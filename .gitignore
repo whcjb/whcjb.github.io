@@ -65,3 +65,5 @@ perkins_raw/galatians/witness_1617/
 # 赫奇森 1841 他版页图与 OCR（可由 scripts/hutcheson_witness.py fetch/ocr 重建）
 hutcheson_raw/john/witness_1841/
 hutcheson_raw/john/zh_trial_backup_*/
+# 雷登证人 hOCR 与页图（可由 scripts/leighton_witness.py fetch 重建）
+leighton_raw/1peter/witness/

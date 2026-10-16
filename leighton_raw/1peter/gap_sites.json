@@ -1,0 +1,8954 @@
+[
+{
+"slug": "1",
+"kind": "punc",
+"tok": "▪",
+"vol": 1,
+"page": "1",
+"facs": "4"
+},
+{
+"slug": "1",
+"kind": "letter",
+"tok": "•",
+"vol": 1,
+"page": "4",
+"facs": "6"
+},
+{
+"slug": "1",
+"kind": "letter",
+"tok": "•",
+"vol": 1,
+"page": "5",
+"facs": "6"
+},
+{
+"slug": "1",
+"kind": "letter",
+"tok": "•",
+"vol": 1,
+"page": "6",
+"facs": "7"
+},
+{
+"slug": "1",
+"kind": "letter",
+"tok": "•",
+"vol": 1,
+"page": "8",
+"facs": "8"
+},
+{
+"slug": "1",
+"kind": "letter",
+"tok": "•",
+"vol": 1,
+"page": "8",
+"facs": "8"
+},
+{
+"slug": "1",
+"kind": "punc",
+"tok": "▪",
+"vol": 1,
+"page": "9",
+"facs": "8"
+},
+{
+"slug": "1",
+"kind": "punc",
+"tok": "▪",
+"vol": 1,
+"page": "9",
+"facs": "8"
+},
+{
+"slug": "1",
+"kind": "letter",
+"tok": "•",
+"vol": 1,
+"page": "10",
+"facs": "9"
+},
+{
+"slug": "1",
+"kind": "letter",
+"tok": "•",
+"vol": 1,
+"page": "10",
+"facs": "9"
+},
+{
+"slug": "1",
+"kind": "letter",
+"tok": "•",
+"vol": 1,
+"page": "10",
+"facs": "9"
+},
+{
+"slug": "1",
+"kind": "letter",
+"tok": "•",
+"vol": 1,
+"page": "12",
+"facs": "10"
+},
+{
+"slug": "1",
+"kind": "letter",
+"tok": "•",
+"vol": 1,
+"page": "12",
+"facs": "10"
+},
+{
+"slug": "1",
+"kind": "letter",
+"tok": "•",
+"vol": 1,
+"page": "13",
+"facs": "10"
+},
+{
+"slug": "1",
+"kind": "letter",
+"tok": "•",
+"vol": 1,
+"page": "13",
+"facs": "10"
+},
+{
+"slug": "1",
+"kind": "punc",
+"tok": "▪",
+"vol": 1,
+"page": "13",
+"facs": "10"
+},
+{
+"slug": "1",
+"kind": "letter",
+"tok": "•",
+"vol": 1,
+"page": "14",
+"facs": "11"
+},
+{
+"slug": "1",
+"kind": "punc",
+"tok": "▪",
+"vol": 1,
+"page": "15",
+"facs": "11"
+},
+{
+"slug": "1",
+"kind": "letter",
+"tok": "•",
+"vol": 1,
+"page": "18",
+"facs": "13"
+},
+{
+"slug": "1",
+"kind": "punc",
+"tok": "▪",
+"vol": 1,
+"page": "19",
+"facs": "13"
+},
+{
+"slug": "1",
+"kind": "punc",
+"tok": "▪",
+"vol": 1,
+"page": "23",
+"facs": "15"
+},
+{
+"slug": "1",
+"kind": "letter",
+"tok": "•",
+"vol": 1,
+"page": "23",
+"facs": "15"
+},
+{
+"slug": "1",
+"kind": "letter",
+"tok": "•",
+"vol": 1,
+"page": "23",
+"facs": "15"
+},
+{
+"slug": "1",
+"kind": "foreign",
+"tok": "〈Greek〉",
+"vol": 1,
+"page": "23",
+"facs": "15"
+},
+{
+"slug": "1",
+"kind": "letter",
+"tok": "••",
+"vol": 1,
+"page": "23",
+"facs": "15"
+},
+{
+"slug": "1",
+"kind": "letter",
+"tok": "•",
+"vol": 1,
+"page": "23",
+"facs": "15"
+},
+{
+"slug": "1",
+"kind": "letter",
+"tok": "•",
+"vol": 1,
+"page": "26",
+"facs": "17"
+},
+{
+"slug": "1",
+"kind": "letter",
+"tok": "•",
+"vol": 1,
+"page": "29",
+"facs": "18"
+},
+{
+"slug": "1",
+"kind": "punc",
+"tok": "▪",
+"vol": 1,
+"page": "30",
+"facs": "19"
+},
+{
+"slug": "1",
+"kind": "letter",
+"tok": "•",
+"vol": 1,
+"page": "30",
+"facs": "19"
+},
+{
+"slug": "1",
+"kind": "letter",
+"tok": "•",
+"vol": 1,
+"page": "34",
+"facs": "22"
+},
+{
+"slug": "1",
+"kind": "punc",
+"tok": "▪",
+"vol": 1,
+"page": "34",
+"facs": "22"
+},
+{
+"slug": "1",
+"kind": "letter",
+"tok": "•",
+"vol": 1,
+"page": "34",
+"facs": "22"
+},
+{
+"slug": "1",
+"kind": "letter",
+"tok": "•",
+"vol": 1,
+"page": "35",
+"facs": "22"
+},
+{
+"slug": "1",
+"kind": "letter",
+"tok": "•",
+"vol": 1,
+"page": "39",
+"facs": "24"
+},
+{
+"slug": "1",
+"kind": "letter",
+"tok": "•",
+"vol": 1,
+"page": "39",
+"facs": "24"
+},
+{
+"slug": "1",
+"kind": "letter",
+"tok": "•",
+"vol": 1,
+"page": "41",
+"facs": "25"
+},
+{
+"slug": "1",
+"kind": "letter",
+"tok": "•",
+"vol": 1,
+"page": "41",
+"facs": "25"
+},
+{
+"slug": "1",
+"kind": "punc",
+"tok": "▪",
+"vol": 1,
+"page": "42",
+"facs": "26"
+},
+{
+"slug": "1",
+"kind": "letter",
+"tok": "•",
+"vol": 1,
+"page": "44",
+"facs": "27"
+},
+{
+"slug": "1",
+"kind": "punc",
+"tok": "▪",
+"vol": 1,
+"page": "45",
+"facs": "27"
+},
+{
+"slug": "1",
+"kind": "punc",
+"tok": "▪",
+"vol": 1,
+"page": "49",
+"facs": "29"
+},
+{
+"slug": "1",
+"kind": "letter",
+"tok": "•",
+"vol": 1,
+"page": "52",
+"facs": "31"
+},
+{
+"slug": "1",
+"kind": "letter",
+"tok": "•",
+"vol": 1,
+"page": "54",
+"facs": "32"
+},
+{
+"slug": "1",
+"kind": "punc",
+"tok": "▪",
+"vol": 1,
+"page": "57",
+"facs": "33"
+},
+{
+"slug": "1",
+"kind": "letter",
+"tok": "•",
+"vol": 1,
+"page": "59",
+"facs": "34"
+},
+{
+"slug": "1",
+"kind": "letter",
+"tok": "•",
+"vol": 1,
+"page": "60",
+"facs": "35"
+},
+{
+"slug": "1",
+"kind": "letter",
+"tok": "•",
+"vol": 1,
+"page": "60",
+"facs": "35"
+},
+{
+"slug": "1",
+"kind": "punc",
+"tok": "▪",
+"vol": 1,
+"page": "62",
+"facs": "36"
+},
+{
+"slug": "1",
+"kind": "punc",
+"tok": "▪",
+"vol": 1,
+"page": "63",
+"facs": "36"
+},
+{
+"slug": "1",
+"kind": "letter",
+"tok": "•",
+"vol": 1,
+"page": "63",
+"facs": "36"
+},
+{
+"slug": "1",
+"kind": "letter",
+"tok": "•",
+"vol": 1,
+"page": "63",
+"facs": "36"
+},
+{
+"slug": "1",
+"kind": "letter",
+"tok": "•",
+"vol": 1,
+"page": "64",
+"facs": "38"
+},
+{
+"slug": "1",
+"kind": "punc",
+"tok": "▪",
+"vol": 1,
+"page": "65",
+"facs": "38"
+},
+{
+"slug": "1",
+"kind": "letter",
+"tok": "•",
+"vol": 1,
+"page": "67",
+"facs": "39"
+},
+{
+"slug": "1",
+"kind": "letter",
+"tok": "•",
+"vol": 1,
+"page": "68",
+"facs": "40"
+},
+{
+"slug": "1",
+"kind": "letter",
+"tok": "•",
+"vol": 1,
+"page": "76",
+"facs": "44"
+},
+{
+"slug": "1",
+"kind": "letter",
+"tok": "•",
+"vol": 1,
+"page": "76",
+"facs": "44"
+},
+{
+"slug": "1",
+"kind": "letter",
+"tok": "•",
+"vol": 1,
+"page": "76",
+"facs": "44"
+},
+{
+"slug": "1",
+"kind": "letter",
+"tok": "•",
+"vol": 1,
+"page": "76",
+"facs": "44"
+},
+{
+"slug": "1",
+"kind": "letter",
+"tok": "•",
+"vol": 1,
+"page": "78",
+"facs": "45"
+},
+{
+"slug": "1",
+"kind": "letter",
+"tok": "•",
+"vol": 1,
+"page": "79",
+"facs": "45"
+},
+{
+"slug": "1",
+"kind": "letter",
+"tok": "•",
+"vol": 1,
+"page": "79",
+"facs": "45"
+},
+{
+"slug": "1",
+"kind": "punc",
+"tok": "▪",
+"vol": 1,
+"page": "81",
+"facs": "46"
+},
+{
+"slug": "1",
+"kind": "letter",
+"tok": "•",
+"vol": 1,
+"page": "82",
+"facs": "47"
+},
+{
+"slug": "1",
+"kind": "letter",
+"tok": "•",
+"vol": 1,
+"page": "82",
+"facs": "47"
+},
+{
+"slug": "1",
+"kind": "word",
+"tok": "〈◊〉",
+"vol": 1,
+"page": "82",
+"facs": "47"
+},
+{
+"slug": "1",
+"kind": "word",
+"tok": "〈◊〉",
+"vol": 1,
+"page": "82",
+"facs": "47"
+},
+{
+"slug": "1",
+"kind": "letter",
+"tok": "•",
+"vol": 1,
+"page": "82",
+"facs": "47"
+},
+{
+"slug": "1",
+"kind": "punc",
+"tok": "▪",
+"vol": 1,
+"page": "82",
+"facs": "47"
+},
+{
+"slug": "1",
+"kind": "letter",
+"tok": "•",
+"vol": 1,
+"page": "82",
+"facs": "47"
+},
+{
+"slug": "1",
+"kind": "letter",
+"tok": "•",
+"vol": 1,
+"page": "82",
+"facs": "47"
+},
+{
+"slug": "1",
+"kind": "letter",
+"tok": "•",
+"vol": 1,
+"page": "82",
+"facs": "47"
+},
+{
+"slug": "1",
+"kind": "punc",
+"tok": "▪",
+"vol": 1,
+"page": "82",
+"facs": "47"
+},
+{
+"slug": "1",
+"kind": "letter",
+"tok": "•",
+"vol": 1,
+"page": "82",
+"facs": "47"
+},
+{
+"slug": "1",
+"kind": "letter",
+"tok": "•",
+"vol": 1,
+"page": "82",
+"facs": "47"
+},
+{
+"slug": "1",
+"kind": "letter",
+"tok": "•",
+"vol": 1,
+"page": "82",
+"facs": "47"
+},
+{
+"slug": "1",
+"kind": "letter",
+"tok": "•",
+"vol": 1,
+"page": "82",
+"facs": "47"
+},
+{
+"slug": "1",
+"kind": "word",
+"tok": "〈◊〉",
+"vol": 1,
+"page": "82",
+"facs": "47"
+},
+{
+"slug": "1",
+"kind": "punc",
+"tok": "▪",
+"vol": 1,
+"page": "82",
+"facs": "47"
+},
+{
+"slug": "1",
+"kind": "punc",
+"tok": "▪",
+"vol": 1,
+"page": "83",
+"facs": "47"
+},
+{
+"slug": "1",
+"kind": "letter",
+"tok": "•",
+"vol": 1,
+"page": "83",
+"facs": "47"
+},
+{
+"slug": "1",
+"kind": "letter",
+"tok": "•",
+"vol": 1,
+"page": "83",
+"facs": "47"
+},
+{
+"slug": "1",
+"kind": "letter",
+"tok": "•",
+"vol": 1,
+"page": "83",
+"facs": "47"
+},
+{
+"slug": "1",
+"kind": "letter",
+"tok": "•",
+"vol": 1,
+"page": "83",
+"facs": "47"
+},
+{
+"slug": "1",
+"kind": "letter",
+"tok": "•",
+"vol": 1,
+"page": "84",
+"facs": "48"
+},
+{
+"slug": "1",
+"kind": "punc",
+"tok": "▪",
+"vol": 1,
+"page": "86",
+"facs": "49"
+},
+{
+"slug": "1",
+"kind": "letter",
+"tok": "•",
+"vol": 1,
+"page": "86",
+"facs": "49"
+},
+{
+"slug": "1",
+"kind": "letter",
+"tok": "•",
+"vol": 1,
+"page": "87",
+"facs": "49"
+},
+{
+"slug": "1",
+"kind": "letter",
+"tok": "•",
+"vol": 1,
+"page": "87",
+"facs": "49"
+},
+{
+"slug": "1",
+"kind": "letter",
+"tok": "•",
+"vol": 1,
+"page": "87",
+"facs": "49"
+},
+{
+"slug": "1",
+"kind": "letter",
+"tok": "•",
+"vol": 1,
+"page": "87",
+"facs": "49"
+},
+{
+"slug": "1",
+"kind": "letter",
+"tok": "•",
+"vol": 1,
+"page": "87",
+"facs": "49"
+},
+{
+"slug": "1",
+"kind": "letter",
+"tok": "••",
+"vol": 1,
+"page": "87",
+"facs": "49"
+},
+{
+"slug": "1",
+"kind": "letter",
+"tok": "•",
+"vol": 1,
+"page": "88",
+"facs": "51"
+},
+{
+"slug": "1",
+"kind": "letter",
+"tok": "•",
+"vol": 1,
+"page": "91",
+"facs": "52"
+},
+{
+"slug": "1",
+"kind": "letter",
+"tok": "•",
+"vol": 1,
+"page": "94",
+"facs": "54"
+},
+{
+"slug": "1",
+"kind": "letter",
+"tok": "•",
+"vol": 1,
+"page": "94",
+"facs": "54"
+},
+{
+"slug": "1",
+"kind": "letter",
+"tok": "•",
+"vol": 1,
+"page": "94",
+"facs": "54"
+},
+{
+"slug": "1",
+"kind": "letter",
+"tok": "•",
+"vol": 1,
+"page": "94",
+"facs": "54"
+},
+{
+"slug": "1",
+"kind": "letter",
+"tok": "•",
+"vol": 1,
+"page": "95",
+"facs": "54"
+},
+{
+"slug": "1",
+"kind": "letter",
+"tok": "•",
+"vol": 1,
+"page": "95",
+"facs": "54"
+},
+{
+"slug": "1",
+"kind": "letter",
+"tok": "•",
+"vol": 1,
+"page": "95",
+"facs": "54"
+},
+{
+"slug": "1",
+"kind": "letter",
+"tok": "•",
+"vol": 1,
+"page": "95",
+"facs": "54"
+},
+{
+"slug": "1",
+"kind": "letter",
+"tok": "•",
+"vol": 1,
+"page": "95",
+"facs": "54"
+},
+{
+"slug": "1",
+"kind": "letter",
+"tok": "•",
+"vol": 1,
+"page": "95",
+"facs": "54"
+},
+{
+"slug": "1",
+"kind": "punc",
+"tok": "▪",
+"vol": 1,
+"page": "100",
+"facs": "57"
+},
+{
+"slug": "1",
+"kind": "punc",
+"tok": "▪",
+"vol": 1,
+"page": "101",
+"facs": "57"
+},
+{
+"slug": "1",
+"kind": "letter",
+"tok": "•",
+"vol": 1,
+"page": "103",
+"facs": "58"
+},
+{
+"slug": "1",
+"kind": "letter",
+"tok": "••",
+"vol": 1,
+"page": "104",
+"facs": "59"
+},
+{
+"slug": "1",
+"kind": "letter",
+"tok": "•",
+"vol": 1,
+"page": "112",
+"facs": "61"
+},
+{
+"slug": "1",
+"kind": "letter",
+"tok": "•",
+"vol": 1,
+"page": "112",
+"facs": "61"
+},
+{
+"slug": "1",
+"kind": "letter",
+"tok": "•",
+"vol": 1,
+"page": "112",
+"facs": "61"
+},
+{
+"slug": "1",
+"kind": "punc",
+"tok": "▪",
+"vol": 1,
+"page": "109",
+"facs": "61"
+},
+{
+"slug": "1",
+"kind": "letter",
+"tok": "•",
+"vol": 1,
+"page": "108",
+"facs": "62"
+},
+{
+"slug": "1",
+"kind": "punc",
+"tok": "▪",
+"vol": 1,
+"page": "109",
+"facs": "62"
+},
+{
+"slug": "1",
+"kind": "letter",
+"tok": "•",
+"vol": 1,
+"page": "108",
+"facs": "63"
+},
+{
+"slug": "1",
+"kind": "letter",
+"tok": "•",
+"vol": 1,
+"page": "108",
+"facs": "63"
+},
+{
+"slug": "1",
+"kind": "letter",
+"tok": "•",
+"vol": 1,
+"page": "108",
+"facs": "63"
+},
+{
+"slug": "1",
+"kind": "letter",
+"tok": "•",
+"vol": 1,
+"page": "105",
+"facs": "63"
+},
+{
+"slug": "1",
+"kind": "punc",
+"tok": "▪",
+"vol": 1,
+"page": "105",
+"facs": "63"
+},
+{
+"slug": "1",
+"kind": "punc",
+"tok": "▪",
+"vol": 1,
+"page": "114",
+"facs": "65"
+},
+{
+"slug": "1",
+"kind": "punc",
+"tok": "▪",
+"vol": 1,
+"page": "114",
+"facs": "65"
+},
+{
+"slug": "1",
+"kind": "letter",
+"tok": "•",
+"vol": 1,
+"page": "116",
+"facs": "66"
+},
+{
+"slug": "1",
+"kind": "letter",
+"tok": "•",
+"vol": 1,
+"page": "116",
+"facs": "66"
+},
+{
+"slug": "1",
+"kind": "punc",
+"tok": "▪",
+"vol": 1,
+"page": "118",
+"facs": "67"
+},
+{
+"slug": "1",
+"kind": "letter",
+"tok": "•",
+"vol": 1,
+"page": "119",
+"facs": "67"
+},
+{
+"slug": "1",
+"kind": "letter",
+"tok": "•",
+"vol": 1,
+"page": "122",
+"facs": "69"
+},
+{
+"slug": "1",
+"kind": "letter",
+"tok": "•",
+"vol": 1,
+"page": "125",
+"facs": "70"
+},
+{
+"slug": "1",
+"kind": "letter",
+"tok": "•",
+"vol": 1,
+"page": "131",
+"facs": "73"
+},
+{
+"slug": "1",
+"kind": "foreign",
+"tok": "〈Greek〉",
+"vol": 1,
+"page": "132",
+"facs": "74"
+},
+{
+"slug": "1",
+"kind": "foreign",
+"tok": "〈Greek〉",
+"vol": 1,
+"page": "132",
+"facs": "74"
+},
+{
+"slug": "1",
+"kind": "letter",
+"tok": "•",
+"vol": 1,
+"page": "133",
+"facs": "74"
+},
+{
+"slug": "1",
+"kind": "punc",
+"tok": "▪",
+"vol": 1,
+"page": "133",
+"facs": "74"
+},
+{
+"slug": "1",
+"kind": "punc",
+"tok": "▪",
+"vol": 1,
+"page": "135",
+"facs": "75"
+},
+{
+"slug": "1",
+"kind": "letter",
+"tok": "•",
+"vol": 1,
+"page": "136",
+"facs": "76"
+},
+{
+"slug": "1",
+"kind": "letter",
+"tok": "•",
+"vol": 1,
+"page": "136",
+"facs": "76"
+},
+{
+"slug": "1",
+"kind": "letter",
+"tok": "•",
+"vol": 1,
+"page": "138",
+"facs": "77"
+},
+{
+"slug": "1",
+"kind": "letter",
+"tok": "•",
+"vol": 1,
+"page": "142",
+"facs": "79"
+},
+{
+"slug": "1",
+"kind": "letter",
+"tok": "•",
+"vol": 1,
+"page": "145",
+"facs": "80"
+},
+{
+"slug": "1",
+"kind": "punc",
+"tok": "▪",
+"vol": 1,
+"page": "145",
+"facs": "80"
+},
+{
+"slug": "1",
+"kind": "letter",
+"tok": "•",
+"vol": 1,
+"page": "145",
+"facs": "80"
+},
+{
+"slug": "1",
+"kind": "letter",
+"tok": "•",
+"vol": 1,
+"page": "145",
+"facs": "80"
+},
+{
+"slug": "1",
+"kind": "letter",
+"tok": "•",
+"vol": 1,
+"page": "146",
+"facs": "81"
+},
+{
+"slug": "1",
+"kind": "letter",
+"tok": "•",
+"vol": 1,
+"page": "148",
+"facs": "82"
+},
+{
+"slug": "1",
+"kind": "punc",
+"tok": "▪",
+"vol": 1,
+"page": "148",
+"facs": "82"
+},
+{
+"slug": "1",
+"kind": "letter",
+"tok": "•",
+"vol": 1,
+"page": "149",
+"facs": "82"
+},
+{
+"slug": "1",
+"kind": "letter",
+"tok": "•",
+"vol": 1,
+"page": "149",
+"facs": "82"
+},
+{
+"slug": "1",
+"kind": "letter",
+"tok": "•",
+"vol": 1,
+"page": "149",
+"facs": "82"
+},
+{
+"slug": "1",
+"kind": "letter",
+"tok": "•",
+"vol": 1,
+"page": "150",
+"facs": "83"
+},
+{
+"slug": "1",
+"kind": "letter",
+"tok": "•",
+"vol": 1,
+"page": "152",
+"facs": "84"
+},
+{
+"slug": "1",
+"kind": "letter",
+"tok": "•",
+"vol": 1,
+"page": "152",
+"facs": "84"
+},
+{
+"slug": "1",
+"kind": "letter",
+"tok": "•",
+"vol": 1,
+"page": "152",
+"facs": "84"
+},
+{
+"slug": "1",
+"kind": "letter",
+"tok": "•",
+"vol": 1,
+"page": "152",
+"facs": "84"
+},
+{
+"slug": "1",
+"kind": "letter",
+"tok": "•",
+"vol": 1,
+"page": "152",
+"facs": "84"
+},
+{
+"slug": "1",
+"kind": "letter",
+"tok": "•",
+"vol": 1,
+"page": "152",
+"facs": "84"
+},
+{
+"slug": "1",
+"kind": "letter",
+"tok": "••",
+"vol": 1,
+"page": "153",
+"facs": "84"
+},
+{
+"slug": "1",
+"kind": "letter",
+"tok": "•",
+"vol": 1,
+"page": "153",
+"facs": "84"
+},
+{
+"slug": "1",
+"kind": "letter",
+"tok": "•",
+"vol": 1,
+"page": "154",
+"facs": "85"
+},
+{
+"slug": "1",
+"kind": "letter",
+"tok": "•",
+"vol": 1,
+"page": "154",
+"facs": "85"
+},
+{
+"slug": "1",
+"kind": "letter",
+"tok": "•",
+"vol": 1,
+"page": "157",
+"facs": "86"
+},
+{
+"slug": "1",
+"kind": "word",
+"tok": "〈◊〉",
+"vol": 1,
+"page": "159",
+"facs": "87"
+},
+{
+"slug": "1",
+"kind": "punc",
+"tok": "▪",
+"vol": 1,
+"page": "160",
+"facs": "88"
+},
+{
+"slug": "1",
+"kind": "letter",
+"tok": "•",
+"vol": 1,
+"page": "160",
+"facs": "88"
+},
+{
+"slug": "1",
+"kind": "letter",
+"tok": "•",
+"vol": 1,
+"page": "160",
+"facs": "88"
+},
+{
+"slug": "1",
+"kind": "letter",
+"tok": "••",
+"vol": 1,
+"page": "160",
+"facs": "88"
+},
+{
+"slug": "1",
+"kind": "span",
+"tok": "〈…〉",
+"vol": 1,
+"page": "160",
+"facs": "88"
+},
+{
+"slug": "1",
+"kind": "span",
+"tok": "〈…〉",
+"vol": 1,
+"page": "160",
+"facs": "88"
+},
+{
+"slug": "1",
+"kind": "word",
+"tok": "〈◊〉",
+"vol": 1,
+"page": "160",
+"facs": "88"
+},
+{
+"slug": "1",
+"kind": "letter",
+"tok": "•",
+"vol": 1,
+"page": "160",
+"facs": "88"
+},
+{
+"slug": "1",
+"kind": "punc",
+"tok": "▪",
+"vol": 1,
+"page": "163",
+"facs": "89"
+},
+{
+"slug": "1",
+"kind": "punc",
+"tok": "▪",
+"vol": 1,
+"page": "168",
+"facs": "92"
+},
+{
+"slug": "1",
+"kind": "letter",
+"tok": "•",
+"vol": 1,
+"page": "168",
+"facs": "92"
+},
+{
+"slug": "1",
+"kind": "punc",
+"tok": "▪",
+"vol": 1,
+"page": "168",
+"facs": "92"
+},
+{
+"slug": "1",
+"kind": "punc",
+"tok": "▪",
+"vol": 1,
+"page": "168",
+"facs": "92"
+},
+{
+"slug": "1",
+"kind": "letter",
+"tok": "•",
+"vol": 1,
+"page": "169",
+"facs": "92"
+},
+{
+"slug": "1",
+"kind": "punc",
+"tok": "▪",
+"vol": 1,
+"page": "170",
+"facs": "93"
+},
+{
+"slug": "1",
+"kind": "letter",
+"tok": "•",
+"vol": 1,
+"page": "170",
+"facs": "93"
+},
+{
+"slug": "1",
+"kind": "letter",
+"tok": "•",
+"vol": 1,
+"page": "171",
+"facs": "93"
+},
+{
+"slug": "1",
+"kind": "punc",
+"tok": "▪",
+"vol": 1,
+"page": "171",
+"facs": "93"
+},
+{
+"slug": "1",
+"kind": "letter",
+"tok": "•",
+"vol": 1,
+"page": "172",
+"facs": "94"
+},
+{
+"slug": "1",
+"kind": "letter",
+"tok": "•",
+"vol": 1,
+"page": "173",
+"facs": "94"
+},
+{
+"slug": "1",
+"kind": "punc",
+"tok": "▪",
+"vol": 1,
+"page": "173",
+"facs": "94"
+},
+{
+"slug": "1",
+"kind": "letter",
+"tok": "•",
+"vol": 1,
+"page": "173",
+"facs": "94"
+},
+{
+"slug": "1",
+"kind": "letter",
+"tok": "•",
+"vol": 1,
+"page": "173",
+"facs": "94"
+},
+{
+"slug": "1",
+"kind": "punc",
+"tok": "▪",
+"vol": 1,
+"page": "173",
+"facs": "94"
+},
+{
+"slug": "1",
+"kind": "punc",
+"tok": "▪",
+"vol": 1,
+"page": "173",
+"facs": "94"
+},
+{
+"slug": "1",
+"kind": "punc",
+"tok": "▪",
+"vol": 1,
+"page": "174",
+"facs": "95"
+},
+{
+"slug": "1",
+"kind": "letter",
+"tok": "•",
+"vol": 1,
+"page": "175",
+"facs": "95"
+},
+{
+"slug": "1",
+"kind": "letter",
+"tok": "•",
+"vol": 1,
+"page": "176",
+"facs": "96"
+},
+{
+"slug": "1",
+"kind": "punc",
+"tok": "▪",
+"vol": 1,
+"page": "176",
+"facs": "96"
+},
+{
+"slug": "1",
+"kind": "punc",
+"tok": "▪",
+"vol": 1,
+"page": "176",
+"facs": "96"
+},
+{
+"slug": "1",
+"kind": "letter",
+"tok": "•",
+"vol": 1,
+"page": "177",
+"facs": "96"
+},
+{
+"slug": "1",
+"kind": "letter",
+"tok": "•",
+"vol": 1,
+"page": "178",
+"facs": "97"
+},
+{
+"slug": "1",
+"kind": "punc",
+"tok": "▪",
+"vol": 1,
+"page": "179",
+"facs": "97"
+},
+{
+"slug": "1",
+"kind": "punc",
+"tok": "▪",
+"vol": 1,
+"page": "179",
+"facs": "97"
+},
+{
+"slug": "1",
+"kind": "punc",
+"tok": "▪",
+"vol": 1,
+"page": "179",
+"facs": "97"
+},
+{
+"slug": "1",
+"kind": "letter",
+"tok": "•",
+"vol": 1,
+"page": "179",
+"facs": "97"
+},
+{
+"slug": "1",
+"kind": "punc",
+"tok": "▪",
+"vol": 1,
+"page": "179",
+"facs": "97"
+},
+{
+"slug": "1",
+"kind": "punc",
+"tok": "▪",
+"vol": 1,
+"page": "179",
+"facs": "97"
+},
+{
+"slug": "1",
+"kind": "punc",
+"tok": "▪",
+"vol": 1,
+"page": "179",
+"facs": "97"
+},
+{
+"slug": "1",
+"kind": "letter",
+"tok": "•",
+"vol": 1,
+"page": "180",
+"facs": "99"
+},
+{
+"slug": "1",
+"kind": "punc",
+"tok": "▪",
+"vol": 1,
+"page": "181",
+"facs": "99"
+},
+{
+"slug": "1",
+"kind": "word",
+"tok": "〈◊〉",
+"vol": 1,
+"page": "182",
+"facs": "100"
+},
+{
+"slug": "1",
+"kind": "punc",
+"tok": "▪",
+"vol": 1,
+"page": "182",
+"facs": "100"
+},
+{
+"slug": "1",
+"kind": "punc",
+"tok": "▪",
+"vol": 1,
+"page": "182",
+"facs": "100"
+},
+{
+"slug": "1",
+"kind": "punc",
+"tok": "▪",
+"vol": 1,
+"page": "182",
+"facs": "100"
+},
+{
+"slug": "1",
+"kind": "letter",
+"tok": "•",
+"vol": 1,
+"page": "182",
+"facs": "100"
+},
+{
+"slug": "1",
+"kind": "punc",
+"tok": "▪",
+"vol": 1,
+"page": "183",
+"facs": "100"
+},
+{
+"slug": "1",
+"kind": "letter",
+"tok": "••",
+"vol": 1,
+"page": "183",
+"facs": "100"
+},
+{
+"slug": "1",
+"kind": "letter",
+"tok": "•",
+"vol": 1,
+"page": "184",
+"facs": "101"
+},
+{
+"slug": "1",
+"kind": "punc",
+"tok": "▪",
+"vol": 1,
+"page": "184",
+"facs": "101"
+},
+{
+"slug": "1",
+"kind": "letter",
+"tok": "•",
+"vol": 1,
+"page": "186",
+"facs": "102"
+},
+{
+"slug": "1",
+"kind": "letter",
+"tok": "•",
+"vol": 1,
+"page": "190",
+"facs": "104"
+},
+{
+"slug": "1",
+"kind": "punc",
+"tok": "▪",
+"vol": 1,
+"page": "194",
+"facs": "106"
+},
+{
+"slug": "1",
+"kind": "letter",
+"tok": "•",
+"vol": 1,
+"page": "195",
+"facs": "106"
+},
+{
+"slug": "1",
+"kind": "letter",
+"tok": "•",
+"vol": 1,
+"page": "195",
+"facs": "106"
+},
+{
+"slug": "1",
+"kind": "punc",
+"tok": "▪",
+"vol": 1,
+"page": "196",
+"facs": "107"
+},
+{
+"slug": "1",
+"kind": "letter",
+"tok": "•",
+"vol": 1,
+"page": "196",
+"facs": "107"
+},
+{
+"slug": "1",
+"kind": "punc",
+"tok": "▪",
+"vol": 1,
+"page": "197",
+"facs": "107"
+},
+{
+"slug": "1",
+"kind": "letter",
+"tok": "•",
+"vol": 1,
+"page": "198",
+"facs": "108"
+},
+{
+"slug": "1",
+"kind": "punc",
+"tok": "▪",
+"vol": 1,
+"page": "198",
+"facs": "108"
+},
+{
+"slug": "1",
+"kind": "letter",
+"tok": "•",
+"vol": 1,
+"page": "201",
+"facs": "109"
+},
+{
+"slug": "1",
+"kind": "letter",
+"tok": "•",
+"vol": 1,
+"page": "202",
+"facs": "110"
+},
+{
+"slug": "1",
+"kind": "letter",
+"tok": "•",
+"vol": 1,
+"page": "202",
+"facs": "110"
+},
+{
+"slug": "1",
+"kind": "punc",
+"tok": "▪",
+"vol": 1,
+"page": "206",
+"facs": "112"
+},
+{
+"slug": "1",
+"kind": "letter",
+"tok": "•",
+"vol": 1,
+"page": "209",
+"facs": "113"
+},
+{
+"slug": "1",
+"kind": "letter",
+"tok": "•",
+"vol": 1,
+"page": "209",
+"facs": "113"
+},
+{
+"slug": "1",
+"kind": "letter",
+"tok": "•",
+"vol": 1,
+"page": "209",
+"facs": "113"
+},
+{
+"slug": "1",
+"kind": "letter",
+"tok": "•",
+"vol": 1,
+"page": "209",
+"facs": "113"
+},
+{
+"slug": "1",
+"kind": "letter",
+"tok": "•",
+"vol": 1,
+"page": "209",
+"facs": "113"
+},
+{
+"slug": "1",
+"kind": "letter",
+"tok": "•",
+"vol": 1,
+"page": "210",
+"facs": "114"
+},
+{
+"slug": "1",
+"kind": "foreign",
+"tok": "〈Greek〉",
+"vol": 1,
+"page": "211",
+"facs": "114"
+},
+{
+"slug": "1",
+"kind": "foreign",
+"tok": "〈Greek〉",
+"vol": 1,
+"page": "211",
+"facs": "114"
+},
+{
+"slug": "1",
+"kind": "letter",
+"tok": "•",
+"vol": 1,
+"page": "212",
+"facs": "115"
+},
+{
+"slug": "1",
+"kind": "punc",
+"tok": "▪",
+"vol": 1,
+"page": "212",
+"facs": "115"
+},
+{
+"slug": "1",
+"kind": "letter",
+"tok": "•",
+"vol": 1,
+"page": "213",
+"facs": "115"
+},
+{
+"slug": "1",
+"kind": "letter",
+"tok": "•",
+"vol": 1,
+"page": "216",
+"facs": "117"
+},
+{
+"slug": "1",
+"kind": "letter",
+"tok": "•",
+"vol": 1,
+"page": "216",
+"facs": "117"
+},
+{
+"slug": "2",
+"kind": "punc",
+"tok": "▪",
+"vol": 1,
+"page": "224",
+"facs": "121"
+},
+{
+"slug": "2",
+"kind": "letter",
+"tok": "•",
+"vol": 1,
+"page": "224",
+"facs": "121"
+},
+{
+"slug": "2",
+"kind": "foreign",
+"tok": "〈Greek〉",
+"vol": 1,
+"page": "225",
+"facs": "121"
+},
+{
+"slug": "2",
+"kind": "letter",
+"tok": "•",
+"vol": 1,
+"page": "227",
+"facs": "122"
+},
+{
+"slug": "2",
+"kind": "letter",
+"tok": "•",
+"vol": 1,
+"page": "228",
+"facs": "123"
+},
+{
+"slug": "2",
+"kind": "letter",
+"tok": "•",
+"vol": 1,
+"page": "228",
+"facs": "123"
+},
+{
+"slug": "2",
+"kind": "letter",
+"tok": "•",
+"vol": 1,
+"page": "229",
+"facs": "123"
+},
+{
+"slug": "2",
+"kind": "letter",
+"tok": "•",
+"vol": 1,
+"page": "232",
+"facs": "125"
+},
+{
+"slug": "2",
+"kind": "letter",
+"tok": "•",
+"vol": 1,
+"page": "233",
+"facs": "125"
+},
+{
+"slug": "2",
+"kind": "letter",
+"tok": "•",
+"vol": 1,
+"page": "233",
+"facs": "125"
+},
+{
+"slug": "2",
+"kind": "letter",
+"tok": "•",
+"vol": 1,
+"page": "235",
+"facs": "126"
+},
+{
+"slug": "2",
+"kind": "letter",
+"tok": "•",
+"vol": 1,
+"page": "235",
+"facs": "126"
+},
+{
+"slug": "2",
+"kind": "letter",
+"tok": "•",
+"vol": 1,
+"page": "238",
+"facs": "128"
+},
+{
+"slug": "2",
+"kind": "punc",
+"tok": "▪",
+"vol": 1,
+"page": "243",
+"facs": "130"
+},
+{
+"slug": "2",
+"kind": "letter",
+"tok": "•",
+"vol": 1,
+"page": "243",
+"facs": "130"
+},
+{
+"slug": "2",
+"kind": "letter",
+"tok": "•",
+"vol": 1,
+"page": "243",
+"facs": "130"
+},
+{
+"slug": "2",
+"kind": "letter",
+"tok": "•",
+"vol": 1,
+"page": "249",
+"facs": "133"
+},
+{
+"slug": "2",
+"kind": "letter",
+"tok": "•",
+"vol": 1,
+"page": "259",
+"facs": "138"
+},
+{
+"slug": "2",
+"kind": "letter",
+"tok": "•",
+"vol": 1,
+"page": "264",
+"facs": "141"
+},
+{
+"slug": "2",
+"kind": "letter",
+"tok": "•",
+"vol": 1,
+"page": "271",
+"facs": "144"
+},
+{
+"slug": "2",
+"kind": "letter",
+"tok": "•",
+"vol": 1,
+"page": "274",
+"facs": "146"
+},
+{
+"slug": "2",
+"kind": "letter",
+"tok": "•",
+"vol": 1,
+"page": "274",
+"facs": "146"
+},
+{
+"slug": "2",
+"kind": "letter",
+"tok": "•",
+"vol": 1,
+"page": "276",
+"facs": "147"
+},
+{
+"slug": "2",
+"kind": "punc",
+"tok": "▪",
+"vol": 1,
+"page": "277",
+"facs": "147"
+},
+{
+"slug": "2",
+"kind": "punc",
+"tok": "▪",
+"vol": 1,
+"page": "277",
+"facs": "147"
+},
+{
+"slug": "2",
+"kind": "letter",
+"tok": "•",
+"vol": 1,
+"page": "283",
+"facs": "150"
+},
+{
+"slug": "2",
+"kind": "letter",
+"tok": "•",
+"vol": 1,
+"page": "291",
+"facs": "154"
+},
+{
+"slug": "2",
+"kind": "letter",
+"tok": "•",
+"vol": 1,
+"page": "292",
+"facs": "155"
+},
+{
+"slug": "2",
+"kind": "letter",
+"tok": "•",
+"vol": 1,
+"page": "293",
+"facs": "155"
+},
+{
+"slug": "2",
+"kind": "letter",
+"tok": "•",
+"vol": 1,
+"page": "308",
+"facs": "163"
+},
+{
+"slug": "2",
+"kind": "letter",
+"tok": "•",
+"vol": 1,
+"page": "309",
+"facs": "163"
+},
+{
+"slug": "2",
+"kind": "letter",
+"tok": "•",
+"vol": 1,
+"page": "314",
+"facs": "166"
+},
+{
+"slug": "2",
+"kind": "letter",
+"tok": "•",
+"vol": 1,
+"page": "314",
+"facs": "166"
+},
+{
+"slug": "2",
+"kind": "letter",
+"tok": "•",
+"vol": 1,
+"page": "315",
+"facs": "166"
+},
+{
+"slug": "2",
+"kind": "letter",
+"tok": "•",
+"vol": 1,
+"page": "315",
+"facs": "166"
+},
+{
+"slug": "2",
+"kind": "letter",
+"tok": "•",
+"vol": 1,
+"page": "330",
+"facs": "174"
+},
+{
+"slug": "2",
+"kind": "letter",
+"tok": "•",
+"vol": 1,
+"page": "330",
+"facs": "174"
+},
+{
+"slug": "2",
+"kind": "letter",
+"tok": "•",
+"vol": 1,
+"page": "330",
+"facs": "174"
+},
+{
+"slug": "2",
+"kind": "letter",
+"tok": "•",
+"vol": 1,
+"page": "330",
+"facs": "174"
+},
+{
+"slug": "2",
+"kind": "letter",
+"tok": "•",
+"vol": 1,
+"page": "338",
+"facs": "178"
+},
+{
+"slug": "2",
+"kind": "letter",
+"tok": "•",
+"vol": 1,
+"page": "338",
+"facs": "178"
+},
+{
+"slug": "2",
+"kind": "letter",
+"tok": "•",
+"vol": 1,
+"page": "340",
+"facs": "179"
+},
+{
+"slug": "2",
+"kind": "punc",
+"tok": "▪",
+"vol": 1,
+"page": "341",
+"facs": "179"
+},
+{
+"slug": "2",
+"kind": "letter",
+"tok": "•",
+"vol": 1,
+"page": "344",
+"facs": "181"
+},
+{
+"slug": "2",
+"kind": "punc",
+"tok": "▪",
+"vol": 1,
+"page": "356",
+"facs": "187"
+},
+{
+"slug": "2",
+"kind": "letter",
+"tok": "•",
+"vol": 1,
+"page": "359",
+"facs": "188"
+},
+{
+"slug": "2",
+"kind": "punc",
+"tok": "▪",
+"vol": 1,
+"page": "366",
+"facs": "192"
+},
+{
+"slug": "2",
+"kind": "punc",
+"tok": "▪",
+"vol": 1,
+"page": "367",
+"facs": "192"
+},
+{
+"slug": "2",
+"kind": "punc",
+"tok": "▪",
+"vol": 1,
+"page": "367",
+"facs": "192"
+},
+{
+"slug": "2",
+"kind": "word",
+"tok": "〈◊〉",
+"vol": 1,
+"page": "367",
+"facs": "192"
+},
+{
+"slug": "2",
+"kind": "letter",
+"tok": "•",
+"vol": 1,
+"page": "367",
+"facs": "192"
+},
+{
+"slug": "2",
+"kind": "letter",
+"tok": "••",
+"vol": 1,
+"page": "367",
+"facs": "192"
+},
+{
+"slug": "2",
+"kind": "word",
+"tok": "〈◊〉",
+"vol": 1,
+"page": "367",
+"facs": "192"
+},
+{
+"slug": "2",
+"kind": "punc",
+"tok": "▪",
+"vol": 1,
+"page": "368",
+"facs": "193"
+},
+{
+"slug": "2",
+"kind": "letter",
+"tok": "•",
+"vol": 1,
+"page": "369",
+"facs": "193"
+},
+{
+"slug": "2",
+"kind": "letter",
+"tok": "•",
+"vol": 1,
+"page": "369",
+"facs": "193"
+},
+{
+"slug": "2",
+"kind": "letter",
+"tok": "•",
+"vol": 1,
+"page": "373",
+"facs": "195"
+},
+{
+"slug": "2",
+"kind": "letter",
+"tok": "•",
+"vol": 1,
+"page": "379",
+"facs": "198"
+},
+{
+"slug": "2",
+"kind": "letter",
+"tok": "•",
+"vol": 1,
+"page": "379",
+"facs": "198"
+},
+{
+"slug": "2",
+"kind": "letter",
+"tok": "•",
+"vol": 1,
+"page": "384",
+"facs": "202"
+},
+{
+"slug": "2",
+"kind": "letter",
+"tok": "•",
+"vol": 1,
+"page": "385",
+"facs": "202"
+},
+{
+"slug": "2",
+"kind": "letter",
+"tok": "•",
+"vol": 1,
+"page": "390",
+"facs": "205"
+},
+{
+"slug": "2",
+"kind": "letter",
+"tok": "•",
+"vol": 1,
+"page": "397",
+"facs": "208"
+},
+{
+"slug": "2",
+"kind": "punc",
+"tok": "▪",
+"vol": 1,
+"page": "403",
+"facs": "211"
+},
+{
+"slug": "2",
+"kind": "punc",
+"tok": "▪",
+"vol": 1,
+"page": "403",
+"facs": "211"
+},
+{
+"slug": "2",
+"kind": "letter",
+"tok": "•",
+"vol": 1,
+"page": "406",
+"facs": "213"
+},
+{
+"slug": "2",
+"kind": "letter",
+"tok": "•",
+"vol": 1,
+"page": "407",
+"facs": "213"
+},
+{
+"slug": "2",
+"kind": "letter",
+"tok": "•",
+"vol": 1,
+"page": "420",
+"facs": "220"
+},
+{
+"slug": "2",
+"kind": "letter",
+"tok": "•",
+"vol": 1,
+"page": "422",
+"facs": "221"
+},
+{
+"slug": "2",
+"kind": "letter",
+"tok": "•",
+"vol": 1,
+"page": "429",
+"facs": "224"
+},
+{
+"slug": "2",
+"kind": "punc",
+"tok": "▪",
+"vol": 1,
+"page": "432",
+"facs": "226"
+},
+{
+"slug": "2",
+"kind": "letter",
+"tok": "•",
+"vol": 1,
+"page": "439",
+"facs": "229"
+},
+{
+"slug": "2",
+"kind": "letter",
+"tok": "•",
+"vol": 1,
+"page": "443",
+"facs": "231"
+},
+{
+"slug": "2",
+"kind": "punc",
+"tok": "▪",
+"vol": 1,
+"page": "444",
+"facs": "232"
+},
+{
+"slug": "2",
+"kind": "letter",
+"tok": "•",
+"vol": 1,
+"page": "446",
+"facs": "233"
+},
+{
+"slug": "2",
+"kind": "letter",
+"tok": "•",
+"vol": 1,
+"page": "446",
+"facs": "233"
+},
+{
+"slug": "2",
+"kind": "letter",
+"tok": "•",
+"vol": 1,
+"page": "446",
+"facs": "233"
+},
+{
+"slug": "2",
+"kind": "letter",
+"tok": "•",
+"vol": 1,
+"page": "446",
+"facs": "233"
+},
+{
+"slug": "2",
+"kind": "word",
+"tok": "〈◊〉",
+"vol": 1,
+"page": "446",
+"facs": "233"
+},
+{
+"slug": "2",
+"kind": "word",
+"tok": "〈◊〉",
+"vol": 1,
+"page": "446",
+"facs": "233"
+},
+{
+"slug": "2",
+"kind": "punc",
+"tok": "▪",
+"vol": 1,
+"page": "447",
+"facs": "233"
+},
+{
+"slug": "2",
+"kind": "letter",
+"tok": "•",
+"vol": 1,
+"page": "449",
+"facs": "234"
+},
+{
+"slug": "2",
+"kind": "letter",
+"tok": "•",
+"vol": 1,
+"page": "449",
+"facs": "234"
+},
+{
+"slug": "2",
+"kind": "letter",
+"tok": "•",
+"vol": 1,
+"page": "450",
+"facs": "235"
+},
+{
+"slug": "2",
+"kind": "punc",
+"tok": "▪",
+"vol": 1,
+"page": "450",
+"facs": "235"
+},
+{
+"slug": "2",
+"kind": "letter",
+"tok": "•",
+"vol": 1,
+"page": "450",
+"facs": "235"
+},
+{
+"slug": "2",
+"kind": "punc",
+"tok": "▪",
+"vol": 1,
+"page": "450",
+"facs": "235"
+},
+{
+"slug": "2",
+"kind": "letter",
+"tok": "•",
+"vol": 1,
+"page": "451",
+"facs": "235"
+},
+{
+"slug": "2",
+"kind": "letter",
+"tok": "•",
+"vol": 1,
+"page": "451",
+"facs": "235"
+},
+{
+"slug": "2",
+"kind": "letter",
+"tok": "•",
+"vol": 1,
+"page": "451",
+"facs": "235"
+},
+{
+"slug": "2",
+"kind": "letter",
+"tok": "•",
+"vol": 1,
+"page": "452",
+"facs": "236"
+},
+{
+"slug": "2",
+"kind": "punc",
+"tok": "▪",
+"vol": 1,
+"page": "452",
+"facs": "236"
+},
+{
+"slug": "2",
+"kind": "punc",
+"tok": "▪",
+"vol": 1,
+"page": "452",
+"facs": "236"
+},
+{
+"slug": "2",
+"kind": "punc",
+"tok": "▪",
+"vol": 1,
+"page": "452",
+"facs": "236"
+},
+{
+"slug": "2",
+"kind": "punc",
+"tok": "▪",
+"vol": 1,
+"page": "452",
+"facs": "236"
+},
+{
+"slug": "2",
+"kind": "letter",
+"tok": "•",
+"vol": 1,
+"page": "452",
+"facs": "236"
+},
+{
+"slug": "2",
+"kind": "letter",
+"tok": "•",
+"vol": 1,
+"page": "452",
+"facs": "236"
+},
+{
+"slug": "2",
+"kind": "punc",
+"tok": "▪",
+"vol": 1,
+"page": "452",
+"facs": "236"
+},
+{
+"slug": "2",
+"kind": "punc",
+"tok": "▪",
+"vol": 1,
+"page": "453",
+"facs": "236"
+},
+{
+"slug": "2",
+"kind": "punc",
+"tok": "▪",
+"vol": 1,
+"page": "453",
+"facs": "236"
+},
+{
+"slug": "2",
+"kind": "letter",
+"tok": "•",
+"vol": 1,
+"page": "453",
+"facs": "236"
+},
+{
+"slug": "2",
+"kind": "punc",
+"tok": "▪",
+"vol": 1,
+"page": "453",
+"facs": "236"
+},
+{
+"slug": "2",
+"kind": "letter",
+"tok": "•",
+"vol": 1,
+"page": "453",
+"facs": "236"
+},
+{
+"slug": "2",
+"kind": "letter",
+"tok": "•",
+"vol": 1,
+"page": "453",
+"facs": "236"
+},
+{
+"slug": "2",
+"kind": "letter",
+"tok": "••",
+"vol": 1,
+"page": "453",
+"facs": "236"
+},
+{
+"slug": "2",
+"kind": "letter",
+"tok": "•",
+"vol": 1,
+"page": "454",
+"facs": "239"
+},
+{
+"slug": "2",
+"kind": "punc",
+"tok": "▪",
+"vol": 1,
+"page": "454",
+"facs": "239"
+},
+{
+"slug": "2",
+"kind": "letter",
+"tok": "•",
+"vol": 1,
+"page": "454",
+"facs": "239"
+},
+{
+"slug": "2",
+"kind": "letter",
+"tok": "•",
+"vol": 1,
+"page": "455",
+"facs": "239"
+},
+{
+"slug": "2",
+"kind": "letter",
+"tok": "•",
+"vol": 1,
+"page": "456",
+"facs": "240"
+},
+{
+"slug": "2",
+"kind": "letter",
+"tok": "•",
+"vol": 1,
+"page": "456",
+"facs": "240"
+},
+{
+"slug": "2",
+"kind": "letter",
+"tok": "•",
+"vol": 1,
+"page": "457",
+"facs": "240"
+},
+{
+"slug": "2",
+"kind": "punc",
+"tok": "▪",
+"vol": 1,
+"page": "461",
+"facs": "242"
+},
+{
+"slug": "2",
+"kind": "letter",
+"tok": "•",
+"vol": 1,
+"page": "270",
+"facs": "247"
+},
+{
+"slug": "2",
+"kind": "punc",
+"tok": "▪",
+"vol": 1,
+"page": "479",
+"facs": "251"
+},
+{
+"slug": "2",
+"kind": "punc",
+"tok": "▪",
+"vol": 1,
+"page": "484",
+"facs": "254"
+},
+{
+"slug": "2",
+"kind": "letter",
+"tok": "•",
+"vol": 1,
+"page": "484",
+"facs": "254"
+},
+{
+"slug": "errata1",
+"kind": "letter",
+"tok": "•",
+"vol": 1,
+"page": null,
+"facs": "255"
+},
+{
+"slug": "errata1",
+"kind": "letter",
+"tok": "••",
+"vol": 1,
+"page": null,
+"facs": "255"
+},
+{
+"slug": "errata1",
+"kind": "letter",
+"tok": "•",
+"vol": 1,
+"page": null,
+"facs": "255"
+},
+{
+"slug": "errata1",
+"kind": "letter",
+"tok": "•",
+"vol": 1,
+"page": null,
+"facs": "255"
+},
+{
+"slug": "errata1",
+"kind": "letter",
+"tok": "•",
+"vol": 1,
+"page": null,
+"facs": "255"
+},
+{
+"slug": "errata1",
+"kind": "letter",
+"tok": "•",
+"vol": 1,
+"page": null,
+"facs": "255"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "2",
+"facs": "5"
+},
+{
+"slug": "3",
+"kind": "word",
+"tok": "〈◊〉",
+"vol": 2,
+"page": "2",
+"facs": "5"
+},
+{
+"slug": "3",
+"kind": "foreign",
+"tok": "〈Greek〉",
+"vol": 2,
+"page": "2",
+"facs": "5"
+},
+{
+"slug": "3",
+"kind": "foreign",
+"tok": "〈Greek〉",
+"vol": 2,
+"page": "2",
+"facs": "5"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "4",
+"facs": "6"
+},
+{
+"slug": "3",
+"kind": "foreign",
+"tok": "〈Greek〉",
+"vol": 2,
+"page": "5",
+"facs": "6"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "5",
+"facs": "6"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "7",
+"facs": "7"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "8",
+"facs": "8"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "8",
+"facs": "8"
+},
+{
+"slug": "3",
+"kind": "punc",
+"tok": "▪",
+"vol": 2,
+"page": "8",
+"facs": "8"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "8",
+"facs": "8"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "8",
+"facs": "8"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "••",
+"vol": 2,
+"page": "8",
+"facs": "8"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "8",
+"facs": "8"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "8",
+"facs": "8"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "8",
+"facs": "8"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "8",
+"facs": "8"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "••",
+"vol": 2,
+"page": "8",
+"facs": "8"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "••",
+"vol": 2,
+"page": "8",
+"facs": "8"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "8",
+"facs": "8"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "8",
+"facs": "8"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "8",
+"facs": "8"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "8",
+"facs": "8"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "8",
+"facs": "8"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "••",
+"vol": 2,
+"page": "8",
+"facs": "8"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "••",
+"vol": 2,
+"page": "8",
+"facs": "8"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "9",
+"facs": "8"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "13",
+"facs": "10"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "••",
+"vol": 2,
+"page": "13",
+"facs": "10"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "16",
+"facs": "12"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "••",
+"vol": 2,
+"page": "16",
+"facs": "12"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "••",
+"vol": 2,
+"page": "16",
+"facs": "12"
+},
+{
+"slug": "3",
+"kind": "foreign",
+"tok": "〈Greek〉",
+"vol": 2,
+"page": "19",
+"facs": "13"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "19",
+"facs": "13"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "20",
+"facs": "14"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "••",
+"vol": 2,
+"page": "20",
+"facs": "14"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "20",
+"facs": "14"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "20",
+"facs": "14"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "20",
+"facs": "14"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "20",
+"facs": "14"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "21",
+"facs": "14"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "21",
+"facs": "14"
+},
+{
+"slug": "3",
+"kind": "word",
+"tok": "〈◊〉",
+"vol": 2,
+"page": "21",
+"facs": "14"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "21",
+"facs": "14"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "••",
+"vol": 2,
+"page": "21",
+"facs": "14"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "21",
+"facs": "14"
+},
+{
+"slug": "3",
+"kind": "word",
+"tok": "〈◊〉",
+"vol": 2,
+"page": "22",
+"facs": "15"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "22",
+"facs": "15"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "22",
+"facs": "15"
+},
+{
+"slug": "3",
+"kind": "word",
+"tok": "〈◊〉",
+"vol": 2,
+"page": "22",
+"facs": "15"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "••",
+"vol": 2,
+"page": "22",
+"facs": "15"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "22",
+"facs": "15"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "22",
+"facs": "15"
+},
+{
+"slug": "3",
+"kind": "word",
+"tok": "〈◊〉",
+"vol": 2,
+"page": "22",
+"facs": "15"
+},
+{
+"slug": "3",
+"kind": "word",
+"tok": "〈◊〉",
+"vol": 2,
+"page": "22",
+"facs": "15"
+},
+{
+"slug": "3",
+"kind": "word",
+"tok": "〈◊〉",
+"vol": 2,
+"page": "22",
+"facs": "15"
+},
+{
+"slug": "3",
+"kind": "span",
+"tok": "〈…〉",
+"vol": 2,
+"page": "22",
+"facs": "15"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "23",
+"facs": "15"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "23",
+"facs": "15"
+},
+{
+"slug": "3",
+"kind": "punc",
+"tok": "▪",
+"vol": 2,
+"page": "23",
+"facs": "15"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "23",
+"facs": "15"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "23",
+"facs": "15"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "24",
+"facs": "16"
+},
+{
+"slug": "3",
+"kind": "punc",
+"tok": "▪",
+"vol": 2,
+"page": "24",
+"facs": "16"
+},
+{
+"slug": "3",
+"kind": "foreign",
+"tok": "〈Greek〉",
+"vol": 2,
+"page": "26",
+"facs": "17"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "••",
+"vol": 2,
+"page": "26",
+"facs": "17"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "27",
+"facs": "17"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "••",
+"vol": 2,
+"page": "27",
+"facs": "17"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "27",
+"facs": "17"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "28",
+"facs": "18"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "28",
+"facs": "18"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "28",
+"facs": "18"
+},
+{
+"slug": "3",
+"kind": "foreign",
+"tok": "〈Greek〉",
+"vol": 2,
+"page": "29",
+"facs": "18"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "29",
+"facs": "18"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "29",
+"facs": "18"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "29",
+"facs": "18"
+},
+{
+"slug": "3",
+"kind": "foreign",
+"tok": "〈Greek〉",
+"vol": 2,
+"page": "29",
+"facs": "18"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "29",
+"facs": "18"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "29",
+"facs": "18"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "29",
+"facs": "18"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "29",
+"facs": "18"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "29",
+"facs": "18"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "30",
+"facs": "19"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "30",
+"facs": "19"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "••",
+"vol": 2,
+"page": "30",
+"facs": "19"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "31",
+"facs": "19"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "31",
+"facs": "19"
+},
+{
+"slug": "3",
+"kind": "punc",
+"tok": "▪",
+"vol": 2,
+"page": "32",
+"facs": "20"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "32",
+"facs": "20"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "••",
+"vol": 2,
+"page": "32",
+"facs": "20"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "33",
+"facs": "20"
+},
+{
+"slug": "3",
+"kind": "foreign",
+"tok": "〈Greek〉",
+"vol": 2,
+"page": "33",
+"facs": "20"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "33",
+"facs": "20"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "33",
+"facs": "20"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "34",
+"facs": "21"
+},
+{
+"slug": "3",
+"kind": "foreign",
+"tok": "〈Greek〉",
+"vol": 2,
+"page": "34",
+"facs": "21"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "35",
+"facs": "21"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "35",
+"facs": "21"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "35",
+"facs": "21"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "36",
+"facs": "22"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "36",
+"facs": "22"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "36",
+"facs": "22"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "36",
+"facs": "22"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "37",
+"facs": "22"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "37",
+"facs": "22"
+},
+{
+"slug": "3",
+"kind": "punc",
+"tok": "▪",
+"vol": 2,
+"page": "37",
+"facs": "22"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "38",
+"facs": "23"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "39",
+"facs": "23"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "40",
+"facs": "24"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "40",
+"facs": "24"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "40",
+"facs": "24"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "••••••",
+"vol": 2,
+"page": "40",
+"facs": "24"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "••",
+"vol": 2,
+"page": "41",
+"facs": "24"
+},
+{
+"slug": "3",
+"kind": "foreign",
+"tok": "〈Greek〉",
+"vol": 2,
+"page": "43",
+"facs": "25"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "43",
+"facs": "25"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "43",
+"facs": "25"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "46",
+"facs": "27"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "46",
+"facs": "27"
+},
+{
+"slug": "3",
+"kind": "foreign",
+"tok": "〈Greek〉",
+"vol": 2,
+"page": "47",
+"facs": "27"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "47",
+"facs": "27"
+},
+{
+"slug": "3",
+"kind": "word",
+"tok": "〈◊〉",
+"vol": 2,
+"page": "47",
+"facs": "27"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•••",
+"vol": 2,
+"page": "47",
+"facs": "27"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "••",
+"vol": 2,
+"page": "47",
+"facs": "27"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "48",
+"facs": "28"
+},
+{
+"slug": "3",
+"kind": "foreign",
+"tok": "〈Greek〉",
+"vol": 2,
+"page": "48",
+"facs": "28"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "49",
+"facs": "28"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "49",
+"facs": "28"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "49",
+"facs": "28"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "49",
+"facs": "28"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "53",
+"facs": "30"
+},
+{
+"slug": "3",
+"kind": "foreign",
+"tok": "〈Greek〉",
+"vol": 2,
+"page": "53",
+"facs": "30"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "53",
+"facs": "30"
+},
+{
+"slug": "3",
+"kind": "foreign",
+"tok": "〈Greek〉",
+"vol": 2,
+"page": "53",
+"facs": "30"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "55",
+"facs": "31"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "55",
+"facs": "31"
+},
+{
+"slug": "3",
+"kind": "punc",
+"tok": "▪",
+"vol": 2,
+"page": "57",
+"facs": "32"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "60",
+"facs": "34"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "60",
+"facs": "34"
+},
+{
+"slug": "3",
+"kind": "foreign",
+"tok": "〈Greek〉",
+"vol": 2,
+"page": "61",
+"facs": "34"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "63",
+"facs": "35"
+},
+{
+"slug": "3",
+"kind": "foreign",
+"tok": "〈Greek〉",
+"vol": 2,
+"page": "67",
+"facs": "37"
+},
+{
+"slug": "3",
+"kind": "foreign",
+"tok": "〈Greek〉",
+"vol": 2,
+"page": "67",
+"facs": "37"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "67",
+"facs": "37"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "67",
+"facs": "37"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "73",
+"facs": "40"
+},
+{
+"slug": "3",
+"kind": "span",
+"tok": "〈…〉",
+"vol": 2,
+"page": "74",
+"facs": "41"
+},
+{
+"slug": "3",
+"kind": "foreign",
+"tok": "〈Greek〉",
+"vol": 2,
+"page": "74",
+"facs": "41"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "74",
+"facs": "41"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "74",
+"facs": "41"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "74",
+"facs": "41"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "74",
+"facs": "41"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "••",
+"vol": 2,
+"page": "74",
+"facs": "41"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "74",
+"facs": "41"
+},
+{
+"slug": "3",
+"kind": "word",
+"tok": "〈◊〉",
+"vol": 2,
+"page": "74",
+"facs": "41"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "74",
+"facs": "41"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "74",
+"facs": "41"
+},
+{
+"slug": "3",
+"kind": "word",
+"tok": "〈◊〉",
+"vol": 2,
+"page": "74",
+"facs": "41"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "••••",
+"vol": 2,
+"page": "74",
+"facs": "41"
+},
+{
+"slug": "3",
+"kind": "word",
+"tok": "〈◊〉",
+"vol": 2,
+"page": "74",
+"facs": "41"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "••",
+"vol": 2,
+"page": "75",
+"facs": "41"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "75",
+"facs": "41"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "78",
+"facs": "43"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "78",
+"facs": "43"
+},
+{
+"slug": "3",
+"kind": "punc",
+"tok": "▪",
+"vol": 2,
+"page": "79",
+"facs": "43"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "79",
+"facs": "43"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "79",
+"facs": "43"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "81",
+"facs": "44"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "83",
+"facs": "45"
+},
+{
+"slug": "3",
+"kind": "foreign",
+"tok": "〈Greek〉",
+"vol": 2,
+"page": "85",
+"facs": "46"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "86",
+"facs": "47"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "88",
+"facs": "48"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "88",
+"facs": "48"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "88",
+"facs": "48"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "••",
+"vol": 2,
+"page": "89",
+"facs": "48"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "••",
+"vol": 2,
+"page": "89",
+"facs": "48"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "89",
+"facs": "48"
+},
+{
+"slug": "3",
+"kind": "span",
+"tok": "〈…〉",
+"vol": 2,
+"page": "89",
+"facs": "48"
+},
+{
+"slug": "3",
+"kind": "punc",
+"tok": "▪",
+"vol": 2,
+"page": "90",
+"facs": "49"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "90",
+"facs": "49"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "90",
+"facs": "49"
+},
+{
+"slug": "3",
+"kind": "foreign",
+"tok": "〈Greek〉",
+"vol": 2,
+"page": "96",
+"facs": "52"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "105",
+"facs": "56"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "108",
+"facs": "58"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "••",
+"vol": 2,
+"page": "108",
+"facs": "58"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "110",
+"facs": "59"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "111",
+"facs": "59"
+},
+{
+"slug": "3",
+"kind": "word",
+"tok": "〈◊〉",
+"vol": 2,
+"page": "113",
+"facs": "60"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "••",
+"vol": 2,
+"page": "113",
+"facs": "60"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "115",
+"facs": "61"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "115",
+"facs": "61"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "115",
+"facs": "61"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "115",
+"facs": "61"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "115",
+"facs": "61"
+},
+{
+"slug": "3",
+"kind": "foreign",
+"tok": "〈Greek〉",
+"vol": 2,
+"page": "115",
+"facs": "61"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "115",
+"facs": "61"
+},
+{
+"slug": "3",
+"kind": "word",
+"tok": "〈◊〉",
+"vol": 2,
+"page": "115",
+"facs": "61"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "116",
+"facs": "62"
+},
+{
+"slug": "3",
+"kind": "foreign",
+"tok": "〈Greek〉",
+"vol": 2,
+"page": "116",
+"facs": "62"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "117",
+"facs": "62"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "••",
+"vol": 2,
+"page": "117",
+"facs": "62"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "117",
+"facs": "62"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "118",
+"facs": "63"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "118",
+"facs": "63"
+},
+{
+"slug": "3",
+"kind": "foreign",
+"tok": "〈Greek〉",
+"vol": 2,
+"page": "118",
+"facs": "63"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "118",
+"facs": "63"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "118",
+"facs": "63"
+},
+{
+"slug": "3",
+"kind": "word",
+"tok": "〈◊〉",
+"vol": 2,
+"page": "118",
+"facs": "63"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "119",
+"facs": "63"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "120",
+"facs": "64"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "120",
+"facs": "64"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "120",
+"facs": "64"
+},
+{
+"slug": "3",
+"kind": "foreign",
+"tok": "〈Greek〉",
+"vol": 2,
+"page": "121",
+"facs": "64"
+},
+{
+"slug": "3",
+"kind": "foreign",
+"tok": "〈Greek〉",
+"vol": 2,
+"page": "121",
+"facs": "64"
+},
+{
+"slug": "3",
+"kind": "word",
+"tok": "〈◊〉",
+"vol": 2,
+"page": "125",
+"facs": "66"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "••",
+"vol": 2,
+"page": "125",
+"facs": "66"
+},
+{
+"slug": "3",
+"kind": "span",
+"tok": "〈…〉",
+"vol": 2,
+"page": "125",
+"facs": "66"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "125",
+"facs": "66"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "125",
+"facs": "66"
+},
+{
+"slug": "3",
+"kind": "punc",
+"tok": "▪",
+"vol": 2,
+"page": "125",
+"facs": "66"
+},
+{
+"slug": "3",
+"kind": "span",
+"tok": "〈…〉",
+"vol": 2,
+"page": "125",
+"facs": "66"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "••",
+"vol": 2,
+"page": "125",
+"facs": "66"
+},
+{
+"slug": "3",
+"kind": "span",
+"tok": "〈…〉",
+"vol": 2,
+"page": "125",
+"facs": "66"
+},
+{
+"slug": "3",
+"kind": "span",
+"tok": "〈…〉",
+"vol": 2,
+"page": "125",
+"facs": "66"
+},
+{
+"slug": "3",
+"kind": "word",
+"tok": "〈◊〉",
+"vol": 2,
+"page": "125",
+"facs": "66"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "125",
+"facs": "66"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "128",
+"facs": "68"
+},
+{
+"slug": "3",
+"kind": "word",
+"tok": "〈◊〉",
+"vol": 2,
+"page": "128",
+"facs": "68"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "128",
+"facs": "68"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "130",
+"facs": "69"
+},
+{
+"slug": "3",
+"kind": "foreign",
+"tok": "〈Greek〉",
+"vol": 2,
+"page": "131",
+"facs": "69"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "131",
+"facs": "69"
+},
+{
+"slug": "3",
+"kind": "foreign",
+"tok": "〈Greek〉",
+"vol": 2,
+"page": "131",
+"facs": "69"
+},
+{
+"slug": "3",
+"kind": "foreign",
+"tok": "〈Greek〉",
+"vol": 2,
+"page": "132",
+"facs": "70"
+},
+{
+"slug": "3",
+"kind": "foreign",
+"tok": "〈Greek〉",
+"vol": 2,
+"page": "133",
+"facs": "70"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "134",
+"facs": "71"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "134",
+"facs": "71"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "136",
+"facs": "72"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "136",
+"facs": "72"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "137",
+"facs": "72"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "138",
+"facs": "73"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "140",
+"facs": "74"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "140",
+"facs": "74"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "145",
+"facs": "76"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "145",
+"facs": "76"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "145",
+"facs": "76"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "••",
+"vol": 2,
+"page": "146",
+"facs": "77"
+},
+{
+"slug": "3",
+"kind": "foreign",
+"tok": "〈Greek〉",
+"vol": 2,
+"page": "147",
+"facs": "77"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "147",
+"facs": "77"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "147",
+"facs": "77"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "148",
+"facs": "78"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "148",
+"facs": "78"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "••",
+"vol": 2,
+"page": "148",
+"facs": "78"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "149",
+"facs": "78"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "149",
+"facs": "78"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "149",
+"facs": "78"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "149",
+"facs": "78"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "••",
+"vol": 2,
+"page": "149",
+"facs": "78"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "149",
+"facs": "78"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "149",
+"facs": "78"
+},
+{
+"slug": "3",
+"kind": "word",
+"tok": "〈◊〉",
+"vol": 2,
+"page": "149",
+"facs": "78"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "••",
+"vol": 2,
+"page": "150",
+"facs": "79"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "150",
+"facs": "79"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "152",
+"facs": "80"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "152",
+"facs": "80"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "152",
+"facs": "80"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "152",
+"facs": "80"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "153",
+"facs": "80"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "154",
+"facs": "81"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "154",
+"facs": "81"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "154",
+"facs": "81"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "154",
+"facs": "81"
+},
+{
+"slug": "3",
+"kind": "word",
+"tok": "〈◊〉",
+"vol": 2,
+"page": "154",
+"facs": "81"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "154",
+"facs": "81"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "••",
+"vol": 2,
+"page": "154",
+"facs": "81"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "154",
+"facs": "81"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "154",
+"facs": "81"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "154",
+"facs": "81"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "155",
+"facs": "81"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "157",
+"facs": "82"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "157",
+"facs": "82"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "157",
+"facs": "82"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "159",
+"facs": "83"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "159",
+"facs": "83"
+},
+{
+"slug": "3",
+"kind": "foreign",
+"tok": "〈Greek〉",
+"vol": 2,
+"page": "159",
+"facs": "83"
+},
+{
+"slug": "3",
+"kind": "foreign",
+"tok": "〈Greek〉",
+"vol": 2,
+"page": "159",
+"facs": "83"
+},
+{
+"slug": "3",
+"kind": "word",
+"tok": "〈◊〉",
+"vol": 2,
+"page": "159",
+"facs": "83"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "159",
+"facs": "83"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "••",
+"vol": 2,
+"page": "159",
+"facs": "83"
+},
+{
+"slug": "3",
+"kind": "word",
+"tok": "〈◊〉",
+"vol": 2,
+"page": "159",
+"facs": "83"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "159",
+"facs": "83"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "••",
+"vol": 2,
+"page": "160",
+"facs": "84"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "160",
+"facs": "84"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•••",
+"vol": 2,
+"page": "160",
+"facs": "84"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "••••",
+"vol": 2,
+"page": "160",
+"facs": "84"
+},
+{
+"slug": "3",
+"kind": "word",
+"tok": "〈◊〉",
+"vol": 2,
+"page": "160",
+"facs": "84"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•••",
+"vol": 2,
+"page": "160",
+"facs": "84"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "161",
+"facs": "84"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "162",
+"facs": "85"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "162",
+"facs": "85"
+},
+{
+"slug": "3",
+"kind": "foreign",
+"tok": "〈Greek〉",
+"vol": 2,
+"page": "163",
+"facs": "85"
+},
+{
+"slug": "3",
+"kind": "foreign",
+"tok": "〈Greek〉",
+"vol": 2,
+"page": "163",
+"facs": "85"
+},
+{
+"slug": "3",
+"kind": "foreign",
+"tok": "〈Greek〉",
+"vol": 2,
+"page": "163",
+"facs": "85"
+},
+{
+"slug": "3",
+"kind": "foreign",
+"tok": "〈Greek〉",
+"vol": 2,
+"page": "163",
+"facs": "85"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "164",
+"facs": "86"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "166",
+"facs": "87"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "166",
+"facs": "87"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "166",
+"facs": "87"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "166",
+"facs": "87"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "166",
+"facs": "87"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "167",
+"facs": "87"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "167",
+"facs": "87"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "167",
+"facs": "87"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "167",
+"facs": "87"
+},
+{
+"slug": "3",
+"kind": "foreign",
+"tok": "〈Greek〉",
+"vol": 2,
+"page": "168",
+"facs": "88"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "••",
+"vol": 2,
+"page": "173",
+"facs": "90"
+},
+{
+"slug": "3",
+"kind": "foreign",
+"tok": "〈Greek〉",
+"vol": 2,
+"page": "175",
+"facs": "91"
+},
+{
+"slug": "3",
+"kind": "punc",
+"tok": "▪",
+"vol": 2,
+"page": "175",
+"facs": "91"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "175",
+"facs": "91"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "175",
+"facs": "91"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "175",
+"facs": "91"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "176",
+"facs": "92"
+},
+{
+"slug": "3",
+"kind": "punc",
+"tok": "▪",
+"vol": 2,
+"page": "176",
+"facs": "92"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "176",
+"facs": "92"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "176",
+"facs": "92"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "176",
+"facs": "92"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "176",
+"facs": "92"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "176",
+"facs": "92"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "178",
+"facs": "93"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "178",
+"facs": "93"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "••••",
+"vol": 2,
+"page": "178",
+"facs": "93"
+},
+{
+"slug": "3",
+"kind": "word",
+"tok": "〈◊〉",
+"vol": 2,
+"page": "178",
+"facs": "93"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "179",
+"facs": "93"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "179",
+"facs": "93"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "183",
+"facs": "95"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "185",
+"facs": "96"
+},
+{
+"slug": "3",
+"kind": "punc",
+"tok": "▪",
+"vol": 2,
+"page": "185",
+"facs": "96"
+},
+{
+"slug": "3",
+"kind": "foreign",
+"tok": "〈Greek〉",
+"vol": 2,
+"page": "185",
+"facs": "96"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "186",
+"facs": "97"
+},
+{
+"slug": "3",
+"kind": "punc",
+"tok": "▪",
+"vol": 2,
+"page": "186",
+"facs": "97"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "187",
+"facs": "97"
+},
+{
+"slug": "3",
+"kind": "foreign",
+"tok": "〈Greek〉",
+"vol": 2,
+"page": "190",
+"facs": "99"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "191",
+"facs": "99"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "191",
+"facs": "99"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "192",
+"facs": "100"
+},
+{
+"slug": "3",
+"kind": "punc",
+"tok": "▪",
+"vol": 2,
+"page": "193",
+"facs": "100"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "194",
+"facs": "101"
+},
+{
+"slug": "3",
+"kind": "foreign",
+"tok": "〈Greek〉",
+"vol": 2,
+"page": "196",
+"facs": "102"
+},
+{
+"slug": "3",
+"kind": "foreign",
+"tok": "〈Greek〉",
+"vol": 2,
+"page": "196",
+"facs": "102"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "197",
+"facs": "102"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "198",
+"facs": "103"
+},
+{
+"slug": "3",
+"kind": "word",
+"tok": "〈◊〉",
+"vol": 2,
+"page": "198",
+"facs": "103"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "198",
+"facs": "103"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "199",
+"facs": "103"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "199",
+"facs": "103"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "199",
+"facs": "103"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "200",
+"facs": "104"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "200",
+"facs": "104"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "202",
+"facs": "105"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "202",
+"facs": "105"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "202",
+"facs": "105"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "203",
+"facs": "105"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "203",
+"facs": "105"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "207",
+"facs": "107"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "••",
+"vol": 2,
+"page": "207",
+"facs": "107"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "208",
+"facs": "108"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "208",
+"facs": "108"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "209",
+"facs": "108"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "209",
+"facs": "108"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "209",
+"facs": "108"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "209",
+"facs": "108"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "211",
+"facs": "109"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "212",
+"facs": "110"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "212",
+"facs": "110"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "212",
+"facs": "110"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "212",
+"facs": "110"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "212",
+"facs": "110"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "213",
+"facs": "110"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "213",
+"facs": "110"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "213",
+"facs": "110"
+},
+{
+"slug": "3",
+"kind": "foreign",
+"tok": "〈Greek〉",
+"vol": 2,
+"page": "214",
+"facs": "111"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "216",
+"facs": "112"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "219",
+"facs": "113"
+},
+{
+"slug": "3",
+"kind": "punc",
+"tok": "▪",
+"vol": 2,
+"page": "221",
+"facs": "114"
+},
+{
+"slug": "3",
+"kind": "punc",
+"tok": "▪",
+"vol": 2,
+"page": "224",
+"facs": "116"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "225",
+"facs": "116"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "225",
+"facs": "116"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "••",
+"vol": 2,
+"page": "225",
+"facs": "116"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "226",
+"facs": "117"
+},
+{
+"slug": "3",
+"kind": "word",
+"tok": "〈◊〉",
+"vol": 2,
+"page": "226",
+"facs": "117"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "226",
+"facs": "117"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "226",
+"facs": "117"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "229",
+"facs": "118"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "229",
+"facs": "118"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "229",
+"facs": "118"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "229",
+"facs": "118"
+},
+{
+"slug": "3",
+"kind": "word",
+"tok": "〈◊〉",
+"vol": 2,
+"page": "229",
+"facs": "118"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "••",
+"vol": 2,
+"page": "229",
+"facs": "118"
+},
+{
+"slug": "3",
+"kind": "punc",
+"tok": "▪",
+"vol": 2,
+"page": "229",
+"facs": "118"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "230",
+"facs": "119"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "231",
+"facs": "119"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "231",
+"facs": "119"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "231",
+"facs": "119"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "231",
+"facs": "119"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "231",
+"facs": "119"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "231",
+"facs": "119"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "231",
+"facs": "119"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "••",
+"vol": 2,
+"page": "231",
+"facs": "119"
+},
+{
+"slug": "3",
+"kind": "word",
+"tok": "〈◊〉",
+"vol": 2,
+"page": "232",
+"facs": "120"
+},
+{
+"slug": "3",
+"kind": "word",
+"tok": "〈◊〉",
+"vol": 2,
+"page": "232",
+"facs": "120"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "232",
+"facs": "120"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "232",
+"facs": "120"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "232",
+"facs": "120"
+},
+{
+"slug": "3",
+"kind": "foreign",
+"tok": "〈Greek〉",
+"vol": 2,
+"page": "232",
+"facs": "120"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "232",
+"facs": "120"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "232",
+"facs": "120"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "232",
+"facs": "120"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "232",
+"facs": "120"
+},
+{
+"slug": "3",
+"kind": "foreign",
+"tok": "〈Greek〉",
+"vol": 2,
+"page": "233",
+"facs": "120"
+},
+{
+"slug": "3",
+"kind": "foreign",
+"tok": "〈Greek〉",
+"vol": 2,
+"page": "233",
+"facs": "120"
+},
+{
+"slug": "3",
+"kind": "foreign",
+"tok": "〈Greek〉",
+"vol": 2,
+"page": "233",
+"facs": "120"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "233",
+"facs": "120"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "241",
+"facs": "124"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "241",
+"facs": "124"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "241",
+"facs": "124"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "241",
+"facs": "124"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "241",
+"facs": "124"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "241",
+"facs": "124"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "••",
+"vol": 2,
+"page": "241",
+"facs": "124"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "242",
+"facs": "125"
+},
+{
+"slug": "3",
+"kind": "word",
+"tok": "〈◊〉",
+"vol": 2,
+"page": "242",
+"facs": "125"
+},
+{
+"slug": "3",
+"kind": "word",
+"tok": "〈◊〉",
+"vol": 2,
+"page": "242",
+"facs": "125"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "243",
+"facs": "125"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "••",
+"vol": 2,
+"page": "243",
+"facs": "125"
+},
+{
+"slug": "3",
+"kind": "word",
+"tok": "〈◊〉",
+"vol": 2,
+"page": "243",
+"facs": "125"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "243",
+"facs": "125"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "244",
+"facs": "126"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "244",
+"facs": "126"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "245",
+"facs": "126"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "245",
+"facs": "126"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "246",
+"facs": "127"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "246",
+"facs": "127"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "246",
+"facs": "127"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "246",
+"facs": "127"
+},
+{
+"slug": "3",
+"kind": "word",
+"tok": "〈◊〉",
+"vol": 2,
+"page": "246",
+"facs": "127"
+},
+{
+"slug": "3",
+"kind": "word",
+"tok": "〈◊〉",
+"vol": 2,
+"page": "246",
+"facs": "127"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "246",
+"facs": "127"
+},
+{
+"slug": "3",
+"kind": "foreign",
+"tok": "〈Greek〉",
+"vol": 2,
+"page": "252",
+"facs": "130"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "254",
+"facs": "131"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "255",
+"facs": "131"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "255",
+"facs": "131"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "••",
+"vol": 2,
+"page": "255",
+"facs": "131"
+},
+{
+"slug": "4",
+"kind": "foreign",
+"tok": "〈Greek〉",
+"vol": 2,
+"page": "257",
+"facs": "132"
+},
+{
+"slug": "4",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "261",
+"facs": "134"
+},
+{
+"slug": "4",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "261",
+"facs": "134"
+},
+{
+"slug": "4",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "261",
+"facs": "134"
+},
+{
+"slug": "4",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "262",
+"facs": "135"
+},
+{
+"slug": "4",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "264",
+"facs": "136"
+},
+{
+"slug": "4",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "264",
+"facs": "136"
+},
+{
+"slug": "4",
+"kind": "letter",
+"tok": "••",
+"vol": 2,
+"page": "265",
+"facs": "136"
+},
+{
+"slug": "4",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "267",
+"facs": "137"
+},
+{
+"slug": "4",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "268",
+"facs": "138"
+},
+{
+"slug": "4",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "268",
+"facs": "138"
+},
+{
+"slug": "4",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "269",
+"facs": "138"
+},
+{
+"slug": "4",
+"kind": "letter",
+"tok": "••",
+"vol": 2,
+"page": "270",
+"facs": "139"
+},
+{
+"slug": "4",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "270",
+"facs": "139"
+},
+{
+"slug": "4",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "270",
+"facs": "139"
+},
+{
+"slug": "4",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "270",
+"facs": "139"
+},
+{
+"slug": "4",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "270",
+"facs": "139"
+},
+{
+"slug": "4",
+"kind": "word",
+"tok": "〈◊〉",
+"vol": 2,
+"page": "271",
+"facs": "139"
+},
+{
+"slug": "4",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "271",
+"facs": "139"
+},
+{
+"slug": "4",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "271",
+"facs": "139"
+},
+{
+"slug": "4",
+"kind": "word",
+"tok": "〈◊〉",
+"vol": 2,
+"page": "271",
+"facs": "139"
+},
+{
+"slug": "4",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "271",
+"facs": "139"
+},
+{
+"slug": "4",
+"kind": "foreign",
+"tok": "〈Greek〉",
+"vol": 2,
+"page": "273",
+"facs": "140"
+},
+{
+"slug": "4",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "273",
+"facs": "140"
+},
+{
+"slug": "4",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "273",
+"facs": "140"
+},
+{
+"slug": "4",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "274",
+"facs": "141"
+},
+{
+"slug": "4",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "274",
+"facs": "141"
+},
+{
+"slug": "4",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "277",
+"facs": "142"
+},
+{
+"slug": "4",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "279",
+"facs": "143"
+},
+{
+"slug": "4",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "280",
+"facs": "144"
+},
+{
+"slug": "4",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "281",
+"facs": "144"
+},
+{
+"slug": "4",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "281",
+"facs": "144"
+},
+{
+"slug": "4",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "282",
+"facs": "145"
+},
+{
+"slug": "4",
+"kind": "punc",
+"tok": "▪",
+"vol": 2,
+"page": "283",
+"facs": "145"
+},
+{
+"slug": "4",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "284",
+"facs": "146"
+},
+{
+"slug": "4",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "284",
+"facs": "146"
+},
+{
+"slug": "4",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "285",
+"facs": "146"
+},
+{
+"slug": "4",
+"kind": "foreign",
+"tok": "〈Greek〉",
+"vol": 2,
+"page": "287",
+"facs": "147"
+},
+{
+"slug": "4",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "287",
+"facs": "147"
+},
+{
+"slug": "4",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "287",
+"facs": "147"
+},
+{
+"slug": "4",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "288",
+"facs": "148"
+},
+{
+"slug": "4",
+"kind": "foreign",
+"tok": "〈Greek〉",
+"vol": 2,
+"page": "288",
+"facs": "148"
+},
+{
+"slug": "4",
+"kind": "foreign",
+"tok": "〈Greek〉",
+"vol": 2,
+"page": "288",
+"facs": "148"
+},
+{
+"slug": "4",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "288",
+"facs": "148"
+},
+{
+"slug": "4",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "288",
+"facs": "148"
+},
+{
+"slug": "4",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "288",
+"facs": "148"
+},
+{
+"slug": "4",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "288",
+"facs": "148"
+},
+{
+"slug": "4",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "289",
+"facs": "148"
+},
+{
+"slug": "4",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "291",
+"facs": "149"
+},
+{
+"slug": "4",
+"kind": "letter",
+"tok": "••",
+"vol": 2,
+"page": "291",
+"facs": "149"
+},
+{
+"slug": "4",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "291",
+"facs": "149"
+},
+{
+"slug": "4",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "290",
+"facs": "149"
+},
+{
+"slug": "4",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "292",
+"facs": "150"
+},
+{
+"slug": "4",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "292",
+"facs": "150"
+},
+{
+"slug": "4",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "292",
+"facs": "150"
+},
+{
+"slug": "4",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "292",
+"facs": "150"
+},
+{
+"slug": "4",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "292",
+"facs": "150"
+},
+{
+"slug": "4",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "292",
+"facs": "150"
+},
+{
+"slug": "4",
+"kind": "word",
+"tok": "〈◊〉",
+"vol": 2,
+"page": "293",
+"facs": "150"
+},
+{
+"slug": "4",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "293",
+"facs": "150"
+},
+{
+"slug": "4",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "293",
+"facs": "150"
+},
+{
+"slug": "4",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "293",
+"facs": "150"
+},
+{
+"slug": "4",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "293",
+"facs": "150"
+},
+{
+"slug": "4",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "293",
+"facs": "150"
+},
+{
+"slug": "4",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "293",
+"facs": "150"
+},
+{
+"slug": "4",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "293",
+"facs": "150"
+},
+{
+"slug": "4",
+"kind": "foreign",
+"tok": "〈Greek〉",
+"vol": 2,
+"page": "294",
+"facs": "151"
+},
+{
+"slug": "4",
+"kind": "foreign",
+"tok": "〈Greek〉",
+"vol": 2,
+"page": "297",
+"facs": "152"
+},
+{
+"slug": "4",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "300",
+"facs": "154"
+},
+{
+"slug": "4",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "301",
+"facs": "154"
+},
+{
+"slug": "4",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "303",
+"facs": "155"
+},
+{
+"slug": "4",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "304",
+"facs": "156"
+},
+{
+"slug": "4",
+"kind": "word",
+"tok": "〈◊〉",
+"vol": 2,
+"page": "307",
+"facs": "157"
+},
+{
+"slug": "4",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "309",
+"facs": "158"
+},
+{
+"slug": "4",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "309",
+"facs": "158"
+},
+{
+"slug": "4",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "312",
+"facs": "160"
+},
+{
+"slug": "4",
+"kind": "foreign",
+"tok": "〈Greek〉",
+"vol": 2,
+"page": "316",
+"facs": "162"
+},
+{
+"slug": "4",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "316",
+"facs": "162"
+},
+{
+"slug": "4",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "317",
+"facs": "162"
+},
+{
+"slug": "4",
+"kind": "foreign",
+"tok": "〈Greek〉",
+"vol": 2,
+"page": "318",
+"facs": "163"
+},
+{
+"slug": "4",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "320",
+"facs": "164"
+},
+{
+"slug": "4",
+"kind": "word",
+"tok": "〈◊〉",
+"vol": 2,
+"page": "320",
+"facs": "164"
+},
+{
+"slug": "4",
+"kind": "span",
+"tok": "〈…〉",
+"vol": 2,
+"page": "320",
+"facs": "164"
+},
+{
+"slug": "4",
+"kind": "span",
+"tok": "〈…〉",
+"vol": 2,
+"page": "320",
+"facs": "164"
+},
+{
+"slug": "4",
+"kind": "word",
+"tok": "〈◊〉",
+"vol": 2,
+"page": "320",
+"facs": "164"
+},
+{
+"slug": "4",
+"kind": "word",
+"tok": "〈◊〉",
+"vol": 2,
+"page": "320",
+"facs": "164"
+},
+{
+"slug": "4",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "320",
+"facs": "164"
+},
+{
+"slug": "4",
+"kind": "foreign",
+"tok": "〈Greek〉",
+"vol": 2,
+"page": "326",
+"facs": "167"
+},
+{
+"slug": "4",
+"kind": "punc",
+"tok": "▪",
+"vol": 2,
+"page": "327",
+"facs": "167"
+},
+{
+"slug": "4",
+"kind": "foreign",
+"tok": "〈Greek〉",
+"vol": 2,
+"page": "328",
+"facs": "168"
+},
+{
+"slug": "4",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "328",
+"facs": "168"
+},
+{
+"slug": "4",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "328",
+"facs": "168"
+},
+{
+"slug": "4",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "328",
+"facs": "168"
+},
+{
+"slug": "4",
+"kind": "foreign",
+"tok": "〈Greek〉",
+"vol": 2,
+"page": "332",
+"facs": "170"
+},
+{
+"slug": "4",
+"kind": "punc",
+"tok": "▪",
+"vol": 2,
+"page": "333",
+"facs": "170"
+},
+{
+"slug": "4",
+"kind": "punc",
+"tok": "▪",
+"vol": 2,
+"page": "335",
+"facs": "171"
+},
+{
+"slug": "4",
+"kind": "foreign",
+"tok": "〈Greek〉",
+"vol": 2,
+"page": "340",
+"facs": "174"
+},
+{
+"slug": "4",
+"kind": "word",
+"tok": "〈◊〉",
+"vol": 2,
+"page": "341",
+"facs": "174"
+},
+{
+"slug": "4",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "341",
+"facs": "174"
+},
+{
+"slug": "4",
+"kind": "foreign",
+"tok": "〈Greek〉",
+"vol": 2,
+"page": "342",
+"facs": "175"
+},
+{
+"slug": "4",
+"kind": "foreign",
+"tok": "〈Greek〉",
+"vol": 2,
+"page": "342",
+"facs": "175"
+},
+{
+"slug": "4",
+"kind": "foreign",
+"tok": "〈Greek〉",
+"vol": 2,
+"page": "342",
+"facs": "175"
+},
+{
+"slug": "4",
+"kind": "punc",
+"tok": "▪",
+"vol": 2,
+"page": "342",
+"facs": "175"
+},
+{
+"slug": "4",
+"kind": "foreign",
+"tok": "〈Greek〉",
+"vol": 2,
+"page": "343",
+"facs": "175"
+},
+{
+"slug": "4",
+"kind": "foreign",
+"tok": "〈Greek〉",
+"vol": 2,
+"page": "343",
+"facs": "175"
+},
+{
+"slug": "4",
+"kind": "foreign",
+"tok": "〈Greek〉",
+"vol": 2,
+"page": "343",
+"facs": "175"
+},
+{
+"slug": "4",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "344",
+"facs": "176"
+},
+{
+"slug": "4",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "344",
+"facs": "176"
+},
+{
+"slug": "4",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "344",
+"facs": "176"
+},
+{
+"slug": "4",
+"kind": "punc",
+"tok": "▪",
+"vol": 2,
+"page": "344",
+"facs": "176"
+},
+{
+"slug": "4",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "344",
+"facs": "176"
+},
+{
+"slug": "4",
+"kind": "letter",
+"tok": "••",
+"vol": 2,
+"page": "344",
+"facs": "176"
+},
+{
+"slug": "4",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "344",
+"facs": "176"
+},
+{
+"slug": "4",
+"kind": "letter",
+"tok": "••",
+"vol": 2,
+"page": "344",
+"facs": "176"
+},
+{
+"slug": "4",
+"kind": "foreign",
+"tok": "〈Greek〉",
+"vol": 2,
+"page": "344",
+"facs": "176"
+},
+{
+"slug": "4",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "348",
+"facs": "178"
+},
+{
+"slug": "4",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "351",
+"facs": "179"
+},
+{
+"slug": "4",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "356",
+"facs": "182"
+},
+{
+"slug": "4",
+"kind": "letter",
+"tok": "••",
+"vol": 2,
+"page": "356",
+"facs": "182"
+},
+{
+"slug": "4",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "357",
+"facs": "182"
+},
+{
+"slug": "4",
+"kind": "foreign",
+"tok": "〈Greek〉",
+"vol": 2,
+"page": "359",
+"facs": "183"
+},
+{
+"slug": "4",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "359",
+"facs": "183"
+},
+{
+"slug": "4",
+"kind": "foreign",
+"tok": "〈Greek〉",
+"vol": 2,
+"page": "361",
+"facs": "184"
+},
+{
+"slug": "4",
+"kind": "foreign",
+"tok": "〈Greek〉",
+"vol": 2,
+"page": "361",
+"facs": "184"
+},
+{
+"slug": "4",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "364",
+"facs": "186"
+},
+{
+"slug": "4",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "366",
+"facs": "187"
+},
+{
+"slug": "4",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "366",
+"facs": "187"
+},
+{
+"slug": "4",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "366",
+"facs": "187"
+},
+{
+"slug": "4",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "367",
+"facs": "187"
+},
+{
+"slug": "4",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "368",
+"facs": "188"
+},
+{
+"slug": "4",
+"kind": "foreign",
+"tok": "〈Greek〉",
+"vol": 2,
+"page": "368",
+"facs": "188"
+},
+{
+"slug": "4",
+"kind": "letter",
+"tok": "••",
+"vol": 2,
+"page": "370",
+"facs": "189"
+},
+{
+"slug": "4",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "370",
+"facs": "189"
+},
+{
+"slug": "4",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "373",
+"facs": "190"
+},
+{
+"slug": "4",
+"kind": "word",
+"tok": "〈◊〉",
+"vol": 2,
+"page": "373",
+"facs": "190"
+},
+{
+"slug": "4",
+"kind": "letter",
+"tok": "••",
+"vol": 2,
+"page": "373",
+"facs": "190"
+},
+{
+"slug": "4",
+"kind": "word",
+"tok": "〈◊〉",
+"vol": 2,
+"page": "373",
+"facs": "190"
+},
+{
+"slug": "4",
+"kind": "letter",
+"tok": "••",
+"vol": 2,
+"page": "375",
+"facs": "191"
+},
+{
+"slug": "4",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "376",
+"facs": "192"
+},
+{
+"slug": "4",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "377",
+"facs": "192"
+},
+{
+"slug": "4",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "379",
+"facs": "193"
+},
+{
+"slug": "4",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "380",
+"facs": "194"
+},
+{
+"slug": "4",
+"kind": "word",
+"tok": "〈◊〉",
+"vol": 2,
+"page": "380",
+"facs": "194"
+},
+{
+"slug": "4",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "382",
+"facs": "195"
+},
+{
+"slug": "4",
+"kind": "letter",
+"tok": "••",
+"vol": 2,
+"page": "382",
+"facs": "195"
+},
+{
+"slug": "4",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "382",
+"facs": "195"
+},
+{
+"slug": "4",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "382",
+"facs": "195"
+},
+{
+"slug": "4",
+"kind": "letter",
+"tok": "•••",
+"vol": 2,
+"page": "383",
+"facs": "195"
+},
+{
+"slug": "4",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "383",
+"facs": "195"
+},
+{
+"slug": "4",
+"kind": "word",
+"tok": "〈◊〉",
+"vol": 2,
+"page": "383",
+"facs": "195"
+},
+{
+"slug": "4",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "383",
+"facs": "195"
+},
+{
+"slug": "4",
+"kind": "foreign",
+"tok": "〈Greek〉",
+"vol": 2,
+"page": "385",
+"facs": "196"
+},
+{
+"slug": "4",
+"kind": "foreign",
+"tok": "〈Greek〉",
+"vol": 2,
+"page": "385",
+"facs": "196"
+},
+{
+"slug": "4",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "386",
+"facs": "197"
+},
+{
+"slug": "4",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "387",
+"facs": "197"
+},
+{
+"slug": "4",
+"kind": "punc",
+"tok": "▪",
+"vol": 2,
+"page": "395",
+"facs": "201"
+},
+{
+"slug": "4",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "399",
+"facs": "203"
+},
+{
+"slug": "4",
+"kind": "foreign",
+"tok": "〈Greek〉",
+"vol": 2,
+"page": "399",
+"facs": "203"
+},
+{
+"slug": "4",
+"kind": "punc",
+"tok": "▪",
+"vol": 2,
+"page": "400",
+"facs": "204"
+},
+{
+"slug": "4",
+"kind": "punc",
+"tok": "▪",
+"vol": 2,
+"page": "402",
+"facs": "205"
+},
+{
+"slug": "4",
+"kind": "punc",
+"tok": "▪",
+"vol": 2,
+"page": "403",
+"facs": "205"
+},
+{
+"slug": "4",
+"kind": "punc",
+"tok": "▪",
+"vol": 2,
+"page": "404",
+"facs": "206"
+},
+{
+"slug": "4",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "404",
+"facs": "206"
+},
+{
+"slug": "5",
+"kind": "word",
+"tok": "〈◊〉",
+"vol": 2,
+"page": "407",
+"facs": "207"
+},
+{
+"slug": "5",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "409",
+"facs": "208"
+},
+{
+"slug": "5",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "409",
+"facs": "208"
+},
+{
+"slug": "5",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "409",
+"facs": "208"
+},
+{
+"slug": "5",
+"kind": "punc",
+"tok": "▪",
+"vol": 2,
+"page": "409",
+"facs": "208"
+},
+{
+"slug": "5",
+"kind": "punc",
+"tok": "▪",
+"vol": 2,
+"page": "410",
+"facs": "209"
+},
+{
+"slug": "5",
+"kind": "foreign",
+"tok": "〈Greek〉",
+"vol": 2,
+"page": "410",
+"facs": "209"
+},
+{
+"slug": "5",
+"kind": "punc",
+"tok": "▪",
+"vol": 2,
+"page": "411",
+"facs": "209"
+},
+{
+"slug": "5",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "412",
+"facs": "210"
+},
+{
+"slug": "5",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "414",
+"facs": "211"
+},
+{
+"slug": "5",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "416",
+"facs": "212"
+},
+{
+"slug": "5",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "418",
+"facs": "213"
+},
+{
+"slug": "5",
+"kind": "foreign",
+"tok": "〈Greek〉",
+"vol": 2,
+"page": "419",
+"facs": "213"
+},
+{
+"slug": "5",
+"kind": "foreign",
+"tok": "〈Greek〉",
+"vol": 2,
+"page": "420",
+"facs": "214"
+},
+{
+"slug": "5",
+"kind": "foreign",
+"tok": "〈Greek〉",
+"vol": 2,
+"page": "421",
+"facs": "214"
+},
+{
+"slug": "5",
+"kind": "foreign",
+"tok": "〈Greek〉",
+"vol": 2,
+"page": "421",
+"facs": "214"
+},
+{
+"slug": "5",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "421",
+"facs": "214"
+},
+{
+"slug": "5",
+"kind": "punc",
+"tok": "▪",
+"vol": 2,
+"page": "421",
+"facs": "214"
+},
+{
+"slug": "5",
+"kind": "foreign",
+"tok": "〈Greek〉",
+"vol": 2,
+"page": "421",
+"facs": "214"
+},
+{
+"slug": "5",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "421",
+"facs": "214"
+},
+{
+"slug": "5",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "422",
+"facs": "215"
+},
+{
+"slug": "5",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "422",
+"facs": "215"
+},
+{
+"slug": "5",
+"kind": "punc",
+"tok": "▪",
+"vol": 2,
+"page": "422",
+"facs": "215"
+},
+{
+"slug": "5",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "423",
+"facs": "215"
+},
+{
+"slug": "5",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "423",
+"facs": "215"
+},
+{
+"slug": "5",
+"kind": "foreign",
+"tok": "〈Greek〉",
+"vol": 2,
+"page": "423",
+"facs": "215"
+},
+{
+"slug": "5",
+"kind": "foreign",
+"tok": "〈Greek〉",
+"vol": 2,
+"page": "426",
+"facs": "217"
+},
+{
+"slug": "5",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "427",
+"facs": "217"
+},
+{
+"slug": "5",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "427",
+"facs": "217"
+},
+{
+"slug": "5",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "427",
+"facs": "217"
+},
+{
+"slug": "5",
+"kind": "foreign",
+"tok": "〈Greek〉",
+"vol": 2,
+"page": "429",
+"facs": "218"
+},
+{
+"slug": "5",
+"kind": "foreign",
+"tok": "〈Greek〉",
+"vol": 2,
+"page": "429",
+"facs": "218"
+},
+{
+"slug": "5",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "429",
+"facs": "218"
+},
+{
+"slug": "5",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "430",
+"facs": "219"
+},
+{
+"slug": "5",
+"kind": "word",
+"tok": "〈◊〉",
+"vol": 2,
+"page": "430",
+"facs": "219"
+},
+{
+"slug": "5",
+"kind": "letter",
+"tok": "••",
+"vol": 2,
+"page": "430",
+"facs": "219"
+},
+{
+"slug": "5",
+"kind": "punc",
+"tok": "▪",
+"vol": 2,
+"page": "430",
+"facs": "219"
+},
+{
+"slug": "5",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "430",
+"facs": "219"
+},
+{
+"slug": "5",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "430",
+"facs": "219"
+},
+{
+"slug": "5",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "430",
+"facs": "219"
+},
+{
+"slug": "5",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "430",
+"facs": "219"
+},
+{
+"slug": "5",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "430",
+"facs": "219"
+},
+{
+"slug": "5",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "430",
+"facs": "219"
+},
+{
+"slug": "5",
+"kind": "word",
+"tok": "〈◊〉",
+"vol": 2,
+"page": "430",
+"facs": "219"
+},
+{
+"slug": "5",
+"kind": "punc",
+"tok": "▪",
+"vol": 2,
+"page": "430",
+"facs": "219"
+},
+{
+"slug": "5",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "430",
+"facs": "219"
+},
+{
+"slug": "5",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "430",
+"facs": "219"
+},
+{
+"slug": "5",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "430",
+"facs": "219"
+},
+{
+"slug": "5",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "430",
+"facs": "219"
+},
+{
+"slug": "5",
+"kind": "punc",
+"tok": "▪",
+"vol": 2,
+"page": "431",
+"facs": "219"
+},
+{
+"slug": "5",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "431",
+"facs": "219"
+},
+{
+"slug": "5",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "431",
+"facs": "219"
+},
+{
+"slug": "5",
+"kind": "word",
+"tok": "〈◊〉",
+"vol": 2,
+"page": "431",
+"facs": "219"
+},
+{
+"slug": "5",
+"kind": "word",
+"tok": "〈◊〉",
+"vol": 2,
+"page": "431",
+"facs": "219"
+},
+{
+"slug": "5",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "431",
+"facs": "219"
+},
+{
+"slug": "5",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "432",
+"facs": "220"
+},
+{
+"slug": "5",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "432",
+"facs": "220"
+},
+{
+"slug": "5",
+"kind": "word",
+"tok": "〈◊〉",
+"vol": 2,
+"page": "433",
+"facs": "220"
+},
+{
+"slug": "5",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "434",
+"facs": "221"
+},
+{
+"slug": "5",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "434",
+"facs": "221"
+},
+{
+"slug": "5",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "435",
+"facs": "221"
+},
+{
+"slug": "5",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "436",
+"facs": "222"
+},
+{
+"slug": "5",
+"kind": "foreign",
+"tok": "〈Greek〉",
+"vol": 2,
+"page": "436",
+"facs": "222"
+},
+{
+"slug": "5",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "438",
+"facs": "223"
+},
+{
+"slug": "5",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "440",
+"facs": "224"
+},
+{
+"slug": "5",
+"kind": "word",
+"tok": "〈◊〉",
+"vol": 2,
+"page": "440",
+"facs": "224"
+},
+{
+"slug": "5",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "440",
+"facs": "224"
+},
+{
+"slug": "5",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "440",
+"facs": "224"
+},
+{
+"slug": "5",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "440",
+"facs": "224"
+},
+{
+"slug": "5",
+"kind": "letter",
+"tok": "••",
+"vol": 2,
+"page": "440",
+"facs": "224"
+},
+{
+"slug": "5",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "445",
+"facs": "226"
+},
+{
+"slug": "5",
+"kind": "punc",
+"tok": "▪",
+"vol": 2,
+"page": "445",
+"facs": "226"
+},
+{
+"slug": "5",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "446",
+"facs": "227"
+},
+{
+"slug": "5",
+"kind": "word",
+"tok": "〈◊〉",
+"vol": 2,
+"page": "446",
+"facs": "227"
+},
+{
+"slug": "5",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "446",
+"facs": "227"
+},
+{
+"slug": "5",
+"kind": "foreign",
+"tok": "〈Greek〉",
+"vol": 2,
+"page": "448",
+"facs": "228"
+},
+{
+"slug": "5",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "448",
+"facs": "228"
+},
+{
+"slug": "5",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "448",
+"facs": "228"
+},
+{
+"slug": "5",
+"kind": "foreign",
+"tok": "〈Greek〉",
+"vol": 2,
+"page": "448",
+"facs": "228"
+},
+{
+"slug": "5",
+"kind": "foreign",
+"tok": "〈Greek〉",
+"vol": 2,
+"page": "450",
+"facs": "229"
+},
+{
+"slug": "5",
+"kind": "punc",
+"tok": "▪",
+"vol": 2,
+"page": "451",
+"facs": "229"
+},
+{
+"slug": "5",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "456",
+"facs": "232"
+},
+{
+"slug": "5",
+"kind": "span",
+"tok": "〈…〉",
+"vol": 2,
+"page": "458",
+"facs": "233"
+},
+{
+"slug": "5",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "459",
+"facs": "233"
+},
+{
+"slug": "5",
+"kind": "punc",
+"tok": "▪",
+"vol": 2,
+"page": "460",
+"facs": "234"
+},
+{
+"slug": "5",
+"kind": "punc",
+"tok": "▪",
+"vol": 2,
+"page": "462",
+"facs": "235"
+},
+{
+"slug": "5",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "462",
+"facs": "235"
+},
+{
+"slug": "5",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "463",
+"facs": "235"
+},
+{
+"slug": "5",
+"kind": "foreign",
+"tok": "〈Greek〉",
+"vol": 2,
+"page": "464",
+"facs": "236"
+},
+{
+"slug": "5",
+"kind": "foreign",
+"tok": "〈Greek〉",
+"vol": 2,
+"page": "465",
+"facs": "236"
+},
+{
+"slug": "5",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "465",
+"facs": "236"
+},
+{
+"slug": "5",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "472",
+"facs": "240"
+},
+{
+"slug": "5",
+"kind": "word",
+"tok": "〈◊〉",
+"vol": 2,
+"page": "472",
+"facs": "240"
+},
+{
+"slug": "5",
+"kind": "word",
+"tok": "〈◊〉",
+"vol": 2,
+"page": "472",
+"facs": "240"
+},
+{
+"slug": "5",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "472",
+"facs": "240"
+},
+{
+"slug": "5",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "472",
+"facs": "240"
+},
+{
+"slug": "5",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "473",
+"facs": "240"
+},
+{
+"slug": "5",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "474",
+"facs": "241"
+},
+{
+"slug": "5",
+"kind": "word",
+"tok": "〈◊〉",
+"vol": 2,
+"page": "474",
+"facs": "241"
+},
+{
+"slug": "5",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "474",
+"facs": "241"
+},
+{
+"slug": "5",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "474",
+"facs": "241"
+},
+{
+"slug": "5",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "474",
+"facs": "241"
+},
+{
+"slug": "5",
+"kind": "punc",
+"tok": "▪",
+"vol": 2,
+"page": "474",
+"facs": "241"
+},
+{
+"slug": "5",
+"kind": "word",
+"tok": "〈◊〉",
+"vol": 2,
+"page": "474",
+"facs": "241"
+},
+{
+"slug": "5",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "475",
+"facs": "241"
+},
+{
+"slug": "5",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "475",
+"facs": "241"
+},
+{
+"slug": "5",
+"kind": "word",
+"tok": "〈◊〉",
+"vol": 2,
+"page": "475",
+"facs": "241"
+},
+{
+"slug": "5",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "475",
+"facs": "241"
+},
+{
+"slug": "5",
+"kind": "punc",
+"tok": "▪",
+"vol": 2,
+"page": "475",
+"facs": "241"
+},
+{
+"slug": "5",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "475",
+"facs": "241"
+},
+{
+"slug": "5",
+"kind": "foreign",
+"tok": "〈Greek〉",
+"vol": 2,
+"page": "475",
+"facs": "241"
+},
+{
+"slug": "5",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "476",
+"facs": "242"
+},
+{
+"slug": "5",
+"kind": "foreign",
+"tok": "〈Greek〉",
+"vol": 2,
+"page": "476",
+"facs": "242"
+},
+{
+"slug": "5",
+"kind": "punc",
+"tok": "▪",
+"vol": 2,
+"page": "478",
+"facs": "243"
+},
+{
+"slug": "5",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "478",
+"facs": "243"
+},
+{
+"slug": "5",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "479",
+"facs": "243"
+},
+{
+"slug": "5",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "479",
+"facs": "243"
+},
+{
+"slug": "5",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "479",
+"facs": "243"
+},
+{
+"slug": "5",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "479",
+"facs": "243"
+},
+{
+"slug": "5",
+"kind": "letter",
+"tok": "••",
+"vol": 2,
+"page": "479",
+"facs": "243"
+},
+{
+"slug": "5",
+"kind": "word",
+"tok": "〈◊〉",
+"vol": 2,
+"page": "479",
+"facs": "243"
+},
+{
+"slug": "5",
+"kind": "punc",
+"tok": "▪",
+"vol": 2,
+"page": "479",
+"facs": "243"
+},
+{
+"slug": "5",
+"kind": "word",
+"tok": "〈◊〉",
+"vol": 2,
+"page": "479",
+"facs": "243"
+},
+{
+"slug": "5",
+"kind": "letter",
+"tok": "••",
+"vol": 2,
+"page": "479",
+"facs": "243"
+},
+{
+"slug": "5",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "479",
+"facs": "243"
+},
+{
+"slug": "5",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "479",
+"facs": "243"
+},
+{
+"slug": "5",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "479",
+"facs": "243"
+},
+{
+"slug": "5",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "482",
+"facs": "245"
+},
+{
+"slug": "5",
+"kind": "punc",
+"tok": "▪",
+"vol": 2,
+"page": "470",
+"facs": "246"
+},
+{
+"slug": "5",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "470",
+"facs": "246"
+},
+{
+"slug": "5",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "467",
+"facs": "246"
+},
+{
+"slug": "5",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "467",
+"facs": "246"
+},
+{
+"slug": "5",
+"kind": "punc",
+"tok": "▪",
+"vol": 2,
+"page": "487",
+"facs": "247"
+},
+{
+"slug": "5",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "487",
+"facs": "247"
+},
+{
+"slug": "5",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "487",
+"facs": "247"
+},
+{
+"slug": "5",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "487",
+"facs": "247"
+},
+{
+"slug": "5",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "489",
+"facs": "248"
+},
+{
+"slug": "5",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "489",
+"facs": "248"
+},
+{
+"slug": "5",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "490",
+"facs": "249"
+},
+{
+"slug": "5",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "491",
+"facs": "249"
+},
+{
+"slug": "5",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "493",
+"facs": "250"
+},
+{
+"slug": "5",
+"kind": "letter",
+"tok": "•",
+"vol": 2,
+"page": "496",
+"facs": "252"
+}
+]
