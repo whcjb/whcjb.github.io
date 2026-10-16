@@ -5,6 +5,8 @@ book_name: "赫奇森《约翰福音注释》"
 title: "致基督徒读者"
 subtitle: "Edmund Calamy"
 date: 2026-10-16 16:29
+prev_url: "/hutcheson/john/zh/title/"
+prev_label: "书名页"
 next_url: "/hutcheson/john/zh/1-1/"
 next_label: "约翰福音 1:1"
 en_url: "/hutcheson/john/calamy/"
