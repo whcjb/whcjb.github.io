@@ -9,6 +9,7 @@ prev_url: "/perkins/galatians/dedication/"
 prev_label: "The Epistle Dedicatorie"
 next_url: "/perkins/galatians/1-1/"
 next_label: "Galatians 1:1"
+zh_url: "/perkins/galatians/zh/reader/"
 ---
 
 <div class="pk-to-the-reader" markdown="1">

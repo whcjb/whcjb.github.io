@@ -7,6 +7,7 @@ subtitle: "Ralph Cudworth to Robert, Lord Rich"
 date: 2026-10-16 10:02
 next_url: "/perkins/galatians/reader/"
 next_label: "To the Courteous Reader"
+zh_url: "/perkins/galatians/zh/dedication/"
 ---
 
 <div class="pk-title-page" markdown="1">
