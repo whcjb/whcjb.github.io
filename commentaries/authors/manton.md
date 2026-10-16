@@ -6,26 +6,46 @@ tagline: "清教徒牧者 · 威斯敏斯特会议书记"
 permalink: /commentaries/authors/manton/
 ---
 
-## 生平
+## 早年
 
-托马斯·曼顿 1620 年 3 月 31 日在萨默塞特受洗，1639 年获牛津大学文学学士。他被按立为执事，但始终没有领受牧师圣职。1640 至 1643 年任德文郡索顿（Sowton）的城镇讲员，1643 至 1645 年在同郡科利顿（Colyton）。
+托马斯·曼顿 1620 年 3 月 31 日在萨默塞特郡的利迪亚德圣劳伦斯（Lydeard St Lawrence）受洗。他可能就读于德文郡蒂弗顿的布伦德尔学校（Blundell's School），但证据不明。后入牛津大学瓦德姆学院（Wadham College），1639 年以哈特学堂（Hart Hall）学生身份获文学学士。
 
-约 1645 年，他受召到米德尔塞克斯的斯托克纽因顿（Stoke Newington）牧会，在那里开设周间讲座，先讲以赛亚书第 53 章，后讲雅各书，再讲犹大书——本站所收的《雅各书注释》就是这一时期讲章的结集。约十年后，他转任伦敦科芬园（Covent Garden）圣保罗堂。
+1640 年，诺里奇主教约瑟·霍尔（Joseph Hall）按立他为执事；他此后始终没有领受牧师圣职。1640 至 1643 年任德文郡索顿（Sowton）的城镇讲员，1643 至 1645 年转往同郡科利顿（Colyton）。
 
-他是威斯敏斯特会议的三位书记之一，1658 年受托为《威斯敏斯特信条》第二版作序。他也曾任克伦威尔的牧师，并任审核传道人资格的「审查员」（Trier）。1662 年王政复辟后，他被逐出国教会。1677 年去世，葬于斯托克纽因顿教堂圣坛，挚友贝茨（William Bates）为他讲丧礼讲章。
+## 斯托克纽因顿与共和国时期
+
+1645 年 7 月，在波帕姆上校（Colonel Alexander Popham）的举荐下，他到米德尔塞克斯郡的斯托克纽因顿（Stoke Newington）牧会，在那里开设周间讲座：先讲以赛亚书第 53 章，再讲雅各书，后讲犹大书。本站所收的《雅各书注释》就出自这一系列讲章。
+
+他至少六次在国会讲道，其中两次是禁食日讲章：1647 年 6 月 30 日讲撒迦利亚书 14:9，1648 年 6 月 30 日讲启示录 3:20。他是威斯敏斯特会议的三位书记之一，1658 年受命为《威斯敏斯特信条》第二版作序。他也曾任克伦威尔的牧师，并作「审查员」（Trier），负责考核传道职分的候选人。
+
+1656 年，他接替塞奇威克（Obadiah Sedgwick），任伦敦科芬园（Covent Garden）圣保罗堂教区牧师，兼任威斯敏斯特大教堂讲员。
+
+## 王政复辟与被逐
+
+1660 年，他随代表团前往布雷达（Breda），参与迎请查理二世复位的协商；又参加了萨伏伊会议。当局曾授他罗切斯特座堂主任之职，他出于良心拒绝了。
+
+1662 年 8 月 17 日，他在科芬园讲最后一篇讲章（经文是希伯来书 12:1），8 月 24 日《划一法案》生效，他辞去职位。此后他在科芬园国王街的家中讲道，1670 年依《秘密集会法》被囚六个月。1672 年《宽容宣言》颁行后，他获准在家中讲道，并任品纳斯会堂（Pinner's Hall）讲员，但次年国会撤销了这项宽容。
+
+1677 年 10 月 18 日去世，遗下妻子和三个孩子，葬于斯托克纽因顿教堂圣坛，挚友贝茨（William Bates）为他讲丧礼讲章。
 
 <ul class="cb-timeline">
 <li><b>1620</b>3 月 31 日在萨默塞特受洗</li>
 <li><b>1639</b>牛津大学文学学士</li>
+<li><b>1640</b>由约瑟·霍尔按立为执事</li>
 <li><b>1640–1645</b>德文郡索顿、科利顿讲员</li>
-<li><b>约 1645</b>斯托克纽因顿牧会，开讲雅各书</li>
+<li><b>1645</b>7 月起在斯托克纽因顿牧会</li>
+<li><b>1647 / 1648</b>国会禁食日讲道</li>
+<li><b>1656</b>科芬园圣保罗堂教区牧师</li>
 <li><b>1658</b>为《威斯敏斯特信条》第二版作序</li>
-<li><b>1662</b>被逐出国教会</li>
-<li><b>1677</b>卒</li>
+<li><b>1660</b>赴布雷达迎请查理二世</li>
+<li><b>1662</b>8 月 24 日去职</li>
+<li><b>1670</b>依《秘密集会法》被囚六个月</li>
+<li><b>1672</b>品纳斯会堂讲员</li>
+<li><b>1677</b>10 月 18 日卒</li>
 </ul>
 
-## 著作
+## 著作与评价
 
-他生前出版的只有若干讲章，以及《雅各书注释》和《犹大书注释》；其余大量讲章与论著在他身后陆续刊行，后来汇为多卷本全集。
+他生前出版的只有若干讲章，以及《雅各书注释》（版本有 1653、1657 年等）与《犹大书注释》；其余大量讲章与论著在他身后陆续刊行，后来汇为二十二卷本全集。《雅各书注释》常被认为是他最好的作品。莱尔（J. C. Ryle）评论他是「一个说话、行事、写作都不能不引人注意的人」。
 
-<p class="cb-src">资料来源：<a href="https://en.wikipedia.org/wiki/Thomas_Manton_(minister)">Wikipedia</a>；<a href="https://words.fromoldbooks.org/Chalmers-Biography/m/manton-thomas.html">Chalmers' Biographical Dictionary</a>；<a href="https://thisday.pcahistory.org/2014/10/october-18-2/">PCA Historical Center</a>。</p>
+<p class="cb-src">资料来源：<a href="https://en.wikipedia.org/wiki/Thomas_Manton_(minister)">Wikipedia: Thomas Manton (minister)</a>；<a href="https://words.fromoldbooks.org/Chalmers-Biography/m/manton-thomas.html">Chalmers' Biographical Dictionary</a>；<a href="https://thisday.pcahistory.org/2014/10/october-18-2/">PCA Historical Center</a>。</p>

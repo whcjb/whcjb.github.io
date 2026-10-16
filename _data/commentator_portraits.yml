@@ -1,0 +1,24 @@
+# 注释家肖像：本地文件 img/commentators/<id>.jpg（宽 640，取自 Wikimedia Commons，均为公有领域）。
+# 只收画中人确证为本人的画像。没有可靠传世画像的（毕列志、达拉谟、约翰斯通）不列，页面显示姓名首字。
+# 反例：Commons 上 File:James_Durham.jpg 是 1906 年的同名棒球运动员；Charles Bridges 名下是 1670–1747 年的同名画家。
+owen:
+  caption: "约翰·格林希尔（John Greenhill，传）绘，约 1668 年"
+  source: "https://commons.wikimedia.org/wiki/File:John_Owen_by_John_Greenhill.jpg"
+hodge:
+  caption: "伦勃朗·皮尔（Rembrandt Peale）绘，19 世纪"
+  source: "https://commons.wikimedia.org/wiki/File:PORTRAIT_OF_CHARLES_HODGE,_Rembrandt_Peale.jpg"
+manton:
+  caption: "辛岑尼希（G. E. Sintzenich）绘，约 1821 年，牛津曼斯菲尔德学院藏"
+  source: "https://commons.wikimedia.org/wiki/File:Thomas_Manton.jpg"
+davenant:
+  caption: "佚名画家，1640 年（画上题「Æt. 69」）"
+  source: "https://commons.wikimedia.org/wiki/File:John_Davenant.jpg"
+spurgeon:
+  caption: "亚历山大·梅尔维尔（Alexander Melville）绘，1885 年"
+  source: "https://commons.wikimedia.org/wiki/File:Charles_Haddon_Spurgeon_by_Alexander_Melville.jpg"
+perkins:
+  caption: "英国画派佚名画家，画上题 1602 年"
+  source: "https://commons.wikimedia.org/wiki/File:British_-_William_Perkins_-_Google_Art_Project.jpg"
+alexander:
+  caption: "佚名摄影，1860 年以前"
+  source: "https://commons.wikimedia.org/wiki/File:J._Addison_Alexander.jpg"

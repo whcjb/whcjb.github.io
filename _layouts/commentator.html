@@ -26,11 +26,19 @@ layout: default
 
         <div class="cb-back"><a href="{{ site.baseurl }}/commentaries/">&larr; 历代解经</a></div>
 
+        {%- assign pt = site.data.commentator_portraits[page.author_id] -%}
         <header class="cb-hero">
+          {%- if pt %}
+          <figure class="cb-portrait"><img src="{{ site.baseurl }}/img/commentators/{{ page.author_id }}.jpg" alt="{{ me.name }}肖像"></figure>
+          {%- else %}
+          <div class="cb-portrait cb-noportrait" title="未见可靠的传世画像">{{ me.short | slice: 0 }}</div>
+          {%- endif %}
           <h1>{{ me.name }}</h1>
           <p class="cb-en">{{ me.en }}{% if me.years != "" %} · {{ me.years }}{% endif %}</p>
           {% if page.tagline %}<p class="cb-tag">{{ page.tagline }}</p>{% endif %}
         </header>
+        {%- if pt %}<p class="cb-caption">肖像：<a href="{{ pt.source }}">{{ pt.caption }}</a>（Wikimedia Commons，公有领域）</p>
+        {%- else %}<p class="cb-caption">未见可靠的传世画像。</p>{%- endif %}
 
         <article class="cb-body">
           {{ content }}
@@ -63,6 +71,13 @@ layout: default
   background: linear-gradient(135deg, var(--cb-c0) 0%, var(--cb-c1) 100%);
   color: #fff; border-radius: 6px; padding: 32px 28px 26px; text-align: center; margin-bottom: 30px;
 }
+.cb-wrap .cb-portrait { width: 150px; height: 186px; margin: 0 auto 18px; border-radius: 50% / 46%;
+  overflow: hidden; border: 3px solid rgba(255,255,255,.85); box-shadow: 0 4px 14px rgba(0,0,0,.25); background: #ece5d3; }
+.cb-wrap .cb-portrait img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 18%; display: block; }
+.cb-wrap .cb-noportrait { display: flex; align-items: center; justify-content: center; color: var(--cb-c1);
+  font-size: 56px; font-family: 'Source Han Serif SC', 'Noto Serif SC', 'Songti SC', serif; }
+.cb-wrap .cb-caption { text-align: center; font-size: 12px; color: var(--cb-light); margin: -18px 0 22px; }
+.cb-wrap .cb-caption a { color: var(--cb-light); }
 .cb-wrap .cb-hero h1 { margin: 0 0 8px; font-size: 30px; font-weight: 600; letter-spacing: .12em;
   font-family: 'Source Han Serif SC', 'Noto Serif SC', 'Songti SC', serif; }
 .cb-wrap .cb-en { margin: 0; font-family: Georgia, serif; font-size: 15px; opacity: .9; }
@@ -93,5 +108,12 @@ layout: default
 .cb-wrap .cb-works a:hover { background: #f4efe2; }
 .cb-wrap .cb-wk-cn { font-size: 15px; }
 .cb-wrap .cb-wk-en { display: block; font-family: Georgia, serif; font-style: italic; font-size: 12px; color: #b0a68d; margin-top: 2px; }
-@media (max-width: 767px) { .cb-wrap .cb-hero h1 { font-size: 24px; } .cb-wrap .cb-body { font-size: 16px; } }
+@media (max-width: 767px) { .cb-wrap .cb-portrait { width: 150px; height: 186px; margin: 0 auto 18px; border-radius: 50% / 46%;
+  overflow: hidden; border: 3px solid rgba(255,255,255,.85); box-shadow: 0 4px 14px rgba(0,0,0,.25); background: #ece5d3; }
+.cb-wrap .cb-portrait img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 18%; display: block; }
+.cb-wrap .cb-noportrait { display: flex; align-items: center; justify-content: center; color: var(--cb-c1);
+  font-size: 56px; font-family: 'Source Han Serif SC', 'Noto Serif SC', 'Songti SC', serif; }
+.cb-wrap .cb-caption { text-align: center; font-size: 12px; color: var(--cb-light); margin: -18px 0 22px; }
+.cb-wrap .cb-caption a { color: var(--cb-light); }
+.cb-wrap .cb-hero h1 { font-size: 24px; } .cb-wrap .cb-body { font-size: 16px; } }
 </style>

@@ -84,6 +84,11 @@ description: 加尔文与马太亨利之外的历代改革宗注释——欧文�
   .cx-who-davenant{ border-left-color: #556b2f; }
   .cx-who-alexander { border-left-color: #7d2f2f; }
   .cx-who:hover { background: #f4efe2; }
+  .cx-who-pic { float: left; width: 52px; height: 64px; margin: 1px 14px 4px 0; border-radius: 50% / 46%;
+    object-fit: cover; object-position: 50% 18%; border: 1px solid #e2d9c3; background: #ece5d3; }
+  .cx-who-nopic { display: flex; align-items: center; justify-content: center; font-size: 22px;
+    color: #a89c80; font-family: 'Source Han Serif SC', 'Noto Serif SC', 'Songti SC', serif; }
+  .cx-who::after { content: ""; display: block; clear: both; }
   .cx-who-go { float: right; font-size: 11.5px; font-weight: normal; color: #b0a68d; letter-spacing: .06em; }
   .cx-who:hover .cx-who-go { color: var(--cx-primary); }
   .cx-who-name { font-size: 15px; color: var(--cx-primary); font-weight: 600; letter-spacing: .04em; }
@@ -252,6 +257,8 @@ description: 加尔文与马太亨利之外的历代改革宗注释——欧文�
         {%- endfor -%}{%- endfor -%}
         <a class="cx-who cx-who-{{ a.id }}" href="{{ site.baseurl }}/commentaries/authors/{{ a.id }}/"
            style="border-left-color: {{ who_c }};" title="{{ a.name }}生平">
+          {%- if site.data.commentator_portraits[a.id] %}<img class="cx-who-pic" src="{{ site.baseurl }}/img/commentators/{{ a.id }}.jpg" alt="" loading="lazy">
+          {%- else %}<span class="cx-who-pic cx-who-nopic">{{ a.short | slice: 0 }}</span>{%- endif %}
           <div class="cx-who-name">{{ a.name }}<span class="cx-who-go">生平 &rsaquo;</span></div>
           <div class="cx-who-meta">{{ a.en }}{% if a.years != "" %} · {{ a.years }}{% endif %}</div>
           <div class="cx-who-work">
