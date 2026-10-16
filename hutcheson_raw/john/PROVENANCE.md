@@ -56,38 +56,33 @@ TCP 标出的缺口 838 处：读不出的字母 946 个（`•`）、整词 35�
 （`〈…〉`）、希腊文 3（`〈Greek〉`，都在卷首 Calamy 序）、认不清的标点 21（`▪`）。
 14 页缩微胶片重拍页（`reason="duplicate"`）丢。
 
-### 找过的影像，都用不了
+### 第 ② 层：1841 年他版证人（2026-10-16 补做）
 
-- IA 的 EEBO 影像集（`bim_early-english-books-1641-1700_*`）收了赫奇森 1654/1657
-  的小先知书、1659 的论战小册、1691 的讲章集，**唯独没有这部约翰福音**。
-- IA `expositionofgosp0000geor`（1971 Sovereign Grace 重印）、
-  `gospelofjohn0000hutc`（1972 Banner of Truth）：都是借阅限制本，PDF、djvu.txt、
-  书内检索（`fulltext/inside.php`）一律 403。
-- Google Books：检索 API 当日配额用尽；网上提到的 1657 年扫描本未能核实。
+| | |
+|---|---|
+| 证人 | *An Exposition of the Gospel … According to John. Reprinted from the Edition of 1657*，London: T. Ward & Co.，439 页 |
+| 来源 | Google Books `PXRjAAAAcAAJ`（大英图书馆藏本，2015 年数字化，公版全文） |
+| 取法 | PDF 下载被人机验证拦；改走阅读器的签名页图接口（`jscmd=click3` → `src`），438/439 页取到（缺 PA3 卷首） |
 
-所以 Perkins 那条「同版影像裁图判读」（第 ③ 层）与「他版按位置判读」（第 ② 层）
-都走不通，**只做第 ① 层语料自证**，判不了的记号留在页面上（`.hc-gap` 标红）。
+1841 本是**重排、拼写现代化**的翻印（beleevers → believers、经文出处改罗马数字章号、
+偶有改写如 `regrate [reflection]`），所以只当证人不当底本：
 
-### 语料自证的守卫（scripts/hutcheson_gapfill.py）
+1. 两套 tesseract（原图 psm4 / 2× Otsu psm6）各出词流，两侧上下文三词组投票定位；
+2. 每处裁出 1841 页图那几行，**逐条看图判读**（`scripts/hutcheson_review.py` 落
+   `gap_review_1841.tsv`）。judge 的自动读数只当预填值，不直接落盘；
+3. 拼写落 **1657 的写法**：1841 读数只负责在本书语料的候选里挑一个
+   （`Men's` → `Mens`、`improve` → `emprove` 的那一类以本书频次为准）；
+4. 1841 本在该处改写、读不出 1657 原词的，判 `?` 不补（如 `regrate`、`•an` 处 1841 作
+   `cometh`）。
 
-只碰「词里缺几个字母」。缺整词／一截／希腊文／标点、含数字的（经文出处
-`1•.10`）、已知字母少于 3 个的（`b•t`）一律不碰。满足以下之一才补：
+结果：541 处待判里 490 处定位到，人工复核 458 条、判出 391 条；连同语料自证的 265 条，
+`manual_fixes.tsv` 共 656 条。**剩余 158 个缺字记号**：未定位 51、锚点覆盖低 38、
+看过判不了 67（多为 1841 改写处）及非字母缺口。
 
-1. **lex**：逐位填，在「全书语料 ∪ 系统词典 web2」并集里只有一个词对得上，且该词
-   在本书出现 ≥3 次。并上词典是为挡 `lu•k → lurk`（书里只有 lurk，英语里 luck
-   一样填得进）。
-2. **ctx**：多个候选，但全书同样「左邻 + 候选 + 右邻」搭配里只有一个候选出现过、
-   且 ≥2 次（`may be •educed to foure heads` → reduced，不是 seduced）。
+### 找过但用不了的
 
-结果（2026-10-16）：806 个缺字词里 lex 224、ctx 41 落盘，共 265 条；
-ambig 217 / rare 34 / none 21 / 不碰 269 留着。265 条落盘前全部列出逐条看过，
-ctx 档逐条带上下文核对。
-
-### 将来能补的
-
-拿到 1657 年版页面影像（EEBO 机构订阅、Cambridge UL 藏本、或 Google Books 全文
-扫描）后，按 Perkins 的 gapcrop 流程逐处判读，判读结果追加进 `manual_fixes.tsv`
-（`hutcheson_gapfill.py --apply` 会重写自动部分，手工判读要另存一份并在导出时合并）。
+- IA 的 EEBO 影像集未收此书；IA 1971 Sovereign Grace / 1972 Banner of Truth 重印本借阅限制，
+  全文与书内检索 403。
 
 ## 文件
 
@@ -97,7 +92,10 @@ ctx 档逐条带上下文核对。
 | `en_chapters/*.md` | `scripts/extract_hutcheson.py` 产物 |
 | `gap_sites.json` | 缺字清单（抽取时写出） |
 | `gap_decisions.tsv` | 每处缺字词的判读记录（`?` = 不判）与证据 |
-| `manual_fixes.tsv` | 由判读记录导出的按位落盘表，`hutcheson_common.py` 自检 |
+| `manual_fixes.tsv` | 语料自证 + 1841 复核导出的按位落盘表，`hutcheson_common.py` 自检 |
+| `gap_review_1841.tsv` | 1841 他版逐条看图复核（`?` = 看过判不了） |
+| `witness_locs.json` / `gap_decisions_witness.tsv` | 定位结果 / 自动读数（预填值） |
+| `witness_1841/` | 页图、OCR、判读图（不入库，`hutcheson_witness.py fetch/ocr` 重建） |
 | `en_meta.json` | 每页发布时刻（重跑不改已有值） |
 | `pages.json` / `pages_en.json` | 印本页码表 / 发布页表 |
 
@@ -105,7 +103,8 @@ ctx 档逐条带上下文核对。
 
 ```
 python3 scripts/extract_hutcheson.py --apply
-python3 scripts/hutcheson_gapfill.py --apply
+python3 scripts/hutcheson_witness.py fetch && … ocr && … build && … match && … judge   # 他版证人（只有重做判读时才需要）
+python3 scripts/hutcheson_gapfill.py --apply      # 语料自证 + 并入 gap_review_1841.tsv
 python3 scripts/hutcheson_common.py          # 自检：每条都要落得下
 python3 scripts/publish_hutcheson_en.py --apply
 python3 scripts/build_commentaries_index.py

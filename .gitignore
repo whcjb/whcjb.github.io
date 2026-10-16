@@ -62,3 +62,5 @@ manton_raw/james/zh_translate_issues.log
 perkins_raw/galatians/witness_1604/
 perkins_raw/galatians/witness_1607/
 perkins_raw/galatians/witness_1617/
+# 赫奇森 1841 他版页图与 OCR（可由 scripts/hutcheson_witness.py fetch/ocr 重建）
+hutcheson_raw/john/witness_1841/
