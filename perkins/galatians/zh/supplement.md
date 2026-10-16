@@ -7,6 +7,8 @@ subtitle: "扉页与献辞（致加迪爵士）"
 date: 2026-10-16 14:31
 prev_url: "/perkins/galatians/zh/5-26/"
 prev_label: "加拉太书 5:26"
+next_url: "/perkins/galatians/zh/6-1/"
+next_label: "加拉太书 6:1"
 en_url: "/perkins/galatians/supplement/"
 zh: true
 ---
