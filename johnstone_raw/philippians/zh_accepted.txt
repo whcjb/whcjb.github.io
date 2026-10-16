@@ -1,0 +1,14 @@
+# 人工逐条核过、确认无误却过不了 translate_johnstone.structural_diff 的译文缓存键（2026-10-16）。
+# 列在这里 --resume 不当坏缓存重译；英文段落一改、键就变，自动失效。
+e3deba6c7ff5142b  8#23 钦定本 ‘Yet’ 加斜体讨论，内容无误
+47e20eebcba917bc  10#12 相邻两处斜体合并，内容完整
+548fa28e4ab9f93f  11#20 讨论英文词 other/others，照原文保留
+697cf4c042d94ffb  12#17 讨论英文词 excruciating 加斜体
+da72734f7e592523  15#4 “*on* the victim”斜体合入，内容无误
+766237afa1ab0ef3  24#4 讨论钦定本词 conversation 加斜体
+48c12fa6a2f83ae9  26#3 钦定本拼法 Euodias 照原文保留
+55cc4a6e47213ae5  notes-2#28 De Wette 德文 keinen andern 照引
+286495fd275cd5d8  notes-2#30 讨论英文译词 truly/naturally/Genuinely 加斜体
+d738dcfe675cdfac  notes-3#23 拉丁 venire/pervenire 照引
+c9b7fc05588135b2  polycarp#69 ‘Him’ 加斜体讨论
+e3b44bd85009ebf4  notes-1#24 拉丁词 prætorium 在「」里讨论，照原文保留

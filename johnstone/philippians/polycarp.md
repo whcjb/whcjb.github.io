@@ -110,5 +110,5 @@ THE END.
 <p class="jh-note" id="fn-52" markdown="span"><a class="jh-back" href="#fnref-52">52</a>Phil. iii. 18.</p>
 <p class="jh-note" id="fn-53" markdown="span"><a class="jh-back" href="#fnref-53">53</a>Or, ‘in all things.’</p>
 <p class="jh-note" id="fn-54" markdown="span"><a class="jh-back" href="#fnref-54">54</a>The reference seems to be to a letter addressed to the church of Antioch, and forwarded through Polycarp.</p>
-<p class="jh-note" id="fn-55" markdown="span"><a class="jh-back" href="#fnref-55">55</a>The Latin version has a present tense here, *qui cum eo sunt ;* but, no doubt, this is a mistranslation of Polycarp’s τῶν σὺν αὐτᾷ. We see from the 9th paragraph that he knew of Ignatius’s death.</p>
+<p class="jh-note" id="fn-55" markdown="span"><a class="jh-back" href="#fnref-55">55</a>The Latin version has a present tense here, *qui cum eo sunt ;* but, no doubt, this is a mistranslation of Polycarp’s τῶν σὺν αὐτῷ. We see from the 9th paragraph that he knew of Ignatius’s death.</p>
 </div>

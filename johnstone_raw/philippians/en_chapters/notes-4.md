@@ -6,7 +6,7 @@ Ver. 2. The first name in this verse, looking simply at the form, might designat
 
 3. Failing, as has been observed in the previous note, to see the reference of αὐταῖς to the women mentioned in the 2nd verse, our translators have given the pronoun the force of a demonstrative, and thus made the apostle speak generally of the women who had been helpful to him in his Christian work at Philippi; whilst the real meaning is, ‘Help them (Euodia and Syntyche), seeing that they laboured.’ With regard to this force of the compound relative ὅστις, as equivalent to the Latin *quippe qui,* or *utpote qui,* compare chap. i. 28, with note.
 
-Lightfoot would join μετὰ καὶ Κλήμεντος, κ.τ.λ., with συλ- λαμβάνου, rather than with συνήθλησαν,—supposing that the apostle’s object is ‘to engage *all in* the work of conciliation.’ But this does not appear natural. In particular, the clause ὧν τὰ ὀνόματα ἐν βίβλῳ ζωῆς would lack relevancy and point with this connection.
+Lightfoot would join μετὰ καὶ Κλήμεντος, κ.τ.λ., with συλλαμβάνου, rather than with συνήθλησαν,—supposing that the apostle’s object is ‘to engage *all in* the work of conciliation.’ But this does not appear natural. In particular, the clause ὧν τὰ ὀνόματα ἐν βίβλῳ ζωῆς would lack relevancy and point with this connection.
 
 4. Ἐρῶ (from a present εἴρω, used by Homer) is always a *future* in the New Testament, as in classical writers: ‘*will* say,’ therefore,—not ‘say,’ as in the Authorized Version.
 

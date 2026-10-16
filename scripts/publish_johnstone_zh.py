@@ -104,6 +104,14 @@ REL_REF = re.compile(r'(?<![书记传篇言歌音录])第\s?([1-4])\s?章\s?(\d{
                      r'(?:\s?[-–至]\s?(\d{1,2}))?\s?节')
 
 
+# 书末两块原样保留、没送翻译的英文（translate_johnstone.IMPRINT）：卷终语与印刷所落款。
+IMPRINT_ZH = [
+    ('\nTHE END.\n', '\n（全书完）\n'),
+    ('<span class="jh-verse">MURRAY AND GIBB, EDINBURGH,<br>PRINTERS TO HER MAJESTY’S STATIONERY OFFICE.</span>',
+     '<span class="jh-verse">爱丁堡 Murray and Gibb 印行<br>（女王陛下文书局印刷商）</span>'),
+]
+
+
 def absolutize_refs(body: str) -> str:
     def sub(m):
         vs = m.group(2) + (f'-{m.group(3)}' if m.group(3) else '')
@@ -137,6 +145,8 @@ def main(only=None):
         m = TITLE_LINE.match(raw)
         title_zh = m.group(1).strip() if m else sec
         body = raw[m.end():] if m else raw
+        for a, b in IMPRINT_ZH:
+            body = body.replace(a, b)
         sub = FM_SUB.search(en_fm(sec))
         info[sec] = dict(label=label(sec, title_zh), body=absolutize_refs(body.strip()),
                          ref=zh_ref(sub.group(1)) if sub else None)

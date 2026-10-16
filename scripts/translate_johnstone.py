@@ -31,6 +31,7 @@ subprocess 调 claude。
 """
 import argparse
 import json
+import unicodedata
 import os
 import re
 import subprocess
@@ -82,7 +83,9 @@ SYSTEM = (
     "`viz.`→`即`，`cf.`/`compare`→`参`，`ver.`/`vers.`→`第 N 节`\n"
     "7. 希腊文、拉丁文、德文一律保留原文，其后用圆括号附中文译义，"
     "如 πολιτεύεσθε（要行事为人，直译「尽你们公民的本分」）；"
-    "整句拉丁引文保留原文，括注中文大意\n"
+    "整句拉丁引文保留原文，括注中文大意。希腊文**逐字照抄**，一个字母、一个"
+    "重音符号都不许改（不要把钝音符 ὰ 改成锐音符 ά，不要用形近的拉丁字母代替希腊字母）；"
+    "作者用英文拼法写的人名、词（Euodia、presbyter），照英文保留，不要自行换成希腊文\n"
     "8. 圣经书卷名、人名、地名一律用和合本标准译名：Paul→保罗，"
     "Timotheus/Timothy→提摩太，Epaphroditus→以巴弗提，Euodia/Euodias→友阿爹，"
     "Syntyche→循都基，Clement→革利免，Lydia→吕底亚，Silas→西拉，"
@@ -181,7 +184,7 @@ CHATTY_RE = re.compile(
 
 # 漏译的整词：光溜溜落在中文句子里的英文词。斜体内（作者在讨论这个词本身）、
 # 紧跟括注（原名对照）、整句英文引文都不算。
-STRAY_EN = re.compile(r'(?<![（(A-Za-z])[A-Za-z][A-Za-z\'’-]{2,}(?![*）)A-Za-z])')
+STRAY_EN = re.compile(r'(?<![（(A-Za-zæœÆŒ])[A-Za-zæœÆŒ][A-Za-zæœÆŒ\'’-]{2,}(?![*）)A-Za-zæœÆŒ])')
 
 
 def stray_english(zh: str):
@@ -196,9 +199,40 @@ def stray_english(zh: str):
     return out
 
 
+GREEK = r'\u0370-\u03ff\u1f00-\u1fff'
+RE_GREEK_TOK = re.compile(rf'[{GREEK}\u0300-\u036f]+')
+RE_MIXED = re.compile(rf'[{GREEK}]+[A-Za-z]+|[A-Za-z]+[{GREEK}]+')
+# 人工逐条核过、确认无误却过不了硬校验的译文（例：模型照规则把作者正在讨论的
+# 英文词标了斜体，星号数因而多出一对）。列在这里，--resume 时不再当坏缓存重译。
+ACCEPTED = RAW / 'zh_accepted.txt'
+
+
+def accepted_keys():
+    if not ACCEPTED.exists():
+        return set()
+    return {ln.split()[0] for ln in ACCEPTED.read_text(encoding='utf-8').splitlines()
+            if ln.strip() and not ln.startswith('#')}
+
+
+def tidy(zh: str) -> str:
+    """译文落盘前的统一：人名括注一律用圆括号（模型时而写〔Lightfoot〕／［Green］）。"""
+    return re.sub(r'[〔［]([A-Za-zÀ-ÿ][A-Za-zÀ-ÿ .\'’-]*)[〕］]', r'（\1）', zh)
+
+
 def structural_diff(en: str, zh: str) -> str:
     """返回结构性差异说明；空字符串表示通过。只查可机验的硬结构。"""
     problems = []
+    # 希腊文必须照原文逐字抄：模型会把个别字母换成形近的拉丁字母（ἐκοπίASA、
+    # ταῦTα，全书 22 处），会把钝音符改成锐音符（ἀλλὰ→ἀλλά），还会把作者
+    # 写成英文拼法的人名自己「还原」成希腊文（Euodia→Εὐοδία）。2026-10-16 查出。
+    mixed = RE_MIXED.findall(zh)
+    if mixed:
+        problems.append('希腊文混入拉丁字母 ' + '、'.join(mixed[:4]))
+    nfc = lambda s: unicodedata.normalize('NFC', s)   # ώ 有 U+03CE / U+1F7D 两种编码
+    src = set(RE_GREEK_TOK.findall(nfc(en)))
+    extra = [w for w in RE_GREEK_TOK.findall(nfc(zh)) if len(w) > 1 and w not in src]
+    if extra:
+        problems.append('原文没有的希腊词 ' + '、'.join(extra[:4]))
     if en.count('*') != zh.count('*'):
         problems.append(f'斜体 * 数量不符 {en.count("*")} → {zh.count("*")}')
     pe, pz = RE_PH.findall(en), RE_PH.findall(zh)
@@ -228,7 +262,7 @@ def translate_one(text: str, resume: bool, label: str = '') -> str:
     f = CACHE / f'{key}.txt'
     if resume and f.exists() and f.stat().st_size > 0:
         cached = f.read_text(encoding='utf-8')
-        if not structural_diff(text, cached):
+        if key in accepted_keys() or not structural_diff(text, cached):
             return cached
         print(f'    [cache-reject] {label}: {structural_diff(text, cached)[:90]}',
               flush=True)
@@ -236,20 +270,21 @@ def translate_one(text: str, resume: bool, label: str = '') -> str:
     base = ("把下面这段约翰斯通《腓立比书讲义》的英文译成简体中文。"
             "整段通读后再译，保证上下文连贯；逐一保留 `*` 斜体标记与 ⟦N⟧ 占位符；"
             "只输出译文。\n\n")
-    out = re.sub(r'<<<[^>]*>>>', '',
-                 tf.call_claude(base + text, timeout=600, label=label)).strip()
+    out = tidy(re.sub(r'<<<[^>]*>>>', '',
+                      tf.call_claude(base + text, timeout=600, label=label)).strip())
 
     diff = structural_diff(text, out)
     if diff:
         print(f'    [retry-struct] {label}: {diff[:90]}', flush=True)
         fix = (f"上一版译文有结构问题：{diff}。\n"
-               "重译下面这段。**必须逐一保留** `*` 斜体标记（开合各一个）与 ⟦N⟧ 占位符"
+               "重译下面这段。**必须逐一保留** `*` 斜体标记（开合各一个）与 ⟦N⟧ 占位符；"
+               "希腊文一个字母、一个重音都不许改，照原文逐字抄"
                "（个数与先后都要对上）；**不得把任何英文词原样留在中文句子里**——"
                "除非那个词正是作者在讨论的对象（此时用 *斜体* 标出并括注中文义）。"
                "只输出译文。\n\n")
-        out2 = re.sub(r'<<<[^>]*>>>', '',
-                      tf.call_claude(fix + text, timeout=600,
-                                     label=label + '·retry')).strip()
+        out2 = tidy(re.sub(r'<<<[^>]*>>>', '',
+                           tf.call_claude(fix + text, timeout=600,
+                                          label=label + '·retry')).strip())
         if not structural_diff(text, out2):
             out = out2
         else:
