@@ -134,8 +134,22 @@ def add_anchors(body, ch):
     return RE_BOX.sub(sub, body)
 
 
+RE_CONJ = re.compile(r'⟦([^⟧]*)⟧')
+CONJ_TITLE = 'Editorial conjecture: illegible in the 1657 source; supplied from context (编者据上下文推补，非原书原文)'
+
+
+def render_conj(m):
+    # 编者推补（gap_review_conj.tsv / manual_errata.tsv）：方括号 + 另色，标明不是原文。
+    # 推补为「删去」的（⟦⟧）不留痕迹。
+    t = m.group(1)
+    if not t:
+        return ''
+    return f'<span class="hc-conj" title="{CONJ_TITLE}">[{t}]</span>'
+
+
 def render_body(body, ch=None):
     body = add_anchors(body, ch)
+    body = RE_CONJ.sub(render_conj, body)
     body = hc.TOK.sub(lambda m: f'<span class="hc-gap" title="TCP: illegible in source">{m.group(0)}</span>', body)
     return body
 
@@ -250,11 +264,27 @@ def build_index(pages):
         if p['group'] == 'tail':
             out.append(f'  <li><a href="{{{{ site.baseurl }}}}/hutcheson/{BOOK_ID}/{p["slug"]}/">{p["title"]}</a></li>')
     out.append('</ul>')
-    out.append('<p class="hc-note">Source: EEBO-TCP A45241 (keyed from the 1657 London edition, Wing H3826 / ESTC R11373; '
-               'CC0). Original spelling and italics retained; the long s is printed as s. Page numbers of the 1657 edition '
-               'are kept as in-page anchors. Letters illegible in the source are restored only where this book’s own '
-               'vocabulary admits a single reading; the rest are left marked in red. See '
-               '<code>hutcheson_raw/john/PROVENANCE.md</code>.</p>')
+    out.append('<div class="hc-note">')
+    out.append('<p><b>About this text.</b> The text is EEBO-TCP A45241, keyed by hand from microfilm images of the '
+               '1657 London edition (Wing H3826; Cambridge University Library copy; CC0). Original spelling and italics '
+               'are retained; the long s is printed as s. Page numbers of the 1657 edition are kept as in-page anchors.</p>')
+    out.append('<p><b>Illegible places.</b> The keyers could not read 838 places on the microfilm. They have been restored '
+               'in three ways, in this order of evidence: (1) where this book\u2019s own vocabulary admits only one reading; '
+               '(2) by comparing, word by word, the page images of the 1841 London reprint (T. Ward &amp; Co., '
+               '\u201cReprinted from the Edition of 1657\u201d; Google Books, British Library copy), keeping the 1657 spelling; '
+               '(3) where neither applies, from the context or the cited source. Readings of the third kind that the '
+               'evidence does not fix are shown <span class="hc-conj">[in brackets]</span>: they are editorial conjectures, '
+               'not the words of the 1657 edition (22 places). Four illegible punctuation marks absent from the 1841 reprint, and one apparently stray letter, '
+               'have been dropped. The EarlyPrint machine-filled readings were checked and not used.</p>')
+    out.append('<p class="hc-note-zh"><b>文本说明。</b>本书据 EEBO-TCP A45241，即 1657 年伦敦初版（剑桥大学图书馆藏本缩微胶片）的人工录入本，保留原书拼写与斜体，长 ſ 作 s。'
+               '录入本有 838 处胶片上读不出的字，依证据强弱分三步补出：① 本书自身用词只容一种读法的；'
+               '② 逐处对照 1841 年伦敦 T. Ward 重印本（扉页注明「据 1657 年版重印」，大英图书馆藏本）的页面影像判读，拼写仍按 1657 年；'
+               '③ 以上都无从判定的，据上下文或所引出处推补。'
+               '<b>凡用 <span class="hc-conj">[方括号]</span> 另色标出的，都是编者推补，不是 1657 年原书的文字</b>，共 22 处，鼠标移上去可见说明；'
+               '另有 4 处录入本标为「认不清的标点」、而 1841 年本该处并无标点的，按 1841 年本删去，另 1 处疑为衍文的单字亦删去，均记录在案；'
+               '其中卡拉米序里一处希腊文无从推断，只注明「原书希腊字不可辨」。'
+               'EarlyPrint 项目的机器补字经比对错误较多，未采用。逐条依据见 <code>hutcheson_raw/john/PROVENANCE.md</code>。</p>')
+    out.append('</div>')
     return '\n'.join(out) + '\n'
 
 

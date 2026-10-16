@@ -175,7 +175,7 @@ def main():
     # 他版证人（1841 Ward 重印本）：语料判不了的那些，按位置裁出 1841 页图**人工逐条看过**
     # 的结论（gap_review_1841.tsv，hutcheson_review.py 录入）一并导出。judge 的自动判读
     # 只是预填值，不直接落盘。语料档已判的不被覆盖。
-    for wit in (RAW / 'gap_review_1841.tsv', RAW / 'gap_review_ctx.tsv'):
+    for wit in (RAW / 'gap_review_1841.tsv', RAW / 'gap_review_ctx.tsv', RAW / 'gap_review_conj.tsv'):
         if not wit.exists():
             continue
         have = {(r[0], int(r[1])) for r in done}
