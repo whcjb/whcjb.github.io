@@ -1,0 +1,10 @@
+# 判读缺字时顺带看见的 TCP 录入错（非缺字）。只记录，不擅自改——要改须逐条对影像核实后进 manual_fixes。
+# slug	TCP 原样（含上下文）	影像所见	leaf
+2	from all sinner. Thus much	from all sinnes. Thus much	130
+# 第 ① 层语料自证（2026-10-16）：TCP 把长 s 录成 f 的候选 34 个词形（finnes/defire/curfe/faide/faued/ferues/finner/
+# prefence/confidering/confideration/feruant/fenses/refist/promifeth/fimilitude/hypocrifie/finnefull/leffer/fwearing/
+# prefume/refigne/forrowes/forcerer + 真词歧义 forts/feedes/fought/fed/feeds/rife/fits/feate/fets/f/fi）。
+# 每处须裁 1604 影像核实后才改，不按词形批量替换（old-book-ocr §1：词频只说明书里有，不说明这一处就是它）。
+dedication	Act. 2. 〈◊〉. Iam 1 21.	1607: Act. 20. 32.	待 1604 影像核
+dedication	1. Cor. 1: •3.	1607: 2. Cor. 11. 13.	待 1604 影像核
+dedication	2. Sam. 〈◊〉. 30.	1607: 1. Sam. 2. 30.	待 1604 影像核

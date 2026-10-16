@@ -1,0 +1,389 @@
+# 缺字判读记录：id（gap_locs.json）\t 判读后的整词（含贴着的标点）\t 依据
+# 判读写 ? 表示暂不能定（挂起，留待放大或他版）；写 = 表示与同词前一处合并已判
+# 依据：img=IA 1604 影像（leaf 号见 gap_locs.json）
+10	Perushim,	img
+19	scribes.	img
+23	Asclepiodorus	img
+24	?	img 模糊：he? unne
+28	the	img
+30	Reuolt,	img
+31	peruert,	img
+6	?	希腊文挂起放大
+32	is	img
+35	?	希腊文挂起放大
+36	?	希腊文挂起放大
+37	iudg+	img 行末断词无连字符；+ = 与下一词拼合
+38	men-pleasers,	img
+39	?	定位错行，重定位
+40	ted.	img 行末 tain- / ted.
+41	hott	img
+42	fall	img
+43	wicked	img 词后是一个小墨点，非标点（语法上此处不能断）
+44	deceiued,	img
+45	vnitie,	img
+46	bondage:	img
+47	Ierusalem,	img
+48	people,	img 逗号
+49	offered,	img
+50	at	img 是 Antioch 首字母上的墨渍，不是标点
+51	Antioch	img
+52	=	同词 #51
+53	came	img
+54	be	img 词间一小点墨，语法上不可能断句
+55	considered,	img
+56	is	img
+57	fornicatour,	img
+58	Ministers	img
+59	expresse	img
+60	=	同词 #59
+61	marke	img
+64	first,	img 逗号
+65	aboue	img
+66	deuided	img（申 32:8 when he divided the nations）
+67	Gentiles	img
+69	?	定位错行，重定位
+70	standing,	img
+71	aduersarie,	img
+72	iu+	img 影像 the word iu-｜stifie（行末断词），拼成 iustifie
+73	?	定位错行，重定位
+75	intercession	img
+76	is,	img
+77	?	定位错行，重定位
+78	?	定位错行，重定位
+79	?	希腊文挂起放大
+80	?	定位错行，重定位
+81	Abnegation,	img
+83	?	希腊文挂起放大
+84	Christ?	img 问号
+85	?Z	img nature 后一符号不清，放大
+86	established	img
+89	inflicting	img 墨渍压在 li 上，残形与词义均为 inflicting
+90	Hebr.	img
+91	?	定位错行，重定位
+92	altar	img
+93	laid	img 墨渍压在 la 上，残 id；suffering the miseries laid on vs
+94	benediction	img
+95	?	img 墨渍整块盖住，需他版（1607/1617）
+96	part	img
+97	seede	img
+98	?ED	img 墨渍盖 dl：残 Seco…y,（列举 Secondly），待他版印证
+99	?ED	img 墨渍盖 sm：残 bapti…e.（baptisme），待他版印证
+100	?ED	img 墨渍：Apostl… and，词尾与标点不可判
+101	cleanseth	img
+102	?ED	img 墨渍盖整词
+103	?ED	img 墨渍压在标点上
+108	pronesse	img
+111	?	定位错行，重定位
+112	sealed	img
+113	30.	img 残 :0.；林前 1:30
+114	11.	img 赛 11:9
+115	Abrahams	img 墨渍压 a
+116	knowe	img
+118	tooke	img
+119	vnited	img
+120	redde	img
+121	?ED	img father 后一符号被墨压
+122	?ED	img 墨渍盖整词（euery where … all times）
+123	?ED	img 墨渍盖首字母
+124	?	希腊文挂起放大
+125	?Z	img 节号 9.? 放大（罗 9:3 才是「被咒诅」，印本或作 1）
+126	?	希腊文挂起放大
+127	the	img
+128	grace,	img
+129	fained	img
+130	?	希腊文挂起放大
+131	compassion	img
+132	now:	img 影像为冒号
+133	was	img
+134	?	希腊文挂起放大
+135	betroath	img
+136	subuersion	img
+137	is,	img 逗号
+138	pate:	img
+142	precisenes,	img
+143	vs.	img
+144	hypocrites,	img
+145	not	img
+146	iustified	img
+147	punish+	img 行末 punish- ｜ ment，拼合
+148	to	img
+149	life,	img
+150	fauour	img
+151	for.	img
+152	11.	img 印本即 11
+153	Ioel	img
+154	faith,	img
+155	loue.	img
+156	nusle	img
+157	sort	img 长 s
+158	religion:	img 冒号
+159	sound	img 长 s
+160	so	img
+161	Pharisies	img
+162	riot,	img
+163	vi+	img 行末 vi ｜ ces.，无连字符，拼合
+164	Achan	img
+165	Martyrs,	img 逗号
+166	affiance	img
+167	doubtfull	img
+168	repent.	img 影像为下圆点（按影像，不按语法改）
+169	heretikes	img
+170	is.)	img
+171	a	img
+172	saftie	img
+173	?Z	img are 后标点不清
+174	bereaues	img
+175	insition	img
+176	soe	img
+177	?ED	img 行末切在页边墨渍里：ref…
+178	if	img 页边墨渍压住 f；i? 后接 by any occasion，只能是 if
+179	?ED	img 行首墨渍盖词
+180	+tish,	img 行末 bru- ｜ tish,；+ 起头 = 与前一词拼合
+181	?	定位错到页眉，重定位
+182	and	img 墨渍压 an，残 d
+184	staies	img
+185	partly	img 墨渍压 p
+186	seauenteene:	img
+187	?ED	img 墨渍：worshipp…f，e 是否在不可判
+188	?	希腊文挂起放大
+189	?	希腊文挂起放大
+191	vnruly,	img
+192	feasting,	img
+194	premising	img
+200	Uenus,	img
+201	Patronage,	img
+202	set	img
+203	precept,	img
+205	Skeptikes:	img
+206	those	img
+208	trie	img
+209	?	希腊文挂起放大
+210	?	希腊文挂起放大
+211	?	希腊文挂起放大
+218	them	img
+219	was	img
+220	dumme	img
+221	meeke	img
+222	tongue	img
+223	=	同词 #222
+226	ye	img
+227	straiter	img
+228	Ishmeelites,	img
+229	easily	img
+230	our	img
+234	tieth	img
+235	partie,	img
+238	sinister	img
+239	admonitions	img
+241	lest	img
+249	lest	img
+250	Catoes,	img
+251	smite	img
+253	fistulare,	img
+254	?	定位错行，重定位
+255	vstion	img
+256	disionyted	img
+257	?Z	img 2 后点号不清
+258	?	定位错行，重定位
+259	?Z	img 标点不清
+260	?	希腊文挂起放大
+261	?Z	img Cretians 后是逗号还是分号
+262	?	希腊文挂起放大
+263	chastisment	img
+265	not;	img
+267	?	定位错行，重定位
+268	causes:	img 冒号
+269	twise	img
+270	recant	img
+272	delay:	img 冒号
+273	partie	img
+282	si+	img 行末 si ｜ sters，拼合
+285	weepe:	img
+286	?Z	img them 后点号/逗号
+287	he	img
+288	5.	img
+295	morter	img
+304	?	定位错行，重定位
+308	newe	img
+309	feruent	img
+310	?Z	img 4 后标点不清
+311	thus	img
+312	?Z	img you 后标点不清
+313	life	img（TCP 残字 se 实为 fe）
+314	inchoate	img
+315	fall in	img 两词
+317	sinne	img
+319	wilt	img
+320	booke	img
+323	?ED	img 残 t…he，墨损
+325	iesting,	img
+327	dote	img
+331	euery	img
+336	?	定位错到页眉，重定位
+337	sand-+	img sand·blind 中间是连字符（sand-blind 半盲）
+338	condemnation.	img
+350	thy	img
+353	that	img
+354	rather	img
+356	Cosbie	img
+358	contrarietie	img
+359	?	希腊文挂起放大
+360	innocents,	img
+361	hath	img
+363	bodie;	img 分号
+368	Iosh.	img
+369	grieuous	img
+370	as	img
+371	felt	img
+372	corruptions,	img
+373	torment	img
+374	ieast	img
+375	+nus	img 行末 o- ｜ nus（拉丁 onus），拼合
+377	professe	img
+378	halfe	img
+379	gulfe	img
+380	pressing,	img
+389	Thus	img
+390	gaine,	img
+391	cloake,	img
+392	scrip,	img
+401	or	img
+402	(for	img
+403	chaffe	img
+404	thoughts	img
+405	heat,	img
+406	mistris,	img
+407	Christ,	img
+417	care	img
+418	sinne	img
+419	aggrauate	img
+420	filth	img
+421	?	定位错行，重定位
+422	counterfaiteth	img
+423	?	定位错行，重定位
+424	?	定位错行，重定位
+425	life.	img 影像为句点
+426	?	定位错行，重定位
+427	corruption:	img
+428	he	img
+430	motes,	img
+431	Sodom	img
+432	sundrie	img
+433	ten,	img
+436	kinde,	img
+437	bodie:	img
+438	promised.	img 墨渍压 mi
+439	receiue	img
+440	=	同词 #439
+441	those	img
+442	heate	img
+443	smalnes	img
+444	emploied	img
+445	but	img
+446	fiue,	img
+447	quantitie.	img 影像为句点
+448	iudge,	img
+454	?	定位错行，重定位
+457	assiduitie,	img
+458	hid	img
+459	himselfe,	img
+460	hoasts:	img Lord of hoasts（TCP 把 h 录成 b）
+461	cockle,	img
+465	the	img
+466	Binsfeldius	img 斜体残 B·nsfeldius（Petrus Binsfeldius，经院学者）
+467	none	img
+468	affirme	img
+485	?	希腊文挂起放大
+486	?	希腊文挂起放大
+491	fruits	img
+494	sensles	img
+496	some)	img 词首是墨渍不是字母
+499	life.	img
+500	comparatiuely,	img
+501	?	希腊文挂起放大
+507	three	img 墨渍压中间，残 th…e；下文 First/Secondly 列举
+508	humanitati,	img
+509	raine	img
+515	Ebr.	img
+521	spirit,	img
+522	swine,	img
+523	godly	img
+529	12.	img 启 12:12
+531	?	定位错行，重定位
+534	Haimo	img
+541	?	定位错行，重定位
+543	11.	img
+544	?	希腊文挂起放大
+545	?	希腊文挂起放大
+546	?	希腊文挂起放大
+548	custos	img
+549	deuotion.	img
+556	counterfait,	img
+557	of	img
+558	parts	img
+559	?Z	img seducers 后标点
+560	Lent	img
+561	committing	img
+562	seipsos:	img
+570	?	希腊文挂起放大
+572	?	希腊文挂起放大
+574	transitorie	img
+576	?	希腊文挂起放大
+578	?ED	img 墨渍压在标点上
+579	husbands.	img
+580	auaylable	img
+581	nearer,	img
+583	?	希腊文挂起放大
+584	iniurious	img
+586	hypocrites,	img
+587	hearers,	img
+589	rule	img
+590	settes	img
+591	hearers	img
+592	seameles	img
+593	eos	img
+596	?	定位到别处（同页另一句 sequestred），重定位
+597	Eremites	img
+598	properly	img
+604	Coloss.	img
+605	?	希腊文挂起放大
+606	?	希腊文挂起放大
+607	matters	img
+610	2.	img
+611	indeleble	img
+612	set	img
+613	?	定位错行，重定位
+621	Philippi:	img
+622	tom.	img
+623	Antuerp.	img
+624	Titus	img
+625	Emmanuel	img 斜体 u/n 同形；人名 Emmanuel Sa（耶稣会士）
+626	?Z	img 影像该处读作 l.1.，与 TCP 2• 不符，放大
+627	Laodicea	img
+628	argument,	img
+629	Laodicea,	img 印本 Laodicea（TCP 录作 odicca）
+630	trouble.	img
+631	Plinie	img
+632	?	定位错行，重定位
+633	Euangelist,	img
+634	?	定位错行，重定位
+635	diligent	img
+636	Nicopolis,	img
+637	?	希腊文挂起放大
+39	is	img 行段 leaf 44
+69	lost	img 行段 leaf 127
+0	Vict.	1607 leaf 4
+1	sacris.	1607 leaf 4（Scriptor. sa-｜cris.）
+2	lib.	1607 leaf 4
+3	32.	1607 leaf 5：Act. 20. 32.（TCP 前一词录作 2.，见 tcp_errata_seen）
+13	non	1607 leaf 8
+14	est	1607 leaf 8（eſt）
+15	13.	1607 leaf 8：2. Cor. 11. 13.（TCP 前文录作 1. Cor. 1:，见 tcp_errata_seen）
+16	18.	1607 leaf 9：Eccles. 18. 6.
+17	2.	1607 leaf 9：1. Sam. 2. 30.（TCP 前文录作 2. Sam.，见 tcp_errata_seen）
+24	begunne	1607 leaf 11 begun + TCP 残字 nne（1604 拼法）
+29	8. 28.	1607 leaf 20：Rom. 8. 28.
+73	ascended	1607 leaf 117
+74	men,	1607 leaf 117：gifts to men（弗 4:8）
+77	is,	1607 leaf 122
+80	mercilesse.	1607 leaf 132

@@ -1,0 +1,61 @@
+---
+layout: default
+---
+{%- comment -%}
+  帕金斯《加拉太书注释》书卷首页。配色与章节页同源（暗酒红 #9b2d5f）。
+  目录按原书：卷首献辞 / 致读者 → 第 1–5 章（Perkins）→ 补编扉页 + 第 6 章 + 结语（Cudworth）。
+{%- endcomment -%}
+
+<div class="container perkins-book" style="padding-top: 70px;">
+  <div class="row">
+    <div class="col-lg-9 col-lg-offset-1 col-md-10 col-md-offset-1">
+
+      <div class="pk-booklang">
+        {% if page.zh %}{% if page.en_url %}<a href="{{ site.baseurl }}{{ page.en_url }}">English edition &rarr;</a>{% endif %}
+        {% else %}{% if page.zh_url %}<a href="{{ site.baseurl }}{{ page.zh_url }}">中文版 &rarr;</a>{% endif %}{% endif %}
+      </div>
+      <div class="pk-hero">
+        <h1>{{ page.book_name }}</h1>
+        <p class="pk-hero-author">{{ page.author }}</p>
+        <p class="pk-hero-meta">{{ page.edition }}</p>
+      </div>
+
+      {{ content }}
+
+    </div>
+  </div>
+</div>
+
+<style>
+.perkins-book { --pk-ink: #9b2d5f; --pk-ink-dark: #7a2249; --pk-rule: #e6d5dd; --pk-paper: #fdfafb; }
+.perkins-book .pk-booklang { text-align: right; margin: 0 0 10px; font-size: 13px; font-family: Georgia, serif; }
+.perkins-book .pk-booklang a { color: var(--pk-ink); border: 1px solid var(--pk-rule);
+  border-radius: 4px; padding: 4px 10px; text-decoration: none; }
+.perkins-book .pk-booklang a:hover { background: var(--pk-ink); color: #fff; }
+.perkins-book .pk-hero {
+  background: linear-gradient(135deg, #7a2249 0%, #9b2d5f 55%, #c66a92 100%);
+  color: #fff; border-radius: 6px; padding: 34px 28px; margin-bottom: 30px;
+  font-family: Georgia, "Times New Roman", "Songti SC", serif; text-align: center;
+}
+.perkins-book .pk-hero h1 { margin: 0 0 10px; font-size: 30px; font-weight: normal; line-height: 1.35; }
+.perkins-book .pk-hero-author { margin: 0 0 4px; font-size: 15px; opacity: .92; }
+.perkins-book .pk-hero-meta { margin: 0; font-size: 13px; opacity: .78; font-style: italic; }
+.perkins-book .pk-group {
+  font-family: Georgia, "Times New Roman", "Songti SC", serif; margin: 30px 0 12px;
+  font-size: 15px; color: var(--pk-ink-dark); letter-spacing: .05em;
+  padding-bottom: 6px; border-bottom: 1px solid var(--pk-rule);
+}
+.perkins-book .pk-toc { list-style: none; padding: 0; margin: 0; display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); gap: 8px; }
+.perkins-book .pk-toc li { margin: 0; }
+.perkins-book .pk-toc a { display: block; padding: 9px 13px; border: 1px solid var(--pk-rule);
+  border-radius: 4px; background: var(--pk-paper); text-decoration: none;
+  font-family: Georgia, "Times New Roman", "Songti SC", serif; font-size: 15px; color: #2f2a2c; line-height: 1.45; }
+.perkins-book .pk-toc a:hover { border-color: var(--pk-ink); background: #fff; color: var(--pk-ink-dark); }
+.perkins-book .pk-note { font-family: Georgia, "Times New Roman", "Songti SC", serif; font-size: 13.5px;
+  color: #7b6f74; line-height: 1.8; margin: 34px 0 0; padding-top: 16px; border-top: 1px solid var(--pk-rule); }
+@media (max-width: 767px) {
+  .perkins-book .pk-hero h1 { font-size: 23px; }
+  .perkins-book .pk-toc { grid-template-columns: 1fr 1fr; }
+}
+</style>

@@ -1,0 +1,268 @@
+---
+layout: default
+---
+{%- comment -%}
+  帕金斯《加拉太书注释》(1604) 章节页（中英共用，靠 page.zh 切换）。
+
+  ⚠️ 不复用别家 layout：每本书独立样式（用户既定规矩）。
+
+  配色取暗酒红 #9b2d5f —— 与「历代解经」已登记各色及站点 Hux 蓝相比，
+  最小 ΔE 27.1（最近的是 #7d2f2f），次近 28.2（曼顿 #5b2f4a），与站上先例
+  同档（约翰斯通 26.8 / 曼顿 27.3 / 亚历山大 26.9）。深浅两端 #7a2249 / #c66a92。
+
+  本书版式要点（都对照过 IA 1604 影像，leaf 0035 等）：
+  - 逐节讲解。被讲解的经文段原书排斜体、独立成段 → `.pk-text`；
+    其后紧跟 commentary-anchor（verse-nav 与经文索引的跳转目标）。
+  - 页边旁注（经文出处、拉丁引文）→ `.pk-margin`。宽屏浮到正文右侧页边，
+    窄屏收成正文里的一小段灰字（不能用负外边距，手机上会被推出视口）。
+  - 1604 印本页码 → `.pk-pb` 空锚点，`#p123` 可直达；页面上显示成页边小号码。
+  - TCP 判不出、影像也判不出的缺字 → `.pk-gap`，留在明面上。
+  - 章顶 verse-nav 是**全章**的节号（跨页），数据在 _data/perkins_galatians.json。
+{%- endcomment -%}
+
+{%- assign pk_ch = page.chapter | append: "" -%}
+{%- assign pk_nav = site.data.perkins_galatians[pk_ch] -%}
+
+<div class="container perkins-wrap{% if page.zh %} pk-zh{% endif %}" style="padding-top: 70px;">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+
+      <div class="pk-chrome">
+        <a href="{{ site.baseurl }}/perkins/{{ page.book_id }}/{% unless page.zh %}en/{% endunless %}">&larr; {{ page.book_name }}</a>
+        {% if page.zh %}{% if page.en_url %}<a class="pk-lang" href="{{ site.baseurl }}{{ page.en_url }}">English &rarr;</a>{% endif %}
+        {% else %}{% if page.zh_url %}<a class="pk-lang" href="{{ site.baseurl }}{{ page.zh_url }}">中文版 &rarr;</a>{% endif %}{% endif %}
+      </div>
+
+      <h1 class="pk-title">{{ page.title }}</h1>
+      {% if page.subtitle %}<p class="pk-subtitle">{{ page.subtitle }}</p>{% endif %}
+
+      {% if pk_nav %}
+      <div id="verse-nav">
+        <div id="verse-nav-toggle" onclick="togglePerkinsVerseNav()">
+          <span id="verse-nav-label">{% if page.zh %}加拉太书 {{ page.chapter }} 章 · 跳到某节{% else %}Galatians {{ page.chapter }} · jump to verse{% endif %}</span>
+          <span id="verse-nav-arrow">&#9660;</span>
+        </div>
+        <div id="verse-nav-pills" style="display:none;">
+          {% for e in pk_nav %}<a class="verse-pill" data-slug="{{ e.slug }}" href="{{ site.baseurl }}/perkins/{{ page.book_id }}/{% if page.zh %}zh/{% endif %}{{ e.slug }}/#galatians-{{ page.chapter }}-{{ e.v }}">{{ e.v }}</a>{% endfor %}
+        </div>
+      </div>
+      {% endif %}
+
+      <div class="pk-nav">
+        {% if page.prev_url %}<a href="{{ site.baseurl }}{{ page.prev_url }}">&larr; {{ page.prev_label }}</a>
+        {% else %}<span></span>{% endif %}
+        {% if page.next_url %}<a href="{{ site.baseurl }}{{ page.next_url }}">{{ page.next_label }} &rarr;</a>
+        {% else %}<span></span>{% endif %}
+      </div>
+
+      <div class="pk-content">
+        {{ content }}
+      </div>
+
+      {% if page.date %}
+      <div class="pk-stamp">{% if page.zh %}译于{% else %}Published{% endif %} {{ page.date | date: "%Y-%m-%d %H:%M" }}</div>
+      {% endif %}
+
+      <div class="pk-nav pk-nav-foot">
+        {% if page.prev_url %}<a href="{{ site.baseurl }}{{ page.prev_url }}">&larr; {{ page.prev_label }}</a>
+        {% else %}<span></span>{% endif %}
+        {% if page.next_url %}<a href="{{ site.baseurl }}{{ page.next_url }}">{{ page.next_label }} &rarr;</a>
+        {% else %}<span></span>{% endif %}
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<script>
+// 章顶导航：本页自己的节号胶囊改成页内锚点（不重新加载），并标出本页范围。
+// 点被讲解的经文段（.pk-text）→ 展开胶囊、高亮该节、滚回导航条。
+// 注：此处刻意不写出锚点的完整标签字面量（审计 grep 会把注释也数进去）。
+(function () {
+  var content = document.querySelector('.pk-content');
+  var pills = document.getElementById('verse-nav-pills');
+  if (!content || !pills) return;
+  var here = location.pathname.replace(/\/$/, '').split('/').pop();
+  pills.querySelectorAll('.verse-pill').forEach(function (p) {
+    if (p.dataset.slug === here) {
+      p.classList.add('verse-pill--here');
+      p.setAttribute('href', p.getAttribute('href').replace(/^.*#/, '#'));
+      p.addEventListener('click', function () { setTimeout(closePerkinsVerseNav, 200); });
+    }
+  });
+  content.querySelectorAll('.pk-text').forEach(function (box) {
+    var el = box.nextElementSibling;
+    if (!el || !el.classList.contains('commentary-anchor')) return;
+    box.classList.add('verse-anchor');      // scripture-popup 的 skip 列表
+    box.dataset.anchor = el.id;
+    box.addEventListener('click', function (ev) {
+      if (ev.target.closest('a, .pk-margin')) return;
+      var arrow = document.getElementById('verse-nav-arrow');
+      pills.style.display = 'flex';
+      if (arrow) arrow.classList.add('open');
+      var want = '#' + this.dataset.anchor;
+      pills.querySelectorAll('.verse-pill').forEach(function (p) {
+        p.classList.toggle('verse-pill--active', p.getAttribute('href') === want);
+      });
+      document.getElementById('verse-nav').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+  });
+})();
+function togglePerkinsVerseNav() {
+  var pills = document.getElementById('verse-nav-pills');
+  var arrow = document.getElementById('verse-nav-arrow');
+  var open = pills.style.display !== 'none';
+  pills.style.display = open ? 'none' : 'flex';
+  arrow.classList.toggle('open', !open);
+}
+function closePerkinsVerseNav() {
+  document.getElementById('verse-nav-pills').style.display = 'none';
+  document.getElementById('verse-nav-arrow').classList.remove('open');
+}
+</script>
+
+{%- comment -%}
+  经文引用弹层：只给中文页（模块认的是中文书卷名）。accent/vnum 必须写字面量
+  （Jekyll 3 的 include 参数不接受变量）——与下方 CSS 的 --pk-ink 两处同值，改色要一起改。
+{%- endcomment -%}
+{% if page.zh %}
+{% include scripture-popup.html container_selector=".pk-content" accent="#9b2d5f" vnum="#7a2249" slide="down" %}
+{% endif %}
+
+<style>
+.perkins-wrap {
+  --pk-ink: #9b2d5f;
+  --pk-ink-dark: #7a2249;
+  --pk-ink-light: #c66a92;
+  --pk-rule: #e6d5dd;
+  --pk-paper: #fdfafb;
+  --pk-body: #2f2a2c;
+}
+.perkins-wrap .pk-chrome,
+.perkins-wrap .pk-nav {
+  font-size: 13px; display: flex; justify-content: space-between; gap: 12px;
+  align-items: center; font-family: Georgia, "Times New Roman", serif;
+}
+.perkins-wrap .pk-chrome { margin: 18px 0 22px; }
+.perkins-wrap .pk-chrome a,
+.perkins-wrap .pk-nav a { color: var(--pk-ink); text-decoration: none; }
+.perkins-wrap .pk-chrome a:hover,
+.perkins-wrap .pk-nav a:hover { color: var(--pk-ink-dark); text-decoration: underline; }
+.perkins-wrap .pk-lang { border: 1px solid var(--pk-rule); border-radius: 4px; padding: 4px 10px; }
+.perkins-wrap .pk-lang:hover { background: var(--pk-ink); color: #fff !important; text-decoration: none; }
+.perkins-wrap .pk-title {
+  font-family: Georgia, "Times New Roman", serif; font-size: 30px; font-weight: normal;
+  color: var(--pk-ink-dark); text-align: center; margin: 10px 0 4px; line-height: 1.3;
+}
+.perkins-wrap .pk-subtitle {
+  text-align: center; font-size: 14px; color: #958a8f; margin: 0 0 18px;
+  font-family: Georgia, "Times New Roman", serif; font-style: italic;
+}
+.perkins-wrap .pk-nav { margin: 14px 0 26px; }
+.perkins-wrap .pk-nav-foot { margin-top: 44px; padding-top: 16px; border-top: 1px solid var(--pk-rule); }
+
+/* 章顶节号导航 */
+#verse-nav { margin: 0 0 18px; position: relative; z-index: 2; scroll-margin-top: 80px; }
+#verse-nav-toggle { display: flex; align-items: center; gap: 8px; width: fit-content; margin: 0 auto;
+  padding: 5px 14px; border: 1px solid var(--pk-rule); border-radius: 16px; cursor: pointer;
+  font-size: 13px; color: var(--pk-ink-dark); font-family: Georgia, "Times New Roman", serif;
+  background: var(--pk-paper); user-select: none; }
+#verse-nav-toggle:hover { background: #f6eaf0; }
+#verse-nav-arrow { font-size: 10px; transition: transform .2s; }
+#verse-nav-arrow.open { transform: rotate(180deg); }
+#verse-nav-pills { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px; padding: 12px 14px;
+  border: 1px solid var(--pk-rule); border-radius: 6px; background: var(--pk-paper); justify-content: center; }
+.perkins-wrap .verse-pill { display: inline-block; padding: 3px 9px; border-radius: 12px; min-width: 30px;
+  text-align: center; border: 1px solid var(--pk-rule); font-size: 13px; color: var(--pk-ink-dark);
+  text-decoration: none; background: #fff; font-family: Georgia, serif; }
+.perkins-wrap .verse-pill:hover { background: var(--pk-ink); border-color: var(--pk-ink); color: #fff; text-decoration: none; }
+.perkins-wrap .verse-pill--here { border-color: var(--pk-ink-light); }
+.perkins-wrap .verse-pill--active { background: var(--pk-ink-dark); border-color: var(--pk-ink-dark); color: #fff; font-weight: bold; }
+
+/* 正文 */
+.perkins-wrap .pk-content {
+  font-family: Georgia, "Times New Roman", "Songti SC", STSong, serif;
+  font-size: 17px; line-height: 1.85; color: var(--pk-body);
+}
+.perkins-wrap .pk-content p { margin: 0 0 16px; text-align: justify; }
+.perkins-wrap .pk-content h2 {
+  font-family: Georgia, "Times New Roman", serif; font-size: 20px; font-weight: normal;
+  text-align: center; color: var(--pk-ink-dark); margin: 10px 0 22px; line-height: 1.5;
+}
+.perkins-wrap .pk-content a { color: var(--pk-ink); }
+
+/* 被讲解的经文段：原书独立成段、通段斜体。 */
+.perkins-wrap .pk-text {
+  background: var(--pk-paper); border-left: 3px solid var(--pk-ink);
+  padding: 12px 18px; margin: 6px 0 20px; color: #4d3e45; cursor: pointer;
+}
+.perkins-wrap .pk-text p { margin: 0; text-align: left; }
+.perkins-wrap .pk-text p + p { margin-top: 8px; }
+.perkins-wrap .commentary-anchor {
+  display: block; height: 0; line-height: 0; margin: 0; padding: 0;
+  overflow: hidden; visibility: hidden; scroll-margin-top: 80px;
+}
+
+/* 每章开头的「论旨」(The Argument) */
+.perkins-wrap .pk-argument {
+  border-top: 1px solid var(--pk-rule); border-bottom: 1px solid var(--pk-rule);
+  padding: 14px 4px 2px; margin: 0 0 26px; font-size: 16px; color: #4d4448;
+}
+.perkins-wrap .pk-argument h2 { font-size: 16px; letter-spacing: .12em; margin: 0 0 10px; }
+
+/* 页边旁注 */
+.perkins-wrap .pk-margin {
+  display: block; margin: 2px 0 8px; padding-left: 10px; border-left: 2px solid var(--pk-rule);
+  font-size: 13px; line-height: 1.55; color: #8a7a81; font-style: normal; text-align: left;
+}
+.perkins-wrap .pk-margin b { color: var(--pk-ink); font-weight: normal; font-style: italic; }
+@media (min-width: 1200px) {
+  .perkins-wrap .pk-margin {
+    float: right; clear: right; width: 150px; margin: 4px -182px 8px 16px;
+    padding-left: 8px; text-indent: 0;
+  }
+}
+
+/* 1604 印本页码：空锚点，页边显示小号码 */
+.perkins-wrap .pk-pb { scroll-margin-top: 80px; }
+.perkins-wrap .pk-pb::before {
+  content: "[" attr(data-p) "]"; font-size: 11px; color: #b8a9b0; font-style: normal;
+  font-family: Georgia, serif; vertical-align: super; line-height: 0; margin: 0 2px;
+}
+
+/* 花饰首字 */
+.perkins-wrap .pk-dropcap {
+  float: left; font-family: Georgia, "Times New Roman", serif; font-size: 3.1em;
+  line-height: .84; margin: 4px 7px 0 0; color: var(--pk-ink-dark);
+}
+
+/* 底本里读不出的字 */
+.perkins-wrap .pk-gap { color: #c0392b; background: #fdecea; border-radius: 2px; padding: 0 2px; cursor: help; }
+
+/* 卷首：书名页、献辞落款、勘误表 */
+.perkins-wrap .pk-title-page { text-align: center; margin: 0 0 30px; padding-bottom: 22px;
+  border-bottom: 1px solid var(--pk-rule); letter-spacing: .03em; }
+.perkins-wrap .pk-title-page p { text-align: center; font-size: 16px; }
+.perkins-wrap .pk-center { text-align: center !important; font-size: 13px; color: #8a7a81; letter-spacing: .1em; }
+.perkins-wrap .pk-closer { text-align: right !important; font-style: italic; color: #5d5257; }
+.perkins-wrap .pk-errata { margin: 8px auto 20px; border-collapse: collapse; font-size: 14px; }
+.perkins-wrap .pk-errata th, .perkins-wrap .pk-errata td { border-bottom: 1px solid var(--pk-rule); padding: 3px 12px; text-align: left; }
+
+.perkins-wrap .pk-stamp {
+  margin-top: 32px; font-size: 12px; color: #a99ca2; text-align: right;
+  font-family: Georgia, "Times New Roman", serif; letter-spacing: .03em;
+}
+.perkins-wrap :target { background: #fff6cc; transition: background .4s; }
+
+/* 中文页 */
+.perkins-wrap.pk-zh .pk-content {
+  font-family: "Songti SC", STSong, "Noto Serif CJK SC", "Source Han Serif SC", Georgia, serif;
+}
+.perkins-wrap.pk-zh .pk-title { font-family: "Songti SC", STSong, Georgia, serif; }
+.perkins-wrap.pk-zh .pk-text { font-family: "Kaiti SC", STKaiti, KaiTi, "Songti SC", serif; }
+
+@media (max-width: 767px) {
+  .perkins-wrap .pk-title { font-size: 24px; }
+  .perkins-wrap .pk-content { font-size: 16px; line-height: 1.8; }
+}
+</style>

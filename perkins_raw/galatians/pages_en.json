@@ -1,0 +1,917 @@
+[
+ {
+  "slug": "dedication",
+  "title": "The Epistle Dedicatorie",
+  "subtitle": "Ralph Cudworth to Robert, Lord Rich",
+  "group": "front"
+ },
+ {
+  "slug": "reader",
+  "title": "To the Courteous Reader",
+  "subtitle": "Ralph Cudworth",
+  "group": "front"
+ },
+ {
+  "slug": "1-1",
+  "title": "Galatians 1:1",
+  "subtitle": "William Perkins",
+  "group": "ch1",
+  "ch": 1,
+  "v1": 1,
+  "v2": 1
+ },
+ {
+  "slug": "1-2",
+  "title": "Galatians 1:2",
+  "subtitle": "William Perkins",
+  "group": "ch1",
+  "ch": 1,
+  "v1": 2,
+  "v2": 2
+ },
+ {
+  "slug": "1-3",
+  "title": "Galatians 1:3–4",
+  "subtitle": "William Perkins",
+  "group": "ch1",
+  "ch": 1,
+  "v1": 3,
+  "v2": 4
+ },
+ {
+  "slug": "1-5",
+  "title": "Galatians 1:5",
+  "subtitle": "William Perkins",
+  "group": "ch1",
+  "ch": 1,
+  "v1": 5,
+  "v2": 5
+ },
+ {
+  "slug": "1-6",
+  "title": "Galatians 1:6–7",
+  "subtitle": "William Perkins",
+  "group": "ch1",
+  "ch": 1,
+  "v1": 6,
+  "v2": 7
+ },
+ {
+  "slug": "1-8",
+  "title": "Galatians 1:8–9",
+  "subtitle": "William Perkins",
+  "group": "ch1",
+  "ch": 1,
+  "v1": 8,
+  "v2": 9
+ },
+ {
+  "slug": "1-10",
+  "title": "Galatians 1:10",
+  "subtitle": "William Perkins",
+  "group": "ch1",
+  "ch": 1,
+  "v1": 10,
+  "v2": 10
+ },
+ {
+  "slug": "1-11",
+  "title": "Galatians 1:11",
+  "subtitle": "William Perkins",
+  "group": "ch1",
+  "ch": 1,
+  "v1": 11,
+  "v2": 11
+ },
+ {
+  "slug": "1-12",
+  "title": "Galatians 1:12",
+  "subtitle": "William Perkins",
+  "group": "ch1",
+  "ch": 1,
+  "v1": 12,
+  "v2": 12
+ },
+ {
+  "slug": "1-13",
+  "title": "Galatians 1:13–14",
+  "subtitle": "William Perkins",
+  "group": "ch1",
+  "ch": 1,
+  "v1": 13,
+  "v2": 14
+ },
+ {
+  "slug": "1-15",
+  "title": "Galatians 1:15–17",
+  "subtitle": "William Perkins",
+  "group": "ch1",
+  "ch": 1,
+  "v1": 15,
+  "v2": 17
+ },
+ {
+  "slug": "1-18",
+  "title": "Galatians 1:18",
+  "subtitle": "William Perkins",
+  "group": "ch1",
+  "ch": 1,
+  "v1": 18,
+  "v2": 18
+ },
+ {
+  "slug": "1-19",
+  "title": "Galatians 1:19",
+  "subtitle": "William Perkins",
+  "group": "ch1",
+  "ch": 1,
+  "v1": 19,
+  "v2": 19
+ },
+ {
+  "slug": "1-20",
+  "title": "Galatians 1:20",
+  "subtitle": "William Perkins",
+  "group": "ch1",
+  "ch": 1,
+  "v1": 20,
+  "v2": 20
+ },
+ {
+  "slug": "1-21",
+  "title": "Galatians 1:21–24",
+  "subtitle": "William Perkins",
+  "group": "ch1",
+  "ch": 1,
+  "v1": 21,
+  "v2": 24
+ },
+ {
+  "slug": "2-1",
+  "title": "Galatians 2:1–2",
+  "subtitle": "William Perkins",
+  "group": "ch2",
+  "ch": 2,
+  "v1": 1,
+  "v2": 2
+ },
+ {
+  "slug": "2-3",
+  "title": "Galatians 2:3",
+  "subtitle": "William Perkins",
+  "group": "ch2",
+  "ch": 2,
+  "v1": 3,
+  "v2": 3
+ },
+ {
+  "slug": "2-4",
+  "title": "Galatians 2:4–5",
+  "subtitle": "William Perkins",
+  "group": "ch2",
+  "ch": 2,
+  "v1": 4,
+  "v2": 5
+ },
+ {
+  "slug": "2-6",
+  "title": "Galatians 2:6",
+  "subtitle": "William Perkins",
+  "group": "ch2",
+  "ch": 2,
+  "v1": 6,
+  "v2": 6
+ },
+ {
+  "slug": "2-7",
+  "title": "Galatians 2:7–9",
+  "subtitle": "William Perkins",
+  "group": "ch2",
+  "ch": 2,
+  "v1": 7,
+  "v2": 9
+ },
+ {
+  "slug": "2-10",
+  "title": "Galatians 2:10",
+  "subtitle": "William Perkins",
+  "group": "ch2",
+  "ch": 2,
+  "v1": 10,
+  "v2": 10
+ },
+ {
+  "slug": "2-11",
+  "title": "Galatians 2:11",
+  "subtitle": "William Perkins",
+  "group": "ch2",
+  "ch": 2,
+  "v1": 11,
+  "v2": 11
+ },
+ {
+  "slug": "2-12",
+  "title": "Galatians 2:12–13",
+  "subtitle": "William Perkins",
+  "group": "ch2",
+  "ch": 2,
+  "v1": 12,
+  "v2": 13
+ },
+ {
+  "slug": "2-14",
+  "title": "Galatians 2:14",
+  "subtitle": "William Perkins",
+  "group": "ch2",
+  "ch": 2,
+  "v1": 14,
+  "v2": 14
+ },
+ {
+  "slug": "2-15",
+  "title": "Galatians 2:15–16",
+  "subtitle": "William Perkins",
+  "group": "ch2",
+  "ch": 2,
+  "v1": 15,
+  "v2": 16
+ },
+ {
+  "slug": "2-17",
+  "title": "Galatians 2:17",
+  "subtitle": "William Perkins",
+  "group": "ch2",
+  "ch": 2,
+  "v1": 17,
+  "v2": 17
+ },
+ {
+  "slug": "2-18",
+  "title": "Galatians 2:18",
+  "subtitle": "William Perkins",
+  "group": "ch2",
+  "ch": 2,
+  "v1": 18,
+  "v2": 18
+ },
+ {
+  "slug": "2-19",
+  "title": "Galatians 2:19",
+  "subtitle": "William Perkins",
+  "group": "ch2",
+  "ch": 2,
+  "v1": 19,
+  "v2": 19
+ },
+ {
+  "slug": "2-20",
+  "title": "Galatians 2:20",
+  "subtitle": "William Perkins",
+  "group": "ch2",
+  "ch": 2,
+  "v1": 20,
+  "v2": 20
+ },
+ {
+  "slug": "2-21",
+  "title": "Galatians 2:21",
+  "subtitle": "William Perkins",
+  "group": "ch2",
+  "ch": 2,
+  "v1": 21,
+  "v2": 21
+ },
+ {
+  "slug": "3-1",
+  "title": "Galatians 3:1",
+  "subtitle": "William Perkins",
+  "group": "ch3",
+  "ch": 3,
+  "v1": 1,
+  "v2": 1
+ },
+ {
+  "slug": "3-2",
+  "title": "Galatians 3:2–3",
+  "subtitle": "William Perkins",
+  "group": "ch3",
+  "ch": 3,
+  "v1": 2,
+  "v2": 3
+ },
+ {
+  "slug": "3-4",
+  "title": "Galatians 3:4",
+  "subtitle": "William Perkins",
+  "group": "ch3",
+  "ch": 3,
+  "v1": 4,
+  "v2": 4
+ },
+ {
+  "slug": "3-5",
+  "title": "Galatians 3:5",
+  "subtitle": "William Perkins",
+  "group": "ch3",
+  "ch": 3,
+  "v1": 5,
+  "v2": 5
+ },
+ {
+  "slug": "3-6",
+  "title": "Galatians 3:6–7",
+  "subtitle": "William Perkins",
+  "group": "ch3",
+  "ch": 3,
+  "v1": 6,
+  "v2": 7
+ },
+ {
+  "slug": "3-8",
+  "title": "Galatians 3:8–9",
+  "subtitle": "William Perkins",
+  "group": "ch3",
+  "ch": 3,
+  "v1": 8,
+  "v2": 9
+ },
+ {
+  "slug": "3-10",
+  "title": "Galatians 3:10",
+  "subtitle": "William Perkins",
+  "group": "ch3",
+  "ch": 3,
+  "v1": 10,
+  "v2": 10
+ },
+ {
+  "slug": "3-11",
+  "title": "Galatians 3:11–12",
+  "subtitle": "William Perkins",
+  "group": "ch3",
+  "ch": 3,
+  "v1": 11,
+  "v2": 12
+ },
+ {
+  "slug": "3-13",
+  "title": "Galatians 3:13–14",
+  "subtitle": "William Perkins",
+  "group": "ch3",
+  "ch": 3,
+  "v1": 13,
+  "v2": 14
+ },
+ {
+  "slug": "3-15",
+  "title": "Galatians 3:15–18",
+  "subtitle": "William Perkins",
+  "group": "ch3",
+  "ch": 3,
+  "v1": 15,
+  "v2": 18
+ },
+ {
+  "slug": "3-19",
+  "title": "Galatians 3:19–20",
+  "subtitle": "William Perkins",
+  "group": "ch3",
+  "ch": 3,
+  "v1": 19,
+  "v2": 20
+ },
+ {
+  "slug": "3-21",
+  "title": "Galatians 3:21–22",
+  "subtitle": "William Perkins",
+  "group": "ch3",
+  "ch": 3,
+  "v1": 21,
+  "v2": 22
+ },
+ {
+  "slug": "3-23",
+  "title": "Galatians 3:23–25",
+  "subtitle": "William Perkins",
+  "group": "ch3",
+  "ch": 3,
+  "v1": 23,
+  "v2": 25
+ },
+ {
+  "slug": "3-26",
+  "title": "Galatians 3:26–28",
+  "subtitle": "William Perkins",
+  "group": "ch3",
+  "ch": 3,
+  "v1": 26,
+  "v2": 28
+ },
+ {
+  "slug": "3-29",
+  "title": "Galatians 3:29",
+  "subtitle": "William Perkins",
+  "group": "ch3",
+  "ch": 3,
+  "v1": 29,
+  "v2": 29
+ },
+ {
+  "slug": "4-1",
+  "title": "Galatians 4:1–7",
+  "subtitle": "William Perkins",
+  "group": "ch4",
+  "ch": 4,
+  "v1": 1,
+  "v2": 7
+ },
+ {
+  "slug": "4-8",
+  "title": "Galatians 4:8–9",
+  "subtitle": "William Perkins",
+  "group": "ch4",
+  "ch": 4,
+  "v1": 8,
+  "v2": 9
+ },
+ {
+  "slug": "4-10",
+  "title": "Galatians 4:10",
+  "subtitle": "William Perkins",
+  "group": "ch4",
+  "ch": 4,
+  "v1": 10,
+  "v2": 10
+ },
+ {
+  "slug": "4-11",
+  "title": "Galatians 4:11",
+  "subtitle": "William Perkins",
+  "group": "ch4",
+  "ch": 4,
+  "v1": 11,
+  "v2": 11
+ },
+ {
+  "slug": "4-12",
+  "title": "Galatians 4:12",
+  "subtitle": "William Perkins",
+  "group": "ch4",
+  "ch": 4,
+  "v1": 12,
+  "v2": 12
+ },
+ {
+  "slug": "4-13",
+  "title": "Galatians 4:13–16",
+  "subtitle": "William Perkins",
+  "group": "ch4",
+  "ch": 4,
+  "v1": 13,
+  "v2": 16
+ },
+ {
+  "slug": "4-17",
+  "title": "Galatians 4:17–18",
+  "subtitle": "William Perkins",
+  "group": "ch4",
+  "ch": 4,
+  "v1": 17,
+  "v2": 18
+ },
+ {
+  "slug": "4-19",
+  "title": "Galatians 4:19–20",
+  "subtitle": "William Perkins",
+  "group": "ch4",
+  "ch": 4,
+  "v1": 19,
+  "v2": 20
+ },
+ {
+  "slug": "4-21",
+  "title": "Galatians 4:21–23",
+  "subtitle": "William Perkins",
+  "group": "ch4",
+  "ch": 4,
+  "v1": 21,
+  "v2": 23
+ },
+ {
+  "slug": "4-24",
+  "title": "Galatians 4:24–25",
+  "subtitle": "William Perkins",
+  "group": "ch4",
+  "ch": 4,
+  "v1": 24,
+  "v2": 25
+ },
+ {
+  "slug": "4-26",
+  "title": "Galatians 4:26",
+  "subtitle": "William Perkins",
+  "group": "ch4",
+  "ch": 4,
+  "v1": 26,
+  "v2": 26
+ },
+ {
+  "slug": "4-27",
+  "title": "Galatians 4:27",
+  "subtitle": "William Perkins",
+  "group": "ch4",
+  "ch": 4,
+  "v1": 27,
+  "v2": 27
+ },
+ {
+  "slug": "4-28",
+  "title": "Galatians 4:28",
+  "subtitle": "William Perkins",
+  "group": "ch4",
+  "ch": 4,
+  "v1": 28,
+  "v2": 28
+ },
+ {
+  "slug": "4-29",
+  "title": "Galatians 4:29",
+  "subtitle": "William Perkins",
+  "group": "ch4",
+  "ch": 4,
+  "v1": 29,
+  "v2": 29
+ },
+ {
+  "slug": "4-30",
+  "title": "Galatians 4:30",
+  "subtitle": "William Perkins",
+  "group": "ch4",
+  "ch": 4,
+  "v1": 30,
+  "v2": 30
+ },
+ {
+  "slug": "4-31",
+  "title": "Galatians 4:31",
+  "subtitle": "William Perkins",
+  "group": "ch4",
+  "ch": 4,
+  "v1": 31,
+  "v2": 31
+ },
+ {
+  "slug": "5-1",
+  "title": "Galatians 5:1",
+  "subtitle": "William Perkins",
+  "group": "ch5",
+  "ch": 5,
+  "v1": 1,
+  "v2": 1
+ },
+ {
+  "slug": "5-2",
+  "title": "Galatians 5:2",
+  "subtitle": "William Perkins",
+  "group": "ch5",
+  "ch": 5,
+  "v1": 2,
+  "v2": 2
+ },
+ {
+  "slug": "5-3",
+  "title": "Galatians 5:3–4",
+  "subtitle": "William Perkins",
+  "group": "ch5",
+  "ch": 5,
+  "v1": 3,
+  "v2": 4
+ },
+ {
+  "slug": "5-5",
+  "title": "Galatians 5:5–6",
+  "subtitle": "William Perkins",
+  "group": "ch5",
+  "ch": 5,
+  "v1": 5,
+  "v2": 6
+ },
+ {
+  "slug": "5-7",
+  "title": "Galatians 5:7",
+  "subtitle": "William Perkins",
+  "group": "ch5",
+  "ch": 5,
+  "v1": 7,
+  "v2": 7
+ },
+ {
+  "slug": "5-8",
+  "title": "Galatians 5:8",
+  "subtitle": "William Perkins",
+  "group": "ch5",
+  "ch": 5,
+  "v1": 8,
+  "v2": 8
+ },
+ {
+  "slug": "5-9",
+  "title": "Galatians 5:9",
+  "subtitle": "William Perkins",
+  "group": "ch5",
+  "ch": 5,
+  "v1": 9,
+  "v2": 9
+ },
+ {
+  "slug": "5-10",
+  "title": "Galatians 5:10",
+  "subtitle": "William Perkins",
+  "group": "ch5",
+  "ch": 5,
+  "v1": 10,
+  "v2": 10
+ },
+ {
+  "slug": "5-11",
+  "title": "Galatians 5:11–12",
+  "subtitle": "William Perkins",
+  "group": "ch5",
+  "ch": 5,
+  "v1": 11,
+  "v2": 12
+ },
+ {
+  "slug": "5-13",
+  "title": "Galatians 5:13",
+  "subtitle": "William Perkins",
+  "group": "ch5",
+  "ch": 5,
+  "v1": 13,
+  "v2": 13
+ },
+ {
+  "slug": "5-14",
+  "title": "Galatians 5:14",
+  "subtitle": "William Perkins",
+  "group": "ch5",
+  "ch": 5,
+  "v1": 14,
+  "v2": 14
+ },
+ {
+  "slug": "5-15",
+  "title": "Galatians 5:15",
+  "subtitle": "William Perkins",
+  "group": "ch5",
+  "ch": 5,
+  "v1": 15,
+  "v2": 15
+ },
+ {
+  "slug": "5-16",
+  "title": "Galatians 5:16",
+  "subtitle": "William Perkins",
+  "group": "ch5",
+  "ch": 5,
+  "v1": 16,
+  "v2": 16
+ },
+ {
+  "slug": "5-17",
+  "title": "Galatians 5:17",
+  "subtitle": "William Perkins",
+  "group": "ch5",
+  "ch": 5,
+  "v1": 17,
+  "v2": 17
+ },
+ {
+  "slug": "5-18",
+  "title": "Galatians 5:18",
+  "subtitle": "William Perkins",
+  "group": "ch5",
+  "ch": 5,
+  "v1": 18,
+  "v2": 18
+ },
+ {
+  "slug": "5-19",
+  "title": "Galatians 5:19–21",
+  "subtitle": "William Perkins",
+  "group": "ch5",
+  "ch": 5,
+  "v1": 19,
+  "v2": 21
+ },
+ {
+  "slug": "5-22",
+  "title": "Galatians 5:22–23",
+  "subtitle": "William Perkins",
+  "group": "ch5",
+  "ch": 5,
+  "v1": 22,
+  "v2": 23
+ },
+ {
+  "slug": "5-24",
+  "title": "Galatians 5:24",
+  "subtitle": "William Perkins",
+  "group": "ch5",
+  "ch": 5,
+  "v1": 24,
+  "v2": 24
+ },
+ {
+  "slug": "5-25",
+  "title": "Galatians 5:25",
+  "subtitle": "William Perkins",
+  "group": "ch5",
+  "ch": 5,
+  "v1": 25,
+  "v2": 25
+ },
+ {
+  "slug": "5-26",
+  "title": "Galatians 5:26",
+  "subtitle": "William Perkins",
+  "group": "ch5",
+  "ch": 5,
+  "v1": 26,
+  "v2": 26
+ },
+ {
+  "slug": "supplement",
+  "title": "The Supplement upon the Sixth Chapter",
+  "subtitle": "Title page and dedication to Sir Bassingbourne Gawdy",
+  "group": "supp"
+ },
+ {
+  "slug": "6-1",
+  "title": "Galatians 6:1",
+  "subtitle": "Ralph Cudworth",
+  "group": "ch6",
+  "ch": 6,
+  "v1": 1,
+  "v2": 1
+ },
+ {
+  "slug": "6-2",
+  "title": "Galatians 6:2",
+  "subtitle": "Ralph Cudworth",
+  "group": "ch6",
+  "ch": 6,
+  "v1": 2,
+  "v2": 2
+ },
+ {
+  "slug": "6-3",
+  "title": "Galatians 6:3",
+  "subtitle": "Ralph Cudworth",
+  "group": "ch6",
+  "ch": 6,
+  "v1": 3,
+  "v2": 3
+ },
+ {
+  "slug": "6-4",
+  "title": "Galatians 6:4",
+  "subtitle": "Ralph Cudworth",
+  "group": "ch6",
+  "ch": 6,
+  "v1": 4,
+  "v2": 4
+ },
+ {
+  "slug": "6-5",
+  "title": "Galatians 6:5",
+  "subtitle": "Ralph Cudworth",
+  "group": "ch6",
+  "ch": 6,
+  "v1": 5,
+  "v2": 5
+ },
+ {
+  "slug": "6-6",
+  "title": "Galatians 6:6",
+  "subtitle": "Ralph Cudworth",
+  "group": "ch6",
+  "ch": 6,
+  "v1": 6,
+  "v2": 6
+ },
+ {
+  "slug": "6-7",
+  "title": "Galatians 6:7",
+  "subtitle": "Ralph Cudworth",
+  "group": "ch6",
+  "ch": 6,
+  "v1": 7,
+  "v2": 7
+ },
+ {
+  "slug": "6-8",
+  "title": "Galatians 6:8",
+  "subtitle": "Ralph Cudworth",
+  "group": "ch6",
+  "ch": 6,
+  "v1": 8,
+  "v2": 8
+ },
+ {
+  "slug": "6-9",
+  "title": "Galatians 6:9",
+  "subtitle": "Ralph Cudworth",
+  "group": "ch6",
+  "ch": 6,
+  "v1": 9,
+  "v2": 9
+ },
+ {
+  "slug": "6-10",
+  "title": "Galatians 6:10",
+  "subtitle": "Ralph Cudworth",
+  "group": "ch6",
+  "ch": 6,
+  "v1": 10,
+  "v2": 10
+ },
+ {
+  "slug": "6-11",
+  "title": "Galatians 6:11",
+  "subtitle": "Ralph Cudworth",
+  "group": "ch6",
+  "ch": 6,
+  "v1": 11,
+  "v2": 11
+ },
+ {
+  "slug": "6-12",
+  "title": "Galatians 6:12",
+  "subtitle": "Ralph Cudworth",
+  "group": "ch6",
+  "ch": 6,
+  "v1": 12,
+  "v2": 12
+ },
+ {
+  "slug": "6-13",
+  "title": "Galatians 6:13",
+  "subtitle": "Ralph Cudworth",
+  "group": "ch6",
+  "ch": 6,
+  "v1": 13,
+  "v2": 13
+ },
+ {
+  "slug": "6-14",
+  "title": "Galatians 6:14",
+  "subtitle": "Ralph Cudworth",
+  "group": "ch6",
+  "ch": 6,
+  "v1": 14,
+  "v2": 14
+ },
+ {
+  "slug": "6-15",
+  "title": "Galatians 6:15",
+  "subtitle": "Ralph Cudworth",
+  "group": "ch6",
+  "ch": 6,
+  "v1": 15,
+  "v2": 15
+ },
+ {
+  "slug": "6-16",
+  "title": "Galatians 6:16",
+  "subtitle": "Ralph Cudworth",
+  "group": "ch6",
+  "ch": 6,
+  "v1": 16,
+  "v2": 16
+ },
+ {
+  "slug": "6-17",
+  "title": "Galatians 6:17",
+  "subtitle": "Ralph Cudworth",
+  "group": "ch6",
+  "ch": 6,
+  "v1": 17,
+  "v2": 17
+ },
+ {
+  "slug": "6-18",
+  "title": "Galatians 6:18",
+  "subtitle": "Ralph Cudworth",
+  "group": "ch6",
+  "ch": 6,
+  "v1": 18,
+  "v2": 18
+ },
+ {
+  "slug": "conclusion",
+  "title": "The Conclusion",
+  "subtitle": "Ralph Cudworth",
+  "group": "tail"
+ }
+]

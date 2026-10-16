@@ -56,3 +56,9 @@ logs/quote_crops/
 logs/residue_crops/
 manton_raw/james/source/
 manton_raw/james/zh_translate_issues.log
+
+# 帕金斯加拉太书：IA 1604 扫描件原图、hOCR、本地 OCR 与判读拼图（可从 archive.org 重新取得，
+# item id 见 perkins_raw/galatians/PROVENANCE.md）
+perkins_raw/galatians/witness_1604/
+perkins_raw/galatians/witness_1607/
+perkins_raw/galatians/witness_1617/
