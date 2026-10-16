@@ -9,6 +9,7 @@ prev_url: "/hutcheson/john/reader/"
 prev_label: "To the Reader"
 next_url: "/hutcheson/john/1-1/"
 next_label: "John 1:1"
+zh_url: "/hutcheson/john/zh/argument/"
 ---
 
 ## The *ARGUMENT.*

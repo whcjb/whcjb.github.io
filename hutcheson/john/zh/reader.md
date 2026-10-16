@@ -7,8 +7,8 @@ subtitle: "George Hutcheson"
 date: 2026-10-16 20:03
 prev_url: "/hutcheson/john/zh/dedication/"
 prev_label: "献辞"
-next_url: "/hutcheson/john/zh/1-1/"
-next_label: "约翰福音 1:1"
+next_url: "/hutcheson/john/zh/argument/"
+next_label: "论旨"
 en_url: "/hutcheson/john/reader/"
 zh: true
 ---
