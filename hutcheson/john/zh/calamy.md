@@ -7,8 +7,8 @@ subtitle: "Edmund Calamy"
 date: 2026-10-16 16:29
 prev_url: "/hutcheson/john/zh/title/"
 prev_label: "书名页"
-next_url: "/hutcheson/john/zh/1-1/"
-next_label: "约翰福音 1:1"
+next_url: "/hutcheson/john/zh/dedication/"
+next_label: "献辞"
 en_url: "/hutcheson/john/calamy/"
 zh: true
 ---

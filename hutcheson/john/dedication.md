@@ -9,6 +9,7 @@ prev_url: "/hutcheson/john/calamy/"
 prev_label: "To the Christian Reader"
 next_url: "/hutcheson/john/reader/"
 next_label: "To the Reader"
+zh_url: "/hutcheson/john/zh/dedication/"
 ---
 
 ## To the Right Honourable and Noble Ladies, The Lady *Margaret Lesly,* late Countesse of *Buccleuch,* now Countesse of *Weems* Lady *Elcho, &c.* AND The Lady *Mary Scot,* Countesse of *Buccleuch,* Lady *Scot* of *Whitchester, &c.* her hopeful Daughter. *Grace, mercy, and peace, through Jesus Christ, be multiplied.*
