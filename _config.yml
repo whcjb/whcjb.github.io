@@ -40,6 +40,7 @@ exclude:
   - davenant_raw
   - hodge_raw
   - hutcheson_raw
+  - leighton_raw
   - manton_raw
   - owen_raw
   - ocr_output

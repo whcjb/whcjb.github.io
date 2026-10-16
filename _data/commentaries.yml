@@ -98,6 +98,14 @@ authors:
     work_cn: "约翰福音注释"
     work_en: "An Exposition of the Gospel of Jesus Christ according to John"
     books: 1
+  - id: leighton
+    name: "罗伯特·雷登"
+    short: "雷登"
+    en: "Robert Leighton"
+    years: "1611–1684"
+    work_cn: "彼得前书实用注释"
+    work_en: "A Practical Commentary upon the First Epistle General of St. Peter"
+    books: 1
   - id: alexander
     name: "约瑟·亚历山大"
     short: "亚历山大"
@@ -482,6 +490,7 @@ books:
     testament: nt
     chapters: 5
     links:
+      - {author: leighton, path: "/leighton/1peter/", url_tpl: "/leighton/1peter/__CH__/", title_cn: "彼得前书实用注释", title_en: "A Practical Commentary upon the First Epistle General of St. Peter", c0: "#22226e", c1: "#2d2d99"}
   - id: 2peter
     name: "彼得后书"
     en: "2 Peter"

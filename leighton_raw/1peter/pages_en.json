@@ -1,0 +1,731 @@
+[
+ {
+  "slug": "title1",
+  "title": "Title Page (Vol. I)",
+  "subtitle": "York, 1693",
+  "group": "v1front"
+ },
+ {
+  "slug": "reader1",
+  "title": "To the Pious Reader",
+  "subtitle": "The Publisher",
+  "group": "v1front"
+ },
+ {
+  "slug": "1-1",
+  "title": "1 Peter 1:1",
+  "subtitle": "Robert Leighton",
+  "group": "ch1",
+  "ch": 1,
+  "v1": 1,
+  "v2": 1
+ },
+ {
+  "slug": "1-2",
+  "title": "1 Peter 1:2",
+  "subtitle": "Robert Leighton",
+  "group": "ch1",
+  "ch": 1,
+  "v1": 2,
+  "v2": 2
+ },
+ {
+  "slug": "1-3",
+  "title": "1 Peter 1:3–4",
+  "subtitle": "Robert Leighton",
+  "group": "ch1",
+  "ch": 1,
+  "v1": 3,
+  "v2": 4
+ },
+ {
+  "slug": "1-5",
+  "title": "1 Peter 1:5",
+  "subtitle": "Robert Leighton",
+  "group": "ch1",
+  "ch": 1,
+  "v1": 5,
+  "v2": 5
+ },
+ {
+  "slug": "1-6",
+  "title": "1 Peter 1:6",
+  "subtitle": "Robert Leighton",
+  "group": "ch1",
+  "ch": 1,
+  "v1": 6,
+  "v2": 6
+ },
+ {
+  "slug": "1-7",
+  "title": "1 Peter 1:7",
+  "subtitle": "Robert Leighton",
+  "group": "ch1",
+  "ch": 1,
+  "v1": 7,
+  "v2": 7
+ },
+ {
+  "slug": "1-8",
+  "title": "1 Peter 1:8–9",
+  "subtitle": "Robert Leighton",
+  "group": "ch1",
+  "ch": 1,
+  "v1": 8,
+  "v2": 9
+ },
+ {
+  "slug": "1-10",
+  "title": "1 Peter 1:10–12",
+  "subtitle": "Robert Leighton",
+  "group": "ch1",
+  "ch": 1,
+  "v1": 10,
+  "v2": 12
+ },
+ {
+  "slug": "1-13",
+  "title": "1 Peter 1:13",
+  "subtitle": "Robert Leighton",
+  "group": "ch1",
+  "ch": 1,
+  "v1": 13,
+  "v2": 13
+ },
+ {
+  "slug": "1-14",
+  "title": "1 Peter 1:14–16",
+  "subtitle": "Robert Leighton",
+  "group": "ch1",
+  "ch": 1,
+  "v1": 14,
+  "v2": 16
+ },
+ {
+  "slug": "1-17",
+  "title": "1 Peter 1:17",
+  "subtitle": "Robert Leighton",
+  "group": "ch1",
+  "ch": 1,
+  "v1": 17,
+  "v2": 17
+ },
+ {
+  "slug": "1-18",
+  "title": "1 Peter 1:18–19",
+  "subtitle": "Robert Leighton",
+  "group": "ch1",
+  "ch": 1,
+  "v1": 18,
+  "v2": 19
+ },
+ {
+  "slug": "1-20",
+  "title": "1 Peter 1:20",
+  "subtitle": "Robert Leighton",
+  "group": "ch1",
+  "ch": 1,
+  "v1": 20,
+  "v2": 20
+ },
+ {
+  "slug": "1-21",
+  "title": "1 Peter 1:21",
+  "subtitle": "Robert Leighton",
+  "group": "ch1",
+  "ch": 1,
+  "v1": 21,
+  "v2": 21
+ },
+ {
+  "slug": "1-22",
+  "title": "1 Peter 1:22",
+  "subtitle": "Robert Leighton",
+  "group": "ch1",
+  "ch": 1,
+  "v1": 22,
+  "v2": 22
+ },
+ {
+  "slug": "1-23",
+  "title": "1 Peter 1:23",
+  "subtitle": "Robert Leighton",
+  "group": "ch1",
+  "ch": 1,
+  "v1": 23,
+  "v2": 23
+ },
+ {
+  "slug": "1-24",
+  "title": "1 Peter 1:24",
+  "subtitle": "Robert Leighton",
+  "group": "ch1",
+  "ch": 1,
+  "v1": 24,
+  "v2": 24
+ },
+ {
+  "slug": "1-25",
+  "title": "1 Peter 1:25",
+  "subtitle": "Robert Leighton",
+  "group": "ch1",
+  "ch": 1,
+  "v1": 25,
+  "v2": 25
+ },
+ {
+  "slug": "2-1",
+  "title": "1 Peter 2:1–2",
+  "subtitle": "Robert Leighton",
+  "group": "ch2",
+  "ch": 2,
+  "v1": 1,
+  "v2": 2
+ },
+ {
+  "slug": "2-3",
+  "title": "1 Peter 2:3",
+  "subtitle": "Robert Leighton",
+  "group": "ch2",
+  "ch": 2,
+  "v1": 3,
+  "v2": 3
+ },
+ {
+  "slug": "2-4",
+  "title": "1 Peter 2:4–5",
+  "subtitle": "Robert Leighton",
+  "group": "ch2",
+  "ch": 2,
+  "v1": 4,
+  "v2": 5
+ },
+ {
+  "slug": "2-6",
+  "title": "1 Peter 2:6",
+  "subtitle": "Robert Leighton",
+  "group": "ch2",
+  "ch": 2,
+  "v1": 6,
+  "v2": 6
+ },
+ {
+  "slug": "2-7",
+  "title": "1 Peter 2:7–8",
+  "subtitle": "Robert Leighton",
+  "group": "ch2",
+  "ch": 2,
+  "v1": 7,
+  "v2": 8
+ },
+ {
+  "slug": "2-9",
+  "title": "1 Peter 2:9",
+  "subtitle": "Robert Leighton",
+  "group": "ch2",
+  "ch": 2,
+  "v1": 9,
+  "v2": 9
+ },
+ {
+  "slug": "2-10",
+  "title": "1 Peter 2:10",
+  "subtitle": "Robert Leighton",
+  "group": "ch2",
+  "ch": 2,
+  "v1": 10,
+  "v2": 10
+ },
+ {
+  "slug": "2-11",
+  "title": "1 Peter 2:11",
+  "subtitle": "Robert Leighton",
+  "group": "ch2",
+  "ch": 2,
+  "v1": 11,
+  "v2": 11
+ },
+ {
+  "slug": "2-12",
+  "title": "1 Peter 2:12",
+  "subtitle": "Robert Leighton",
+  "group": "ch2",
+  "ch": 2,
+  "v1": 12,
+  "v2": 12
+ },
+ {
+  "slug": "2-13",
+  "title": "1 Peter 2:13–14",
+  "subtitle": "Robert Leighton",
+  "group": "ch2",
+  "ch": 2,
+  "v1": 13,
+  "v2": 14
+ },
+ {
+  "slug": "2-15",
+  "title": "1 Peter 2:15–16",
+  "subtitle": "Robert Leighton",
+  "group": "ch2",
+  "ch": 2,
+  "v1": 15,
+  "v2": 16
+ },
+ {
+  "slug": "2-17",
+  "title": "1 Peter 2:17",
+  "subtitle": "Robert Leighton",
+  "group": "ch2",
+  "ch": 2,
+  "v1": 17,
+  "v2": 17
+ },
+ {
+  "slug": "2-18",
+  "title": "1 Peter 2:18–20",
+  "subtitle": "Robert Leighton",
+  "group": "ch2",
+  "ch": 2,
+  "v1": 18,
+  "v2": 20
+ },
+ {
+  "slug": "2-21",
+  "title": "1 Peter 2:21–23",
+  "subtitle": "Robert Leighton",
+  "group": "ch2",
+  "ch": 2,
+  "v1": 21,
+  "v2": 23
+ },
+ {
+  "slug": "2-24",
+  "title": "1 Peter 2:24",
+  "subtitle": "Robert Leighton",
+  "group": "ch2",
+  "ch": 2,
+  "v1": 24,
+  "v2": 24
+ },
+ {
+  "slug": "2-25",
+  "title": "1 Peter 2:25",
+  "subtitle": "Robert Leighton",
+  "group": "ch2",
+  "ch": 2,
+  "v1": 25,
+  "v2": 25
+ },
+ {
+  "slug": "errata1",
+  "title": "Errata (Vol. I)",
+  "subtitle": "",
+  "group": "v1tail"
+ },
+ {
+  "slug": "title2",
+  "title": "Title Page (Vol. II)",
+  "subtitle": "London, 1694",
+  "group": "v2front"
+ },
+ {
+  "slug": "reader2",
+  "title": "To the Christian Reader",
+  "subtitle": "The Publisher",
+  "group": "v2front"
+ },
+ {
+  "slug": "3-1",
+  "title": "1 Peter 3:1",
+  "subtitle": "Robert Leighton",
+  "group": "ch3",
+  "ch": 3,
+  "v1": 1,
+  "v2": 1
+ },
+ {
+  "slug": "3-2",
+  "title": "1 Peter 3:2",
+  "subtitle": "Robert Leighton",
+  "group": "ch3",
+  "ch": 3,
+  "v1": 2,
+  "v2": 2
+ },
+ {
+  "slug": "3-3",
+  "title": "1 Peter 3:3–4",
+  "subtitle": "Robert Leighton",
+  "group": "ch3",
+  "ch": 3,
+  "v1": 3,
+  "v2": 4
+ },
+ {
+  "slug": "3-5",
+  "title": "1 Peter 3:5–6",
+  "subtitle": "Robert Leighton",
+  "group": "ch3",
+  "ch": 3,
+  "v1": 5,
+  "v2": 6
+ },
+ {
+  "slug": "3-7",
+  "title": "1 Peter 3:7",
+  "subtitle": "Robert Leighton",
+  "group": "ch3",
+  "ch": 3,
+  "v1": 7,
+  "v2": 7
+ },
+ {
+  "slug": "3-8",
+  "title": "1 Peter 3:8",
+  "subtitle": "Robert Leighton",
+  "group": "ch3",
+  "ch": 3,
+  "v1": 8,
+  "v2": 8
+ },
+ {
+  "slug": "3-9",
+  "title": "1 Peter 3:9",
+  "subtitle": "Robert Leighton",
+  "group": "ch3",
+  "ch": 3,
+  "v1": 9,
+  "v2": 9
+ },
+ {
+  "slug": "3-10",
+  "title": "1 Peter 3:10",
+  "subtitle": "Robert Leighton",
+  "group": "ch3",
+  "ch": 3,
+  "v1": 10,
+  "v2": 10
+ },
+ {
+  "slug": "3-11",
+  "title": "1 Peter 3:11",
+  "subtitle": "Robert Leighton",
+  "group": "ch3",
+  "ch": 3,
+  "v1": 11,
+  "v2": 11
+ },
+ {
+  "slug": "3-12",
+  "title": "1 Peter 3:12",
+  "subtitle": "Robert Leighton",
+  "group": "ch3",
+  "ch": 3,
+  "v1": 12,
+  "v2": 12
+ },
+ {
+  "slug": "3-13",
+  "title": "1 Peter 3:13",
+  "subtitle": "Robert Leighton",
+  "group": "ch3",
+  "ch": 3,
+  "v1": 13,
+  "v2": 13
+ },
+ {
+  "slug": "3-14",
+  "title": "1 Peter 3:14",
+  "subtitle": "Robert Leighton",
+  "group": "ch3",
+  "ch": 3,
+  "v1": 14,
+  "v2": 14
+ },
+ {
+  "slug": "3-15",
+  "title": "1 Peter 3:15",
+  "subtitle": "Robert Leighton",
+  "group": "ch3",
+  "ch": 3,
+  "v1": 15,
+  "v2": 15
+ },
+ {
+  "slug": "3-16",
+  "title": "1 Peter 3:16",
+  "subtitle": "Robert Leighton",
+  "group": "ch3",
+  "ch": 3,
+  "v1": 16,
+  "v2": 16
+ },
+ {
+  "slug": "3-17",
+  "title": "1 Peter 3:17",
+  "subtitle": "Robert Leighton",
+  "group": "ch3",
+  "ch": 3,
+  "v1": 17,
+  "v2": 17
+ },
+ {
+  "slug": "3-18",
+  "title": "1 Peter 3:18",
+  "subtitle": "Robert Leighton",
+  "group": "ch3",
+  "ch": 3,
+  "v1": 18,
+  "v2": 18
+ },
+ {
+  "slug": "3-19",
+  "title": "1 Peter 3:19–21",
+  "subtitle": "Robert Leighton",
+  "group": "ch3",
+  "ch": 3,
+  "v1": 19,
+  "v2": 21
+ },
+ {
+  "slug": "3-21",
+  "title": "1 Peter 3:21",
+  "subtitle": "Robert Leighton",
+  "group": "ch3",
+  "ch": 3,
+  "v1": 21,
+  "v2": 21
+ },
+ {
+  "slug": "3-22",
+  "title": "1 Peter 3:22",
+  "subtitle": "Robert Leighton",
+  "group": "ch3",
+  "ch": 3,
+  "v1": 22,
+  "v2": 22
+ },
+ {
+  "slug": "4-1",
+  "title": "1 Peter 4:1",
+  "subtitle": "Robert Leighton",
+  "group": "ch4",
+  "ch": 4,
+  "v1": 1,
+  "v2": 1
+ },
+ {
+  "slug": "4-2",
+  "title": "1 Peter 4:2–3",
+  "subtitle": "Robert Leighton",
+  "group": "ch4",
+  "ch": 4,
+  "v1": 2,
+  "v2": 3
+ },
+ {
+  "slug": "4-4",
+  "title": "1 Peter 4:4–5",
+  "subtitle": "Robert Leighton",
+  "group": "ch4",
+  "ch": 4,
+  "v1": 4,
+  "v2": 5
+ },
+ {
+  "slug": "4-6",
+  "title": "1 Peter 4:6",
+  "subtitle": "Robert Leighton",
+  "group": "ch4",
+  "ch": 4,
+  "v1": 6,
+  "v2": 6
+ },
+ {
+  "slug": "4-7",
+  "title": "1 Peter 4:7",
+  "subtitle": "Robert Leighton",
+  "group": "ch4",
+  "ch": 4,
+  "v1": 7,
+  "v2": 7
+ },
+ {
+  "slug": "4-8",
+  "title": "1 Peter 4:8",
+  "subtitle": "Robert Leighton",
+  "group": "ch4",
+  "ch": 4,
+  "v1": 8,
+  "v2": 8
+ },
+ {
+  "slug": "4-9",
+  "title": "1 Peter 4:9",
+  "subtitle": "Robert Leighton",
+  "group": "ch4",
+  "ch": 4,
+  "v1": 9,
+  "v2": 9
+ },
+ {
+  "slug": "4-10",
+  "title": "1 Peter 4:10",
+  "subtitle": "Robert Leighton",
+  "group": "ch4",
+  "ch": 4,
+  "v1": 10,
+  "v2": 10
+ },
+ {
+  "slug": "4-11",
+  "title": "1 Peter 4:11",
+  "subtitle": "Robert Leighton",
+  "group": "ch4",
+  "ch": 4,
+  "v1": 11,
+  "v2": 11
+ },
+ {
+  "slug": "4-12",
+  "title": "1 Peter 4:12–13",
+  "subtitle": "Robert Leighton",
+  "group": "ch4",
+  "ch": 4,
+  "v1": 12,
+  "v2": 13
+ },
+ {
+  "slug": "4-14",
+  "title": "1 Peter 4:14–16",
+  "subtitle": "Robert Leighton",
+  "group": "ch4",
+  "ch": 4,
+  "v1": 14,
+  "v2": 16
+ },
+ {
+  "slug": "4-17",
+  "title": "1 Peter 4:17",
+  "subtitle": "Robert Leighton",
+  "group": "ch4",
+  "ch": 4,
+  "v1": 17,
+  "v2": 17
+ },
+ {
+  "slug": "4-18",
+  "title": "1 Peter 4:18",
+  "subtitle": "Robert Leighton",
+  "group": "ch4",
+  "ch": 4,
+  "v1": 18,
+  "v2": 18
+ },
+ {
+  "slug": "4-19",
+  "title": "1 Peter 4:19",
+  "subtitle": "Robert Leighton",
+  "group": "ch4",
+  "ch": 4,
+  "v1": 19,
+  "v2": 19
+ },
+ {
+  "slug": "5-1",
+  "title": "1 Peter 5:1",
+  "subtitle": "Robert Leighton",
+  "group": "ch5",
+  "ch": 5,
+  "v1": 1,
+  "v2": 1
+ },
+ {
+  "slug": "5-2",
+  "title": "1 Peter 5:2–3",
+  "subtitle": "Robert Leighton",
+  "group": "ch5",
+  "ch": 5,
+  "v1": 2,
+  "v2": 3
+ },
+ {
+  "slug": "5-4",
+  "title": "1 Peter 5:4",
+  "subtitle": "Robert Leighton",
+  "group": "ch5",
+  "ch": 5,
+  "v1": 4,
+  "v2": 4
+ },
+ {
+  "slug": "5-5",
+  "title": "1 Peter 5:5",
+  "subtitle": "Robert Leighton",
+  "group": "ch5",
+  "ch": 5,
+  "v1": 5,
+  "v2": 5
+ },
+ {
+  "slug": "5-6",
+  "title": "1 Peter 5:6",
+  "subtitle": "Robert Leighton",
+  "group": "ch5",
+  "ch": 5,
+  "v1": 6,
+  "v2": 6
+ },
+ {
+  "slug": "5-7",
+  "title": "1 Peter 5:7",
+  "subtitle": "Robert Leighton",
+  "group": "ch5",
+  "ch": 5,
+  "v1": 7,
+  "v2": 7
+ },
+ {
+  "slug": "5-8",
+  "title": "1 Peter 5:8–9",
+  "subtitle": "Robert Leighton",
+  "group": "ch5",
+  "ch": 5,
+  "v1": 8,
+  "v2": 9
+ },
+ {
+  "slug": "5-10",
+  "title": "1 Peter 5:10",
+  "subtitle": "Robert Leighton",
+  "group": "ch5",
+  "ch": 5,
+  "v1": 10,
+  "v2": 10
+ },
+ {
+  "slug": "5-11",
+  "title": "1 Peter 5:11",
+  "subtitle": "Robert Leighton",
+  "group": "ch5",
+  "ch": 5,
+  "v1": 11,
+  "v2": 11
+ },
+ {
+  "slug": "5-12",
+  "title": "1 Peter 5:12–14",
+  "subtitle": "Robert Leighton",
+  "group": "ch5",
+  "ch": 5,
+  "v1": 12,
+  "v2": 14
+ },
+ {
+  "slug": "errata2",
+  "title": "Errata (Vol. II)",
+  "subtitle": "",
+  "group": "v2tail"
+ }
+]

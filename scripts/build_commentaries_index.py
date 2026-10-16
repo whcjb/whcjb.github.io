@@ -108,6 +108,12 @@ AUTHORS = OrderedDict([
                        work_cn='约翰福音注释',
                        work_en='An Exposition of the Gospel of Jesus Christ '
                                'according to John')),
+    # 雷登：格拉斯哥大主教，生卒年取 DNB（Leighton, Robert (1611-1684)）与 TCP 编目一致。
+    # 《彼得前书实用注释》身后分两卷出版：卷一 1693 约克，卷二 1694 伦敦。
+    ('leighton', dict(name='罗伯特·雷登', short='雷登', en='Robert Leighton',
+                      years='1611–1684', dir='leighton',
+                      work_cn='彼得前书实用注释',
+                      work_en='A Practical Commentary upon the First Epistle General of St. Peter')),
     ('alexander', dict(name='约瑟·亚历山大', short='亚历山大', en='Joseph Addison Alexander',
                        years='1809–1860', dir='alexander',
                        work_cn='诗篇、以赛亚书注释',
@@ -156,6 +162,8 @@ AUTHOR_COLORS = {
     # ΔE 最小 27.4（达文南特橄榄绿 #556b2f），次近欧文绿 39.3，与先例同档。
     # 同批算过的 #2e7d4f(21.2) / #2b7a45(20.1) 离达文南特太近，弃用。
     'hutcheson': ('#24753a', '#2f8f46'),
+    # 雷登靛紫：与既有十三色及加尔文酒红、马太亨利金、站点 Hux 蓝的 ΔE 最小 30.5（达拉谟紫）。
+    'leighton': ('#22226e', '#2d2d99'),
 }
 
 # 逐卷书名（同一注释家的不同分册书名不同时用）。取各卷扉页的实际书名。
@@ -185,6 +193,9 @@ BOOK_TITLES = {
     ('hutcheson', 'john'):     ('约翰福音注释',
                                 'An Exposition of the Gospel of Jesus Christ '
                                 'according to John'),
+    ('leighton', '1peter'):    ('彼得前书实用注释',
+                                'A Practical Commentary upon the First Epistle '
+                                'General of St. Peter'),
     ('manton', 'james'):       ('雅各书注释',
                                 'A Practical Commentary, or an Exposition with Notes '
                                 'on the Epistle of James'),
@@ -207,14 +218,14 @@ COMPARE_ACCENT = {
     'calvin': '#800000', 'mhenry': '#C9922A', 'owen': '#1f5a4b',
     'bridges': '#96613F', 'hodge': '#1f3a5f', 'manton': '#5b2f4a',
     'davenant': '#556b2f', 'alexander': '#7d2f2f', 'spurgeon': '#4a3b22', 'durham': '#674c8e',
-    'johnstone': '#106ab2', 'perkins': '#9b2d5f', 'hutcheson': '#2f8f46',
+    'johnstone': '#106ab2', 'perkins': '#9b2d5f', 'hutcheson': '#2f8f46', 'leighton': '#2d2d99',
 }
 COMPARE_LABEL = {
     'calvin': '加尔文注释', 'mhenry': '马太亨利注释', 'owen': '约翰欧文注释',
     'bridges': '毕列志注释', 'hodge': '贺智注释', 'manton': '曼顿注释',
     'davenant': '达文南特注释', 'alexander': '亚历山大注释',
     'spurgeon': '司布真注释', 'durham': '达拉谟注释', 'johnstone': '约翰斯通讲疏',
-    'perkins': '珀金斯注释', 'hutcheson': '赫奇森注释',
+    'perkins': '珀金斯注释', 'hutcheson': '赫奇森注释', 'leighton': '雷登注释',
 }
 
 
@@ -233,7 +244,7 @@ def _chapter_range(d: Path):
 PRIMARY_LANG = {'calvin': 'zh', 'mhenry': 'zh', 'bridges': 'zh',
                 'owen': 'en', 'hodge': 'en', 'manton': 'en', 'davenant': 'en',
                 'alexander': 'en', 'spurgeon': 'en', 'durham': 'en',
-                'johnstone': 'en', 'perkins': 'en', 'hutcheson': 'en'}
+                'johnstone': 'en', 'perkins': 'en', 'hutcheson': 'en', 'leighton': 'en'}
 
 
 def _lang_variants(aid, d: Path, name: str):
