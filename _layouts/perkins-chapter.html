@@ -21,7 +21,8 @@ layout: default
 {%- endcomment -%}
 
 {%- assign pk_ch = page.chapter | append: "" -%}
-{%- assign pk_nav = site.data.perkins_galatians[pk_ch] -%}
+{%- if page.zh -%}{%- assign pk_nav = site.data.perkins_galatians_zh[pk_ch] -%}
+{%- else -%}{%- assign pk_nav = site.data.perkins_galatians[pk_ch] -%}{%- endif -%}
 
 <div class="container perkins-wrap{% if page.zh %} pk-zh{% endif %}" style="padding-top: 70px;">
   <div class="row">
