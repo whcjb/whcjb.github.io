@@ -17,7 +17,7 @@
     python3 -u scripts/translate_hutcheson.py --dry-run --all
     python3 -u scripts/translate_hutcheson.py --section 1-1 --resume
     python3 -u scripts/translate_hutcheson.py --all --resume [--jobs 3]
-夜间守护：scripts/sched_hutcheson_zh.py（每夜 18:20–22:10，与约翰斯通腓立比书中译同一时段）
+夜间守护：scripts/sched_hutcheson_zh.py（每夜 20:00–次日 03:00）
 """
 import argparse
 import json

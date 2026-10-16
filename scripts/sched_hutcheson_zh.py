@@ -1,8 +1,9 @@
 #!/usr/bin/env python3
 """夜里把赫奇森《约翰福音注释》一页一页译完，白天不占额度。
 
-时段与约翰斯通《腓立比书讲疏》中译一致：每晚 18:20 开工，22:10 之后不再开新页
-（2026-10-15 腓立比书那一轮是 18:19 开始、22:06 收尾）。
+时段：每晚 20:00 开工，次日 03:00 之后不再开新页（2026-10-16 用户指定；最初按约翰斯通
+腓立比书那轮定为 18:20–22:10，已改）。亚历山大诗篇守护也是 20:00–03:00，两者经 FIFO 锁轮流，
+不会同时调 CLI。
 
 全书 557 页、约 268 万英文字符。2026-10-16 试译 1-1 与 calamy 两页 $0.34–0.46，
 按珀金斯实测折算全书约 $70；一晚约 4 小时，要分好多晚。
@@ -20,7 +21,7 @@
 
 用法
 ----
-    python3 scripts/sched_hutcheson_zh.py             # 今晚 18:20 起，22:10 后不开新页
+    python3 scripts/sched_hutcheson_zh.py             # 今晚 20:00 起，次日 03:00 后不开新页
     python3 scripts/sched_hutcheson_zh.py --status    # 看还剩多少页、日志在哪
     python3 scripts/sched_hutcheson_zh.py --stop-now  # 停掉守护（不打断当前页）
     python3 scripts/sched_hutcheson_zh.py --self-test # 空跑，验排班/锁/收工
@@ -149,8 +150,8 @@ def status():
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument('--start', type=hhmm, default=(18, 20), help='每夜开工时刻')
-    ap.add_argument('--stop', type=hhmm, default=(22, 10), help='此后不再开新页')
+    ap.add_argument('--start', type=hhmm, default=(20, 0), help='每夜开工时刻')
+    ap.add_argument('--stop', type=hhmm, default=(3, 0), help='此后不再开新页')
     ap.add_argument('--status', action='store_true')
     ap.add_argument('--stop-now', action='store_true', help='停掉守护')
     ap.add_argument('--self-test', action='store_true',
