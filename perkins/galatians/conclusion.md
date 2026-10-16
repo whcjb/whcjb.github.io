@@ -7,6 +7,7 @@ subtitle: "Ralph Cudworth"
 date: 2026-10-16 10:02
 prev_url: "/perkins/galatians/6-18/"
 prev_label: "Galatians 6:18"
+zh_url: "/perkins/galatians/zh/conclusion/"
 ---
 
 ## The Conclusion.
