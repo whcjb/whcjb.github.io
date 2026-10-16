@@ -33,15 +33,16 @@ EN = ROOT / 'hutcheson' / 'john'
 OUT = EN / 'zh'
 BOOK_NAME_ZH = '赫奇森《约翰福音注释》'
 AUTHOR_ZH = '乔治·赫奇森'
+AUTHOR_EN = 'George Hutcheson'   # 页面副标题一律写英文原名（用户 2026-10-16 定）
 FM_DATE = re.compile(r'^date:\s*(.+)$', re.M)
 
 FRONT_LABEL = {
     'title': ('书名页', '伦敦，1657'),
-    'calamy': ('致基督徒读者', '爱德蒙·卡拉米'),
+    'calamy': ('致基督徒读者', 'Edmund Calamy'),
     'dedication': ('献辞', '致韦姆斯与巴克卢两位伯爵夫人'),
-    'reader': ('致读者', AUTHOR_ZH),
-    'argument': ('论旨', AUTHOR_ZH),
-    'errata': ('勘误表', AUTHOR_ZH),
+    'reader': ('致读者', AUTHOR_EN),
+    'argument': ('论旨', AUTHOR_EN),
+    'errata': ('勘误表', AUTHOR_EN),
 }
 
 
@@ -53,7 +54,7 @@ def label(p):
 
 
 def subtitle(p):
-    return AUTHOR_ZH if 'ch' in p else FRONT_LABEL[p['slug']][1]
+    return AUTHOR_EN if 'ch' in p else FRONT_LABEL[p['slug']][1]
 
 
 def clean(body: str) -> str:
@@ -113,7 +114,7 @@ def main():
         lst = '\n'.join(f'<li><a href="{{{{ site.baseurl }}}}/hutcheson/john/zh/{p["slug"]}/">'
                         f'{label(p)}</a></li>' for p in secs)
         fm = ['---', 'layout: hutcheson-chapter', 'book_id: john', f'book_name: "{BOOK_NAME_ZH}"',
-              f'title: "约翰福音第 {ch} 章"', f'subtitle: "{AUTHOR_ZH}"',
+              f'title: "约翰福音第 {ch} 章"', f'subtitle: "{AUTHOR_EN}"',
               f'date: {meta.get(secs[-1]["slug"], now)}', f'chapter: {ch}',
               f'en_url: "/hutcheson/john/{ch}/"', 'zh: true', '---']
         (OUT / f'{ch}.md').write_text('\n'.join(fm) + f'\n\n<ul class="hc-chtoc">\n{lst}\n</ul>\n',

@@ -3,7 +3,7 @@ layout: hutcheson-chapter
 book_id: john
 book_name: "赫奇森《约翰福音注释》"
 title: "致基督徒读者"
-subtitle: "爱德蒙·卡拉米"
+subtitle: "Edmund Calamy"
 date: 2026-10-16 16:29
 next_url: "/hutcheson/john/zh/1-1/"
 next_label: "约翰福音 1:1"

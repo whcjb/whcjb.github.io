@@ -19,7 +19,7 @@ layout: default
   - 页边旁注（只在卷首 Calamy 序）→ `.hc-margin`。
   - 1657 印本页码 → `.hc-pb` 空锚点，`#p123` 可直达。
   - TCP 判不出、语料也证不出的缺字 → `.hc-gap`，留在明面上。
-  - 章顶 verse-nav 是**全章**的节号（跨页），数据在 _data/hutcheson_john.json。
+  - 章顶 verse-nav（跳到某节）已按用户要求去掉（2026-10-16）；_data/hutcheson_john*.json 仍生成，脚本无导航条时自动跳过。
 {%- endcomment -%}
 
 {%- assign hc_ch = page.chapter | append: "" -%}
@@ -39,17 +39,6 @@ layout: default
       <h1 class="hc-title">{{ page.title }}</h1>
       {% if page.subtitle %}<p class="hc-subtitle">{{ page.subtitle }}</p>{% endif %}
 
-      {% if hc_nav %}
-      <div id="verse-nav">
-        <div id="verse-nav-toggle" onclick="toggleHutchesonVerseNav()">
-          <span id="verse-nav-label">{% if page.zh %}约翰福音 {{ page.chapter }} 章 · 跳到某节{% else %}John {{ page.chapter }} · jump to verse{% endif %}</span>
-          <span id="verse-nav-arrow">&#9660;</span>
-        </div>
-        <div id="verse-nav-pills" style="display:none;">
-          {% for e in hc_nav %}<a class="verse-pill" data-slug="{{ e.slug }}" href="{{ site.baseurl }}/hutcheson/{{ page.book_id }}/{% if page.zh %}zh/{% endif %}{{ e.slug }}/#john-{{ page.chapter }}-{{ e.v }}">{{ e.v }}</a>{% endfor %}
-        </div>
-      </div>
-      {% endif %}
 
       <div class="hc-nav">
         {% if page.prev_url %}<a href="{{ site.baseurl }}{{ page.prev_url }}">&larr; {{ page.prev_label }}</a>
