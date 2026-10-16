@@ -178,13 +178,21 @@ def main():
     for wit in (RAW / 'gap_review_1841.tsv', RAW / 'gap_review_ctx.tsv', RAW / 'gap_review_conj.tsv'):
         if not wit.exists():
             continue
-        have = {(r[0], int(r[1])) for r in done}
+        # 看图复核 / 经用户同意的结论**覆盖**语料判读（2026-10-16 起：1841 本证明语料补错的要改过来）
+        idx = {(r[0], int(r[1])): n for n, r in enumerate(done)}
         for ln in wit.read_text(encoding='utf-8').splitlines():
             if not ln or ln.startswith('#'):
                 continue
             f = ln.split('\t')
-            if f[3] != '?' and (f[0], int(f[1])) not in have:
-                done.append((f[0], int(f[1]), f[2], f[3], f[4]))
+            if f[3] == '?':
+                continue
+            k = (f[0], int(f[1]))
+            row = (f[0], int(f[1]), f[2], f[3], f[4])
+            if k in idx:
+                done[idx[k]] = row
+            else:
+                idx[k] = len(done)
+                done.append(row)
     print(f'  并入复核表后共 {len(done)} 条', file=sys.stderr)
     if a.apply:
         DEC.write_text('# slug\tord\ttcp_word\t判读(?=不判)\t证据\n'
