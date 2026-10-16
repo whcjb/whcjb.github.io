@@ -14,7 +14,17 @@ permalink: /commentaries/authors/davenant/
 
 ## 多特会议
 
-1618 年，英王詹姆士一世派他与卡尔顿（George Carleton）、沃德（Samuel Ward）、霍尔（Joseph Hall）代表英国国教会出席荷兰多特会议（Synod of Dort）。在基督为谁而死的问题上，他与沃德、马蒂尼乌斯（Matthias Martinius）主张基督也为每一个人而死，反对一些加尔文派代表过于狭隘的表述，提倡普遍救赎。后世学者对他的立场看法不一：有人认为他在阿明念主义与堕落前预定论之间寻求中道，为「假设性普救论」（hypothetical universalism）辩护；也有人强调他与法国索米尔学派及亚目拉尔都（Moses Amyraut）的区别。
+1618 年，英王詹姆士一世派他与卡尔顿（George Carleton）、沃德（Samuel Ward）、霍尔（Joseph Hall）代表英国国教会出席荷兰多特会议（Synod of Dort）。
+
+在「基督之死的范围」这个问题上，他的立场后来被称为「假设性普救论」（hypothetical universalism）。这个名称出自后世学者，并不是他自己的用语，而且容易误导：它**不是**主张人人终必得救的普救论。据林奇（Michael J. Lynch）的专著研究，达文南特自己更接近「所定的充足」（ordained sufficiency）的说法，大意是：
+
+- 他承袭伦巴都（Peter Lombard）「就赎价之充足而言为众人，就其功效而言只为选民」的传统公式；
+- 基督的死作为救赎的代价，是真实地为全人类献上的，凡悔改相信的人都可以得救；
+- 但只有选民才会真正悔改相信，基督的死对选民必然生效。
+
+这与阿明念派有根本区别：后者以人的自由意志为由，否认基督的献祭对选民必然有效，以致它不能确保任何人得救；达文南特则坚持基督之死对选民的功效是确定的。赫尔姆（Paul Helm）也特别指出，达文南特一再强调基督之死并不意味着普遍得救。
+
+在多特会议上，任何「基督为众人而死」的说法都容易被视为阿明念主义，因此他的立场需要谨慎区分。林奇指出，英国代表团对信经最终的定稿有重要影响，有几份草稿为照顾英国代表的顾虑而改写，但「所定的充足」这一说法最终并没有写进信经。
 
 ## 索尔兹伯里主教
 
@@ -43,4 +53,4 @@ permalink: /commentaries/authors/davenant/
 
 本站所收《歌罗西书注释》英文本据扫描件重新校勘，并译为中文，中英对照发布。
 
-<p class="cb-src">资料来源：<a href="https://en.wikipedia.org/wiki/John_Davenant">Wikipedia: John Davenant</a>；<a href="https://en.wikisource.org/wiki/Dictionary_of_National_Biography,_1885-1900/Davenant,_John">Dictionary of National Biography（1888）</a>；<a href="https://banneroftruth.org/uk/about/banner-authors/john-davenant/">Banner of Truth</a>。</p>
+<p class="cb-src">资料来源：<a href="https://en.wikipedia.org/wiki/John_Davenant">Wikipedia: John Davenant</a>；<a href="https://en.wikisource.org/wiki/Dictionary_of_National_Biography,_1885-1900/Davenant,_John">Dictionary of National Biography（1888）</a>；<a href="https://banneroftruth.org/uk/about/banner-authors/john-davenant/">Banner of Truth</a>；<a href="https://www.modernreformation.org/resources/articles/john-davenants-hypothetical-universalism-a-defense-of-catholic-and-reformed-orthodoxy-by-michael-j-lynch">Modern Reformation：评林奇《达文南特的假设性普救论》（Oxford, 2021）</a>；<a href="https://credomag.com/2015/01/hypothetical-universalism-paul-helm/">Paul Helm, Hypothetical Universalism</a>。</p>
