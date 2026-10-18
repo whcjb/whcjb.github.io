@@ -7,6 +7,7 @@ subtitle: "George Hutcheson"
 date: 2026-10-16 13:38
 prev_url: "/hutcheson/john/21-24/"
 prev_label: "John 21:24–25"
+zh_url: "/hutcheson/john/zh/errata/"
 ---
 
 ## ERRATA.
