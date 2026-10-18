@@ -130,7 +130,7 @@ sources:
     - {key: calvin-en, author: calvin, lang: en, label: "加尔文注释（英文版）", url_tpl: "/calvin/john-en/__CH__/", accent: "#800000", ch_from: 1, ch_to: 21}
     - {key: mhenry, author: mhenry, lang: zh, label: "马太亨利注释", url_tpl: "/mhenry/john/__CH__/", accent: "#C9922A", ch_from: 1, ch_to: 21}
     - {key: hutcheson-en, author: hutcheson, lang: en, label: "赫奇森注释（英文版）", url_tpl: "/hutcheson/john/__CH__/", accent: "#2f8f46", ch_from: 1, ch_to: 21}
-    - {key: hutcheson, author: hutcheson, lang: zh, label: "赫奇森注释", url_tpl: "/hutcheson/john/zh/__CH__/", accent: "#2f8f46", ch_from: 1, ch_to: 19}
+    - {key: hutcheson, author: hutcheson, lang: zh, label: "赫奇森注释", url_tpl: "/hutcheson/john/zh/__CH__/", accent: "#2f8f46", ch_from: 1, ch_to: 20}
   jonah:
     - {key: calvin, author: calvin, lang: zh, label: "加尔文注释", url_tpl: "/calvin/jonah/__CH__/", accent: "#800000", ch_from: 1, ch_to: 4}
     - {key: mhenry, author: mhenry, lang: zh, label: "马太亨利注释", url_tpl: "/mhenry/jonah/__CH__/", accent: "#C9922A", ch_from: 1, ch_to: 4}
