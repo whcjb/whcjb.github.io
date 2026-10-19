@@ -1,5 +1,4 @@
 chapter	token	witness	verdict	bucket
-1	rniis	them	reject	待判·证人对不上
 10	duriter		无证据	待判·无证据
 10	iftsa		无证据	待判·无证据
 11	ixisn		无证据	待判·无证据
@@ -75,7 +74,6 @@ chapter	token	witness	verdict	bucket
 6	audite	the	reject	待判·证人还有话说
 6	videte		无证据	待判·无证据
 60	pirnn		无证据	待判·无证据
-61	ttmas	the	reject	待判·证人对不上
 63	Parallelismus	parauelismus	reject	待判·证人还有话说
 63	rtson		无证据	待判·无证据
 63	tabtea		无证据	待判·无证据

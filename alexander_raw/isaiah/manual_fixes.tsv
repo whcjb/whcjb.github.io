@@ -2005,3 +2005,5 @@ word from ncs *(*	word from ncs '	quote-52: 开引号被读成左括号、又被
  of *instead*—*(* 	 of *instead*—'	quote-8: 开引号被读成左括号、又被裹进一对星号（`*(*`）。影像核过 v1p47「Knobel—‘Say ye of the righteous」、v1p105「firebrands—‘the tails」、v1p329「unfinished: ‘in the day」；全书 13 处形状一致，每一处的引文都在同一句里以 ’ 收尾
 DX from "nax\ *(*	DX from "nax\ '	quote-8: 开引号被读成左括号、又被裹进一对星号（`*(*`）。影像核过 v1p47「Knobel—‘Say ye of the righteous」、v1p105「firebrands—‘the tails」、v1p329「unfinished: ‘in the day」；全书 13 处形状一致，每一处的引文都在同一句里以 ’ 收尾
 *προεστῶς, προϊστάμε^ vos,	*προεστῶς, προϊστάμενος,	grc-dup: 希腊词后半截 νος 被另读成拉丁 vos；原先两行重扫读数叠落碰巧拼对，按位置判重后只落前半截（2026-10-19）。v1 导论 προϊστάμενος 与 προεστῶς 并列
+from "nax\ *(*If not	from "nax\ 'If not	quote-8b: 同 quote-8，前文的乱码 DX 已被换成希伯来文（אם־לא），按新前文再立一条（2026-10-19）
+ground that i'a, though properly	ground that מו, though properly	heb-ctx: 53:8 לָמוֹ 的后缀 מו；tesseract heb 读数 מו（73 分），上下文「though properly a plural suffix」吻合（2026-10-19）

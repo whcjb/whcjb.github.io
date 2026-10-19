@@ -20,6 +20,11 @@ alexander_raw/isaiah/ref/wlc_Isa.xml），**只落辅音（含 maqaf），不落
 不补只是少一点细节，字不会错。9 月 tesseract 落的那批本来也不带点，口径一致。tesseract 只负责「指」，不负责「写」：读数再糊，
 写进正文的也是马所拉文本的正字。指不准（分数低、或前两名太接近）→ 不落。
 
+**第二档「词表验证」**（本节附近选不中时）：tesseract 读出的辅音串（≥4 字母、置信度 ≥60、
+希腊模型读不出更像的）与马所拉文本全部 39 卷的某个词形**一字不差**（ref/wlc_forms.txt），
+就落这个读数——只落辅音，读数与真词全同就是证据，同英文拿判词典验「是不是真词」。
+3 个字母的不收：希伯来词根太密，随机三字母串十有八九碰巧是个词。
+
 引自经文之外的希伯来文（金希的注释原话、别卷经文、词根）不在闭集里，
 这一步救不了，留给后面标〔希伯来文〕。
 
@@ -42,12 +47,13 @@ import fitz
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import isaiah_hebrew_ocr as H                      # noqa: E402  裁图、切词、tesseract 都复用
-from alexander_lexicon import build                # noqa: E402
+from alexander_lexicon import build, is_word       # noqa: E402
 
 ROOT = Path(__file__).resolve().parent.parent
 WLC = ROOT / 'alexander_raw/isaiah/ref/wlc_Isa.xml'
 PUB = ROOT / 'alexander/isaiah'
 OUT = ROOT / 'alexander_raw/isaiah/hebrew_closedset.tsv'
+FORMS = ROOT / 'alexander_raw/isaiah/ref/wlc_forms.txt'
 OSIS = '{http://www.bibletechnologies.net/2003/OSIS/namespace}'
 ACC = re.compile(r'[֑-ֽ֯׀׃-׆]')   # 吟诵符、meteg、标点
 PREFIX = set('ובכלמהש')
@@ -105,10 +111,17 @@ def flat_chapter(ch):
                 marks.append((sum(len(x) for x in out), int(a.group(2))))
             continue
         out.append(s)
-    return re.sub(r'\s+', ' ', ''.join(out)), marks
+    return norm_loc(''.join(out)), marks
 
 
 _FLAT = {}
+
+
+def norm_loc(t):
+    """定位口径：发布页有斜体星号、弯引号，ABBYY 原文没有——两边都去星号、统一引号、压空白。
+    只删字符不改长度以外的东西会让锚点下标错位，所以星号换成空格再压。"""
+    t = t.replace('*', ' ').translate(str.maketrans('‘’“”', "''\"\""))
+    return re.sub(r'\s+', ' ', t)
 
 
 def locate(job):
@@ -118,7 +131,7 @@ def locate(job):
             _FLAT[ch] = flat_chapter(ch)
         text, marks = _FLAT[ch]
         # 前文锚取后 3 个词：乱码本身可能已被 repair 改过一两个字符
-        tail = ' '.join(job.get('ctx', job['before']).split()[-3:])
+        tail = norm_loc(' '.join(job.get('ctx', job['before']).split()[-3:]))
         if len(tail) < 8:
             continue
         hits = [m.start() for m in re.finditer(re.escape(tail), text)]
@@ -153,8 +166,9 @@ def choose(reading, ch, v, V):
     # 只数字母：元音点也在 \u0590 段，算进去会把带点的读数（עָבְדָה）误判成「夹杂」
     rh = [c for c in reading if '\u05D0' <= c <= '\u05EA' or (c.isascii() and c.isalnum())]
     rc = cons(reading)
-    # 读数里非希伯来的字母数字超过两成 → 模型在硬凑（多半是希腊文或英文），不选
-    if len(rc) < 2 or (len(rh) - len(rc)) > 0.2 * len(rh):
+    # 读数里夹拉丁字母或数字 → 裁图里混进了英文（`dbis n^a (Ecc.` 读成「00 בית עולם」，
+    # 落下去会把出处「(Ecc.」一起删掉），或是模型在硬凑希腊文／英文——两档都不选
+    if len(rc) < 2 or len(rh) != len(rc):
         return None
     tol = 0 if len(rc) <= 3 else 1
     near = {}
@@ -187,6 +201,15 @@ VARIANT = re.compile(r'\b(?:read|reads|reading|readings|MSS?|Sept|Septuagint|Vul
                      r'variant|Masor\w*|Masoretic|text|changes?|changed|substitut\w*)\b', re.I)
 
 
+def shape_ok(garbage, reading):
+    """拉丁乱码字母数与希伯来读数字母数要对得上：活字误读大致一对一到一对一点五。
+    `rerb,`（英文 verb 读错）被硬读成 לו、本节恰有 לו 就选中了——4 比 2，不是活字"""
+    lat = len(re.findall(r'[A-Za-z]', garbage))
+    n = len(cons(reading))
+    # 两个字母的读数最容易碰巧对上（לו、על 遍地都是），再收紧：拉丁字母至多 n+1 个
+    return lat <= (n + 1 if n <= 2 else 2 * n + 1)
+
+
 def safe(before, after, tesseract, form):
     """闭集选中之后的闸。只落辅音，所以辅音全同的条目即使在异文讨论里也照落——
     落下的就是原书印的那几个字母；差一个字母的才可能是原书真印了别的字母，
@@ -201,6 +224,42 @@ def safe(before, after, tesseract, form):
     return len(diff) == 1 and (diff[0] in CONFUSE or
                               (diff[0][0].translate(fin), diff[0][1].translate(fin)) in CONFUSE
                               or diff[0][0].translate(fin) == diff[0][1].translate(fin))
+
+
+_LEX = None
+
+
+def lexicon():
+    global _LEX
+    if _LEX is None:
+        _LEX = {ln.strip() for ln in FORMS.read_text(encoding='utf-8').splitlines()
+                if ln.strip() and not ln.startswith('#')}
+    return _LEX
+
+
+def by_lexicon(reading, conf, grc):
+    """第二档：读数（可含空格、maqaf 分开的几个词）每个词都在 WLC 词形表里 → 落读数的辅音"""
+    if re.search(r'[A-Za-z0-9]', reading):          # 同 choose：混了英文的裁图不落
+        return None
+    words = [w for w in re.split(r'[\s\u05BE]+', re.sub(r'[^\u05D0-\u05EA\u05BE\s]', '', reading)) if w]
+    if not words or conf < 60 or max(len(w) for w in words) < 4:
+        return None
+    if len(H.GREEK.findall(grc[0])) >= 3 and grc[1] > conf:
+        return None
+    lex = lexicon()
+    if not all(w in lex for w in words):
+        return None
+    return re.sub(r'[^\u05D0-\u05EA\u05BE ]', '', re.sub(r'\s+', ' ', reading)).strip()
+
+
+def english(tok, lex):
+    """所有格、撇号缩写的英文词（`David's`、`writer's`、`Messiah's`）：撇号让 looks_residue
+    当成「夹了乱码符号」放进候选，第二轮全书跑把 5 处英文词换成了希伯来文"""
+    t = tok.strip(".,;:!?()[]\"*")
+    if not re.search(r"['’]s?$", t):         # 只管带撇号的；不带的交给 looks_residue（乱码本身常长成 `Mibi`）
+        return False
+    core = re.sub(r"['’]s?$", '', t)
+    return core.isalpha() and (is_word(core, lex) or (core[:1].isupper() and core[1:].islower()))
 
 
 def run(page_range, chapters):
@@ -237,7 +296,7 @@ def run(page_range, chapters):
                     if txt is not None and runbuf and not any(c.isalnum() for c in txt):
                         runbuf.append((txt, box))
                         continue
-                    if (txt is not None and k not in skip and H.looks_residue(txt, lex)
+                    if (txt is not None and k not in skip and H.looks_residue(txt, lex) and not english(txt, lex)
                             and len(runbuf) < 4):
                         runbuf.append((txt, box))
                         continue
@@ -257,28 +316,39 @@ def run(page_range, chapters):
 
     def work(j):
         heb, ch_ = H.ocr(j['png'], 'heb')
-        Path(j['png']).unlink(missing_ok=True)
+        if len(H.HEBREW.findall(heb)) < 2:           # 单行模式读不出 → 单词模式（14:14 אדמה 就是这么读出来的）
+            heb, ch_ = H.ocr(j['png'], 'heb', '8')
         loc = locate(j)
         pick = choose(heb, *loc, V) if loc and len(H.HEBREW.findall(heb)) >= 2 else None
-        return j, heb, ch_, loc, pick
+        lexpick = None
+        if not (pick and pick['ok'] and safe(j['before'], j['after'], heb, pick['form'])):
+            if len(H.HEBREW.findall(heb)) >= 4:
+                lexpick = by_lexicon(heb, ch_, H.ocr(j['png'], 'grc'))
+        Path(j['png']).unlink(missing_ok=True)
+        return j, heb, ch_, loc, pick, lexpick
 
     with ThreadPoolExecutor(8) as pool:
         res = list(pool.map(work, jobs))
-    rows, stat = [], {'候选': len(res), '读出希伯来字母': 0, '定位到节': 0, '选中': 0}
-    for j, heb, conf, loc, pick in res:
+    rows, stat = [], {'候选': len(res), '读出希伯来字母': 0, '定位到节': 0, '闭集选中': 0, '闸下': 0, '词表验证': 0}
+    for j, heb, conf, loc, pick, lexpick in res:
         if len(H.HEBREW.findall(heb)) >= 2:
             stat['读出希伯来字母'] += 1
         if loc:
             stat['定位到节'] += 1
-        if pick and pick['ok'] and not safe(j['before'], j['after'], heb, pick['form']):
-            stat['闸下'] = stat.get('闸下', 0) + 1
-            continue
-        if pick and pick['ok']:
-            stat['选中'] += 1
+        if pick and pick['ok'] and safe(j['before'], j['after'], heb, pick['form']) and shape_ok(j['garbage'], heb):
+            stat['闭集选中'] += 1
+            # conf 写 95：闭集选中本身就是证据；isaiah_apply_hebrew 的门槛是 80
             rows.append((j['vol'], j['scan_page'], j['before'], j['garbage'], j['after'],
-                         # conf 写 95：闭集选中本身就是证据；isaiah_apply_hebrew 的门槛是 80
                          'heb-wlc', bare(pick['form']), 95,
                          f'{loc[0]}:{loc[1]}', heb, round(pick['margin'] * 100)))
+            continue
+        if pick and pick['ok']:
+            stat['闸下'] += 1
+        if lexpick and shape_ok(j['garbage'], lexpick):
+            stat['词表验证'] += 1
+            rows.append((j['vol'], j['scan_page'], j['before'], j['garbage'], j['after'],
+                         'heb-lex', lexpick, 90,
+                         f'{loc[0]}:{loc[1]}' if loc else '', heb, round(conf)))
     return rows, stat, res
 
 
@@ -291,7 +361,10 @@ def main():
     if a.refilter:
         import csv
         rows = list(csv.reader(open(OUT, encoding='utf-8'), delimiter='\t', quoting=csv.QUOTE_NONE))
-        keep = [rows[0]] + [r for r in rows[1:] if safe(r[2], r[4], r[9], r[6])]
+        lex = build()
+        keep = [rows[0]] + [r for r in rows[1:]
+                            if (r[5] == 'heb-lex' or safe(r[2], r[4], r[9], r[6])) and shape_ok(r[3], r[6])
+                            and not any(english(t, lex) for t in r[3].split())]
         with open(OUT, 'w', encoding='utf-8') as f:
             f.write(''.join('\t'.join(r) + '\n' for r in keep))
         print(f'重过闸：{len(rows) - 1} → {len(keep) - 1}')

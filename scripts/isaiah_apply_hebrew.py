@@ -26,7 +26,10 @@ ROOT = Path(__file__).resolve().parent.parent
 RAW = ROOT / 'alexander_raw/isaiah/en_chapters'
 # 闭集选词（isaiah_hebrew_closedset.py，落的是马所拉文本原字）**排在最前**：同一处
 # 两张表都有读数时先落它，开集那行再去找就找不到乱码了，自然落空。
+# _r1 是第一轮闭集（2026-10-19 已提交、逐处比对过）：之后每加一道新闸重跑全书，
+# 新表可能因更严把它选中过的筛掉——保留旧表兜底，已验证的结果不被新闸冲掉
 TSV = [ROOT / 'alexander_raw/isaiah/hebrew_closedset.tsv',
+       ROOT / 'alexander_raw/isaiah/hebrew_closedset_r1.tsv',
        ROOT / 'alexander_raw/isaiah/hebrew_ocr.tsv',
        ROOT / 'alexander_raw/isaiah/hebrew_ocr_junk.tsv']
 LOG = ROOT / 'logs/alexander_isaiah_hebrew_applied.tsv'
@@ -158,7 +161,7 @@ def main(apply_it):
         # 13 处已落好的希伯来文退回乱码（2026-10-19）；闭集表的 before 与开集口径一致，整串比即可
         # 闭集行不参与去重：它先落；落不下（斜体否决、定位不到）时，开集那行还要能补上。
         # 两行都落得下时由下面的「位置重叠」判重，不会同一处改两次。
-        if r.get('script') != 'heb-wlc':
+        if r.get('script') not in ('heb-wlc', 'heb-lex'):
             key = (r['vol'], r['scan_page'], r['before'], r['garbage'])
             if key in seen:
                 continue
@@ -223,7 +226,16 @@ def main(apply_it):
             stat['italic'] += 1
             log.append((r['garbage'], r['reading'], r['conf'], 'italic'))
             continue
-        if any(not (b <= x or a >= y) for x, y, _ in edits[name]):
+        over = [e for e in edits[name] if not (b <= e[0] or a >= e[1])]
+        # 旧的开集读数常把相邻几个乱码一起读成一段（「TW and ftf-nn」→ 一段希伯来文）；
+        # 闭集只选中其中一个词先落了，旧行若被判「已被替代」，另外那几个词就退回乱码
+        # （第二轮比对 8 处倒退）。所以：新行完整包住已落的几处 → 用新行这一整段替换它们
+        if over and all(a <= x and y <= b for x, y, _ in over) and (b - a) > max(y - x for x, y, _ in over):
+            for e in over:
+                edits[name].remove(e)
+            stat['applied'] -= len(over)
+            stat['widened'] = stat.get('widened', 0) + 1
+        elif over:
             stat['superseded'] = stat.get('superseded', 0) + 1
             log.append((r['garbage'], r['reading'], r['conf'], 'superseded'))
             continue

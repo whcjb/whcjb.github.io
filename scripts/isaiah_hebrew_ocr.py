@@ -87,7 +87,9 @@ def looks_residue(tok, lex, junk_only=False):
     core = tok.strip(".,;:!?()[]'\"")
     if len(core) < 2 or not core.isascii():
         return False
-    if ROMANISH.match(re.sub(r'[^A-Za-z]', '', core) or 'x'):
+    # 罗马数字闸只挡**干净**的字母串（`xxxvn`）。夹了乱码符号的（`v^n^`、`nx/`）照样是候选：
+    # 希伯来活字的拉丁误读里 n m i v x l c d u 极多，先前整类连试都没试（2026-10-19，14:14 fiE/nx）
+    if ROMANISH.match(re.sub(r'[^A-Za-z]', '', core) or 'x') and not JUNK.search(core):
         return False
     if JUNK.search(core):
         # 垃圾字符本身就说明这块活字 ABBYY 没读懂；只要还剩两个字母就值得一裁
