@@ -91,13 +91,13 @@ SYSTEM = (
     "Syntyche→循都基，Clement→革利免，Lydia→吕底亚，Silas→西拉，"
     "Philippi→腓立比，Macedonia→马其顿，Thessalonica→帖撒罗尼迦，"
     "Cæsar→该撒，Prætorium→御营\n"
-    "8a. **凡音译出来的近现代人名，每篇首次出现时都要括注英文原名**，如"
-    "莱特富特（Lightfoot）、埃利科特（Ellicott）、阿尔福德（Alford）、"
-    "迈耶（Meyer）、德维特（De Wette）、威纳（Winer）、耶尔夫（Jelf）、"
-    "特伦奇（Trench）、本格尔（Bengel）、伯撒（Beza）、格劳秀斯（Grotius）。"
+    "8a. **凡音译出来的专名（人名、地名、民族与教派名），每篇首次出现时都要括注英文原名**，"
+    "不分古今、不论中文是否早有定译："
+    "莱特富特（Lightfoot）、迈耶（Meyer）、加尔文（Calvin）、路德（Luther）、"
+    "坡旅甲（Polycarp）、西塞罗（Cicero）、布鲁图（Brutus）、尼禄（Nero）、"
+    "甘吉提河（Gangites）、日内瓦湖（Geneva）、胡格诺派（Huguenot）。"
     "同一篇里第二次以后不再重复括注。"
-    "中文早有定译、读者一望即知的大名（路德、加尔文、奥古斯丁、屈梭多模、"
-    "坡旅甲、依纳爵）不括注\n"
+    "只有第 8 条所说、和合本里本来就有的圣经人名地名（保罗、腓立比、马其顿）不括注\n"
     "9. 罗马数字章号一律转成阿拉伯数字，格式为「书卷名 章:节」："
     "Rom. viii. 28 → 罗马书 8:28；2 Cor. xii. 9 → 哥林多后书 12:9；"
     "chap. i. 21 → 第 1 章 21 节\n"
@@ -113,8 +113,12 @@ SYSTEM = (
     "不要在译文里留英文残词，也不要另加说明"
 )
 
-# 每篇首次出现要括注原名的音译人名。值 = 已知中文写法（能自动补），
-# None = 只检测、不自动补（不知道模型会写成什么字，猜着补等于乱改正文）。
+# 每篇首次出现要括注原名的音译专名。值 = 已知中文写法（能自动补；元组＝几种
+# 写法都可能出现，补在本篇最先出现的那一处），None = 只检测、不自动补（不知道
+# 模型会写成什么字，猜着补等于乱改正文）。
+# 2026-10-19 用户定：古代人物、地名、加尔文路德这类定译名也一律括注——「谁知道
+# 你说的是谁，音译又不准确」。只有和合本里本来就有的圣经人名地名不注。
+# 写法带上后面的「河」「山」「派」「广场」，免得括号插进专名中间。
 # 只管这一本书，不去统一全站别的书（见 translate_alexander_isaiah.py 的说明）。
 ANNOTATE = {
     'Lightfoot': '莱特富特',
@@ -143,6 +147,66 @@ ANNOTATE = {
     'Zumpt': None,
     'Eadie': None,
     'Brown': None,
+    # ── 古今人物（多为中文已有定译、模型照旧规则没括注的）──
+    'Polycarp': '坡旅甲',
+    'Ignatius': '依纳爵',
+    'Luther': '路德',
+    'Calvin': '加尔文',
+    'Chrysostom': '屈梭多模',
+    'Zuingli': '慈运理',
+    'Eusebius': '优西比乌',
+    'Valens': '瓦伦斯',
+    'Zosimus': '佐西末',
+    'Nero': '尼禄',
+    'Augustus': ('亚古士督', '奥古斯都'),
+    'Trajan': '图拉真',
+    'Hadrian': '哈德良',
+    'Brutus': '布鲁图',
+    'Cassius': '卡西乌斯',
+    'Mark Antony': '马克·安东尼',
+    'Octavianus Cæsar': '屋大维·该撒',
+    'Agricola': '阿格里科拉',
+    'Cicero': '西塞罗',
+    'Seneca': '塞涅卡',
+    'Tacitus': '塔西佗',
+    'Socrates': '苏格拉底',
+    'Plato': '柏拉图',
+    'Homer': '荷马',
+    'Herodotus': '希罗多德',
+    'Sophocles': '索福克勒斯',
+    'Philo': '斐洛',
+    'Josephus': '约瑟夫',
+    'Diognetus': '《*致丢格那妥书*》',
+    'Phidippides': '斐迪庇第斯',
+    # ── 地名、民族、教派、赛会 ──
+    'Gangites': '甘吉提河',
+    'Archipelago': '多岛海',
+    'Athos': '阿陀斯山',
+    'Troy': '特洛伊',
+    'Marathon': '马拉松',
+    'Eleusis': '厄琉息斯',
+    'Isthmian': ('伊斯米亚', '地峡'),
+    'Olympic': '奥林匹亚',
+    'Palatine Hill': '巴拉丁山',
+    'Piedmontese': '皮埃蒙特',
+    'Waldenses': '韦尔多派',
+    'Huguenot': '胡格诺派',
+    'Vilvorde': '维尔福德',
+    'Geneva': '日内瓦湖',
+    'Rhone': '罗讷河',
+    'Arve': '阿尔沃河',
+    'Crimea': '克里米亚',
+    'Madagascar': '马达加斯加',
+    'Rajpootana': '拉杰普塔纳',
+    'Kingston': '金斯顿',
+    'Brighton': '布莱顿',
+    'Aberdeen': '亚伯丁',
+    'Edinburgh': '爱丁堡',
+    'Grassmarket': '草市广场',
+    'Bothwell Bridge': '博斯韦尔桥',
+    'Galashiels': '加拉希尔斯',
+    'Falkirk': '福尔柯克',
+    'Biggar': '比格尔',
 }
 
 # ── 占位符 ────────────────────────────────────────────────────────────────
@@ -300,7 +364,7 @@ def translate_one(text: str, resume: bool, label: str = '') -> str:
 
 
 def annotate_terms(zh: str, en: str):
-    """每篇首次出现的音译人名后补「（原名）」。返回 (正文, 未落实的名字)。
+    """每篇首次出现的音译专名后补「（原名）」。返回 (正文, 未落实的名字)。
 
     原名已在译文里 → 不动；表里有中文写法且找得到 → 首次出现处插入；
     其余 → 记进 missing 告警，不猜、不改正文。插入点后已是「（」就跳过（幂等）。
@@ -311,10 +375,13 @@ def annotate_terms(zh: str, en: str):
             continue
         if re.search(re.escape(term), zh):
             continue
-        if not zh_form or zh_form not in zh:
+        forms = (zh_form,) if isinstance(zh_form, str) else (zh_form or ())
+        hits = [(zh.find(f), f) for f in forms if f in zh]
+        if not hits:
             missing.append(term)
             continue
-        j = zh.find(zh_form) + len(zh_form)
+        i, f = min(hits)
+        j = i + len(f)
         if zh[j:j + 1] == '（':
             continue
         zh = zh[:j] + f'（{term}）' + zh[j:]

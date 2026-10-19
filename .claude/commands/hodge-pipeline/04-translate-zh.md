@@ -110,6 +110,9 @@ translate_filibi.py BOOKS dict 中每个 book 都定义了 system prompt。必�
 - 「保留所有 HTML 标签不变：`<p style="...">` `<strong>` `<div>` 等」
 - 「拉丁文/法文/希腊文/希伯来文保留原文，括号附中文译音/译义」
 - 「圣经书卷/人名用和合本标准译名（一长表）」
+- 「凡音译专名（人名、地名、民族与教派名），每篇首次出现括注英文原名」——不分古今、
+  不论是否已有定译（加尔文（Calvin）也要注），只有和合本已有的圣经人名地名不注。
+  2026-10-19 用户定，详见 pdf-pipeline/04-translate-zh §4（含程序化兜底 `annotate_terms()`）。
 - 「章节引用格式：路加福音 1:1，马太福音 2:23（书卷名 章:节）」
 - 「加尔文术语保留学术性：righteousness→义，justification→称义，...」
 
