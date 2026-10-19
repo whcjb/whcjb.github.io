@@ -4,6 +4,12 @@ author_id: johnstone
 title: "罗伯特·约翰斯通（Robert Johnstone）生平"
 tagline: "苏格兰联合长老会神学院教授"
 permalink: /commentaries/authors/johnstone/
+lead: "十九世纪苏格兰联合长老会的牧者与学者，爱丁堡联合长老会神学院教授。他的生卒年和早年经历，至今没有查到可靠的出处。"
+facts:
+  - ["生卒", "未查到可靠出处"]
+  - ["宗派", "苏格兰联合长老会"]
+  - ["职任", "联合长老会神学院教授"]
+  - ["代表作", "《腓立比书讲疏》《雅各书讲疏》"]
 ---
 
 ## 生平
