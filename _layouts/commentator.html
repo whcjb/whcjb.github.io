@@ -96,7 +96,8 @@ layout: default
   }
   place(); mq.addEventListener ? mq.addEventListener('change', place) : mq.addListener(place);
 
-  // 括注里的西文（原名、拉丁书名）字号小一号、颜色浅：只动文本节点，<em> 书名与链接不碰
+  // 括注里的西文（原名、拉丁书名）改成方括号、小一号、浅色：只动文本节点，<em> 书名与链接不碰
+  // 2026-10-19 用户：「（Dr. Alexander Leighton）这种注释文字需要方括号并且英文字体要小一级」
   var re = /（([A-Za-zÀ-ÿ][^（）㐀-鿿]*)）/g;
   var walker = document.createTreeWalker(body, NodeFilter.SHOW_TEXT, null);
   var nodes = [];
@@ -110,9 +111,9 @@ layout: default
     var frag = document.createDocumentFragment(), s = n.nodeValue, last = 0, m;
     re.lastIndex = 0;
     while ((m = re.exec(s))) {
-      frag.appendChild(document.createTextNode(s.slice(last, m.index) + '（'));
-      var sp = document.createElement('span'); sp.className = 'cb-latin'; sp.textContent = m[1];
-      frag.appendChild(sp); frag.appendChild(document.createTextNode('）'));
+      frag.appendChild(document.createTextNode(s.slice(last, m.index)));
+      var sp = document.createElement('span'); sp.className = 'cb-latin'; sp.textContent = '[' + m[1] + ']';
+      frag.appendChild(sp);
       last = re.lastIndex;
     }
     frag.appendChild(document.createTextNode(s.slice(last)));
@@ -163,7 +164,7 @@ layout: default
 
 /* ── 正文 ─────────────────────────────────────── */
 .cb-wrap .cb-body {
-  font-family: var(--cb-serif); font-size: 17px; line-height: 2.05; color: var(--cb-ink);
+  font-family: var(--cb-serif); font-size: 17px; line-height: 1.75; color: var(--cb-ink);
   max-width: 40em; counter-reset: cbsec;
 }
 .cb-wrap .cb-body h2 {
@@ -177,12 +178,12 @@ layout: default
   width: 32px; height: 32px; line-height: 32px; text-align: center; border-radius: 50%;
   background: var(--cb-c1); color: #fff; font-size: 15px; letter-spacing: 0;
 }
-.cb-wrap .cb-body p { margin: 0 0 16px; text-align: justify; text-indent: 2em; }
+.cb-wrap .cb-body p { margin: 0 0 10px; text-align: justify; text-indent: 2em; }
 .cb-wrap .cb-body ul { padding-left: 1.4em; margin: 0 0 18px; }
 .cb-wrap .cb-body li { margin: 6px 0; }
 .cb-wrap .cb-body em { font-family: Georgia, serif; color: #5d5448; }
 .cb-wrap .cb-body strong { color: var(--cb-c0); }
-.cb-wrap .cb-latin { font-family: Georgia, 'Times New Roman', serif; font-size: .86em; color: #8f8674; letter-spacing: .01em; }
+.cb-wrap .cb-latin { font-family: Georgia, 'Times New Roman', serif; font-size: .8em; color: #8f8674; letter-spacing: .01em; margin: 0 2px; }
 .cb-wrap .cb-body .cb-src {
   text-indent: 0; margin-top: 44px; padding: 0; font-size: 12.5px; color: var(--cb-light); line-height: 1.9;
 }
@@ -221,7 +222,7 @@ layout: default
   .cb-wrap .cb-hero { flex-direction: column; text-align: center; gap: 18px; padding: 26px 18px; }
   .cb-wrap .cb-portrait { width: 124px; height: 154px; }
   .cb-wrap .cb-hero h1 { font-size: 26px; }
-  .cb-wrap .cb-body { font-size: 16px; line-height: 1.95; }
+  .cb-wrap .cb-body { font-size: 16px; line-height: 1.7; }
   .cb-wrap .cb-body h2 { font-size: 17px; }
 }
 </style>
