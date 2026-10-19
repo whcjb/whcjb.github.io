@@ -54,7 +54,7 @@ permalink: /commentaries/authors/perkins/
 
 珀金斯被视为伊丽莎白时代英国清教神学的奠基人。
 
-他的学生和受他影响的人包括埃姆斯（William Ames，后任荷兰弗拉讷克大学神学教授）、约翰·罗宾逊（John Robinson）、托马斯·古德温（Thomas Goodwin）、保罗·贝恩斯（Paul Baynes）、塞缪尔·沃德（Samuel Ward）、托马斯·胡克（Thomas Hooker）、约翰·科顿（John Cotton）、詹姆斯·厄舍（James Ussher）等，经由他们深刻影响了英格兰、新英格兰与荷兰的改革宗传统，一直影响到约拿单·爱德华兹（Jonathan Edwards）。阿明念（Jacobus Arminius）曾专门著文驳斥他的双重预定论。
+他的学生和受他影响的人包括后来任荷兰弗拉讷克大学神学教授的埃姆斯（William Ames）、约翰·罗宾逊（John Robinson）、托马斯·古德温（Thomas Goodwin）、保罗·贝恩斯（Paul Baynes）、塞缪尔·沃德（Samuel Ward）、托马斯·胡克（Thomas Hooker）、约翰·科顿（John Cotton）、詹姆斯·厄舍（James Ussher）等，经由他们深刻影响了英格兰、新英格兰与荷兰的改革宗传统，一直影响到约拿单·爱德华兹（Jonathan Edwards）。阿明念（Jacobus Arminius）曾专门著文驳斥他的双重预定论。
 
 ## 本站所收著作
 
