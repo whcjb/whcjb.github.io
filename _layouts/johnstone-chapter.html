@@ -229,7 +229,12 @@ layout: default
   font-family: "Songti SC", STSong, "Noto Serif CJK SC", "Source Han Serif SC",
                Georgia, serif;
   text-align: justify;
+  line-height: 1.65;
 }
+/* 中文不像英文那样需要大行距透气，沿用英文的 1.85 + 16px 段距显得稀疏 */
+.johnstone-wrap.jh-zh .jh-content p { margin-bottom: 10px; }
+.johnstone-wrap.jh-zh .jh-notes { line-height: 1.6; }
+.johnstone-wrap.jh-zh .jh-notes p { margin-bottom: 7px; }
 .johnstone-wrap.jh-zh .jh-title { font-family: "Songti SC", STSong, Georgia, serif; }
 .johnstone-wrap.jh-zh .jh-notes::before { content: "注"; letter-spacing: .3em; }
 .johnstone-wrap.jh-zh .jh-epigraph .jh-ref { font-variant: normal; }
@@ -237,5 +242,6 @@ layout: default
 @media (max-width: 767px) {
   .johnstone-wrap .jh-title { font-size: 24px; }
   .johnstone-wrap .jh-content { font-size: 16px; line-height: 1.8; }
+  .johnstone-wrap.jh-zh .jh-content { line-height: 1.6; }
 }
 </style>
