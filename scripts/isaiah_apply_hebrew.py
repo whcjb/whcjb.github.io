@@ -32,7 +32,14 @@ TSV = [ROOT / 'alexander_raw/isaiah/hebrew_closedset.tsv',
        ROOT / 'alexander_raw/isaiah/hebrew_closedset_r1.tsv',
        ROOT / 'alexander_raw/isaiah/hebrew_ocr.tsv',
        ROOT / 'alexander_raw/isaiah/hebrew_ocr_junk.tsv']
+# 证人表（tesseract + 视觉证人逐字母一致 / [Heb.] 标记 / 去 ^）**不在这里落**，而是 --published
+# 模式在链条末尾、人工判读全部落完之后落在发布页上：人工表是照修复后的文字写的
+# （`TIQO^w`），证人表的乱码是 ABBYY 原文（`TIQO^UI`），在 raw 阶段先落会让人工规则
+# 静默落空——导论 πρό / כְּתוּבִים、21 章 נטושה 都这么退回过乱码（2026-10-19 比对抓到）
+WITNESS = ROOT / 'alexander_raw/isaiah/hebrew_witness.tsv'
+PUB = ROOT / 'alexander/isaiah'
 LOG = ROOT / 'logs/alexander_isaiah_hebrew_applied.tsv'
+LOG_PUB = ROOT / 'logs/alexander_isaiah_witness_applied.tsv'
 
 # 置信度门槛。实测 ≥80 的读数逐条看都站得住（את / על / ברית / הנה /
 # ῥύσασϑε ἀδικούμενον）；65–75 那一档明显在硬凑（`xb` 读成 כא，其实是 לא），
@@ -95,6 +102,8 @@ def trim_reading(reading):
     只剪「既不是字母数字、也不是组合记号」的那些，希伯来点号与希腊附加符
     都是组合记号，不会被误伤。
     """
+    if reading in ('[Heb.]', '[Gk.]'):             # 证人标记（isaiah_witness_vlm）原样落
+        return reading
     keep = lambda ch: ch.isalnum() or unicodedata.combining(ch)
     i, j = 0, len(reading)
     while i < j and not keep(reading[i]):
@@ -144,11 +153,12 @@ def norm(text):
     return ''.join(out), idx
 
 
-def main(apply_it):
+def main(apply_it, published=False):
     lex = build()
     # 必须 QUOTE_NONE：乱码串里有 `"`（`"tt`、`"ttss`），默认的 csv 引号规则
     # 会把它当成字段起始引号，整行的列就错位了——608 行只解析出 306 行。
-    raw = [r for path in TSV if path.exists()
+    tsvs, src = ([WITNESS], PUB) if published else (TSV, RAW)
+    raw = [r for path in tsvs if path.exists()
            for r in csv.DictReader(open(path, encoding='utf-8'), delimiter='\t',
                                    quoting=csv.QUOTE_NONE)
            if r.get('conf', '').isdigit() and r.get('reading')]
@@ -161,7 +171,7 @@ def main(apply_it):
         # 13 处已落好的希伯来文退回乱码（2026-10-19）；闭集表的 before 与开集口径一致，整串比即可
         # 闭集行不参与去重：它先落；落不下（斜体否决、定位不到）时，开集那行还要能补上。
         # 两行都落得下时由下面的「位置重叠」判重，不会同一处改两次。
-        if r.get('script') not in ('heb-wlc', 'heb-lex'):
+        if r.get('script') not in ('heb-wlc', 'heb-lex', 'heb-wit', 'grc-wit', 'mark', 'caret'):
             key = (r['vol'], r['scan_page'], r['before'], r['garbage'])
             if key in seen:
                 continue
@@ -175,7 +185,7 @@ def main(apply_it):
     # 同一套活字，凭什么只认高的那两次。这是修拉丁误读时的第三道闸
     # （字形规则 → 判词典 → 全书自证）搬到这边来。
     strong = {r['reading'] for r in rows if int(r['conf']) >= MIN_CONF}
-    chapters = {p.stem: p.read_text(encoding='utf-8') for p in RAW.glob('*.md')}
+    chapters = {p.stem: p.read_text(encoding='utf-8') for p in src.glob('*.md')}
     keys = {k: norm(v) for k, v in chapters.items()}
 
     log, stat = [], {'applied': 0, 'lowconf': 0, 'notfound': 0, 'ambiguous': 0,
@@ -230,7 +240,8 @@ def main(apply_it):
         # 旧的开集读数常把相邻几个乱码一起读成一段（「TW and ftf-nn」→ 一段希伯来文）；
         # 闭集只选中其中一个词先落了，旧行若被判「已被替代」，另外那几个词就退回乱码
         # （第二轮比对 8 处倒退）。所以：新行完整包住已落的几处 → 用新行这一整段替换它们
-        if over and all(a <= x and y <= b for x, y, _ in over) and (b - a) > max(y - x for x, y, _ in over):
+        if (over and r.get('script') in ('heb', 'grc') and all(a <= x and y <= b for x, y, _ in over)
+                and (b - a) > max(y - x for x, y, _ in over)):   # 只有开集旧行能扩张；证人的标记不能吞掉已落的字
             for e in over:
                 edits[name].remove(e)
             stat['applied'] -= len(over)
@@ -250,10 +261,10 @@ def main(apply_it):
             text = chapters[name]
             for a, b, rep in sorted(es, reverse=True):     # 从后往前，下标不失效
                 text = text[:a] + rep + text[b:]
-            (RAW / f'{name}.md').write_text(text, encoding='utf-8')
+            (src / f'{name}.md').write_text(text, encoding='utf-8')
 
     LOG.parent.mkdir(exist_ok=True)
-    with open(LOG, 'w', encoding='utf-8') as f:
+    with open(LOG_PUB if published else LOG, 'w', encoding='utf-8') as f:
         f.write('garbage\treading\tconf\tstatus\n')
         for row in log:
             f.write('\t'.join(str(x) for x in row) + '\n')
@@ -265,4 +276,6 @@ def main(apply_it):
 if __name__ == '__main__':
     ap = argparse.ArgumentParser()
     ap.add_argument('--apply', action='store_true')
-    main(ap.parse_args().apply)
+    ap.add_argument('--published', action='store_true', help='落证人表到发布页（链条末尾用）')
+    a = ap.parse_args()
+    main(a.apply, a.published)

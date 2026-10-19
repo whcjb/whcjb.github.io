@@ -37,3 +37,5 @@ python3 scripts/isaiah_english_rescan.py --apply
 #                   后面都要补一遍判读。
 python3 scripts/adjudicate_alexander_isaiah.py --apply
 python3 scripts/isaiah_backlog.py
+python3 scripts/isaiah_apply_hebrew.py --apply --published
+python3 scripts/isaiah_caret_sweep.py

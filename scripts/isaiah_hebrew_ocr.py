@@ -85,7 +85,18 @@ def looks_residue(tok, lex, junk_only=False):
     不是改错正文。
     """
     core = tok.strip(".,;:!?()[]'\"")
-    if len(core) < 2 or not core.isascii():
+    letters = len(re.sub(r'[^A-Za-z]', '', core))
+    if HEBREW.search(core) or GREEK.search(core):
+        return False                      # 已经是外文字母了
+    # 非 ASCII 残渣符号（`•'sxba`、`«`、`°`）与只剩一个字母的乱码（`(-Q`、`"a)`）也是候选：
+    # 先前「非 ASCII 一律不算、少于两字符不算」，14:32 •'sxba（מלאכי）整类没进候选（2026-10-19）
+    if not core.isascii():
+        return letters >= 1
+    if core in ('&c', '&c.', 'Sc', '&e'):     # etc. 的印法
+        return False
+    if JUNK.search(core) and letters >= 1 and len(tok) >= 2:
+        return True
+    if len(core) < 2:
         return False
     # 罗马数字闸只挡**干净**的字母串（`xxxvn`）。夹了乱码符号的（`v^n^`、`nx/`）照样是候选：
     # 希伯来活字的拉丁误读里 n m i v x l c d u 极多，先前整类连试都没试（2026-10-19，14:14 fiE/nx）
