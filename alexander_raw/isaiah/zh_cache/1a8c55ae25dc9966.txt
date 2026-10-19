@@ -1,0 +1,21 @@
+<thinking>
+Count asterisks in original: "*Does he not ... border*" = 2; "*principal wheat, appointed*" = 2; "*sealed barley.*" = 2. Total 6. Previous got 8 — likely added italics for discussed words. Must keep exactly 6.
+
+OCR garble: "p:o3, ",7303, rmr, eta, ir.Via, "paw — these are Hebrew garbled. Rule 7: [Heb.] marks → 〔希伯来文〕. These garbled ones should be treated as unrecognized Hebrew → 〔希伯来文〕. שורה is fine. נסמן is the word (נִסְמָן). But don't guess; use 〔希伯来文〕. However I could keep שורה where it appears. "rmr in that of a row" — that's שורה; but don't guess — use 〔希伯来文〕. Actually we know שורה is the row word, but rule says not to guess. Fine.
+
+Verb eta = שׂם (set). suffix in ir.Via = גְּבֻלָתוֹ. "paw = כֻּסֶּמֶת? Actually "reference of the suffix to" spelt (כסמת). Use 〔希伯来文〕.
+
+German: Waizen in Reihen und Gerste hinein — keep original with Chinese gloss. Waizen is old spelling. "bailey" = barley typo.
+
+Ewald first mention: 埃瓦尔德（Ewald）. Gesenius: 格塞尼乌斯（Gesenius）.
+
+Paronomasia שורה־ושערה keep Hebrew with gloss.
+
+Translate the scripture literally: "岂不是平了地面，就撒下莳萝，播散孜然（小茴香），把小麦按行种上，把大麦种在（所）定的（地方），把粗麦种在他的地边吗？" Use 和合本 terms: dill→小茴香 (和合本 uses 小茴香 for dill, 大茴香 for cummin), spelt→粗麦. Wheat in rows.
+
+"(in the place)" → keep parentheses: （在所）定的（地方）. Keep simple: 大麦种在（所）划定的（地方）. 
+
+Italic two: *上等的小麦，指定的*或*封定的大麦。* — "principal wheat, appointed or sealed barley": meaning "principal wheat, appointed barley" or "sealed barley". Write: *上等的小麦、指定的*或*封定的大麦*。 Put period inside? Original "*sealed barley.*" period inside. Fine.
+
+Doggerel: 打油诗.
+</thinking>*他平了地面，岂不就撒下小茴香，播散大茴香，把小麦按行种上，把大麦种在划定的（地方），把粗麦种在他的地边吗*？这就是说，他依次照料这一切农务，各按其时、各得其地，也顾及所要出产的各样庄稼。有人把 שורה 与〔希伯来文〕两词解作谷物的修饰语：*上等的小麦、指定的*或*封定的大麦。*埃瓦尔德（Ewald）则以之描写土壤：小麦种在上好的地里，大麦种在粗劣的地里。但最有惯用法与类比为据的，是格塞尼乌斯（Gesenius）的解释：他把〔希伯来文〕解作指定、划定之意，把〔希伯来文〕解作行列或次序。这与动词〔希伯来文〕正相吻合，因它所指的不是随意撒种，而是用心栽种；据说东方人种小麦至今仍是这样做，格塞尼乌斯等人也认为这正是古时巴勒斯坦地土出奇丰饶的原因之一。〔希伯来文〕中的词尾大概指农夫，名词则指田地的边缘，其余谷物便播种或栽种在这田里。把这词尾归于〔希伯来文〕，或归于前面几个名词，都十分牵强。格塞尼乌斯为了保留 שורה־ושערה（行列—大麦）之间所谓的谐音双关，竟把这一分句译成了打油诗的格式。（Waizen in Reihen und Gerste hinein.（小麦成行，大麦入地。））
