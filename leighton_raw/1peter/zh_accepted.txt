@@ -1,0 +1,4 @@
+# 人工核过、内容无误、只是过不了结构闸的译文缓存（translate_leighton.py 读）
+45e1e8933d8241d8  1-2 斜体：「as Iames saith」与所引使徒行传 15:18 两段斜体并成一段
+ee3bb338dfcd18f4  1-2 斜体：约翰福音 14:27 前后两半并成一段
+8be3cd91cc38b011  1-10 斜体：「Cant. Chap. / Verse」并进出处「雅歌 1:1」

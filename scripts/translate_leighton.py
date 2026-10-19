@@ -159,6 +159,14 @@ def structural_diff(en: str, zh: str) -> str:
         problems.append('漏译的英文词 ' + '、'.join(sorted(set(stray))[:5]))
     if CHATTY_RE.search(zh):
         problems.append('模型在对话而非翻译')
+    # 起稿残留：模型先写一句草稿（「约翰一书 3:18 → 见 1 约翰一书 3:18」）再从头重写，
+    # 两版都留在输出里——星号、占位符都对得上，旧闸看不见（试译第 1 章 1:22 抓到）
+    if '→' in zh and '→' not in en:
+        problems.append('起稿残留（→）')
+    sents = [x for x in re.split(r'[。！？；]', zh) if len(x) >= 20]
+    dup = [x for x in set(sents) if sents.count(x) > 1]
+    if dup:
+        problems.append('同一句出现两次（重复起稿）：' + dup[0][:20])
     leak = tf.output_leak(zh)
     if leak:
         problems.append(leak)
@@ -175,12 +183,24 @@ def tidy(zh: str) -> str:
     return zh
 
 
+# 人工逐段核过、确认无误却过不了结构闸的译文（多为模型把相邻两段斜体并成一段）。
+# 列在这里，--resume 时不再当坏缓存重译。一行一个 md5 key，# 后是说明。
+ACCEPTED = RAW / 'zh_accepted.txt'
+
+
+def accepted_keys():
+    if not ACCEPTED.exists():
+        return set()
+    return {ln.split()[0] for ln in ACCEPTED.read_text(encoding='utf-8').splitlines()
+            if ln.strip() and not ln.startswith('#')}
+
+
 def translate_one(text: str, resume: bool, label: str = '') -> str:
     key = tf.md5key(KEY_NS + text)
     f = CACHE / f'{key}.txt'
     if resume and f.exists() and f.stat().st_size > 0:
         cached = f.read_text(encoding='utf-8')
-        if not structural_diff(text, cached):
+        if not structural_diff(text, cached) or key in accepted_keys():
             return cached
         print(f'    [cache-reject] {label}: {structural_diff(text, cached)[:90]}', flush=True)
 
