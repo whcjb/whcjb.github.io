@@ -109,7 +109,14 @@ RE_CONJ = re.compile(r'⟦([^⟧]*)⟧')
 CONJ_TITLE = 'Editorial conjecture, approved: illegible in the 1693/94 source; supplied from the stated evidence (编者推补，经同意；非原书原文)'
 
 
+# 原书分条讲「2. It must be pure…」——段首「数字 + 点 + 空格」会被 kramdown 当成
+# 有序列表，从 1 重新编号（页面上第 2 条显示成 1.）。转义那个点，原样显示。
+# old-book-ocr §4.4 渲染层校验「行首 1. 」那一项（2026-10-19 补查出 205 段）。
+RE_OL = re.compile(r'^(\d+)\. ', re.M)
+
+
 def render_body(body, ch=None):
+    body = RE_OL.sub(r'\1\\. ', body)
     body = add_anchors(body, ch)
     body = RE_CONJ.sub(lambda m: f'<span class="lt-conj" title="{CONJ_TITLE}">[{m.group(1)}]</span>'
                        if m.group(1) else '', body)
@@ -202,7 +209,10 @@ def build_index(pages):
            f'title: "{BOOK_NAME}"',
            f'author: "{AUTHOR} (1611–1684) · sometime Archbishop of Glasgow"',
            'edition: "A Practical Commentary upon the First Epistle General of St. Peter · Vol. I York 1693; Vol. II London 1694"',
-           f'zh_url: "/leighton/{BOOK_ID}/"', '---', '']
+           '---', '']
+    # 中译未出时根目录就是这份英文目录，「中文版 →」会链回自己——有 zh/ 才挂
+    if (OUT / 'zh').exists():
+        out.insert(-2, f'zh_url: "/leighton/{BOOK_ID}/"')
 
     def group(name, pred):
         lst = [p for p in pages if pred(p)]
