@@ -11,7 +11,7 @@ next_label: "Isaiah 40"
 zh_url: "/alexander/isaiah/zh/later-introduction/"
 ---
 
-<!-- later-introduction | v2 扫描页 11-46 -->
+<!-- later-introduction v2 扫描页 11-46 -->
 
 <!-- PAGE 11 -->
 ONE of the most important functions of the prophetic office was the exposition of the Law, that is to say, of the Mosaic institutions, the peculiar form in which the Church was organized until the advent of Messiah. This inspired exposition was of absolute necessity, in order to prevent or to correct mistakes which were constantly arising, not only from the blindness and perverseness of the people, but from the very nature of the system under which they lived. That system, being temporary and symbolical, was necessarily material, ceremonial, and restrictive in its forms; as nothing purely spiritual could be symbolical or typical of other spiritual things, nor could a catholic or free constitution have secured the necessary segregation of the people from all others for a temporary purpose.

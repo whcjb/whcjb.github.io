@@ -23,6 +23,39 @@ LOG = ROOT / 'logs/alexander_isaiah_caret_sweep.tsv'
 FOREIGN = r'֐-׿Ͱ-Ͽἀ-῿'
 
 
+# 原书不印的残渣符号（§ 是格塞纽斯语法书的节号，真的，不在此列）
+JUNK = '•«»£~|±°®¬¦¤¢¥©'
+JUNK_RE = '[' + re.escape(JUNK) + ']'
+
+
+def sweep_junk(body, name, log):
+    """同 ^ 的办法清其余残渣符号（2026-10-19 续：「•'מלאכי」字回来了，前面还粘着 •'）"""
+    def note(kind):
+        def f(m):
+            log.append((name, kind, body[max(0, m.start() - 30):m.end() + 30].replace('\n', ' ')))
+            return ''
+        return f
+    body = body.replace('‹heb›', '[Heb.]')
+    body = re.sub(r'(?<=[A-Za-z])~ ?(?=[a-z])', '', body)              # Swe~ den → Sweden（行末断词）
+    # 粘在外文/标记上的（含夹在中间的单个撇号：•'מלאכי）
+    body = re.sub(rf'{JUNK_RE}+[\'’]?(?=[*"“”‘(]*(?:[{FOREIGN}]|\[(?:Heb|Gk)\.\]))', note('粘外文前'), body)
+    body = re.sub(rf'(?<=[{FOREIGN}\]]){JUNK_RE}+', note('粘外文后'), body)
+    body = re.sub(rf'(?<![A-Za-z0-9]){JUNK_RE}+(?![A-Za-z0-9])', note('单独'), body)
+    body = re.sub(rf'{JUNK_RE}+', note('乱码中'), body)
+    # 外文词前落单的引号：乱码开头那个 `"`（`"psxba`）在乱码换成希伯来文后留了下来（「with "מלאכי was」）；
+    # 词后 25 字符内没有对应收引号的才删，真引文不动
+    def lone_quote(m):
+        close = {'"': '"', '“': '”', "'": "'", '‘': '’'}[m.group(1)]
+        word = re.match(r'\S+', body[m.end():]).group(0)
+        if close in body[m.end():m.end() + len(word) + 25]:
+            return m.group(0)
+        log.append((name, '落单引号', body[max(0, m.start() - 30):m.end() + 30].replace('\n', ' ')))
+        return ''
+    body = re.sub(rf'(?<![A-Za-z])(["“\'‘])(?=[{FOREIGN}])', lone_quote, body)
+    body = re.sub(r'\((?:[ \t]+)(?=\S)', '(', body)                 # 删符号后留下的「( 」
+    return re.sub(r'[ \t]{2,}', ' ', body)
+
+
 def sweep(body, name, log):
     def note(kind):
         def f(m):
@@ -44,18 +77,19 @@ def main():
     for p in sorted(PUB.glob('*.md')):
         t = p.read_text(encoding='utf-8')
         head, sep, body = t.partition('\n---\n') if t.startswith('---') else ('', '', t)
-        if '^' not in body:
+        new = sweep_junk(sweep(body, p.stem, log) if '^' in body else body, p.stem, log)
+        if new == body:
             continue
-        new = sweep(body, p.stem, log)
         p.write_text(head + sep + new, encoding='utf-8')
         changed += 1
-    left = sum(p.read_text(encoding='utf-8').count('^') for p in PUB.glob('*.md'))
+    left = sum(p.read_text(encoding='utf-8').split('\n---\n', 1)[-1].count('^') for p in PUB.glob('*.md'))
+    junk_left = sum(len(re.findall(JUNK_RE, p.read_text(encoding='utf-8').split('\n---\n', 1)[-1])) for p in PUB.glob('*.md'))
     LOG.parent.mkdir(exist_ok=True)
     with open(LOG, 'w', encoding='utf-8') as f:
         f.write('chapter\tkind\tcontext\n')
         for r in log:
             f.write('\t'.join(r) + '\n')
-    print(f'^ 清扫：改 {changed} 篇，记录 {len(log)} 处 → {LOG}；剩余 ^ = {left}')
+    print(f'^ 与残渣符号清扫：改 {changed} 篇，记录 {len(log)} 处 → {LOG}；剩余 ^ = {left}，残渣符号 = {junk_left}')
 
 
 if __name__ == '__main__':

@@ -11,7 +11,7 @@ next_label: "Introduction (Vol. II)"
 zh_url: "/alexander/isaiah/zh/later-preface/"
 ---
 
-<!-- later-preface | v2 扫描页 9-10 -->
+<!-- later-preface v2 扫描页 9-10 -->
 
 <!-- PAGE 9 -->
 THIS volume is a sequel to the one which appeared about a year ago, under the title of the Earlier Prophecies, the two together forming a continuous Commentary on Isaiah. While the same plan has been here retained without alteration, I have aimed at greater uniformity of execution, as well as a more critical selection of materials. The reasons for a separate investigation of these later chapters have been stated in the introduction to the other volume. In addition to the authors there enumerated, I have carefully compared the English version and remarks of Noyes (second edition, Boston, 1843) and *die Cyro-jesaianischen Weissagungen* of Beck (Leipzig, 1844); the first of which, though elegant and scholarlike, is too closely modelled on Gesenius to afford much new matter, and the other is remarkable chiefly for the boldness of its ultra-rationalistic doctrines, and the juvenile flippancy with which they are expressed. Of both these works occasional citations will be met with in the present volume.

@@ -11,7 +11,7 @@ next_label: "Isaiah 1"
 zh_url: "/alexander/isaiah/zh/introduction/"
 ---
 
-<!-- introduction | v1 扫描页 15-77 -->
+<!-- introduction v1 扫描页 15-77 -->
 
 <!-- PAGE 15 -->
 THE English words *prophet, prophesy,* and *prophecy,* have long been appropriated, by established usage, to the prediction of future events. To prophesy, according to the universal acceptation of the term, is to foretell, and a prophet is one who does or can foretell things yet to come. This restricted application of the terms in question has materially influenced the interpretation of the prophetic scriptures by modern and especially by English writers. It is necessary, therefore, to compare the common use of these expressions with the corresponding terms in Greek and Hebrew.
