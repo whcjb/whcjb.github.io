@@ -119,6 +119,17 @@ def absolutize_refs(body: str) -> str:
     return REL_REF.sub(sub, body)
 
 
+# 音译专名后的原名括注「（Brutus）」→ 小一号灰字方括号。只认括号里全是西文
+# 字母的（人名、地名）；夹了中文的（「Alford，见于他的一部著作」）、希腊文、
+# 拉丁词释义「fides（信心）」都不动。zh_chapters 仍存圆括号，只在发布时换。
+# 2026-10-19 用户：「用圆括号有点丑陋，改成方括号并且字体小一号，灰色字体」。
+ORIG_NAME = re.compile(r"（([A-Za-zÀ-ÿÆæŒœ][A-Za-zÀ-ÿÆæŒœ .,'’&-]*)）")
+
+
+def orig_names(body: str) -> str:
+    return ORIG_NAME.sub(r'<span class="jh-orig">[\1]</span>', body)
+
+
 def existing_date(path: Path):
     if not path.exists():
         return None
@@ -148,7 +159,7 @@ def main(only=None):
         for a, b in IMPRINT_ZH:
             body = body.replace(a, b)
         sub = FM_SUB.search(en_fm(sec))
-        info[sec] = dict(label=label(sec, title_zh), body=absolutize_refs(body.strip()),
+        info[sec] = dict(label=label(sec, title_zh), body=orig_names(absolutize_refs(body.strip())),
                          ref=zh_ref(sub.group(1)) if sub else None)
 
     written = kept = 0
