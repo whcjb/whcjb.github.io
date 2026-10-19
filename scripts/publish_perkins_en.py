@@ -121,8 +121,14 @@ def add_anchors(body, ch):
                                  f'<div class="commentary-anchor" id="galatians-{ch}-{m.group(1)}"></div>', body)
 
 
+# 原书分条「2. …」各自成段——段首「数字 + 点 + 空格」会被 kramdown 当成有序列表、
+# 从 1 重新编号（第 2 条显示成 1.）。转义那个点，原样显示（2026-10-19，同雷登）。
+RE_OL = re.compile(r'^(\d+)\. ', re.M)
+
+
 def render_body(body, ch=None):
     body = add_anchors(body, ch)
+    body = RE_OL.sub(r'\1\\. ', body)
     # 剩下判不出的缺字记号包成 .pk-gap，页面上看得见
     body = pc.TOK.sub(lambda m: f'<span class="pk-gap" title="TCP: illegible in source">{m.group(0)}</span>', body)
     return body

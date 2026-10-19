@@ -57,10 +57,16 @@ def subtitle(p):
     return AUTHOR_EN if 'ch' in p else FRONT_LABEL[p['slug']][1]
 
 
+# 原书分条「2. …」各自成段——段首「数字 + 点 + 空格」会被 kramdown 当成有序列表、
+# 从 1 重新编号（第 2 条显示成 1.）。转义那个点，原样显示（2026-10-19，同雷登）。
+RE_OL = re.compile(r'^(\d+)\. ', re.M)
+
+
 def clean(body: str) -> str:
     # 相邻两段斜体在译文里常被并成 `**`；本书的 `**N**` 是节号粗体，只合并「孤立的」`**`
     body = re.sub(r'(?<![*\d])\*\*(?![*\d])', '', body)
     body = re.sub(r'<<<[^>]*>>>', '', body)
+    body = RE_OL.sub(r'\1\\. ', body)
     return body.strip()
 
 
