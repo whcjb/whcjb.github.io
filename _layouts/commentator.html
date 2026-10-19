@@ -216,17 +216,11 @@ layout: default
   font-family: var(--cb-serif); font-size: 16px; line-height: 1.6; color: var(--cb-ink);
   max-width: 40em; counter-reset: cbsec;
 }
-.cb-wrap .cb-body h2 {
-  counter-increment: cbsec; position: relative;
+.cb-wrap .cb-body h2 {                   /* 节号圆圈已去掉（2026-10-19 用户） */
   font-size: 17px; font-weight: 600; letter-spacing: .12em; color: var(--cb-c1);
-  margin: 24px 0 8px; padding: 0 0 0 36px; line-height: 26px;
+  margin: 24px 0 8px; padding: 0; line-height: 1.5;
 }
 .cb-wrap .cb-body h2:first-child { margin-top: 4px; }
-.cb-wrap .cb-body h2::before {
-  content: counter(cbsec, cjk-ideographic); position: absolute; left: 0; top: 0;
-  width: 26px; height: 26px; line-height: 26px; text-align: center; border-radius: 50%;
-  background: var(--cb-c1); color: #fff; font-size: 13px; letter-spacing: 0;
-}
 .cb-wrap .cb-body p { margin: 0 0 6px; text-align: justify; text-indent: 2em; }
 .cb-wrap .cb-body ul { padding-left: 1.4em; margin: 2px 0 8px; }
 .cb-wrap .cb-body li { margin: 1px 0; }
