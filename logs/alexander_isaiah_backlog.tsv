@@ -10,7 +10,6 @@ chapter	token	witness	verdict	bucket
 17	fiiis		无证据	待判·无证据
 17	Evaioi		无证据	待判·无证据
 17	itisa		无证据	待判·无证据
-17	nnfea	among	reject	待判·证人对不上
 18	donec	donee	fix	待判·证人还有话说
 2	ducis		无证据	待判·无证据
 21	nsiba		无证据	待判·无证据
@@ -26,7 +25,9 @@ chapter	token	witness	verdict	bucket
 29	somno		无证据	待判·无证据
 3	patris	ticum	reject	待判·证人还有话说
 3	refisal	words	reject	待判·证人还有话说
+3	Braut	als	reject	待判·证人对不上
 30	afiiua		无证据	待判·无证据
+30	panem	ephraim	reject	待判·证人还有话说
 33	abana		无证据	待判·无证据
 33	doctus		无证据	待判·无证据
 34	gramen		无证据	待判·无证据
@@ -80,6 +81,5 @@ chapter	token	witness	verdict	bucket
 63	tabtea		无证据	待判·无证据
 64	susii		无证据	待判·无证据
 7	veavie		无证据	待判·无证据
-9	innaia		无证据	待判·无证据
 9	tumulum		无证据	待判·无证据
 introduction	Onias	oni	reject	待判·证人还有话说

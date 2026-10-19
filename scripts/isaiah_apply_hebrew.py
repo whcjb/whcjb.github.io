@@ -24,7 +24,10 @@ from alexander_lexicon import build, is_word
 
 ROOT = Path(__file__).resolve().parent.parent
 RAW = ROOT / 'alexander_raw/isaiah/en_chapters'
-TSV = [ROOT / 'alexander_raw/isaiah/hebrew_ocr.tsv',
+# 闭集选词（isaiah_hebrew_closedset.py，落的是马所拉文本原字）**排在最前**：同一处
+# 两张表都有读数时先落它，开集那行再去找就找不到乱码了，自然落空。
+TSV = [ROOT / 'alexander_raw/isaiah/hebrew_closedset.tsv',
+       ROOT / 'alexander_raw/isaiah/hebrew_ocr.tsv',
        ROOT / 'alexander_raw/isaiah/hebrew_ocr_junk.tsv']
 LOG = ROOT / 'logs/alexander_isaiah_hebrew_applied.tsv'
 
@@ -151,10 +154,15 @@ def main(apply_it):
     # 于是 `(from πρόφημι)` 变成 `(from πρόφημι)))`（导论正文第一行）。
     rows, seen = [], set()
     for r in raw:
-        key = (r['vol'], r['scan_page'], r['before'], r['garbage'])
-        if key in seen:
-            continue
-        seen.add(key)
+        # 整串比前文。曾改成只比末两词，把两张开集表里不同的两行并掉、留下低置信度那行，
+        # 13 处已落好的希伯来文退回乱码（2026-10-19）；闭集表的 before 与开集口径一致，整串比即可
+        # 闭集行不参与去重：它先落；落不下（斜体否决、定位不到）时，开集那行还要能补上。
+        # 两行都落得下时由下面的「位置重叠」判重，不会同一处改两次。
+        if r.get('script') != 'heb-wlc':
+            key = (r['vol'], r['scan_page'], r['before'], r['garbage'])
+            if key in seen:
+                continue
+            seen.add(key)
         r['reading'] = trim_reading(r['reading'])
         if not r['reading']:
             continue
@@ -214,6 +222,10 @@ def main(apply_it):
         if rep is None:
             stat['italic'] += 1
             log.append((r['garbage'], r['reading'], r['conf'], 'italic'))
+            continue
+        if any(not (b <= x or a >= y) for x, y, _ in edits[name]):
+            stat['superseded'] = stat.get('superseded', 0) + 1
+            log.append((r['garbage'], r['reading'], r['conf'], 'superseded'))
             continue
         edits[name].append((a, b, rep))
         stat['applied'] += 1
