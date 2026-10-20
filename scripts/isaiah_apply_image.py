@@ -33,11 +33,21 @@ PUB = ROOT / 'alexander/isaiah'
 
 
 def load():
-    rows = []
-    with TSV.open(encoding='utf-8') as f:
-        for r in csv.DictReader((ln for ln in f if not ln.startswith('#')), delimiter='\t',
-                                quoting=csv.QUOTE_NONE):
-            rows.append(r)
+    """→ [(批号, 行)]。`# ——` 起头的注释行开新的一批。"""
+    rows, batch = [], 0
+    lines = TSV.read_text(encoding='utf-8').splitlines()
+    head = None
+    for ln in lines:
+        if ln.startswith('# ——'):
+            batch += 1
+            continue
+        if not ln.strip() or ln.startswith('#'):
+            continue
+        cells = ln.split('\t')
+        if head is None:
+            head = cells
+            continue
+        rows.append((batch, dict(zip(head, cells))))
     return rows
 
 
@@ -46,28 +56,33 @@ def main():
     ap.add_argument('--apply', action='store_true')
     a = ap.parse_args()
     rows = load()
-    by_ch = collections.defaultdict(list)
-    for r in rows:
-        by_ch[r['chapter']].append(r)
+    by_ch = collections.defaultdict(lambda: collections.defaultdict(list))
+    for batch, r in rows:
+        by_ch[r['chapter']][batch].append(r)
     stat = collections.Counter()
     bad = []
-    for ch, rs in sorted(by_ch.items()):
+    for ch, batches in sorted(by_ch.items()):
         path = PUB / f'{ch}.md'
         text = path.read_text(encoding='utf-8')
         orig = text
-        for r in rs:
-            b = r['before'].replace('\\t', '\t').replace('\\n', '\n')
-            old, new = r['old'], r['new']
-            if b + new in text and (b + old) not in text:
-                stat['已落'] += 1
-                continue
-            n = text.count(b + old)
-            if n == 1:
-                text = text.replace(b + old, b + new)
+        # 每批的前文锚都是照「上一批落完、本批还没落」的正文取的：一批一批地落；
+        # 同一批里锚可能含本批前面的乱码，所以按位置从后往前落
+        for batch in sorted(batches):
+            todo = []
+            for r in batches[batch]:
+                b = r['before'].replace('\\t', '\t').replace('\\n', '\n')
+                old, new = r['old'], r['new']
+                n = text.count(b + old)
+                if n == 1:
+                    todo.append((text.index(b + old) + len(b), old, new))
+                elif n == 0 and b + new in text:
+                    stat['已落'] += 1
+                else:
+                    stat['找不到' if n == 0 else '不唯一'] += 1
+                    bad.append((ch, n, b[-30:], old, new))
+            for pos, old, new in sorted(todo, reverse=True):
+                text = text[:pos] + new + text[pos + len(old):]
                 stat['落'] += 1
-            else:
-                stat['找不到' if n == 0 else '不唯一'] += 1
-                bad.append((ch, n, b[-30:], old, new))
         if a.apply and text != orig:
             path.write_text(text, encoding='utf-8')
     print('影像判读外文:', dict(stat))
