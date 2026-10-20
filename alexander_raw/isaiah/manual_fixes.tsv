@@ -2008,3 +2008,4 @@ DX from "nax\ *(*	DX from "nax\ '	quote-8: 开引号被读成左括号、又被�
 from "nax\ *(*If not	from "nax\ 'If not	quote-8b: 同 quote-8，前文的乱码 DX 已被换成希伯来文（אם־לא），按新前文再立一条（2026-10-19）
 ground that i'a, though properly	ground that מו, though properly	heb-ctx: 53:8 לָמוֹ 的后缀 מו；tesseract heb 读数 מו（73 分），上下文「though properly a plural suffix」吻合（2026-10-19）
 the Chaldee Paraphrase (SE35 b=),	the Chaldee Paraphrase (כל עמא),	img: v1p360 影像核过——迦勒底意译（亚兰文）「כל עמא」，右起读；tesseract heb 两块读数 עמא(75)/כל(88)，不在 WLC 故闭集救不了（2026-10-19 用户截图）
+Septuagint more freely *ta*	Septuagint more freely τὰ θεμέλια.	img: v1p283 影像核过——v.15 末希腊文「τὰ θεμέλια.」被 OCR 读成 *ta*，其余整串丢失（2026-10-20 用户截图）
