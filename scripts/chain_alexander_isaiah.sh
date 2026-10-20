@@ -39,3 +39,6 @@ python3 scripts/adjudicate_alexander_isaiah.py --apply
 python3 scripts/isaiah_backlog.py
 python3 scripts/isaiah_apply_hebrew.py --apply --published
 python3 scripts/isaiah_caret_sweep.py
+# 影像判读的外文（希伯来/希腊）——前面各道都救不回来、发布页上还是 [Heb.]/[Gk.] 或乱码的，
+# 按高分辨率原始扫描逐条看过，表在 alexander_raw/isaiah/foreign_image.tsv
+python3 scripts/isaiah_apply_image.py --apply
