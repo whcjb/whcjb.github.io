@@ -171,6 +171,31 @@ description: 加尔文与马太亨利之外的历代改革宗注释——欧文�
      hover 用 brightness 压深，省掉为每个色再写一份深色值。 */
   .cx-book-btn--has { background: linear-gradient(135deg, var(--c0), var(--c1)); }
   .cx-book-btn--has:hover { filter: brightness(.82); }
+  /* 石榴籽/红宝石光泽：底色那层渐变原样不动，只在其上叠白色半透明光层——
+     左上一片椭圆高光 + 一个小亮点（受光面）、底部一团透光的内辉，
+     再用内阴影压出暗边和顶沿一线反光，显得饱满透亮。 */
+  .cx-book-btn--has {
+    background:
+      radial-gradient(circle at 17% 17%, rgba(255,255,255,.75) 0, rgba(255,255,255,.5) 1.6%, rgba(255,255,255,0) 4%),
+      radial-gradient(ellipse 70% 40% at 30% 4%, rgba(255,255,255,.26), rgba(255,255,255,.05) 58%, rgba(255,255,255,0) 70%),
+      radial-gradient(ellipse 85% 55% at 72% 112%, rgba(255,255,255,.22), rgba(255,255,255,0) 70%),
+      linear-gradient(135deg, var(--c0), var(--c1));
+    box-shadow:
+      inset 0 1px 0 rgba(255,255,255,.42),
+      inset 0 0 0 1px rgba(255,255,255,.07),
+      inset 0 -10px 16px -6px rgba(0,0,0,.24),
+      inset 0 0 18px rgba(0,0,0,.10),
+      0 1px 3px rgba(45,74,58,.14);
+    text-shadow: 0 1px 1.5px rgba(0,0,0,.28);
+  }
+  .cx-book-btn--has:hover {
+    box-shadow:
+      inset 0 1px 0 rgba(255,255,255,.42),
+      inset 0 0 0 1px rgba(255,255,255,.07),
+      inset 0 -10px 16px -6px rgba(0,0,0,.24),
+      inset 0 0 18px rgba(0,0,0,.10),
+      0 5px 12px rgba(45,74,58,.26);
+  }
   /* 尚无别家注释：虚线描边，不可点（同加尔文主页 --pending） */
   .cx-book-btn--none {
     background: transparent; border: 1px dashed var(--cx-pending-border);
