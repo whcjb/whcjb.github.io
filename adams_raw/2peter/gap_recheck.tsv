@@ -1333,3 +1333,6 @@
 8952	hee	tcp-count	同一词的拼法按 TCP 缺字数（录入员看原图所记）取
 10223	Wee	tcp-count	同一词的拼法按 TCP 缺字数（录入员看原图所记）取
 10704	Bee	tcp-count	同一词的拼法按 TCP 缺字数（录入员看原图所记）取
+2982	the	r1848	1862 OCR 把 the 读成 tile、预填误作 till；1848 同位 the
+4480	great	r1848	1862 OCR 把 great 读成 groat；1848 同位 great，合 TCP gr•••
+8011	hee	r1848	1862 OCR 把 he 读成 lie；1848 同位 he，TCP ••e 三字母作 hee
