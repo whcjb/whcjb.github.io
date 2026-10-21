@@ -277,4 +277,34 @@ function closeAdamsVerseNav() {
 }
 /* 编者推补（1657 原书此处缺损，据上下文补出）：方括号 + 另色，与原文区分 */
 .adams-wrap .ad-conj, .adams-book .ad-conj { color: #8a5a00; background: #fff6e0; border-radius: 2px; padding: 0 1px; cursor: help; font-style: normal; }
+/* 扉页（title1 / title2）：照 1633 原书版式手排——双线框、逐行居中、字号大小悬殊、小型大写、斜体、
+   段间横线、印刷商徽记。字形用站内衬线体，不仿古字。 */
+.adams-wrap .ad-tp { max-width: 520px; margin: 10px auto 30px; padding: 26px 30px 22px;
+  border: 1px solid #3a3a40; outline: 1px solid #3a3a40; outline-offset: 5px;
+  text-align: center; font-family: Georgia, "Times New Roman", serif; color: #1f1f24; line-height: 1.15; }
+.adams-wrap .ad-tp-l { margin: 0 0 6px; text-align: center; }
+.adams-wrap .ad-tp .s0 { font-size: 46px; letter-spacing: .02em; }
+.adams-wrap .ad-tp .s1 { font-size: 30px; }
+.adams-wrap .ad-tp .s2b { font-size: 30px; letter-spacing: .03em; }
+.adams-wrap .ad-tp .s2 { font-size: 22px; letter-spacing: .03em; }
+.adams-wrap .ad-tp .s3 { font-size: 20px; }
+.adams-wrap .ad-tp .s4 { font-size: 16px; }
+.adams-wrap .ad-tp .s5 { font-size: 14px; line-height: 1.45; margin: 4px 6px 6px; }
+.adams-wrap .ad-tp .it { font-style: italic; }
+.adams-wrap .ad-tp .ls { letter-spacing: .18em; }
+.adams-wrap .ad-tp .ls2, .adams-wrap .ad-tp .ls2 .sc { letter-spacing: .22em; }
+.adams-wrap .ad-tp .sc { font-variant: small-caps; text-transform: lowercase; letter-spacing: .06em; }
+.adams-wrap .ad-tp sup { font-size: .5em; vertical-align: .9em; }
+.adams-wrap .ad-tp-rule { border: 0; border-top: 1.5px solid #3a3a40; margin: 12px 0; }
+.adams-wrap .ad-tp-dev { margin: 6px 0; }
+.adams-wrap .ad-tp-dev img { width: 46%; max-width: 230px; height: auto; display: inline-block; }
+@media (max-width: 600px) {
+  .adams-wrap .ad-tp { padding: 18px 12px 16px; }
+  .adams-wrap .ad-tp .s0 { font-size: 30px; }
+  .adams-wrap .ad-tp .s1, .adams-wrap .ad-tp .s2b { font-size: 22px; }
+  .adams-wrap .ad-tp .s2 { font-size: 17px; }
+  .adams-wrap .ad-tp .s3 { font-size: 16px; }
+  .adams-wrap .ad-tp .s4 { font-size: 13px; }
+  .adams-wrap .ad-tp .s5 { font-size: 12px; }
+}
 </style>

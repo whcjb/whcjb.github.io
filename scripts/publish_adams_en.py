@@ -39,6 +39,16 @@ TAIL = [('index', 'An Alphabeticall Direction', 'Index of the principal points')
 RE_BOX = re.compile(r'<div class="ad-text" markdown="1">')
 
 
+MANUAL = RAW / 'manual_pages'
+
+
+def load_page(slug):
+    """扉页等排版性页面：用照原书影像手排的 HTML（manual_pages/<slug>.html），文字取自 TCP，
+    版式（分行、字号、小型大写、斜体、横线、印刷商徽记）照 1633 原书。"""
+    f = MANUAL / f'{slug}.html'
+    return f.read_text(encoding='utf-8').strip() if f.exists() else ac.load(slug)
+
+
 def vref(ch, a, b):
     return f'2 Peter {ch}:{a}' if a == b else f'2 Peter {ch}:{a}–{b}'
 
@@ -48,14 +58,14 @@ def build_pages():
     verse_slugs = [s for s in order if re.fullmatch(r'\d-\d+', s)]
     pages = []
     for slug, title, sub in FRONT:
-        pages.append(dict(slug=slug, title=title, subtitle=sub, body=ac.load(slug), group='front'))
+        pages.append(dict(slug=slug, title=title, subtitle=sub, body=load_page(slug), group='front'))
     for i, slug in enumerate(verse_slugs):
         ch, a = map(int, slug.split('-'))
         nxt = verse_slugs[i + 1] if i + 1 < len(verse_slugs) else None
         b = (int(nxt.split('-')[1]) - 1) if nxt and int(nxt.split('-')[0]) == ch else NV[ch]
         if slug == '2-11':          # 卷二从 2:11 起：卷二扉页排在它前面
             for s2, t2, sub2 in VOL2:
-                pages.append(dict(slug=s2, title=t2, subtitle=sub2, body=ac.load(s2), group='vol2'))
+                pages.append(dict(slug=s2, title=t2, subtitle=sub2, body=load_page(s2), group='vol2'))
         parts = split_long(ac.load(slug))
         for k, body in enumerate(parts, 1):
             pg = dict(slug=slug if k == 1 else f'{slug}-{k}',

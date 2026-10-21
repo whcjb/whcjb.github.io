@@ -11,13 +11,28 @@ next_url: "/adams/2peter/2-11/"
 next_label: "2 Peter 2:11"
 ---
 
-A COMMENTARY OR, EXPOSITION UPON THE DIVINE SECOND EPISTLE GENERALL, WRITTEN BY THE BLESSED APOSTLE S*t.* PETER.
-
-The second Tome.
-
-By THOMAS ADAMS.
-
-<p class="ad-quote" markdown="1">*1 PETER 5.10.* The God of all grace, who hath called us into his eternall glory by Christ Iesus, after that yee have suffered a while, make you perfect, stablish, strengthen, settle you: To Him be glory and dominion, for ever and ever, Amen.</p>
-
-LONDON, Imprinted by FELIX KYNGSTON for IACOB BLOOME. 1633.
-
+<div class="ad-tp">
+<div class="ad-tp-l s1">A</div>
+<div class="ad-tp-l s0">COMMENTARY</div>
+<div class="ad-tp-l s3">O<span class="sc">r</span>,</div>
+<div class="ad-tp-l s0">EXPOSITION</div>
+<div class="ad-tp-l s3 it ls">VPON</div>
+<div class="ad-tp-l s2b">THE DIVINE SECOND</div>
+<div class="ad-tp-l s2">EPISTLE GENERALL,</div>
+<div class="ad-tp-l s4"><span class="ls2">W<span class="sc">ritten</span></span></div>
+<div class="ad-tp-l s2 it ls">BY THE BLESSED APOSTLE</div>
+<div class="ad-tp-l s2b">S<sup>t.</sup> PETER.</div>
+<hr class="ad-tp-rule">
+<div class="ad-tp-l s3 it">The second Tome.</div>
+<hr class="ad-tp-rule">
+<div class="ad-tp-l s3"><i>By</i> T<span class="sc">homas</span> A<span class="sc">dams</span>.</div>
+<hr class="ad-tp-rule">
+<div class="ad-tp-l s4">1 P<span class="sc">eter</span> 5.10.</div>
+<div class="ad-tp-l s5 it">The God of all grace, who hath called us into his eternall glory by Christ Iesus, after that yee have suffered a while, make you perfect, stablish, strengthen, settle you: To Him be glory and dominion, for ever and ever, Amen.</div>
+<hr class="ad-tp-rule">
+<div class="ad-tp-dev"><img src="{{ site.baseurl }}/img/adams/device2.jpg" alt="Printer's device of Felix Kyngston: caduceus with clasped hands, motto PAX OPVLENTIAM SAPIENTIA PACEM"></div>
+<hr class="ad-tp-rule">
+<div class="ad-tp-l s3 ls">L<span class="sc">ondon</span>,</div>
+<div class="ad-tp-l s4">Imprinted by F<span class="sc">elix</span> K<span class="sc">yngston</span> for</div>
+<div class="ad-tp-l s5 ls">I<span class="sc">acob</span> B<span class="sc">loome</span>. 1633.</div>
+</div>
