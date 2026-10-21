@@ -114,6 +114,13 @@ AUTHORS = OrderedDict([
                       years='1611–1684', dir='leighton',
                       work_cn='彼得前书实用注释',
                       work_en='A Practical Commentary upon the First Epistle General of St. Peter')),
+    # 亚当斯：生卒取 DLB（Baker 1995）：约 1583 生，1652 年 11 月 26 日下葬。
+    # 《彼得后书注释》1633 伦敦两卷对开本（STC 108；DNB 误作 1638）。
+    ('adams', dict(name='托马斯·亚当斯', short='亚当斯', en='Thomas Adams',
+                   years='1583–1652', dir='adams',
+                   work_cn='彼得后书注释',
+                   work_en='A Commentary or, Exposition vpon the Diuine Second Epistle Generall, '
+                           'written by the Blessed Apostle St. Peter')),
     ('alexander', dict(name='约瑟·亚历山大', short='亚历山大', en='Joseph Addison Alexander',
                        years='1809–1860', dir='alexander',
                        work_cn='诗篇、以赛亚书注释',
@@ -164,6 +171,9 @@ AUTHOR_COLORS = {
     'hutcheson': ('#24753a', '#2f8f46'),
     # 雷登靛紫：与既有十三色及加尔文酒红、马太亨利金、站点 Hux 蓝的 ΔE 最小 30.5（达拉谟紫）。
     'leighton': ('#22226e', '#2d2d99'),
+    # 亚当斯石板灰：中高彩度候选都离既有十四色太近（最好的也只有 ΔE 20 上下），
+    # 低彩度一档 #66666c 与既有各色及加尔文酒红、马太亨利金、站点 Hux 蓝最小 ΔE 26.9，与先例同档。
+    'adams': ('#48484e', '#66666c'),
 }
 
 # 逐卷书名（同一注释家的不同分册书名不同时用）。取各卷扉页的实际书名。
@@ -196,6 +206,9 @@ BOOK_TITLES = {
     ('leighton', '1peter'):    ('彼得前书实用注释',
                                 'A Practical Commentary upon the First Epistle '
                                 'General of St. Peter'),
+    ('adams', '2peter'):       ('彼得后书注释',
+                                'A Commentary or, Exposition vpon the Diuine Second Epistle '
+                                'Generall, written by the Blessed Apostle St. Peter'),
     ('manton', 'james'):       ('雅各书注释',
                                 'A Practical Commentary, or an Exposition with Notes '
                                 'on the Epistle of James'),
@@ -219,6 +232,7 @@ COMPARE_ACCENT = {
     'bridges': '#96613F', 'hodge': '#1f3a5f', 'manton': '#5b2f4a',
     'davenant': '#556b2f', 'alexander': '#7d2f2f', 'spurgeon': '#4a3b22', 'durham': '#674c8e',
     'johnstone': '#106ab2', 'perkins': '#9b2d5f', 'hutcheson': '#2f8f46', 'leighton': '#2d2d99',
+    'adams': '#66666c',
 }
 COMPARE_LABEL = {
     'calvin': '加尔文注释', 'mhenry': '马太亨利注释', 'owen': '约翰欧文注释',
@@ -226,6 +240,7 @@ COMPARE_LABEL = {
     'davenant': '达文南特注释', 'alexander': '亚历山大注释',
     'spurgeon': '司布真注释', 'durham': '达拉谟注释', 'johnstone': '约翰斯通讲疏',
     'perkins': '珀金斯注释', 'hutcheson': '赫奇森注释', 'leighton': '雷登注释',
+    'adams': '亚当斯注释',
 }
 
 
@@ -244,7 +259,8 @@ def _chapter_range(d: Path):
 PRIMARY_LANG = {'calvin': 'zh', 'mhenry': 'zh', 'bridges': 'zh',
                 'owen': 'en', 'hodge': 'en', 'manton': 'en', 'davenant': 'en',
                 'alexander': 'en', 'spurgeon': 'en', 'durham': 'en',
-                'johnstone': 'en', 'perkins': 'en', 'hutcheson': 'en', 'leighton': 'en'}
+                'johnstone': 'en', 'perkins': 'en', 'hutcheson': 'en', 'leighton': 'en',
+                'adams': 'en'}
 
 
 def _lang_variants(aid, d: Path, name: str):

@@ -1,0 +1,78 @@
+---
+layout: default
+---
+{%- comment -%}
+  亚当斯《彼得后书注释》书卷首页。配色与章节页同源（石板灰 #66666c）。
+  目录按原书：卷一（书名页 / 致敬虔的读者 / 第 1–2 章 / 勘误）→ 卷二（书名页 / 致基督徒读者 / 第 3–5 章 / 勘误）。
+{%- endcomment -%}
+
+<div class="container adams-book" style="padding-top: 70px;">
+  <div class="row">
+    <div class="col-lg-9 col-lg-offset-1 col-md-10 col-md-offset-1">
+
+      <div class="ad-booklang">
+        {% if page.zh %}{% if page.en_url %}<a href="{{ site.baseurl }}{{ page.en_url }}">English edition &rarr;</a>{% endif %}
+        {% else %}{% if page.zh_url %}<a href="{{ site.baseurl }}{{ page.zh_url }}">中文版 &rarr;</a>{% endif %}{% endif %}
+      </div>
+      <div class="ad-hero">
+        <h1>{{ page.book_name }}</h1>
+        <p class="ad-hero-author">{{ page.author }}</p>
+        <p class="ad-hero-meta">{{ page.edition }}</p>
+      </div>
+
+      {{ content }}
+
+    </div>
+  </div>
+</div>
+
+<style>
+.adams-book { --ad-ink: #66666c; --ad-ink-dark: #48484e; --ad-rule: #e2e2e6; --ad-paper: #fbfbfa; }
+.adams-book .ad-booklang { text-align: right; margin: 0 0 10px; font-size: 13px; font-family: Georgia, serif; }
+.adams-book .ad-booklang a { color: var(--ad-ink); border: 1px solid var(--ad-rule);
+  border-radius: 4px; padding: 4px 10px; text-decoration: none; }
+.adams-book .ad-booklang a:hover { background: var(--ad-ink); color: #fff; }
+.adams-book .ad-hero {
+  background: linear-gradient(135deg, #48484e 0%, #66666c 55%, #9a9aa3 100%);
+  color: #fff; border-radius: 6px; padding: 34px 28px; margin-bottom: 30px;
+  font-family: Georgia, "Times New Roman", "Songti SC", serif; text-align: center;
+}
+.adams-book .ad-hero h1 { margin: 0 0 10px; font-size: 30px; font-weight: normal; line-height: 1.35; }
+.adams-book .ad-hero-author { margin: 0 0 4px; font-size: 15px; opacity: .92; }
+.adams-book .ad-hero-meta { margin: 0; font-size: 13px; opacity: .78; font-style: italic; }
+.adams-book .ad-group {
+  font-family: Georgia, "Times New Roman", "Songti SC", serif; margin: 30px 0 12px;
+  font-size: 15px; color: var(--ad-ink-dark); letter-spacing: .05em;
+  padding-bottom: 6px; border-bottom: 1px solid var(--ad-rule);
+}
+.adams-book .ad-toc { list-style: none; padding: 0; margin: 0; display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); gap: 8px; }
+.adams-book .ad-toc li { margin: 0; }
+.adams-book .ad-toc a { display: block; padding: 9px 13px; border: 1px solid var(--ad-rule);
+  border-radius: 4px; background: var(--ad-paper); text-decoration: none;
+  font-family: Georgia, "Times New Roman", "Songti SC", serif; font-size: 15px; color: #2a2a33; line-height: 1.45; }
+.adams-book .ad-toc a:hover { border-color: var(--ad-ink); background: #fff; color: var(--ad-ink-dark); }
+.adams-book .ad-note { font-family: Georgia, "Times New Roman", "Songti SC", serif; font-size: 13.5px;
+  color: #6f6f85; line-height: 1.8; margin: 34px 0 0; padding-top: 16px; border-top: 1px solid var(--ad-rule); }
+.adams-book .ad-chgrid { list-style: none; padding: 0; margin: 0; display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(92px, 1fr)); gap: 8px; }
+.adams-book .ad-chgrid a { display: block; text-align: center; padding: 10px 6px; border: 1px solid var(--ad-rule);
+  border-radius: 4px; background: var(--ad-paper); text-decoration: none; color: #2a2a33;
+  font-family: Georgia, "Times New Roman", "Songti SC", serif; font-size: 15px; }
+.adams-book .ad-chgrid a:hover { border-color: var(--ad-ink); background: #fff; color: var(--ad-ink-dark); }
+@media (max-width: 767px) {
+  .adams-book .ad-hero h1 { font-size: 23px; }
+  .adams-book .ad-toc { grid-template-columns: 1fr 1fr; }
+}
+/* 编者推补（1657 原书此处缺损，据上下文补出）：方括号 + 另色，与原文区分 */
+.adams-wrap .ad-conj, .adams-book .ad-conj { color: #8a5a00; background: #fff6e0; border-radius: 2px; padding: 0 1px; cursor: help; font-style: normal; }
+.adams-book .ad-note p { margin: 0 0 12px; }
+.adams-book .ad-note-zh { font-family: "Songti SC", STSong, serif; }
+.adams-book .ad-conjhead { font-family: "Songti SC", STSong, Georgia, serif; font-size: 16px; color: var(--ad-ink-dark); margin: 26px 0 10px; }
+.adams-book .ad-conjtab { width: 100%; border-collapse: collapse; font-size: 13px; line-height: 1.6; margin: 10px 0 20px; }
+.adams-book .ad-conjtab th, .adams-book .ad-conjtab td { border-bottom: 1px solid var(--ad-rule); padding: 6px 6px; vertical-align: top; text-align: left; }
+.adams-book .ad-conjtab th { background: var(--ad-paper); color: var(--ad-ink-dark); white-space: nowrap; }
+.adams-book .ad-conjtab code { font-size: 12px; white-space: nowrap; }
+.adams-book .ad-conjtab .ad-grade { white-space: nowrap; color: #6f6f85; }
+@media (max-width: 767px) { .adams-book .ad-conjtab { display: block; overflow-x: auto; } }
+</style>

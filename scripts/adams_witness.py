@@ -580,6 +580,8 @@ def judge():
 
 # ── 5. 判读图 ────────────────────────────────────────────────────────
 CROPS = W / 'crops2'
+FULLRES = False
+_BIMWS = None
 CACHED_ONLY = False      # 判读图只用已下载的整页（下载在后台跑时）
 
 
@@ -641,7 +643,7 @@ def full_page(key, leaf):
     IMG.mkdir(parents=True, exist_ok=True)
     f = IMG / f'{key}_{leaf:04d}.jpg'
     if not f.exists():
-        suf = '_w3720' if key == 'bim' else '_w1500'   # bim 原图 7440 宽取半；1862 现代字体 1500 宽足够（带宽受限，按页大小取舍）
+        suf = ('' if FULLRES else '_w3720') if key == 'bim' else '_w1500'   # bim 原图 7440 宽取半（复核轮取原尺寸，装订缝处残字要原分辨率才读得出）；1862 1500 宽足够
         for t in range(5):
             try:
                 _download(f'https://archive.org/download/{item}/page/n{_ACCESS[item][leaf]}{suf}.jpg', f)
@@ -741,6 +743,158 @@ def sheets(gids, name, per=12):
     shown = json.loads(side.read_text()) if side.exists() else {}
     shown.update({str(g): locs[g].get('auto') or locs[g].get('cand') for g in gids})
     side.write_text(json.dumps(shown, ensure_ascii=False))
+    print(f'{n_items} 条 → {k} 张 {sh}/{name}_*.jpg', file=sys.stderr)
+
+
+# ── 6. 复核轮（2026-10-21 用户要求：推断条目一律对照原图定）──────────────
+def locate_bim_by_page(gids):
+    """bim 没定位到的：TCP facs（EEBO 对开影像号 n）→ bim 单页叶号约 2n-5…2n-2，
+    只在这几叶里按左右上下文做模糊对齐（bim OCR 噪声大，用 SequenceMatcher 字符比）。"""
+    locs = json.loads((RAW / 'witness_locs.json').read_text(encoding='utf-8'))
+    byg = {r['gid']: r for r in locs}
+    st = Stream('bim')
+    byleaf = collections.defaultdict(list)
+    for k, w in enumerate(st.ws):
+        byleaf[w['leaf']].append(k)
+    found = 0
+    for g in gids:
+        r = byg[g]
+        if 'bim' in r or not r.get('facs'):
+            continue
+        n = int(r['facs'].split(':')[-1])
+        cand = [k for lf in range(2 * n - 6, 2 * n) for k in byleaf.get(lf, ())]
+        if not cand:
+            continue
+        L = ' '.join(fold(w) for w in r['left'][-4:] if not TOK.search(w))
+        R = ' '.join(fold(w) for w in r['right'][:4] if not TOK.search(w))
+        best = (0, None)
+        for side, pat in (('L', L), ('R', R)):
+            if len(pat) < 8:
+                continue
+            m = len(pat.split())
+            for i, k in enumerate(cand[:-m] if m else cand):
+                win = ' '.join(st.keys[c] for c in cand[i:i + m])
+                sc = SequenceMatcher(None, win, pat, autojunk=False).ratio()
+                if sc > best[0]:
+                    best = (sc, cand[i + m] if side == 'L' and i + m < len(cand) else cand[max(0, i - 1)])
+        if best[0] >= 0.6 and best[1] is not None:
+            k = best[1]
+            r['bim'] = {'read': st.ws[k]['t'], 'score': round(best[0], 2), 'side': 'page', **page_box(st.ws, k, k + 1)}
+            found += 1
+    (RAW / 'witness_locs.json').write_text(json.dumps(locs, ensure_ascii=False, indent=0), encoding='utf-8')
+    print(f'bim 按页补定位 {found}/{len(gids)}', file=sys.stderr)
+
+
+CROPS_W = W / 'crops_wide2'
+
+
+def crop_wide(gid, key, loc, out_w=1400):
+    """三行高、几乎整栏宽：缺字行在中，上下各一行（换行处的下半个词、成段缺口都看得到）。"""
+    CROPS_W.mkdir(parents=True, exist_ok=True)
+    f = CROPS_W / f'{gid:05d}_{key}.jpg'
+    if f.exists():
+        return f
+    from PIL import Image
+    Image.MAX_IMAGE_PIXELS = None
+    h = max(20, loc.get('gh', 60))
+    # 缺字常在行首/行末（装订缝一侧），左右放到整行宽；上下各约两行（跨行的上半/下半个词）
+    X0 = max(0, loc['gx'] - h * 60)
+    X1 = min(loc['pw'], max(loc.get('gx1', loc['gx']), loc['gx'] + h) + h * 60)
+    if key == 'bim':     # bim 一页一栏：取本叶正文行的左右界（含行末装订缝一侧），别从中间截断
+        global _BIMWS
+        if _BIMWS is None:
+            _BIMWS = collections.defaultdict(list)
+            for w in json.loads((W / 'words_bim.json').read_text()):
+                _BIMWS[w['leaf']].append(w)
+        near = [w for w in _BIMWS[loc['leaf']] if abs(w['y'] - loc['gy']) < h * 4]
+        if near:
+            X0 = max(0, min(w['x'] for w in near) - h * 2)
+            X1 = min(loc['pw'], max(w['x'] + w['w'] for w in near) + h * 3)
+    Y0 = max(0, loc['gy'] - int(h * 2.9))
+    Y1 = loc['gy'] + int(h * 3.3)
+    im = Image.open(full_page(key, loc['leaf'])).convert('L')
+    sc = im.width / loc['pw'] if loc['pw'] else 1.0
+    c = im.crop((int(X0 * sc), int(Y0 * sc), int(X1 * sc), int(Y1 * sc)))
+    c = c.resize((out_w, max(1, int(c.height * out_w / c.width))))
+    c.save(f, quality=88)
+    if key == 'bim':
+        # 原分辨率近景两段：①上一行行末（装订缝一侧，换行的上半个词、跨行缺口多在这里）
+        # ②本行定位词附近。行的范围从 bim 词流按 y 坐标取（定位词常是缺口后面那个词）
+        ws = _BIMWS[loc['leaf']]
+        prev = [w for w in ws if loc['gy'] - h * 1.8 < w['y'] < loc['gy'] - h * 0.5]
+        cur = [w for w in ws if abs(w['y'] - loc['gy']) < h * 0.5]
+        parts = []
+        if prev:
+            xe = max(w['x'] + w['w'] for w in prev)
+            ye = min(w['y'] for w in prev)
+            parts.append((xe - h * 9, ye - int(h * 0.4), xe + h * 3, ye + int(h * 1.3)))
+        nxt = [w for w in ws if loc['gy'] + h * 0.5 < w['y'] < loc['gy'] + h * 1.8]
+        if nxt:     # 下一行行首（左缝一侧）：跨行缺口的下半个词常在这里
+            xs = min(w['x'] for w in nxt)
+            ys = min(w['y'] for w in nxt)
+            parts.append((xs - h * 4, ys - int(h * 0.4), xs + h * 8, ys + int(h * 1.3)))
+        if cur:
+            xs = min(w['x'] for w in cur)
+            xe = max(w['x'] + w['w'] for w in cur)
+            parts.append((max(xs, loc['gx'] - h * 5), loc['gy'] - int(h * 0.4),
+                          min(xe + h * 3, loc['gx'] + h * 9), loc['gy'] + int(h * 1.3)))
+            parts.append((xe - h * 9, loc['gy'] - int(h * 0.4), xe + h * 3, loc['gy'] + int(h * 1.3)))
+        tiles = [im.crop(tuple(int(v * sc) for v in b)) for b in parts if b[2] > b[0]]
+        if tiles:
+            th = 150
+            tiles = [t.resize((max(1, int(t.width * th / t.height)), th)) for t in tiles]
+            out = Image.new('L', (sum(t.width for t in tiles) + 20 * len(tiles), th), 255)
+            x = 0
+            for t in tiles:
+                out.paste(t, (x, 0))
+                x += t.width + 20
+            out.save(CROPS_W / f'{gid:05d}_bimhi.jpg', quality=90)
+    return f
+
+
+def sheets_wide(gids, name, per=6, notes=None):
+    import numpy as np
+    from PIL import Image, ImageDraw, ImageFont
+    locs = {r['gid']: r for r in json.loads((RAW / 'witness_locs.json').read_text(encoding='utf-8'))}
+    sh = W / 'sheets'
+    sh.mkdir(exist_ok=True)
+    for f in sh.glob(f'{name}_*.jpg'):
+        f.unlink()
+    font = ImageFont.truetype('/System/Library/Fonts/Supplemental/Arial Unicode.ttf', 21)
+    width = 1400
+    rows, n_items, k = [], 0, 0
+
+    def flush():
+        nonlocal rows, k
+        if rows:
+            Image.fromarray(np.vstack(rows)).save(sh / f'{name}_{k:03d}.jpg', quality=82)
+            rows, k = [], k + 1
+    for g in gids:
+        rec = locs[g]
+        head = Image.new('L', (width, 56), 255)
+        dr = ImageDraw.Draw(head)
+        ctx = ' '.join(rec['left'][-7:]) + ' [[' + rec['tcp'] + ']] ' + ' '.join(rec['right'][:6])
+        dr.text((6, 2), f"#{g}  {ctx}"[:150], font=font, fill=0)
+        dr.text((6, 29), f"上次: {(notes or {}).get(g, '')}"[:150], font=font, fill=70)
+        rows.append(np.array(head))
+        for key, w_ in (('bim', width), ('bimhi', width), ('r1862', 900)):
+            f = CROPS_W / f'{g:05d}_{key}.jpg'
+            if f.exists():
+                im = Image.open(f).convert('L').resize((w_, None or 1)) if False else Image.open(f).convert('L')
+                im = im.resize((w_, max(1, int(im.height * w_ / im.width))))
+                row = Image.new('L', (width, im.height), 255)
+                row.paste(im, (0, 0))
+                rows.append(np.array(row))
+            else:
+                blank = Image.new('L', (width, 26), 235)
+                ImageDraw.Draw(blank).text((6, 2), f'（{key} 无图）', font=font, fill=120)
+                rows.append(np.array(blank))
+            rows.append(np.full((3, width), 200, np.uint8))
+        rows.append(np.full((10, width), 50, np.uint8))
+        n_items += 1
+        if n_items % per == 0:
+            flush()
+    flush()
     print(f'{n_items} 条 → {k} 张 {sh}/{name}_*.jpg', file=sys.stderr)
 
 
