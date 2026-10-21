@@ -171,46 +171,6 @@ description: 加尔文与马太亨利之外的历代改革宗注释——欧文�
      hover 用 brightness 压深，省掉为每个色再写一份深色值。 */
   .cx-book-btn--has { background: linear-gradient(135deg, var(--c0), var(--c1)); }
   .cx-book-btn--has:hover { filter: brightness(.82); }
-  /* 石榴籽/红宝石光泽。底色渐变原样不动，光全在两层伪元素上：
-     ::before 体内透光——overlay 混合：白处把底色提亮且更饱和（不发灰），
-              黑处压暗四周，形成「中间透亮、边缘深沉」的宝石体感；
-     ::after  表面反光——顶部一弯边缘清晰的弧形高光 + 一粒锐利亮点。
-     前一版用白色半透明雾层叠在上面，颜色被冲灰、像磨砂玻璃，已弃。 */
-  .cx-book-btn--has {
-    position: relative; overflow: hidden; isolation: isolate;
-    border-radius: 9px;
-    border: 1px solid rgba(0,0,0,.28);
-    box-shadow:
-      0 1px 2px rgba(0,0,0,.18),
-      0 4px 10px -4px var(--c1);
-    text-shadow: 0 1px 2px rgba(0,0,0,.45);
-  }
-  .cx-book-btn--has:hover {
-    box-shadow:
-      0 2px 4px rgba(0,0,0,.2),
-      0 8px 16px -6px var(--c1);
-  }
-  .cx-book-btn--has::before,
-  .cx-book-btn--has::after {
-    content: ""; position: absolute; inset: 0; pointer-events: none; border-radius: inherit;
-  }
-  .cx-book-btn--has::before {
-    z-index: 0; mix-blend-mode: overlay;
-    background:
-      radial-gradient(ellipse 62% 58% at 58% 68%, rgba(255,255,255,.5), rgba(255,255,255,.16) 55%, rgba(255,255,255,0) 80%),
-      radial-gradient(ellipse 50% 22% at 50% 100%, rgba(255,255,255,.45), rgba(255,255,255,0) 100%),
-      radial-gradient(ellipse 115% 125% at 52% 52%, rgba(0,0,0,0) 52%, rgba(0,0,0,.55) 100%);
-  }
-  .cx-book-btn--has::after {
-    z-index: 1;
-    background:
-      radial-gradient(5px 3.5px at 22px 13px, rgba(255,255,255,.95) 0, rgba(255,255,255,.7) 45%, rgba(255,255,255,0) 100%),
-      radial-gradient(ellipse 88% 36% at 50% -4%, rgba(255,255,255,.26) 0, rgba(255,255,255,.04) 95%, rgba(255,255,255,0) 100%);
-    box-shadow:
-      inset 0 1px 0 rgba(255,255,255,.35),
-      inset 0 -1px 0 rgba(255,255,255,.12);
-  }
-  .cx-book-btn--has > span { position: relative; z-index: 2; }
   /* 尚无别家注释：虚线描边，不可点（同加尔文主页 --pending） */
   .cx-book-btn--none {
     background: transparent; border: 1px dashed var(--cx-pending-border);
