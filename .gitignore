@@ -67,3 +67,6 @@ hutcheson_raw/john/witness_1841/
 hutcheson_raw/john/zh_trial_backup_*/
 # 雷登证人 hOCR 与页图（可由 scripts/leighton_witness.py fetch 重建）
 leighton_raw/1peter/witness/
+
+# 亚当斯《彼得后书》证人页图/hOCR（可重下）
+adams_raw/2peter/witness/

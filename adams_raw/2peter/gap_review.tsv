@@ -1,0 +1,1310 @@
+# 亚当斯《彼得后书》缺字逐条看图判读（scripts/adams_witness.py sheets 出图）
+# gid	判读（1633 拼法；= 表示同预填；? 判不了；P:建议 = 推断待用户同意）	依据（img r1862 / img bim / ctx）	备注
+0	=	img r1862+bim	he
+50	=	img r1862+bim	does
+109	=	img r1862	traduce,
+148	=	img r1862	lives
+188	=	img r1862+bim	nor
+234	=	img r1862+bim	an
+273	=	img r1862+bim	just
+306	=	img r1862+bim	immortall
+330	=	img r1862+bim	are
+359	=	img r1862+bim	that
+393	=	img r1862+bim	Saul
+421	=	img r1862+bim	therefore
+448	=	img r1862	that
+504	=	img r1862+bim	they
+534	=	img r1862	habite.
+568	=	img r1862+bim	Mammon.
+596	=	img r1862+bim	is
+624	=	img r1862+bim	have
+649	=	img r1862+bim	error,
+674	=	img r1862+bim	former,
+701	=	img r1862+bim	of
+728	=	img r1862+bim	we
+755	=	img r1862+bim	understanding,
+475	?	img r1862	重裁：1862 裁图未含该词（换行）
+782	=	img r1862+bim	we
+817	=	img r1862+bim	hinder
+872	=	img r1862+bim	our
+902	=	img r1862	no
+938	=	img r1862	except
+972	=	img r1862	riding
+1002	=	img r1862+bim	and
+1034	=	img r1862+bim	but
+1058	=	img r1862+bim	that
+1088	=	img r1862+bim	all
+1125	=	img r1862	even
+843	Here	img r1862	预填 Her 错（fold 去词尾 e 致 her/here 同形），规则已修
+1156	=	img r1862+bim	us.
+1189	=	img r1862+bim	sons,
+1217	=	img r1862+bim	more:
+1244	=	img r1862+bim	saies
+1272	=	img r1862+bim	they
+1298	=	img r1862+bim	God
+1322	=	img r1862+bim	what
+1359	=	img r1862	to
+1393	=	img r1862	would
+1420	=	img r1862+bim	the
+1446	=	img r1862+bim	he
+1473	=	img r1862+bim	similitude.
+1498	=	img r1862+bim	was
+1523	=	img r1862+bim	adversaries?
+1549	=	img r1862+bim	may
+1591	=	img r1862+bim	shall
+1645	=	img r1862	owne;
+1670	=	img r1862+bim	unto
+1692	=	img r1862+bim	sin
+1725	=	img r1862+bim	Why
+1752	=	img r1862+bim	masterlesse
+1776	=	img r1862+bim	by
+1804	=	img r1862+bim	himselfe
+1828	=	img r1862+bim	GOD
+1851	=	img r1862+bim	ye
+1880	=	img r1862+bim	it
+1907	=	img r1862+bim	pillar
+1937	=	img r1862+bim	arrowes
+1995	=	img r1862+bim	into
+2022	=	img r1862+bim	Saviour
+2050	=	img r1862+bim	for
+2070	=	img r1862+bim	mother,
+2098	=	img r1862+bim	than
+2123	=	img r1862+bim	licking
+2149	=	img r1862	purse up
+1967	had	img r1862	预填 Iade 错：1862 OCR 把 had 认成 Jiad；规则已加词典闸
+2176	=	img r1862+bim	him
+2205	=	img r1862	resolution;
+2242	=	img r1862+bim	given
+2266	=	img r1862	faire
+2291	=	img r1862	him,
+2318	=	img r1862+bim	rather
+2362	=	img r1862+bim	not
+2386	=	img r1862+bim	sins
+2412	=	img r1862+bim	we
+2441	=	img r1862+bim	manuduction
+2466	=	img r1862+bim	degenerates,
+2494	=	img r1862+bim	merchants
+2520	=	img r1862+bim	owne
+2547	=	img r1862+bim	fryar,
+2575	=	img r1862	true
+2604	=	img r1862	mischiefe,
+2631	=	img r1862	and
+2656	=	img r1862+bim	determine
+2687	=	img r1862+bim	Nebuchadnezzars
+2721	=	img r1862+bim	lifting
+2745	=	img r1862+bim	plucke
+2773	=	img r1862	thought:
+2802	=	img r1862	into
+2826	=	img r1862+bim	doore
+2850	=	img r1862+bim	outrages:
+2879	=	img r1862+bim	to
+2917	=	img r1862+bim	it
+2947	=	img r1862	sinned.
+2976	=	img r1862+bim	diadem
+3007	=	img r1862	be
+3057	=	img r1862+bim	very
+3095	=	img r1862+bim	stoppings,
+3128	=	img r1862+bim	the
+3168	=	img r1862+bim	not
+3193	=	img r1862+bim	that
+3221	=	img r1862+bim	not
+3251	=	img r1862+bim	and
+3284	=	img r1862+bim	the
+3313	=	img r1862	his
+3335	=	img r1862+bim	finds
+3368	=	img r1862+bim	comming:
+3402	=	img r1862+bim	word
+3432	=	img r1862+bim	therefore
+3455	=	img r1862+bim	owne
+3477	=	img r1862+bim	good
+3507	=	img r1862+bim	Lord
+3541	=	img r1862+bim	unlesse
+3566	=	img r1862+bim	more
+3594	=	img r1862	followed
+3626	=	img r1862+bim	and
+3652	=	img r1862+bim	righteous
+3677	=	img r1862	kingdomes
+3704	=	img r1862+bim	shall
+3735	=	img r1862+bim	Instruments
+3769	=	img r1862+bim	to
+3794	=	img r1862+bim	damned
+3825	=	img r1862	be
+3853	=	img r1862	light,
+3879	=	img r1862+bim	out,
+3913	=	img r1862+bim	owne
+3945	=	img r1862+bim	refreshing:
+3977	=	img r1862	fire
+4004	=	img r1862	but
+4039	=	img r1862+bim	minds
+4068	=	img r1862	that
+4096	=	img r1862+bim	but
+4128	=	img r1862+bim	as
+4189	=	img r1862+bim	spirit
+4236	=	img r1862+bim	are
+4263	=	img r1862+bim	to
+4287	=	img r1862+bim	that
+4155	?	img r1862	拉丁引文，1862 译成英文（even to see），读不出原拉丁词；规则已加邻词闸
+4312	=	img r1862+bim	which
+4368	=	img r1862+bim	put
+4390	=	img r1862+bim	walke
+4416	=	img r1862+bim	David
+4439	=	img r1862+bim	many
+4466	=	img r1862	can,
+4491	=	img r1862+bim	might
+4514	=	img r1862+bim	have
+4544	=	img r1862+bim	him
+4575	=	img r1862+bim	goodnesse
+4606	=	img r1862	can
+4343	P:tenebra	ctx	拉丁 opera tenebra-rum（罗 13:12 武加大本 opera tenebrarum）跨行；1862 译作 works，图无读数
+4635	=	img r1862+bim	his
+4673	=	img r1862+bim	the
+4705	=	img r1862+bim	may
+4734	=	img r1862+bim	heart:) let
+4793	=	img r1862	let
+4827	=	img r1862+bim	Ierusalem
+4858	=	img r1862+bim	only,
+4881	=	img r1862+bim	sworne
+4910	=	img r1862+bim	an
+4934	=	img r1862+bim	of
+4959	=	img r1862+bim	honour
+4767	workes.	img r1862	1862 作 works. "Know ye not" 1 Cor.；TCP 后接 Cor. 6.3，缺口可能还含书卷号 1（未补，待核）
+5257	those	img r1862	
+4981	dead.	img r1862+bim	图上预填核对无误
+5006	your	img r1862+bim	图上预填核对无误
+5043	is	img r1862+bim	图上预填核对无误
+5072	They	img r1862	图上预填核对无误
+5125	and	img r1862+bim	图上预填核对无误
+5154	into the	img r1862+bim	图上预填核对无误
+5186	are	img r1862+bim	图上预填核对无误
+5230	to	img r1862+bim	图上预填核对无误
+5287	how	img r1862+bim	图上预填核对无误
+5310	the	img r1862+bim	图上预填核对无误
+5337	incredulity,	img r1862+bim	图上预填核对无误
+5368	continued	img r1862+bim	图上预填核对无误
+5395	save	img r1862+bim	图上预填核对无误
+5426	flesh	img r1862+bim	图上预填核对无误
+5458	innocent	img r1862+bim	图上预填核对无误
+5550	Which	img r1862+bim	图上预填核对无误
+5585	and	img r1862+bim	图上预填核对无误
+5622	Heaven,	img r1862+bim	图上预填核对无误
+5662	be	img r1862+bim	图上预填核对无误
+5699	moist	img r1862+bim	图上预填核对无误
+5730	made an	img r1862+bim	图上预填核对无误
+5484	of.	img r1862	1862 作 notice of. But；句点随缺口一并缺
+5803	?	img r1862	重裁：第二词 It 换行不在裁图内
+5835	daughters	img r1862+bim	图上预填核对无误
+5913	taste	img r1862+bim	图上预填核对无误
+5940	not	img r1862	图上预填核对无误
+5966	mountaines.	img r1862+bim	图上预填核对无误
+5990	the	img r1862+bim	图上预填核对无误
+6013	forbeare.	img r1862+bim	图上预填核对无误
+6043	killed	img r1862	图上预填核对无误
+6068	that	img r1862+bim	图上预填核对无误
+6091	them.	img r1862+bim	图上预填核对无误
+6114	Ierusalem,	img r1862	图上预填核对无误
+6138	strangers	img r1862+bim	图上预填核对无误
+6164	for	img r1862	图上预填核对无误
+6217	partiall,	img r1862+bim	图上预填核对无误
+6261	it	img r1862	图上预填核对无误
+6288	what	img r1862+bim	图上预填核对无误
+6311	still faith finds	img r1862+bim	图上预填核对无误
+6333	his	img r1862+bim	图上预填核对无误
+6359	because	img r1862+bim	图上预填核对无误
+6386	have	img r1862+bim	图上预填核对无误
+6408	Daniel:	img r1862+bim	图上预填核对无误
+6433	marriage,	img r1862+bim	图上预填核对无误
+6487	at	img r1862	图上预填核对无误
+6513	could	img r1862+bim	图上预填核对无误
+6191	no	img bim	1633 原图作 no strength；1862 Sherman 改作 not（同位换词，规则拦不住）
+6538	sucke	img r1862+bim	图上预填核对无误
+6561	in	img r1862	图上预填核对无误
+6582	is	img r1862+bim	图上预填核对无误
+6612	but	img r1862+bim	图上预填核对无误
+6638	should	img r1862	图上预填核对无误
+6661	which	img r1862	图上预填核对无误
+6683	perdition	img r1862	图上预填核对无误
+6738	of	img r1862+bim	图上预填核对无误
+6770	Coaches	img r1862+bim	图上预填核对无误
+6793	but	img r1862+bim	图上预填核对无误
+6821	resolution	img r1862+bim	图上预填核对无误
+6847	consume	img r1862+bim	图上预填核对无误
+6875	of	img r1862	图上预填核对无误
+6909	lilies,	img r1862+bim	图上预填核对无误
+6931	ceremoniall	img r1862+bim	图上预填核对无误
+6952	of	img r1862+bim	图上预填核对无误
+6980	that	img r1862	图上预填核对无误
+7007	they	img r1862+bim	图上预填核对无误
+7037	can	img r1862	图上预填核对无误
+7061	hand	img r1862	图上预填核对无误
+7089	of	img r1862+bim	图上预填核对无误
+7115	like	img r1862+bim	图上预填核对无误
+7138	Take	img r1862+bim	图上预填核对无误
+7161	Godlinesse	img r1862+bim	图上预填核对无误
+7204	ungodlinesse?	img r1862	图上预填核对无误
+7225	wickednesse	img r1862+bim	图上预填核对无误
+7246	he	img r1862+bim	图上预填核对无误
+7268	infirmities?	img r1862+bim	图上预填核对无误
+7293	miracles,	img r1862+bim	图上预填核对无误
+7372	what	img r1862	图上预填核对无误
+7395	when	img r1862+bim	图上预填核对无误
+7422	turned	img r1862+bim	图上预填核对无误
+7446	professors	img r1862+bim	图上预填核对无误
+7469	bread	img r1862+bim	图上预填核对无误
+7497	that	img r1862	图上预填核对无误
+7522	not	img r1862	图上预填核对无误
+7546	and	img r1862	图上预填核对无误
+7571	in a	img r1862+bim	图上预填核对无误
+7616	as	img r1862	图上预填核对无误
+7641	shall	img r1862+bim	图上预填核对无误
+7662	procures	img r1862+bim	图上预填核对无误
+7719	of	img r1862+bim	图上预填核对无误
+7748	Suppose	img r1862+bim	图上预填核对无误
+7777	other	img r1862+bim	图上预填核对无误
+7816	into	img r1862	图上预填核对无误
+7839	trust	img r1862+bim	图上预填核对无误
+7870	largely.	img r1862	图上预填核对无误
+7595	him.	img r1862	句点随缺口一并缺（下句 No 大写）
+7918	looser	img r1862+bim	图上预填核对无误
+7945	as	img r1862+bim	图上预填核对无误
+7975	condemneth	img r1862+bim	图上预填核对无误
+8004	than	img r1862+bim	图上预填核对无误
+8034	according	img r1862+bim	图上预填核对无误
+8059	dissimulation.	img r1862+bim	图上预填核对无误
+8086	of	img r1862+bim	图上预填核对无误
+8110	pardoned	img r1862+bim	图上预填核对无误
+8137	my	img r1862	图上预填核对无误
+8165	be	img r1862+bim	图上预填核对无误
+8195	wicked,	img r1862+bim	图上预填核对无误
+8220	is	img r1862+bim	图上预填核对无误
+8244	sin	img r1862+bim	图上预填核对无误
+8273	declares	img r1862+bim	图上预填核对无误
+8298	witnesses	img r1862+bim	图上预填核对无误
+8332	Sire	img r1862	图上预填核对无误
+8356	from	img r1862+bim	图上预填核对无误
+8381	body	img r1862+bim	图上预填核对无误
+8412	righteous,	img r1862+bim	图上预填核对无误
+8436	but	img r1862+bim	图上预填核对无误
+8460	turne	img r1862+bim	图上预填核对无误
+8485	repentance	img r1862	图上预填核对无误
+8522	Our	img r1862+bim	图上预填核对无误
+8549	their	img r1862+bim	图上预填核对无误
+8583	authoritie,	img r1862+bim	图上预填核对无误
+8605	weights	img r1862+bim	图上预填核对无误
+8638	pity	img r1862+bim	图上预填核对无误
+8726	and	img r1862+bim	图上预填核对无误
+8758	rather	img r1862+bim	图上预填核对无误
+8783	things.	img r1862+bim	图上预填核对无误
+8812	sell	img r1862+bim	图上预填核对无误
+8834	carry	img r1862+bim	图上预填核对无误
+8855	heats	img r1862+bim	图上预填核对无误
+8877	by	img r1862+bim	图上预填核对无误
+8931	againe.	img r1862+bim	图上预填核对无误
+8672	Pamphlets.	img r1862	分开的认不清标点 ▪ 按 1862 作句点（下句 Many 大写）
+8955	not	img r1862+bim	图上预填核对无误
+8987	because	img r1862	图上预填核对无误
+9019	endure	img r1862+bim	图上预填核对无误
+9072	violate	img r1862	图上预填核对无误
+9110	meddle	img r1862+bim	图上预填核对无误
+9134	destroy	img r1862+bim	图上预填核对无误
+9159	have	img r1862	图上预填核对无误
+9186	triumphant	img r1862+bim	图上预填核对无误
+9223	by	img r1862+bim	图上预填核对无误
+9249	hard	img r1862+bim	图上预填核对无误
+9286	sunne:	img r1862+bim	图上预填核对无误
+9311	had	img r1862+bim	图上预填核对无误
+9388	many	img r1862+bim	图上预填核对无误
+9411	He	img r1862+bim	图上预填核对无误
+9438	this	img r1862+bim	图上预填核对无误
+9478	How,	img r1862+bim	图上预填核对无误
+9505	regenerate,	img r1862+bim	图上预填核对无误
+9555	riches	img r1862+bim	图上预填核对无误
+9585	ignominy;	img r1862+bim	图上预填核对无误
+9635	expiation.	img r1862	图上预填核对无误
+9666	bathe	img r1862+bim	图上预填核对无误
+9693	that	img r1862+bim	图上预填核对无误
+9729	myrie	img r1862+bim	图上预填核对无误
+9763	But	img r1862+bim	图上预填核对无误
+9784	there	img r1862+bim	图上预填核对无误
+9814	unlike	img r1862+bim	图上预填核对无误
+9841	thirsty	img r1862+bim	图上预填核对无误
+9866	unto them?	img r1862	图上预填核对无误
+9896	and	img r1862+bim	图上预填核对无误
+9959	nature;	img r1862	图上预填核对无误
+9991	Direction	img r1862	图上预填核对无误
+10045	remorse	img r1862	图上预填核对无误
+10073	to	img r1862+bim	图上预填核对无误
+10113	paine a	img r1862	图上预填核对无误
+10170	Gentiles	img r1862	图上预填核对无误
+10209	Our	img r1862	图上预填核对无误
+10243	it,	img r1862	图上预填核对无误
+10266	than his	img r1862	图上预填核对无误
+10313	told us	img r1862	图上预填核对无误
+10340	once	img r1862+bim	图上预填核对无误
+10369	buried,	img r1862+bim	图上预填核对无误
+10490	lusts	img r1862	图上预填核对无误
+10551	is	img r1862+bim	图上预填核对无误
+10655	neither	img r1862+bim	图上预填核对无误
+10682	Sunne:	img r1862	图上预填核对无误
+10756	Solstice.	img r1862+bim	图上预填核对无误
+10797	many	img r1862	图上预填核对无误
+10854	heate:	img r1862	图上预填核对无误
+296	Pavilions,	img r1862+bim	图上预填核对无误
+344	Recorders.	img r1862	图上预填核对无误
+546	Toxicum,	img r1862+bim	图上预填核对无误
+550	fardel	img r1862+bim	图上预填核对无误
+557	Prognosticator	img r1862	图上预填核对无误
+1074	Antichristians.	img r1862+bim	图上预填核对无误
+1277	bearer	img r1862+bim	图上预填核对无误
+1286	perspicacity;	img r1862+bim	图上预填核对无误
+1335	marvelled,	img r1862+bim	图上预填核对无误
+1640	Russes;	img r1862+bim	图上预填核对无误
+261	borne	img r1862	1862 OCR 作 bom，图为 born；拼法取本书 borne
+249	paineful	img r1862	TCP 标缺 2 字母（pai••ful，行末断字 pai-/ful）
+1906	formals	img r1862+bim	图上预填核对无误
+1908	Valerius	img r1862+bim	图上预填核对无误
+2013	misguidance.	img r1862+bim	图上预填核对无误
+2183	Luxuries	img r1862	图上预填核对无误
+2229	tabret	img r1862+bim	图上预填核对无误
+2349	consenter	img r1862+bim	图上预填核对无误
+2595	hoarding:	img r1862+bim	图上预填核对无误
+2714	feigned	img r1862	图上预填核对无误
+2809	Biron	img r1862	图上预填核对无误
+2899	unmanly	img r1862+bim	图上预填核对无误
+2941	uncleansable	img r1862+bim	图上预填核对无误
+2410	run	img r1862	1862 OCR 作 nm，图为 run
+2966	castigations	img r1862+bim	图上预填核对无误
+3070	Antiperistasis, it	img r1862+bim	图上预填核对无误
+3218	ebb: but	img r1862+bim	图上预填核对无误
+3234	commencement	img r1862+bim	图上预填核对无误
+3306	dominant	img r1862+bim	图上预填核对无误
+3799	brass	img r1862+bim	图上预填核对无误
+3896	corporeal	img r1862+bim	图上预填核对无误
+3019	his	img r1862	1862 OCR 作 nis
+3556	hath	img r1862	1862 OCR 作 hatii
+3640	quem	img r1862	1862 OCR 作 querm
+3768	off	img r1862	1862 OCR 作 olT
+3815	Answ.	img r1862	1862 OCR 作 Ansu
+3926	glowing	img r1862+bim	图上预填核对无误
+3955	elemental	img r1862+bim	图上预填核对无误
+4224	animation	img r1862+bim	图上预填核对无误
+4290	afflicter.	img r1862+bim	图上预填核对无误
+4698	prowess	img r1862+bim	图上预填核对无误
+4706	discountenance	img r1862+bim	图上预填核对无误
+4728	perverseness	img r1862+bim	图上预填核对无误
+5263	fifteen	img r1862+bim	图上预填核对无误
+5342	Tecla, and	img r1862+bim	图上预填核对无误
+5511	augusteity;	img r1862+bim	图上预填核对无误
+4777	his	img r1862	1862 OCR 作 liis
+5643	Saras	img r1862	1862 作 Sara's；1633 所有格不加撇号（Gods、mans）
+5850	adhesion:	img r1862+bim	图上预填核对无误
+6021	overwhelming	img r1862+bim	图上预填核对无误
+6024	gapings	img r1862+bim	图上预填核对无误
+6342	prorogations	img r1862	图上预填核对无误
+6449	anterior	img r1862	图上预填核对无误
+7019	catamites,	img r1862+bim	图上预填核对无误
+7032	vicegerent.	img r1862+bim	图上预填核对无误
+7086	pinions	img r1862+bim	图上预填核对无误
+7389	aught	img r1862+bim	图上预填核对无误
+6212	trust	img r1862	1862 OCR 作 tnist
+6523	earth,	img r1862	1862 OCR 作 eartli，图为 earth,（逗号随 1862）
+6758	that	img r1862	1862 OCR 作 tliat
+7543	musters	img r1862	图上预填核对无误
+7709	believing,	img r1862+bim	图上预填核对无误
+7844	reproof,	img r1862+bim	图上预填核对无误
+7980	mollify	img r1862+bim	图上预填核对无误
+8010	forgiver.	img r1862+bim	图上预填核对无误
+8131	Colonel	img r1862+bim	图上预填核对无误
+8213	craftily	img r1862+bim	图上预填核对无误
+8299	flux	img r1862+bim	图上预填核对无误
+8541	instrumental	img r1862+bim	图上预填核对无误
+7563	but	img r1862	1862 OCR 作 bvit
+7940	Abraham	img r1862	1862 OCR 作 Abraliam
+8146	serveth	img r1862	1862 OCR 作 scrveth
+8621	Commissioner.	img r1862	图上预填核对无误
+8761	passionately:	img r1862+bim	图上预填核对无误
+8785	backwardest	img r1862+bim	图上预填核对无误
+8882	flushings	img r1862+bim	图上预填核对无误
+8891	steerage,	img r1862	图上预填核对无误
+9176	perpended.	img r1862	图上预填核对无误
+9377	negatives,	img r1862+bim	图上预填核对无误
+9610	malcontent	img r1862+bim	图上预填核对无误
+9738	Euripus,	img r1862+bim	图上预填核对无误
+9558	hath	img r1862	1862 OCR 作 halh
+9754	blessest,	img r1862	1862 OCR 作 blesscst
+9259	hypocrisie	img r1862	1862 作 hypocrisy；拼法取本书 hypocrisie（TCP 缺字数估计偏少）
+9777	repercussive	img r1862+bim	图上预填核对无误
+9812	overlooked	img r1862+bim	图上预填核对无误
+9915	sweetnesses	img r1862+bim	图上预填核对无误
+10071	adages	img r1862+bim	图上预填核对无误
+10119	Stibium,	img r1862	图上预填核对无误
+10472	puerile	img r1862	图上预填核对无误
+10552	washpot,	img r1862	图上预填核对无误
+10668	calcines	img r1862+bim	图上预填核对无误
+10804	profanes	img r1862	图上预填核对无误
+10829	outvie	img r1862	图上预填核对无误
+10146	turnes the temple	img r1862	1862 OCR 作 tunis，图为 turns；拼法取 turnes
+10306	throughly displeased	img r1862	1862 作 thoroughly；TCP th•••ghly 缺 3 字母合 throughly（同词古形）
+3	impio	img bim	原图斜体拉丁 impio more；1862 译作 to
+8	manicled	img r1862	1862 manacled；TCP mani•led 仅容 c
+15	without	img r1862+bim	1862 换行 with-out
+16	independent	img r1862+bim	
+25	Scripture	img r1862+bim	
+28	here	img bim	原图 Two sorts he.e repro-，无 are（1862 加）
+34	Quoad	img bim	原图 Quoad finem；TCP 残字记法异
+35	a	img r1862	
+37	?	img bim	原图 Iove 后一字符看不清（1862 Jove,）；TCP 首字 l 应为 I，待重裁
+38	galeam	img r1862+bim	
+53	friend,	img bim	
+57	corruption	img r1862+bim	1862 OCR 作 cormption
+62	Eutropilus	img r1862+bim	
+63	?		定位错（1862/bim 裁到别处）；拉丁 c•nsequi 似 consequi，待重裁
+66	Hee	img bim	原图 Hee（1862 He）
+67	corrupt,	img r1862+bim	1862 OCR 作 cornipt
+69	?	img bim	原图 Israel 后为一认不清符号 + so；1862 插 Judg 出处是旁注挪入，不采；待重裁
+74	fit	img bim	原图斜体拉丁 fit Leo vincens（1862 译 he is）
+75	Stultitia	img bim	
+82	divinum,	img bim	▪ 按原图为逗号
+95	estate,	img r1862+bim	
+110	lost	img r1862	缺口后 TCP 已有句点：落 lost，句点不重复
+114	?		1862 换行 re-，裁图不全，待重裁
+115	Zerubbabel	img r1862+bim	
+119	runne	img r1862	1862 run；TCP ru••e 合 runne
+125	Prophetantis	img bim	原图 Prophetan… 与 Precantis 对仗
+127	us	img r1862	
+129	Caietan	img bim	原图 Caieta… 后糊；Caietan（迦耶坦）
+134	seene,	img r1862	▪ 按 1862 逗号；1862 所插出处为旁注
+136	P:make	img r1862	1862 make；TCP 残字 mal• 与之不合（疑 TCP 误键 k 为 l），待同意
+137	Proponere	img bim	
+138	affectate	img bim	原图 affectate；1862 改 affected
+139	these	img r1862+bim	1862 加 two
+140	but	img r1862	
+141	to	img r1862	
+142	hath	img r1862	
+143	neighbours	img r1862+bim	
+149	hearing,	img r1862	
+156	us	img r1862	
+164	uti	img r1862	拉丁引文 virtutibus uti；TCP 后已有 ;
+165	mæchos gladium	img r1862	1862 图 in mæchos gladium（OCR 乱码）；1633 原写法或 mœchos，待原图核
+167	we	img r1862	
+168	Then	img r1862	1862 插 1 Tim. i. 5. 为旁注，不采
+172	P:was	ctx	God was manifested（提前 3:16）；裁图未及该词，待重裁
+175	?		Es•h. 是旁注出处 Esth. 5.2，1862 无，待原图
+176	P:favour	img r1862	TCP 残字 fev•nt 与 1862 favour 不合（疑 favour 误键），待同意
+177	There be	img r1862	TCP 合写 Thereb•
+179	sure	img r1862+bim	原图长 s sure enough
+181	the	img r1862	
+189	but a	img r1862+bim	
+190	Urbicus,	img r1862	
+191	?		TCP ••pertaine 一词；1862 改 not pertain；文义当为 not pertaine，待原图
+192	?	img bim	原图 ædifice…（拉丁）其后糊；1862 改写
+195	P:nec	ctx	Vt ne• bonum quod, sic nec bonum — 对仗推 nec；原图 n 后糊
+196	P:on	ctx	have mercy on us（太 20:30）；裁图错位
+197	thee	img r1862	
+198	satispatiendum,	img bim	原图 satispatiendu…，与 satisfaciendum 对仗
+199	Vanimadus	img r1862+bim	
+201	P:Nullus finis	ctx	拉丁 Nullus finis ad locum；1862 改写
+204	?		TCP f•••ell 与 1862 served 不合，待原图
+205	P:Caesarem,	ctx	约 19:15 武加大本 nisi Caesarem；bim 裁图错行
+208	P:ignis	ctx	lux radians, ignis consumens
+215	?	img bim	原图 Pontific… 后入装订缝黑块
+216	P:Christianae	ctx	Christianae reipublicae Monarcha
+218	P:Super	ctx	Optatus: Super Imperatorem non est nisi Deus
+221	P:castitatis	ctx	原图 castita- 换行；Primus gradus castitatis
+225	kinde.	img r1862+bim	原图 •inde. 首字入黑块；1862 kind
+227	P:boni	ctx	Ut boni invitentur praemiis, ut mali dent poenas
+232	P:It is	ctx	1862 It is sown（林前 15:43）；TCP 单词缺口
+235	P:Yet	ctx	诗 2:6 Yet have I set my king；TCP T•• 疑首字误键
+240	P:mecum	ctx	Hodie es mecum in Paradiso 化用
+245	Couragious,	img bim	原图 Couragio… 后入黑块；1862 courageous
+247	P:praedicandi:	ctx	原图仅见 …di :；studium praedicandi
+251	in	img r1862	
+257	P:Laudataque	img r1862	1862 图 Laudataque；TCP 非缺字母 Lai…s 与之不合（录入误），需改动缺口外字母，待同意
+258	Crescit,	img r1862	
+259	P:per se cur	img r1862	1862 图 per se cursurus；TCP po• 〈◊〉 sutus 拆分错乱，待同意
+260	fortior	img r1862	
+265	Agamemnon	img r1862+bim	
+266	in	img r1862	
+269	?		TCP a••• 与 1862 that 不合
+270	therefore	img r1862	
+272	putting	img r1862	
+276	slothfull	img r1862+bim	
+279	P:non	ctx	Qui non improbat, probat（法谚）
+281	?		拉丁 ta••tes，无证人
+282	P:annuntiare	ctx	原图 nuntiare 行首，上行末字糊
+283	P:facilius.	ctx	amitti nihil facilius
+285	nuntiation	img r1862	1862 nunciation；TCP …tiation
+287	remember	img r1862	
+293	souldiers,	img bim	
+299	frailenesse	img r1862+bim	
+301	P:infra	ctx	Nihil firmum infra firmamentum；原图 fra 前入黑块
+302	immobile	img bim	
+304	P:poena,	ctx	原图 …ena，前入黑块；vivere poena
+307	P:spiritu	ctx	原图 …iritu；spiritu adoptata
+308	bloud,	img r1862+bim	
+311	ancillari,	img r1862+bim	1862 图 Dominam ancillari
+316	composed	img r1862	
+328	hovering;	img r1862	1862 OCR 作 hovenng
+331	as	img r1862	
+334	complaine	img r1862+bim	原图 complai… 后入黑块；1862 complain；TCP complain• 合 complaine
+335	vocavi.	img r1862	1862 图 iterumque vocavi.
+338	suspend	img r1862	TCP suspe•• 合 suspend
+351	new	img r1862	
+352	it	img r1862	not new in itself；TCP •t selfe
+353	called	img r1862	
+356	?		1862 定位错
+358	P:imitations;	ctx	TCP imita•ions 只缺 t，唯一可能；1862 定位错
+363	entitleth	img r1862	
+365	Rehearsall	img r1862	1862 re- 换行；TCP Re•earsall 只缺 h，前文同句 Rehearsall
+370	P:meliora	ctx	原图 melio… 后入黑块；Bona…meliora…optima 对仗
+372	meos	img bim	原图 si meos 可辨
+374	P:punitur.	ctx	qua casta punitur（奥古斯丁论路克丽霞）
+375	in	img r1862+bim	
+376	P:Dei	ctx	Nostrum est dicere, vestrum agere, Dei perficere
+380	P:regit	ctx	bene regit…non regit navem
+381	he	img r1862+bim	
+384	introitus,	img bim	原图 Vnus intro… ；Unus introitus, innumeri exitus
+394	bloudy	img r1862+bim	
+398	?	img bim	原图行首 descit，前行末未裁到（c•descit 应为 con-/descit 之类），待重裁
+403	them	img r1862	
+404	morning,	img r1862+bim	
+414	P:perpetuum	ctx	原图 in per- 换行；in perpetuum auferatur
+416	forgate	img r1862+bim	原图 …orgate；1862 forgot
+417	servants,	img r1862+bim	
+418	present	img r1862+bim	
+419	P:ut	ctx	拉丁 ut dum semper ignoratur
+425	last	img r1862+bim	
+427	sicknesse	img r1862+bim	
+435	so	img r1862	
+439	to	img r1862+bim	
+440	?		拉丁 quasi 〈◊〉 tempus relictum，无证人
+441	cannot	img r1862	
+442	P:victus	ctx	原图 modo vi… 后入黑块；modo victus & victus
+443	P:male	ctx	Martial 1.38: sed male cum recitas
+445	conditione	img r1862	1862 图 simili conditione ligans
+447	a	img r1862+bim	原图 but a departing
+451	the	img r1862	
+453	schollers	img r1862+bim	
+459	P:ornamenta;	ctx	原图 ornamen- 换行；documenta, non ornamenta
+465	forbidden	img r1862	1862 图 are forbidden.
+467	great	img r1862	
+469	purpose	img r1862+bim	
+471	and	img r1862	
+472	kingdome	img r1862	
+473	P:Negotium	ctx	原图 Negoti… 后入黑块
+478	?		TCP no•: 与 1862 us 不合，待原图
+480	P:Dei	ctx	Nostrum est dare operam, Dei dare operationem
+482	obitum	img r1862	
+484	Stephanus,	img r1862	
+487	P:Lûcis Britania dives,	img bim	原图 Lucis Britania…；TCP 把 Britania dives 连写
+488	light;	img r1862	
+489	an	img r1862	
+491	P:nihil habebam;	ctx	奥古斯丁《忏悔录》9.6 论 Adeodatus: praeter delictum nihil habebam
+492	P:bad.	img r1862	1862 bad.；TCP had• 首字疑误键
+497	nor	img r1862+bim	
+500	destruction.	img r1862	1862 OCR 作 destniction
+507	P:scripturas	ctx	原图 Non scrip- 换行；Tertul.
+513	the	img r1862+bim	
+514	P:modo	ctx	aliquo modo vera, nullo modo certa
+515	epicene,	img r1862+bim	
+523	Rhetoricke,	img r1862+bim	原图 Rheto- 换行
+524	language,	img r1862+bim	
+528	it	img r1862	
+531	P:nihil	ctx	Ex nihilo nihil fit
+532	nothing,	img r1862+bim	
+533	P:privatione	ctx	原图 A privatio- 换行；A privatione ad habitum non datur regressus
+535	is	img r1862	1862 conceive, is true
+536	supernaturall	img r1862	1862 OCR 作 supeniatural
+541	hopes.	img r1862+bim	
+547	swallow	img r1862+bim	1862 OCR 作 sw:illow
+548	honest to	img r1862+bim	TCP 合写 honest••
+551	out	img r1862	
+552	meum,	img r1862+bim	
+558	from	img r1862	
+559	is	img r1862	
+560	at	img r1862	at the worst
+562	provokes	img r1862	
+563	P:vel	ctx	vel adeunt vel audiunt；TCP •el
+566	prophesied	img r1862	1862 OCR 作 jirophesied
+569	P:no	ctx	1862 unkindness；TCP their •o kindnesse → no
+573	boulting:	img r1862	1862 OCR 作 bou.'ting
+575	periturae	img r1862	1862 图 …turæ literæ；TCP peritu•ae
+580	understandings	img r1862	
+581	selfe;	img r1862	TCP 作 it •elfe 两词；按 TCP 分词落 selfe
+586	everlasting	img r1862	
+590	yet	img r1862	
+594	P:In Iudaeo;	ctx	原图 latet In- 换行；latuit mundo… latet in Iudaeo
+598	rejoycing	img r1862	1862 rejoicing；TCP rejoy••ng
+599	Nothing?	img r1862	1862 插 Psal. xix. 5,6 为旁注
+600	thawed;	img r1862+bim	
+601	wilfully	img r1862	
+603	P:splendentis.	ctx	原图 splenden- 换行；pendentis / splendentis 对仗
+609	Hee	img r1862	
+613	cloutes:	img bim	
+616	Iailour	img r1862	1862 jailer；TCP Iailo•••
+626	Soveraigne	img r1862	
+627	P:11.6.	ctx	原图 …1.6. 首字入黑块；赛 11:6 豺狼与羊羔同居
+629	suppresse	img r1862	
+640	his	img r1862+bim	
+643	divels;	img r1862	
+645	pitie	img r1862+bim	
+648	oppositions	img r1862+bim	
+650	of	img r1862	
+652	endureth!	img r1862	1862 endure!；TCP en•ureth 只缺 d
+655	ourlippes	img r1862+bim	原图 ourlippes 连写
+656	hindrances	img bim	
+657	that	img r1862+bim	
+663	stonest	img r1862	
+666	in	img r1862	
+670	testimonie	img r1862	
+682	P:acceptationem,	ctx	原图 accep- 换行；与 acception 对应
+683	true:	img r1862+bim	1862 true；原图 …ue:
+684	P:27.2.	ctx	箴 27:2 Let another man praise thee；原图首字入黑块
+690	when	img bim	
+693	?	img bim	拉丁 •d recolo，首字入黑块
+696	bloud:	img bim	
+699	is	img r1862	
+702	witnesse	img r1862+bim	
+706	themselves	img r1862+bim	
+707	onely	img bim	
+712	?		TCP di•like 与 1862 spake like 不合；bim 裁图为另一处
+713	do	img r1862	
+718	?	img bim	原图 aposta… 后入黑块；1862 apostatized
+721	all	img r1862	1862 all on；TCP 右邻即 Iesus，on 可能未标缺
+723	Apostles:	img bim	
+730	P:Tempus	ctx	Extra tempus debitum；原图 …mpus
+731	?		1862 定位错
+734	the	img r1862	behind the very chiefest
+742	P:Ioh.	ctx	约 20:22 吹气；原图 …h.20.22
+743	but	img r1862+bim	
+747	The	img r1862+bim	
+749	P:famae,	ctx	Bonae famae；原图 …ma,
+751	Sanctimony,	img r1862+bim	
+752	P:Isidor.	ctx	原图 …idor.；引 Isidor
+761	P:unum	ctx	Unum sentire, unum dicere
+763	Therefore	img r1862+bim	原图 There- 换行
+764	you.	img r1862	▪ 按 1862 作句点（下句 When 大写）
+765	?		1862 定位错；拉丁 sed 〈◊〉 essentia
+612	manger,	img r1862	
+768	P:In	ctx	In mysterio, non in natura
+769	P:two or	img r1862	1862 two or three；TCP t••• 单词 → two（or 未标缺，存疑）
+770	might	img r1862	TCP mig•• 合 might；1862 插 John xix. 35 为旁注
+784	P:Ioh.	ctx	约 19:5 Behold the man
+785	miseries.	img r1862+bim	
+788	our	img r1862	1862 OCR 作 rur
+789	unexpressible	img r1862	1862 un- 换行
+791	thousand.	img r1862	
+793	had	img r1862	
+794	?		1862 改写（that "he…"），无法对位
+799	P:Brasen	img r1862	1862 brazen；TCP 残字 Bre••• 的 e 与之不合（疑误键），本书 brasen 6/brazen 2
+800	2	img r1862	2 Kings iv
+801	besides.	img r1862	TCP be••i•. 合 besides
+806	himselfe.	img r1862	
+811	Princes,	img r1862	
+813	P:visum;	ctx	Peribit visus & visum
+814	most	img r1862	
+815	?		拉丁 ••dò videamus te，1862 改写；待原图
+821	The	img r1862+bim	
+823	?	img r1862+bim	两本都在 re- 处换行，下行未裁到
+829	?		1862 裁到页码 170
+833	As	img r1862	
+835	?	img bim	原图 Re- 换行，下行未裁到
+836	received.	img r1862	He received；1862 同句后文 He received
+838	five:	img r1862+bim	
+839	P:magnificentius	ctx	Plenius vel planius, manifestius vel magnificentius
+841	our	img r1862	
+842	full,	img r1862+bim	
+847	P:recipere,	ctx	Contentus recipere, ut posset tribuere
+849	Abram	img r1862	
+852	beleeve,	img r1862+bim	原图 be- 换行；本书拼 beleeve
+853	beleeve	img r1862+bim	
+854	coevall	img r1862+bim	
+860	By	img r1862+bim	
+861	and	img r1862+bim	
+864	as	img r1862+bim	
+869	noting	img r1862	
+870	to	img r1862+bim	
+871	P:Deus	ctx	申 6:4 Dominus noster Deus unus est
+873	P:pietas,	ctx	原图 pieta… 后入黑块；伯尔纳 credere pietas
+875	P:me.	ctx	太 4:9 Si cadens adoraveris me
+876	?		拉丁 l•••dere；1862 定位错
+878	?		出处 1 Cor. 15.41；1862 定位错
+879	Starres.	img r1862	1862 stars；插出处为旁注
+881	glory	img r1862	TCP glo••• 合 glory（多 1 字母）
+883	graced	img r1862	
+884	P:restored	img r1862	1862 re-/stored 换行；TCP 残字 teste••ed 与之不合，待同意
+895	?	img bim	原图 indigno dignitas.（TCP 拆成 dignita• •ignitas 两段，疑重键），待复核
+897	Governour:	img r1862	
+898	and	img r1862	
+901	without	img r1862	1862 with- 换行
+904	owne.	img bim	
+906	Arnobius,	img r1862+bim	
+919	ridiculous	img r1862	
+920	P:inspice, looke	img r1862	1862 look upon；拉丁 inspice 按文义（Nudum inspice）
+923	patrimonie,	img r1862	1862 patrimony
+924	put off	img r1862	
+925	put	img r1862	1862 put off；off 是否在缺口内待核
+926	?		1862 定位错；拉丁 al•• fo•tui•••dudaci•
+927	P:counterfeits	img r1862	1862 counterfeits；TCP 残字 const•••ties 与之不合
+928	?		1862 定位错；拉丁 〈◊〉 ••une
+930	?		拉丁 Quia…quat n•f•• •••no 〈◊〉 ••gnuo；1862 改写
+931	whether	img r1862	
+933	another	img r1862	1862 OCR 作 anotlicr
+936	but	img r1862	TCP b••• 单词；1862 but for
+937	Curtius	img r1862	
+942	P:procedent	img r1862	1862 precedent；TCP 残字 proced••• 首段 proc 与之不合
+950	honour	img r1862	
+951	He	img r1862	1862 插 1 Sam. ii. 30 为旁注
+954	at	img r1862	
+956	and	img r1862	启 7:12
+959	P:came,	img r1862	TCP d•••e 首字疑误键
+961	?		拉丁 Qu•••ando；1862 定位错
+963	P:from the	img r1862	1862 from the；TCP s••• 首字与之不合
+964	there	img r1862	When there came
+966	P:beene	img r1862	TCP al••e 首字疑误键
+968	P:mount,	img r1862	TCP •o••t i• 拆两段
+969	Albeit	img r1862	
+970	here	img r1862	
+974	P:commeth	img r1862	TCP 〈◊〉 ••th 拆两段；1862 cometh
+980	here	img r1862+bim	
+983	his	img r1862	
+984	men,	img r1862+bim	
+986	P:vires,	ctx	原图 …es,；interiores vires
+988	P:remarkable.	ctx	原图 remar- 换行（下行未裁到）；TCP remar••ble 只缺 ka
+990	P:thought	ctx	原图 …ought；Admirabantur, they thought it a miracle
+991	P:miracle	ctx	原图 mira- 换行；TCP mira••e
+993	receite	img r1862+bim	原图 …ceite
+997	him,	img r1862	
+999	P:medio	ctx	Stare in medio insidiantium
+1000	P:man	ctx	原图 …an able
+1005	P:sum,	ctx	Ego sum, I am he（约 18:5）；原图 …m,
+1007	when	img r1862+bim	
+1008	P:21.12.	ctx	太 21:12（1862 xxi. 12）；原图 …1.12.
+1010	of	img r1862+bim	
+1014	of	img r1862+bim	
+1015	performed	img r1862+bim	
+1016	Hieron.	img r1862+bim	原图 …ieron.；1862 (Hieron.)
+1017	eyes.	img r1862+bim	
+1019	P:materia,	ctx	Inanimata materia, a matter without life；原图 …ateria
+1020	P:domantur	ctx	Tot milium hominum domantur ingenia；原图 …omantur
+1025	voice,	img r1862+bim	原图 voice,
+1026	honoured	img r1862	
+1027	it	img r1862	
+1032	P:vestitus;	ctx	caelesti gloria vestitus；1862 adorned with celestial glory
+1033	P:conspiciebatur,	ctx	Nil terrenum conspiciebatur；原图 …spiciebatur
+1036	Majesty,	img bim	原图 Ma-/jesty 换行；1633 原图作 Majesty
+1043	not	img r1862	
+1044	admitted	img r1862+bim	
+1045	in	img r1862+bim	原图 …her；1862 in her
+1057	selfe	img r1862+bim	it selfe；1862 itself
+1059	Lysias	img r1862+bim	
+1062	Iohn,	img r1862+bim	
+1064	Tertullian,	img r1862+bim	
+1071	verba	img r1862+bim	
+1072	Carolostadius.	img r1862	原图 Ca- 换行
+1073	dilucidation	img r1862	
+1081	P:12.22.	ctx	徒 12:22（1862 Acts xii. 22）
+1085	P:Zach.	ctx	亚 1:13
+1086	vocis,	img r1862+bim	
+1087	thy	img r1862	1862 OCR 作 tliy
+1092	Well	img r1862+bim	
+1093	P:85.8.	ctx	诗 85:8 I will heare what God
+1094	laudúmque	img r1862+bim	原图 …dúmque 行首
+1095	?		1862 定位错
+1096	?		无证人
+1097	P:ad	ctx	habet ad voluptatem（对仗 videre ad, frui ad）
+1098	?		原图 compa… 1862 com- 换行，下行未裁到
+1099	?		1862 It is；TCP ki••，待原图
+1100	P:longitudo	ctx	nec longitudo terminum
+1105	felicitie,	img r1862	
+1107	inhabite	img r1862	
+1111	P:alter	ctx	原图 …ter à Patre, alter à virgine 对仗
+1112	he	img r1862	
+1113	P:servi	ctx	Si forma servi；原图 forma ser… 后入黑块
+1114	condition.	img r1862	
+1117	scorning	img r1862	
+1120	Ephphata,	img r1862	
+1121	P:Ioh.	ctx	约 3:35
+1122	P:regnum	ctx	西 1:13 武加大 in regnum filii dilectionis suae
+1124	Next,	img r1862+bim	
+1126	?		1862 定位错；出处 Lam. 1.12
+1128	his	img r1862	
+1132	P:22.44.	ctx	路 22:44 汗如血点
+1137	Grumosus,	img bim	原图 Grumosus,
+1140	sorrowfull	img r1862+bim	
+1141	forsaken	img r1862+bim	
+1143	answers	img bim	
+1144	eripuit,	img bim	
+1146	P:unionem,	ctx	non solvit unionem, sed subtraxit visionem
+1147	of	img r1862	
+1148	releeve	img r1862	1862 relieve；TCP re•eeve
+1149	loved	img r1862	
+1150	servants	img r1862	1862 ser- 换行
+1162	Proprietatis,	img r1862+bim	
+1164	?		拉丁 Filius Dei, 〈◊〉 Trinitatis；1862 定位错
+1166	est	img r1862	
+1167	P:detinuit	img r1862	1862 图 qui non detinuit se；TCP 拆 ••it nuit，待同意
+1168	P:in meritum;	img r1862	1862 图 in meritum, dabit et sua in praemium
+1169	sua in	img r1862	TCP suaii• 合写 sua in
+1170	not	img r1862	
+1171	P:Rebekah.	img r1862	1862 Rebekah；拼法待原图（TCP Reb•••.）
+1174	P:desired	img r1862+bim	原图 Christ desi… ；TCP define•• 与之不合
+1177	?		1862 servants；TCP •••s•ll 待原图
+1178	point	img r1862	
+1179	extended	img r1862	
+1182	This	img r1862+bim	
+1184	die	img r1862	
+1186	P:omnium,	ctx	原图 omni- 换行；Dominus omnium
+1191	objects	img r1862	
+1192	commonly	img r1862+bim	原图 com- 换行
+1193	P:43.9.	ctx	创 43:9 I will be surety for him
+1197	the	img r1862	
+1201	deliver	img r1862+bim	
+1202	?		拉丁 〈◊〉 ex voluntate，1862 改写
+1204	convertite	img r1862+bim	
+1209	P:53.6.	ctx	赛 53:6（1862 Isa. liii. 6）
+1212	the	img r1862	
+1214	Davids	img r1862+bim	
+1215	Oh	img r1862	1862 O；TCP •h 合 Oh
+1219	killed:	img r1862+bim	
+1226	pulled	img r1862+bim	
+1231	?		1862 a righteous；TCP Ins•• 拉丁，待原图
+1232	P:meus,	ctx	Ecce filius meus
+1233	was	img r1862	
+1235	gotten,	img r1862+bim	
+1239	P:unigenitum,	ctx	原图 unige- 换行
+1242	immundum	img r1862	1862 图 mundum immundum
+1247	together.	img r1862+bim	
+1248	Sonne.	img bim	
+1251	embraces	img r1862+bim	
+1252	the	img r1862+bim	
+1253	songs,	img r1862	
+1255	voice.	img r1862	
+1264	glory:	img r1862	
+1269	P:isti	ctx	Ut isti acrius doleant；原图 …sti
+1270	P:evaserint;	ctx	原图 evase- 换行；quid evaserint
+1274	P:eighteenth	ctx	原图 eigh- 换行；士 13:18
+1285	according	img r1862+bim	
+1288	Amplitude	img bim	原图 …mplitude；下文 For Amplitude
+1290	Eccles.	img r1862+bim	原图 …ccles.
+1292	saw;	img r1862+bim	
+1300	P:Vidimus	ctx	原图 Vidi- 换行；Vidimus in monte Sion
+1301	So,	img r1862	
+1305	Schismaticke	img r1862+bim	
+1311	malicious	img r1862+bim	
+1312	and	img r1862+bim	
+1321	part	img r1862+bim	
+1334	comfort,	img r1862+bim	
+1340	glory	img r1862+bim	
+1342	glory	img r1862+bim	
+1343	workes.	img bim	
+1344	man	img r1862+bim	
+1346	of his	img r1862+bim	
+1347	everlasting	img r1862+bim	
+1348	Disciples	img r1862+bim	原图 Disci- 换行
+1349	appearing;	img r1862+bim	原图 ap- 换行
+1351	that	img r1862+bim	
+1352	P:their	img r1862+bim	原图 …ir；TCP •r 疑缺两字
+1353	see	img r1862+bim	see the（the 已在 TCP）
+1354	Christ	img r1862	
+1358	his	img r1862	
+1361	over	img r1862	
+1364	But	img r1862	
+1366	?		无证人
+1367	?		1862 定位错
+1369	P:inhe-	img r1862	1862 inherent；TCP 〈◊〉 rent 拆两段
+1370	Mark	img r1862	可 9:2
+1375	P:pro-	ctx	拉丁 primum in quo promisit（1862 定位失败），原图行首 misit → 上行末 pro-
+1376	P:it,	img r1862	1862 promised it,；TCP promise 〈◊〉 待原图
+1378	P:the	img r1862	1862 改写 this sight；原图上行末未裁到
+1379	?		1862 定位失败
+1380	P:in-	img r1862	1862 To inflame；原图 flame 行首，上行末 in-
+1381	P:in-	img r1862	1862 To in-/crease；TCP 〈◊〉 encrease
+1385	such	img r1862	
+1387	Some	img r1862	
+1388	P:performance.	img r1862	1862 performance；TCP perform 〈◊〉 → -ance.
+1390	sayes it	img r1862	TCP saye• 合写
+1391	nominatively	img r1862+bim	原图 …tively
+1392	P:Mirabili-	ctx	原图 Mira… 后入黑块；Mirabilitate ex omni parte
+1398	?		原图 …ever；1862 whithersoever；TCP 作 Whither •ever 两词
+1399	perfume	img r1862+bim	原图 per- 换行
+1401	in	img r1862	
+1403	place	img r1862+bim	
+1404	P:Pater	ctx	Pater sanctitatis
+1405	Sanctus	img bim	
+1406	body	img bim	
+1408	revenewes:	img bim	
+1410	habitation	img r1862+bim	
+1412	to	img r1862+bim	
+1417	in	img r1862	
+1421	shewed	img r1862	1862 showed；本书拼 shewed
+1427	not	img r1862+bim	
+1429	properly	img r1862+bim	
+1430	P:ad	ctx	De natura ad naturam
+1431	P:Secundum	ctx	原图 Se- 换行；secundum mutationem, sed secundum manifestationem
+1435	be	img r1862	
+1437	his	img r1862+bim	of 已在 TCP 左邻
+1438	P:ostendit	ctx	Qui cicatrices ostendit
+1439	scarres	img r1862+bim	原图 …rs；本书 scarres 3
+1441	?		1862 by；拉丁 〈◊〉 exteriori 不定
+1443	apprehend	img r1862+bim	TCP a•prehend.
+1449	but	img r1862+bim	原图 but 可见
+1450	did	img r1862	
+1451	P:two or	img r1862	TCP 单个 〈◊〉；1862 two or
+1452	?		拉丁 Flos totius 〈◊〉 Christi，无证人
+1453	Nor	img r1862+bim	
+1455	to	img r1862	
+1456	P:malum,	ctx	extirpando malum & operando bonum
+1458	Humble,	img r1862+bim	原图 …ble,
+1461	admitted.	img r1862	
+1467	whose	img r1862+bim	
+1468	more	img r1862+bim	
+1474	but	img r1862+bim	
+1476	disputation	img r1862+bim	
+1478	Beth-peor:	img r1862	原图 Beth- 换行
+1480	there	img r1862	
+1481	P:3.13.	ctx	约 3:13 No man hath ascended
+1487	not	img r1862	
+1490	death;	img r1862+bim	
+1496	the	img r1862	
+1501	?		拉丁 se •••tur，无证人
+1503	P:vir mitissimus,	ctx	民 12:3 武加大 vir mitissimus；TCP •i• 合 vir
+1504	It	img r1862	
+1506	art	img r1862	
+1507	P:ante	ctx	Potentiam ante passionem（与 gloriam ante injuriam 对仗）
+1509	P:propter	ctx	non propter potentiam eorum, sed propter patientiam
+1514	betimes	img r1862+bim	
+1516	then	img r1862	
+1517	advise	img r1862+bim	
+1518	P:aenigmaticè,	ctx	原图 ænigma- 换行
+1527	P:petis,	ctx	tu montem petis
+1528	thou	img r1862+bim	
+1529	P:via	ctx	in via Patriam, or in patria Tabernaculum
+1530	his	img r1862+bim	
+1537	P:Coelestis	ctx	Superius, Coelestis Patria
+1538	conscience:	img r1862+bim	
+1540	together	img r1862+bim	两本都 to- 换行
+1541	they	img r1862+bim	
+1546	P:nobis	ctx	原图 …bis Iesum；Da modo nobis Iesum
+1552	following	img r1862+bim	
+1554	it	img r1862	
+1556	clarification.	img r1862+bim	
+1557	ad	img bim	
+1567	pits	img r1862	哀 4:20
+1571	P:tamen	ctx	Etsi tu non perit, tamen tu perdis
+1576	cloud	img r1862+bim	原图 the cloud…
+1577	P:is Pa-	ctx	1862 is Father of light；拉丁 Pater luminum；原图入黑块
+1578	comforts	img r1862	
+1580	?		拉丁 quamvis 〈◊〉 nisi promissum；1862 改写
+1587	darkly;	img r1862+bim	原图 darkly;
+1588	still	img r1862+bim	原图 remaine still
+1590	and	img r1862	1862 插 Psal. cxii. 8 为旁注
+1593	I	img r1862	
+1602	?		拉丁 sanctificata 〈◊〉 Deum parere；1862 改写
+1608	P:Sole	ctx	Absente sole, luna lux
+1609	cannot	img r1862	
+1610	?		拉丁 〈◊〉 get Ecclesia Doctoribus，1862 改写
+1614	?		1862 改写；原图入黑块
+1615	P:volans	ctx	Sagitta per diem 〈◊〉 the arrow that flieth → volans
+1616	?		诗 91:6 拉丁 ••stie in caligine，待原图
+1628	it	img r1862	
+1629	tentatio,	img r1862	
+1634	Archytas	img r1862	原图 Ar- 换行
+1636	Divell	img r1862	
+1637	populúmque	img r1862	
+1638	P:mendacii,	ctx	原图 menda- 换行；Spiritus mendacii
+1646	Yea	img r1862+bim	
+1650	preferred	img r1862+bim	原图 prefer- 换行
+1651	whosoever	img r1862	
+1659	whom	img r1862	
+1665	no	img r1862	
+1666	this,	img r1862	
+1667	bloud,	img r1862	
+1669	denyall.	img r1862	
+1671	though	img r1862	1862 OCR 作 tliough
+1674	to	img r1862	
+1675	more	img r1862	
+1682	made	img r1862	
+1684	O	img r1862	
+1686	Theologicall	img r1862	
+1693	now	img r1862+bim	原图 Loe, now
+1694	How?	img r1862	
+1695	can	img r1862	
+1696	?		1862 avenged him being dead；原图 vindicavit… 入黑块；TCP ••scissum
+1701	?		无证人
+1702	riseth	img r1862	1862 ariseth；TCP rise•h
+1706	operatur	img bim	
+1716	Ahazias	img r1862	
+1718	presumption	img r1862+bim	原图 presumptio… 入黑块；1862 pre- 换行
+1727	Nemo	img bim	
+1728	is	img r1862+bim	
+1729	sold	img r1862+bim	
+1731	himselfe:	img r1862+bim	原图 him- 换行
+1741	P:1.13.	ctx	雅 1:13
+1745	he	img r1862+bim	
+1746	omnipotence:	img r1862+bim	
+1748	published	img r1862+bim	
+1749	concealed,	img r1862+bim	
+1753	thou	img r1862	
+1754	it	img r1862	
+1756	doth	img r1862	
+1758	thousand	img r1862+bim	
+1768	hardening	img bim	
+1769	P:when	ctx	Nolle illuminare, when he will not enlighten（同上句 Nolle emollire, when he will）
+1774	ne	img r1862	
+1778	God	img r1862	
+1780	P:Mulier	ctx	创 3:12 武加大 Mulier quam dedisti mihi
+1784	confutes	img r1862+bim	
+1785	lust	img r1862+bim	
+1786	Here	img r1862	1862 Hereupon；TCP H•• upon 分写
+1787	unnaturalnesse,	img r1862+bim	原图 …ralnesse
+1792	stole the	img r1862	TCP stole•• 合写
+1794	charge	img r1862	
+1799	selfe-troubler:	img bim	原图 selfe-troubler:
+1810	if	img r1862	
+1816	P:Ionas	ctx	原图 …nas 3.4；拿 3:4
+1818	Niniveh	img bim	原图 …iniveh
+1825	because	img r1862+bim	两本都 be- 换行
+1826	Thus	img r1862+bim	
+1830	If	img r1862	
+1836	P:rampiers	ctx	原图 …piers；1862 ramparts
+1838	to	img r1862	
+1839	Grape-gatherers	img r1862+bim	原图 …therers
+1841	P:amicum;	ctx	原图 nec amicum.（入黑块）
+1846	up	img r1862+bim	原图 first eats up
+1854	overturne	img r1862	
+1855	not,	img r1862	
+1859	Let the	img r1862+bim	原图 Let…
+1862	devoure.	img bim	原图 devoure.
+1865	rankling	img r1862	1862 rank-/ling
+1872	consequent.	img r1862+bim	原图 …quent.
+1876	acknowledgement	img r1862+bim	
+1877	destroyed	img r1862+bim	
+1879	this	img r1862	
+1881	Nothing	img r1862+bim	
+1883	couragious	img r1862	1862 courageous；本书拼 couragious（#245 原图）
+1894	humours	img r1862	
+1899	a	img r1862	
+1901	out	img r1862+bim	
+1903	bloud.	img r1862	
+1905	in	img r1862	
+1909	puniuntur	img r1862	
+1910	uno	img r1862+bim	
+1914	?		原图行首 man dieth，B•t 未裁到
+1917	do	img r1862	
+1925	that	img r1862	
+1928	smote	img r1862+bim	
+1930	Trajicit.	img r1862+bim	
+1931	pricke-arrowes,	img r1862+bim	原图 pricke- 换行
+1932	P:fetherd	ctx	原图 …etherd
+1933	and	img r1862	
+1935	shoote	img r1862	
+1936	Torto	img r1862+bim	
+1939	death:	img r1862+bim	
+1941	speakes,	img r1862+bim	
+1945	?		1862 feign；TCP gi•aine 不合，待原图
+1946	giving	img r1862	
+1947	by	img r1862+bim	
+1949	continuall	img r1862	
+1953	so	img r1862	
+1955	P:servants;	ctx	原图 …vants;
+1956	?		1862 定位错
+1959	was	img r1862	
+1960	out	img r1862	1862 cometh out
+1964	thundereth.	img r1862	
+1969	?		拉丁 communem reg••, a common bonefire；无证人
+1970	passe	img r1862	
+1972	peace.	img r1862	
+1973	in	img r1862	
+1974	pieces	img r1862+bim	
+1977	of	img r1862	
+1978	P:diluvium,	ctx	Ignitum diluvium, the fiery deluge
+1979	P:Gehen-	img r1862	1862 Gehenna；TCP Ge••• na 分写
+1981	of	img r1862	
+1984	that	img r1862	
+1989	Mandrakes.	img r1862+bim	
+1994	Many	img r1862	
+1996	revolters	img r1862	
+2007	P:leaders;	img r1862	1862 ringleaders；TCP Ring leader• 分写
+2010	P:Theudas, to	img r1862+bim	原图 Theuda,…；1862 Theudas, to
+2017	inferno.	img r1862+bim	
+2020	supererogates	img r1862+bim	
+2023	malo	img bim	原图 a Pastore malo
+2024	P:execranda	ctx	execranda infectio
+2025	P:caput	ctx	caput novum, a new head
+2035	reprimendo	img r1862	
+2039	P:averti,	ctx	Restat averti, cui converti non contigit；1862 改写
+2041	let	img r1862	
+2046	P:4.9.	ctx	腓 4:9
+2047	you.	img r1862	
+2049	land	img r1862	
+2051	for	img r1862+bim	
+2062	rather	img r1862+bim	
+2073	are the	img r1862	
+2078	P:exemplo major:	ctx	Imperio maximus, exemplo major；原图 exemplo… 入黑块
+2083	P:The king	img r1862	TCP T•king 合写；1862 The king
+2087	when	img r1862	
+2089	virum,	img r1862	
+2090	wine,	img r1862	
+2091	P:Blasphemiae,	ctx	1862 blasphemies
+2093	and	img r1862+bim	
+2095	P:religion;	img r1862	1862 reli-/gion 换行
+2096	P:licere	ctx	Minimum licere decet, cui plurimum licet（塞涅卡）
+2102	P:25.4.	ctx	民 25:4 Take all the heads；原图 Numb.25.4
+2110	P:lifted	img r1862	TCP lib••• 首字不合
+2115	one	img r1862+bim	
+2117	rare	img r1862+bim	
+2118	man	img r1862+bim	
+2122	?		1862 excellest；TCP s••mountest（surmountest），两本异文
+2124	P:nequitia	ctx	Quid non summa nequitia poterit
+2130	their	img r1862	
+2131	damnable	img r1862	1862 damn-/able
+2132	called	img r1862	
+2135	pass	img r1862	
+2136	to	img r1862	
+2143	as	img r1862	assoone as
+2148	there	img r1862	TCP th•••• 单词；1862 there is
+2151	our	img r1862	
+2152	adulterers,	img r1862+bim	原图 …terers,
+2154	temptations	img r1862+bim	原图 …tations
+2158	P:mutata	ctx	原图 non muta… 入黑块；non mutata piscatio sed intentio
+2160	pervert;	img r1862+bim	
+2161	men	img r1862	
+2162	in a	img r1862	TCP i• 〈◊〉
+2163	house of	img r1862+bim	原图 houseof 连写
+2166	Saint:	img r1862	
+2169	precipice	img r1862+bim	
+2172	whither	img r1862	
+2179	diversly	img r1862	
+2188	the	img r1862	
+2189	slay	img r1862	
+2191	P:diluant;	ctx	原图 dilu-/ant 换行
+2195	with	img r1862	
+2201	flesh:	img r1862	
+2202	are	img r1862	
+2207	bewitcheth	img r1862+bim	
+2213	P:Infidel.	ctx	提前 5:8；原图 Infid… 入黑块
+2214	asked	img r1862+bim	原图 Alanus asked him
+2216	groat.	img r1862	
+2218	There	img r1862+bim	
+2222	P:sacriledge,	ctx	原图 That sa… 入黑块；1862 sacrilege
+2223	congression	img r1862+bim	of 已在 TCP
+2226	damnation	img r1862+bim	原图 Having dam…
+2230	P:17.6.	ctx	伯 17:6
+2231	Socrates	img r1862	
+2233	in	img r1862	TCP 作 i• discreet 两词
+2236	sinne	img r1862	
+2245	P:Iob	ctx	伯 41:29（TCP 作 41.20）
+2255	they	img r1862	
+2259	selves,	img r1862	our selves
+2262	corrupting	img r1862	
+2268	vertues:	img r1862	
+2277	P:revenge	ctx	原图 re- 换行
+2278	P:Christianorum	ctx	原图 Chri- 换行
+2282	Peter	img r1862	原图 Pe- 换行
+2288	mayest	img r1862	TCP may•st 合 mayest
+2289	bad	img r1862	
+2294	hand	img r1862	
+2295	faith,	img r1862+bim	
+2298	pedler	img r1862	
+2300	doe it	img r1862	TCP do•• 合写
+2301	P:Diabolicum,	ctx	原图 Diab… 入黑块；Diabolicum, the part of a man of Belial
+2302	?		1862 改写，TCP bea••
+2303	thy	img r1862	
+2305	P:Gadarens	img r1862+bim	TCP C•••rens 首字疑误
+2309	P:horum	ctx	原图 plus nocuerunt hor…；Tertul.
+2312	hate	img r1862	
+2320	Christ.	img r1862+bim	
+2325	insinuations	img r1862	
+2329	asked	img r1862	
+2330	Numa	img r1862+bim	
+2331	Gal.	img r1862+bim	加 3:1
+2332	espouse	img r1862	
+2334	P:Absolvendi;	ctx	veritas Ligandi … veritas Absolvendi
+2336	shall	img r1862	
+2337	P:Law;	ctx	the End of the Law（罗 10:4）
+2339	P:1.20.	ctx	林后 1:20 All the promises of God
+2342	killing	img r1862	
+2343	P:Christianorum quàm	ctx	原图 Christianorum quàm…
+2347	P:culpam,	ctx	qui consentiunt in eandem culpam
+2350	Rev.	img r1862+bim	
+2352	or	img r1862+bim	
+2353	P:nobis	ctx	Credimus nulla peccata nobis nocere, nisi nostra
+2354	P:genus	ctx	pessimum genus maledicentiae；1862 worst kind of evil speaking
+2367	out	img r1862+bim	
+2373	P:terris:	ctx	ambulantem in terris
+2377	Temple	img r1862	
+2380	shall	img r1862	
+2381	against	img r1862+bim	
+2383	P:24.	ctx	利 24:14ff；原图 …4.
+2392	it	img r1862	
+2395	P:blasphemie,	ctx	原图 blasphe- 换行
+2397	punished	img r1862	
+2402	P:Rabshakeh,	img r1862	TCP R••s•ceh 拼法不合，取 1862
+2404	dumbnesse:	img r1862+bim	原图 …nesse:
+2414	cry:	img r1862	
+2417	P:parsimoniam:	img r1862	TCP persi••am 与 1862 parsimoniam 首段不合
+2419	P:prolixas;	ctx	原图 …as;；in verbis breves, in operibus prolixas
+2423	went.	img r1862	
+2424	their	img r1862+bim	
+2426	mislike	img r1862	
+2427	?		1862 cruelty；TCP c••ch•• 不合，待原图
+2428	P:with a	img r1862	TCP wi•• 单词；1862 With a
+2432	Tit.	img r1862	多 2:10
+2437	as	img r1862	
+2438	day	img r1862	
+2450	Father.	img r1862	
+2454	P:manifestum	ctx	原图 …anifestum
+2455	P:audio,	ctx	Sanctum audio, profanum video；原图 …dio
+2458	P:Soveraignes	ctx	原图 Sove- 换行；1862 sovereign's
+2463	eternall.	img r1862+bim	
+2467	what	img r1862	
+2468	divell	img r1862	
+2469	the	img r1862	
+2478	P:maledicit	ctx	原图 qui maledi…；qui maledicit Domino … qui benedicit
+2479	makes	img r1862	
+2480	P:soule,	ctx	路 1:46 magnifie her soule
+2484	times	img r1862	
+2488	omnia	img r1862+bim	原图 …ia tellus
+2489	P:facias,	ctx	ut nec facias, nec patiaris fraudem
+2492	Abimelechs;	img r1862+bim	原图 Abi- 换行
+2493	P:contradentes:	img r1862	1862 contradentes；TCP contr•tendentes 待原图
+2496	P:Irenaeus	img r1862	1862 Irenæus；TCP Ire•• 仅 5 字，本书他处 Irenaeus
+2500	P:dicit	ctx	原图 …icit；qui dicit se scire quod nescit
+2501	knowledge,	img r1862+bim	
+2505	plaine-song	img r1862	
+2509	market	img r1862+bim	
+2510	P:jure	ctx	原图 vendere jure potest
+2512	sixe	img r1862	
+2514	a	img r1862+bim	
+2516	P:word	img r1862	TCP w•rs• 与 1862 word 不合
+2522	discredit	img r1862	
+2523	Puritan-foxe:	img r1862+bim	
+2526	That	img r1862	
+2528	First-fruits,	img r1862+bim	
+2529	Cattell,	img r1862	本书拼法 cattell
+2535	correction	img r1862+bim	
+2539	P:fecit.	ctx	quamvis miraculum fecit；原图 …cit.
+2540	auferre.	img r1862	
+2541	begger.	img r1862+bim	原图 beg- 换行
+2542	one	img r1862	
+2546	so	img r1862+bim	
+2550	Divinitie;	img r1862	
+2552	If	img r1862	
+2553	Being	img r1862+bim	原图 Be- 换行
+2563	?		1862 Nay,；TCP •t 不合
+2567	judgement.	img r1862+bim	原图 judge- 换行
+2568	withall	img r1862+bim	原图 with- 换行
+2570	the	img r1862	
+2572	Englands	img r1862+bim	原图 Eng- 换行
+2573	Temples	img r1862+bim	原图 Tem- 换行
+2574	out.	img r1862	
+2576	challengeth	img r1862	
+2577	to	img r1862	
+2582	singularitys:	img r1862+bim	原图 singu- 换行
+2584	of	img r1862	
+2585	inconceiveable	img r1862	
+2591	P:hungriest	img r1862	1862 hungri-/est；原图入黑块
+2594	is	img r1862+bim	
+2598	his	img r1862	
+2599	defrauded	img r1862+bim	原图下行 defrauded
+2602	thereout	img r1862	
