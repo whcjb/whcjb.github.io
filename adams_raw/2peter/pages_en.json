@@ -669,12 +669,22 @@
  },
  {
   "slug": "3-9",
-  "title": "2 Peter 3:9",
+  "title": "2 Peter 3:9 (part 1 of 2)",
   "subtitle": "Thomas Adams",
   "group": "ch3",
   "ch": 3,
   "v1": 9,
   "v2": 9
+ },
+ {
+  "slug": "3-9-2",
+  "title": "2 Peter 3:9 (part 2 of 2)",
+  "subtitle": "Thomas Adams",
+  "group": "ch3",
+  "ch": 3,
+  "v1": 9,
+  "v2": 9,
+  "cont": true
  },
  {
   "slug": "3-10",

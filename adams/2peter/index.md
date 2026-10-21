@@ -41,7 +41,7 @@ next_label: "Errata"
 
 *Agreement* of the Scriptures, the confirmation of our faith, *Page 344, 345. 361*
 
-*Agreement* in <span class="ad-conj" title="Editorial conjecture: illegible in the 1633 source (lost in the gutter of the EEBO microfilm); supplied from the stated evidence (编者推补；非原书原文)">[I must lay]</span> not tolerable, *Page 909*
+*Agreement* in <span class="ad-gap" title="TCP: illegible in source">〈…〉</span> not tolerable, *Page 909*
 
 *Aire;* many take it for <span class="ad-gap" title="TCP: illegible in source">〈◊〉</span> place where the last Assises shall be kept, *Page 1328*
 
