@@ -68,10 +68,11 @@ TCP 标出的缺口：读不出的字母 13,436 个、整词 1,947、一截 64�
    - TCP 录入错误：看图时顺带发现 2 处（`in mero;`→`in utero,`、`Quia`→`Quis`），记 `tcp_fixes.tsv`，发布时替换（原串须全书唯一）。
      全书普查（TCP 与 1862 分段对齐，找 TCP 词像错字而 1862 同位是本书常见词）得 186 处候选，多为当时拼法或 1633
      原书排印错（照原样）。不看图的判法：在 bim（1633 原图的 IA OCR 词流）里按锚点分段对齐取同位词——原图 OCR 合 TCP
-     → 原书如此（57 条，照原样）；合 1862 → TCP 录入错（2 条：creditours→creditors、deliveranee→deliverance，已入
-     tcp_fixes）；其余 127 条原图 OCR 对不上或判不了，不动。
+     → 原书如此（57 条，照原样；其中 fick/faid/forrow 3 条不算证据——OCR 常把长 s 读成 f）；合 1862 → TCP 录入错，
+     但原图 OCR 自带词典、会把古拼法往现代拼法「纠正」，所以只采信明显的错字（deliveranee→deliverance），
+     creditours（本书 creditours 1 / creditors 4 两种都有）不改；其余 127 条判不了，不动。
    - A/B 档复核（不看图）：用 1848 本（同一修订本的另一份扫描，OCR 独立）同位再读一遍。6,173 条里 4,773 条两份
-     OCR 相合；不合的 382 条多是 1848 自己 OCR 乱码（but→bat）。两边都是真词的十余条看上下文，查出 1862 OCR
+     OCR 相合（只说明 1862 OCR 没读错；Sherman 修订本自己改了的词，两本一样，这法子查不出）；不合的 382 条多是 1848 自己 OCR 乱码（but→bat）。两边都是真词的十余条看上下文，查出 1862 OCR
      读错而过了真词闸的 3 条（the→tile→till、great→groat、he→lie），按 1848 改。约 1,400 条 1848 没定位或词数不同，未复核。
 
 ### 落盘口径（`scripts/adams_common.py`）
