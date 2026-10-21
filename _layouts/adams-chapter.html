@@ -233,11 +233,12 @@ function closeAdamsVerseNav() {
   }
 }
 
-/* 1693/94 印本页码：空锚点，页边显示小号码 */
-.adams-wrap .ad-pb { scroll-margin-top: 80px; }
+/* 1633 印本页码：空锚点，行内显示「p. N」小灰字（不用上标方括号——容易被当成脚注号） */
+.adams-wrap .ad-pb { scroll-margin-top: 80px; cursor: help; }
 .adams-wrap .ad-pb::before {
-  content: "[" attr(data-p) "]"; font-size: 11px; color: #a9a9c0; font-style: normal;
-  font-family: Georgia, serif; vertical-align: super; line-height: 0; margin: 0 2px;
+  content: "p." attr(data-p); font-size: 10.5px; color: #a9a9b3; font-style: normal;
+  font-family: Georgia, serif; letter-spacing: .02em; margin: 0 4px;
+  border: 1px solid #e2e2e6; border-radius: 3px; padding: 0 3px; vertical-align: 1px;
 }
 
 /* 花饰首字 */

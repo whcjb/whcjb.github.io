@@ -137,7 +137,8 @@ class R:
         k = self.pb_seen.get(n, 0) + 1
         self.pb_seen[n] = k
         pid = f'p{n}' + ('' if k == 1 else f'-{k}')
-        return f'<span class="ad-pb" id="{pid}" data-p="{n}" data-facs="{facs}"></span>'
+        return (f'<span class="ad-pb" id="{pid}" data-p="{n}" data-facs="{facs}" '
+                f'title="Page {n} of the 1633 edition begins here (原书第 {n} 页起)"></span>')
 
     def note(self, c):
         return f'<span class="ad-margin" markdown="1">{norm(self, self.inline(c))}</span>'
@@ -314,6 +315,7 @@ def main():
     vols = root.find(TEI + 'text').find(TEI + 'group').findall(TEI + 'text')
 
     last_verse = [None]
+    carry = []
 
     def put(slug, paras):
         md = to_md(paras)
@@ -344,7 +346,8 @@ def main():
                         t = tag(c)
                         if t == 'div' and c.get('type') == 'chapter':
                             ch = int(c.get('n'))
-                            head_paras = []
+                            head_paras = carry[:]
+                            carry.clear()
                             for e in c:
                                 if tag(e) == 'div' and e.get('type') == 'verse':
                                     vs = verse_slug(ch, e)
@@ -364,11 +367,15 @@ def main():
                                     render_block(r, e, head_paras)
                             if head_paras:
                                 put(r.slug, head_paras)
-                        elif t in ('pb', 'head', 'trailer'):
+                        elif t in ('pb', 'head'):
+                            # 卷首的总标题「AN EXPOSITION VPON…」与印本第 1 页页码：属于正文开头，
+                            # 挂到下一章第一节前（曾误落到献辞页尾）
+                            render_block(r, c, carry)
+                        elif t == 'trailer':
                             paras = []
                             render_block(r, c, paras)
                             if paras:
-                                put(r.slug or 'front', paras)
+                                put(r.slug, paras)
                         else:
                             raise ValueError(f'卷{vi} commentary 下未处理 <{t}> {c.get("type")}')
                 elif typ == 'index':

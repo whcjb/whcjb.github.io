@@ -19,7 +19,3 @@ next_label: "2 Peter 1:1 (part 1 of 2)"
 
 <p class="ad-closer" markdown="1">Your ever honour'd Vertues humble and thankfull servant, *THOMAS ADAMS.*</p>
 
-<span class="ad-pb" id="p1" data-p="1" data-facs="4"></span>
-
-## AN EXPOSITION VPON THE SECOND EPISTLE GENERALL OF THE HOLY APOSTLE, *Saint* PETER.
-
