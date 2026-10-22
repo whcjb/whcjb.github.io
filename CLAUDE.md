@@ -15,8 +15,11 @@ bundle install
 # Serve locally with live reload
 bundle exec jekyll serve
 
-# Build static site
+# Build static site（_config.yml 已开 incremental，只重建改动部分）
 bundle exec jekyll build
+
+# 改了 _config.yml / _data / 列表类页面后，增量可能漏更新，强制全量：
+rm -f .jekyll-metadata && bundle exec jekyll build
 ```
 
 For CSS/JS asset compilation (requires Node.js):

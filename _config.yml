@@ -23,6 +23,11 @@ RSS: false
 # from 2016, 'pygments' is unsupported on GitHub Pages. Use 'rouge' for highlighting instead.
 permalink: pretty
 paginate: 3
+# 本地增量编译：只重建改过的文件及依赖它的页面（改一章 ~9s，全量 ~3min）。
+# GitHub Pages 每次都在干净环境里全量构建，这一项对线上没有影响。
+# 改了 _config.yml、_data/ 或首页/列表页取的数据时，增量可能漏更新 → 本地 rm .jekyll-metadata 再建。
+incremental: true
+
 exclude:
   - less
   - node_modules
@@ -34,6 +39,9 @@ exclude:
   # hodge_raw / owen_raw 先前漏排除，raw 被当公开页面发布了
   # （_site 里各 31 / 57 个 index.html，2026-09-04 查出）
   # 新增注释家时**必须同步加一行**，否则 raw 目录里的 md 会被当公开页面发布
+  # 2026-10-22：perkins/johnstone/durham/spurgeon 四个 _raw 又漏了（_site 多出 3G+），
+  # 改用通配符兜底，下面逐个列的留作清单。
+  - "*_raw"
   - adams_raw
   - alexander_raw
   - bridges_raw

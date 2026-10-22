@@ -71,3 +71,7 @@ leighton_raw/1peter/witness/
 # 亚当斯《彼得后书》证人页图/hOCR（可重下）
 adams_raw/2peter/witness/
 adams_raw/2peter/tcp_main_tokens.json
+
+# Jekyll 增量编译的依赖表与缓存（本地专用）
+.jekyll-metadata
+.jekyll-cache/
