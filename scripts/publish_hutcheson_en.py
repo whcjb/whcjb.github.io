@@ -104,11 +104,21 @@ def vref(ch, a, b):
     return f'John {ch}:{a}' if a == b else f'John {ch}:{a}–{b}'
 
 
+MANUAL = RAW / 'manual_pages'
+
+
+def load_front(slug, fixes):
+    """扉页：照 1657 原书影像手排的 HTML（manual_pages/<slug>.html；Google Books vy1kAAAAcAAJ PP5），
+    文字取自 TCP，分行、字号、字距、双线框、分隔线照原书，花饰裁自原图。"""
+    f = MANUAL / f'{slug}.html'
+    return f.read_text(encoding='utf-8').strip() if f.exists() else hc.load(slug, fixes)
+
+
 def build_pages():
     fixes = hc.load_fixes()
     pages = []
     for slug, title, sub in FRONT:
-        pages.append(dict(slug=slug, title=title, subtitle=sub, body=hc.load(slug, fixes), group='front'))
+        pages.append(dict(slug=slug, title=title, subtitle=sub, body=load_front(slug, fixes), group='front'))
     for ch in range(1, 22):
         md = hc.load(str(ch), fixes)
         for a, b, body in split_chapter(ch, md):
