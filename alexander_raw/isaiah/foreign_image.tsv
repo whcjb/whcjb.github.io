@@ -4472,3 +4472,45 @@ preface	 הידלי read 	\*W.—P.	יחילו.—P.	img	v1	14
 # —— 第二十九批（2026-10-22，用户指出 30:32 keri (ca)）——
 30	been subject to oppression. 	with יהוה as an active	נלחם may agree with יהוה as an active	img+wlc	v1	604
 30	as by Ewald (wird 	gekampft). The keri (ca) must	gekämpft). The keri (בם) must	img+wlc	v1	604
+# —— 第三十批（2026-10-22，用户：找出所有 & 等符号连接希伯来字母）：& $ § { } 等贴着希伯来词的游离符号 41 处，只删符号 ——
+1		&גם	גם	punct	v1	
+10		&הלא	הלא	punct	v1	
+10		לא־עץ&&	לא־עץ	punct	v1	
+11		לשלח&	לשלח	punct	v1	
+13		פז&	פז	punct	v1	
+14		*עב$*	עב	punct	v1	
+16		עתה$	עתה	punct	v1	
+19		&נשא,	נשא,	punct	v1	
+20		גלות&	גלות	punct	v1	
+27		&לרגעים	לרגעים	punct	v1	
+27		על§,	על,	punct	v1	
+28		אפרים&?	אפרים	punct	v1	
+29		(הפלא &ופלא})	(הפלא ופלא)	punct	v1	
+30		על§	על	punct	v1	
+31		*&מלא*	מלא	punct	v1	
+31		&יקרא,	יקרא,	punct	v1	
+31		&צבא	צבא	punct	v1	
+31		לאשר$	לאשר	punct	v1	
+31		&מסס	מסס	punct	v1	
+34		&קוא	קוא	punct	v1	
+37		*עינך$*	עינך	punct	v1	
+4		*}עשן$*	עשן	punct	v1	
+40		*\עץ$*	עץ	punct	v2	
+40		אבר$	אבר	punct	v2	
+46		&משא	משא	punct	v2	
+47		&אפס	אפס	punct	v2	
+52		&באפס	באפס	punct	v2	
+53		ונראהו}	ונראהו	punct	v2	
+54		*לה}>*	לה	punct	v2	
+54		&}שצף	שצף	punct	v2	
+56		שרת$,	שרת,	punct	v2	
+60		כפות§	כפות	punct	v2	
+63		לא&,	לא,	punct	v2	
+65		&קרא	קרא	punct	v2	
+66		איך$	איך	punct	v2	
+7		*עואלה&*	עואלה	punct	v1	
+8		&מאס	מאס	punct	v1	
+8		&מסוס,	מסוס,	punct	v1	
+8		&מסס	מסס	punct	v1	
+8		&מורא	מורא	punct	v1	
+9		{מורה	מורה	punct	v1	
