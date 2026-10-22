@@ -1,0 +1,205 @@
+---
+layout: default
+---
+{%- comment -%}
+  罗洛克《帖撒罗尼迦前后书讲章》(1606) 章节页（中英共用，靠 page.zh 切换）。
+
+  ⚠️ 不复用别家 layout：每本书独立样式（用户既定规矩）。骨架取自 adams-chapter。
+  按 2026-10-16 起的新书规矩：章顶不放「跳到某节」下拉，副标题作者写英文原名。
+
+  配色赭金 #786000：与「历代解经」已登记十五色及加尔文酒红、马太亨利金、站点 Hux 蓝
+  相比，最小 ΔE 26.8（与先例同档）。深端 #584600。
+
+  本书版式要点（底本 EEBO-TCP A11010，见 rollock_raw/thessalonians/PROVENANCE.md）：
+  - 一讲一页（帖前 27 讲、帖后 14 讲）。讲前排出这一讲的经文 → `.rl-text`，其后每节一个 commentary-anchor。
+  - 页边旁注（分段提要、出处）→ `.rl-margin`。
+  - 印本页码（帖前、帖后各自起页）→ `.rl-pb`，id `#pN`。
+  - 编者推补 → `.rl-conj`（方括号另色）；待定的缺字 → `.rl-gap`（标红）。
+{%- endcomment -%}
+
+<div class="container rollock-wrap{% if page.zh %} rl-zh{% endif %}" style="padding-top: 70px;">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1" id="cmpCol">
+
+      <div class="rl-chrome">
+        <a href="{{ site.baseurl }}/rollock/{{ page.book_id }}/{% unless page.zh %}en/{% endunless %}">&larr; {{ page.book_name }}</a>
+        {% if page.zh %}{% if page.en_url %}<a class="rl-lang" href="{{ site.baseurl }}{{ page.en_url }}">English &rarr;</a>{% endif %}
+        {% else %}{% if page.zh_url %}<a class="rl-lang" href="{{ site.baseurl }}{{ page.zh_url }}">中文版 &rarr;</a>{% endif %}{% endif %}
+      </div>
+
+      <h1 class="rl-title">{{ page.title }}</h1>
+      {% if page.subtitle %}<p class="rl-subtitle">{{ page.subtitle }}</p>{% endif %}
+
+      <div class="rl-nav">
+        {% if page.prev_url %}<a href="{{ site.baseurl }}{{ page.prev_url }}">&larr; {{ page.prev_label }}</a>
+        {% else %}<span></span>{% endif %}
+        {% if page.next_url %}<a href="{{ site.baseurl }}{{ page.next_url }}">{{ page.next_label }} &rarr;</a>
+        {% else %}<span></span>{% endif %}
+      </div>
+
+      {%- comment -%}
+        对比注释抽屉：只给正文章节页（有 page.chapter）。self 把本书自己排除，中英两版 key 不同。
+      {%- endcomment -%}
+      {% if page.chapter %}
+      {% assign cc_self = "rollock-en" %}{% if page.zh %}{% assign cc_self = "rollock" %}{% endif %}
+      {% include compare-commentary-head.html self=cc_self content_class="rl-content" self_label="罗洛克" %}
+      {% endif %}
+      <div class="rl-content">
+        {{ content }}
+      </div>
+      {% if page.chapter %}{% include compare-commentary-foot.html %}{% endif %}
+
+      {% if page.date %}
+      <div class="rl-stamp">{% if page.zh %}译于{% else %}Published{% endif %} {{ page.date | date: "%Y-%m-%d %H:%M" }}</div>
+      {% endif %}
+
+      <div class="rl-nav rl-nav-foot">
+        {% if page.prev_url %}<a href="{{ site.baseurl }}{{ page.prev_url }}">&larr; {{ page.prev_label }}</a>
+        {% else %}<span></span>{% endif %}
+        {% if page.next_url %}<a href="{{ site.baseurl }}{{ page.next_url }}">{{ page.next_label }} &rarr;</a>
+        {% else %}<span></span>{% endif %}
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<script>
+// 讲前经文框：标进 scripture-popup 的 skip 列表（框里本身就是经文，不再 linkify）
+(function () {
+  document.querySelectorAll('.rl-content .rl-text').forEach(function (box) {
+    box.classList.add('verse-anchor');
+  });
+})();
+</script>
+
+{%- comment -%}
+  经文引用弹层：只给中文页（模块认的是中文书卷名）。accent/vnum 必须写字面量
+  （Jekyll 3 的 include 参数不接受变量）——与下方 CSS 的 --rl-ink 两处同值，改色要一起改。
+{%- endcomment -%}
+{% if page.zh %}
+{% include scripture-popup.html container_selector=".rl-content" accent="#786000" vnum="#584600" slide="down" %}
+{% endif %}
+
+<style>
+.rollock-wrap {
+  --rl-ink: #786000;
+  --rl-ink-dark: #584600;
+  --rl-ink-light: #b09a55;
+  --rl-rule: #ebe5d3;
+  --rl-paper: #fcfaf3;
+  --rl-body: #2d2a20;
+}
+.rollock-wrap .rl-chrome,
+.rollock-wrap .rl-nav {
+  font-size: 13px; display: flex; justify-content: space-between; gap: 12px;
+  align-items: center; font-family: Georgia, "Times New Roman", serif;
+}
+.rollock-wrap .rl-chrome { margin: 18px 0 22px; }
+.rollock-wrap .rl-chrome a,
+.rollock-wrap .rl-nav a { color: var(--rl-ink); text-decoration: none; }
+.rollock-wrap .rl-chrome a:hover,
+.rollock-wrap .rl-nav a:hover { color: var(--rl-ink-dark); text-decoration: underline; }
+.rollock-wrap .rl-lang { border: 1px solid var(--rl-rule); border-radius: 4px; padding: 4px 10px; }
+.rollock-wrap .rl-lang:hover { background: var(--rl-ink); color: #fff !important; text-decoration: none; }
+.rollock-wrap .rl-title {
+  font-family: Georgia, "Times New Roman", serif; font-size: 30px; font-weight: normal;
+  color: var(--rl-ink-dark); text-align: center; margin: 10px 0 4px; line-height: 1.3;
+}
+.rollock-wrap .rl-subtitle {
+  text-align: center; font-size: 14px; color: #8f8670; margin: 0 0 18px;
+  font-family: Georgia, "Times New Roman", serif; font-style: italic;
+}
+.rollock-wrap .rl-nav { margin: 14px 0 26px; }
+.rollock-wrap .rl-nav-foot { margin-top: 44px; padding-top: 16px; border-top: 1px solid var(--rl-rule); }
+
+/* 正文 */
+.rollock-wrap .rl-content {
+  font-family: Georgia, "Times New Roman", "Songti SC", STSong, serif;
+  font-size: 17px; line-height: 1.85; color: var(--rl-body);
+}
+.rollock-wrap .rl-content p { margin: 0 0 16px; text-align: justify; }
+.rollock-wrap .rl-content h2 {
+  font-family: Georgia, "Times New Roman", serif; font-size: 19px; font-weight: normal;
+  text-align: center; color: var(--rl-ink-dark); margin: 10px 0 18px; line-height: 1.5; letter-spacing: .03em;
+}
+.rollock-wrap .rl-content a { color: var(--rl-ink); }
+
+/* 章目录页（/rollock/<书>/<章>/）：本章各讲 */
+.rollock-wrap .rl-chtoc { list-style: none; padding: 0; margin: 10px 0; display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 8px; }
+.rollock-wrap .rl-chtoc a { display: block; padding: 9px 13px; border: 1px solid var(--rl-rule);
+  border-radius: 4px; background: var(--rl-paper); text-decoration: none; color: #2d2a20; line-height: 1.45; }
+.rollock-wrap .rl-chtoc a:hover { border-color: var(--rl-ink); color: var(--rl-ink-dark); }
+.rollock-wrap .rl-chtoc small { display: block; color: #8f8670; font-size: 12.5px; }
+
+/* 讲前排出的经文：一节一行（TEI <epigraph>） */
+.rollock-wrap .rl-text {
+  background: var(--rl-paper); border-left: 3px solid var(--rl-ink);
+  padding: 12px 18px; margin: 6px 0 20px; color: #3f3a28;
+}
+.rollock-wrap .rl-text p { margin: 0; text-align: left; }
+.rollock-wrap .rl-text p + p { margin-top: 8px; }
+.rollock-wrap .rl-text .rl-vlabel { font-size: 13px; letter-spacing: .04em; color: var(--rl-ink-dark); margin: 0 0 4px; font-style: italic; }
+.rollock-wrap .commentary-anchor {
+  display: block; height: 0; line-height: 0; margin: 0; padding: 0;
+  overflow: hidden; visibility: hidden; scroll-margin-top: 80px;
+}
+
+/* 中文页：音译专名后的原名对照，小一号灰字 */
+.rollock-wrap.rl-zh .rl-orig { font-size: .82em; color: #8f8670; margin: 0 1px;
+  font-family: Georgia, "Times New Roman", serif; white-space: nowrap; }
+
+/* 页边旁注 */
+.rollock-wrap .rl-margin {
+  display: block; margin: 2px 0 8px; padding-left: 10px; border-left: 2px solid var(--rl-rule);
+  font-size: 13px; line-height: 1.55; color: #7f7660; font-style: normal; text-align: left;
+}
+@media (min-width: 1200px) {
+  .rollock-wrap .rl-margin {
+    float: right; clear: right; width: 150px; margin: 4px -182px 8px 16px;
+    padding-left: 8px; text-indent: 0;
+  }
+}
+
+/* 1606 印本页码：空锚点，行内显示「p. N」小灰字 */
+.rollock-wrap .rl-pb { scroll-margin-top: 80px; cursor: help; }
+.rollock-wrap .rl-pb[data-p]::before {
+  content: "p." attr(data-p); font-size: 10.5px; color: #b0a78e; font-style: normal;
+  font-family: Georgia, serif; letter-spacing: .02em; margin: 0 4px;
+  border: 1px solid #ebe5d3; border-radius: 3px; padding: 0 3px; vertical-align: 1px;
+}
+
+/* 花饰首字 */
+.rollock-wrap .rl-dropcap {
+  float: left; font-family: Georgia, "Times New Roman", serif; font-size: 3.1em;
+  line-height: .84; margin: 4px 7px 0 0; color: var(--rl-ink-dark);
+}
+
+/* 底本里读不出的字 */
+.rollock-wrap .rl-gap { color: #c0392b; background: #fdecea; border-radius: 2px; padding: 0 2px; cursor: help; }
+/* 编者推补：方括号 + 另色，与原文区分 */
+.rollock-wrap .rl-conj { color: #8a5a00; background: #fff6e0; border-radius: 2px; padding: 0 1px; cursor: help; font-style: normal; }
+
+/* 书名页、献辞落款、讲末 AMEN. */
+.rollock-wrap .rl-closer { text-align: right !important; font-style: italic; color: #5a5440; }
+.rollock-wrap .rl-tp p { text-align: center !important; font-size: 16px; letter-spacing: .03em; }
+
+.rollock-wrap .rl-stamp {
+  margin-top: 32px; font-size: 12px; color: #a59c84; text-align: right;
+  font-family: Georgia, "Times New Roman", serif; letter-spacing: .03em;
+}
+.rollock-wrap :target { background: #fff6cc; transition: background .4s; }
+
+/* 中文页 */
+.rollock-wrap.rl-zh .rl-content {
+  font-family: "Songti SC", STSong, "Noto Serif CJK SC", "Source Han Serif SC", Georgia, serif;
+}
+.rollock-wrap.rl-zh .rl-title { font-family: "Songti SC", STSong, Georgia, serif; }
+.rollock-wrap.rl-zh .rl-text { font-family: "Kaiti SC", STKaiti, KaiTi, "Songti SC", serif; }
+
+@media (max-width: 767px) {
+  .rollock-wrap .rl-title { font-size: 24px; }
+  .rollock-wrap .rl-content { font-size: 16px; line-height: 1.8; }
+}
+</style>

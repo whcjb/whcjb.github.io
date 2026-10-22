@@ -1,0 +1,76 @@
+---
+layout: default
+---
+{%- comment -%}
+  罗洛克《帖撒罗尼迦前后书讲章》书卷首页（帖前、帖后各一页）。配色与章节页同源（赭金 #786000）。
+{%- endcomment -%}
+
+<div class="container rollock-book" style="padding-top: 70px;">
+  <div class="row">
+    <div class="col-lg-9 col-lg-offset-1 col-md-10 col-md-offset-1">
+
+      <div class="rl-booklang">
+        {% if page.zh %}{% if page.en_url %}<a href="{{ site.baseurl }}{{ page.en_url }}">English edition &rarr;</a>{% endif %}
+        {% else %}{% if page.zh_url %}<a href="{{ site.baseurl }}{{ page.zh_url }}">中文版 &rarr;</a>{% endif %}{% endif %}
+      </div>
+      <div class="rl-hero">
+        <h1>{{ page.book_name }}</h1>
+        <p class="rl-hero-author">{{ page.author }}</p>
+        <p class="rl-hero-meta">{{ page.edition }}</p>
+      </div>
+
+      {{ content }}
+
+    </div>
+  </div>
+</div>
+
+<style>
+.rollock-book { --rl-ink: #786000; --rl-ink-dark: #584600; --rl-rule: #ebe5d3; --rl-paper: #fcfaf3; }
+.rollock-book .rl-booklang { text-align: right; margin: 0 0 10px; font-size: 13px; font-family: Georgia, serif; }
+.rollock-book .rl-booklang a { color: var(--rl-ink); border: 1px solid var(--rl-rule);
+  border-radius: 4px; padding: 4px 10px; text-decoration: none; }
+.rollock-book .rl-booklang a:hover { background: var(--rl-ink); color: #fff; }
+.rollock-book .rl-hero {
+  background: linear-gradient(135deg, #584600 0%, #786000 55%, #b09a55 100%);
+  color: #fff; border-radius: 6px; padding: 34px 28px; margin-bottom: 30px;
+  font-family: Georgia, "Times New Roman", "Songti SC", serif; text-align: center;
+}
+.rollock-book .rl-hero h1 { margin: 0 0 10px; font-size: 30px; font-weight: normal; line-height: 1.35; }
+.rollock-book .rl-hero-author { margin: 0 0 4px; font-size: 15px; opacity: .92; }
+.rollock-book .rl-hero-meta { margin: 0; font-size: 13px; opacity: .8; font-style: italic; }
+.rollock-book .rl-group {
+  font-family: Georgia, "Times New Roman", "Songti SC", serif; margin: 30px 0 12px;
+  font-size: 15px; color: var(--rl-ink-dark); letter-spacing: .05em;
+  padding-bottom: 6px; border-bottom: 1px solid var(--rl-rule);
+}
+.rollock-book .rl-toc { list-style: none; padding: 0; margin: 0; display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 8px; }
+.rollock-book .rl-toc li { margin: 0; }
+.rollock-book .rl-toc a { display: block; padding: 9px 13px; border: 1px solid var(--rl-rule);
+  border-radius: 4px; background: var(--rl-paper); text-decoration: none;
+  font-family: Georgia, "Times New Roman", "Songti SC", serif; font-size: 15px; color: #2d2a20; line-height: 1.45; }
+.rollock-book .rl-toc a:hover { border-color: var(--rl-ink); background: #fff; color: var(--rl-ink-dark); }
+.rollock-book .rl-toc small { display: block; color: #8f8670; font-size: 12.5px; }
+.rollock-book .rl-chgrid { list-style: none; padding: 0; margin: 0; display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(92px, 1fr)); gap: 8px; }
+.rollock-book .rl-chgrid a { display: block; text-align: center; padding: 10px 6px; border: 1px solid var(--rl-rule);
+  border-radius: 4px; background: var(--rl-paper); text-decoration: none; color: #2d2a20;
+  font-family: Georgia, "Times New Roman", "Songti SC", serif; font-size: 15px; }
+.rollock-book .rl-chgrid a:hover { border-color: var(--rl-ink); background: #fff; color: var(--rl-ink-dark); }
+.rollock-book .rl-note { font-family: Georgia, "Times New Roman", "Songti SC", serif; font-size: 13.5px;
+  color: #6f6850; line-height: 1.8; margin: 34px 0 0; padding-top: 16px; border-top: 1px solid var(--rl-rule); }
+.rollock-book .rl-note p { margin: 0 0 12px; }
+.rollock-book .rl-note-zh { font-family: "Songti SC", STSong, serif; }
+.rollock-book .rl-conj { color: #8a5a00; background: #fff6e0; border-radius: 2px; padding: 0 1px; font-style: normal; }
+.rollock-book .rl-gap { color: #c0392b; background: #fdecea; border-radius: 2px; padding: 0 2px; }
+.rollock-book .rl-conjhead { font-family: "Songti SC", STSong, Georgia, serif; font-size: 16px; color: var(--rl-ink-dark); margin: 26px 0 10px; }
+.rollock-book .rl-conjtab { width: 100%; border-collapse: collapse; font-size: 13px; line-height: 1.6; margin: 10px 0 20px; }
+.rollock-book .rl-conjtab th, .rollock-book .rl-conjtab td { border-bottom: 1px solid var(--rl-rule); padding: 6px 6px; vertical-align: top; text-align: left; }
+.rollock-book .rl-conjtab th { background: var(--rl-paper); color: var(--rl-ink-dark); white-space: nowrap; }
+@media (max-width: 767px) {
+  .rollock-book .rl-hero h1 { font-size: 23px; }
+  .rollock-book .rl-toc { grid-template-columns: 1fr; }
+  .rollock-book .rl-conjtab { display: block; overflow-x: auto; }
+}
+</style>

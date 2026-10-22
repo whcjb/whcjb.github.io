@@ -75,3 +75,5 @@ adams_raw/2peter/tcp_main_tokens.json
 # Jekyll 增量编译的依赖表与缓存（本地专用）
 .jekyll-metadata
 .jekyll-cache/
+# 罗洛克帖撒罗尼迦书：证人整页图、本地 OCR、判读图（可重跑 rollock_bim_ocr / rollock_witness 重建）
+rollock_raw/thessalonians/witness/

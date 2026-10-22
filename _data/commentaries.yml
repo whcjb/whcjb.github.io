@@ -114,6 +114,14 @@ authors:
     work_cn: "彼得后书注释"
     work_en: "A Commentary or, Exposition vpon the Diuine Second Epistle Generall, written by the Blessed Apostle St. Peter"
     books: 1
+  - id: rollock
+    name: "罗伯特·罗洛克"
+    short: "罗洛克"
+    en: "Robert Rollock"
+    years: "1555?–1599"
+    work_cn: "帖撒罗尼迦前后书讲章"
+    work_en: "Lectures vpon the First and Second Epistles of Paul to the Thessalonians"
+    books: 2
   - id: alexander
     name: "约瑟·亚历山大"
     short: "亚历山大"
@@ -448,12 +456,14 @@ books:
     testament: nt
     chapters: 5
     links:
+      - {author: rollock, path: "/rollock/1thessalonians/", url_tpl: "/rollock/1thessalonians/__CH__/", title_cn: "帖撒罗尼迦前书讲章", title_en: "Lectures vpon the First Epistle of Paul to the Thessalonians", c0: "#584600", c1: "#786000"}
   - id: 2thessalonians
     name: "帖撒罗尼迦后书"
     en: "2 Thessalonians"
     testament: nt
     chapters: 3
     links:
+      - {author: rollock, path: "/rollock/2thessalonians/", url_tpl: "/rollock/2thessalonians/__CH__/", title_cn: "帖撒罗尼迦后书讲章", title_en: "Lectures vpon the Second Epistle of the Apostle Paul to the Thessalonians", c0: "#584600", c1: "#786000"}
   - id: 1timothy
     name: "提摩太前书"
     en: "1 Timothy"
