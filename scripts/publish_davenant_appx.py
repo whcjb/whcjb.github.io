@@ -51,7 +51,11 @@ CN = {                                   # 目录与导航上的中文题名
 }
 
 FN_MARK_START = re.compile(r'^\s*(\*|\+|†|‡|[ftJI])\s+')
-REF_RE = re.compile(r'(?<=[\w.,;:)\'"”’])(\*|\+)|(?<=\s)(\*|\+)(?=\s)')
+# 第三支：正文里 `†` 被读成 `t` 贴在逗号后（`Ames,t says` v2p333、
+# `Cameron,t B. M.` v2p570）。全附卷 `字母,t空白` 只有这两处，都是 †。
+# 不认它的话该页的 `*` 引用会顺位吃掉 † 那条注，后面整页错配一位。
+REF_RE = re.compile(r'(?<=[\w.,;:)\'"”’])(\*|\+)|(?<=\s)(\*|\+)(?=\s)'
+                    r'|(?<=[A-Za-z],)t(?=\s)')
 
 
 # ── 斜体 ────────────────────────────────────────────────────────────────────
@@ -274,6 +278,14 @@ def collect_notes(items):
             cur_last = p
     if cur is not None:
         notes.setdefault(cur_p, []).append(cur)
+    # 符号按「该页原排序里第几条带符号的注」回填，必须在配对**之前**做：
+    # 配对后输出顺序可能与原排序不同（† 引用按符号配，见 attach_notes），
+    # 到 render 再按输出顺序数会把 v2p570 Cameron 那条 `+` 回填成 `*`。
+    for p, q in notes.items():
+        n = 0
+        for i, t in enumerate(q):
+            q[i], has = fix_fn_symbol(t, n)
+            n += has
     return notes
 
 
@@ -325,7 +337,7 @@ def build_units(items):
 
 def attach_notes(units, notes):
     """行内配对 + 兜底挂段尾。按页归章，见模块 docstring。"""
-    used = {p: 0 for p in notes}
+    used = {p: set() for p in notes}
     seq = 0
     for u in units:
         for i, (kind, payload) in enumerate(u['blocks']):
@@ -334,14 +346,24 @@ def attach_notes(units, notes):
             it = payload
 
             def sub(m):
+                # † 引用（`+` / 贴逗号的 `t`）优先配该页带 † 的注：v2p570 的 `*`
+                # 引用在篇题上被剥掉了，正文里只剩 Cameron 那个 †，按顺位配会
+                # 吃掉 `*` 那条注（`Vide Life of Bishop Davenant`）。
                 nonlocal seq
+                dag = m.group(0) in ('+', 't')
                 for p in it['pages']:
                     q = notes.get(p, [])
-                    if used.get(p, 0) < len(q):
-                        seq += 1
-                        u['fns'].append((seq, q[used[p]], p))
-                        used[p] += 1
-                        return f'[^da{seq}]'
+                    free = [k for k in range(len(q)) if k not in used[p]]
+                    if not free:
+                        continue
+                    k = free[0]
+                    if dag:
+                        k = next((j for j in free
+                                  if re.match(r'^\s*†\s', q[j])), k)
+                    seq += 1
+                    u['fns'].append((seq, q[k], p))
+                    used[p].add(k)
+                    return f'[^da{seq}]'
                 return m.group(0)              # 该页注已用尽 → 原样留符号
 
             txt = REF_RE.sub(sub, mark_italics(it['text'], it['pages'],
@@ -352,18 +374,18 @@ def attach_notes(units, notes):
         # 该页还剩没配上行内引用的注 → 挂在本页最后一段段尾
         for p in sorted(u['pages']):
             q = notes.get(p, [])
-            k = used.get(p, 0)
-            if k >= len(q) or p not in u['last']:
+            free = [k for k in range(len(q)) if k not in used.get(p, ())]
+            if not free or p not in u['last']:
                 continue
             idx = u['last'][p]
             kind, txt = u['blocks'][idx]
-            for text in q[k:]:
+            for k in free:
                 seq += 1
-                u['fns'].append((seq, text, p))
+                u['fns'].append((seq, q[k], p))
                 txt += f'[^da{seq}]'
-                used[p] += 1
+                used[p].add(k)
             u['blocks'][idx] = (kind, txt)
-    left = sum(len(q) - used.get(p, 0) for p, q in notes.items())
+    left = sum(len(q) - len(used.get(p, ())) for p, q in notes.items())
     return seq, left
 
 

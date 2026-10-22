@@ -73,7 +73,9 @@ PIECES = [
 # `Chip. vi.` / `Chap. ui.`，所以一律只卡中间那个稳定的词根。
 HEAD_RES = [
     re.compile(r'D[Il1|]S[SB5]ERTAT[Il1|]ON\s+ON\s+T[HIU]E\s+DEA', re.I),
-    re.compile(r'^\s*[^A-Za-z]{0,3}Ch[a@ni][pn][.,;]?\s*[ivxlIVXL]{1,5}\s*[.,;]', re.I),
+    # `1`：p334 书眉 `Chap.1. ON THE ORIGIN…325` 的罗马数字 i 被读成阿拉伯 1，
+    # 漏剥后整行夹进正文句中（`prevarica- Chap.1. ON THE ORIGIN… 325 tor`）。
+    re.compile(r'^\s*[^A-Za-z]{0,3}Ch[a@ni][pn][.,;]?\s*[ivxlIVXL1]{1,5}\s*[.,;]', re.I),
     re.compile(r'CONTROVERSY\s+AMONG\s+TH[EF]\s+FRENCH', re.I),
     re.compile(r'OP[Il1]N[Il1]ON\s+OF\s+B[Il1]SHOP\s+DAVENANT', re.I),
     re.compile(r'GALL[Il1]CAN\s+CONTROVERSY', re.I),
@@ -586,6 +588,14 @@ def run_piece(pc, pages_by_vol, out, stats):
             t = E.clean(W.fix_line(vol, p, raw)[0])
             if not t:
                 continue
+            # unspeck 把注首的脚注符当斑点剥进了 l['speck']，接回来——不接的话
+            # 这条注在 publish 那边看着像续注，会并进上一条（v2p333 Ames 那条
+            # `+` 并进了 Grevinchovius，p334 的 `* Faustus` 又跨页接了上去）。
+            # 上一行停在字母上（句中断开）时不接：v2p365 `…Mr. Bickersteth in his` / `* Christian
+            # Student" observes` 的 `*` 是读花的开引号，接回去会把半句话切成新注。
+            if E.had_fn_mark(l) and not E.FN_MARK.match(t) and (
+                    not cur_fn or not re.search(r'[A-Za-z]$', cur_fn)):
+                t = re.findall(r'[*+†‡]', l['speck'])[-1] + ' ' + t
             if (is_start or E.FN_MARK.match(t)) and cur_fn:
                 out.append(f'[FN] <!--v{vol}p{p}--> '
                            + W.manual_para(vol, [p], E.drop_stray(cur_fn)))
