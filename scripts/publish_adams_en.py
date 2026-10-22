@@ -36,6 +36,7 @@ VOL2 = [('title2', 'Title Page (Vol. II)', 'London, 1633')]
 TAIL = [('index', 'An Alphabeticall Direction', 'Index of the principal points'),
         ('errata', 'Errata', '')]
 
+PUB_SLUG = {'index': 'alphabetical-index'}
 RE_BOX = re.compile(r'<div class="ad-text" markdown="1">')
 
 
@@ -75,7 +76,9 @@ def build_pages():
                 pg['cont'] = True
             pages.append(pg)
     for slug, title, sub in TAIL:
-        pages.append(dict(slug=slug, title=title, subtitle=sub, body=ac.load(slug), group='tail'))
+        # 书末索引的抽取篇名是 index：发布成 index.md 会占掉书首页 /adams/2peter/（与 index.html 同路径，
+        # 历代解经点进来落到索引页）。发布页名另取 alphabetical-index，抽取产物与判读对齐仍用 index
+        pages.append(dict(slug=PUB_SLUG.get(slug, slug), title=title, subtitle=sub, body=ac.load(slug), group='tail'))
     return pages
 
 

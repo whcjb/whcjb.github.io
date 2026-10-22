@@ -4,7 +4,7 @@ book_id: 2peter
 book_name: "Adams on 2 Peter"
 title: "Errata"
 date: 2026-10-21 16:31
-prev_url: "/adams/2peter/index/"
+prev_url: "/adams/2peter/alphabetical-index/"
 prev_label: "An Alphabeticall Direction"
 ---
 
