@@ -423,6 +423,44 @@ ORD_ZH = {'FIRST': '第一章', 'SECOND': '第二章',
           'THIRD': '第三章', 'FOURTH': '第四章'}
 
 
+# 括注 → 小一号灰字方括号（2026-10-22 用户：「括号改成灰色小一个大小的字号及
+# 方括号」，照约翰斯通腓立比书 publish_johnstone_zh.orig_names 的做法）。
+# zh_chapters 仍存圆括号，只在发布时换。
+#
+# 本卷模型把**对照性括注**一律写成半角 `(…)`：「署名(subscription)」
+# 「Augustine(奥古斯丁)」「νουϑετεῖν(<em>劝诫</em>)」「(《论称义》卷三第九章)」
+# ——全卷 2491 处逐类看过，没有一处是正文自身的插入语；正文插入语是全角
+# 「（若他有的话）」，那些不动。全角里只换三类纯对照的：纯西文原词、
+# 「原词，即……」、纯经文出处（同约翰斯通）。
+# 不换：markdown 链接 `](url)`；只有数字/单个小写字母的编号（「(Bec)」「(em)」
+# 是原名对照，要换）；裸「(3:20)」——经文
+# 弹层按「本卷」识别它靠的是圆括号，换成方括号就认不出了。
+HALF_PAREN = re.compile(r'\(([^()\n]+)\)')
+LINK_TAIL = re.compile(r'\[(?!\^)[^\[\]]*\]$')   # `[文字](` 才是链接；`[^dv133](` 是脚注符后的括注
+FULL_LATIN = re.compile(r"（([A-Za-zÀ-ÿÆæŒœ][A-Za-zÀ-ÿÆæŒœ .,'’&-]*)）")
+FULL_GLOSS = re.compile(
+    r"（([A-Za-zÀ-ÿÆæŒœ\u0370-\u03ff\u1f00-\u1fff][A-Za-zÀ-ÿÆæŒœ\u0370-\u03ff\u1f00-\u1fff'’ -]*，即[^（）]*)）")
+_REF = r"(?:[\u4e00-\u9fff]{2,7} ?)?\d+:\d[\d:\-、, ]*(?:节)?"
+_PRE = r"(?:另参|并参|见|参|如)?"
+_REF1 = r"[\u4e00-\u9fff]{2,7} ?\d+:\d[\d:\-、, ]*"
+FULL_REF = re.compile(rf"（({_PRE}{_REF1}(?:[；，]{_PRE}{_REF})*)）")
+BARE = re.compile(r'[\da-z]|\d[\d:\-、, ]*')
+
+
+def bracket_glosses(body: str) -> str:
+    def half(m):
+        inner = m.group(1)
+        if BARE.fullmatch(inner.strip()) or LINK_TAIL.search(m.string[max(0, m.start() - 200):m.start()]):
+            return m.group(0)
+        return f'<span class="dv-orig">[{inner}]</span>'
+    fm_end = body.index('\n---\n', 4) + 5 if body.startswith('---\n') else 0
+    fm, text = body[:fm_end], body[fm_end:]
+    text = HALF_PAREN.sub(half, text)
+    for rx in (FULL_REF, FULL_GLOSS, FULL_LATIN):
+        text = rx.sub(r'<span class="dv-orig">[\1]</span>', text)
+    return fm + text
+
+
 def translate_chapter(n: int, resume: bool, publish: bool, limit: int, dry: bool):
     src = PUB / f'{n}.md'
     fm, body = split_page(src.read_text(encoding='utf-8'))
@@ -508,7 +546,7 @@ def translate_chapter(n: int, resume: bool, publish: bool, limit: int, dry: bool
 
     if publish:
         zh_page_dir.mkdir(parents=True, exist_ok=True)
-        existing.write_text(page, encoding='utf-8')
+        existing.write_text(bracket_glosses(page), encoding='utf-8')
         print(f'✓ 中文页 → {existing}', flush=True)
         t = src.read_text(encoding='utf-8')
         if 'zh_url:' not in t:

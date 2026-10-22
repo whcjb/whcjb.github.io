@@ -21,7 +21,7 @@ layout: default
   - 脚注符是每页重置的 `*` / `†` / `‡`，非全书连号；定义末尾缀原书页码。
 {%- endcomment -%}
 
-<div class="container davenant-wrap" style="padding-top: 70px;">
+<div class="container davenant-wrap{% if page.zh %} dv-zh{% endif %}" style="padding-top: 70px;">
   <div class="row">
     <div id="cmpCol" class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
 
@@ -212,6 +212,26 @@ layout: default
    两边分开各自为政，改一边不动另一边。 */
 .dv-outline { margin: 12px 0 16px 1.6em; }
 .dv-outline p { margin: 2px 0; text-indent: 0; }
+
+/* ── 中文页：照约翰斯通腓立比书中文版收紧（2026-10-22 用户：「像腓立比书一样
+   紧凑一些」）。中文不像英文那样需要大行距透气，1.85 + 15px 段距显得稀疏。
+   上面 content-visibility 的估高按英文 1.85 算的，中文行高降到 1.65 后同比
+   缩到 320px（360 × 1.65/1.85）。 */
+.dv-zh .dv-content { font-family: "Songti SC", STSong, "Noto Serif CJK SC",
+  "Source Han Serif SC", Georgia, serif; line-height: 1.65; }
+/* 只收无 class 的正文段：带 class 的版式块（dv-cite 2px、dv-outline 2px、
+   dv-attrib 12px…）各有自己的段距，用 .dv-content p 一刀切会把清单撑开。 */
+.dv-zh .dv-content > p:not([class]) { margin-bottom: 10px; }
+.dv-zh .dv-content > p { contain-intrinsic-size: auto 320px; }
+.dv-zh .dv-scripture { padding: 10px 16px 2px; margin: 14px 0 16px; }
+.dv-zh .dv-scripture p { margin-bottom: 8px; }
+.dv-zh .dv-content h2 { margin: 24px 0 10px; }
+.dv-zh .dv-content .footnotes { line-height: 1.6; }
+.dv-zh .dv-content .footnotes li { margin-bottom: 5px; }
+/* 原名/原词/出处括注「署名[subscription]」「Augustine[奥古斯丁]」：小一号、灰字、
+   方括号，不抢正文（publish 时由 translate_davenant.bracket_glosses 换）。 */
+.dv-zh .dv-orig { font-size: .82em; color: #8b8b80; margin: 0 1px; }
+.dv-zh .dv-orig em { color: inherit; }
 
 /* 节号锚点：跳转时避开 fixed navbar */
 .dv-anchor { position: relative; top: -80px; display: block; height: 0; }
