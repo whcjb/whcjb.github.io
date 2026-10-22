@@ -126,7 +126,25 @@ def absolutize_refs(body: str) -> str:
 ORIG_NAME = re.compile(r"（([A-Za-zÀ-ÿÆæŒœ][A-Za-zÀ-ÿÆæŒœ .,'’&-]*)）")
 
 
+# 「（presbyter，即「长老」一词的希腊文）」这种「原词，即……」的原文括注也同样处理，
+# 连同后面的中文说明一起放进灰字方括号（2026-10-22 用户指定）。
+ORIG_GLOSS = re.compile(r"（([A-Za-zÀ-ÿÆæŒœ][A-Za-zÀ-ÿÆæŒœ'’-]*，即[^（）]*)）")
+
+
+# 纯经文出处括注「（彼得前书 5:1、2）」「（见提摩太前书 6:18，并参哥林多前书 1:5）」
+# 同样换成灰字方括号（2026-10-22 用户指定）。括号里夹了别的话（「见该节第一分句的
+# 讲解」「中 εἴ πως 便是……」「自夸，」）的不动。
+_REF = r"(?:[\u4e00-\u9fff]{2,7} )?\d+:\d[\d:\-、, ]*"
+_PRE = r"(?:另参|并参|见|参|如)?"
+# 首个出处必须带书卷名：裸「（3:20）」是弹层按「本卷」识别的格式、靠圆括号认，
+# 换成方括号弹层就认不出了，留原样。
+_REF1 = r"[\u4e00-\u9fff]{2,7} \d+:\d[\d:\-、, ]*"
+SCRIPTURE_PAREN = re.compile(rf"（({_PRE}{_REF1}(?:[；，]{_PRE}{_REF})*)）")
+
+
 def orig_names(body: str) -> str:
+    body = SCRIPTURE_PAREN.sub(r'<span class="jh-orig jh-orig-wrap">[\1]</span>', body)
+    body = ORIG_GLOSS.sub(r'<span class="jh-orig jh-orig-wrap">[\1]</span>', body)
     return ORIG_NAME.sub(r'<span class="jh-orig">[\1]</span>', body)
 
 

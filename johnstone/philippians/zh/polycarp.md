@@ -64,7 +64,7 @@ zh: true
 <p class="jh-note" id="fn-6" markdown="span"><a class="jh-back" href="#fnref-6">6</a>彼得前书 1:13。</p>
 <p class="jh-note" id="fn-7" markdown="span"><a class="jh-back" href="#fnref-7">7</a>彼得前书 3:9。</p>
 <p class="jh-note" id="fn-8" markdown="span"><a class="jh-back" href="#fnref-8">8</a>马太福音 7:1。</p>
-<p class="jh-note" id="fn-9" markdown="span"><a class="jh-back" href="#fnref-9">9</a>这两处对登山宝训的引用（路加福音 6:37；马太福音 5:7）都是意引，与原文的措辞并不相同。</p>
+<p class="jh-note" id="fn-9" markdown="span"><a class="jh-back" href="#fnref-9">9</a>这两处对登山宝训的引用<span class="jh-orig jh-orig-wrap">[路加福音 6:37；马太福音 5:7]</span>都是意引，与原文的措辞并不相同。</p>
 <p class="jh-note" id="fn-10" markdown="span"><a class="jh-back" href="#fnref-10">10</a>马太福音 7:2。</p>
 <p class="jh-note" id="fn-11" markdown="span"><a class="jh-back" href="#fnref-11">11</a>路加福音 6:20。</p>
 <p class="jh-note" id="fn-12" markdown="span"><a class="jh-back" href="#fnref-12">12</a>马太福音 5:10。</p>
@@ -73,13 +73,13 @@ zh: true
 <p class="jh-note" id="fn-15" markdown="span"><a class="jh-back" href="#fnref-15">15</a>或作「在这些之内」。此处读法存疑。</p>
 <p class="jh-note" id="fn-16" markdown="span"><a class="jh-back" href="#fnref-16">16</a>提摩太前书 6:7。</p>
 <p class="jh-note" id="fn-17" markdown="span"><a class="jh-back" href="#fnref-17">17</a>或者所补的词也可以是「我们要教导我们的妻子」。</p>
-<p class="jh-note" id="fn-18" markdown="span"><a class="jh-back" href="#fnref-18">18</a>这显然是保罗「我们是永生神的殿」（哥林多后书 6:16）这一比喻的变体。</p>
+<p class="jh-note" id="fn-18" markdown="span"><a class="jh-back" href="#fnref-18">18</a>这显然是保罗「我们是永生神的殿」<span class="jh-orig jh-orig-wrap">[哥林多后书 6:16]</span>这一比喻的变体。</p>
 <p class="jh-note" id="fn-19" markdown="span"><a class="jh-back" href="#fnref-19">19</a>加拉太书 6:7。</p>
 <p class="jh-note" id="fn-20" markdown="span"><a class="jh-back" href="#fnref-20">20</a>严格说来应作「执事」；「执事」一名所本的原文，字义就是「仆人」。</p>
 <p class="jh-note" id="fn-21" markdown="span"><a class="jh-back" href="#fnref-21">21</a>此处似乎是在暗指腓立比书 1:27，因为两处用的是同一个特别的字，其严格的意思是「作为公民而生活」。正如莱特富特<span class="jh-orig">[Lightfoot]</span>博士所言，坡旅甲在这里把这个字放在这样的上下文中，很可能有意让这层意思鲜明地显出来，即：「我们若以配得过祂的方式尽*公民*的本分，将来就必与祂一同作*王*。」</p>
 <p class="jh-note" id="fn-22" markdown="span"><a class="jh-back" href="#fnref-22">22</a>提摩太后书 2:12。</p>
 <p class="jh-note" id="fn-23" markdown="span"><a class="jh-back" href="#fnref-23">23</a>哥林多前书 6:9，10。</p>
-<p class="jh-note" id="fn-24" markdown="span"><a class="jh-back" href="#fnref-24">24</a>读者会注意到，这封书信中丝毫看不出腓立比教会的体制有任何趋向高级教阶主教制的迹象。坡旅甲时代的教会职分，仍与保罗时代（腓立比书 1:1）一样，是「诸位监督」（又称「长老」）「和诸位执事」。</p>
+<p class="jh-note" id="fn-24" markdown="span"><a class="jh-back" href="#fnref-24">24</a>读者会注意到，这封书信中丝毫看不出腓立比教会的体制有任何趋向高级教阶主教制的迹象。坡旅甲时代的教会职分，仍与保罗时代<span class="jh-orig jh-orig-wrap">[腓立比书 1:1]</span>一样，是「诸位监督」（又称「长老」）「和诸位执事」。</p>
 <p class="jh-note" id="fn-25" markdown="span"><a class="jh-back" href="#fnref-25">25</a>直译为「罪的欠债者」。参路加福音 13:4 原文，以及第 2 节中与之平行的说法。把这里的这个说法和下一句的第一个分句合起来看，我们不能不看出，坡旅甲在此是暗指马太福音 6:12。</p>
 <p class="jh-note" id="fn-26" markdown="span"><a class="jh-back" href="#fnref-26">26</a>罗马书 14:10、12。</p>
 <p class="jh-note" id="fn-27" markdown="span"><a class="jh-back" href="#fnref-27">27</a>约翰福音 4:3。</p>
