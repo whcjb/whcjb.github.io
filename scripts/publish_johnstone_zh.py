@@ -148,13 +148,14 @@ def orig_names(body: str) -> str:
     return ORIG_NAME.sub(r'<span class="jh-orig">[\1]</span>', body)
 
 
-# 引文改楷体（2026-10-22 用户：先只改第 1 章看效果）。
+# 引文改楷体（2026-10-22 用户：第 1 章试行后推广全书）。
 # 判据：「」里去标点后 ≥8 字的算引文（经文、诗歌、他人原话）；短的多半是「提到某个词」
 # （「恩典」「本分」「凡」），不动。段首整句斜体的「*……*」是本段要讲解的经文短语，
 # 不论长短都算引文。引文里的斜体：整句斜体 → 去掉（楷体本身已标出引文）；
-# 局部斜体（作者强调）→ 着重号 <em class="jh-dot">。星号奇数（斜体跨出引号）的不动。
+# 局部斜体（作者强调）→ <em class="jh-emph">，楷中用宋（2026-10-22 用户：着重号的点
+# 落在行间、对不齐，改用字体对比）。星号奇数（斜体跨出引号）的不动。
 # 题记 .jh-epigraph 有自己的版式，跳过。
-KAI_SECTIONS = {'1'}
+KAI_SECTIONS = set(ORDER)
 KAI_MIN = 8
 QUOTE = re.compile(r'「([^「」\n]*)」')
 _QPUNCT = re.compile(r'[\s　，。；：、！？『』“”‘’（）()\*·…—,.;:!?\-]|<[^>]+>|\[\^[^\]]+\]')
@@ -179,7 +180,7 @@ def kai_quotes(body: str) -> str:
             lemma = whole and m.start() == 0
             if not lemma and len(_QPUNCT.sub('', q)) < KAI_MIN:
                 return m.group(0)
-            q = q[1:-1] if whole else re.sub(r'\*([^*]+)\*', r'<em class="jh-dot">\1</em>', q)
+            q = q[1:-1] if whole else re.sub(r'\*([^*]+)\*', r'<em class="jh-emph">\1</em>', q)
             return f'「<span class="jh-q">{q}</span>」'
         out.append(QUOTE.sub(sub, line))
     return '\n'.join(out)
