@@ -74,3 +74,14 @@ TCP 标出的缺口：读不出的字母 715、整词 239、一截 144、外文 
   整页出判读图（`rollock_pagesheets.py`），重影/透印页另出原分辨率三段放大图（`--zoom 3`）。
 - TCP 录入错 14 条进 `tcp_fixes.tsv`（看图时顺带发现；最大一处 p.112 漏录一整句并错置）。
 - 两卷扉页照原书影像手排（`manual_pages/`），花边与印刷商徽记（Justitia / Religio 木刻）裁自胶片，存 `img/rollock/`。
+
+### 第二轮：判不了的 163 组按 800 ppi 原图重看（2026-10-22）
+
+- 先找第二份影像：EEBO（Michigan / Oxford）与 archive.org 是同一卷胶片（Huntington 图书馆藏本）；Google Books、
+  Wodrow 选集均无全书影像。图像处理（找叠印的来源页、背面镜像相减）试过，叠印上来的字对不上任何相邻页，减不掉。
+- 改用 IA 原始 800 ppi 页图（前面判读用的是半尺寸），重影/透印页按条带（`rollock_bands.py`）、零散的按原分辨率裁图
+  （`rollock_fullcrop.py`）逐条看。结果：163 组里**又读出 98 组**；**44 组字形看得出大概但不够清楚**，写成推断，
+  列在 `gap_pending_approval.tsv` 待用户逐条同意；**21 组仍读不出**（p.66 页底整块黑污渍 9、墨点盖字 2、
+  手写批注潦草 2、重影太重 6、页码数字 2）。
+- 看图时又发现 TCP 录入错 2 条进 `tcp_fixes.tsv`：帖后 1:8 引文 TCP 漏录 *knovv **not** God* 的 not（意思相反）；
+  帖前 5:24 讲 `so hes no appoynted` 实为 `so hes he appoynted`。
