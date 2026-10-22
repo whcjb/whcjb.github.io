@@ -277,4 +277,31 @@ function closeLeightonVerseNav() {
 }
 /* 编者推补（1657 原书此处缺损，据上下文补出）：方括号 + 另色，与原文区分 */
 .leighton-wrap .lt-conj, .leighton-book .lt-conj { color: #8a5a00; background: #fff6e0; border-radius: 2px; padding: 0 1px; cursor: help; font-style: normal; }
+/* 扉页（title1 / title2）：照原书版式手排——双线框、逐行居中、字号悬殊、斜体、字距、分隔线。字形用站内衬线体，不仿古字。 */
+.leighton-wrap .lt-tp { max-width: 500px; margin: 10px auto 30px; padding: 24px 28px 20px;
+  border: 1px solid #2a2a33; outline: 1px solid #2a2a33; outline-offset: 5px; background: #fff;
+  text-align: center; font-family: Georgia, "Times New Roman", serif; color: #1f1f24; line-height: 1.2; }
+.leighton-wrap .lt-tp-imp { outline: none; border: none; padding: 0 28px; margin-bottom: 26px; }
+.leighton-wrap .lt-tp-l { margin: 0 0 7px; text-align: center !important; }
+.leighton-wrap .lt-tp .s0 { font-size: 44px; letter-spacing: .02em; }
+.leighton-wrap .lt-tp .s1 { font-size: 30px; }
+.leighton-wrap .lt-tp .s2 { font-size: 21px; }
+.leighton-wrap .lt-tp .s3 { font-size: 17px; }
+.leighton-wrap .lt-tp .s4 { font-size: 15px; }
+.leighton-wrap .lt-tp .s5 { font-size: 14px; line-height: 1.5; margin: 4px 6px 4px; }
+.leighton-wrap .lt-tp .gap { margin-top: 12px; }
+.leighton-wrap .lt-tp .it, .leighton-wrap .lt-tp i { font-style: italic; }
+.leighton-wrap .lt-tp .ls { letter-spacing: .12em; }
+.leighton-wrap .lt-tp .ls2 { letter-spacing: .4em; }
+.leighton-wrap .lt-tp .sc { font-variant: small-caps; text-transform: lowercase; }
+.leighton-wrap .lt-tp .lt-tp-date { font-size: 12px; margin-right: 8px; }
+.leighton-wrap .lt-tp-rule { border: 0; border-top: 1.5px solid #2a2a33; margin: 12px 0; }
+@media (max-width: 600px) {
+  .leighton-wrap .lt-tp { padding: 16px 10px; }
+  .leighton-wrap .lt-tp .s0 { font-size: 28px; }
+  .leighton-wrap .lt-tp .s1 { font-size: 22px; }
+  .leighton-wrap .lt-tp .s2 { font-size: 16px; }
+  .leighton-wrap .lt-tp .s3 { font-size: 14px; }
+  .leighton-wrap .lt-tp .s4, .leighton-wrap .lt-tp .s5 { font-size: 12.5px; }
+}
 </style>

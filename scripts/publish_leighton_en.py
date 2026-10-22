@@ -67,8 +67,14 @@ def vref(ch, a, b):
     return f'1 Peter {ch}:{a}' if a == b else f'1 Peter {ch}:{a}–{b}'
 
 
+MANUAL = Path(__file__).resolve().parent.parent / 'leighton_raw' / '1peter' / 'manual_pages'
+
+
 def load(slug, fixes):
-    return lc.load(slug, fixes)
+    """扉页：照原书影像手排的 HTML（manual_pages/<slug>.html；卷一 comment00leig n4、卷二 pract00leig n5–6），
+    文字取自 TCP，分行、字号、斜体、字距、双线框与分隔线照原书。"""
+    f = MANUAL / f'{slug}.html'
+    return f.read_text(encoding='utf-8').strip() if f.exists() else lc.load(slug, fixes)
 
 
 def build_pages():
