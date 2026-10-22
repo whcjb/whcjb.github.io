@@ -308,5 +308,7 @@
  "1|489|Levins,": "Lerins,",
  "1|434|withcrafts": "witchcrafts",
  "_compositor_policy": "**原书排字错：默认仍然「照印不改」。** 2026-09-23 用户逐条批准了**这 9 处**个案，不是政策改了——以后再发现的排字错，**报给用户等批准，不得自行套用这几条当先例**。已获批准的 9 处：`Pellarmin`→Bellarmin（v1p101，4 倍放大只有上半个碗，是 P）、`nothwithstanding`→notwithstanding（v1p146）、`Eqist.`→Epist.（v2p131，是 q 不是 p）、`autnority,`→authority,（v2p54，没有上升部，是 n）、`thsir`→their（v2p54）、`righteouness,`→righteousness,（v1p565，少一个 s）、`Levins,`→Lerins,（v2p334/v1p489，书末勘误表里就写着「for Levins, read Lerins」）、`withcrafts`→witchcrafts（v1p434）。⚠️ 与这 9 处**形似但性质不同、一律不碰**的：①本书**一贯**的拼法——索引里 `Suares` 14 次 / `Suarez` 1 次、`Auverne` 3 次 / `Auvergne` 1 次，是这一版的惯用名（见 `_suares`）；②19 世纪拼法 `shews` `connexion` `amongst` `woful`；③`æ` `œ` 连字。",
- "2|338|T\">embrace": "T'"
+ "2|338|T\">embrace": "T'",
+ "2|362|^o": "",
+ "2|542|^": ""
 }
