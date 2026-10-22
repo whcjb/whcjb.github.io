@@ -89,7 +89,7 @@ def apply(md, groups_gid, dec, sites):
             continue
         v, kind = dec[g]
         if '*' in v:                     # 读法自带斜体标记（组内斜体边界与原串不同）：整组照写
-            edits.append((a, b, v))
+            edits.append((a, b, f'{CONJ_L}{v}{CONJ_R}' if kind == 'c' else v))
             continue
         lead = re.match(r'^\**', s).group(0)
         trail = re.search(r'\**$', s).group(0)

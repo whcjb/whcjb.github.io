@@ -194,6 +194,58 @@ def stats():
     return len(sites), w, c
 
 
+def _anchor(book, slug, page):
+    """缺字所在印本页的锚点：页面里第一个 id="pN"。"""
+    return f'/rollock/{book}/{slug}/' + (f'#p{page}' if page else '')
+
+
+def _ctx(s):
+    return html.escape(' '.join(s['left'][-5:]) + ' ⟨' + s['tcp'] + '⟩ ' + ' '.join(s['right'][:5]))
+
+
+def _grade(note):
+    if re.search(r'经文|徒 |提后|犹 |帖后 |史实|同语|下文|下句|合字数', note):
+        return '中：字形可辨大半，另有经文或上下文印证'
+    return '低：只认出部分字形'
+
+
+def notes_tables(book):
+    """首页逐条说明（从判读表生成，表改首页跟着变）：① 编者推补（用户同意的推断）② 仍读不出的。"""
+    sites = {s['gid']: s for s in json.loads((RAW / 'gap_sites.json').read_text(encoding='utf-8'))}
+    review = {int(r[0]): r for r in rc._tsv('gap_review.tsv')}
+    appr = [(int(r[0]), r[1]) for r in rc._tsv('gap_approved.tsv')]
+    out = []
+    rows = [(g, v) for g, v in appr if sites[g]['book'] == book]
+    if rows:
+        out.append(f'<h3 class="rl-conjhead">编者推补逐条说明（{len(rows)} 处）</h3>')
+        out.append('<p class="rl-note-zh">以下各处录入本标为读不出；1606 原版胶片在这些位置或重影（同页拍了两次、两次影像错位叠印）、'
+                   '或背面字透印、或被墨渍盖住，800 ppi 原图上只能认出大致字形。按字形并参照经文与上下文推补，'
+                   '正文中以 <span class="rl-conj">[方括号]</span> 另色标出，不是原书确定的文字。</p>')
+        out.append('<table class="rl-conjtab"><tr><th>位置</th><th>录入本原样（前后文）</th><th>现作</th><th>把握</th><th>依据</th></tr>')
+        for g, v in rows:
+            s = sites[g]
+            note = (review.get(g, ['', '', '', ''])[3] if len(review.get(g, [])) > 3 else '')
+            note = re.sub(r'[，,]?\s*列推断', '', note)
+            note = re.sub(r'[，,]?\s*发布时一并改（tcp_fixes）', '，正文一并改作 there', note).replace('800ppi', '800 ppi 原图')
+            out.append(f'<tr><td><a href="{{{{ site.baseurl }}}}{_anchor(book, s["slug"], s.get("page"))}">'
+                       f'{s["slug"]} · p.{s.get("page")}</a></td><td>{_ctx(s)}</td>'
+                       f'<td>[{html.escape(v.replace("*", ""))}]</td><td>{_grade(note)}</td><td>{html.escape(note)}</td></tr>')
+        out.append('</table>')
+    left = [g for g, r in review.items() if r[1] == '?' and sites[g]['book'] == book]
+    if left:
+        out.append(f'<h3 class="rl-conjhead">仍读不出的（{len(left)} 处）</h3>')
+        out.append('<p class="rl-note-zh">这些位置在网上唯一的一份影像（EEBO 缩微胶片，Huntington 图书馆藏本）上读不出，'
+                   '正文中标红留在明面，不推补。</p>')
+        out.append('<table class="rl-conjtab"><tr><th>位置</th><th>录入本原样（前后文）</th><th>原因</th></tr>')
+        for g in sorted(left):
+            s = sites[g]
+            note = review[g][3] if len(review[g]) > 3 else ''
+            out.append(f'<tr><td><a href="{{{{ site.baseurl }}}}{_anchor(book, s["slug"], s.get("page"))}">'
+                       f'{s["slug"]} · p.{s.get("page")}</a></td><td>{_ctx(s)}</td><td>{html.escape(note)}</td></tr>')
+        out.append('</table>')
+    return out
+
+
 def build_index(book, pages):
     cfg = BOOKS[book]
     other = '2thessalonians' if book == '1thessalonians' else '1thessalonians'
@@ -238,7 +290,8 @@ def build_index(book, pages):
                f'录入本有 {n:,} 处读不出的字（两卷合计），{w:,} 处对照同一卷胶片的灰度扫描（Internet Archive）逐处看图读出'
                + (f'；{c:,} 处为编者推补，以 <span class="rl-conj">[方括号]</span> 另色标出' if c else '')
                + f'；本卷仍读不出的标红留在明面（{left:,} 处）——都落在胶片本身的毛病上：两次曝光叠印、背面透印、p.65–66 页底污渍，'
-               '只有另一份藏本的影像才可能读出。逐条依据见 <code>rollock_raw/thessalonians/</code>。</p>')
+               '只有另一份藏本的影像才可能读出。逐条依据见下表与 <code>rollock_raw/thessalonians/</code>。</p>')
+    out.extend(notes_tables(book))
     out.append('</div>')
     return '\n'.join(out) + '\n'
 
