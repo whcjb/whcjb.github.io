@@ -70,6 +70,7 @@ layout: default
   参数不接受变量），取本书的钴蓝两端。
 {%- endcomment -%}
 {% if page.zh %}
+<link href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-webfont@1.7.0/style.css" rel="stylesheet">
 {% include scripture-popup.html container_selector=".jh-content" accent="#106ab2" vnum="#0d5690" slide="down" %}
 {% endif %}
 
@@ -240,6 +241,13 @@ layout: default
 .johnstone-wrap.jh-zh .jh-orig {
   font-size: .82em; color: #8b949c; margin: 0 1px;
   font-family: Georgia, "Times New Roman", serif; white-space: nowrap;
+}
+/* 引文（经文、诗歌、他人原话）：楷体，字号颜色不变；引文里作者强调的词用着重号 */
+.johnstone-wrap.jh-zh .jh-q { font-family: "LXGW WenKai", "Kaiti SC", STKaiti, KaiTi, serif; }
+.johnstone-wrap.jh-zh .jh-q em.jh-dot {
+  font-style: normal;
+  -webkit-text-emphasis: filled dot; text-emphasis: filled dot;
+  -webkit-text-emphasis-position: under; text-emphasis-position: under right;
 }
 /* 带中文说明的原词括注、经文出处括注较长，允许折行 */
 .johnstone-wrap.jh-zh .jh-orig-wrap { white-space: normal; }

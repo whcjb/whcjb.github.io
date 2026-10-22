@@ -148,6 +148,43 @@ def orig_names(body: str) -> str:
     return ORIG_NAME.sub(r'<span class="jh-orig">[\1]</span>', body)
 
 
+# 引文改楷体（2026-10-22 用户：先只改第 1 章看效果）。
+# 判据：「」里去标点后 ≥8 字的算引文（经文、诗歌、他人原话）；短的多半是「提到某个词」
+# （「恩典」「本分」「凡」），不动。段首整句斜体的「*……*」是本段要讲解的经文短语，
+# 不论长短都算引文。引文里的斜体：整句斜体 → 去掉（楷体本身已标出引文）；
+# 局部斜体（作者强调）→ 着重号 <em class="jh-dot">。星号奇数（斜体跨出引号）的不动。
+# 题记 .jh-epigraph 有自己的版式，跳过。
+KAI_SECTIONS = {'1'}
+KAI_MIN = 8
+QUOTE = re.compile(r'「([^「」\n]*)」')
+_QPUNCT = re.compile(r'[\s　，。；：、！？『』“”‘’（）()\*·…—,.;:!?\-]|<[^>]+>|\[\^[^\]]+\]')
+
+
+def kai_quotes(body: str) -> str:
+    out, in_epi = [], False
+    for line in body.split('\n'):
+        if 'class="jh-epigraph"' in line:
+            in_epi = True
+        if in_epi:
+            out.append(line)
+            if line.strip() == '</div>':
+                in_epi = False
+            continue
+
+        def sub(m):
+            q = m.group(1)
+            if q.count('*') % 2:
+                return m.group(0)
+            whole = re.fullmatch(r'\*[^*]+\*', q) is not None
+            lemma = whole and m.start() == 0
+            if not lemma and len(_QPUNCT.sub('', q)) < KAI_MIN:
+                return m.group(0)
+            q = q[1:-1] if whole else re.sub(r'\*([^*]+)\*', r'<em class="jh-dot">\1</em>', q)
+            return f'「<span class="jh-q">{q}</span>」'
+        out.append(QUOTE.sub(sub, line))
+    return '\n'.join(out)
+
+
 def existing_date(path: Path):
     if not path.exists():
         return None
@@ -177,7 +214,10 @@ def main(only=None):
         for a, b in IMPRINT_ZH:
             body = body.replace(a, b)
         sub = FM_SUB.search(en_fm(sec))
-        info[sec] = dict(label=label(sec, title_zh), body=orig_names(absolutize_refs(body.strip())),
+        body = orig_names(absolutize_refs(body.strip()))
+        if sec in KAI_SECTIONS:
+            body = kai_quotes(body)
+        info[sec] = dict(label=label(sec, title_zh), body=body,
                          ref=zh_ref(sub.group(1)) if sub else None)
 
     written = kept = 0
