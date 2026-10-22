@@ -92,7 +92,7 @@ for leaf, items in list(by.items())[:a.n]:
     d = json.loads((rw.W / 'ocr' / f'{leaf:04d}.json').read_text())
     sc = im.width / d['w']
     ys = sorted(w[2] for w in d['words'] if len(w[0]) > 2)
-    y0, y1 = (ys[int(len(ys) * .01)], ys[int(len(ys) * .995)] + 80) if ys else (0, d['h'])
+    y0, y1 = (ys[int(len(ys) * .01)], ys[-1] + 120) if ys else (0, d['h'])
     xs = sorted(w[1] for w in d['words'] if len(w[0]) > 2)
     xe = sorted(w[1] + w[3] for w in d['words'] if len(w[0]) > 2)
     X0 = max(0, xs[int(len(xs) * .02)] - 300) if xs else 0

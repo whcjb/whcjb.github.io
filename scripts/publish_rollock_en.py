@@ -230,12 +230,15 @@ def build_index(book, pages):
                f'from the black-and-white film images. {w:,} were read from the grayscale scan of the same film '
                f'(Internet Archive), place by place against the page image'
                + (f'; {c:,} are editorial conjectures shown <span class="rl-conj">[in brackets]</span>' if c else '')
-               + f'. Places still undecided in this epistle remain marked <span class="rl-gap">in red</span> ({left:,}).</p>')
+               + f'. Places still unread in this epistle remain marked <span class="rl-gap">in red</span> ({left:,}); '
+               'they lie where the film itself fails — double exposures, show-through from the reverse, a blot on pp. 65–66 — '
+               'and could only be read from another copy.</p>')
     out.append('<p class="rl-note-zh"><b>文本说明。</b>本书据 EEBO-TCP 人工录入本 A11010（爱丁堡 1606，STC 21281，EEBO 缩微胶片），'
                '帖前、帖后两部讲章原为一册。保留原书拼写与斜体，长 ſ 作 s；印本页码保留为页内锚点。'
                f'录入本有 {n:,} 处读不出的字（两卷合计），{w:,} 处对照同一卷胶片的灰度扫描（Internet Archive）逐处看图读出'
                + (f'；{c:,} 处为编者推补，以 <span class="rl-conj">[方括号]</span> 另色标出' if c else '')
-               + f'；本卷仍未定的标红留在明面（{left:,} 处）。逐条依据见 <code>rollock_raw/thessalonians/</code>。</p>')
+               + f'；本卷仍读不出的标红留在明面（{left:,} 处）——都落在胶片本身的毛病上：两次曝光叠印、背面透印、p.65–66 页底污渍，'
+               '只有另一份藏本的影像才可能读出。逐条依据见 <code>rollock_raw/thessalonians/</code>。</p>')
     out.append('</div>')
     return '\n'.join(out) + '\n'
 
