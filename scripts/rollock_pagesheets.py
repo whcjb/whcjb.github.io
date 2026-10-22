@@ -17,12 +17,16 @@ import rollock_witness as rw  # noqa: E402
 ap = argparse.ArgumentParser()
 ap.add_argument('--n', type=int, default=6)
 ap.add_argument('--gids')
+ap.add_argument('--leaf', help='gid:叶,…  强制指定叶（自动挑错页时）')
+ap.add_argument('--q', action='store_true', help='含已判 ? 的')
+ap.add_argument('--zoom', type=int, default=1, help='每页切成几段、按原分辨率出图（透印页用 3）')
 a = ap.parse_args()
 from PIL import Image, ImageDraw, ImageFont  # noqa: E402
 import numpy as np  # noqa: E402
 
 Image.MAX_IMAGE_PIXELS = None
-done = {int(f[0]) for f in rc._tsv('gap_review.tsv')}
+done = {int(f[0]) for f in rc._tsv('gap_review.tsv') if not (a.q and f[1] == '?')}
+force = {int(x.split(':')[0]): int(x.split(':')[1]) for x in (a.leaf or '').split(',') if x}
 locs = json.loads((rc.RAW / 'witness_locs.json').read_text(encoding='utf-8'))
 want = set(map(int, a.gids.split(','))) if a.gids else None
 # 叶号优先按印本页码：IA page_numbers.json（叶 → 页面上印的页码）在 TCP 图号的窗口里找同页码的叶；
@@ -61,6 +65,9 @@ def leaf_of(r):
     """候选：印本页码对上的叶、插值估位的叶、TCP 图号窗口里的各叶；取上下文词命中最多的。"""
     s = sites[r['gid']]
     cand = [lf for lf in pmap.get(s.get('page') or '', []) if 2 * s['facs'] - 6 <= lf <= 2 * s['facs']]
+    if len(cand) == 1:      # 页码对上的叶 ±1 里挑（透印页 OCR 是乱码，全窗口挑会被邻页抢走）
+        cand = [cand[0] - 1, cand[0], cand[0] + 1]
+        return max(cand, key=lambda lf: _hits(lf, s) + (0.35 if lf == cand[1] else 0))
     cand += [r['bim']['leaf']] + list(range(2 * s['facs'] - 6, 2 * s['facs'] + 1))
     return max(dict.fromkeys(cand), key=lambda lf: _hits(lf, s))
 
@@ -72,7 +79,7 @@ for r in locs:
         continue
     if want is None and not (b.get('est') or r.get('anchor')):
         continue
-    by.setdefault(leaf_of(r), []).append(r)
+    by.setdefault(force.get(r['gid']) or leaf_of(r), []).append(r)
 out = rw.W / 'sheets'
 out.mkdir(exist_ok=True)
 for f in out.glob('p_*.jpg'):
@@ -91,13 +98,16 @@ for leaf, items in list(by.items())[:a.n]:
     X0 = max(0, xs[int(len(xs) * .02)] - 300) if xs else 0
     X1 = min(d["w"], xe[int(len(xe) * .98)] + 300) if xe else d["w"]
     mid = (y0 + y1) // 2
-    for hi, (ya, yb) in enumerate(((y0 - 60, y1 + 40),)):
+    step = (y1 - y0) / a.zoom
+    segs = [(int(y0 + i * step) - 60, int(y0 + (i + 1) * step) + 60) for i in range(a.zoom)]
+    for hi, (ya, yb) in enumerate(segs):
         c = im.crop((int(X0 * sc), int(max(0, ya) * sc), int(X1 * sc), int(min(d['h'], yb) * sc)))
-        c = c.resize((W, int(c.height * W / c.width)))
-        lines = [f"叶 {leaf}  整页  ({items[0]['book'][0]}T {items[0]['slug']}  TCP 页码 p.{sites[items[0]['gid']].get('page')})"]
+        if a.zoom == 1:
+            c = c.resize((W, int(c.height * W / c.width)))
+        lines = [f"叶 {leaf}  {hi + 1}/{a.zoom}  ({items[0]['book'][0]}T {items[0]['slug']}  TCP 页码 p.{sites[items[0]['gid']].get('page')})"]
         for r in items:
             lines.append(f"#{r['gid']}  " + ' '.join(r['left'][-5:]) + ' [[' + r['tcp'] + ']] ' + ' '.join(r['right'][:5]))
-        head = Image.new('L', (W, 28 * len(lines) + 8), 255)
+        head = Image.new('L', (c.width, 28 * len(lines) + 8), 255)
         dr = ImageDraw.Draw(head)
         for i, t in enumerate(lines):
             dr.text((6, 4 + 28 * i), t[:100], font=font, fill=0 if i else 90)

@@ -9,13 +9,20 @@ next_url: "/rollock/1thessalonians/dedication/"
 next_label: "Epistle Dedicatory"
 ---
 
-<div class="rl-tp" markdown="1">
-
-<span class="rl-pb" data-facs="1"></span><span class="rl-pb" data-facs="1"></span>LECTVRES VPON THE FIRST AND SECOND EPISTLES OF PAVL TO THE THESSALONIANS:
-
-Preached by that faithfull seruant of God M. ROBERT ROLLOCK, some-tyme Minister of the Euangell of Iesus Christ, and *Rector of the Colledge in EDINBVRGH.*
-
-EDINBVRGH PRINTED BY ROBERT CHARTERIS Printer to the Kings most Excellent Majestie. *An. Dom. M. D. C. VI.* Cum Priuilegio Regiae Majestatis.
-
-
+<div class="rl-tpg">
+<div class="rl-tpg-orn"><img src="{{ site.baseurl }}/img/rollock/orn1.png" alt="Headpiece ornament"></div>
+<div class="rl-tpg-l s0">LECTVRES VPON</div>
+<div class="rl-tpg-l s2 ls">THE FIRST AND SECOND</div>
+<div class="rl-tpg-l s3 it ls">EPISTLES OF PAVL TO THE</div>
+<div class="rl-tpg-l s2 ls">THESSALONIANS:</div>
+<div class="rl-tpg-l s1">Preached by that faithfull ser-</div>
+<div class="rl-tpg-l s4">uant of God M. R<span class="sc">obert</span> R<span class="sc">ollock</span>, some-tyme</div>
+<div class="rl-tpg-l s4">Minister of the Euangell of Iesus Christ, and</div>
+<div class="rl-tpg-l s4"><i>Rector of the Colledge in</i> EDINBVRGH.</div>
+<div class="rl-tpg-dev"><img src="{{ site.baseurl }}/img/rollock/device1.png" alt="Printer's device: Justitia and Religio, mottoes SVVM CVIQVE, DEVM COLE, HIS SVFFVLTA DVRANT; initials H C"></div>
+<div class="rl-tpg-l s3 ls">EDINBVRGH</div>
+<div class="rl-tpg-l s3">PRINTED BY ROBERT CHARTERIS</div>
+<div class="rl-tpg-l s4">Printer to the Kings most Excellent Majestie.</div>
+<div class="rl-tpg-l s4 it">An. Dom. &nbsp; M. D. C. VI.</div>
+<div class="rl-tpg-l s4">Cum Priuilegio Regiæ Majestatis.</div>
 </div>

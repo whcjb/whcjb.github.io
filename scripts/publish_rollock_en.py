@@ -59,12 +59,22 @@ def span(ref, a, b):
     return f'{ref} {c1}:{v1}–{c2}:{v2}'
 
 
+MANUAL = RAW / 'manual_pages'
+
+
+def load_page(book, slug):
+    """扉页：照 1606 原书影像手排的 HTML（manual_pages/<书>-<slug>.html），文字取自 TCP，
+    分行、字号、斜体、花边与印刷商徽记照原书（叶 0 / 叶 360）。"""
+    f = MANUAL / f'{book}-{slug}.html'
+    return f.read_text(encoding='utf-8').strip() if f.exists() else rc.load(book, slug)
+
+
 def build_pages(book):
     cfg = BOOKS[book]
     lecs = [x for x in json.loads((RAW / 'lectures.json').read_text()) if x['book'] == book]
     pages = []
     for slug, title, sub in cfg['front']:
-        pages.append(dict(slug=slug, title=title, subtitle=sub, body=rc.load(book, slug), group='front'))
+        pages.append(dict(slug=slug, title=title, subtitle=sub, body=load_page(book, slug), group='front'))
     for x in lecs:
         rng = span(cfg['ref'], x['start'], x['end'])
         pages.append(dict(slug=x['slug'], title=f'Lecture {x["n"]} · {rng}', short=f'Lecture {x["n"]}', rng=rng,
@@ -100,7 +110,7 @@ RE_OL = re.compile(r'^(\d+)\. ', re.M)
 def render_body(book, body, pg):
     body = RE_OL.sub(r'\1\\. ', body)
     body = add_anchors(book, body, pg)
-    if pg['slug'] == 'title':
+    if pg['slug'] == 'title' and not body.startswith('<div class="rl-tpg">'):
         body = '<div class="rl-tp" markdown="1">\n\n' + body + '\n\n</div>'
     body = RE_CONJ.sub(lambda m: f'<span class="rl-conj" title="{CONJ_TITLE}">[{m.group(1)}]</span>'
                        if m.group(1) else '', body)
