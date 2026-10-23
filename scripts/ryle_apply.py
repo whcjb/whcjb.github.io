@@ -61,6 +61,7 @@ BOOKS = {
     '1Jo': ('1 John', '1 John', []), '2Jo': ('2 John', '2 John', []), '3Jo': ('3 John', '3 John', []),
     'Jud': ('Jude', 'Jude', []), 'Rev': ('Revelation', 'Rev.', []),
 }
+SINGLE = {'Oba', 'Phm', '2Jo', '3Jo', 'Jud'}
 REF = re.compile(r'⟨([1-3]?[A-Z][a-z]{1,2})_(\d+):([^⟩]+)⟩')
 
 # 零星手工修正：(段, e-Sword 原文片段, 改作, 依据)。片段须在该段恰好出现一次。
@@ -76,6 +77,19 @@ MANUAL = [
      '1857 原作 vi. 4—7, and x. 26, 27'),
     ('26:14', '(Mark ix. 48.)', '(Mark ix. 44.)', '1857 p.372 作 ix. 44（钦定本 9:44 与 9:48 同句，原书不误），e-Sword 改成 48'),
 ]
+# 序言：e-Sword 本未进全书对齐（对齐只跑各段注释），单独与 1857 p.9–14 逐词比过、看图核过
+PREFACE_MANUAL = [
+    ('endeavoured', 'endeavored', '1857 序言三处都作 endeavored（正文也是 endeavor）'),
+    ('of His divine person (⟨Col_1:15⟩,) of His divine office (⟨1Ti_2:5⟩,) of His divine righteousness (⟨Jer_23:6⟩,) '
+     'and of His divine Spirit, which all that are His receive (⟨Rom_8:9⟩.)',
+     'of His divine person, (Col. i. 15.) of His divine office, (1 Tim. ii. 5.) of His divine righteousness, '
+     '(Jer. xxiii. 6.) and of His divine Spirit, which all that are His receive. (Rom. viii. 9.)',
+     '1857 p.12 原样'),
+    ('lead me."—*(Traill\'s Preface to Throne of Grace.)*', 'lead me."—*Traill\'s Preface to Throne of Grace.*',
+     '1857 p.12 落款无括号'),
+    ('I can truly say', 'I can say', '1857 p.13 无 truly'),
+]
+
 # 1857 出处误植、e-Sword 已改正的：沿用改正，书首页逐条列出（引文按钦定本核过）
 REF_ERRATA = [
     ('14:1', 'Eccles. vi. 8', 'Eccles. v. 8', '引文 "he that is higher than the highest regardeth" 在传 5:8'),
@@ -219,8 +233,9 @@ def main():
                     ab = pair.get(ti)
                     nref['same-pos' if ab else 'default'] += 1
                     vs = re.sub(r'\s*[-–]\s*', '—', vs)
-                    edits[(si, kind, idx)].append((m.start(), m.end(), f'{ab or default[c]} {roman(ch)}. {vs}',
-                                                   None))
+                    # 单章书卷只写节号（1857 作 Jude 6.）
+                    s_ref = (f'{ab or default[c]} {vs}' if c in SINGLE else f'{ab or default[c]} {roman(ch)}. {vs}')
+                    edits[(si, kind, idx)].append((m.start(), m.end(), s_ref, None))
 
     # 落 1、2、3
     for (si, kind, idx), es in edits.items():
@@ -243,6 +258,11 @@ def main():
                 n_sp += sum(1 for x, y in zip(t.split(), nt.split()) if x != y)
                 arr[i] = nt
     d['preface'] = [respell(p) for p in d['preface']]
+    for old, new, why in PREFACE_MANUAL:
+        n = sum(p.count(old) for p in d['preface'])
+        assert n >= 1, old
+        d['preface'] = [p.replace(old, new) for p in d['preface']]
+        log.append(('序言', '手工：' + why, old, new))
 
     # 5. 手工
     for sec, old, new, why in MANUAL:

@@ -128,6 +128,13 @@ AUTHORS = OrderedDict([
                      years='1555?–1599', dir='rollock',
                      work_cn='帖撒罗尼迦前后书讲章',
                      work_en='Lectures vpon the First and Second Epistles of Paul to the Thessalonians')),
+    # 莱尔：利物浦首任主教。生卒取 DNB 1901 补编（Ryle, John Charles (1816–1900)）：1816 年 5 月 10 日生，
+    # 1900 年 6 月 10 日卒。Expository Thoughts 马太卷序言落款 1856 年 12 月，本站据 1857 纽约 Carter 版。
+    # 中文书名不用三联译本的「释经默想」，另作「释义」，免与该版混淆。
+    ('ryle', dict(name='约翰·查尔斯·莱尔', short='莱尔', en='J. C. Ryle',
+                  years='1816–1900', dir='ryle',
+                  work_cn='马太福音释义',
+                  work_en='Expository Thoughts on the Gospels: St. Matthew')),
     ('alexander', dict(name='约瑟·亚历山大', short='亚历山大', en='Joseph Addison Alexander',
                        years='1809–1860', dir='alexander',
                        work_cn='诗篇、以赛亚书注释',
@@ -184,6 +191,8 @@ AUTHOR_COLORS = {
     # 罗洛克赭金：限定低中彩度（C 25–50）后与既有十五色及加尔文酒红、马太亨利金、站点 Hux 蓝
     # 最小 ΔE 26.8，与先例同档。同批 #9c6070(23.7) / #986084(22.4) 离曼顿梅、珀金斯太近，弃用。
     'rollock': ('#584600', '#786000'),
+    # 莱尔深梅紫：L* 30–46、C* 25–55 可读范围内，与既有十六色及站点 Hux 蓝的最小 ΔE 最大（23.9）。
+    'ryle': ('#561650', '#7a1f71'),
 }
 
 # 逐卷书名（同一注释家的不同分册书名不同时用）。取各卷扉页的实际书名。
@@ -223,6 +232,8 @@ BOOK_TITLES = {
                                     'Lectures vpon the First Epistle of Paul to the Thessalonians'),
     ('rollock', '2thessalonians'): ('帖撒罗尼迦后书讲章',
                                     'Lectures vpon the Second Epistle of the Apostle Paul to the Thessalonians'),
+    ('ryle', 'matthew'):       ('马太福音释义',
+                                'Expository Thoughts on the Gospels: St. Matthew'),
     ('manton', 'james'):       ('雅各书注释',
                                 'A Practical Commentary, or an Exposition with Notes '
                                 'on the Epistle of James'),
@@ -246,7 +257,7 @@ COMPARE_ACCENT = {
     'bridges': '#96613F', 'hodge': '#1f3a5f', 'manton': '#5b2f4a',
     'davenant': '#556b2f', 'alexander': '#7d2f2f', 'spurgeon': '#4a3b22', 'durham': '#674c8e',
     'johnstone': '#106ab2', 'perkins': '#9b2d5f', 'hutcheson': '#2f8f46', 'leighton': '#2d2d99',
-    'adams': '#66666c', 'rollock': '#786000',
+    'adams': '#66666c', 'rollock': '#786000', 'ryle': '#7a1f71',
 }
 COMPARE_LABEL = {
     'calvin': '加尔文注释', 'mhenry': '马太亨利注释', 'owen': '约翰欧文注释',
@@ -254,7 +265,7 @@ COMPARE_LABEL = {
     'davenant': '达文南特注释', 'alexander': '亚历山大注释',
     'spurgeon': '司布真注释', 'durham': '达拉谟注释', 'johnstone': '约翰斯通讲疏',
     'perkins': '珀金斯注释', 'hutcheson': '赫奇森注释', 'leighton': '雷登注释',
-    'adams': '亚当斯注释', 'rollock': '罗洛克讲章',
+    'adams': '亚当斯注释', 'rollock': '罗洛克讲章', 'ryle': '莱尔释义',
 }
 
 
@@ -274,7 +285,7 @@ PRIMARY_LANG = {'calvin': 'zh', 'mhenry': 'zh', 'bridges': 'zh',
                 'owen': 'en', 'hodge': 'en', 'manton': 'en', 'davenant': 'en',
                 'alexander': 'en', 'spurgeon': 'en', 'durham': 'en',
                 'johnstone': 'en', 'perkins': 'en', 'hutcheson': 'en', 'leighton': 'en',
-                'adams': 'en', 'rollock': 'en'}
+                'adams': 'en', 'rollock': 'en', 'ryle': 'en'}
 
 
 def _lang_variants(aid, d: Path, name: str):

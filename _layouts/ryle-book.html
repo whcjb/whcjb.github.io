@@ -1,0 +1,70 @@
+---
+layout: default
+---
+{%- comment -%}
+  莱尔《马太福音释义》书首页。配色与章节页同源（深梅紫 #7a1f71）。
+  书首不用大色块横幅（用户 2026-10-22）：书名 + 作者 + 版本一行起，下接细线。
+{%- endcomment -%}
+
+<div class="container ryle-book" style="padding-top: 70px;">
+  <div class="row">
+    <div class="col-lg-9 col-lg-offset-1 col-md-10 col-md-offset-1">
+
+      <div class="ry-booklang">
+        {% if page.zh %}{% if page.en_url %}<a href="{{ site.baseurl }}{{ page.en_url }}">English edition &rarr;</a>{% endif %}
+        {% else %}{% if page.zh_url %}<a href="{{ site.baseurl }}{{ page.zh_url }}">中文版 &rarr;</a>{% endif %}{% endif %}
+      </div>
+      <div class="ry-hero">
+        <h1>{{ page.book_name }}</h1>
+        <p class="ry-hero-author">{{ page.author }}</p>
+        <p class="ry-hero-meta">{{ page.edition }}</p>
+      </div>
+
+      {{ content }}
+
+    </div>
+  </div>
+</div>
+
+<style>
+.ryle-book { --ry-ink: #7a1f71; --ry-ink-dark: #561650; --ry-rule: #ece2ea; --ry-paper: #fbf8fa; }
+.ryle-book .ry-booklang { text-align: right; margin: 0 0 10px; font-size: 13px; font-family: Georgia, serif; }
+.ryle-book .ry-booklang a { color: var(--ry-ink); border: 1px solid var(--ry-rule);
+  border-radius: 4px; padding: 4px 10px; text-decoration: none; }
+.ryle-book .ry-booklang a:hover { background: var(--ry-ink); color: #fff; }
+.ryle-book .ry-hero { margin: 4px 0 22px; padding: 0 0 12px; border-bottom: 2px solid var(--ry-ink);
+  font-family: Georgia, "Times New Roman", "Songti SC", serif; }
+.ryle-book .ry-hero h1 { font-family: Georgia, "Times New Roman", "Songti SC", serif; margin: 0 0 4px; font-size: 26px;
+  font-weight: normal; line-height: 1.3; color: var(--ry-ink-dark); }
+.ryle-book .ry-hero-author { margin: 0; font-size: 14.5px; color: #4a3f47; }
+.ryle-book .ry-hero-meta { margin: 2px 0 0; font-size: 13px; color: #8a7b86; font-style: italic; }
+.ryle-book .ry-group { font-family: Georgia, "Times New Roman", "Songti SC", serif; margin: 30px 0 12px;
+  font-size: 15px; color: var(--ry-ink-dark); letter-spacing: .05em; padding-bottom: 6px; border-bottom: 1px solid var(--ry-rule); }
+.ryle-book .ry-toc { list-style: none; padding: 0; margin: 0; display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 8px; }
+.ryle-book .ry-toc li { margin: 0; }
+.ryle-book .ry-toc a { display: block; padding: 8px 12px; border: 1px solid var(--ry-rule); border-radius: 4px;
+  background: var(--ry-paper); text-decoration: none; font-family: Georgia, "Times New Roman", "Songti SC", serif;
+  font-size: 14.5px; color: #2b2329; line-height: 1.45; }
+.ryle-book .ry-toc a:hover { border-color: var(--ry-ink); background: #fff; color: var(--ry-ink-dark); }
+.ryle-book .ry-toc small { display: block; color: #8a7b86; font-size: 12.5px; }
+.ryle-book .ry-chgrid { list-style: none; padding: 0; margin: 0; display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(92px, 1fr)); gap: 8px; }
+.ryle-book .ry-chgrid a { display: block; text-align: center; padding: 10px 6px; border: 1px solid var(--ry-rule);
+  border-radius: 4px; background: var(--ry-paper); text-decoration: none; color: #2b2329;
+  font-family: Georgia, "Times New Roman", "Songti SC", serif; font-size: 15px; }
+.ryle-book .ry-chgrid a:hover { border-color: var(--ry-ink); background: #fff; color: var(--ry-ink-dark); }
+.ryle-book .ry-note { font-family: Georgia, "Times New Roman", "Songti SC", serif; font-size: 13.5px; color: #6a5d66;
+  line-height: 1.8; margin: 34px 0 0; padding-top: 16px; border-top: 1px solid var(--ry-rule); }
+.ryle-book .ry-note p { margin: 0 0 12px; }
+.ryle-book .ry-note-zh { font-family: "Songti SC", STSong, serif; }
+.ryle-book .ry-errhead { font-family: "Songti SC", STSong, Georgia, serif; font-size: 16px; color: var(--ry-ink-dark); margin: 26px 0 10px; }
+.ryle-book .ry-errtab { width: 100%; border-collapse: collapse; font-size: 13px; line-height: 1.6; margin: 10px 0 20px; }
+.ryle-book .ry-errtab th, .ryle-book .ry-errtab td { border-bottom: 1px solid var(--ry-rule); padding: 6px; vertical-align: top; text-align: left; }
+.ryle-book .ry-errtab th { background: var(--ry-paper); color: var(--ry-ink-dark); white-space: nowrap; }
+@media (max-width: 767px) {
+  .ryle-book .ry-hero h1 { font-size: 22px; }
+  .ryle-book .ry-toc { grid-template-columns: 1fr 1fr; }
+  .ryle-book .ry-errtab { display: block; overflow-x: auto; }
+}
+</style>

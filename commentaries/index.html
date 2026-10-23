@@ -171,6 +171,11 @@ description: 加尔文与马太亨利之外的历代改革宗注释——欧文�
      hover 用 brightness 压深，省掉为每个色再写一份深色值。 */
   .cx-book-btn--has { background: linear-gradient(135deg, var(--c0), var(--c1)); }
   .cx-book-btn--has:hover { filter: brightness(.82); }
+  /* 多家：整格不可点，作者名各自是链接 */
+  .cx-book-btn--multi:hover { filter: none; transform: none; box-shadow: 0 1px 3px rgba(45,74,58,.14); }
+  .cx-book-btn--multi .cx-book-meta { opacity: .95; }
+  .cx-book-btn--multi a { color: #fff !important; border-bottom: 1px solid rgba(255,255,255,.55); text-decoration: none !important; }
+  .cx-book-btn--multi a:hover { border-bottom-color: #fff; }
   /* 尚无别家注释：虚线描边，不可点（同加尔文主页 --pending） */
   .cx-book-btn--none {
     background: transparent; border: 1px dashed var(--cx-pending-border);
@@ -218,7 +223,21 @@ description: 加尔文与马太亨利之外的历代改革宗注释——欧文�
         </h3>
         <div class="cx-book-grid">
           {%- for b in rows -%}
-          {%- if b.links.size > 0 -%}
+          {%- if b.links.size > 1 -%}
+          {%- comment -%} 一卷有两家以上（马太：司布真、莱尔）：整格不再是一个链接，
+            格内逐家列作者名、各自链到该家书首；底色取第一家到最后一家的主题色渐变。{%- endcomment -%}
+          {%- assign l0 = b.links | first -%}{%- assign l9 = b.links | last -%}
+          <div class="cx-book-btn cx-book-btn--has cx-book-btn--multi" style="--c0: {{ l0.c1 }}; --c1: {{ l9.c1 }};">
+            <span class="cx-book-name">{{ b.name }}</span>
+            <span class="cx-book-name-en">{{ b.en }}</span>
+            <span class="cx-book-meta cx-book-meta-au">
+              {%- for l in b.links -%}{%- assign au = author_map | where: "id", l.author | first -%}
+              {%- unless forloop.first %} · {% endunless -%}
+              <a href="{{ site.baseurl }}{{ l.path }}" title="{{ l.title_cn }}{% if l.title_en != '' %} · {{ l.title_en }}{% endif %}">{{ au.short }}</a>
+              {%- endfor -%}
+            </span>
+          </div>
+          {%- elsif b.links.size > 0 -%}
           {%- assign l = b.links | first -%}
           {%- assign au = author_map | where: "id", l.author | first -%}
           <a href="{{ site.baseurl }}{{ l.path }}"

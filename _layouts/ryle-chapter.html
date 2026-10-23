@@ -1,0 +1,173 @@
+---
+layout: default
+---
+{%- comment -%}
+  莱尔《马太福音释义》（Expository Thoughts on Matthew, 1857）章节页（中英共用，靠 page.zh 切换）。
+
+  ⚠️ 不复用别家 layout：每本书独立样式（用户既定规矩）。骨架取自 rollock-chapter。
+  按 2026-10-16 起的新书规矩：章顶不放「跳到某节」下拉，副标题作者写英文原名。
+
+  配色深梅紫 #7a1f71：与「历代解经」已登记十六色及站点 Hux 蓝相比，
+  在 L* 30–46、C* 25–55 的可读范围里最小 ΔE 最大（23.9）。深端 #561650。
+
+  版式要点（底本见 ryle_raw/matthew/PROVENANCE.md）：
+  - 一章一页，章内按原书分段：段首 .ry-sechead（MATTHEW I. 1—17.）→ 经文框 .ry-text（原书双栏小字）
+    → 每节一个 commentary-anchor → 释义正文 → 本段脚注（kramdown 脚注，汇到页尾）。
+  - 段首词与钦定本的 LORD 是小型大写 → .ry-sc。
+{%- endcomment -%}
+
+<div class="container ryle-wrap{% if page.zh %} ry-zh{% endif %}" style="padding-top: 70px;">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1" id="cmpCol">
+
+      <div class="ry-chrome">
+        <a href="{{ site.baseurl }}/ryle/{{ page.book_id }}/{% if page.zh %}zh/{% endif %}">&larr; {{ page.book_name }}</a>
+        {% if page.zh %}{% if page.en_url %}<a class="ry-lang" href="{{ site.baseurl }}{{ page.en_url }}">English &rarr;</a>{% endif %}
+        {% else %}{% if page.zh_url %}<a class="ry-lang" href="{{ site.baseurl }}{{ page.zh_url }}">中文版 &rarr;</a>{% endif %}{% endif %}
+      </div>
+
+      <h1 class="ry-title">{{ page.title }}</h1>
+      {% if page.subtitle %}<p class="ry-subtitle">{{ page.subtitle }}</p>{% endif %}
+
+      <div class="ry-nav">
+        {% if page.prev_url %}<a href="{{ site.baseurl }}{{ page.prev_url }}">&larr; {{ page.prev_label }}</a>
+        {% else %}<span></span>{% endif %}
+        {% if page.next_url %}<a href="{{ site.baseurl }}{{ page.next_url }}">{{ page.next_label }} &rarr;</a>
+        {% else %}<span></span>{% endif %}
+      </div>
+
+      {%- comment -%}对比注释抽屉：只给正文章节页（有 page.chapter）。self 按语种切，免得本页出现在自己的选项里。{%- endcomment -%}
+      {% if page.chapter %}
+      {% assign cc_self = "ryle-en" %}{% if page.zh %}{% assign cc_self = "ryle" %}{% endif %}
+      {% include compare-commentary-head.html self=cc_self content_class="ry-content" self_label="莱尔" %}
+      {% endif %}
+      <div class="ry-content">
+        {{ content }}
+      </div>
+      {% if page.chapter %}{% include compare-commentary-foot.html %}{% endif %}
+
+      {% if page.date %}
+      <div class="ry-stamp">{% if page.zh %}译于{% else %}Published{% endif %} {{ page.date | date: "%Y-%m-%d %H:%M" }}</div>
+      {% endif %}
+
+      <div class="ry-nav ry-nav-foot">
+        {% if page.prev_url %}<a href="{{ site.baseurl }}{{ page.prev_url }}">&larr; {{ page.prev_label }}</a>
+        {% else %}<span></span>{% endif %}
+        {% if page.next_url %}<a href="{{ site.baseurl }}{{ page.next_url }}">{{ page.next_label }} &rarr;</a>
+        {% else %}<span></span>{% endif %}
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<script>
+// 经文框与段首标题：标进 scripture-popup 的 skip 列表（框里本身就是经文，标题「MATTHEW I. 1—17.」不是引用）
+(function () {
+  document.querySelectorAll('.ry-content .ry-text, .ry-content .ry-sechead').forEach(function (el) {
+    el.classList.add('verse-anchor');
+  });
+})();
+</script>
+
+{%- comment -%}
+  经文引用弹层：只给中文页（模块认的是中文书卷名）。accent/vnum 必须写字面量（Jekyll 3 的 include 参数不接受变量），
+  与下方 CSS 的 --ry-ink 两处同值，改色要一起改。
+{%- endcomment -%}
+{% if page.zh %}
+{% include scripture-popup.html container_selector=".ry-content" accent="#7a1f71" vnum="#561650" slide="down" %}
+{% endif %}
+
+<style>
+.ryle-wrap {
+  --ry-ink: #7a1f71;
+  --ry-ink-dark: #561650;
+  --ry-rule: #ece2ea;
+  --ry-paper: #fbf8fa;
+  --ry-body: #2b2329;
+}
+.ryle-wrap .ry-chrome,
+.ryle-wrap .ry-nav {
+  font-size: 13px; display: flex; justify-content: space-between; gap: 12px;
+  align-items: center; font-family: Georgia, "Times New Roman", serif;
+}
+.ryle-wrap .ry-chrome { margin: 18px 0 22px; }
+.ryle-wrap .ry-chrome a,
+.ryle-wrap .ry-nav a { color: var(--ry-ink); text-decoration: none; }
+.ryle-wrap .ry-chrome a:hover,
+.ryle-wrap .ry-nav a:hover { color: var(--ry-ink-dark); text-decoration: underline; }
+.ryle-wrap .ry-lang { border: 1px solid var(--ry-rule); border-radius: 4px; padding: 4px 10px; }
+.ryle-wrap .ry-lang:hover { background: var(--ry-ink); color: #fff !important; text-decoration: none; }
+.ryle-wrap .ry-title {
+  font-family: Georgia, "Times New Roman", serif; font-size: 30px; font-weight: normal;
+  color: var(--ry-ink-dark); text-align: center; margin: 10px 0 4px; line-height: 1.3;
+}
+.ryle-wrap .ry-subtitle {
+  text-align: center; font-size: 14px; color: #8a7b86; margin: 0 0 18px;
+  font-family: Georgia, "Times New Roman", serif; font-style: italic;
+}
+.ryle-wrap .ry-nav { margin: 14px 0 26px; }
+.ryle-wrap .ry-nav-foot { margin-top: 44px; padding-top: 16px; border-top: 1px solid var(--ry-rule); }
+
+/* 正文 */
+.ryle-wrap .ry-content {
+  font-family: Georgia, "Times New Roman", "Songti SC", STSong, serif;
+  font-size: 17px; line-height: 1.85; color: var(--ry-body);
+}
+.ryle-wrap .ry-content p { margin: 0 0 16px; text-align: justify; }
+.ryle-wrap .ry-content a { color: var(--ry-ink); }
+.ryle-wrap .ry-sc { font-variant: small-caps; letter-spacing: .03em; }
+
+/* 段首：MATTHEW I. 1—17.（原书居中、上方一道短线） */
+.ryle-wrap .ry-sechead {
+  font-family: Georgia, "Times New Roman", serif; font-size: 15px; font-weight: normal;
+  text-align: center; color: var(--ry-ink-dark); letter-spacing: .08em;
+  margin: 46px 0 14px; padding-top: 22px; position: relative; scroll-margin-top: 80px;
+}
+.ryle-wrap .ry-sechead::before {
+  content: ""; position: absolute; top: 0; left: 50%; width: 120px; margin-left: -60px;
+  border-top: 1px solid #c9b6c4;
+}
+.ryle-wrap .ry-content > .ry-sechead:first-child { margin-top: 6px; }
+
+/* 经文框：原书双栏小字，节号在行首 */
+.ryle-wrap .ry-text {
+  background: var(--ry-paper); border-top: 1px solid var(--ry-rule); border-bottom: 1px solid var(--ry-rule);
+  padding: 12px 16px; margin: 0 0 22px; color: #3a3038;
+  font-size: 14.5px; line-height: 1.6; column-count: 2; column-gap: 28px; column-rule: 1px solid #ddd0d9;
+}
+.ryle-wrap .ry-text p.ry-v { margin: 0 0 6px; text-align: left; break-inside: avoid-column; }
+.ryle-wrap .ry-vn { color: var(--ry-ink); font-size: 12px; margin-right: 3px; font-variant-numeric: oldstyle-nums; }
+@media (max-width: 767px) { .ryle-wrap .ry-text { column-count: 1; } }
+
+.ryle-wrap .commentary-anchor {
+  display: block; height: 0; line-height: 0; margin: 0; padding: 0;
+  overflow: hidden; visibility: hidden; scroll-margin-top: 80px;
+}
+
+/* 脚注（原书用 * 标在页底；kramdown 汇到页尾） */
+.ryle-wrap .footnotes { margin-top: 40px; padding-top: 12px; border-top: 1px solid var(--ry-rule);
+  font-size: 14.5px; line-height: 1.7; color: #4a4048; }
+.ryle-wrap .footnotes p { margin: 0 0 8px; }
+.ryle-wrap sup a.footnote, .ryle-wrap a.footnote { color: var(--ry-ink); text-decoration: none; }
+
+/* 序言落款 */
+.ryle-wrap .ry-closer { text-align: right !important; font-style: italic; color: #5a4c56; line-height: 1.7; }
+
+.ryle-wrap .ry-stamp {
+  margin-top: 32px; font-size: 12px; color: #a3939f; text-align: right;
+  font-family: Georgia, "Times New Roman", serif; letter-spacing: .03em;
+}
+.ryle-wrap :target { background: #fbeef8; transition: background .4s; }
+
+/* 中文页 */
+.ryle-wrap.ry-zh .ry-content { font-family: "Songti SC", STSong, "Noto Serif CJK SC", "Source Han Serif SC", Georgia, serif; }
+.ryle-wrap.ry-zh .ry-title { font-family: "Songti SC", STSong, Georgia, serif; }
+.ryle-wrap.ry-zh .ry-text { font-family: "Kaiti SC", STKaiti, KaiTi, "Songti SC", serif; }
+.ryle-wrap.ry-zh .ry-orig { font-size: .82em; color: #8a7b86; margin: 0 1px; font-family: Georgia, serif; white-space: nowrap; }
+
+@media (max-width: 767px) {
+  .ryle-wrap .ry-title { font-size: 24px; }
+  .ryle-wrap .ry-content { font-size: 16px; line-height: 1.8; }
+}
+</style>
