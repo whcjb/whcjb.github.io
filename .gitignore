@@ -81,3 +81,5 @@ rollock_raw/thessalonians/witness/
 ryle_raw/matthew/src/
 # 莱尔马太判读对照图（python3 scripts/ryle_review.py 可再生；判读结果在 review.tsv）
 ryle_raw/matthew/review/
+# 莱尔路加：底本（e-Sword 模块链到 matthew/src/esword、IA 扫描件）不入库，见 ryle_raw/luke/PROVENANCE.md
+ryle_raw/luke/src/
