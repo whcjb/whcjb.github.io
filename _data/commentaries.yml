@@ -122,14 +122,6 @@ authors:
     work_cn: "帖撒罗尼迦前后书讲章"
     work_en: "Lectures vpon the First and Second Epistles of Paul to the Thessalonians"
     books: 2
-  - id: ryle
-    name: "约翰·查尔斯·莱尔"
-    short: "莱尔"
-    en: "J. C. Ryle"
-    years: "1816–1900"
-    work_cn: "马太福音释义"
-    work_en: "Expository Thoughts on the Gospels: St. Matthew"
-    books: 1
   - id: alexander
     name: "约瑟·亚历山大"
     short: "亚历山大"
@@ -384,7 +376,6 @@ books:
     chapters: 28
     links:
       - {author: spurgeon, path: "/spurgeon/matthew/zh/", url_tpl: "/spurgeon/matthew/zh/__CH__/", title_cn: "马太福音注释", title_en: "The Gospel of the Kingdom", c0: "#3a3018", c1: "#4a3b22"}
-      - {author: ryle, path: "/ryle/matthew/", url_tpl: "/ryle/matthew/__CH__/", title_cn: "马太福音释义", title_en: "Expository Thoughts on the Gospels: St. Matthew", c0: "#561650", c1: "#7a1f71"}
   - id: mark
     name: "马可福音"
     en: "Mark"

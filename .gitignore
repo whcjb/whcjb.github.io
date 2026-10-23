@@ -77,9 +77,3 @@ adams_raw/2peter/tcp_main_tokens.json
 .jekyll-cache/
 # 罗洛克帖撒罗尼迦书：证人整页图、本地 OCR、判读图（可重跑 rollock_bim_ocr / rollock_witness 重建）
 rollock_raw/thessalonians/witness/
-# 莱尔马太福音：CCEL 数字版 + IA 1857 扫描件，底本不入库，重新获取见 ryle_raw/matthew/PROVENANCE.md
-ryle_raw/matthew/src/
-# 莱尔马太判读对照图（python3 scripts/ryle_review.py 可再生；判读结果在 review.tsv）
-ryle_raw/matthew/review/
-# 莱尔路加：底本（e-Sword 模块链到 matthew/src/esword、IA 扫描件）不入库，见 ryle_raw/luke/PROVENANCE.md
-ryle_raw/luke/src/
