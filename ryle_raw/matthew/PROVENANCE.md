@@ -21,4 +21,17 @@ CCEL 的 ThML/HTML 下载地址返回 404，未取得。
 | Monergism `src/monergism/ryle_gospels.pdf`（calibre 2018，四福音合集，2542 页） | 措辞大体随原书，但美式拼写（Saviour→Savior、practise→practice）；引文换成现代译本（"He abideth faithful: He can not deny Himself" → "He remains faithful--He cannot deny Himself"）；出处改阿拉伯数字；无钦定本经文、无斜体 |
 | Precept Austin 网页 | 与 Monergism 同一系（Savior、阿拉伯数字出处） |
 
-Project Gutenberg、Wikisource 均无此书。
+Project Gutenberg、Wikisource、Faded Page 均无此书。StudyLight 的 Ryle 只有约翰福音的 Notes，且是 OCR 本（"Terse"=verse）。
+
+## 最接近原书的一份：e-Sword 模块（2009）
+
+`src/esword/Ryle.cmtx`（SQLite/RTF，12.9 MB），下载自 http://www.sg-audiotreasures.org/proverbs/Ryle.cmtx
+（发布页 http://www.eternallifeministries.org/e-sword-ryle.htm，2009-09/11，马太、马可、路加）。马太 96 条＝93 段注释 + 序言 + 脚注。
+
+- **保留**：原书措辞、斜体要点（`\i`）、首词小型大写、序言（落款 Helmingham Rectory, December, 1856）、原书脚注（如 26:26 的 Ferus/Mayence 长注）。
+- **改动**（都是成体系的，可程序化识别）：Saviour→Savior（马太 47 处，1857 原书 52 处全作 Saviour）；"St. Matthew"→"Matthew"（原书 14 处，模块剩 1 处）；出处改 e-Sword 格式（`Gen_12:3`，原书作 Gen. xii. 3）；practise→practice。
+- **缺**：每段前的钦定本经文。
+
+逐词三元组对照 IA 1857 OCR（全书，OCR 本身有噪声）：e-Sword 94.3%、CCEL 85.0%、Monergism 83.0%。
+
+可行路线：以 e-Sword 本为底本，按位置对齐 1857 扫描件逐处回改上述成体系改动、出处恢复罗马数字，钦定本经文按 1857 版式补齐；任何改动以页面影像为准。
