@@ -7,6 +7,8 @@ subtitle: "Robert Leighton"
 date: 2026-10-26 11:43
 prev_url: "/leighton/1peter/zh/2-25/"
 prev_label: "彼得前书 2:25"
+next_url: "/leighton/1peter/zh/title2/"
+next_label: "书名页（卷二）"
 en_url: "/leighton/1peter/errata1/"
 zh: true
 ---

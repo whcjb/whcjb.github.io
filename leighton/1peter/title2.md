@@ -9,6 +9,7 @@ prev_url: "/leighton/1peter/errata1/"
 prev_label: "Errata (Vol. I)"
 next_url: "/leighton/1peter/reader2/"
 next_label: "To the Christian Reader"
+zh_url: "/leighton/1peter/zh/title2/"
 ---
 
 <div class="lt-tp lt-tp-imp">
