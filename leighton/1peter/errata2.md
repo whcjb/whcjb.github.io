@@ -6,6 +6,7 @@ title: "Errata (Vol. II)"
 date: 2026-10-16 19:11
 prev_url: "/leighton/1peter/5-12/"
 prev_label: "1 Peter 5:12–14"
+zh_url: "/leighton/1peter/zh/errata2/"
 ---
 
 ## ERRATA.
