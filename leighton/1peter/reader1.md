@@ -9,6 +9,7 @@ prev_url: "/leighton/1peter/title1/"
 prev_label: "Title Page (Vol. I)"
 next_url: "/leighton/1peter/1-1/"
 next_label: "1 Peter 1:1"
+zh_url: "/leighton/1peter/zh/reader1/"
 ---
 
 ## To the Pious Reader.

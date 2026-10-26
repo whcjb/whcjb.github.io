@@ -5,8 +5,8 @@ book_name: "雷登《彼得前书实用注释》"
 title: "书名页（卷一）"
 subtitle: "约克，1693"
 date: 2026-10-26 09:12
-next_url: "/leighton/1peter/zh/1-1/"
-next_label: "彼得前书 1:1"
+next_url: "/leighton/1peter/zh/reader1/"
+next_label: "致敬虔的读者"
 en_url: "/leighton/1peter/title1/"
 zh: true
 ---
