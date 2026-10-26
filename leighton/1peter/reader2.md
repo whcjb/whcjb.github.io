@@ -9,6 +9,7 @@ prev_url: "/leighton/1peter/title2/"
 prev_label: "Title Page (Vol. II)"
 next_url: "/leighton/1peter/3-1/"
 next_label: "1 Peter 3:1"
+zh_url: "/leighton/1peter/zh/reader2/"
 ---
 
 ## TO THE Christian Reader.

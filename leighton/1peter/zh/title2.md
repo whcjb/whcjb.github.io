@@ -7,6 +7,8 @@ subtitle: "伦敦，1694"
 date: 2026-10-26 11:44
 prev_url: "/leighton/1peter/zh/errata1/"
 prev_label: "勘误表（卷一）"
+next_url: "/leighton/1peter/zh/reader2/"
+next_label: "致基督徒读者"
 en_url: "/leighton/1peter/title2/"
 zh: true
 ---
