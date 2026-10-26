@@ -7,6 +7,8 @@ subtitle: "出版者"
 date: 2026-10-26 11:46
 prev_url: "/leighton/1peter/zh/title2/"
 prev_label: "书名页（卷二）"
+next_url: "/leighton/1peter/zh/3-1/"
+next_label: "彼得前书 3:1"
 en_url: "/leighton/1peter/reader2/"
 zh: true
 ---
