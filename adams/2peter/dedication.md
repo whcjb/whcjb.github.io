@@ -9,6 +9,7 @@ prev_url: "/adams/2peter/title1/"
 prev_label: "Title Page (Vol. I)"
 next_url: "/adams/2peter/1-1/"
 next_label: "2 Peter 1:1 (part 1 of 2)"
+zh_url: "/adams/2peter/zh/dedication/"
 ---
 
 ## TO THE TRULY NOBLE, AND WORTHILY HONOVRED, S*IR* HENRY MARTEN *KNIGHT;* IVDGE OF HIS MAIESTIES HIGH *Court of the Admiraltie, and Deane of the Arches Court of* Canterbury.
