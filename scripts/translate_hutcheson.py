@@ -312,7 +312,7 @@ def main():
     ap.add_argument('--all', action='store_true')
     ap.add_argument('--resume', action='store_true')
     ap.add_argument('--dry-run', action='store_true')
-    ap.add_argument('--jobs', type=int, default=3)
+    ap.add_argument('--jobs', type=int, default=1)   # 只准 1 路，多路须用户特别指示
     ap.add_argument('--no-publish', action='store_true')
     a = ap.parse_args()
     tf.SYSTEM = SYSTEM

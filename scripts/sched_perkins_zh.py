@@ -86,7 +86,7 @@ def translate(sec):
     with LOGF.open('a', encoding='utf-8') as out:
         return subprocess.run(
             [sys.executable, '-u', 'scripts/translate_perkins.py',
-             '--section', sec, '--resume', '--jobs', '3'],
+             '--section', sec, '--resume', '--jobs', '1'],
             cwd=ROOT, stdout=out, stderr=subprocess.STDOUT).returncode
 
 
