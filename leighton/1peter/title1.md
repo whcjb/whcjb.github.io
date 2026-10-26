@@ -7,6 +7,7 @@ subtitle: "York, 1693"
 date: 2026-10-16 19:11
 next_url: "/leighton/1peter/reader1/"
 next_label: "To the Pious Reader"
+zh_url: "/leighton/1peter/zh/title1/"
 ---
 
 <div class="lt-tp">
