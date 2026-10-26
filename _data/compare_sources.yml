@@ -21,7 +21,7 @@ sources:
     - {key: calvin-en, author: calvin, lang: en, label: "加尔文注释（英文版）", url_tpl: "/calvin/1peter-en/__CH__/", accent: "#800000", ch_from: 1, ch_to: 5}
     - {key: mhenry, author: mhenry, lang: zh, label: "马太亨利注释", url_tpl: "/mhenry/1peter/__CH__/", accent: "#C9922A", ch_from: 1, ch_to: 5}
     - {key: leighton-en, author: leighton, lang: en, label: "雷登注释（英文版）", url_tpl: "/leighton/1peter/__CH__/", accent: "#2d2d99", ch_from: 1, ch_to: 5}
-    - {key: leighton, author: leighton, lang: zh, label: "雷登注释", url_tpl: "/leighton/1peter/zh/__CH__/", accent: "#2d2d99", ch_from: 1, ch_to: 3}
+    - {key: leighton, author: leighton, lang: zh, label: "雷登注释", url_tpl: "/leighton/1peter/zh/__CH__/", accent: "#2d2d99", ch_from: 1, ch_to: 4}
   1thessalonians:
     - {key: calvin, author: calvin, lang: zh, label: "加尔文注释", url_tpl: "/calvin/1thessalonians/__CH__/", accent: "#800000", ch_from: 1, ch_to: 5}
     - {key: calvin-en, author: calvin, lang: en, label: "加尔文注释（英文版）", url_tpl: "/calvin/1thessalonians-en/__CH__/", accent: "#800000", ch_from: 1, ch_to: 5}
