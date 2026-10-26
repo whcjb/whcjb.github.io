@@ -8,6 +8,7 @@ prev_url: "/leighton/1peter/2-25/"
 prev_label: "1 Peter 2:25"
 next_url: "/leighton/1peter/title2/"
 next_label: "Title Page (Vol. II)"
+zh_url: "/leighton/1peter/zh/errata1/"
 ---
 
 ## Errata.
