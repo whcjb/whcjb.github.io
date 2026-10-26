@@ -170,6 +170,13 @@ def structural_diff(en: str, zh: str) -> str:
     leak = tf.output_leak(zh)
     if leak:
         problems.append(leak)
+    # 第 2-5 章抓到的三种：思考过程整段漏出（<thinking> / Count asterisks…）、
+    # 半路自我纠正（「——不对，须照抄：」后再写一遍）、只吐半句就停（4:19 只剩 ἐν ἀγαthinking）
+    m = re.search(r'</?thinking|——不对|不对，须|须照抄|\bHmm\b|Count asterisks', zh)
+    if m and not re.search(re.escape(m.group(0)), en):
+        problems.append(f'模型自语「{m.group(0)}」')
+    if len(en) > 200 and len(re.findall(r'[一-鿿]', zh)) < len(en) * 0.1:   # 经文框/卷首页正常比例也只有 0.14 上下
+        problems.append(f'疑似截断（原文 {len(en)} 字符，译文汉字 {len(re.findall(r"[一-鿿]", zh))}）')
     if re.search(r'[A-Za-z]{4}', en) and not re.search(r'[一-鿿]', zh):
         problems.append('译文无汉字')
     return '；'.join(problems)
@@ -195,6 +202,15 @@ def accepted_keys():
             if ln.strip() and not ln.startswith('#')}
 
 
+class SevereTranslation(Exception):
+    """重试后仍有严重结构问题的段落：不写缓存，整篇不发布，等人处理。"""
+
+
+def is_severe(diff: str) -> bool:
+    """只剩「斜体 * 数量不符」算轻微（多是模型把相邻斜体并成一段）；其余都算严重。"""
+    return bool(diff) and any(not p.startswith('斜体 * 数量不符') for p in diff.split('；'))
+
+
 def translate_one(text: str, resume: bool, label: str = '') -> str:
     key = tf.md5key(KEY_NS + text)
     f = CACHE / f'{key}.txt'
@@ -213,14 +229,22 @@ def translate_one(text: str, resume: bool, label: str = '') -> str:
         fix = (f"上一版译文有结构问题：{diff}。\n重译下面这段。**必须逐一保留** `*` 斜体标记"
                "（开合各一个）与 ⟦N⟧ 占位符（个数与先后都要对上）；希腊文逐字照抄；"
                "**不得把任何英文词原样留在中文句子里**。只输出译文。\n\n")
-        out2 = tidy(tf.call_claude(fix + text, timeout=900, label=label + '·retry'))
-        if not structural_diff(text, out2):
-            out = out2
+        # 重试两次，取第一个合格的；都不合格就取「只剩斜体问题」的那一版
+        for n in (1, 2):
+            out2 = tidy(tf.call_claude(fix + text, timeout=900, label=f'{label}·retry{n}'))
+            if not structural_diff(text, out2):
+                out = out2
+                break
+            if not is_severe(structural_diff(text, out2)) or is_severe(diff):
+                out, diff = out2 or out, structural_diff(text, out2 or out)
         else:
-            out = out2 or out
             with BAD_LOG.open('a', encoding='utf-8') as fh:
                 fh.write(f'[{label}] {structural_diff(text, out)}\n'
                          f'  EN: {text[:160]!r}\n  ZH: {out[:160]!r}\n')
+            # 严重问题（自语/截断/重复起稿/希腊文走样/占位符错）不进缓存、不发布：
+            # 第 1 章与第 2-5 章两次都是「记一笔日志、照样发布」，坏译文直接上了网站
+            if is_severe(structural_diff(text, out)):
+                raise SevereTranslation(f'{label}: {structural_diff(text, out)[:120]}')
     CACHE.mkdir(parents=True, exist_ok=True)
     f.write_text(out, encoding='utf-8')
     return out
@@ -390,19 +414,32 @@ def main():
     slugs = all_slugs() if a.all else a.section
     if not slugs:
         ap.error('--section 或 --all')
+    severe = []
     for s in slugs:
         if a.resume and not a.dry_run and (OUT_DIR / f'{s}.md').exists():
             units = units_of(s)
-            keys = {tf.md5key(KEY_NS + mask(b)[0]) for k, b in units if k == 'text'}
-            if all((CACHE / f'{k}.txt').exists() for k in keys):
+            # 缓存都在、且都过得了结构闸（或已人工认可）才整篇跳过；只看「在不在」会把坏缓存永远留住
+            acc = accepted_keys()
+
+            def ok(b):
+                f = CACHE / f'{tf.md5key(KEY_NS + b)}.txt'
+                return f.exists() and (tf.md5key(KEY_NS + b) in acc
+                                       or not structural_diff(b, f.read_text(encoding='utf-8')))
+            if all(ok(mask(b)[0]) for k, b in units if k == 'text'):
                 continue
         try:
             run_section(s, a.resume, a.dry_run, a.jobs, not a.no_publish)
+        except SevereTranslation as e:
+            severe.append(str(e))
+            print(f'⛔ [{s}] 有段落重试后仍不合格，本篇不写出、不发布：{e}', flush=True)
         except RuntimeError as e:
             if 'session limit' in str(e).lower() or 'limit' in str(e).lower():
                 print(f'⛔ 额度用尽，中止：{e}', flush=True)
                 sys.exit(42)          # 用量汇总由 claude_usage 的 atexit 打印
             raise
+    if severe:
+        print('\n⛔ 以下段落未通过，所在篇未发布：\n  ' + '\n  '.join(severe), flush=True)
+        sys.exit(3)
 
 
 if __name__ == '__main__':
