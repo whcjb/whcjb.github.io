@@ -39,6 +39,7 @@ RAW = ROOT / 'adams_raw' / '2peter'
 OUT_DIR = RAW / 'zh_chapters'
 CACHE = RAW / 'zh_cache'
 BAD_LOG = RAW / 'zh_translate_issues.log'
+ITALIC_LOG = RAW / 'zh_italic_notes.log'   # 斜体程序修/对数不同的记录，人工抽查用
 META = RAW / 'zh_meta.json'
 PAGES = RAW / 'pages_en.json'
 KEY_NS = 'ADAMS_2PETER::'
@@ -59,7 +60,9 @@ SYSTEM = (
     "**必须原样逐个保留**，个数、先后都与原文一致，放在中文里对应的位置。"
     "有的占位符是原书**缺字处**，紧挨着残缺的字母（如 ⟦4⟧o、ab⟦5⟧sement）："
     "占位符照留，残字母不要输出，按上下文把句子译通\n"
-    "3. 星号 `*` 是斜体标记，逐一保留，开合各一个\n"
+    "3. 星号 `*` 是斜体标记，开合各一个、必须成对。原文斜体的部分（人名、书名、拉丁词、引文、强调语），"
+    "中文里对应的词照样用 `*` 包起来，一处对一处：不要把相邻两处斜体并成一处，不要自己增添斜体，"
+    "不要只包一个「第」字、数字或标点\n"
     "4. **凡引用圣经经文，一律照抄和合本**；他用 KJV 或自己的译法，与和合本措辞不同时仍以和合本为准；"
     "但凡他说 that is / i. e. 后给出的是自己的解释，按他的英文译；"
     "**原文只给出处、没有引经文的，只译出处，不要自己补出经文**\n"
@@ -153,8 +156,9 @@ def structural_diff(en: str, zh: str) -> str:
     extra = [w for w in RE_GREEK_TOK.findall(nfc(zh)) if len(w) > 1 and w not in src]
     if extra:
         problems.append('原文没有的希腊词 ' + '、'.join(extra[:4]))
-    if en.count('*') != zh.count('*'):
-        problems.append(f'斜体 * 数量不符 {en.count("*")} → {zh.count("*")}')
+    # 斜体对数不同不算结构问题、不重译（2026-10-27 用户：斜体要一遍过，不要重译）。
+    # 实测雷登+亚当斯首轮被打回的 296 段里 261 段只是斜体对数不同、星号都成对，重译换不来实质改进；
+    # 落单的星号在 translate_one 里由 fix_italics 程序修，不调模型。
     pe, pz = RE_PH.findall(en), RE_PH.findall(zh)
     if pe != pz:
         problems.append(f'占位符不符 {pe} → {pz}')
@@ -211,8 +215,22 @@ class SevereTranslation(Exception):
 
 
 def is_severe(diff: str) -> bool:
-    """只剩「斜体 * 数量不符」算轻微（多是模型把相邻斜体并成一段）；其余都算严重。"""
+    """斜体已不进 structural_diff（见 fix_italics）；保留此判断兼容旧日志格式：只剩斜体问题算轻微，其余都算严重。"""
     return bool(diff) and any(not p.startswith('斜体 * 数量不符') for p in diff.split('；'))
+
+
+def fix_italics(zh: str, en: str, label: str) -> str:
+    """斜体只做程序修、不重译：星号落单（奇数个）→ 去掉本段全部斜体标记；对数与原文不同 → 只记一笔待抽查。"""
+    if zh.count('*') % 2:
+        note = f'斜体 * 落单（{zh.count("*")} 个），已去掉本段斜体'
+        zh = zh.replace('*', '')
+    elif zh.count('*') != en.count('*'):
+        note = f'斜体对数不同 {en.count("*") // 2} → {zh.count("*") // 2} 对（未重译，待抽查）'
+    else:
+        return zh
+    with ITALIC_LOG.open('a', encoding='utf-8') as fh:
+        fh.write(f'[{label}] {note}\n')
+    return zh
 
 
 def translate_one(text: str, resume: bool, label: str = '') -> str:
@@ -226,16 +244,17 @@ def translate_one(text: str, resume: bool, label: str = '') -> str:
 
     base = ("把下面这段亚当斯《彼得后书注释》的十七世纪英文译成简体中文。"
             "整段通读后再译，保证上下文连贯；逐一保留 `*` 斜体标记与 ⟦N⟧ 占位符；只输出译文。\n\n")
-    out = tidy(tf.call_claude(base + text, timeout=900, label=label))
+    out = fix_italics(tidy(tf.call_claude(base + text, timeout=900, label=label)), text, label)
     diff = structural_diff(text, out)
     if diff:
         print(f'    [retry-struct] {label}: {diff[:90]}', flush=True)
-        fix = (f"上一版译文有结构问题：{diff}。\n重译下面这段。**必须逐一保留** `*` 斜体标记"
-               "（开合各一个）与 ⟦N⟧ 占位符（个数与先后都要对上）；希腊文逐字照抄；"
+        fix = (f"上一版译文有结构问题：{diff}。\n重译下面这段。**必须逐一保留**"
+               " ⟦N⟧ 占位符（个数与先后都要对上）；希腊文逐字照抄；"
                "**不得把任何英文词原样留在中文句子里**。只输出译文。\n\n")
         # 重试两次，取第一个合格的；都不合格就取「只剩斜体问题」的那一版
         for n in (1, 2):
-            out2 = tidy(tf.call_claude(fix + text, timeout=900, label=f'{label}·retry{n}'))
+            out2 = fix_italics(tidy(tf.call_claude(fix + text, timeout=900, label=f'{label}·retry{n}')),
+                               text, f'{label}·retry{n}')
             if not structural_diff(text, out2):
                 out = out2
                 break
