@@ -122,6 +122,14 @@ authors:
     work_cn: "帖撒罗尼迦前后书讲章"
     work_en: "Lectures vpon the First and Second Epistles of Paul to the Thessalonians"
     books: 2
+  - id: jenkyn
+    name: "威廉·詹金"
+    short: "詹金"
+    en: "William Jenkyn"
+    years: "1613–1685"
+    work_cn: "犹大书讲解"
+    work_en: "An Exposition of the Epistle of Jude"
+    books: 0
   - id: alexander
     name: "约瑟·亚历山大"
     short: "亚历山大"
