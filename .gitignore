@@ -77,3 +77,6 @@ adams_raw/2peter/tcp_main_tokens.json
 .jekyll-cache/
 # 罗洛克帖撒罗尼迦书：证人整页图、本地 OCR、判读图（可重跑 rollock_bim_ocr / rollock_witness 重建）
 rollock_raw/thessalonians/witness/
+# 詹金犹大书：证人 hOCR、整页图、裁图、判读图（可由 scripts/jenkyn_witness.py build/sheets 重建）
+jenkyn_raw/jude/witness/
+jenkyn_raw/jude/tcp_main_tokens.json

@@ -1,0 +1,79 @@
+---
+layout: default
+---
+{%- comment -%}
+  詹金《犹大书讲解》书首页。配色与章节页同源（赤陶 #cd5f37）。
+  目录按原书：第一部分（书名页 / 致读者 / 勘误 / 第 1–8 节）→ 第二部分（书名页 / 献辞 / 第 8–25 节 / 勘误）。
+{%- endcomment -%}
+
+<div class="container jenkyn-book" style="padding-top: 70px;">
+  <div class="row">
+    <div class="col-lg-9 col-lg-offset-1 col-md-10 col-md-offset-1">
+
+      <div class="jk-booklang">
+        {% if page.zh %}{% if page.en_url %}<a href="{{ site.baseurl }}{{ page.en_url }}">English edition &rarr;</a>{% endif %}
+        {% else %}{% if page.zh_url %}<a href="{{ site.baseurl }}{{ page.zh_url }}">中文版 &rarr;</a>{% endif %}{% endif %}
+      </div>
+      <div class="jk-hero">
+        <h1>{{ page.book_name }}</h1>
+        <p class="jk-hero-author">{{ page.author }}</p>
+        <p class="jk-hero-meta">{{ page.edition }}</p>
+      </div>
+
+      {{ content }}
+
+    </div>
+  </div>
+</div>
+
+<style>
+.jenkyn-book { --jk-ink: #cd5f37; --jk-ink-dark: #9a4425; --jk-rule: #efe2dc; --jk-paper: #fcf9f7; }
+.jenkyn-book .jk-booklang { text-align: right; margin: 0 0 10px; font-size: 13px; font-family: Georgia, serif; }
+.jenkyn-book .jk-booklang a { color: var(--jk-ink); border: 1px solid var(--jk-rule);
+  border-radius: 4px; padding: 4px 10px; text-decoration: none; }
+.jenkyn-book .jk-booklang a:hover { background: var(--jk-ink); color: #fff; }
+/* 书首：不用大色块横幅（用户 2026-10-22），书名 + 作者 + 版本加细线 */
+.jenkyn-book .jk-hero {
+  margin: 4px 0 22px; padding: 0 0 12px; border-bottom: 2px solid var(--jk-ink);
+  font-family: Georgia, "Times New Roman", "Songti SC", serif;
+}
+.jenkyn-book .jk-hero h1 { font-family: Georgia, "Times New Roman", "Songti SC", serif; margin: 0 0 4px;
+  font-size: 26px; font-weight: normal; line-height: 1.3; color: var(--jk-ink-dark); }
+.jenkyn-book .jk-hero-author { margin: 0; font-size: 14.5px; color: #44444f; }
+.jenkyn-book .jk-hero-meta { margin: 2px 0 0; font-size: 13px; color: #8a8a99; font-style: italic; }
+.jenkyn-book .jk-group {
+  font-family: Georgia, "Times New Roman", "Songti SC", serif; margin: 30px 0 12px;
+  font-size: 15px; color: var(--jk-ink-dark); letter-spacing: .05em;
+  padding-bottom: 6px; border-bottom: 1px solid var(--jk-rule);
+}
+.jenkyn-book .jk-toc { list-style: none; padding: 0; margin: 0; display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); gap: 8px; }
+.jenkyn-book .jk-toc li { margin: 0; }
+.jenkyn-book .jk-toc a { display: block; padding: 9px 13px; border: 1px solid var(--jk-rule);
+  border-radius: 4px; background: var(--jk-paper); text-decoration: none;
+  font-family: Georgia, "Times New Roman", "Songti SC", serif; font-size: 15px; color: #2a2a33; line-height: 1.45; }
+.jenkyn-book .jk-toc a:hover { border-color: var(--jk-ink); background: #fff; color: var(--jk-ink-dark); }
+.jenkyn-book .jk-note { font-family: Georgia, "Times New Roman", "Songti SC", serif; font-size: 13.5px;
+  color: #6f6f85; line-height: 1.8; margin: 34px 0 0; padding-top: 16px; border-top: 1px solid var(--jk-rule); }
+.jenkyn-book .jk-chgrid { list-style: none; padding: 0; margin: 0; display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(92px, 1fr)); gap: 8px; }
+.jenkyn-book .jk-chgrid a { display: block; text-align: center; padding: 10px 6px; border: 1px solid var(--jk-rule);
+  border-radius: 4px; background: var(--jk-paper); text-decoration: none; color: #2a2a33;
+  font-family: Georgia, "Times New Roman", "Songti SC", serif; font-size: 15px; }
+.jenkyn-book .jk-chgrid a:hover { border-color: var(--jk-ink); background: #fff; color: var(--jk-ink-dark); }
+@media (max-width: 767px) {
+  .jenkyn-book .jk-hero h1 { font-size: 22px; }
+  .jenkyn-book .jk-toc { grid-template-columns: 1fr 1fr; }
+}
+/* 编者推补（原书此处缺损，据上下文补出）：方括号 + 另色，与原文区分 */
+.jenkyn-wrap .jk-conj, .jenkyn-book .jk-conj { color: #8a5a00; background: #fff6e0; border-radius: 2px; padding: 0 1px; cursor: help; font-style: normal; }
+.jenkyn-book .jk-note p { margin: 0 0 12px; }
+.jenkyn-book .jk-note-zh { font-family: "Songti SC", STSong, serif; }
+.jenkyn-book .jk-conjhead { font-family: "Songti SC", STSong, Georgia, serif; font-size: 16px; color: var(--jk-ink-dark); margin: 26px 0 10px; }
+.jenkyn-book .jk-conjtab { width: 100%; border-collapse: collapse; font-size: 13px; line-height: 1.6; margin: 10px 0 20px; }
+.jenkyn-book .jk-conjtab th, .jenkyn-book .jk-conjtab td { border-bottom: 1px solid var(--jk-rule); padding: 6px 6px; vertical-align: top; text-align: left; }
+.jenkyn-book .jk-conjtab th { background: var(--jk-paper); color: var(--jk-ink-dark); white-space: nowrap; }
+.jenkyn-book .jk-conjtab code { font-size: 12px; white-space: nowrap; }
+.jenkyn-book .jk-conjtab .jk-grade { white-space: nowrap; color: #6f6f85; }
+@media (max-width: 767px) { .jenkyn-book .jk-conjtab { display: block; overflow-x: auto; } }
+</style>

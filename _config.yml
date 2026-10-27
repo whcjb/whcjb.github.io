@@ -47,6 +47,7 @@ exclude:
   - bridges_raw
   - calvin_raw
   - davenant_raw
+  - jenkyn_raw
   - hodge_raw
   - hutcheson_raw
   - leighton_raw

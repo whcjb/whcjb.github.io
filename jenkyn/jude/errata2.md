@@ -1,0 +1,14 @@
+---
+layout: jenkyn-chapter
+book_id: jude
+book_name: "Jenkyn on Jude"
+title: "Errata (Part II)"
+date: 2026-10-27 10:59
+prev_url: "/jenkyn/jude/1-24/"
+prev_label: "Jude 24–25"
+---
+
+## ERRATA.
+
+PAge 5 line 8 del *despising,* pag 5 l 35 read *evill of,* pag 7 l 22 r *it,* p 8 r *highest,* p 24 l 9 r *sinner,* pag 44 marg r *Isag.* p 53 l 12 r *make,* p 73 l 13 r *in that,* p 80 l 20 r *ful of,* p 102 marg r *detractatores,* p 112 l 22 r *moderator,* p 200 *l* 22 r *prosecutions,* p 205 marg r *finis,* p 253 l 21 r *ever,* p 257 l 3 r *curam,* p 288 marg r *adipibus* p 300 l 17 r *Cocumenius,* p 335 l 152 *defects,* p 381 marg del <span class="jk-gap" title="TCP: illegible in source">〈Greek〉</span>, p 512 l 13 r *peaceable,* p 544 l 25 26 dele *so much,* p 560 marg r *lucifugae,* p 583 marg r *Hieron,* p 612 marg r *aliquo,* p 637 l 32 r *as they look,* p 672 l 27 r *seen.* p 678 marg r *silentiam appetitus,* p 644 l 28 r *By propounding.*
+
