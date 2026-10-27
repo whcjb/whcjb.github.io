@@ -130,6 +130,14 @@ authors:
     work_cn: "犹大书讲解"
     work_en: "An Exposition of the Epistle of Jude"
     books: 1
+  - id: candlish
+    name: "罗伯特·坎德利什"
+    short: "坎德利什"
+    en: "Robert S. Candlish"
+    years: "1806–1873"
+    work_cn: "约翰一书讲解"
+    work_en: "The First Epistle of John, Expounded in a Series of Lectures"
+    books: 1
   - id: alexander
     name: "约瑟·亚历山大"
     short: "亚历山大"
@@ -530,6 +538,7 @@ books:
     testament: nt
     chapters: 5
     links:
+      - {author: candlish, path: "/candlish/1john/", url_tpl: "/candlish/1john/__CH__/", title_cn: "约翰一书讲解", title_en: "The First Epistle of John, Expounded in a Series of Lectures", c0: "#8a5462", c1: "#b07080"}
   - id: 2john
     name: "约翰二书"
     en: "2 John"
