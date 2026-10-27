@@ -10,7 +10,8 @@
   - 经文引用被换成链接后残下的「 ,」：`( , 2:2)`→`(2:2)`、`of , Revelation`→`of Revelation`
   - 引用整个被吃掉、只剩 `()` 的：记号 ⟦lost⟧，发布时标出「录入本此处缺文」，不擅补
   - `Lcke`→`Lücke`（ü 在 e-Sword 本丢了；Monergism 正文作 Lücke）
-e-Sword 本这几条脚注的 OCR 错字（cither / tome / lam …）**不在这里改**，见 notes_pending.tsv，经同意才落。
+e-Sword 本这几条脚注的 OCR 错字（cither / tome / lam …）与补出的经文出处，经用户同意（2026-10-27）后列在
+note_fixes.tsv，在机械清理之后逐条落（每条须恰好命中 1 次）。
 """
 import json
 import re
@@ -73,7 +74,19 @@ def clean(t):
     return t
 
 
+def note_fixes():
+    """note_fixes.tsv → {n: [(old, new)]}"""
+    out = {}
+    for ln in (RAW / 'note_fixes.tsv').read_text(encoding='utf-8').splitlines():
+        if not ln.strip() or ln.startswith('#'):
+            continue
+        n, old, new, _why, _kind = ln.split('\t')
+        out.setdefault(int(n), []).append((old, new))
+    return out
+
+
 def main():
+    fixes = note_fixes()
     cc = json.loads((RAW / 'work' / 'notes_cc.json').read_text())
     out = []
     for n, (unit, anchor) in PLACE.items():
@@ -89,8 +102,14 @@ def main():
                 t = body.strip()
             if n == 29 and t.endswith('.")'):
                 t = t[:-1]          # 段尾多出的右括号（e-Sword 本把括注拆成独立段时残下）
+            for old, new in fixes.pop(n, []):
+                if t.count(old) != 1:
+                    raise SystemExit(f'note_fixes: #{n}「{old}」命中 {t.count(old)} 次（应为 1）')
+                t = t.replace(old, new)
             rec['text'] = t
         out.append(rec)
+    if fixes:
+        raise SystemExit(f'note_fixes 有落不下的脚注号：{sorted(fixes)}')
     (RAW / 'notes.json').write_text(json.dumps(out, ensure_ascii=False, indent=1) + '\n', encoding='utf-8')
     for r in out:
         print(f"#{r['n']} {r['unit']}: {(r['text'] or '—缺—')[:2000]}\n")

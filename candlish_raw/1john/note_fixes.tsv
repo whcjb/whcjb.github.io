@@ -1,0 +1,14 @@
+# 坎德利什约翰一书 · 脚注的编者修正（candlish_build_notes.py 在机械清理之后逐条落，每条须恰好命中 1 次）
+# 经用户同意（2026-10-27）。脚注正文取自 e-Sword 本，该本这几条是 OCR 文字。
+# 列：脚注号（notes.json 的 n）<TAB>原样<TAB>改作<TAB>依据<TAB>类别
+# ⟦ed:X⟧ = 编者补出的经文出处（录入本被转换程序吃掉，只剩空括号），页面以方括号另色标出。
+7	conceived as cither necessary	conceived as either necessary	OCR 错字（c/e）	editor
+7	It becomes tome quite notional	It becomes to me quite notional	OCR 粘连	editor
+7	not real; lam apt to resolve	not real; I am apt to resolve	OCR 错字（I am → lam）	editor
+7	subject in nu examination of	subject in an examination of	OCR 错字	editor
+10	to speak of believers us being born of Christ	to speak of believers as being born of Christ	OCR 错字（a/u）	editor
+5	which again agrees with, with the "him"	which again agrees with the "him"	重复词	editor
+6	made higher than the heavens" (⟦lost⟧)	made higher than the heavens" (⟦ed:Hebrews 7:26⟧)	所引即希伯来书 7:26	supply
+10	the very next verse (⟦lost⟧)	the very next verse (⟦ed:3:1⟧)	2:29 的下一节	supply
+11	said before of "his coming" (⟦lost⟧)	said before of "his coming" (⟦ed:2:28⟧)	「his coming」见 2:28	supply
+28	where alone it is found:—i. (⟦lost⟧)	where alone it is found:—i. (⟦ed:1:3⟧)	以弗所书 1:3（「天上」第一次出现）	supply

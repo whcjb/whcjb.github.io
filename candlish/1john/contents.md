@@ -119,7 +119,7 @@ XLIII. [The Believer as born of God keeping himself so as not to sin—1 JOHN 5:
 
 XLIV. [Our being of God—The World lying in the Wicked One:.—1 JOHN 5:18, 19]({{ site.baseurl }}/candlish/1john/lecture-44/)
 
-XLV. [Knowing the True One and being in Him:—1 JOHN 5:26]({{ site.baseurl }}/candlish/1john/lecture-45/)
+XLV. [Knowing the True One and being in Him:—1 JOHN 5:20]({{ site.baseurl }}/candlish/1john/lecture-45/)
 
 XLVI. [Jesus the True God and Eternal Life against all Idols:—1 JOHN 5:20, 21]({{ site.baseurl }}/candlish/1john/lecture-46/)
 

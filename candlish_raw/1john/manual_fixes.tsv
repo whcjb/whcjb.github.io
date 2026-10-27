@@ -1,11 +1,16 @@
 # 坎德利什约翰一书 · Monergism 底本的修正表（publish_candlish_en.py 逐条落，每条须恰好命中 1 次）
-# 列：讲次<TAB>原样<TAB>改作<TAB>依据
-# 只收「ccbiblestudy e-Sword 本同位读出」的：两份是各自独立的录入本，一处非词、一处真词，取真词。
-# 两份共有的错字（illlustration 等）不在此表，见 notes_pending.tsv，经同意才落。
-XI	little childen, because	little children, because	e-Sword 本同位作 children
-IX	abide, atleast a little	abide, at least a little	e-Sword 本同位作 at least
-XIII	passing here; apssing and	passing here; passing and	e-Sword 本同位作 passing
-XXXVI	as his seryant, to carry	as his servant, to carry	e-Sword 本同位作 servant
-XI	It is a trumpetcall, summoning	It is a trumpet-call, summoning	e-Sword 本同位作 trumpet-call
-XXVII	free and forthflowing, between	free and forth-flowing, between	e-Sword 本同位作 forth-flowing
-XXIX	in this matter; in and as on the	in this matter; in the view that you take, and the conception that you form of Jesus Christ come in the flesh; of the end of his coming, and the manner in which that end is attained. You look at that great fact, first and chiefly in its relation to God, and as on the	Monergism 本在两个「in」之间跳行漏 46 词（in this matter; in ⟨…⟩ and as on the side of God），e-Sword 本完整
+# 列：讲次<TAB>原样<TAB>改作<TAB>依据<TAB>类别
+# 类别 witness = e-Sword 本（另一份独立录入本）同位读出，一处非词、一处真词，取真词；
+#      editor  = 两份录入本同误、按字形或本书内证改，经用户同意（2026-10-27）。
+# 书首页「编者改动逐条说明」表由此生成（publish_candlish_en.py edits_table）。
+XI	little childen, because	little children, because	e-Sword 本同位作 children	witness
+IX	abide, atleast a little	abide, at least a little	e-Sword 本同位作 at least	witness
+XIII	passing here; apssing and	passing here; passing and	e-Sword 本同位作 passing	witness
+XXXVI	as his seryant, to carry	as his servant, to carry	e-Sword 本同位作 servant	witness
+XI	It is a trumpetcall, summoning	It is a trumpet-call, summoning	e-Sword 本同位作 trumpet-call	witness
+XXVII	free and forthflowing, between	free and forth-flowing, between	e-Sword 本同位作 forth-flowing	witness
+XXIX	in this matter; in and as on the	in this matter; in the view that you take, and the conception that you form of Jesus Christ come in the flesh; of the end of his coming, and the manner in which that end is attained. You look at that great fact, first and chiefly in its relation to God, and as on the	Monergism 本在两个「in」之间跳行漏 47 词（in this matter; in ⟨…⟩ and as on the side of God），e-Sword 本完整	witness
+XXXI	the only possible perfect illlustration, of	the only possible perfect illustration, of	三个 l，非词；两份录入本同误	editor
+XL	He will give uttterance indeed	He will give utterance indeed	三个 t，非词；两份录入本同误	editor
+XXVIII	our growing aquaintance with God	our growing acquaintance with God	缺 c，非词；两份录入本同误	editor
+Table of Contents	being in Him:—1 JOHN 5:26	being in Him:—1 JOHN 5:20	约翰一书第 5 章只有 21 节；第 XLV 讲题记作 1 JOHN 5:20	editor

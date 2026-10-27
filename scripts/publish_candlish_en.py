@@ -124,7 +124,7 @@ def apply_fixes(units, log):
     for ln in (RAW / 'manual_fixes.tsv').read_text(encoding='utf-8').splitlines():
         if not ln.strip() or ln.startswith('#'):
             continue
-        unit, old, new, _why = ln.split('\t')
+        unit, old, new, _why, _kind = ln.split('\t')
         u = key[unit]
         hits = 0
         for f in ('epi', 'paras'):
@@ -161,6 +161,8 @@ def md_escape(t):
     return t
 
 
+ED_TITLE = ('Supplied by the editor: the reference was lost in both transcriptions '
+            '(编者补出：两份录入本此处出处均被吃掉)')
 LOST = ('<span class="cd-lost" title="Wanting in both transcriptions used for this edition '
         '(两份录入本此处均缺)">…</span>')
 
@@ -193,6 +195,7 @@ def note_md(nt, k):
                 'edition. 此条脚注正文两份录入本均缺。]</span>')
     else:
         body = md_escape(nt['text']).replace('⟦lost⟧', LOST)
+        body = re.sub(r'⟦ed:([^⟧]*)⟧', lambda m: f'<span class="cd-ed" title="{ED_TITLE}">[{m.group(1)}]</span>', body)
         if nt.get('head'):
             body = f'<span class="cd-notehead">{nt["head"]}.</span> ' + body
     return f'[^{k}]: {body}'
@@ -343,6 +346,63 @@ def chapter_pages(pages, meta, stamp):
     return out
 
 
+def edits_rows():
+    """manual_fixes.tsv + note_fixes.tsv → 书首页逐条说明的行：(组, 位置链接, 原样, 现作, 依据)。"""
+    slug = {n: f'lecture-{k}' for k, n in enumerate(ROMAN, 1)}
+    slug['Table of Contents'] = 'contents'
+    slug['PREFACE TO FIRST EDITION'] = 'preface-1'
+    slug['PREFACE TO SECOND EDITION (1869)'] = 'preface-2'
+
+    def where(unit, note=None):
+        name = 'Contents' if unit == 'Table of Contents' else (f'Lecture {unit}' if unit in ROMAN else unit.title())
+        if note:
+            name += ', footnote'
+        return f'<a href="{{{{ site.baseurl }}}}/candlish/{BOOK_ID}/{slug[unit]}/">{name}</a>'
+
+    def show(old, new):
+        if len(new) > 120:                 # 跳行漏文：只显示补了多少词
+            extra = len(new.split()) - len(old.split())
+            return html_esc(old), html_esc(old.replace(' and as on the', '')) + f' ⟨+{extra} words⟩ and as on the'
+        return html_esc(old), html_esc(new).replace('⟦ed:', '[').replace('⟧', ']')
+    rows = []
+    for ln in (RAW / 'manual_fixes.tsv').read_text(encoding='utf-8').splitlines():
+        if ln.strip() and not ln.startswith('#'):
+            unit, old, new, why, kind = ln.split('\t')
+            rows.append((kind, where(unit), *show(old, new), why))
+    units = {nt['n']: nt['unit'] for nt in json.loads((RAW / 'notes.json').read_text(encoding='utf-8'))}
+    for ln in (RAW / 'note_fixes.tsv').read_text(encoding='utf-8').splitlines():
+        if ln.strip() and not ln.startswith('#'):
+            n, old, new, why, kind = ln.split('\t')
+            rows.append((kind, where(units[int(n)], note=True), *show(old.replace('⟦lost⟧', '…'), new), why))
+    return rows
+
+
+def html_esc(t):
+    return t.replace('&', '&amp;').replace('<', '&lt;').replace('>', '&gt;')
+
+
+def edits_table():
+    rows = edits_rows()
+    groups = [('witness', '据另一份录入本同位读出（第一份漏字、拼错）'),
+              ('editor', '两份录入本同误，编者改正（经同意）'),
+              ('supply', '经文出处两份录入本均被吃掉，编者补出（页面以 <span class="cd-ed">[方括号]</span> 另色标出）')]
+    out = ['<h3 class="cd-edhead">编者改动逐条说明</h3>',
+           '<table class="cd-edtab"><tr><th>#</th><th>位置</th><th>录入本原样</th><th>现作</th><th>依据</th></tr>']
+    k = 0
+    for kind, title in groups:
+        sub = [r for r in rows if r[0] == kind]
+        if not sub:
+            continue
+        out.append(f'<tr class="cd-edgrp"><td colspan="5">{title}（{len(sub)}）</td></tr>')
+        for _, loc, old, new, why in sub:
+            k += 1
+            out.append(f'<tr><td>{k}</td><td>{loc}</td><td>{old}</td><td>{new}</td><td>{why}</td></tr>')
+    out.append('</table>')
+    out.append('<p class="cd-note-zh">另：第 XVI 讲脚注 2（「abide in the Father and the Son."」处）两份录入本都只有脚注号、'
+               '没有正文，无从补，页面上注明缺文。</p>')
+    return out
+
+
 def build_index(pages):
     out = ['---', 'layout: candlish-book', f'book_id: {BOOK_ID}', f'book_name: "{BOOK_NAME}"',
            f'title: "{BOOK_NAME}"', f'author: "{AUTHOR} (1806–1873)"',
@@ -370,8 +430,6 @@ def build_index(pages):
     out.append('<ul class="cd-chgrid">')
     out += [f'  <li><a href="{{{{ site.baseurl }}}}/candlish/{BOOK_ID}/{c}/">1 John {c}</a></li>' for c in range(1, 6)]
     out.append('</ul>')
-    nfix = sum(1 for ln in (RAW / 'manual_fixes.tsv').read_text(encoding='utf-8').splitlines()
-               if ln.strip() and not ln.startswith('#'))
     out.append('<div class="cd-note">')
     out.append('<p><b>About this text.</b> The text follows the Monergism Books e-text (2020), a modern keyed '
                'transcription in which Scripture references are given in modern form (1 John 2:3) and the '
@@ -379,13 +437,16 @@ def build_index(pages):
                'asterisks; their wording has been supplied from a second, independent transcription (the '
                'e-Sword / BibleSupport module, from William A. Anderson\'s 2008 Libronix edition), cleared of '
                'that module\'s conversion damage. Where the second transcription supplies a word or a passage '
-               f'the first has dropped or misspelled, the reading has been adopted ({nfix} places). Places '
-               'wanting in both are marked <span class="cd-lost">…</span>.</p>')
+               f'the first has dropped or misspelled, the reading has been adopted. Obvious misprints shared by '
+               'both, and Scripture references lost from both, have been corrected or supplied by the editor '
+               '(supplied references are shown <span class="cd-ed">[in brackets]</span>). Every change is '
+               'listed in the table below.</p>')
     out.append(f'<p class="cd-note-zh"><b>文本说明。</b>本书正文据 Monergism Books 电子本（2020）。该本是现代人工录入本，'
                f'经文出处已改作现代格式（1 John 2:3），原书斜体未标。它把作者的脚注正文全部丢了，只剩星号；'
                f'脚注据另一份独立录入本（e-Sword / BibleSupport 模块，出自 William A. Anderson 2008 年的 Libronix 本）补回，'
-               f'并清理了该模块转换时造成的损坏。第一份漏掉或拼错、第二份同位读出的字句，取第二份（{nfix} 处）。'
-               f'两份都缺的标 <span class="cd-lost">…</span>。逐条依据见 <code>candlish_raw/1john/PROVENANCE.md</code>。</p>')
+               f'并清理了该模块转换时造成的损坏。第一份漏掉或拼错、第二份同位读出的字句，取第二份。'
+               f'两份录入本同误的错字与被吃掉的经文出处，由编者改正、补出。下表逐条列出全部改动。</p>')
+    out += edits_table()
     out.append('</div>')
     return '\n'.join(out) + '\n'
 

@@ -40,9 +40,9 @@ IA 上普林斯顿神学院藏第二版两卷（firstepistleofjo01cand / 02cand�
    跨页：上页末块末行排满（x1 ≥ 515）即与下页首块相接，接缝留 `\n⁣` 记号。末页「-----」之后是 Monergism 版权声明，不收。
 2. 跨页接缝（378 处）：接缝后的文字是 e-Sword 本某段的开头 → 分段（7 处），否则接上。另有 4 处 e-Sword 本分段而
    Monergism 排在同一行中间的，照 Monergism 不分。
-3. `manual_fixes.tsv`（7 条）：只收「e-Sword 本同位读出、Monergism 读成非词或漏文」的——
+3. `manual_fixes.tsv` 类别 `witness`（7 条）：「e-Sword 本同位读出、Monergism 读成非词或漏文」的——
    childen / atleast / apssing / seryant、trumpetcall / forthflowing 两处连字符，
-   以及第 XXIX 讲 Monergism 在两个 in 之间跳行漏掉的 46 个词。每条须恰好命中一次。
+   以及第 XXIX 讲 Monergism 在两个 in 之间跳行漏掉的 47 个词。每条须恰好命中一次。
 4. 脚注（`scripts/candlish_notes.py` 定位 → `candlish_build_notes.py` 机械清理 → `notes.json` 定稿）：
    按 `*` 前的文字在 e-Sword 本里找对应的括注或「1]」段。清理只做导出损坏的还原（经卷名误展开、粘连、
    残下的「 ,」、`Lcke`→`Lücke`、`ver24`→`ver. 24`）；被吃掉的经文出处标 ⟦lost⟧，页面显示灰色「…」。
@@ -53,9 +53,13 @@ IA 上普林斯顿神学院藏第二版两卷（firstepistleofjo01cand / 02cand�
    经文锚点 `1john-<章>-<节>` 只挂第一次讲到该节的那一讲（全书 105 节齐）。
    破折号后紧贴字母的直引号写死为开引号（kramdown 智能引号把 `;—"But` 判成收引号，123 处）。
 
-### 待同意（`notes_pending.tsv`，未经同意不落）
+### 编者改正与补出（2026-10-27 用户同意：「改了，并且在首页说清楚」）
 
-两份共有的错字 3 处、目录 `5:26`、e-Sword 脚注的 OCR 错字 6 处、被吃掉的经文出处 4 处、缺文脚注 1 条。
+原列 notes_pending.tsv 的 15 条，同意后落到两张表，书首页「编者改动逐条说明」由这两张表生成：
+- `manual_fixes.tsv` 类别 `editor`：两份共有的错字 illlustration / uttterance / aquaintance、作者目录 `5:26`→`5:20`；
+- `note_fixes.tsv`：e-Sword 脚注的 OCR 错字 6 处（cither / tome / lam / nu / us being / 重复的 with），
+  被吃掉的经文出处 4 处以 `⟦ed:…⟧` 补出，页面 `.cd-ed` 方括号另色；
+- 第 XVI 讲脚注 2 两份都无正文，无从补，页面注明缺文。
 
 ## 验收
 
