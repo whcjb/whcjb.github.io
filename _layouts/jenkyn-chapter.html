@@ -303,7 +303,18 @@ function closeJenkynVerseNav() {
 .jenkyn-wrap .jk-tp-rule { border: 0; border-top: 1.5px solid #3a3a40; margin: 12px 0; }
 .jenkyn-wrap .jk-tp-dev { margin: 6px 0; }
 .jenkyn-wrap .jk-tp-dev img { width: 46%; max-width: 230px; height: auto; display: inline-block; }
+/* 第一部分扉页：1652 原书的花饰框（从同版胶片裁出，img/jenkyn/tp1-frame.jpg 只取四边） */
+.jenkyn-wrap .jk-tp1 { border: 26px solid transparent; outline: none;
+  border-image: url("{{ site.baseurl }}/img/jenkyn/tp1-frame.jpg") 36 round; padding: 22px 26px 18px; }
+.jenkyn-wrap .jk-tp2 { outline: none; }
+.jenkyn-wrap .jk-tp .s00 { font-size: 64px; letter-spacing: .14em; line-height: 1.05; }
+.jenkyn-wrap .jk-tp-motto { text-align: left; font-size: 13px; line-height: 1.45; margin: 4px 2px; }
+.jenkyn-wrap .jk-tp-motto p { margin: 0 0 3px; text-align: left; text-indent: -1.2em; padding-left: 1.2em; }
+.jenkyn-wrap .jk-tp-note { font-size: 12px; color: #8a8a99; margin: 14px 0 0; text-align: center !important;
+  font-family: "Songti SC", STSong, serif; }
 @media (max-width: 600px) {
+  .jenkyn-wrap .jk-tp .s00 { font-size: 40px; }
+  .jenkyn-wrap .jk-tp1 { border-width: 16px; padding: 14px 10px; }
   .jenkyn-wrap .jk-tp { padding: 18px 12px 16px; }
   .jenkyn-wrap .jk-tp .s0 { font-size: 30px; }
   .jenkyn-wrap .jk-tp .s1, .jenkyn-wrap .jk-tp .s2b { font-size: 22px; }

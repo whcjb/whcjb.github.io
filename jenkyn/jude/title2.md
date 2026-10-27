@@ -11,11 +11,26 @@ next_url: "/jenkyn/jude/dedication/"
 next_label: "Epistle Dedicatory (Part II)"
 ---
 
-AN EXPOSITION Of the EPISTLE of JUDE, *Together* With many large and usefull DEDUCTIONS. *Formerly Delivered* In sundry LECTURES in *Christ-Church* LONDON.
-
-BY *WILLIAM JENKYN, Minister of the Gospel of* Jesus Christ, AND PASTOR of the Church at *Black-friars,* LONDON.
-
-*The* SECOND PART.
-
-*LONDON,* Printed by *Tho. Maxey,* for SAMUEL GELLIBRAND, at the golden BALL in *Paul's* Church-yard, 1654.
-
+<div class="jk-tp jk-tp2">
+<div class="jk-tp-l s3 ls">AN</div>
+<div class="jk-tp-l s0 ls">EXPOSITION</div>
+<div class="jk-tp-l s2">Of the E<span class="sc">pistle</span> of</div>
+<div class="jk-tp-l s00 ls">JUDE,</div>
+<div class="jk-tp-l s4 it">Together</div>
+<div class="jk-tp-l s3">With many large and usefull</div>
+<div class="jk-tp-l s1">DEDUCTIONS.</div>
+<div class="jk-tp-l s4 it">Formerly Delivered</div>
+<div class="jk-tp-l s3">In sundry LECTURES in <i>Christ-Church</i> LONDON.</div>
+<hr class="jk-tp-rule">
+<div class="jk-tp-l s5 ls">BY</div>
+<div class="jk-tp-l s2 it ls">WILLIAM JENKYN,</div>
+<div class="jk-tp-l s4"><i>Minister of the Gospel of</i> Jesus Christ,</div>
+<div class="jk-tp-l s5 ls">AND</div>
+<div class="jk-tp-l s4">P<span class="sc">astor</span> of the Church at <i>Black-friars,</i> L<span class="sc">ondon</span>.</div>
+<hr class="jk-tp-rule">
+<div class="jk-tp-l s3"><i>The</i> <span class="ls">SECOND PART.</span></div>
+<hr class="jk-tp-rule">
+<div class="jk-tp-l s4"><i>LONDON,</i> Printed by <i>Tho. Maxey,</i> for S<span class="sc">amuel</span> G<span class="sc">ellibrand</span>,</div>
+<div class="jk-tp-l s4">at the golden B<span class="sc">all</span> in <i>Paul's</i> Church-yard, 1654.</div>
+<p class="jk-tp-note">1654 年初版扉页网上无影像：文字照 EEBO-TCP A87557，分行与版式参照同一印刷商 1656 年第二版扉页（措辞不同），不是照原图排。</p>
+</div>
