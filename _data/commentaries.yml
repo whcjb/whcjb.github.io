@@ -129,7 +129,7 @@ authors:
     years: "1613–1685"
     work_cn: "犹大书讲解"
     work_en: "An Exposition of the Epistle of Jude"
-    books: 0
+    books: 1
   - id: alexander
     name: "约瑟·亚历山大"
     short: "亚历山大"
@@ -548,6 +548,7 @@ books:
     testament: nt
     chapters: 1
     links:
+      - {author: jenkyn, path: "/jenkyn/jude/", url_tpl: "/jenkyn/jude/__CH__/", title_cn: "犹大书讲解", title_en: "An Exposition of the Epistle of Jude", c0: "#9a4425", c1: "#cd5f37"}
   - id: revelation
     name: "启示录"
     en: "Revelation"
