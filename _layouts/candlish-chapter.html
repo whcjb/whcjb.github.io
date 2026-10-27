@@ -1,0 +1,194 @@
+---
+layout: default
+---
+{%- comment -%}
+  坎德利什《约翰一书讲解》(1866；第二版序 1869) 讲次页 / 章目录页 / 序言页。
+
+  ⚠️ 不复用别家 layout：每本书独立样式（用户既定规矩）。骨架取自 jenkyn-chapter，
+  去掉了詹金特有的旁注、页码、缺字、扉页手排与章顶跳节导航（2026-10-16 起新书不放）。
+
+  配色灰玫瑰 #b07080：与「历代解经」已登记十八色及加尔文酒红、马太亨利金、站点 Hux 蓝的
+  CIELAB ΔE 最小 28.4（珀金斯暗酒红），与先例同档。深端 #8a5462。
+
+  本书版式要点（底本 Monergism 录入本，见 candlish_raw/1john/PROVENANCE.md）：
+  - 一讲一页（lecture-N）。讲题（原书全大写）→ `.cd-head`；题记经文 → `.cd-text`，其后 commentary-anchor。
+  - 每部分第一讲前排出部分标题 `.cd-part`。
+  - 作者脚注（录入本只剩 * / †，正文从 e-Sword 本取回）→ kramdown 脚注；两份录入本都缺文的 → `.cd-lost`。
+{%- endcomment -%}
+
+<div class="container candlish-wrap{% if page.zh %} cd-zh{% endif %}" style="padding-top: 70px;">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1" id="cmpCol">
+
+      <div class="cd-chrome">
+        <a href="{{ site.baseurl }}/candlish/{{ page.book_id }}/{% unless page.zh %}en/{% endunless %}">&larr; {{ page.book_name }}</a>
+        {% if page.zh %}{% if page.en_url %}<a class="cd-lang" href="{{ site.baseurl }}{{ page.en_url }}">English &rarr;</a>{% endif %}
+        {% else %}{% if page.zh_url %}<a class="cd-lang" href="{{ site.baseurl }}{{ page.zh_url }}">中文版 &rarr;</a>{% endif %}{% endif %}
+      </div>
+
+      <h1 class="cd-title">{{ page.title }}</h1>
+      {% if page.subtitle %}<p class="cd-subtitle">{{ page.subtitle }}</p>{% endif %}
+
+      <div class="cd-nav">
+        {% if page.prev_url %}<a href="{{ site.baseurl }}{{ page.prev_url }}">&larr; {{ page.prev_label }}</a>
+        {% else %}<span></span>{% endif %}
+        {% if page.next_url %}<a href="{{ site.baseurl }}{{ page.next_url }}">{{ page.next_label }} &rarr;</a>
+        {% else %}<span></span>{% endif %}
+      </div>
+
+      {%- comment -%}
+        对比注释抽屉：只给正文页（有 page.chapter）。self 把本书自己排除，中英两版 key 不同。
+      {%- endcomment -%}
+      {% if page.chapter %}
+      {% assign cc_self = "candlish-en" %}{% if page.zh %}{% assign cc_self = "candlish" %}{% endif %}
+      {% include compare-commentary-head.html self=cc_self content_class="cd-content" self_label="坎德利什" %}
+      {% endif %}
+      <div class="cd-content">
+        {{ content }}
+      </div>
+      {% if page.chapter %}{% include compare-commentary-foot.html %}{% endif %}
+
+      {% if page.date %}
+      <div class="cd-stamp">{% if page.zh %}译于{% else %}Published{% endif %} {{ page.date | date: "%Y-%m-%d %H:%M" }}</div>
+      {% endif %}
+
+      <div class="cd-nav cd-nav-foot">
+        {% if page.prev_url %}<a href="{{ site.baseurl }}{{ page.prev_url }}">&larr; {{ page.prev_label }}</a>
+        {% else %}<span></span>{% endif %}
+        {% if page.next_url %}<a href="{{ site.baseurl }}{{ page.next_url }}">{{ page.next_label }} &rarr;</a>
+        {% else %}<span></span>{% endif %}
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<script>
+// 题记经文框（.cd-text）不是脚注、不是链接：给 scripture-popup 的 skip 列表打上 verse-anchor。
+(function () {
+  document.querySelectorAll('.candlish-wrap .cd-text').forEach(function (box) {
+    box.classList.add('verse-anchor');
+  });
+})();
+</script>
+
+{%- comment -%}
+  经文引用弹层：只给中文页（模块认的是中文书卷名）。accent/vnum 必须写字面量
+  （Jekyll 3 的 include 参数不接受变量）——与下方 CSS 的 --cd-ink 两处同值，改色要一起改。
+{%- endcomment -%}
+{% if page.zh %}
+{% include scripture-popup.html container_selector=".cd-content" accent="#b07080" vnum="#8a5462" slide="down" %}
+{% endif %}
+
+<style>
+.candlish-wrap {
+  --cd-ink: #b07080;
+  --cd-ink-dark: #8a5462;
+  --cd-rule: #eee2e6;
+  --cd-paper: #fbf8f9;
+  --cd-body: #2a2a33;
+}
+.candlish-wrap .cd-chrome,
+.candlish-wrap .cd-nav {
+  font-size: 13px; display: flex; justify-content: space-between; gap: 12px;
+  align-items: center; font-family: Georgia, "Times New Roman", serif;
+}
+.candlish-wrap .cd-chrome { margin: 18px 0 22px; }
+.candlish-wrap .cd-chrome a,
+.candlish-wrap .cd-nav a { color: var(--cd-ink-dark); text-decoration: none; }
+.candlish-wrap .cd-chrome a:hover,
+.candlish-wrap .cd-nav a:hover { color: var(--cd-ink-dark); text-decoration: underline; }
+.candlish-wrap .cd-lang { border: 1px solid var(--cd-rule); border-radius: 4px; padding: 4px 10px; }
+.candlish-wrap .cd-lang:hover { background: var(--cd-ink); color: #fff !important; text-decoration: none; }
+.candlish-wrap .cd-title {
+  font-family: Georgia, "Times New Roman", serif; font-size: 30px; font-weight: normal;
+  color: var(--cd-ink-dark); text-align: center; margin: 10px 0 4px; line-height: 1.3;
+}
+.candlish-wrap .cd-subtitle {
+  text-align: center; font-size: 14px; color: #8a8a99; margin: 0 0 18px;
+  font-family: Georgia, "Times New Roman", serif; font-style: italic;
+}
+.candlish-wrap .cd-nav { margin: 14px 0 26px; }
+.candlish-wrap .cd-nav-foot { margin-top: 44px; padding-top: 16px; border-top: 1px solid var(--cd-rule); }
+
+/* 正文 */
+.candlish-wrap .cd-content {
+  font-family: Georgia, "Times New Roman", "Songti SC", STSong, serif;
+  font-size: 17px; line-height: 1.85; color: var(--cd-body);
+}
+.candlish-wrap .cd-content p { margin: 0 0 16px; text-align: justify; }
+.candlish-wrap .cd-content a { color: var(--cd-ink-dark); }
+
+/* 部分标题（每部分第一讲前） */
+.candlish-wrap .cd-part {
+  text-align: center; margin: 0 0 26px; padding: 10px 0 12px;
+  border-top: 1px solid var(--cd-rule); border-bottom: 1px solid var(--cd-rule);
+  font-family: Georgia, "Times New Roman", serif; color: var(--cd-ink-dark);
+  font-size: 13.5px; letter-spacing: .12em; line-height: 1.6;
+}
+.candlish-wrap .cd-part small { display: block; letter-spacing: .04em; color: #8a8a99; font-size: 12.5px; }
+/* 讲题：原书全大写，排小一号、加字距 */
+.candlish-wrap .cd-content h2.cd-head {
+  font-family: Georgia, "Times New Roman", serif; font-size: 16px; font-weight: normal;
+  text-align: center; color: var(--cd-ink-dark); margin: 4px 0 22px; line-height: 1.6;
+  letter-spacing: .08em;
+}
+/* 题记经文 */
+.candlish-wrap .cd-text {
+  background: var(--cd-paper); border-left: 3px solid var(--cd-ink);
+  padding: 12px 18px; margin: 6px 0 22px; color: #3e3e55; font-size: 16px; line-height: 1.75;
+}
+.candlish-wrap .cd-text p { margin: 0; text-align: left; }
+.candlish-wrap .cd-text p + p { margin-top: 8px; }
+.candlish-wrap .commentary-anchor {
+  display: block; height: 0; line-height: 0; margin: 0; padding: 0;
+  overflow: hidden; visibility: hidden; scroll-margin-top: 80px;
+}
+
+/* 作者脚注：kramdown 的 sup.footnote + div.footnotes */
+.candlish-wrap .cd-content sup { line-height: 0; }
+.candlish-wrap .cd-content a.footnote { text-decoration: none; padding: 0 1px; font-size: 12px; }
+.candlish-wrap .cd-content .footnotes {
+  margin-top: 36px; padding-top: 14px; border-top: 1px solid var(--cd-rule);
+  font-size: 14.5px; line-height: 1.7; color: #44444f;
+}
+.candlish-wrap .cd-content .footnotes ol { padding-left: 1.6em; margin: 0; }
+.candlish-wrap .cd-content .footnotes li { margin: 0 0 10px; }
+.candlish-wrap .cd-content .footnotes p { margin: 0 0 8px; }
+.candlish-wrap .cd-content .footnotes a.reversefootnote { text-decoration: none; }
+.candlish-wrap .cd-notehead { font-variant: small-caps; letter-spacing: .05em; color: var(--cd-ink-dark); }
+/* 两份录入本都缺的字（经文出处被导出程序吃掉、脚注正文缺失） */
+.candlish-wrap .cd-lost { color: #8a8a99; border-bottom: 1px dotted #b8b8c4; cursor: help; font-style: italic; }
+.candlish-wrap .cd-edit { color: #8a8a99; font-style: italic; }
+
+/* 章目录页、目录页 */
+.candlish-wrap .cd-chtoc { list-style: none; padding: 0; margin: 10px 0; }
+.candlish-wrap .cd-chtoc li { margin: 0 0 8px; }
+.candlish-wrap .cd-chtoc a { display: block; padding: 9px 13px; border: 1px solid var(--cd-rule);
+  border-radius: 4px; background: var(--cd-paper); text-decoration: none; color: #2a2a33; line-height: 1.5; }
+.candlish-wrap .cd-chtoc a:hover { border-color: var(--cd-ink); color: var(--cd-ink-dark); }
+.candlish-wrap .cd-chtoc .cd-ref { display: block; font-size: 13px; color: #8a8a99; }
+.candlish-wrap .cd-content h2.cd-group { font-size: 14px; text-align: left; letter-spacing: .08em;
+  margin: 28px 0 10px; padding-bottom: 6px; border-bottom: 1px solid var(--cd-rule);
+  font-family: Georgia, "Times New Roman", serif; font-weight: normal; color: var(--cd-ink-dark); }
+.candlish-wrap .cd-contents p { margin: 0 0 10px; text-align: left; padding-left: 2.6em; text-indent: -2.6em; }
+
+.candlish-wrap .cd-stamp {
+  margin-top: 32px; font-size: 12px; color: #9c9cb0; text-align: right;
+  font-family: Georgia, "Times New Roman", serif; letter-spacing: .03em;
+}
+.candlish-wrap :target { background: #fff6cc; transition: background .4s; }
+
+/* 中文页 */
+.candlish-wrap.cd-zh .cd-content {
+  font-family: "Songti SC", STSong, "Noto Serif CJK SC", "Source Han Serif SC", Georgia, serif;
+}
+.candlish-wrap.cd-zh .cd-title { font-family: "Songti SC", STSong, Georgia, serif; }
+.candlish-wrap.cd-zh .cd-text { font-family: "Kaiti SC", STKaiti, KaiTi, "Songti SC", serif; }
+
+@media (max-width: 767px) {
+  .candlish-wrap .cd-title { font-size: 24px; }
+  .candlish-wrap .cd-content { font-size: 16px; line-height: 1.8; }
+  .candlish-wrap .cd-contents p { padding-left: 0; text-indent: 0; }
+}
+</style>

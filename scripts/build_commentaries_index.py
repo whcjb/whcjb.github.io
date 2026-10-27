@@ -134,6 +134,12 @@ AUTHORS = OrderedDict([
                     years='1613–1685', dir='jenkyn',
                     work_cn='犹大书讲解',
                     work_en='An Exposition of the Epistle of Jude')),
+    # 坎德利什：生卒取 DNB vol.8（Candlish, Robert Smith, D.D. (1806–1873)，W. G. Blaikie 撰）：1806 年生于爱丁堡，
+    # 1873 年 10 月 19 日卒。《约翰一书讲解》1866 初版；第二版经作者修订（序作于 1869，IA 所见印本 1870 爱丁堡 A. & C. Black）。
+    ('candlish', dict(name='罗伯特·坎德利什', short='坎德利什', en='Robert S. Candlish',
+                      years='1806–1873', dir='candlish',
+                      work_cn='约翰一书讲解',
+                      work_en='The First Epistle of John, Expounded in a Series of Lectures')),
     ('alexander', dict(name='约瑟·亚历山大', short='亚历山大', en='Joseph Addison Alexander',
                        years='1809–1860', dir='alexander',
                        work_cn='诗篇、以赛亚书注释',
@@ -193,6 +199,9 @@ AUTHOR_COLORS = {
     # 詹金赤陶：低中彩度一档已无空位，放宽到 L 25–55、C 20–60 后与既有十七色及加尔文酒红、马太亨利金、
     # 站点 Hux 蓝最小 ΔE 28.4（毕列志棕），次近加尔文酒红 29.2，与先例同档。
     'jenkyn': ('#9a4425', '#cd5f37'),
+    # 坎德利什灰玫瑰：L 28–55、C 20–60 网格里与既有十八色及加尔文酒红、马太亨利金、站点 Hux 蓝
+    # 最小 ΔE 28.4（珀金斯暗酒红），次近曼顿梅 28.1 档，与先例同档。
+    'candlish': ('#8a5462', '#b07080'),
 }
 
 # 逐卷书名（同一注释家的不同分册书名不同时用）。取各卷扉页的实际书名。
@@ -234,6 +243,8 @@ BOOK_TITLES = {
                                     'Lectures vpon the Second Epistle of the Apostle Paul to the Thessalonians'),
     ('jenkyn', 'jude'):        ('犹大书讲解',
                                 'An Exposition of the Epistle of Jude'),
+    ('candlish', '1john'):     ('约翰一书讲解',
+                                'The First Epistle of John, Expounded in a Series of Lectures'),
     ('manton', 'james'):       ('雅各书注释',
                                 'A Practical Commentary, or an Exposition with Notes '
                                 'on the Epistle of James'),
@@ -258,6 +269,7 @@ COMPARE_ACCENT = {
     'davenant': '#556b2f', 'alexander': '#7d2f2f', 'spurgeon': '#4a3b22', 'durham': '#674c8e',
     'johnstone': '#106ab2', 'perkins': '#9b2d5f', 'hutcheson': '#2f8f46', 'leighton': '#2d2d99',
     'adams': '#66666c', 'rollock': '#786000', 'jenkyn': '#cd5f37',
+    'candlish': '#b07080',
 }
 COMPARE_LABEL = {
     'calvin': '加尔文注释', 'mhenry': '马太亨利注释', 'owen': '约翰欧文注释',
@@ -266,6 +278,7 @@ COMPARE_LABEL = {
     'spurgeon': '司布真注释', 'durham': '达拉谟注释', 'johnstone': '约翰斯通讲疏',
     'perkins': '珀金斯注释', 'hutcheson': '赫奇森注释', 'leighton': '雷登注释',
     'adams': '亚当斯注释', 'rollock': '罗洛克讲章', 'jenkyn': '詹金讲解',
+    'candlish': '坎德利什讲解',
 }
 
 
@@ -285,7 +298,8 @@ PRIMARY_LANG = {'calvin': 'zh', 'mhenry': 'zh', 'bridges': 'zh',
                 'owen': 'en', 'hodge': 'en', 'manton': 'en', 'davenant': 'en',
                 'alexander': 'en', 'spurgeon': 'en', 'durham': 'en',
                 'johnstone': 'en', 'perkins': 'en', 'hutcheson': 'en', 'leighton': 'en',
-                'adams': 'en', 'rollock': 'en', 'jenkyn': 'en'}
+                'adams': 'en', 'rollock': 'en', 'jenkyn': 'en',
+                'candlish': 'en'}
 
 
 def _lang_variants(aid, d: Path, name: str):
