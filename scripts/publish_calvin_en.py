@@ -30,6 +30,9 @@ import subprocess
 import sys
 from pathlib import Path
 
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from decode_ages_hebrew import convert_text  # noqa: E402
+
 ROOT = Path(__file__).resolve().parent.parent
 
 
@@ -540,6 +543,10 @@ def main():
         if out_path.exists() and not args.overwrite:
             skipped_existing.append(key)
             continue
+        # AGES 希伯来字体乱码 → Unicode。不放进链条的话，每重跑一次提取+发布就把
+        # 解好的希伯来文打回乱码（2026-08-25 / 09-03 重提取旧约 12 卷就是这样
+        # 回归了约 2,400 处）。幂等：已是 Unicode 的 span 原样跳过。
+        body_md = convert_text(body_md)[0]
         out_path.write_text(fm + body_md, encoding='utf-8')
         print(f'  → {key}.md ({len(body_md):,} chars)')
 

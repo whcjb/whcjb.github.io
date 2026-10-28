@@ -53,7 +53,12 @@ MAP = {
     ' ': ' ',
 }
 HEB_RE = re.compile(r'[֐-׿]')
-SPAN_RE = re.compile(r'(<span style="color:#008080">)(.*?)(</span>)', re.S)
+# 起始标签可能带 markdown="span" 之类属性（发布脚本给含脚注引用的 span 加的）；
+# JSON 文件里引号是 \" 转义的，另一条正则专门对付（只用于 json.dumps 之前的
+# 原始文本兜底计数，实际转换走 convert_json 逐值处理）。
+SPAN_RE = re.compile(r'(<span style="color:#008080"[^>]*>)(.*?)(</span>)', re.S)
+# span 末尾可能紧跟脚注引用：`çgr[^fb310]`——解码前半段，引用原样接回
+TRAIL_FN_RE = re.compile(r'^(.*?)((?:\[\^[^\]]+\])+)$', re.S)
 STY_RE  = re.compile(r'(<sty c="008080"[^>]*>)(.*?)(</sty>)', re.S)
 
 
@@ -72,7 +77,13 @@ def convert_text(text: str):
 
     def repl(m):
         nonlocal n, skipped
-        out = decode(m.group(2))
+        inner, tail = m.group(2), ''
+        t = TRAIL_FN_RE.match(inner)
+        if t:
+            inner, tail = t.group(1), t.group(2)
+        out = decode(inner)
+        if out is not None:
+            out += tail
         if out is None:
             if not HEB_RE.search(m.group(2)) and m.group(2).strip():
                 skipped += 1
@@ -152,7 +163,48 @@ def migrate_cache(old_raw: str, new_raw: str, cache_dir: Path, dry: bool):
 
 
 # ── 文件处理 ──────────────────────────────────────────────────────────
+def convert_json(path: Path, dry: bool, fn_cache=None):
+    """{code: 定义} 形式的脚注 JSON（诗篇 footnote_defs / zh_footnote_defs）。
+
+    文本层正则看不见 JSON 里 `<span style=\"color:#008080\">` 的转义引号，
+    08-19 全库那一轮因此整批漏掉——要逐值解码再按原格式（indent=1）写回。
+    fn_cache：英文定义的翻译缓存目录（translate_psalms_footnotes 以**整条英文定义**
+    的 md5 为 key），英文改了就要把缓存改名，否则重跑会整批重译。
+    """
+    import json
+    raw = path.read_text(encoding='utf-8')
+    d = json.loads(raw)
+    if json.dumps(d, ensure_ascii=False, indent=1) != raw:
+        print(f'    !! {path} 不是 indent=1 格式，写回会改动无关字节，跳过')
+        return 0, 0, 0, 0
+    n = skipped = moved = missing = 0
+    for k, v in d.items():
+        if not isinstance(v, str):
+            continue
+        nv, a, b = convert_text(v)
+        n += a; skipped += b
+        if nv == v:
+            continue
+        if fn_cache is not None:
+            src, dst = fn_cache / f'{md5key(v)}.txt', fn_cache / f'{md5key(nv)}.txt'
+            # 内容相同的两条定义共用一个 key：第一条已改名，第二条见 dst 已在即可
+            if src.exists() and not dst.exists():
+                if not dry:
+                    zh, _, _ = convert_text(src.read_text(encoding='utf-8'))
+                    dst.write_text(zh, encoding='utf-8')
+                    src.unlink()
+                moved += 1
+            elif not dst.exists():
+                missing += 1
+        d[k] = nv
+    if n and not dry:
+        path.write_text(json.dumps(d, ensure_ascii=False, indent=1), encoding='utf-8')
+    return n, skipped, moved, missing
+
+
 def process(path: Path, dry: bool, cache_dir=None):
+    if path.suffix == '.json':
+        return convert_json(path, dry, cache_dir)
     raw = path.read_text(encoding='utf-8')
     new, n, skipped = convert_text(raw)
     if n == 0:
@@ -174,6 +226,8 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument('--book', help='translate_filibi 的 book key，如 isaiah-1')
     ap.add_argument('--paths', nargs='*', default=[], help='额外的文件/目录')
+    ap.add_argument('--fn-defs', nargs='*', default=[],
+                    help='英文脚注定义 JSON（会把同目录 zh_footnote_cache 的 key 一起迁移）')
     ap.add_argument('--dry-run', action='store_true')
     args = ap.parse_args()
 
@@ -196,6 +250,9 @@ def main():
         if pub.is_dir():
             for p in sorted(pub.rglob('*.md')):
                 targets.append((p, None))
+    for s in args.fn_defs:
+        p = ROOT / s
+        targets.append((p, p.parent / 'zh_footnote_cache'))
     for s in args.paths:
         p = ROOT / s
         if p.is_dir():
@@ -203,6 +260,9 @@ def main():
             # 内容——缓存文件名是**英文原文**的 md5，改内容不动 key，安全。
             # 不改则 --resume 会把旧乱码从缓存读回正文，等于回归。
             qs = sorted(p.rglob('*.md')) + sorted(p.rglob('*.txt'))
+            # 脚注 JSON：英文定义（footnote_defs.json）是缓存 key 的来源，
+            # 只许经 --fn-defs 处理（要迁缓存），这里只收中译那份
+            qs += sorted(p.rglob('zh_footnote_defs.json'))
         else:
             qs = [p]
         for q in qs:
