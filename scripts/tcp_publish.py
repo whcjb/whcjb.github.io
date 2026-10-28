@@ -226,8 +226,7 @@ class Book:
         out.append(f'<ul class="{P}-chgrid">' + ''.join(cells) + '</ul>')
         if other:
             out.append(f'<p class="{P}-note-zh {P}-companion">{self.companion_zh}</p>')
-        out.append(f'<h2 class="{P}-group">Commentary</h2>')
-        out += [f'<ul class="{P}-toc">'] + [link(p) for p in pages if p['group'].startswith('section')] + ['</ul>']
+        # 逐段目录不放书首页（用户 2026-10-28：只留章格子，各段在每章目录页里列）
         if self.back:
             out.append(f'<h2 class="{P}-group">{self.back_label}</h2>')
             out += [f'<ul class="{P}-toc">'] + [link(p) for p in pages if p['group'] == 'back'] + ['</ul>']
