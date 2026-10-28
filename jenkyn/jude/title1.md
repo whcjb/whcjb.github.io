@@ -7,6 +7,7 @@ subtitle: "London, 1652"
 date: 2026-10-27 10:59
 next_url: "/jenkyn/jude/to-the-reader/"
 next_label: "To the Reader"
+zh_url: "/jenkyn/jude/zh/title1/"
 ---
 
 <div class="jk-tp jk-tp1">

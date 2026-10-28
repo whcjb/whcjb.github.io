@@ -9,6 +9,7 @@ prev_url: "/jenkyn/jude/title1/"
 prev_label: "Title Page (Part I)"
 next_url: "/jenkyn/jude/errata1/"
 next_label: "Errata (Part I)"
+zh_url: "/jenkyn/jude/zh/to-the-reader/"
 ---
 
 ## To the Right Worshipfull, and other my Beloved and Christian Friends.

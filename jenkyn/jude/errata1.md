@@ -8,6 +8,7 @@ prev_url: "/jenkyn/jude/to-the-reader/"
 prev_label: "To the Reader"
 next_url: "/jenkyn/jude/advertisement/"
 next_label: "The Publisher to the Reader"
+zh_url: "/jenkyn/jude/zh/errata1/"
 ---
 
 ## ERRATA.

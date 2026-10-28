@@ -8,6 +8,7 @@ prev_url: "/jenkyn/jude/errata1/"
 prev_label: "Errata (Part I)"
 next_url: "/jenkyn/jude/1-1/"
 next_label: "Jude 1 (part 1 of 2)"
+zh_url: "/jenkyn/jude/zh/advertisement/"
 ---
 
 <p class="jk-salute" markdown="1">READER,</p>
