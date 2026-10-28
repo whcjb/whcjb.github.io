@@ -337,13 +337,18 @@ def split_mixed(r, e, depth):
     return out
 
 
+def em(s):
+    """*斜体* → <em>（只用于不交给 kramdown 的 HTML 块，如表格单元格）。"""
+    return re.sub(r'\*([^*]+)\*', r'<em>\1</em>', s)
+
+
 def table_html(r, e):
     P = r.P
     rows = []
     for c in e:
         k = tag(c)
         if k == 'head':
-            rows.append(f'<caption>{r.text(c)}</caption>')
+            rows.append(f'<caption>{em(r.text(c))}</caption>')
         elif k == 'pb':
             x = r.pb(c)
             if x:
@@ -351,9 +356,11 @@ def table_html(r, e):
         elif k == 'row':
             cells = []
             for cell in c:
-                txt = r.text(cell)
+                txt = em(r.text(cell))
                 th = cell.get('role') == 'label' or c.get('role') == 'label'
-                cells.append(f'<{"th" if th else "td"} markdown="1">{txt}</{"th" if th else "td"}>')
+                # 单元格不带 markdown="1"：几百格各自递归交给 kramdown，jekyll serve 的子线程栈会溢出
+                # （巴洛卷首要目 18 张表、四百行实测 SystemStackError）；斜体在这里直接写成 <em>
+                cells.append(f'<{"th" if th else "td"}>{txt}</{"th" if th else "td"}>')
             rows.append('<tr>' + ''.join(cells) + '</tr>')
         else:
             raise ValueError(f'table 下未处理 <{k}>')
