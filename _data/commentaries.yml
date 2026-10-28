@@ -525,9 +525,9 @@ books:
     testament: nt
     chapters: 4
     links:
+      - {author: barlow, path: "/barlow/2timothy/", url_tpl: "/barlow/2timothy/__CH__/", title_cn: "提摩太后书第一章讲解", title_en: "An Exposition of the Second Epistle of the Apostle Paul to Timothy, the First Chapter", c0: "#007162", c1: "#2b9b8a"}
       - {author: fairbairn, path: "/fairbairn/2timothy/", url_tpl: "/fairbairn/2timothy/__CH__/", title_cn: "提摩太后书注释", title_en: "The Pastoral Epistles: The Greek Text and Translation, with Introduction, Expository Notes, and Dissertations", c0: "#8e3f82", c1: "#bc65ac"}
       - {author: hall, path: "/hall/2timothy/", url_tpl: "/hall/2timothy/__CH__/", title_cn: "提摩太后书第三、四章注释", title_en: "A Practical and Polemical Commentary upon the Third and Fourth Chapters of the Latter Epistle of Saint Paul to Timothy", c0: "#536513", c1: "#769019"}
-      - {author: barlow, path: "/barlow/2timothy/", url_tpl: "/barlow/2timothy/__CH__/", title_cn: "提摩太后书第一章讲解", title_en: "An Exposition of the Second Epistle of the Apostle Paul to Timothy, the First Chapter", c0: "#007162", c1: "#2b9b8a"}
   - id: titus
     name: "提多书"
     en: "Titus"
