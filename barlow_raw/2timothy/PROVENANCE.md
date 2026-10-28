@@ -4,7 +4,7 @@
 
 John Barlow（约翰·巴洛，1580/81 生，卒年不详；Wood, *Athenae Oxonienses* vol.1 p.495，原文存 `wood_barlow.txt`）。
 *An Exposition of the Second Epistle of the Apostle Paul to Timothy, the First Chapter …* London: I. D[awson] for
-Iohn Bellamie, 1625（刻版扉页 1624），四开本（STC 1434，ESTC S100861）。1632 年对开本增讲第二章（IA
+Iohn Bellamie, 1625（扉页印 1625；录入本把扉页年份录成 1624，看原图是旧式数字 5），四开本（STC 1434，ESTC S100861）。1632 年对开本增讲第二章（IA
 `bim_early-english-books-1475-1640_an-exposition-of-the-fis_barlow-john_1633`，无 TCP 录入本，暂未处理）。
 
 ## 是否有中译本

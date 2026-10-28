@@ -210,6 +210,32 @@ layout: default
 .hall-wrap .hl-table td:last-child { white-space: nowrap; }
 @media (max-width: 767px) { .hall-wrap .hl-table { display: block; overflow-x: auto; } }
 
+/* 扉页：照 1658 原书版式手排（old-book-ocr skill §5.6）——双线框、逐行居中、字号悬殊、字距、斜体、分隔横线 */
+.hall-wrap .hl-tpg { max-width: 560px; margin: 10px auto 30px; padding: 5px; border: 2px solid #2b2a24; background: #fff; }
+.hall-wrap .hl-tpg-in { border: 1px solid #2b2a24; padding: 20px 18px 16px; text-align: center;
+  font-family: Georgia, "Times New Roman", serif; color: #1f1d16; line-height: 1.2; }
+.hall-wrap .hl-tpg-l { margin: 0 0 3px; }
+.hall-wrap .hl-tpg .s00 { font-size: 46px; letter-spacing: .04em; margin: 6px 0 10px; }
+.hall-wrap .hl-tpg .s0 { font-size: 40px; letter-spacing: .02em; }
+.hall-wrap .hl-tpg .s1 { font-size: 30px; }
+.hall-wrap .hl-tpg .s2 { font-size: 20px; }
+.hall-wrap .hl-tpg .s3 { font-size: 17px; }
+.hall-wrap .hl-tpg .s3b { font-size: 18.5px; }
+.hall-wrap .hl-tpg .s4 { font-size: 15px; }
+.hall-wrap .hl-tpg .s5 { font-size: 12.5px; margin-top: 6px; }
+.hall-wrap .hl-tpg .s6 { font-size: 12.5px; }
+.hall-wrap .hl-tpg .it, .hall-wrap .hl-tpg i { font-style: italic; }
+.hall-wrap .hl-tpg .ls { letter-spacing: .22em; }
+.hall-wrap .hl-tpg .sc { font-variant: small-caps; text-transform: lowercase; }
+.hall-wrap .hl-tpg-rule { border: 0; border-top: 1px solid #2b2a24; margin: 9px 0; }
+@media (max-width: 600px) {
+  .hall-wrap .hl-tpg-in { padding: 14px 8px; }
+  .hall-wrap .hl-tpg .s00 { font-size: 32px; } .hall-wrap .hl-tpg .s0 { font-size: 27px; }
+  .hall-wrap .hl-tpg .s1 { font-size: 21px; } .hall-wrap .hl-tpg .s2 { font-size: 15.5px; }
+  .hall-wrap .hl-tpg .s3, .hall-wrap .hl-tpg .s3b { font-size: 13.5px; }
+  .hall-wrap .hl-tpg .s4 { font-size: 12.5px; } .hall-wrap .hl-tpg .s5, .hall-wrap .hl-tpg .s6 { font-size: 11px; }
+}
+
 .hall-wrap .hl-stamp {
   margin-top: 32px; font-size: 12px; color: #a1a492; text-align: right;
   font-family: Georgia, "Times New Roman", serif; letter-spacing: .03em;

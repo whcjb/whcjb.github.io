@@ -4,7 +4,7 @@
     python3 scripts/extract_barlow.py            # 试跑，只报统计
     python3 scripts/extract_barlow.py --apply
 
-约翰·巴洛《提摩太后书第一章讲解》London: I. D[awson] for Iohn Bellamie 1625（STC 1434；扉页 1624）。
+约翰·巴洛《提摩太后书第一章讲解》London: I. D[awson] for Iohn Bellamie 1625（STC 1434；录入本扉页年份误录作 1624，原图为 1625）。
 底本是 TCP 人工录入的 TEI，**不是 OCR**。缺字原样留记号，交给 barlow_common.py 按判读表回填。
 
 录入本 body 是一个 <div type="tract">：总标题 + 全章导论（Analysis）若干段 + 18 个 <div type="verse">。

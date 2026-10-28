@@ -3,23 +3,42 @@ layout: barlow-chapter
 book_id: 2timothy
 book_name: "Barlow on 2 Timothy 1"
 title: "Title Page"
-subtitle: "London, 1624/25"
+subtitle: "London, 1625"
 date: 2026-10-28 15:49
 next_url: "/barlow/2timothy/dedication/"
 next_label: "Epistle Dedicatory"
 ---
 
-<span class="bl-pb" data-facs="1"></span><span class="bl-pb" data-facs="1"></span>AN EXPOSITION OF THE SECOND Epistle of the Apostle *Paul* to *Timothy,* the first Chapter. WHEREIN
-
-<p class="bl-item" markdown="1">1 *The text is Logically into it's parts resolved,*</p>
-
-<p class="bl-item" markdown="1">2 *The words plainely explicated.*</p>
-
-<p class="bl-item" markdown="1">3 *A familiar Metaphrase annexed.*</p>
-
-<p class="bl-item" markdown="1">4 *The seueral Doctrines thence arising deduced. and largely cofirmed. 1. by Precept. 2. by Example. 3. by Reasons.*</p>
-
-All which is accompanied with familiar *and delightfull similitudes, for the better* alluting the drouping affections to imbrace *the truth; and the froward will to obey it.* Lastly as the matter requireth: there is vsed, *definitions, distributions, subdiuisions, trialls,* motiues, and directions, all which be of great *vse in their proper order.* By IOHN BARLOVV sometime Minister of the word at *Plimmouth,* but now resident at *Halifax* in *Yorkshire.*
-
-*LONDON.* Printed by. *I. D.* for *Iohn Bellamie,* and are to be sould at his shop at the 3. Golden Lyons in Cornehill, neere the Royall Exchange. 1624.
-
+<div class="bl-tpg">
+<div class="bl-tpg-l s2 ls">AN</div>
+<div class="bl-tpg-l s0">EXPOSITION</div>
+<div class="bl-tpg-l s1 ls">OF THE SECOND</div>
+<div class="bl-tpg-l s3">Epistle of the Apostle <i>Paul</i> to</div>
+<div class="bl-tpg-l s3"><i>Timothy</i>, the first Chapter.</div>
+<div class="bl-tpg-l s4 ls">W<span class="sc">herein</span></div>
+<div class="bl-tpg-l s5 it bl-tpg-left">1 The text is Logically into it's parts resolved,</div>
+<div class="bl-tpg-l s5 it bl-tpg-left">2 The words plainely explicated.</div>
+<div class="bl-tpg-l s5 it bl-tpg-left">3 A familiar Metaphrase annexed.</div>
+<div class="bl-tpg-l s5 it bl-tpg-left">4 The seueral Doctrines thence arising deduced.</div>
+<div class="bl-tpg-l s5 it bl-tpg-left bl-tpg-ind">and largely co<span class="bl-gap" title="本胶片此处被墨渍盖住，按录入本作 cofirmed">fir</span>med. 1. by Precept. 2. by Ex-</div>
+<div class="bl-tpg-l s5 it bl-tpg-left bl-tpg-ind">ample. 3. by Reasons.</div>
+<div class="bl-tpg-l s5">All which is accompanied with familiar</div>
+<div class="bl-tpg-l s5 it">and delightfull similitudes, for the better</div>
+<div class="bl-tpg-l s5">alluting the drouping affections to imbrace</div>
+<div class="bl-tpg-l s5 it">the truth; and the froward will</div>
+<div class="bl-tpg-l s5 it">to obey it.</div>
+<div class="bl-tpg-l s5">Lastly as the matter requireth: there is vsed,</div>
+<div class="bl-tpg-l s5 it">definitions, distributions, subdiuisions, trialls,</div>
+<div class="bl-tpg-l s5">motiues, and directions, all which be of great</div>
+<div class="bl-tpg-l s5 it">vse in their proper order.</div>
+<hr class="bl-tpg-rule">
+<div class="bl-tpg-l s4">By <span class="ls">I<span class="sc">ohn</span> B<span class="sc">arlovv</span></span> sometime Mini-</div>
+<div class="bl-tpg-l s4">ster of the word at <i>Plimmouth</i>, but now resident</div>
+<div class="bl-tpg-l s4">at <i>Halifax</i> in <i>Yorkshire</i>.</div>
+<hr class="bl-tpg-rule">
+<div class="bl-tpg-l s5 it ls">LONDON.</div>
+<div class="bl-tpg-l s6">Printed by, <i>I. D.</i> for <i>Iohn Bellamie</i>, and</div>
+<div class="bl-tpg-l s6">are to be sould at his shop at the 3. Golden</div>
+<div class="bl-tpg-l s6">Lyons in Cornehill, neere the Royall Exchange.</div>
+<div class="bl-tpg-l s6 ls">1625.</div>
+</div>

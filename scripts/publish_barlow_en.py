@@ -44,8 +44,7 @@ class Barlow(tcp_publish.Book):
 
 def about_en(f):
     return [
-        '<p><b>About this text.</b> EEBO-TCP A04220 (London: I. D[awson] for Iohn Bellamie, 1625; STC 1434; the '
-        'engraved title is dated 1624), keyed by hand from the EEBO microfilm; CC0. This edition covers the first '
+        '<p><b>About this text.</b> EEBO-TCP A04220 (London: I. D[awson] for Iohn Bellamie, 1625; STC 1434), keyed by hand from the EEBO microfilm; CC0. This edition covers the first '
         'chapter of 2 Timothy only. Original spelling and italics are retained; the long s is printed as s. Page '
         'numbers of the original are kept as in-page anchors. The film used by the keyers lacked sixteen openings '
         '(two pages each); those pages are supplied from the grayscale scan of the 1625 edition and marked with a '
@@ -58,8 +57,7 @@ def about_en(f):
 
 def about_zh(f):
     return [
-        '<p class="bl-note-zh"><b>文本说明。</b>本书据 EEBO-TCP 人工录入本 A04220（伦敦 1625 年，STC 1434；'
-        '刻版扉页作 1624 年）。这一版只讲提摩太后书第一章。保留原书拼写与斜体，长 ſ 作 s；印本页码保留为页内锚点。'
+        '<p class="bl-note-zh"><b>文本说明。</b>本书据 EEBO-TCP 人工录入本 A04220（伦敦 1625 年，STC 1434）。这一版只讲提摩太后书第一章。保留原书拼写与斜体，长 ſ 作 s；印本页码保留为页内锚点。'
         '录入所据的胶片漏拍了十六个对开（每处两页），这些页据 1625 年本的胶片灰度扫描补录，正文中以左侧虚线标出。'
         f'录入本有 {f["n"]} 处读不出的字，{f["w"]} 处对照胶片灰度扫描（Internet Archive）逐处看图读出；'
         f'{f["c"]} 处为编者推补，以 <span class="bl-conj">[方括号]</span> 另色标出；仍读不出的 {f["left"]} 处标红留在明面。'
@@ -71,7 +69,7 @@ BOOK = Barlow(
     author='John Barlow', years='b. 1580/81', name='Barlow on 2 Timothy 1', ref='2 Timothy',
     edition='An Exposition of the Second Epistle of the Apostle Paul to Timothy, the First Chapter · '
             'London: I. D[awson] for Iohn Bellamie, 1625',
-    front=[('title', 'Title Page', 'London, 1624/25'),
+    front=[('title', 'Title Page', 'London, 1625'),
            ('dedication', 'Epistle Dedicatory', 'To the Mayor and Magistrates of Plymouth'),
            ('to-the-reader', 'The Epistle to the Reader', ''),
            ('contents', 'The Principal Heads Handled', 'Doctrines, with pages'),

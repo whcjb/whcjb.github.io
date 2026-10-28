@@ -215,6 +215,34 @@ layout: default
 .barlow-wrap .bl-supplied { border-left: 3px dashed var(--bl-ink-light); padding-left: 14px; margin: 0 0 18px; }
 .barlow-wrap .bl-supplied-note { font-size: 12.5px; color: #6f7c79; font-style: italic; margin: 0 0 10px !important; }
 
+/* 扉页：照 1625 原书版式手排（old-book-ocr skill §5.6）。木刻拱门花框裁自原书胶片（img/barlow/tp-frame.jpg，
+   1000 px 宽），当 border-image 只取四边：slice 上 219、左 204、右 207、下 45（框内文字区的边界）。 */
+.barlow-wrap .bl-tpg { max-width: 640px; margin: 10px auto 30px; box-sizing: border-box;
+  border-style: solid; border-width: 140px 130px 29px 132px;
+  border-image: url("{{ site.baseurl }}/img/barlow/tp-frame.jpg") 219 207 45 204 stretch;
+  background: #f4f1e8; padding: 6px 4px 10px; text-align: center;
+  font-family: Georgia, "Times New Roman", serif; color: #1f1d16; line-height: 1.22; }
+.barlow-wrap .bl-tpg-l { margin: 0 0 2px; }
+.barlow-wrap .bl-tpg .s0 { font-size: 34px; letter-spacing: .03em; }
+.barlow-wrap .bl-tpg .s1 { font-size: 21px; }
+.barlow-wrap .bl-tpg .s2 { font-size: 19px; }
+.barlow-wrap .bl-tpg .s3 { font-size: 17px; }
+.barlow-wrap .bl-tpg .s4 { font-size: 14px; margin-top: 3px; }
+.barlow-wrap .bl-tpg .s5 { font-size: 12.5px; }
+.barlow-wrap .bl-tpg .s6 { font-size: 11.5px; }
+.barlow-wrap .bl-tpg .it, .barlow-wrap .bl-tpg i { font-style: italic; }
+.barlow-wrap .bl-tpg .ls { letter-spacing: .22em; }
+.barlow-wrap .bl-tpg .sc { font-variant: small-caps; text-transform: lowercase; }
+.barlow-wrap .bl-tpg-left { text-align: left; padding-left: 4px; }
+.barlow-wrap .bl-tpg-ind { padding-left: 16px; }
+.barlow-wrap .bl-tpg-rule { border: 0; border-top: 1px solid #2b2a24; margin: 7px 0; }
+@media (max-width: 600px) {
+  .barlow-wrap .bl-tpg { border-width: 80px 70px 16px 72px; }
+  .barlow-wrap .bl-tpg .s0 { font-size: 22px; } .barlow-wrap .bl-tpg .s1, .barlow-wrap .bl-tpg .s2 { font-size: 14px; }
+  .barlow-wrap .bl-tpg .s3 { font-size: 12.5px; } .barlow-wrap .bl-tpg .s4 { font-size: 11px; }
+  .barlow-wrap .bl-tpg .s5, .barlow-wrap .bl-tpg .s6 { font-size: 9.5px; }
+}
+
 .barlow-wrap .bl-stamp {
   margin-top: 32px; font-size: 12px; color: #9aa8a5; text-align: right;
   font-family: Georgia, "Times New Roman", serif; letter-spacing: .03em;

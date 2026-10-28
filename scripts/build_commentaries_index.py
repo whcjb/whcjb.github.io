@@ -163,7 +163,7 @@ AUTHORS = OrderedDict([
                           'of the Latter Epistle of Saint Paul to Timothy')),
     # 巴洛：生年取 TCP 编目「b. 1580 or 81」（Wood《牛津名人录》：1600 年入哈特学堂，时年十九或稍长）；
     # 卒年未见可靠记载（Wood 本人也说不准），留问号，勿补。
-    # 《提摩太后书第一章讲解》1625 伦敦四开本（STC 1434，刻版扉页 1624），本站据此版；1632 年对开本增讲第二章。
+    # 《提摩太后书第一章讲解》1625 伦敦四开本（STC 1434），本站据此版；1632 年对开本增讲第二章。
     ('barlow', dict(name='约翰·巴洛', short='巴洛', en='John Barlow',
                     years='1580/81–?', dir='barlow',
                     work_cn='提摩太后书第一章讲解',
