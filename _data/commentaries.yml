@@ -146,6 +146,14 @@ authors:
     work_cn: "教牧书信注释"
     work_en: "The Pastoral Epistles"
     books: 3
+  - id: taylor
+    name: "托马斯·泰勒"
+    short: "泰勒"
+    en: "Thomas Taylor"
+    years: "1576–1633"
+    work_cn: "提多书注释"
+    work_en: "A Commentarie vpon the Epistle of S. Paul written to Titus"
+    books: 1
   - id: alexander
     name: "约瑟·亚历山大"
     short: "亚历山大"
@@ -508,6 +516,7 @@ books:
     testament: nt
     chapters: 3
     links:
+      - {author: taylor, path: "/taylor/titus/", url_tpl: "/taylor/titus/__CH__/", title_cn: "提多书注释", title_en: "A Commentarie vpon the Epistle of S. Paul written to Titus", c0: "#4050b3", c1: "#6f77e0"}
       - {author: fairbairn, path: "/fairbairn/titus/", url_tpl: "/fairbairn/titus/__CH__/", title_cn: "提多书注释", title_en: "The Pastoral Epistles: The Greek Text and Translation, with Introduction, Expository Notes, and Dissertations", c0: "#8e3f82", c1: "#bc65ac"}
   - id: philemon
     name: "腓利门书"

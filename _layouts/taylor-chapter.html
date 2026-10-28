@@ -1,0 +1,238 @@
+---
+layout: default
+---
+{%- comment -%}
+  托马斯·泰勒《提多书注释》(1612) 章节页（中英共用，靠 page.zh 切换）。
+
+  ⚠️ 不复用别家 layout：每本书独立样式（用户既定规矩）。骨架取自 rollock-chapter。
+  按 2026-10-16 起的新书规矩：章顶不放「跳到某节」下拉，副标题作者写英文原名。
+
+  配色长春花蓝 #6f77e0：与「历代解经」已登记十七色及加尔文酒红、马太亨利金、站点 Hux 蓝
+  相比，最小 ΔE 26.4（约翰斯通钴蓝），与先例同档（费尔贝恩 26.5）。深端 #4050b3。
+
+  本书版式要点（底本 EEBO-TCP A13535，见 taylor_raw/titus/PROVENANCE.md）：
+  - 原书不分讲，按经文一段一段讲：段前排出经文 → `.ty-text`，其后每节一个 commentary-anchor；一段一页。
+  - 段内逐语解说的引语（「Not angrie]」）→ `.ty-lemma`。
+  - 页边旁注（出处、要点）→ `.ty-margin`。
+  - 印本页码 → `.ty-pb`，id `#pN`。
+  - 编者推补 → `.ty-conj`（方括号另色）；待定的缺字 → `.ty-gap`（标红）。
+{%- endcomment -%}
+
+<div class="container taylor-wrap{% if page.zh %} ty-zh{% endif %}" style="padding-top: 70px;">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1" id="cmpCol">
+
+      <div class="ty-chrome">
+        <a href="{{ site.baseurl }}/taylor/{{ page.book_id }}/{% unless page.zh %}en/{% endunless %}">&larr; {{ page.book_name }}</a>
+        {% if page.zh %}{% if page.en_url %}<a class="ty-lang" href="{{ site.baseurl }}{{ page.en_url }}">English &rarr;</a>{% endif %}
+        {% else %}{% if page.zh_url %}<a class="ty-lang" href="{{ site.baseurl }}{{ page.zh_url }}">中文版 &rarr;</a>{% endif %}{% endif %}
+      </div>
+
+      <h1 class="ty-title">{{ page.title }}</h1>
+      {% if page.subtitle %}<p class="ty-subtitle">{{ page.subtitle }}</p>{% endif %}
+
+      <div class="ty-nav">
+        {% if page.prev_url %}<a href="{{ site.baseurl }}{{ page.prev_url }}">&larr; {{ page.prev_label }}</a>
+        {% else %}<span></span>{% endif %}
+        {% if page.next_url %}<a href="{{ site.baseurl }}{{ page.next_url }}">{{ page.next_label }} &rarr;</a>
+        {% else %}<span></span>{% endif %}
+      </div>
+
+      {%- comment -%}
+        对比注释抽屉：只给正文章节页（有 page.chapter）。self 把本书自己排除，中英两版 key 不同。
+      {%- endcomment -%}
+      {% if page.chapter %}
+      {% assign cc_self = "taylor-en" %}{% if page.zh %}{% assign cc_self = "taylor" %}{% endif %}
+      {% include compare-commentary-head.html self=cc_self content_class="ty-content" self_label="泰勒" %}
+      {% endif %}
+      <div class="ty-content">
+        {{ content }}
+      </div>
+      {% if page.chapter %}{% include compare-commentary-foot.html %}{% endif %}
+
+      {% if page.date %}
+      <div class="ty-stamp">{% if page.zh %}译于{% else %}Published{% endif %} {{ page.date | date: "%Y-%m-%d %H:%M" }}</div>
+      {% endif %}
+
+      <div class="ty-nav ty-nav-foot">
+        {% if page.prev_url %}<a href="{{ site.baseurl }}{{ page.prev_url }}">&larr; {{ page.prev_label }}</a>
+        {% else %}<span></span>{% endif %}
+        {% if page.next_url %}<a href="{{ site.baseurl }}{{ page.next_url }}">{{ page.next_label }} &rarr;</a>
+        {% else %}<span></span>{% endif %}
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<script>
+// 段前经文框：标进 scripture-popup 的 skip 列表（框里本身就是经文，不再 linkify）
+(function () {
+  document.querySelectorAll('.ty-content .ty-text').forEach(function (box) {
+    box.classList.add('verse-anchor');
+  });
+})();
+</script>
+
+{%- comment -%}
+  经文引用弹层：只给中文页（模块认的是中文书卷名）。accent/vnum 必须写字面量
+  （Jekyll 3 的 include 参数不接受变量）——与下方 CSS 的 --ty-ink 两处同值，改色要一起改。
+{%- endcomment -%}
+{% if page.zh %}
+{% include scripture-popup.html container_selector=".ty-content" accent="#6f77e0" vnum="#4050b3" slide="down" %}
+{% endif %}
+
+<style>
+.taylor-wrap {
+  --ty-ink: #6f77e0;
+  --ty-ink-dark: #4050b3;
+  --ty-ink-light: #a3a8ea;
+  --ty-rule: #e3e5f5;
+  --ty-paper: #f7f8fd;
+  --ty-body: #24263a;
+}
+.taylor-wrap .ty-chrome,
+.taylor-wrap .ty-nav {
+  font-size: 13px; display: flex; justify-content: space-between; gap: 12px;
+  align-items: center; font-family: Georgia, "Times New Roman", serif;
+}
+.taylor-wrap .ty-chrome { margin: 18px 0 22px; }
+.taylor-wrap .ty-chrome a,
+.taylor-wrap .ty-nav a { color: var(--ty-ink); text-decoration: none; }
+.taylor-wrap .ty-chrome a:hover,
+.taylor-wrap .ty-nav a:hover { color: var(--ty-ink-dark); text-decoration: underline; }
+.taylor-wrap .ty-lang { border: 1px solid var(--ty-rule); border-radius: 4px; padding: 4px 10px; }
+.taylor-wrap .ty-lang:hover { background: var(--ty-ink); color: #fff !important; text-decoration: none; }
+.taylor-wrap .ty-title {
+  font-family: Georgia, "Times New Roman", serif; font-size: 30px; font-weight: normal;
+  color: var(--ty-ink-dark); text-align: center; margin: 10px 0 4px; line-height: 1.3;
+}
+.taylor-wrap .ty-subtitle {
+  text-align: center; font-size: 14px; color: #7e8199; margin: 0 0 18px;
+  font-family: Georgia, "Times New Roman", serif; font-style: italic;
+}
+.taylor-wrap .ty-nav { margin: 14px 0 26px; }
+.taylor-wrap .ty-nav-foot { margin-top: 44px; padding-top: 16px; border-top: 1px solid var(--ty-rule); }
+
+/* 正文 */
+.taylor-wrap .ty-content {
+  font-family: Georgia, "Times New Roman", "Songti SC", STSong, serif;
+  font-size: 17px; line-height: 1.85; color: var(--ty-body);
+}
+.taylor-wrap .ty-content p { margin: 0 0 16px; text-align: justify; }
+.taylor-wrap .ty-content h2 {
+  font-family: Georgia, "Times New Roman", serif; font-size: 19px; font-weight: normal;
+  text-align: center; color: var(--ty-ink-dark); margin: 10px 0 18px; line-height: 1.5; letter-spacing: .03em;
+}
+.taylor-wrap .ty-content a { color: var(--ty-ink); }
+
+/* 章目录页（/taylor/<书>/<章>/）：本章各段 */
+.taylor-wrap .ty-chtoc { list-style: none; padding: 0; margin: 10px 0; display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 8px; }
+.taylor-wrap .ty-chtoc a { display: block; padding: 9px 13px; border: 1px solid var(--ty-rule);
+  border-radius: 4px; background: var(--ty-paper); text-decoration: none; color: #24263a; line-height: 1.45; }
+.taylor-wrap .ty-chtoc a:hover { border-color: var(--ty-ink); color: var(--ty-ink-dark); }
+.taylor-wrap .ty-chtoc small { display: block; color: #7e8199; font-size: 12.5px; }
+
+/* 段前排出的经文：一节一行 */
+.taylor-wrap .ty-text {
+  background: var(--ty-paper); border-left: 3px solid var(--ty-ink);
+  padding: 12px 18px; margin: 6px 0 20px; color: #33364f;
+}
+.taylor-wrap .ty-text p { margin: 0; text-align: left; }
+.taylor-wrap .ty-text p + p { margin-top: 8px; }
+.taylor-wrap .ty-text .ty-vlabel { font-size: 13px; letter-spacing: .04em; color: var(--ty-ink-dark); margin: 0 0 4px; font-style: italic; }
+.taylor-wrap .commentary-anchor {
+  display: block; height: 0; line-height: 0; margin: 0; padding: 0;
+  overflow: hidden; visibility: hidden; scroll-margin-top: 80px;
+}
+
+/* 中文页：音译专名后的原名对照，小一号灰字 */
+.taylor-wrap.ty-zh .ty-orig { font-size: .82em; color: #7e8199; margin: 0 1px;
+  font-family: Georgia, "Times New Roman", serif; white-space: nowrap; }
+
+/* 页边旁注 */
+.taylor-wrap .ty-margin {
+  display: block; margin: 2px 0 8px; padding-left: 10px; border-left: 2px solid var(--ty-rule);
+  font-size: 13px; line-height: 1.55; color: #73768f; font-style: normal; text-align: left;
+}
+@media (min-width: 1200px) {
+  .taylor-wrap .ty-margin {
+    float: right; clear: right; width: 150px; margin: 4px -182px 8px 16px;
+    padding-left: 8px; text-indent: 0;
+  }
+}
+
+/* 1612 印本页码：空锚点，行内显示「p. N」小灰字 */
+.taylor-wrap .ty-pb { scroll-margin-top: 80px; cursor: help; }
+.taylor-wrap .ty-pb[data-p]::before {
+  content: "p." attr(data-p); font-size: 10.5px; color: #a8abc4; font-style: normal;
+  font-family: Georgia, serif; letter-spacing: .02em; margin: 0 4px;
+  border: 1px solid #e3e5f5; border-radius: 3px; padding: 0 3px; vertical-align: 1px;
+}
+
+/* 花饰首字 */
+.taylor-wrap .ty-dropcap {
+  float: left; font-family: Georgia, "Times New Roman", serif; font-size: 3.1em;
+  line-height: .84; margin: 4px 7px 0 0; color: var(--ty-ink-dark);
+}
+
+/* 段内逐语解说的引语（原书「Not angrie]」） */
+.taylor-wrap .ty-lemma { font-weight: 600; color: var(--ty-ink-dark); margin: 22px 0 8px !important; text-align: left !important; }
+/* 原书分条（1. 2. …） */
+.taylor-wrap .ty-item { padding-left: 1.4em; margin: 0 0 8px !important; }
+/* 扉页题辞 */
+.taylor-wrap .ty-quote { text-align: center !important; font-style: italic; }
+
+/* 底本里读不出的字 */
+.taylor-wrap .ty-gap { color: #c0392b; background: #fdecea; border-radius: 2px; padding: 0 2px; cursor: help; }
+/* 编者推补：方括号 + 另色，与原文区分 */
+.taylor-wrap .ty-conj { color: #8a5a00; background: #fff6e0; border-radius: 2px; padding: 0 1px; cursor: help; font-style: normal; }
+
+/* 书名页、献辞落款 */
+.taylor-wrap .ty-closer { text-align: right !important; font-style: italic; color: #4e5168; }
+.taylor-wrap .ty-tp p { text-align: center !important; font-size: 16px; letter-spacing: .03em; }
+
+/* 扉页：照 1612 原书版式手排——逐行居中、字号悬殊、字距、斜体、木刻花边与印刷商徽记（裁自原书胶片） */
+.taylor-wrap .ty-tpg { max-width: 520px; margin: 10px auto 30px; padding: 22px 26px 20px;
+  border: 1px solid #d0d3e8; background: #fff; text-align: center;
+  font-family: Georgia, "Times New Roman", serif; color: #1f1d16; line-height: 1.2; }
+.taylor-wrap .ty-tpg-l { margin: 0 0 5px; text-align: center; }
+.taylor-wrap .ty-tpg .s0 { font-size: 40px; letter-spacing: .03em; margin-bottom: 8px; }
+.taylor-wrap .ty-tpg .s1 { font-size: 27px; margin-top: 12px; }
+.taylor-wrap .ty-tpg .s2 { font-size: 19px; }
+.taylor-wrap .ty-tpg .s3 { font-size: 17px; }
+.taylor-wrap .ty-tpg .s4 { font-size: 15px; }
+.taylor-wrap .ty-tpg .it { font-style: italic; }
+.taylor-wrap .ty-tpg .ls { letter-spacing: .2em; }
+.taylor-wrap .ty-tpg .sc { font-variant: small-caps; text-transform: lowercase; letter-spacing: .05em; }
+.taylor-wrap .ty-tpg-orn img { width: 100%; height: auto; display: block; margin: 0 0 14px; }
+.taylor-wrap .ty-tpg-dev { margin: 16px 0 14px; }
+.taylor-wrap .ty-tpg-dev img { width: 56%; max-width: 270px; height: auto; display: inline-block; }
+@media (max-width: 600px) {
+  .taylor-wrap .ty-tpg { padding: 16px 10px; }
+  .taylor-wrap .ty-tpg .s0 { font-size: 28px; }
+  .taylor-wrap .ty-tpg .s1 { font-size: 20px; }
+  .taylor-wrap .ty-tpg .s2 { font-size: 15px; }
+  .taylor-wrap .ty-tpg .s3 { font-size: 14px; }
+  .taylor-wrap .ty-tpg .s4 { font-size: 12.5px; }
+}
+
+.taylor-wrap .ty-stamp {
+  margin-top: 32px; font-size: 12px; color: #9da0b8; text-align: right;
+  font-family: Georgia, "Times New Roman", serif; letter-spacing: .03em;
+}
+.taylor-wrap :target { background: #eef0ff; transition: background .4s; }
+
+/* 中文页 */
+.taylor-wrap.ty-zh .ty-content {
+  font-family: "Songti SC", STSong, "Noto Serif CJK SC", "Source Han Serif SC", Georgia, serif;
+}
+.taylor-wrap.ty-zh .ty-title { font-family: "Songti SC", STSong, Georgia, serif; }
+.taylor-wrap.ty-zh .ty-text { font-family: "Kaiti SC", STKaiti, KaiTi, "Songti SC", serif; }
+
+@media (max-width: 767px) {
+  .taylor-wrap .ty-title { font-size: 24px; }
+  .taylor-wrap .ty-content { font-size: 16px; line-height: 1.8; }
+}
+</style>

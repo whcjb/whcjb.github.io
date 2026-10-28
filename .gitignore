@@ -87,3 +87,6 @@ candlish_raw/1john/work/
 
 # 费尔贝恩教牧书信：StudyLight 录入本快照与扫描本 OCR（下载地址见 PROVENANCE.md）
 fairbairn_raw/pastoral/src/
+
+# 泰勒提多书：证人整页图、本地 OCR、判读图（可重跑 taylor_bim_ocr / taylor_witness 重建）
+taylor_raw/titus/witness/

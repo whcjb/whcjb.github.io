@@ -1,0 +1,76 @@
+---
+layout: default
+---
+{%- comment -%}
+  托马斯·泰勒《提多书注释》书卷首页。配色与章节页同源（长春花蓝 #6f77e0）。
+{%- endcomment -%}
+
+<div class="container taylor-book" style="padding-top: 70px;">
+  <div class="row">
+    <div class="col-lg-9 col-lg-offset-1 col-md-10 col-md-offset-1">
+
+      <div class="ty-booklang">
+        {% if page.zh %}{% if page.en_url %}<a href="{{ site.baseurl }}{{ page.en_url }}">English edition &rarr;</a>{% endif %}
+        {% else %}{% if page.zh_url %}<a href="{{ site.baseurl }}{{ page.zh_url }}">中文版 &rarr;</a>{% endif %}{% endif %}
+      </div>
+      <div class="ty-hero">
+        <h1>{{ page.book_name }}</h1>
+        <p class="ty-hero-author">{{ page.author }}</p>
+        <p class="ty-hero-meta">{{ page.edition }}</p>
+      </div>
+
+      {{ content }}
+
+    </div>
+  </div>
+</div>
+
+<style>
+.taylor-book { --ty-ink: #6f77e0; --ty-ink-dark: #4050b3; --ty-rule: #e3e5f5; --ty-paper: #f7f8fd; }
+.taylor-book .ty-booklang { text-align: right; margin: 0 0 10px; font-size: 13px; font-family: Georgia, serif; }
+.taylor-book .ty-booklang a { color: var(--ty-ink); border: 1px solid var(--ty-rule);
+  border-radius: 4px; padding: 4px 10px; text-decoration: none; }
+.taylor-book .ty-booklang a:hover { background: var(--ty-ink); color: #fff; }
+/* 书首：不用大色块横幅（用户 2026-10-22），书名 + 作者 + 版本一行起，下接细线 */
+.taylor-book .ty-hero {
+  margin: 4px 0 22px; padding: 0 0 12px; border-bottom: 2px solid var(--ty-ink);
+  font-family: Georgia, "Times New Roman", "Songti SC", serif;
+}
+.taylor-book .ty-hero h1 { font-family: Georgia, "Times New Roman", "Songti SC", serif; margin: 0 0 4px; font-size: 26px; font-weight: normal; line-height: 1.3; color: var(--ty-ink-dark); }
+.taylor-book .ty-hero-author { margin: 0; font-size: 14.5px; color: #3e4157; }
+.taylor-book .ty-hero-meta { margin: 2px 0 0; font-size: 13px; color: #7e8199; font-style: italic; }
+.taylor-book .ty-group {
+  font-family: Georgia, "Times New Roman", "Songti SC", serif; margin: 30px 0 12px;
+  font-size: 15px; color: var(--ty-ink-dark); letter-spacing: .05em;
+  padding-bottom: 6px; border-bottom: 1px solid var(--ty-rule);
+}
+.taylor-book .ty-toc { list-style: none; padding: 0; margin: 0; display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 8px; }
+.taylor-book .ty-toc li { margin: 0; }
+.taylor-book .ty-toc a { display: block; padding: 9px 13px; border: 1px solid var(--ty-rule);
+  border-radius: 4px; background: var(--ty-paper); text-decoration: none;
+  font-family: Georgia, "Times New Roman", "Songti SC", serif; font-size: 15px; color: #24263a; line-height: 1.45; }
+.taylor-book .ty-toc a:hover { border-color: var(--ty-ink); background: #fff; color: var(--ty-ink-dark); }
+.taylor-book .ty-toc small { display: block; color: #7e8199; font-size: 12.5px; }
+.taylor-book .ty-chgrid { list-style: none; padding: 0; margin: 0; display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(92px, 1fr)); gap: 8px; }
+.taylor-book .ty-chgrid a { display: block; text-align: center; padding: 10px 6px; border: 1px solid var(--ty-rule);
+  border-radius: 4px; background: var(--ty-paper); text-decoration: none; color: #24263a;
+  font-family: Georgia, "Times New Roman", "Songti SC", serif; font-size: 15px; }
+.taylor-book .ty-chgrid a:hover { border-color: var(--ty-ink); background: #fff; color: var(--ty-ink-dark); }
+.taylor-book .ty-note { font-family: Georgia, "Times New Roman", "Songti SC", serif; font-size: 13.5px;
+  color: #63667f; line-height: 1.8; margin: 34px 0 0; padding-top: 16px; border-top: 1px solid var(--ty-rule); }
+.taylor-book .ty-note p { margin: 0 0 12px; }
+.taylor-book .ty-note-zh { font-family: "Songti SC", STSong, serif; }
+.taylor-book .ty-conj { color: #8a5a00; background: #fff6e0; border-radius: 2px; padding: 0 1px; font-style: normal; }
+.taylor-book .ty-gap { color: #c0392b; background: #fdecea; border-radius: 2px; padding: 0 2px; }
+.taylor-book .ty-conjhead { font-family: "Songti SC", STSong, Georgia, serif; font-size: 16px; color: var(--ty-ink-dark); margin: 26px 0 10px; }
+.taylor-book .ty-conjtab { width: 100%; border-collapse: collapse; font-size: 13px; line-height: 1.6; margin: 10px 0 20px; }
+.taylor-book .ty-conjtab th, .taylor-book .ty-conjtab td { border-bottom: 1px solid var(--ty-rule); padding: 6px 6px; vertical-align: top; text-align: left; }
+.taylor-book .ty-conjtab th { background: var(--ty-paper); color: var(--ty-ink-dark); white-space: nowrap; }
+@media (max-width: 767px) {
+  .taylor-book .ty-hero h1 { font-size: 22px; }
+  .taylor-book .ty-toc { grid-template-columns: 1fr; }
+  .taylor-book .ty-conjtab { display: block; overflow-x: auto; }
+}
+</style>

@@ -1,0 +1,16 @@
+---
+layout: taylor-chapter
+book_id: titus
+book_name: "Taylor on Titus"
+title: "Errata"
+date: 2026-10-28 13:55
+prev_url: "/taylor/titus/questions/"
+prev_label: "A Brief Table of the Questions"
+---
+
+## <span class="ty-pb" data-facs="392"></span>J entreate the curteous Reader to passe ouer some lesser escapes in the printing; and among others to amend these which I haue obserued, most altering, or hurting the sense.
+
+Pag. 5. in the margent for *quiddam,* read *quidam.* p. 40. line 7. for eternall. r. internall. p· 59. l. 26. f. first, r. fifth. p. 79. l· 31. f. God, r. Gad. p. 99. in the margent, f. *fidem,* r *sedem.* p. 112. l. 20. wanteth when. p. 135. l. 39. f. world, r. worke. p. 121. margent. f. *superioris,* r. *superius.* p. 144. l. 2. f. Noahs, r. Lots. p. 142. l. 9. f adoring, r. adorning. p. 143. l. 36. f. members, r. memorie. p. 148. l. 32. f. heart, r. heat. p. 151. marg. f. *sui aliter,* r. *sin aliter.* p. 163. m. f. haibourles, r. harberous. p. 213.25. f. they might, r. they might not contract. p. 210.1. f. pace, r. pale. p. 217.11. f. them, r. Cham. p. 300. l. 24. f. argueth, r. aimeth at. p. 326.23. f. forte, r. foote. p. 327.36. f. persons, r. purses. p. 328.30. f. him, r. them. p. 329. l. 5. f. others, r. oathes. p. 343. marg. f. γεον, r. νεον. and f. γεοφυτον. r νεοφυτον. p. 350.5. put in hold on Christ. p. 354.18. f. desolation, r. dissolution. p. 362.6. f. cannot, r. can. p. 366.31. wanteth, to vtter.
+
+<span class="ty-pb" data-facs="392"></span>
+

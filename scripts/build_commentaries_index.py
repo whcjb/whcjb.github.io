@@ -147,6 +147,13 @@ AUTHORS = OrderedDict([
                        years='1805–1874', dir='fairbairn',
                        work_cn='教牧书信注释',
                        work_en='The Pastoral Epistles')),
+    # 泰勒：生卒取 DNB vol.55（Taylor, Thomas (1576–1633)，Charlotte Fell Smith 撰）：1576 年生于约克郡里士满，
+    # 1632/3 年 1 月或 2 月卒于艾尔沃思（旧历 1632，故 TCP 编目作 1576-1632）。
+    # 《提多书注释》1612 剑桥初版（STC 23825），本站据此版；1619 年再版。
+    ('taylor', dict(name='托马斯·泰勒', short='泰勒', en='Thomas Taylor',
+                    years='1576–1633', dir='taylor',
+                    work_cn='提多书注释',
+                    work_en='A Commentarie vpon the Epistle of S. Paul written to Titus')),
     ('alexander', dict(name='约瑟·亚历山大', short='亚历山大', en='Joseph Addison Alexander',
                        years='1809–1860', dir='alexander',
                        work_cn='诗篇、以赛亚书注释',
@@ -213,7 +220,17 @@ AUTHOR_COLORS = {
     # 最小 ΔE 30.5 的是 #c55db5（太艳）；退一档取 C 50 的 #bc65ac，最小 ΔE 26.5，与先例同档
     # （约翰斯通 26.8 / 亚历山大 26.9）。低彩度一档（C ≤ 40）最好的也只有 25.5。
     'fairbairn': ('#8e3f82', '#bc65ac'),
+    # 泰勒长春花蓝：L 28–55、C 20–60 网格里与既有二十色及加尔文酒红、马太亨利金、站点 Hux 蓝
+    # 最小 ΔE 26.4（约翰斯通钴蓝 #106ab2），次近达拉谟紫 27.2，与先例同档（费尔贝恩 26.5）。
+    # 网格首选 #771071(28.0) 与费尔贝恩同属紫红一系、#cb3e53 一档与詹金赤陶/珀金斯同属红系，弃用。
+    'taylor': ('#4050b3', '#6f77e0'),
 }
+
+# 书卷卡片的入口注释家：历代解经版面每卷只显示 links 的第一条（commentaries/index.html
+# `b.links | first`），默认按 AUTHORS 次序。这里指定的排到第一位，其余照常列在后面
+# （注释家生平页「本站收录」照列，对照抽屉照常可选）。
+# 提多书：用户 2026-10-28 指定入口用泰勒；费尔贝恩《教牧书信》的提多书部分保留。
+LEAD_AUTHOR = {'titus': 'taylor'}
 
 # 逐卷书名（同一注释家的不同分册书名不同时用）。取各卷扉页的实际书名。
 BOOK_TITLES = {
@@ -265,6 +282,8 @@ BOOK_TITLES = {
     ('fairbairn', '2timothy'): ('提摩太后书注释',
                                 'The Pastoral Epistles: The Greek Text and Translation, with Introduction, '
                                 'Expository Notes, and Dissertations'),
+    ('taylor', 'titus'):       ('提多书注释',
+                                'A Commentarie vpon the Epistle of S. Paul written to Titus'),
     ('manton', 'james'):       ('雅各书注释',
                                 'A Practical Commentary, or an Exposition with Notes '
                                 'on the Epistle of James'),
@@ -289,7 +308,7 @@ COMPARE_ACCENT = {
     'davenant': '#556b2f', 'alexander': '#7d2f2f', 'spurgeon': '#4a3b22', 'durham': '#674c8e',
     'johnstone': '#106ab2', 'perkins': '#9b2d5f', 'hutcheson': '#2f8f46', 'leighton': '#2d2d99',
     'adams': '#66666c', 'rollock': '#786000', 'jenkyn': '#cd5f37',
-    'candlish': '#b07080', 'fairbairn': '#bc65ac',
+    'candlish': '#b07080', 'fairbairn': '#bc65ac', 'taylor': '#6f77e0',
 }
 COMPARE_LABEL = {
     'calvin': '加尔文注释', 'mhenry': '马太亨利注释', 'owen': '约翰欧文注释',
@@ -298,7 +317,7 @@ COMPARE_LABEL = {
     'spurgeon': '司布真注释', 'durham': '达拉谟注释', 'johnstone': '约翰斯通讲疏',
     'perkins': '珀金斯注释', 'hutcheson': '赫奇森注释', 'leighton': '雷登注释',
     'adams': '亚当斯注释', 'rollock': '罗洛克讲章', 'jenkyn': '詹金讲解',
-    'candlish': '坎德利什讲解', 'fairbairn': '费尔贝恩注释',
+    'candlish': '坎德利什讲解', 'fairbairn': '费尔贝恩注释', 'taylor': '泰勒注释',
 }
 
 
@@ -319,7 +338,7 @@ PRIMARY_LANG = {'calvin': 'zh', 'mhenry': 'zh', 'bridges': 'zh',
                 'alexander': 'en', 'spurgeon': 'en', 'durham': 'en',
                 'johnstone': 'en', 'perkins': 'en', 'hutcheson': 'en', 'leighton': 'en',
                 'adams': 'en', 'rollock': 'en', 'jenkyn': 'en',
-                'candlish': 'en', 'fairbairn': 'en'}
+                'candlish': 'en', 'fairbairn': 'en', 'taylor': 'en'}
 
 
 def _lang_variants(aid, d: Path, name: str):
@@ -605,6 +624,8 @@ def main():
         entries = [(aid, by_author[aid][bid][0], by_author[aid][bid][1])
                    for aid in AUTHORS
                    if bid in by_author[aid] and aid not in EXCLUDED_AUTHORS]
+        if bid in LEAD_AUTHOR:
+            entries.sort(key=lambda e: e[0] != LEAD_AUTHOR[bid])
         # 合参覆盖的书卷：加尔文没有分卷注释，补一条指向对应的合参索引页。
         # 放在最前，与其他卷「加尔文在先」的次序一致。
         if bid in HARMONY_MAP and 'calvin' not in EXCLUDED_AUTHORS:

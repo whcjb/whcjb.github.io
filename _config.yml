@@ -50,6 +50,7 @@ exclude:
   - jenkyn_raw
   - candlish_raw
   - fairbairn_raw
+  - taylor_raw
   - hodge_raw
   - hutcheson_raw
   - leighton_raw
