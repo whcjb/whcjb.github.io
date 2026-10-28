@@ -185,15 +185,17 @@ def notes_tables():
     out = []
     if appr:
         out.append(f'<h3 class="ty-conjhead">编者推补逐条说明（{len(appr)} 处）</h3>')
-        out.append('<p class="ty-note-zh">以下各处录入本标为读不出，两份 1612 年藏本的影像上也只能认出大致字形；'
-                   '按字形并参照经文、上下文与后出版次推补，正文中以 <span class="ty-conj">[方括号]</span> 另色标出，'
-                   '不是原书确定的文字。</p>')
+        out.append('<p class="ty-note-zh">以下各处录入本标为读不出，对照两份 1612 年藏本的胶片影像也只能认出一部分字形：'
+                   '多数是墨团或污点盖住了一两个字母，其余字母清楚；少数是页边希腊文小字，重音和词尾看不全；'
+                   '还有几处落在上一页末行，影像没裁到。编者按看得见的字形，参照本句上下文与所引经文补出，'
+                   '2026 年 10 月 28 日经本站同意后发布。正文中以 <span class="ty-conj">[方括号]</span> 另色标出，'
+                   '<b>不是原书确定的文字</b>；鼠标停在上面也有提示。每条看图所见写在「依据」一栏。</p>')
         out.append('<table class="ty-conjtab"><tr><th>位置</th><th>录入本原样（前后文）</th><th>现作</th><th>依据</th></tr>')
         for g, v in appr:
             s = sites[g]
             note = review.get(g, ['', '', '', ''])[3] if len(review.get(g, [])) > 3 else ''
             out.append(f'<tr><td><a href="{{{{ site.baseurl }}}}{_anchor(s["slug"], s.get("page"))}">'
-                       f'{s["slug"]} · p.{s.get("page")}</a></td><td>{_ctx(s)}</td>'
+                       f'{s["slug"]}' + (f' · p.{s["page"]}' if s.get('page') else '') + '</a></td><td>{_ctx(s)}</td>'
                        f'<td>[{html.escape(v.replace("*", ""))}]</td><td>{html.escape(note)}</td></tr>')
         out.append('</table>')
     left = [g for g, r in review.items() if r[1] == '?']
@@ -205,7 +207,7 @@ def notes_tables():
             s = sites[g]
             note = review[g][3] if len(review[g]) > 3 else ''
             out.append(f'<tr><td><a href="{{{{ site.baseurl }}}}{_anchor(s["slug"], s.get("page"))}">'
-                       f'{s["slug"]} · p.{s.get("page")}</a></td><td>{_ctx(s)}</td><td>{html.escape(note)}</td></tr>')
+                       f'{s["slug"]}' + (f' · p.{s["page"]}' if s.get('page') else '') + '</a></td><td>{_ctx(s)}</td><td>{html.escape(note)}</td></tr>')
         out.append('</table>')
     return out
 
@@ -234,7 +236,7 @@ def build_index(pages):
     out.append('<h2 class="ty-group">Tables</h2>')
     out += ['<ul class="ty-toc">'] + toc('back') + ['</ul>']
     n, w, c = stats()
-    left = sum(len(tc.TOK.findall(p['body'])) for p in pages)
+    left = sum(1 for r in tc._tsv('gap_review.tsv') if r[1] == '?')   # 按组计，与下表一致
     out.append('<div class="ty-note">')
     out.append('<p><b>About this text.</b> EEBO-TCP A13535 (Cambridge: Cantrell Legge for L. Greene, 1612; STC 23825), '
                'keyed by hand from the EEBO microfilm; CC0. The commentary was preached in Cambridge; this is the first '
@@ -244,12 +246,12 @@ def build_index(pages):
                f'film images. {w:,} were read from the grayscale scans of two copies of the 1612 edition (Internet Archive), '
                'place by place against the page image'
                + (f'; {c:,} are editorial conjectures shown <span class="ty-conj">[in brackets]</span>' if c else '')
-               + f'. Places still unread remain marked <span class="ty-gap">in red</span> ({left:,}).</p>')
+               + f'. {left:,} places still unread remain marked <span class="ty-gap">in red</span>; all are listed below.</p>')
     out.append('<p class="ty-note-zh"><b>文本说明。</b>本书据 EEBO-TCP 人工录入本 A13535（剑桥 1612 年初版，STC 23825，'
                'EEBO 缩微胶片）。原书是泰勒在剑桥讲道的讲稿。保留原书拼写与斜体，长 ſ 作 s；印本页码保留为页内锚点。'
                f'录入本有 {n:,} 处读不出的字，{w:,} 处对照两份 1612 年藏本的胶片灰度扫描（Internet Archive）逐处看图读出'
                + (f'；{c:,} 处为编者推补，以 <span class="ty-conj">[方括号]</span> 另色标出' if c else '')
-               + f'；仍读不出的标红留在明面（{left:,} 处）。逐条依据见下表与 <code>taylor_raw/titus/</code>。</p>')
+               + f'；仍读不出的 {left:,} 处标红留在明面。推补与读不出的都逐条列在下表，判读记录见 <code>taylor_raw/titus/</code>。</p>')
     out.extend(notes_tables())
     out.append('</div>')
     return '\n'.join(out) + '\n'
