@@ -154,6 +154,20 @@ AUTHORS = OrderedDict([
                     years='1576–1633', dir='taylor',
                     work_cn='提多书注释',
                     work_en='A Commentarie vpon the Epistle of S. Paul written to Titus')),
+    # 霍尔：生卒取 DNB vol.24（Hall, Thomas (1610–1665)，Alexander Gordon 撰）：1610 年 7 月 22 日前后生于伍斯特，
+    # 1665 年 4 月 13 日卒，葬金斯诺顿。《提摩太后书第三、四章注释》1658 伦敦对开本（Wing H436），本站据此版。
+    ('hall', dict(name='托马斯·霍尔', short='霍尔', en='Thomas Hall',
+                  years='1610–1665', dir='hall',
+                  work_cn='提摩太后书第三、四章注释',
+                  work_en='A Practical and Polemical Commentary upon the Third and Fourth Chapters '
+                          'of the Latter Epistle of Saint Paul to Timothy')),
+    # 巴洛：生年取 TCP 编目「b. 1580 or 81」（Wood《牛津名人录》：1600 年入哈特学堂，时年十九或稍长）；
+    # 卒年未见可靠记载（Wood 本人也说不准），留问号，勿补。
+    # 《提摩太后书第一章讲解》1625 伦敦四开本（STC 1434，刻版扉页 1624），本站据此版；1632 年对开本增讲第二章。
+    ('barlow', dict(name='约翰·巴洛', short='巴洛', en='John Barlow',
+                    years='1580/81–?', dir='barlow',
+                    work_cn='提摩太后书第一章讲解',
+                    work_en='An Exposition of the Second Epistle of the Apostle Paul to Timothy, the First Chapter')),
     ('alexander', dict(name='约瑟·亚历山大', short='亚历山大', en='Joseph Addison Alexander',
                        years='1809–1860', dir='alexander',
                        work_cn='诗篇、以赛亚书注释',
@@ -224,6 +238,10 @@ AUTHOR_COLORS = {
     # 最小 ΔE 26.4（约翰斯通钴蓝 #106ab2），次近达拉谟紫 27.2，与先例同档（费尔贝恩 26.5）。
     # 网格首选 #771071(28.0) 与费尔贝恩同属紫红一系、#cb3e53 一档与詹金赤陶/珀金斯同属红系，弃用。
     'taylor': ('#4050b3', '#6f77e0'),
+    # 霍尔橄榄绿：LCh 网格 (56, 60, 115°)，与既有各色及加尔文酒红、马太亨利金、站点 Hux 蓝最小 ΔE 28.2。
+    'hall': ('#536513', '#769019'),
+    # 巴洛青绿：LCh 网格 (58, 35, 180°)，加上霍尔之后最小 ΔE 26.6（达拉谟深绿 #1f5a4b），与先例同档。
+    'barlow': ('#007162', '#2b9b8a'),
 }
 
 # 书卷卡片的入口注释家：历代解经版面每卷只显示 links 的第一条（commentaries/index.html
@@ -309,6 +327,7 @@ COMPARE_ACCENT = {
     'johnstone': '#106ab2', 'perkins': '#9b2d5f', 'hutcheson': '#2f8f46', 'leighton': '#2d2d99',
     'adams': '#66666c', 'rollock': '#786000', 'jenkyn': '#cd5f37',
     'candlish': '#b07080', 'fairbairn': '#bc65ac', 'taylor': '#6f77e0',
+    'hall': '#769019', 'barlow': '#2b9b8a',
 }
 COMPARE_LABEL = {
     'calvin': '加尔文注释', 'mhenry': '马太亨利注释', 'owen': '约翰欧文注释',
@@ -318,6 +337,7 @@ COMPARE_LABEL = {
     'perkins': '珀金斯注释', 'hutcheson': '赫奇森注释', 'leighton': '雷登注释',
     'adams': '亚当斯注释', 'rollock': '罗洛克讲章', 'jenkyn': '詹金讲解',
     'candlish': '坎德利什讲解', 'fairbairn': '费尔贝恩注释', 'taylor': '泰勒注释',
+    'hall': '霍尔注释', 'barlow': '巴洛讲解',
 }
 
 
@@ -338,7 +358,8 @@ PRIMARY_LANG = {'calvin': 'zh', 'mhenry': 'zh', 'bridges': 'zh',
                 'alexander': 'en', 'spurgeon': 'en', 'durham': 'en',
                 'johnstone': 'en', 'perkins': 'en', 'hutcheson': 'en', 'leighton': 'en',
                 'adams': 'en', 'rollock': 'en', 'jenkyn': 'en',
-                'candlish': 'en', 'fairbairn': 'en', 'taylor': 'en'}
+                'candlish': 'en', 'fairbairn': 'en', 'taylor': 'en',
+                'hall': 'en', 'barlow': 'en'}
 
 
 def _lang_variants(aid, d: Path, name: str):

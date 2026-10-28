@@ -1,0 +1,5 @@
+### POST-SCRIPT. The second Epistle unto *Timothy* ordained the first Bishop of the Church of the *Ephesians,* was written from *Rome* when *Paul* was brought before *Nero* the second time.
+
+<span class="hl-margin" markdown="1">*See the falshood of these Post-scripts in* Cudworth *on* Gal. *6. in the end. p. 429. &* Glassii *Philolog. l. 1. Tract. 4. Sect. 4.* mihi. *p. 245.*</span> THese Post-scripts are no part of the Text, neither was this added by the Apostle, for it contradicts the Text. The Apostle calls *Timothy* an Evangelist, *2 Tim. 4.5.* and the Post-script makes him a Bishop; The Evangelists were not tied to personal residence in one place, as Bishops and Pastors were: but they were to go from place to place to confirm the Churches planted by the Apostles. *Beza* observes that this first clause doubtless is spurious, it is not extant in divers old coppies, and, which is much, the Vulgar Latin omits it. So do the *Syriack* and *Aethiopick* Versions. So that this is but a very sorry foundation to build the Divine Right of Episcopacy upon.
+
+<p class="hl-closer" markdown="1">FINIS.</p>

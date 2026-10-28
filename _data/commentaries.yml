@@ -154,6 +154,22 @@ authors:
     work_cn: "提多书注释"
     work_en: "A Commentarie vpon the Epistle of S. Paul written to Titus"
     books: 1
+  - id: hall
+    name: "托马斯·霍尔"
+    short: "霍尔"
+    en: "Thomas Hall"
+    years: "1610–1665"
+    work_cn: "提摩太后书第三、四章注释"
+    work_en: "A Practical and Polemical Commentary upon the Third and Fourth Chapters of the Latter Epistle of Saint Paul to Timothy"
+    books: 1
+  - id: barlow
+    name: "约翰·巴洛"
+    short: "巴洛"
+    en: "John Barlow"
+    years: "1580/81–?"
+    work_cn: "提摩太后书第一章讲解"
+    work_en: "An Exposition of the Second Epistle of the Apostle Paul to Timothy, the First Chapter"
+    books: 1
   - id: alexander
     name: "约瑟·亚历山大"
     short: "亚历山大"
@@ -510,6 +526,8 @@ books:
     chapters: 4
     links:
       - {author: fairbairn, path: "/fairbairn/2timothy/", url_tpl: "/fairbairn/2timothy/__CH__/", title_cn: "提摩太后书注释", title_en: "The Pastoral Epistles: The Greek Text and Translation, with Introduction, Expository Notes, and Dissertations", c0: "#8e3f82", c1: "#bc65ac"}
+      - {author: hall, path: "/hall/2timothy/", url_tpl: "/hall/2timothy/__CH__/", title_cn: "提摩太后书第三、四章注释", title_en: "A Practical and Polemical Commentary upon the Third and Fourth Chapters of the Latter Epistle of Saint Paul to Timothy", c0: "#536513", c1: "#769019"}
+      - {author: barlow, path: "/barlow/2timothy/", url_tpl: "/barlow/2timothy/__CH__/", title_cn: "提摩太后书第一章讲解", title_en: "An Exposition of the Second Epistle of the Apostle Paul to Timothy, the First Chapter", c0: "#007162", c1: "#2b9b8a"}
   - id: titus
     name: "提多书"
     en: "Titus"

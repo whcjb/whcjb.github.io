@@ -1,0 +1,235 @@
+---
+layout: default
+---
+{%- comment -%}
+  约翰·巴洛《提摩太后书第一章讲解》(1625) 的章节页（中英共用，靠 page.zh 切换）。
+
+  ⚠️ 不复用别家 layout：每本书独立样式（用户既定规矩）。骨架取自 taylor-chapter。
+  按 2026-10-16 起的新书规矩：章顶不放「跳到某节」下拉，副标题作者写英文原名。
+
+  配色青绿 #2b9b8a：LCh 网格 (58, 35, 180°)，与「历代解经」已登记各色（含霍尔橄榄绿）及加尔文酒红、
+  马太亨利金、站点 Hux 蓝相比最小 ΔE 26.6，与先例同档。深端 #007162。
+
+  本书版式要点（底本 EEBO-TCP A04220，见 barlow_raw/2timothy/PROVENANCE.md）：
+  - 一节一页：节首经文 → `.bl-text`，其后一个 commentary-anchor。
+  - 原书每节分「The Logicall resolution」「The Theologicall exposition」等，在原书是页边旁注，照录为 `.bl-margin`。
+  - 印本页码 → `.bl-pb`，id `#pN`。
+  - 录入本漏拍、据 1625 年影像补录的页 → `.bl-supplied`。
+  - 编者推补 → `.bl-conj`（方括号另色）；待定的缺字 → `.bl-gap`（标红）。
+{%- endcomment -%}
+
+<div class="container barlow-wrap{% if page.zh %} bl-zh{% endif %}" style="padding-top: 70px;">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1" id="cmpCol">
+
+      <div class="bl-chrome">
+        <a href="{{ site.baseurl }}/barlow/{{ page.book_id }}/{% unless page.zh %}en/{% endunless %}">&larr; {{ page.book_name }}</a>
+        {% if page.zh %}{% if page.en_url %}<a class="bl-lang" href="{{ site.baseurl }}{{ page.en_url }}">English &rarr;</a>{% endif %}
+        {% else %}{% if page.zh_url %}<a class="bl-lang" href="{{ site.baseurl }}{{ page.zh_url }}">中文版 &rarr;</a>{% endif %}{% endif %}
+      </div>
+
+      <h1 class="bl-title">{{ page.title }}</h1>
+      {% if page.subtitle %}<p class="bl-subtitle">{{ page.subtitle }}</p>{% endif %}
+
+      <div class="bl-nav">
+        {% if page.prev_url %}<a href="{{ site.baseurl }}{{ page.prev_url }}">&larr; {{ page.prev_label }}</a>
+        {% else %}<span></span>{% endif %}
+        {% if page.next_url %}<a href="{{ site.baseurl }}{{ page.next_url }}">{{ page.next_label }} &rarr;</a>
+        {% else %}<span></span>{% endif %}
+      </div>
+
+      {%- comment -%}
+        对比注释抽屉：只给正文章节页（有 page.chapter）。self 把本书自己排除，中英两版 key 不同。
+      {%- endcomment -%}
+      {% if page.chapter %}
+      {% assign cc_self = "barlow-en" %}{% if page.zh %}{% assign cc_self = "barlow" %}{% endif %}
+      {% include compare-commentary-head.html self=cc_self content_class="bl-content" self_label="巴洛" %}
+      {% endif %}
+      <div class="bl-content">
+        {{ content }}
+      </div>
+      {% if page.chapter %}{% include compare-commentary-foot.html %}{% endif %}
+
+      {% if page.date %}
+      <div class="bl-stamp">{% if page.zh %}译于{% else %}Published{% endif %} {{ page.date | date: "%Y-%m-%d %H:%M" }}</div>
+      {% endif %}
+
+      <div class="bl-nav bl-nav-foot">
+        {% if page.prev_url %}<a href="{{ site.baseurl }}{{ page.prev_url }}">&larr; {{ page.prev_label }}</a>
+        {% else %}<span></span>{% endif %}
+        {% if page.next_url %}<a href="{{ site.baseurl }}{{ page.next_url }}">{{ page.next_label }} &rarr;</a>
+        {% else %}<span></span>{% endif %}
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<script>
+// 段前经文框：标进 scripture-popup 的 skip 列表（框里本身就是经文，不再 linkify）
+(function () {
+  document.querySelectorAll('.bl-content .bl-text').forEach(function (box) {
+    box.classList.add('verse-anchor');
+  });
+})();
+</script>
+
+{%- comment -%}
+  经文引用弹层：只给中文页（模块认的是中文书卷名）。accent/vnum 必须写字面量
+  （Jekyll 3 的 include 参数不接受变量）——与下方 CSS 的 --bl-ink 两处同值，改色要一起改。
+{%- endcomment -%}
+{% if page.zh %}
+{% include scripture-popup.html container_selector=".bl-content" accent="#2b9b8a" vnum="#007162" slide="down" %}
+{% endif %}
+
+<style>
+.barlow-wrap {
+  --bl-ink: #2b9b8a;
+  --bl-ink-dark: #007162;
+  --bl-ink-light: #7cc4b8;
+  --bl-rule: #d8ece8;
+  --bl-paper: #f3faf8;
+  --bl-body: #1f2a28;
+}
+.barlow-wrap .bl-chrome,
+.barlow-wrap .bl-nav {
+  font-size: 13px; display: flex; justify-content: space-between; gap: 12px;
+  align-items: center; font-family: Georgia, "Times New Roman", serif;
+}
+.barlow-wrap .bl-chrome { margin: 18px 0 22px; }
+.barlow-wrap .bl-chrome a,
+.barlow-wrap .bl-nav a { color: var(--bl-ink); text-decoration: none; }
+.barlow-wrap .bl-chrome a:hover,
+.barlow-wrap .bl-nav a:hover { color: var(--bl-ink-dark); text-decoration: underline; }
+.barlow-wrap .bl-lang { border: 1px solid var(--bl-rule); border-radius: 4px; padding: 4px 10px; }
+.barlow-wrap .bl-lang:hover { background: var(--bl-ink); color: #fff !important; text-decoration: none; }
+.barlow-wrap .bl-title {
+  font-family: Georgia, "Times New Roman", serif; font-size: 30px; font-weight: normal;
+  color: var(--bl-ink-dark); text-align: center; margin: 10px 0 4px; line-height: 1.3;
+}
+.barlow-wrap .bl-subtitle {
+  text-align: center; font-size: 14px; color: #7a8784; margin: 0 0 18px;
+  font-family: Georgia, "Times New Roman", serif; font-style: italic;
+}
+.barlow-wrap .bl-nav { margin: 14px 0 26px; }
+.barlow-wrap .bl-nav-foot { margin-top: 44px; padding-top: 16px; border-top: 1px solid var(--bl-rule); }
+
+/* 正文 */
+.barlow-wrap .bl-content {
+  font-family: Georgia, "Times New Roman", "Songti SC", STSong, serif;
+  font-size: 17px; line-height: 1.85; color: var(--bl-body);
+}
+.barlow-wrap .bl-content p { margin: 0 0 16px; text-align: justify; }
+.barlow-wrap .bl-content h2 {
+  font-family: Georgia, "Times New Roman", serif; font-size: 19px; font-weight: normal;
+  text-align: center; color: var(--bl-ink-dark); margin: 10px 0 18px; line-height: 1.5; letter-spacing: .03em;
+}
+.barlow-wrap .bl-content a { color: var(--bl-ink); }
+
+/* 章目录页（/barlow/<书>/<章>/）：本章各段 */
+.barlow-wrap .bl-chtoc { list-style: none; padding: 0; margin: 10px 0; display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 8px; }
+.barlow-wrap .bl-chtoc a { display: block; padding: 9px 13px; border: 1px solid var(--bl-rule);
+  border-radius: 4px; background: var(--bl-paper); text-decoration: none; color: #1f2a28; line-height: 1.45; }
+.barlow-wrap .bl-chtoc a:hover { border-color: var(--bl-ink); color: var(--bl-ink-dark); }
+.barlow-wrap .bl-chtoc small { display: block; color: #7a8784; font-size: 12.5px; }
+
+/* 段前排出的经文：一节一行 */
+.barlow-wrap .bl-text {
+  background: var(--bl-paper); border-left: 3px solid var(--bl-ink);
+  padding: 12px 18px; margin: 6px 0 20px; color: #30403d;
+}
+.barlow-wrap .bl-text p { margin: 0; text-align: left; }
+.barlow-wrap .bl-text p + p { margin-top: 8px; }
+.barlow-wrap .bl-text .bl-vlabel { font-size: 13px; letter-spacing: .04em; color: var(--bl-ink-dark); margin: 0 0 4px; font-style: italic; }
+.barlow-wrap .commentary-anchor {
+  display: block; height: 0; line-height: 0; margin: 0; padding: 0;
+  overflow: hidden; visibility: hidden; scroll-margin-top: 80px;
+}
+
+/* 中文页：音译专名后的原名对照，小一号灰字 */
+.barlow-wrap.bl-zh .bl-orig { font-size: .82em; color: #7a8784; margin: 0 1px;
+  font-family: Georgia, "Times New Roman", serif; white-space: nowrap; }
+
+/* 页边旁注 */
+.barlow-wrap .bl-margin {
+  display: block; margin: 2px 0 8px; padding-left: 10px; border-left: 2px solid var(--bl-rule);
+  font-size: 13px; line-height: 1.55; color: #6f7c79; font-style: normal; text-align: left;
+}
+@media (min-width: 1200px) {
+  .barlow-wrap .bl-margin {
+    float: right; clear: right; width: 150px; margin: 4px -182px 8px 16px;
+    padding-left: 8px; text-indent: 0;
+  }
+}
+
+/* 1625 印本页码：空锚点，行内显示「p. N」小灰字 */
+.barlow-wrap .bl-pb { scroll-margin-top: 80px; cursor: help; }
+.barlow-wrap .bl-pb[data-p]::before {
+  content: "p." attr(data-p); font-size: 10.5px; color: #a5b3b0; font-style: normal;
+  font-family: Georgia, serif; letter-spacing: .02em; margin: 0 4px;
+  border: 1px solid #d8ece8; border-radius: 3px; padding: 0 3px; vertical-align: 1px;
+}
+
+/* 花饰首字 */
+.barlow-wrap .bl-dropcap {
+  float: left; font-family: Georgia, "Times New Roman", serif; font-size: 3.1em;
+  line-height: .84; margin: 4px 7px 0 0; color: var(--bl-ink-dark);
+}
+
+/* 原书分条（1. 2. …） */
+.barlow-wrap .bl-item { padding-left: 1.4em; margin: 0 0 8px !important; }
+/* 扉页题辞 */
+.barlow-wrap .bl-quote { text-align: center !important; font-style: italic; }
+
+/* 底本里读不出的字 */
+.barlow-wrap .bl-gap { color: #c0392b; background: #fdecea; border-radius: 2px; padding: 0 2px; cursor: help; }
+/* 编者推补：方括号 + 另色，与原文区分 */
+.barlow-wrap .bl-conj { color: #8a5a00; background: #fff6e0; border-radius: 2px; padding: 0 1px; cursor: help; font-style: normal; }
+
+/* 书名页、献辞落款 */
+.barlow-wrap .bl-closer { text-align: right !important; font-style: italic; color: #4a5856; }
+.barlow-wrap .bl-tp p { text-align: center !important; font-size: 16px; letter-spacing: .03em; }
+
+/* 小标题：逐语解说的引语、分论点（录入本 section / subsection） */
+.barlow-wrap .bl-content h3 { font-family: Georgia, "Times New Roman", serif; font-size: 17.5px; font-weight: 600;
+  color: var(--bl-ink-dark); margin: 30px 0 10px; line-height: 1.5; text-align: left; }
+.barlow-wrap .bl-content h4 { font-family: Georgia, "Times New Roman", serif; font-size: 16px; font-weight: 600;
+  font-style: italic; color: var(--bl-ink-dark); margin: 22px 0 8px; line-height: 1.5; }
+.barlow-wrap .bl-content h5 { font-size: 15px; font-weight: 600; color: #4a5856; margin: 18px 0 6px; }
+.barlow-wrap .bl-listhead { font-weight: 600; margin: 14px 0 6px !important; }
+/* 引诗：逐行 */
+.barlow-wrap .bl-poem { margin: 6px 0 18px; padding-left: 2.2em; font-style: italic; }
+.barlow-wrap .bl-poem p { margin: 0 !important; text-align: left !important; }
+/* 引文里嵌的另一篇（录入本 floatingText） */
+.barlow-wrap .bl-float { border: 1px solid var(--bl-rule); border-radius: 4px; padding: 12px 18px; margin: 8px 0 20px; background: #fff; }
+/* 表（卷首目录、卷末索引） */
+.barlow-wrap .bl-table { width: 100%; border-collapse: collapse; font-size: 14.5px; line-height: 1.6; margin: 8px 0 22px; }
+.barlow-wrap .bl-table caption { caption-side: top; text-align: left; font-weight: 600; color: var(--bl-ink-dark); padding: 6px 0; }
+.barlow-wrap .bl-table td, .barlow-wrap .bl-table th { border-bottom: 1px solid var(--bl-rule); padding: 5px 6px; vertical-align: top; text-align: left; }
+.barlow-wrap .bl-table th { background: var(--bl-paper); color: var(--bl-ink-dark); font-weight: normal; font-style: italic; }
+.barlow-wrap .bl-table td:last-child { white-space: nowrap; }
+@media (max-width: 767px) { .barlow-wrap .bl-table { display: block; overflow-x: auto; } }
+
+/* 录入本漏拍、据 1625 年胶片影像补录的页：左侧细线标出，页首一行说明 */
+.barlow-wrap .bl-supplied { border-left: 3px dashed var(--bl-ink-light); padding-left: 14px; margin: 0 0 18px; }
+.barlow-wrap .bl-supplied-note { font-size: 12.5px; color: #6f7c79; font-style: italic; margin: 0 0 10px !important; }
+
+.barlow-wrap .bl-stamp {
+  margin-top: 32px; font-size: 12px; color: #9aa8a5; text-align: right;
+  font-family: Georgia, "Times New Roman", serif; letter-spacing: .03em;
+}
+.barlow-wrap :target { background: #f3faf8; transition: background .4s; }
+
+/* 中文页 */
+.barlow-wrap.bl-zh .bl-content {
+  font-family: "Songti SC", STSong, "Noto Serif CJK SC", "Source Han Serif SC", Georgia, serif;
+}
+.barlow-wrap.bl-zh .bl-title { font-family: "Songti SC", STSong, Georgia, serif; }
+.barlow-wrap.bl-zh .bl-text { font-family: "Kaiti SC", STKaiti, KaiTi, "Songti SC", serif; }
+
+@media (max-width: 767px) {
+  .barlow-wrap .bl-title { font-size: 24px; }
+  .barlow-wrap .bl-content { font-size: 16px; line-height: 1.8; }
+}
+</style>

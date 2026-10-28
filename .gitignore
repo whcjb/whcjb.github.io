@@ -90,3 +90,7 @@ fairbairn_raw/pastoral/src/
 
 # 泰勒提多书：证人整页图、本地 OCR、判读图（可重跑 taylor_bim_ocr / taylor_witness 重建）
 taylor_raw/titus/witness/
+
+# 霍尔、巴洛提摩太后书：证人整页图、本地 OCR、判读图与原图裁片（可重跑 *_bim_ocr / *_witness / tcp_native 重建）
+hall_raw/2timothy/witness/
+barlow_raw/2timothy/witness/

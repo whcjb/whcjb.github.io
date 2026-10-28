@@ -51,6 +51,8 @@ exclude:
   - candlish_raw
   - fairbairn_raw
   - taylor_raw
+  - hall_raw
+  - barlow_raw
   - hodge_raw
   - hutcheson_raw
   - leighton_raw

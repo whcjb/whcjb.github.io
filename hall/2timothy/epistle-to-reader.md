@@ -1,0 +1,25 @@
+---
+layout: hall-chapter
+book_id: 2timothy
+book_name: "Hall on 2 Timothy 3–4"
+title: "An Epistle to the Reader"
+subtitle: "Edmund Calamy"
+date: 2026-10-28 15:49
+prev_url: "/hall/2timothy/title/"
+prev_label: "Title Page"
+next_url: "/hall/2timothy/dedication/"
+next_label: "Epistle Dedicatory"
+---
+
+### <span class="hl-pb" data-facs="1"></span>An Epistle to the READER.
+
+<span class="hl-dropcap">A</span>Mongst all the *Tractates* in *Divinity* written by *English men* in *English* (which are very many, and *many* of them *very excellent,* and highly esteemed even by *learned* men of other *Nations*) there are none more useful (in some respects) or more serviceable to the Church of Christ, then such of them which are *Commentaries* and *Expositions* upon the *holy Scriptures.* Witness *Ainsworth* upon the Pentateuch. *Willet* upon Genesis, Exodus, Leviticus, Daniel, Romans and Iude. *Perkins* upon the Galatians. *Bifield* upon the Colossians. *Taylor* upon Titus, & many others. Insomuch that if we had such like *English Commentaries* upon every Book in the Bible, I doubt not but it would very much tend to the right understanding of the *Scripture,* & thereby to the further propagation of *Truth* & *Godliness* throughout the whole Nation.
+
+The *Reverend, Learned* and *Religious Author* of this ensuing Treatise hath undertaken to give us a *Practical* and *Polemical* Exposition upon the third and fourth Chapters of the latter Epistle of *S. Paul* to *Timothy*; of which it may truly be said, That it is both *elaborate* and *judicious.* And *that he doth not serve the Lord with that which cost him nothing.* There is in this excellent Commentary the sum of nigh *30 years studies,* and the *Epitome* of all those choice things which this *worthy Minister of Christ* hath ever either *heard* or *read.* And therefore I doubt not but it will fully answer expectation, and be gladly entertained by the godly learned Readers.
+
+Especially if they consider, That the *Author* of this Book is the same Person who hath by former Books *guarded* the *Pulpit* from unordained Preachers, The *Font* from Antipaedobaptists, The *Schools* by the defence of human learning; And the Ministery and their maintenance in a Latine Treatise called *Sal Terrae.* His abilities are already sufficiently known to the world by these, and many other of his works, and therefore there is no need to add any thing more in way of commendation, *Vinum vendibile non opus habet hederâ suspensâ.*
+
+My prayer to God is, That this large and yet pithy and learned Exposition may obtain the end for which it was written, That it may do good to future Generations and speak to the world, when the Author is gone out of it to enjoy the Kingdom provided for him from all Eternity.
+
+<p class="hl-closer" markdown="1">Thy servant in the work of the Ministery, EDM. CALAMY.</p>
+

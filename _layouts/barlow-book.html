@@ -1,0 +1,89 @@
+---
+layout: default
+---
+{%- comment -%}
+  约翰·巴洛《提摩太后书第一章讲解》(1625) 的书卷首页（中英共用，靠 page.zh 切换）。
+
+  ⚠️ 不复用别家 layout：每本书独立样式（用户既定规矩）。骨架取自 taylor-chapter。
+  按 2026-10-16 起的新书规矩：章顶不放「跳到某节」下拉，副标题作者写英文原名。
+
+  配色青绿 #2b9b8a：LCh 网格 (58, 35, 180°)，与「历代解经」已登记各色（含霍尔橄榄绿）及加尔文酒红、
+  马太亨利金、站点 Hux 蓝相比最小 ΔE 26.6，与先例同档。深端 #007162。
+
+  本书版式要点（底本 EEBO-TCP A04220，见 barlow_raw/2timothy/PROVENANCE.md）：
+  - 一节一页：节首经文 → `.bl-text`，其后一个 commentary-anchor。
+  - 原书每节分「The Logicall resolution」「The Theologicall exposition」等，在原书是页边旁注，照录为 `.bl-margin`。
+  - 印本页码 → `.bl-pb`，id `#pN`。
+  - 录入本漏拍、据 1625 年影像补录的页 → `.bl-supplied`。
+  - 编者推补 → `.bl-conj`（方括号另色）；待定的缺字 → `.bl-gap`（标红）。
+{%- endcomment -%}
+
+<div class="container barlow-book" style="padding-top: 70px;">
+  <div class="row">
+    <div class="col-lg-9 col-lg-offset-1 col-md-10 col-md-offset-1">
+
+      <div class="bl-booklang">
+        {% if page.zh %}{% if page.en_url %}<a href="{{ site.baseurl }}{{ page.en_url }}">English edition &rarr;</a>{% endif %}
+        {% else %}{% if page.zh_url %}<a href="{{ site.baseurl }}{{ page.zh_url }}">中文版 &rarr;</a>{% endif %}{% endif %}
+      </div>
+      <div class="bl-hero">
+        <h1>{{ page.book_name }}</h1>
+        <p class="bl-hero-author">{{ page.author }}</p>
+        <p class="bl-hero-meta">{{ page.edition }}</p>
+      </div>
+
+      {{ content }}
+
+    </div>
+  </div>
+</div>
+
+<style>
+.barlow-book { --bl-ink: #2b9b8a; --bl-ink-dark: #007162; --bl-rule: #d8ece8; --bl-paper: #f3faf8; }
+.barlow-book .bl-booklang { text-align: right; margin: 0 0 10px; font-size: 13px; font-family: Georgia, serif; }
+.barlow-book .bl-booklang a { color: var(--bl-ink); border: 1px solid var(--bl-rule);
+  border-radius: 4px; padding: 4px 10px; text-decoration: none; }
+.barlow-book .bl-booklang a:hover { background: var(--bl-ink); color: #fff; }
+/* 书首：不用大色块横幅（用户 2026-10-22），书名 + 作者 + 版本一行起，下接细线 */
+.barlow-book .bl-hero {
+  margin: 4px 0 22px; padding: 0 0 12px; border-bottom: 2px solid var(--bl-ink);
+  font-family: Georgia, "Times New Roman", "Songti SC", serif;
+}
+.barlow-book .bl-hero h1 { font-family: Georgia, "Times New Roman", "Songti SC", serif; margin: 0 0 4px; font-size: 26px; font-weight: normal; line-height: 1.3; color: var(--bl-ink-dark); }
+.barlow-book .bl-hero-author { margin: 0; font-size: 14.5px; color: #3a4644; }
+.barlow-book .bl-hero-meta { margin: 2px 0 0; font-size: 13px; color: #7a8784; font-style: italic; }
+.barlow-book .bl-group {
+  font-family: Georgia, "Times New Roman", "Songti SC", serif; margin: 30px 0 12px;
+  font-size: 15px; color: var(--bl-ink-dark); letter-spacing: .05em;
+  padding-bottom: 6px; border-bottom: 1px solid var(--bl-rule);
+}
+.barlow-book .bl-toc { list-style: none; padding: 0; margin: 0; display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 8px; }
+.barlow-book .bl-toc li { margin: 0; }
+.barlow-book .bl-toc a { display: block; padding: 9px 13px; border: 1px solid var(--bl-rule);
+  border-radius: 4px; background: var(--bl-paper); text-decoration: none;
+  font-family: Georgia, "Times New Roman", "Songti SC", serif; font-size: 15px; color: #1f2a28; line-height: 1.45; }
+.barlow-book .bl-toc a:hover { border-color: var(--bl-ink); background: #fff; color: var(--bl-ink-dark); }
+.barlow-book .bl-toc small { display: block; color: #7a8784; font-size: 12.5px; }
+.barlow-book .bl-chgrid { list-style: none; padding: 0; margin: 0; display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(92px, 1fr)); gap: 8px; }
+.barlow-book .bl-chgrid a { display: block; text-align: center; padding: 10px 6px; border: 1px solid var(--bl-rule);
+  border-radius: 4px; background: var(--bl-paper); text-decoration: none; color: #1f2a28;
+  font-family: Georgia, "Times New Roman", "Songti SC", serif; font-size: 15px; }
+.barlow-book .bl-chgrid a:hover { border-color: var(--bl-ink); background: #fff; color: var(--bl-ink-dark); }
+.barlow-book .bl-note { font-family: Georgia, "Times New Roman", "Songti SC", serif; font-size: 13.5px;
+  color: #5f6c69; line-height: 1.8; margin: 34px 0 0; padding-top: 16px; border-top: 1px solid var(--bl-rule); }
+.barlow-book .bl-note p { margin: 0 0 12px; }
+.barlow-book .bl-note-zh { font-family: "Songti SC", STSong, serif; }
+.barlow-book .bl-conj { color: #8a5a00; background: #fff6e0; border-radius: 2px; padding: 0 1px; font-style: normal; }
+.barlow-book .bl-gap { color: #c0392b; background: #fdecea; border-radius: 2px; padding: 0 2px; }
+.barlow-book .bl-conjhead { font-family: "Songti SC", STSong, Georgia, serif; font-size: 16px; color: var(--bl-ink-dark); margin: 26px 0 10px; }
+.barlow-book .bl-conjtab { width: 100%; border-collapse: collapse; font-size: 13px; line-height: 1.6; margin: 10px 0 20px; }
+.barlow-book .bl-conjtab th, .barlow-book .bl-conjtab td { border-bottom: 1px solid var(--bl-rule); padding: 6px 6px; vertical-align: top; text-align: left; }
+.barlow-book .bl-conjtab th { background: var(--bl-paper); color: var(--bl-ink-dark); white-space: nowrap; }
+@media (max-width: 767px) {
+  .barlow-book .bl-hero h1 { font-size: 22px; }
+  .barlow-book .bl-toc { grid-template-columns: 1fr; }
+  .barlow-book .bl-conjtab { display: block; overflow-x: auto; }
+}
+</style>
