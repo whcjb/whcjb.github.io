@@ -995,7 +995,7 @@
 <span style="color:#800000">*希伯来人*</span>。这个名称是最古老的，亚伯拉罕本人在摩西笔下就是以此称呼的（创世记 14:13）。[^f173] 因此，大意是：保罗出身于雅各的后裔，可以追溯到极为久远的年代，以至于他能历数祖父、曾祖，甚至可以上溯更远。
 
 
-<span style="color:#800000">*按着律法说，是法利赛人*</span>。说完血统的尊贵之后，他接着谈论所谓个人特殊的资历。众所周知，法利赛派以圣洁和教义的声望，享誉于其他各派之上。他声称自己属于这一派。通常的看法认为，法利赛人的名称源自一个意为"分离"的词[^f174]；然而我更赞同我曾从卡皮托——一位令人追念的圣洁人物[^f175]——处所学到的见解：他们自夸受赐解释圣经的恩赐，因为 çrp（parash）在希伯来语中含有"解释"之意。[^f176]
+<span style="color:#800000">*按着律法说，是法利赛人*</span>。说完血统的尊贵之后，他接着谈论所谓个人特殊的资历。众所周知，法利赛派以圣洁和教义的声望，享誉于其他各派之上。他声称自己属于这一派。通常的看法认为，法利赛人的名称源自一个意为"分离"的词[^f174]；然而我更赞同我曾从卡皮托——一位令人追念的圣洁人物[^f175]——处所学到的见解：他们自夸受赐解释圣经的恩赐，因为 פרש（parash）在希伯来语中含有"解释"之意。[^f176]
 
 
 当别人自称为文字派[^f177]时，他们却宁愿被视为法利赛人[^f178]，以为自己持守着古人的传统解释。诚然，事实证明，他们以尊古为名，却以自己的杜撰败坏了整本圣经；然而，由于他们同时也保存了一些由古人传承下来的健全解释，故而享有极高的声望。
@@ -1626,7 +1626,7 @@
 > '但众殉道者所流的宝血，作为献给其神之见证，在神的教会中将成为种子，从中必生出充满悟性的子女。'"
 
 
-[^ft47]: 贝扎在注释"耶稣基督的心肠"这一表达时观察道："Alibi solet dicere, In Christo. Ut autem significet ex quo fonte promanet affectus iste, et quo etiam feratur, additum visceribus nomen magnum pondus addit sententiæ, ut intimus amor significetur. Solent enim Hebraei µymjr, rachamim, id est, viscera omnes teneros ac veluti maternos affectus vocare;"——"他在其他地方惯于说，在基督里。但为表明这情感从何泉源流出、又流向何处，加入'心肠'一词使陈述大添分量，以表达亲密之爱。希伯来人惯于以µymjr rachamim，即'心肠'，指称一切温柔而近乎慈母般的情感。"——编者注。
+[^ft47]: 贝扎在注释"耶稣基督的心肠"这一表达时观察道："Alibi solet dicere, In Christo. Ut autem significet ex quo fonte promanet affectus iste, et quo etiam feratur, additum visceribus nomen magnum pondus addit sententiæ, ut intimus amor significetur. Solent enim Hebraei רחמים, rachamim, id est, viscera omnes teneros ac veluti maternos affectus vocare;"——"他在其他地方惯于说，在基督里。但为表明这情感从何泉源流出、又流向何处，加入'心肠'一词使陈述大添分量，以表达亲密之爱。希伯来人惯于以רחמים rachamim，即'心肠'，指称一切温柔而近乎慈母般的情感。"——编者注。
 
 
 <!-- PAGE 115 -->
