@@ -9694,7 +9694,7 @@ On this he has the following note:“<span style="color:#008080">מסביב מג
 
 <!-- PAGE 1237 -->
 
-<span style="color:#800000">fta614</span> *“Before the sons of men, i.e.* openly, so that the world must acknowledge ‘there is a reward for the righteous man.’ Compare Psalm 58:11.” *— French and Skinner.* <span style="color:#800000">fta615</span> “Et que quand elle luit sur les fideles, ses rayons sont pour esblouir les yeux de tous les iniques, et affoiblir leur mains.”. — *Fr.* <span style="color:#800000">fta616</span> This is the reading adopted by Walford. “<span style="color:#008080">yskrm, skr</span>, *colligavit:*hence ‘bands,’ ‘conspiracies.’”
+<span style="color:#800000">fta614</span> *“Before the sons of men, i.e.* openly, so that the world must acknowledge ‘there is a reward for the righteous man.’ Compare Psalm 58:11.” *— French and Skinner.* <span style="color:#800000">fta615</span> “Et que quand elle luit sur les fideles, ses rayons sont pour esblouir les yeux de tous les iniques, et affoiblir leur mains.”. — *Fr.* <span style="color:#800000">fta616</span> This is the reading adopted by Walford. “<span style="color:#008080">מרכסי, רכס</span>, *colligavit:*hence ‘bands,’ ‘conspiracies.’”
 
 <span style="color:#800000">fta617</span> “The particle of similitude is wanting in Hebrew, as is not uncommon. The intention of the Psalmist is evidently to describe by a metaphor his signal deliverance, as if he had been guarded by invincible fortifications.” — *Walford.* <span style="color:#800000">fta618</span> “Ou, perturbation; ou, hastivete.” — *Fr*. *marg.* “Or, perturbation; or, haste.”
 

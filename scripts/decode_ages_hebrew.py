@@ -62,8 +62,19 @@ TRAIL_FN_RE = re.compile(r'^(.*?)((?:\[\^[^\]]+\])+)$', re.S)
 STY_RE  = re.compile(r'(<sty c="008080"[^>]*>)(.*?)(</sty>)', re.S)
 
 
+# 映射表外字符、逐字规则解不了的整 span，逐条核对后写死（键＝span 原文）。
+#   诗 31 脚注 fta616（Walford）：两词夹逗号，整串倒序会把词根排到前面。
+#   字母以诗 31:20 马所拉文本 מֵרֻכְסֵי 核对；次序取「词形, 词根」——
+#   紧跟的 *colligavit* 是词根 רכס 的释义。2026-10-28 用户同意。
+SPAN_OVERRIDES = {
+    'yskrm, skr': 'מרכסי, רכס',
+}
+
+
 def decode(garble: str):
     """乱码 → 希伯来；不可解码返回 None（调用方保持原样）。"""
+    if garble in SPAN_OVERRIDES:
+        return SPAN_OVERRIDES[garble]
     if not garble or HEB_RE.search(garble):
         return None                      # 空 / 已经是 Unicode 希伯来
     if any(c not in MAP for c in garble):
@@ -203,6 +214,8 @@ def convert_json(path: Path, dry: bool, fn_cache=None):
 
 
 def process(path: Path, dry: bool, cache_dir=None):
+    if not path.exists():        # 同一轮里先被缓存迁移改了名（--book 与 --paths 同用）
+        return 0, 0, 0, 0
     if path.suffix == '.json':
         return convert_json(path, dry, cache_dir)
     raw = path.read_text(encoding='utf-8')

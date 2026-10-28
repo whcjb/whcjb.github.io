@@ -9971,7 +9971,7 @@
 [BODY] <sty c="800000" i="0">fta614</sty> <sty c="000000" i="1">“Before the sons of men, i.e. </sty>openly, so that the world must acknowledge ‘there is a reward for the righteous man.’ Compare
 [FOOTNOTE] <sty c="800000" i="0"><195811></sty>Psalm 58:11.” <sty c="000000" i="1">— French and Skinner.</sty>
 [BODY] <sty c="800000" i="0">fta615</sty> “Et que quand elle luit sur les fideles, ses rayons sont pour esblouir les yeux de tous les iniques, et affoiblir leur mains.”. — <sty c="000000" i="1">Fr.</sty>
-[BODY] <sty c="800000" i="0">fta616</sty> This is the reading adopted by Walford. “<sty c="008080" i="0">yskrm, skr</sty><sty c="000000" i="1">,</sty> <sty c="000000" i="1">colligavit:</sty>hence ‘bands,’ ‘conspiracies.’”
+[BODY] <sty c="800000" i="0">fta616</sty> This is the reading adopted by Walford. “<sty c="008080" i="0">מרכסי, רכס</sty><sty c="000000" i="1">,</sty> <sty c="000000" i="1">colligavit:</sty>hence ‘bands,’ ‘conspiracies.’”
 [BODY] <sty c="800000" i="0">fta617</sty> “The particle of similitude is wanting in Hebrew, as is not uncommon. The intention of the Psalmist is evidently to describe by a metaphor his signal deliverance, as if he had been guarded by invincible fortifications.” — <sty c="000000" i="1">Walford.</sty>
 [BODY] <sty c="800000" i="0">fta618</sty> “Ou, perturbation; ou, hastivete.” — <sty c="000000" i="1">Fr</sty>. <sty c="000000" i="1">marg. </sty>“Or, perturbation; or, haste.”
 [BODY] <sty c="800000" i="0">fta619</sty>”Ou, par excellence.” — “Or, excellently.” — <sty c="000000" i="1">Fr.</sty> <sty c="000000" i="1">marg.</sty>
