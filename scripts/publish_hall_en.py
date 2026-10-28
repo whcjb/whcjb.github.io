@@ -58,7 +58,10 @@ BOOK = tcp_publish.Book(
           ('starkey', 'Books Sold by John Starkey', 'Publisher’s list')],
     back_label='Post-script and Tables',
     about_en=about_en, about_zh=about_zh,
-    witness_zh='同一卷胶片的灰度扫描')
+    witness_zh='同一卷胶片的灰度扫描',
+    all_chapters=[1, 2, 3, 4], others={1: ('Barlow', '/barlow/2timothy/1/')},
+    companion_zh='霍尔只讲第三、四章。第一章见本站所收巴洛《提摩太后书第一章讲解》（1625）；'
+                 '第二章巴洛 1632 年对开本有讲解，但没有录入本，本站暂缺。')
 
 
 def main():

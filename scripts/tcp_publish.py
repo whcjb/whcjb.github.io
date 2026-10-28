@@ -206,9 +206,22 @@ class Book:
         out.append(f'<h2 class="{P}-group">Prefatory Matter</h2>')
         out += [f'<ul class="{P}-toc">'] + [link(p) for p in pages if p['group'] == 'front'] + ['</ul>']
         out.append(f'<h2 class="{P}-group">Chapters</h2>')
-        out.append(f'<ul class="{P}-chgrid">' + ''.join(
-            f'<li><a href="{{{{ site.baseurl }}}}/{self.slug}/{self.book}/{c}/">Chapter {c}</a></li>'
-            for c in sorted(self.NV)) + '</ul>')
+        # 这一卷由几本拼成（提后：巴洛第 1 章、霍尔第 3–4 章）：书首页按全卷章数排，本书没有的章接到别本，
+        # 谁都没有的标灰。历代解经卡片只显示一位注释家，不在这里互相接上，另一本就没有入口。
+        allch = getattr(self, 'all_chapters', None) or sorted(self.NV)
+        other = getattr(self, 'others', {})
+        cells = []
+        for c in allch:
+            if c in self.NV:
+                cells.append(f'<li><a href="{{{{ site.baseurl }}}}/{self.slug}/{self.book}/{c}/">Chapter {c}</a></li>')
+            elif c in other:
+                who, url = other[c]
+                cells.append(f'<li><a class="{P}-other" href="{{{{ site.baseurl }}}}{url}">Chapter {c}<small>{who}</small></a></li>')
+            else:
+                cells.append(f'<li><span class="{P}-none">Chapter {c}<small>not on this site</small></span></li>')
+        out.append(f'<ul class="{P}-chgrid">' + ''.join(cells) + '</ul>')
+        if other:
+            out.append(f'<p class="{P}-note-zh {P}-companion">{self.companion_zh}</p>')
         out.append(f'<h2 class="{P}-group">Commentary</h2>')
         out += [f'<ul class="{P}-toc">'] + [link(p) for p in pages if p['group'].startswith('section')] + ['</ul>']
         if self.back:
