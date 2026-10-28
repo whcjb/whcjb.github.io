@@ -140,6 +140,13 @@ AUTHORS = OrderedDict([
                       years='1806–1873', dir='candlish',
                       work_cn='约翰一书讲解',
                       work_en='The First Epistle of John, Expounded in a Series of Lectures')),
+    # 费尔贝恩：生卒取 DNB vol.18（Fairbairn, Patrick, D.D. (1805–1874)，W. G. Blaikie 撰）：1805 年 1 月 28 日
+    # 生于贝里克郡格林洛堂区 Hallyburton，1874 年 8 月 6 日夜猝逝。《教牧书信》1874 爱丁堡 T. & T. Clark 一册，
+    # 提前、提多、提后在本站分三卷登记。
+    ('fairbairn', dict(name='帕特里克·费尔贝恩', short='费尔贝恩', en='Patrick Fairbairn',
+                       years='1805–1874', dir='fairbairn',
+                       work_cn='教牧书信注释',
+                       work_en='The Pastoral Epistles')),
     ('alexander', dict(name='约瑟·亚历山大', short='亚历山大', en='Joseph Addison Alexander',
                        years='1809–1860', dir='alexander',
                        work_cn='诗篇、以赛亚书注释',
@@ -202,6 +209,10 @@ AUTHOR_COLORS = {
     # 坎德利什灰玫瑰：L 28–55、C 20–60 网格里与既有十八色及加尔文酒红、马太亨利金、站点 Hux 蓝
     # 最小 ΔE 28.4（珀金斯暗酒红），次近曼顿梅 28.1 档，与先例同档。
     'candlish': ('#8a5462', '#b07080'),
+    # 费尔贝恩桑葚紫：L 28–55、C 20–60 网格里与既有十九色及加尔文酒红、马太亨利金、站点 Hux 蓝
+    # 最小 ΔE 30.5 的是 #c55db5（太艳）；退一档取 C 50 的 #bc65ac，最小 ΔE 26.5，与先例同档
+    # （约翰斯通 26.8 / 亚历山大 26.9）。低彩度一档（C ≤ 40）最好的也只有 25.5。
+    'fairbairn': ('#8e3f82', '#bc65ac'),
 }
 
 # 逐卷书名（同一注释家的不同分册书名不同时用）。取各卷扉页的实际书名。
@@ -245,6 +256,15 @@ BOOK_TITLES = {
                                 'An Exposition of the Epistle of Jude'),
     ('candlish', '1john'):     ('约翰一书讲解',
                                 'The First Epistle of John, Expounded in a Series of Lectures'),
+    ('fairbairn', '1timothy'): ('提摩太前书注释',
+                                'The Pastoral Epistles: The Greek Text and Translation, with Introduction, '
+                                'Expository Notes, and Dissertations'),
+    ('fairbairn', 'titus'):    ('提多书注释',
+                                'The Pastoral Epistles: The Greek Text and Translation, with Introduction, '
+                                'Expository Notes, and Dissertations'),
+    ('fairbairn', '2timothy'): ('提摩太后书注释',
+                                'The Pastoral Epistles: The Greek Text and Translation, with Introduction, '
+                                'Expository Notes, and Dissertations'),
     ('manton', 'james'):       ('雅各书注释',
                                 'A Practical Commentary, or an Exposition with Notes '
                                 'on the Epistle of James'),
@@ -269,7 +289,7 @@ COMPARE_ACCENT = {
     'davenant': '#556b2f', 'alexander': '#7d2f2f', 'spurgeon': '#4a3b22', 'durham': '#674c8e',
     'johnstone': '#106ab2', 'perkins': '#9b2d5f', 'hutcheson': '#2f8f46', 'leighton': '#2d2d99',
     'adams': '#66666c', 'rollock': '#786000', 'jenkyn': '#cd5f37',
-    'candlish': '#b07080',
+    'candlish': '#b07080', 'fairbairn': '#bc65ac',
 }
 COMPARE_LABEL = {
     'calvin': '加尔文注释', 'mhenry': '马太亨利注释', 'owen': '约翰欧文注释',
@@ -278,7 +298,7 @@ COMPARE_LABEL = {
     'spurgeon': '司布真注释', 'durham': '达拉谟注释', 'johnstone': '约翰斯通讲疏',
     'perkins': '珀金斯注释', 'hutcheson': '赫奇森注释', 'leighton': '雷登注释',
     'adams': '亚当斯注释', 'rollock': '罗洛克讲章', 'jenkyn': '詹金讲解',
-    'candlish': '坎德利什讲解',
+    'candlish': '坎德利什讲解', 'fairbairn': '费尔贝恩注释',
 }
 
 
@@ -299,7 +319,7 @@ PRIMARY_LANG = {'calvin': 'zh', 'mhenry': 'zh', 'bridges': 'zh',
                 'alexander': 'en', 'spurgeon': 'en', 'durham': 'en',
                 'johnstone': 'en', 'perkins': 'en', 'hutcheson': 'en', 'leighton': 'en',
                 'adams': 'en', 'rollock': 'en', 'jenkyn': 'en',
-                'candlish': 'en'}
+                'candlish': 'en', 'fairbairn': 'en'}
 
 
 def _lang_variants(aid, d: Path, name: str):

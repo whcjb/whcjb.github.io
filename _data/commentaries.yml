@@ -138,6 +138,14 @@ authors:
     work_cn: "约翰一书讲解"
     work_en: "The First Epistle of John, Expounded in a Series of Lectures"
     books: 1
+  - id: fairbairn
+    name: "帕特里克·费尔贝恩"
+    short: "费尔贝恩"
+    en: "Patrick Fairbairn"
+    years: "1805–1874"
+    work_cn: "教牧书信注释"
+    work_en: "The Pastoral Epistles"
+    books: 3
   - id: alexander
     name: "约瑟·亚历山大"
     short: "亚历山大"
@@ -486,18 +494,21 @@ books:
     testament: nt
     chapters: 6
     links:
+      - {author: fairbairn, path: "/fairbairn/1timothy/", url_tpl: "/fairbairn/1timothy/__CH__/", title_cn: "提摩太前书注释", title_en: "The Pastoral Epistles: The Greek Text and Translation, with Introduction, Expository Notes, and Dissertations", c0: "#8e3f82", c1: "#bc65ac"}
   - id: 2timothy
     name: "提摩太后书"
     en: "2 Timothy"
     testament: nt
     chapters: 4
     links:
+      - {author: fairbairn, path: "/fairbairn/2timothy/", url_tpl: "/fairbairn/2timothy/__CH__/", title_cn: "提摩太后书注释", title_en: "The Pastoral Epistles: The Greek Text and Translation, with Introduction, Expository Notes, and Dissertations", c0: "#8e3f82", c1: "#bc65ac"}
   - id: titus
     name: "提多书"
     en: "Titus"
     testament: nt
     chapters: 3
     links:
+      - {author: fairbairn, path: "/fairbairn/titus/", url_tpl: "/fairbairn/titus/__CH__/", title_cn: "提多书注释", title_en: "The Pastoral Epistles: The Greek Text and Translation, with Introduction, Expository Notes, and Dissertations", c0: "#8e3f82", c1: "#bc65ac"}
   - id: philemon
     name: "腓利门书"
     en: "Philemon"

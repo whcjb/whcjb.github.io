@@ -1,0 +1,214 @@
+---
+layout: default
+---
+{%- comment -%}
+  费尔贝恩《教牧书信》(1874) 逐章注释页 / 序言、导论、经文与译文、附录页。
+
+  ⚠️ 不复用别家 layout：每本书独立样式（用户既定规矩）。骨架取自 candlish-chapter，
+  去掉了坎德利什特有的讲次标题、部分标题、两份录入本的补字标记。
+
+  配色桑葚紫 #bc65ac：与「历代解经」已登记十九色及加尔文酒红、马太亨利金、站点 Hux 蓝的
+  CIELAB ΔE 最小 26.5，与先例同档（约翰斯通 26.8 / 亚历山大 26.9）。深端 #8e3f82。
+
+  本书版式要点（底本 StudyLight / BibleSupport 录入本，见 fairbairn_raw/pastoral/PROVENANCE.md）：
+  - 一章一页；每条注释以原书的「Ver. N.」起段 → `.fb-ver`，前面放 commentary-anchor。
+  - 录入本整节缺文 → `.fb-lost`（不从扫描本补，待用户定）。
+  - 原书页脚注录入本已改作正文圆括号插注，照录入本。
+  - 经文与译文页：希腊文 / 英文左右两栏 `.fb-par`，手机上上下排。
+{%- endcomment -%}
+
+<div class="container fairbairn-wrap{% if page.zh %} fb-zh{% endif %}" style="padding-top: 70px;">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1" id="cmpCol">
+
+      <div class="fb-chrome">
+        <a href="{{ site.baseurl }}/fairbairn/{{ page.book_id }}/">&larr; {{ page.book_name }}</a>
+        {% if page.zh %}{% if page.en_url %}<a class="fb-lang" href="{{ site.baseurl }}{{ page.en_url }}">English &rarr;</a>{% endif %}
+        {% else %}{% if page.zh_url %}<a class="fb-lang" href="{{ site.baseurl }}{{ page.zh_url }}">中文版 &rarr;</a>{% endif %}{% endif %}
+      </div>
+
+      <h1 class="fb-title">{{ page.title }}</h1>
+      {% if page.subtitle %}<p class="fb-subtitle">{{ page.subtitle }}</p>{% endif %}
+
+      <div class="fb-nav">
+        {% if page.prev_url %}<a href="{{ site.baseurl }}{{ page.prev_url }}">&larr; {{ page.prev_label }}</a>
+        {% else %}<span></span>{% endif %}
+        {% if page.next_url %}<a href="{{ site.baseurl }}{{ page.next_url }}">{{ page.next_label }} &rarr;</a>
+        {% else %}<span></span>{% endif %}
+      </div>
+
+      {%- comment -%}
+        对比注释抽屉：只给正文页（有 page.chapter）。self 把本书自己排除，中英两版 key 不同。
+      {%- endcomment -%}
+      {% if page.chapter %}
+      {% assign cc_self = "fairbairn-en" %}
+      {% include compare-commentary-head.html self=cc_self content_class="fb-content" self_label="费尔贝恩" %}
+      {% endif %}
+      <div class="fb-content">
+        {{ content }}
+      </div>
+      {% if page.chapter %}{% include compare-commentary-foot.html %}{% endif %}
+
+      {% if page.date %}
+      <div class="fb-stamp">{% if page.zh %}译于{% else %}Published{% endif %} {{ page.date | date: "%Y-%m-%d %H:%M" }}</div>
+      {% endif %}
+
+      <div class="fb-nav fb-nav-foot">
+        {% if page.prev_url %}<a href="{{ site.baseurl }}{{ page.prev_url }}">&larr; {{ page.prev_label }}</a>
+        {% else %}<span></span>{% endif %}
+        {% if page.next_url %}<a href="{{ site.baseurl }}{{ page.next_url }}">{{ page.next_label }} &rarr;</a>
+        {% else %}<span></span>{% endif %}
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<script>
+// 本书暂无中文页，经文弹层不挂（模块只认中文书卷名）。
+</script>
+
+{%- comment -%}
+  经文引用弹层：只给中文页（模块认的是中文书卷名）。accent/vnum 必须写字面量
+  （Jekyll 3 的 include 参数不接受变量）——与下方 CSS 的 --fb-ink 两处同值，改色要一起改。
+{%- endcomment -%}
+{% if page.zh %}
+{% include scripture-popup.html container_selector=".fb-content" accent="#bc65ac" vnum="#8e3f82" slide="down" %}
+{% endif %}
+
+<style>
+.fairbairn-wrap {
+  --fb-ink: #bc65ac;
+  --fb-ink-dark: #8e3f82;
+  --fb-rule: #f0e2ee;
+  --fb-paper: #fbf7fa;
+  --fb-body: #2a2a33;
+}
+.fairbairn-wrap .fb-chrome,
+.fairbairn-wrap .fb-nav {
+  font-size: 13px; display: flex; justify-content: space-between; gap: 12px;
+  align-items: center; font-family: Georgia, "Times New Roman", serif;
+}
+.fairbairn-wrap .fb-chrome { margin: 18px 0 22px; }
+.fairbairn-wrap .fb-chrome a,
+.fairbairn-wrap .fb-nav a { color: var(--fb-ink-dark); text-decoration: none; }
+.fairbairn-wrap .fb-chrome a:hover,
+.fairbairn-wrap .fb-nav a:hover { color: var(--fb-ink-dark); text-decoration: underline; }
+.fairbairn-wrap .fb-lang { border: 1px solid var(--fb-rule); border-radius: 4px; padding: 4px 10px; }
+.fairbairn-wrap .fb-lang:hover { background: var(--fb-ink); color: #fff !important; text-decoration: none; }
+.fairbairn-wrap .fb-title {
+  font-family: Georgia, "Times New Roman", serif; font-size: 30px; font-weight: normal;
+  color: var(--fb-ink-dark); text-align: center; margin: 10px 0 4px; line-height: 1.3;
+}
+.fairbairn-wrap .fb-subtitle {
+  text-align: center; font-size: 14px; color: #8a8a99; margin: 0 0 18px;
+  font-family: Georgia, "Times New Roman", serif; font-style: italic;
+}
+.fairbairn-wrap .fb-nav { margin: 14px 0 26px; }
+.fairbairn-wrap .fb-nav-foot { margin-top: 44px; padding-top: 16px; border-top: 1px solid var(--fb-rule); }
+
+/* 正文 */
+.fairbairn-wrap .fb-content {
+  font-family: Georgia, "Times New Roman", "Songti SC", STSong, serif;
+  font-size: 17px; line-height: 1.85; color: var(--fb-body);
+}
+.fairbairn-wrap .fb-content p { margin: 0 0 16px; text-align: justify; }
+.fairbairn-wrap .fb-content a { color: var(--fb-ink-dark); }
+
+/* 部分标题（每部分第一讲前） */
+.fairbairn-wrap .fb-part {
+  text-align: center; margin: 0 0 26px; padding: 10px 0 12px;
+  border-top: 1px solid var(--fb-rule); border-bottom: 1px solid var(--fb-rule);
+  font-family: Georgia, "Times New Roman", serif; color: var(--fb-ink-dark);
+  font-size: 13.5px; letter-spacing: .12em; line-height: 1.6;
+}
+.fairbairn-wrap .fb-part small { display: block; letter-spacing: .04em; color: #8a8a99; font-size: 12.5px; }
+/* 讲题：原书全大写，排小一号、加字距 */
+.fairbairn-wrap .fb-content h2.fb-head {
+  font-family: Georgia, "Times New Roman", serif; font-size: 16px; font-weight: normal;
+  text-align: center; color: var(--fb-ink-dark); margin: 4px 0 22px; line-height: 1.6;
+  letter-spacing: .08em;
+}
+/* 题记经文 */
+.fairbairn-wrap .fb-text {
+  background: var(--fb-paper); border-left: 3px solid var(--fb-ink);
+  padding: 12px 18px; margin: 6px 0 22px; color: #3e3e55; font-size: 16px; line-height: 1.75;
+}
+.fairbairn-wrap .fb-text p { margin: 0; text-align: left; }
+.fairbairn-wrap .fb-text p + p { margin-top: 8px; }
+.fairbairn-wrap .commentary-anchor {
+  display: block; height: 0; line-height: 0; margin: 0; padding: 0;
+  overflow: hidden; visibility: hidden; scroll-margin-top: 80px;
+}
+
+/* 作者脚注：kramdown 的 sup.footnote + div.footnotes */
+.fairbairn-wrap .fb-content sup { line-height: 0; }
+.fairbairn-wrap .fb-content a.footnote { text-decoration: none; padding: 0 1px; font-size: 12px; }
+.fairbairn-wrap .fb-content .footnotes {
+  margin-top: 36px; padding-top: 14px; border-top: 1px solid var(--fb-rule);
+  font-size: 14.5px; line-height: 1.7; color: #44444f;
+}
+.fairbairn-wrap .fb-content .footnotes ol { padding-left: 1.6em; margin: 0; }
+.fairbairn-wrap .fb-content .footnotes li { margin: 0 0 10px; }
+.fairbairn-wrap .fb-content .footnotes p { margin: 0 0 8px; }
+.fairbairn-wrap .fb-content .footnotes a.reversefootnote { text-decoration: none; }
+.fairbairn-wrap .fb-notehead { font-variant: small-caps; letter-spacing: .05em; color: var(--fb-ink-dark); }
+/* 两份录入本都缺的字（经文出处被导出程序吃掉、脚注正文缺失） */
+.fairbairn-wrap .fb-lost { color: #8a8a99; border-bottom: 1px dotted #b8b8c4; cursor: help; font-style: italic; }
+.fairbairn-wrap .fb-edit { color: #8a8a99; font-style: italic; }
+/* 编者补出的经文出处（两份录入本都被吃掉）：方括号 + 另色 */
+.fairbairn-wrap .fb-ed { color: #8a5a00; background: #fff6e0; border-radius: 2px; padding: 0 1px; cursor: help; font-style: normal; }
+
+/* 章目录页、目录页 */
+.fairbairn-wrap .fb-chtoc { list-style: none; padding: 0; margin: 10px 0; }
+.fairbairn-wrap .fb-chtoc li { margin: 0 0 8px; }
+.fairbairn-wrap .fb-chtoc a { display: block; padding: 9px 13px; border: 1px solid var(--fb-rule);
+  border-radius: 4px; background: var(--fb-paper); text-decoration: none; color: #2a2a33; line-height: 1.5; }
+.fairbairn-wrap .fb-chtoc a:hover { border-color: var(--fb-ink); color: var(--fb-ink-dark); }
+.fairbairn-wrap .fb-chtoc .fb-ref { display: block; font-size: 13px; color: #8a8a99; }
+.fairbairn-wrap .fb-content h2.fb-group { font-size: 14px; text-align: left; letter-spacing: .08em;
+  margin: 28px 0 10px; padding-bottom: 6px; border-bottom: 1px solid var(--fb-rule);
+  font-family: Georgia, "Times New Roman", serif; font-weight: normal; color: var(--fb-ink-dark); }
+.fairbairn-wrap .fb-contents p { margin: 0 0 10px; text-align: left; padding-left: 2.6em; text-indent: -2.6em; }
+
+.fairbairn-wrap .fb-stamp {
+  margin-top: 32px; font-size: 12px; color: #9c9cb0; text-align: right;
+  font-family: Georgia, "Times New Roman", serif; letter-spacing: .03em;
+}
+.fairbairn-wrap :target { background: #fff6cc; transition: background .4s; }
+
+/* 中文页 */
+.fairbairn-wrap.fb-zh .fb-content {
+  font-family: "Songti SC", STSong, "Noto Serif CJK SC", "Source Han Serif SC", Georgia, serif;
+}
+.fairbairn-wrap.fb-zh .fb-title { font-family: "Songti SC", STSong, Georgia, serif; }
+.fairbairn-wrap.fb-zh .fb-text { font-family: "Kaiti SC", STKaiti, KaiTi, "Songti SC", serif; }
+
+@media (max-width: 767px) {
+  .fairbairn-wrap .fb-title { font-size: 24px; }
+  .fairbairn-wrap .fb-content { font-size: 16px; line-height: 1.8; }
+  .fairbairn-wrap .fb-contents p { padding-left: 0; text-indent: 0; }
+}
+/* 费尔贝恩：经节起首「Ver. 5.」 */
+.fairbairn-wrap .fb-ver { font-weight: normal; font-variant: small-caps; letter-spacing: .04em; color: var(--fb-ink-dark); }
+/* 录入本整节缺文 */
+.fairbairn-wrap .fb-lost { color: #8a8a99; font-style: italic; border-left: 3px solid var(--fb-rule);
+  padding: 6px 0 6px 14px; text-align: left !important; }
+.fairbairn-wrap .fb-lost .fb-ver { font-style: normal; }
+/* 章内小节标题（导论、附录） */
+.fairbairn-wrap .fb-content h2.fb-sec { font-family: Georgia, "Times New Roman", serif; font-size: 17px; font-weight: normal;
+  text-align: center; color: var(--fb-ink-dark); margin: 6px 0 22px; letter-spacing: .06em; line-height: 1.6; }
+/* 经文与译文：希腊文 / 英文两栏 */
+.fairbairn-wrap .fb-par { display: grid; grid-template-columns: 1fr 1fr; gap: 26px; margin: 0 0 30px; }
+.fairbairn-wrap .fb-par h3 { grid-column: 1 / -1; margin: 6px 0 -10px; font-family: Georgia, serif; font-size: 15px;
+  font-weight: normal; color: var(--fb-ink-dark); letter-spacing: .1em; text-align: center;
+  border-bottom: 1px solid var(--fb-rule); padding-bottom: 6px; }
+.fairbairn-wrap .fb-par .fb-gk { font-family: "Gentium Plus", "GFS Didot", "Palatino Linotype", Palatino, Georgia, serif;
+  font-size: 16.5px; line-height: 1.9; text-align: left; }
+.fairbairn-wrap .fb-par .fb-en { text-align: left; }
+.fairbairn-wrap .fb-par sup.fb-vn { color: var(--fb-ink-dark); font-size: 11px; font-weight: bold; margin-right: 2px; }
+.fairbairn-wrap .fb-title p { text-align: center !important; margin: 0 0 6px; letter-spacing: .04em; }
+@media (max-width: 767px) {
+  .fairbairn-wrap .fb-par { grid-template-columns: 1fr; gap: 12px; }
+}
+</style>

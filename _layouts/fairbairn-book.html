@@ -1,0 +1,84 @@
+---
+layout: default
+---
+{%- comment -%}
+  费尔贝恩《教牧书信》(1874) 三卷书首页（提前 / 提多 / 提后各一）。配色与正文页同源（桑葚紫 #bc65ac）。
+  目录按原书：序言、导论四节 → 本卷经文与译文 → 逐章注释 → 附录 A–C。
+{%- endcomment -%}
+
+<div class="container fairbairn-book" style="padding-top: 70px;">
+  <div class="row">
+    <div class="col-lg-9 col-lg-offset-1 col-md-10 col-md-offset-1">
+
+      <div class="fb-hero">
+        <h1>{{ page.book_name }}</h1>
+        <p class="fb-hero-author">{{ page.author }}</p>
+        <p class="fb-hero-meta">{{ page.edition }}</p>
+      </div>
+
+      {{ content }}
+
+    </div>
+  </div>
+</div>
+
+<style>
+.fairbairn-book { --fb-ink: #bc65ac; --fb-ink-dark: #8e3f82; --fb-rule: #f0e2ee; --fb-paper: #fbf7fa; }
+.fairbairn-book .fb-booklang { text-align: right; margin: 0 0 10px; font-size: 13px; font-family: Georgia, serif; }
+.fairbairn-book .fb-booklang a { color: var(--fb-ink); border: 1px solid var(--fb-rule);
+  border-radius: 4px; padding: 4px 10px; text-decoration: none; }
+.fairbairn-book .fb-booklang a:hover { background: var(--fb-ink); color: #fff; }
+/* 书首：不用大色块横幅（用户 2026-10-22），书名 + 作者 + 版本加细线 */
+.fairbairn-book .fb-hero {
+  margin: 4px 0 22px; padding: 0 0 12px; border-bottom: 2px solid var(--fb-ink);
+  font-family: Georgia, "Times New Roman", "Songti SC", serif;
+}
+.fairbairn-book .fb-hero h1 { font-family: Georgia, "Times New Roman", "Songti SC", serif; margin: 0 0 4px;
+  font-size: 26px; font-weight: normal; line-height: 1.3; color: var(--fb-ink-dark); }
+.fairbairn-book .fb-hero-author { margin: 0; font-size: 14.5px; color: #44444f; }
+.fairbairn-book .fb-hero-meta { margin: 2px 0 0; font-size: 13px; color: #8a8a99; font-style: italic; }
+.fairbairn-book .fb-group {
+  font-family: Georgia, "Times New Roman", "Songti SC", serif; margin: 30px 0 12px;
+  font-size: 15px; color: var(--fb-ink-dark); letter-spacing: .05em;
+  padding-bottom: 6px; border-bottom: 1px solid var(--fb-rule);
+}
+.fairbairn-book .fb-toc { list-style: none; padding: 0; margin: 0; display: grid;
+  grid-template-columns: 1fr; gap: 8px; }
+.fairbairn-book .fb-toc li { margin: 0; }
+.fairbairn-book .fb-toc .fb-ref { display: block; font-size: 12.5px; color: #8a8a99; margin-top: 2px; }
+.fairbairn-book .fb-part-sub { margin: -6px 0 12px; font-size: 13px; color: #8a8a99; font-style: italic; font-family: Georgia, serif; }
+.fairbairn-book .fb-toc a { display: block; padding: 9px 13px; border: 1px solid var(--fb-rule);
+  border-radius: 4px; background: var(--fb-paper); text-decoration: none;
+  font-family: Georgia, "Times New Roman", "Songti SC", serif; font-size: 15px; color: #2a2a33; line-height: 1.45; }
+.fairbairn-book .fb-toc a:hover { border-color: var(--fb-ink); background: #fff; color: var(--fb-ink-dark); }
+.fairbairn-book .fb-note { font-family: Georgia, "Times New Roman", "Songti SC", serif; font-size: 13.5px;
+  color: #6f6f85; line-height: 1.8; margin: 34px 0 0; padding-top: 16px; border-top: 1px solid var(--fb-rule); }
+.fairbairn-book .fb-chgrid { list-style: none; padding: 0; margin: 0; display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(92px, 1fr)); gap: 8px; }
+.fairbairn-book .fb-chgrid a { display: block; text-align: center; padding: 10px 6px; border: 1px solid var(--fb-rule);
+  border-radius: 4px; background: var(--fb-paper); text-decoration: none; color: #2a2a33;
+  font-family: Georgia, "Times New Roman", "Songti SC", serif; font-size: 15px; }
+.fairbairn-book .fb-chgrid a:hover { border-color: var(--fb-ink); background: #fff; color: var(--fb-ink-dark); }
+@media (max-width: 767px) {
+  .fairbairn-book .fb-hero h1 { font-size: 22px; }
+}
+.fairbairn-book .fb-note p { margin: 0 0 12px; }
+.fairbairn-book .fb-note-zh { font-family: "Songti SC", STSong, serif; }
+.fairbairn-book .fb-lost { color: #8a8a99; border-bottom: 1px dotted #b8b8c4; font-style: italic; }
+.fairbairn-book .fb-ed { color: #8a5a00; background: #fff6e0; border-radius: 2px; padding: 0 1px; font-style: normal; }
+/* 编者改动逐条说明 */
+.fairbairn-book .fb-edhead { font-family: "Songti SC", STSong, Georgia, serif; font-size: 16px; color: var(--fb-ink-dark); margin: 26px 0 10px; }
+.fairbairn-book .fb-edtab { width: 100%; border-collapse: collapse; font-size: 13px; line-height: 1.6; margin: 10px 0 16px; }
+.fairbairn-book .fb-edtab th, .fairbairn-book .fb-edtab td { border-bottom: 1px solid var(--fb-rule); padding: 6px 6px; vertical-align: top; text-align: left; }
+.fairbairn-book .fb-edtab th { background: var(--fb-paper); color: var(--fb-ink-dark); white-space: nowrap; }
+.fairbairn-book .fb-edtab td:first-child, .fairbairn-book .fb-edtab td:nth-child(2) { white-space: nowrap; }
+.fairbairn-book .fb-edtab td:nth-child(3), .fairbairn-book .fb-edtab td:nth-child(4) { font-family: Georgia, serif; }
+.fairbairn-book .fb-edtab td a { color: var(--fb-ink-dark); }
+.fairbairn-book .fb-edtab .fb-edgrp td { background: var(--fb-paper); color: var(--fb-ink-dark); font-family: "Songti SC", STSong, serif; padding-top: 10px; }
+@media (max-width: 767px) { .fairbairn-book .fb-edtab { display: block; overflow-x: auto; } }
+</style>
+<style>
+.fairbairn-book .fb-siblings { margin: -12px 0 18px; font-size: 13.5px; font-family: Georgia, serif; color: #8a8a99; }
+.fairbairn-book .fb-siblings a { color: var(--fb-ink-dark); margin-right: 10px; }
+.fairbairn-book .fb-siblings b { color: var(--fb-ink-dark); margin-right: 10px; font-weight: normal; border-bottom: 2px solid var(--fb-ink); }
+</style>
