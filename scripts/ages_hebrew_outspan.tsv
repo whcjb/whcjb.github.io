@@ -1,0 +1,50 @@
+# AGES 希伯来乱码中**丢了 teal 颜色**、不在 <span> 里的那一类——decode 按 span 找不到。
+# 逐条按旁边音译 / 钦定本译文 / 释义核对过才收。book = translate_filibi BOOKS key
+# （= calvin_raw 子目录名）。2026-10-28 用户同意（「修」）。
+# 次序：同一本书里长串在前（短串是长串的子串时先替长串）。
+# book	乱码	希伯来	依据
+genesis	twnjm ynçl	לשני מחנות	音译 leshenai machanoth（32 章）
+genesis	hfyçq	קשיטה	音译 Kisitah（33 章）
+genesis	hrqh	הקרה	音译 hakreh（24 章）
+genesis	qba	אבק	音译 Abak，Niphal 摔跤（32 章）
+genesis	qby	יבק	雅博河 Jabbok（32 章）
+genesis	dyx	ציד	释义 cibus venatione partus（10 章）
+genesis	trp nb	בן פרת	音译 Ben porath（49 章）
+genesis	µjn	נחם	中译 5 章：英文版同处为 span 内 נחם，翻译时 span 丢失
+genesis	jwn	נוח	中译 5 章：英文版同处为 span 内 נוח
+amos	jrs	סרח	拉丁原注 extensorum（6 章，摩 6:7 סרוחים）
+harmony-law-2	hrwt ypAl[	על־פי תורה	A.V. according to the sentence of the law（14 章）
+harmony-law-2	YpAl[	על־פי	according to the word（14 章；Y 为带 dagesh 的 י）
+harmony-law-2	hrwt	תורה	the noun … from the verb ירה（14 章）
+harmony-law-2	hry	ירה	Hiphil to teach（14 章）
+harmony-law-2	r[b	בער	to consume（15 章）
+harmony-law-2	hjnm	מנחה	A.V. meat offering（16 章）
+harmony-law-2	hjn	נחה	词源讨论（16 章）
+harmony-law-2	lza z[	עז אזל	the goat departing（17 章）
+harmony-law-2	lzaz[	עזאזל	Azazel（17 章）
+harmony-law-2	µça	אשם	S.M. deliquerit / A.V. is guilty（17 章）
+harmony-law-2	[dwh	הודע	niphal/hophal 讨论（17 章）
+harmony-law-2	[dwn	נודע	the niphal of ידע（17 章）
+harmony-law-2	[dy	ידע	（17 章）
+harmony-law-2	[rwh	הורע	照源转；按文意似应作 הודע（hophal），源字如此不改
+harmony-law-2	hla	אלה	execration, blasphemy, or perjury（17 章）
+harmony-law-2	h[wbç	שבועה	adjuration（17 章）
+harmony-law-2	çq[	עקש	A.V. froward（17 章，箴 11:20）
+harmony-law-2	˚ryzn ybn[	ענבי נזירך	grapes of thy separation（22 章，利 25:5）
+harmony-law-2	rm[	עמר	音译 gomer（23 章）
+harmony-law-2	trx[	עצרת	day of restraint（23 章）
+harmony-law-2	rx[	עצר	to retain, restrain（23 章）
+harmony-law-2	µylgr	רגלים	the feet（23 章）
+harmony-law-2	µym[p	פעמים	the feet / times（23 章）
+isaiah-2	rkn ˆb	בן נכר	音译 ben nekar（56 章）
+isaiah-2	µmwtça	אשתומם	照源转；音译 yishtomem 对应 ישתומם，源字首作 א 不改（59 章）
+isaiah-2	µça	אשם	音译 asham（53 章）
+isaiah-2	tafh	הטאת	照源转；音译 hattath 对应 חטאת，源字首作 h 不改（53 章）
+isaiah-2	rkn	נכר	音译 nekar（56 章）
+isaiah-2	µwrm	מרום	音译 marom（58 章）
+isaiah-2	wnb	בנו	音译 bunnu（58 章）
+isaiah-2	hn[	ענה	音译 gnanah（59 章）
+isaiah-2	wnta	אתנו	音译 ittanu（59 章）
+isaiah-2	çya	איש	音译 ish（59 章）
+isaiah-2	yk	כי	音译 ki（59 章）
+isaiah-2	rhn	נהר	音译 nahar（60 章）

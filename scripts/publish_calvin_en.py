@@ -31,7 +31,7 @@ import sys
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from decode_ages_hebrew import convert_text  # noqa: E402
+from decode_ages_hebrew import convert_text, convert_outspan  # noqa: E402
 
 ROOT = Path(__file__).resolve().parent.parent
 
@@ -547,6 +547,7 @@ def main():
         # 解好的希伯来文打回乱码（2026-08-25 / 09-03 重提取旧约 12 卷就是这样
         # 回归了约 2,400 处）。幂等：已是 Unicode 的 span 原样跳过。
         body_md = convert_text(body_md)[0]
+        body_md = convert_outspan(body_md, book_key)[0]   # 丢了颜色的那一类，见 ages_hebrew_outspan.tsv
         out_path.write_text(fm + body_md, encoding='utf-8')
         print(f'  → {key}.md ({len(body_md):,} chars)')
 

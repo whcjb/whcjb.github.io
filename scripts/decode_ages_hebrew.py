@@ -82,6 +82,35 @@ def decode(garble: str):
     return ''.join(MAP[c] for c in reversed(garble))
 
 
+# ── span 之外的乱码（丢了 teal 颜色的）：逐条核对过的固定表 ──────────────
+OUTSPAN_TSV = Path(__file__).resolve().parent / 'ages_hebrew_outspan.tsv'
+_B = r"A-Za-z0-9\[\]µ≈˚ˆãç^’'\-"      # 只认 ASCII 边界：中文字符在 \w 里，不能用 \b
+
+
+def _load_outspan():
+    table = {}
+    if OUTSPAN_TSV.exists():
+        for line in OUTSPAN_TSV.read_text(encoding='utf-8').splitlines():
+            if not line.strip() or line.startswith('#'):
+                continue
+            book, g, h = line.split('\t')[:3]
+            table.setdefault(book, []).append(
+                (re.compile(f'(?<![{_B}]){re.escape(g)}(?![{_B}])'), h))
+    return table
+
+
+OUTSPAN = _load_outspan()
+
+
+def convert_outspan(text: str, book: str):
+    """返回 (新文本, 替换数)。book 不在表里原样返回。"""
+    n = 0
+    for rx, h in OUTSPAN.get(book, []):
+        text, k = rx.subn(h, text)
+        n += k
+    return text, n
+
+
 def convert_text(text: str):
     """返回 (新文本, 转换数, 跳过数)"""
     n = skipped = 0
@@ -147,7 +176,7 @@ def translatable_texts(raw: str):
     return out
 
 
-def migrate_cache(old_raw: str, new_raw: str, cache_dir: Path, dry: bool):
+def migrate_cache(old_raw: str, new_raw: str, cache_dir: Path, dry: bool, book=None):
     """英文源改动后，把 zh_cache/<旧md5>.txt 改名成 <新md5>.txt（内容也解码）。"""
     if not cache_dir.is_dir():
         return 0, 0
@@ -167,6 +196,8 @@ def migrate_cache(old_raw: str, new_raw: str, cache_dir: Path, dry: bool):
         if not dry:
             zh = src.read_text(encoding='utf-8')
             zh_new, _, _ = convert_text(zh)      # 中文缓存里同一个 span 也解码
+            if book:                             # span 外那一类也要，否则还得再跑一遍
+                zh_new, _ = convert_outspan(zh_new, book)
             dst.write_text(zh_new, encoding='utf-8')
             src.unlink()
         moved += 1
@@ -213,18 +244,21 @@ def convert_json(path: Path, dry: bool, fn_cache=None):
     return n, skipped, moved, missing
 
 
-def process(path: Path, dry: bool, cache_dir=None):
+def process(path: Path, dry: bool, cache_dir=None, book=None):
     if not path.exists():        # 同一轮里先被缓存迁移改了名（--book 与 --paths 同用）
         return 0, 0, 0, 0
     if path.suffix == '.json':
         return convert_json(path, dry, cache_dir)
     raw = path.read_text(encoding='utf-8')
     new, n, skipped = convert_text(raw)
+    if book:
+        new, k = convert_outspan(new, book)
+        n += k
     if n == 0:
         return 0, skipped, 0, 0
     moved = missing = 0
     if cache_dir is not None:
-        moved, missing = migrate_cache(raw, new, cache_dir, dry)
+        moved, missing = migrate_cache(raw, new, cache_dir, dry, book)
     if not dry:
         mode = path.stat().st_mode & 0o777
         if not mode & 0o200:                 # raw 章节是 444 只读
@@ -284,7 +318,7 @@ def main():
     tot = tot_skip = tot_moved = tot_missing = 0
     touched = 0
     for p, cache in targets:
-        n, skipped, moved, missing = process(p, args.dry_run, cache)
+        n, skipped, moved, missing = process(p, args.dry_run, cache, args.book)
         tot += n; tot_skip += skipped; tot_moved += moved; tot_missing += missing
         if n:
             touched += 1

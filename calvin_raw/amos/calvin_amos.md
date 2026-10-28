@@ -1776,7 +1776,7 @@ We now see the design of the comparison which the Prophet makes: He aggravates, 
 
 <p style="margin-left:2em;" markdown="1">**6.** Qui bibunt in phialis vinum, et primitiis oleorum sese ungunt, et non condolescunt super contritionem Joseph. 7. Therefore now shall they go captive with the first that go captive, and the banquet of them that stretched themselves shall be removed.</p>
 
-<p style="text-align:right;" markdown="1">7. Propterea nunc transferentur (voluentur) in capite migrantium, et veniet luctus extensorum (est deductum ab eodem verbo jrs; diximus plura significare sed accipio pro extendere; et aliquid rursus dicendum erit in fine.)</p>
+<p style="text-align:right;" markdown="1">7. Propterea nunc transferentur (voluentur) in capite migrantium, et veniet luctus extensorum (est deductum ab eodem verbo סרח; diximus plura significare sed accipio pro extendere; et aliquid rursus dicendum erit in fine.)</p>
 
 Amos now reproaches the chiefs of both kingdoms for drinking wine in bowls, that is, in vessels either elegantly formed or precious. Some think “silver” to be understood “in vessels of silver:” but there is no need of regarding any thing as understood in the Prophet’s words. The meaning is, that those men were sufficiently convicted of brutish stupidity, inasmuch as they did not forsake their indulgences, when God manifested his terrible vengeance. Since God then did thus what tended to humble them, their madness and blindness were conspicuous enough; for they indulged themselves, they drank wine according to their usual custom, when they ought to have betaken themselves, as we have said, to fasting, lamentation, and mourning, to sackcloth and ashes.
 
