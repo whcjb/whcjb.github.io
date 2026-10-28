@@ -193,8 +193,12 @@ class Book:
     def build_index(self, pages):
         P = self.P
         out = ['---', f'layout: {self.layout.replace("-chapter", "-book")}', f'book_id: {self.book}',
-               f'book_name: "{self.name}"', f'title: "{self.name}"', f'author: "{self.author} ({self.years})"',
-               f'edition: "{self.edition}"', '---', '']
+               f'book_name: "{self.name}"', f'title: "{self.name}"', f'author: "{self.author} ({self.years})' + (f' · {self.author_note}' if getattr(self, 'author_note', '') else '') + '"',
+               f'edition: "{self.edition}"']
+        co = getattr(self, 'coauthor', None)       # 同卷另一本（提后：巴洛第 1 章 + 霍尔第 3–4 章），书首页并列两位作者
+        if co:
+            out += [f'author2: "{co[0]}"', f'author2_url: "{co[1]}"', f'edition2: "{co[2]}"']
+        out += ['---', '']
         if (self.OUT / 'zh').exists():
             out.insert(-2, f'zh_url: "/{self.slug}/{self.book}/"')
 

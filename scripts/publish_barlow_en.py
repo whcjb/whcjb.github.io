@@ -80,6 +80,10 @@ BOOK = Barlow(
     back_label='',
     about_en=about_en, about_zh=about_zh,
     witness_zh='1625 年本的胶片灰度扫描',
+    author_note='chapter 1',
+    coauthor=('Thomas Hall (1610–1665) · chapters 3–4', '/hall/2timothy/',
+              'A Practical and Polemical Commentary … upon the Third and Fourth Chapters of the Latter Epistle '
+              'of Saint Paul to Timothy · London, 1658'),
     all_chapters=[1, 2, 3, 4], others={3: ('Hall', '/hall/2timothy/3/'), 4: ('Hall', '/hall/2timothy/4/')},
     companion_zh='巴洛这一版只讲第一章。第三、四章见本站所收霍尔《提摩太后书第三、四章注释》（1658）；'
                  '第二章巴洛 1632 年对开本有讲解，但没有录入本，本站暂缺。')
