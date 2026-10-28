@@ -1,6 +1,6 @@
 ### <span class="hl-pb" data-facs="2"></span>TO THE RIGHT WORSHIPFUL *Richard Hemming* Mayor, *Richard Vernon* Sheriffe, with the Aldermen, the Reverend Ministers, the Common-Council, and the rest of the Inhabitants of the City of WORCESTER; *T. H.* Dedicateth this *Practical* and *Polemical COMMENTARY,* as a Testimony of his unfained Love and best Respects to that his Native *CITY.*
 
-<p class="hl-closer" markdown="1">Dearly beloved in the Lord,</p>
+<p class="hl-salute" markdown="1">Dearly beloved in the Lord,</p>
 
 MY hearts desire and Prayer for you is that you may be saved, And since God saveth none ordinarily but by means, I here present you with a *Practical Book,* which by the blessing of God may be a means to lead you safely through this Wilderness to the heavenly Canaan. Here you will finde Directions for all sorts, for Magistrates and Ministers, for Superiours and Inferiours. Here you have Antidotes against those nineteen sinnes (of these last and worst times) which are so rife both in City and Countrey; for, where can a man goe but he shal finde such as are Self-Lovers, Covetous, Boasters, Proud, Blasphemers, False-accusers, Covenant-breakers, Vnholy, &c. So that <span class="hl-pb" data-facs="3"></span> the Treatise is very seasonable, the good Lord make it profitable.
 

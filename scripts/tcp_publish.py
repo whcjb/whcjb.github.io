@@ -28,7 +28,18 @@ class Book:
 
     def load_page(self, slug):
         f = self.RAW / 'manual_pages' / f'{slug}.html'
-        return f.read_text(encoding='utf-8').strip() if f.exists() else self.tc.load(slug)
+        if f.exists():
+            return f.read_text(encoding='utf-8').strip()
+        md = self.tc.load(slug)
+        # 献辞题头等原书逐行居中、字号递减的块：抽取压成一行粗体标题，照原图手排后换掉页首那行 ###
+        # （页码锚点保留在前）。手排文件放 manual_heads/<slug>.html。
+        h = self.RAW / 'manual_heads' / f'{slug}.html'
+        if h.exists():
+            m = re.match(r'(#+ )((?:<span class="[a-z]+-pb"[^>]*></span>)*)[^\n]*\n', md)
+            if not m:
+                raise ValueError(f'{slug}: 页首不是标题行，manual_heads 无处替换')
+            md = m.group(2) + '\n\n' + h.read_text(encoding='utf-8').strip() + md[m.end():]
+        return md
 
     def build_pages(self):
         od = self.tc.order()

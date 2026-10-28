@@ -282,7 +282,11 @@ def block(r, e, out, depth=3):
             out.append(('cls', f'{P}-quote', txt))
     elif t == 'bibl':
         out.append(('cls', f'{P}-quote', r.text(e)))
-    elif t in ('closer', 'trailer', 'opener', 'signed', 'dateline', 'salute', 'byline'):
+    elif t in ('opener', 'salute'):         # 信首称呼（「Dearly beloved in the Lord,」）：左起，不是落款
+        txt = r.text(e)
+        if txt:
+            out.append(('cls', f'{P}-salute', txt))
+    elif t in ('closer', 'trailer', 'signed', 'dateline', 'byline'):
         txt = r.text(e)
         if txt:
             out.append(('cls', f'{P}-closer', txt))
