@@ -118,13 +118,7 @@ layout: default
   font-family: Georgia, "Times New Roman", "Songti SC", STSong, serif;
   font-size: 17px; line-height: 1.85; color: var(--hl-body);
 }
-/* 段落照原书：段间不留空行，首行缩进（原书 17 世纪排法；短句成段时整段空行会显得满屏换行，用户 2026-10-28 指出） */
-.hall-wrap .hl-content p { margin: 0; text-indent: 1.6em; text-align: justify; }
-.hall-wrap .hl-content h2 + p, .hall-wrap .hl-content h3 + p, .hall-wrap .hl-content h4 + p,
-.hall-wrap .hl-content div + p { margin-top: 10px; }
-.hall-wrap .hl-content .hl-text p, .hall-wrap .hl-content .hl-poem p, .hall-wrap .hl-content p[class] { text-indent: 0; }
-.hall-wrap .hl-content .hl-text p { margin: 0; }
-.hall-wrap .hl-content p:has(.hl-dropcap) { text-indent: 0; }   /* 花饰首字段不再缩进 */
+.hall-wrap .hl-content p { margin: 0 0 16px; text-align: justify; }
 .hall-wrap .hl-content h2 {
   font-family: Georgia, "Times New Roman", serif; font-size: 19px; font-weight: normal;
   text-align: center; color: var(--hl-ink-dark); margin: 10px 0 18px; line-height: 1.5; letter-spacing: .03em;
