@@ -11,8 +11,13 @@ next_url: "/taylor/titus/observations/"
 next_label: "Other Profitable Notes"
 ---
 
-## <span class="ty-pb" data-facs="385"></span><span class="ty-pb" data-facs="385"></span>A SHORT VIEWE OF SVCH Doctrines as are enlarged with their reasons and vses.
+<span class="ty-pb" data-facs="385"></span><span class="ty-pb" data-facs="385"></span>
 
+<div class="ty-dedhead">
+<div class="l s1 ls">A SHORT VIEWE OF SVCH</div>
+<div class="l s3 it">Doctrines as are enlarged with their</div>
+<div class="l s3 it">reasons and vses.</div>
+</div>
 <p class="ty-item" markdown="1">*A* Man may sometimes lawfully change his name.*Pag. 4.*</p>
 
 <p class="ty-item" markdown="1">Such names are to be giuen to children as may put them in minde of some good dutie.*Pag. 4*</p>

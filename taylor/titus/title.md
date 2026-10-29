@@ -9,15 +9,26 @@ next_url: "/taylor/titus/dedication/"
 next_label: "Epistle Dedicatory"
 ---
 
-<div class="ty-tp" markdown="1">
-
-<p class="ty-lemma" markdown="1"><span class="ty-pb" data-facs="1"></span><span class="ty-pb" data-facs="1"></span>Αρχην απαντων και τελοσ ποιει θεον</p>
-
-A COMMENTARIE VPON THE EPISTLE of S. PAUL written to TITVS. Preached in Cambridge by *THOMAS* TAYLOR, and now published for the further vse of the Church of God. With three short Tables in the end for the easier finding of 1. *Doctrines,* 2. *Obseruations,* 3. *Questions* contained in the same.
-
-<p class="ty-quote" markdown="1">Vnto euery one of vs is giuen grace, according to the measure of the gift of Christ. Eph. 4.7.</p>
-
-Printed for L. GREENE. 1612.
-
-
+<div class="ty-tpg">
+<div class="ty-tpg-l s4">Ἀρχὴν ἀπάντων καὶ τέλος ποίει θεόν.</div>
+<hr class="ty-tpg-rule">
+<div class="ty-tpg-l s2 it">A</div>
+<div class="ty-tpg-l s0">COMMENTARIE</div>
+<div class="ty-tpg-l s1 ls">VPON THE EPISTLE</div>
+<div class="ty-tpg-l s2">of S. P<span class="sc">avl</span> written to</div>
+<div class="ty-tpg-l s3 it ls">TITVS.</div>
+<hr class="ty-tpg-rule">
+<div class="ty-tpg-l s2"><i>Preached in Cambridge by</i> T<span class="sc">homas</span></div>
+<div class="ty-tpg-l s3">T<span class="sc">aylor</span>, and now published for the further</div>
+<div class="ty-tpg-l s3 it">vse of the Church of God.</div>
+<div class="ty-tpg-l s3" style="margin-top:8px">With three short Tables in the end for the easier finding</div>
+<div class="ty-tpg-l s3">of 1. <i>Doctrines</i>, 2. <i>Obseruations</i>, 3. <i>Questions</i></div>
+<div class="ty-tpg-l s3">contained in the same.</div>
+<hr class="ty-tpg-rule">
+<div class="ty-tpg-l s3">Eph. 4. 7.</div>
+<div class="ty-tpg-l s4 it">Vnto euery one of vs is giuen grace, according to the</div>
+<div class="ty-tpg-l s4 it">measure of the gift of Christ.</div>
+<div class="ty-tpg-dev"><img src="{{ site.baseurl }}/img/taylor/device.jpg" alt="Printer's device: fleur-de-lis with the motto IN DOMINO CONFIDO"></div>
+<div class="ty-tpg-l s1">Printed for L. G<span class="sc">reene</span>.</div>
+<div class="ty-tpg-l s3 ls">1612.</div>
 </div>

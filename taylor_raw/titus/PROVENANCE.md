@@ -86,3 +86,18 @@ python3 scripts/build_commentaries_index.py
 
 提多书卡片入口用泰勒（用户 2026-10-28 指定）：`build_commentaries_index.py` 的 `LEAD_AUTHOR`。
 费尔贝恩《教牧书信》的提多书部分保留，在费尔贝恩生平页「本站收录」与对照抽屉里照常可进。
+
+## 2026-10-29 按 old-book-ocr skill 复查
+
+- **§5.6 扉页手排**：`manual_pages/title.html`，照底本（bim，叶 0）原图逐行排：双线框、希腊文题辞、字号/字距/斜体/小型大写、横线；
+  印刷商徽记（百合花，IN DOMINO CONFIDO）从底本原生分辨率胶片裁出 `img/taylor/device.jpg`。
+  **两份藏本是同一版的两种发行本**：底本（TCP 所据）落款「Printed for L. GREENE. 1612.」，第二份（bim2）落款
+  「Printed by CANTRELL LEGGE, Printer to the Vniversitie of CAMBRIDGE. 1612.」，其余排版相同。扉页按底本落款排；
+  底本中部有大片水渍，水渍处的版式对照 bim2。题辞希腊文按原图补上重音（录入本作无重音的 Αρχην απαντων και τελοσ ποιει θεον）。
+- **题头手排**：献辞、致读者、卷末三表中的两表（doctrines / observations）与问题表的题头，抽取压成一行 `##`，
+  照原图逐行居中改排，放 `manual_heads/<slug>.html`，`publish_taylor_en.py` 的 `load_page()` 换入。
+- **§4.4 渲染层**：无误生 `<table>`/`<ol>`/`<blockquote>`、无字面星号、无空强调或首尾带空白的 `<em>`、无重复 id。
+- **§3.1 跨页断段**：「段尾无句末标点 + 下段小写起头」0 处（TCP 按原书分段）。
+- **§3.2b 白名单**：游离字符只有原书缩写横（ē ō ū ā 等）与 5 处上圆点 `·`（TCP 照原书录入，保留）。
+- **§4.1–4.3**：重跑抽取与库中产物逐字节一致；发布连跑两次零差异；判读 1,038 组全部命中，`tcp_fixes.tsv` 三条均在产物中生效。
+- 用户问过 1:1「spread it selfe.」：原图第 4 页清楚印作 ſpread it ſelfe.，录入本无误。

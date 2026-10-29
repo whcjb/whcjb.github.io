@@ -11,8 +11,14 @@ next_url: "/taylor/titus/questions/"
 next_label: "A Brief Table of the Questions"
 ---
 
-## <span class="ty-pb" data-facs="388"></span>OTHER PROFITABLE NOTES which besides illustration of Doctrines, lie either in the explication of the sence, or in application of the vses.
+<span class="ty-pb" data-facs="388"></span>
 
+<div class="ty-dedhead">
+<div class="l s1 ls">OTHER PROFITABLE NOTES</div>
+<div class="l s3 it">which besides illustration of Doctrines, lie ei-</div>
+<div class="l s3 it">ther in the explication of the sence, or in</div>
+<div class="l s3 it">application of the vses.</div>
+</div>
 <p class="ty-item" markdown="1">RVles to be obserued in changing of mens names, in number three.*4*</p>
 
 <p class="ty-item" markdown="1">Cases in which a man may forbeare to set his name to his writings, *3. 5*</p>

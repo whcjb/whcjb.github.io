@@ -11,8 +11,13 @@ next_url: "/taylor/titus/errata/"
 next_label: "Errata"
 ---
 
-## An other briefe Table of the most of the Questions resolued in this Commentarie.
 
+
+<div class="ty-dedhead">
+<div class="l s2">An other briefe Table of the most of the</div>
+<div class="l s2">Questions resolued in this</div>
+<div class="l s2">Commentarie.</div>
+</div>
 <p class="ty-item" markdown="1">HOw and why Pauls name was changed. *3*</p>
 
 <p class="ty-item" markdown="1">Why Pauls name is prefixed before his Epistles. *5*</p>

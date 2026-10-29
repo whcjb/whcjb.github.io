@@ -50,7 +50,18 @@ MANUAL = RAW / 'manual_pages'
 
 def load_page(slug):
     f = MANUAL / f'{slug}.html'
-    return f.read_text(encoding='utf-8').strip() if f.exists() else tc.load(slug)
+    if f.exists():
+        return f.read_text(encoding='utf-8').strip()
+    md = tc.load(slug)
+    # 献辞、致读者、卷末各表的题头：原书逐行居中、字号递减，抽取压成一行 ##；照原图手排的块换掉它
+    # （old-book-ocr §5.6 同理；页码锚点留在前面）
+    h = RAW / 'manual_heads' / f'{slug}.html'
+    if h.exists():
+        m = re.match(r'(#+ )((?:\s*<span class="ty-pb"[^>]*></span>)*)[^\n]*\n', md)
+        if not m:
+            raise ValueError(f'{slug}: 页首不是标题行，manual_heads 无处替换')
+        md = m.group(2).strip() + '\n\n' + h.read_text(encoding='utf-8').strip() + md[m.end():]
+    return md
 
 
 def build_pages():
