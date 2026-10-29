@@ -168,6 +168,12 @@ AUTHORS = OrderedDict([
                     years='1580/81–?', dir='barlow',
                     work_cn='提摩太后书第一章讲解',
                     work_en='An Exposition of the Second Epistle of the Apostle Paul to Timothy, the First Chapter')),
+    # 阿特索尔：生年不详；卒年取 DNB vol.2（Attersoll, William (d. 1640)，A. B. Grosart 撰）：伊斯菲尔德堂区
+    # 登记簿记 1640 年 5 月 30 日下葬。《腓利门书注释》1612 伦敦初版（STC 890），本站据此版；1633 年修订增补再版。
+    ('attersoll', dict(name='威廉·阿特索尔', short='阿特索尔', en='William Attersoll',
+                       years='?–1640', dir='attersoll',
+                       work_cn='腓利门书注释',
+                       work_en='A Commentarie vpon the Epistle of Saint Paule to Philemon')),
     ('alexander', dict(name='约瑟·亚历山大', short='亚历山大', en='Joseph Addison Alexander',
                        years='1809–1860', dir='alexander',
                        work_cn='诗篇、以赛亚书、使徒行传注释',
@@ -242,6 +248,9 @@ AUTHOR_COLORS = {
     'hall': ('#536513', '#769019'),
     # 巴洛青绿：LCh 网格 (58, 35, 180°)，加上霍尔之后最小 ΔE 26.6（达拉谟深绿 #1f5a4b），与先例同档。
     'barlow': ('#007162', '#2b9b8a'),
+    # 阿特索尔灰紫：LCh 网格 (60, 28, 295°)，与既有各色及加尔文酒红、马太亨利金、站点 Hux 蓝最小 ΔE 27.0
+    # （约翰斯通钴蓝），次近达拉谟紫 27.2。红系一档 ΔE 29 但与页内标红的缺字记号撞色，弃用。
+    'attersoll': ('#565582', '#8e8cbd'),
 }
 
 # 书卷卡片的入口注释家：历代解经版面每卷只显示 links 的第一条（commentaries/index.html
@@ -306,6 +315,8 @@ BOOK_TITLES = {
                                 'Expository Notes, and Dissertations'),
     ('taylor', 'titus'):       ('提多书注释',
                                 'A Commentarie vpon the Epistle of S. Paul written to Titus'),
+    ('attersoll', 'philemon'): ('腓利门书注释',
+                                'A Commentarie vpon the Epistle of Saint Paule to Philemon'),
     ('manton', 'james'):       ('雅各书注释',
                                 'A Practical Commentary, or an Exposition with Notes '
                                 'on the Epistle of James'),
@@ -331,7 +342,7 @@ COMPARE_ACCENT = {
     'johnstone': '#106ab2', 'perkins': '#9b2d5f', 'hutcheson': '#2f8f46', 'leighton': '#2d2d99',
     'adams': '#66666c', 'rollock': '#786000', 'jenkyn': '#cd5f37',
     'candlish': '#b07080', 'fairbairn': '#bc65ac', 'taylor': '#6f77e0',
-    'hall': '#769019', 'barlow': '#2b9b8a',
+    'hall': '#769019', 'barlow': '#2b9b8a', 'attersoll': '#8e8cbd',
 }
 COMPARE_LABEL = {
     'calvin': '加尔文注释', 'mhenry': '马太亨利注释', 'owen': '约翰欧文注释',
@@ -341,7 +352,7 @@ COMPARE_LABEL = {
     'perkins': '珀金斯注释', 'hutcheson': '赫奇森注释', 'leighton': '雷登注释',
     'adams': '亚当斯注释', 'rollock': '罗洛克讲章', 'jenkyn': '詹金讲解',
     'candlish': '坎德利什讲解', 'fairbairn': '费尔贝恩注释', 'taylor': '泰勒注释',
-    'hall': '霍尔注释', 'barlow': '巴洛讲解',
+    'hall': '霍尔注释', 'barlow': '巴洛讲解', 'attersoll': '阿特索尔注释',
 }
 
 
@@ -363,7 +374,7 @@ PRIMARY_LANG = {'calvin': 'zh', 'mhenry': 'zh', 'bridges': 'zh',
                 'johnstone': 'en', 'perkins': 'en', 'hutcheson': 'en', 'leighton': 'en',
                 'adams': 'en', 'rollock': 'en', 'jenkyn': 'en',
                 'candlish': 'en', 'fairbairn': 'en', 'taylor': 'en',
-                'hall': 'en', 'barlow': 'en'}
+                'hall': 'en', 'barlow': 'en', 'attersoll': 'en'}
 
 
 def _lang_variants(aid, d: Path, name: str):

@@ -1,0 +1,263 @@
+---
+layout: default
+---
+{%- comment -%}
+  威廉·阿特索尔《腓利门书注释》(1612) 章节页（中英共用，靠 page.zh 切换）。
+
+  ⚠️ 不复用别家 layout：每本书独立样式（用户既定规矩）。骨架取自 taylor-chapter。
+  按 2026-10-16 起的新书规矩：章顶不放「跳到某节」下拉，副标题作者写英文原名。
+
+  配色灰紫 #8e8cbd（LCh 60/28/295）：与「历代解经」已登记各色及加尔文酒红、马太亨利金、站点 Hux 蓝
+  相比最小 ΔE 27.0（约翰斯通钴蓝），次近达拉谟紫 27.2，与先例同档（泰勒 26.4）。红系一档（ΔE 29）
+  会和页内标红的缺字记号撞色，弃用。深端 #565582。
+
+  本书版式要点（底本 EEBO-TCP A22481，见 attersoll_raw/philemon/PROVENANCE.md）：
+  - 原书按经文分段讲：段前排出经文 → `.at-text`（节号 `.at-vn`），其后每节一个 commentary-anchor；一段一页。
+  - 页边旁注两种：要点（Doct. 1. / Reason 1. / Vse 1.）→ `.at-margin.at-sum`；出处（正文以 a b c 指引）
+    → `.at-margin[data-n]`，字母照原书显示在旁注前。
+  - 印本页码 → `.at-pb`，id `#pN`。诗句 → `.at-l`。卷首卷末各表的小标题 → `.at-lhead`。
+  - 编者推补 → `.at-conj`（方括号另色）；待定的缺字 → `.at-gap`（标红）。
+{%- endcomment -%}
+
+<div class="container attersoll-wrap{% if page.zh %} at-zh{% endif %}" style="padding-top: 70px;">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1" id="cmpCol">
+
+      <div class="at-chrome">
+        <a href="{{ site.baseurl }}/attersoll/{{ page.book_id }}/{% unless page.zh %}en/{% endunless %}">&larr; {{ page.book_name }}</a>
+        {% if page.zh %}{% if page.en_url %}<a class="at-lang" href="{{ site.baseurl }}{{ page.en_url }}">English &rarr;</a>{% endif %}
+        {% else %}{% if page.zh_url %}<a class="at-lang" href="{{ site.baseurl }}{{ page.zh_url }}">中文版 &rarr;</a>{% endif %}{% endif %}
+      </div>
+
+      <h1 class="at-title">{{ page.title }}</h1>
+      {% if page.subtitle %}<p class="at-subtitle">{{ page.subtitle }}</p>{% endif %}
+
+      <div class="at-nav">
+        {% if page.prev_url %}<a href="{{ site.baseurl }}{{ page.prev_url }}">&larr; {{ page.prev_label }}</a>
+        {% else %}<span></span>{% endif %}
+        {% if page.next_url %}<a href="{{ site.baseurl }}{{ page.next_url }}">{{ page.next_label }} &rarr;</a>
+        {% else %}<span></span>{% endif %}
+      </div>
+
+      {%- comment -%}
+        对比注释抽屉：只给正文章节页（有 page.chapter）。self 把本书自己排除，中英两版 key 不同。
+      {%- endcomment -%}
+      {% if page.chapter %}
+      {% assign cc_self = "attersoll-en" %}{% if page.zh %}{% assign cc_self = "attersoll" %}{% endif %}
+      {% include compare-commentary-head.html self=cc_self content_class="at-content" self_label="阿特索尔" %}
+      {% endif %}
+      <div class="at-content">
+        {{ content }}
+      </div>
+      {% if page.chapter %}{% include compare-commentary-foot.html %}{% endif %}
+
+      {% if page.date %}
+      <div class="at-stamp">{% if page.zh %}译于{% else %}Published{% endif %} {{ page.date | date: "%Y-%m-%d %H:%M" }}</div>
+      {% endif %}
+
+      <div class="at-nav at-nav-foot">
+        {% if page.prev_url %}<a href="{{ site.baseurl }}{{ page.prev_url }}">&larr; {{ page.prev_label }}</a>
+        {% else %}<span></span>{% endif %}
+        {% if page.next_url %}<a href="{{ site.baseurl }}{{ page.next_url }}">{{ page.next_label }} &rarr;</a>
+        {% else %}<span></span>{% endif %}
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<script>
+// 段前经文框：标进 scripture-popup 的 skip 列表（框里本身就是经文，不再 linkify）
+(function () {
+  document.querySelectorAll('.at-content .at-text').forEach(function (box) {
+    box.classList.add('verse-anchor');
+  });
+})();
+</script>
+
+{%- comment -%}
+  经文引用弹层：只给中文页（模块认的是中文书卷名）。accent/vnum 必须写字面量
+  （Jekyll 3 的 include 参数不接受变量）——与下方 CSS 的 --at-ink 两处同值，改色要一起改。
+{%- endcomment -%}
+{% if page.zh %}
+{% include scripture-popup.html container_selector=".at-content" accent="#8e8cbd" vnum="#565582" slide="down" %}
+{% endif %}
+
+<style>
+.attersoll-wrap {
+  --at-ink: #8e8cbd;
+  --at-ink-dark: #565582;
+  --at-ink-light: #c0bfdc;
+  --at-rule: #e8e6f6;
+  --at-paper: #f6f5fb;
+  --at-body: #262536;
+}
+.attersoll-wrap .at-chrome,
+.attersoll-wrap .at-nav {
+  font-size: 13px; display: flex; justify-content: space-between; gap: 12px;
+  align-items: center; font-family: Georgia, "Times New Roman", serif;
+}
+.attersoll-wrap .at-chrome { margin: 18px 0 22px; }
+.attersoll-wrap .at-chrome a,
+.attersoll-wrap .at-nav a { color: var(--at-ink); text-decoration: none; }
+.attersoll-wrap .at-chrome a:hover,
+.attersoll-wrap .at-nav a:hover { color: var(--at-ink-dark); text-decoration: underline; }
+.attersoll-wrap .at-lang { border: 1px solid var(--at-rule); border-radius: 4px; padding: 4px 10px; }
+.attersoll-wrap .at-lang:hover { background: var(--at-ink); color: #fff !important; text-decoration: none; }
+.attersoll-wrap .at-title {
+  font-family: Georgia, "Times New Roman", serif; font-size: 30px; font-weight: normal;
+  color: var(--at-ink-dark); text-align: center; margin: 10px 0 4px; line-height: 1.3;
+}
+.attersoll-wrap .at-subtitle {
+  text-align: center; font-size: 14px; color: #7e8199; margin: 0 0 18px;
+  font-family: Georgia, "Times New Roman", serif; font-style: italic;
+}
+.attersoll-wrap .at-nav { margin: 14px 0 26px; }
+.attersoll-wrap .at-nav-foot { margin-top: 44px; padding-top: 16px; border-top: 1px solid var(--at-rule); }
+
+/* 正文 */
+.attersoll-wrap .at-content {
+  font-family: Georgia, "Times New Roman", "Songti SC", STSong, serif;
+  font-size: 17px; line-height: 1.85; color: var(--at-body);
+}
+.attersoll-wrap .at-content p { margin: 0 0 16px; text-align: justify; }
+.attersoll-wrap .at-content h2 {
+  font-family: Georgia, "Times New Roman", serif; font-size: 19px; font-weight: normal;
+  text-align: center; color: var(--at-ink-dark); margin: 10px 0 18px; line-height: 1.5; letter-spacing: .03em;
+}
+.attersoll-wrap .at-content a { color: var(--at-ink); }
+
+/* 章目录页（/attersoll/<书>/<章>/）：本章各段 */
+.attersoll-wrap .at-chtoc { list-style: none; padding: 0; margin: 10px 0; display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 8px; }
+.attersoll-wrap .at-chtoc a { display: block; padding: 9px 13px; border: 1px solid var(--at-rule);
+  border-radius: 4px; background: var(--at-paper); text-decoration: none; color: #262536; line-height: 1.45; }
+.attersoll-wrap .at-chtoc a:hover { border-color: var(--at-ink); color: var(--at-ink-dark); }
+.attersoll-wrap .at-chtoc small { display: block; color: #7e8199; font-size: 12.5px; }
+
+/* 段前排出的经文：一节一行 */
+.attersoll-wrap .at-text {
+  background: var(--at-paper); border-left: 3px solid var(--at-ink);
+  padding: 12px 18px; margin: 6px 0 20px; color: #33364f;
+}
+.attersoll-wrap .at-text p { margin: 0; text-align: left; }
+.attersoll-wrap .at-text p + p { margin-top: 8px; }
+.attersoll-wrap .at-text .at-vlabel { font-size: 13px; letter-spacing: .04em; color: var(--at-ink-dark); margin: 0 0 4px; font-style: italic; }
+.attersoll-wrap .commentary-anchor {
+  display: block; height: 0; line-height: 0; margin: 0; padding: 0;
+  overflow: hidden; visibility: hidden; scroll-margin-top: 80px;
+}
+
+/* 中文页：音译专名后的原名对照，小一号灰字 */
+.attersoll-wrap.at-zh .at-orig { font-size: .82em; color: #7e8199; margin: 0 1px;
+  font-family: Georgia, "Times New Roman", serif; white-space: nowrap; }
+
+/* 页边旁注 */
+.attersoll-wrap .at-margin {
+  display: block; margin: 2px 0 8px; padding-left: 10px; border-left: 2px solid var(--at-rule);
+  font-size: 13px; line-height: 1.55; color: #73768f; font-style: normal; text-align: left;
+}
+@media (min-width: 1200px) {
+  .attersoll-wrap .at-margin {
+    float: right; clear: right; width: 150px; margin: 4px -182px 8px 16px;
+    padding-left: 8px; text-indent: 0;
+  }
+}
+
+/* 旁注：要点（原书页边小标题）略重；出处前显示原书指引字母 */
+.attersoll-wrap .at-sum { color: var(--at-ink-dark); }
+.attersoll-wrap .at-margin[data-n]::before { content: attr(data-n) "  "; font-style: italic; color: var(--at-ink); }
+/* 段前经文的节号 */
+.attersoll-wrap .at-vn { font-size: 12px; color: var(--at-ink-dark); font-weight: 600; margin-right: 4px; vertical-align: 1px; }
+/* 诗句 */
+.attersoll-wrap .at-l { display: block; padding-left: 2.2em; text-align: left; }
+.attersoll-wrap .at-l:first-of-type { margin-top: 6px; }
+/* 卷首教义总览、卷末索引的小标题（Verse 1, and 2. / A / B …） */
+.attersoll-wrap .at-lhead { text-align: center !important; color: var(--at-ink-dark); font-size: 16px; letter-spacing: .04em; margin: 24px 0 10px !important; }
+
+/* 1612 印本页码：空锚点，行内显示「p. N」小灰字 */
+.attersoll-wrap .at-pb { scroll-margin-top: 80px; cursor: help; }
+.attersoll-wrap .at-pb[data-p]::before {
+  content: "p." attr(data-p); font-size: 10.5px; color: #aaa9c2; font-style: normal;
+  font-family: Georgia, serif; letter-spacing: .02em; margin: 0 4px;
+  border: 1px solid #e8e6f6; border-radius: 3px; padding: 0 3px; vertical-align: 1px;
+}
+
+/* 花饰首字 */
+.attersoll-wrap .at-dropcap {
+  float: left; font-family: Georgia, "Times New Roman", serif; font-size: 3.1em;
+  line-height: .84; margin: 4px 7px 0 0; color: var(--at-ink-dark);
+}
+
+/* 段内逐语解说的引语（原书「Not angrie]」） */
+.attersoll-wrap .at-lemma { font-weight: 600; color: var(--at-ink-dark); margin: 22px 0 8px !important; text-align: left !important; }
+/* 原书分条（1. 2. …） */
+.attersoll-wrap .at-item { padding-left: 1.4em; margin: 0 0 8px !important; }
+/* 扉页题辞 */
+.attersoll-wrap .at-quote { text-align: center !important; font-style: italic; }
+
+/* 底本里读不出的字 */
+.attersoll-wrap .at-gap { color: #c0392b; background: #fdecea; border-radius: 2px; padding: 0 2px; cursor: help; }
+/* 编者推补：方括号 + 另色，与原文区分 */
+.attersoll-wrap .at-conj { color: #8a5a00; background: #fff6e0; border-radius: 2px; padding: 0 1px; cursor: help; font-style: normal; }
+
+/* 书名页、献辞落款 */
+.attersoll-wrap .at-closer { text-align: right !important; font-style: italic; color: #4e5168; }
+.attersoll-wrap .at-tp p { text-align: center !important; font-size: 16px; letter-spacing: .03em; }
+
+/* 扉页：照 1612 原书版式手排（manual_pages/title.html，若有） */
+.attersoll-wrap .at-tpg { max-width: 520px; margin: 10px auto 30px; padding: 22px 26px 20px;
+  border: 1px solid #d6d4e8; background: #fff; text-align: center;
+  font-family: Georgia, "Times New Roman", serif; color: #1f1d16; line-height: 1.2; }
+.attersoll-wrap .at-tpg-l { margin: 0 0 5px; text-align: center; }
+.attersoll-wrap .at-tpg .s0 { font-size: 40px; letter-spacing: .03em; margin-bottom: 8px; }
+.attersoll-wrap .at-tpg .s1 { font-size: 27px; margin-top: 12px; }
+.attersoll-wrap .at-tpg .s2 { font-size: 19px; }
+.attersoll-wrap .at-tpg .s3 { font-size: 17px; }
+.attersoll-wrap .at-tpg .s4 { font-size: 15px; }
+.attersoll-wrap .at-tpg .it { font-style: italic; }
+.attersoll-wrap .at-tpg .ls { letter-spacing: .2em; }
+.attersoll-wrap .at-tpg .sc { font-variant: small-caps; text-transform: lowercase; letter-spacing: .05em; }
+.attersoll-wrap .at-tpg-orn img { width: 100%; height: auto; display: block; margin: 0 0 14px; }
+.attersoll-wrap .at-tpg-dev { margin: 16px 0 14px; }
+.attersoll-wrap .at-tpg-rule { border: 0; border-top: 1px solid #2b2a24; margin: 10px 0; }
+.attersoll-wrap .at-tpg { border: 3px double #2b2a24 !important; }
+.attersoll-wrap .at-tpg-dev img { width: 56%; max-width: 270px; height: auto; display: inline-block; }
+@media (max-width: 600px) {
+  .attersoll-wrap .at-tpg { padding: 16px 10px; }
+  .attersoll-wrap .at-tpg .s0 { font-size: 28px; }
+  .attersoll-wrap .at-tpg .s1 { font-size: 20px; }
+  .attersoll-wrap .at-tpg .s2 { font-size: 15px; }
+  .attersoll-wrap .at-tpg .s3 { font-size: 14px; }
+  .attersoll-wrap .at-tpg .s4 { font-size: 12.5px; }
+}
+
+/* 献辞、致读者、卷末各表题头：照原书逐行居中、字号递减手排（attersoll_raw/philemon/manual_heads/） */
+.attersoll-wrap .at-dedhead { text-align: center; font-family: Georgia, "Times New Roman", serif; color: var(--at-ink-dark);
+  line-height: 1.25; margin: 6px 0 26px; }
+.attersoll-wrap .at-dedhead .l { margin: 0 0 3px; }
+.attersoll-wrap .at-dedhead .s1 { font-size: 26px; letter-spacing: .04em; }
+.attersoll-wrap .at-dedhead .s2 { font-size: 20px; }
+.attersoll-wrap .at-dedhead .s3 { font-size: 17px; }
+.attersoll-wrap .at-dedhead .s4 { font-size: 15.5px; }
+.attersoll-wrap .at-dedhead .it, .attersoll-wrap .at-dedhead i { font-style: italic; }
+.attersoll-wrap .at-dedhead .ls { letter-spacing: .14em; }
+
+.attersoll-wrap .at-stamp {
+  margin-top: 32px; font-size: 12px; color: #9da0b8; text-align: right;
+  font-family: Georgia, "Times New Roman", serif; letter-spacing: .03em;
+}
+.attersoll-wrap :target { background: #efedfb; transition: background .4s; }
+
+/* 中文页 */
+.attersoll-wrap.at-zh .at-content {
+  font-family: "Songti SC", STSong, "Noto Serif CJK SC", "Source Han Serif SC", Georgia, serif;
+}
+.attersoll-wrap.at-zh .at-title { font-family: "Songti SC", STSong, Georgia, serif; }
+.attersoll-wrap.at-zh .at-text { font-family: "Kaiti SC", STKaiti, KaiTi, "Songti SC", serif; }
+
+@media (max-width: 767px) {
+  .attersoll-wrap .at-title { font-size: 24px; }
+  .attersoll-wrap .at-content { font-size: 16px; line-height: 1.8; }
+}
+</style>

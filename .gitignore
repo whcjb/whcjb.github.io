@@ -99,3 +99,6 @@ barlow_raw/2timothy-1632/witness/
 # 亚历山大使徒行传：Monergism 录入本、扫描本 ABBYY、KJV USFM（地址见 PROVENANCE.md）与对齐中间产物、裁图
 alexander_raw/acts/src/
 alexander_raw/acts/work/
+
+# 阿特索尔腓利门书：证人整页图、本地 OCR、1633 版 djvu.xml、判读图（可重跑 attersoll_witness 重建）
+attersoll_raw/philemon/witness/

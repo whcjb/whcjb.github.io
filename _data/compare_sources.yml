@@ -176,7 +176,9 @@ sources:
     - {key: mhenry, author: mhenry, lang: zh, label: "马太亨利注释", url_tpl: "/mhenry/obadiah/__CH__/", accent: "#C9922A", ch_from: 1, ch_to: 1}
   philemon:
     - {key: calvin, author: calvin, lang: zh, label: "加尔文注释", url_tpl: "/calvin/philemon/__CH__/", accent: "#800000", ch_from: 1, ch_to: 1}
+    - {key: calvin-en, author: calvin, lang: en, label: "加尔文注释（英文版）", url_tpl: "/calvin/philemon-en/__CH__/", accent: "#800000", ch_from: 1, ch_to: 1}
     - {key: mhenry, author: mhenry, lang: zh, label: "马太亨利注释", url_tpl: "/mhenry/philemon/__CH__/", accent: "#C9922A", ch_from: 1, ch_to: 1}
+    - {key: attersoll-en, author: attersoll, lang: en, label: "阿特索尔注释（英文版）", url_tpl: "/attersoll/philemon/__CH__/", accent: "#8e8cbd", ch_from: 1, ch_to: 1}
   philippians:
     - {key: calvin, author: calvin, lang: zh, label: "加尔文注释", url_tpl: "/calvin/philippians/__CH__/", accent: "#800000", ch_from: 1, ch_to: 4}
     - {key: calvin-en, author: calvin, lang: en, label: "加尔文注释（英文版）", url_tpl: "/calvin/philippians-en/__CH__/", accent: "#800000", ch_from: 1, ch_to: 4}
