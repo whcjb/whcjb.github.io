@@ -65,7 +65,27 @@ class RangeZip:
         self.by_leaf = {int(re.search(r'_(\d+)\.jp2$', n).group(1)): n for n in self.members}
 
     def raw(self, leaf):
-        return self.z.read(self.by_leaf[leaf])
+        """一个成员一次 Range 请求取完（zipfile 自己读会按 64KB 缓冲一块块发请求，一叶要几百次往返）。"""
+        import struct
+        import zlib
+        info = self.z.getinfo(self.by_leaf[leaf])
+        raw = self.f.raw
+        start = info.header_offset
+        end = start + 30 + len(info.filename.encode()) + 1024 + info.compress_size
+        req = urllib.request.Request(raw.url, headers={'User-Agent': UA, 'Range': f'bytes={start}-{min(end, raw.size) - 1}'})
+        for k in range(4):
+            try:
+                with urllib.request.urlopen(req, timeout=600) as r:
+                    b = r.read()
+                break
+            except Exception:      # noqa: BLE001
+                if k == 3:
+                    raise
+        n, m = struct.unpack('<HH', b[26:30])
+        data = b[30 + n + m: 30 + n + m + info.compress_size]
+        if info.compress_type == zipfile.ZIP_STORED:
+            return data
+        return zlib.decompress(data, -15)
 
     def image(self, leaf):
         from PIL import Image
