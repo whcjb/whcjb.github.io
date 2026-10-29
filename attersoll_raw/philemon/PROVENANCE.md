@@ -67,3 +67,21 @@ python3 scripts/attersoll_witness.py crops        # 取叶 + 本地 OCR + 裁图
 python3 scripts/publish_attersoll_en.py --apply
 python3 scripts/build_commentaries_index.py
 ```
+
+## 2026-10-29 按 old-book-ocr skill 复查
+
+- **§5.6 扉页手排**：`manual_pages/title.html`，照底本（bim 叶 0）原图逐行排：双线框、各区横线、两组大括号排法
+  （œconomicall / Politicall / Ecclesiasticall；As { Of …十一条）、小型大写人名、斜体。录入本作 oeconomicall，原图是 œ 连字，照原图。
+  扉页无印刷商徽记。
+- **题头手排**：献辞、致读者、教义总览、序论（An Exposition of the Epistle…）、书末内容索引的题头照原图逐行排，放
+  `manual_heads/<slug>.html`；各题头上方的木刻花饰从原书胶片裁出放 `img/attersoll/headpiece-*.jpg`（献辞、致读者、
+  索引各一种，教义总览与序论共用同一块）。勘误页题头只一行，不另排。
+- **致读者整篇斜体**：原图（叶 10–17）此篇正文排斜体、人名与引语排正体，TCP 的 `<hi>` 标的是「换字体」，抽出的 `*…*`
+  其实是正体段。发布时整篇包进 `.at-itbody` 由样式反转（`publish_attersoll_en.py` 的 `ITALIC_BODY`），不改抽取产物。
+  其余各篇原图正文为正体，与录入本一致。
+- **§3.1 跨页断段**：「段尾无句末标点 + 下段小写起头」只有扉页 1 处（大括号排法），已由手排取代；正文 0 处。
+- **§3.2b 白名单**：游离字符只有原书字形——缩写横（103）、呼格 ô（22）、quàm 的 à、扉页 ¶，以及缺字记号；无噪点。
+- **§4.1–4.3**：重跑抽取与库中产物逐字节一致；`gaps` 重跑一致；发布连跑两次零差异；判读 131 组全部命中、原串不合 0。
+- **§4.4 渲染层**：正文区无误生 `<table>`/`<ol>`/`<blockquote>`、无字面星号、无空强调或首尾带空白的 `<em>`、无重复 id；
+  逐页比对渲染前后实词，丢词 0。桌面宽度截图看过扉页与各题头页。
+- 胶片叶 538–551 是卷首（扉页至致读者）的重拍，可作卷首的第二影像。

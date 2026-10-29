@@ -10,7 +10,16 @@ next_url: "/attersoll/philemon/preface/"
 next_label: "The Preface"
 ---
 
-## <span class="at-pb" data-facs="10"></span><span class="at-pb" data-facs="10"></span>A BRIEFE RECAPITVLATION OF ALL THE DOCTRINES HANDLED AT LARGE IN THIS EPISTLE.
+<span class="at-pb" data-facs="10"></span><span class="at-pb" data-facs="10"></span>
+
+<div class="at-dedhead">
+<div class="at-orn"><img src="{{ site.baseurl }}/img/attersoll/headpiece-band.jpg" alt="Woodcut headpiece (from the 1612 edition)"></div>
+<div class="l s1 ls">A BRIEFE RECAPITV-</div>
+<div class="l s1 ls">LATION OF ALL THE DO-</div>
+<div class="l s2 ls">CTRINES HANDLED AT</div>
+<div class="l s2 ls">LARGE IN THIS</div>
+<div class="l s3 ls">E<span class="sc">pistle</span>.</div>
+</div>
 
 <p class="at-lhead" markdown="1">Out of the Praeface.</p>
 

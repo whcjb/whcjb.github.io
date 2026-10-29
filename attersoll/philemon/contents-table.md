@@ -10,7 +10,14 @@ next_url: "/attersoll/philemon/errata/"
 next_label: "Errata"
 ---
 
-## <span class="at-pb" data-facs="267"></span>A Table of the principall Contents of this Booke.
+<span class="at-pb" data-facs="267"></span>
+
+<div class="at-dedhead">
+<div class="at-orn"><img src="{{ site.baseurl }}/img/attersoll/headpiece-table.jpg" alt="Woodcut headpiece (from the 1612 edition)"></div>
+<div class="l s2">A</div>
+<div class="l s1">Table of the principall Contents of</div>
+<div class="l s1">this Booke.</div>
+</div>
 
 <p class="at-lhead" markdown="1">A</p>
 

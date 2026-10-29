@@ -221,7 +221,17 @@ layout: default
 .attersoll-wrap .at-tpg-orn img { width: 100%; height: auto; display: block; margin: 0 0 14px; }
 .attersoll-wrap .at-tpg-dev { margin: 16px 0 14px; }
 .attersoll-wrap .at-tpg-rule { border: 0; border-top: 1px solid #2b2a24; margin: 10px 0; }
-.attersoll-wrap .at-tpg { border: 3px double #2b2a24 !important; }
+.attersoll-wrap .at-tpg { border: 3px double #2b2a24 !important; max-width: 620px; }
+.attersoll-wrap .at-tpg-left { text-align: left; }
+.attersoll-wrap .at-tpg .s5 { font-size: 13.5px; }
+@media (max-width: 600px) { .attersoll-wrap .at-tpg .s5 { font-size: 11.5px; } }
+.attersoll-wrap .at-tpg-ind { padding-left: 1.4em; }
+/* 扉页的大括号排法：左栏 } { 右栏（œconomicall / Politicall / Ecclesiasticall；As { Of …） */
+.attersoll-wrap .at-tpg-brace { display: flex; align-items: center; justify-content: center; gap: 0; margin: 4px 0 6px; text-align: left; line-height: 1.35; }
+.attersoll-wrap .at-tpg-bl { padding-right: 10px; border-right: 1.5px solid #2b2a24; border-radius: 0 10px 10px 0; }
+.attersoll-wrap .at-tpg-br { padding-left: 10px; border-left: 1.5px solid #2b2a24; border-radius: 10px 0 0 10px; }
+.attersoll-wrap .at-tpg-bl + .at-tpg-br { margin-left: 6px; }
+.attersoll-wrap .at-tpg-lab { padding-right: 6px; }
 .attersoll-wrap .at-tpg-dev img { width: 56%; max-width: 270px; height: auto; display: inline-block; }
 @media (max-width: 600px) {
   .attersoll-wrap .at-tpg { padding: 16px 10px; }
@@ -236,6 +246,16 @@ layout: default
 .attersoll-wrap .at-dedhead { text-align: center; font-family: Georgia, "Times New Roman", serif; color: var(--at-ink-dark);
   line-height: 1.25; margin: 6px 0 26px; }
 .attersoll-wrap .at-dedhead .l { margin: 0 0 3px; }
+/* 原书整篇斜体的篇（致读者）：正文斜体，*…* 标的人名、引语转正体；旁注不反转 */
+.attersoll-wrap .at-itbody p { font-style: italic; }
+.attersoll-wrap .at-itbody p em { font-style: normal; }
+.attersoll-wrap .at-itbody .at-margin { font-style: normal; }
+.attersoll-wrap .at-itbody .at-margin em { font-style: italic; }
+.attersoll-wrap .at-itbody .at-dropcap { font-style: normal; }
+/* 题头上方的木刻花饰：裁自 1612 原书胶片（img/attersoll/） */
+.attersoll-wrap .at-orn { margin: 0 auto 16px; max-width: 520px; }
+.attersoll-wrap .at-orn img { width: 100%; height: auto; display: block; mix-blend-mode: multiply; }
+.attersoll-wrap .at-dedhead .sc { font-variant: small-caps; text-transform: lowercase; letter-spacing: .05em; }
 .attersoll-wrap .at-dedhead .s1 { font-size: 26px; letter-spacing: .04em; }
 .attersoll-wrap .at-dedhead .s2 { font-size: 20px; }
 .attersoll-wrap .at-dedhead .s3 { font-size: 17px; }

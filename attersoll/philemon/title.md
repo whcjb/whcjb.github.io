@@ -9,47 +9,37 @@ next_url: "/attersoll/philemon/dedication/"
 next_label: "Epistle Dedicatory"
 ---
 
-<div class="at-tp" markdown="1">
-
-<span class="at-pb" data-facs="1"></span><span class="at-pb" data-facs="1"></span>A COMMENTARIE VPON THE EPISTLE OF SAINT PAVLE TO PHILEMON. Wherein, the Apostle handling a meane and low subiect, intreating for a Fraudulent and Fugitiue Seruant, mounteth aloft vnto God, and deliuereth sundry high Misteries of true Religion, and the practise of Duties
-
-<p class="at-item" markdown="1">*oeconomicall.*</p>
-
-<p class="at-item" markdown="1">*Politicall.*</p>
-
-<p class="at-item" markdown="1">*Ecclesiasticall.*</p>
-
-As
-
-<p class="at-item" markdown="1">Of Persecution for Righteousnesse sake.</p>
-
-<p class="at-item" markdown="1">Of Christian Equity, and Moderation.</p>
-
-<p class="at-item" markdown="1">Of Gods free Grace forgiuing offences.</p>
-
-<p class="at-item" markdown="1">Of Houshold Gouernment, and priuate possessions.</p>
-
-<p class="at-item" markdown="1">Of the Conuersion of Sinners, and Communion of Saints.</p>
-
-<p class="at-item" markdown="1">Of Faith, and good workes.</p>
-
-<p class="at-item" markdown="1">Of Friendship, and Suretiship.</p>
-
-<p class="at-item" markdown="1">Of Prayer, and Hospitality.</p>
-
-<p class="at-item" markdown="1">Of the Gospell, and Almes-deedes.</p>
-
-<p class="at-item" markdown="1">Of Gods Prouidence.</p>
-
-<p class="at-item" markdown="1">And of the force and fruit of the Ministery.</p>
-
-¶ Mouing all the Ministers of the Gospell, to a diligent labouring in the spirituall Haruest, and the people, to a conscionable attending to the word of Saluation, as to Gods high and holy ordinance for our conuersion, with assured hope of his wonderfull blessing; vpon the sound Preaching of the one, and the sauing hearing of the other.
-
-Written by WILLIAM ATTERSOLL, Minister of the word of God, at Isfield in Sussex.
-
-<p class="at-quote" markdown="1">*¶ Take heede to your selues: if thy Brother trespasse against thee, rebuke him: and if he repent, forgiue him.* Luke 17. 3.</p>
-
-¶ Printed at London by William Iaggard. 1612.
-
-
+<div class="at-tpg">
+<div class="at-tpg-l s2">A</div>
+<div class="at-tpg-l s0">COMMENTARIE</div>
+<div class="at-tpg-l s1">VPON THE EPISTLE OF</div>
+<div class="at-tpg-l s1 ls">SAINT PAVLE TO</div>
+<div class="at-tpg-l s2 ls">PHILEMON.</div>
+<hr class="at-tpg-rule">
+<div class="at-tpg-l s1 at-tpg-left">Wherein, the Apostle handling a meane</div>
+<div class="at-tpg-l s4 at-tpg-left at-tpg-ind">and low subiect, intreating for a Fraudulent and Fugitiue Seruant,</div>
+<div class="at-tpg-brace at-tpg-ind">
+<div class="at-tpg-bl s4">mounteth aloft vnto God, and deli-<br>uereth sundry high Misteries of true<br>Religion, and the practise of Duties</div>
+<div class="at-tpg-br s4 it">œconomicall.<br>Politicall.<br>Ecclesiasticall.</div>
+</div>
+<hr class="at-tpg-rule">
+<div class="at-tpg-brace at-tpg-as">
+<div class="at-tpg-lab s4">As</div>
+<div class="at-tpg-br s4">Of Persecution for Righteousnesse sake.<br>Of Christian Equity, and Moderation.<br>Of Gods free Grace forgiuing offences.<br>Of Houshold Gouernment, and priuate possessions.<br>Of the Conuersion of Sinners, and Communion of Saints.<br>Of Faith, and good workes.<br>Of Friendship, and Suretiship.<br>Of Prayer, and Hospitality.<br>Of the Gospell, and Almes-deedes.<br>Of Gods Prouidence.<br>And of the force and fruit of the Ministery.</div>
+</div>
+<hr class="at-tpg-rule">
+<div class="at-tpg-l s5">¶ <i>Mouing all the Ministers of the Gospell, to a diligent labouring in the spirituall Haruest,</i></div>
+<div class="at-tpg-l s5">and the people, to a conscionable attending to the word of Saluation, as to Gods high and</div>
+<div class="at-tpg-l s5">holy ordinance for our conuersion, with assured hope of his wonderfull blessing;</div>
+<div class="at-tpg-l s5">vpon the sound Preaching of the one, and the sauing hearing</div>
+<div class="at-tpg-l s5">of the other.</div>
+<hr class="at-tpg-rule">
+<div class="at-tpg-l s3">Written by W<span class="sc">illiam</span> A<span class="sc">ttersoll</span>, Minister of the word</div>
+<div class="at-tpg-l s4 it">of God, at Isfield in Sussex.</div>
+<hr class="at-tpg-rule">
+<div class="at-tpg-l s4">Luke 17. 3.</div>
+<div class="at-tpg-l s5 it">¶ Take heede to your selues: if thy Brother trespasse against thee, rebuke him: and if he repent,</div>
+<div class="at-tpg-l s5 it">forgiue him.</div>
+<hr class="at-tpg-rule">
+<div class="at-tpg-l s3">¶ Printed at London by William Iaggard. 1612.</div>
 </div>

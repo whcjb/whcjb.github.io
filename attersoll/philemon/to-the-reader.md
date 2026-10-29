@@ -10,7 +10,14 @@ next_url: "/attersoll/philemon/doctrines/"
 next_label: "A Brief Recapitulation of All the Doctrines"
 ---
 
-## <span class="at-pb" data-facs="6"></span><span class="at-pb" data-facs="6"></span>To the Reader.
+<span class="at-pb" data-facs="6"></span><span class="at-pb" data-facs="6"></span>
+
+<div class="at-dedhead">
+<div class="at-orn"><img src="{{ site.baseurl }}/img/attersoll/headpiece-reader.jpg" alt="Woodcut headpiece (from the 1612 edition)"></div>
+<div class="l s1">To the Reader.</div>
+</div>
+
+<div class="at-itbody" markdown="1">
 
 <span class="at-dropcap">I</span>T was well said, <span class="at-margin" data-n="a" markdown="1">*Plini. secund. Epist.* 6. *lib.* 1.</span> that the first duty of a Writer is, that he read ouer his owne Title, and cast backe his eyes to consider what he began to write: who, if hee dwell vpon the matter, is not to be accounted long: but if he wander and straggle from it, euery sentence is too too long and tedious. The Epistle with which I deale, I confesse, is short: the Commentary which I haue written vpon it, long: howbeit, I haue bin carefull to remember the former rule, and to keep me close to the present subiect, and therefore hope to obtain pardon with patience. One of the Ancients said of *Carthage,* that contended so much and so long with Rome, in emulation for greatnesse and Empire; It is better to say nothing, then to speake a little. Much more may this be said of this Noble and Diuine Epistle, wherein the Apostle doth so discouer his affections, and stirre vp the affections of others, that too much cannot be spoken of it.
 
@@ -44,3 +51,5 @@ Thus I haue set downe to thy view (Christian Reader) the scope of this Epistle: 
 
 <p class="at-closer" markdown="1">Thine in our common Sauiour, *William Attersoll.*</p>
 
+
+</div>

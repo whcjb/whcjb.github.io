@@ -59,7 +59,7 @@ def load_page(slug):
         m = re.match(r'(#+ )((?:\s*<span class="at-pb"[^>]*></span>)*)[^\n]*\n', md)
         if not m:
             raise ValueError(f'{slug}: 页首不是标题行，manual_heads 无处替换')
-        md = m.group(2).strip() + '\n\n' + h.read_text(encoding='utf-8').strip() + md[m.end():]
+        md = m.group(2).strip() + '\n\n' + h.read_text(encoding='utf-8').strip() + '\n\n' + md[m.end():].lstrip('\n')
     return md
 
 
@@ -93,12 +93,20 @@ def add_anchors(body, pg):
 RE_CONJ = re.compile(r'⟦([^⟧]*)⟧')
 CONJ_TITLE = ('Editorial conjecture: illegible in the 1612 source; supplied from the stated evidence '
               '(编者推补；非原书原文)')
+# 原书整篇排斜体的篇（看 1612 原图确认：致读者，叶 10–17）
+ITALIC_BODY = {'to-the-reader'}
 RE_OL = re.compile(r'^(\d+)\. ', re.M)
 
 
 def render_body(body, pg):
     body = RE_OL.sub(r'\1\\. ', body)
     body = add_anchors(body, pg)
+    if pg['slug'] in ITALIC_BODY:
+        # 原书此篇正文整篇排斜体，人名、引语排正体；TCP 的 <hi> 标的是「换字体」，抽出的 *…* 实为正体段。
+        # 整篇包进 .at-itbody，由样式反转（题头手排块留在外面）
+        h = body.find('<div class="at-dedhead">')
+        i = body.find('\n</div>\n', h) + len('\n</div>\n') if h >= 0 else 0   # 题头块自己那一行的收尾
+        body = body[:i] + '\n<div class="at-itbody" markdown="1">\n\n' + body[i:].lstrip('\n') + '\n\n</div>'
     if pg['slug'] == 'title' and not body.startswith('<div class="at-tpg">'):
         body = '<div class="at-tp" markdown="1">\n\n' + body + '\n\n</div>'
     body = RE_CONJ.sub(lambda m: f'<span class="at-conj" title="{CONJ_TITLE}">[{m.group(1)}]</span>'

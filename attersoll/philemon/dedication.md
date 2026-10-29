@@ -11,7 +11,15 @@ next_url: "/attersoll/philemon/to-the-reader/"
 next_label: "To the Reader"
 ---
 
-## <span class="at-pb" data-facs="2"></span><span class="at-pb" data-facs="2"></span>TO THE RIGHT WORshipfull Sir THOMAS PELHAM, Baronet, encrease of GRACE in this life, and eternall GLORIE in the life to come.
+<span class="at-pb" data-facs="2"></span><span class="at-pb" data-facs="2"></span>
+
+<div class="at-dedhead">
+<div class="at-orn"><img src="{{ site.baseurl }}/img/attersoll/headpiece-dedication.jpg" alt="Woodcut headpiece (from the 1612 edition)"></div>
+<div class="l s1">TO THE RIGHT WOR-</div>
+<div class="l s3">shipfull Sir T<span class="sc">homas</span> P<span class="sc">elham</span>, Baronet,</div>
+<div class="l s3"><i>encrease of</i> G<span class="sc">race</span> <i>in this life, and eter-</i></div>
+<div class="l s4">nall G<span class="sc">lorie</span> in the life to come.</div>
+</div>
 
 <span class="at-dropcap">A</span>*Gesilaus* King of *Lacedemon,* when one praised a certaine Orator that he could stretch out small matters at large and length; and amplifie them with many words, both fitly and fully answeared him, *But I cannot* <span class="at-margin" data-n="a" markdown="1">*Plut. Apotheg.*</span> *thinke him a good Shoo-maker, that would put a great and wide Shoo vpon a slender foote.* There be many I feare, who considering the shortnesse of this present Epistle; and comparing it with the largenesse of my Exposition, will bee ready to suppose and surmise, through the fore-stalling of their preiudicate Opinion, that to a little Citty I haue set vp wide Gates; and to a slender body, haue fashioned a wide Garment; both which, are faulty and vnfit. But, if these partiall Iudges would weigh the cause aright, in iust and equal Ballances, without the corrupt affections of Malice, or Enuy, I doubt not, but they will rather thinke, that to a great Foot I haue fitted and applied a little Shoo.
 
