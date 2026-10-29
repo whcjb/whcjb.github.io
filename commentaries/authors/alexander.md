@@ -4,7 +4,7 @@ author_id: alexander
 title: "约瑟·亚历山大（Joseph Addison Alexander）生平"
 tagline: "普林斯顿神学院圣经学者 · 语言学家"
 permalink: /commentaries/authors/alexander/
-lead: "普林斯顿神学院的圣经学者，以语言天分著称，先后主持东方与圣经文学、圣经与教会历史、希腊化与新约文学讲席。《以赛亚书注释》《诗篇注释》是他最知名的释经著作，本站都已收录。"
+lead: "普林斯顿神学院的圣经学者，以语言天分著称，先后主持东方与圣经文学、圣经与教会历史、希腊化与新约文学讲席。《以赛亚书注释》《诗篇注释》是他最知名的释经著作；本站收录这两部与《使徒行传注释》。"
 facts:
   - ["生", "1809 年 4 月 24 日 · 费城"]
   - ["卒", "1860 年 1 月 28 日 · 普林斯顿"]
@@ -61,6 +61,6 @@ facts:
 
 ## 本站所收著作
 
-本站收录他的《以赛亚书注释》与《诗篇注释》，都据扫描件重新校勘，以中英文发布。
+本站收录他的《以赛亚书注释》与《诗篇注释》，都据扫描件重新校勘，以中英文发布；《使徒行传注释》以 Monergism 录入本为底本，斜体、经文头与脚注据 1857 年初版三份扫描本补回，现有英文版。
 
 <p class="cb-src">资料来源：<a href="https://en.wikipedia.org/wiki/Joseph_Addison_Alexander">Wikipedia: Joseph Addison Alexander</a>；<a href="https://cblibrary.org/schaff_h/ag/alexander_joseph_addison.htm">Schaff-Herzog Encyclopedia</a>；<a href="https://reformation21.org/ja-alexander-18091860-php/">Reformation21</a>。</p>

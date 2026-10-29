@@ -175,9 +175,9 @@ authors:
     short: "亚历山大"
     en: "Joseph Addison Alexander"
     years: "1809–1860"
-    work_cn: "诗篇、以赛亚书注释"
+    work_cn: "诗篇、以赛亚书、使徒行传注释"
     work_en: ""
-    books: 2
+    books: 3
 
 books:
   - id: genesis
@@ -449,6 +449,7 @@ books:
     testament: nt
     chapters: 28
     links:
+      - {author: alexander, path: "/alexander/acts/", url_tpl: "/alexander/acts/__CH__/", title_cn: "使徒行传注释", title_en: "The Acts of the Apostles Explained", c0: "#5f2323", c1: "#7d2f2f"}
   - id: romans
     name: "罗马书"
     en: "Romans"

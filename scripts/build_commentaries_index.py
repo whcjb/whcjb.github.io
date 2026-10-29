@@ -170,7 +170,7 @@ AUTHORS = OrderedDict([
                     work_en='An Exposition of the Second Epistle of the Apostle Paul to Timothy, the First Chapter')),
     ('alexander', dict(name='约瑟·亚历山大', short='亚历山大', en='Joseph Addison Alexander',
                        years='1809–1860', dir='alexander',
-                       work_cn='诗篇、以赛亚书注释',
+                       work_cn='诗篇、以赛亚书、使徒行传注释',
                        work_en='')),
 ])
 
@@ -270,6 +270,8 @@ BOOK_TITLES = {
                                 'The Psalms Translated and Explained'),
     ('alexander', 'isaiah'):   ('以赛亚书注释',
                                 'The Earlier and Later Prophecies of Isaiah'),
+    ('alexander', 'acts'):     ('使徒行传注释',
+                                'The Acts of the Apostles Explained'),
     ('johnstone', 'philippians'): ('腓立比书讲疏',
                                   'Lectures Exegetical and Practical on the '
                                   'Epistle of Paul to the Philippians'),

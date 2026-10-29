@@ -63,7 +63,9 @@ sources:
     - {key: barlow-en, author: barlow, lang: en, label: "巴洛讲解（英文版）", url_tpl: "/barlow/2timothy/__CH__/", accent: "#2b9b8a", ch_from: 1, ch_to: 1}
   acts:
     - {key: calvin, author: calvin, lang: zh, label: "加尔文注释", url_tpl: "/calvin/acts/__CH__/", accent: "#800000", ch_from: 1, ch_to: 28}
+    - {key: calvin-en, author: calvin, lang: en, label: "加尔文注释（英文版）", url_tpl: "/calvin/acts-en/__CH__/", accent: "#800000", ch_from: 1, ch_to: 28}
     - {key: mhenry, author: mhenry, lang: zh, label: "马太亨利注释", url_tpl: "/mhenry/acts/__CH__/", accent: "#C9922A", ch_from: 1, ch_to: 28}
+    - {key: alexander-en, author: alexander, lang: en, label: "亚历山大注释（英文版）", url_tpl: "/alexander/acts/__CH__/", accent: "#7d2f2f", ch_from: 1, ch_to: 28}
   amos:
     - {key: calvin, author: calvin, lang: zh, label: "加尔文注释", url_tpl: "/calvin/amos/__CH__/", accent: "#800000", ch_from: 1, ch_to: 9}
     - {key: mhenry, author: mhenry, lang: zh, label: "马太亨利注释", url_tpl: "/mhenry/amos/__CH__/", accent: "#C9922A", ch_from: 1, ch_to: 9}

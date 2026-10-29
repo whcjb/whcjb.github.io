@@ -1,0 +1,28 @@
+# 经文头「真词对真词」的 OCR 字形混淆：OCR 键 \t KJV 键 \t 看图依据（2026-10-29 逐页裁图核过）
+# 只在 KJV 同位词恰为右列时才换；不在表里的真词差异一律照 OCR（亚历山大的经文头本与 KJV 有出入）。
+# 判为「原书如此、保留」的：didst/diddest 7:28、hands/hand 7:35、saith/said 9:34、in/at 9:35、
+# house/housetop 10:9、a/an（10:22 13:17 27:12 27:34）、aware/ware 14:6、others/other 17:9，
+# 以及 Judea Cesarea Cesar show inquire publicly Eneas Canaan aught Stoics steadfastly Midian license
+# jailer havoc Chaldeans bishopric Alpheus 等拼法（全书一贯，是这一版经文头的写法）。
+lie	he	7:15 7:55 图作 he（同一混淆全书 43 处）
+clay	day	1:2 图作 day；16:11 同
+yon	you	1:7 2:38，与 lie/he 同属 h/li、u/n 一类
+earnest	camest	9:17 图作 camest
+sinned	shined	12:7 图作 shined
+said	saul	13:7 图作 Saul
+ill	in	13:41 图作 in；20:14 23:10 同
+religions	religious	13:43 图作 religious
+paid	paul	13:46 17:16 19:15 21:26 图作 Paul
+then	their	14:5 图作 their
+reached	preached	15:36 图作 preached
+lands	bands	16:26 图作 bands
+gains	gaius	19:29 20:4 图作 Gaius
+hereof	whereof	21:24 图作 whereof
+mood	blood	21:25 图作 blood
+hand	band	21:31 图作 band
+he	be	22:10 图作 be
+comer	corner	26:26 图作 corner
+heth	lieth	27:12 图作 lieth
+vent	went	10:27 OCR v/ent
+1	i	8:31 OCR 把 I 读成 1
+he	lie	23:21 图作 there lie in wait（OCR He）

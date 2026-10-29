@@ -1,0 +1,104 @@
+---
+layout: default
+---
+{%- comment -%}
+  亚历山大《使徒行传注释》书卷目录页。
+
+  ⚠️ 不与 alexander-book（诗篇）、alexander-isaiah-book 共用：前置件、分卷、版本说明都不一样
+  （每本书独立样式）。配色取注释家身份色石榴石 #7d2f2f。
+
+  分组按原书两卷：卷一第 1–12 章、卷二第 13–28 章（1857 纽约 Scribner 初版）。
+  中译未开始，章号格子一律进英文页；将来出中译时照以赛亚书那页的深浅两色做法加。
+  页面要紧凑：不放大色块横幅（用户 2026-10-19 定）。
+{%- endcomment -%}
+
+<div class="container alexander-acts-wrap" style="padding-top: 70px;">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+
+      <div class="aa-chrome" style="margin: 18px 0 22px;">
+        <a href="{{ site.baseurl }}/commentaries/">&larr; 历代解经</a>
+        <span></span>
+      </div>
+
+      <h1 class="aa-title">{{ page.title }}</h1>
+      <div class="aa-sub">Joseph Addison Alexander · 1809–1860 · New York: Charles Scribner, 1857 · 2 vols.</div>
+
+      <div class="aa-extra">
+        <a href="{{ site.baseurl }}/alexander/acts/preface/"><span class="aa-extra-cn">著者序</span><span class="aa-extra-en">Preface</span></a>
+        <a href="{{ site.baseurl }}/alexander/acts/introduction/"><span class="aa-extra-cn">导论</span><span class="aa-extra-en">Introduction</span></a>
+      </div>
+
+      {% assign groups = "1,12,卷一|13,28,卷二" | split: "|" %}
+      {% for g in groups %}
+        {% assign gp = g | split: "," %}
+        {% assign lo = gp[0] | times: 1 %}
+        {% assign hi = gp[1] | times: 1 %}
+        <h2 class="aa-grp">{{ gp[2] }}<span>Acts {{ lo }}–{{ hi }} · Vol. {% if lo == 1 %}I{% else %}II{% endif %}</span></h2>
+        <div class="aa-ch-grid">
+          {% for i in (lo..hi) %}
+          <a class="aa-ch" href="{{ site.baseurl }}/alexander/acts/{{ i }}/">{{ i }}</a>
+          {% endfor %}
+        </div>
+      {% endfor %}
+
+      <div class="aa-blurb">
+        <p>约瑟·亚历山大（Joseph Addison Alexander）是普林斯顿神学院教授。
+        这部使徒行传注释 1857 年在纽约分两卷出版。
+        体例是每章先给一段分析性的解题，交代全章的结构；再逐节先印英文钦定本经文，
+        随即辨析希腊文的词义、语法与平行经文。<em>正文中的斜体是他所讲解的经文字词
+        与他自己的译法</em>。著者序说明，此书原为神学生而写，改为面向一般读者之后，
+        尽量少引希腊原文，也不逐家罗列他人的解释，而以「把译文做准」为主要目的。
+        全书<strong>尚无中译</strong>。</p>
+      </div>
+
+      {{ content }}
+
+    </div>
+  </div>
+</div>
+
+<style>
+.alexander-acts-wrap {
+  --aa-ink: #7d2f2f;
+  --aa-ink-dark: #5f2323;
+  --aa-rule: #e2d2cc;
+  --aa-paper: #fdfaf7;
+}
+.aa-chrome { font-size: 13px; display: flex; justify-content: space-between; }
+.aa-chrome a { color: var(--aa-ink); }
+.aa-title { font-family: Georgia, "Times New Roman", serif; font-size: 30px; font-weight: bold;
+  color: var(--aa-ink-dark); margin: 0 0 6px; padding-bottom: 10px; border-bottom: 2px solid var(--aa-ink); }
+.aa-sub { font-family: Georgia, serif; font-style: italic; font-size: 13px; color: #9a8a86; margin-bottom: 20px; }
+
+.aa-extra { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 8px; margin-bottom: 8px; }
+.aa-extra a { display: flex; align-items: baseline; gap: 8px; padding: 10px 14px;
+  border: 1px solid var(--aa-rule); border-radius: 3px; text-decoration: none !important; }
+.aa-extra a:hover { background: #faf3f1; }
+.aa-extra-cn { color: var(--aa-ink-dark); font-size: 14.5px; }
+.aa-extra-en { color: #a8938e; font-family: Georgia, serif; font-style: italic; font-size: 12.5px; }
+
+.aa-grp { font-family: Georgia, serif; font-size: 16px; color: var(--aa-ink-dark);
+  margin: 24px 0 10px; padding-bottom: 6px; border-bottom: 1px solid var(--aa-rule); }
+.aa-grp span { font-style: italic; font-size: 13px; color: #a8938e; margin-left: 8px; }
+.aa-ch-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(46px, 1fr)); gap: 7px; }
+.aa-ch { display: flex; align-items: center; justify-content: center; min-height: 40px;
+  font-family: Georgia, serif; font-size: 15px; color: var(--aa-ink); background: var(--aa-paper);
+  border: 1px solid var(--aa-rule); border-radius: 3px; text-decoration: none !important; }
+.aa-ch:hover { background: var(--aa-ink); color: #fff !important; border-color: var(--aa-ink); }
+
+.aa-blurb { font-size: 15px; line-height: 1.95; color: #3d3532; margin: 28px 0 0; }
+.aa-blurb p { margin: 0 0 12px; }
+
+.aa-note { font-size: 13.5px; line-height: 1.8; color: #5d514d; background: #faf3f1;
+  border-left: 3px solid var(--aa-rule); padding: 12px 15px; margin-top: 18px; }
+.aa-note p { margin: 0 0 10px; }
+.aa-ed { margin: 8px 0; }
+.aa-ed summary { cursor: pointer; color: var(--aa-ink-dark); }
+.aa-ed table { width: 100%; border-collapse: collapse; margin: 8px 0 4px; font-size: 12.5px; }
+.aa-ed th, .aa-ed td { border: 1px solid var(--aa-rule); padding: 3px 6px; text-align: left; vertical-align: top; }
+.aa-ed th { background: #f5ebe8; }
+@media (max-width: 600px) {
+  .aa-ed table { display: block; overflow-x: auto; }
+}
+</style>

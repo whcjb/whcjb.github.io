@@ -1,0 +1,14 @@
+# 经文头逐条手改：章:节 \t 现文 \t 改为 \t 依据。每条须恰好命中一次。
+7:35	the An gel	the Angel	图：行末 An- 转行 gel，OCR 丢了连字符
+5:35	mi to tliem	unto them	OCR 拆读；KJV 同位 unto them
+27:24	sail ii thee	sail with thee	图作 sail with thee（OCR 乱码 ^\ii\\）
+25:12	J last thou	Hast thou	图：H 被 OCR 拆成 J l（KJV 同位 Hast）
+3:21	since the world	since the world began.	图：第三行 began. ABBYY 整行漏读
+2:16	Prophet JoeL	Prophet Joel.	图作 Joel.（句点读成 L）
+2:34	thy footstool	thy footstool.	图作 foot-stool.（行末断词；句点读成 L）
+4:31	filled with the Holy Ghost and	filled with the Holy Ghost, and	图作 Ghost, and（OCR 丢逗号）
+4:31	with boldness	with boldness.	图有句点
+8:36	baptized 1	baptized?	图作问号
+8:15	Holy Ghost i	Holy Ghost.	图作 Ghost.（OCR 行末噪点 i；分号 for; them 已由标点闸去掉）
+5:4	power Why	power? Why	图作 power ? Why（OCR 丢问号）
+7:35	a judge the same	a judge? the same	图作 judge ? the same（OCR 丢问号）
