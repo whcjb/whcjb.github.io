@@ -240,6 +240,28 @@ def block_text(r, e):
     return norm(r, r.inline(e))
 
 
+def render_list(r, e, paras):
+    """<list> → ('list', [条目…])：一条一行、条间不留段距。夹在条目之间的页码挂进下一条行首。"""
+    items, pend = [], ''
+    for it in e:
+        if tag(it) in ('item', 'head'):
+            txt = block_text(r, it)
+            if txt:
+                items.append(pend + txt)
+                pend = ''
+        elif tag(it) == 'pb':
+            pend += r.pb(it)
+        else:
+            raise ValueError(f'list 下未处理 <{tag(it)}>')
+    if pend:
+        if items:
+            items[-1] += pend
+        else:
+            paras.append(('pb', pend))
+    if items:
+        paras.append(('list', items))
+
+
 def render_block(r, e, paras):
     t = tag(e)
     if t == 'head':
@@ -251,7 +273,21 @@ def render_block(r, e, paras):
         if x:
             paras.append(('pb', x))
     elif t == 'p':
-        txt = block_text(r, e)
+        # 段内直属的 <list>：原书是引导句下逐条分行的紧凑列表，切出来单独排（2026-10-30）。
+        # 条目里再套的 <list>（Cain/Balaam/Core 一类花括号并列）和旁注里的仍按行内拍平。
+        cur = ET.Element(e.tag)
+        cur.text = e.text
+        for c in e:
+            if tag(c) == 'list':
+                txt = block_text(r, cur)
+                if txt:
+                    paras.append(('p', txt))
+                render_list(r, c, paras)
+                cur = ET.Element(e.tag)
+                cur.text = c.tail
+            else:
+                cur.append(c)
+        txt = block_text(r, cur)
         if txt:
             paras.append(('p', txt))
     elif t == 'q':
@@ -272,17 +308,7 @@ def render_block(r, e, paras):
         if e.get('reason') != 'duplicate':
             paras.append(('p', r.gap(e).strip()))
     elif t == 'list':
-        for it in e:
-            if tag(it) in ('item', 'head'):
-                txt = block_text(r, it)
-                if txt:
-                    paras.append(('p', txt))
-            elif tag(it) == 'pb':
-                x = r.pb(it)
-                if x:
-                    paras.append(('pb', x))
-            else:
-                raise ValueError(f'list 下未处理 <{tag(it)}>')
+        render_list(r, e, paras)
     elif t in ('figure', 'milestone'):
         pass
     elif t == 'note':                  # 块级旁注（夹在两段之间）：单独成段
@@ -341,6 +367,11 @@ def to_md(paras):
             out.append(f'<p class="jk-quote" markdown="1">{pre}{item[1]}</p>')
         elif k == 'salute':
             out.append(f'<p class="jk-salute" markdown="1">{pre}{item[1]}</p>')
+        elif k == 'list':
+            out.append('<div class="jk-list" markdown="1">\n'
+                       + '\n'.join(f'<p markdown="1">{pre if i == 0 else ""}{x}</p>'
+                                   for i, x in enumerate(item[1]))
+                       + '\n</div>')
         elif k == 'closer':
             out.append(f'<p class="jk-closer" markdown="1">{pre}{item[1]}</p>')
         else:

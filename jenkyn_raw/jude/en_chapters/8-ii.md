@@ -13,17 +13,24 @@
 
 <span class="jk-pb" id="q2" data-p="2" data-part="2" data-facs="6" title="Part 2, page 2 of the 1654 edition begins here (第二部分原书第 2 页起)"></span>This *eighth verse* then, being part of that *second* Branch, wherein the Apostle shews that these seducers lived in the same sins which God had punish'd in others, contains (as hath been said *pag.* 612.) these two parts.
 
-1. The *faults* wherewith these seducers were charged.
+<div class="jk-list" markdown="1">
+<p markdown="1">1. The *faults* wherewith these seducers were charged.</p>
+<p markdown="1">2. The *fountain* from which these faults issued.</p>
+</div>
 
-2. The *fountain* from which these faults issued.
+In the first, The *faults* wherewith, &c. I considered,
 
-In the first, The *faults* wherewith, &c. I considered, 1 Their *specification.* 2 Their *amplification.*
+<div class="jk-list" markdown="1">
+<p markdown="1">1 Their *specification.*</p>
+<p markdown="1">2 Their *amplification.*</p>
+</div>
 
 1 Their *specification;* and their faults were of *two* sorts.
 
-1 Carnal uncleannesse: they *defiled the flesh.*
-
-2 Opposing of Authority, express'd in two Branches; 1 The *despising of dominion:* 2 The *speaking evil of dignities.*
+<div class="jk-list" markdown="1">
+<p markdown="1">1 Carnal uncleannesse: they *defiled the flesh.*</p>
+<p markdown="1">2 Opposing of Authority, express'd in two Branches; 1 The *despising of dominion:* 2 The *speaking evil of dignities.*</p>
+</div>
 
 2 Their *amplification* in these words *[Likewise also:]* They sinn'd both as the former sinners had done, and although they knew that they had been punished by God for sinning.
 
@@ -111,7 +118,12 @@ In the explication hereof, I shall shew in what sense the Apostle here gives the
 
 The word here interpreted *filthy dreamers,* in the Greek is 528〈Greek〉, <span class="jk-margin" markdown="1">529〈Greek〉 *qui videt in somnia.*</span> signifying properly such who are *dreaming in sleep. Beza* renders the word *sopiti,* such who are *fast or sound asleep,* in a *deep dead sleep. Erasmus* and *Vatablus,* <span class="jk-margin" markdown="1">530〈Greek〉, Arist.</span> *Delusi in somniis;* such who are deluded in dreams. The *Vulgar* wholly omits the translation of the word; but the word properly signifies such who in their sleep are dreaming; and thus *Joseph* is called 531〈Greek〉 a dreamer, and *Acts* 2.17. It's said, *your old men 532〈Greek〉, shall dream dreams* (importing likewise thus to dream in *sleep.*) And these of whom our Apostle here speaks, may be termed *dreamers in sleep,* either 1. In a *proper,* or 2. In a *metaphorical* sense. If 1. In a proper sense, then these seducers were dreamers in their natural and bodily rest and sleep; thus they, mentioned *Acts.* 2.17. dreamed dreams in their naturall sleep, and thus *Gagneius, Vatablus, Salmeron* understand this place; as if the Apostle had intended, <span class="jk-margin" markdown="1">*Redundat effusior libido vsque ad nocturnas inter dormiendum pollutiones* Vatab.</span> that these impure seducers did put forth and expresse their filthy lustfulnesse in their very dreams, when they were asleep. Thus likewise our own learned interpreters understood this *dreaming in sleep,* as is plain by their rendring the word 533〈Greek〉, by *filthy* <span class="jk-pb" id="q21" data-p="21" data-part="2" data-facs="15" title="Part 2, page 21 of the 1654 edition begins here (第二部分原书第 21 页起)"></span>*dreamers,* as conceiving that these seducers in their unclean dreams had defiled and polluted their bodies when they were in their *naturall sleep;* not that the word 534〈Greek〉 admits of the interpretation of *(fil535•hy dreams)* by the force of its own signification, (it's *Acts* 2.17. us'd in a good sense, namely of holy and pure dreaming) but the foresaid interpreters were pleas'd so to refer this word to the following expression, *viz. (defile the flesh)* that they interpreted it of that *dreaming in sleep* wherein these seducers defiled their bodies by *nocturnal pollutions;* which uncleannesse (as some think) is the same with that of him mentioned, *Lev.* 15.16. *Whose seed went from him.* A strong inducement hence may be gathered (that I may note it by the way) for every one, as to hate that *odious,* and I fear, *too common* a sin of *self-pollution* (which by some Casuists is accounted a greater sin then *adultery;* and by others to have even murder in it) so to keep their hearts with all diligence, from those impure thoughts in the day-time, which may otherwise make them filthy dreamers in the night; and when they go to sleep, to beseech God to keep the key of their phansie, that so it may not run out into dreaming impurely.
 
-But secondly, others (and those the most) better interpret this dreaming whereof *Jude* speaks, *metaphorically,* or in a borrowed sense; conceiving that the Apostle here in calling these seducers *dreamers in sleep,* doth compare them to such: and that, 1. In respect of *sleeping.* 2. Of *dreaming in sleep.*
+But secondly, others (and those the most) better interpret this dreaming whereof *Jude* speaks, *metaphorically,* or in a borrowed sense; conceiving that the Apostle here in calling these seducers *dreamers in sleep,* doth compare them to such: and that,
+
+<div class="jk-list" markdown="1">
+<p markdown="1">1. In respect of *sleeping.*</p>
+<p markdown="1">2. Of *dreaming in sleep.*</p>
+</div>
 
 1. In respect of *sleeping,* <span class="jk-margin" markdown="1">536〈Greek〉. Septuag.</span> these seducers may be compared to *dreamers in sleep;* they were spiritually drown'd, overwhelmed in a *deep, sound sleep of sin;* such a *deep sleep* as the Prophet mentions, *Isa.* 29.10. <span class="jk-margin" markdown="1">Isa. 29.10</span> *The Lord hath poured upon you the spirit of a deep sleep,* a dead and midnight sleep. 1 *Thes.* 5.6. *Let us not sleep as do others, Matth.* 25.5. *while the bridegrome tarried, they all slumbred and slept,* <span class="jk-pb" id="q22" data-p="22" data-part="2" data-facs="16" title="Part 2, page 22 of the 1654 edition begins here (第二部分原书第 22 页起)"></span>*&c.* This spiritual sleep in sin is threefold, (as divines observe) 1. That *natural sleep* whereby every one is overtaken, and is both unable and unwilling to move himself to the least supernaturall good, till God awake him by his *spirit,* and effectually say unto him, *Awake thou that sleepest, and stand up from the dead.* 2. That *slumber, or the remaines of that natural sleep* in the godly, continuing in them, even after they are awakened out of their dead sleep of *nature;* they being hereby oft overtaken with *spiritual slumber,* by reason of the relicks of sin still abiding in them. This the Spouse acknowledgeth, *Cant.* 5.2. *I sleep, but my heart waketh.* 3. The third is a *judicial and penal increase* of that naturall sleep, and that deadnesse of heart, by the custom and continuance in sin. This is properly that forementioned deep sleep, *Isa.* 29.10. pour'd upon the impenitent Jewes; and this last is that which is here attributed to these seducers. And in two respects may such sinners be compared to men in a deep sleep.
 
