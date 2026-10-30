@@ -189,10 +189,17 @@ function closeAdamsVerseNav() {
 
 /* 章目录页（/adams/2peter/<章>/）：本章各讲解段 */
 .adams-wrap .ad-chtoc { list-style: none; padding: 0; margin: 10px 0; display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 8px; }
-.adams-wrap .ad-chtoc a { display: block; padding: 9px 13px; border: 1px solid var(--ad-rule);
-  border-radius: 4px; background: var(--ad-paper); text-decoration: none; color: #2a2a33; }
-.adams-wrap .ad-chtoc a:hover { border-color: var(--ad-ink); color: var(--ad-ink-dark); }
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 6px; }
+.adams-wrap .ad-chtoc li { display: flex; align-items: center; gap: 8px; margin: 0;
+  padding: 6px 12px; border: 1px solid var(--ad-rule); border-radius: 4px; background: var(--ad-paper); }
+.adams-wrap .ad-chtoc li:hover { border-color: var(--ad-ink); }
+.adams-wrap .ad-chtoc a { text-decoration: none; color: #2a2a33; white-space: nowrap; }
+.adams-wrap .ad-chtoc a:hover { color: var(--ad-ink-dark); }
+/* 一节分成几部分：格内右侧并排小号码 */
+.adams-wrap .ad-chtoc .ad-pt { margin-left: auto; display: flex; gap: 4px; }
+.adams-wrap .ad-chtoc .ad-pt a { font-size: 12.5px; line-height: 1; padding: 4px 6px; border-radius: 3px;
+  color: var(--ad-ink); border: 1px solid var(--ad-rule); background: #fff; }
+.adams-wrap .ad-chtoc .ad-pt a:hover { border-color: var(--ad-ink); }
 
 /* 每段讲解前排出的经文：一节一行，节号加粗（TEI <epigraph>）。 */
 .adams-wrap .ad-text {
