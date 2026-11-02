@@ -6,6 +6,7 @@ title: "Errata (Part II)"
 date: 2026-10-27 10:59
 prev_url: "/jenkyn/jude/1-24/"
 prev_label: "Jude 24–25"
+zh_url: "/jenkyn/jude/zh/errata2/"
 ---
 
 ## ERRATA.
