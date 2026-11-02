@@ -8,6 +8,8 @@ kicker: "论基督之死"
 subtitle: "第二命题的申述与证立"
 prev_url: "/davenant/colossians/dissertation/3/zh/"
 prev_label: "第三章 · 答辩"
+next_url: "/davenant/colossians/dissertation/5/zh/"
+next_label: "第五章 · 第三命题的申述与证立"
 en_url: "/davenant/colossians/dissertation/4/"
 ---
 
