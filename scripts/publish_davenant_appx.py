@@ -174,6 +174,7 @@ def mark_italics(txt, pages, vol=2):
     return ' '.join(out)
 
 
+LEAD_CAP = re.compile(r'((?:^|[,:;)]) )([A-Z][a-z]{0,6}) ' + IT0 + r'(?=[a-z])(?![ivxlc]+[.,])')
 NUM_IT = re.compile(IT0 + r'([\d.,;:()\[\]\s—–-]+?)' + IT1 + r'(?:(\s*)' + IT0 + r')?')
 
 
@@ -187,6 +188,9 @@ def italics(t):
     # v2p328/335/340/445 看图），倾角在数字上量不准（笔画少，常落 9–11°）。
     # 片段后紧接斜体＝引文的开头（`<em>5.</em> <em>Flesh…`），并进后面那段
     t = NUM_IT.sub(lambda m: m.group(1) + ((m.group(2) + IT0) if m.group(2) is not None else ''), t)
+    # 引文首个大写词丢斜体：`, Who <em>gave himself…` → `, <em>Who gave himself…`。
+    # 首字大写的短词笔画直、倾角量不出（v2p328/335/338/341 看图，量 −1~2°）
+    t = LEAD_CAP.sub(lambda m: m.group(1) + IT0 + m.group(2) + ' ', t)
     return t.replace(IT0, '<em>').replace(IT1, '</em>')
 
 
