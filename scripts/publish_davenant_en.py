@@ -80,11 +80,19 @@ def ref_budget(items):
     归到 `pages[0]`，与 attach_notes 里 `sub()` 取注的次序一致。
     """
     need = collections.Counter()
+    prev = None
     for it in items:
+        # ⚠️ lemma 后紧跟的那段正文 2026-11-02 才补上页码（之前没有，斜体与
+        # 脚注配对都落空）。注区切分的条数**沿用补页码之前的口径**、不数这些段的
+        # 符号：数进来会让 v1p86–96 等页多切出半截注（`which he composed…`
+        # `unsound. St. Jerome…`），而切分一变，中译缓存对不上要重译。
+        # 补页码只用来让这些段的 `*` 按页配上本来就切好的注。
+        post_lemma = prev is not None and prev['tag'] == 'LEMMA' and it['tag'] == 'BODY'
         if it['tag'] in ('BODY', 'LEMMA', 'OUTLINE', 'HEAD', 'RUBRIC',
                          'ATTRIB') \
-                and it['pages']:
+                and it['pages'] and not post_lemma:
             need[it['pages'][0]] += len(REF_RE.findall(it['text']))
+        prev = it
     return need
 
 
@@ -340,7 +348,8 @@ def mark_italics(txt, pages):
     # 只认按位对上的词（equal 段），倾角值取自流
     for k in range(1, len(mine) - 1):
         if not mark[k] and mark[k - 1] and mark[k + 1] and slant_at[k] is not None \
-                and VALLEY_LO <= slant_at[k] < ITALIC_MIN:
+                and (VALLEY_LO <= slant_at[k] < ITALIC_MIN or mine[k] == 'I'):
+            # 单个大写 I 是一竖，量不出倾角（v2p105 `And I live` 看图斜体）
             mark[k] = True
     # 反方向：孤立单个「斜体」常用词、字形里有 y/v/w 斜笔——倾角量法把斜笔当成
     # 字身倾斜（every/very/say/way/ye 量 17–21°，原书正体；全书孤立斜体
@@ -369,7 +378,7 @@ def mark_italics(txt, pages):
 
 
 LEAD_CAP = re.compile(r'((?:^|[,:;)]) )([A-Z][a-z]{0,6}) ' + IT0 + r'(?=[a-z])(?![ivxlc]+[.,])')
-NUM_IT = re.compile(IT0 + r'([\d.,;:()\[\]\s—–-]+?)' + IT1 + r'(?:(\s*)' + IT0 + r')?')
+NUM_IT = re.compile(IT0 + r'([\d.,;:?!()\[\]\s—–-]+?)' + IT1 + r'(?:(\s*)' + IT0 + r')?')
 
 
 def italics(t):

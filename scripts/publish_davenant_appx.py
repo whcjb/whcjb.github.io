@@ -160,7 +160,8 @@ def mark_italics(txt, pages, vol=2):
     # 只认按位对上的词（equal 段），倾角值取自流
     for k in range(1, len(mine) - 1):
         if not mark[k] and mark[k - 1] and mark[k + 1] and slant_at[k] is not None \
-                and VALLEY_LO <= slant_at[k] < ITALIC_MIN:
+                and (VALLEY_LO <= slant_at[k] < ITALIC_MIN or mine[k] == 'I'):
+            # 单个大写 I 是一竖，量不出倾角（v2p105 `And I live` 看图斜体）
             mark[k] = True
     # 反方向：孤立单个「斜体」常用词、字形里有 y/v/w 斜笔——倾角量法把斜笔当成
     # 字身倾斜（every/very/say/way/ye 量 17–21°，原书正体；全书孤立斜体
@@ -189,7 +190,7 @@ def mark_italics(txt, pages, vol=2):
 
 
 LEAD_CAP = re.compile(r'((?:^|[,:;)]) )([A-Z][a-z]{0,6}) ' + IT0 + r'(?=[a-z])(?![ivxlc]+[.,])')
-NUM_IT = re.compile(IT0 + r'([\d.,;:()\[\]\s—–-]+?)' + IT1 + r'(?:(\s*)' + IT0 + r')?')
+NUM_IT = re.compile(IT0 + r'([\d.,;:?!()\[\]\s—–-]+?)' + IT1 + r'(?:(\s*)' + IT0 + r')?')
 
 
 def italics(t):

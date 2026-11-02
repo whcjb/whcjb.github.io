@@ -1722,7 +1722,10 @@ def main():
                     total['lemma'] += 1
                     rest = clean(para[m.end():])
                     if rest:
-                        out.append(f'[BODY] {fix_label(rest)[0]}')
+                        # ⚠️ 必须带 {pg}：没有页码的段，发布器按页取不到倾角（整段斜体全丢）、
+                        # 也配不上脚注（`Epiphanius,*` 的星号以字面印出、注挂到段尾）。
+                        # 2026-11-02 前漏了它，全书 328 段 lemma 后的正文受影响
+                        out.append(f'[BODY] {pg}{fix_label(rest)[0]}')
                     continue
                 tag = {'item': 'ITEM', 'head': 'HEAD', 'rubric': 'RUBRIC',
                        'attrib': 'ATTRIB'}.get(kind, 'BODY')
