@@ -22,13 +22,13 @@ layout: default
     dense                  索引页用：改窄行距 + 等宽数字，见 .dv-dense
 {%- endcomment -%}
 
-<div class="container davenant-wrap" style="padding-top: 70px;">
+<div class="container davenant-wrap{% if page.en_url %} dv-zh{% endif %}" style="padding-top: 70px;">
   <div class="row">
     <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
 
       <div class="dv-chrome" style="margin: 18px 0 22px;">
         <a href="{{ site.baseurl }}{{ page.up_url }}">&larr; {{ page.up_label }}</a>
-        <span></span>
+        <span>{% if page.zh_url %}<a class="dv-lang" href="{{ site.baseurl }}{{ page.zh_url }}">中文版 &rarr;</a>{% endif %}{% if page.en_url %}<a class="dv-lang" href="{{ site.baseurl }}{{ page.en_url }}">English &rarr;</a>{% endif %}</span>
       </div>
 
       {% if page.kicker %}<div class="dv-kicker">{{ page.kicker }}</div>{% endif %}
@@ -156,4 +156,26 @@ layout: default
 .dv-content .footnotes li { margin-bottom: 8px; }
 .dv-fn-page { color: #9a9a8c; font-size: 11.5px; }
 .dv-content sup[id^="fnref:"] { scroll-margin-top: 80px; }
+/* 中文页（有 en_url）：字体与行距照注释正文中文页 davenant-chapter.html 同一套 */
+   上面 content-visibility 的估高按英文 1.85 算的，中文行高降到 1.65 后同比
+   缩到 320px（360 × 1.65/1.85）。 */
+.dv-zh .dv-content { font-family: "Songti SC", STSong, "Noto Serif CJK SC",
+  "Source Han Serif SC", Georgia, serif; line-height: 1.65; }
+/* 只收无 class 的正文段：带 class 的版式块（dv-cite 2px、dv-outline 2px、
+   dv-attrib 12px…）各有自己的段距，用 .dv-content p 一刀切会把清单撑开。 */
+.dv-zh .dv-content > p:not([class]) { margin-bottom: 10px; }
+.dv-zh .dv-content > p { contain-intrinsic-size: auto 320px; }
+.dv-zh .dv-scripture { padding: 10px 16px 2px; margin: 14px 0 16px; }
+.dv-zh .dv-scripture p { margin-bottom: 8px; }
+.dv-zh .dv-content h2 { margin: 24px 0 10px; }
+.dv-zh .dv-content .footnotes { line-height: 1.6; }
+.dv-zh .dv-content .footnotes li { margin-bottom: 5px; }
+/* 原名/原词/出处括注「署名[subscription]」「Augustine[奥古斯丁]」：小一号、灰字、
+   方括号，不抢正文（publish 时由 translate_davenant.bracket_glosses 换）。 */
+.dv-zh .dv-orig { font-size: .82em; color: #8b8b80; margin: 0 1px; }
+.dv-zh .dv-orig em { color: inherit; }
+.dv-lang { border: 1px solid var(--dv-rule); border-radius: 4px; padding: 4px 10px; }
+.dv-lang:hover { background: var(--dv-ink); color: var(--dv-paper) !important;
+  text-decoration: none !important; }
 </style>
+{% if page.en_url %}{% include scripture-popup.html container_selector=".dv-content" accent="#556b2f" vnum="#8a9b6a" slide="down" %}{% endif %}

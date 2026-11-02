@@ -570,6 +570,10 @@ def main():
               f'date: {keep_date(path_of(k)) or now}']
         if k.startswith('diss') or k == 'preface':
             fm.append(f'kicker: "{DISS_KICKER}"')
+        # 中译出了就挂上切换链接（translate_davenant.py --diss N 产出 <篇>/zh/index.md）
+        zp = (OUT / path_of(k)).with_suffix('') / 'zh' / 'index.md'
+        if zp.exists():
+            fm.append(f'zh_url: "{url_of(k)}zh/"')
         # 序那一页的原书标题就是 TO THE KIND READER，与页面标题重复，不再印一遍
         def _key(x):
             return re.sub(r'[^a-z]', '', x.lower())

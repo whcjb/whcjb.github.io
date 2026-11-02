@@ -43,6 +43,7 @@ CACHE = RAW / 'zh_cache'
 ZH_RAW = RAW / 'zh_chapters'
 
 BOOK_NAME_ZH = '歌罗西书·达文南特注释'
+WORK_LABEL = '达文南特《歌罗西书注释》'
 CH_ZH = {1: '第一章', 2: '第二章', 3: '第三章', 4: '第四章'}
 ROMAN_ZH = {'I': '第一章', 'II': '第二章', 'III': '第三章', 'IV': '第四章'}
 
@@ -255,7 +256,7 @@ def normalize_fn_colon(text):
 
 def translate_batch(texts):
     parts = [f'<<<{i+1}>>>\n{t}' for i, t in enumerate(texts)]
-    prompt = ('请按编号顺序翻译以下各段（达文南特《歌罗西书注释》），'
+    prompt = (f'请按编号顺序翻译以下各段（{WORK_LABEL}），'
               '保持 <<<N>>> 格式输出：\n\n' + '\n\n'.join(parts))
     raw = tf.call_claude(prompt)
     res = [None] * len(texts)
@@ -294,7 +295,7 @@ def _leaked_en(zh):
 
 
 def _fnrefs(t):
-    return sorted(re.findall(r'\[\^(dv\d+)\]', t))
+    return sorted(re.findall(r'\[\^(d[va]\d+)\]', t))
 
 
 def _tags(t):
@@ -556,15 +557,130 @@ def translate_chapter(n: int, resume: bool, publish: bool, limit: int, dry: bool
             print(f'✓ 英文页回填 zh_url → {src}', flush=True)
 
 
+# ── 附卷《论基督之死》（Dissertatio de morte Christi）────────────────────────
+# 源页 davenant/colossians/dissertation/N.md（publish_davenant_appx 出），
+# 中文页 davenant/colossians/dissertation/N/zh/index.md，raw 存 zh_chapters/diss-N.md。
+# 与注释正文共用分块、缓存、译后闸与修订；不是逐节注释，没有 lemma/经文块。
+# date 取「这一篇译完的时刻」，记在 zh_meta.json（CLAUDE.md：不许用发布时刻）。
+DISS_SYSTEM = (
+    "\n本篇是同书卷二所附达文南特的《论基督之死》(Dissertatio de morte Christi，"
+    "Allport 英译)，不是逐节注释：论题是基督之死的普遍性与特殊性，"
+    "多引教父、经院学者、多特会议与抗辩派（Remonstrants→抗辩派，Arminius→阿明尼乌）。"
+    "脚注标记形如 [^da12]，同样原样保留、不增删、不改号。"
+    "<span class=\"dv-fn-page\">Vol. II. p. 328</span> 这类页码标签原样保留，内文译作「第二卷第 328 页」。"
+    "Proposition→命题，Argument→论证，Objection→反驳，Reply→答复，"
+    "universal redemption→普遍救赎，sufficiency→充足性，efficacy→功效，"
+    "the elect→选民，reprobate→被弃绝者，Semipelagians→半柏拉糾派。"
+)
+DISS_DIR = PUB / 'dissertation'
+ZH_META = RAW / 'zh_meta.json'
+
+
+def _diss_cn():
+    sys.path.insert(0, str(ROOT / 'scripts'))
+    import publish_davenant_appx as A
+    return A.CN
+
+
+def translate_diss(n: int, resume: bool, publish: bool, limit: int, dry: bool):
+    global WORK_LABEL
+    WORK_LABEL = '达文南特《论基督之死》'
+    tf.SYSTEM = SYSTEM + DISS_SYSTEM + tf.SCRIPTURE_RULE
+    src = DISS_DIR / f'{n}.md'
+    fm, body = split_page(src.read_text(encoding='utf-8'))
+    items = blocks_of(body)
+    send = [i for i, it in enumerate(items) if it[0] in ('body', 'scripture')]
+    if limit:
+        send = send[:limit]
+    texts = [prompt_of(items[i]) for i in send]
+    hit = sum(1 for t in texts if (CACHE / f'{tf.md5key(t)}.txt').exists())
+    print(f'diss{n}: 块 {len(items)}  需译 {len(send)}  缓存命中 {hit}'
+          f'  英文 {sum(len(t) for t in texts):,} 字符', flush=True)
+    if dry:
+        for i in send[:6]:
+            print(f'  [{items[i][0]}] {items[i][1][:90]}…')
+        return
+
+    zh_list = tf.cached_translate(texts, resume)
+    zh_list, bad = revise(texts, zh_list)
+    if bad:
+        print(f'  ✗ diss{n} 有 {len(bad)} 块两轮重译后仍不合格，不发布', flush=True)
+        sys.exit(3)
+    if limit:
+        return
+    zh = {i: z for i, z in zip(send, zh_list)}
+    out = []
+    for i, it in enumerate(items):
+        if i in zh:
+            out.append(re.sub(r'<<<[^>]*>>>', '', zh[i]).strip())
+        elif it[0] == 'h2':
+            out.append(it[2])
+        else:
+            out.append(it[1])
+    zh_body = normalize_etc('\n\n'.join(out))
+
+    meta = json.loads(ZH_META.read_text(encoding='utf-8')) if ZH_META.exists() else {}
+    key = f'diss-{n}'
+    if key not in meta:
+        meta[key] = datetime.now().strftime('%Y-%m-%d %H:%M')
+        ZH_META.write_text(json.dumps(meta, ensure_ascii=False, indent=1) + '\n', encoding='utf-8')
+    CN = _diss_cn()
+    nav = []
+    if (DISS_DIR / str(n - 1) / 'zh' / 'index.md').exists() or (publish and n - 1 in CN and (ZH_RAW / f'diss-{n-1}.md').exists()):
+        nav += [f'prev_url: "/davenant/colossians/dissertation/{n-1}/zh/"', f'prev_label: "{CN[n-1]}"']
+    if n + 1 in CN and (ZH_RAW / f'diss-{n+1}.md').exists():
+        nav += [f'next_url: "/davenant/colossians/dissertation/{n+1}/zh/"', f'next_label: "{CN[n+1]}"']
+    title, _, sub = CN[n].partition(' · ')
+    fm_zh = ('---\n'
+             'layout: davenant-appendix\n'
+             f'title: "{title}"\n'
+             'up_url: "/davenant/colossians/"\n'
+             f'up_label: "{BOOK_NAME_ZH}"\n'
+             f'date: {meta[key]}\n'
+             'kicker: "论基督之死"\n'
+             + (f'subtitle: "{sub}"\n' if sub else '')
+             + (('\n'.join(nav) + '\n') if nav else '')
+             + f'en_url: "/davenant/colossians/dissertation/{n}/"\n'
+             '---\n\n')
+    page = normalize_fn_colon(fm_zh + zh_body + '\n')
+    raw_out = ZH_RAW / f'diss-{n}.md'
+    if raw_out.exists():
+        raw_out.chmod(0o644)
+    raw_out.write_text(page, encoding='utf-8')
+    raw_out.chmod(0o444)
+    print(f'✓ 中文 raw → {raw_out}  (chmod 444)', flush=True)
+    if publish:
+        d = DISS_DIR / str(n) / 'zh'
+        d.mkdir(parents=True, exist_ok=True)
+        (d / 'index.md').write_text(bracket_glosses(page), encoding='utf-8')
+        print(f'✓ 中文页 → {d / "index.md"}', flush=True)
+        # 上一篇的中文页补「下一篇」链接
+        prev = DISS_DIR / str(n - 1) / 'zh' / 'index.md'
+        if prev.exists() and 'next_url' not in prev.read_text(encoding='utf-8'):
+            t = prev.read_text(encoding='utf-8').replace(
+                '\nen_url:', f'\nnext_url: "/davenant/colossians/dissertation/{n}/zh/"\nnext_label: "{CN[n]}"\nen_url:', 1)
+            prev.write_text(t, encoding='utf-8')
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument('--chapter', type=int)
+    ap.add_argument('--diss', type=int, help='附卷《论基督之死》第 N 篇（0=致读者）')
     ap.add_argument('--all', action='store_true')
     ap.add_argument('--resume', action='store_true')
     ap.add_argument('--publish', action='store_true')
     ap.add_argument('--limit', type=int, default=0)
     ap.add_argument('--dry-run', action='store_true')
     a = ap.parse_args()
+    if a.diss is not None:
+        tf.CACHE_DIR = CACHE
+        tf.translate_batch = translate_batch
+        try:
+            translate_diss(a.diss, a.resume, a.publish, a.limit, a.dry_run)
+        except tf.SessionLimitError as e:
+            print(f'✗ diss{a.diss} 会话额度用尽，已翻部分留在缓存：{e}', flush=True)
+            sys.exit(42)
+        return
     if not (a.chapter or a.all):
         sys.exit('要 --chapter N 或 --all')
 
