@@ -271,6 +271,19 @@ def slant_words(vol, page):
                 r = json.loads(ln)
                 _slant[vol][r['page']] = [w for l in r['lines']
                                           for w in l['words']]
+        # 人工看图核过的倾角/词形覆盖（slant_overrides.json，键 卷|页|词形）。
+        # 值可以是 [改用的词形, 倾角]：跨行断词 `/a-` + `bour` 对不上校勘后的
+        # `labour`，把前半登记成整词，后半留在流里当多余词，不影响对齐
+        ov = RAW / 'slant_overrides.json'
+        if ov.exists():
+            for k, deg in json.loads(ov.read_text(encoding='utf-8')).items():
+                if k.startswith('_'):
+                    continue
+                v, pg, wd = k.split('|', 2)
+                if int(v) == vol:
+                    nw, deg = deg if isinstance(deg, list) else (None, deg)
+                    _slant[vol][int(pg)] = [[nw or w, deg] if w == wd else [w, a]
+                                            for w, a in _slant[vol].get(int(pg), [])]
     return _slant[vol].get(page, [])
 
 
