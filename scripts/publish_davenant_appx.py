@@ -71,6 +71,7 @@ REF_RE = re.compile(r'(?<=[\w.,;:)\'"”’])(\*|\+)|(?<=\s)(\*|\+)(?=\s)'
 # 都不动，斜体只在最后贴上去。
 IT0, IT1 = '\ue000', '\ue001'
 ITALIC_MIN = 9.0
+VALLEY_LO = 4.0
 _slant = {}
 
 
@@ -132,6 +133,7 @@ def mark_italics(txt, pages, vol=2):
                                  [_nrm(w[0]) for w in stream], autojunk=False)
     flags = [w[1] is not None and w[1] >= ITALIC_MIN for w in stream]
     mark = [False] * len(mine)
+    slant_at = [None] * len(mine)
     hit = 0
     for tag, a1, a2, b1, b2 in sm.get_opcodes():
         if tag == 'equal':
@@ -143,12 +145,20 @@ def mark_italics(txt, pages, vol=2):
             # `Augustine)`↔`tine)` 与后一词捆成一组，整组不全斜，后一词丢斜体
             for k in range(a2 - a1):
                 mark[a1 + k] = flags[b1 + k]
+                slant_at[a1 + k] = stream[b1 + k][1]
         elif tag == 'replace':
             seg = flags[b1:b2]
             for k in range(a1, a2):
                 mark[k] = bool(seg) and all(seg)   # 拆词/并词处要整段都斜才算
     if hit < len(mine) * 0.5:
         return txt                        # 对齐太差，宁可不标
+    # 斜体引文里的短词（`and</em> as <em>you say`）：笔画少，倾角常量在
+    # 4–9° 的空谷里，差一点过线。两邻都是斜体、自己落在空谷 → 算斜体。
+    # 只认按位对上的词（equal 段），倾角值取自流
+    for k in range(1, len(mine) - 1):
+        if not mark[k] and mark[k - 1] and mark[k + 1] and slant_at[k] is not None \
+                and VALLEY_LO <= slant_at[k] < ITALIC_MIN:
+            mark[k] = True
     out, i = [], 0
     while i < len(mine):
         if not mark[i]:
