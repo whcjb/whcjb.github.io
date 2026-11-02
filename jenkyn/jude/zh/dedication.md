@@ -7,6 +7,8 @@ subtitle: "致伦敦黑衣修士区（Black-Friars）的神的教会"
 date: 2026-11-02 18:35
 prev_url: "/jenkyn/jude/zh/title2/"
 prev_label: "书名页（第二部分）"
+next_url: "/jenkyn/jude/zh/1-9/"
+next_label: "犹大书 9 节（第 1/2 段）"
 en_url: "/jenkyn/jude/dedication/"
 zh: true
 ---
