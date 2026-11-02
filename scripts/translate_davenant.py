@@ -571,6 +571,9 @@ DISS_SYSTEM = (
     "Proposition→命题，Argument→论证，Objection→反驳，Reply→答复，"
     "universal redemption→普遍救赎，sufficiency→充足性，efficacy→功效，"
     "the elect→选民，reprobate→被弃绝者，Semipelagians→半柏拉糾派。"
+    "人名、地名、教区名凡是音译的，本篇第一次出现一律在后面括注英文原名，"
+    "如 达文南特(Davenant)、阿马(Armagh)、格雷文霍维乌(Grevinchovius)、普罗斯珀(Prosper)；"
+    "和合本圣经里已有的人名地名不注。"
 )
 DISS_DIR = PUB / 'dissertation'
 ZH_META = RAW / 'zh_meta.json'
