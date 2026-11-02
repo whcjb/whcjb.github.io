@@ -7,6 +7,8 @@ subtitle: "伦敦，1654"
 date: 2026-11-02 18:33
 prev_url: "/jenkyn/jude/zh/1-8/"
 prev_label: "犹大书 8 节"
+next_url: "/jenkyn/jude/zh/dedication/"
+next_label: "献辞（第二部分）"
 en_url: "/jenkyn/jude/title2/"
 zh: true
 ---

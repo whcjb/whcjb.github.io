@@ -9,6 +9,7 @@ prev_url: "/jenkyn/jude/title2/"
 prev_label: "Title Page (Part II)"
 next_url: "/jenkyn/jude/1-8-ii/"
 next_label: "Jude 8 (Part II)"
+zh_url: "/jenkyn/jude/zh/dedication/"
 ---
 
 ## TO My Dear FLOCK, and much honoured Friends, The CHURCH of GOD, In the *Precinct* of BLACK-FRYARS *LONDON.*
