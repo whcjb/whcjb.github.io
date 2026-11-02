@@ -5,6 +5,8 @@ up_url: "/davenant/colossians/"
 up_label: "歌罗西书·达文南特注释"
 date: 2026-11-02 19:16
 kicker: "论基督之死"
+next_url: "/davenant/colossians/dissertation/1/zh/"
+next_label: "第一章 · 争论的由来"
 en_url: "/davenant/colossians/dissertation/0/"
 ---
 
