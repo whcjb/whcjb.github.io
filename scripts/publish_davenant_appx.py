@@ -93,10 +93,18 @@ def slant_words(vol, page):
                 v, pg, wd = k.split('|', 2)
                 if int(v) == vol:
                     # 值可以是 [改用的词形, 倾角]：倾角流里的词读花了、对不上校勘后
-                    # 的正文时（v2p577 `Jt`↔`<sup>e</sup>It`），连词形一起改
+                    # 的正文时（v2p577 `Jt`↔`<sup>e</sup>It`），连词形一起改。
+                    # 键 `as#2`＝该页第 2 个 `as`（同页同词形多处、只改其中一处）
                     nw, deg = deg if isinstance(deg, list) else (None, deg)
-                    _slant[vol][int(pg)] = [[nw or w, deg] if w == wd else [w, a]
-                                            for w, a in _slant[vol].get(int(pg), [])]
+                    wd, _, nth = wd.partition('#')
+                    seen, out = 0, []
+                    for w, a in _slant[vol].get(int(pg), []):
+                        if w == wd:
+                            seen += 1
+                            if not nth or seen == int(nth):
+                                out.append([nw or w, deg]); continue
+                        out.append([w, a])
+                    _slant[vol][int(pg)] = out
     return _slant[vol].get(page, [])
 
 
