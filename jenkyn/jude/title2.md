@@ -9,6 +9,7 @@ prev_url: "/jenkyn/jude/1-8/"
 prev_label: "Jude 8"
 next_url: "/jenkyn/jude/dedication/"
 next_label: "Epistle Dedicatory (Part II)"
+zh_url: "/jenkyn/jude/zh/title2/"
 ---
 
 <div class="jk-tp jk-tp2">

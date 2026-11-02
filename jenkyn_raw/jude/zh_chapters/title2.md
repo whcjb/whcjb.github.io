@@ -1,0 +1,23 @@
+<div class="jk-tp jk-tp2">
+<div class="jk-tp-l s3 ls">犹大</div>
+<div class="jk-tp-l s0 ls">书信</div>
+<div class="jk-tp-l s2">之</div>
+<div class="jk-tp-l s00 ls">讲解</div>
+<div class="jk-tp-l s4 it">并附</div>
+<div class="jk-tp-l s3">诸多详尽而有益的</div>
+<div class="jk-tp-l s1">引申应用</div>
+<div class="jk-tp-l s4 it">原系宣讲于</div>
+<div class="jk-tp-l s3">伦敦*基督堂*（Christ-Church）历次讲座</div>
+<hr class="jk-tp-rule">
+<div class="jk-tp-l s5 ls">著者</div>
+<div class="jk-tp-l s2 it ls">威廉·詹金（William Jenkyn）</div>
+<div class="jk-tp-l s4">耶稣基督*福音的传道人*</div>
+<div class="jk-tp-l s5 ls">兼</div>
+<div class="jk-tp-l s4">伦敦*黑衣修士区*（Black-friars）教会牧师</div>
+<hr class="jk-tp-rule">
+<div class="jk-tp-l s3">*本书*第二部分</div>
+<hr class="jk-tp-rule">
+<div class="jk-tp-l s4">*伦敦*：*托马斯·马克西*（Tho. Maxey）为塞缪尔·盖利布兰德（Samuel Gellibrand）印行</div>
+<div class="jk-tp-l s4">书肆在*保罗*堂墓园金球招牌处，1654 年</div>
+<p class="jk-tp-note">1654 年初版扉页网上无影像：文字照 EEBO-TCP A87557，分行与版式参照同一印刷商 1656 年第二版扉页（措辞不同），不是照原图排。</p>
+</div>
