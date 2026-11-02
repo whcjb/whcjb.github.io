@@ -84,11 +84,22 @@ def slant_words(vol, page):
                 r = json.loads(ln)
                 _slant[vol][r['page']] = [w for l in r['lines']
                                           for w in l['words']]
+        # 人工看图核过的倾角误判（slant_overrides.json，键 卷|页|词形），只改倾角不改词
+        ov = RAW / 'slant_overrides.json'
+        if ov.exists():
+            for k, deg in json.loads(ov.read_text(encoding='utf-8')).items():
+                if k.startswith('_'):
+                    continue
+                v, pg, wd = k.split('|', 2)
+                if int(v) == vol:
+                    _slant[vol][int(pg)] = [[w, deg] if w == wd else [w, a]
+                                            for w, a in _slant[vol].get(int(pg), [])]
     return _slant[vol].get(page, [])
 
 
 def _nrm(t):
-    return re.sub(r'[^a-z0-9]', '', t.lower())
+    # `/` 多是斜体 l 读花（`a//`↔`all`），当 l 对齐
+    return re.sub(r'[^a-z0-9]', '', t.lower().replace('/', 'l'))
 
 
 def mark_italics(txt, pages, vol=2):
@@ -112,6 +123,11 @@ def mark_italics(txt, pages, vol=2):
     for tag, a1, a2, b1, b2 in sm.get_opcodes():
         if tag == 'equal':
             hit += a2 - a1
+            for k in range(a2 - a1):
+                mark[a1 + k] = flags[b1 + k]
+        elif tag == 'replace' and a2 - a1 == b2 - b1:
+            # 词数相等＝逐词换字（`al/`↔`a//`），按位对应；不然跨行接起来的
+            # `Augustine)`↔`tine)` 与后一词捆成一组，整组不全斜，后一词丢斜体
             for k in range(a2 - a1):
                 mark[a1 + k] = flags[b1 + k]
         elif tag == 'replace':
