@@ -50,19 +50,15 @@ def label(p):
 
 
 def chtoc(secs, base, vlabel):
-    """章目录：一节一格，分成几部分的在格内并排列 1 2 3 小链接（只列已有的部分）。"""
+    """章目录：一个页面一个等大方块，按顺序排，只写节号；分成几部分的写成 3-1 3-2（只列已有的部分）。"""
     rows, groups = [], {}
     for p in secs:
         groups.setdefault((p['v1'], p['v2']), []).append(p)
     for (a, b), ps in groups.items():
-        href = lambda p: f'{{{{ site.baseurl }}}}{base}{p["slug"]}/'
-        parts = ''
-        if len(ps) > 1 or RE_PART.search(ps[0]['title']):
-            parts = '<span class="ad-pt">' + ''.join(
-                f'<a href="{href(p)}">{(RE_PART.search(p["title"]) or [0, 1])[1]}</a>' for p in ps) + '</span>'
-        # 分部分的：只留 1 2 3，不再写节名（节名和「1」原来是同一链接，重复）
-        head = '' if parts else f'<a href="{href(ps[0])}">{vlabel(a, b)}</a>'
-        rows.append(f'<li>{head}{parts}</li>')
+        multi = len(ps) > 1 or RE_PART.search(ps[0]['title'])
+        for p in ps:
+            pn = f'<span class="ad-pn">-{(RE_PART.search(p["title"]) or [0, 1])[1]}</span>' if multi else ''
+            rows.append(f'<li><a href="{{{{ site.baseurl }}}}{base}{p["slug"]}/">{vlabel(a, b)}{pn}</a></li>')
     return '\n'.join(rows)
 
 
@@ -136,7 +132,7 @@ def main():
             body = (ZH_RAW / f'{p["slug"]}.md').read_text(encoding='utf-8')
             for v in re.findall(r'id="2peter-\d+-(\d+)"', body):
                 nav.setdefault(str(ch), []).append({'v': int(v), 'slug': p['slug']})
-        lst = chtoc(secs, '/adams/2peter/zh/', lambda a, b: f'第 {a}' + (f'–{b}' if b != a else '') + ' 节')
+        lst = chtoc(secs, '/adams/2peter/zh/', lambda a, b: f'{a}' + (f'–{b}' if b != a else ''))
         fm = ['---', 'layout: adams-chapter', 'book_id: 2peter', f'book_name: "{BOOK_NAME_ZH}"',
               f'title: "彼得后书第 {ch} 章"', f'subtitle: "{AUTHOR_EN}"',
               f'date: {meta.get(secs[-1]["slug"], now)}', f'chapter: {ch}',

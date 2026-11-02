@@ -187,22 +187,17 @@ function closeAdamsVerseNav() {
 }
 .adams-wrap .ad-content a { color: var(--ad-ink); }
 
-/* 章目录页（/adams/2peter/<章>/）：本章各讲解段 */
-.adams-wrap .ad-chtoc { list-style: none; padding: 0; margin: 10px 0; display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(110px, 1fr)); gap: 5px; }
-.adams-wrap .ad-chtoc li { display: flex; align-items: stretch; margin: 0; overflow: hidden;
-  border: 1px solid var(--ad-rule); border-radius: 4px; background: var(--ad-paper); }
-.adams-wrap .ad-chtoc li:hover { border-color: var(--ad-ink); }
-.adams-wrap .ad-chtoc a { text-decoration: none; color: #2a2a33; white-space: nowrap; }
-.adams-wrap .ad-chtoc li > a { display: flex; align-items: center; padding: 6px 10px; font-size: 15px; }
-.adams-wrap .ad-chtoc li > a:only-child { flex: 1; }
-.adams-wrap .ad-chtoc a:hover { color: var(--ad-ink-dark); }
-/* 一节分成几部分：整格按段数等宽切开，只列 1 2 3，每段整高可点 */
-.adams-wrap .ad-chtoc .ad-pt { flex: 1; display: flex; }
-.adams-wrap .ad-chtoc .ad-pt a { flex: 1; display: flex; align-items: center; justify-content: center;
-  padding: 6px 0; font-size: 14px; color: var(--ad-ink); background: #fff; }
-.adams-wrap .ad-chtoc .ad-pt a + a { border-left: 1px solid var(--ad-rule); }
-.adams-wrap .ad-chtoc .ad-pt a:hover { background: var(--ad-ink); color: #fff; }
+/* 章目录页（/adams/2peter/<章>/）：一个页面一个等大方块，只写节号；分部分的写 3-1 3-2，部分号小一号 */
+.adams-wrap .ad-chtoc { list-style: none; padding: 0; margin: 12px 0; display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(56px, 1fr)); gap: 6px; }
+.adams-wrap .ad-chtoc li { margin: 0; }
+.adams-wrap .ad-chtoc a { display: flex; align-items: baseline; justify-content: center;
+  padding: 9px 0; border: 1px solid var(--ad-rule); border-radius: 4px; background: var(--ad-paper);
+  text-decoration: none; color: #2a2a33; font-size: 15px; white-space: nowrap;
+  font-variant-numeric: tabular-nums; }
+.adams-wrap .ad-chtoc .ad-pn { font-size: 12px; color: #8a8a93; }
+.adams-wrap .ad-chtoc a:hover { background: var(--ad-ink); border-color: var(--ad-ink); color: #fff; }
+.adams-wrap .ad-chtoc a:hover .ad-pn { color: #fff; }
 
 /* 每段讲解前排出的经文：一节一行，节号加粗（TEI <epigraph>）。 */
 .adams-wrap .ad-text {

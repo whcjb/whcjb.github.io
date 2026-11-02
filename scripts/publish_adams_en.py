@@ -51,19 +51,15 @@ def load_page(slug):
 
 
 def chtoc(secs, base, vlabel):
-    """章目录：一节一格，分成几部分的在格内并排列 1 2 3 小链接。publish_adams_zh.py 有同名一份。"""
+    """章目录：一个页面一个等大方块，按顺序排，只写节号；分成几部分的写成 3-1 3-2（只列已有的部分）。"""
     rows, groups = [], {}
     for p in secs:
         groups.setdefault((p['v1'], p['v2']), []).append(p)
     for (a, b), ps in groups.items():
-        href = lambda p: f'{{{{ site.baseurl }}}}{base}{p["slug"]}/'
-        parts = ''
-        if len(ps) > 1 or RE_PART_T.search(ps[0]['title']):
-            parts = '<span class="ad-pt">' + ''.join(
-                f'<a href="{href(p)}">{(RE_PART_T.search(p["title"]) or [0, 1])[1]}</a>' for p in ps) + '</span>'
-        # 分部分的：只留 1 2 3，不再写节名（节名和「1」原来是同一链接，重复）
-        head = '' if parts else f'<a href="{href(ps[0])}">{vlabel(a, b)}</a>'
-        rows.append(f'<li>{head}{parts}</li>')
+        multi = len(ps) > 1 or RE_PART_T.search(ps[0]['title'])
+        for p in ps:
+            pn = f'<span class="ad-pn">-{(RE_PART_T.search(p["title"]) or [0, 1])[1]}</span>' if multi else ''
+            rows.append(f'<li><a href="{{{{ site.baseurl }}}}{base}{p["slug"]}/">{vlabel(a, b)}{pn}</a></li>')
     return '\n'.join(rows)
 
 
@@ -214,7 +210,7 @@ def main():
             if ch < 3:
                 fm += [f'next_url: "/adams/{BOOK_ID}/{ch + 1}/"', f'next_label: "2 Peter {ch + 1}"']
             fm.append('---')
-            lst = chtoc(secs, f'/adams/{BOOK_ID}/', lambda a, b: f'v. {a}' + (f'–{b}' if b != a else ''))
+            lst = chtoc(secs, f'/adams/{BOOK_ID}/', lambda a, b: f'{a}' + (f'–{b}' if b != a else ''))
             (OUT / f'{slug}.md').write_text('\n'.join(fm) + f'\n\n<ul class="ad-chtoc">\n{lst}\n</ul>\n', encoding='utf-8')
         nav = {}
         for pg in pages:
