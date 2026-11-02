@@ -298,6 +298,27 @@ def build_index(pages):
                '第 14 章缩微胶片缺两页（原书第 194–195 页），已在原处标明，待据他本补。'
                '经文框里有两处节号印错（21:21 印作 22、33:2 印作 3），照原书显示，跳转按实际节。'
                '来源与处理见 <code>hutcheson_raw/job/PROVENANCE.md</code>。</p>')
+    # 缺字为什么还没补（2026-11-02 查证结果；用户要求写上首页）
+    out.append('<h3 class="hc-conjhead">缺字为什么还没补</h3>')
+    out.append('<p class="hc-note-zh">补缺字要有证据：另一份影像在同一位置读得出来，或另一份独立录入本录得出来。'
+               '约翰福音那本就是拿 1841 年重印本的页面影像逐处判读补齐的。本书到 2026 年 11 月为止，这两样都找不到：</p>')
+    out.append('<ul class="hc-note-zh">'
+               '<li><b>页面影像</b>：Internet Archive 的 EEBO 缩微胶片集收了赫奇森的小先知书、讲章集，'
+               '没有这本；Google Books 的两条 1669 年本记录和一种年份不明的重印本都不开放页面；'
+               'HathiTrust、PRDL 未能查成（网站拦截）。'
+               '市面上的按需印刷影印本（ISBN 9781171263395）翻印的就是录入本所据的同一份缩微胶片，'
+               '胶片上读不出的地方它也读不出，缺的两页它也没有。</li>'
+               '<li><b>其他录入本</b>：密歇根大学 EEBO-TCP、牛津文本档案馆、Early English Printed Sermons 用的都是同一份 TCP 录入本，'
+               '缺字处照样空着（如 1:1 讲解里的 <code>•ithal</code>）；唯一在 TCP 上补过缺字的 EarlyPrint 没有收这本书'
+               '（它在约翰福音上补的字是自动猜的，对照影像错得多，本来也不能作据）。</li>'
+               '</ul>')
+    out.append('<p class="hc-note-zh">另有 588 处，单凭本书自己的用词就只容一种读法（如 <code>t•yals</code> 全书作 tryals 295 次），'
+               '已列成清单，经同意后再补。其余缺字与第 14 章缺页，要等找到原书影像才能补。</p>')
+    out.append('<p><b>Why the gaps remain.</b> Restoring an illegible place needs evidence: another image or an independent transcription '
+               'that reads the same spot. For this book (London, 1669) none has been found as of November 2026: the Internet Archive '
+               'EEBO microfilm collection and Google Books have no viewable copy; the print-on-demand facsimile reproduces the same microfilm; '
+               'the Michigan, Oxford and Early English Printed Sermons texts are the same TCP transcription with the same gaps; '
+               'EarlyPrint does not include this title.</p>')
     out.append('</div>')
     return '\n'.join(out) + '\n'
 
