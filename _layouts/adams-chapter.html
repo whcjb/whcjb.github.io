@@ -189,17 +189,18 @@ function closeAdamsVerseNav() {
 
 /* 章目录页（/adams/2peter/<章>/）：本章各讲解段 */
 .adams-wrap .ad-chtoc { list-style: none; padding: 0; margin: 10px 0; display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 6px; }
-.adams-wrap .ad-chtoc li { display: flex; flex-direction: column; margin: 0; overflow: hidden;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 6px; }
+.adams-wrap .ad-chtoc li { display: flex; align-items: stretch; margin: 0; overflow: hidden;
   border: 1px solid var(--ad-rule); border-radius: 4px; background: var(--ad-paper); }
 .adams-wrap .ad-chtoc li:hover { border-color: var(--ad-ink); }
 .adams-wrap .ad-chtoc a { text-decoration: none; color: #2a2a33; white-space: nowrap; }
-.adams-wrap .ad-chtoc li > a { flex: 1; display: flex; align-items: center; padding: 10px 14px; }
+.adams-wrap .ad-chtoc li > a { display: flex; align-items: center; padding: 10px 14px; }
+.adams-wrap .ad-chtoc li > a:only-child { flex: 1; }
 .adams-wrap .ad-chtoc a:hover { color: var(--ad-ink-dark); }
-/* 一节分成几部分：格底一条等宽分段，整段可点（原来格内右侧小号码太小、难点） */
-.adams-wrap .ad-chtoc .ad-pt { display: flex; border-top: 1px solid var(--ad-rule); }
-.adams-wrap .ad-chtoc .ad-pt a { flex: 1; text-align: center; padding: 8px 0; font-size: 14px;
-  color: var(--ad-ink); background: #fff; }
+/* 一节分成几部分：节名右侧剩余部分按段数等宽切开，每段整高可点（原来格内小号码太小、难点） */
+.adams-wrap .ad-chtoc .ad-pt { flex: 1; display: flex; border-left: 1px solid var(--ad-rule); }
+.adams-wrap .ad-chtoc .ad-pt a { flex: 1; display: flex; align-items: center; justify-content: center;
+  font-size: 14px; color: var(--ad-ink); background: #fff; }
 .adams-wrap .ad-chtoc .ad-pt a + a { border-left: 1px solid var(--ad-rule); }
 .adams-wrap .ad-chtoc .ad-pt a:hover { background: var(--ad-ink); color: #fff; }
 
