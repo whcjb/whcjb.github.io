@@ -8,6 +8,8 @@ kicker: "论基督之死"
 subtitle: "基督之死为普世的救恩之因"
 prev_url: "/davenant/colossians/dissertation/1/zh/"
 prev_label: "第一章 · 争论的由来"
+next_url: "/davenant/colossians/dissertation/3/zh/"
+next_label: "第三章 · 答辩"
 en_url: "/davenant/colossians/dissertation/2/"
 ---
 
