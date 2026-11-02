@@ -91,6 +91,15 @@ def apply_fixes(slug, md, fixes=None, report=None):
 ERRATA = RAW / 'manual_errata.tsv'
 
 
+def use(book):
+    """切到另一本书的 raw 目录（约伯记脚本 import 后调 hc.use('job')）；默认约翰福音不变。"""
+    global RAW, SRC, FIXES, ERRATA
+    RAW = ROOT / 'hutcheson_raw' / book
+    SRC = RAW / 'en_chapters'
+    FIXES = RAW / 'manual_fixes.tsv'
+    ERRATA = RAW / 'manual_errata.tsv'
+
+
 def load_errata():
     """TCP 录入错（非缺字）修正表：slug \t 原串（含足够上下文，须在该篇唯一）\t 改后 \t 依据。"""
     rows = []

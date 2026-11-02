@@ -1,0 +1,23 @@
+---
+layout: hutcheson-job-chapter
+book_id: job
+book_name: "Hutcheson on Job"
+title: "Errata"
+subtitle: "George Hutcheson"
+date: 2026-11-02 16:27
+prev_url: "/hutcheson/job/reader/"
+prev_label: "To the Reader"
+next_url: "/hutcheson/job/argument/"
+next_label: "The Argument"
+---
+
+## ERRATA.
+
+<p class="hc-salute" markdown="1">Courteous Reader,</p>
+
+Having received many sheets of this Copy, I do find (notwithstanding the great care of the Printers, especially in the progress) some mistakes which may readily retard thee. As for the misprinting of Books of Scriture (as *Psal.* is sometime put for *Isai.* and *Gal.* for *Eccles.*) or the *Chapters* and *verses,* thy acquaintance with the Scriptures will (I hope) correct that. Neither shall I trouble thee with literal mistakes, or with the defect, redundancy or permutation of *particles* and *words,* where the sense will easily lead thee to be a Corrector thy self, or runs smooth enough with the words as they stand. Only I desire thou wilt correct these few with thy Pen; where *(a)* signifieth the first, and *(b)* the second column of the *page.*
+
+*Page* 11. *(a)* line 26. for *posterity* read *prosperity,* p. 15. *(a) l.* 39. for *living* r. *lying,* p. 18. *(a)* l. 46. for *preserved* r. *persevered,* p. 19. *(a)* l. 14. for *respect* r. *reject,* l. 48. for *plot* r. *lot, (b)* l. 39. for *immediately* r. *undenyably,* p. 77. *(b)* l. 38. for *now* r. *nor,* p. 86. *(b)* l. 33. for *heat* r. *heart,* p. 92. *(a)* l. last save seven, for *he spake* r. *we speak,* p. 93. *(a)* l. 45: for *greatness* r. *gentleness,* p. 115. *(b)* l. last save two, r. *their motions,* p. 126. *(b)* l. 37. r. *hold them,* p. 135. *(a)* l. last save eight, for *to him* r. *by him,* p. 146. *(b)* l. last save ten, for *could* r. *would,* p. 149. *(b)* l. 32. r. *that as,* p. 162. *(b)* l. 3. r. *his own,* l. last save twelve, for *any* r. *my,* p. 163. *(b)* l. 1. r. *that he might,* l. last save nine, for *might may* r. *many might,* p. 169. *(b)* l. 8. for *Truths* r. *Tricks,* p. 177. (a) l. 18. for *to God* r. *for God,* l. last save five, for *Truth* r. *God of Truth,* p. 179. *(a)* l. 28. for *could* r. *would,* p. 181. *(b)* l. 41. for *may,* r. *God may,* p. 202. *(b)* l. 43 for *This* r. *Thus,* p. 206. *(b)* l. 45. for *like* r. *likewise,* p. 217. *(a)* l. 12. for *There* r. *Therefore,* p. 229. *(a)* l. 24. r. *well managed,* p. 363. *(b)* l. 28. for *fryst* r. *tryst,* p. 365. *(a)* l. 33 for *yet* r. *got,* p. 378. *(b)* l. 33. r. *many may,* p. 379, *(a)* l. last save one, for *taste* r. *task,* p. 400. *(b)* l. 6. r. *to come,* p. 401. *(b)* l. last save fifteen, r. *as little,* p. 410. *(a)* l. 10. r. *make men,* p. 423. *(a)* l. 32. for *Gods* r. *Jobs,* p. 449. *(a)* l. 52. for *refused* r. *refuted,* Ch. 37. p. 8. *(b)* l. last save fourteen, for *yet* r. *get,* Chap. 38. p. 12. *(b)* l. last save twelve, for *Answer* r. *Answerer.*
+
+If thou find any material escapes in the sheets which I have not seen, the correcting thereof is remitted to thy own care.
+

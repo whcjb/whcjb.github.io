@@ -102,12 +102,12 @@ AUTHORS = OrderedDict([
                      work_en='A Commentarie or Exposition vpon the Fiue First '
                              'Chapters of the Epistle to the Galatians')),
     # 赫奇森：苏格兰盟约派，爱丁堡牧师。生卒年取 TCP 编目（Hutcheson, George,
-    # 1615-1674）。本书 1657 年伦敦初版，卷首有 Edmund Calamy 的序。
+    # 1615-1674）。约翰福音 1657 年伦敦初版（卷首有 Edmund Calamy 的序）；
+    # 约伯记 1669 年伦敦版（316 篇讲章）。两部书名不同，逐卷书名走 BOOK_TITLES。
     ('hutcheson', dict(name='乔治·赫奇森', short='赫奇森', en='George Hutcheson',
                        years='1615–1674', dir='hutcheson',
-                       work_cn='约翰福音注释',
-                       work_en='An Exposition of the Gospel of Jesus Christ '
-                               'according to John')),
+                       work_cn='约伯记、约翰福音注释',
+                       work_en='')),
     # 雷登：格拉斯哥大主教，生卒年取 DNB（Leighton, Robert (1611-1684)）与 TCP 编目一致。
     # 《彼得前书实用注释》身后分两卷出版：卷一 1693 约克，卷二 1694 伦敦。
     ('leighton', dict(name='罗伯特·雷登', short='雷登', en='Robert Leighton',
@@ -287,6 +287,8 @@ BOOK_TITLES = {
     ('perkins', 'galatians'):  ('加拉太书注释',
                                 'A Commentarie or Exposition vpon the Fiue First '
                                 'Chapters of the Epistle to the Galatians'),
+    ('hutcheson', 'job'):      ('约伯记讲解',
+                                'An Exposition of the Book of Job'),
     ('hutcheson', 'john'):     ('约翰福音注释',
                                 'An Exposition of the Gospel of Jesus Christ '
                                 'according to John'),

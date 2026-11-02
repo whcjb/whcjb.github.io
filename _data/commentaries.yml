@@ -95,9 +95,9 @@ authors:
     short: "赫奇森"
     en: "George Hutcheson"
     years: "1615–1674"
-    work_cn: "约翰福音注释"
-    work_en: "An Exposition of the Gospel of Jesus Christ according to John"
-    books: 1
+    work_cn: "约伯记、约翰福音注释"
+    work_en: ""
+    books: 2
   - id: leighton
     name: "罗伯特·雷登"
     short: "雷登"
@@ -296,6 +296,7 @@ books:
     testament: ot
     chapters: 42
     links:
+      - {author: hutcheson, path: "/hutcheson/job/", url_tpl: "/hutcheson/job/__CH__/", title_cn: "约伯记讲解", title_en: "An Exposition of the Book of Job", c0: "#24753a", c1: "#2f8f46"}
   - id: psalms
     name: "诗篇"
     en: "Psalms"
