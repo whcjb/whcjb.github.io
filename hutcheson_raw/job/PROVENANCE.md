@@ -58,6 +58,19 @@ TCP `<gap reason="illegible">` 1656 处（1 字母 1403、2 字母 122、3 字�
 发布后剩余可见记号 1725 个。**均未判读**，照录为 `•` / `〈◊〉` / `〈…〉` / `▪`。
 判读走约翰福音那套（`manual_fixes.tsv`，按篇内次序落位，`hutcheson_common.use('job')`）。
 
+**证人**：2026-11-02 查，1669 年版公开渠道没有页面影像——IA `bim_early-english-books` 胶片集
+只有赫奇森的小先知书、讲章集等，无约伯记；Google Books 的 1669 本（4VgeswEACAAJ / DYkQMwEACAAJ）
+与一种年份不明的重印本（_8rgoQEACAAJ）都是 no view。第 ②③ 层（看图判读）、扉页照原图手排、
+14 章缺页补录都因此暂做不了。
+
+**第 ① 层语料自证**（`scripts/hutcheson_job_gapfill.py --write`，判据同约翰福音）：1679 个缺字词里
+语料可判 588（lex 534 / ctx 54），其余 skip 599（缺整词、标点、含数字、已知字母<3）、
+ambig 387、none 55、rare 50。按 2026-10-16 起的规矩，语料自证**不直接落**，全部列在
+`gap_pending_approval.tsv` 待用户同意。
+
+**渲染层验收**（§4.4，2026-11-02）：凭空表格 0、`<ol>` 0、重复 id 0、`<em>` 首尾空白 0、
+正文字面星号 0、渲染前后实词集合无缺失。
+
 ## 发布（`scripts/publish_hutcheson_job_en.py`）
 
 照搬约翰福音的英文发布：按经文框分页（讲解不足 300 字符并入下一段），页名
