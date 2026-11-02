@@ -92,13 +92,18 @@ def slant_words(vol, page):
                     continue
                 v, pg, wd = k.split('|', 2)
                 if int(v) == vol:
-                    _slant[vol][int(pg)] = [[w, deg] if w == wd else [w, a]
+                    # 值可以是 [改用的词形, 倾角]：倾角流里的词读花了、对不上校勘后
+                    # 的正文时（v2p577 `Jt`↔`<sup>e</sup>It`），连词形一起改
+                    nw, deg = deg if isinstance(deg, list) else (None, deg)
+                    _slant[vol][int(pg)] = [[nw or w, deg] if w == wd else [w, a]
                                             for w, a in _slant[vol].get(int(pg), [])]
     return _slant[vol].get(page, [])
 
 
 def _nrm(t):
     # `/` 多是斜体 l 读花（`a//`↔`all`），当 l 对齐
+    # 人工核定补进来的 `<sup>e</sup>It` 不能把标签字母算进词形
+    t = re.sub(r'<sup>[^<]*</sup>', '', t)
     return re.sub(r'[^a-z0-9]', '', t.lower().replace('/', 'l'))
 
 

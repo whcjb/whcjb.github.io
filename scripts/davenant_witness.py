@@ -211,7 +211,7 @@ def manual_votes():
     return _manual
 
 
-def manual_repair(vol, page, w, nxt=None):
+def manual_repair(vol, page, w, nxt=None, prev=None):
     """整词优先；不中时剥掉尾标点再试一次，命中就把标点带回去。
     表里写的是词本身（`mints'ered`），正文里常常挂着逗号（`mints'ered,`）。
 
@@ -222,9 +222,15 @@ def manual_repair(vol, page, w, nxt=None):
 
         "2|475|change.>taking"   → 只改后面紧跟着 `taking` 的那一处
 
-    带限定的键先查，查不到再退回不带限定的整词键。"""
+    带限定的键先查，查不到再退回不带限定的整词键。
+
+    还不够时再带**前词限定**：`"2|572|<in>this"`——前词为空（行首/段首）的
+    那个 `in this`，同页另有 `grace in this life` 不该动。写法 `前词<词形`，
+    可与后词限定连用；前词限定的键最先查。"""
     tbl = manual_votes()
-    keys = ([f'{vol}|{page}|{w}>{nxt}'] if nxt else []) + [f'{vol}|{page}|{w}']
+    keys = ([f'{vol}|{page}|{prev}<{w}>{nxt}', f'{vol}|{page}|{prev}<{w}']
+            if prev is not None else [])
+    keys += ([f'{vol}|{page}|{w}>{nxt}'] if nxt else []) + [f'{vol}|{page}|{w}']
     for key in keys:
         hit = tbl.get(key)
         if hit is not None:
@@ -289,7 +295,7 @@ def manual_para(vol, pages, text):
         nxt = toks[i + 1] if i + 1 < len(toks) else ''
         got = None
         for pg in pages:
-            got = manual_repair(vol, pg, w, nxt)
+            got = manual_repair(vol, pg, w, nxt, toks[i - 1] if i else '')
             if got is not None:
                 break
         if got == '':
@@ -2012,7 +2018,7 @@ def fix_line(vol, page, text, strict=False):
             # 这种形状——前导引号其实是粗气符，剥掉就把希腊文改成了看着像
             # 英文的东西（实测 9 处）。只留判据里带**英文词表或引书格式**、
             # 在希腊文音译里不可能命中的那几条。
-            f = (manual_repair(vol, page, w, nxt) or glue_repair(w)
+            f = (manual_repair(vol, page, w, nxt, prev) or glue_repair(w)
                  or apos_head_repair(w) or one_repair(w, prev, nxt)
                  or romanref_repair(w, prev, nxt) or fndot_repair(w, prev, nxt))
             why = '对不上行·确定性'
@@ -2070,10 +2076,10 @@ def fix_line(vol, page, text, strict=False):
         # 循环不 break，照样落到兜底里）——v2p78 实测：`con-` + `clude` 本来
         # 是对的，IA 那层在这一位读成 `elude`（一个正经英文词，词典判据拦不住），
         # 产物里就成了 `conelude`。这类「流水线自己改坏」的账见 `_pipeline_damage`。
-        _hands = manual_repair(vol, page, w, _nxt)
+        _hands = manual_repair(vol, page, w, _nxt, _prev)
         if _hands is not None and _hands == w:
             continue
-        for _why, _fix in (('人工核定', manual_repair(vol, page, w, _nxt)),
+        for _why, _fix in (('人工核定', manual_repair(vol, page, w, _nxt, _prev)),
                            ('引文粘连', glue_repair(w)),
                            ('前导引号', quote_repair(w)),
                            ('If/It', ifit_repair(w, _nxt)),

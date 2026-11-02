@@ -322,5 +322,22 @@
  "2|465|/o": "to",
  "2|404|/o": "to",
  "2|404|—": "",
- "2|535|al/": "all"
+ "2|535|al/": "all",
+ "2|472|i£": "it",
+ "_gallican_keys": "《加利坎之争》两套上标对照字母 a–g（v2p570–571 法国方的问题、v2p572–577 达文南特逐条答复），OCR 吞掉或读成 4/‘/“/^/c/f/£。2026-11-02 对 IA 高清扫描 n571–n578 逐个核过。",
+ "2|570|4THE": "<sup>a</sup>THE",
+ "2|570|some<who": "<sup>b</sup>who",
+ "2|570|‘with": "<sup>c</sup>with",
+ "2|570|“God,": "<sup>d</sup>God,",
+ "2|570|‘so": "<sup>e</sup>so",
+ "2|571|the/Deputies": "the <sup>f</sup>Deputies",
+ "2|571|^on": "<sup>g</sup>on",
+ "2|572|“THE": "<sup>a</sup>THE",
+ "2|572|<in>this": "<sup>b</sup>In",
+ "2|573|\"The": "<sup>c</sup>The",
+ "2|575|“That": "<sup>d</sup>That",
+ "2|577|c>Jt": "",
+ "2|577|Jt": "<sup>e</sup>It",
+ "2|577|fI": "<sup>f</sup>I",
+ "2|577|£Lastly.": "<sup>g</sup>Lastly."
 }
