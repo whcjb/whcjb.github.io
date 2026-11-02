@@ -401,5 +401,10 @@
  "2|340|10": "to",
  "2|341|11.9,": "ii. 9,",
  "2|338|tle": "tle",
- "2|330|Vincentius,>That": "Vincentius,t"
+ "2|330|Vincentius,>That": "Vincentius,t",
+ "_fn_marks": "正文脚注号 † ‡ 读花成 t/f/} 粘在词尾、提取器认不出 → 注落单挂段尾。登记成提取器认的 `词+`（2026-11-02 看图：v2p457 Tilenus† Thomson‡、v2p514 Massilians,†、v2p555 Vegas†）。",
+ "2|457|Tilenust": "Tilenus+",
+ "2|457|Thomson}": "Thomson+",
+ "2|514|Massilians,f": "Massilians,+",
+ "2|555|Vegast": "Vegas+"
 }

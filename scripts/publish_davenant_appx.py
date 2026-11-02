@@ -296,8 +296,10 @@ def collect_notes(items):
             continue
         p = it['pages'][0] if it['pages'] else cur_p
         marked = bool(FN_MARK_START.match(it['text']))
+        # 续页上的注也可能分好几段（v2p418 Athanasius 溢到 p419 是两段）：
+        # 第二段与上一段同在续页，`cur_last + 1` 不认，被当成新注单独编号
         same_note = cur is not None and (
-            p == cur_p or (not marked and p == cur_last + 1))
+            p == cur_p or (not marked and p in (cur_last, cur_last + 1)))
         if marked or not same_note:
             if cur is not None:
                 notes.setdefault(cur_p, []).append(cur)
