@@ -72,6 +72,9 @@ REF_RE = re.compile(r'(?<=[\w.,;:)\'"”’])(\*|\+)|(?<=\s)(\*|\+)(?=\s)'
 IT0, IT1 = '\ue000', '\ue001'
 ITALIC_MIN = 9.0
 VALLEY_LO = 4.0
+DIAG_WORDS = {'every', 'very', 'say', 'says', 'way', 'ways', 'ye', 'eye', 'eyes', 'by',
+              'any', 'my', 'easy', 'away', 'we', 'why', 'yet', 'you', 'your', 'may',
+              'they', 'yea', 'saw', 'was', 'were', 'have', 'even', 'ever', 'view'}
 _slant = {}
 
 
@@ -159,6 +162,17 @@ def mark_italics(txt, pages, vol=2):
         if not mark[k] and mark[k - 1] and mark[k + 1] and slant_at[k] is not None \
                 and VALLEY_LO <= slant_at[k] < ITALIC_MIN:
             mark[k] = True
+    # 反方向：孤立单个「斜体」常用词、字形里有 y/v/w 斜笔——倾角量法把斜笔当成
+    # 字身倾斜（every/very/say/way/ye 量 17–21°，原书正体；全书孤立斜体
+    # 1194 处里这一组占 800+，抽样看图全是正体）。前后都是正体才改
+    for k in range(len(mine)):
+        if mark[k] and (k == 0 or not mark[k - 1]) and (k + 1 >= len(mine) or not mark[k + 1]) \
+                and re.sub(r'[^a-z]', '', mine[k].lower()) in DIAG_WORDS \
+                and not any(slant_at[j] is not None and slant_at[j] >= ITALIC_MIN
+                            for j in (k - 1, k + 1) if 0 <= j < len(mine)):
+            # 邻词实测是斜体（只是没标上）时不改：那是整句斜体引文断开了，
+            # 去掉这一个只会让引文更碎
+            mark[k] = False
     out, i = [], 0
     while i < len(mine):
         if not mark[i]:
