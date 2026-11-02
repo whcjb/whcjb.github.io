@@ -104,6 +104,72 @@ layout: default
     });
   });
 })();
+// 两层小标题：点标题文字 → 跳回页顶「In this section」目录（目录里的链接再跳回来）；
+// 点标题前的小三角 → 折叠：大划分（h3.jk-part）收到下一个大划分，经文短语（h4.jk-clause）收到下一个短语或大划分。
+// 只切 .jk-folded 类、不挪 DOM。容器取标题的父元素——对照抽屉会在外面再套一层 .jk-content。
+// 跳到被收起的位置（目录、#锚点）时自动展开。
+(function () {
+  var SEL = 'h3.jk-part, h4.jk-clause';
+  function box() { var h = document.querySelector(SEL); return h && h.parentElement; }
+  function prep() {
+    var c = box(); if (!c) return;
+    c.querySelectorAll(SEL).forEach(function (h) {
+      if (h.querySelector('.jk-caret')) return;
+      var k = document.createElement('button');
+      k.type = 'button'; k.className = 'jk-caret';
+      k.setAttribute('aria-label', 'Fold / unfold this part');
+      k.setAttribute('aria-expanded', h.classList.contains('jk-shut') ? 'false' : 'true');
+      h.insertBefore(k, h.firstChild);
+      h.title = 'Back to “In this section”';
+    });
+  }
+  function refresh() {
+    var c = box(); if (!c) return;
+    var partShut = false, clauseShut = false;
+    Array.prototype.forEach.call(c.children, function (el) {
+      if (el.matches('h3.jk-part')) {
+        partShut = el.classList.contains('jk-shut'); clauseShut = false; el.classList.remove('jk-folded'); return;
+      }
+      if (el.matches('h4.jk-clause')) {
+        clauseShut = el.classList.contains('jk-shut'); el.classList.toggle('jk-folded', partShut); return;
+      }
+      if (el.matches('h2, h3:not(.jk-part)')) { partShut = clauseShut = false; }
+      el.classList.toggle('jk-folded', partShut || clauseShut);
+    });
+  }
+  function setShut(h, shut) {
+    h.classList.toggle('jk-shut', shut);
+    var k = h.querySelector('.jk-caret');
+    if (k) k.setAttribute('aria-expanded', shut ? 'false' : 'true');
+  }
+  document.addEventListener('click', function (ev) {
+    var k = ev.target.closest('.jk-caret');
+    if (k) { var h0 = k.parentElement; setShut(h0, !h0.classList.contains('jk-shut')); refresh(); return; }
+    var h = ev.target.closest(SEL);
+    if (h && !ev.target.closest('a')) {
+      var toc = document.querySelector('.jk-ctoc');
+      (toc || document.body).scrollIntoView({ behavior: 'smooth', block: 'start' });
+      return;
+    }
+    if (ev.target.closest('a[href*="#"]')) setTimeout(reveal, 0);
+  });
+  function reveal() {
+    var c = box();
+    var t = c && location.hash && document.getElementById(decodeURIComponent(location.hash.slice(1)));
+    if (!t || !c.contains(t)) return;
+    var el = t; while (el.parentElement !== c) el = el.parentElement;
+    var clauseDone = false;      // 管着它的最近一个短语、所属大划分（含它自己）都打开
+    for (var p = el; p; p = p.previousElementSibling) {
+      if (p.matches('h4.jk-clause') && !clauseDone) { setShut(p, false); clauseDone = true; }
+      if (p.matches('h3.jk-part')) { setShut(p, false); break; }
+    }
+    refresh();
+    t.scrollIntoView();
+  }
+  window.addEventListener('hashchange', reveal);
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', prep); else prep();
+  window.addEventListener('load', function () { prep(); reveal(); });
+})();
 function toggleJenkynVerseNav() {
   var pills = document.getElementById('verse-nav-pills');
   var arrow = document.getElementById('verse-nav-arrow');
@@ -207,6 +273,45 @@ function closeJenkynVerseNav() {
 .jenkyn-wrap .jk-text p + p { margin-top: 8px; }
 .jenkyn-wrap .jk-text .jk-vlabel { font-size: 13px; letter-spacing: .04em; color: var(--jk-ink-dark); margin: 0 0 4px; font-style: italic; }
 .jenkyn-wrap .jk-v { scroll-margin-top: 80px; }
+/* 两层小标题（clause_heads.tsv）：作者的大划分 .jk-part、经文短语 .jk-clause（引经文原字） */
+.jenkyn-wrap .jk-content h3.jk-part {
+  font-family: Georgia, "Times New Roman", serif; font-size: 21px; font-weight: normal; line-height: 1.45;
+  color: var(--jk-ink-dark); text-align: left; margin: 48px 0 16px; padding: 10px 0 8px;
+  border-top: 2px solid var(--jk-ink); border-bottom: 1px solid var(--jk-rule); scroll-margin-top: 80px;
+}
+.jenkyn-wrap .jk-content h4.jk-clause {
+  font-family: Georgia, "Times New Roman", serif; font-size: 18px; font-weight: normal; line-height: 1.5;
+  color: var(--jk-ink); text-align: left; margin: 34px 0 12px 0; padding-left: 12px;
+  border-left: 3px solid var(--jk-ink-light); scroll-margin-top: 80px;
+}
+.jenkyn-wrap .jk-content h3.jk-part + h4.jk-clause { margin-top: 18px; }
+/* 标题前的小三角＝折叠开关（按钮）；点标题文字回页顶目录 */
+.jenkyn-wrap .jk-content h3.jk-part, .jenkyn-wrap .jk-content h4.jk-clause { cursor: pointer; }
+.jenkyn-wrap .jk-content h3.jk-part:hover, .jenkyn-wrap .jk-content h4.jk-clause:hover { text-decoration: underline dotted; text-underline-offset: 4px; }
+.jenkyn-wrap .jk-caret { -webkit-appearance: none; appearance: none; background: none; border: 0; cursor: pointer;
+  width: 26px; height: 26px; margin: 0 4px 0 -6px; padding: 0; vertical-align: middle; position: relative; color: inherit; }
+.jenkyn-wrap .jk-caret::before { content: ""; position: absolute; left: 8px; top: 10px;
+  border-left: 5px solid transparent; border-right: 5px solid transparent; border-top: 7px solid currentColor;
+  opacity: .55; }
+.jenkyn-wrap .jk-caret:hover::before, .jenkyn-wrap .jk-caret:focus-visible::before { opacity: 1; }
+.jenkyn-wrap .jk-shut .jk-caret::before { transform: rotate(-90deg); }
+.jenkyn-wrap .jk-content .jk-folded { display: none !important; }
+.jenkyn-wrap .jk-content h3.jk-part.jk-shut { margin-bottom: 6px; }
+.jenkyn-wrap .jk-content h4.jk-clause.jk-shut { margin-bottom: 4px; }
+/* 原书的 EXPLICATION / OBSERVATIONS：降为短语下的小标签 */
+.jenkyn-wrap .jk-content h5 {
+  font-family: Georgia, "Times New Roman", serif; font-size: 13px; font-weight: normal;
+  letter-spacing: .12em; color: #8a8a99; margin: 22px 0 10px; text-align: left;
+}
+/* 页顶「本节分几个短语讲」 */
+.jenkyn-wrap .jk-ctoc { background: var(--jk-paper); border: 1px solid var(--jk-rule);
+  padding: 10px 16px; margin: 0 0 24px; font-size: 14.5px; line-height: 1.7; }
+.jenkyn-wrap .jk-ctoc-h { display: block; font-size: 12px; letter-spacing: .08em; color: #8a8a99; margin-bottom: 2px; }
+.jenkyn-wrap .jk-ctoc ol { margin: 0; padding-left: 1.2em; list-style: none; }
+.jenkyn-wrap .jk-ctoc a { color: #3e3e55; text-decoration: none; font-style: italic; }
+.jenkyn-wrap .jk-ctoc a:hover { color: var(--jk-ink); }
+.jenkyn-wrap .jk-ctoc-part a { font-style: normal; color: var(--jk-ink-dark); }
+.jenkyn-wrap .jk-ctoc-part + ol { margin-bottom: 4px; }
 /* 原书引导句下逐条分行的列表（TEI <list>）：缩进、条间不留段距 */
 .jenkyn-wrap .jk-list { margin: -6px 0 18px 1.2em; padding: 2px 0 2px 14px;
   border-left: 2px solid var(--jk-ink-light); font-size: 15.5px; line-height: 1.75; color: #4a4a5c; }

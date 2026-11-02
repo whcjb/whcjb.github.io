@@ -22,6 +22,7 @@ William Jenkyn《犹大书讲解》两部分：
 | <note place="margin"> | 页边旁注 | `<span class="jk-margin">` |
 | <pb n="N"> | 印本页码 | `<span class="jk-pb" id="pN">`（第二部分 id 前缀 `q`） |
 | <add> | Thomason 藏本的手写批注（日期等） | 丢（非印刷文字） |
+| VV（拼 W） | 大号首字母缺 W 字模，两个 V 顶替 | W（同长 ſ 作 s） |
 | <gap reason="duplicate"> | 缩微胶片重拍页 | 丢（连同紧挨着的 pb） |
 """
 import argparse
@@ -191,6 +192,7 @@ class R:
 
 def norm(r, s):
     s = s.replace('ſ', 's').replace('*', '&#42;')     # 原书的星号参见记号：写实体，不与斜体星号混
+    s = re.sub(r'\bVV(?=[A-Za-z])', 'W', s)          # 大号首字母无 W 字模，原书拿两个 V 拼（VVE = WE），同长 s 一样归一
     s = re.sub(r'\x04\s*', '', s)
     s = re.sub(r'\s+', ' ', s)
     runs, depth, buf = [], 0, []
@@ -338,8 +340,9 @@ def render_block(r, e, paras):
         sub = []
         for c in e:
             render_block(r, c, sub)
-        if sub and sub[0][0] == 'head':
-            sub[0] = ('subhead', sub[0][1])
+        i = next((i for i, x in enumerate(sub) if x[0] != 'pb'), None)   # 页码锚点可能排在标题前
+        if i is not None and sub[i][0] == 'head':
+            sub[i] = ('subhead', sub[i][1])
         paras.extend(sub)
     else:
         raise ValueError(f'块级未处理的元素 <{t}>')

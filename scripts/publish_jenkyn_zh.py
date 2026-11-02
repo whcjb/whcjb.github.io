@@ -65,10 +65,32 @@ RE_OL = re.compile(r'^(\d+)\. ', re.M)
 ORIG_NAME = re.compile(r"（([A-Za-zÀ-ÿÆæŒœ][A-Za-zÀ-ÿÆæŒœ .,'’&-]*)）")
 
 
+def _ref_books_re():
+    """经文弹层认的中文书卷名，直接从 _includes/scripture-popup.html 的 BOOKS 表读（同一份来源，免得两边不一致）。"""
+    src = (ROOT / '_includes' / 'scripture-popup.html').read_text(encoding='utf-8')
+    a = src.index('var BOOKS = ['); b = src.index('];', a)
+    names = sorted(re.findall(r"\['([^']+)',\d+\]", src[a:b]), key=len, reverse=True)
+    return re.compile(r'\*([^*\n]*?)(' + '|'.join(map(re.escape, names)) + r')\*(?=\s*\d{1,3}\s*[:：]\s*\d)')
+
+
+# 原书书卷名排斜体（*Matth.* 10.4），译文照搬成「*马太福音* 10:4」——渲染后书名与章节号落在两个文本节点，
+# 经文弹层逐个文本节点找引用，就认不出来。书名挪到斜体外：「*亚勒腓，见马太福音* 10:3」→「*亚勒腓，见*马太福音 10:3」。
+REF_BOOK_ITALIC = _ref_books_re()
+
+
+def _unitalic_ref(m):
+    pre = m.group(1)
+    if not pre.strip():
+        return m.group(2)
+    core = pre.rstrip()
+    return f'*{core}*{pre[len(core):]}{m.group(2)}'
+
+
 def clean(body: str) -> str:
     # 相邻两段斜体在译文里常被并成 `**`：本书没有粗体，只合并孤立的 `**`
     body = re.sub(r'(?<!\*)\*\*(?!\*)', '', body)
     body = re.sub(r'<<<[^>]*>>>', '', body)
+    body = REF_BOOK_ITALIC.sub(_unitalic_ref, body)
     body = RE_OL.sub(r'\1\\. ', body)
     # 章题照原书斜体搬来——中文书名里斜体不成样子，标题行去掉星号
     body = re.sub(r'^(#+ .*)$', lambda m: m.group(1).replace('*', ''), body, flags=re.M)
@@ -83,6 +105,44 @@ def clean(body: str) -> str:
     body = re.sub(r'(<p>)(.*?)(</p>)',
                   lambda m: m.group(1) + re.sub(r'\*([^*]+)\*', r'<i>\1</i>', m.group(2)) + m.group(3), body)
     return body.strip()
+
+
+RE_HEADS = re.compile(r'^(###|####) (.+?)\n\{: \.jk-(part|clause) #(c\d+)\}', re.M)
+
+
+def add_toc(body, p, names, bodies):
+    """页顶「本节内容」目录：按译好的两层小标题生成（同英文页 clause_toc），跨续页链到中文续页。
+    放在经文框与 commentary-anchor 之后；续页没有经文框，放页首。"""
+    if 'ch' not in p:
+        return body
+    groups, n = [], 0
+    for q in names:
+        if q.get('src') != p.get('src') or 'ch' not in q:
+            continue
+        for m in RE_HEADS.finditer(bodies[q['slug']]):
+            href = f'#{m.group(4)}' if q is p else f'{{{{ site.baseurl }}}}/jenkyn/jude/zh/{q["slug"]}/#{m.group(4)}'
+            a = f'<a href="{href}">{m.group(2).strip("*")}</a>'
+            if m.group(3) == 'part':
+                groups.append([a, []])
+            else:
+                if not groups:
+                    groups.append([None, []])
+                groups[-1][1].append(a)
+                n += 1
+    if n < 2:
+        return body
+    toc = ['<nav class="jk-ctoc"><span class="jk-ctoc-h">本节内容</span>']
+    for head, items in groups:
+        if head:
+            toc.append(f'<div class="jk-ctoc-part">{head}</div>')
+        if items:
+            toc.append('<ol>' + ''.join(f'<li>{x}</li>' for x in items) + '</ol>')
+    toc.append('</nav>')
+    last = None
+    for last in re.finditer(r'<div class="commentary-anchor"[^>]*></div>', body):
+        pass
+    k = last.end() if last else 0
+    return body[:k] + ('\n\n' if k else '') + ''.join(toc) + '\n\n' + body[k:].lstrip('\n')
 
 
 def existing_date(path: Path):
@@ -103,6 +163,7 @@ def main():
                          check=True).stdout.strip()
     OUT.mkdir(parents=True, exist_ok=True)
 
+    bodies = {p['slug']: clean((ZH_RAW / f'{p["slug"]}.md').read_text(encoding='utf-8')) for p in names}
     for k, p in enumerate(names):
         slug = p['slug']
         path = OUT / f'{slug}.md'
@@ -119,7 +180,7 @@ def main():
             q = names[k + 1]
             fm += [f'next_url: "/jenkyn/jude/zh/{q["slug"]}/"', f'next_label: "{label(q)}"']
         fm += [f'en_url: "/jenkyn/jude/{slug}/"', 'zh: true', '---']
-        body = clean((ZH_RAW / f'{slug}.md').read_text(encoding='utf-8'))
+        body = add_toc(bodies[slug], p, names, bodies)
         path.write_text('\n'.join(fm) + '\n\n' + body + '\n', encoding='utf-8')
 
     # 章目录页 + 章内导航数据（只列已译的正文页）
@@ -176,7 +237,15 @@ def build_index(names, pages):
     group('勘误', lambda p: p['group'] == 'tail')
     out.append(f'<p class="jk-note-zh">中译已上线 {len(names)} / {len(pages)} 篇，逐篇推进；未译的篇见'
                '<a href="{{ site.baseurl }}/jenkyn/jude/en/">英文版</a>。</p>')
+    out.append(TEXT_NOTE)
     return '\n'.join(out) + '\n'
+
+
+# 底本文字上的改动（英文版首页「About this text」有全文，这里只列读者会撞见的一条）
+TEXT_NOTE = ('<p class="jk-note-zh"><b>底本改字说明。</b>原书缺大号 W 字模，以两个 V 拼成「VV」顶替'
+             '（全书 19 处，多在段首大字与斜体词），本站一律作 W，如 <i>VVE have finished</i> 作 '
+             '<i>WE have finished</i>、<i>VVhat</i> 作 <i>What</i>。这是印刷字形，不是拼法，与长 ſ 作 s 同理；'
+             '其余拼法、斜体照原书。详见<a href="{{ site.baseurl }}/jenkyn/jude/en/">英文版首页</a>文本说明。</p>')
 
 
 if __name__ == '__main__':

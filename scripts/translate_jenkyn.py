@@ -100,7 +100,8 @@ SYSTEM = (
 
 RE_GAP = re.compile(r'<span class="jk-gap"[^>]*>.*?</span>')
 RE_TAG = re.compile(r'<[^<>]{1,400}>')
-RE_ANY = re.compile(RE_GAP.pattern + '|' + RE_TAG.pattern)
+RE_IAL = re.compile(r'\{:[^}\n]*\}')          # kramdown 属性行 {: .jk-part #c1}（两层小标题），整个一个占位
+RE_ANY = re.compile(RE_GAP.pattern + '|' + RE_TAG.pattern + '|' + RE_IAL.pattern)
 RE_PH = re.compile(r'⟦(\d+)⟧')
 
 
@@ -146,7 +147,9 @@ def stray_english(zh: str, en: str):
             continue
         out.append(m.group(0))
     # 拉丁整句引文：连续多个英文词出现，多半是保留的拉丁原文，不算漏译
-    return [w for w in out if w.lower() not in en_words or len(w) < 4]
+    # 原文里带句点的缩写（旁注引书 *Pet. Dam.*、*Bed.*、*Aqu.*）照录不译，三个字母的也放过
+    abbr = {w.lower() for w in re.findall(r'\b([A-Z][a-z]{1,3})\.', en)}
+    return [w for w in out if (w.lower() not in en_words or len(w) < 4) and w.lower() not in abbr]
 
 
 def structural_diff(en: str, zh: str) -> str:
@@ -281,7 +284,9 @@ def body_of(slug: str) -> str:
     # 扉页排版 span：拆掉外壳只留字，<i> 改成星号（否则「E<span sc>pistle</span>」一个词三个占位符）
     for _ in range(2):
         t = re.sub(r'<span class="(?:sc|ls)">([^<>]*)</span>', r'\1', t)
-    return re.sub(r'<i>([^<>]*)</i>', r'*\1*', t)
+    t = re.sub(r'<i>([^<>]*)</i>', r'*\1*', t)
+    # 页顶「In this section」目录是英文页按英文小标题生成的；中文页由 publish_jenkyn_zh 按译好的小标题重生成
+    return re.sub(r'<nav class="jk-ctoc">.*?</nav>\n*', '', t, flags=re.S).strip()
 
 
 def units_of(slug: str):

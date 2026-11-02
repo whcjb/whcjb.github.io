@@ -7,6 +7,8 @@ subtitle: "William Jenkyn"
 date: 2026-10-28 12:36
 prev_url: "/jenkyn/jude/zh/errata1/"
 prev_label: "勘误表（第一部分）"
+next_url: "/jenkyn/jude/zh/1-1/"
+next_label: "犹大书 1 节（第 1/2 段）"
 en_url: "/jenkyn/jude/advertisement/"
 zh: true
 ---

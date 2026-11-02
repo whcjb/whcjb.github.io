@@ -68,7 +68,14 @@ def build_pages():
                 pages.append(dict(slug=s2, title=t2, subtitle=sub2, body=load_page(s2), group='front2'))
         base = f'1-{src}'
         label = vref(a, b) + (' (Part II)' if src == '8-ii' else '')
-        parts = split_long(jc.load(src))
+        body = jc.load(src)
+        parts = split_long(body)           # 先按原样切页（续页边界不动，中文版按页对应）
+        spans, n0 = [], 0
+        for chunk in parts:                # 再把插了小标题的段落按原切点分回各页
+            n = chunk.count('\n\n') + 1
+            spans.append((n0, n))
+            n0 += n
+        parts = slice_with_clauses(add_clauses(src, body).split('\n\n'), spans)
         for k, body in enumerate(parts, 1):
             pg = dict(slug=base if k == 1 else f'{base}-{k}',
                       title=label + (f' (part {k} of {len(parts)})' if len(parts) > 1 else ''),
@@ -83,6 +90,104 @@ def build_pages():
 
 
 LIMIT = 120_000
+CLAUSES = RAW / 'clause_heads.tsv'
+RE_HEAD3 = re.compile(r'^### ', re.M)
+
+
+def plain(b):
+    """段落去标签、去页码与旁注后的纯文字——clause_heads.tsv 的锚点按它比。"""
+    b = re.sub(r'<span class="jk-pb"[^>]*></span>', '', b)
+    b = re.sub(r'<span class="jk-margin"[\s\S]*?</span>(</span>)?', '', b)
+    b = re.sub(r'<[^>]+>', '', b)
+    return re.sub(r'\s+', ' ', b).strip()
+
+
+def load_clauses():
+    rows = {}
+    for ln in CLAUSES.read_text(encoding='utf-8').splitlines():
+        if ln.startswith('#') or not ln.strip():
+            continue
+        slug, anchor, head, level = ln.split('\t')
+        rows.setdefault(slug, []).append((anchor, head, int(level)))
+    return rows
+
+
+def add_clauses(src, body):
+    """按 clause_heads.tsv 在作者的过渡段前插两层小标题：作者的大划分（###，.jk-part）、经文短语（####，.jk-clause），
+    原 EXPLICATION / OBSERVATIONS 降为 #####。
+    锚点在 en_chapters 原稿上定位（判读回填前），两边段数必须一致。"""
+    rows = load_clauses().get(src)
+    if not rows:
+        return body
+    raw = [plain(b) for b in (jc.SRC / f'{src}.md').read_text(encoding='utf-8').split('\n\n')]
+    blocks = body.split('\n\n')
+    if len(raw) != len(blocks):
+        raise ValueError(f'{src}: 原稿 {len(raw)} 段，回填后 {len(blocks)} 段，锚点对不上')
+    at = {}
+    for k, (anchor, head, level) in enumerate(rows, 1):
+        m = re.fullmatch(r'(.*?)#(\d+)', anchor)
+        a, nth = (m.group(1), int(m.group(2))) if m else (anchor, 1)
+        hits = [i for i, b in enumerate(raw) if b.startswith(a)]
+        if len(hits) < nth or (not m and len(hits) != 1):
+            raise ValueError(f'{src}: 锚点命中 {len(hits)} 处：{anchor[:40]}')
+        at.setdefault(hits[nth - 1], []).append((k, head, level))
+    out = []
+    for i, b in enumerate(blocks):
+        if b.startswith('### '):
+            b = '##' + b
+        for k, head, level in at.get(i, []):
+            out.append(f'### {head}\n{{: .jk-part #c{k}}}' if level == 1 else
+                       f'#### *{head}*\n{{: .jk-clause #c{k}}}')
+        out.append(b)
+    return '\n\n'.join(out)
+
+
+def slice_with_clauses(withc, spans):
+    """withc = 插了小标题的段落表；spans = 原文各页 (起段, 段数)。小标题跟着它后面那段走。"""
+    out, i, orig = [], 0, 0
+    bounds = {a for a, _ in spans[1:]}
+    cur = []
+    while i < len(withc):
+        b = withc[i]
+        if b.startswith('###') and ('{: .jk-clause' in b or '{: .jk-part' in b):
+            if orig in bounds and cur:
+                out.append('\n\n'.join(cur)); cur = []; bounds.discard(orig)
+            cur.append(b); i += 1
+            continue
+        if orig in bounds and cur and not ('{: .jk-clause' in cur[-1] or '{: .jk-part' in cur[-1]):
+            out.append('\n\n'.join(cur)); cur = []; bounds.discard(orig)
+        cur.append(b); i += 1; orig += 1
+    out.append('\n\n'.join(cur))
+    assert len(out) == len(spans), (len(out), len(spans))
+    return out
+
+
+def clause_toc(pg, pages):
+    """每节页面顶上：本节怎么分（大划分 + 经文短语），点了跳过去（跨续页的链到续页）。"""
+    groups, n = [], 0
+    for p in pages:
+        if p.get('src') != pg.get('src') or 'ch' not in p:
+            continue
+        for m in re.finditer(r'^(###|####) \*?(.+?)\*?\n\{: \.jk-(part|clause) #(c\d+)\}', p['body'], re.M):
+            href = f'#{m.group(4)}' if p is pg else f'{{{{ site.baseurl }}}}/jenkyn/{BOOK_ID}/{p["slug"]}/#{m.group(4)}'
+            a = f'<a href="{href}">{m.group(2)}</a>'
+            if m.group(3) == 'part':
+                groups.append([a, []])
+            else:
+                if not groups:
+                    groups.append([None, []])
+                groups[-1][1].append(a)
+                n += 1
+    if n < 2:
+        return ''
+    out = ['<nav class="jk-ctoc"><span class="jk-ctoc-h">In this section</span>']
+    for head, items in groups:
+        if head:
+            out.append(f'<div class="jk-ctoc-part">{head}</div>')
+        if items:
+            out.append('<ol>' + ''.join(f'<li>{x}</li>' for x in items) + '</ol>')
+    out.append('</nav>')
+    return ''.join(out)
 
 
 def split_long(body):
@@ -136,9 +241,17 @@ CONJ_TITLE = 'Editorial conjecture: illegible in the source; supplied from the s
 RE_OL = re.compile(r'^(\d+)\. ', re.M)
 
 
-def render_body(body, pg):
+def render_body(body, pg, pages=()):
     body = RE_OL.sub(r'\1\\. ', body)
     body = add_anchors(body, pg)
+    toc = clause_toc(pg, pages)
+    if toc:
+        # 挂在经文框与 commentary-anchor 之后；续页没有经文框，挂页首
+        last = None
+        for last in re.finditer(r'<div class="commentary-anchor"[^>]*></div>', body):
+            pass
+        k = last.end() if last else 0
+        body = body[:k] + ('\n\n' if k else '') + toc + '\n\n' + body[k:].lstrip('\n')
     body = RE_CONJ.sub(lambda m: f'<span class="jk-conj" title="{CONJ_TITLE}">[{m.group(1)}]</span>'
                        if m.group(1) else '', body)
     body = jc.TOK.sub(lambda m: f'<span class="jk-gap" title="TCP: illegible in source">{m.group(0)}</span>', body)
@@ -183,7 +296,7 @@ def main():
             fm.append(f'zh_url: "/jenkyn/{BOOK_ID}/zh/{slug}/"')
         fm.append('---')
         if a.apply:
-            (OUT / f'{slug}.md').write_text('\n'.join(fm) + '\n\n' + render_body(pg['body'], pg) + '\n',
+            (OUT / f'{slug}.md').write_text('\n'.join(fm) + '\n\n' + render_body(pg['body'], pg, pages) + '\n',
                                             encoding='utf-8')
     if a.apply:
         secs = [p for p in pages if 'ch' in p]
@@ -273,10 +386,15 @@ def build_index(pages):
     conj = sum(len(RE_CONJ.findall(p['body'])) for p in pages)
     left = sum(len(jc.TOK.findall(p['body'])) for p in pages)
     nsite = len(jc.sites())
+    from extract_jenkyn import SRCS
+    nvv = sum(len(re.findall(r'\bVV(?=[A-Za-z])', f.read_text(encoding='utf-8'))) for f in SRCS)
     out.append('<div class="jk-note">')
     out.append('<p><b>About this text.</b> EEBO-TCP A87554 (Part I, London 1652; Thomason copy) and A87557 '
                '(Part II, London 1654), keyed by hand from the microfilm; CC0. Original spelling and italics are '
-               'retained; the long s is printed as s. Page numbers of the original are kept as in-page anchors '
+               'retained; the long s is printed as s. '
+               f'Where the printer, lacking a large W, set two V’s for it ({nvv} places, nearly all in display '
+               f'initials and italic words), the letter is printed as W: <i>VVE have finished</i> → '
+               f'<i>WE have finished</i>, <i>VVhat</i> → <i>What</i>. Page numbers of the original are kept as in-page anchors '
                '(each part is paged from 1). Manuscript notes on the Thomason copy (dates) are omitted.</p>')
     out.append(f'<p><b>Illegible places.</b> The keyers marked {nsite:,} places they could not read, most of them '
                f'Greek and Hebrew words, which TCP does not transcribe. English words were supplied from the same '
@@ -286,7 +404,9 @@ def build_index(pages):
                + (f'Editorial conjectures are shown <span class="jk-conj">[in brackets]</span> ({conj:,}); ' if conj else '')
                + f'places still undecided remain marked in red ({left:,}).</p>')
     out.append(f'<p class="jk-note-zh"><b>文本说明。</b>本书据 EEBO-TCP 人工录入本 A87554（第一部分，伦敦 1652，Thomason 藏本）'
-               f'与 A87557（第二部分，伦敦 1654），保留原书拼写与斜体，长 ſ 作 s；原书页码保留为页内锚点（两部分各自从 1 起）；'
+               f'与 A87557（第二部分，伦敦 1654），保留原书拼写与斜体，长 ſ 作 s；原书缺大号 W 字模、以两个 V 拼成「VV」顶替处（{nvv} 处，多在段首大字与斜体词），'
+               f'一律作 W，如 <i>VVE have finished</i> 作 <i>WE have finished</i>、<i>VVhat</i> 作 <i>What</i>——'
+               f'这是印刷字形，不是拼法，与长 ſ 作 s 同理；原书页码保留为页内锚点（两部分各自从 1 起）；'
                f'Thomason 藏本扉页上的手写日期不录。录入本标出 {nsite:,} 处读不出的字，大半是录入本照例不录的希腊文、希伯来文：'
                f'英文词按 1865 年爱丁堡重印本（Nichol）同一位置读出、看图核对，拼法照原书；希腊文、希伯来文与页边旁注'
                f'（1865 本把旁注删了）对照原书胶片判读——第一部分用 1652 同版胶片，第二部分用 1656 年第二版胶片（1654 初版网上无扫描）。'
