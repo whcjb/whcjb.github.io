@@ -38,7 +38,7 @@ facts:
 
 - 《十二小先知书简释》（*A Brief Exposition of the XII. Smal Prophets*，1653–1655 年间陆续出版）
 - 《约翰福音注释》（*An Exposition of the Gospel of Jesus Christ according to John*，伦敦 Ralph Smith，1657）
-- 《约伯记释义》（*An Exposition of the Book of Job, being the Sum of CCCXVI Lectures, Preached in the City of Edenburgh*，伦敦，1669）：如书名所示，是他在爱丁堡讲的三百一十六篇讲章的提要。
+- 《约伯记释义》（*An Exposition of the Book of Job, being the Sum of CCCXVI Lectures, Preached in the City of Edenburgh*，伦敦 Ralph Smith，1669）：如书名所示，是他在爱丁堡讲的三百一十六篇讲章的提要。
 
 ## 本站所收著作
 
@@ -46,4 +46,6 @@ facts:
 
 本站底本为 EEBO-TCP 的 1657 年伦敦初版人工录入本，以英文发布。
 
-<p class="cb-src">资料来源：<a href="https://www.worldcat.org/identities/lccn-n84184690/">WorldCat Identities</a>；<a href="https://onlinebooks.library.upenn.edu/webbin/book/lookupname?key=Hutcheson,+George,+1615-1674">The Online Books Page</a>；<a href="https://www.reformationscotland.org/author/ghutcheson1/">Reformation Scotland</a>；<a href="http://greatchristianlibrary.blogspot.com/2013/12/george-hutcheson-george-hutcheson.html">Great Christian Library</a>；<a href="https://www.biblicalcyclopedia.com/H/hutcheson-francis.html">McClintock & Strong Cyclopedia</a>；本站 <code>hutcheson_raw/john/PROVENANCE.md</code>。注意：维基百科与《英国国家传记辞典》的「George Hutcheson」条目是同名的格拉斯哥公证人（约 1580–1639），不是这位牧者。</p>
+《约伯记释义》体例相同：每段先排出经文，再讲解、分条列教训；正文前有全书论旨，每章前有章首提要，卷首有作者致读者与勘误表。本站底本为 EEBO-TCP 的 1669 年伦敦版人工录入本（A45240），以英文发布；缩微胶片缺第 14 章两页（原书第 194–195 页），录入本里读不出的字尚未判读补出。
+
+<p class="cb-src">资料来源：<a href="https://www.worldcat.org/identities/lccn-n84184690/">WorldCat Identities</a>；<a href="https://onlinebooks.library.upenn.edu/webbin/book/lookupname?key=Hutcheson,+George,+1615-1674">The Online Books Page</a>；<a href="https://www.reformationscotland.org/author/ghutcheson1/">Reformation Scotland</a>；<a href="http://greatchristianlibrary.blogspot.com/2013/12/george-hutcheson-george-hutcheson.html">Great Christian Library</a>；<a href="https://www.biblicalcyclopedia.com/H/hutcheson-francis.html">McClintock & Strong Cyclopedia</a>；本站 <code>hutcheson_raw/john/PROVENANCE.md</code>、<code>hutcheson_raw/job/PROVENANCE.md</code>。注意：维基百科与《英国国家传记辞典》的「George Hutcheson」条目是同名的格拉斯哥公证人（约 1580–1639），不是这位牧者。</p>

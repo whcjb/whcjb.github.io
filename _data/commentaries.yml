@@ -296,7 +296,7 @@ books:
     testament: ot
     chapters: 42
     links:
-      - {author: hutcheson, path: "/hutcheson/job/", url_tpl: "/hutcheson/job/__CH__/", title_cn: "约伯记讲解", title_en: "An Exposition of the Book of Job", c0: "#24753a", c1: "#2f8f46"}
+      - {author: hutcheson, path: "/hutcheson/job/", url_tpl: "/hutcheson/job/__CH__/", title_cn: "约伯记释义", title_en: "An Exposition of the Book of Job", c0: "#24753a", c1: "#2f8f46"}
   - id: psalms
     name: "诗篇"
     en: "Psalms"

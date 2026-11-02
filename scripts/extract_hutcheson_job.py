@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""hutcheson_raw/job/src/A45240.xml（EEBO-TCP）→ en_chapters/*.md　赫奇森《约伯记讲解》(1669)
+"""hutcheson_raw/job/src/A45240.xml（EEBO-TCP）→ en_chapters/*.md　赫奇森《约伯记释义》(1669)
 
     python3 scripts/extract_hutcheson_job.py            # 试跑，只报统计
     python3 scripts/extract_hutcheson_job.py --apply

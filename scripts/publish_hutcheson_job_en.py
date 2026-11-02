@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""hutcheson_raw/job/en_chapters/*.md（+ manual_fixes.tsv）→ hutcheson/job/*.md　赫奇森《约伯记讲解》(1669)
+"""hutcheson_raw/job/en_chapters/*.md（+ manual_fixes.tsv）→ hutcheson/job/*.md　赫奇森《约伯记释义》(1669)
 
     python3 scripts/publish_hutcheson_job_en.py            # 试跑，只报不写
     python3 scripts/publish_hutcheson_job_en.py --apply

@@ -287,7 +287,7 @@ BOOK_TITLES = {
     ('perkins', 'galatians'):  ('加拉太书注释',
                                 'A Commentarie or Exposition vpon the Fiue First '
                                 'Chapters of the Epistle to the Galatians'),
-    ('hutcheson', 'job'):      ('约伯记讲解',
+    ('hutcheson', 'job'):      ('约伯记释义',
                                 'An Exposition of the Book of Job'),
     ('hutcheson', 'john'):     ('约翰福音注释',
                                 'An Exposition of the Gospel of Jesus Christ '
