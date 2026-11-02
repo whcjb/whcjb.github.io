@@ -79,7 +79,10 @@ layout: default
           <p class="dv-appx-note">{{ grp.note }}</p>
           <div class="dv-appx-list">
             {% for it in grp.items %}
-            <a href="{{ site.baseurl }}{{ it.url }}">
+            {%- comment -%} 有中译（<篇>/zh/index.md）就指中文页，页内可切回英文；与章卡片同一判法 {%- endcomment -%}
+            {%- assign azk = it.url | remove_first: "/" | append: "zh/index.md" -%}
+            {%- assign a_zh = false -%}{% if zh_paths contains azk %}{% assign a_zh = true %}{% endif %}
+            <a href="{{ site.baseurl }}{{ it.url }}{% if a_zh %}zh/{% endif %}" title="{% if a_zh %}中文版（页内可切回英文原文）{% else %}仅英文{% endif %}">
               <span class="dv-appx-cn">{{ it.cn }}</span>
               <span class="dv-appx-en">{{ it.label }}</span>
             </a>
