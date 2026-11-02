@@ -164,12 +164,19 @@ def mark_italics(txt, pages, vol=2):
     return ' '.join(out)
 
 
+NUM_IT = re.compile(IT0 + r'([\d.,;:()\[\]\s—–-]+?)' + IT1 + r'(?:(\s*)' + IT0 + r')?')
+
+
 def italics(t):
     """私用码 → <em>。放在 md_escape 之后：escape 只动 markdown 元字符，
     碰不到私用码；反过来先换成 <em> 就会被 escape 掉。"""
     t = re.sub(IT0 + r'\s*' + IT1, '', t)
     if t.count(IT0) != t.count(IT1):
         return t.replace(IT0, '').replace(IT1, '')   # 落单的丢掉，不留半个标签
+    # 只有数字/标点的斜体片段：原书引注编号一律正体（v1p114/123/125/134、
+    # v2p328/335/340/445 看图），倾角在数字上量不准（笔画少，常落 9–11°）。
+    # 片段后紧接斜体＝引文的开头（`<em>5.</em> <em>Flesh…`），并进后面那段
+    t = NUM_IT.sub(lambda m: m.group(1) + ((m.group(2) + IT0) if m.group(2) is not None else ''), t)
     return t.replace(IT0, '<em>').replace(IT1, '</em>')
 
 
