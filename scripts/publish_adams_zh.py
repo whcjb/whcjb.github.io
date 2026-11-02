@@ -60,8 +60,8 @@ def chtoc(secs, base, vlabel):
         if len(ps) > 1 or RE_PART.search(ps[0]['title']):
             parts = '<span class="ad-pt">' + ''.join(
                 f'<a href="{href(p)}">{(RE_PART.search(p["title"]) or [0, 1])[1]}</a>' for p in ps) + '</span>'
-        # 分部分的：节名只作标签不可点，点右侧 1 2 3 进各部分（节名和「1」原来是同一链接，重复）
-        head = f'<span class="ad-vl">{vlabel(a, b)}</span>' if parts else f'<a href="{href(ps[0])}">{vlabel(a, b)}</a>'
+        # 分部分的：只留 1 2 3，不再写节名（节名和「1」原来是同一链接，重复）
+        head = '' if parts else f'<a href="{href(ps[0])}">{vlabel(a, b)}</a>'
         rows.append(f'<li>{head}{parts}</li>')
     return '\n'.join(rows)
 
