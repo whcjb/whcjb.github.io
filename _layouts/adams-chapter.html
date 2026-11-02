@@ -196,6 +196,9 @@ function closeAdamsVerseNav() {
 .adams-wrap .ad-chtoc a { text-decoration: none; color: #2a2a33; white-space: nowrap; }
 .adams-wrap .ad-chtoc li > a { display: flex; align-items: center; padding: 10px 14px; }
 .adams-wrap .ad-chtoc li > a:only-child { flex: 1; }
+/* 分部分的格：节名只是标签（不是按钮），可点的只有右侧 1 2 3 */
+.adams-wrap .ad-chtoc .ad-vl { display: flex; align-items: center; padding: 10px 14px;
+  white-space: nowrap; color: #8a8a93; font-size: 14px; }
 .adams-wrap .ad-chtoc a:hover { color: var(--ad-ink-dark); }
 /* 一节分成几部分：节名右侧剩余部分按段数等宽切开，每段整高可点（原来格内小号码太小、难点） */
 .adams-wrap .ad-chtoc .ad-pt { flex: 1; display: flex; border-left: 1px solid var(--ad-rule); }
