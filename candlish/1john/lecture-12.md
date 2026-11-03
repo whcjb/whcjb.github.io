@@ -11,6 +11,7 @@ prev_url: "/candlish/1john/lecture-11/"
 prev_label: "Lecture XI"
 next_url: "/candlish/1john/lecture-13/"
 next_label: "Lecture XIII"
+zh_url: "/candlish/1john/zh/lecture-12/"
 ---
 
 <h2 class="cd-head">THE GUILELESS SPIRIT LOVING NOT THE WORLD, WHICH IS DARKNESS, BUT GOD, WHO IS LIGHT</h2>

@@ -31,7 +31,7 @@ zh: true
 第九讲　[对于心中没有诡诈、行在光中的人，那命令既是旧的，又是新的（约翰一书 2:7, 8）]({{ site.baseurl }}/candlish/1john/zh/lecture-9/)
 第十讲　[弟兄相爱：以无诡诈之心在光明中并住在光明中的试验与途径（约翰一书 2:9–11）]({{ site.baseurl }}/candlish/1john/zh/lecture-10/)
 第十一讲　[住在光中的无诈之灵：孩童、父老、少年三重样态（约翰一书 2:12–14）]({{ site.baseurl }}/candlish/1john/zh/lecture-11/)
-第十二讲　[无诡诈的心灵不爱世界（世界乃是黑暗），乃爱神（神就是光）（约翰一书 2:15, 16）]({{ site.baseurl }}/candlish/1john/lecture-12/)
+第十二讲　[无诡诈的心灵不爱世界（世界乃是黑暗），乃爱神（神就是光）（约翰一书 2:15, 16）]({{ site.baseurl }}/candlish/1john/zh/lecture-12/)
 第十三讲　[无诡诈的心灵在黑暗世界的流逝之中，坚立于敬虔之光（约翰一书 2:17）]({{ site.baseurl }}/candlish/1john/lecture-13/)
 第十四讲　[在敌基督的背道离去之中，因弥赛亚的恩膏与光照而得坚立的无诡诈之心（约翰一书 2:18–20）]({{ site.baseurl }}/candlish/1john/lecture-14/)
 第十五讲　[无诡诈的心灵：在敌基督否认子之际，认子，因而也有父（约翰一书 2:21, 22, 23）]({{ site.baseurl }}/candlish/1john/lecture-15/)
