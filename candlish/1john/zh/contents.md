@@ -28,7 +28,7 @@ zh: true
 第六讲　[基督作中保的性质与根基：足以满足心里没有诡诈之人的需要（约翰一书 2:1, 2）]({{ site.baseurl }}/candlish/1john/zh/lecture-6/)
 第七讲　[无诡诈的心借着顺服，切实领受对神的认识，以此为在神里面、并住在神里面的途径（约翰一书 2:3–5）]({{ site.baseurl }}/candlish/1john/zh/lecture-7/)
 第八讲　[心里没有诡诈、住在神里面的人，行事为人与基督一样（约翰一书 2:6）]({{ site.baseurl }}/candlish/1john/zh/lecture-8/)
-第九讲　[对于心中没有诡诈、行在光中的人，那命令既是旧的，又是新的（约翰一书 2:7, 8）]({{ site.baseurl }}/candlish/1john/lecture-9/)
+第九讲　[对于心中没有诡诈、行在光中的人，那命令既是旧的，又是新的（约翰一书 2:7, 8）]({{ site.baseurl }}/candlish/1john/zh/lecture-9/)
 第十讲　[弟兄相爱：以无诡诈之心在光明中并住在光明中的试验与途径（约翰一书 2:9–11）]({{ site.baseurl }}/candlish/1john/lecture-10/)
 第十一讲　[住在光中的无诈之灵：孩童、父老、少年三重样态（约翰一书 2:12–14）]({{ site.baseurl }}/candlish/1john/lecture-11/)
 第十二讲　[无诡诈的心灵不爱世界（世界乃是黑暗），乃爱神（神就是光）（约翰一书 2:15, 16）]({{ site.baseurl }}/candlish/1john/lecture-12/)

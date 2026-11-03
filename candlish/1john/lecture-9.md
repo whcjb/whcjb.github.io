@@ -11,6 +11,7 @@ prev_url: "/candlish/1john/lecture-8/"
 prev_label: "Lecture VIII"
 next_url: "/candlish/1john/lecture-10/"
 next_label: "Lecture X"
+zh_url: "/candlish/1john/zh/lecture-9/"
 ---
 
 <h2 class="cd-head">THE COMMANDMENT AT ONCE OLD AND NEW TO ONE WALKING WITH GUILELESS SPIRIT IN THE LIGHT—THE DARKNESS PASSING—THE TRUE LIGHT SHINING</h2>
