@@ -11,6 +11,7 @@ prev_url: "/candlish/1john/lecture-20/"
 prev_label: "Lecture XX"
 next_url: "/candlish/1john/lecture-22/"
 next_label: "Lecture XXII"
+zh_url: "/candlish/1john/zh/lecture-21/"
 ---
 
 <h2 class="cd-head">THE SECRET OF SINLESSNESS—ABIDING IN THE SINLESS ONE AS MANIFESTED TO TAKE AWAY OUR SINS</h2>
