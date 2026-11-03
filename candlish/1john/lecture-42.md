@@ -11,6 +11,7 @@ prev_url: "/candlish/1john/lecture-41/"
 prev_label: "Lecture XLI"
 next_url: "/candlish/1john/lecture-43/"
 next_label: "Lecture XLIII"
+zh_url: "/candlish/1john/zh/lecture-42/"
 ---
 
 <h2 class="cd-head">PRAYER FOR A BROTHER'S SIN, BUT NOT FOR A SIN UNTO DEATH</h2>
