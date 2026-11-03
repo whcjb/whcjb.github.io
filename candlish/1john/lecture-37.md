@@ -11,6 +11,7 @@ prev_url: "/candlish/1john/lecture-36/"
 prev_label: "Lecture XXXVI"
 next_url: "/candlish/1john/lecture-38/"
 next_label: "Lecture XXXVIII"
+zh_url: "/candlish/1john/zh/lecture-37/"
 ---
 
 <h2 class="cd-head">FILIAL FAITH OVERCOMING THE WORLD</h2>
