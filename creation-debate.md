@@ -4,7 +4,7 @@ title: "创世年代之争"
 description: "年轻地球论与古老地球说：双方论证与改革宗传统的立场"
 header-img: "img/about-bg-faith.jpg"
 date: 2026-11-03 10:10
-updated: 2026-11-03 10:42
+updated: 2026-11-03 10:50
 ---
 
 <style>
@@ -301,7 +301,6 @@ updated: 2026-11-03 10:42
 | Joel Beeke（清教徒改革宗神学院） | 字面六日，认为宗教改革家也是这样理解 | Beeke、Smalley《Reformed Systematic Theology》卷二论创造部分；小册子《What Did the Reformers Believe about the Age of the Earth?》。页码暂找不到。**【转引】**（转引自《Modern Reformation》书评） |
 | Kenneth Gentry | 字面六日，反对框架说 | 与 Michael R. Butler 合著《Yea, Hath God Said? The Framework Hypothesis / Six-Day Creation Debate》（Wipf and Stock, 2002）。**【书目核过】** |
 | C. John Collins（圣约神学院） | 类比日说：创造周与以色列人的工作周相类比 | 《Genesis 1–4: A Linguistic, Literary, and Theological Commentary》（P&R, 2006）；《Reading Genesis Well》（2018）第 162–163 页。**【转引】**（转引自书评，页码待核） |
-| 提摩太·凯勒（Tim Keller，1950–2023） | 认为创世记 1 章不教导神在六个 24 小时日内造世界，也不教导演化 | 〈Creation, Evolution, and Christian Laypeople〉（BioLogos, 2009）：「Genesis 1 does not teach that God made the world in six twenty-four hour days.」**【转引】**（转引自《Clarion》杂志书评） |
 
 ### （七）宗派的处理
 
