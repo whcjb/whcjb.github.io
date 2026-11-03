@@ -11,6 +11,7 @@ prev_url: "/candlish/1john/lecture-10/"
 prev_label: "Lecture X"
 next_url: "/candlish/1john/lecture-12/"
 next_label: "Lecture XII"
+zh_url: "/candlish/1john/zh/lecture-11/"
 ---
 
 <h2 class="cd-head">THE GUILELESS SPIRIT ABIDING IN THE LIGHT IN ITS THREEFOLD ASPECT OF CHILDHOOD, FATHERHOOD, AND YOUTH</h2>
