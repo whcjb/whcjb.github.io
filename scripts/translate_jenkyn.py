@@ -145,6 +145,9 @@ def stray_english(zh: str, en: str):
             continue
         if re.search(r'[A-Za-z]\s*$', zh[:s]) or re.match(r'\s*[A-Za-z]', zh[e:]):
             continue
+        # 带重音的拉丁词被 ASCII 判据切碎（1-3-2 `ipsâ vitâ` → `ips` `vit`）：紧挨着 à-ÿ 的片段是拉丁原文
+        if re.match(r'[À-ÿ]', zh[e:e + 1]) or re.search(r'[À-ÿ]$', zh[:s]):
+            continue
         # 短词随一段原文逐字照抄（1-11-3 旁注 `Deo & parenti non redditur aquivalens.` 原样保留）
         if len(m.group(0)) < 4 and (zh[s:s + 14] in en or zh[max(0, e - 14):e] in en) and len(zh[s:s + 14]) >= 12:
             continue
