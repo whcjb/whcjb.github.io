@@ -11,6 +11,7 @@ prev_url: "/candlish/1john/lecture-18/"
 prev_label: "Lecture XVIII"
 next_url: "/candlish/1john/lecture-20/"
 next_label: "Lecture XX"
+zh_url: "/candlish/1john/zh/lecture-19/"
 ---
 
 <h2 class="cd-head">THE DIVINE BIRTH—THE FAMILY LIKENESS</h2>
