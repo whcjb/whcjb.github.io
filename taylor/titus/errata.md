@@ -6,6 +6,7 @@ title: "Errata"
 date: 2026-10-28 13:55
 prev_url: "/taylor/titus/questions/"
 prev_label: "A Brief Table of the Questions"
+zh_url: "/taylor/titus/zh/errata/"
 ---
 
 ## <span class="ty-pb" data-facs="392"></span>J entreate the curteous Reader to passe ouer some lesser escapes in the printing; and among others to amend these which I haue obserued, most altering, or hurting the sense.

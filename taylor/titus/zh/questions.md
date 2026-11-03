@@ -7,6 +7,8 @@ subtitle: "第三表"
 date: 2026-11-03 20:30
 prev_url: "/taylor/titus/zh/observations/"
 prev_label: "其他有益的札记"
+next_url: "/taylor/titus/zh/errata/"
+next_label: "勘误表"
 en_url: "/taylor/titus/questions/"
 zh: true
 ---
