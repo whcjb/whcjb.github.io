@@ -155,6 +155,10 @@ def stray_english(zh: str, en: str):
     return [w for w in out if (w.lower() not in en_words or len(w) < 4) and w.lower() not in abbr]
 
 
+HOMO = dict(zip('aAbBeEhHiIkKmMnNoOpPtTuUxXyYzZvs',
+                'ααββεεηηιικκμμννοορρττυυχχυυζζνσ'))
+
+
 def restore_greek(zh: str, en: str) -> str:
     """模型把希腊词后半截写成形近的拉丁字母（`ἀποδιορίζοντES` `δένδρa` `στῆσαI` `ἐποικοδom`，
     犹大书首轮 5 篇卡在这上面，重译两次照样犯）。在原文里找「希腊前缀相同、总长相同」的希腊词，
@@ -169,6 +173,12 @@ def restore_greek(zh: str, en: str) -> str:
             return w
         pre = nfc(g.group(0))
         cand = [t for t in src if t.startswith(pre) and len(t) == len(nfc(w)) and t != pre]
+        if len(cand) > 1:
+            # 同前缀同长的不止一个（κατανύσσω / κατάνυξις）：拉丁字母按字形对回希腊字母、去重音后逐字比
+            base = lambda x: ''.join(c for c in unicodedata.normalize('NFD', x.lower())
+                                     if not unicodedata.combining(c)).replace('ς', 'σ')
+            look = base(''.join(HOMO.get(c, c) for c in nfc(w)))
+            cand = [t for t in cand if base(t) == look]
         return cand[0] if len(cand) == 1 else w
     return re.sub(rf'[{GREEK}̀-ͯ]+[A-Za-z]{{1,4}}[{GREEK}̀-ͯ]*', fix, zh)
 
