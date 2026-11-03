@@ -11,6 +11,7 @@ prev_url: "/candlish/1john/lecture-2/"
 prev_label: "Lecture II"
 next_url: "/candlish/1john/lecture-4/"
 next_label: "Lecture IV"
+zh_url: "/candlish/1john/zh/lecture-3/"
 ---
 
 <div class="cd-part">PART FIRST<small>Primary Condition of the Divine Fellowship — Light</small></div>
