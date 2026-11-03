@@ -11,6 +11,7 @@ prev_url: "/candlish/1john/lecture-16/"
 prev_label: "Lecture XVI"
 next_url: "/candlish/1john/lecture-18/"
 next_label: "Lecture XVIII"
+zh_url: "/candlish/1john/zh/lecture-17/"
 ---
 
 <h2 class="cd-head">THE GUILELESS SPIRIT, THROUGH THE ABIDING MESSIANIC UNCTION AND ILLUMINATION OF THE HOLY GHOST, ABIDING IN CHRIST, SO AS TO HAVE CONFIDENCE AT HIS COMING</h2>
