@@ -226,6 +226,10 @@ OK_CHARS = re.compile(r'[\u0000-\u007F\u00A0-\u024F\u02B0-\u036F\u0370-\u03FF\u0
                       r'\uF900-\uFAFF\uFF00-\uFFEF\u2116\u2122]')
 
 
+# 已知形近错字（模型偶尔把生僻字写成形近常用字；统计扫描误报太多，发现一个收一个）
+KNOWN_TYPOS = {'亡古': '亘古'}
+
+
 def odd_chars(zh: str, en: str):
     """名单外、原文也没有的字符。零宽空格夹在两个斜体星号之间（*​*）是有用的，放过。"""
     t = zh.replace('*\u200b*', '**')
@@ -253,6 +257,9 @@ def structural_diff(en: str, zh: str) -> str:
         if len(ws) >= 4 and sum(w in EN_FUNC for w in ws) >= 2 and run.strip(' .,;:') not in en:
             problems.append('模型自语 ' + run.strip()[:60])
             break
+    typo = [w for w in KNOWN_TYPOS if w in zh]
+    if typo:
+        problems.append('已知错字 ' + '、'.join(f'{w}→{KNOWN_TYPOS[w]}' for w in typo))
     odd = odd_chars(zh, en)
     if odd:
         problems.append('异常字符 ' + ' '.join(f'{c}(U+{ord(c):04X})' for c in odd[:4]))

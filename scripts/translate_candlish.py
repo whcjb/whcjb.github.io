@@ -87,7 +87,7 @@ SYSTEM = (
     "the Law→律法　Mediator→中保　the Word→道　Ministers→传道人　Sacraments→圣礼　carnal→属肉体的　"
     "Saints→圣徒　holiness→圣洁　godlinesse→敬虔　vertue→德行　knowledge→知识　temperance→节制　"
     "patience→忍耐　charity→爱　fellowship→相交　abide→住在　propitiation→挽回祭　advocate→中保（约壹 2:1 和合本作「中保」）"
-    "　antichrist→敌基督　the world→世界　unction→恩膏　begotten of God→从神生的　love→爱　light→光　darkness→黑暗　"
+    "　antichrist→敌基督　the world→世界　unction→恩膏　begotten of God→从神生的　from everlasting→从亘古（和合本诗 90:2；「亘」不可写作「亡」）　love→爱　light→光　darkness→黑暗　"
     "false teachers→假师傅　Papists→天主教徒　the Pope→教皇　Doctrine→教义　Vse→应用\n"
     "13. 称神、基督、圣灵的代词一律用「他」（和合本体例），不用「祂」，全书前后一致\n"
     "14. **不得把任何英文词原样留在中文句子里**；印本里偶有的排印错字，按上下文读通后译出，"
@@ -227,6 +227,10 @@ OK_CHARS = re.compile(r'[\u0000-\u007F\u00A0-\u024F\u02B0-\u036F\u0370-\u03FF\u0
                       r'\uF900-\uFAFF\uFF00-\uFFEF\u2116\u2122]')
 
 
+# 已知形近错字（模型偶尔把生僻字写成形近常用字；统计扫描误报太多，发现一个收一个）
+KNOWN_TYPOS = {'亡古': '亘古'}
+
+
 def odd_chars(zh: str, en: str):
     """名单外、原文也没有的字符。零宽空格夹在两个斜体星号之间（*​*）是有用的，放过。"""
     t = zh.replace('*\u200b*', '**')
@@ -254,6 +258,9 @@ def structural_diff(en: str, zh: str) -> str:
         if len(ws) >= 4 and sum(w in EN_FUNC for w in ws) >= 2 and run.strip(' .,;:') not in en:
             problems.append('模型自语 ' + run.strip()[:60])
             break
+    typo = [w for w in KNOWN_TYPOS if w in zh]
+    if typo:
+        problems.append('已知错字 ' + '、'.join(f'{w}→{KNOWN_TYPOS[w]}' for w in typo))
     odd = odd_chars(zh, en)
     if odd:
         problems.append('异常字符 ' + ' '.join(f'{c}(U+{ord(c):04X})' for c in odd[:4]))

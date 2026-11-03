@@ -40,6 +40,7 @@ description: 历代解经各书中译的译名规范与本站定译词表。新�
 | irrevocable | 不可撤销的 | 不可撤回 | 同上（参罗马书 11:29） |
 | Augustine, *Enchiridion* (Ench. / Enchirid.) | 《信望爱手册》[Enchiridion] | 《教义手册》《手册》《致劳伦修手册》 | 2026-11-03 用户 |
 | Master of the Colleges at Glasgow（卡梅伦，1622） | 格拉斯哥大学校长 | 格拉斯哥各学院院长 | 2026-11-03 用户 |
+| from everlasting | 从亘古（和合本诗 90:2、弥 5:2） | 亡古（形近错字） | 2026-11-03 用户指出约翰一书第一讲「亡古以来」 |
 | Aquinas 引注 `1. qu. 10, art. 6` | 第一部，第 10 题，第 6 条 | — | 《神学大全》部 / 题 / 条 |
 | Remonstrants | 抗辩派 | — | 达文南特提示词 |
 | Pelagians / Semipelagians | 柏拉糾派 / 半柏拉糾派 | — | 达文南特提示词 |
