@@ -271,6 +271,11 @@ AUTHOR_COLORS = {
 # 霍尔与费尔贝恩照常列在后面。
 LEAD_AUTHOR = {'titus': 'taylor', '2timothy': 'barlow'}
 
+# 一张卡片并列两家：卡片对角一分为二，各填一家的主题色、各链到一家，交界处做颜料交融的边缘
+# （commentaries/index.html 的 .cx-book-btn--duo）。links 前两条按这里的次序排，yml 里标 duo: true。
+# 马太福音：用户 2026-11-03 指定司布真与迪克森合用一张卡片。
+DUO_BOOKS = {'matthew': ('spurgeon', 'dickson')}
+
 # 逐卷书名（同一注释家的不同分册书名不同时用）。取各卷扉页的实际书名。
 BOOK_TITLES = {
     ('hodge', 'romans'):       ('罗马书注释',
@@ -676,6 +681,11 @@ def main():
                    if bid in by_author[aid] and aid not in EXCLUDED_AUTHORS]
         if bid in LEAD_AUTHOR:
             entries.sort(key=lambda e: e[0] != LEAD_AUTHOR[bid])
+        duo = DUO_BOOKS.get(bid)
+        if duo:
+            if not all(any(e[0] == a for e in entries) for a in duo):
+                raise SystemExit(f'DUO_BOOKS {bid}: {duo} 不全在本卷条目里')
+            entries.sort(key=lambda e: duo.index(e[0]) if e[0] in duo else len(duo))
         # 合参覆盖的书卷：加尔文没有分卷注释，补一条指向对应的合参索引页。
         # 放在最前，与其他卷「加尔文在先」的次序一致。
         if bid in HARMONY_MAP and 'calvin' not in EXCLUDED_AUTHORS:
@@ -706,8 +716,10 @@ def main():
                   f'    name: {yaml_escape(cn)}',
                   f'    en: {yaml_escape(en)}',
                   f'    testament: {testament}',
-                  f'    chapters: {CHAPTERS.get(bid, 0)}',
-                  '    links:']
+                  f'    chapters: {CHAPTERS.get(bid, 0)}']
+        if duo:
+            lines.append('    duo: true')
+        lines.append('    links:')
         for aid, path, ov_cn, ov_en, note in entries:
             # 中英书名都**按卷**生成，一一对应。曾经中文一律输出各家的总书名
             # （「加尔文圣经注释」），于是马可福音那一条中文写总名、英文写

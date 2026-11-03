@@ -171,6 +171,27 @@ description: 加尔文与马太亨利之外的历代改革宗注释——欧文�
      hover 用 brightness 压深，省掉为每个色再写一份深色值。 */
   .cx-book-btn--has { background: linear-gradient(135deg, var(--c0), var(--c1)); }
   .cx-book-btn--has:hover { filter: brightness(.82); }
+  /* 两家合用一张卡片（_data 里 duo: true，见 build_commentaries_index.py 的 DUO_BOOKS）：
+     左上归第一家、右下归第二家，各自可点。底色是一条「甲色 → 乙色」的渐变，交界只留中间约 5% 的窄条（用户 2026-11-03：融合部分要窄），
+     渐变向量取用户坐标 (0,10)→(200,90)，等色线正好是 (120,0)–(80,100)，与两半 clip-path 的分界 60%→40% 重合；再用 SVG 噪声位移（feTurbulence + feDisplacementMap）把这条交界扭成流纹，像两股颜料互相渗开。
+     两个 <a> 用 clip-path 按交界的大致走向分区；书名压在上层、不接点击，点到哪半边就去哪家。 */
+  .cx-book-btn--duo { position: relative; overflow: hidden; background: none; padding: 12px 14px 30px; }
+  .cx-book-btn--duo:hover { filter: none; transform: none; }
+  .cx-duo-paint { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
+  .cx-book-btn--duo .cx-book-name, .cx-book-btn--duo .cx-book-name-en { position: relative; z-index: 2; pointer-events: none; }
+  .cx-duo-half { position: absolute; inset: 0; z-index: 1; color: #fff !important; text-decoration: none !important; }
+  .cx-duo-a { clip-path: polygon(0 0, 60% 0, 40% 100%, 0 100%); }
+  .cx-duo-b { clip-path: polygon(60% 0, 100% 0, 100% 100%, 40% 100%); }
+  .cx-duo-half::before { content: ""; position: absolute; inset: 0; background: rgba(0,0,0,0); transition: background .2s ease; }
+  .cx-duo-half:hover::before, .cx-duo-half:focus-visible::before { background: rgba(0,0,0,.2); }
+  .cx-duo-half .cx-book-meta { position: absolute; bottom: 9px; margin: 0; opacity: .85; }
+  .cx-duo-a .cx-book-meta { left: 14px; }
+  .cx-duo-b .cx-book-meta { right: 14px; }
+  .cx-duo-half:hover .cx-book-meta { opacity: 1; }
+  @media (max-width: 768px) {
+    .cx-book-btn--duo { padding: 10px 11px 28px; }
+    .cx-duo-a .cx-book-meta { left: 11px; } .cx-duo-b .cx-book-meta { right: 11px; }
+  }
   /* 尚无别家注释：虚线描边，不可点（同加尔文主页 --pending） */
   .cx-book-btn--none {
     background: transparent; border: 1px dashed var(--cx-pending-border);
@@ -218,7 +239,34 @@ description: 加尔文与马太亨利之外的历代改革宗注释——欧文�
         </h3>
         <div class="cx-book-grid">
           {%- for b in rows -%}
-          {%- if b.links.size > 0 -%}
+          {%- if b.duo and b.links.size > 1 -%}
+          {%- assign la = b.links[0] -%}{%- assign lb = b.links[1] -%}
+          {%- assign aua = author_map | where: "id", la.author | first -%}
+          {%- assign aub = author_map | where: "id", lb.author | first -%}
+          <div class="cx-book-btn cx-book-btn--has cx-book-btn--duo">
+            <svg class="cx-duo-paint" viewBox="0 0 200 100" preserveAspectRatio="none" aria-hidden="true" focusable="false">
+              <defs>
+                <linearGradient id="cxduo-g-{{ b.id }}" gradientUnits="userSpaceOnUse" x1="0" y1="10" x2="200" y2="90">
+                  <stop offset="0" stop-color="{{ la.c0 }}"/><stop offset=".475" stop-color="{{ la.c1 }}"/>
+                  <stop offset=".525" stop-color="{{ lb.c0 }}"/><stop offset="1" stop-color="{{ lb.c1 }}"/>
+                </linearGradient>
+                <filter id="cxduo-f-{{ b.id }}" x="-15%" y="-15%" width="130%" height="130%" color-interpolation-filters="sRGB">
+                  <feTurbulence type="fractalNoise" baseFrequency="0.035 0.11" numOctaves="3" seed="11" result="n"/>
+                  <feDisplacementMap in="SourceGraphic" in2="n" scale="16" xChannelSelector="R" yChannelSelector="G"/>
+                </filter>
+              </defs>
+              <rect x="-30" y="-30" width="260" height="160" fill="url(#cxduo-g-{{ b.id }})" filter="url(#cxduo-f-{{ b.id }})"/>
+            </svg>
+            <a class="cx-duo-half cx-duo-a" href="{{ site.baseurl }}{{ la.path }}"
+               title="{{ aua.name }} · {{ la.title_cn }}{% if la.title_en != '' %} · {{ la.title_en }}{% endif %}">
+              <span class="cx-book-meta cx-book-meta-au">{{ aua.short }}</span></a>
+            <a class="cx-duo-half cx-duo-b" href="{{ site.baseurl }}{{ lb.path }}"
+               title="{{ aub.name }} · {{ lb.title_cn }}{% if lb.title_en != '' %} · {{ lb.title_en }}{% endif %}">
+              <span class="cx-book-meta cx-book-meta-au">{{ aub.short }}</span></a>
+            <span class="cx-book-name">{{ b.name }}</span>
+            <span class="cx-book-name-en">{{ b.en }}</span>
+          </div>
+          {%- elsif b.links.size > 0 -%}
           {%- assign l = b.links | first -%}
           {%- assign au = author_map | where: "id", l.author | first -%}
           <a href="{{ site.baseurl }}{{ l.path }}"
