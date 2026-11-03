@@ -4,6 +4,7 @@ title: "创世年代之争"
 description: "年轻地球论与古老地球说：双方论证与改革宗传统的立场"
 header-img: "img/about-bg-faith.jpg"
 date: 2026-11-03 10:10
+updated: 2026-11-03 10:15
 ---
 
 <style>
@@ -13,11 +14,14 @@ date: 2026-11-03 10:10
 .cd-page h2 { margin-top:1.8em; }
 .cd-page h3 { margin-top:1.4em; font-size:19px; }
 .cd-page .cd-side { margin:.4em 0 .4em 0; padding-left:.8em; border-left:3px solid #e2dccb; }
+.cd-page .cd-time { color:#888; font-size:14px; margin:0 0 1.2em; }
 .cd-page .cd-note { color:#777; font-size:14px; }
 @media (max-width:640px) { .cd-page table { display:block; overflow-x:auto; } }
 </style>
 
 <div class="cd-page" markdown="1">
+
+<p class="cd-time">发布于 {{ page.date | date: "%Y-%m-%d %H:%M" }}{% if page.updated %} · 更新于 {{ page.updated | date: "%Y-%m-%d %H:%M" }}{% endif %}</p>
 
 ## 缘起
 
