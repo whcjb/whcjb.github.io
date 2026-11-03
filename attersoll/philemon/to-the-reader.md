@@ -8,6 +8,7 @@ prev_url: "/attersoll/philemon/dedication/"
 prev_label: "Epistle Dedicatory"
 next_url: "/attersoll/philemon/doctrines/"
 next_label: "A Brief Recapitulation of All the Doctrines"
+zh_url: "/attersoll/philemon/zh/to-the-reader/"
 ---
 
 <span class="at-pb" data-facs="6"></span><span class="at-pb" data-facs="6"></span>
