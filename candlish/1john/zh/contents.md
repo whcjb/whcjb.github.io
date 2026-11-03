@@ -34,7 +34,7 @@ zh: true
 第十二讲　[无诡诈的心灵不爱世界（世界乃是黑暗），乃爱神（神就是光）（约翰一书 2:15, 16）]({{ site.baseurl }}/candlish/1john/zh/lecture-12/)
 第十三讲　[无诡诈的心灵在黑暗世界的流逝之中，坚立于敬虔之光（约翰一书 2:17）]({{ site.baseurl }}/candlish/1john/zh/lecture-13/)
 第十四讲　[在敌基督的背道离去之中，因弥赛亚的恩膏与光照而得坚立的无诡诈之心（约翰一书 2:18–20）]({{ site.baseurl }}/candlish/1john/zh/lecture-14/)
-第十五讲　[无诡诈的心灵：在敌基督否认子之际，认子，因而也有父（约翰一书 2:21, 22, 23）]({{ site.baseurl }}/candlish/1john/lecture-15/)
+第十五讲　[无诡诈的心灵：在敌基督否认子之际，认子，因而也有父（约翰一书 2:21, 22, 23）]({{ site.baseurl }}/candlish/1john/zh/lecture-15/)
 第十六讲　[无诡诈的心住在子里面，也住在父里面，以致领受永生的应许（约翰一书 2:24, 25）]({{ site.baseurl }}/candlish/1john/lecture-16/)
 第十七讲　[无诡诈的心灵：借着圣灵常存的弥赛亚恩膏与光照住在基督里，以致他来的时候可以坦然无惧（约翰一书 2:26–28）]({{ site.baseurl }}/candlish/1john/lecture-17/)
 <h2 class="cd-group">第二部分：与神相交的居中条件——义</h2>

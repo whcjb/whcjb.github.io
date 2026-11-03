@@ -11,6 +11,7 @@ prev_url: "/candlish/1john/lecture-14/"
 prev_label: "Lecture XIV"
 next_url: "/candlish/1john/lecture-16/"
 next_label: "Lecture XVI"
+zh_url: "/candlish/1john/zh/lecture-15/"
 ---
 
 <h2 class="cd-head">THE GUILELESS SPIRIT, AMID ANTICHRISTIAN DENIAL OF THE SON, ACKNOWLEDGING THE SON SO AS TO HAVE THE FATHER ALSO</h2>
