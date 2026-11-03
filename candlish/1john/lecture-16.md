@@ -11,6 +11,7 @@ prev_url: "/candlish/1john/lecture-15/"
 prev_label: "Lecture XV"
 next_url: "/candlish/1john/lecture-17/"
 next_label: "Lecture XVII"
+zh_url: "/candlish/1john/zh/lecture-16/"
 ---
 
 <h2 class="cd-head">THE GUILELESS SPIRIT ABIDING THROUGH THE WORD IN THE SON AND IN THE FATHER, SO AS TO RECEIVE THE PROMISE OF ETERNAL LIFE</h2>
