@@ -152,10 +152,30 @@ def stray_english(zh: str, en: str):
     return [w for w in out if (w.lower() not in en_words or len(w) < 4) and w.lower() not in abbr]
 
 
+def restore_greek(zh: str, en: str) -> str:
+    """模型把希腊词后半截写成形近的拉丁字母（`ἀποδιορίζοντES` `δένδρa` `στῆσαI` `ἐποικοδom`，
+    犹大书首轮 5 篇卡在这上面，重译两次照样犯）。在原文里找「希腊前缀相同、总长相同」的希腊词，
+    唯一命中才原样换回——只是把原文那个词抄回来，不猜；对不上就留给结构闸去拦。"""
+    nfc = lambda x: unicodedata.normalize('NFC', x)
+    src = set(RE_GREEK_TOK.findall(nfc(en)))
+
+    def fix(m):
+        w = m.group(0)
+        g = re.match(rf'[{GREEK}̀-ͯ]+', w)
+        if not g or w in en:
+            return w
+        pre = nfc(g.group(0))
+        cand = [t for t in src if t.startswith(pre) and len(t) == len(nfc(w)) and t != pre]
+        return cand[0] if len(cand) == 1 else w
+    return re.sub(rf'[{GREEK}̀-ͯ]+[A-Za-z]{{1,4}}[{GREEK}̀-ͯ]*', fix, zh)
+
+
 def structural_diff(en: str, zh: str) -> str:
     problems = []
-    if RE_MIXED.findall(zh):
-        problems.append('希腊文混入拉丁字母 ' + '、'.join(RE_MIXED.findall(zh)[:4]))
+    # 原文里本来就混写的（1-17 `hypostaticῶs`：印本用 ῶ 表 ō）照抄是对的，不算
+    mixed = [w for w in RE_MIXED.findall(zh) if w not in en]
+    if mixed:
+        problems.append('希腊文混入拉丁字母 ' + '、'.join(mixed[:4]))
     nfc = lambda s: unicodedata.normalize('NFC', s)
     src = set(RE_GREEK_TOK.findall(nfc(en)))
     extra = [w for w in RE_GREEK_TOK.findall(nfc(zh)) if len(w) > 1 and w not in src]
@@ -249,7 +269,8 @@ def translate_one(text: str, resume: bool, label: str = '') -> str:
 
     base = ("把下面这段詹金《犹大书讲解》的十七世纪英文译成简体中文。"
             "整段通读后再译，保证上下文连贯；逐一保留 `*` 斜体标记与 ⟦N⟧ 占位符；只输出译文。\n\n")
-    out = fix_italics(tidy(tf.call_claude(base + text, timeout=900, label=label)), text, label)
+    out = fix_italics(restore_greek(tidy(tf.call_claude(base + text, timeout=900, label=label)), text),
+                      text, label)
     diff = structural_diff(text, out)
     if diff:
         print(f'    [retry-struct] {label}: {diff[:90]}', flush=True)
@@ -258,7 +279,7 @@ def translate_one(text: str, resume: bool, label: str = '') -> str:
                "**不得把任何英文词原样留在中文句子里**。只输出译文。\n\n")
         # 重试两次，取第一个合格的；都不合格就取「只剩斜体问题」的那一版
         for n in (1, 2):
-            out2 = fix_italics(tidy(tf.call_claude(fix + text, timeout=900, label=f'{label}·retry{n}')),
+            out2 = fix_italics(restore_greek(tidy(tf.call_claude(fix + text, timeout=900, label=f'{label}·retry{n}')), text),
                                text, f'{label}·retry{n}')
             if not structural_diff(text, out2):
                 out = out2
