@@ -11,6 +11,7 @@ prev_url: "/candlish/1john/lecture-5/"
 prev_label: "Lecture V"
 next_url: "/candlish/1john/lecture-7/"
 next_label: "Lecture VII"
+zh_url: "/candlish/1john/zh/lecture-6/"
 ---
 
 <h2 class="cd-head">NATURE AND GROUND OF CHRIST'S ADVOCACY AS MEETING THE NEED OF THE GUILELESS SPIRIT</h2>
