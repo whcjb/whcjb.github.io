@@ -11,6 +11,7 @@ prev_url: "/candlish/1john/contents/"
 prev_label: "Contents"
 next_url: "/candlish/1john/lecture-2/"
 next_label: "Lecture II"
+zh_url: "/candlish/1john/zh/lecture-1/"
 ---
 
 <div class="cd-part">PRELIMINARY CHAPTERS<small>General Aim of the Book</small></div>

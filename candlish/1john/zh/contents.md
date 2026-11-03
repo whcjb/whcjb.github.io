@@ -7,6 +7,8 @@ subtitle: "作者原拟的分析目录"
 date: 2026-11-03 21:05
 prev_url: "/candlish/1john/zh/preface-1/"
 prev_label: "初版序"
+next_url: "/candlish/1john/zh/lecture-1/"
+next_label: "第一讲"
 en_url: "/candlish/1john/contents/"
 zh: true
 ---
@@ -16,7 +18,7 @@ zh: true
 [初版序]({{ site.baseurl }}/candlish/1john/zh/preface-1/)
 <h2 class="cd-group">绪论诸章——本书总旨</h2>
 
-第一讲　[使徒的教义与相交（约翰一书 1:3）]({{ site.baseurl }}/candlish/1john/lecture-1/)
+第一讲　[使徒的教义与相交（约翰一书 1:3）]({{ site.baseurl }}/candlish/1john/zh/lecture-1/)
 第二讲　[主的喜乐，及其满足（约翰一书 1:4）]({{ site.baseurl }}/candlish/1john/lecture-2/)
 <h2 class="cd-group">第一部分：与神相交的首要条件——光</h2>
 
