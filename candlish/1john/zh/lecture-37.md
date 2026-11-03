@@ -9,6 +9,8 @@ chapter: 5
 lecture: 37
 prev_url: "/candlish/1john/zh/lecture-36/"
 prev_label: "第三十六讲"
+next_url: "/candlish/1john/zh/lecture-38/"
+next_label: "第三十八讲"
 en_url: "/candlish/1john/lecture-37/"
 zh: true
 ---

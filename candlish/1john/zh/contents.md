@@ -63,7 +63,7 @@ zh: true
 
 第三十六讲　[爱神的人遵守他的诫命，且不以为难（约翰一书 5:2, 3）]({{ site.baseurl }}/candlish/1john/zh/lecture-36/)
 第三十七讲　[儿子般的信心胜过世界（约翰一书 5:4, 5）]({{ site.baseurl }}/candlish/1john/zh/lecture-37/)
-第三十八讲　[三个见证及其相合（约翰一书 5:6、8）]({{ site.baseurl }}/candlish/1john/lecture-38/)
+第三十八讲　[三个见证及其相合（约翰一书 5:6、8）]({{ site.baseurl }}/candlish/1john/zh/lecture-38/)
 第三十九讲　[神向信徒所作、又在信徒心里的见证（约翰一书 5:9, 10）]({{ site.baseurl }}/candlish/1john/lecture-39/)
 第四十讲　[见证的实质——永生是神在他儿子里所赐的（约翰一书 5:11, 12）]({{ site.baseurl }}/candlish/1john/lecture-40/)
 第四十一讲　[永生与祷告中的坦然无惧相连（约翰一书 5:13–15）]({{ site.baseurl }}/candlish/1john/lecture-41/)

@@ -11,6 +11,7 @@ prev_url: "/candlish/1john/lecture-37/"
 prev_label: "Lecture XXXVII"
 next_url: "/candlish/1john/lecture-39/"
 next_label: "Lecture XXXIX"
+zh_url: "/candlish/1john/zh/lecture-38/"
 ---
 
 <h2 class="cd-head">THE THREE WITNESSES AND THEIR AGREEMENT</h2>
