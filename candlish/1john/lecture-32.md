@@ -11,6 +11,7 @@ prev_url: "/candlish/1john/lecture-31/"
 prev_label: "Lecture XXXI"
 next_url: "/candlish/1john/lecture-33/"
 next_label: "Lecture XXXIII"
+zh_url: "/candlish/1john/zh/lecture-32/"
 ---
 
 <h2 class="cd-head">LOVE GOING FORTH TOWARDS WHAT IS SEEN</h2>
