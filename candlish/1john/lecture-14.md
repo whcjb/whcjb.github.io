@@ -11,6 +11,7 @@ prev_url: "/candlish/1john/lecture-13/"
 prev_label: "Lecture XIII"
 next_url: "/candlish/1john/lecture-15/"
 next_label: "Lecture XV"
+zh_url: "/candlish/1john/zh/lecture-14/"
 ---
 
 <h2 class="cd-head">THE GUILELESS SPIRIT, AMID ANTICHRISTIAN DEFECTIONS, ESTABLISHED BY A MESSIANIC UNCTION AND ILLUMINATION</h2>
