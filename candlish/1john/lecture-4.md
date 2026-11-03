@@ -11,6 +11,7 @@ prev_url: "/candlish/1john/lecture-3/"
 prev_label: "Lecture III"
 next_url: "/candlish/1john/lecture-5/"
 next_label: "Lecture V"
+zh_url: "/candlish/1john/zh/lecture-4/"
 ---
 
 <h2 class="cd-head">THE PRIMARY CONDITION OF THE DIVINE FELLOWSHIP FULFILLED IN THE BELIEVING CONFESSION OF A GUILELESS SPIRIT. (PSALM 32)</h2>

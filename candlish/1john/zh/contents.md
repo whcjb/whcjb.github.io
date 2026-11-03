@@ -23,7 +23,7 @@ zh: true
 <h2 class="cd-group">第一部分：与神相交的首要条件——光</h2>
 
 第三讲　[此条件的根据或理由：光既是神的本性，又是神的居所（约翰一书 1:5–7）]({{ site.baseurl }}/candlish/1john/zh/lecture-3/)
-第四讲　[此条件在心无诡诈者的认罪中得以成全（约翰一书 1:8–10）]({{ site.baseurl }}/candlish/1john/lecture-4/)
+第四讲　[此条件在心无诡诈者的认罪中得以成全（约翰一书 1:8–10）]({{ site.baseurl }}/candlish/1john/zh/lecture-4/)
 第五讲　[无诡诈之灵以不犯罪为志——为其仍不断觉察己罪所预备的供应（约翰一书 2:1）]({{ site.baseurl }}/candlish/1john/lecture-5/)
 第六讲　[基督作中保的性质与根基：足以满足心里没有诡诈之人的需要（约翰一书 2:1, 2）]({{ site.baseurl }}/candlish/1john/lecture-6/)
 第七讲　[无诡诈的心借着顺服，切实领受对神的认识，以此为在神里面、并住在神里面的途径（约翰一书 2:3–5）]({{ site.baseurl }}/candlish/1john/lecture-7/)
