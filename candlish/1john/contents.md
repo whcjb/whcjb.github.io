@@ -9,6 +9,7 @@ prev_url: "/candlish/1john/preface-1/"
 prev_label: "Preface to the First Edition"
 next_url: "/candlish/1john/lecture-1/"
 next_label: "Lecture I"
+zh_url: "/candlish/1john/zh/contents/"
 ---
 
 <div class="cd-contents" markdown="1">

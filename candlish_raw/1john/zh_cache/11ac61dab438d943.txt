@@ -1,0 +1,2 @@
+⟦1⟧
+[再版序言]({{ site.baseurl }}/candlish/1john/preface-2/)

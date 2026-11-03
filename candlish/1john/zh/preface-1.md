@@ -7,6 +7,8 @@ subtitle: "1866"
 date: 2026-11-03 20:39
 prev_url: "/candlish/1john/zh/preface-2/"
 prev_label: "第二版序"
+next_url: "/candlish/1john/zh/contents/"
+next_label: "全书纲目"
 en_url: "/candlish/1john/preface-1/"
 zh: true
 ---
