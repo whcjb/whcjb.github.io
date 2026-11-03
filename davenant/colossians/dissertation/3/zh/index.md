@@ -87,6 +87,6 @@ en_url: "/davenant/colossians/dissertation/3/"
 
 ---
 
-[^da18]: \* 阿德里安·范德博雷<span class="dv-orig">[Adrian Vander Borre]</span>，莱顿<span class="dv-orig">[Leyden]</span>的牧师之一，属抗辩派。见勃兰特<span class="dv-orig">[Brandt]</span>《低地国家宗教改革史》第三卷第 351 页。  <span class="dv-fn-page">Vol. II. p. 366</span>
+[^da18]: \* 阿德里安·范德博雷<span class="dv-orig">[Adrian Vander Borre]</span>，莱顿<span class="dv-orig">[Leyden]</span>的牧师之一，属抗辩派<span class="dv-orig">[Remonstrant]</span>。见勃兰特<span class="dv-orig">[Brandt]</span>《低地国家宗教改革史》第三卷第 351 页。  <span class="dv-fn-page">Vol. II. p. 366</span>
 
 [^da19]: † 关于这位杰出人物，本书卷首所附《达文南特主教传》<span class="dv-orig">[见《传》，第一卷第 xii—xiv 页]</span>已有论述，此处几乎无须赘言。编者对待他人既已采取一贯的做法，在此亦只须提醒读者：正如加尔文的情形一样，阿明尼乌<span class="dv-orig">[Arminius]</span>之名也被加在许多人身上，而这些人散漫的神学是他所鄙弃的，其不敬虔的行为更是他所憎恶的。须知，正是极端加尔文主义的偏激，才迫使他不情愿地卷入论战；这一场域与他温柔的敬虔、谦卑的性情殊不相宜。他因坚持己见而遭受最苦毒的逼迫与毁谤，其生命无疑亦为此而牺牲。他在最艰难的境遇中的全部为人，以及他在临终病榻剧痛之中所显出的忍耐而热切的信心，都足以证明——凡正直之人皆当承认——他是蒙福之耶稣真诚的门徒与仆人。至于阿明尼乌的著作，引一位极有裨益且持论公允的作者之言即足矣。他说：\*“某些近代作者若读阿明尼乌，会惊讶地发现他何等具有加尔文主义色彩。他们必定会把他看作一个加尔文主义者。”——比克斯特斯<span class="dv-orig">[Bickersteth]</span>《基督徒学生》。  <span class="dv-fn-page">Vol. II. p. 366</span>

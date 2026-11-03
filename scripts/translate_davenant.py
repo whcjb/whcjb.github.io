@@ -462,6 +462,41 @@ def bracket_glosses(body: str) -> str:
     return fm + text
 
 
+# 教派名 / 主义每篇首次出现补原名（2026-11-03 用户：「阿明尼乌主义」为什么不加英文）。
+# 附卷提示词原先只要求人名地名，漏了教派；这里按本篇英文原文里**实际用的写法**补，原文里没有就不补，不编。
+SECT_TERMS = [
+    ('阿明尼乌主义', r'Arminianism'), ('阿明尼乌派', r'Arminians?'),
+    ('半柏拉糾主义', r'Semi-?[Pp]elagianism'), ('半柏拉糾派', r'Semi-?[Pp]elagians?'),
+    ('柏拉糾主义', r'Pelagianism'), ('柏拉糾派', r'Pelagians'),
+    ('抗辩派', r'Remonstrants?'), ('苏西尼派', r'Socinians?'), ('苏西尼主义', r'Socinianism'),
+    ('加尔文派', r'Calvinists?'), ('路德派', r'Lutherans?'), ('耶稣会士', r'Jesuits?'),
+    ('多明我会', r'Dominicans?'), ('方济各会', r'Franciscans?'), ('多纳徒派', r'Donatists?'),
+    ('诺斯底派', r'Gnostics?'), ('摩尼教', r'Manich\w+'), ('阿里乌派', r'Arians'),
+    ('再洗礼派', r'Anabaptists?'), ('托马斯派', r'Thomists?'),
+]
+
+
+def annotate_sects(zh: str, en: str, html: bool = False) -> str:
+    """zh 里每个教派词第一次出现处补「（原名）」（html=True 时直接写成 dv-orig 灰字方括号）。幂等。"""
+    en_plain = re.sub(r'<[^>]+>', ' ', en)
+    for term, pat in SECT_TERMS:
+        m_en = re.search(r'\b' + pat + r'\b', en_plain)
+        if not m_en:
+            continue
+        # 第一次出现、且不是更长词的一部分（柏拉糾派 ⊂ 半柏拉糾派）
+        for m in re.finditer(re.escape(term), zh):
+            i, j = m.start(), m.end()
+            if term.startswith('柏拉糾') and zh[i - 1:i] == '半':
+                continue
+            if zh[j:j + 1] in '（(' or zh[j:].startswith('<span class="dv-orig">'):
+                break
+            orig = m_en.group(0)
+            ins = f'<span class="dv-orig">[{orig}]</span>' if html else f'（{orig}）'
+            zh = zh[:j] + ins + zh[j:]
+            break
+    return zh
+
+
 def translate_chapter(n: int, resume: bool, publish: bool, limit: int, dry: bool):
     src = PUB / f'{n}.md'
     fm, body = split_page(src.read_text(encoding='utf-8'))
@@ -506,7 +541,7 @@ def translate_chapter(n: int, resume: bool, publish: bool, limit: int, dry: bool
             out.append(t)
         else:
             out.append(it[1])
-    zh_body = normalize_etc('\n\n'.join(out))
+    zh_body = annotate_sects(normalize_etc('\n\n'.join(out)), body)
 
     ZH_RAW.mkdir(parents=True, exist_ok=True)
     zh_page_dir = PUB / str(n) / 'zh'
@@ -571,7 +606,7 @@ DISS_SYSTEM = (
     "Proposition→命题，Argument→论证，Objection→反驳，Reply→答复，"
     "universal redemption→普遍救赎，sufficiency→充足性，efficacy→功效，"
     "the elect→选民，reprobate→被弃绝者，Semipelagians→半柏拉糾派。"
-    "人名、地名、教区名凡是音译的，本篇第一次出现一律在后面括注英文原名，"
+    "人名、地名、教区名、教派与主义名（阿明尼乌主义 Arminianism、抗辩派 Remonstrants、柏拉糾派 Pelagians）凡是音译的，本篇第一次出现一律在后面括注英文原名，"
     "如 达文南特(Davenant)、阿马(Armagh)、格雷文霍维乌(Grevinchovius)、普罗斯珀(Prosper)；"
     "和合本圣经里已有的人名地名不注。"
 )
@@ -620,7 +655,7 @@ def translate_diss(n: int, resume: bool, publish: bool, limit: int, dry: bool):
             out.append(it[2])
         else:
             out.append(it[1])
-    zh_body = normalize_etc('\n\n'.join(out))
+    zh_body = annotate_sects(normalize_etc('\n\n'.join(out)), body)
 
     meta = json.loads(ZH_META.read_text(encoding='utf-8')) if ZH_META.exists() else {}
     key = f'diss-{n}'
@@ -698,7 +733,7 @@ def translate_gallican(resume: bool, publish: bool, dry: bool):
             out.append(it[2])
         else:
             out.append(it[1])
-    zh_body = normalize_etc('\n\n'.join(out))
+    zh_body = annotate_sects(normalize_etc('\n\n'.join(out)), body)
     meta = json.loads(ZH_META.read_text(encoding='utf-8')) if ZH_META.exists() else {}
     if 'gallican' not in meta:
         meta['gallican'] = datetime.now().strftime('%Y-%m-%d %H:%M')
