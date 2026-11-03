@@ -4,7 +4,7 @@ title: "创世年代之争"
 description: "年轻地球论与古老地球说：双方论证与改革宗传统的立场"
 header-img: "img/about-bg-faith.jpg"
 date: 2026-11-03 10:10
-updated: 2026-11-03 10:15
+updated: 2026-11-03 10:20
 ---
 
 <style>
@@ -14,6 +14,7 @@ updated: 2026-11-03 10:15
 .cd-page h2 { margin-top:1.8em; }
 .cd-page h3 { margin-top:1.4em; font-size:19px; }
 .cd-page .cd-side { margin:.4em 0 .4em 0; padding-left:.8em; border-left:3px solid #e2dccb; }
+.cd-page .he { font-family:"SBL Hebrew","Ezra SIL","Times New Roman",serif; font-size:1.15em; unicode-bidi:isolate; }
 .cd-page .cd-time { color:#888; font-size:14px; margin:0 0 1.2em; }
 .cd-page .cd-note { color:#777; font-size:14px; }
 @media (max-width:640px) { .cd-page table { display:block; overflow-x:auto; } }
@@ -60,16 +61,16 @@ updated: 2026-11-03 10:15
 
 以下每个问题依次列出：年轻地球一方的论证、古老地球一方的回应、年轻地球一方的再回应。
 
-### 1. 「日」（yom）的意思
+### 1. 「日」（<span class="he" lang="he" dir="rtl">יוֹם</span>，yom）的意思
 
 <div class="cd-side" markdown="1">
-**年轻地球**：yom 配上序数（第一日、第二日……），又有「有晚上，有早晨」，在旧约别处都指平常的一天；如果作者要说漫长时代，希伯来文有别的词可用（如 olam）。
+**年轻地球**：<span class="he" lang="he" dir="rtl">יוֹם</span>（yom）配上序数（第一日、第二日……），又有「有晚上，有早晨」（<span class="he" lang="he" dir="rtl">וַיְהִי־עֶרֶב וַיְהִי־בֹקֶר</span>（vayehi-erev vayehi-voqer）），在旧约别处都指平常的一天；如果作者要说漫长时代，希伯来文有别的词可用，如<span class="he" lang="he" dir="rtl">עוֹלָם</span>（olam），「长久、永远」。
 </div>
 <div class="cd-side" markdown="1">
 **古老地球**：yom 本身用法很宽。创世记 2:4 说「在耶和华神造天地的日子」，一个 yom 就涵盖了整个创造周；诗篇 90:4、彼得后书 3:8 也说神看千年如一日。「晚上、早晨」可以是比喻，标出一段工作的开始与完成。
 </div>
 <div class="cd-side" markdown="1">
-**再回应**：2:4 的「日子」是介词片语（beyom，「当……的时候」），与第一章带序数的「日」用法不同；诗篇 90:4 和彼得后书 3:8 讲的是神超越时间，不是在解释创世记。
+**再回应**：2:4 的「日子」是介词片语<span class="he" lang="he" dir="rtl">בְּיוֹם</span>（beyom），意思是「当……的时候」，与第一章带序数的「日」用法不同；诗篇 90:4 和彼得后书 3:8 讲的是神超越时间，不是在解释创世记。
 </div>
 
 ### 2. 第四日才造日月
@@ -102,7 +103,7 @@ updated: 2026-11-03 10:15
 ### 5. 第六日的事是否塞得进 24 小时
 
 <div class="cd-side" markdown="1">
-**古老地球**：第六日要造牲畜、造亚当；亚当要给所有牲畜、飞鸟起名，在其中找不到配偶；然后沉睡，神造夏娃。亚当说「这是我骨中的骨」（创 2:23），原文带有「终于」的语气，像是经过一段等待。
+**古老地球**：第六日要造牲畜、造亚当；亚当要给所有牲畜、飞鸟起名，在其中找不到配偶；然后沉睡，神造夏娃。亚当说「这是我骨中的骨」（创 2:23），原文<span class="he" lang="he" dir="rtl">זֹאת הַפַּעַם</span>（zot happa‘am）带有「这一次终于」的语气，像是经过一段等待。
 </div>
 <div class="cd-side" markdown="1">
 **年轻地球**：亚当受造时没有罪，心智完全；给的是「牲畜、空中飞鸟、野地走兽」的类别，不是每一个物种，几个小时足够。「终于」的语气不能证明过了很久。
@@ -134,7 +135,7 @@ updated: 2026-11-03 10:15
 <div class="cd-side" markdown="1">
 **古老地球（格林）**：
 - 圣经家谱常有省略：马太福音 1:8「约兰生乌西雅」中间省掉三代王；以斯拉记 7:1–5 对照历代志上 6 章少了好几代；历代志上 26:24「摩西的孙子、革舜的儿子细布业」在大卫时代管库，相隔几百年。
-- 「生」「儿子」可以指后裔。
+- 「生」<span class="he" lang="he" dir="rtl">יָלַד</span>（yalad）、「儿子」<span class="he" lang="he" dir="rtl">בֵּן</span>（ben）都可以指后裔。
 - 创世记 5 章与 11 章都是十代，各以一个有三个儿子的人作结，是刻意排列的。
 - 圣经从未把这些年岁加总，不像出埃及记 12:40、列王纪上 6:1 明说年数。
 - 马所拉本、七十士译本、撒玛利亚五经的数字彼此差上千年。
