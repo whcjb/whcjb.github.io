@@ -7,6 +7,7 @@ subtitle: "Faults escaped"
 date: 2026-10-29 16:14
 prev_url: "/attersoll/philemon/contents-table/"
 prev_label: "A Table of the Principal Contents"
+zh_url: "/attersoll/philemon/zh/errata/"
 ---
 
 ## Faults escaped.
