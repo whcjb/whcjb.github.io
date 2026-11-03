@@ -9,6 +9,7 @@ prev_url: "/taylor/titus/title/"
 prev_label: "Title Page"
 next_url: "/taylor/titus/to-the-reader/"
 next_label: "To the Christian Reader"
+zh_url: "/taylor/titus/zh/dedication/"
 ---
 
 <span class="ty-pb" data-facs="2"></span><span class="ty-pb" data-facs="2"></span>

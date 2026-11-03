@@ -5,8 +5,8 @@ book_name: "泰勒《提多书注释》"
 title: "书名页"
 subtitle: "剑桥，1612"
 date: 2026-11-03 11:32
-next_url: "/taylor/titus/zh/to-the-reader/"
-next_label: "致基督徒读者"
+next_url: "/taylor/titus/zh/dedication/"
+next_label: "献辞"
 en_url: "/taylor/titus/title/"
 zh: true
 ---
