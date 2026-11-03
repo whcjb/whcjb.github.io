@@ -11,6 +11,7 @@ prev_url: "/candlish/1john/lecture-17/"
 prev_label: "Lecture XVII"
 next_url: "/candlish/1john/lecture-19/"
 next_label: "Lecture XIX"
+zh_url: "/candlish/1john/zh/lecture-18/"
 ---
 
 <div class="cd-part">PART SECOND<small>Intermediate Condition of the Divine Fellowship — Righteousness</small></div>
