@@ -4,7 +4,7 @@ title: "创世年代之争"
 description: "年轻地球论与古老地球说：双方论证与改革宗传统的立场"
 header-img: "img/about-bg-faith.jpg"
 date: 2026-11-03 10:10
-updated: 2026-11-03 10:22
+updated: 2026-11-03 10:42
 ---
 
 <style>
@@ -221,64 +221,94 @@ updated: 2026-11-03 10:22
 
 ## 四、改革宗传统里的立场
 
+每一条都附出处，并标明核验程度：
+
+- **【原书核过】**：看过原书扫描件或原文，页码、引文都对上了。
+- **【书目核过】**：书名、期刊卷期、页码范围核过，正文没有逐句核。
+- **【转引】**：引文或页码来自二手资料，原书未见，括号内注明转引自哪里。
+- **【暂找不到出处】**：说法保留，但目前没有找到原文依据，有待查证。
+
 ### （一）宗教改革与改革宗正统时期（十六至十七世纪）
 
-| 人物或文件 | 身份 | 立场 |
+| 人物或文件 | 立场 | 出处 |
 |---|---|---|
-| 加尔文（John Calvin，1509–1564） | 日内瓦改教家 | 六日字面；创世记 1:5 注释明确反对奥古斯丁的瞬间创造说；但注释 1:16 时说摩西按普通人的眼光写作，不教导天文学 |
-| 杜仁田（Francis Turretin，1623–1687） | 日内瓦神学家，《辩道学要义》 | 六日字面，也反对瞬间创造说 |
-| 乌雪（James Ussher，1581–1656） | 爱尔兰阿马大主教 | 按家谱推算创世在主前 4004 年 |
-| 莱特福特（John Lightfoot，1602–1675） | 威斯敏斯特会议成员、希伯来学者 | 六日字面，推算创世约在主前 3929 年，与乌雪相近 |
-| 威斯敏斯特信条 4.1（1646） | 长老会信条 | 「在六日之内」（in the space of six days）。David W. Hall 查考与会神学家的著作，认为凡论及此事的都按字面理解 |
+| 加尔文（John Calvin，1509–1564） | 六日字面，明确反对奥古斯丁的瞬间创造说；同时认为摩西是按普通人的眼光写作，不讲天文学 | 《创世记注释》卷一，加尔文翻译协会英译本（Edinburgh, 1847）。第 78 页注 1:5：「it is too violent a cavil to contend that Moses distributes the work which God perfected at once into six days, for the mere purpose of conveying instruction. Let us rather conclude that God himself took the space of six days」；第 86 页注 1:16：「Moses does not here subtilely descant, as a philosopher, on the secrets of nature」。**【原书核过】** |
+| 杜仁田（Francis Turretin，1623–1687） | 六日字面 | 《辩道学要义》（Institutes of Elenctic Theology），Giger 英译，P&R 1992，卷一第五论题（论创造）。引文「the simple and historical Mosaic narration … mentions six days and ascribes a particular work to each day」。页码暂找不到。**【转引】**（转引自 Kenneth Gentry 博文） |
+| 乌雪（James Ussher，1581–1656） | 按家谱推算，创世在主前 4004 年 | 《The Annals of the World》（London, 1658）第 1 页：「the entrance of the night preceding the twenty third day of Octob. in the year of the Julian Calendar, 710」，旁注「The year before Christ 4004」。**【转引】**（转引自 Wikipedia「Ussher chronology」条及网上录文，原书影像未核） |
+| 莱特福特（John Lightfoot，1602–1675） | 六日字面，推算创世约在主前 3929 年 | 年份据 Wikipedia「John Lightfoot」条，该条说出自他 1642–1644 年的年代学著作。**【暂找不到出处】**（原书未见） |
+| 威斯敏斯特信条 4.1（1646） | 「在六日之内」（in the space of six days） | 信条原文。David W. Hall 考察与会神学家的著作，认为论及此事的都按字面理解，见 Pipa、Hall 编《Did God Create in Six Days?》（1999）第 2 章，第 41–53 页 **【书目核过】**。William S. Barker 撰文反驳 Hall 的统计，见《Westminster Theological Journal》62:1（2000）**【书目核过】** |
 
 ### （二）十九世纪：地质学兴起之后
 
-| 人物 | 身份 | 立场 |
+| 人物 | 立场 | 出处 |
 |---|---|---|
-| 查麦士（Thomas Chalmers，1780–1847） | 苏格兰自由教会创立者 | 1814 年提出间隔说：地质年代落在创世记 1:1 与 1:2 之间 |
-| 休·米勒（Hugh Miller，1802–1856） | 苏格兰自由教会信徒、地质学家 | 日代说，《The Testimony of the Rocks》（1857） |
-| 贺智（Charles Hodge，1797–1878） | 普林斯顿神学院 | 《系统神学》第一卷接受日代说的可能，认为地质学的结论与圣经可以调和 |
-| 达布尼（Robert L. Dabney，1820–1898） | 美南长老会神学家 | 坚持六日字面，批评当时的地质学推论 |
-| 薛德（W. G. T. Shedd，1820–1894） | 协和神学院（当时仍属正统）教义学教授 | 与贺智一样，强调创世记的记载与地质学的发现高度吻合（据伯克富转述） |
-| 格林（William Henry Green，1825–1900） | 普林斯顿神学院 | 家谱有省略，圣经没有给出创世年代 |
+| 查麦士（Thomas Chalmers，1780–1847，苏格兰自由教会创立者） | 间隔说：地质年代落在创世记 1:1 与 1:2 之间 | 〈Remarks on Cuvier's Theory of the Earth〉，《The Christian Instructor》（1814）；重刊于《Works of Thomas Chalmers》第 12 卷第 347–372 页。**【转引】**（转引自 Terry Mortenson 的注释，原书未见） |
+| 休·米勒（Hugh Miller，1802–1856，苏格兰自由教会信徒、地质学家） | 日代说 | 《The Testimony of the Rocks》（Boston: Gould and Lincoln, 1857）。序言：「I adopt, in my Third and Fourth Lectures, that scheme of reconciliation … which accepts the six days of creation as vastly extended periods」；第三讲（约第 175 页）：「the days of the Mosaic account were great periods, not natural days」。**【原书核过】**（页码按扫描页推算） |
+| 贺智（Charles Hodge，1797–1878，普林斯顿神学院） | 倾向日代说：若「日」的字面义与事实冲突，而另一义可免冲突，就有义务采用另一义 | 《Systematic Theology》卷一（1872），第 570–571 页：「if that sense brings the Mosaic account into conflict with facts, and another sense avoids such conflict, then it is obligatory on us to adopt that other」。**【原书核过】** |
+| 达布尼（Robert L. Dabney，1820–1898，美南长老会） | 坚持六日字面，逐条驳斥米勒的日代说 | 《Syllabus and Notes of the Course of Systematic and Polemic Theology》（1878），第 254–256 页：「The sacred writer seems to shut us up to the literal interpretation, by describing the day as composed of its natural parts, "morning and evening."」**【原书核过】** |
+| 薛德（W. G. T. Shedd，1820–1894，协和神学院，当时仍属正统） | 认为就经文本身而言，「日」完全可以解为一段时期 | 《Dogmatic Theology》卷一（1888），第 98 页：「Exegetes for many years interpreted it to mean a day of twenty-four hours, thereby bringing Genesis and geology into collision. But so far as the text is concerned, there is full right and reason to explain it as a period.」**【原书核过】** |
+| 格林（William Henry Green，1825–1900，普林斯顿神学院） | 家谱有省略，圣经没有给出创世年代 | 〈Primeval Chronology〉，《Bibliotheca Sacra》第 47 卷（1890 年 4 月），第 285–303 页；结论在第 303 页：「the Scriptures furnish no data for a chronological computation prior to the life of Abraham; and … the Mosaic records do not fix and were not intended to fix the precise date either of the Flood or of the creation of the world」。**【原书核过】** |
 
 ### （三）二十世纪前期
 
-| 人物 | 身份 | 立场 |
+| 人物 | 立场 | 出处 |
 |---|---|---|
-| 华腓德（B. B. Warfield，1851–1921） | 普林斯顿神学院 | 人类的年代在神学上不要紧，要紧的是全人类出于一人 |
-| 凯波尔（Abraham Kuyper，1837–1920） | 荷兰自由大学创办人 | 前三日的长度可能与平常日不同，后三日确是平常的日子（据伯克富转述） |
-| 巴文克（Herman Bavinck，1854–1921） | 荷兰改革宗神学家，《改革宗教理学》 | 与凯波尔相同；称创造日为「神的日子」，但仍是真实的先后次序 |
-| Arie Noordtzij（1871–1944） | 荷兰乌特勒支大学旧约教授 | 1924 年最早提出框架说 |
-| 伯克富（Louis Berkhof，1873–1957） | 加尔文神学院，《系统神学》 | 倾向字面六日，指出这是教会历来的主流看法 |
+| 华腓德（B. B. Warfield，1851–1921，普林斯顿神学院） | 人类的年代在神学上不要紧，要紧的是全人类出于一人 | 〈On the Antiquity and the Unity of the Human Race〉，《Princeton Theological Review》第 9 卷第 1 期（1911），第 1–25 页。**【书目核过】** |
+| 凯波尔（Abraham Kuyper，1837–1920） | 前三日的长度可能与平常日不同，后三日确是平常的日子 | 伯克富《系统神学》论创造一章的转述：「Kuyper and Bavinck hold that, while the first three days may have been of somewhat different length, the last three were certainly ordinary days」。凯波尔原书出处暂找不到，伯克富的页码待核。**【转引】** |
+| 巴文克（Herman Bavinck，1854–1921） | 称创造日为「非常的日子」、神的工作日，但仍是真实的先后次序 | 《Reformed Dogmatics》卷二（Baker 2004 英译本）第 10 章〈Earth: The Material World〉（第 473–510 页），其中「The Six Days of Creation」「The Six-Day Week of Creation」两节 **【书目核过】**（据出版社目录）。立场概括转引自 Banner of Truth 网站文章 **【转引】** |
+| Arie Noordtzij（1871–1944，荷兰乌特勒支大学） | 1924 年最早提出框架说 | 《Gods Woord en der eeuwen getuigenis》（1924）。杨以德〈The Days of Genesis〉一文专门讨论此书，见《Westminster Theological Journal》25（1962–63），第 1–34 页。**【书目核过】** |
+| 伯克富（Louis Berkhof，1873–1957，加尔文神学院） | 倾向字面六日，指出这是教会历来的主流看法 | 《Systematic Theology》论创造一章：「the prevailing view has always been that the days of Genesis 1 are to be understood as literal days」。页码待核。**【转引】**（转引自 monergism.com 摘录） |
 
-### （四）二十世纪中后期
+### （四）重点：威斯敏斯特神学院的三位奠基者
 
-| 人物 | 身份 | 立场 |
+1929 年普林斯顿神学院改组，梅钦带领一批教授出走，创立威斯敏斯特神学院，延续老普林斯顿的正统。范泰尔是创校教员，慕理 1930 年加入。三人在创造日问题上的立场如下。
+
+**梅钦（J. Gresham Machen，1881–1937）**
+
+- **立场**：认为六日不必是 24 小时的日子，可以理解为很长的时期。
+- **原话**：「It is certainly not necessary to think that the six days spoken of in that first chapter of the Bible are intended to be six days of twenty four hours each. We may think of them rather as very long periods of time.」
+- **出处**：《The Christian View of Man》（New York: Macmillan, 1937），这是他生前最后一两年的电台讲稿，去世后出版。页码暂找不到：本书在 Internet Archive 上只能借阅，没法全文检索。**【转引】**（转引自 jgmachen.org〈Machen and Creation in Six Days〉）
+- **背景**：梅钦是二十世纪初对抗自由派最坚定的长老会学者，同时又认为创造日的长度不是信仰的界线。这个立场与贺智、华腓德一脉相承。
+
+**慕理（John Murray，1898–1975）**
+
+- **立场**：他是否认为六日是 24 小时的日子，**【暂找不到出处】**。目前查到的研究者也说，在他的文集里找不到对日长度的明确表态。
+- **相关论述**：他在论安息日时，把神的创造周与人的一周区分开来：「the seventh day in the sphere of God's action, not the seventh day in our weekly cycle」；「God's week, if we may use that term, is not a cycle, it is a once-for-all accomplishment」；「God's mode of operation is the exemplar on the basis of which the sequence for man is patterned」。
+- **出处**：《Principles of Conduct》（Grand Rapids: Eerdmans, 1957），第 30–32 页。**【转引】**（转引自 Brian Lund〈John Murray on Creation as Analogical Days〉）
+- **说明**：有人认为这段话接近类比日说，但慕理本人没有这样下结论，不能据此把他归入某一派。
+
+**范泰尔（Cornelius Van Til，1895–1987）**
+
+- **立场**：**【暂找不到出处】**。网上有讨论引述他在《The Defense of the Faith》中照信条说「in the space of six days」，没有页码，原书未见。另有一本《Creation According to the Scriptures》（P. Andrew Sandlin 编），副题是为字面六日辩护，收了他的一篇文章；书本身未见。他的《Christian-Theistic Evidences》在 Internet Archive 上只能借阅，无法检索。
+- **可以确定的**：他的护教学以「圣经的权威先于人对自然的解释」为前提。这一点常被年轻地球一方引用，但他本人对日长度的具体看法，目前没有找到原文。
+
+### （五）二十世纪中后期
+
+| 人物 | 立场 | 出处 |
 |---|---|---|
-| N. H. Ridderbos（1910–1981） | 荷兰自由大学旧约教授 | 发展框架说，《Is There a Conflict Between Genesis 1 and Natural Science?》（1957） |
-| 杨以德（E. J. Young，1907–1968） | 威斯敏斯特神学院旧约教授 | 《Studies in Genesis One》（1964）反对框架说，坚持六日是先后相继的真实顺序 |
-| Meredith Kline（1922–2007） | 威斯敏斯特、戈登康威尔神学院 | 框架说的主要倡导者 |
-| 薛华（Francis Schaeffer，1912–1984） | 长老会牧师、护教家 | 《Genesis in Space and Time》（1972）认为日的长度可以开放 |
+| N. H. Ridderbos（1910–1981，荷兰自由大学） | 发展框架说 | 《Is There a Conflict Between Genesis 1 and Natural Science?》（Grand Rapids: Eerdmans, 1957）。**【书目核过】** |
+| 杨以德（E. J. Young，1907–1968，威斯敏斯特神学院） | 反对框架说，坚持六日是先后相继的真实顺序 | 〈The Days of Genesis〉，《Westminster Theological Journal》25（1962–63），第 1–34 页 **【书目核过】**；《Studies in Genesis One》（P&R, 1964），第 99 页：「If the "framework" hypothesis were applied to the narratives of the virgin birth or the resurrection or Romans 5:12 ff., it could as effectively serve to minimize the importance of the content of those passages as it now does the content of the first chapter of Genesis.」**【转引】**（转引自 gty.org） |
+| Meredith Kline（1922–2007，威斯敏斯特、戈登康威尔神学院） | 框架说的主要倡导者 | 〈Because It Had Not Rained〉，《Westminster Theological Journal》20（1958），页码待核 **【书目核过】**；〈Space and Time in the Genesis Cosmogony〉，《Perspectives on Science and Christian Faith》48:1（1996），第 2–15 页 **【书目核过】** |
+| 薛华（Francis Schaeffer，1912–1984） | 认为日的长度可以开放：希伯来文的「日」有 24 小时、白昼、不定时期三种用法 | 《Genesis in Space and Time》（InterVarsity, 1972），第 57–59 页一带。**【转引】**（转引自 geochristian.com，页码待核） |
 
-### （五）当代
+### （六）当代
 
-| 人物 | 身份 | 立场 |
+| 人物 | 立场 | 出处 |
 |---|---|---|
-| 史普罗（R. C. Sproul，1939–2017） | 林格尼尔事工创办人 | 长期认为框架说是一种可能，2006 年《Truths We Confess》中表明改持字面六日；但没有表态接受年轻地球论 |
-| Douglas Kelly | 改革宗神学院（RTS）系统神学教授 | 字面六日，《Creation and Change》（1997） |
-| Joseph Pipa | 格林维尔长老会神学院 | 字面六日，与 David Hall 合编《Did God Create in Six Days?》（1999） |
-| Joel Beeke | 清教徒改革宗神学院 | 字面六日，认为这才合乎信条原意 |
-| Kenneth Gentry | 长老会牧师 | 字面六日，著书反对框架说 |
-| C. John Collins | 圣约神学院（PCA）旧约教授 | 类比日说 |
-| 提摩太·凯勒（Tim Keller，1950–2023） | 纽约救赎主长老会 | 认为创世记 1 章带有诗体特征，不必按 24 小时读 |
+| 史普罗（R. C. Sproul，1939–2017） | 长期认为框架说是一种可能，2006 年改持字面六日；但没有表态接受年轻地球论 | 《Truths We Confess》卷一（2006），第 127 页：「For most of my teaching career, I considered the framework hypothesis to be a possibility. But I have now changed my mind. I now hold to a literal six-day creation.」**【转引】**（转引自 biblearchaeology.org、creation.com）。2012 年接受 Tim Challies 访谈时的补充说明，见 creation.com 的报道 **【转引】** |
+| Douglas Kelly（改革宗神学院） | 字面六日 | 《Creation and Change: Genesis 1.1–2.4 in the Light of Changing Scientific Paradigms》（Mentor, 1997；增订版 2017）。页码暂找不到。**【书目核过】** |
+| Joseph Pipa（格林维尔长老会神学院） | 字面六日 | 与 David W. Hall 合编《Did God Create in Six Days?》（1999）。**【书目核过】** |
+| Joel Beeke（清教徒改革宗神学院） | 字面六日，认为宗教改革家也是这样理解 | Beeke、Smalley《Reformed Systematic Theology》卷二论创造部分；小册子《What Did the Reformers Believe about the Age of the Earth?》。页码暂找不到。**【转引】**（转引自《Modern Reformation》书评） |
+| Kenneth Gentry | 字面六日，反对框架说 | 与 Michael R. Butler 合著《Yea, Hath God Said? The Framework Hypothesis / Six-Day Creation Debate》（Wipf and Stock, 2002）。**【书目核过】** |
+| C. John Collins（圣约神学院） | 类比日说：创造周与以色列人的工作周相类比 | 《Genesis 1–4: A Linguistic, Literary, and Theological Commentary》（P&R, 2006）；《Reading Genesis Well》（2018）第 162–163 页。**【转引】**（转引自书评，页码待核） |
+| 提摩太·凯勒（Tim Keller，1950–2023） | 认为创世记 1 章不教导神在六个 24 小时日内造世界，也不教导演化 | 〈Creation, Evolution, and Christian Laypeople〉（BioLogos, 2009）：「Genesis 1 does not teach that God made the world in six twenty-four hour days.」**【转引】**（转引自《Clarion》杂志书评） |
 
-### （六）宗派的处理
+### （七）宗派的处理
 
-| 年份 | 文件 | 结论 |
-|---|---|---|
-| 2000 | 美国长老会（PCA）创造研究委员会报告 | 字面日说、日代说、框架说、类比日说都可在信条范围内存在；但都必须承认亚当夏娃是神特别造的历史人物 |
-| 2004 | 正统长老会（OPC）创造观研究委员会报告 | 承认多种看法在会内并存 |
+| 年份 | 文件 | 结论 | 出处 |
+|---|---|---|---|
+| 2000 | 美国长老会（PCA）创造研究委员会报告，提交第 28 届总会 | 列出字面日说、日代说、框架说、类比日说四种；委员会成员之间没有达成一致，但联名提交一份报告 | 原文见 pcahistory.org/pca/studies/creation/report.pdf **【书目核过】** |
+| 2004 | 正统长老会（OPC）创造观研究委员会报告，提交第 71 届总会 | 考察改革宗教会中的五种看法；委员会在创造日的释经上未能达成一致 | 原文见 opc.org/GA/creation.html **【书目核过】** |
 
 几乎所有改革宗宗派都划了一条共同的底线：**亚当是神直接创造的历史人物，不是从别的物种演化来的**，全人类都出于他。
 
