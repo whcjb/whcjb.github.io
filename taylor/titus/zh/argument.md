@@ -7,6 +7,8 @@ subtitle: "Thomas Taylor"
 date: 2026-11-03 11:36
 prev_url: "/taylor/titus/zh/to-the-reader/"
 prev_label: "致基督徒读者"
+next_url: "/taylor/titus/zh/1-1/"
+next_label: "提多书 1:1"
 en_url: "/taylor/titus/argument/"
 zh: true
 ---
