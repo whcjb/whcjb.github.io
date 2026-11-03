@@ -11,6 +11,7 @@ prev_url: "/candlish/1john/lecture-39/"
 prev_label: "Lecture XXXIX"
 next_url: "/candlish/1john/lecture-41/"
 next_label: "Lecture XLI"
+zh_url: "/candlish/1john/zh/lecture-40/"
 ---
 
 <h2 class="cd-head">THE SUBSTANCE OF THE TESTIMONY—ETERNAL LIFE GOD'S GIFT IN HIS SON</h2>
