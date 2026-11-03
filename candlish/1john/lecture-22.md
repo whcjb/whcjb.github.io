@@ -11,6 +11,7 @@ prev_url: "/candlish/1john/lecture-21/"
 prev_label: "Lecture XXI"
 next_url: "/candlish/1john/lecture-23/"
 next_label: "Lecture XXIII"
+zh_url: "/candlish/1john/zh/lecture-22/"
 ---
 
 <h2 class="cd-head">THE SECRET OF SINLESSNESS—OUR ABIDING IN CHRIST—THE SEED OF GOD ABIDING IN US—OUR BEING BORN OF GOD</h2>
