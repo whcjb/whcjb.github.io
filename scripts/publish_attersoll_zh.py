@@ -84,6 +84,9 @@ def _unitalic_ref(m):
 def clean(body: str) -> str:
     body = re.sub(r'(?<!\*)\*\*(?!\*)', '', body)
     body = re.sub(r'<<<[^>]*>>>', '', body)
+    # 模型常给页边旁注外加一对括号：「比喻（<旁注>）」。旁注在宽屏挪到页边显示，正文里只剩一对空括号。
+    # 括号里只裹着一条旁注、别无他字时，去掉括号（原书本无此括号）
+    body = re.sub(r'[（(]\s*(<span class="at-margin[^>]*>.*?</span>)\s*[）)]', r'\1', body)
     body = REF_BOOK_ITALIC.sub(_unitalic_ref, body)
     body = RE_OL.sub(r'\1\\. ', body)
     body = re.sub(r'^(#+ .*)$', lambda m: m.group(1).replace('*', ''), body, flags=re.M)

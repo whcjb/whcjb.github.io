@@ -90,6 +90,9 @@ def clean(body: str) -> str:
     # 相邻两段斜体在译文里常被并成 `**`：本书没有粗体，只合并孤立的 `**`
     body = re.sub(r'(?<!\*)\*\*(?!\*)', '', body)
     body = re.sub(r'<<<[^>]*>>>', '', body)
+    # 模型常给页边旁注外加一对括号：「比喻（<旁注>）」。旁注在宽屏挪到页边显示，正文里只剩一对空括号。
+    # 括号里只裹着一条旁注、别无他字时，去掉括号（原书本无此括号）
+    body = re.sub(r'[（(]\s*(<span class="jk-margin[^>]*>.*?</span>)\s*[）)]', r'\1', body)
     body = REF_BOOK_ITALIC.sub(_unitalic_ref, body)
     body = RE_OL.sub(r'\1\\. ', body)
     # 章题照原书斜体搬来——中文书名里斜体不成样子，标题行去掉星号
