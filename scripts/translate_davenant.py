@@ -307,6 +307,18 @@ def _tags(t):
     return c
 
 
+OK_CHARS = re.compile(r'[\u0000-\u007F\u00A0-\u024F\u02B0-\u036F\u0370-\u03FF\u0590-\u05FF\u1E00-\u1FFF'
+                      r'\u2010-\u2027\u2030-\u205E\u2160-\u2188\u2190-\u22FF\u25A0-\u25FF\u27E6-\u27EF'
+                      r'\u2E00-\u2E7F\u2E80-\u2FDF\u3000-\u303F\u31C0-\u31EF\u3400-\u4DBF\u4E00-\u9FFF'
+                      r'\uF900-\uFAFF\uFF00-\uFFEF\u2116\u2122]')
+
+
+def odd_chars(zh, en):
+    """白名单外、原文也没有的字符（模型吐的垃圾：🧠 ⓘ 징 ─ …）。见 zh-translate-ops skill。"""
+    t = zh.replace('*\u200b*', '**')
+    return sorted({c for c in t if not OK_CHARS.match(c) and c not in en})
+
+
 def check_block(en, zh):
     """→ 出错原因，没问题返回 ''。"""
     if not zh or len(zh.strip()) < 2:
@@ -316,6 +328,9 @@ def check_block(en, zh):
     leak = _leaked_en(zh)
     if leak:
         return '夹着未译的英文词 ' + ' '.join(dict.fromkeys(leak))
+    odd = odd_chars(zh, en)
+    if odd:
+        return '异常字符 ' + ' '.join(f'{c}(U+{ord(c):04X})' for c in odd[:4])
     if CYRILLIC_RE.search(zh):
         return '混入西里尔字母 ' + ' '.join(CYRILLIC_RE.pattern and
                                         re.findall(r'[\u0400-\u04ff]+', zh))

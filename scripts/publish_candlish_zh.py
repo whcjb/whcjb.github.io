@@ -110,6 +110,40 @@ def clean(body: str) -> str:
     return body.strip()
 
 
+# 全书纲目是结构化目录，不能听凭模型排版（2026-11-03：编号有「一、」「第三讲」「XV.」「[四、…]」多种、
+# 经节写法各异、链接全指英文页）。逐条按固定格式重排：第N讲　[标题（约翰一书 X）](中文页或英文页)。
+RE_TOC = re.compile(r'^(.*?)\[(.*?)\]\(\{\{ site\.baseurl \}\}/candlish/1john/((?:lecture-\d+)|preface-[12])/\)\s*$', re.M)
+RE_NUMPFX = re.compile(r'^\s*(?:第[一二三四五六七八九十〇]+讲|[一二三四五六七八九十〇]+、|[IVXLC]+\.)\s*')
+RE_REFTAIL = re.compile(r'[\s：:—\-（(，,]*约翰一书\s*[\d:：–\-,，、；;\s]+[）)]?[。.]?\s*$')
+
+
+def fix_contents(body, done, allp):
+    def rep(m):
+        slug = m.group(3)
+        url = f'{{{{ site.baseurl }}}}/candlish/1john/{"zh/" if slug in done else ""}{slug}/'
+        if slug.startswith('preface'):
+            return f'[{FRONT[slug][0]}]({url})'
+        p = allp[slug]
+        title = RE_NUMPFX.sub('', RE_NUMPFX.sub('', m.group(1).strip()) + m.group(2)).strip()
+        title = RE_REFTAIL.sub('', title).rstrip('：:——-，, 。.')
+        return f'{label(p)}　[{title}（{TOC_REF.get(slug) or p["ref"]}）]({url})'
+    return RE_TOC.sub(rep, body)
+
+
+def _toc_refs():
+    """英文纲目每条末尾的讲题经文（:—1 JOHN 1:3）→ 约翰一书 1:3。纲目经节照原书，不取讲章覆盖范围。"""
+    t = (EN / 'contents.md').read_text(encoding='utf-8')
+    out = {}
+    for m in re.finditer(r'\[[^\]]*?[:：]?—\s*1 JOHN\s*([^\]]+?)\.?\]\(\{\{ site\.baseurl \}\}/candlish/1john/(lecture-\d+)/\)', t):
+        ref = re.sub(r'\s*:\s*', ':', m.group(1).strip()).replace(' ;', ';')
+        ref = re.sub(r'\s+and\s+', '、', ref)
+        out[m.group(2)] = '约翰一书 ' + ref
+    return out
+
+
+TOC_REF = _toc_refs()
+
+
 def existing_date(path: Path):
     if not path.exists():
         return None
@@ -143,6 +177,8 @@ def main():
             fm += [f'next_url: "/candlish/1john/zh/{q["slug"]}/"', f'next_label: "{label(q)}"']
         fm += [f'en_url: "/candlish/1john/{slug}/"', 'zh: true', '---']
         body = clean((ZH_RAW / f'{slug}.md').read_text(encoding='utf-8'))
+        if slug == 'contents':
+            body = fix_contents(body, {q['slug'] for q in names}, {q['slug']: q for q in allp})
         body = sect_names.annotate(body, (EN / f'{slug}.md').read_text(encoding='utf-8'), 'cd-orig')
         path.write_text('\n'.join(fm) + '\n\n' + body + '\n', encoding='utf-8')
 

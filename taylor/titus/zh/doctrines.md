@@ -94,7 +94,7 @@ lg Text: "All are not naturall sonnes that are so accounted." Likely a marginal 
 
 <p class="ty-item" markdown="1">一个人无论多么善于教导，若生活不检、招人非议，就不配被选立为传道人。*第 92 页*</p>
 
-ℰ<p class="ty-item" markdown="1">传道人结婚是神合法而圣洁的设立。*第 97 页*</p>
+<p class="ty-item" markdown="1">传道人结婚是神合法而圣洁的设立。*第 97 页*</p>
 
 <p class="ty-item" markdown="1">多妻向来是可责的，即便在最好的人身上也是如此。*第 103 页*</p>
 
@@ -192,7 +192,7 @@ lg Text: "All are not naturall sonnes that are so accounted." Likely a marginal 
 
 <p class="ty-item" markdown="1">许多人堕落至此，竟把自己从人的行列中除名了。*第 250 页*</p>
 
-︎<p class="ty-item" markdown="1">游手好闲的生活，为本性之光与圣经所共同定罪。*第 253 页*</p>
+<p class="ty-item" markdown="1">游手好闲的生活，为本性之光与圣经所共同定罪。*第 253 页*</p>
 
 <p class="ty-item" markdown="1">懒惰与放纵很少分离。*第 256 页*</p>
 
@@ -332,7 +332,7 @@ lg Text: "All are not naturall sonnes that are so accounted." Likely a marginal 
 
 <p class="ty-item" markdown="1">基督的荣耀在他第二次显现时，必以全然的光辉照耀出来。*第 494 页*</p>
 
-ⓘ<p class="ty-item" markdown="1">我们论及神，非关重大之事不可轻言，且总要存敬畏的态度。*第 496 页*</p>
+<p class="ty-item" markdown="1">我们论及神，非关重大之事不可轻言，且总要存敬畏的态度。*第 496 页*</p>
 
 <p class="ty-item" markdown="1">基督为他的教会舍己，却不是为每一个个别的人。*第 505 页*</p>
 

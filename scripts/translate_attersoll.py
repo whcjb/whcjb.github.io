@@ -218,6 +218,20 @@ EN_FUNC = {'the', 'with', 'and', 'this', 'that', 'here', 'is', 'are', 'i', 'will
            'translation', 'translate', 'output', 'only', 'alone', 'bare', 'below', 'following', 'text', 'rule'}
 
 
+# 白名单字符：汉字、中文标点、ASCII、拉丁扩展、希腊、希伯来、常用标点与符号。
+# 名单外又不在原文里的 → 模型吐的垃圾（2026-11-03 普查五书：🧠 ⓘ ╋ ︰ ℰ ᐅ 变体选择符 零宽空格、韩文「징兆」、制表线「─」）
+OK_CHARS = re.compile(r'[\u0000-\u007F\u00A0-\u024F\u02B0-\u036F\u0370-\u03FF\u0590-\u05FF\u1E00-\u1FFF'
+                      r'\u2010-\u2027\u2030-\u205E\u2160-\u2188\u2190-\u22FF\u25A0-\u25FF\u27E6-\u27EF'
+                      r'\u2E00-\u2E7F\u2E80-\u2FDF\u3000-\u303F\u31C0-\u31EF\u3400-\u4DBF\u4E00-\u9FFF'
+                      r'\uF900-\uFAFF\uFF00-\uFFEF\u2116\u2122]')
+
+
+def odd_chars(zh: str, en: str):
+    """名单外、原文也没有的字符。零宽空格夹在两个斜体星号之间（*​*）是有用的，放过。"""
+    t = zh.replace('*\u200b*', '**')
+    return sorted({c for c in t if not OK_CHARS.match(c) and c not in en})
+
+
 def structural_diff(en: str, zh: str) -> str:
     problems = []
     # 原文里本来就混写的（1-17 `hypostaticῶs`：印本用 ῶ 表 ō）照抄是对的，不算
@@ -239,6 +253,9 @@ def structural_diff(en: str, zh: str) -> str:
         if len(ws) >= 4 and sum(w in EN_FUNC for w in ws) >= 2 and run.strip(' .,;:') not in en:
             problems.append('模型自语 ' + run.strip()[:60])
             break
+    odd = odd_chars(zh, en)
+    if odd:
+        problems.append('异常字符 ' + ' '.join(f'{c}(U+{ord(c):04X})' for c in odd[:4]))
     pe, pz = RE_PH.findall(en), RE_PH.findall(zh)
     if pe != pz:
         problems.append(f'占位符不符 {pe} → {pz}')

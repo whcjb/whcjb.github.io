@@ -84,7 +84,7 @@ zh: true
 
 <p class="at-item" markdown="1">不可向人求不合律之事。418</p>
 
-ⓘ<p class="at-item" markdown="1">无神论者。209</p>
+<p class="at-item" markdown="1">无神论者。209</p>
 
 <p class="at-item" markdown="1">须要专心听道，219；专心的三样益处，同上。</p>
 
@@ -158,7 +158,7 @@ Index entry.
 
 <p class="at-item" markdown="1">使人成为殉道者的，是所为之受苦的缘由。19</p>
 
-ⓘ<p class="at-item" markdown="1">关怀有两种。504。每个肢体都当彼此关怀。189</p>
+<p class="at-item" markdown="1">关怀有两种。504。每个肢体都当彼此关怀。189</p>
 
 <p class="at-item" markdown="1">教会的惩戒者。168</p>
 
@@ -268,7 +268,7 @@ Index entry.
 
 <p class="at-item" markdown="1">书面立约。见“契据”条。</p>
 
-ⓘ<p class="at-item" markdown="1">对犯过之人的残忍。174</p>
+<p class="at-item" markdown="1">对犯过之人的残忍。174</p>
 
 <p class="at-item" markdown="1">咒诅的言语。475</p>
 
@@ -302,7 +302,7 @@ Index entry.
 
 <p class="at-item" markdown="1">事奉神必须以之为乐。287</p>
 
-ⓘ<p class="at-item" markdown="1">敬虔人的死往往来得突然。308</p>
+<p class="at-item" markdown="1">敬虔人的死往往来得突然。308</p>
 
 <p class="at-item" markdown="1">死的信心。258，259</p>
 
@@ -772,7 +772,7 @@ Index entry.
 
 <p class="at-item" markdown="1">为证明讲道并非重生之寻常途径而提出的种种反驳。207</p>
 
-ᐅ<p class="at-item" markdown="1">重洗派<span class="at-orig">[Anabaptists]</span>的反驳。265，367</p>
+<p class="at-item" markdown="1">重洗派<span class="at-orig">[Anabaptists]</span>的反驳。265，367</p>
 
 <p class="at-item" markdown="1">反对饶恕得罪人者的异议，246。反对使用问安的异议，247</p>
 
@@ -1034,7 +1034,7 @@ Running header: "Popish Idolatry like the Gentiles" with page number 63.
 
 <p class="at-item" markdown="1">停滞不前者受责备。131</p>
 
-ⓘ This looks like an index entry: "Stir up the gifts of God. See Gifts."
+This looks like an index entry: "Stir up the gifts of God. See Gifts."
 
 <p class="at-item" markdown="1">要激发神的恩赐。参见“恩赐”。</p>
 

@@ -9,7 +9,7 @@
 
 二、[主的喜乐，及其满足：约翰一书 1:4]({{ site.baseurl }}/candlish/1john/lecture-2/)
 
-🧠<h2 class="cd-group">第一部分：与神相交的首要条件——光</h2>
+<h2 class="cd-group">第一部分：与神相交的首要条件——光</h2>
 
 第三讲 [此条件的根据或理由：光既是神的本性，又是神的居所——约翰一书 1:5-7]({{ site.baseurl }}/candlish/1john/lecture-3/)
 
