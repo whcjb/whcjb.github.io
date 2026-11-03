@@ -90,6 +90,11 @@ SYSTEM = (
     "　antichrist→敌基督　the world→世界　unction→恩膏　begotten of God→从神生的　from everlasting→从亘古（和合本诗 90:2；「亘」不可写作「亡」）　love→爱　light→光　darkness→黑暗　"
     "false teachers→假师傅　Papists→天主教徒　the Pope→教皇　Doctrine→教义　Vse→应用\n"
     "13. 称神、基督、圣灵的代词一律用「他」（和合本体例），不用「祂」，全书前后一致\n"
+    "13b. **注意中文词的褒贬色彩**：原文是正面的神学说法，不得用带贬义的中文词（据为己有、霸占、攫取、侵吞……）。"
+    "appropriate / appropriating faith 指信心把基督与应许领受过来归给自己——译「领受归己」「领受为己有」，"
+    "如 personal, appropriating, and assured faith → 个人的、领受归己的、确信的信心；"
+    "只有原文是僭取、侵占的负面义（arrogate、usurp、take to himself what is not his）才译「据为己有」。"
+    "personal faith / personal interest → 个人的信心 / 切身的利害（不作「亲身的」）\n"
     "14. **不得把任何英文词原样留在中文句子里**；印本里偶有的排印错字，按上下文读通后译出，"
     "不要留残词，也不要另加说明"
 )
