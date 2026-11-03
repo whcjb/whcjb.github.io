@@ -7,6 +7,8 @@ subtitle: "William Attersoll"
 date: 2026-11-03 12:07
 prev_url: "/attersoll/philemon/zh/to-the-reader/"
 prev_label: "致读者"
+next_url: "/attersoll/philemon/zh/preface/"
+next_label: "序言"
 en_url: "/attersoll/philemon/doctrines/"
 zh: true
 ---

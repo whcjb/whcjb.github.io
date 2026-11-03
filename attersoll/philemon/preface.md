@@ -9,6 +9,7 @@ prev_url: "/attersoll/philemon/doctrines/"
 prev_label: "A Brief Recapitulation of All the Doctrines"
 next_url: "/attersoll/philemon/1-1/"
 next_label: "1:1–2"
+zh_url: "/attersoll/philemon/zh/preface/"
 ---
 
 <span class="at-pb" id="p1" data-p="1" data-facs="12" title="Page 1 of the 1612 edition begins here (原书第 1 页起)"></span>
