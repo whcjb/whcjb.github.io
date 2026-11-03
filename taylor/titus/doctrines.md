@@ -9,6 +9,7 @@ prev_url: "/taylor/titus/3-15/"
 prev_label: "3:15"
 next_url: "/taylor/titus/observations/"
 next_label: "Other Profitable Notes"
+zh_url: "/taylor/titus/zh/doctrines/"
 ---
 
 <span class="ty-pb" data-facs="385"></span><span class="ty-pb" data-facs="385"></span>
