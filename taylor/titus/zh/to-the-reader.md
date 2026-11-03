@@ -7,6 +7,8 @@ subtitle: "Thomas Taylor"
 date: 2026-11-03 11:25
 prev_url: "/taylor/titus/zh/dedication/"
 prev_label: "献辞"
+next_url: "/taylor/titus/zh/argument/"
+next_label: "本书缘起与分段"
 en_url: "/taylor/titus/to-the-reader/"
 zh: true
 ---

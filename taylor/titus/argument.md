@@ -8,6 +8,7 @@ prev_url: "/taylor/titus/to-the-reader/"
 prev_label: "To the Christian Reader"
 next_url: "/taylor/titus/1-1/"
 next_label: "1:1"
+zh_url: "/taylor/titus/zh/argument/"
 ---
 
 ## <span class="ty-pb" data-facs="9"></span> <span class="ty-pb" id="p1" data-p="1" data-facs="9" title="Page 1 of the 1612 edition begins here (原书第 1 页起)"></span>A COMMENTARIE vpon the Epistle of Saint PAUL to *TITUS.*
