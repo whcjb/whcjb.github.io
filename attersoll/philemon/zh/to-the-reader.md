@@ -5,8 +5,8 @@ book_name: "阿特索尔《腓利门书注释》"
 title: "致读者"
 subtitle: "William Attersoll"
 date: 2026-11-03 11:52
-prev_url: "/attersoll/philemon/zh/title/"
-prev_label: "书名页"
+prev_url: "/attersoll/philemon/zh/dedication/"
+prev_label: "献辞"
 en_url: "/attersoll/philemon/to-the-reader/"
 zh: true
 ---

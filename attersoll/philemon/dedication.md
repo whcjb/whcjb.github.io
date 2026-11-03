@@ -9,6 +9,7 @@ prev_url: "/attersoll/philemon/title/"
 prev_label: "Title Page"
 next_url: "/attersoll/philemon/to-the-reader/"
 next_label: "To the Reader"
+zh_url: "/attersoll/philemon/zh/dedication/"
 ---
 
 <span class="at-pb" data-facs="2"></span><span class="at-pb" data-facs="2"></span>

@@ -5,8 +5,8 @@ book_name: "阿特索尔《腓利门书注释》"
 title: "书名页"
 subtitle: "伦敦，1612"
 date: 2026-11-03 11:55
-next_url: "/attersoll/philemon/zh/to-the-reader/"
-next_label: "致读者"
+next_url: "/attersoll/philemon/zh/dedication/"
+next_label: "献辞"
 en_url: "/attersoll/philemon/title/"
 zh: true
 ---
