@@ -7,6 +7,8 @@ subtitle: "第二表"
 date: 2026-11-03 20:21
 prev_url: "/taylor/titus/zh/3-15/"
 prev_label: "提多书 3:15"
+next_url: "/taylor/titus/zh/questions/"
+next_label: "问题简表"
 en_url: "/taylor/titus/observations/"
 zh: true
 ---

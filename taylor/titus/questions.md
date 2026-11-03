@@ -9,6 +9,7 @@ prev_url: "/taylor/titus/observations/"
 prev_label: "Other Profitable Notes"
 next_url: "/taylor/titus/errata/"
 next_label: "Errata"
+zh_url: "/taylor/titus/zh/questions/"
 ---
 
 
