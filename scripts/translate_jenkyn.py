@@ -186,6 +186,11 @@ def restore_greek(zh: str, en: str) -> str:
     return re.sub(rf'[{GREEK}̀-ͯ]+[A-Za-z]{{1,4}}[{GREEK}̀-ͯ]*', fix, zh)
 
 
+RE_EN_RUN = re.compile(r"[A-Za-z][A-Za-z'’]*(?:[ ,.;:]+[A-Za-z][A-Za-z'’]*){3,}")
+EN_FUNC = {'the', 'with', 'and', 'this', 'that', 'here', 'is', 'are', 'i', 'will', 'you', 'your', 'answer',
+           'translation', 'translate', 'output', 'only', 'alone', 'bare', 'below', 'following', 'text', 'rule'}
+
+
 def structural_diff(en: str, zh: str) -> str:
     problems = []
     # 原文里本来就混写的（1-17 `hypostaticῶs`：印本用 ῶ 表 ō）照抄是对的，不算
@@ -200,6 +205,13 @@ def structural_diff(en: str, zh: str) -> str:
     # 斜体对数不同不算结构问题、不重译（2026-10-27 用户：斜体要一遍过，不要重译）。
     # 实测雷登+亚当斯首轮被打回的 296 段里 261 段只是斜体对数不同、星号都成对，重译换不来实质改进；
     # 落单的星号在 translate_one 里由 fix_italics 程序修，不调模型。
+    # 模型在译文前后自加的英文话（腓利门书 to-the-reader：`Answer with the bare translation alone.`）。
+    # 「连续多个英文词＝保留的拉丁引文」那条放行会放过它；拉丁引文里几乎不出现英语虚词，按虚词个数认
+    for run in RE_EN_RUN.findall(zh):
+        ws = re.findall(r"[a-z']+", run.lower())
+        if len(ws) >= 4 and sum(w in EN_FUNC for w in ws) >= 2 and run.strip(' .,;:') not in en:
+            problems.append('模型自语 ' + run.strip()[:60])
+            break
     pe, pz = RE_PH.findall(en), RE_PH.findall(zh)
     if pe != pz:
         problems.append(f'占位符不符 {pe} → {pz}')
