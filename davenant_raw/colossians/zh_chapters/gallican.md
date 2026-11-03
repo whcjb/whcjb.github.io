@@ -5,7 +5,7 @@ up_url: "/davenant/colossians/"
 up_label: "歌罗西书·达文南特注释"
 date: 2026-11-03 19:20
 kicker: "附卷"
-subtitle: "论法国改革宗神学家之间关于神对罪人的恩慈与拯救之旨意的争论"
+subtitle: "论法国改革宗神学家之间关于<sup>a</sup>神对罪人的恩慈与拯救之旨意的争论"
 prev_url: "/davenant/colossians/dissertation/7/zh/"
 prev_label: "第七章 · 基督之死之于蒙拣选者"
 en_url: "/davenant/colossians/gallican/"

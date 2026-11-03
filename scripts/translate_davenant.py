@@ -714,7 +714,7 @@ def translate_gallican(resume: bool, publish: bool, dry: bool):
              f'up_label: "{BOOK_NAME_ZH}"\n'
              f'date: {meta["gallican"]}\n'
              'kicker: "附卷"\n'
-             'subtitle: "论法国改革宗神学家之间关于神对罪人的恩慈与拯救之旨意的争论"\n'
+             'subtitle: "论法国改革宗神学家之间关于<sup>a</sup>神对罪人的恩慈与拯救之旨意的争论"\n'
              + (('\n'.join(nav) + '\n') if nav else '')
              + 'en_url: "/davenant/colossians/gallican/"\n'
              '---\n\n')

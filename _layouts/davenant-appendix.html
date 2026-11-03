@@ -178,4 +178,41 @@ layout: default
 .dv-lang:hover { background: var(--dv-ink); color: var(--dv-paper) !important;
   text-decoration: none !important; }
 </style>
+{% if page.url contains '/gallican/' %}
+<script>
+// 《法国教会之争》两套对照字母 a–g：前半法国一方的问题、后半达文南特的逐条答复，同字母一问一答。
+// 同一字母在页内出现两次（副标题 + 正文都算），两处互链：点问题里的 ᵇ 跳到答复的 ᵇ，再点跳回。
+(function () {
+  var sups = document.querySelectorAll('.dv-subtitle sup, .dv-content sup');
+  var by = {};
+  sups.forEach(function (s) {
+    var k = s.textContent.trim();
+    if (/^[a-g]$/.test(k) && !s.closest('.footnotes')) (by[k] = by[k] || []).push(s);
+  });
+  Object.keys(by).forEach(function (k) {
+    var l = by[k];
+    if (l.length !== 2) return;
+    var zh = document.documentElement.lang === 'zh' || {{ page.en_url | jsonify }} !== null;
+    [['q', 'r', zh ? '跳到答复 ' : 'Go to the reply '], ['r', 'q', zh ? '跳回问题 ' : 'Back to the question ']].forEach(function (x, i) {
+      var s = l[i];
+      s.id = 'gc-' + x[0] + '-' + k;
+      var a = document.createElement('a');
+      a.href = '#gc-' + x[1] + '-' + k;
+      a.className = 'gc-key';
+      a.title = x[2] + k;
+      a.textContent = k;
+      s.textContent = '';
+      s.appendChild(a);
+    });
+  });
+})();
+</script>
+<style>
+.davenant-wrap .gc-key { text-decoration: none; color: var(--dv-ink); font-weight: 600; padding: 0 1px;
+  border-bottom: 1px dotted currentColor; }
+.davenant-wrap .gc-key:hover { color: var(--dv-ink-dark); }
+.davenant-wrap sup[id^="gc-"] { scroll-margin-top: 90px; }
+.davenant-wrap sup[id^="gc-"]:target { background: #f3e9b8; border-radius: 2px; }
+</style>
+{% endif %}
 {% if page.en_url %}{% include scripture-popup.html container_selector=".dv-content" accent="#556b2f" vnum="#8a9b6a" slide="down" %}{% endif %}
