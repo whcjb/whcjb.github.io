@@ -124,31 +124,54 @@ def is_keep_block(b: str) -> bool:
 CHATTY_RE = re.compile(
     r'(您似乎|你似乎|请把原文|请提供|没有附上|未提供|无法翻译|'
     r'as an ai|i (?:cannot|can\'t|don\'t see)|please provide)', re.I)
-STRAY_EN = re.compile(r'(?<![（(A-Za-zæœÆŒ])[A-Za-zæœÆŒ][A-Za-zæœÆŒ\'’-]{2,}(?![*）)A-Za-zæœÆŒ])')
+# 拉丁字母含 À-ɏ（Latin-1 补充 + 扩展 A/B）：早期印本拉丁文用 ē ō ū ā 表示省略的 m/n
+# （probationē、Excōmunicatio、mendaciū），只认 ASCII 会把词切碎、碎片被当成漏译（2026-11-03 提多书 3:10 两次误拦）
+STRAY_EN = re.compile(r'(?<![（(A-Za-zÀ-ɏ])[A-Za-zÀ-ɏ][A-Za-zÀ-ɏ\'’-]{2,}(?![*）)A-Za-zÀ-ɏ])')
 GREEK = r'Ͱ-Ͽἀ-῿'
 RE_GREEK_TOK = re.compile(rf'[{GREEK}̀-ͯ]+')
 RE_MIXED = re.compile(rf'[{GREEK}]+[A-Za-z]+|[A-Za-z]+[{GREEK}]+')
 LATIN_OK = re.compile(r'[A-Za-z]')
 
 
+EN_COMMON = set("""
+the and that this with which have from they their them there these those were been being would could should
+shall will what when where while whom whose because therefore however wherefore whereas although though
+also only even very more most such than then thus into upon unto about after before against among between
+through without within under over again other another every each both either neither nothing something
+anything everything someone people thing things time times reason reasons place first second third last
+word words make made take taken give given come came know known think thought say said same your yours
+ours his hers its our not but for are was has had can may must might shall him her who how why all any
+keep fine translate translation translated italic italics output note rule here good right well just like
+faith love grace sin sinners sinner god lord christ spirit holy church world life death heart soul man men
+""".split())
+
+
 def stray_english(zh: str, en: str):
     """光溜溜落在中文句子里的英文词。斜体内、括注里、原文里本就有的拉丁词都不算。"""
-    en_words = {w.lower() for w in re.findall(r'[A-Za-z]{3,}', en)}
+    en_words = {w.lower() for w in re.findall(r'[A-Za-zÀ-ɏ]{3,}', en)}
     out = []
     for m in STRAY_EN.finditer(zh):
         s, e = m.start(), m.end()
         if zh.count('*', 0, s) % 2 == 1:
-            continue
+            # 斜体里多是保留的拉丁原文，一般放行；但常见英语词（拉丁文里不出现）又不在原文里 → 漏译或模型自语
+            # （2026-11-03 注入测试：斜体内漏译 84/397 全漏抓）
+            if not (m.group(0).lower() in EN_COMMON and m.group(0).lower() not in en_words):
+                continue
         if re.search(r'[A-Za-z]\s*$', zh[:s]) or re.match(r'\s*[A-Za-z]', zh[e:]):
             continue
         # 带重音的拉丁词被 ASCII 判据切碎（1-3-2 `ipsâ vitâ` → `ips` `vit`）：紧挨着 à-ÿ 的片段是拉丁原文
-        if re.match(r'[À-ÿ]', zh[e:e + 1]) or re.search(r'[À-ÿ]$', zh[:s]):
+        if re.match(r'[À-ɏ]', zh[e:e + 1]) or re.search(r'[À-ɏ]$', zh[:s]):
             continue
         # 短词在原文里有、且紧邻的词也是原文里的词（拉丁引文被模型顺手规范了拼写：mendaciū→mendacium）
         if len(m.group(0)) < 4 and m.group(0).lower() in en_words:
             near = re.findall(r'[A-Za-z]{3,}', zh[max(0, s - 24):s] + ' ' + zh[e:e + 24])
             if any(w.lower() in en_words and len(w) >= 4 for w in near):
                 continue
+        # 印本把一个词排断（ipsâ vit â），模型接回成 vitâ：去掉原文空格后能找到即是照抄
+        toks = re.findall(r'[A-Za-zÀ-ɏ]+', en.lower())
+        if len(m.group(0)) >= 4 and re.search(r'[À-ɏ]', m.group(0)) \
+                and m.group(0).lower() in {x + y for x, y in zip(toks, toks[1:])}:
+            continue
         # 拉丁缩写被模型展开（probationē → probationem）：原文有 ≥6 字母的同词干、只是词尾多一两个字母
         wl = m.group(0).lower()
         if any(len(x) >= 6 and wl.startswith(x) and len(wl) - len(x) <= 2 for x in en_words):
