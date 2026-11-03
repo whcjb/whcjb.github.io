@@ -5,8 +5,8 @@ book_name: "阿特索尔《腓利门书注释》"
 title: "勘误表"
 subtitle: "William Attersoll"
 date: 2026-11-03 17:18
-prev_url: "/attersoll/philemon/zh/1-25/"
-prev_label: "腓利门书 1:25"
+prev_url: "/attersoll/philemon/zh/contents-table/"
+prev_label: "要目索引"
 en_url: "/attersoll/philemon/errata/"
 zh: true
 ---

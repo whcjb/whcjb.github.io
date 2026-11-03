@@ -8,6 +8,7 @@ prev_url: "/attersoll/philemon/1-25/"
 prev_label: "1:25"
 next_url: "/attersoll/philemon/errata/"
 next_label: "Errata"
+zh_url: "/attersoll/philemon/zh/contents-table/"
 ---
 
 <span class="at-pb" data-facs="267"></span>
