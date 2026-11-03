@@ -68,7 +68,7 @@ zh: true
 第四十讲　[见证的实质——永生是神在他儿子里所赐的（约翰一书 5:11, 12）]({{ site.baseurl }}/candlish/1john/zh/lecture-40/)
 第四十一讲　[永生与祷告中的坦然无惧相连（约翰一书 5:13–15）]({{ site.baseurl }}/candlish/1john/zh/lecture-41/)
 第四十二讲　[为弟兄的罪祷告，但不为至于死的罪（约翰一书 5:16, 17）]({{ site.baseurl }}/candlish/1john/zh/lecture-42/)
-第四十三讲　[信徒既从神生，就保守自己不犯罪（约翰一书 5:17, 18）]({{ site.baseurl }}/candlish/1john/lecture-43/)
+第四十三讲　[信徒既从神生，就保守自己不犯罪（约翰一书 5:17, 18）]({{ site.baseurl }}/candlish/1john/zh/lecture-43/)
 第四十四讲　[我们属神——全世界都卧在那恶者手下（约翰一书 5:18, 19）]({{ site.baseurl }}/candlish/1john/lecture-44/)
 第四十五讲　[认识那位真实的，并在他里面（约翰一书 5:20）]({{ site.baseurl }}/candlish/1john/lecture-45/)
 第四十六讲　[耶稣是真神，是永生，与一切偶像相对（约翰一书 5:20, 21）]({{ site.baseurl }}/candlish/1john/lecture-46/)

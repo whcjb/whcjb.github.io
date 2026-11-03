@@ -11,6 +11,7 @@ prev_url: "/candlish/1john/lecture-42/"
 prev_label: "Lecture XLII"
 next_url: "/candlish/1john/lecture-44/"
 next_label: "Lecture XLIV"
+zh_url: "/candlish/1john/zh/lecture-43/"
 ---
 
 <h2 class="cd-head">THE BELIEVER AS BORN OF GOD KEEPING HIMSELF SO AS NOT TO SIN</h2>
