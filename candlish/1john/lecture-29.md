@@ -11,6 +11,7 @@ prev_url: "/candlish/1john/lecture-28/"
 prev_label: "Lecture XXVIII"
 next_url: "/candlish/1john/lecture-30/"
 next_label: "Lecture XXX"
+zh_url: "/candlish/1john/zh/lecture-29/"
 ---
 
 <h2 class="cd-head">OUR RIGHTEOUSNESS EXERCISED IN TRYING THE SPIRITS; THE TEST, CONFESSING THAT JESUS CHRIST IS COME IN THE FLESH</h2>
