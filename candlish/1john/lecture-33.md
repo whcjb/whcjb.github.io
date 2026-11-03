@@ -11,6 +11,7 @@ prev_url: "/candlish/1john/lecture-32/"
 prev_label: "Lecture XXXII"
 next_url: "/candlish/1john/lecture-34/"
 next_label: "Lecture XXXIV"
+zh_url: "/candlish/1john/zh/lecture-33/"
 ---
 
 <h2 class="cd-head">LOVE THE MEANS OF MUTUAL INDWELLING; GOD IN US AND WE IN GOD</h2>

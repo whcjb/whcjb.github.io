@@ -56,7 +56,7 @@ zh: true
 
 第三十一讲　[爱是从神来的——神就是爱（约翰一书 4:7–10）]({{ site.baseurl }}/candlish/1john/zh/lecture-31/)
 第三十二讲　[爱向看得见的发出（约翰一书 4:10–12）]({{ site.baseurl }}/candlish/1john/zh/lecture-32/)
-第三十三讲　[爱是彼此相互内住的途径：神在我们里面，我们也在神里面（约翰一书 4:13–16）]({{ site.baseurl }}/candlish/1john/lecture-33/)
+第三十三讲　[爱是彼此相互内住的途径：神在我们里面，我们也在神里面（约翰一书 4:13–16）]({{ site.baseurl }}/candlish/1john/zh/lecture-33/)
 第三十四讲　[爱既完全便可坦然（约翰一书 4:17–19）]({{ site.baseurl }}/candlish/1john/lecture-34/)
 第三十五讲　[我们所爱的对象——神的儿女与神自己（约翰一书 4:20, 21–5:1–3）]({{ site.baseurl }}/candlish/1john/lecture-35/)
 <h2 class="cd-group">第四部分：光、义与爱的属神相交，胜过世界和世界的王</h2>
