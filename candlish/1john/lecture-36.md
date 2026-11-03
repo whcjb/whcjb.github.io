@@ -11,6 +11,7 @@ prev_url: "/candlish/1john/lecture-35/"
 prev_label: "Lecture XXXV"
 next_url: "/candlish/1john/lecture-37/"
 next_label: "Lecture XXXVII"
+zh_url: "/candlish/1john/zh/lecture-36/"
 ---
 
 <div class="cd-part">PART FOURTH<small>The Divine Fellowship of Light, Righteousness, and Love, Overcoming the World and Its Prince</small></div>

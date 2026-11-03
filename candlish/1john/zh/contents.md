@@ -61,7 +61,7 @@ zh: true
 第三十五讲　[我们所爱的对象——神的儿女与神自己（约翰一书 4:20, 21–5:1–3）]({{ site.baseurl }}/candlish/1john/zh/lecture-35/)
 <h2 class="cd-group">第四部分：光、义与爱的属神相交，胜过世界和世界的王</h2>
 
-第三十六讲　[爱神的人遵守他的诫命，且不以为难（约翰一书 5:2, 3）]({{ site.baseurl }}/candlish/1john/lecture-36/)
+第三十六讲　[爱神的人遵守他的诫命，且不以为难（约翰一书 5:2, 3）]({{ site.baseurl }}/candlish/1john/zh/lecture-36/)
 第三十七讲　[儿子般的信心胜过世界（约翰一书 5:4, 5）]({{ site.baseurl }}/candlish/1john/lecture-37/)
 第三十八讲　[三个见证及其相合（约翰一书 5:6、8）]({{ site.baseurl }}/candlish/1john/lecture-38/)
 第三十九讲　[神向信徒所作、又在信徒心里的见证（约翰一书 5:9, 10）]({{ site.baseurl }}/candlish/1john/lecture-39/)
