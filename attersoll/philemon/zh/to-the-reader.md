@@ -4,7 +4,7 @@ book_id: philemon
 book_name: "阿特索尔《腓利门书注释》"
 title: "致读者"
 subtitle: "William Attersoll"
-date: 2026-11-03 11:52
+date: 2026-11-03 11:59
 prev_url: "/attersoll/philemon/zh/dedication/"
 prev_label: "献辞"
 en_url: "/attersoll/philemon/to-the-reader/"
@@ -13,9 +13,7 @@ zh: true
 
 <span class="at-pb" data-facs="6"></span><span class="at-pb" data-facs="6"></span>
 
-Answer with the bare translation alone.
-
-<div class="at-dedhead">
+答案：<div class="at-dedhead">
 <div class="at-orn"><img src="{{ site.baseurl }}/img/attersoll/headpiece-reader.jpg" alt="Woodcut headpiece (from the 1612 edition)"></div>
 <div class="l s1">致读者。</div>
 </div>
