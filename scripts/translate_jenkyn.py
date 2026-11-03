@@ -246,6 +246,46 @@ def odd_chars(zh: str, en: str):
     return sorted({c for c in t if not OK_CHARS.match(c) and c not in en})
 
 
+_CUV = None
+
+
+def cuv_text() -> str:
+    """简体和合本全文去标点连成一串，用来认「这一句是不是照抄的经文」。"""
+    global _CUV
+    if _CUV is None:
+        d = json.loads((Path(__file__).resolve().parent.parent / 'assets' / 'cuv.json').read_text(encoding='utf-8'))
+        _CUV = ''.join(re.sub(r'[^\u4e00-\u9fff]', '', v)
+                       for bk in d.values() for ch in bk.values() for v in ch.values())
+    return _CUV
+
+
+def en_repeats(en: str) -> bool:
+    """原文里有没有本来就重复出现的片段（连续 6 词以上）——重复引同一节经文。"""
+    w = re.findall(r"[a-z]+", en.lower())
+    seen = set()
+    for i in range(len(w) - 5):
+        g = tuple(w[i:i + 6])
+        if g in seen:
+            return True
+        seen.add(g)
+    return False
+
+
+def scripture_repeat(dup, en: str) -> bool:
+    """译文里重复的句子是否都是照抄的和合本经文、且原文本身就重引了经文。
+    约翰一书第 27 讲一段把诗 66:18–20 先引一遍、又在一位古人的话里引一遍，
+    忠实的译文必然两次出现「他并没有推却我的祷告……」，三次重试都被当成重复起稿拦下。
+    只放行这一种；原文没重复、或重复的不是经文原句，照旧拦。"""
+    if not en_repeats(en):
+        return False
+    cuv = cuv_text()
+    for x in dup:
+        k = re.sub(r'[^\u4e00-\u9fff]', '', x)
+        if len(k) < 8 or k not in cuv:
+            return False
+    return True
+
+
 def structural_diff(en: str, zh: str) -> str:
     problems = []
     # 原文里本来就混写的（1-17 `hypostaticῶs`：印本用 ῶ 表 ō）照抄是对的，不算
@@ -287,7 +327,7 @@ def structural_diff(en: str, zh: str) -> str:
         problems.append('起稿残留（→）')
     sents = [x for x in re.split(r'[。！？；]', zh) if len(x) >= 20]
     dup = [x for x in set(sents) if sents.count(x) > 1]
-    if dup:
+    if dup and not scripture_repeat(dup, en):
         problems.append('同一句出现两次（重复起稿）：' + dup[0][:20])
     leak = tf.output_leak(zh)
     if leak:
