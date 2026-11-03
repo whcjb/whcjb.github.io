@@ -11,6 +11,7 @@ prev_url: "/candlish/1john/lecture-34/"
 prev_label: "Lecture XXXIV"
 next_url: "/candlish/1john/lecture-36/"
 next_label: "Lecture XXXVI"
+zh_url: "/candlish/1john/zh/lecture-35/"
 ---
 
 <h2 class="cd-head">THE OBJECTS OF OUR LOVE—THE CHILDREN OF GOD AND GOD HIMSELF</h2>
