@@ -240,6 +240,8 @@ def structural_diff(en: str, zh: str) -> str:
 
 def tidy(zh: str) -> str:
     zh = re.sub(r'<<<[^>]*>>>', '', zh).strip()
+    # 只有一行标题、其余全是占位符的块，模型常当成问答，开头冒出「答案：」（腓利门书 to-the-reader）
+    zh = re.sub(r'^(?:答案|译文|翻译|中文译文|Answer|Translation)\s*[:：]\s*', '', zh)
     zh = re.sub(r'[〔［]([A-Za-zÀ-ÿ][A-Za-zÀ-ÿ .\'’-]*)[〕］]', r'（\1）', zh)
     # &c. 一律省略号（全站通则）
     zh = re.sub(r'(等等|等语|云云)(?=[」』。，；：）\s]|$)', '……', zh)
