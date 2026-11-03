@@ -11,6 +11,7 @@ prev_url: "/candlish/1john/lecture-33/"
 prev_label: "Lecture XXXIII"
 next_url: "/candlish/1john/lecture-35/"
 next_label: "Lecture XXXV"
+zh_url: "/candlish/1john/zh/lecture-34/"
 ---
 
 <h2 class="cd-head">THE BOLDNESS OF PERFECTED LOVE</h2>
