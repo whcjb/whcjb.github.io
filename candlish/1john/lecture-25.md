@@ -11,6 +11,7 @@ prev_url: "/candlish/1john/lecture-24/"
 prev_label: "Lecture XXIV"
 next_url: "/candlish/1john/lecture-26/"
 next_label: "Lecture XXVI"
+zh_url: "/candlish/1john/zh/lecture-25/"
 ---
 
 <h2 class="cd-head">BROTHERLY LOVE THE FRUIT AND TEST OF PASSING FROM DEATH UNTO LIFE—THE WORLD'S HATRED—THE LOVE OF GOD</h2>
