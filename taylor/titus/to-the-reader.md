@@ -8,6 +8,7 @@ prev_url: "/taylor/titus/dedication/"
 prev_label: "Epistle Dedicatory"
 next_url: "/taylor/titus/argument/"
 next_label: "The Occasion and Parts of the Epistle"
+zh_url: "/taylor/titus/zh/to-the-reader/"
 ---
 
 <span class="ty-pb" data-facs="5"></span>
