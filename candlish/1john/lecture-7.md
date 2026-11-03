@@ -11,6 +11,7 @@ prev_url: "/candlish/1john/lecture-6/"
 prev_label: "Lecture VI"
 next_url: "/candlish/1john/lecture-8/"
 next_label: "Lecture VIII"
+zh_url: "/candlish/1john/zh/lecture-7/"
 ---
 
 <h2 class="cd-head">THE GUILELESS SPIRIT REALISING THROUGH OBEDIENCE THE KNOWLEDGE OF GOD AS THE MEANS OF BEING AND ABIDING IN GOD</h2>
