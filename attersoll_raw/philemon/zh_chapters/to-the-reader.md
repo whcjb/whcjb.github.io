@@ -1,6 +1,6 @@
 <span class="at-pb" data-facs="6"></span><span class="at-pb" data-facs="6"></span>
 
-答案：<div class="at-dedhead">
+<div class="at-dedhead">
 <div class="at-orn"><img src="{{ site.baseurl }}/img/attersoll/headpiece-reader.jpg" alt="Woodcut headpiece (from the 1612 edition)"></div>
 <div class="l s1">致读者。</div>
 </div>

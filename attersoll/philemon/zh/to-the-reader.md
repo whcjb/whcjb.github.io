@@ -7,13 +7,15 @@ subtitle: "William Attersoll"
 date: 2026-11-03 11:59
 prev_url: "/attersoll/philemon/zh/dedication/"
 prev_label: "献辞"
+next_url: "/attersoll/philemon/zh/doctrines/"
+next_label: "全书教义撮要"
 en_url: "/attersoll/philemon/to-the-reader/"
 zh: true
 ---
 
 <span class="at-pb" data-facs="6"></span><span class="at-pb" data-facs="6"></span>
 
-答案：<div class="at-dedhead">
+<div class="at-dedhead">
 <div class="at-orn"><img src="{{ site.baseurl }}/img/attersoll/headpiece-reader.jpg" alt="Woodcut headpiece (from the 1612 edition)"></div>
 <div class="l s1">致读者。</div>
 </div>
