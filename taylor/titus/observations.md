@@ -9,6 +9,7 @@ prev_url: "/taylor/titus/doctrines/"
 prev_label: "A Short View of the Doctrines"
 next_url: "/taylor/titus/questions/"
 next_label: "A Brief Table of the Questions"
+zh_url: "/taylor/titus/zh/observations/"
 ---
 
 <span class="ty-pb" data-facs="388"></span>
