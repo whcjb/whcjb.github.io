@@ -718,7 +718,11 @@ def main():
                   f'    testament: {testament}',
                   f'    chapters: {CHAPTERS.get(bid, 0)}']
         if duo:
-            lines.append('    duo: true')
+            # 交界处颜料相混的颜色：两家相邻一端（甲的亮端、乙的暗端）逐通道取均值再压暗 40%，
+            # 模拟颜料减色混合——两色相叠比任一色都暗，交界那一道才像真的渗在一起。
+            a, b = theme_color(duo[0])[1], theme_color(duo[1])[0]
+            mix = '#' + ''.join(f'{round((int(a[i:i + 2], 16) + int(b[i:i + 2], 16)) / 2 * .6):02x}' for i in (1, 3, 5))
+            lines += ['    duo: true', f'    duo_mix: {yaml_escape(mix)}']
         lines.append('    links:')
         for aid, path, ov_cn, ov_en, note in entries:
             # 中英书名都**按卷**生成，一一对应。曾经中文一律输出各家的总书名

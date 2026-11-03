@@ -172,7 +172,7 @@ description: 加尔文与马太亨利之外的历代改革宗注释——欧文�
   .cx-book-btn--has { background: linear-gradient(135deg, var(--c0), var(--c1)); }
   .cx-book-btn--has:hover { filter: brightness(.82); }
   /* 两家合用一张卡片（_data 里 duo: true，见 build_commentaries_index.py 的 DUO_BOOKS）：
-     左上归第一家、右下归第二家，各自可点。底色是一条「甲色 → 乙色」的渐变，交界只留中间约 5% 的窄条（用户 2026-11-03：融合部分要窄），
+     左上归第一家、右下归第二家，各自可点。底色是一条「甲色 → 乙色」的渐变，交界只留中间一窄条（用户 2026-11-03：融合部分要窄；又要像真实颜料交融，见卡片上方 SVG 注释），
      渐变向量取用户坐标 (0,10)→(200,90)，等色线正好是 (120,0)–(80,100)，与两半 clip-path 的分界 60%→40% 重合；再用 SVG 噪声位移（feTurbulence + feDisplacementMap）把这条交界扭成流纹，像两股颜料互相渗开。
      两个 <a> 用 clip-path 按交界的大致走向分区；书名压在上层、不接点击，点到哪半边就去哪家。 */
   .cx-book-btn--duo { position: relative; overflow: hidden; background: none; padding: 12px 14px 30px; }
@@ -244,18 +244,73 @@ description: 加尔文与马太亨利之外的历代改革宗注释——欧文�
           {%- assign aua = author_map | where: "id", la.author | first -%}
           {%- assign aub = author_map | where: "id", lb.author | first -%}
           <div class="cx-book-btn cx-book-btn--has cx-book-btn--duo">
+            {%- comment -%}
+              颜料交融：甲色铺满 → 乙色向甲侧淡淡晕开一层 → 乙色经遮罩叠上 → 甲色向乙侧淡淡渗回一层 → 交界一道混色 → 整张一层淡淡的水渍。
+              两层晕染用另一组更散的噪声、模糊更重，像湿画法里颜料顺着水往外走，只在交界附近约 ±7% 内。
+              遮罩与混色带用同一组噪声（同 seed），两层的边缘严丝合缝。噪声两档：低频定大走向的起伏，
+              高频出纤维状的毛边；轻微模糊让边缘发虚而不糊。混色带 = 遮罩模糊前后之差（只在边缘两侧有值），
+              粗细随噪声起伏，取 duo_mix（两色减色混合后的暗色）。
+            {%- endcomment -%}
             <svg class="cx-duo-paint" viewBox="0 0 200 100" preserveAspectRatio="none" aria-hidden="true" focusable="false">
               <defs>
-                <linearGradient id="cxduo-g-{{ b.id }}" gradientUnits="userSpaceOnUse" x1="0" y1="10" x2="200" y2="90">
-                  <stop offset="0" stop-color="{{ la.c0 }}"/><stop offset=".475" stop-color="{{ la.c1 }}"/>
-                  <stop offset=".525" stop-color="{{ lb.c0 }}"/><stop offset="1" stop-color="{{ lb.c1 }}"/>
-                </linearGradient>
-                <filter id="cxduo-f-{{ b.id }}" x="-15%" y="-15%" width="130%" height="130%" color-interpolation-filters="sRGB">
-                  <feTurbulence type="fractalNoise" baseFrequency="0.035 0.11" numOctaves="3" seed="11" result="n"/>
-                  <feDisplacementMap in="SourceGraphic" in2="n" scale="16" xChannelSelector="R" yChannelSelector="G"/>
+                <linearGradient id="cxduo-ga-{{ b.id }}" gradientUnits="userSpaceOnUse" x1="0" y1="10" x2="200" y2="90">
+                  <stop offset="0" stop-color="{{ la.c0 }}"/><stop offset=".55" stop-color="{{ la.c1 }}"/></linearGradient>
+                <linearGradient id="cxduo-gb-{{ b.id }}" gradientUnits="userSpaceOnUse" x1="0" y1="10" x2="200" y2="90">
+                  <stop offset=".45" stop-color="{{ lb.c0 }}"/><stop offset="1" stop-color="{{ lb.c1 }}"/></linearGradient>
+                <linearGradient id="cxduo-gs-{{ b.id }}" gradientUnits="userSpaceOnUse" x1="0" y1="10" x2="200" y2="90">
+                  <stop offset=".49" stop-color="#000"/><stop offset=".51" stop-color="#fff"/></linearGradient>
+                <filter id="cxduo-fe-{{ b.id }}" x="-20%" y="-20%" width="140%" height="140%" color-interpolation-filters="sRGB">
+                  <feTurbulence type="fractalNoise" baseFrequency="0.011 0.03" numOctaves="2" seed="4" result="lo"/>
+                  <feTurbulence type="fractalNoise" baseFrequency="0.06 0.17" numOctaves="3" seed="17" result="hi"/>
+                  <feDisplacementMap in="SourceGraphic" in2="lo" scale="34" xChannelSelector="R" yChannelSelector="G" result="d1"/>
+                  <feDisplacementMap in="d1" in2="hi" scale="10" xChannelSelector="G" yChannelSelector="R" result="d2"/>
+                  <feGaussianBlur in="d2" stdDeviation="0.8"/>
                 </filter>
+                <filter id="cxduo-fr-{{ b.id }}" x="-20%" y="-20%" width="140%" height="140%" color-interpolation-filters="sRGB">
+                  <feTurbulence type="fractalNoise" baseFrequency="0.011 0.03" numOctaves="2" seed="4" result="lo"/>
+                  <feTurbulence type="fractalNoise" baseFrequency="0.06 0.17" numOctaves="3" seed="17" result="hi"/>
+                  <feDisplacementMap in="SourceGraphic" in2="lo" scale="34" xChannelSelector="R" yChannelSelector="G" result="d1"/>
+                  <feDisplacementMap in="d1" in2="hi" scale="10" xChannelSelector="G" yChannelSelector="R" result="d2"/>
+                  <feColorMatrix in="d2" type="luminanceToAlpha" result="a"/>
+                  <feGaussianBlur in="a" stdDeviation="2.8" result="ab"/>
+                  <feComposite in="ab" in2="a" operator="arithmetic" k2="2.6" k3="-2.6" result="r1"/>
+                  <feComposite in="a" in2="ab" operator="arithmetic" k2="2" k3="-2" result="r2"/>
+                  <feMerge result="rim"><feMergeNode in="r1"/><feMergeNode in="r2"/></feMerge>
+                  <feTurbulence type="fractalNoise" baseFrequency="0.05 0.12" numOctaves="2" seed="29" result="v"/>
+                  <feColorMatrix in="v" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 2.2 -0.55" result="va"/>
+                  <feComposite in="rim" in2="va" operator="in" result="rimv"/>
+                  <feFlood flood-color="{{ b.duo_mix }}"/>
+                  <feComposite in2="rimv" operator="in"/>
+                </filter>
+                <filter id="cxduo-fw-{{ b.id }}" x="0" y="0" width="100%" height="100%">
+                  <feTurbulence type="fractalNoise" baseFrequency="0.035 0.07" numOctaves="3" seed="8"/>
+                  <feColorMatrix type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 -1.6 0.9"/>
+                </filter>
+                <mask id="cxduo-m-{{ b.id }}" maskUnits="userSpaceOnUse" x="-30" y="-30" width="260" height="160">
+                  <rect x="-30" y="-30" width="260" height="160" fill="url(#cxduo-gs-{{ b.id }})" filter="url(#cxduo-fe-{{ b.id }})"/>
+                </mask>
+                <linearGradient id="cxduo-gs2-{{ b.id }}" gradientUnits="userSpaceOnUse" x1="0" y1="10" x2="200" y2="90">
+                  <stop offset=".43" stop-color="#000"/><stop offset=".5" stop-color="#fff"/></linearGradient>
+                <linearGradient id="cxduo-gs3-{{ b.id }}" gradientUnits="userSpaceOnUse" x1="0" y1="10" x2="200" y2="90">
+                  <stop offset=".5" stop-color="#fff"/><stop offset=".57" stop-color="#000"/></linearGradient>
+                <filter id="cxduo-fb-{{ b.id }}" x="-20%" y="-20%" width="140%" height="140%" color-interpolation-filters="sRGB">
+                  <feTurbulence type="fractalNoise" baseFrequency="0.02 0.05" numOctaves="3" seed="23" result="n"/>
+                  <feDisplacementMap in="SourceGraphic" in2="n" scale="30" xChannelSelector="R" yChannelSelector="G" result="d"/>
+                  <feGaussianBlur in="d" stdDeviation="2.2"/>
+                </filter>
+                <mask id="cxduo-m2-{{ b.id }}" maskUnits="userSpaceOnUse" x="-30" y="-30" width="260" height="160">
+                  <rect x="-30" y="-30" width="260" height="160" fill="url(#cxduo-gs2-{{ b.id }})" filter="url(#cxduo-fb-{{ b.id }})"/>
+                </mask>
+                <mask id="cxduo-m3-{{ b.id }}" maskUnits="userSpaceOnUse" x="-30" y="-30" width="260" height="160">
+                  <rect x="-30" y="-30" width="260" height="160" fill="url(#cxduo-gs3-{{ b.id }})" filter="url(#cxduo-fb-{{ b.id }})"/>
+                </mask>
               </defs>
-              <rect x="-30" y="-30" width="260" height="160" fill="url(#cxduo-g-{{ b.id }})" filter="url(#cxduo-f-{{ b.id }})"/>
+              <rect x="-30" y="-30" width="260" height="160" fill="url(#cxduo-ga-{{ b.id }})"/>
+              <rect x="-30" y="-30" width="260" height="160" fill="url(#cxduo-gb-{{ b.id }})" mask="url(#cxduo-m2-{{ b.id }})" opacity=".42"/>
+              <rect x="-30" y="-30" width="260" height="160" fill="url(#cxduo-gb-{{ b.id }})" mask="url(#cxduo-m-{{ b.id }})"/>
+              <rect x="-30" y="-30" width="260" height="160" fill="url(#cxduo-ga-{{ b.id }})" mask="url(#cxduo-m3-{{ b.id }})" opacity=".34"/>
+              <rect x="-30" y="-30" width="260" height="160" fill="url(#cxduo-gs-{{ b.id }})" filter="url(#cxduo-fr-{{ b.id }})" opacity=".9"/>
+              <rect x="0" y="0" width="200" height="100" filter="url(#cxduo-fw-{{ b.id }})" opacity=".14"/>
             </svg>
             <a class="cx-duo-half cx-duo-a" href="{{ site.baseurl }}{{ la.path }}"
                title="{{ aua.name }} · {{ la.title_cn }}{% if la.title_en != '' %} · {{ la.title_en }}{% endif %}">
