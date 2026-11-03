@@ -13,6 +13,7 @@
 - 跑完回调 publish_jenkyn_en.py --apply，让英文页补上「中文版 →」；再重建「历代解经」数据。
 """
 import json
+import sect_names  # noqa: E402  教派名补原名
 import re
 import subprocess
 import sys
@@ -184,6 +185,7 @@ def main():
             fm += [f'next_url: "/jenkyn/jude/zh/{q["slug"]}/"', f'next_label: "{label(q)}"']
         fm += [f'en_url: "/jenkyn/jude/{slug}/"', 'zh: true', '---']
         body = add_toc(bodies[slug], p, names, bodies)
+        body = sect_names.annotate(body, (EN / f'{slug}.md').read_text(encoding='utf-8'), 'jk-orig')
         path.write_text('\n'.join(fm) + '\n\n' + body + '\n', encoding='utf-8')
 
     # 章目录页 + 章内导航数据（只列已译的正文页）
