@@ -7,6 +7,7 @@ subtitle: "Cambridge, 1612"
 date: 2026-10-28 13:55
 next_url: "/taylor/titus/dedication/"
 next_label: "Epistle Dedicatory"
+zh_url: "/taylor/titus/zh/title/"
 ---
 
 <div class="ty-tpg">

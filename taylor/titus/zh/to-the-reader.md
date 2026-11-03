@@ -5,6 +5,8 @@ book_name: "泰勒《提多书注释》"
 title: "致基督徒读者"
 subtitle: "Thomas Taylor"
 date: 2026-11-03 11:25
+prev_url: "/taylor/titus/zh/title/"
+prev_label: "书名页"
 en_url: "/taylor/titus/to-the-reader/"
 zh: true
 ---
