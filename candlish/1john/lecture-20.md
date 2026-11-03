@@ -11,6 +11,7 @@ prev_url: "/candlish/1john/lecture-19/"
 prev_label: "Lecture XIX"
 next_url: "/candlish/1john/lecture-21/"
 next_label: "Lecture XXI"
+zh_url: "/candlish/1john/zh/lecture-20/"
 ---
 
 <h2 class="cd-head">THE DIVINE HOPE PERFECTING THE SINLESS FAMILY LIKENESS</h2>

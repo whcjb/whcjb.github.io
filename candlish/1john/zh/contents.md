@@ -41,7 +41,7 @@ zh: true
 
 第十八讲　[此条件的根据或理由在于神公义的本性——重生归于义（约翰一书 2:29; 3:1）]({{ site.baseurl }}/candlish/1john/zh/lecture-18/)
 第十九讲　[从神而生——家族的相似（约翰一书 2:29; 3:2）]({{ site.baseurl }}/candlish/1john/zh/lecture-19/)
-第二十讲　[属神的盼望使那无罪的家族形象臻于完全（约翰一书 3:2, 4）]({{ site.baseurl }}/candlish/1john/lecture-20/)
+第二十讲　[属神的盼望使那无罪的家族形象臻于完全（约翰一书 3:2, 4）]({{ site.baseurl }}/candlish/1john/zh/lecture-20/)
 第二十一讲　[不犯罪的秘诀：住在那位为除掉我们的罪而显现的无罪者里面（约翰一书 3:4–6）]({{ site.baseurl }}/candlish/1john/lecture-21/)
 第二十二讲　[不犯罪的秘诀——我们住在基督里——神的种存在我们里面——我们是由神生的（约翰一书 3:6、9）]({{ site.baseurl }}/candlish/1john/lecture-22/)
 第二十三讲　[无罪的奥秘——两种相对的“行”——行义与犯罪——二者出处本源相反，故不能并存——神与魔鬼（约翰一书 3:7, 8）]({{ site.baseurl }}/candlish/1john/lecture-23/)
