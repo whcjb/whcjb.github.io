@@ -7,6 +7,7 @@ subtitle: "1869"
 date: 2026-10-27 16:16
 next_url: "/candlish/1john/preface-1/"
 next_label: "Preface to the First Edition"
+zh_url: "/candlish/1john/zh/preface-2/"
 ---
 
 IN issuing this book anew, I have scarcely anything to add to what I wrote in issuing it before. I have very carefully revised it, more than once or twice; not so much, however, it is fair to say, with a view to its being more learned or critical, as with a view to its bringing out more clearly what I thought I had ascertained to be the Apostle's general line of thought.
