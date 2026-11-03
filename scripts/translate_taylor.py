@@ -148,6 +148,10 @@ def stray_english(zh: str, en: str):
             near = re.findall(r'[A-Za-z]{3,}', zh[max(0, s - 24):s] + ' ' + zh[e:e + 24])
             if any(w.lower() in en_words and len(w) >= 4 for w in near):
                 continue
+        # 拉丁缩写被模型展开（probationē → probationem）：原文有 ≥6 字母的同词干、只是词尾多一两个字母
+        wl = m.group(0).lower()
+        if any(len(x) >= 6 and wl.startswith(x) and len(wl) - len(x) <= 2 for x in en_words):
+            continue
         # 短词随一段原文逐字照抄（1-11-3 旁注 `Deo & parenti non redditur aquivalens.` 原样保留）
         if len(m.group(0)) < 4 and (zh[s:s + 14] in en or zh[max(0, e - 14):e] in en) and len(zh[s:s + 14]) >= 12:
             continue
