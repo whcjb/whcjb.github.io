@@ -11,6 +11,7 @@ prev_url: "/candlish/1john/lecture-38/"
 prev_label: "Lecture XXXVIII"
 next_url: "/candlish/1john/lecture-40/"
 next_label: "Lecture XL"
+zh_url: "/candlish/1john/zh/lecture-39/"
 ---
 
 <h2 class="cd-head">THE WITNESS OR TESTIMONY OF GOD TO AND IN BELIEVERS</h2>
