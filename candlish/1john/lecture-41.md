@@ -11,6 +11,7 @@ prev_url: "/candlish/1john/lecture-40/"
 prev_label: "Lecture XL"
 next_url: "/candlish/1john/lecture-42/"
 next_label: "Lecture XLII"
+zh_url: "/candlish/1john/zh/lecture-41/"
 ---
 
 <h2 class="cd-head">ETERNAL LIFE CONNECTED WITH CONFIDENCE IN PRAYER</h2>
