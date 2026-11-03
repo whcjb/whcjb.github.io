@@ -665,9 +665,82 @@ def translate_diss(n: int, resume: bool, publish: bool, limit: int, dry: bool):
             prev.write_text(t, encoding='utf-8')
 
 
+def translate_gallican(resume: bool, publish: bool, dry: bool):
+    """附卷《论法国改革宗神学家之争》（gallican.md）：与 translate_diss 同一套分块、缓存、闸；
+    中文页 davenant/colossians/gallican/zh/index.md，raw 存 zh_chapters/gallican.md，date 记 zh_meta.json[gallican]。"""
+    global WORK_LABEL
+    WORK_LABEL = '达文南特《论法国教会之争》'
+    tf.SYSTEM = SYSTEM + DISS_SYSTEM + (
+        "\n本篇是同书所附达文南特就法国改革宗神学家之间（卡梅伦 Cameron 一派与其反对者）"
+        "关于「神对罪人的恩慈与拯救之旨意」的争论所写的判断。正文与小标题前的上标字母 <sup>a</sup>…<sup>g</sup>"
+        "是原书两套对照字母（问题条目与答复一一对应），原样保留在对应位置。") + tf.SCRIPTURE_RULE
+    src = PUB / 'gallican.md'
+    fm, body = split_page(src.read_text(encoding='utf-8'))
+    items = blocks_of(body)
+    send = [i for i, it in enumerate(items) if it[0] in ('body', 'scripture')]
+    texts = [prompt_of(items[i]) for i in send]
+    hit = sum(1 for t in texts if (CACHE / f'{tf.md5key(t)}.txt').exists())
+    print(f'gallican: 块 {len(items)}  需译 {len(send)}  缓存命中 {hit}'
+          f'  英文 {sum(len(t) for t in texts):,} 字符', flush=True)
+    if dry:
+        return
+    zh_list = tf.cached_translate(texts, resume)
+    zh_list, bad = revise(texts, zh_list)
+    if bad:
+        print(f'  ✗ gallican 有 {len(bad)} 块两轮重译后仍不合格，不发布', flush=True)
+        sys.exit(3)
+    zh = {i: z for i, z in zip(send, zh_list)}
+    out = []
+    for i, it in enumerate(items):
+        if i in zh:
+            out.append(re.sub(r'<<<[^>]*>>>', '', zh[i]).strip())
+        elif it[0] == 'h2':
+            out.append(it[2])
+        else:
+            out.append(it[1])
+    zh_body = normalize_etc('\n\n'.join(out))
+    meta = json.loads(ZH_META.read_text(encoding='utf-8')) if ZH_META.exists() else {}
+    if 'gallican' not in meta:
+        meta['gallican'] = datetime.now().strftime('%Y-%m-%d %H:%M')
+        ZH_META.write_text(json.dumps(meta, ensure_ascii=False, indent=1) + '\n', encoding='utf-8')
+    CN = _diss_cn()
+    nav = []
+    if (DISS_DIR / '7' / 'zh' / 'index.md').exists():
+        nav += ['prev_url: "/davenant/colossians/dissertation/7/zh/"', f'prev_label: "{CN[7]}"']
+    fm_zh = ('---\n'
+             'layout: davenant-appendix\n'
+             'title: "论法国教会之争"\n'
+             'up_url: "/davenant/colossians/"\n'
+             f'up_label: "{BOOK_NAME_ZH}"\n'
+             f'date: {meta["gallican"]}\n'
+             'kicker: "附卷"\n'
+             'subtitle: "论法国改革宗神学家之间关于神对罪人的恩慈与拯救之旨意的争论"\n'
+             + (('\n'.join(nav) + '\n') if nav else '')
+             + 'en_url: "/davenant/colossians/gallican/"\n'
+             '---\n\n')
+    page = normalize_fn_colon(fm_zh + zh_body + '\n')
+    raw_out = ZH_RAW / 'gallican.md'
+    if raw_out.exists():
+        raw_out.chmod(0o644)
+    raw_out.write_text(page, encoding='utf-8')
+    raw_out.chmod(0o444)
+    print(f'✓ 中文 raw → {raw_out}  (chmod 444)', flush=True)
+    if publish:
+        d = PUB / 'gallican' / 'zh'
+        d.mkdir(parents=True, exist_ok=True)
+        (d / 'index.md').write_text(bracket_glosses(page), encoding='utf-8')
+        print(f'✓ 中文页 → {d / "index.md"}', flush=True)
+        prev = DISS_DIR / '7' / 'zh' / 'index.md'
+        if prev.exists() and 'next_url' not in prev.read_text(encoding='utf-8'):
+            t = prev.read_text(encoding='utf-8').replace(
+                '\nen_url:', '\nnext_url: "/davenant/colossians/gallican/zh/"\nnext_label: "论法国教会之争"\nen_url:', 1)
+            prev.write_text(t, encoding='utf-8')
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument('--chapter', type=int)
+    ap.add_argument('--gallican', action='store_true', help='附卷《论法国教会之争》')
     ap.add_argument('--diss', type=int, help='附卷《论基督之死》第 N 篇（0=致读者）')
     ap.add_argument('--all', action='store_true')
     ap.add_argument('--resume', action='store_true')
@@ -675,6 +748,15 @@ def main():
     ap.add_argument('--limit', type=int, default=0)
     ap.add_argument('--dry-run', action='store_true')
     a = ap.parse_args()
+    if a.gallican:
+        tf.CACHE_DIR = CACHE
+        tf.translate_batch = translate_batch
+        try:
+            translate_gallican(a.resume, a.publish, a.dry_run)
+        except tf.SessionLimitError as e:
+            print(f'✗ gallican 会话额度用尽：{e}', flush=True)
+            sys.exit(42)
+        return
     if a.diss is not None:
         tf.CACHE_DIR = CACHE
         tf.translate_batch = translate_batch

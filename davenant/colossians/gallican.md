@@ -4,6 +4,7 @@ title: "The Gallican Controversy"
 up_url: "/davenant/colossians/"
 up_label: "Davenant on Colossians"
 date: 2026-09-15 16:53
+zh_url: "/davenant/colossians/gallican/zh/"
 subtitle: "ON THE CONTROVERSY AMONG THE FRENCH DIVINES OF THE REFORMED CHURCH CONCERNING <sup>a</sup>THE GRACIOUS AND SAVING WILL OF GOD TOWARDS SINFUL MEN."
 prev_url: "/davenant/colossians/dissertation/7/"
 prev_label: "Chapter VII"

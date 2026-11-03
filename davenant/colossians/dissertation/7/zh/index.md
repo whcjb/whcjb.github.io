@@ -8,6 +8,8 @@ kicker: "论基督之死"
 subtitle: "基督之死之于蒙拣选者"
 prev_url: "/davenant/colossians/dissertation/6/zh/"
 prev_label: "第六章 · 末一命题的申述与证立"
+next_url: "/davenant/colossians/gallican/zh/"
+next_label: "论法国教会之争"
 en_url: "/davenant/colossians/dissertation/7/"
 ---
 
