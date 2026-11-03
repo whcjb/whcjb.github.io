@@ -11,6 +11,7 @@ prev_url: "/candlish/1john/lecture-1/"
 prev_label: "Lecture I"
 next_url: "/candlish/1john/lecture-3/"
 next_label: "Lecture III"
+zh_url: "/candlish/1john/zh/lecture-2/"
 ---
 
 <h2 class="cd-head">THE JOY OF THE LORD, AND ITS FULNESS</h2>

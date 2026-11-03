@@ -19,7 +19,7 @@ zh: true
 <h2 class="cd-group">绪论诸章——本书总旨</h2>
 
 第一讲　[使徒的教义与相交（约翰一书 1:3）]({{ site.baseurl }}/candlish/1john/zh/lecture-1/)
-第二讲　[主的喜乐，及其满足（约翰一书 1:4）]({{ site.baseurl }}/candlish/1john/lecture-2/)
+第二讲　[主的喜乐，及其满足（约翰一书 1:4）]({{ site.baseurl }}/candlish/1john/zh/lecture-2/)
 <h2 class="cd-group">第一部分：与神相交的首要条件——光</h2>
 
 第三讲　[此条件的根据或理由：光既是神的本性，又是神的居所（约翰一书 1:5–7）]({{ site.baseurl }}/candlish/1john/lecture-3/)
