@@ -145,6 +145,9 @@ def stray_english(zh: str, en: str):
             continue
         if re.search(r'[A-Za-z]\s*$', zh[:s]) or re.match(r'\s*[A-Za-z]', zh[e:]):
             continue
+        # 短词随一段原文逐字照抄（1-11-3 旁注 `Deo & parenti non redditur aquivalens.` 原样保留）
+        if len(m.group(0)) < 4 and (zh[s:s + 14] in en or zh[max(0, e - 14):e] in en) and len(zh[s:s + 14]) >= 12:
+            continue
         out.append(m.group(0))
     # 拉丁整句引文：连续多个英文词出现，多半是保留的拉丁原文，不算漏译
     # 原文里带句点的缩写（旁注引书 *Pet. Dam.*、*Bed.*、*Aqu.*）照录不译，三个字母的也放过
