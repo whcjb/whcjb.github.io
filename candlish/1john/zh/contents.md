@@ -45,7 +45,7 @@ zh: true
 第二十一讲　[不犯罪的秘诀：住在那位为除掉我们的罪而显现的无罪者里面（约翰一书 3:4–6）]({{ site.baseurl }}/candlish/1john/zh/lecture-21/)
 第二十二讲　[不犯罪的秘诀——我们住在基督里——神的种存在我们里面——我们是由神生的（约翰一书 3:6、9）]({{ site.baseurl }}/candlish/1john/zh/lecture-22/)
 第二十三讲　[无罪的奥秘——两种相对的“行”——行义与犯罪——二者出处本源相反，故不能并存——神与魔鬼（约翰一书 3:7, 8）]({{ site.baseurl }}/candlish/1john/zh/lecture-23/)
-第二十四讲　[行义与爱弟兄相连，证明是从神生的；不义、不爱人的心则相反，显明是出于魔鬼（约翰一书 3:10–12）]({{ site.baseurl }}/candlish/1john/lecture-24/)
+第二十四讲　[行义与爱弟兄相连，证明是从神生的；不义、不爱人的心则相反，显明是出于魔鬼（约翰一书 3:10–12）]({{ site.baseurl }}/candlish/1john/zh/lecture-24/)
 第二十五讲　[弟兄相爱是出死入生的果子与凭据——世界的恨恶——神的爱（约翰一书 3:13–16）]({{ site.baseurl }}/candlish/1john/lecture-25/)
 第二十六讲　[弟兄相爱中的义或诚实：要在自己心里、也在神面前有无亏的良心，这是不可或缺的（约翰一书 3:17–21）]({{ site.baseurl }}/candlish/1john/lecture-26/)
 第二十七讲　[行义为蒙神喜悦、蒙他垂听所必需（约翰一书 3:22, 23）]({{ site.baseurl }}/candlish/1john/lecture-27/)

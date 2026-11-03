@@ -11,6 +11,7 @@ prev_url: "/candlish/1john/lecture-23/"
 prev_label: "Lecture XXIII"
 next_url: "/candlish/1john/lecture-25/"
 next_label: "Lecture XXV"
+zh_url: "/candlish/1john/zh/lecture-24/"
 ---
 
 <h2 class="cd-head">CONNECTION OF DOING RIGHTEOUSNESS WITH BROTHERLY LOVE AS PROVING A DIVINE BIRTH, IN CONTRAST WITH THE UNRIGHTEOUS AND UNLOVING SPIRIT INDICATING A DEVILISH PARENTAGE</h2>
