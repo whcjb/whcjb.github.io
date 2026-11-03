@@ -11,6 +11,7 @@ prev_url: "/candlish/1john/lecture-9/"
 prev_label: "Lecture IX"
 next_url: "/candlish/1john/lecture-11/"
 next_label: "Lecture XI"
+zh_url: "/candlish/1john/zh/lecture-10/"
 ---
 
 <h2 class="cd-head">BROTHERLY LOVE A TEST AND MEANS OF BEING AND ABIDING, WITH GUILELESS SPIRIT, IN THE LIGHT, INSTEAD OF WALKING IN DARKNESS</h2>
