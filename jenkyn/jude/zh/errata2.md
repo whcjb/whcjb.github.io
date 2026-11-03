@@ -5,8 +5,8 @@ book_name: "詹金《犹大书讲解》"
 title: "勘误表（第二部分）"
 subtitle: "William Jenkyn"
 date: 2026-11-03 01:36
-prev_url: "/jenkyn/jude/zh/1-22/"
-prev_label: "犹大书 22-23 节"
+prev_url: "/jenkyn/jude/zh/1-24/"
+prev_label: "犹大书 24-25 节"
 en_url: "/jenkyn/jude/errata2/"
 zh: true
 ---
