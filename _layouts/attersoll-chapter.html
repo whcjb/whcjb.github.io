@@ -73,6 +73,16 @@ layout: default
     box.classList.add('verse-anchor');
   });
 })();
+// 出处旁注的原书指引字母（a b c…）：原书正文里也印着同一个字母。宽屏旁注挪到页边后，
+// 在正文原位补一个上标字母，读者好对照；窄屏旁注就在正文里、自带字母，这个上标由 CSS 藏起
+(function () {
+  document.querySelectorAll('.at-content .at-margin[data-n]').forEach(function (m) {
+    var s = document.createElement('sup');
+    s.className = 'at-mk';
+    s.textContent = m.getAttribute('data-n');
+    m.parentNode.insertBefore(s, m);
+  });
+})();
 </script>
 
 {%- comment -%}
@@ -167,6 +177,10 @@ layout: default
 /* 旁注：要点（原书页边小标题）略重；出处前显示原书指引字母 */
 .attersoll-wrap .at-sum { color: var(--at-ink-dark); }
 .attersoll-wrap .at-margin[data-n]::before { content: attr(data-n) "  "; font-style: italic; color: var(--at-ink); }
+/* 正文里与旁注对应的指引字母（脚本插入）：只在宽屏、旁注挪到页边时显示 */
+.attersoll-wrap .at-mk { display: none; font-size: .68em; font-style: italic; color: var(--at-ink);
+  margin: 0 1px; line-height: 0; }
+@media (min-width: 1200px) { .attersoll-wrap .at-mk { display: inline; } }
 /* 段前经文的节号 */
 .attersoll-wrap .at-vn { font-size: 12px; color: var(--at-ink-dark); font-weight: 600; margin-right: 4px; vertical-align: 1px; }
 /* 诗句 */
