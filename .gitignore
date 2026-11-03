@@ -102,3 +102,6 @@ alexander_raw/acts/work/
 
 # 阿特索尔腓利门书：证人整页图、本地 OCR、1633 版 djvu.xml、判读图（可重跑 attersoll_witness 重建）
 attersoll_raw/philemon/witness/
+
+# 迪克森马太福音：证人整页图、本地 OCR、判读图（可重跑 dickson_bim_ocr / dickson_witness 重建）
+dickson_raw/matthew/witness/

@@ -178,6 +178,14 @@ authors:
     work_cn: "腓利门书注释"
     work_en: "A Commentarie vpon the Epistle of Saint Paule to Philemon"
     books: 1
+  - id: dickson
+    name: "大卫·迪克森"
+    short: "迪克森"
+    en: "David Dickson"
+    years: "1583?–1663"
+    work_cn: "马太福音简释"
+    work_en: "A Brief Exposition of the Evangel of Jesus Christ according to Matthew"
+    books: 1
   - id: alexander
     name: "约瑟·亚历山大"
     short: "亚历山大"
@@ -433,6 +441,7 @@ books:
     chapters: 28
     links:
       - {author: spurgeon, path: "/spurgeon/matthew/zh/", url_tpl: "/spurgeon/matthew/zh/__CH__/", title_cn: "马太福音注释", title_en: "The Gospel of the Kingdom", c0: "#3a3018", c1: "#4a3b22"}
+      - {author: dickson, path: "/dickson/matthew/", url_tpl: "/dickson/matthew/__CH__/", title_cn: "马太福音简释", title_en: "A Brief Exposition of the Evangel of Jesus Christ according to Matthew", c0: "#661b6f", c1: "#8b2499"}
   - id: mark
     name: "马可福音"
     en: "Mark"

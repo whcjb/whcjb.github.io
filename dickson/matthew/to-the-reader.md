@@ -1,0 +1,26 @@
+---
+layout: dickson-chapter
+book_id: matthew
+book_name: "Dickson on Matthew"
+title: "To the Honest-Hearted Reader"
+date: 2026-11-03 20:48
+prev_url: "/dickson/matthew/dedication/"
+prev_label: "Epistle Dedicatory"
+next_url: "/dickson/matthew/titles/"
+next_label: "The Titles of the Book"
+---
+
+### <span class="dk-pb" data-facs="5"></span>To the honest-hearted *Reader.*
+
+<span class="dk-dropcap">B</span>Eside what I have said in the *Epistle Dedicatory,* I must acquaint thee (worthy Reader) yet further with my purpose and way in this Piece: The speciall intent of the putting forth of it, is not onely that measure of edification which thou maist reap by this small Work; but also, that in satisfying the desire of sundry worthy men of GOD, who have <span class="dk-gap" title="TCP: illegible in source">•</span>bt<span class="dk-gap" title="TCP: illegible in source">•</span>st<span class="dk-gap" title="TCP: illegible in source">•</span>d me to make proof, how some other place of Scripture may be fitted for the Churches edification after the mould of the *Short Explanation of the Epistle to the Hebrews,* I may engage them all (if it be possible) and others also with them, who are more able then I am, to quicken and prosecute, as partners, the motion made by me heretofore, and now renewed, to wit, That by the consent of a number of able Workmen, dividing the task among them, some such brief Explanation of the whole Text of Scripture, containing the chief Doctrines, in a way accommodate unto the capacity of common people, may see the light, for the setling of saving Truth in their hearts, by the force of divine Faith, closing <span class="dk-pb" data-facs="5"></span> immediatly with the Text of Scripture. Then which Work, I conceive there can be no one mean, after powerful Preaching, more forcible for rooting out of Errours, and manifesting unto all men the true Religion which wee profess in *Brittain,* and by Covenant are obliged to maintain and propagate according to our power.
+
+In this *Explanation of the Gospel according to Matthew,* I have laboured to fit the mould so, that the deduction of the Doctrines from the Text, may be more obvious to the Readers up-taking, then it is in the *Short Explanation of the Epistle to the Hebrews.*
+
+I have contented my self with some few observations upon each Text, which might serve most for the cleering of the place; leaving to every Reader, as he hath time for Meditation, and ability of Gifts, to observe what further the Text may afford, it being sufficient for my designe, that thou find so much clearnesse and sweetnesse in the Lords Word by what I offer to thy taste, as may make thee more in love with the daily reading of the Scripture, and the Learned and Able may be stirred up to help thee with more Stuffe of this kinde.
+
+I point ordinarily at some words in the Text, for a Ground of the Doctrine proponed: from which words, if the Doctrines do not immediately arise, and formally follow; yet from these words such Doctrines may be inferred, after some little larger Explication of them, as these illate Particles, *FOR* and *THEREFORE,* do at least import.
+
+The History being all along most part plain, I have forborn to trouble thee with large Contents or Analysis, or Exposition of words, and have insisted onely where some difficulty is, and that so long onely as was necessary to give some light; hasting in all other places unto the <span class="dk-pb" data-facs="6"></span> Doctrine, and couching in them frequently so much Exposition of the words as I could with clearnesse and brevity, of which I have had a speciall care, resolving with my self, that as larger Commentaries serve onely for them who have Leasure and love to read much, so this sort of Writing must be for those onely, who (for one reason or other) must either have something in short, or nothing at all. If this Mould seem unto thee fit for opening of the sealed Book, pray with me, that the Lord would fit, and stir up a sufficient number of Instruments for hastening forth this wished-for Work, unto thy Edification; and I will remain.
+
+<p class="dk-closer" markdown="1">Thine, to serve thee, for CARIST'S cause, D. D.</p>
+

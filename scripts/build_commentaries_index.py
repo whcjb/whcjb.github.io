@@ -174,6 +174,13 @@ AUTHORS = OrderedDict([
                        years='?–1640', dir='attersoll',
                        work_cn='腓利门书注释',
                        work_en='A Commentarie vpon the Epistle of Saint Paule to Philemon')),
+    # 迪克森：生卒取 DNB vol.15（Dickson, David (1583?–1663)，T. F. Henderson 撰）：约 1583 年生于格拉斯哥，
+    # 1663 年初卒（ODNB 作 1662，Wikisource 编者注）。《马太福音简释》1647 格拉斯哥初版（Wing D1398），
+    # 本站据 1651 伦敦第三版（Wing D1400，EEBO-TCP A35949）。
+    ('dickson', dict(name='大卫·迪克森', short='迪克森', en='David Dickson',
+                     years='1583?–1663', dir='dickson',
+                     work_cn='马太福音简释',
+                     work_en='A Brief Exposition of the Evangel of Jesus Christ according to Matthew')),
     ('alexander', dict(name='约瑟·亚历山大', short='亚历山大', en='Joseph Addison Alexander',
                        years='1809–1860', dir='alexander',
                        work_cn='诗篇、以赛亚书、使徒行传注释',
@@ -251,6 +258,9 @@ AUTHOR_COLORS = {
     # 阿特索尔灰紫：LCh 网格 (60, 28, 295°)，与既有各色及加尔文酒红、马太亨利金、站点 Hux 蓝最小 ΔE 27.0
     # （约翰斯通钴蓝），次近达拉谟紫 27.2。红系一档 ΔE 29 但与页内标红的缺字记号撞色，弃用。
     'attersoll': ('#565582', '#8e8cbd'),
+    # 迪克森紫：LCh 网格 (36, 71, 324°)，与既有各色（含深端）及加尔文酒红、马太亨利金、站点 Hux 蓝最小 ΔE 29.0
+    # （CIE76，雷登靛紫 #2d2d99）。低中彩度一档全部 < 26.5（色板已挤），粉红高彩一档 ΔE 36 但太跳，弃用。
+    'dickson': ('#661b6f', '#8b2499'),
 }
 
 # 书卷卡片的入口注释家：历代解经版面每卷只显示 links 的第一条（commentaries/index.html
@@ -319,6 +329,8 @@ BOOK_TITLES = {
                                 'A Commentarie vpon the Epistle of S. Paul written to Titus'),
     ('attersoll', 'philemon'): ('腓利门书注释',
                                 'A Commentarie vpon the Epistle of Saint Paule to Philemon'),
+    ('dickson', 'matthew'):    ('马太福音简释',
+                                'A Brief Exposition of the Evangel of Jesus Christ according to Matthew'),
     ('manton', 'james'):       ('雅各书注释',
                                 'A Practical Commentary, or an Exposition with Notes '
                                 'on the Epistle of James'),
@@ -344,7 +356,7 @@ COMPARE_ACCENT = {
     'johnstone': '#106ab2', 'perkins': '#9b2d5f', 'hutcheson': '#2f8f46', 'leighton': '#2d2d99',
     'adams': '#66666c', 'rollock': '#786000', 'jenkyn': '#cd5f37',
     'candlish': '#b07080', 'fairbairn': '#bc65ac', 'taylor': '#6f77e0',
-    'hall': '#769019', 'barlow': '#2b9b8a', 'attersoll': '#8e8cbd',
+    'hall': '#769019', 'barlow': '#2b9b8a', 'attersoll': '#8e8cbd', 'dickson': '#8b2499',
 }
 COMPARE_LABEL = {
     'calvin': '加尔文注释', 'mhenry': '马太亨利注释', 'owen': '约翰欧文注释',
@@ -354,7 +366,7 @@ COMPARE_LABEL = {
     'perkins': '珀金斯注释', 'hutcheson': '赫奇森注释', 'leighton': '雷登注释',
     'adams': '亚当斯注释', 'rollock': '罗洛克讲章', 'jenkyn': '詹金讲解',
     'candlish': '坎德利什讲解', 'fairbairn': '费尔贝恩注释', 'taylor': '泰勒注释',
-    'hall': '霍尔注释', 'barlow': '巴洛讲解', 'attersoll': '阿特索尔注释',
+    'hall': '霍尔注释', 'barlow': '巴洛讲解', 'attersoll': '阿特索尔注释', 'dickson': '迪克森简释',
 }
 
 
@@ -376,7 +388,7 @@ PRIMARY_LANG = {'calvin': 'zh', 'mhenry': 'zh', 'bridges': 'zh',
                 'johnstone': 'en', 'perkins': 'en', 'hutcheson': 'en', 'leighton': 'en',
                 'adams': 'en', 'rollock': 'en', 'jenkyn': 'en',
                 'candlish': 'en', 'fairbairn': 'en', 'taylor': 'en',
-                'hall': 'en', 'barlow': 'en', 'attersoll': 'en'}
+                'hall': 'en', 'barlow': 'en', 'attersoll': 'en', 'dickson': 'en'}
 
 
 def _lang_variants(aid, d: Path, name: str):
