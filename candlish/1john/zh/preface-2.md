@@ -5,6 +5,8 @@ book_name: "坎德利什《约翰一书讲解》"
 title: "第二版序"
 subtitle: "1869"
 date: 2026-11-03 20:36
+next_url: "/candlish/1john/zh/preface-1/"
+next_label: "初版序"
 en_url: "/candlish/1john/preface-2/"
 zh: true
 ---

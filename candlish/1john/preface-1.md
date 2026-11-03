@@ -9,6 +9,7 @@ prev_url: "/candlish/1john/preface-2/"
 prev_label: "Preface to the Second Edition"
 next_url: "/candlish/1john/contents/"
 next_label: "Contents"
+zh_url: "/candlish/1john/zh/preface-1/"
 ---
 
 Two "Expositions" of this First Epistle of John came into my hands about the end of last year (1865): the one by the Rev. John Stock, late Vicar of Finchingfield, Essex; the other by Dr. Morgan of Belfast; both published in the course of that year, and both, especially the latter, of great practical interest and value. If they had appeared at an earlier date, I might have abstained from issuing this volume. But in my Lectures on the Fatherhood of God I had previously referred to these discourses of mine on this Epistle, as being completed and ready for publication. And I did not see how I could well draw back, especially as I wished my views on that subject to be looked at in the light of the beloved Apostle's argument in his great Epistle.[^1]
