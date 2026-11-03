@@ -49,7 +49,7 @@ zh: true
 第二十五讲　[弟兄相爱是出死入生的果子与凭据——世界的恨恶——神的爱（约翰一书 3:13–16）]({{ site.baseurl }}/candlish/1john/zh/lecture-25/)
 第二十六讲　[弟兄相爱中的义或诚实：要在自己心里、也在神面前有无亏的良心，这是不可或缺的（约翰一书 3:17–21）]({{ site.baseurl }}/candlish/1john/zh/lecture-26/)
 第二十七讲　[行义为蒙神喜悦、蒙他垂听所必需（约翰一书 3:22, 23）]({{ site.baseurl }}/candlish/1john/zh/lecture-27/)
-第二十八讲　[我们的义由顺服得以证实，因顺服显明我们住在神里面、神也住在我们里面，这是借着他所赐给我们的圣灵（约翰一书 3:24; 4:1）]({{ site.baseurl }}/candlish/1john/lecture-28/)
+第二十八讲　[我们的义由顺服得以证实，因顺服显明我们住在神里面、神也住在我们里面，这是借着他所赐给我们的圣灵（约翰一书 3:24; 4:1）]({{ site.baseurl }}/candlish/1john/zh/lecture-28/)
 第二十九讲　[我们的义在试验那些灵上的操练；试验的标准：认耶稣基督是成了肉身来的（约翰一书 3:24–4:4）]({{ site.baseurl }}/candlish/1john/lecture-29/)
 第三十讲　[在我们里面基督的灵，比那在世界上敌基督的灵更大（约翰一书 4:4–6）]({{ site.baseurl }}/candlish/1john/lecture-30/)
 <h2 class="cd-group">第三部分：与神相交的终极条件——爱</h2>

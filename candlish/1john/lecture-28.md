@@ -11,6 +11,7 @@ prev_url: "/candlish/1john/lecture-27/"
 prev_label: "Lecture XXVII"
 next_url: "/candlish/1john/lecture-29/"
 next_label: "Lecture XXIX"
+zh_url: "/candlish/1john/zh/lecture-28/"
 ---
 
 <h2 class="cd-head">OUR RIGHTEOUSNESS ATTESTED BY OBEDIENCE, AS IMPLYING OUR ABIDING IN GOD, AND HIS ABIDING IN US BY THE SPIRIT GIVEN BY HIM TO US</h2>
