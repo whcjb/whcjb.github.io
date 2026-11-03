@@ -9,6 +9,8 @@ chapter: 4
 lecture: 30
 prev_url: "/candlish/1john/zh/lecture-29/"
 prev_label: "第二十九讲"
+next_url: "/candlish/1john/zh/lecture-31/"
+next_label: "第三十一讲"
 en_url: "/candlish/1john/lecture-30/"
 zh: true
 ---

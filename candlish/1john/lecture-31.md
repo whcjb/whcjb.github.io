@@ -11,6 +11,7 @@ prev_url: "/candlish/1john/lecture-30/"
 prev_label: "Lecture XXX"
 next_url: "/candlish/1john/lecture-32/"
 next_label: "Lecture XXXII"
+zh_url: "/candlish/1john/zh/lecture-31/"
 ---
 
 <div class="cd-part">PART THIRD<small>Ultimate Condition of the Divine Fellowship — Love</small></div>
