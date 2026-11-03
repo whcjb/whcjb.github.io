@@ -11,6 +11,7 @@ prev_url: "/candlish/1john/lecture-12/"
 prev_label: "Lecture XII"
 next_url: "/candlish/1john/lecture-14/"
 next_label: "Lecture XIV"
+zh_url: "/candlish/1john/zh/lecture-13/"
 ---
 
 <h2 class="cd-head">THE GUILELESS SPIRIT, AMID THE DARK WORLD'S FLOW, ESTABLISHED IN THE LIGHT OF GODLINESS</h2>
