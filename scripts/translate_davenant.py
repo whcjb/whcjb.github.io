@@ -462,10 +462,10 @@ def bracket_glosses(body: str) -> str:
     return fm + text
 
 
-# 教派名 / 主义每篇首次出现补原名（2026-11-03 用户：「阿明尼乌主义」为什么不加英文）。
+# 教派名 / 主义每篇首次出现补原名（2026-11-03 用户：「阿民念主义」为什么不加英文）。
 # 附卷提示词原先只要求人名地名，漏了教派；这里按本篇英文原文里**实际用的写法**补，原文里没有就不补，不编。
 SECT_TERMS = [
-    ('阿明尼乌主义', r'Arminianism'), ('阿明尼乌派', r'Arminians?'),
+    ('阿民念主义', r'Arminianism'), ('阿民念派', r'Arminians?'),
     ('半柏拉糾主义', r'Semi-?[Pp]elagianism'), ('半柏拉糾派', r'Semi-?[Pp]elagians?'),
     ('柏拉糾主义', r'Pelagianism'), ('柏拉糾派', r'Pelagians'),
     ('抗辩派', r'Remonstrants?'), ('苏西尼派', r'Socinians?'), ('苏西尼主义', r'Socinianism'),
@@ -600,13 +600,13 @@ def translate_chapter(n: int, resume: bool, publish: bool, limit: int, dry: bool
 DISS_SYSTEM = (
     "\n本篇是同书卷二所附达文南特的《论基督之死》(Dissertatio de morte Christi，"
     "Allport 英译)，不是逐节注释：论题是基督之死的普遍性与特殊性，"
-    "多引教父、经院学者、多特会议与抗辩派（Remonstrants→抗辩派，Arminius→阿明尼乌）。"
+    "多引教父、经院学者、多特会议与抗辩派（Remonstrants→抗辩派，Arminius→阿民念）。"
     "脚注标记形如 [^da12]，同样原样保留、不增删、不改号。"
     "<span class=\"dv-fn-page\">Vol. II. p. 328</span> 这类页码标签原样保留，内文译作「第二卷第 328 页」。"
     "Proposition→命题，Argument→论证，Objection→反驳，Reply→答复，"
     "universal redemption→普遍救赎，sufficiency→充足性，efficacy→功效，"
     "the elect→选民，reprobate→被弃绝者，Semipelagians→半柏拉糾派。"
-    "人名、地名、教区名、教派与主义名（阿明尼乌主义 Arminianism、抗辩派 Remonstrants、柏拉糾派 Pelagians）凡是音译的，本篇第一次出现一律在后面括注英文原名，"
+    "人名、地名、教区名、教派与主义名（阿民念主义 Arminianism、抗辩派 Remonstrants、柏拉糾派 Pelagians）凡是音译的，本篇第一次出现一律在后面括注英文原名，"
     "如 达文南特(Davenant)、阿马(Armagh)、格雷文霍维乌(Grevinchovius)、普罗斯珀(Prosper)；"
     "和合本圣经里已有的人名地名不注。"
 )

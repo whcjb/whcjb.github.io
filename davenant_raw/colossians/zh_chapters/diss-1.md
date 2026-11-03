@@ -58,7 +58,7 @@ en_url: "/davenant/colossians/dissertation/1/"
 
 [^da7]: \* 格雷文霍维乌(Grevinchovius)，荷兰人，十七世纪初任鹿特丹(Rotterdam)牧师，在抗辩派（Remonstrants）中颇负盛名。见 Weismanni Hist. Eccl. ed. 1745, Part. Post. p. 1158(魏斯曼[Weismann]《教会史》，1745 年版，下编第 1158 页)。布兰特(Brandt)《低地国家宗教改革史》(Reformation in the Low Countries)第三卷第 175 页对他有详细记述。  <span class="dv-fn-page">第二卷第 324 页</span>
 
-[^da8]: † 威廉·艾姆斯(William Ames)博士，1576 年生于诺福克(Norfolk)一古老世家，在剑桥(Cambridge)受教于著名的威廉·珀金斯(William Perkins)门下；为躲避班克罗夫特(Bancroft)大主教的迫害而出逃，受弗里斯兰(Frieseland)议会之聘，出任弗拉讷克(Francker)大学神学教席，在任十二年，声誉卓著；此后应鹿特丹一所英国教会之邀迁往该地，任其牧师。他出席了多特会议，并随时将会议中的辩论情形禀告詹姆斯王(King James)驻海牙(Hague)的大使。除驳斥阿明尼乌派（Arminians）的论战著作外，他还出版了以下著作：——Medulla Theologiae(神学精髓)；——Manuductio Logica(逻辑入门)；——《良心问题》(Cases of Conscience)；——《诗篇分析》；——《彼得前书与彼得后书注释》……——见麦克莱恩(Maclaine)所译莫斯海姆(Mosheim)《教会史》注。  <span class="dv-fn-page">第二卷第 324 页</span>
+[^da8]: † 威廉·艾姆斯(William Ames)博士，1576 年生于诺福克(Norfolk)一古老世家，在剑桥(Cambridge)受教于著名的威廉·珀金斯(William Perkins)门下；为躲避班克罗夫特(Bancroft)大主教的迫害而出逃，受弗里斯兰(Frieseland)议会之聘，出任弗拉讷克(Francker)大学神学教席，在任十二年，声誉卓著；此后应鹿特丹一所英国教会之邀迁往该地，任其牧师。他出席了多特会议，并随时将会议中的辩论情形禀告詹姆斯王(King James)驻海牙(Hague)的大使。除驳斥阿民念派（Arminians）的论战著作外，他还出版了以下著作：——Medulla Theologiae(神学精髓)；——Manuductio Logica(逻辑入门)；——《良心问题》(Cases of Conscience)；——《诗篇分析》；——《彼得前书与彼得后书注释》……——见麦克莱恩(Maclaine)所译莫斯海姆(Mosheim)《教会史》注。  <span class="dv-fn-page">第二卷第 324 页</span>
 
 [^da9]: \* 福斯图斯(Faustus)是一位博学的主教，生于不列颠，先在莱兰(Lerins)修道院为修士，后任该院院长，455 年被选为普罗旺斯(Provence)的里耶(Riez，或作 Ries)主教。他曾著文反对拣选与弃绝的教义，杜潘(Du Pin)对这些著作作过摘要。米尔纳(Milner)对他品格的描绘，与此处所述截然相反；正如米尔纳对教宗大格里高利(Gregory the Great)的描述，与其他史家和作者的看法及见证截然相反一样。福斯图斯于 481 年被逐出其主教辖区，不久即去世。参见凯夫(Cave)，Hist. Lit.(《文学史》)第一卷第 453 页，主后 472 年；以及杜潘，《教会史》第五世纪，第四卷。  <span class="dv-fn-page">第二卷第 325 页</span>
 
