@@ -509,6 +509,22 @@ def render(u):
     return out
 
 
+def gallican_theses(blocks):
+    """《法国教会之争》三部分开头各有一句论题（原书斜体、与正文分排，v2p573/575/577 看图）：
+    第一、三部分居中、一句折两行——抽取按行拆成了两段；第二部分悬挂缩进——抽取把它和后面正文并成一段。
+    这里合回一句、拆出正文，单独成 .dv-thesis 段（第二部分加 .dv-thesis-hang）。"""
+    t = '\n\n'.join(blocks)
+    t, n1 = re.subn(r'(## PART I\.\n\n)<em>([^<]*?general)</em>\n\n<em>(intention\.)</em>',
+                    r'\1<p class="dv-thesis" markdown="1"><em>\2 \3</em></p>', t)
+    t, n3 = re.subn(r'(## PART III\.\n\n)<em>(<sup>e</sup>[^<]*?hardness of)</em>\n\n<em>(their hearts, that they are not saved\.)</em>',
+                    r'\1<p class="dv-thesis" markdown="1"><em>\2 \3</em></p>', t)
+    t, n2 = re.subn(r'(## PART II\.\n\n)<em>(<sup>d</sup>That God.*?if they will\.)</em> ',
+                    r'\1<p class="dv-thesis dv-thesis-hang" markdown="1"><em>\2</em></p>\n\n', t, flags=re.S)
+    if (n1, n2, n3) != (1, 1, 1):
+        raise SystemExit(f'gallican 论题重排没对上 {(n1, n2, n3)}')
+    return t.split('\n\n')
+
+
 def main():
     items = parse()
     notes = collect_notes(items)
@@ -591,6 +607,8 @@ def main():
                    'next_label: "General Index"']
         fm.append('---')
         body = render(u)
+        if k == 'gallican':
+            body = gallican_theses(body)
         dst = OUT / path_of(k)
         dst.write_text('\n'.join(fm) + '\n\n' + '\n\n'.join(body) + '\n',
                        encoding='utf-8')
