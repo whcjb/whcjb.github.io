@@ -11,6 +11,7 @@ prev_url: "/candlish/1john/lecture-43/"
 prev_label: "Lecture XLIII"
 next_url: "/candlish/1john/lecture-45/"
 next_label: "Lecture XLV"
+zh_url: "/candlish/1john/zh/lecture-44/"
 ---
 
 <h2 class="cd-head">OUR BEING OF GOD—THE WORLD LYING IN THE WICKED ONE</h2>
