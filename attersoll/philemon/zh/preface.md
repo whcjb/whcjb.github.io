@@ -7,6 +7,8 @@ subtitle: "本书信的时间、主旨与缘起"
 date: 2026-11-03 12:12
 prev_url: "/attersoll/philemon/zh/doctrines/"
 prev_label: "全书教义撮要"
+next_url: "/attersoll/philemon/zh/1-1/"
+next_label: "腓利门书 1:1–2"
 en_url: "/attersoll/philemon/preface/"
 zh: true
 ---
