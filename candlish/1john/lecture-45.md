@@ -11,6 +11,7 @@ prev_url: "/candlish/1john/lecture-44/"
 prev_label: "Lecture XLIV"
 next_url: "/candlish/1john/lecture-46/"
 next_label: "Lecture XLVI"
+zh_url: "/candlish/1john/zh/lecture-45/"
 ---
 
 <h2 class="cd-head">KNOWING THE TRUE ONE AND BEING IN HIM</h2>
