@@ -11,6 +11,7 @@ prev_url: "/candlish/1john/lecture-4/"
 prev_label: "Lecture IV"
 next_url: "/candlish/1john/lecture-6/"
 next_label: "Lecture VI"
+zh_url: "/candlish/1john/zh/lecture-5/"
 ---
 
 <h2 class="cd-head">SINLESS AIM OF THE GUILELESS SPIRIT—PROVISION FOR ITS CONTINUED SENSE OF SIN</h2>
