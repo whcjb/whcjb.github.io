@@ -9,6 +9,7 @@ chapter: 5
 lecture: 46
 prev_url: "/candlish/1john/lecture-45/"
 prev_label: "Lecture XLV"
+zh_url: "/candlish/1john/zh/lecture-46/"
 ---
 
 <h2 class="cd-head">JESUS THE TRUE GOD AND ETERNAL LIFE AGAINST ALL IDOLS</h2>

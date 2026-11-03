@@ -71,5 +71,5 @@ zh: true
 第四十三讲　[信徒既从神生，就保守自己不犯罪（约翰一书 5:17, 18）]({{ site.baseurl }}/candlish/1john/zh/lecture-43/)
 第四十四讲　[我们属神——全世界都卧在那恶者手下（约翰一书 5:18, 19）]({{ site.baseurl }}/candlish/1john/zh/lecture-44/)
 第四十五讲　[认识那位真实的，并在他里面（约翰一书 5:20）]({{ site.baseurl }}/candlish/1john/zh/lecture-45/)
-第四十六讲　[耶稣是真神，是永生，与一切偶像相对（约翰一书 5:20, 21）]({{ site.baseurl }}/candlish/1john/lecture-46/)
+第四十六讲　[耶稣是真神，是永生，与一切偶像相对（约翰一书 5:20, 21）]({{ site.baseurl }}/candlish/1john/zh/lecture-46/)
 </div>

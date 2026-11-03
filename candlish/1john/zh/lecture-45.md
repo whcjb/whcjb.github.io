@@ -9,6 +9,8 @@ chapter: 5
 lecture: 45
 prev_url: "/candlish/1john/zh/lecture-44/"
 prev_label: "第四十四讲"
+next_url: "/candlish/1john/zh/lecture-46/"
+next_label: "第四十六讲"
 en_url: "/candlish/1john/lecture-45/"
 zh: true
 ---
