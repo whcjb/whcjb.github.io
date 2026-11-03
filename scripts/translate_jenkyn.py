@@ -304,6 +304,22 @@ def structural_diff(en: str, zh: str) -> str:
     return '；'.join(problems)
 
 
+RE_TAGGED = re.compile(r'<译文>(.*?)</译文>', re.S)
+
+
+def take_tagged(raw: str) -> str:
+    """只取 <译文>…</译文> 里的内容。模型没处可想时会把推敲（This is an index entry /
+    Rule: … / Hmm）写进输出，各书约 3–6% 的调用因此重试；2026-11-03 回放 24 段曾自语的原文：
+    不加标签不合格 4 段，开原生思考 4 段（自语反而 3 次），加标签两遍 48 次 0 段。
+    模型漏了标签就原样返回，交给 structural_diff 把关。"""
+    m = RE_TAGGED.findall(raw)
+    if m:
+        return m[-1].strip()
+    if '<译文>' in raw:                       # 只写了开标签：取其后
+        raw = raw.rsplit('<译文>', 1)[1]
+    return raw.replace('</译文>', '').strip()
+
+
 def tidy(zh: str) -> str:
     zh = re.sub(r'<<<[^>]*>>>', '', zh).strip()
     # 只有一行标题、其余全是占位符的块，模型常当成问答，开头冒出「答案：」（腓利门书 to-the-reader）
@@ -359,18 +375,18 @@ def translate_one(text: str, resume: bool, label: str = '') -> str:
         print(f'    [cache-reject] {label}: {structural_diff(text, cached)[:90]}', flush=True)
 
     base = ("把下面这段詹金《犹大书讲解》的十七世纪英文译成简体中文。"
-            "整段通读后再译，保证上下文连贯；逐一保留 `*` 斜体标记与 ⟦N⟧ 占位符；只输出译文。\n\n")
-    out = fix_italics(restore_greek(tidy(tf.call_claude(base + text, timeout=900, label=label)), text),
+            "整段通读后再译，保证上下文连贯；逐一保留 `*` 斜体标记与 ⟦N⟧ 占位符；把译文完整放在 <译文> 与 </译文> 之间，标签外的文字一律丢弃。\n\n")
+    out = fix_italics(restore_greek(tidy(take_tagged(tf.call_claude(base + text, timeout=900, label=label))), text),
                       text, label)
     diff = structural_diff(text, out)
     if diff:
         print(f'    [retry-struct] {label}: {diff[:90]}', flush=True)
         fix = (f"上一版译文有结构问题：{diff}。\n重译下面这段。**必须逐一保留**"
                " ⟦N⟧ 占位符（个数与先后都要对上）；希腊文逐字照抄；"
-               "**不得把任何英文词原样留在中文句子里**。只输出译文。\n\n")
+               "**不得把任何英文词原样留在中文句子里**。把译文完整放在 <译文> 与 </译文> 之间，标签外的文字一律丢弃。\n\n")
         # 重试两次，取第一个合格的；都不合格就取「只剩斜体问题」的那一版
         for n in (1, 2):
-            out2 = fix_italics(restore_greek(tidy(tf.call_claude(fix + text, timeout=900, label=f'{label}·retry{n}')), text),
+            out2 = fix_italics(restore_greek(tidy(take_tagged(tf.call_claude(fix + text, timeout=900, label=f'{label}·retry{n}'))), text),
                                text, f'{label}·retry{n}')
             if not structural_diff(text, out2):
                 out = out2
