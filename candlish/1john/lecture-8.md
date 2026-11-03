@@ -11,6 +11,7 @@ prev_url: "/candlish/1john/lecture-7/"
 prev_label: "Lecture VII"
 next_url: "/candlish/1john/lecture-9/"
 next_label: "Lecture IX"
+zh_url: "/candlish/1john/zh/lecture-8/"
 ---
 
 <h2 class="cd-head">THE CHRISTLIKE WALK OF ONE WITH GUILELESS SPIRIT ABIDING IN GOD</h2>
