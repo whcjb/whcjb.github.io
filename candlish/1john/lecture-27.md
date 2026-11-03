@@ -11,6 +11,7 @@ prev_url: "/candlish/1john/lecture-26/"
 prev_label: "Lecture XXVI"
 next_url: "/candlish/1john/lecture-28/"
 next_label: "Lecture XXVIII"
+zh_url: "/candlish/1john/zh/lecture-27/"
 ---
 
 <h2 class="cd-head">RIGHTEOUSNESS ESSENTIAL TO OUR PLEASING GOD AND TO HIS HEARING US</h2>
