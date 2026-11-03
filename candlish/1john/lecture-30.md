@@ -11,6 +11,7 @@ prev_url: "/candlish/1john/lecture-29/"
 prev_label: "Lecture XXIX"
 next_url: "/candlish/1john/lecture-31/"
 next_label: "Lecture XXXI"
+zh_url: "/candlish/1john/zh/lecture-30/"
 ---
 
 <h2 class="cd-head">THE SPIRIT OF CHRIST IN US GREATER THAN THE SPIRIT OF ANTICHRIST IN THE WORLD</h2>
