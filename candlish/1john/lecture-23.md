@@ -11,6 +11,7 @@ prev_url: "/candlish/1john/lecture-22/"
 prev_label: "Lecture XXII"
 next_url: "/candlish/1john/lecture-24/"
 next_label: "Lecture XXIV"
+zh_url: "/candlish/1john/zh/lecture-23/"
 ---
 
 <h2 class="cd-head">THE SECRET OF SINLESSNESS—THE CONTRASTED "DOINGS"—DOING RIGHTEOUSNESS AND DOING SIN—THEIR INCOMPATIBILITY IN RESPECT OF THEIR OPPOSITE ORIGINS OR PARENTAGES—GOD AND THE DEVIL</h2>
