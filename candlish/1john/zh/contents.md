@@ -47,7 +47,7 @@ zh: true
 第二十三讲　[无罪的奥秘——两种相对的“行”——行义与犯罪——二者出处本源相反，故不能并存——神与魔鬼（约翰一书 3:7, 8）]({{ site.baseurl }}/candlish/1john/zh/lecture-23/)
 第二十四讲　[行义与爱弟兄相连，证明是从神生的；不义、不爱人的心则相反，显明是出于魔鬼（约翰一书 3:10–12）]({{ site.baseurl }}/candlish/1john/zh/lecture-24/)
 第二十五讲　[弟兄相爱是出死入生的果子与凭据——世界的恨恶——神的爱（约翰一书 3:13–16）]({{ site.baseurl }}/candlish/1john/zh/lecture-25/)
-第二十六讲　[弟兄相爱中的义或诚实：要在自己心里、也在神面前有无亏的良心，这是不可或缺的（约翰一书 3:17–21）]({{ site.baseurl }}/candlish/1john/lecture-26/)
+第二十六讲　[弟兄相爱中的义或诚实：要在自己心里、也在神面前有无亏的良心，这是不可或缺的（约翰一书 3:17–21）]({{ site.baseurl }}/candlish/1john/zh/lecture-26/)
 第二十七讲　[行义为蒙神喜悦、蒙他垂听所必需（约翰一书 3:22, 23）]({{ site.baseurl }}/candlish/1john/lecture-27/)
 第二十八讲　[我们的义由顺服得以证实，因顺服显明我们住在神里面、神也住在我们里面，这是借着他所赐给我们的圣灵（约翰一书 3:24; 4:1）]({{ site.baseurl }}/candlish/1john/lecture-28/)
 第二十九讲　[我们的义在试验那些灵上的操练；试验的标准：认耶稣基督是成了肉身来的（约翰一书 3:24–4:4）]({{ site.baseurl }}/candlish/1john/lecture-29/)

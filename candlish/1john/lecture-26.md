@@ -11,6 +11,7 @@ prev_url: "/candlish/1john/lecture-25/"
 prev_label: "Lecture XXV"
 next_url: "/candlish/1john/lecture-27/"
 next_label: "Lecture XXVII"
+zh_url: "/candlish/1john/zh/lecture-26/"
 ---
 
 <h2 class="cd-head">RIGHTEOUSNESS OR TRUTH IN BROTHERLY LOVE—ESSENTIAL TO THE ANSWER OF A GOOD CONSCIENCE IN OURSELVES AND BEFORE GOD</h2>
