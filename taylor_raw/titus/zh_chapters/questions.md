@@ -69,7 +69,7 @@
 
 <p class="ty-item" markdown="1">拒不参加国教礼拜的天主教徒既然以此为冒犯，是否仍可强制他们上教会。*293*</p>
 
-<|i|><p class="ty-item" markdown="1">在官长所禁的时日食肉，人能否良心无亏。*294*</p>
+<p class="ty-item" markdown="1">在官长禁止的时期吃肉，人是否可以凭无亏的良心而行。*294*</p>
 
 <p class="ty-item" markdown="1">任何官长能否制定约束良心的律法。*同上*</p>
 

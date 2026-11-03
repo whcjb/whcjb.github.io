@@ -817,10 +817,6 @@ Index entry.
 
 <p class="at-item" markdown="1">基督徒所受的逼迫，就是基督所受的逼迫。15</p>
 
-Running header: "Popish Idolatry like the Gentiles" with page number 63.
-
-<br>
-
 <p class="at-item" markdown="1">天主教的偶像崇拜与外邦人无异。63</p>
 
 <p class="at-item" markdown="1">天主教关于圣经的论断。78</p>

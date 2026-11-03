@@ -319,6 +319,9 @@ def structural_diff(en: str, zh: str) -> str:
         problems.append('模型在对话而非翻译')
     # 起稿残留：模型先写一句草稿（「约翰一书 3:18 → 见 1 约翰一书 3:18」）再从头重写，
     # 两版都留在输出里——星号、占位符都对得上，旧闸看不见（试译第 1 章 1:22 抓到）
+    tag = re.search(r'</?[^<>⟦⟧\s]{1,20}>', zh)
+    if tag and tag.group(0) not in en:      # 取标签漏网的 <译文> 之类
+        problems.append(f'残留标签 {tag.group(0)}')
     if '→' in zh and '→' not in en:
         problems.append('起稿残留（→）')
     sents = [x for x in re.split(r'[。！？；]', zh) if len(x) >= 20]
@@ -349,8 +352,8 @@ def take_tagged(raw: str) -> str:
     不加标签不合格 4 段，开原生思考 4 段（自语反而 3 次），加标签两遍 48 次 0 段。
     模型漏了标签就原样返回，交给 structural_diff 把关。"""
     m = RE_TAGGED.findall(raw)
-    if m:
-        return m[-1].strip()
+    if m:   # 开标签写了两次（「<译文>.\n\n<译文>三、…</译文>」，约翰一书第 10 讲）：取最后一个开标签之后
+        return m[-1].rsplit('<译文>', 1)[-1].strip()
     if '<译文>' in raw:                       # 只写了开标签：取其后
         raw = raw.rsplit('<译文>', 1)[1]
     return raw.replace('</译文>', '').strip()
