@@ -1,0 +1,130 @@
+---
+layout: default
+---
+{%- comment -%}
+  亚历山大《马太福音释义》(1861) 章节页 / 序页。
+
+  ⚠️ 不复用 alexander-chapter（诗篇、以赛亚书）与 alexander-acts-chapter：每本书独立样式（用户既定规矩）。
+  配色仍取注释家的身份色石榴石 #7d2f2f / #5f2323——一人一色，与「每本书独立样式」不冲突；类名一律 am- 前缀。
+
+  版式（底本见 alexander_raw/matthew/PROVENANCE.md）：
+  - **有经文头**：原书每条注释前用大一号字排印英文经文（KJV，补出词加圆括号）→ `.am-head`，节号 `.am-vn`。
+    录入本删掉了，从扫描本补回。
+  - **斜体是被讲解的经文字词与他的译法**，给比默认斜体更明确的墨色。
+  - 各章开头的分析性解题 → `.am-analysis`；第 17–28 章原书只有这一段。第 5 章前另有登山宝训（5–7 章）总说。
+  - 页脚注 → 章末 `.am-notes`。
+  - 新书规矩（2026-10-16 起）：章顶不放「跳到某节」下拉；副标题作者写英文原名。
+{%- endcomment -%}
+
+<div class="container alexander-matthew-wrap{% if page.zh %} am-zh{% endif %}" style="padding-top: 70px;">
+  <div class="row">
+    <div id="cmpCol" class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+
+      <div class="am-chrome cmp-nav" style="margin: 18px 0 22px;">
+        <a href="{{ site.baseurl }}/alexander/matthew/{% if page.zh %}zh/{% endif %}">&larr; {{ page.book_name }}</a>
+        {% if page.zh %}{% if page.en_url %}<a class="am-lang" href="{{ site.baseurl }}{{ page.en_url }}">English &rarr;</a>{% endif %}
+        {% else %}{% if page.zh_url %}<a class="am-lang" href="{{ site.baseurl }}{{ page.zh_url }}">中文版 &rarr;</a>{% endif %}{% endif %}
+      </div>
+
+      <h1 class="am-title">{{ page.title }}</h1>
+      {% if page.subtitle %}<p class="am-subtitle">{{ page.subtitle }}</p>{% endif %}
+
+      <div class="am-nav cmp-nav">
+        {% if page.prev_section %}<a href="{{ site.baseurl }}/alexander/matthew/{% if page.zh %}zh/{% endif %}{{ page.prev_section }}/">&larr; {{ page.prev_label }}</a>{% else %}<span></span>{% endif %}
+        {% if page.next_section %}<a href="{{ site.baseurl }}/alexander/matthew/{% if page.zh %}zh/{% endif %}{{ page.next_section }}/">{{ page.next_label }} &rarr;</a>{% else %}<span></span>{% endif %}
+      </div>
+
+      {%- comment -%}
+        对照抽屉只给章节页。self 必须与 _data/compare_sources.yml 的 key 一致（英文版 `alexander-en`），
+        否则本页自己会出现在对照选项里。
+      {%- endcomment -%}
+      {% if page.chapter %}
+      {% assign cc_self = "alexander-en" %}{% if page.zh %}{% assign cc_self = "alexander" %}{% endif %}
+      {% include compare-commentary-head.html self=cc_self content_class="am-content" self_label="亚历山大" %}
+      {% endif %}
+      <div class="am-content">
+        {{ content }}
+      </div>
+      {% if page.chapter %}{% include compare-commentary-foot.html %}{% endif %}
+
+      {% if page.date %}
+      <div class="am-chrome am-stamp">
+        {% if page.zh %}译于{% else %}Published{% endif %} {{ page.date | date: "%Y-%m-%d %H:%M" }}
+      </div>
+      {% endif %}
+
+      <div class="am-nav cmp-nav am-nav-foot">
+        {% if page.prev_section %}<a href="{{ site.baseurl }}/alexander/matthew/{% if page.zh %}zh/{% endif %}{{ page.prev_section }}/">&larr; {{ page.prev_label }}</a>{% else %}<span></span>{% endif %}
+        {% if page.next_section %}<a href="{{ site.baseurl }}/alexander/matthew/{% if page.zh %}zh/{% endif %}{{ page.next_section }}/">{{ page.next_label }} &rarr;</a>{% else %}<span></span>{% endif %}
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<style>
+.alexander-matthew-wrap {
+  --am-ink: #7d2f2f;
+  --am-ink-dark: #5f2323;
+  --am-rule: #e2d2cc;
+  --am-paper: #fdfaf7;
+}
+.am-chrome, .am-nav { font-size: 13px; display: flex; justify-content: space-between;
+  align-items: center; gap: 10px; flex-wrap: wrap; }
+.am-chrome a, .am-nav a { color: var(--am-ink); }
+.am-chrome a:hover, .am-nav a:hover { color: var(--am-ink-dark); }
+.am-lang { border: 1px solid var(--am-rule); border-radius: 4px; padding: 4px 10px; }
+.am-lang:hover { background: var(--am-ink); color: var(--am-paper) !important; text-decoration: none !important; }
+.am-title { font-family: Georgia, "Times New Roman", serif; font-size: 30px; font-weight: bold;
+  color: var(--am-ink-dark); margin: 0 0 4px; padding-bottom: 10px; border-bottom: 2px solid var(--am-ink); }
+.am-subtitle { font-family: Georgia, serif; font-style: italic; font-size: 13.5px; color: #9a8a86; margin: 6px 0 0; }
+.am-nav { margin: 14px 0 26px; }
+.am-nav-foot { margin-top: 44px; padding-top: 16px; border-top: 1px solid var(--am-rule); }
+.am-stamp { margin-top: 32px; font-size: 12px; color: #9a9a92; justify-content: flex-end; }
+
+/* ── 正文 ───────────────────────────────────────────────────────── */
+.am-content { font-family: Georgia, "Times New Roman", "Songti SC", STSong, serif;
+  font-size: 16.5px; line-height: 1.85; color: #2b2726; }
+.am-content p { margin: 0 0 15px; text-align: justify; }
+.am-content a { color: var(--am-ink); }
+/* 一章最长近 8 万字符：屏外段落跳过排版，估值按 16.5px/1.85、平均段约 1500 字符 */
+.am-content > p { content-visibility: auto; contain-intrinsic-size: auto 420px; }
+
+/* 各章开头的解题：原书与注释同字号，这里只加一道细边与正文区分 */
+.am-analysis { padding-left: 14px; border-left: 3px solid var(--am-rule); color: #3d3532; }
+
+/* 经文头：原书大一号字排印，节号同字号。不加框——原书就是大字段落 */
+.am-head { font-size: 18.5px; line-height: 1.6; color: #241f1e; margin: 30px 0 12px !important;
+  text-align: left !important; }
+.am-vn { font-weight: bold; color: var(--am-ink); margin-right: 4px; }
+
+/* 斜体＝被讲解的经文字词与他的译法：压一档墨色 */
+.am-content em { font-style: italic; color: #4a2c28; }
+
+/* 脚注 */
+.am-fnref { font-size: 12px; line-height: 0; }
+.am-fnref a { text-decoration: none; }
+.am-notes { margin-top: 36px; padding-top: 12px; border-top: 1px solid var(--am-rule);
+  font-size: 14px; line-height: 1.7; color: #4b4340; }
+.am-notes p { margin: 0 0 8px; text-align: left; }
+.am-fnback { margin-right: 4px; text-decoration: none; }
+.am-lost { color: #9a8a86; font-style: italic; }
+
+.ax-anchor { position: relative; top: -80px; display: block; height: 0; }
+
+.am-zh .am-content { font-family: "Songti SC", STSong, "Noto Serif CJK SC", "Source Han Serif SC", Georgia, serif;
+  font-size: 17px; line-height: 1.95; }
+.am-zh .am-content em { font-style: normal; color: #6b2f2a; letter-spacing: .04em; }
+
+@media (max-width: 600px) {
+  .am-title { font-size: 25px; }
+  .am-content { font-size: 16px; }
+  .am-head { font-size: 17px; }
+}
+</style>
+
+{%- comment -%}
+  经文引用弹层：只给中文页（模块认的是中文书卷名）。accent/vnum 写字面量
+  （Jekyll 3 的 include 参数不接受变量）——与上面 --am-ink 同值，改色要一起改。
+{%- endcomment -%}
+{% if page.zh %}{% include scripture-popup.html container_selector=".am-content" accent="#7d2f2f" vnum="#a8736b" slide="down" %}{% endif %}
