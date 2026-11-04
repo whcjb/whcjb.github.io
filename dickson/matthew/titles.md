@@ -7,8 +7,8 @@ subtitle: "The New Testament; the Gospel according to Matthew"
 date: 2026-11-03 20:48
 prev_url: "/dickson/matthew/to-the-reader/"
 prev_label: "To the Honest-Hearted Reader"
-next_url: "/dickson/matthew/1-1/"
-next_label: "1:1"
+next_url: "/dickson/matthew/1/"
+next_label: "Matthew 1"
 ---
 
 ### <span class="dk-pb" id="p1" data-p="1" data-facs="6" title="Page 1 of the 1651 edition begins here (原书第 1 页起)"></span>Before the Evangel written by *MATTHEW,* a Title is prefixed, common to it, and all the rest of the Writings of the Apostles and Evangelists, which is this: *THE NEW TESTAMENT* (Or COVENANT) *OF OUR LORD AND SAVIOUR JESUS CHRIST.*

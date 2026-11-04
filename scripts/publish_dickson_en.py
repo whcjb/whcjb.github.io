@@ -4,13 +4,15 @@
     python3 scripts/publish_dickson_en.py            # 试跑
     python3 scripts/publish_dickson_en.py --apply
 
-大卫·迪克森《马太福音简释》1651（第三版）。一段经文一页（页名 `<章>-<首节>`），每章一页目录。
-共用逻辑在 tcp_publish.py。
+大卫·迪克森《马太福音简释》1651（第三版）。**一章一页**（`<章>.md`）：每节讲解太短，逐段分页翻起来太碎
+（用户 2026-11-04），各段依次排进本章页，段前挂锚点 `#v<首节>`。原先的逐段页 `<章>-<首节>` 改成跳转页，
+指到本章页对应锚点，站内外旧链接不死。共用逻辑在 tcp_publish.py（逐段分页的 publish 不用，这里重写）。
 
 录入本第五章 23 节后缺原书 pp. 52–53（`〈MISSING:1〉`）：据 1647 年初版胶片影像补录的文字放 supplied/1.md，
 发布时换进去，外包 `.dk-supplied` 并加一行说明；还没补录时照样留一行红字说明缺了哪两页。
 """
 import argparse
+import json
 import re
 import sys
 from pathlib import Path
@@ -43,6 +45,78 @@ class Dickson(tcp_publish.Book):
         md = super().load_page(slug)
         md = RE_MISS.sub(supplied, md)
         return re.sub(r'\n{3,}', '\n\n', md)
+
+    def _anchor(self, slug, page):
+        """首页逐条说明的位置链接：逐段页已并进本章页，链到本章页的原书页码锚点（没有就链段首）。"""
+        ch, v1 = slug.split('-', 1) if re.fullmatch(r'\d+-\d+', slug) else (None, None)
+        if ch is None:
+            return super()._anchor(slug, page)
+        return f'/{self.slug}/{self.book}/{ch}/' + (f'#p{page}' if page else f'#v{v1}')
+
+    def redirect_stub(self, pg):
+        to = f'/{self.slug}/{self.book}/{pg["ch"]}/#v{pg["v1"]}'
+        return ('---\nlayout: null\nsitemap: false\n---\n<!doctype html>\n<meta charset="utf-8">\n'
+                '<!-- 迪克森马太福音改为一章一页（用户 2026-11-04），逐段页只作跳转，保住旧链接。 -->\n'
+                f'<link rel="canonical" href="{{{{ site.baseurl }}}}{to}">\n'
+                f'<meta http-equiv="refresh" content="0; url={{{{ site.baseurl }}}}{to}">\n'
+                f'<script>location.replace("{{{{ site.baseurl }}}}{to}");</script>\n'
+                f'<title>{pg["rng"]} · {self.name}</title>\n'
+                f'<p>本段已并入 <a href="{{{{ site.baseurl }}}}{to}">{self.ref} {pg["ch"]}</a>。</p>\n')
+
+    def publish(self, apply):
+        meta = json.loads(self.META.read_text(encoding='utf-8')) if self.META.exists() else {}
+        m = meta.setdefault(self.book, {})
+        stamp = self.now()
+        pages = self.build_pages()
+        front = [p for p in pages if p['group'] == 'front']
+        chs = sorted(self.NV)
+        nav = [dict(slug=p['slug'], short=p['title']) for p in front] + \
+              [dict(slug=str(c), short=f'{self.ref} {c}') for c in chs]
+
+        def fm_nav(i):
+            out = []
+            if i:
+                out += [f'prev_url: "/{self.slug}/{self.book}/{nav[i - 1]["slug"]}/"', f'prev_label: "{nav[i - 1]["short"]}"']
+            if i + 1 < len(nav):
+                out += [f'next_url: "/{self.slug}/{self.book}/{nav[i + 1]["slug"]}/"', f'next_label: "{nav[i + 1]["short"]}"']
+            return out
+
+        def zh(slug):
+            return [f'zh_url: "/{self.slug}/{self.book}/zh/{slug}/"'] if (self.OUT / 'zh' / f'{slug}.md').exists() else []
+
+        files = {}
+        for i, pg in enumerate(front):
+            fm = ['---', f'layout: {self.layout}', f'book_id: {self.book}', f'book_name: "{self.name}"',
+                  f'title: "{pg["title"]}"'] + ([f'subtitle: "{pg["subtitle"]}"'] if pg['subtitle'] else []) + \
+                 [f'date: {m.setdefault(pg["slug"], stamp)}'] + fm_nav(i) + zh(pg['slug']) + ['---']
+            files[pg['slug']] = '\n'.join(fm) + '\n\n' + self.render_body(pg['body'], pg) + '\n'
+        for k, ch in enumerate(chs):
+            secs = [p for p in pages if p.get('ch') == ch or p.get('inch') == ch]
+            slug = str(ch)
+            fm = ['---', f'layout: {self.layout}', f'book_id: {self.book}', f'book_name: "{self.name}"',
+                  f'title: "{self.ref} {ch}"', f'subtitle: "{self.author}"', f'date: {m.setdefault(slug, stamp)}',
+                  f'chapter: {ch}', 'verse_from: 1', f'verse_to: {self.NV[ch]}'] + fm_nav(len(front) + k) + zh(slug) + ['---']
+            body = f'\n\n<hr class="{self.P}-secrule">\n\n'.join(
+                (f'<div class="{self.P}-sec" id="v{p["v1"]}"></div>\n\n' if 'v1' in p else '')
+                + self.render_body(p['body'], p) for p in secs)
+            files[slug] = '\n'.join(fm) + '\n\n' + body + '\n'
+            for p in secs:
+                if 'v1' in p:
+                    files[p['slug']] = self.redirect_stub(p)
+        if apply:
+            for slug, txt in files.items():
+                (self.OUT / f'{slug}.md').write_text(txt, encoding='utf-8')
+            idx = self.build_index(pages)
+            (self.OUT / 'en').mkdir(exist_ok=True)
+            (self.OUT / 'en' / 'index.html').write_text(idx, encoding='utf-8')
+            if not (self.OUT / 'zh').exists():
+                (self.OUT / 'index.html').write_text(idx, encoding='utf-8')
+            self.META.write_text(json.dumps(meta, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
+        left = sum(len(self.tc.TOK.findall(p['body'])) for p in pages)
+        conj = sum(len(self.RE_CONJ.findall(p['body'])) for p in pages)
+        print(f'{self.slug}/{self.book}: {"写入" if apply else "试跑"} {len(front)} 篇卷首 + {len(chs)} 章（一章一页）；'
+              f'逐段跳转页 {sum(1 for p in pages if "v1" in p)}；推补 {conj}；剩余缺字记号 {left}', file=sys.stderr)
+        return pages
 
 
 def about_en(f):
