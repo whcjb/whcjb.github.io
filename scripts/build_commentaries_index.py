@@ -271,10 +271,33 @@ AUTHOR_COLORS = {
 # 霍尔与费尔贝恩照常列在后面。
 LEAD_AUTHOR = {'titus': 'taylor', '2timothy': 'barlow'}
 
-# 一张卡片并列两家：卡片对角一分为二，各填一家的主题色、各链到一家，交界处做颜料交融的边缘
-# （commentaries/index.html 的 .cx-book-btn--duo）。links 前两条按这里的次序排，yml 里标 duo: true。
-# 马太福音：用户 2026-11-03 指定司布真与迪克森合用一张卡片。
-DUO_BOOKS = {'matthew': ('spurgeon', 'dickson')}
+# 一张卡片并列几家：卡片按斜线分成几条色带，各填一家的主题色、各链到一家，交界处做颜料交融的边缘
+# （commentaries/index.html 的 .cx-book-btn--duo）。links 前 n 条按这里的次序排；yml 里写 duo: true、
+# duo_n，以及 duo_seams（每道交界的位置与混色）、duo_bands（每条色带的点击区与作者名位置），模板只管循环。
+# 马太福音：用户 2026-11-03 指定司布真与迪克森合用一张卡片；2026-11-04 加上亚历山大，三家合一。
+DUO_BOOKS = {'matthew': ('spurgeon', 'dickson', 'alexander')}
+# 交界斜度：顶边比底边右移 2×DUO_SLANT 个百分点。原先 20 个百分点，三家时最左一带底边太窄放不下作者名，收到 8。
+DUO_SLANT = 4
+
+
+def duo_geometry(n, colors):
+    """n 家 → (seams, bands)。第 i 道交界（i=1..n-1）在渐变上的位置 t=i/n，经过卡片中线上的 (100t%, 50%)，
+    顶边 x = 100t+DUO_SLANT %，底边 x = 100t−DUO_SLANT %。混色：左边一家亮端与右边一家暗端逐通道均值压暗 40%，
+    模拟颜料减色混合。colors = [(c0, c1), …]。"""
+    seams = []
+    for i in range(1, n):
+        t = i / n
+        a, b = colors[i - 1][1], colors[i][0]
+        mix = '#' + ''.join(f'{round((int(a[k:k + 2], 16) + int(b[k:k + 2], 16)) / 2 * .6):02x}' for k in (1, 3, 5))
+        seams.append(dict(t=round(t, 4), top=round(100 * t + DUO_SLANT, 2), bot=round(100 * t - DUO_SLANT, 2),
+                          mix=mix))
+    edges = [dict(top=0, bot=0)] + seams + [dict(top=100, bot=100)]
+    bands = []
+    for k in range(n):
+        l, r = edges[k], edges[k + 1]
+        clip = f'polygon({l["top"]}% 0, {r["top"]}% 0, {r["bot"]}% 100%, {l["bot"]}% 100%)'
+        bands.append(dict(clip=clip, label=round((l['bot'] + r['bot']) / 2, 2)))
+    return seams, bands
 
 # 逐卷书名（同一注释家的不同分册书名不同时用）。取各卷扉页的实际书名。
 BOOK_TITLES = {
@@ -720,11 +743,12 @@ def main():
                   f'    testament: {testament}',
                   f'    chapters: {CHAPTERS.get(bid, 0)}']
         if duo:
-            # 交界处颜料相混的颜色：两家相邻一端（甲的亮端、乙的暗端）逐通道取均值再压暗 40%，
-            # 模拟颜料减色混合——两色相叠比任一色都暗，交界那一道才像真的渗在一起。
-            a, b = theme_color(duo[0])[1], theme_color(duo[1])[0]
-            mix = '#' + ''.join(f'{round((int(a[i:i + 2], 16) + int(b[i:i + 2], 16)) / 2 * .6):02x}' for i in (1, 3, 5))
-            lines += ['    duo: true', f'    duo_mix: {yaml_escape(mix)}']
+            seams, bands = duo_geometry(len(duo), [theme_color(a) for a in duo])
+            lines += ['    duo: true', f'    duo_n: {len(duo)}', '    duo_seams:']
+            lines += [f'      - {{t: {x["t"]}, top: {x["top"]}, bot: {x["bot"]}, mix: {yaml_escape(x["mix"])}}}'
+                      for x in seams]
+            lines += ['    duo_bands:']
+            lines += [f'      - {{clip: {yaml_escape(x["clip"])}, label: {x["label"]}}}' for x in bands]
         lines.append('    links:')
         for aid, path, ov_cn, ov_en, note in entries:
             # 中英书名都**按卷**生成，一一对应。曾经中文一律输出各家的总书名

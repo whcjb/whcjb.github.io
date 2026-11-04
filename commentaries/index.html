@@ -172,7 +172,7 @@ description: 加尔文与马太亨利之外的历代改革宗注释——欧文�
   .cx-book-btn--has { background: linear-gradient(135deg, var(--c0), var(--c1)); }
   .cx-book-btn--has:hover { filter: brightness(.82); }
   /* 两家合用一张卡片（_data 里 duo: true，见 build_commentaries_index.py 的 DUO_BOOKS）：
-     左上归第一家、右下归第二家，各自可点。底色是一条「甲色 → 乙色」的渐变，交界只留中间一窄条（用户 2026-11-03：融合部分要窄；又要像真实颜料交融，见卡片上方 SVG 注释），
+     按斜线分成几条色带，每家一条，各自可点（clip-path 与作者名位置由数据给出）。底色是一条「甲色 → 乙色」的渐变，交界只留中间一窄条（用户 2026-11-03：融合部分要窄；又要像真实颜料交融，见卡片上方 SVG 注释），
      渐变向量取用户坐标 (0,10)→(200,90)，等色线正好是 (120,0)–(80,100)，与两半 clip-path 的分界 60%→40% 重合；再用 SVG 噪声位移（feTurbulence + feDisplacementMap）把这条交界扭成流纹，像两股颜料互相渗开。
      两个 <a> 用 clip-path 按交界的大致走向分区；书名压在上层、不接点击，点到哪半边就去哪家。 */
   .cx-book-btn--duo { position: relative; overflow: hidden; background: none; padding: 12px 14px 30px; }
@@ -180,17 +180,12 @@ description: 加尔文与马太亨利之外的历代改革宗注释——欧文�
   .cx-duo-paint { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
   .cx-book-btn--duo .cx-book-name, .cx-book-btn--duo .cx-book-name-en { position: relative; z-index: 2; pointer-events: none; }
   .cx-duo-half { position: absolute; inset: 0; z-index: 1; color: #fff !important; text-decoration: none !important; }
-  .cx-duo-a { clip-path: polygon(0 0, 60% 0, 40% 100%, 0 100%); }
-  .cx-duo-b { clip-path: polygon(60% 0, 100% 0, 100% 100%, 40% 100%); }
-  .cx-duo-half::before { content: ""; position: absolute; inset: 0; background: rgba(0,0,0,0); transition: background .2s ease; }
+      .cx-duo-half::before { content: ""; position: absolute; inset: 0; background: rgba(0,0,0,0); transition: background .2s ease; }
   .cx-duo-half:hover::before, .cx-duo-half:focus-visible::before { background: rgba(0,0,0,.2); }
-  .cx-duo-half .cx-book-meta { position: absolute; bottom: 9px; margin: 0; opacity: .85; }
-  .cx-duo-a .cx-book-meta { left: 14px; }
-  .cx-duo-b .cx-book-meta { right: 14px; }
+  .cx-duo-half .cx-book-meta { position: absolute; bottom: 9px; margin: 0; opacity: .85; transform: translateX(-50%); white-space: nowrap; }
   .cx-duo-half:hover .cx-book-meta { opacity: 1; }
   @media (max-width: 768px) {
     .cx-book-btn--duo { padding: 10px 11px 28px; }
-    .cx-duo-a .cx-book-meta { left: 11px; } .cx-duo-b .cx-book-meta { right: 11px; }
   }
   /* 尚无别家注释：虚线描边，不可点（同加尔文主页 --pending） */
   .cx-book-btn--none {
@@ -239,26 +234,21 @@ description: 加尔文与马太亨利之外的历代改革宗注释——欧文�
         </h3>
         <div class="cx-book-grid">
           {%- for b in rows -%}
-          {%- if b.duo and b.links.size > 1 -%}
-          {%- assign la = b.links[0] -%}{%- assign lb = b.links[1] -%}
-          {%- assign aua = author_map | where: "id", la.author | first -%}
-          {%- assign aub = author_map | where: "id", lb.author | first -%}
+          {%- if b.duo and b.links.size >= b.duo_n -%}
           <div class="cx-book-btn cx-book-btn--has cx-book-btn--duo">
             {%- comment -%}
-              颜料交融：甲色铺满 → 乙色向甲侧淡淡晕开一层 → 乙色经遮罩叠上 → 甲色向乙侧淡淡渗回一层 → 交界一道混色 → 整张一层淡淡的水渍。
-              两层晕染用另一组更散的噪声、模糊更重，像湿画法里颜料顺着水往外走，只在交界附近约 ±7% 内。
-              遮罩与混色带用同一组噪声（同 seed），两层的边缘严丝合缝。噪声两档：低频定大走向的起伏，
-              高频出纤维状的毛边；轻微模糊让边缘发虚而不糊。混色带 = 遮罩模糊前后之差（只在边缘两侧有值），
-              粗细随噪声起伏，取 duo_mix（两色减色混合后的暗色）。
+              颜料交融（几家合用一张卡片，数据见 build_commentaries_index.py 的 DUO_BOOKS / duo_geometry）：
+              第一家铺满 → 每道交界：右边一家向左淡淡晕开一层 → 右边一家经遮罩叠上 → 左边一家向右淡淡渗回一层
+              → 交界一道减色混合的暗色水线 → 整张一层淡淡的水渍。渐变向量取用户坐标 (0,50)→(195.01,81.2)，
+              偏移 t 的等色线正好经过 (100t%, 50%)、上下各偏 DUO_SLANT=4 个百分点，与色带 clip-path 重合。
+              遮罩与水线用同一组噪声（同 seed），两层边缘严丝合缝；低频定起伏、高频出毛边，轻微模糊让边发虚。
             {%- endcomment -%}
             <svg class="cx-duo-paint" viewBox="0 0 200 100" preserveAspectRatio="none" aria-hidden="true" focusable="false">
               <defs>
-                <linearGradient id="cxduo-ga-{{ b.id }}" gradientUnits="userSpaceOnUse" x1="0" y1="10" x2="200" y2="90">
-                  <stop offset="0" stop-color="{{ la.c0 }}"/><stop offset=".55" stop-color="{{ la.c1 }}"/></linearGradient>
-                <linearGradient id="cxduo-gb-{{ b.id }}" gradientUnits="userSpaceOnUse" x1="0" y1="10" x2="200" y2="90">
-                  <stop offset=".45" stop-color="{{ lb.c0 }}"/><stop offset="1" stop-color="{{ lb.c1 }}"/></linearGradient>
-                <linearGradient id="cxduo-gs-{{ b.id }}" gradientUnits="userSpaceOnUse" x1="0" y1="10" x2="200" y2="90">
-                  <stop offset=".49" stop-color="#000"/><stop offset=".51" stop-color="#fff"/></linearGradient>
+                {%- for l in b.links limit: b.duo_n %}
+                <linearGradient id="cxduo-g{{ forloop.index0 }}-{{ b.id }}" gradientUnits="userSpaceOnUse" x1="0" y1="50" x2="195.01" y2="81.2">
+                  <stop offset="0" stop-color="{{ l.c0 }}"/><stop offset="1" stop-color="{{ l.c1 }}"/></linearGradient>
+                {%- endfor %}
                 <filter id="cxduo-fe-{{ b.id }}" x="-20%" y="-20%" width="140%" height="140%" color-interpolation-filters="sRGB">
                   <feTurbulence type="fractalNoise" baseFrequency="0.011 0.03" numOctaves="2" seed="4" result="lo"/>
                   <feTurbulence type="fractalNoise" baseFrequency="0.06 0.17" numOctaves="3" seed="17" result="hi"/>
@@ -266,7 +256,30 @@ description: 加尔文与马太亨利之外的历代改革宗注释——欧文�
                   <feDisplacementMap in="d1" in2="hi" scale="10" xChannelSelector="G" yChannelSelector="R" result="d2"/>
                   <feGaussianBlur in="d2" stdDeviation="0.8"/>
                 </filter>
-                <filter id="cxduo-fr-{{ b.id }}" x="-20%" y="-20%" width="140%" height="140%" color-interpolation-filters="sRGB">
+                <filter id="cxduo-fb-{{ b.id }}" x="-20%" y="-20%" width="140%" height="140%" color-interpolation-filters="sRGB">
+                  <feTurbulence type="fractalNoise" baseFrequency="0.02 0.05" numOctaves="3" seed="23" result="n"/>
+                  <feDisplacementMap in="SourceGraphic" in2="n" scale="30" xChannelSelector="R" yChannelSelector="G" result="d"/>
+                  <feGaussianBlur in="d" stdDeviation="2.2"/>
+                </filter>
+                <filter id="cxduo-fw-{{ b.id }}" x="0" y="0" width="100%" height="100%">
+                  <feTurbulence type="fractalNoise" baseFrequency="0.035 0.07" numOctaves="3" seed="8"/>
+                  <feColorMatrix type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 -1.6 0.9"/>
+                </filter>
+                {%- for sm in b.duo_seams %}
+                {%- assign k = forloop.index %}
+                <linearGradient id="cxduo-gs{{ k }}-{{ b.id }}" gradientUnits="userSpaceOnUse" x1="0" y1="50" x2="195.01" y2="81.2">
+                  <stop offset="{{ sm.t | minus: 0.01 }}" stop-color="#000"/><stop offset="{{ sm.t | plus: 0.01 }}" stop-color="#fff"/></linearGradient>
+                <linearGradient id="cxduo-gb{{ k }}-{{ b.id }}" gradientUnits="userSpaceOnUse" x1="0" y1="50" x2="195.01" y2="81.2">
+                  <stop offset="{{ sm.t | minus: 0.06 }}" stop-color="#000"/><stop offset="{{ sm.t }}" stop-color="#fff"/></linearGradient>
+                <linearGradient id="cxduo-gr{{ k }}-{{ b.id }}" gradientUnits="userSpaceOnUse" x1="0" y1="50" x2="195.01" y2="81.2">
+                  <stop offset="{{ sm.t | minus: 0.06 }}" stop-color="#000"/><stop offset="{{ sm.t }}" stop-color="#fff"/><stop offset="{{ sm.t | plus: 0.06 }}" stop-color="#000"/></linearGradient>
+                <mask id="cxduo-m{{ k }}-{{ b.id }}" maskUnits="userSpaceOnUse" x="-30" y="-30" width="260" height="160">
+                  <rect x="-30" y="-30" width="260" height="160" fill="url(#cxduo-gs{{ k }}-{{ b.id }})" filter="url(#cxduo-fe-{{ b.id }})"/></mask>
+                <mask id="cxduo-mb{{ k }}-{{ b.id }}" maskUnits="userSpaceOnUse" x="-30" y="-30" width="260" height="160">
+                  <rect x="-30" y="-30" width="260" height="160" fill="url(#cxduo-gb{{ k }}-{{ b.id }})" filter="url(#cxduo-fb-{{ b.id }})"/></mask>
+                <mask id="cxduo-mr{{ k }}-{{ b.id }}" maskUnits="userSpaceOnUse" x="-30" y="-30" width="260" height="160">
+                  <rect x="-30" y="-30" width="260" height="160" fill="url(#cxduo-gr{{ k }}-{{ b.id }})" filter="url(#cxduo-fb-{{ b.id }})"/></mask>
+                <filter id="cxduo-fr{{ k }}-{{ b.id }}" x="-20%" y="-20%" width="140%" height="140%" color-interpolation-filters="sRGB">
                   <feTurbulence type="fractalNoise" baseFrequency="0.011 0.03" numOctaves="2" seed="4" result="lo"/>
                   <feTurbulence type="fractalNoise" baseFrequency="0.06 0.17" numOctaves="3" seed="17" result="hi"/>
                   <feDisplacementMap in="SourceGraphic" in2="lo" scale="34" xChannelSelector="R" yChannelSelector="G" result="d1"/>
@@ -279,45 +292,28 @@ description: 加尔文与马太亨利之外的历代改革宗注释——欧文�
                   <feTurbulence type="fractalNoise" baseFrequency="0.05 0.12" numOctaves="2" seed="29" result="v"/>
                   <feColorMatrix in="v" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 2.2 -0.55" result="va"/>
                   <feComposite in="rim" in2="va" operator="in" result="rimv"/>
-                  <feFlood flood-color="{{ b.duo_mix }}"/>
+                  <feFlood flood-color="{{ sm.mix }}"/>
                   <feComposite in2="rimv" operator="in"/>
                 </filter>
-                <filter id="cxduo-fw-{{ b.id }}" x="0" y="0" width="100%" height="100%">
-                  <feTurbulence type="fractalNoise" baseFrequency="0.035 0.07" numOctaves="3" seed="8"/>
-                  <feColorMatrix type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 -1.6 0.9"/>
-                </filter>
-                <mask id="cxduo-m-{{ b.id }}" maskUnits="userSpaceOnUse" x="-30" y="-30" width="260" height="160">
-                  <rect x="-30" y="-30" width="260" height="160" fill="url(#cxduo-gs-{{ b.id }})" filter="url(#cxduo-fe-{{ b.id }})"/>
-                </mask>
-                <linearGradient id="cxduo-gs2-{{ b.id }}" gradientUnits="userSpaceOnUse" x1="0" y1="10" x2="200" y2="90">
-                  <stop offset=".43" stop-color="#000"/><stop offset=".5" stop-color="#fff"/></linearGradient>
-                <linearGradient id="cxduo-gs3-{{ b.id }}" gradientUnits="userSpaceOnUse" x1="0" y1="10" x2="200" y2="90">
-                  <stop offset=".5" stop-color="#fff"/><stop offset=".57" stop-color="#000"/></linearGradient>
-                <filter id="cxduo-fb-{{ b.id }}" x="-20%" y="-20%" width="140%" height="140%" color-interpolation-filters="sRGB">
-                  <feTurbulence type="fractalNoise" baseFrequency="0.02 0.05" numOctaves="3" seed="23" result="n"/>
-                  <feDisplacementMap in="SourceGraphic" in2="n" scale="30" xChannelSelector="R" yChannelSelector="G" result="d"/>
-                  <feGaussianBlur in="d" stdDeviation="2.2"/>
-                </filter>
-                <mask id="cxduo-m2-{{ b.id }}" maskUnits="userSpaceOnUse" x="-30" y="-30" width="260" height="160">
-                  <rect x="-30" y="-30" width="260" height="160" fill="url(#cxduo-gs2-{{ b.id }})" filter="url(#cxduo-fb-{{ b.id }})"/>
-                </mask>
-                <mask id="cxduo-m3-{{ b.id }}" maskUnits="userSpaceOnUse" x="-30" y="-30" width="260" height="160">
-                  <rect x="-30" y="-30" width="260" height="160" fill="url(#cxduo-gs3-{{ b.id }})" filter="url(#cxduo-fb-{{ b.id }})"/>
-                </mask>
+                {%- endfor %}
               </defs>
-              <rect x="-30" y="-30" width="260" height="160" fill="url(#cxduo-ga-{{ b.id }})"/>
-              <rect x="-30" y="-30" width="260" height="160" fill="url(#cxduo-gb-{{ b.id }})" mask="url(#cxduo-m2-{{ b.id }})" opacity=".42"/>
-              <rect x="-30" y="-30" width="260" height="160" fill="url(#cxduo-gb-{{ b.id }})" mask="url(#cxduo-m-{{ b.id }})"/>
-              <rect x="-30" y="-30" width="260" height="160" fill="url(#cxduo-ga-{{ b.id }})" mask="url(#cxduo-m3-{{ b.id }})" opacity=".34"/>
-              <rect x="-30" y="-30" width="260" height="160" fill="url(#cxduo-gs-{{ b.id }})" filter="url(#cxduo-fr-{{ b.id }})" opacity=".9"/>
+              <rect x="-30" y="-30" width="260" height="160" fill="url(#cxduo-g0-{{ b.id }})"/>
+              {%- for sm in b.duo_seams %}
+              {%- assign k = forloop.index %}{%- assign kp = forloop.index0 %}
+              <rect x="-30" y="-30" width="260" height="160" fill="url(#cxduo-g{{ k }}-{{ b.id }})" mask="url(#cxduo-mb{{ k }}-{{ b.id }})" opacity=".42"/>
+              <rect x="-30" y="-30" width="260" height="160" fill="url(#cxduo-g{{ k }}-{{ b.id }})" mask="url(#cxduo-m{{ k }}-{{ b.id }})"/>
+              <rect x="-30" y="-30" width="260" height="160" fill="url(#cxduo-g{{ kp }}-{{ b.id }})" mask="url(#cxduo-mr{{ k }}-{{ b.id }})" opacity=".34"/>
+              <rect x="-30" y="-30" width="260" height="160" fill="url(#cxduo-gs{{ k }}-{{ b.id }})" filter="url(#cxduo-fr{{ k }}-{{ b.id }})" opacity=".9"/>
+              {%- endfor %}
               <rect x="0" y="0" width="200" height="100" filter="url(#cxduo-fw-{{ b.id }})" opacity=".14"/>
             </svg>
-            <a class="cx-duo-half cx-duo-a" href="{{ site.baseurl }}{{ la.path }}"
-               title="{{ aua.name }} · {{ la.title_cn }}{% if la.title_en != '' %} · {{ la.title_en }}{% endif %}">
-              <span class="cx-book-meta cx-book-meta-au">{{ aua.short }}</span></a>
-            <a class="cx-duo-half cx-duo-b" href="{{ site.baseurl }}{{ lb.path }}"
-               title="{{ aub.name }} · {{ lb.title_cn }}{% if lb.title_en != '' %} · {{ lb.title_en }}{% endif %}">
-              <span class="cx-book-meta cx-book-meta-au">{{ aub.short }}</span></a>
+            {%- for l in b.links limit: b.duo_n %}
+            {%- assign au_ = author_map | where: "id", l.author | first -%}
+            {%- assign bd = b.duo_bands[forloop.index0] %}
+            <a class="cx-duo-half" style="clip-path: {{ bd.clip }};" href="{{ site.baseurl }}{{ l.path }}"
+               title="{{ au_.name }} · {{ l.title_cn }}{% if l.title_en != '' %} · {{ l.title_en }}{% endif %}">
+              <span class="cx-book-meta cx-book-meta-au" style="left: {{ bd.label }}%;">{{ au_.short }}</span></a>
+            {%- endfor %}
             <span class="cx-book-name">{{ b.name }}</span>
             <span class="cx-book-name-en">{{ b.en }}</span>
           </div>

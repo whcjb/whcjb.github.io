@@ -440,7 +440,14 @@ books:
     testament: nt
     chapters: 28
     duo: true
-    duo_mix: "#351a2c"
+    duo_n: 3
+    duo_seams:
+      - {t: 0.3333, top: 37.33, bot: 29.33, mix: "#351a2c"}
+      - {t: 0.6667, top: 70.67, bot: 62.67, mix: "#461538"}
+    duo_bands:
+      - {clip: "polygon(0% 0, 37.33% 0, 29.33% 100%, 0% 100%)", label: 14.66}
+      - {clip: "polygon(37.33% 0, 70.67% 0, 62.67% 100%, 29.33% 100%)", label: 46.0}
+      - {clip: "polygon(70.67% 0, 100% 0, 100% 100%, 62.67% 100%)", label: 81.34}
     links:
       - {author: spurgeon, path: "/spurgeon/matthew/zh/", url_tpl: "/spurgeon/matthew/zh/__CH__/", title_cn: "马太福音注释", title_en: "The Gospel of the Kingdom", c0: "#3a3018", c1: "#4a3b22"}
       - {author: dickson, path: "/dickson/matthew/", url_tpl: "/dickson/matthew/__CH__/", title_cn: "马太福音简释", title_en: "A Brief Exposition of the Evangel of Jesus Christ according to Matthew", c0: "#661b6f", c1: "#8b2499"}
