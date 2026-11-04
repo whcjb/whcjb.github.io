@@ -52,6 +52,8 @@ layout: default
   font-family: Georgia, "Times New Roman", "Songti SC", serif; font-size: 15px; color: #2d2a20; line-height: 1.45; }
 .rollock-book .rl-toc a:hover { border-color: var(--rl-ink); background: #fff; color: var(--rl-ink-dark); }
 .rollock-book .rl-toc small { display: block; color: #8f8670; font-size: 12.5px; }
+/* 中文目录里暂只有英文的篇：虚线框、灰字 */
+.rollock-book .rl-toc a.rl-other { border-style: dashed; background: transparent; color: #8f8670; }
 .rollock-book .rl-chgrid { list-style: none; padding: 0; margin: 0; display: grid;
   grid-template-columns: repeat(auto-fill, minmax(92px, 1fr)); gap: 8px; }
 .rollock-book .rl-chgrid a { display: block; text-align: center; padding: 10px 6px; border: 1px solid var(--rl-rule);
