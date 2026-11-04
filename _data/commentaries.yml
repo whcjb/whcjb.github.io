@@ -186,6 +186,14 @@ authors:
     work_cn: "马太福音简释"
     work_en: "A Brief Exposition of the Evangel of Jesus Christ according to Matthew"
     books: 1
+  - id: petter
+    name: "乔治·佩特"
+    short: "佩特"
+    en: "George Petter"
+    years: "?–1654"
+    work_cn: "马可福音注释"
+    work_en: "A Learned, Pious, and Practical Commentary upon the Gospel according to St. Mark"
+    books: 1
   - id: alexander
     name: "约瑟·亚历山大"
     short: "亚历山大"
@@ -458,6 +466,7 @@ books:
     testament: nt
     chapters: 16
     links:
+      - {author: petter, path: "/petter/mark/", url_tpl: "/petter/mark/__CH__/", title_cn: "马可福音注释", title_en: "A Learned, Pious, and Practical Commentary upon the Gospel according to St. Mark", c0: "#2a7d16", c1: "#38a622"}
   - id: luke
     name: "路加福音"
     en: "Luke"

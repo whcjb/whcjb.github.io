@@ -181,6 +181,13 @@ AUTHORS = OrderedDict([
                      years='1583?–1663', dir='dickson',
                      work_cn='马太福音简释',
                      work_en='A Brief Exposition of the Evangel of Jesus Christ according to Matthew')),
+    # 佩特：无 DNB 条目。生平取《马可福音注释》卷首其弟约翰·佩特序（1661）与 Venn《剑桥校友录》：
+    # 1602 入剑桥三一学院，1609 文学硕士；任萨塞克斯布雷德牧职 44 年，卒年 67 岁；遗嘱 1654 年 P.C.C. 认证。
+    # 生年无确据（由入学年龄推只是约数），故作「?–1654」。本站据 1661 伦敦版（Wing P1888，EEBO-TCP A54583）。
+    ('petter', dict(name='乔治·佩特', short='佩特', en='George Petter',
+                    years='?–1654', dir='petter',
+                    work_cn='马可福音注释',
+                    work_en='A Learned, Pious, and Practical Commentary upon the Gospel according to St. Mark')),
     ('alexander', dict(name='约瑟·亚历山大', short='亚历山大', en='Joseph Addison Alexander',
                        years='1809–1860', dir='alexander',
                        work_cn='诗篇、以赛亚书、马太福音、使徒行传注释',
@@ -261,6 +268,10 @@ AUTHOR_COLORS = {
     # 迪克森紫：LCh 网格 (36, 71, 324°)，与既有各色（含深端）及加尔文酒红、马太亨利金、站点 Hux 蓝最小 ΔE 29.0
     # （CIE76，雷登靛紫 #2d2d99）。低中彩度一档全部 < 26.5（色板已挤），粉红高彩一档 ΔE 36 但太跳，弃用。
     'dickson': ('#661b6f', '#8b2499'),
+    # 佩特叶绿：LCh 网格 (60, 77, 135°)，与既有各色（含深端）及加尔文酒红、马太亨利金、站点 Hux 蓝、缺字红
+    # 最小 ΔE 27.0（CIE76，赫奇森绿 #2f8f46）。色板深端一侧已挤（L≤48 一档最好只有 22.3），只能取亮端；
+    # 深端 #2a7d16 与赫奇森两端 ΔE 15–20，卡片靠亮端区分。
+    'petter': ('#2a7d16', '#38a622'),
 }
 
 # 书卷卡片的入口注释家：历代解经版面每卷只显示 links 的第一条（commentaries/index.html
@@ -361,6 +372,8 @@ BOOK_TITLES = {
                                 'A Commentarie vpon the Epistle of Saint Paule to Philemon'),
     ('dickson', 'matthew'):    ('马太福音简释',
                                 'A Brief Exposition of the Evangel of Jesus Christ according to Matthew'),
+    ('petter', 'mark'):        ('马可福音注释',
+                                'A Learned, Pious, and Practical Commentary upon the Gospel according to St. Mark'),
     ('manton', 'james'):       ('雅各书注释',
                                 'A Practical Commentary, or an Exposition with Notes '
                                 'on the Epistle of James'),
@@ -387,6 +400,7 @@ COMPARE_ACCENT = {
     'adams': '#66666c', 'rollock': '#786000', 'jenkyn': '#cd5f37',
     'candlish': '#b07080', 'fairbairn': '#bc65ac', 'taylor': '#6f77e0',
     'hall': '#769019', 'barlow': '#2b9b8a', 'attersoll': '#8e8cbd', 'dickson': '#8b2499',
+    'petter': '#38a622',
 }
 COMPARE_LABEL = {
     'calvin': '加尔文注释', 'mhenry': '马太亨利注释', 'owen': '约翰欧文注释',
@@ -397,6 +411,7 @@ COMPARE_LABEL = {
     'adams': '亚当斯注释', 'rollock': '罗洛克讲章', 'jenkyn': '詹金讲解',
     'candlish': '坎德利什讲解', 'fairbairn': '费尔贝恩注释', 'taylor': '泰勒注释',
     'hall': '霍尔注释', 'barlow': '巴洛讲解', 'attersoll': '阿特索尔注释', 'dickson': '迪克森简释',
+    'petter': '佩特注释',
 }
 
 
@@ -418,7 +433,7 @@ PRIMARY_LANG = {'calvin': 'zh', 'mhenry': 'zh', 'bridges': 'zh',
                 'johnstone': 'en', 'perkins': 'en', 'hutcheson': 'en', 'leighton': 'en',
                 'adams': 'en', 'rollock': 'en', 'jenkyn': 'en',
                 'candlish': 'en', 'fairbairn': 'en', 'taylor': 'en',
-                'hall': 'en', 'barlow': 'en', 'attersoll': 'en', 'dickson': 'en'}
+                'hall': 'en', 'barlow': 'en', 'attersoll': 'en', 'dickson': 'en', 'petter': 'en'}
 
 
 def _lang_variants(aid, d: Path, name: str):

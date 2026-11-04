@@ -55,6 +55,7 @@ exclude:
   - hall_raw
   - barlow_raw
   - dickson_raw
+  - petter_raw
   - hodge_raw
   - hutcheson_raw
   - leighton_raw
