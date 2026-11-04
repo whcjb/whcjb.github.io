@@ -108,3 +108,6 @@ attersoll_raw/philemon/witness/
 
 # 迪克森马太福音：证人整页图、本地 OCR、判读图（可重跑 dickson_bim_ocr / dickson_witness 重建）
 dickson_raw/matthew/witness/
+
+# 佩特马可福音：证人整页图、本地 OCR、判读图（可重跑 petter_witness anchors / petter_bim_ocr 重建）
+petter_raw/mark/witness/
