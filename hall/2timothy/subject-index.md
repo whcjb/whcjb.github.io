@@ -173,7 +173,7 @@ next_label: "Books Sold by John Starkey"
 
 <p class="hl-item" markdown="1">**Feasting when lawfull. *p. 58.* Rules for it.** *p. 61*</p>
 
-<p class="hl-item" markdown="1">**Formality dangerous. *page 340.* many Reasons against it. *p. 123.125.* Helps against it.** *p. 1<span class="hl-gap" title="TCP: illegible in source">•</span>3.*</p>
+<p class="hl-item" markdown="1">**Formality dangerous. *page 340.* many Reasons against it. *p. 123.125.* Helps against it.** *p. 133.*</p>
 
 <p class="hl-item" markdown="1">**Fornication a great sin. *p. 101.* Reasons against it. *page 123, 125.* Helps against it.** *p. 133*</p>
 
