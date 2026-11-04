@@ -218,19 +218,24 @@ def build_index(names, allp):
     front = [p for p in names if 'k' not in p]
     if front:
         out.append('<h2 class="cd-group">卷首</h2>')
-        out.append('<ul class="cd-toc">')
+        out.append('<ul class="cd-toc cd-toc-sm">')
         out.extend(f'  <li><a href="{{{{ site.baseurl }}}}/candlish/1john/zh/{p["slug"]}/">{label(p)}'
                    f'<small>{subtitle(p)}</small></a></li>' for p in front)
         out.append('</ul>')
     lect = [p for p in names if 'k' in p]
     if lect:
         out.append('<h2 class="cd-group">讲章</h2>')
-        out.append('<ul class="cd-toc">')
+        # 小按钮网格（用户 2026-11-04：整行长条太占地方）；经文都是约翰一书，按钮里只写章节
+        out.append('<ul class="cd-toc cd-toc-sm">')
         out.extend(f'  <li><a href="{{{{ site.baseurl }}}}/candlish/1john/zh/{p["slug"]}/">{label(p)}'
-                   f'<small>{p["ref"]}</small></a></li>' for p in lect)
+                   f'<small>{p["ref"].replace("约翰一书 ", "")}</small></a></li>' for p in lect)
         out.append('</ul>')
-    out.append(f'<p class="cd-note-zh">中译已上线 {len(names)} / {len(allp)} 篇，逐篇推进；未译的篇见'
-               '<a href="{{ site.baseurl }}/candlish/1john/en/">英文版</a>。底本说明与编者改动逐条说明见英文版首页。</p>')
+    if len(names) < len(allp):
+        out.append(f'<p class="cd-note-zh">中译已上线 {len(names)} / {len(allp)} 篇，逐篇推进；未译的篇见'
+                   '<a href="{{ site.baseurl }}/candlish/1john/en/">英文版</a>。底本说明与编者改动逐条说明见英文版首页。</p>')
+    else:
+        out.append('<p class="cd-note-zh">底本说明与编者改动逐条说明见'
+                   '<a href="{{ site.baseurl }}/candlish/1john/en/">英文版首页</a>。</p>')
     return '\n'.join(out) + '\n'
 
 
