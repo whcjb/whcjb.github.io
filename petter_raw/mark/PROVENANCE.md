@@ -60,3 +60,11 @@ python3 scripts/petter_witness.py gaps
 python3 scripts/publish_petter_en.py --apply
 python3 scripts/build_commentaries_index.py
 ```
+
+## 判读进度（2026-11-04）
+
+- 影像证人：IA `bim_…_petter-george_1661`（与 TCP 同卷胶片）；第二份独立影像网上未找到（IA / Google Books / HathiTrust / Open Library / reformedbooksonline 均无）。
+- 看图判读 gid 0–774（`gap_review.tsv`）：看图逐张判读太耗额度，774 以后停。原生 800 ppi 比服务端半宽图清楚得多（#633 appeard），若再看图应取原生分辨率。
+- 本地语料自证 + 本地 OCR 裁定（`scripts/petter_gapfill.py` → `gap_corpus.tsv`，零模型额度）：682 组可判（lex 唯一候选 / ctx 三元搭配 / ocr 多候选中与本地 OCR 读数吻合者）；
+  与看图读法对照 226 组一致、1 组不一致（#646 even/ever，OCR 档误判）。**全部待用户同意**，同意的抄进 gap_approved.tsv。
+- 余 899 组：字母级多候选或已知字母过少、希腊文 121、缺整词/成段 114、缺标点 46。
