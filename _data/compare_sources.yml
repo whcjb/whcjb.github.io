@@ -169,6 +169,7 @@ sources:
     - {key: spurgeon-en, author: spurgeon, lang: en, label: "司布真注释（英文版）", url_tpl: "/spurgeon/matthew/__CH__/", accent: "#4a3b22", ch_from: 1, ch_to: 28}
     - {key: spurgeon, author: spurgeon, lang: zh, label: "司布真注释", url_tpl: "/spurgeon/matthew/zh/__CH__/", accent: "#4a3b22", ch_from: 1, ch_to: 28}
     - {key: dickson-en, author: dickson, lang: en, label: "迪克森简释（英文版）", url_tpl: "/dickson/matthew/__CH__/", accent: "#8b2499", ch_from: 1, ch_to: 28}
+    - {key: dickson, author: dickson, lang: zh, label: "迪克森简释", url_tpl: "/dickson/matthew/zh/__CH__/", accent: "#8b2499", ch_from: 3, ch_to: 3}
   micah:
     - {key: calvin, author: calvin, lang: zh, label: "加尔文注释", url_tpl: "/calvin/micah/__CH__/", accent: "#800000", ch_from: 1, ch_to: 7}
     - {key: mhenry, author: mhenry, lang: zh, label: "马太亨利注释", url_tpl: "/mhenry/micah/__CH__/", accent: "#C9922A", ch_from: 1, ch_to: 7}
