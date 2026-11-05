@@ -5,6 +5,7 @@
 3	Ἐπιτομὴ χρόνων	img	希腊文
 4	?	img	原生分辨率复查：行首整片褪色，仍看不出
 5	Perfidious	img	原生分辨率看图读出
+6	P:Judgment.	img	原生分辨率看图：J 未着墨
 7	it.	img	索引；原图 it 后为句点
 8	P:sick	img	原生分辨率看图：c 未着墨
 9	P:matter	img	原生分辨率看图：第二个 t 未着墨
@@ -36,6 +37,7 @@
 36	P:entertainment	img	原生分辨率看图：原图 enterta▪▪ment，中段褪色
 37	P:naturally	img	原生分辨率看图：墨淡，似 naturally
 38	P:or	img	原生分辨率看图：原图 Chriſt, o▪，墨淡
+39	P:humiliation	img	原生分辨率看图：原图 humiliaion，t 未印出
 40	P:laid down	img	原生分辨率看图：laid 可辨，down 褪色
 41	P:self	img	原生分辨率看图：墨淡，似 ſelf
 42	P:Son	img	原生分辨率看图：墨淡，似 Son
@@ -264,6 +266,7 @@
 269	P:Chap. 11.	img	原生分辨率看图：墨淡，似 Chap. 11.（斜体）
 270	ἐκβάλλειν,	img	希腊文
 271	P:Cities,	img	原生分辨率看图：原图 Citie▪,
+272	P:Interpreter,	img	原生分辨率看图：r 未着墨
 273	(βλασφημία.)	img	希腊文
 274	Ἀντίλυτρον.	img	希腊文
 275	Nature	img
@@ -309,6 +312,7 @@
 315	P:us,	img	原生分辨率看图：原图 u ,
 316	P:substance	img	原生分辨率看图：原图 ſubſtan e
 317	P:dealeth	img	原生分辨率看图：原图 de leth
+318	P:to	img	原生分辨率看图：t 未着墨
 319	P:as lightly	img	原生分辨率看图：墨淡，似 a▪ lightly
 320	P:occasion	img	原生分辨率看图：首字母褪色
 321	P:argueth	img	原生分辨率看图：原图 arg  e h
@@ -316,6 +320,9 @@
 323	Ἰάειρος.	img	希腊文
 324	ἵνα σωθῇ,	img	希腊文
 325	P:diligence	img	原生分辨率看图：原图 dilige  ce
+326	P:is	img	原生分辨率看图：s 未着墨
+327	P:sins,	img	原生分辨率看图：s 墨淡
+328	P:sins;	img	原生分辨率看图：s 未着墨
 329	P:Elijah,	img	原生分辨率看图：斜体，原图 Eli ah,
 330	P:Yes,	img	原生分辨率看图：原图 Ye ,
 331	P:before	img	原生分辨率看图：原图 b  fore
@@ -474,6 +481,7 @@
 500	P:reject	img	原生分辨率看图：原图 re ect
 501	[πεπωρωμένην]	img	希腊文
 502	πῶρος,	img	希腊文，ος 为连写符
+505	P:reject	img	原生分辨率看图：j 未着墨
 506	P:Wilderness,	img	原生分辨率看图：斜体，原图 Wilder-|neſs,，墨淡
 507	P:working	img	原生分辨率看图：原图 wo king
 508	P:used	img	原生分辨率看图：原图 u.ed，s 残
@@ -484,6 +492,7 @@
 513	P:Watch	img	原生分辨率看图：斜体，原图 Wa ch
 514	P:to	img	原生分辨率看图：原图 t 后空白
 515	P:Gospel	img	原生分辨率看图：字母未着墨/墨淡，读法与上下文合
+516	Majesty	img	原生分辨率看图读出
 518	P:or Messiah.	img	原图 o: Meſſiah.
 519	P:is	img	原生分辨率看图：原图 i 后空白
 520	P:rejected	img	原生分辨率看图：斜体，原图 re ected
@@ -631,6 +640,7 @@
 670	P:desired.	img	原图 deſi▪ed.
 671	P:this	img	原生分辨率看图：原图 thi 后空白
 672	P:then	img	原生分辨率看图：原图 th n
+673	forth	img	原生分辨率看图读出
 674	[φωτεινή];	img	希腊文
 675	deliverance,	img
 676	P:God-head	img	原生分辨率看图：首字母褪色
@@ -725,6 +735,7 @@
 773	P:although	img	原图 al hough，有破损
 775	P:from doing	img	录入本记作希腊文，原图是英文，墨淡：from doing
 776	P:seek his	img	墨淡，可见 ſeek hi…，行末
+777	P:of	img	原生分辨率看图：of 前一残墨似括号，非字母
 778	seeing	img	原生分辨率看图：ſ 可辨
 779	consequently,	img	原生分辨率看图：n 可辨
 780	our	img	原生分辨率看图：原图 our（语料候选 out 不对）
@@ -736,6 +747,7 @@
 787	P:nothing	img	原生分辨率看图：t 处墨断
 788	Justificans	img	原生分辨率看图读出
 790	P:works	img	原生分辨率看图：末字母走形
+791	Miracle:	img	原生分辨率看图：原书无 s，作 Miracle :
 793	fervent,	img	原生分辨率看图读出
 794	fervently,	img	原生分辨率看图读出
 795	fervent,	img	原生分辨率看图读出
@@ -833,6 +845,7 @@
 891	&c.	img	原生分辨率看图读出
 892	P:favourers	img	原生分辨率看图：字母未着墨/墨淡，读法与上下文合
 893	P:is	img	原生分辨率看图：s 未着墨
+894	P:his	img	原生分辨率看图：s 未着墨
 895	nor	img	原生分辨率看图读出
 896	P:Neutrals	img	原生分辨率看图：u 处行末断开
 897	P:Gods	img	原生分辨率看图：字母未着墨/墨淡，读法与上下文合
@@ -871,6 +884,7 @@
 935	stream	img	原生分辨率看图读出
 936	P:aeterno.*	img	原生分辨率看图：原图 æterno（ae 连字），r 墨淡
 937	P:profane	img	原生分辨率看图：字母未着墨/墨淡，读法与上下文合
+938	P:Bring	img	原生分辨率看图：B 形残
 939	P:meat	img	原生分辨率看图：斜体，墨团盖住中段，可辨 m…t；录入本记 a 可见，作 meat
 940	Æneam	img	原生分辨率看图读出
 941	P:lament	img	原生分辨率看图：首字母处墨团
@@ -904,6 +918,7 @@
 969	P:Word,	img	原生分辨率看图：d 墨断
 970	light	img	原生分辨率看图读出
 971	P:love	img	原生分辨率看图：字母未着墨/墨淡，读法与上下文合
+972	P:without	img	原生分辨率看图：行末 with- 首字母墨淡
 974	P:purging	img	原生分辨率看图：字母未着墨/墨淡，读法与上下文合
 977	fall	img	原生分辨率看图读出
 978	P:diligence	img	原生分辨率看图：字母未着墨/墨淡，读法与上下文合
@@ -925,6 +940,7 @@
 996	P:occasions;	img	原生分辨率看图：字母未着墨/墨淡，读法与上下文合
 997	P:*Object.*	img	原生分辨率看图：j 未着墨
 999	P:or	img	原生分辨率看图：原图 ,or 墨淡
+1000	P:occasions	img	原生分辨率看图：s 墨淡
 1001	P:of	img	原生分辨率看图：f 未着墨
 1003	P:Pastors	img	原生分辨率看图：字母未着墨/墨淡，读法与上下文合
 1006	P:appetite	img	原生分辨率看图：行末断开
@@ -948,6 +964,7 @@
 1029	Scriptures,	img	原生分辨率看图读出
 1030	P:of	img	原生分辨率看图：f 未着墨
 1031	nupt.	img	原生分辨率看图读出
+1032	P:seeking	img	原生分辨率看图：n 未着墨
 1033	write	img	原生分辨率看图读出
 1034	foul	img	原生分辨率看图读出
 1035	gross	img	原生分辨率看图读出
@@ -956,6 +973,7 @@
 1038	them.	img	原生分辨率看图读出
 1039	P:*Arrians,	img	原生分辨率看图：字母未着墨/墨淡，读法与上下文合
 1040	*Papists,	img	原生分辨率看图读出
+1041	P:touching	img	原生分辨率看图：行首 t 未着墨
 1042	P:suddenly	img	原生分辨率看图：字母未着墨/墨淡，读法与上下文合
 1043	P:unjust	img	原生分辨率看图：j 墨淡
 1045	Wife,	img	原生分辨率看图读出
@@ -964,9 +982,11 @@
 1048	P:Marriage	img	原生分辨率看图：字母未着墨/墨淡，读法与上下文合
 1050	P:vide	img	原生分辨率看图：斜体，e 处墨团
 1051	P:1.	img	原生分辨率看图：原图墨团，似 1.；下文「That God saw…」即创 1 末节
+1052	P:profitableness	img	原生分辨率看图：ſ 墨淡
 1053	instituted,	img	原生分辨率看图读出
 1054	joyned	img	原生分辨率看图读出
 1055	P:Parents	img	原生分辨率看图：字母未着墨/墨淡，读法与上下文合
+1056	P:or	img	原生分辨率看图：r 未着墨
 1057	P:married	img	原生分辨率看图：字母未着墨/墨淡，读法与上下文合
 1058	P:Judges.*	img	原生分辨率看图：字母未着墨/墨淡，读法与上下文合
 1059	P:judge,	img	原生分辨率看图：字母未着墨/墨淡，读法与上下文合
@@ -991,8 +1011,10 @@
 1080	P:reconciliation,	img	原生分辨率看图：字母未着墨/墨淡，读法与上下文合
 1082	place,	img	原生分辨率看图读出
 1083	P:*Whosoever	img	原生分辨率看图：墨淡
+1086	P:time;	img	原生分辨率看图：m 走形
 1087	P:one	img	原生分辨率看图：墨淡
 1088	P:so	img	原生分辨率看图：ſ 未着墨
+1089	P:Believer,	img	原生分辨率看图：r 墨淡
 1090	P:converted	img	原生分辨率看图：字母未着墨/墨淡，读法与上下文合
 1091	P:unjustly	img	原生分辨率看图：字母未着墨/墨淡，读法与上下文合
 1093	τὰ βρέφη.	img	希腊文
@@ -1030,6 +1052,7 @@
 1128	P:of	img	原生分辨率看图：f 形残
 1129	P:willing	img	原生分辨率看图：字母未着墨/墨淡，读法与上下文合
 1134	P:*Luther*	img	原生分辨率看图：t 墨淡
+1137	P:carry	img	原生分辨率看图：a 墨淡
 1139	P:*Reason.*	img	原生分辨率看图：字母未着墨/墨淡，读法与上下文合
 1140	P:bosom;	img	原生分辨率看图：s 墨淡
 1141	P:conceits	img	原生分辨率看图：s 墨淡
@@ -1070,6 +1093,8 @@
 1176	P:Essential	img	原生分辨率看图：原图 Eſſenial，t 未印出
 1177	P:God	img	原生分辨率看图：G 形残
 1178	P:him	img	原生分辨率看图：h 形残，i 未着墨
+1179	P:disposition	img	原生分辨率看图：原图 diſpoſiion，t 未印出
+1180	P:is	img	原生分辨率看图：原图 as s，i 未着墨
 1181	P:the	img	原生分辨率看图：e 未着墨
 1182	(τὸ ἀγαθὸν οὗ πάντα ἐφίεται.	img	希腊文（οὗ 为连字）
 1183	P:doth	img	原生分辨率看图：d 墨淡
@@ -1081,6 +1106,8 @@
 1190	puffed	img	原生分辨率看图读出
 1191	healing	img	原生分辨率看图读出
 1192	commit	img	原图 commit 后无标点
+1194	P:enjoyning	img	原生分辨率看图：原图 enjoyning，j 处墨淡
+1195	P:explication	img	原生分辨率看图：t 墨淡
 1196	P:towards	img	原生分辨率看图：字母未着墨/墨淡，读法与上下文合
 1197	P:Commandments	img	原生分辨率看图：字母未着墨/墨淡，读法与上下文合
 1198	P:outward	img	原生分辨率看图：t 未着墨
@@ -1101,6 +1128,7 @@
 1215	P:is	img	原生分辨率看图：s 墨淡
 1216	feet	img	原生分辨率看图读出
 1217	P:is	img	原生分辨率看图：墨团盖住
+1218	P:bearing	img	原生分辨率看图：r 未印出
 1219	P:shews,	img	原生分辨率看图：字母未着墨/墨淡，读法与上下文合
 1220	P:hypocrite,	img	原生分辨率看图：t 墨团
 1221	P:*Joh.*	img	原生分辨率看图：斜体 h/b 难分；所引「one of you is a devil」是约 6:70（语料候选 Job 不对）
@@ -1148,6 +1176,7 @@
 1266	it	img	原生分辨率看图读出
 1267	μεγάλη διδάσκαλος.	img	希腊文（ος 为连字）
 1268	P:is	img	原生分辨率看图：s 墨淡
+1269	P:treasure	img	原生分辨率看图：行首 ſ 未着墨（跨行 trea-|ſure）
 1270	P:periculosius	img	原生分辨率看图：原图 periculoſins（u 倒排）
 1271	P:sayes)	img	原生分辨率看图：s 未着墨
 1272	P:preserved	img	原生分辨率看图：字母未着墨/墨淡，读法与上下文合
@@ -1172,6 +1201,7 @@
 1292	P:move	img	原生分辨率看图：字母未着墨/墨淡，读法与上下文合
 1293	sight	img	原生分辨率看图读出
 1294	P:great	img	原生分辨率看图：字母未着墨/墨淡，读法与上下文合
+1296	P:difficulties	img	原生分辨率看图：i 未着墨
 1297	P:thine	img	原生分辨率看图：i 墨团
 1298	P:lusts,	img	原生分辨率看图：s 墨淡
 1299	P:triumph	img	原生分辨率看图：字母未着墨/墨淡，读法与上下文合
@@ -1190,6 +1220,7 @@
 1312	spoiling	img	原生分辨率看图读出
 1314	profession	img	原生分辨率看图读出
 1315	hindmost	img	原生分辨率看图读出
+1316	P:our	img	原生分辨率看图：r 墨淡
 1317	P:Hypocrisy;	img	原生分辨率看图：字母未着墨/墨淡，读法与上下文合
 1318	P:bin	img	原生分辨率看图：字母未着墨/墨淡，读法与上下文合
 1320	P:in	img	原生分辨率看图：斜体 i/u 难分
@@ -1200,6 +1231,7 @@
 1325	P:went	img	原生分辨率看图：字母未着墨/墨淡，读法与上下文合
 1326	P:Families	img	原生分辨率看图：字母未着墨/墨淡，读法与上下文合
 1327	P:take	img	原生分辨率看图：t 被墨团盖住
+1328	Disciples.	img	原生分辨率看图：原图跨栏，后半 iſciples 清楚
 1329	Crosse	img	原生分辨率看图读出
 1330	P:chearfully;	img	原生分辨率看图：字母未着墨/墨淡，读法与上下文合
 1331	pretium	img	原生分辨率看图读出
@@ -1225,6 +1257,7 @@
 1351	sit	img	原生分辨率看图读出
 1352	P:others,	img	原生分辨率看图：字母未着墨/墨淡，读法与上下文合
 1353	P:different	img	原生分辨率看图：字母未着墨/墨淡，读法与上下文合
+1354	Chorazin,	img	原生分辨率看图读出
 1355	P:justifie;	img	原生分辨率看图：字母未着墨/墨淡，读法与上下文合
 1356	P:inheritance	img	原生分辨率看图：字母未着墨/墨淡，读法与上下文合
 1357	Petition	img	原生分辨率看图读出
@@ -1238,6 +1271,7 @@
 1365	P:others,	img	原生分辨率看图：字母未着墨/墨淡，读法与上下文合
 1366	οἱ δοκοῦντες,	img	希腊文
 1367	P:Gentiles.	img	原生分辨率看图：字母未着墨/墨淡，读法与上下文合
+1368	exercise	img	原生分辨率看图读出
 1370	reckoned	img	原生分辨率看图读出
 1371	detest	img	原生分辨率看图读出
 1372	P:temporal,	img	原生分辨率看图：字母未着墨/墨淡，读法与上下文合
@@ -1292,6 +1326,7 @@
 1425	P:Souls	img	原生分辨率看图：字母未着墨/墨淡，读法与上下文合
 1426	P:Consciences.	img	原生分辨率看图：字母未着墨/墨淡，读法与上下文合
 1427	state	img	原生分辨率看图读出
+1428	sin	img	原生分辨率看图读出
 1429	P:This condemns	img	原生分辨率看图：i、s 墨淡
 1430	P:they	img	原生分辨率看图：t 处墨团
 1431	up;	img	
@@ -1304,6 +1339,9 @@
 1438	P:*Hosanna,	img	原生分辨率看图：字母未着墨/墨淡，读法与上下文合
 1439	P:because	img	原生分辨率看图：字母未着墨/墨淡，读法与上下文合
 1440	P:did	img	原生分辨率看图：d 未着墨
+1445	our	img	原生分辨率看图读出
+1459	*Brethren,	img	原生分辨率看图读出
+1460	prosper	img	原生分辨率看图读出
 1461	P:Function,	img	原生分辨率看图：字母未着墨/墨淡，读法与上下文合
 1462	*Hos.*	img	原生分辨率看图读出
 1463	P:such	img	原生分辨率看图：字母未着墨/墨淡，读法与上下文合
@@ -1318,11 +1356,13 @@
 1472	τραπεζῖται	img	希腊文
 1473	κολλυβιστής).	img	希腊文
 1474	P:abuses.	img	原生分辨率看图：字母未着墨/墨淡，读法与上下文合
+1475	P:majesty	img	原生分辨率看图：跨行 ma-|eſty，行首 j 未着墨
 1478	as	img	原生分辨率看图读出
 1479	P:abuses	img	原生分辨率看图：字母未着墨/墨淡，读法与上下文合
 1480	P:example	img	原生分辨率看图：字母未着墨/墨淡，读法与上下文合
 1481	thine	img	原生分辨率看图读出
 1482	P:sins	img	原生分辨率看图：字母未着墨/墨淡，读法与上下文合
+1483	P:our	img	原生分辨率看图：r 墨淡
 1484	P:reform	img	原生分辨率看图：字母未着墨/墨淡，读法与上下文合
 1485	P:*Jerusalem,*	img	原生分辨率看图：字母未着墨/墨淡，读法与上下文合
 1486	P:*Jerusalem,*	img	原生分辨率看图：字母未着墨/墨淡，读法与上下文合
@@ -1338,9 +1378,11 @@
 1497	P:those	img	原生分辨率看图：字母未着墨/墨淡，读法与上下文合
 1498	he	img	原生分辨率看图：原书印作 he（be 之误）
 1499	P:evils,	img	原生分辨率看图：字母未着墨/墨淡，读法与上下文合
+1500	stedfastness	img	原生分辨率看图读出
 1501	P:consideration	img	原生分辨率看图：字母未着墨/墨淡，读法与上下文合
 1502	his	img	原生分辨率看图读出
 1503	P:this	img	原生分辨率看图：字母未着墨/墨淡，读法与上下文合
+1504	P:Minister;	img	原生分辨率看图：原图 Miniſter ;; 末字母处墨团
 1505	sign	img	原生分辨率看图读出
 1506	P:matters	img	原生分辨率看图：m 处墨团（语料候选 Platters 不取）
 1507	P:Further	img	原生分辨率看图：F 被墨团盖住
@@ -1390,6 +1432,7 @@
 1551	P:first Restorers	img	原生分辨率看图：字母未着墨/墨淡，读法与上下文合
 1552	P:selves	img	原生分辨率看图：字母未着墨/墨淡，读法与上下文合
 1553	(ἕνα λόγον)	img	希腊文
+1554	confute	img	原生分辨率看图读出
 1555	affirmatively	img	原生分辨率看图读出
 1556	διελογίζοντο,	img	希腊文
 1557	P:believe	img	原生分辨率看图：字母未着墨/墨淡，读法与上下文合
