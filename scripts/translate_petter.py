@@ -332,6 +332,8 @@ def structural_diff(en: str, zh: str) -> str:
         if len(ws) >= 4 and sum(w in EN_FUNC for w in ws) >= 2 and run.strip(' .,;:') not in en:
             problems.append('模型自语 ' + run.strip()[:60])
             break
+    if re.search(r'【上下文】|<上下文>|【要翻译的这段】|（本段）', zh):      # 附给短段的上下文被吐进译文
+        problems.append('上下文泄漏进译文')
     typo = [w for w in KNOWN_TYPOS if w in zh]
     if typo:
         problems.append('已知错字 ' + '、'.join(f'{w}→{KNOWN_TYPOS[w]}' for w in typo))
@@ -433,7 +435,20 @@ def fix_italics(zh: str, en: str, label: str) -> str:
     return zh
 
 
-def translate_one(text: str, resume: bool, label: str = '') -> str:
+SHORT_CTX = 300   # 短于此的段落附上前后文（只供理解、不译）
+
+
+def ctx_block(ctx: str) -> str:
+    """孤零零一句话的段落（分条「5. Lastly, …」、一句应用）模型看不到上下文，就在输出里自语
+    （第 1 章 1-4#12 / 1-4b#16 / 1-6#19：Context… irrelevant… instructions，三次同类）。
+    附上前后段的英文供理解，明说不译；缓存键只取要译的那段，附不附上下文不影响已有缓存。"""
+    if not ctx:
+        return ''
+    return ("【上下文】下面是这段前后的原文，只帮助理解这段在说什么，**不要翻译、不要输出、不要评论**：\n"
+            f"<上下文>\n{ctx}\n</上下文>\n\n【要翻译的这段】\n")
+
+
+def translate_one(text: str, resume: bool, label: str = '', ctx: str = '') -> str:
     key = tf.md5key(KEY_NS + text)
     f = CACHE / f'{key}.txt'
     if resume and f.exists() and f.stat().st_size > 0:
@@ -442,9 +457,9 @@ def translate_one(text: str, resume: bool, label: str = '') -> str:
             return cached
         print(f'    [cache-reject] {label}: {structural_diff(text, cached)[:90]}', flush=True)
 
-    base = ("把下面这段佩特《马可福音注释》的十六世纪苏格兰英文译成简体中文。"
+    base = ("把下面这段佩特《马可福音注释》的十七世纪英文译成简体中文。"
             "整段通读后再译，保证上下文连贯；逐一保留 `*` 斜体标记与 ⟦N⟧ 占位符；把译文完整放在 <译文> 与 </译文> 之间，标签外的文字一律丢弃。\n\n")
-    out = fix_italics(restore_greek(tidy(take_tagged(tf.call_claude(base + text, timeout=900, label=label))), text),
+    out = fix_italics(restore_greek(tidy(take_tagged(tf.call_claude(base + ctx_block(ctx) + text, timeout=900, label=label))), text),
                       text, label)
     diff = structural_diff(text, out)
     if diff:
@@ -454,7 +469,7 @@ def translate_one(text: str, resume: bool, label: str = '') -> str:
                "**不得把任何英文词原样留在中文句子里**。把译文完整放在 <译文> 与 </译文> 之间，标签外的文字一律丢弃。\n\n")
         # 重试两次，取第一个合格的；都不合格就取「只剩斜体问题」的那一版
         for n in (1, 2):
-            out2 = fix_italics(restore_greek(tidy(take_tagged(tf.call_claude(fix + text, timeout=900, label=f'{label}·retry{n}'))), text),
+            out2 = fix_italics(restore_greek(tidy(take_tagged(tf.call_claude(fix + ctx_block(ctx) + text, timeout=900, label=f'{label}·retry{n}'))), text),
                                text, f'{label}·retry{n}')
             if not structural_diff(text, out2):
                 out = out2
@@ -574,7 +589,13 @@ def run_section(slug: str, resume: bool, dry: bool, jobs: int, publish: bool) ->
     def work(j):
         i = idx[j]
         masked, tags = mask(units[i][1])
-        return i, unmask(translate_one(masked, resume, f'{slug}#{j + 1}'), tags)
+        ctx = ''
+        if len(re.sub(r'⟦\d+⟧', '', masked)) < SHORT_CTX:
+            plain = lambda t: re.sub(r'\s+', ' ', RE_ANY.sub(' ', t)).strip()
+            before = plain(units[idx[j - 1]][1])[-500:] if j > 0 else ''
+            after = plain(units[idx[j + 1]][1])[:300] if j + 1 < len(idx) else ''
+            ctx = '\n'.join(x for x in (('……' + before) if before else '', ('（本段）'), (after + '……') if after else '') if x)
+        return i, unmask(translate_one(masked, resume, f'{slug}#{j + 1}', ctx), tags)
 
     done = {}
     with ThreadPoolExecutor(max_workers=jobs) as ex:
