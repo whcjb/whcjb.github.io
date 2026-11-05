@@ -185,6 +185,35 @@ layout: default
 .petter-wrap .pt-item { padding-left: 1.4em; margin: 0 0 8px !important; }
 /* 扉页题辞 */
 .petter-wrap .pt-quote { text-align: center !important; font-style: italic; }
+/* 扉页：照 1661 原书胶片影像手排（petter_raw/mark/manual_pages/title.html） */
+.petter-wrap .pt-tp { max-width: 540px; margin: 10px auto 30px; padding: 24px 28px 20px;
+  border: 1px solid #2a2a2a; outline: 1px solid #2a2a2a; outline-offset: 4px;
+  text-align: center; font-family: Georgia, "Times New Roman", serif; color: #1f1f1f; line-height: 1.2; }
+.petter-wrap .pt-tp-l { margin: 0 0 6px; text-align: center !important; text-indent: 0 !important; }
+.petter-wrap .pt-tp .s00 { font-size: 58px; letter-spacing: .16em; line-height: 1.05; }
+.petter-wrap .pt-tp .s0 { font-size: 46px; font-weight: bold; letter-spacing: .01em; line-height: 1.05; }
+.petter-wrap .pt-tp .s1 { font-size: 26px; }
+.petter-wrap .pt-tp .s2 { font-size: 20px; }
+.petter-wrap .pt-tp .s3 { font-size: 17px; }
+.petter-wrap .pt-tp .s4 { font-size: 15px; }
+.petter-wrap .pt-tp .s5 { font-size: 13px; line-height: 1.4; }
+.petter-wrap .pt-tp .it { font-style: italic; }
+.petter-wrap .pt-tp .ls { letter-spacing: .22em; }
+.petter-wrap .pt-tp sup { font-size: .45em; vertical-align: .95em; }
+.petter-wrap .pt-tp-rule { border: 0; border-top: 1px solid #2a2a2a; margin: 10px 0; }
+.petter-wrap .pt-tp-motto { font-size: 12.5px; line-height: 1.45; margin: 2px 0; }
+.petter-wrap .pt-tp-motto p { margin: 0 0 3px !important; text-align: justify !important; text-indent: 1.4em !important; }
+.petter-wrap .pt-tp-motto.c p { text-align: center !important; text-indent: 0 !important; }
+.petter-wrap .pt-tp-note { font-size: 12px; color: #8a8a8a; margin: 14px 0 0 !important; text-align: center !important;
+  text-indent: 0 !important; font-family: "Songti SC", STSong, serif; }
+@media (max-width: 600px) {
+  .petter-wrap .pt-tp { padding: 16px 10px 14px; }
+  .petter-wrap .pt-tp .s00 { font-size: 34px; letter-spacing: .1em; }
+  .petter-wrap .pt-tp .s0 { font-size: 28px; }
+  .petter-wrap .pt-tp .s1 { font-size: 20px; }
+  .petter-wrap .pt-tp .s2 { font-size: 17px; }
+  .petter-wrap .pt-tp-motto p { text-align: left !important; }
+}
 
 /* 底本里读不出的字 */
 .petter-wrap .pt-gap { color: #c0392b; background: #fdecea; border-radius: 2px; padding: 0 2px; cursor: help; }
@@ -193,7 +222,6 @@ layout: default
 
 /* 书名页、献辞落款 */
 .petter-wrap .pt-closer { text-align: right !important; font-style: italic; color: #4a584b; }
-.petter-wrap .pt-tp p { text-align: center !important; font-size: 16px; letter-spacing: .03em; }
 
 /* 小标题：逐语解说的引语、分论点（录入本 section / subsection） */
 .petter-wrap .pt-content h3 { font-family: Georgia, "Times New Roman", serif; font-size: 17.5px; font-weight: 600;
