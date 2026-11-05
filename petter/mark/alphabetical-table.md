@@ -1643,7 +1643,7 @@ next_label: "1:1"
 
 <p class="pt-ixterm" markdown="1">Friends.</p>
 
-<p class="pt-ixsub" markdown="1">Per<span class="pt-gap" title="TCP: illegible in source">•</span>idious friends. 1367</p>
+<p class="pt-ixsub" markdown="1">Perfidious friends. 1367</p>
 
 <p class="pt-ixsub" markdown="1">We may comfort us when Friends forsake us. 1384</p>
 
@@ -4327,7 +4327,7 @@ next_label: "1:1"
 
 <p class="pt-ixsub" markdown="1">Good Works. 1227.</p>
 
-<p class="pt-ixsub" markdown="1">They are sometimes rewarded in this<span class="pt-gap" title="TCP: illegible in source">▪</span> life 1230</p>
+<p class="pt-ixsub" markdown="1">They are sometimes rewarded in this life 1230</p>
 
 <p class="pt-ixterm" markdown="1">Works of God.</p>
 

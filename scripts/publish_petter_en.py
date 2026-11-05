@@ -102,7 +102,7 @@ def about_en(f):
         'onward; the date in the margin of each text is the author’s own. The marginal heads of the original '
         '(<i>Observ.</i>, <i>Use</i>, <i>Quest.</i>, <i>Answ.</i> …) are shown as small tags in the text. '
         'Two lecture headings disagree with the text they introduce (7:33–34 headed “33, 24”; 8:31 headed “Mark 7. 31.”); '
-        'they are left as transcribed, and the pages are named by the true verse.</p>',
+        'the 1661 page images show these are misprints in the original. They are left as printed, and the pages are named by the true verse.</p>',
         f'<p><b>Illegible places.</b> The keyers marked {f["n"]} places they could not read from the film images. '
         f'{f["w"]} have been read from the page images so far; {f["c"]} are editorial conjectures shown '
         f'<span class="pt-conj">[in brackets]</span>. The rest remain marked <span class="pt-gap">in red</span>.</p>']
@@ -115,7 +115,7 @@ def about_zh(f):
         '该藏本残缺，缺原书第 884 页以后的全部内容，<b>录入本止于第十一章，第 12–16 章的注释暂缺</b>。'
         '保留原书拼写与斜体，长 ſ 作 s；印本页码保留为页内锚点。每页是一讲，原是作者 1618 年 6 月起在布雷德（Brede）逐主日所讲，'
         '经文旁的日期是原书页边所记的讲道日期；原书页边的纲目标记（Observ. 观察、Use 应用、Quest. 问、Answ. 答等）在正文中以小标签显示。'
-        '录入本有两处讲题与经文对不上（7:33–34 题作「33, 24」；8:31 题作「Mark 7. 31.」），未看影像，不定是印错还是录错；正文照录，页名按真节号。'
+        '有两处讲题与经文对不上（7:33–34 题作「33, 24」；8:31 题作「Mark 7. 31.」），对照 1661 年原版影像，是原书印错，录入无误；正文照原书，页名按真节号。'
         f'录入本有 {f["n"]} 处读不出的字，对照 1661 年原版胶片影像（Internet Archive，希腊文与缺整词处取原生分辨率）'
         f'已看图读出 {f["w"]} 处；{f["c"]} 处墨淡褪色、只认得出部分字形，由编者推补，以 '
         '<span class="pt-conj">[方括号]</span> 另色标出，逐条列在下面；其余标红留在明面。'
