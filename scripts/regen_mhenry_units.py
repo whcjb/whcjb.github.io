@@ -17,7 +17,7 @@
 import os, re, sys, difflib
 import fitz, yaml
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from audit_mhenry_unit_seams import ROOT, PDF_DIR, TOP_MARGIN, RUNHEAD, HAN, UNIT_RE, han, pdf_files
+from audit_mhenry_unit_seams import pdf_profile, ROOT, PDF_DIR, TOP_MARGIN, RUNHEAD, HAN, UNIT_RE, han, pdf_files
 from audit_mhenry_verse_boxes import best_head
 from fix_mhenry_unit_seams import pdf_stream_raw, clean
 from fix_mhenry_verse_boxes import fmt_verse
@@ -31,6 +31,7 @@ def pdf_lines(files):
     """逐行记录：文字、是否段末、每个汉字的字体首字母、该行汉字在全书汉字流里的起止。
     过滤规则与 pdf_stream_raw 逐 span 一致（<11 号丢、y<40 丢、页眉丢），保证下标对齐。"""
     lines, hcount = [], 0
+    min_size, conv = pdf_profile(files)
     for fn in files:
         doc = fitz.open(PDF_DIR + fn)
         for page in doc:
@@ -38,10 +39,10 @@ def pdf_lines(files):
                 for ln in blk.get('lines', []):
                     txt, fonts, h0, big, any_body = '', '', hcount, False, False
                     for sp in ln['spans']:
-                        t = sp['text']
+                        t = conv(sp['text']) if conv else sp['text']
                         if sp['bbox'][1] < TOP_MARGIN:
                             continue
-                        if sp['size'] < 11:
+                        if sp['size'] < min_size:
                             if any_body and re.fullmatch(r'\s*\d+\s*', t) and sp['size'] < 9:
                                 txt += t.strip()      # 正文里的脚注引号
                             continue
@@ -95,7 +96,11 @@ def render(paras, vfont):
     for p in paras:
         t = clean(''.join(l['text'] for l in p))
         f = ''.join(l['fonts'] for l in p)
-        is_v = bool(re.match(r'\d{1,3}(?:-\d{1,3})?\s*(?![.．\d])', t)) and f and f.count(vfont) / len(f) > 0.8
+        vr = f.count(vfont) / len(f) if f else 0
+        starts_num = bool(re.match(r'\d{1,3}(?:-\d{1,3})?\s*(?![.．\d])', t))
+        is_label = bool(ROMAN.match(t) or re.match(r'\d+[.．]|[（(]\d+[）)]|\[\d+\.\]', t))
+        # 节号是小号上标的 PDF（林前等）经文段开头没有数字：经文字体 ≥90% 也算
+        is_v = (starts_num and vr > 0.8) or (not is_label and vr >= 0.9 and len(t) >= 10)
         if t.strip():
             kinds.append(('V' if is_v else 'C', t))
     for i, (k, t) in enumerate(kinds):
@@ -183,10 +188,16 @@ def main():
     vfont_code = F[vs]
     # 把 F 的字体代码换回字体名首字母：pdf_lines 用的是字体名首字母
     font_name = None
-    for l in lines:
-        if l['h1'] > vs and re.match(r'\s*\d{1,3}(?:-\d{1,3})?\s*(?![.．\d])', l['text']) and l['fonts']:
-            font_name = max(set(l['fonts']), key=l['fonts'].count)
-            break
+    if not st:
+        # 经文字体 = 框头那个字在 PDF 里的字体（框头本身就是经文）
+        lv = next(l for l in lines if l['h1'] > vs)
+        seg_f = lv['fonts'][vs - lv['h0']:vs - lv['h0'] + 8]
+        font_name = max(set(seg_f), key=seg_f.count) if seg_f else None
+    if font_name is None:
+        for l in lines:
+            if l['h1'] > vs and re.match(r'\s*\d{1,3}(?:-\d{1,3})?\s*(?![.．\d])', l['text']) and l['fonts']:
+                font_name = max(set(l['fonts']), key=l['fonts'].count)
+                break
     # 取行：从含 vs 的行起（并回退一段小标题），到含 ve 的行前（并去掉它的前置小标题）
     i0 = next(i for i, l in enumerate(lines) if l['h1'] > vs)
     if ve is not None:
@@ -202,6 +213,22 @@ def main():
                 i1 = next(i for i, l in enumerate(lines) if l['h1'] > j)
         if i1 is None:
             i1 = next((i for i in range(i0 + 1, len(lines)) if lines[i]['big']), len(lines))
+    VARN = lambda t: han(t).translate(VAR)
+    # 起点：框头所在段的段首。段首到框头之间若是 md 别处没有的经文（如框缺第 1 节），从段首起
+    ps = i0
+    while ps > 0 and not lines[ps - 1]['end'] and not lines[ps - 1]['big']:
+        ps -= 1
+    before = ''.join(l['text'] for l in lines[ps:i0]) + lines[i0]['text']
+    k_in = vs - lines[i0]['h0']
+    pre_h = P[lines[ps]['h0']:vs]
+    prev_box = VARN(units[u_from - 2].group(1)) if u_from >= 2 else ''
+    fonts_before = ''.join(l['fonts'] for l in lines[ps:i0 + 1])[:len(pre_h)]
+    extend = (len(pre_h) >= 4 and pre_h.translate(VAR)[:8] not in prev_box
+              and fonts_before and fonts_before.count(font_name) / len(fonts_before) > 0.8
+              and re.match(r'\s*\d', lines[ps]['text']))
+    if extend:
+        i0, vs = ps, lines[ps]['h0']
+        print(f'起点前移到段首，补回 md 缺的 {len(pre_h)} 字经文：{pre_h[:20]}')
     sel = [dict(l) for l in lines[i0:i1]]
     # 起点精确到框头那个字（连同前面的节号与开引号），不带进上一节的尾巴
     l0 = sel[0]
@@ -219,20 +246,103 @@ def main():
         l0['text'] = l0['text'][pos:]
         l0['fonts'] = l0['fonts'][k:]
         l0['h0'] = vs
+    # 终点精确到下一单元框头那个字之前（不含它的节号），同一行里前面的经文要留下
+    if ve is not None and i1 < len(lines) and ve > lines[i1]['h0']:
+        lt = dict(lines[i1])
+        k2 = ve - lt['h0']
+        cnt, pos = 0, len(lt['text'])
+        for j_, c in enumerate(lt['text']):
+            if HAN.match(c):
+                if cnt == k2:
+                    pos = j_
+                    break
+                cnt += 1
+        mnum = re.search(r'\d{1,3}(?:-\d{1,3})?\s*[「“‘『（]?\s*$', lt['text'][:pos])
+        if mnum:
+            pos = mnum.start()
+        lt['text'] = lt['text'][:pos].rstrip() + ' '
+        lt['fonts'] = lt['fonts'][:k2]
+        lt['h1'] = ve
+        lt['end'] = True
+        if HAN.search(lt['text']):
+            sel.append(lt)
     paras = paragraphs(sel)
     # 前置小标题：i0 之前紧挨着的一段短段
     pre = paragraphs(lines[max(0, i0 - 3):i0]) if lines[i0]['h0'] == vs else []
+    pre = [p_ for p_ in pre if clean(''.join(l['text'] for l in p_)).strip()]
     if pre:
         t = clean(''.join(l['text'] for l in pre[-1]))
         if len(t) <= 40 and t[-1:] not in END_PUNCT:
             paras = [pre[-1]] + paras
-    # 末尾若是下一单元的小标题，去掉
+    # 末尾的小标题：下一单元前面已有同名小标题才去掉，否则保留（放在下一单元前）
+    nxt_head = ''
+    if u_to < len(units):
+        st_next = s.rfind('<div class="mh-unit">', 0, units[u_to].start(1))
+        mh_ = re.search(r'<div class="mh-date-heading">([^<]*)</div>\s*$', s[:st_next])
+        nxt_head = re.sub(r'[\s（）()0-9年主前后]', '', mh_.group(1)) if mh_ else ''
+    paras = [p_ for p_ in paras if clean(''.join(l['text'] for l in p_)).strip()]
     if paras:
         t = clean(''.join(l['text'] for l in paras[-1]))
         if len(t) <= 40 and t[-1:] not in END_PUNCT:
-            paras = paras[:-1]
+            if nxt_head and re.sub(r'[\s（）()0-9年主前后]', '', t) == nxt_head:
+                paras = paras[:-1]
+            else:
+                paras[-1] = [dict(paras[-1][0], text=t, end=True)]
+                paras.append('HEADING_AT_END')
+    heading_at_end = paras and paras[-1] == 'HEADING_AT_END'
+    if heading_at_end:
+        paras = paras[:-1]
     new = render(paras, font_name)
+    if heading_at_end:
+        tl = clean(''.join(l['text'] for l in paras[-1]))
+        tl2 = re.sub(r'(\d)(年）)', r'\1 \2', tl)
+        if not new.rstrip().endswith('</div>') or f'>{tl2}</div>' not in new[-200:]:
+            j_ = new.rfind(tl + '\n\n')                 # render 当注释段输出的，删掉
+            if j_ >= 0:
+                new = new[:j_] + new[j_ + len(tl) + 2:]
+            new = new.rstrip() + f'\n\n<div class="mh-date-heading">{tl2}</div>\n\n'
     a, b = region(s, units, u_from, u_to)
+    s0, a0, b0 = s, a, b                       # 原文件与原区段（重复守卫用）
+    # 末尾单元只有经文、没有注释：PDF 下一单元开头的几节——并到 md 下一单元框头
+    carry = ''
+    mlast = list(re.finditer(r'(<div class="mh-date-heading">[^<]*</div>\s*)?<div class="mh-unit">\n<div class="mh-verse">\n(.*?)\n</div>\n<div class="mh-unit-body">\n*(.*?)</div>\n</div>\n*', new, re.S))
+    if mlast and u_to < len(units):
+        ml = mlast[-1]
+        if not re.sub(r'<[^>]+>|\s', '', ml.group(3)) and ml.end() >= len(new.rstrip()) - 5:
+            carry = ml.group(2).strip()
+            head_txt = ml.group(1) or ''
+            new = new[:ml.start()] + head_txt
+            print(f'末尾单元只有经文，并入下一单元框头：{carry[:30]}')
+    if os.environ.get('REGEN_OVERVIEW', '1') == '1':
+        # 综述：md 综述只是 PDF 综述的前半截时，按 PDF 补全
+        mo = re.search(r'(<div class="mh-overview">\n)(.*?)(\n</div>)', s, re.S)
+        if mo:
+            oh_ = VARN(mo.group(2))
+            j0 = P.find(han(mo.group(2))[:12])
+            if j0 >= 0:
+                k0 = next(i for i, l in enumerate(lines) if l['h1'] > j0)
+                ov_paras = []
+                for p_ in paragraphs(lines[k0:i0 + 200]):
+                    tt = clean(''.join(l['text'] for l in p_))
+                    if not tt.strip():
+                        continue
+                    ff = ''.join(l['fonts'] for l in p_)
+                    is_v = re.match(r'\d{1,3}(?:-\d{1,3})?\s*(?![.．\d])', tt) and ff and ff.count(font_name) / len(ff) > 0.8
+                    if is_v or (len(tt) <= 40 and tt[-1:] not in END_PUNCT):
+                        break                       # 综述止于第一个小标题或经文段
+                    ov_paras.append(p_)
+                ov = ''.join(clean(''.join(l['text'] for l in p_)) for p_ in ov_paras)
+                ov = ov[ov.find(mo.group(2).strip()[:6]):] if mo.group(2).strip()[:6] in ov else ov
+                if VARN(ov).startswith(oh_[:-3]) and len(han(ov)) > len(oh_) + 5:
+                    print(f'综述按 PDF 补全：{len(oh_)} → {len(han(ov))} 字')
+                    s = s[:mo.start(2)] + ov + s[mo.end(2):]
+                    units = list(UNIT_RE.finditer(s))
+                    a, b = region(s, units, u_from, u_to)
+    if carry:
+        nb = s.find('<div class="mh-verse">\n', b)
+        s = s[:nb + len('<div class="mh-verse">\n')] + carry + ' ' + s[nb + len('<div class="mh-verse">\n'):]
+        units = list(UNIT_RE.finditer(s))
+        a, b = region(s, units, u_from, u_to)
     old = s[a:b]
     # 验收
     def body_text(t):
@@ -249,8 +359,16 @@ def main():
     else:
         print('---- NEW (head) ----'); print(new[:1500]); print('---- NEW (tail) ----'); print(new[-600:])
     if do_apply:
-        ratio = len(han(new)) / max(1, len(han(old)))
-        if cover < float(os.environ.get("REGEN_MIN", "0.98")) or not 0.75 <= ratio <= 1.35:
+        ratio = (len(han(new)) + len(han(carry))) / max(1, len(han(old)))   # 并入下一单元的也算
+        # 不得制造重复：新区段的 10 字串不能大量出现在本章区段以外
+        outside = han(s0[:a0] + s0[b0:]).translate(VAR)
+        nn = han(new).translate(VAR)
+        g10 = [nn[i:i + 10] for i in range(0, max(1, len(nn) - 10), 10)]
+        dup = sum(1 for g in g10 if g in outside) / max(1, len(g10))
+        print(f'区段外重复 {dup:.3f}')
+        if dup > 0.03 and len(nn) >= 30:
+            print('会制造重复，不落盘'); sys.exit(1)
+        if cover < float(os.environ.get("REGEN_MIN", "0.98")) or not 0.75 <= ratio <= float(os.environ.get("REGEN_RATIO_MAX", "1.35")):
             print('覆盖不足，不落盘'); sys.exit(1)
         open(md, 'w', encoding='utf-8').write(s[:a] + new + s[b:])
         print('written', md)

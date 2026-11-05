@@ -40,21 +40,61 @@ def pdf_files(book, zh):
     return fs
 
 
+_PROFILE = {}
+
+
+def pdf_profile(files):
+    """(正文最小字号, 繁转简函数或 None)。多数卷正文 12 号、脚注 10 号；罗马书 PDF 为繁体
+    新细明体、正文 10.6 号、脚注 9 号——门槛取「正文众数字号 - 0.8」，繁体逐字转简（一对一，下标不变）。"""
+    k = tuple(files)
+    if k in _PROFILE:
+        return _PROFILE[k]
+    import collections
+    sizes, trad = collections.Counter(), 0
+    for fn in files:
+        doc = fitz.open(PDF_DIR + fn)
+        for page in list(doc)[2:12]:
+            for blk in page.get_text('dict')['blocks']:
+                for ln in blk.get('lines', []):
+                    for sp in ln['spans']:
+                        n = len(HAN.findall(sp['text']))
+                        sizes[round(sp['size'], 1)] += n
+                        if 'MingLiU' in sp['font']:
+                            trad += n
+    body = sizes.most_common(1)[0][0] if sizes else 12.0
+    conv = None
+    if trad > sum(sizes.values()) * 0.5:
+        import opencc
+        cc = opencc.OpenCC('t2s')
+        cache = {}
+        def conv(t):
+            out = []
+            for c in t:
+                if c not in cache:
+                    r = cc.convert(c)
+                    cache[c] = r if len(r) == 1 else c
+                out.append(cache[c])
+            return ''.join(out)
+    _PROFILE[k] = (min(11.0, body - 0.8), conv)
+    return _PROFILE[k]
+
+
 def pdf_stream(files):
     """汉字流 + 每字字体代码（各书经文字体不同，按书自适应）。丢页眉、丢脚注（<11 号）。"""
     chars, fonts, codes = [], [], {}
+    min_size, conv = pdf_profile(files)
     for fn in files:
         doc = fitz.open(PDF_DIR + fn)
         for page in doc:
             for blk in page.get_text('dict')['blocks']:
                 for ln in blk.get('lines', []):
                     for sp in ln['spans']:
-                        if sp['size'] < 11 or sp['bbox'][1] < TOP_MARGIN:
+                        if sp['size'] < min_size or sp['bbox'][1] < TOP_MARGIN:
                             continue
                         if RUNHEAD.match(sp['text'].strip()):
                             continue
                         k = codes.setdefault(sp['font'], chr(65 + len(codes)))
-                        for c in HAN.findall(sp['text']):
+                        for c in HAN.findall(conv(sp['text']) if conv else sp['text']):
                             chars.append(c); fonts.append(k)
     return ''.join(chars), ''.join(fonts)
 
@@ -85,10 +125,23 @@ def _tail(P, t, lo, hi):
     return -1, False
 
 
+VAR = str.maketrans('著麼么甚祢牠', '着吗吗什你它')
+_NORM = {}
+
+
 def locate(P, v, b, cur):
     """经文框开头 vs、经文框结尾 ve、注释开头 bs。先定开头与注释头，再在两者之间倒找框尾，
-    避免框尾句子在前文重复出现（利2:3=2:10、家谱名单）时锚错。"""
-    vs, ex1 = _head(P, v, cur, len(P))
+    避免框尾句子在前文重复出现（利2:3=2:10、家谱名单）时锚错。全程做和合本用字归一
+    （著/着、么/吗…一对一替换，下标不变），框头在多处出现时挑后续吻合度最高的候选。"""
+    if _NORM.get('id') != (len(P), P[:300]):   # 不能用 id(P)：前一卷对象回收后 id 会被复用
+        _NORM['id'], _NORM['P'] = (len(P), P[:300]), P.translate(VAR)
+    P = _NORM['P']
+    v, b = v.translate(VAR), b.translate(VAR)
+    vs, ex1 = _best(P, v, cur)
+    if vs < 0 or not ex1:
+        g, gx = _best(P, v, 0, len(P))           # 前面某单元锚得太靠后时，起点会被带跑
+        if g >= 0 and gx:
+            vs, ex1 = g, gx
     if vs < 0:
         return None
     hi = min(len(P), vs + len(v) + 3000)
@@ -100,6 +153,25 @@ def locate(P, v, b, cur):
         return ('notail', vs)
     return vs, min(ve, bs), bs, (ex1, ex2, ex3)
 
+
+def _best(P, v, cur, window=150000):
+    import difflib
+    key = v[:8]
+    a = v[:200]
+    best, score = -1, 0.0
+    j = P.find(key, cur, cur + window)
+    while j >= 0:
+        def hit(x, y):
+            sm = difflib.SequenceMatcher(None, x, y, autojunk=False)
+            return sum(k.size for k in sm.get_matching_blocks()) / max(1, len(x))
+        r = 0.5 * hit(a[:60], P[j:j + 90]) + 0.5 * hit(a, P[j:j + int(len(a) * 1.5) + 20])
+        if r > score:
+            best, score = j, r
+        j = P.find(key, j + 1, cur + window)
+    if score >= 0.7:
+        return best, True
+    j, ex = _head(P, v, cur, len(P))
+    return j, ex
 
 UNIT_RE = re.compile(r'<div class="mh-verse">(.*?)</div>\s*<div class="mh-unit-body">(.*?)(?=<div class="mh-unit">|<aside|\Z)', re.S)
 

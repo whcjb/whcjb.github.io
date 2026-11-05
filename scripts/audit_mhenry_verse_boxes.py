@@ -41,8 +41,8 @@ _NORM = {}
 def best_head(P, v, cur, window=120000):
     """框头锚点在 [cur, cur+window) 的所有出现里，挑「框文前 200 字有多少能逐字对上」最高的。
     框里缺节时框比 PDF 短，用 ratio 会偏低，所以按框文命中比例打分；先做和合本用字归一。"""
-    if _NORM.get('id') != id(P):
-        _NORM['id'], _NORM['P'] = id(P), P.translate(VAR)   # 一对一替换，下标不变
+    if _NORM.get('id') != (len(P), P[:300]):   # 不能用 id(P)：前一卷对象回收后 id 会被复用
+        _NORM['id'], _NORM['P'] = (len(P), P[:300]), P.translate(VAR)   # 一对一替换，下标不变
     P = _NORM['P']
     key = v[:8].translate(VAR)        # 8 字：第 2 节缺失时 12 字锚点会横跨缺口
     a = v[:200].translate(VAR)

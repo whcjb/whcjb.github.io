@@ -17,7 +17,7 @@
 import os, re, sys
 import fitz, yaml
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from audit_mhenry_unit_seams import (locate, RUNHEAD, ROOT, PDF_DIR, TOP_MARGIN, ANCHOR, GAP_MIN, HAN,
+from audit_mhenry_unit_seams import (pdf_profile, locate, RUNHEAD, ROOT, PDF_DIR, TOP_MARGIN, ANCHOR, GAP_MIN, HAN,
                                      UNIT_RE, pdf_files, han, chapter_files)
 
 MAX_GAP = 400
@@ -29,18 +29,19 @@ def pdf_stream_raw(files):
     """汉字流 P、字体流 F、原文 R、P[i] 在 R 里的下标 idx。"""
     P, F, R, idx, codes = [], [], [], [], {}
     rlen = 0
+    min_size, conv = pdf_profile(files)
     for fn in files:
         doc = fitz.open(PDF_DIR + fn)
         for page in doc:
             for blk in page.get_text('dict')['blocks']:
                 for ln in blk.get('lines', []):
                     for sp in ln['spans']:
-                        if sp['size'] < 11 or sp['bbox'][1] < TOP_MARGIN:
+                        if sp['size'] < min_size or sp['bbox'][1] < TOP_MARGIN:
                             continue
                         if RUNHEAD.match(sp['text'].strip()):
                             continue
                         k = codes.setdefault(sp['font'], chr(65 + len(codes)))
-                        t = sp['text']
+                        t = conv(sp['text']) if conv else sp['text']
                         for j, c in enumerate(t):
                             if HAN.match(c):
                                 P.append(c); F.append(k); idx.append(rlen + j)
