@@ -22,7 +22,7 @@ from audit_mhenry_verse_boxes import best_head
 from fix_mhenry_unit_seams import pdf_stream_raw, clean
 from fix_mhenry_verse_boxes import fmt_verse
 
-VAR = str.maketrans('著麼么甚祢牠', '着吗吗什你它')
+VAR = str.maketrans('著麼么甚祢牠她', '着吗吗什你它他')
 ROMAN = re.compile(r'^(I|II|III|IV|V|VI|VII|VIII|IX|X|XI|XII|XIII|XIV|XV)\.\s*')
 END_PUNCT = '。！？：；，、'          # 小标题常以「（主前593 年）」收尾，「）」不算句末
 
@@ -43,8 +43,11 @@ def pdf_lines(files):
                         if sp['bbox'][1] < TOP_MARGIN:
                             continue
                         if sp['size'] < min_size:
-                            if any_body and re.fullmatch(r'\s*\d+\s*', t) and sp['size'] < 9:
-                                txt += t.strip()      # 正文里的脚注引号
+                            if re.fullmatch(r'\s*\d+(?:-\d+)?\s*', t):
+                                if sp['size'] >= 9:
+                                    txt += t.strip() + ' '   # 小一号的节号（赛 PDF 节号 10 号）
+                                elif any_body:
+                                    txt += t.strip()         # 正文里的脚注引号
                             continue
                         if RUNHEAD.match(t.strip()):
                             continue

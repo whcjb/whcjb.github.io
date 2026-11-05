@@ -32,7 +32,7 @@ def scripture_span(P, F, vs, limit):
     return min(limit, len(P))
 
 
-VAR = str.maketrans('著麼么甚祢牠', '着吗吗什你它')
+VAR = str.maketrans('著麼么甚祢牠她', '着吗吗什你它他')
 
 
 _NORM = {}
@@ -44,11 +44,19 @@ def best_head(P, v, cur, window=120000):
     if _NORM.get('id') != (len(P), P[:300]):   # 不能用 id(P)：前一卷对象回收后 id 会被复用
         _NORM['id'], _NORM['P'] = (len(P), P[:300]), P.translate(VAR)   # 一对一替换，下标不变
     P = _NORM['P']
-    key = v[:8].translate(VAR)        # 8 字：第 2 节缺失时 12 字锚点会横跨缺口
     a = v[:200].translate(VAR)
     best, score = -1, 0.0
-    j = P.find(key, cur, cur + window)
-    while j >= 0:
+    # 多个位置取 8 字锚点（第 1 节很短、第 2 节缺失时，开头锚点会横跨缺口）
+    cands = set()
+    for off in (0, 6, 12, 20, 30):
+        key = a[off:off + 8]
+        if len(key) < 8:
+            break
+        j = P.find(key, cur, cur + window)
+        while j >= 0:
+            cands.add(max(0, j - off))
+            j = P.find(key, j + 1, cur + window)
+    for j in sorted(cands):
         def hit(x, y):
             sm = difflib.SequenceMatcher(None, x, y, autojunk=False)
             return sum(k.size for k in sm.get_matching_blocks()) / max(1, len(x))
@@ -57,7 +65,11 @@ def best_head(P, v, cur, window=120000):
             0.5 * hit(a, P[j:j + int(len(a) * 1.5) + 20])
         if r > score:
             best, score = j, r
-        j = P.find(key, j + 1, cur + window)
+    if best >= 0:
+        # 多锚点推出的起点可能偏几十字：用框文开头 4 字在附近校正到最近的精确位置
+        near = [k for k in range(max(0, best - 80), best + 80) if P.startswith(a[:4], k)]
+        if near:
+            best = min(near, key=lambda k: abs(k - best))
     return (best, True) if score >= 0.7 else (-1, False)
 
 

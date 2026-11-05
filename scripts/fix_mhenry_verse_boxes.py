@@ -16,7 +16,7 @@ from audit_mhenry_unit_seams import HAN, ROOT, ANCHOR, UNIT_RE, han, chapter_fil
 from fix_mhenry_unit_seams import pdf_stream_raw, clean
 from audit_mhenry_verse_boxes import scripture_span, MIN_MISS, best_head
 
-VAR = str.maketrans('著麼么甚祢牠', '着吗吗什你它')
+VAR = str.maketrans('著麼么甚祢牠她', '着吗吗什你它他')
 
 
 def fmt_verse(t):
@@ -70,6 +70,8 @@ def plan(book, zh):
                 mh = re.search(r'\d{1,3}(?:-\d{1,3})?\s*[「“‘『（]?\s*$', R[max(0, j1 - 10):j1])
                 if mh:
                     j1 -= len(mh.group(0))
+                while j0 > 0 and R[j0 - 1] in '（(「“‘『':
+                    j0 -= 1                      # 带上紧挨着的开括号/开引号
                 if not mnum:
                     # 诗篇第 1 节以诗题「1（……）」开头，诗题字体不同，回溯在诗题处停了：把诗题连节号带上
                     msup = re.search(r'(?<![\d.．])\d{1,3}\s*（[^（）\n]{1,80}）\s*$', R[max(0, j0 - 120):j0])
@@ -80,6 +82,16 @@ def plan(book, zh):
                 if mv:
                     raw_seg = raw_seg[mv.start():]        # 去掉同字体的小标题（太5「登山宝训」）
                 prepend = fmt_verse(clean(raw_seg))
+                n0 = re.match(r'\s*(\d{1,3})', re.sub(r'<[^>]+>', '', m.group(1)))
+                if not re.match(r'\d', prepend) and n0 and int(n0.group(1)) > 1:
+                    # PDF 本身漏印节号（诗66「（一篇诗歌，交与伶长。）全地都当向神欢呼！2 ……」）
+                    # 小标题与经文同字体时会一起回溯进来：去掉框前那段最后一个句末标点之前的部分
+                    cut = max(prepend.rfind(' '), -1)
+                    head_txt = prepend
+                    mt = re.search(r'[（(]', head_txt)
+                    if mt:
+                        head_txt = head_txt[mt.start():]
+                    prepend = f'{int(n0.group(1)) - 1} ' + head_txt.strip()
                 commentary_like = re.search(r'^\d+章|第\s*\d+(?:-\d+)?\s*节|这里|注意|请看|(?<![A-Za-z])I\.|（\d+）', prepend)
                 same_font_book = book in ('john', 'romans')    # 这两卷 PDF 经文与注释同字体，字体判据失效
                 if re.match(r'\d', prepend) and len(han(prepend)) >= 6 and not commentary_like and not same_font_book:
@@ -102,6 +114,8 @@ def plan(book, zh):
                                     cnt += 1
                             mm = re.search(r'\d{1,3}(?:-\d{1,3})?\s*[「“‘『（]?\s*$', L[:k])
                             k2 = mm.start() if mm else k
+                            while k2 > 0 and L[k2 - 1] in '（(「“‘『':
+                                k2 -= 1
                             if han(L[k2:]).translate(VAR) == vh and '<' not in L[k2:]:
                                 rem = (lo + lm.start() + k2, lo + lm.end())
                         if not rem:

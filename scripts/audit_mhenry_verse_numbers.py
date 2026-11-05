@@ -18,7 +18,7 @@ ORDER = ['genesis', 'exodus', 'leviticus', 'numbers', 'deuteronomy', 'joshua', '
          'philippians', 'colossians', '1thessalonians', '2thessalonians', '1timothy', '2timothy', 'titus', 'philemon',
          'hebrews', 'james', '1peter', '2peter', '1john', '2john', '3john', 'jude', 'revelation']
 VERSE_BOX = re.compile(r'<div class="mh-verse">(.*?)</div>', re.S)
-NUM = re.compile(r'(?:^|[\s。，；：！？”’」』）)、—─])(\d{1,3})(?:\s*[-–]\s*(\d{1,3}))?(?=\s*[“‘「『（(]?[一-鿿])')
+NUM = re.compile(r'(?:^|[\s。，；：！？”’」』）)、—─])(\d{1,3})(?:\s*[-–]\s*(\d{1,3}))?(?=\s*[“‘「『（(]{0,3}[一-鿿])')
 
 
 def verse_numbers(text):

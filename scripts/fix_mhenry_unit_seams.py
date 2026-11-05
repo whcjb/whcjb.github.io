@@ -54,6 +54,7 @@ def clean(raw):
     s = re.sub(r'(?<=[一-鿿\d（）：，。；、])\s+(?=[一-鿿\d（）：，。；、])', '', s)
     s = re.sub(r'\s+', ' ', s).strip()
     s = s.replace('「', '“').replace('」', '”').replace('『', '‘').replace('』', '’')
+    s = s.replace('创世纪', '创世记')       # PDF 书名笔误，md 早已统一为和合本书名
     return s
 
 
@@ -119,6 +120,8 @@ def plan(book, zh):
             leak_n = ve - true_end          # [B] 框尾混入的注释汉字数
             if leak_n > len(v) * 0.8:
                 leak_n, true_end = 0, ve        # 定位失准，不按漏入处理
+            if leak_n and re.search(r'(?<![\d：:])\d{1,3}\s*[“‘「『]?[\u4e00-\u9fff]', R[idx[true_end]:idx[ve - 1] + 1]):
+                leak_n, true_end = 0, ve        # 要切走的那截含节号：是下一节经文，不是注释
             gap_n = bs - ve                 # [A] 缺口汉字数
             if leak_n < 6 and gap_n < GAP_MIN:
                 # [C] 注释体开头其实是经文（经文漏进注释体）：从 bs 起的经文字体连续段
@@ -137,7 +140,8 @@ def plan(book, zh):
                 incomplete = not re.search(r'[。！？”’」』）)]$', vt)
                 has_vnum = re.search(r'\d+\s*[“‘「『（]?[\u4e00-\u9fff]', seg_raw) is not None
                 cites = re.match(r'\s*[（(]', after) is not None
-                if L >= 8 and (incomplete or has_vnum) and not cites:
+                comm_like = re.search(r'请注意|注意：|(?<![A-Za-z])I\.|第\s*\d+(?:-\d+)?\s*节|这里说的是', seg_raw)
+                if L >= 8 and (incomplete or has_vnum) and not cites and not comm_like:
                     plans.append(dict(book=book, ch=ch, unit=ui, md=md, leak=0, gap=0, mode='pull',
                                       pull=L, pull_han=P[bs:bs + L], why=[], shape='C',
                                       raw=clean(R[idx[bs]:idx[bs + L - 1] + 1]),
@@ -279,7 +283,7 @@ def rebuild_one(s, it):
         if s2 is None:
             return None
     # 验收：原注释体一个 8 字串都不许丢；原经文框允许和合本用字差异，归一后 ≥80% 对得上
-    VAR = str.maketrans('著麼么甚祢牠', '着吗吗什你它')
+    VAR = str.maketrans('著麼么甚祢牠她', '着吗吗什你它他')
     new_h = han(s2).translate(VAR)
     def grams(t):
         t = han(t).translate(VAR)

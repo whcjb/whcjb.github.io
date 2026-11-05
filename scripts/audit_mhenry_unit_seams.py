@@ -125,7 +125,7 @@ def _tail(P, t, lo, hi):
     return -1, False
 
 
-VAR = str.maketrans('著麼么甚祢牠', '着吗吗什你它')
+VAR = str.maketrans('著麼么甚祢牠她', '着吗吗什你它他')
 _NORM = {}
 
 
