@@ -92,7 +92,24 @@ def _unitalic_ref(m):
     return f'*{core}*{pre[len(core):]}{m.group(2)}'
 
 
+# 页边纲目标签：translate_petter.MARK_ZH 没收到的少数写法（改译前的匹配会动缓存键，这里在发布时补译）
+MARK_FIX = {'Instr.': '教导', 'Instruct.': '教导', '[Answ.': '答', 'Ʋs.': '应用', 'Obj': '异议', 'Resp.': '答',
+            'Vers.': '第'}
+
+
+def mark_fix(m):
+    s = m.group(1)
+    for k, v in MARK_FIX.items():
+        if s.startswith(k):
+            num = s[len(k):].strip()
+            if k == 'Vers.':
+                return f'<span class="pt-mark">第 {num} 节</span>'
+            return f'<span class="pt-mark">{v}{(" " + num) if num else ""}</span>'
+    return m.group(0)
+
+
 def clean(body: str) -> str:
+    body = re.sub(r'<span class="pt-mark">([^<]*[A-Za-zƲ][^<]*)</span>', mark_fix, body)
     body = re.sub(r'(?<!\*)\*\*(?!\*)', '', body)
     body = re.sub(r'<<<[^>]*>>>', '', body)
     body = REF_BOOK_ITALIC.sub(_unitalic_ref, body)
