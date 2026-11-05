@@ -3733,7 +3733,7 @@ next_label: "1:1"
 
 <p class="pt-ixsub" markdown="1">They should be thankeful for their Call. <a href="{{ site.baseurl }}/petter/mark/2-15/#p112">112</a></p>
 
-<p class="pt-ixsub" markdown="1">They are like si<span class="pt-gap" title="TCP: illegible in source">•</span>k persons. <a href="{{ site.baseurl }}/petter/mark/2-16/#p115">115</a></p>
+<p class="pt-ixsub" markdown="1">They are like <span class="pt-conj" title="Editorial conjecture: illegible in the source; supplied from the stated evidence (编者推补；非原书原文)">[sick]</span> persons. <a href="{{ site.baseurl }}/petter/mark/2-16/#p115">115</a></p>
 
 <p class="pt-ixsub" markdown="1">They have need of repentance. <a href="{{ site.baseurl }}/petter/mark/2-17/#p117">117</a></p>
 
@@ -4125,7 +4125,7 @@ next_label: "1:1"
 
 <p class="pt-ixsub" markdown="1">Why they persecute the Saints. 1083</p>
 
-<p class="pt-ixsub" markdown="1">Christ*'s* second coming will be ma<span class="pt-gap" title="TCP: illegible in source">•</span>ter of terrour to them. 1411</p>
+<p class="pt-ixsub" markdown="1">Christ*'s* second coming will be <span class="pt-conj" title="Editorial conjecture: illegible in the source; supplied from the stated evidence (编者推补；非原书原文)">[matter]</span> of terrour to them. 1411</p>
 
 <p class="pt-ixsub" markdown="1">There is no society without them. 1357</p>
 
@@ -4135,7 +4135,7 @@ next_label: "1:1"
 
 <p class="pt-ixsub" markdown="1">God*'s* using them as Instruments doth not excuse their malice. 1105</p>
 
-<p class="pt-ixsub" markdown="1">Unity amongst themselves in comm<span class="pt-gap" title="TCP: illegible in source">•</span>tting sin. <a href="{{ site.baseurl }}/petter/mark/3-6/#p141">141</a>. 1359. 1456</p>
+<p class="pt-ixsub" markdown="1">Unity amongst themselves in <span class="pt-conj" title="Editorial conjecture: illegible in the source; supplied from the stated evidence (编者推补；非原书原文)">[committing]</span> sin. <a href="{{ site.baseurl }}/petter/mark/3-6/#p141">141</a>. 1359. 1456</p>
 
 <p class="pt-ixsub" markdown="1">The policy of the wicked. <a href="{{ site.baseurl }}/petter/mark/3-6/#p142">142</a>. <a href="{{ site.baseurl }}/petter/mark/9-14b/#p608">608</a>. 942. 1204. 1660. 1442</p>
 
@@ -4149,7 +4149,7 @@ next_label: "1:1"
 
 <p class="pt-ixsub" markdown="1">God limits their rage. 939. 1379.</p>
 
-<p class="pt-ixsub" markdown="1">The society of them is a<span class="pt-gap" title="TCP: illegible in source">•</span> <span class="pt-gap" title="TCP: illegible in source">•</span>ccasion of sin. <a href="{{ site.baseurl }}/petter/mark/8-38c/#p555">555</a>. 1394.</p>
+<p class="pt-ixsub" markdown="1">The society of them is <span class="pt-conj" title="Editorial conjecture: illegible in the source; supplied from the stated evidence (编者推补；非原书原文)">[an occasion]</span> of sin. <a href="{{ site.baseurl }}/petter/mark/8-38c/#p555">555</a>. 1394.</p>
 
 <p class="pt-ixsub" markdown="1">It is dangerous to receive benefits from them. 1395</p>
 
@@ -4205,7 +4205,7 @@ next_label: "1:1"
 
 <p class="pt-ixsub" markdown="1">We should not expose our selves to them. <a href="{{ site.baseurl }}/petter/mark/11-10b/#p828">828</a></p>
 
-<p class="pt-ixsub" markdown="1">Their Children imita<span class="pt-gap" title="TCP: illegible in source">•</span>e them. <a href="{{ site.baseurl }}/petter/mark/6-12b/#p324">324</a>. <a href="{{ site.baseurl }}/petter/mark/8-12b/#p477">477</a></p>
+<p class="pt-ixsub" markdown="1">Their Children <span class="pt-conj" title="Editorial conjecture: illegible in the source; supplied from the stated evidence (编者推补；非原书原文)">[imitate]</span> them. <a href="{{ site.baseurl }}/petter/mark/6-12b/#p324">324</a>. <a href="{{ site.baseurl }}/petter/mark/8-12b/#p477">477</a></p>
 
 <p class="pt-ixsub" markdown="1">God sometimes permits them to their will against his Servants. <a href="{{ site.baseurl }}/petter/mark/9-13/#p605">605</a></p>
 
@@ -4227,7 +4227,7 @@ next_label: "1:1"
 
 <p class="pt-ixsub" markdown="1"><span class="pt-pb" data-facs="15"></span> God can make the insensible Creatures witnesses against it. <a href="{{ site.baseurl }}/petter/mark/6-11b/#p316">316</a></p>
 
-<p class="pt-ixsub" markdown="1">They sometimes love God*'s* Ch<span class="pt-gap" title="TCP: illegible in source">•</span>ldren. <a href="{{ site.baseurl }}/petter/mark/6-20b/#p339">339</a></p>
+<p class="pt-ixsub" markdown="1">They sometimes love God*'s* <span class="pt-conj" title="Editorial conjecture: illegible in the source; supplied from the stated evidence (编者推补；非原书原文)">[Children]</span>. <a href="{{ site.baseurl }}/petter/mark/6-20b/#p339">339</a></p>
 
 <p class="pt-ixsub" markdown="1">They sometimes restrain others from sin. <a href="{{ site.baseurl }}/petter/mark/6-20b/#p340">340</a></p>
 

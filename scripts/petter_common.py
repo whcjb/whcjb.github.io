@@ -90,7 +90,12 @@ def apply(md, groups_gid, dec, sites):
             continue
         v, kind = dec[g]
         if '*' in v:                     # 读法自带斜体标记（组内斜体边界与原串不同）：整组照写
-            edits.append((a, b, f'{CONJ_L}{v}{CONJ_R}' if kind == 'c' else v))
+            if kind == 'c':                  # 连写号留在方括号外
+                # 斜体号与连写号一律留在方括号外（斜体不能跨标签），括号只框文字段
+                v = re.sub(r'[^*⁀]+', lambda x: re.sub(r'^(\s*)(.*?)(\s*)$',
+                           lambda y: f'{y.group(1)}{CONJ_L}{y.group(2)}{CONJ_R}{y.group(3)}' if y.group(2) else y.group(0),
+                           x.group(0)), v)
+            edits.append((a, b, v))
             continue
         lead = re.match(r'^\**', s).group(0)
         trail = re.search(r'\**$', s).group(0)
