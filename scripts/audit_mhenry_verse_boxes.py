@@ -32,17 +32,33 @@ def scripture_span(P, F, vs, limit):
     return min(limit, len(P))
 
 
+VAR = str.maketrans('著麼么甚祢牠', '着吗吗什你它')
+
+
+_NORM = {}
+
+
 def best_head(P, v, cur, window=120000):
-    """框头锚点在 [cur, cur+window) 的所有出现里，挑后续 200 字与框文最吻合的。"""
-    key = v[:8]                       # 8 字：第 2 节缺失时 12 字锚点会横跨缺口
+    """框头锚点在 [cur, cur+window) 的所有出现里，挑「框文前 200 字有多少能逐字对上」最高的。
+    框里缺节时框比 PDF 短，用 ratio 会偏低，所以按框文命中比例打分；先做和合本用字归一。"""
+    if _NORM.get('id') != id(P):
+        _NORM['id'], _NORM['P'] = id(P), P.translate(VAR)   # 一对一替换，下标不变
+    P = _NORM['P']
+    key = v[:8].translate(VAR)        # 8 字：第 2 节缺失时 12 字锚点会横跨缺口
+    a = v[:200].translate(VAR)
     best, score = -1, 0.0
     j = P.find(key, cur, cur + window)
     while j >= 0:
-        r = difflib.SequenceMatcher(None, v[:200], P[j:j + 260], autojunk=False).ratio()
+        def hit(x, y):
+            sm = difflib.SequenceMatcher(None, x, y, autojunk=False)
+            return sum(k.size for k in sm.get_matching_blocks()) / max(1, len(x))
+        # 开头 60 字逐字吻合（防止锚到综述里的引文）+ 整框吻合（窗口 1.5 倍容纳框里缺节）
+        r = 0.5 * hit(a[:60], P[j:j + 90]) + \
+            0.5 * hit(a, P[j:j + int(len(a) * 1.5) + 20])
         if r > score:
             best, score = j, r
         j = P.find(key, j + 1, cur + window)
-    return (best, True) if score >= 0.5 else (-1, False)
+    return (best, True) if score >= 0.7 else (-1, False)
 
 
 def audit(book, zh):

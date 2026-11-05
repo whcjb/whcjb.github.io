@@ -225,7 +225,12 @@ def plan(book, zh):
                     tail_p = re.match(r'[。，；：！？”’」』）)〉\s]*', R[j1:idx[se] if se < len(idx) else j1])
                     j1 += tail_p.end() if tail_p else 0
                     item['mode'] = 'rebuild'
-                    item['new_verse'] = clean(R[idx[vs]:j1])
+                    j0 = idx[vs]
+                    mh = re.search(r'\d{1,3}(?:-\d{1,3})?\s*[「“‘『（]?\s*$', R[max(0, j0 - 10):j0])
+                    if mh:
+                        j0 -= len(mh.group(0))      # 带上框头节号与开引号
+                    from fix_mhenry_verse_boxes import fmt_verse
+                    item['new_verse'] = fmt_verse(clean(R[j0:j1]))
                     item['new_verse_han'] = P[vs:se]
                     item['raw'] = clean(R[j1:idx[bs]]) if se < bs else ''
                     item['orig_why'] = why
@@ -261,13 +266,12 @@ def rebuild_one(s, it):
     if n >= 8:
         # 回退到 k 之前最后一个汉字之后的标点
         body2 = body2[:p] + body2[k:].lstrip('。，；：！？”’」』）) ')
-    it2 = dict(it, mode='body', leak=0, verse_span=(v0, v0 + len(it['new_verse']) + 1),
-               body_span=None)
-    s2 = s[:v0] + it['new_verse'] + '\n' + s[v1:b0] + body2 + s[b1:]
-    nb0 = v0 + len(it['new_verse']) + 1 + (b0 - v1)
+    nv = '\n' + it['new_verse'] + '\n'
+    it2 = dict(it, mode='body', leak=0, verse_span=(v0, v0 + len(nv)), body_span=None)
+    s2 = s[:v0] + nv + s[v1:b0] + body2 + s[b1:]
+    nb0 = v0 + len(nv) + (b0 - v1)
     nb1 = nb0 + len(body2)
     if it['raw']:
-        it2['verse_span'] = (v0, v0 + len(it['new_verse']) + 1)
         it2['body_span'] = (nb0, nb1)
         it2['gap'] = len(han(it['raw']))
         s2 = apply_one(s2, it2)
