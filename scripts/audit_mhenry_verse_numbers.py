@@ -18,7 +18,7 @@ ORDER = ['genesis', 'exodus', 'leviticus', 'numbers', 'deuteronomy', 'joshua', '
          'philippians', 'colossians', '1thessalonians', '2thessalonians', '1timothy', '2timothy', 'titus', 'philemon',
          'hebrews', 'james', '1peter', '2peter', '1john', '2john', '3john', 'jude', 'revelation']
 VERSE_BOX = re.compile(r'<div class="mh-verse">(.*?)</div>', re.S)
-NUM = re.compile(r'(?:^|[\s。，；：！？”’」』）)、—─])(\d{1,3})(?:\s*[-–]\s*(\d{1,3}))?(?=\s*[“‘「『（(]{0,3}[一-鿿])')
+NUM = re.compile(r'(?:(?<=[^\d][：:.．])|(?<=^[：:.．])|(?<![\d：:.．\-–]))(\d{1,3})(?:\s*[-–]\s*(\d{1,3}))?[ab]?[.．]?(?=\s*[“‘「『（(〈〔]{0,3}[一-鿿])')
 
 
 def verse_numbers(text):
@@ -50,7 +50,9 @@ def main():
                 have |= verse_numbers(re.sub(r'<[^>]+>', '', m.group(1)))
             if len(have) < n * 0.5:
                 continue                     # 框里基本不带节号，没法数
-            miss = sorted(set(range(1, n + 1)) - have)
+            # 和合本数据里标「a」/「并入上节」的是与上一节合并的节，不算缺
+            merged = {v for v in range(1, n + 1) if chs[ch - 1][v - 1].strip() in ('a', '') or re.search('[并併]入上', chs[ch - 1][v - 1].replace(' ', ''))}
+            miss = sorted(set(range(1, n + 1)) - have - merged)
             if miss:
                 total += len(miss)
                 print(f'{book} {ch}: 缺 {miss}（共 {n} 节）')
