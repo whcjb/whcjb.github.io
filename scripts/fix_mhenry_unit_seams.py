@@ -17,7 +17,7 @@
 import os, re, sys
 import fitz, yaml
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from audit_mhenry_unit_seams import (RUNHEAD, ROOT, PDF_DIR, TOP_MARGIN, ANCHOR, GAP_MIN, HAN,
+from audit_mhenry_unit_seams import (locate, RUNHEAD, ROOT, PDF_DIR, TOP_MARGIN, ANCHOR, GAP_MIN, HAN,
                                      UNIT_RE, pdf_files, han, chapter_files)
 
 MAX_GAP = 400
@@ -84,21 +84,26 @@ def plan(book, zh):
             v, b = han(m.group(1)), han(m.group(2))
             if len(v) < ANCHOR or len(b) < ANCHOR:
                 continue
-            ve = P.find(v[-ANCHOR:], cur)
-            if ve < 0:
+            loc = locate(P, v, b, cur)
+            if loc is None:
                 continue
-            ve += ANCHOR
-            bs = P.find(b[:ANCHOR], ve - ANCHOR)
-            if bs < 0 or bs - ve > 3000:
-                cur = ve
-                continue
+            if len(loc) == 2:
+                cur = loc[1]; continue
+            vs, ve, bs, (ex_vh, ex_bh, ex_vt) = loc
             cur = bs
-            vs = P.find(v[:ANCHOR], max(0, ve - len(v) - 200), ve)
-            if vs < 0:
-                continue
             vf = F[vs:vs + ANCHOR]
             vfont = max(set(vf), key=vf.count)
 
+            if not ex_vt:
+                # 框尾措辞与 PDF 不同、锚点模糊：吸附到最近的「经文字体→注释字体」切换点
+                best = None
+                for i in range(max(vs + 1, ve - 20), min(bs + 1, ve + 21)):
+                    if F[i - 1] == vfont and all(c != vfont for c in F[i:i + 4]):
+                        if best is None or abs(i - ve) < abs(best - ve):
+                            best = i
+                if best is not None:
+                    ve, ex_vt = best, True
+            exact = ex_bh and ex_vt          # 框头只用来定经文字体，模糊无妨
             # 经文真实结尾：从经文开头往后，第一段连续 ≥4 个非经文字体汉字之前
             true_end = ve
             run = 0
@@ -111,6 +116,8 @@ def plan(book, zh):
                 else:
                     run = 0
             leak_n = ve - true_end          # [B] 框尾混入的注释汉字数
+            if leak_n > len(v) * 0.8:
+                leak_n, true_end = 0, ve        # 定位失准，不按漏入处理
             gap_n = bs - ve                 # [A] 缺口汉字数
             if leak_n < 6 and gap_n < GAP_MIN:
                 # [C] 注释体开头其实是经文（经文漏进注释体）：从 bs 起的经文字体连续段
@@ -200,9 +207,80 @@ def plan(book, zh):
                 if mp:
                     item['raw_v'] += mp.group(0).strip()
                     item['raw'] = item['raw'][mp.end():]
+            if not exact:
+                why.append('锚点模糊')
+            if why and ex_vh and ex_bh and gap_n < 3000 and '缺口过长' not in ','.join(why[:0]):
+                # 整单元按 PDF 重建：经文框 = 框头起连续经文段；注释头补 PDF 经文后文字
+                se, run = bs, 0
+                for i in range(vs, bs):
+                    if F[i] != vfont:
+                        run += 1
+                        if run >= 4:
+                            se = i - run + 1
+                            break
+                    else:
+                        run = 0
+                if se > vs:
+                    j1 = idx[se - 1] + 1
+                    tail_p = re.match(r'[。，；：！？”’」』）)〉\s]*', R[j1:idx[se] if se < len(idx) else j1])
+                    j1 += tail_p.end() if tail_p else 0
+                    item['mode'] = 'rebuild'
+                    item['new_verse'] = clean(R[idx[vs]:j1])
+                    item['new_verse_han'] = P[vs:se]
+                    item['raw'] = clean(R[j1:idx[bs]]) if se < bs else ''
+                    item['orig_why'] = why
+                    why = []
             item['why'] = why
             plans.append(item)
     return plans
+
+
+def rebuild_one(s, it):
+    v0, v1 = it['verse_span']
+    b0, b1 = it['body_span']
+    verse, body = s[v0:v1], s[b0:b1]
+    nvh = it['new_verse_han']
+    # 注释体里与新经文框重复的整段经文：删段（段 = 空行分隔、不含标签）
+    paras = re.split(r'(\n\s*\n)', body)
+    kept = []
+    for ptxt in paras:
+        ph = han(ptxt)
+        if '<' not in ptxt and len(ph) >= 8 and ph in nvh:
+            continue
+        kept.append(ptxt)
+    body2 = ''.join(kept)
+    # 段首挂着一截经文（段落其余是注释）：剥掉与新框重复的前缀
+    p = first_text_pos(body2)
+    k, n = p, 0
+    while k < len(body2) and body2[k] != '<' and body2[k] != '\n':
+        if HAN.match(body2[k]):
+            if nvh.find(han(body2[p:k + 1])) < 0:
+                break
+            n += 1
+        k += 1
+    if n >= 8:
+        # 回退到 k 之前最后一个汉字之后的标点
+        body2 = body2[:p] + body2[k:].lstrip('。，；：！？”’」』）) ')
+    it2 = dict(it, mode='body', leak=0, verse_span=(v0, v0 + len(it['new_verse']) + 1),
+               body_span=None)
+    s2 = s[:v0] + it['new_verse'] + '\n' + s[v1:b0] + body2 + s[b1:]
+    nb0 = v0 + len(it['new_verse']) + 1 + (b0 - v1)
+    nb1 = nb0 + len(body2)
+    if it['raw']:
+        it2['verse_span'] = (v0, v0 + len(it['new_verse']) + 1)
+        it2['body_span'] = (nb0, nb1)
+        it2['gap'] = len(han(it['raw']))
+        s2 = apply_one(s2, it2)
+        if s2 is None:
+            return None
+    # 验收：原单元每个 8 字串都要能在新文件中找到
+    old_h = han(verse + body)
+    new_h = han(s2)
+    miss = sum(1 for i in range(0, max(0, len(old_h) - 8), 4) if old_h[i:i + 8] not in new_h)
+    if miss:
+        print('  SKIP 重建后原文有缺', miss, it['book'], it['ch'], it['unit'])
+        return None
+    return s2
 
 
 def apply_one(s, it):
@@ -212,6 +290,8 @@ def apply_one(s, it):
     body = s[b0:b1]
     verse = s[v0:v1]
     ins = it['raw']
+    if it.get('mode') == 'rebuild':
+        return rebuild_one(s, it)
     if it.get('mode') == 'pull':
         p = first_text_pos(body)
         n, k = it['pull'], p
@@ -258,6 +338,9 @@ def apply_one(s, it):
                 n -= 1
         # 回到该句起点前的标点（漏入段从 k 开始）
         cut = k
+        if re.search(r'\d\s*[“‘「『（]?$', verse[max(0, cut - 4):cut]):
+            print('  SKIP 漏入段前是节号（本身是经文）', it['book'], it['ch'], it['unit'])
+            return None
         # 漏入段在经文框里的原文，必须与 PDF 汉字一致
         if han(verse[cut:]) != it['leak_han']:
             print('  SKIP 经文框尾与PDF不一致', it['book'], it['ch'], it['unit'])

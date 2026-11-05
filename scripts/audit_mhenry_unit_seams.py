@@ -64,6 +64,43 @@ def han(s):
     return ''.join(HAN.findall(s))
 
 
+def _head(P, t, lo, hi):
+    """t 的开头在 P[lo:hi] 里的位置；先试 12 字锚点，不行就往里挪、缩到 8 字。返回 (pos, exact)。"""
+    for size in (ANCHOR, 8):
+        for off in range(0, min(60, len(t) - size + 1), 3):
+            j = P.find(t[off:off + size], lo, hi)
+            if j >= 0:
+                return j - off, off == 0 and size == ANCHOR
+    return -1, False
+
+
+def _tail(P, t, lo, hi):
+    """t 的结尾在 P[lo:hi] 里的位置（从后往前找）。返回 (end, exact)。"""
+    n = len(t)
+    for size in (ANCHOR, 8):
+        for off in range(0, min(60, n - size + 1), 3):
+            j = P.rfind(t[n - off - size:n - off], lo, hi)
+            if j >= 0:
+                return j + size + off, off == 0 and size == ANCHOR
+    return -1, False
+
+
+def locate(P, v, b, cur):
+    """经文框开头 vs、经文框结尾 ve、注释开头 bs。先定开头与注释头，再在两者之间倒找框尾，
+    避免框尾句子在前文重复出现（利2:3=2:10、家谱名单）时锚错。"""
+    vs, ex1 = _head(P, v, cur, len(P))
+    if vs < 0:
+        return None
+    hi = min(len(P), vs + len(v) + 3000)
+    bs, ex2 = _head(P, b, vs + 1, hi)
+    if bs < 0:
+        return ('nobody', vs)
+    ve, ex3 = _tail(P, v, vs, bs + ANCHOR)
+    if ve < 0 or ve > bs + ANCHOR:
+        return ('notail', vs)
+    return vs, min(ve, bs), bs, (ex1, ex2, ex3)
+
+
 UNIT_RE = re.compile(r'<div class="mh-verse">(.*?)</div>\s*<div class="mh-unit-body">(.*?)(?=<div class="mh-unit">|<aside|\Z)', re.S)
 
 
@@ -86,22 +123,14 @@ def audit(book, zh):
             v, b = han(m.group(1)), han(m.group(2))
             if len(v) < ANCHOR or len(b) < ANCHOR:
                 continue
-            ve = P.find(v[-ANCHOR:], cur)
-            if ve < 0:
-                ve = P.find(v[-ANCHOR:])
-            if ve < 0:
-                out.append((ch, ui, '?', 'verse-tail-not-found', v[-ANCHOR:]))
-                continue
-            ve += ANCHOR
-            bs = P.find(b[:ANCHOR], ve - ANCHOR)
-            if bs < 0 or bs - ve > 3000:
-                out.append((ch, ui, '?', 'body-head-not-found', b[:ANCHOR]))
-                cur = ve
-                continue
+            loc = locate(P, v, b, cur)
+            if loc is None:
+                out.append((ch, ui, '?', 'verse-head-not-found', v[:ANCHOR])); continue
+            if len(loc) == 2:
+                out.append((ch, ui, '?', loc[0], v[:ANCHOR])); cur = loc[1]; continue
+            vs, ve, bs, exact = loc
             cur = bs
-            # 经文字体 = 经文框开头那段在 PDF 里的主字体
-            vs = P.find(v[:ANCHOR], max(0, ve - len(v) - 200), ve)
-            vf = F[vs:vs + ANCHOR] if vs >= 0 else F[ve - ANCHOR:ve]
+            vf = F[vs:vs + ANCHOR]
             vfont = max(set(vf), key=vf.count)
             gap = P[ve:bs]
             if len(gap) >= GAP_MIN:
