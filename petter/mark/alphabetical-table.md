@@ -1901,7 +1901,7 @@ next_label: "1:1"
 
 <p class="pt-ixsub" markdown="1">Hardnesse of it a Sin. <a href="{{ site.baseurl }}/petter/mark/3-5b/#p139">139</a></p>
 
-<p class="pt-ixsub" markdown="1">Hardnesse of it a <span class="pt-gap" title="TCP: illegible in source">•</span>udgment. <a href="{{ site.baseurl }}/petter/mark/4-12/#p197">197</a></p>
+<p class="pt-ixsub" markdown="1">Hardnesse of it a <span class="pt-conj" title="Editorial conjecture: illegible in the source; supplied from the stated evidence (编者推补；非原书原文)">[Judgment]</span>. <a href="{{ site.baseurl }}/petter/mark/4-12/#p197">197</a></p>
 
 <p class="pt-ixsub" markdown="1">It is sometimes hard in the best. <a href="{{ site.baseurl }}/petter/mark/6-51/#p386">386</a>. <a href="{{ site.baseurl }}/petter/mark/8-17b/#p491">491</a></p>
 
