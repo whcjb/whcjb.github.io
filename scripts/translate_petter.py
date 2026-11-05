@@ -459,11 +459,15 @@ def translate_one(text: str, resume: bool, label: str = '', ctx: str = '') -> st
 
     base = ("把下面这段佩特《马可福音注释》的十七世纪英文译成简体中文。"
             "整段通读后再译，保证上下文连贯；逐一保留 `*` 斜体标记与 ⟦N⟧ 占位符；把译文完整放在 <译文> 与 </译文> 之间，标签外的文字一律丢弃。\n\n")
-    out = fix_italics(restore_greek(tidy(take_tagged(tf.call_claude(base + ctx_block(ctx) + text, timeout=900, label=label))), text),
-                      text, label)
+    raw = tf.call_claude(base + ctx_block(ctx) + text, timeout=900, label=label)
+    out = fix_italics(restore_greek(tidy(take_tagged(raw)), text), text, label)
     diff = structural_diff(text, out)
     if diff:
         print(f'    [retry-struct] {label}: {diff[:90]}', flush=True)
+        # 第一遍偶发吐几十 token 的废话（<reasoning_effort>、Placeholder →、只剩一个字；第 1 章 3/700 次，
+        # 同段重放 15 次复现不出）——原始输出存下来备查，重译照常
+        with BAD_LOG.open('a', encoding='utf-8') as fh:
+            fh.write(f'[{label}·first] {diff[:120]}\n  RAW: {raw[:400]!r}\n')
         fix = (f"上一版译文有结构问题：{diff}。\n重译下面这段。**必须逐一保留**"
                " ⟦N⟧ 占位符（个数与先后都要对上）；希腊文逐字照抄；"
                "**不得把任何英文词原样留在中文句子里**。把译文完整放在 <译文> 与 </译文> 之间，标签外的文字一律丢弃。\n\n")
