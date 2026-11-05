@@ -273,12 +273,18 @@ def rebuild_one(s, it):
         s2 = apply_one(s2, it2)
         if s2 is None:
             return None
-    # 验收：原单元每个 8 字串都要能在新文件中找到
-    old_h = han(verse + body)
-    new_h = han(s2)
-    miss = sum(1 for i in range(0, max(0, len(old_h) - 8), 4) if old_h[i:i + 8] not in new_h)
-    if miss:
-        print('  SKIP 重建后原文有缺', miss, it['book'], it['ch'], it['unit'])
+    # 验收：原注释体一个 8 字串都不许丢；原经文框允许和合本用字差异，归一后 ≥80% 对得上
+    VAR = str.maketrans('著麼么甚祢牠', '着吗吗什你它')
+    new_h = han(s2).translate(VAR)
+    def grams(t):
+        t = han(t).translate(VAR)
+        return [t[i:i + 8] for i in range(0, max(0, len(t) - 8), 4)]
+    misses = [g for g in grams(body) if g not in new_h]
+    vg = grams(verse)
+    vmiss = [g for g in vg if g not in new_h]
+    it['misses'] = misses + ['V:' + g for g in vmiss]
+    if misses or (vg and len(vmiss) > 0.2 * len(vg)):
+        print('  SKIP 重建后原文有缺', len(misses), len(vmiss), '/', len(vg), it['book'], it['ch'], it['unit'])
         return None
     return s2
 
