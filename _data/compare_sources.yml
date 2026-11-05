@@ -166,7 +166,7 @@ sources:
     - {key: mhenry, author: mhenry, lang: zh, label: "马太亨利注释", url_tpl: "/mhenry/malachi/__CH__/", accent: "#C9922A", ch_from: 1, ch_to: 4}
   mark:
     - {key: mhenry, author: mhenry, lang: zh, label: "马太亨利注释", url_tpl: "/mhenry/mark/__CH__/", accent: "#C9922A", ch_from: 1, ch_to: 16}
-    - {key: petter, author: petter, lang: zh, label: "佩特注释", url_tpl: "/petter/mark/zh/__CH__/", accent: "#38a622", ch_from: 1, ch_to: 2}
+    - {key: petter, author: petter, lang: zh, label: "佩特注释", url_tpl: "/petter/mark/zh/__CH__/", accent: "#38a622", ch_from: 1, ch_to: 3}
   matthew:
     - {key: mhenry, author: mhenry, lang: zh, label: "马太亨利注释", url_tpl: "/mhenry/matthew/__CH__/", accent: "#C9922A", ch_from: 1, ch_to: 28}
     - {key: spurgeon-en, author: spurgeon, lang: en, label: "司布真注释（英文版）", url_tpl: "/spurgeon/matthew/__CH__/", accent: "#4a3b22", ch_from: 1, ch_to: 28}
