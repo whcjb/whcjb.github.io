@@ -3,7 +3,9 @@
 1	P:Selden.	img	页边「Sel-|d.n.」，元音处只一墨点（Selden）
 2	ὀστωλείψανα,	img	希腊文
 3	Ἐπιτομὴ χρόνων	img	希腊文
-4	?	img	行首褪色，看不出
+4	?	img	原生分辨率复查：行首整片褪色，仍看不出
+5	P:Perfidious	img	墨淡，似 Perfidious
+7	it.	img	索引；原图 it 后为句点
 8	P:sick	img	原图 ſi k，c 未着墨
 9	P:matter	img	原图 ma ter，一个 t 未着墨
 10	P:committing	img	原图 comm tting，i 未着墨
@@ -11,18 +13,21 @@
 12	P:imitate	img	原图 imita e，t 未着墨
 13	P:Children.	img	原图 Ch lrer，i 未着墨
 14	P:this	img	原图 this 后一个墨点，像句点（本句不通，或为污点）
-15	?	img	褪色，只认得出 quadrigas，前面一词读不出
+15	?	img	原生分辨率复查：Evangelists, 后一词褪尽，只认得出 quadrigas
 16	P:grant me	img	墨淡，似 graut me
 17	[Εὐαγγέλιον]	img	希腊文
+18	P:he is the	img	墨淡，似 he is the
+19	P:called the Son of	img	墨淡，似 c lled the Son of
 21	as	img	墨淡但可辨
-22	?	img	可见 Omnipotency, Revel. … 8. …ch，中间褪色
+22	P:Omnipotency, Revel. 1. 8. called	img	原生分辨率：Revel. 与 8. called 可辨，章号褪色；启 1:8、4:8 都有「全能者」，作 1 待定
 23	P:proper works	img	墨淡，似 proper works
 24	P:every	img	墨淡，似 every
 25	P:borrowed	img	墨淡，似 borrowed
 26	P:send Harbingers	img	墨淡，似 , send Harbingers（逗号看不清，未补）
 27	P:necessary	img	原图 thing▪necdrui，墨淡
-28	?	img	Lords, 之后一小段褪色（像经文出处），读不出
+28	P:1 Tim. 6. 15.	img	原生分辨率：褪色，只见 …6. 15.（提前 6:15 万王之王、万主之主）
 29	P:Testimony alledged	img	墨淡，似 Teſtimony alledged
+31	[κήρυξ]	img	希腊文
 32	P:whensoever	img	原图 whe▪ſoever，n 处一团污墨
 33	P:and pressed	img	墨淡，似 and preſſed
 34	P:good Duties. *Eccles.*	img	墨淡，似 good Duties.  Eccleſ.
@@ -57,7 +62,7 @@
 64	P:Object.	img	原图 Ob ect.
 65	P:soundness	img	墨淡
 66	P:[ἀκρὶς]	img	希腊文，ρ 处墨淡，图作 ἀκεις
-67	?	img	似 and fo…th，中间褪色，读不定
+67	P:and serveth	img	原生分辨率：墨淡，似 and ſerveth
 68	P:temperance	img	墨淡
 69	P:it, Isa.	img	墨淡，似 it, Iſa.
 70	P:the	img	墨淡
@@ -85,9 +90,6 @@
 92	P:Think	img	原图 Th nk
 93	P:apart	img	原图 ap▪t，a 处一团墨
 94	within	img
-5	P:Perfidious	img	墨淡，似 Perfidious
-18	P:he is the	img	墨淡，似 he is the
-19	P:called the Son of	img	墨淡，似 c lled the Son of
 95	P:and	img	首字母褪色
 96	P:places	img	原图 place\，s 残
 97	P:Abraham	img	原图 Abralam，h 残
@@ -150,12 +152,13 @@
 154	P:Devil, having in	img	墨淡，似 Devil, having in
 155	P:or	img	墨淡
 156	P:drawing	img	墨淡，似 drawing
-157	?	img	it is 之后褪色，似 laid down，读不定
+157	?	img	原生分辨率复查：似 said …，后一词褪色读不出
 158	P:member or part	img	墨淡，似 member or part
 159	P:themselves,	img	原图 themſelve ,
 160	P:this comfort us	img	墨淡，似 this comfort us
 161	P:then he that	img	墨淡，似 then he that
 162	P:our feet shortly	img	墨淡，似 our feet ſhortly
+163	P:with another	img	墨淡，可见 wi… …her
 165	P:of our Saviour	img	墨淡
 166	P:refrain	img	原图 re▪ain，f 未着墨
 167	P:by those that are of	img	墨淡，似 by thoſe that are of
@@ -163,6 +166,8 @@
 169	P:Points	img	原图 Poi ts
 170	P:of Christ to	img	墨淡，似 of Chriſt to
 171	P:required.	img	墨淡，似 required（句末标点不清）
+172	χρήσει,	img	希腊文
+173	κτήσει.	img	希腊文
 174	P:necessaries,	img	原图 neceſſ▪ries,
 175	P:Disciples.	img	墨淡
 176	P:been	img	墨淡
@@ -171,8 +176,12 @@
 179	P:Matth.	img	墨淡
 180	P:the Palsie	img	墨淡，似 the Palſie
 181	P:time	img	首字母褪色
+184	P:Miracles served	img	墨淡，可见 Mir… ſerv…
+185	P:to be the	img	墨淡，可见 t… b… …e true
 186	P:general to keep the	img	墨淡，似 generall to keep the
+187	P:of so many	img	墨淡，可见 o… ſo …ny
 188	P:detestation	img	墨淡
+189	P:Jude 23	img	原图 Jude 斜体可辨，后数字只见 …3.
 191	P:mind of	img	墨淡
 192	P:Miracles	img	墨淡
 193	P:much of the	img	墨淡
@@ -223,6 +232,7 @@
 238	πρῶτον,	img	希腊文
 239	*Joseph*'s	img	斜体
 240	P:is	img	原图 i 后一竖
+241	Τοῦτο πάντων αἴτιον τῶν κακῶν, τὸ μὴ εἰδέναι τὰς γραφάς.	img	希腊文
 242	P:grace,	img	原图 g ace,
 243	P:of	img	原图 ot
 244	(πωρώσις)	img	希腊文，重音照图
@@ -256,14 +266,15 @@
 273	(βλασφημία.)	img	希腊文
 274	Ἀντίλυτρον.	img	希腊文
 275	Nature	img
+276	παραπέσοντας.	img	希腊文
 277	P:seen	img	首字母残
 278	P:they	img	行首褪色，只见 y
 279	P:Brethren	img	原图 B e hren
+280	?	img	原图 to 后紧贴一长 ſ 即接 dwell，不成词，判不了
 281	P:Drunkards,	img	原图 D unkards,
 282	3.	img
 283	παραβολὴ,	img	希腊文
 284	παραβάλλειν,	img	希腊文
-280	?	img	原图 to 后紧贴一长 ſ 即接 dwell，不成词，判不了
 285	P:hearers	img	行首褪色
 286	λόγος ἀκοῆς,	img	希腊文，ος 为连写符
 287	P:because	img	原图 becau e
@@ -355,8 +366,8 @@
 380	P:Meat	img	原图 Me t
 381	P:*Object.*	img	斜体，原图 Ob ect.
 382	ὑστέρωσις,	img	希腊文
+383	?	img	原生分辨率复查：(βασαν…ζ…ς) 中段仍糊，读不全
 384	[φάντασμα].	img	希腊文
-383	?	img	希腊文，中间有墨痕，只见 (βασαν…ζ…ς)，读不全
 385	P:Jews	img	斜体，首字母褪色
 386	P:great	img	原图 gr t，ea 处有破损
 387	P:Hence	img	原图 Hen 后有竖向破损
@@ -510,6 +521,8 @@
 570	P:his	img	原图 hi 后空白
 571	[φρονεῖν]	img	希腊文
 572	P:things	img	末字母未着墨
+573	P:substance	img	墨淡，可见 ſu… …ance
+574	P:and deliver	img	墨淡，可见 a… …liver
 576	P:loth	img	原图 lo▪h
 577	to	img
 578	P:this	img	原图 th s
@@ -565,6 +578,7 @@
 630	P:Cloud, saying,	img	原图 Cloid, ſaying,
 631	P:first,	img	原图 firſt,
 632	P:Conference	img	原图 Cnferenc，o 与末 e 未着墨
+633	P:appeard	img	斜体；原生 800ppi 看：appea + r（被胶片竖划痕压过）+ d，r 与 d 间无 e 也无撇号的位置；录入本标缺 2 字母，与图上 1 字母不合，待同意
 634	P:them	img	斜体，首字母残
 635	ὤφθη αὐτοῖς Ἠλίας,	img	希腊文
 636	P:clothed	img	原图 cȯthed，l 残
@@ -611,6 +625,9 @@
 682	hearing,	img
 683	P:God	img	首字母褪色
 685	P:Souldiers,	img	原图 Soldier ,
+688	τὸν λόγον,	img	希腊文
+689	Transfiguration.	img	原图 Transfiguration.before
+690	Ἐκράτησαν	img	希腊文
 691	P:religious	img	原图 religiou▪ 末字母残（见本图下行）
 692	P:Elijah	img	斜体，原图 Eli▪ah
 693	P:Spirit,	img	原图 S▪irit,
@@ -685,4 +702,51 @@
 771	P:repent	img	原图 repen 后 t 残
 772	P:Infirmities	img	原图 Infirmitie 后 s 残
 773	P:although	img	原图 al hough，有破损
-633	P:appeard	img	斜体；原生 800ppi 看：appea + r（被胶片竖划痕压过）+ d，r 与 d 间无 e 也无撇号的位置；录入本标缺 2 字母，与图上 1 字母不合，待同意
+775	P:from doing	img	录入本记作希腊文，原图是英文，墨淡：from doing
+776	P:seek his	img	墨淡，可见 ſeek hi…，行末
+806	P:⁀ok	img	原图 to 后叠着残墨，似 took
+807	[ἐπετίμησε]	img	希腊文
+816	respects	img	原图 respects 后无标点
+849	ὑστερολογία;	img	希腊文
+850	παιδίον,	img	希腊文
+859	P:beasts;	img	原图 beaſts 后一符号走形，似分号
+868	P:⁀t us	img	原图 let u，s 未着墨
+884	Observ.	img	句点被墨团盖住
+921	γέεννα	img	希腊文
+923	ἀποστυγοῦντες	img	希腊文
+942	ἀποστυγοῦντες,	img	希腊文
+945	ὁ διὰ παντὸς γέενναν δεδοικὼς, οὐδέποτε εἰς τὸ τῆς γεέννης ἐμπεσεῖται πῦρ	img	希腊文，跨行
+948	πᾶς γὰρ πυρὶ ἁλισθήσεται;	img	希腊文（γὰρ 为缩写连字）
+949	πᾶσα πυρία ἁλισθήσεται;	img	希腊文（本书 ρ 字形近 ε）
+986	θηρίῳ συνοικεῖν κάλλιον ἢ ἀνθρώπῳ τοιούτῳ,	img	希腊文
+1068	P:4.	img	4 后被墨团盖住，似句点
+1093	τὰ βρέφη.	img	希腊文
+1105	ἄρχων,	img	希腊文
+1159	word. And	img	
+1182	(τὸ ἀγαθὸν οὗ πάντα ἐφίεται.	img	希腊文（οὗ 为连字）
+1192	commit	img	原图 commit 后无标点
+1267	μεγάλη διδάσκαλος.	img	希腊文（ος 为连字）
+1275	P:enjoy.	img	似句点，但下行小写起
+1304	sake,	img	
+1335	παραδοθήσεται,	img	希腊文
+1358	ἀγανακτεῖν,	img	希腊文
+1366	οἱ δοκοῦντες,	img	希腊文
+1407	ἐλαιῶν,	img	希腊文
+1408	Matth.	img	
+1420	ἐπάνω αὐτῶν.	img	希腊文
+1431	up;	img	
+1467	[ἐκβάλλειν]	img	希腊文
+1471	κολλυβιστής.)	img	希腊文
+1472	τραπεζῖται	img	希腊文
+1473	κολλυβιστής).	img	希腊文
+1514	you*]	img	原图 you 后为闭括号
+1540	Will;	img	
+1542	further	img	t 墨淡
+1553	(ἕνα λόγον)	img	希腊文
+1556	διελογίζοντο,	img	希腊文
+1558	*They*]	img	原图 They 后为闭括号
+1569	P:Doctrine	img	墨淡，可见 Do… …e
+1570	P:know his own	img	墨淡，可见 kn… …s own
+1571	P:in conscience	img	墨淡，可见 in co… …ce；也可能是 confidence
+1573	?	img	页角撕损，只见 July, 163…，日与年末位缺
+1578	or	img	

@@ -3103,7 +3103,7 @@ next_label: "1:1"
 
 <p class="pt-ixsub" markdown="1">Prayer of Christ. 1317. 1319. 1321. 1324</p>
 
-<p class="pt-ixsub" markdown="1">Watchfulness a help to it<span class="pt-gap" title="TCP: illegible in source">▪</span> 1339. 1186</p>
+<p class="pt-ixsub" markdown="1">Watchfulness a help to it. 1339. 1186</p>
 
 <p class="pt-ixsub" markdown="1">Weakness a motive to it. 1344</p>
 
