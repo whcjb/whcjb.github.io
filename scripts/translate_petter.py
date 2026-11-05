@@ -678,6 +678,8 @@ def main():
     ap.add_argument('--chapter', type=int, action='append', default=[])
     a = ap.parse_args()
     tf.SYSTEM = SYSTEM
+    import claude_usage
+    claude_usage.STRICT_STOP = True   # 中途异常停止的输出直接重采样（见 claude_usage.call_cli）
     slugs = all_slugs() if a.all else a.section + [x for c in a.chapter for x in chapter_slugs(c)]
     if not slugs:
         ap.error('--section / --chapter 或 --all')

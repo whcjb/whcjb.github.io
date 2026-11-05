@@ -10,6 +10,7 @@
     text = call_cli(['--model', 'opus', '--system-prompt', SYSTEM], prompt)
 """
 import atexit, json, subprocess, sys, threading, time
+from pathlib import Path
 
 # 翻译是纯文本任务，用不着工具、MCP、CLAUDE.md、skills、hooks。默认调用把这些
 # 全塞进每次请求的前缀——2026-08-19 实测（CLI 2.1.235）：默认 29,142 token/次，
@@ -21,6 +22,7 @@ import atexit, json, subprocess, sys, threading, time
 #   --system-prompt         由调用方传入，**替换**默认 agent 提示词（而非追加）
 # 注意：prompt 必须走 stdin —— --disallowedTools 是可变参数，会把跟在后面的
 # 位置参数当成工具名吞掉。
+STRICT_STOP = False   # True：stop_reason≠end_turn 当失败抛出（translate_petter 打开）
 CLI_TRIM_FLAGS = ['--safe-mode', '--strict-mcp-config', '--disallowedTools', '*']
 
 
@@ -149,4 +151,11 @@ def call_cli(extra_flags, prompt: str, timeout: int = 300, label: str = '',
     if d.get('is_error') or d.get('subtype') not in (None, 'success'):
         raise RuntimeError(f'CLI 报错: subtype={d.get("subtype")} '
                            f'result={str(d.get("result"))[:200]!r}')
+    # 成功返回但不是正常收尾（stop_reason≠end_turn）：佩特第 1 章约 1% 的调用只吐「解」「尼」「浩_SUPPRESS<br>」
+    # 几十 token 就停。完整 JSON 落盘备查；STRICT_STOP 打开时当失败抛出，由调用方重采样（默认关，不影响别的书）
+    if d.get('stop_reason') not in (None, 'end_turn'):
+        with Path('/tmp/cli_odd_stop.jsonl').open('a', encoding='utf-8') as fh:
+            fh.write(json.dumps({'ts': time.strftime('%F %T'), 'label': label, 'resp': d}, ensure_ascii=False) + '\n')
+        if STRICT_STOP:
+            raise RuntimeError(f'异常停止 stop_reason={d.get("stop_reason")!r} result={str(d.get("result"))[:120]!r}')
     return (d.get('result') or '').strip()
