@@ -104,8 +104,8 @@ def about_en(f):
         'Two lecture headings disagree with the text they introduce (7:33–34 headed “33, 24”; 8:31 headed “Mark 7. 31.”); '
         'the 1661 page images show these are misprints in the original. They are left as printed, and the pages are named by the true verse.</p>',
         f'<p><b>Illegible places.</b> The keyers marked {f["n"]} places they could not read from the film images. '
-        f'{f["w"]} have been read from the page images so far; {f["c"]} are editorial conjectures shown '
-        f'<span class="pt-conj">[in brackets]</span>. The rest remain marked <span class="pt-gap">in red</span>.</p>']
+        f'{f["w"]} have been read from the page images so far; {f["c"]} are editorial conjectures, set in a sans-serif face, '
+        f'in brackets and tinted: <span class="pt-conj">[like this]</span>; each is listed below with the trace seen on the page. The rest remain marked <span class="pt-gap">in red</span>.</p>']
 
 
 def about_zh(f):
@@ -117,8 +117,8 @@ def about_zh(f):
         '经文旁的日期是原书页边所记的讲道日期；原书页边的纲目标记（Observ. 观察、Use 应用、Quest. 问、Answ. 答等）在正文中以小标签显示。'
         '有两处讲题与经文对不上（7:33–34 题作「33, 24」；8:31 题作「Mark 7. 31.」），对照 1661 年原版影像，是原书印错，录入无误；正文照原书，页名按真节号。'
         f'录入本有 {f["n"]} 处读不出的字，对照 1661 年原版胶片影像（Internet Archive，希腊文与缺整词处取原生分辨率）'
-        f'已看图读出 {f["w"]} 处；{f["c"]} 处墨淡褪色、只认得出部分字形，由编者推补，以 '
-        '<span class="pt-conj">[方括号]</span> 另色标出，逐条列在下面；其余标红留在明面。'
+        f'已看图读出 {f["w"]} 处；{f["c"]} 处墨淡褪色、只认得出部分字形，由编者推补，正文中改用无衬线字体、加方括号、另色并加虚下划线标出，'
+        '形如 <span class="pt-conj">[like this]</span>，鼠标停留可见说明，逐条列在下面；其余标红留在明面。'
         '判读记录见 <code>petter_raw/mark/</code>。</p>']
 
 
