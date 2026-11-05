@@ -134,6 +134,8 @@ class Book:
                     fm += [f'prev_url: "/{self.slug}/{self.book}/{chs[k - 1]}/"', f'prev_label: "{self.ref} {chs[k - 1]}"']
                 if k + 1 < len(chs):
                     fm += [f'next_url: "/{self.slug}/{self.book}/{chs[k + 1]}/"', f'next_label: "{self.ref} {chs[k + 1]}"']
+                if (self.OUT / 'zh' / f'{slug}.md').exists():
+                    fm.append(f'zh_url: "/{self.slug}/{self.book}/zh/{slug}/"')
                 fm.append('---')
                 lst = '\n'.join(f'<li><a href="{{{{ site.baseurl }}}}/{self.slug}/{self.book}/{p["slug"]}/">{p["short"]}'
                                 f'<small>{p["rng"]}</small></a></li>' for p in secs)
