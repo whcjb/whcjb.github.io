@@ -153,6 +153,11 @@ def main():
                 if mh and norm(mh.group(1)) == norm(h['text']) and not stacked:
                     continue
                 todo[ui] = h
+            # 块末尾还挂着同名标题文字（诗3 综述末「苦难与信靠」），也要处理
+            for h in assign.values():
+                pat = r'\s*'.join(re.escape(c) for c in re.sub(r'\s', '', h['text']))
+                if re.search(r'(?<=[。！？”’」』）)\]\u4e00-\u9fff])' + pat + r'(?=\s*(?:\n|<))', HEAD_DIV.sub('', s)):
+                    todo.setdefault(-1, h)
             # 整章只要有一处要动，就按全部归属重排（保证同名 div 只留一个）
             if not todo:
                 continue

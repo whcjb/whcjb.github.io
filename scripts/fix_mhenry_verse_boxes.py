@@ -12,7 +12,7 @@
 import difflib, os, re, sys
 import yaml
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from audit_mhenry_unit_seams import ROOT, ANCHOR, UNIT_RE, han, chapter_files, pdf_files, _head
+from audit_mhenry_unit_seams import HAN, ROOT, ANCHOR, UNIT_RE, han, chapter_files, pdf_files, _head
 from fix_mhenry_unit_seams import pdf_stream_raw, clean
 from audit_mhenry_verse_boxes import scripture_span, MIN_MISS, best_head
 
@@ -43,6 +43,77 @@ def plan(book, zh):
             if vs < 0 or not exact:
                 continue
             cur = vs + 1
+            # 框头前补：框头前紧挨着的经文字体段，且本章 md 里找不到 → 丢掉的第一节
+            vfont = max(set(F[vs:vs + 12]), key=F[vs:vs + 12].count)
+            k0 = vs
+            while k0 > max(0, vs - 600):
+                if F[k0 - 1] == vfont:
+                    k0 -= 1
+                    continue
+                j = k0 - 1; n = 0                 # 允许夹 1-3 个异体字体的字
+                while j >= 0 and F[j] != vfont and n < 4:
+                    j -= 1; n += 1
+                if n >= 4 or j < 0:
+                    break
+                k0 = j + 1
+            pre = P[k0:vs]
+            md_h = han(s).translate(VAR)
+            boxes_h = ''.join(han(x) for x in re.findall(r'<div class="mh-verse">(.*?)</div>', s, re.S)).translate(VAR)
+            pn = pre.translate(VAR)
+            # 注释里常引经文，所以只看：本章各经文框里都没有，且整段在全文里没有原样出现
+            if len(pre) >= 6 and pn[:12] not in boxes_h and pn[-12:] not in boxes_h:
+                j0 = idx[k0]
+                mnum = re.search(r'\d{1,3}(?:-\d{1,3})?\s*[「“‘『（]?\s*$', R[max(0, j0 - 10):j0])
+                if mnum:
+                    j0 -= len(mnum.group(0))
+                j1 = idx[vs]
+                mh = re.search(r'\d{1,3}(?:-\d{1,3})?\s*[「“‘『（]?\s*$', R[max(0, j1 - 10):j1])
+                if mh:
+                    j1 -= len(mh.group(0))
+                if not mnum:
+                    # 诗篇第 1 节以诗题「1（……）」开头，诗题字体不同，回溯在诗题处停了：把诗题连节号带上
+                    msup = re.search(r'(?<![\d.．])\d{1,3}\s*（[^（）\n]{1,80}）\s*$', R[max(0, j0 - 120):j0])
+                    if msup:
+                        j0 -= len(msup.group(0))
+                raw_seg = R[j0:j1]
+                mv = re.search(r'(?<![\d.．])\d{1,3}(?:-\d{1,3})?(?!\d|\s*年)\s*[「“‘『（]?\s*(?=[\u4e00-\u9fff])', raw_seg)
+                if mv:
+                    raw_seg = raw_seg[mv.start():]        # 去掉同字体的小标题（太5「登山宝训」）
+                prepend = fmt_verse(clean(raw_seg))
+                commentary_like = re.search(r'^\d+章|第\s*\d+(?:-\d+)?\s*节|这里|注意|请看|(?<![A-Za-z])I\.|（\d+）', prepend)
+                same_font_book = book in ('john', 'romans')    # 这两卷 PDF 经文与注释同字体，字体判据失效
+                if re.match(r'\d', prepend) and len(han(prepend)) >= 6 and not commentary_like and not same_font_book:
+                    vh = han(prepend).translate(VAR)
+                    if vh in md_h:
+                        # 已在 md 里：只接受「挂在上一块某行末尾」的情形（太5:13 在上一单元注释末、诗3:1 在综述末）
+                        ustart = s.rfind('<div class="mh-unit">', 0, m.start(1))
+                        lo = s.rfind('<div class="mh-unit-body">', 0, ustart)
+                        if lo < 0:
+                            lo = s.find('<div class="mh-overview">')
+                        rem = None
+                        for lm in re.finditer(r'[^\n]+', s[lo:ustart] if lo >= 0 else ''):
+                            L = lm.group(0)
+                            # 行末那截的汉字正好是这节经文
+                            k = len(L)
+                            cnt = 0
+                            while k > 0 and cnt < len(vh):
+                                k -= 1
+                                if HAN.match(L[k]):
+                                    cnt += 1
+                            mm = re.search(r'\d{1,3}(?:-\d{1,3})?\s*[「“‘『（]?\s*$', L[:k])
+                            k2 = mm.start() if mm else k
+                            if han(L[k2:]).translate(VAR) == vh and '<' not in L[k2:]:
+                                rem = (lo + lm.start() + k2, lo + lm.end())
+                        if not rem:
+                            continue
+                        out.append(dict(book=book, ch=ch, unit=ui, md=md, span=(m.start(1), m.end(1)),
+                                        prepend=prepend, remove=rem, new=None, cover=1.0, added=1,
+                                        miss=['挪回框头:' + prepend[:16]]))
+                        continue
+                    out.append(dict(book=book, ch=ch, unit=ui, md=md, span=(m.start(1), m.end(1)),
+                                    prepend=prepend, new=None, cover=1.0, added=len(han(prepend)),
+                                    miss=['框头前缺:' + prepend[:16]]))
+                    continue
             se = scripture_span(P, F, vs, vs + len(v) * 3 + 500)
             pv = P[vs:se]
             sm = difflib.SequenceMatcher(None, v, pv, autojunk=False)
@@ -103,7 +174,16 @@ def main():
                 s = open(md, encoding='utf-8').read()
                 for it in sorted(lst, key=lambda x: -x['span'][0]):
                     a, b = it['span']
-                    s = s[:a] + '\n' + it['new'] + '\n' + s[b:]
+                    if it.get('remove'):
+                        r0, r1 = it['remove']
+                        s = s[:a] + '\n' + it['prepend'] + ' ' + s[a:b].lstrip('\n') + s[b:]
+                        s = s[:r0] + s[r1:]
+                        continue
+                    if it.get('prepend'):
+                        body = s[a:b].lstrip('\n')
+                        s = s[:a] + '\n' + it['prepend'] + ' ' + body + s[b:] if not body.endswith('\n') else s[:a] + '\n' + it['prepend'] + ' ' + body + s[b:]
+                    else:
+                        s = s[:a] + '\n' + it['new'] + '\n' + s[b:]
                 open(md, 'w', encoding='utf-8').write(s)
     print(f'OK {ok}  SKIP {bad}')
 
