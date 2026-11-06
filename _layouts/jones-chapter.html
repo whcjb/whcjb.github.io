@@ -1,0 +1,191 @@
+---
+layout: default
+---
+{%- comment -%}
+  威廉·琼斯《约翰二书、三书简释》(1635) 章节页（中英共用，靠 page.zh 切换）。
+
+  ⚠️ 不复用别家 layout：每本书独立样式（用户既定规矩）。骨架取自 attersoll-chapter。
+  按 2026-10-16 起的新书规矩：章顶不放「跳到某节」下拉，副标题作者写英文原名。
+
+  配色橄榄褐 #9c9066（LCh 60/24/95）：与「历代解经」已登记各色及加尔文酒红、马太亨利金、站点 Hux 蓝、
+  缺字红相比，亮端最小 ΔE 24.5（色板已挤，只比亮端，同佩特先例）；粉红一档 ΔE 25.4 但太跳，弃用。深端 #685e37。
+
+  本书版式要点（底本 EEBO-TCP A04619，见 jones_raw/PROVENANCE.md）：
+  - 原书一节一讲，节下不排经文，开讲以斜体引出所讲字句；一节一页，每节一个 commentary-anchor 挂页首。
+  - 页边旁注只有出处一种 → `.jw-margin`。印本页码 → `.jw-pb`，id `#pN`。
+  - 录入本未录的希腊文 `〈Greek〉` 与读不出的字 → `.jw-gap`（标红）；编者推补 → `.jw-conj`（方括号另色）。
+{%- endcomment -%}
+
+<div class="container jones-wrap{% if page.zh %} jw-zh{% endif %}" style="padding-top: 70px;">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1" id="cmpCol">
+
+      <div class="jw-chrome">
+        <a href="{{ site.baseurl }}/jones/{{ page.book_id }}/{% unless page.zh %}en/{% endunless %}">&larr; {{ page.book_name }}</a>
+        {% if page.zh %}{% if page.en_url %}<a class="jw-lang" href="{{ site.baseurl }}{{ page.en_url }}">English &rarr;</a>{% endif %}
+        {% else %}{% if page.zh_url %}<a class="jw-lang" href="{{ site.baseurl }}{{ page.zh_url }}">中文版 &rarr;</a>{% endif %}{% endif %}
+      </div>
+
+      <h1 class="jw-title">{{ page.title }}</h1>
+      {% if page.subtitle %}<p class="jw-subtitle">{{ page.subtitle }}</p>{% endif %}
+
+      <div class="jw-nav">
+        {% if page.prev_url %}<a href="{{ site.baseurl }}{{ page.prev_url }}">&larr; {{ page.prev_label }}</a>
+        {% else %}<span></span>{% endif %}
+        {% if page.next_url %}<a href="{{ site.baseurl }}{{ page.next_url }}">{{ page.next_label }} &rarr;</a>
+        {% else %}<span></span>{% endif %}
+      </div>
+
+      {%- comment -%}
+        对比注释抽屉：只给正文章节页（有 page.chapter）。self 把本书自己排除，中英两版 key 不同。
+      {%- endcomment -%}
+      {% if page.chapter %}
+      {% assign cc_self = "jones-en" %}{% if page.zh %}{% assign cc_self = "jones" %}{% endif %}
+      {% include compare-commentary-head.html self=cc_self content_class="jw-content" self_label="琼斯" %}
+      {% endif %}
+      <div class="jw-content">
+        {{ content }}
+      </div>
+      {% if page.chapter %}{% include compare-commentary-foot.html %}{% endif %}
+
+      {% if page.date %}
+      <div class="jw-stamp">{% if page.zh %}译于{% else %}Published{% endif %} {{ page.date | date: "%Y-%m-%d %H:%M" }}</div>
+      {% endif %}
+
+      <div class="jw-nav jw-nav-foot">
+        {% if page.prev_url %}<a href="{{ site.baseurl }}{{ page.prev_url }}">&larr; {{ page.prev_label }}</a>
+        {% else %}<span></span>{% endif %}
+        {% if page.next_url %}<a href="{{ site.baseurl }}{{ page.next_url }}">{{ page.next_label }} &rarr;</a>
+        {% else %}<span></span>{% endif %}
+      </div>
+
+    </div>
+  </div>
+</div>
+
+{%- comment -%}
+  经文引用弹层：只给中文页（模块认的是中文书卷名）。accent/vnum 必须写字面量
+  （Jekyll 3 的 include 参数不接受变量）——与下方 CSS 的 --jw-ink 两处同值，改色要一起改。
+{%- endcomment -%}
+{% if page.zh %}
+{% include scripture-popup.html container_selector=".jw-content" accent="#9c9066" vnum="#685e37" slide="down" %}
+{% endif %}
+
+<style>
+.jones-wrap {
+  --jw-ink: #9c9066;
+  --jw-ink-dark: #685e37;
+  --jw-rule: #ebe8dc;
+  --jw-paper: #f8f7f1;
+  --jw-body: #2b2a22;
+}
+.jones-wrap .jw-chrome,
+.jones-wrap .jw-nav {
+  font-size: 13px; display: flex; justify-content: space-between; gap: 12px;
+  align-items: center; font-family: Georgia, "Times New Roman", serif;
+}
+.jones-wrap .jw-chrome { margin: 18px 0 22px; }
+.jones-wrap .jw-chrome a,
+.jones-wrap .jw-nav a { color: var(--jw-ink-dark); text-decoration: none; }
+.jones-wrap .jw-chrome a:hover,
+.jones-wrap .jw-nav a:hover { color: var(--jw-ink-dark); text-decoration: underline; }
+.jones-wrap .jw-lang { border: 1px solid var(--jw-rule); border-radius: 4px; padding: 4px 10px; }
+.jones-wrap .jw-lang:hover { background: var(--jw-ink); color: #fff !important; text-decoration: none; }
+.jones-wrap .jw-title {
+  font-family: Georgia, "Times New Roman", serif; font-size: 30px; font-weight: normal;
+  color: var(--jw-ink-dark); text-align: center; margin: 10px 0 4px; line-height: 1.3;
+}
+.jones-wrap .jw-subtitle {
+  text-align: center; font-size: 14px; color: #85816c; margin: 0 0 18px;
+  font-family: Georgia, "Times New Roman", serif; font-style: italic;
+}
+.jones-wrap .jw-nav { margin: 14px 0 26px; }
+.jones-wrap .jw-nav-foot { margin-top: 44px; padding-top: 16px; border-top: 1px solid var(--jw-rule); }
+
+/* 正文 */
+.jones-wrap .jw-content {
+  font-family: Georgia, "Times New Roman", "Songti SC", STSong, serif;
+  font-size: 17px; line-height: 1.85; color: var(--jw-body);
+}
+.jones-wrap .jw-content p { margin: 0 0 16px; text-align: justify; }
+.jones-wrap .jw-content h2 {
+  font-family: Georgia, "Times New Roman", serif; font-size: 19px; font-weight: normal;
+  text-align: center; color: var(--jw-ink-dark); margin: 10px 0 18px; line-height: 1.5; letter-spacing: .03em;
+}
+.jones-wrap .jw-content a { color: var(--jw-ink-dark); }
+
+/* 章目录页（/jones/<书>/1/）：各节 */
+.jones-wrap .jw-chtoc { list-style: none; padding: 0; margin: 10px 0; display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 8px; }
+.jones-wrap .jw-chtoc a { display: block; padding: 9px 13px; border: 1px solid var(--jw-rule);
+  border-radius: 4px; background: var(--jw-paper); text-decoration: none; color: #2b2a22; line-height: 1.45; }
+.jones-wrap .jw-chtoc a:hover { border-color: var(--jw-ink); color: var(--jw-ink-dark); }
+.jones-wrap .jw-chtoc small { display: block; color: #85816c; font-size: 12.5px; }
+
+.jones-wrap .commentary-anchor {
+  display: block; height: 0; line-height: 0; margin: 0; padding: 0;
+  overflow: hidden; visibility: hidden; scroll-margin-top: 80px;
+}
+
+/* 中文页：音译专名后的原名对照，小一号灰字 */
+.jones-wrap.jw-zh .jw-orig { font-size: .82em; color: #85816c; margin: 0 1px;
+  font-family: Georgia, "Times New Roman", serif; white-space: nowrap; }
+
+/* 页边旁注（出处） */
+.jones-wrap .jw-margin {
+  display: block; margin: 2px 0 8px; padding-left: 10px; border-left: 2px solid var(--jw-rule);
+  font-size: 13px; line-height: 1.55; color: #7d7a66; font-style: normal; text-align: left;
+}
+@media (min-width: 1200px) {
+  .jones-wrap .jw-margin {
+    float: right; clear: right; width: 150px; margin: 4px -182px 8px 16px;
+    padding-left: 8px; text-indent: 0;
+  }
+}
+
+/* 1635 印本页码：空锚点，行内显示「p. N」小灰字 */
+.jones-wrap .jw-pb { scroll-margin-top: 80px; cursor: help; }
+.jones-wrap .jw-pb[data-p]::before {
+  content: "p." attr(data-p); font-size: 10.5px; color: #aeaa95; font-style: normal;
+  font-family: Georgia, serif; letter-spacing: .02em; margin: 0 4px;
+  border: 1px solid #ebe8dc; border-radius: 3px; padding: 0 3px; vertical-align: 1px;
+}
+
+/* 花饰首字 */
+.jones-wrap .jw-dropcap {
+  float: left; font-family: Georgia, "Times New Roman", serif; font-size: 3.1em;
+  line-height: .84; margin: 4px 7px 0 0; color: var(--jw-ink-dark);
+}
+
+/* 所讲字句（原书「[THE ELDER]」） */
+.jones-wrap .jw-lemma { font-weight: 600; color: var(--jw-ink-dark); margin: 22px 0 8px !important; text-align: left !important; }
+/* 扉页题辞 */
+.jones-wrap .jw-quote { text-align: center !important; font-style: italic; }
+/* 献辞称呼、落款、篇末 FINIS */
+.jones-wrap .jw-opener { font-variant: small-caps; letter-spacing: .06em; color: var(--jw-ink-dark); }
+.jones-wrap .jw-closer { text-align: right !important; font-style: italic; color: #5e5b49; }
+.jones-wrap .jw-trailer { text-align: center !important; letter-spacing: .1em; color: #5e5b49; }
+.jones-wrap .jw-tp p { text-align: center !important; font-size: 16px; letter-spacing: .03em; }
+
+/* 底本里读不出的字、未录的希腊文 */
+.jones-wrap .jw-gap { color: #c0392b; background: #fdecea; border-radius: 2px; padding: 0 2px; cursor: help; }
+/* 编者推补：方括号 + 另色，与原文区分 */
+.jones-wrap .jw-conj { color: #8a5a00; background: #fff6e0; border-radius: 2px; padding: 0 1px; cursor: help; font-style: normal; }
+
+.jones-wrap .jw-stamp {
+  margin-top: 32px; font-size: 12px; color: #a3a08c; text-align: right;
+  font-family: Georgia, "Times New Roman", serif; letter-spacing: .03em;
+}
+.jones-wrap :target { background: #f1eee0; transition: background .4s; }
+
+/* 中文页 */
+.jones-wrap.jw-zh .jw-content {
+  font-family: "Songti SC", STSong, "Noto Serif CJK SC", "Source Han Serif SC", Georgia, serif;
+}
+.jones-wrap.jw-zh .jw-title { font-family: "Songti SC", STSong, Georgia, serif; }
+
+@media (max-width: 767px) {
+  .jones-wrap .jw-title { font-size: 24px; }
+  .jones-wrap .jw-content { font-size: 16px; line-height: 1.8; }
+}
+</style>

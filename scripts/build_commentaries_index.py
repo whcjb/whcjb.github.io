@@ -195,6 +195,13 @@ AUTHORS = OrderedDict([
                    years='', dir='foote',
                    work_cn='路加福音讲义',
                    work_en='Lectures on the Gospel according to Luke')),
+    # 琼斯：生卒取 DNB vol.30（Jones, William (1561–1636)，W. A. J. Archbold 撰，原文存 jones_raw/dnb_jones.txt）：
+    # 1561 年生，1636 年 12 月 12 日卒于萨福克东伯格霍尔特（1592 年起在此牧会四十四年）。
+    # 约翰二书、三书的讲解附在《腓利门书、希伯来书注释》卷末，1635 伦敦对开本（STC 14739.5，EEBO-TCP A04619）。
+    ('jones', dict(name='威廉·琼斯', short='琼斯', en='William Jones',
+                   years='1561–1636', dir='jones',
+                   work_cn='约翰二书、三书简释',
+                   work_en='A Compendious Explication of the Second and Third Epistles of Saint Iohn')),
     ('alexander', dict(name='约瑟·亚历山大', short='亚历山大', en='Joseph Addison Alexander',
                        years='1809–1860', dir='alexander',
                        work_cn='诗篇、以赛亚书、马太福音、使徒行传注释',
@@ -282,6 +289,9 @@ AUTHOR_COLORS = {
     # 福特覃红：L 28–55、C 20–60 网格里与既有二十五色及站点 Hux 蓝最小 ΔE 27.3（詹金赤陶 #cd5f37），
     # 与先例同档；非红系（H 45–300）候选最好的只有 22.7（毕列志棕），弃用。
     'foote': ('#a13140', '#d14457'),
+    # 琼斯橄榄褐：LCh 网格 (60, 24, 95°)，亮端与既有各色及加尔文酒红、马太亨利金、站点 Hux 蓝、缺字红
+    # 最小 ΔE 24.5（CIE76）。色板已挤，两端同时 ≥ 20 的找不到，同佩特先例只比亮端；粉红一档 25.4 太跳，弃用。
+    'jones': ('#685e37', '#9c9066'),
 }
 
 # 书卷卡片的入口注释家：历代解经版面每卷只显示 links 的第一条（commentaries/index.html
@@ -384,6 +394,10 @@ BOOK_TITLES = {
                                 'A Brief Exposition of the Evangel of Jesus Christ according to Matthew'),
     ('foote', 'luke'):         ('路加福音讲义',
                                 'Lectures on the Gospel according to Luke'),
+    ('jones', '2john'):        ('约翰二书简释',
+                                'A Compendious Explication of the Second Epistle of Saint Iohn'),
+    ('jones', '3john'):        ('约翰三书简释',
+                                'A Compendious Explication of the Third Epistle of Saint Iohn'),
     ('petter', 'mark'):        ('马可福音注释',
                                 'A Learned, Pious, and Practical Commentary upon the Gospel according to St. Mark'),
     ('manton', 'james'):       ('雅各书注释',
@@ -412,7 +426,7 @@ COMPARE_ACCENT = {
     'adams': '#66666c', 'rollock': '#786000', 'jenkyn': '#cd5f37',
     'candlish': '#b07080', 'fairbairn': '#bc65ac', 'taylor': '#6f77e0',
     'hall': '#769019', 'barlow': '#2b9b8a', 'attersoll': '#8e8cbd', 'dickson': '#8b2499',
-    'petter': '#38a622', 'foote': '#d14457',
+    'petter': '#38a622', 'foote': '#d14457', 'jones': '#9c9066',
 }
 COMPARE_LABEL = {
     'calvin': '加尔文注释', 'mhenry': '马太亨利注释', 'owen': '约翰欧文注释',
@@ -423,7 +437,7 @@ COMPARE_LABEL = {
     'adams': '亚当斯注释', 'rollock': '罗洛克讲章', 'jenkyn': '詹金讲解',
     'candlish': '坎德利什讲解', 'fairbairn': '费尔贝恩注释', 'taylor': '泰勒注释',
     'hall': '霍尔注释', 'barlow': '巴洛讲解', 'attersoll': '阿特索尔注释', 'dickson': '迪克森简释',
-    'petter': '佩特注释', 'foote': '福特讲义',
+    'petter': '佩特注释', 'foote': '福特讲义', 'jones': '琼斯简释',
 }
 
 
@@ -446,7 +460,7 @@ PRIMARY_LANG = {'calvin': 'zh', 'mhenry': 'zh', 'bridges': 'zh',
                 'adams': 'en', 'rollock': 'en', 'jenkyn': 'en',
                 'candlish': 'en', 'fairbairn': 'en', 'taylor': 'en',
                 'hall': 'en', 'barlow': 'en', 'attersoll': 'en', 'dickson': 'en', 'petter': 'en',
-                'foote': 'en'}
+                'foote': 'en', 'jones': 'en'}
 
 
 def _lang_variants(aid, d: Path, name: str):
