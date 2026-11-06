@@ -1,0 +1,7168 @@
+lecture	gap	witness	kind
+001	^		nolocate
+001	, '^ 	, ** 	mismatch
+001	 ■	 	delete
+001	^ 	, 	replace
+001	¥		nolocate
+001	^ 	, 	replace
+001	« 		nolocate
+001	^ 		nolocate
+001	^ 	, 	replace
+001	^		nolocate
+001	<0(;^		nolocate
+001	'^ 		nolocate
+001	—^	—	delete
+001	^		nolocate
+001	^		nolocate
+001	—^		nolocate
+001	-^ 		nolocate
+002	—^	—	delete
+002	—^	—	delete
+002	^ 		nolocate
+002	, « *	, "	replace
+002	^ 		nolocate
+002	^ 		nolocate
+002	 ^^ *	 " 	replace
+002	^ 		nolocate
+002	^ 		nolocate
+002	^'* 	." 	mismatch
+002	 10: *\*^ 		nolocate
+002	^ 		nolocate
+002	^ 		nolocate
+002	^* 	," 	replace
+002	 *^'		nolocate
+002	^ 		nolocate
+002	^ 	, 	replace
+002	 ^^ 	 "	replace
+002	£		nolocate
+002	^ 		nolocate
+002	, ^^ *	, " 	replace
+002	^ 		nolocate
+002	^ 		nolocate
+002	^ 		nolocate
+002	 20: *^"		nolocate
+002	^ 		nolocate
+002	^ 	, 	replace
+002	^ 	, 	replace
+002	. ♦ 		nolocate
+002	»^«) 		nolocate
+002	 £		nolocate
+002	—^	—	delete
+002	^ 	, 	replace
+002	 $	 	delete
+003	 *^		nolocate
+003	^ 	, 	replace
+003	 ^	, 	replace
+003	^* 		nolocate
+003	, *^' 		nolocate
+003	 ^^ 		nolocate
+003	^ 		nolocate
+003	^ 		nolocate
+003	^ 		nolocate
+003	£&		nolocate
+003	 "^ 	 '* 	mismatch
+003	^	 	delete
+003	 ♦ 		nolocate
+003	». 		nolocate
+003	, "• *	, " 	replace
+003	'^* (		nolocate
+003	^ 	, 	replace
+003	^		nolocate
+003	^ 		nolocate
+003	^ 		nolocate
+003	 "• 	 "	delete
+003	^ 	 	delete
+003	^		nolocate
+003	 ^		nolocate
+003	.39 --> ♦ 		nolocate
+003	. 46. + 		nolocate
+004	^ 		nolocate
+004	^ 		nolocate
+004	^		nolocate
+004	, *^"^	, ' 	mismatch
+004	^ 	 	delete
+004	^ 	, 	replace
+004	. ^^ 	. '	replace
+004	^ 		nolocate
+004	^		nolocate
+004	^ 		nolocate
+004	^		nolocate
+004	^ 		nolocate
+004	" \** 		nolocate
+004	; ^^ 	; "	replace
+004	'^	_	mismatch
+004	^ 		nolocate
+004	^ 		nolocate
+004	^ 		nolocate
+004	"\** 	." * 	mismatch
+004	 \*"' 	 ' 	mismatch
+004	«		nolocate
+004	^«. 		nolocate
+004	. 25. *"* £		nolocate
+004	. ^^ 		nolocate
+004	» 	, 	replace
+004	. '^ 	. " 	mismatch
+004	^		nolocate
+004	^ 	, 	replace
+004	. ^^ 	. ' 	replace
+005	^	'	replace
+005	^		nolocate
+005	^		nolocate
+005	^;?," 		nolocate
+005	, *^' 		nolocate
+005	: ^^ 	: "	replace
+005	^		nolocate
+005	^ 		nolocate
+005	^ 	 	delete
+005	 {		nolocate
+005	^\** 	," 	replace
+005	^ 		nolocate
+005	^ 	, 	replace
+005	^ 		nolocate
+005	 • 		nolocate
+005	» 		nolocate
+005	^ 	, 	replace
+005	^ 		nolocate
+005	^* 	." 	replace
+005	^ 	. 	replace
+005	: *^'' 		nolocate
+005	^ 		nolocate
+005	 ^		nolocate
+005	« 		nolocate
+005	 • 		nolocate
+005	^* 	." 	replace
+005	^ 	, 	replace
+005	^ 	, 	replace
+005	 ^		nolocate
+005	.70 --> • 1 		nolocate
+005	. 17. 6«» *		nolocate
+006	^		nolocate
+006	^ 		nolocate
+006	^ 	, 	replace
+006	: *^^ 		nolocate
+006	«		nolocate
+006	 "• 	 "	delete
+006	^		nolocate
+006	^ 		nolocate
+006	. 16\*, 	. 16, 	delete
+006	^ 		nolocate
+006	 ♦ 		nolocate
+006	"\** 	."* 	mismatch
+006	^ 	, 	replace
+006	* ««, *		nolocate
+006	/\** 	." 	replace
+006	^ 		nolocate
+006	 \*		nolocate
+006	^ 		nolocate
+006	^ 		nolocate
+006	^ 		nolocate
+006	 \*, 		nolocate
+006	«		nolocate
+006	—^	—	delete
+006	—^	—	delete
+006	^		nolocate
+006	 • 	 :: 	replace
+006	«		nolocate
+006	(9* \*		nolocate
+006	«		nolocate
+007	^ 		nolocate
+007	£		nolocate
+007	^ 		nolocate
+007	^		nolocate
+007	 ■ 		nolocate
+007	^		nolocate
+007	: ^< *		nolocate
+007	^ 		nolocate
+007	^ 		nolocate
+007	^ 		nolocate
+007	^ 		nolocate
+007	^ 		nolocate
+007	^ 		nolocate
+007	^ 		nolocate
+007	^ 		nolocate
+007	 ♦ 1 	 * 1 	mismatch
+007	^ 		nolocate
+007	^* 	," 	replace
+007	^ 		nolocate
+007	—^	—	delete
+007	^ 	, 	replace
+007	^ 	, 	replace
+007	, '^ 		nolocate
+007	» 	, 	replace
+007	: '^ 	: " 	mismatch
+007	. '•• 	. ' 	delete
+007	, ^^ 		nolocate
+007	^ 	, 	replace
+007	 }'		nolocate
+007	 *<!^ ^		nolocate
+007	^ 		nolocate
+007	^ 		nolocate
+007	^ 		nolocate
+007	^ 		nolocate
+007	, ^^ 	, "	replace
+007	 *^		nolocate
+007	 \*		nolocate
+007	$		nolocate
+008	, ^	, ,	replace
+008	, ♦ 		nolocate
+008	^ 		nolocate
+008	^		nolocate
+008	 ^ 		nolocate
+008	^ 	, 	replace
+008	^* 	," 	replace
+008	^ 		nolocate
+008	,\*		nolocate
+008	^ 	-	replace
+008	^ 	, 	replace
+008	^		nolocate
+008	^ 		nolocate
+008	^ 	, 	replace
+008	. ^^ 	. '	replace
+008	, ^^ 	, " 	replace
+008	. ^^ 	. "	replace
+008	^ 	, 	replace
+008	^ 	, 	replace
+008	 *^'•/	 "	mismatch
+008	 *^^		nolocate
+008	 %		nolocate
+008	%		nolocate
+008	^ 		nolocate
+008	^ 	, 	replace
+008	^ 		nolocate
+008	^ 	, 	replace
+008	^ 	, 	replace
+008	^* 	, 	replace
+008	^		nolocate
+008	.^\* 	." 	replace
+009	¥		nolocate
+009	^^* 		nolocate
+009	^ 	, 	replace
+009	^ 	, 	replace
+009	^ 		nolocate
+009	^ 	, 	replace
+009	^ 	, 	replace
+009	 \*^ *		nolocate
+009	 ♦ 	 - * 	mismatch
+009	 *^^ 		nolocate
+009	^ 		nolocate
+009	 *''^	 "	mismatch
+009	/^ 		nolocate
+009	) *''^ 		nolocate
+009	^ 		nolocate
+009	: \*•' 	: "	mismatch
+009	^		nolocate
+009	* «		nolocate
+009	—^	—	delete
+010	}' 	 	mismatch
+010	 ^"^ 		nolocate
+010	^ 		nolocate
+010	^* 	, 	replace
+010	^* 	, 	replace
+010	^ 	, 	replace
+010	^* 	, 	replace
+010	«		nolocate
+010	: "• 	: ' 	mismatch
+010	 ♦ 		nolocate
+010	, \*" 	, '	mismatch
+010	^ 	, 	replace
+010	: ^^ 	: "	replace
+010	 ^' 	 '	delete
+010	 ♦ 		nolocate
+010	^		nolocate
+010	^ 		nolocate
+010	^ 	, 	replace
+010	 ♦ 		nolocate
+010	 ♦ 1 		nolocate
+010	^		nolocate
+010	.141 --> ♦ 		nolocate
+011	 ^		nolocate
+011	 ^ 		nolocate
+011	^	'	replace
+011	^ 		nolocate
+011	^ 		nolocate
+011	 40: *^''		nolocate
+011	 ^	 	delete
+011	^ 		nolocate
+011	^		nolocate
+011	^\** 	," 	replace
+011	, *''^	, "	mismatch
+011	<\* 		nolocate
+011	^ 	; 	replace
+011	^		nolocate
+011	^\** 		nolocate
+011	, "• *	, " 	replace
+011	^		nolocate
+011	^ 	, 	replace
+011	^ 	, 	replace
+011	 ^^ *	 "	replace
+011	^\** 	," 	replace
+011	^ 		nolocate
+011	^ 		nolocate
+011	^ 		nolocate
+011	-\* 		nolocate
+011	« 	. 	replace
+011	^ 	, 	replace
+011	^ 	, 	replace
+011	^§		nolocate
+011	^ 		nolocate
+011	^ 	, 	replace
+011	^		nolocate
+012	^ 		nolocate
+012	. 1\*2. 	. 12. 	delete
+012	^ 	, 	replace
+012	^ 	, 	replace
+012	^ 		nolocate
+012	^		nolocate
+012	\*8 		nolocate
+012	^ 		nolocate
+012	^ 		nolocate
+012	898^ 		nolocate
+012	^ 	, 	replace
+012	^* 	." 	replace
+012	: ^' 	: " 	mismatch
+012	!-^ 	!— 	mismatch
+012	^ 		nolocate
+012	^ 		nolocate
+012	 ♦ 		nolocate
+012	^ 		nolocate
+012	: *^^		nolocate
+012	 ▼	 	delete
+012	: *''^ 	: " 	mismatch
+012	^ 	 	delete
+012	^ 	 	delete
+012	^ 		nolocate
+012	^ 	, 	replace
+012	^ 		nolocate
+012	 "• 		nolocate
+012	^* 	." 	replace
+012	^		nolocate
+012	 ♦ */		nolocate
+012	»9^9		nolocate
+012	^		nolocate
+012	.* + 		nolocate
+012	^ 	 	delete
+012	^		nolocate
+012	 ^		nolocate
+012	^* " 		nolocate
+012	^ 	, 	replace
+012	, \*•\* 	, "	replace
+012	^ 		nolocate
+013	, "»		nolocate
+013	^ 		nolocate
+013	^ 		nolocate
+013	^ 		nolocate
+013	 }		nolocate
+013	^ 		nolocate
+013	^ 		nolocate
+013	 "^^^ 		nolocate
+013	^—	—	delete
+013	-^ 		nolocate
+013	^ 		nolocate
+013	 ^	 	delete
+013	^ 	, 	replace
+013	^		nolocate
+013	." *%* 	." { 	mismatch
+013	." || 		nolocate
+013	 • 		nolocate
+013	. 7. *%* 		nolocate
+013	. 30. |1 		nolocate
+013	\*		nolocate
+013	^ 	, 	replace
+013	^ 	, 	replace
+013	^ 		nolocate
+013	^ 	, 	replace
+013	^ 	, 	replace
+013	^		nolocate
+013	 • 	 -	replace
+013	. «\* 		nolocate
+013	. \*^ 	. " 	replace
+013	. £	. 	delete
+013	. "■ 	. ' 	mismatch
+013	^		nolocate
+013	^ 	, 	replace
+013	^ 	, 	replace
+013	^ 		nolocate
+013	^ 		nolocate
+013	^ 	, 	replace
+013	^ 	, 	replace
+013	^		nolocate
+013	.185 --> + 		nolocate
+013	^^		nolocate
+013	 ^		nolocate
+014	 ♦ 		nolocate
+014	^		nolocate
+014	 *''^ 	 ** 	mismatch
+014	^"* 		nolocate
+014	. "^ *		nolocate
+014	—^		nolocate
+014	 ♦ 		nolocate
+014	.^\** 		nolocate
+014	^		nolocate
+014	^ 	, 	replace
+014	^ 	, 	replace
+014	^ 	, 	replace
+014	 ♦ 		nolocate
+014	 •	 	delete
+014	;^		nolocate
+014	^ 	, 	replace
+014	^ 		nolocate
+014	 ^^	 ~'	mismatch
+014	.203 --> ♦ 		nolocate
+014	.203 --> + 		nolocate
+014	^		nolocate
+014	»		nolocate
+014	»		nolocate
+014	^		nolocate
+015	^ 		nolocate
+015	^ 		nolocate
+015	 ^^ 	 " 	replace
+015	^ 	, 	replace
+015	 ♦ 		nolocate
+015	. 1\*2. \ 		nolocate
+015	^ 		nolocate
+015	^		nolocate
+015	 "<^		nolocate
+015	^		nolocate
+015	 ♦ 		nolocate
+015	. 28. *%* 1 		nolocate
+015	 £		nolocate
+015	^ 		nolocate
+015	^ 		nolocate
+015	^ 		nolocate
+015	^ 	, 	replace
+015	^ 		nolocate
+015	^ 		nolocate
+015	-\* 		nolocate
+015	 *''^	 "	mismatch
+015	: " 2%<?		nolocate
+015	^ 		nolocate
+015	 }»		nolocate
+015	^ 		nolocate
+015	 •''	 "	mismatch
+015	^ 		nolocate
+015	^ 		nolocate
+015	^ 	, 	replace
+015	^ 		nolocate
+015	^ 		nolocate
+015	»9 		nolocate
+015	^		nolocate
+015	» 	, 	replace
+015	—^	—	delete
+015	 ♦ 		nolocate
+015	^ 		nolocate
+015	^		nolocate
+015	^ 		nolocate
+015	«		nolocate
+015	—^	—	delete
+015	^	-	replace
+015	^ 	, 	replace
+015	'^		nolocate
+016	. '2\*2. 	. 22. 	mismatch
+016	^ 	, 	replace
+016	. 15. *^^ 		nolocate
+016	^"* 	," 	replace
+016	;^* 	; 	replace
+016	- ♦ 		nolocate
+016	: "• 	: '* 	mismatch
+016	;^\** 	 ;" 	replace
+016	 €		nolocate
+016	^ 	, 	replace
+016	^* 	." 	replace
+016	,«	,	delete
+016	. *"^		nolocate
+016	^\** 		nolocate
+016	« *		nolocate
+016	^		nolocate
+016	 ♦ 		nolocate
+016	^ 	, 	replace
+016	^		nolocate
+016	.227 --> • 		nolocate
+016	.227 --> *% '		nolocate
+016	^		nolocate
+016	^		nolocate
+016	, »		nolocate
+016	^		nolocate
+017	, ^. 	, 29. 	mismatch
+017	'^		nolocate
+017	^		nolocate
+017	 23: *^^ 		nolocate
+017	^ 		nolocate
+017	^ 		nolocate
+017	^ 		nolocate
+017	: ^ 	 : "	replace
+017	 *^* 		nolocate
+017	-^ 		nolocate
+017	.^\** 	." 	replace
+017	/\* 	." 	replace
+017	^ 		nolocate
+017	^ 		nolocate
+017	^ 		nolocate
+017	^		nolocate
+017	^ 		nolocate
+017	^ 		nolocate
+017	^ 		nolocate
+017	 ♦		nolocate
+017	 21. $ 		nolocate
+017	: *^^		nolocate
+017	 £		nolocate
+017	€		nolocate
+017	^ 	, 	replace
+017	^ 		nolocate
+017	 ♦ 		nolocate
+017	^ 		nolocate
+017	» 		nolocate
+017	^ 		nolocate
+017	^ 		nolocate
+017	^, *		nolocate
+017	^ 	, 	replace
+017	^ 		nolocate
+017	: '^ 	: " 	mismatch
+017	 '^	 "	mismatch
+017	: ^ 	: "	replace
+017	«		nolocate
+017	 • 		nolocate
+017	. *^"	. '	mismatch
+017	* ♦ 		nolocate
+017	^ 		nolocate
+017	^ 	, 	replace
+017	 *%	 	mismatch
+017	^ 		nolocate
+017	^ 		nolocate
+017	^ 		nolocate
+017	^ 		nolocate
+017	« 		nolocate
+017	^		nolocate
+017	 §-		nolocate
+017	 '^ 		nolocate
+017	 ^' 	 " 	mismatch
+018	£		nolocate
+018	;^ 		nolocate
+018	\*		nolocate
+018	 $		nolocate
+018	^ 	, 	replace
+018	—^		nolocate
+018	. 24: *\*^* 		nolocate
+018	^		nolocate
+018	, ^^ 	, "	replace
+018	^^* 	," 	replace
+018	^"* 	," 	replace
+018	^ 		nolocate
+018	^ 	? 	replace
+018	 *^''	 "	mismatch
+018	^ 	, 	replace
+018	^ 	, 	replace
+018	, *%* 	, | 	mismatch
+018	^ 		nolocate
+018	 • 		nolocate
+018	. 16. $ 		nolocate
+018	^ 	, 	replace
+018	^ ^	, 	replace
+018	^ 		nolocate
+018	» 		nolocate
+018	^ 		nolocate
+018	^ 		nolocate
+018	^ 		nolocate
+018	—^		nolocate
+018	: ^	: " 	replace
+018	—^	—	delete
+018	 •		nolocate
+018	^* 	, 	replace
+018	 ^ *	 "	replace
+018	^'* 	," 	mismatch
+018	 "^^^ 	 "7 	mismatch
+018	 *^^* 	 —* + 	mismatch
+018	, ^ *-^* " 	, <~ '	mismatch
+018	 '^^ 	 == 	mismatch
+018	 *^^		nolocate
+018	 ""^^^ 	 	mismatch
+018	 *"^^* 	 ~~ 	mismatch
+018	«		nolocate
+018	- *^* 		nolocate
+018	^\** 		nolocate
+018	. *^^		nolocate
+018	^* 		nolocate
+018	 \*^ 	 "	replace
+018	^ 		nolocate
+018	^* 		nolocate
+018	»		nolocate
+018	<^		nolocate
+018	^		nolocate
+018	^ 		nolocate
+018	 ■		nolocate
+018	 •		nolocate
+018	« 		nolocate
+018	 \*^ *		nolocate
+018	>€		nolocate
+018	,^ ^^ *		nolocate
+018	^ 		nolocate
+018	; *''^	; "	mismatch
+018	^ 		nolocate
+018	« 		nolocate
+018	: ^'	: "	mismatch
+018	-\* 		nolocate
+018	^ 		nolocate
+018	^ 		nolocate
+018	^ 		nolocate
+018	. '^ *		nolocate
+018	$ 		nolocate
+018	: '^ 		nolocate
+018	 *^''	 "	mismatch
+018	^ 	, 	replace
+018	^ 	, 	replace
+018	^ 	, 	replace
+018	 ♦ 		nolocate
+018	^		nolocate
+018	: ^^	: ** 	mismatch
+018	« 		nolocate
+019	 ■		nolocate
+019	^ 		nolocate
+019	^ 	, 	replace
+019	 ^^ 	 " 	replace
+019	,+ 40 		nolocate
+019	^ 		nolocate
+019	^ 	" 	replace
+019	^ 	 	delete
+019	^ 		nolocate
+019	^ 		nolocate
+019	^ 	— 	replace
+019	'^'' 	= 	mismatch
+019	^ 		nolocate
+019	-^ 	— 	mismatch
+019	^ 		nolocate
+019	^ 		nolocate
+019	^ 	® 	mismatch
+019	^ 	 	delete
+019	^ 		nolocate
+019	^		nolocate
+019	^ 		nolocate
+019	>€ 		nolocate
+019	^ *		nolocate
+019	; *^^		nolocate
+019	^ 	, 	replace
+019	 }>	 	mismatch
+019	.!^		nolocate
+019	<»:		nolocate
+019	^ 		nolocate
+019	 ^^ *		nolocate
+019	^ 		nolocate
+019	^ 		nolocate
+019	^ 		nolocate
+019	. ^' *		nolocate
+019	^		nolocate
+019	^ 		nolocate
+019	^ 	, 	replace
+019	» 	, 	replace
+019	^		nolocate
+019	«		nolocate
+019	 '^ *	 "	mismatch
+019	^ *^^ 		nolocate
+019	^ 		nolocate
+019	^ 		nolocate
+019	, ^^ 		nolocate
+019	: *''^* 		nolocate
+019	: ^^ 	: '* 	mismatch
+019	, ^		nolocate
+019	 *^^(		nolocate
+019	 *^ 		nolocate
+019	^ 		nolocate
+019	^ 	, 	replace
+019	: ^' *		nolocate
+019	 •\*		nolocate
+019	»." 		nolocate
+019	^—	—	delete
+019	 ^^ *	 "	replace
+019	^ 		nolocate
+019	^ 	, 	replace
+019	 ^^ 	 "	replace
+019	^* 		nolocate
+019	^ 		nolocate
+019	^ 		nolocate
+019	^ 		nolocate
+019	: ^^	: "	replace
+019	, ^^	, "	replace
+019	^		nolocate
+019	—^	—	delete
+019	^ 	 	delete
+019	^ 	— 	replace
+019	^ 		nolocate
+019	^ 		nolocate
+019	^ 		nolocate
+019	^ 	,» 	mismatch
+019	^ 4. 		nolocate
+019	^ 		nolocate
+019	^ 		nolocate
+019	: ^' 		nolocate
+019	 ^		nolocate
+019	^	 	delete
+019	^ 		nolocate
+019	» 		nolocate
+019	^ 	, 	replace
+019	«		nolocate
+019	9$%		nolocate
+019	: ^^		nolocate
+019	^		nolocate
+019	: ^'	:* ' 	mismatch
+019	: *'•^* 		nolocate
+019	^^\** 		nolocate
+019	»9* 		nolocate
+019	^		nolocate
+019	^«		nolocate
+019	«		nolocate
+020	^ 		nolocate
+020	^* 		nolocate
+020	, ^ 	, "	replace
+020	 • 		nolocate
+020	, ^		nolocate
+020	-» 		nolocate
+020	^ 	, 	replace
+020	^ 		nolocate
+020	8« 		nolocate
+020	-^ 		nolocate
+020	^		nolocate
+020	 €		nolocate
+020	. ^^ *		nolocate
+020	, ^^ *	, " 	replace
+020	^ 		nolocate
+020	« 		nolocate
+020	^ 	, 	replace
+020	^ 		nolocate
+020	^ 		nolocate
+020	^ 		nolocate
+020	^ 		nolocate
+020	 '^/		nolocate
+020	: ^^ 	: " 	replace
+020	«		nolocate
+020	 «		nolocate
+020	^ 	 	delete
+020	%		nolocate
+020	% 		nolocate
+020	 *4^		nolocate
+020	^ 		nolocate
+020	^		nolocate
+020	^ 		nolocate
+020	: \*•• 	: '* 	mismatch
+020	. ^^ 		nolocate
+020	^* 		nolocate
+020	 ^' 	 "	mismatch
+020	^ 		nolocate
+020	^ 	, 	replace
+020	—^	—	delete
+020	 »	 	delete
+020	: ^^ 		nolocate
+020	^ 		nolocate
+020	^ 	 	delete
+020	^ 		nolocate
+020	. ♦ 		nolocate
+020	^ 		nolocate
+020	^* 		nolocate
+020	^ 	, 	replace
+020	—^	—	delete
+021	^ 		nolocate
+021	^ 	, 	replace
+021	"^ 	 = 	mismatch
+021	^ 		nolocate
+021	^ 	, 	replace
+021	^ 	, 	replace
+021	^* 	, 	replace
+021	 ▼	 	delete
+021	-^^ 	-—= 	mismatch
+021	^ 		nolocate
+021	^ 		nolocate
+021	-^^ 		nolocate
+021	^3 		nolocate
+021	"^ 	~~@ 	mismatch
+021	^ 		nolocate
+021	^^ 		nolocate
+021	^ 	=3 	mismatch
+021	^		nolocate
+021	^ 		nolocate
+021	,^^ " *		nolocate
+021	^ 	, 	replace
+021	 *''^	 "	mismatch
+021	^ 	, 	replace
+021	^ 		nolocate
+021	 •* 		nolocate
+021	^ 		nolocate
+021	^ 	, 	replace
+021	." § 	."§ 	mismatch
+021	^ 		nolocate
+021	 ^^ 	 "	replace
+021	 • 	. 	replace
+021	- ♦ 		nolocate
+021	.^ 		nolocate
+021	» 		nolocate
+021	^ 		nolocate
+021	^ 	 	delete
+021	,^		nolocate
+021	^ 	 	delete
+021	^ 		nolocate
+021	^ 		nolocate
+021	^* 		nolocate
+021	^ 		nolocate
+021	<^ 		nolocate
+021	^ 		nolocate
+021	^ 		nolocate
+021	--^ 		nolocate
+021	 ♦ 		nolocate
+021	^ 		nolocate
+021	^ 	, 	replace
+021	^ 		nolocate
+021	^ 	? 23. 	mismatch
+021	^ 		nolocate
+021	^ 	, 	replace
+021	^ (		nolocate
+021	^) 		nolocate
+021	^ 		nolocate
+021	^ 		nolocate
+021	!^* 	," 	mismatch
+021	^ 		nolocate
+021	^ 		nolocate
+021	^ 	 	delete
+021	^ 		nolocate
+021	^		nolocate
+021	«		nolocate
+021	^		nolocate
+021	^ 		nolocate
+021	^ 		nolocate
+021	^ 	™ 	mismatch
+021	^ 		nolocate
+021	3^ 		nolocate
+021	^ 		nolocate
+021	"\** " 		nolocate
+021	 ^^ 	 "	replace
+021	^ 		nolocate
+021	0'^ 		nolocate
+021	; 1^^ 		nolocate
+021	^^ 		nolocate
+021	 -^ 		nolocate
+021	^^ 		nolocate
+021	^^ 		nolocate
+021	^^ 		nolocate
+021	 *"^* 	 --* 	mismatch
+021	^^ 		nolocate
+021	^" 		nolocate
+021	^ 	" 9 '	mismatch
+021	^ 	 	delete
+021	^' 		nolocate
+021	^ 		nolocate
+021	^ 		nolocate
+021	: ^^ 	 : " 	replace
+021	: ^^ 	: " 	replace
+021	^ 		nolocate
+021	^ 		nolocate
+021	^' 		nolocate
+021	^ 		nolocate
+021	 '^ 	 "	mismatch
+021	—^	—	delete
+021	 ♦ 		nolocate
+021	^		nolocate
+021	« 		nolocate
+021	 ^^ 		nolocate
+021	^		nolocate
+021	^		nolocate
+021	^		nolocate
+021	^		nolocate
+021	{,* 		nolocate
+021	. + 		nolocate
+021	.296 --> ♦ 2 		nolocate
+021	.296 --> + 		nolocate
+021	. 3«. *		nolocate
+021	* ^		nolocate
+021	. 5. § 		nolocate
+022	 •		nolocate
+022	^* 		nolocate
+022	<^ 		nolocate
+022	« *		nolocate
+022	^. 		nolocate
+022	 ♦ 		nolocate
+022	^ 	, 	replace
+022	^ 	, 	replace
+022	£ 	 	delete
+022	^ 	® 	mismatch
+022	^^ 	™ 	mismatch
+022	"^ 	@ 	mismatch
+022	^^ 	= 	mismatch
+022	^^ 	= 	mismatch
+022	^ 		nolocate
+022	^ 	™® 	mismatch
+022	^-^ 	» 	mismatch
+022	(^^ 	? 	mismatch
+022	 ^^ 	 "	replace
+022	^* 		nolocate
+022	: ^^	: "	replace
+022	, '^ 	, " 	mismatch
+022	, ^^ 	, " 	replace
+022	« 		nolocate
+022	| 		nolocate
+022	^\** 	," 	replace
+022	, ^^*	, "	replace
+022	^* 		nolocate
+022	, ^^ *	, " 	replace
+022	^ 	, 	replace
+022	: '^ 	: '	delete
+022	: \*" 	: " 	delete
+022	- ♦ 		nolocate
+022	 ^^ 	 "	replace
+022	, '^ 	, " 	mismatch
+022	. ♦ 1 		nolocate
+022	 ^^ 	 "	replace
+022	 ♦ 1 		nolocate
+022	. ^^ *		nolocate
+022	^		nolocate
+022	 %		nolocate
+022	—^	—	delete
+022	^ 	, 	replace
+022	 ^		nolocate
+022	^ 	— 	replace
+022	 ^^ 	 "	replace
+022	^ 		nolocate
+022	 ^' 		nolocate
+022	^		nolocate
+022	: ^' 	: " 	mismatch
+022	^		nolocate
+022	/' *\** 		nolocate
+022	^		nolocate
+022	^		nolocate
+022	 ♦ 		nolocate
+022	£		nolocate
+022	«		nolocate
+022	—^		nolocate
+022	^		nolocate
+022	: " / *•		nolocate
+022	^ 		nolocate
+022	 «		nolocate
+022	 ^		nolocate
+022	. • 		nolocate
+022	»		nolocate
+022	: '^ 	: "	mismatch
+022	|	'	replace
+022	 • 		nolocate
+023	 £		nolocate
+023	€ 		nolocate
+023	®^ 		nolocate
+023	^ 		nolocate
+023	^ 		nolocate
+023	^ 		nolocate
+023	 ©		nolocate
+023	^		nolocate
+023	 •	 	delete
+023	«		nolocate
+023	, •	, 	delete
+023	 «		nolocate
+023	 • 		nolocate
+023	^ 	, 	replace
+023	 • 		nolocate
+023	 •	 	delete
+023	. ♦ 		nolocate
+023	,* + 		nolocate
+023	^ 	, 	replace
+023	^ 	, 	replace
+023	 £		nolocate
+023	^ " 	, "	replace
+023	^ 	, 	replace
+023	^		nolocate
+023	, «		nolocate
+023	 «		nolocate
+023	 ^		nolocate
+023	, ^		nolocate
+023	, ^		nolocate
+023	: *^^		nolocate
+023	^ 		nolocate
+023	^ 		nolocate
+023	^ 		nolocate
+023	^ 		nolocate
+023	^ 		nolocate
+023	 *'^.		nolocate
+023	^		nolocate
+023	^ 9		nolocate
+023	^ 		nolocate
+023	 • 		nolocate
+023	^* 	, 	replace
+023	^	 	delete
+023	. \*^ 	. '	replace
+023	. ^^ 	. '	replace
+024	« *		nolocate
+024	^		nolocate
+024	 «		nolocate
+024	^ 		nolocate
+024	^ 		nolocate
+024	. '• *	. ' 	replace
+024	^ 		nolocate
+024	^ 		nolocate
+024	^ 		nolocate
+024	^ 		nolocate
+024	^ 		nolocate
+024	^ 	, 	replace
+024	 (■	 (	delete
+024	 • 		nolocate
+024	: ''{		nolocate
+024	: ^^ 		nolocate
+024	 ♦		nolocate
+024	^		nolocate
+024	: ^^ 		nolocate
+024	: \*^ 		nolocate
+024	 ♦ 		nolocate
+024	«		nolocate
+024	^^"* 	," 	replace
+024	 '^ 		nolocate
+024	 ^^		nolocate
+024	, ^^	, "	replace
+024	\*	-	replace
+024	—^	—	delete
+024	: ^ 	: « 	mismatch
+024	, ^^	, '	replace
+024	: ^' / *		nolocate
+024	^ 		nolocate
+024	^ 		nolocate
+024	-€		nolocate
+024	^ 		nolocate
+024	, •\* 	, * 	mismatch
+024	^* 	," 	replace
+024	^* 		nolocate
+024	^ *		nolocate
+024	 • 		nolocate
+024	. 12. 34« 		nolocate
+024	 »		nolocate
+024	* «		nolocate
+024	^		nolocate
+024	^		nolocate
+024	/^		nolocate
+024	 ^		nolocate
+024	 \*		nolocate
+024	^		nolocate
+024	^		nolocate
+024	«		nolocate
+024	 ^ 		nolocate
+024	« *		nolocate
+024	^* 		nolocate
+024	^		nolocate
+024	 ^^	 " 	replace
+024	 \*^ 	 "	replace
+024	.—^	.—	delete
+024	^ 		nolocate
+024	^	 	delete
+024	 •€		nolocate
+024	.336 --> • 		nolocate
+024	^«		nolocate
+024	^«		nolocate
+024	«		nolocate
+025	- • 	- '	replace
+025	 «/ *		nolocate
+025	^		nolocate
+025	 ^^ 	 ' 	replace
+025	, '^ *		nolocate
+025	^ 		nolocate
+025	, *\** " 	, * " 	mismatch
+025	, ^^ 	, * 	mismatch
+025	^ 	, 	replace
+025	, ^^ 	, " 	replace
+025	 "• 	 " 	delete
+025	 ♦ 		nolocate
+025	^ 		nolocate
+025	^ 		nolocate
+025	^ 		nolocate
+025	^ 	 	delete
+025	, ^' 	, " 	mismatch
+025	^ 	, 	replace
+025	: ^ 	: " 	replace
+025	: '^ 		nolocate
+025	^, 		nolocate
+025	, ^^ 	, "* 	mismatch
+025	^		nolocate
+025	—^	—	delete
+025	 ^^ 	 " 	replace
+025	. ^^ 	. "	replace
+025	^		nolocate
+025	^		nolocate
+025	: '^	: "	mismatch
+025	, \*^ 	, "	replace
+025	 '^		nolocate
+025	 ♦ 		nolocate
+025	, •	, 	delete
+025	^		nolocate
+025	, ^^ 	, * 	mismatch
+025	£		nolocate
+025	: •\* 	: ' 	replace
+025	: ^		nolocate
+025	: ^		nolocate
+025	—^	—	delete
+026	. *56^* 	. 56, 	mismatch
+026	^ 		nolocate
+026	 '^ 		nolocate
+026	) \*^ 	) " 	replace
+026	: ^^ 	: " 	replace
+026	 « 		nolocate
+026	: '^ 	: " 	mismatch
+026	^ 	, 	replace
+026	^ 		nolocate
+026	^ 		nolocate
+026	, ^'	, "	mismatch
+026	; ^		nolocate
+026	^ 		nolocate
+026	/\* 	." 	replace
+026	, "• 	, "	delete
+026	<|, 		nolocate
+026	 *^-* 	 " 	mismatch
+026	 ♦ 		nolocate
+026	^, 		nolocate
+026	? «—	 ? ——	replace
+026	, '^ 		nolocate
+026	^ 4		nolocate
+026	 ♦ 		nolocate
+026	«		nolocate
+026	.»- 		nolocate
+026	 ^	 /	mismatch
+026	/\* 	." 	replace
+026	 | 		nolocate
+026	^ 	, 	replace
+026	^ 	, 	replace
+026	: \*^ 	: «	mismatch
+026	-» 		nolocate
+026	^ 	, 	replace
+026	: ^^ 	: " 	replace
+026	- ^ 	- "	replace
+026	£		nolocate
+026	^ 	, 	replace
+026	^ 	, 	replace
+026	^ 	, 	replace
+026	« 		nolocate
+026	, £^		nolocate
+026	 ▼		nolocate
+026	^ 	. 	replace
+026	?^		nolocate
+027	! "\*—	!"*—	mismatch
+027	, • 		nolocate
+027	^		nolocate
+027	^* 		nolocate
+027	: ^^ 	: " 	replace
+027	 • 		nolocate
+027	^* 	." 	replace
+027	^* 	." 	replace
+027	« 		nolocate
+027	 ^^ 	 " 	replace
+027	^ 		nolocate
+027	%		nolocate
+027	: ^^ 	: * 	mismatch
+027	 ^		nolocate
+027	 |}		nolocate
+027	^		nolocate
+027	: "• 	: '© 	mismatch
+027	^ 	, 	replace
+027	^ 	, 	replace
+027	: ^' 	: ' 	delete
+027	 ^^ 		nolocate
+027	« 	. 	replace
+027	^ 	, 	replace
+027	: '^ 		nolocate
+027	. 12: ^^ 	. 12: " 	mismatch
+027	^ 	, 	replace
+027	^		nolocate
+028	, *^''	, "	mismatch
+028	^\** 	," 	replace
+028	 *''^	 "	mismatch
+028	 *^^		nolocate
+028	, <^ 		nolocate
+028	/\* 	." 	replace
+028	 ▼		nolocate
+028	 <»	 	mismatch
+028	, •	, 	delete
+028	€		nolocate
+028	, €		nolocate
+028	^ *		nolocate
+028	 • 	- 	replace
+028	^* 		nolocate
+028	 '■'' 	 " 	mismatch
+028	: *^''	: "	mismatch
+028	^ 		nolocate
+028	^		nolocate
+028	^ 		nolocate
+028	^ 	, 	replace
+028	.401 --> ♦ 		nolocate
+029	^ 		nolocate
+029	 • 		nolocate
+029	^		nolocate
+029	: *''^ 	: * 	mismatch
+029	 *"^ 		nolocate
+029	 ^	 	delete
+029	^ 	, 	replace
+029	." « 	." " 	replace
+029	, •\* 	, "	replace
+029	^ 	, 	replace
+029	^		nolocate
+029	 ▼	 	delete
+029	 '• 		nolocate
+029	—^		nolocate
+029	^"* 	," 	replace
+029	, *^''	, "	mismatch
+029	:" *''•	:" " 	mismatch
+029	: —^	: —	delete
+029	^ 	, 	replace
+029	^ 		nolocate
+029	 34: *^^ 		nolocate
+029	^ 	, 	replace
+029	^ 		nolocate
+029	^		nolocate
+029	: '^ *		nolocate
+029	^		nolocate
+029	^ 		nolocate
+029	^ 		nolocate
+029	^ 		nolocate
+029	. ••' *		nolocate
+029	: *^'£		nolocate
+029	^ 		nolocate
+029	^ 		nolocate
+029	 *^		nolocate
+029	^ 		nolocate
+029	 €	 	delete
+029	^		nolocate
+029	 ^		nolocate
+029	^* 	, 	replace
+029	 ^ *		nolocate
+029	^ 		nolocate
+029	^ 		nolocate
+029	^		nolocate
+029	 ■	 	delete
+029	 •	 	delete
+029	!—^	!—	delete
+029	.415 --> ♦		nolocate
+030	 ^		nolocate
+030	^		nolocate
+030	^		nolocate
+030	^ 		nolocate
+030	^		nolocate
+030	 ^\* 	 "	replace
+030	^		nolocate
+030	. ^^ 		nolocate
+030	 «	 	delete
+030	 *})		nolocate
+030	 •	. 	replace
+030	 *\** 		nolocate
+030	^ 		nolocate
+030	^ 		nolocate
+030	^		nolocate
+030	, (», 		nolocate
+030	^ 	, 	replace
+030	^		nolocate
+030	, ^\* 	, " 	replace
+030	: ^^ 	: "	replace
+030	» 	, 	replace
+030	: ^ 	: " 	replace
+030	 €		nolocate
+030	^ 		nolocate
+030	: ^^ *	: " 	replace
+030	^ 		nolocate
+030	^ 		nolocate
+030	^ 		nolocate
+030	^ 		nolocate
+030	^ 		nolocate
+030	'^* 	." 	mismatch
+030	 ^'	 "	mismatch
+030	«		nolocate
+030	«		nolocate
+030	: \*^	: " 	replace
+030	. \*^	. "	replace
+030	%		nolocate
+030	. '• 	. ' 	delete
+030	 •\* 	 "	replace
+030	^ 	, 	replace
+030	, «		nolocate
+030	, «		nolocate
+030	^ 		nolocate
+030	 ^		nolocate
+030	 39: '^ *		nolocate
+030	^ 	, 	replace
+030	 »		nolocate
+030	: ^		nolocate
+030	^ 	, 	replace
+030	^		nolocate
+030	» 		nolocate
+030	\*		nolocate
+030	^		nolocate
+030	."— ♦\* 	."— « 	mismatch
+030	, '^ 	, " 	mismatch
+030	 €		nolocate
+030	^ 		nolocate
+030	—^	—	delete
+030	^		nolocate
+030	 ^		nolocate
+030	 -^		nolocate
+030	^		nolocate
+030	^		nolocate
+030	. *^		nolocate
+030	^ 		nolocate
+030	* »«		nolocate
+030	«		nolocate
+030	 *^		nolocate
+030	^		nolocate
+030	/\* 	." 	replace
+031	—^	—	delete
+031	 *^'•		nolocate
+031	 ^^ 	 " 	replace
+031	^ 	 	delete
+031	^ 	, 	replace
+031	: *^* 		nolocate
+031	, «'	, «	mismatch
+031	 $		nolocate
+031	^ 	, 	replace
+031	^ 		nolocate
+031	^, 		nolocate
+031	: ^'		nolocate
+031	^ 	, 	replace
+031	^ 		nolocate
+031	^"* 	," 	replace
+031	^ 		nolocate
+031	 €		nolocate
+031	 • 	-	replace
+031	 ^^ 	 "	replace
+031	: ^' *	: '	replace
+031	^ 		nolocate
+031	^ 		nolocate
+031	, ^		nolocate
+031	^ 		nolocate
+031	^		nolocate
+031	^ 		nolocate
+031	^		nolocate
+031	: '^ 		nolocate
+031	;—^		nolocate
+031	^		nolocate
+031	^ 		nolocate
+031	^		nolocate
+031	: ^^	: "	replace
+031	, '^ 	, "	mismatch
+031	, ^1 		nolocate
+031	£&		nolocate
+031	^. 7 		nolocate
+031	^ 		nolocate
+031	^^		nolocate
+031	 ^^ 	 " 	replace
+031	—^	—	delete
+031	—^	—	delete
+031	 ^	 	delete
+031	^ 	; 	replace
+031	?^	 ?—	replace
+031	—^	—	delete
+031	^		nolocate
+031	^		nolocate
+031	: ^'	: "	mismatch
+031	."—^^		nolocate
+032	^		nolocate
+032	^ 		nolocate
+032	^ 		nolocate
+032	 1 %		nolocate
+032	 ^^ 	 " 	replace
+032	^ 		nolocate
+032	 «		nolocate
+032	^ 		nolocate
+032	^		nolocate
+032	^ 		nolocate
+032	^ 	, 	replace
+032	£		nolocate
+032	, ^'	, "	mismatch
+032	 ^^ 	 " 	replace
+032	: •\* 	 : " 	replace
+032	^ 	 	delete
+032	, ^^		nolocate
+032	 {»		nolocate
+032	—^		nolocate
+032	% 		nolocate
+032	 ^^ 	 "	replace
+032	 '^ 	 " 	mismatch
+032	 '^ 	 "	mismatch
+032	;|	;{	mismatch
+032	."— ^^ 	." — '** 	mismatch
+032	; ^^ 		nolocate
+032	, •	, 	delete
+032	: ^^ 	: " 	replace
+032	 ^^	, 	replace
+032	^* 	, 	replace
+032	^ 	, 	replace
+032	^ 		nolocate
+032	^ 		nolocate
+032	^ 		nolocate
+032	^ 		nolocate
+032	: ^' *	: " 	mismatch
+032	^		nolocate
+032	, ^' *	, " 	mismatch
+032	^ 		nolocate
+032	^ 	, 	replace
+032	^ 	, 	replace
+032	^		nolocate
+032	 (^		nolocate
+032	;-^		nolocate
+032	^ 	, 	replace
+032	^ 	, 	replace
+032	^ 		nolocate
+032	- •	- '	replace
+032	? ^^ 	? "	replace
+032	^ 	, 	replace
+032	^ 	, 	replace
+032	^ 	, 	replace
+032	^ 		nolocate
+033	^	'	replace
+033	 £		nolocate
+033	^ 	 	delete
+033	 ^ 		nolocate
+033	^, 		nolocate
+033	^ 	, 	replace
+033	^		nolocate
+033	^		nolocate
+033	^		nolocate
+033	^ 	, 	replace
+033	!—^	 !—	delete
+033	, *^^ 		nolocate
+033	^ 		nolocate
+033	^ 		nolocate
+033	 ^^ 	 " 	replace
+033	^		nolocate
+033	^		nolocate
+033	,\*	,'	replace
+033	 €		nolocate
+033	: "^	: "	delete
+033	^ 	, 	replace
+033	 €		nolocate
+033	-\* 		nolocate
+033	| 		nolocate
+033	^ 		nolocate
+033	^ 	; 	replace
+033	«		nolocate
+033	^ 		nolocate
+033	^ 		nolocate
+033	^ 		nolocate
+033	, *^^		nolocate
+033	^		nolocate
+033	, ^^ 	, " 	replace
+033	 §	, 	replace
+033	^ 	, 	replace
+033	^ 		nolocate
+033	^		nolocate
+033	^ 		nolocate
+033	^* 	. 	replace
+033	: ^^ 	: " 	replace
+033	: *^^		nolocate
+033	^ 		nolocate
+033	. ^' 	. '	delete
+033	. ^""	. '	mismatch
+033	) \*^ *		nolocate
+033	^'* (		nolocate
+033	), *^^		nolocate
+033	^ 		nolocate
+033	^ 		nolocate
+033	^ 		nolocate
+033	, *^^		nolocate
+033	^ 		nolocate
+033	 *^^		nolocate
+033	^ 		nolocate
+033	^ 	, 	replace
+033	^ 	, 	replace
+033	^ 1 		nolocate
+033	^* 		nolocate
+033	^		nolocate
+033	—^	—	delete
+033	 '^	 "	mismatch
+033	^ 	. 	replace
+033	 ^	 	delete
+033	» 		nolocate
+033	^		nolocate
+033	^ 		nolocate
+033	^ 		nolocate
+033	» 		nolocate
+033	^ 		nolocate
+033	: ^^	: "	replace
+033	^* 	, 	replace
+033	: ^^ 	: " 	replace
+033	7^. 		nolocate
+033	 86^. 		nolocate
+033	, ^^ 	, "	replace
+033	: "-4\* 		nolocate
+033	^ 		nolocate
+034	: ^^ 	: "	replace
+034	^		nolocate
+034	, £0 		nolocate
+034	 ^' *	 " 	mismatch
+034	^ 		nolocate
+034	 *''^	 " 	mismatch
+034	^* 	," 	replace
+034	^ 	, 	replace
+034	^* 	, 	replace
+034	^* 	, 	replace
+034	^ 		nolocate
+034	^ 		nolocate
+034	 « 		nolocate
+034	: —^ 1 	 : —"] 	mismatch
+034	, ^^ 	, "	replace
+034	! ^^ 		nolocate
+034	 ^'*	 "	mismatch
+034	;—^	;—	delete
+034	: '^ 	: " 	mismatch
+034	 '^ *	 " 	mismatch
+034	^* 		nolocate
+034	^ 	, 	replace
+034	^ 	, 	replace
+034	. ^^ *	. " 	replace
+034	, ^^ *	, " 	replace
+034	 «		nolocate
+034	^ 		nolocate
+034	^ 		nolocate
+034	 €		nolocate
+034	^		nolocate
+034	 \*^ 		nolocate
+034	: '^ 	: "	mismatch
+034	: ^ 	: " 	replace
+034	^		nolocate
+034	^		nolocate
+034	^		nolocate
+034	 *^\* 		nolocate
+034	^ 	, 	replace
+034	^ 		nolocate
+034	 '^ *	 " 	mismatch
+034	^ 	, 	replace
+034	^ 		nolocate
+034	^ 		nolocate
+034	^		nolocate
+034	, £		nolocate
+034	^		nolocate
+034	»{* 		nolocate
+034	^ 		nolocate
+034	: ^^ 	: * 	mismatch
+034	^		nolocate
+034	^ 	, 	replace
+034	^		nolocate
+034	: ^' 	: " 	mismatch
+034	, ^ 	, "	replace
+034	^ 		nolocate
+034	$ 		nolocate
+034	« 		nolocate
+034	» 		nolocate
+034	« 		nolocate
+034	» 		nolocate
+034	: ^' 		nolocate
+034	—\*	—-	replace
+034	^ 	— 	replace
+034	: ^^ 	: " 	replace
+034	: ^'		nolocate
+034	. ^ 	. "	replace
+034	^		nolocate
+034	, *^* 		nolocate
+034	: ^^ 	: " 	replace
+034	 \^'		nolocate
+034	^		nolocate
+034	."—^^ 		nolocate
+034	^ 		nolocate
+034	^ 		nolocate
+034	^ 		nolocate
+034	: '^ 	: " 	mismatch
+034	: ^^ 	: "	replace
+035	^		nolocate
+035	^		nolocate
+035	 '^ 	 "	mismatch
+035	^		nolocate
+035	, ^' 	, "	mismatch
+035	. 2: ^^ 	. 2: " 	mismatch
+035	 • 		nolocate
+035	^		nolocate
+035	: ^' 	: " 	mismatch
+035	^ 		nolocate
+035	: '^ 	 : '	delete
+035	." ^' 	." ' 	delete
+035	. ^^ *	. "° 	mismatch
+035	^ 		nolocate
+035	^"* 	?" 	replace
+035	; '^ *	; " 	mismatch
+035	; ^^ *	; "	replace
+035	, ^' *	, " 	mismatch
+035	^ 	, 	replace
+035	^ 		nolocate
+035	^ 		nolocate
+035	^ 		nolocate
+035	^ 		nolocate
+035	^		nolocate
+035	^ 	 	delete
+035	^ 		nolocate
+035	 ^		nolocate
+035	^		nolocate
+035	: ^ 	: " 	replace
+035	 ^' 		nolocate
+035	^		nolocate
+035	."—^^ 		nolocate
+035	: ^ 	: "	replace
+035	 «\* 	 " 	replace
+035	, • 		nolocate
+035	 ^' 	 "	mismatch
+035	, ^ 	, "	replace
+035	 ♦ 		nolocate
+035	 ^" 	 "	delete
+035	, ^' 	, " 	mismatch
+035	;—^	 ;—	delete
+035	;—^	 ;—	delete
+035	 • 		nolocate
+035	: ^' 		nolocate
+035	, \*^ 	, " 	replace
+035	 ^^ 	 ' 	replace
+035	 ^ 	? 	replace
+035	: ^^	: * 	mismatch
+035	 \*^ 	 " 	replace
+035	^* 	, 	replace
+035	. ^'	. "	mismatch
+035	: ^^ 	: '* 	mismatch
+035	." —^' 	." —' 	delete
+035	. ^^ 	. "	replace
+035	, ^^ 	,* " 	mismatch
+035	; ^^ 	 ; "	replace
+035	-^ 		nolocate
+035	» 	, 	replace
+035	. ^^ 	. '	replace
+035	, ^^ 	, '	replace
+035	 ^		nolocate
+035	: ^^ 		nolocate
+036	 ^		nolocate
+036	 ^		nolocate
+036	. '^	. "	mismatch
+036	: ^^		nolocate
+036	 ^' 	 "	mismatch
+036	. ^' 	. "	mismatch
+036	 ^^ 	 "	replace
+036	, ^^ *	, " 	replace
+036	^ 		nolocate
+036	^ 	, 	replace
+036	^ 		nolocate
+036	 ^^	 "	replace
+036	^ 		nolocate
+036	^ 		nolocate
+036	^ 		nolocate
+036	^ 		nolocate
+036	^ 		nolocate
+036	^ 		nolocate
+036	: ^^	: * 	mismatch
+036	 •		nolocate
+036	 '^	 "	mismatch
+036	 30: *^^ 		nolocate
+036	^ 		nolocate
+036	^ 		nolocate
+036	^ 		nolocate
+036	 '^ 	 "	mismatch
+036	: ^^	: "	replace
+036	. \*.0		nolocate
+036	. *"^ 	. ' 	mismatch
+036	^ 	, 	replace
+036	^ 		nolocate
+036	^ 		nolocate
+036	^ 		nolocate
+036	^ 		nolocate
+036	, ^' *	, * 	mismatch
+036	^"* 	," 	replace
+036	;^* 		nolocate
+036	^ 		nolocate
+036	—^	—	delete
+036	^ 	, 	replace
+036	^ 		nolocate
+036	% 		nolocate
+036	^		nolocate
+036	^ 	 	delete
+036	: ^' 	: " 	mismatch
+036	 *^		nolocate
+036	?—^	 ?—	delete
+036	^	, 	replace
+036	. '^ 	. '	delete
+036	 <^ 	 "	replace
+036	. ^' 	. " 	mismatch
+036	« $		nolocate
+036	 ^' 	 " 	mismatch
+037	^		nolocate
+037	^	'	replace
+037	. ^'	. "	mismatch
+037	: '^ 	: " 	mismatch
+037	^		nolocate
+037	 ^		nolocate
+037	» 	, 	replace
+037	. ^' *	. " 	mismatch
+037	^ 		nolocate
+037	^ 		nolocate
+037	. ^^ 	. "	replace
+037	—^ 	— 	delete
+037	^ 	, 	replace
+037	 ^' 	 " 	mismatch
+037	, ^^ 	, "	replace
+037	—^	—	delete
+037	 *^^		nolocate
+037	^* 		nolocate
+037	^ 		nolocate
+037	 *''^	 "	mismatch
+037	. ^' 	. "	mismatch
+037	^ 		nolocate
+037	» 		nolocate
+037	—^	—	delete
+037	^ 		nolocate
+037	 '^ 	 " 	mismatch
+037	-^		nolocate
+037	: <\* 	: " 	replace
+037	^ 		nolocate
+037	 *^''	 " 	mismatch
+037	^'* 	," 	mismatch
+037	^ 	 	delete
+037	$ 		nolocate
+037	. *^^		nolocate
+037	^		nolocate
+037	^ 	, 	replace
+037	^ 	, 	replace
+037	: '^ 	: " 	mismatch
+037	^ 		nolocate
+037	."^ 	." 	delete
+037	^ 		nolocate
+037	: ^^	: "	replace
+037	^ 	, 	replace
+037	. <^ / *		nolocate
+037	, \*• 	, " 	replace
+037	* "§—-	 '§—	mismatch
+037	^ 	, 	replace
+037	^ 		nolocate
+037	* «		nolocate
+037	^ 		nolocate
+037	^ 	, 	replace
+037	) "««# *		nolocate
+037	^ 		nolocate
+037	 ^		nolocate
+037	 • 	 - 	replace
+037	'^		nolocate
+037	 ^ 	 9 	mismatch
+037	: "• 	: '* 	mismatch
+037	^		nolocate
+037	: *^		nolocate
+037	§		nolocate
+037	^		nolocate
+037	» 		nolocate
+037	^		nolocate
+037	^«^\*		nolocate
+037	» 		nolocate
+037	^ \		nolocate
+038	^^		nolocate
+038	^ 		nolocate
+038	^ 		nolocate
+038	, •\* *		nolocate
+038	^		nolocate
+038	/\* 	." 	replace
+038	^ \*• *		nolocate
+038	^ 		nolocate
+038	^ 	, 	replace
+038	- *\** 		nolocate
+038	. 46. *^^		nolocate
+038	^ 		nolocate
+038	^, 		nolocate
+038	^ 		nolocate
+038	£		nolocate
+038	 ♦ 		nolocate
+038	^ 		nolocate
+038	^ 	, 	replace
+038	 \*		nolocate
+038	, "• 	, "	delete
+038	—^	—	delete
+038	—^	—	delete
+038	—^	—	delete
+038	^ 		nolocate
+038	: '^ 	: '	delete
+038	^ 	; 	replace
+038	» 		nolocate
+039	^ 		nolocate
+039	—^.	—	mismatch
+039	^ 		nolocate
+039	^ 		nolocate
+039	-\* 	-" 	replace
+039	, ^		nolocate
+039	 11: *^^ 		nolocate
+039	 •1 	 '1 	mismatch
+039	^ 		nolocate
+039	^ 		nolocate
+039	 ♦ 		nolocate
+039	: ^' 		nolocate
+039	^ 		nolocate
+039	^ 		nolocate
+039	^ 	, 	replace
+039	- «		nolocate
+039	 ♦ 		nolocate
+039	, *^\** 		nolocate
+039	. ^^ 		nolocate
+039	^ 	, 	replace
+039	"^ 	' 	mismatch
+039	^ 		nolocate
+039	 ^		nolocate
+039	^* 	." 	replace
+039	^ 		nolocate
+039	^ 		nolocate
+039	^ 		nolocate
+039	^ 		nolocate
+039	—^	—	delete
+039	, *^'-		nolocate
+039	^		nolocate
+039	 ¥		nolocate
+039	 ^		nolocate
+039	^		nolocate
+039	 ^		nolocate
+039	^		nolocate
+039	¥ 		nolocate
+039	^		nolocate
+039	^ %		nolocate
+039	* «■»>' *^		nolocate
+039	^		nolocate
+039	^		nolocate
+039	 ^		nolocate
+039	^		nolocate
+039	^		nolocate
+040	^ 	, 	replace
+040	^ 		nolocate
+040	£		nolocate
+040	—^	—	delete
+040	 "• 	 " 	delete
+040	^* 		nolocate
+040	^ 		nolocate
+040	^ 		nolocate
+040	 ^	 	delete
+040	^ 	, 	replace
+040	^ 		nolocate
+040	^ 	, 	replace
+040	, "■ 	, ' 	mismatch
+040	/\*—" 	."—" 	replace
+040	 ♦ 		nolocate
+040	 »		nolocate
+040	$		nolocate
+040	. • 	. - 	replace
+040	 ^		nolocate
+040	^		nolocate
+040	^* 	." 	replace
+040	,^ 	,* 	mismatch
+040	 ^^ 	 " 	replace
+040	^ 		nolocate
+040	 ^^ 	 "	replace
+040	, ^' 	, "	mismatch
+040	, ^' 	, " 	mismatch
+040	^ 	, 	replace
+040	: '^ 	: " 	mismatch
+040	^ 		nolocate
+040	^ 		nolocate
+040	^ 	, 	replace
+040	 ^^ 	 "	replace
+040	,^	, 	delete
+040	: *"'•* 	: *" 	mismatch
+040	.573 --> ♦ 		nolocate
+040	 *^		nolocate
+040	, \*		nolocate
+040	\*		nolocate
+040	«^, 		nolocate
+040	«		nolocate
+040	 ^		nolocate
+040	^ 		nolocate
+040	^ \*		nolocate
+041	 ^		nolocate
+041	^		nolocate
+041	<|.		nolocate
+041	^		nolocate
+041	 • 		nolocate
+041	 ^^ 		nolocate
+041	^ 	, 	replace
+041	^\** 		nolocate
+041	 '^ 	 "	mismatch
+041	^ 		nolocate
+041	^ 		nolocate
+041	^		nolocate
+041	 ^^ 	 "	replace
+041	 ^^ 	 "	replace
+041	^* 	;" 	replace
+041	 4€		nolocate
+041	 *\** (	 * (	mismatch
+041	^		nolocate
+041	^ 	, 	replace
+041	 ^		nolocate
+041	 ^		nolocate
+041	 ♦		nolocate
+041	$ 		nolocate
+041	^ 		nolocate
+041	?—^	 ?—	delete
+041	 ^'	 "	mismatch
+041	^		nolocate
+041	: \*^ 	: " 	replace
+041	$ 		nolocate
+041	^ 	, 	replace
+041	^* 	, 	replace
+042	 ^		nolocate
+042	: "^ *		nolocate
+042	^ 	, 	replace
+042	^ 		nolocate
+042	^ 		nolocate
+042	 % 	 @ 	mismatch
+042	^"* 	," 	replace
+042	^ 	, 	replace
+042	, *"^ 		nolocate
+042	, *^'	, "	mismatch
+042	^	, 	replace
+042	, *^^ 		nolocate
+042	 '^ 	 "	mismatch
+042	/' \*^ *	." " 	mismatch
+042	^'* &	, &	mismatch
+042	 ^' *	 " 	mismatch
+042	^ 	, 	replace
+042	^"* 	" 	replace
+042	—^	—	delete
+042	^"* 		nolocate
+042	^ 		nolocate
+042	, *^^		nolocate
+042	;"\** 		nolocate
+042	, *^^		nolocate
+042	* ^		nolocate
+042	'^ 		nolocate
+042	^ 	, 	replace
+042	^ 		nolocate
+042	 ♦ 		nolocate
+042	 ^'	 "	mismatch
+042	 ♦ 	 * 	mismatch
+042	. £	. 	delete
+042	^ 		nolocate
+042	^ 	, 	replace
+042	; ^^ 		nolocate
+042	^ 		nolocate
+042	^ 		nolocate
+043	« 		nolocate
+043	. 13, '^ 	. 13, " 	mismatch
+043	 *'^	 "	mismatch
+043	"—*^^ 	'—" 	mismatch
+043	» " 	, "	replace
+043	. ♦ 		nolocate
+043	, •\* *	, " 	replace
+043	^ 		nolocate
+043	^ 		nolocate
+043	^ 		nolocate
+043	^ 	, 	replace
+043	,"\*—*''^ 	,"*—" 	mismatch
+043	^ 		nolocate
+043	^ 		nolocate
+043	- »		nolocate
+043	 *^		nolocate
+043	^* 	, 	replace
+043	^ 	, 	replace
+043	 '^	 "	mismatch
+043	 '^ 	 ' 	delete
+043	^ 		nolocate
+043	^ 		nolocate
+043	^ 		nolocate
+043	; *^^ 		nolocate
+043	^ 		nolocate
+043	^ 		nolocate
+043	^ 		nolocate
+043	 52: *'•''		nolocate
+043	, ^' 	, '	delete
+043	^ 		nolocate
+043	/\** 	." 	replace
+043	 *'-^ 		nolocate
+043	,^\** 		nolocate
+043	 '^ *	 " 	mismatch
+043	^		nolocate
+044	 ♦ 		nolocate
+044	^ 	, 	replace
+044	^ 	, 	replace
+044	^		nolocate
+044	, \*^ 	, "	replace
+044	^ 		nolocate
+044	^ 		nolocate
+044	^ 		nolocate
+044	^ 		nolocate
+044	^ 	, 	replace
+044	. *'-^	. '	mismatch
+044	^ 		nolocate
+044	^ 	, 	replace
+044	—^	—	delete
+044	—^	—	delete
+044	 ^' *		nolocate
+044	. *^''	. " 	mismatch
+044	^ 		nolocate
+044	^ 		nolocate
+044	, '^	, "	mismatch
+044	^ 	, 	replace
+044	 •		nolocate
+044	. ^' 	. ' 	delete
+044	 ^' 	 "	mismatch
+044	 \* 		nolocate
+044	, \*^ 	, " 	replace
+044	 ^< 	 "	replace
+044	 ^^ 	 "	replace
+044	, ^^ 		nolocate
+044	^		nolocate
+044	. ^\* 		nolocate
+044	. ^' 		nolocate
+044	 • 		nolocate
+044	^ 	, 	replace
+044	^ 		nolocate
+044	. ^' 	. ' 	delete
+045	^* 	" 	replace
+045	. ♦ 		nolocate
+045	), ^^ *	), "	replace
+045	^ 		nolocate
+045	: ^^ 	: '* 	mismatch
+045	^ 	, 	replace
+045	^ 	, 	replace
+045	, ^^ 	, "	replace
+045	.^ 	.* 	mismatch
+045	 • 		nolocate
+045	^ 	, 	replace
+045	^ 		nolocate
+045	, ^' 	, "	mismatch
+045	^ 		nolocate
+045	^ 		nolocate
+045	, '^ 	, " 	mismatch
+045	^ 		nolocate
+045	. ^^ *	. " 	replace
+045	^ 		nolocate
+045	^ 		nolocate
+045	 *''^	 "	mismatch
+045	^* 		nolocate
+045	. ^^ 	. '	replace
+045	 ^'	 "	mismatch
+045	^* 	, 	replace
+045	- •	- -	replace
+045	, ^^ 	, " 	replace
+046	^* 		nolocate
+046	 ▼		nolocate
+046	^ 		nolocate
+046	^ 	é 	mismatch
+046	^* 	," 	replace
+046	 ^^ *		nolocate
+046	^/		nolocate
+046	£		nolocate
+046	 ^" 	?" 	replace
+046	—^	—	delete
+046	, ^^	, "	replace
+046	—^^	—" 	replace
+046	^ 		nolocate
+046	 *""^	 "	mismatch
+046	^ 	, 	replace
+046	 ♦ 		nolocate
+046	^		nolocate
+046	: ^^ 	: ' 	replace
+046	: ^' *	 : "	mismatch
+046	^ 	, 	replace
+046	^ 		nolocate
+046	^ 		nolocate
+046	^ 		nolocate
+046	^* 	." 	replace
+046	;|; 	} 	mismatch
+046	^		nolocate
+046	 ». 		nolocate
+046	. 7. *%* 		nolocate
+046	«, *		nolocate
+046	^		nolocate
+046	 <^ 	 "	replace
+046	 \*^	 "	replace
+046	^* 		nolocate
+046	^* 	, 	replace
+046	^* 	, 	replace
+046	^* 		nolocate
+046	^		nolocate
+046	^ 		nolocate
+046	. *'^		nolocate
+046	^ 		nolocate
+046	^ 		nolocate
+046	^ 	, 	replace
+046	^ 		nolocate
+046	^ 		nolocate
+046	^		nolocate
+046	 ■	 	delete
+046	♦ 	, 	replace
+046	^ 	, 	replace
+046	-^		nolocate
+046	 •' 	 "	mismatch
+046	 *\** 		nolocate
+046	!—^	!—	delete
+046	, £		nolocate
+047	, '^ *		nolocate
+047	^ 		nolocate
+047	^ 		nolocate
+047	, \*< 	, "	replace
+047	 '^ *		nolocate
+047	, ^' 	, " 	mismatch
+047	 '^ *		nolocate
+047	: ^' 	: " 	mismatch
+047	, '^ 	, " 	mismatch
+047	^\** 	," 	replace
+047	 ^' 	 " 	mismatch
+047	: ^' 	: "* 	mismatch
+047	^		nolocate
+047	^ 		nolocate
+047	—^		nolocate
+047	^		nolocate
+047	 33. *^^ 		nolocate
+047	^ 		nolocate
+047	^ 		nolocate
+047	^ 		nolocate
+047	^ 		nolocate
+047	^ 		nolocate
+047	^ 		nolocate
+047	, '^ *	, "	mismatch
+047	^* 		nolocate
+047	:*—^		nolocate
+047	, ^^ 	, " 	replace
+047	^		nolocate
+047	^ 		nolocate
+047	. '^	. '	delete
+047	^	 '	replace
+047	^		nolocate
+047	. '^ 	. ' 	delete
+047	^ 		nolocate
+047	, ^^ 	, " 	replace
+047	: ^^ 		nolocate
+047	» 		nolocate
+047	^ 		nolocate
+047	^ 	, 	replace
+047	.'^ 	." 	mismatch
+047	^		nolocate
+047	^* ^' *		nolocate
+047	^		nolocate
+047	: ^' 	: " 	mismatch
+047	, ^ 		nolocate
+047	|«		nolocate
+047	«». 		nolocate
+048	^ 		nolocate
+048	. 4\*2. 	. 42, 	mismatch
+048	^ 		nolocate
+048	 ^	 	delete
+048	^ 	, 	replace
+048	^ 	, 	replace
+048	^\** 	,' 	replace
+048	^* 	," 	replace
+048	^* 		nolocate
+048	; *^^ 		nolocate
+048	 ^''	 "	mismatch
+048	^ 		nolocate
+048	 40: *^^ 		nolocate
+048	. *^^		nolocate
+048	^ 		nolocate
+048	^ 		nolocate
+048	. '^ *		nolocate
+048	^ 		nolocate
+048	, '^ *	, "	mismatch
+048	 *^	 	mismatch
+048	. '^ 	. " 	mismatch
+048	, *^'* 	, "	mismatch
+048	, ^^ 	, "	replace
+048	^		nolocate
+048	 ♦ 		nolocate
+048	 "«// *"* 		nolocate
+048	^		nolocate
+048	^\** 	,' 	replace
+048	 ^' 	 "	mismatch
+048	: *^^		nolocate
+048	^"* 	," 	replace
+048	 \** 		nolocate
+048	-^	—	mismatch
+048	^		nolocate
+048	^ 	, 	replace
+048	^ 	, 	replace
+048	^* 		nolocate
+048	^ 	, 	replace
+048	 «		nolocate
+048	, ^' 	, " 	mismatch
+048	, '^ 	, "	mismatch
+048	 '^ 	 " 	mismatch
+048	.^^	.— 	replace
+048	 ^		nolocate
+048	, ^ 	, "	replace
+048	 *\** 	 * 	mismatch
+048	, ^^ 	, " 	replace
+048	^		nolocate
+048	 ♦ 		nolocate
+048	—*\*^* 	—'* 	mismatch
+048	^ 	, 	replace
+048	. *\** 		nolocate
+048	, '^ 	, " 	mismatch
+049	. 49. ^ 	. 49. 4 	mismatch
+049	, ^^ 	, "	replace
+049	," • 		nolocate
+049	 ♦		nolocate
+049	^		nolocate
+049	 ♦ 		nolocate
+049	^ 	, 	replace
+049	—^	—	delete
+049	^ 	, 	replace
+049	 ♦ 		nolocate
+049	^ 		nolocate
+049	—^	—	delete
+049	8$ 		nolocate
+049	^ 	, 	replace
+049	^ '' 	, " 	mismatch
+049	^* 		nolocate
+049	^ 	, 	replace
+049	^ 		nolocate
+049	^ 		nolocate
+049	^ 	, 	replace
+049	 •^	 —	replace
+049	. 23: ^^ 	. 23: " 	mismatch
+049	^* 		nolocate
+049	^ 	, 	replace
+049	 —^	 —	delete
+049	/\* 	,' 	replace
+049	.—^	.—	delete
+049	- ♦ 		nolocate
+050	 *'■•* 		nolocate
+050	^ *		nolocate
+050	^* 		nolocate
+050	 —^	 —	delete
+050	, ^^*		nolocate
+050	^		nolocate
+050	^ 		nolocate
+050	^ 		nolocate
+050	^ 		nolocate
+050	^ 		nolocate
+050	^ 		nolocate
+050	^		nolocate
+050	 ^		nolocate
+050	 • 		nolocate
+050	; ^^*	; '	replace
+050	 *^^		nolocate
+050	 "^0 *		nolocate
+050	^ 		nolocate
+050	^ 		nolocate
+050	 ^'	 "	mismatch
+050	: ^^ 	:* " 	mismatch
+050	, ^^ 	, "	replace
+050	^ 	, 	replace
+050	, ♦ 		nolocate
+050	^ 	- 	replace
+050	 ♦ 		nolocate
+050	 "• 	 "	delete
+050	^		nolocate
+050	 • 		nolocate
+050	, *^'* 	, " 	mismatch
+050	 \*^ 	 "	replace
+050	-\* 		nolocate
+050	^	 	delete
+050	 ♦ 		nolocate
+050	^		nolocate
+050	^		nolocate
+050	 ^	 	delete
+050	/\* 	," 	replace
+050	^		nolocate
+050	^^		nolocate
+050	/\* 	," 	replace
+050	^ " 	, "	replace
+050	^^		nolocate
+050	^* 		nolocate
+051	^ 	, 	replace
+051	, *^'		nolocate
+051	^ 		nolocate
+051	\^ 		nolocate
+051	) *^"^ 		nolocate
+051	^ 		nolocate
+051	^ 		nolocate
+051	^ 		nolocate
+051	^ 	, 	replace
+051	, ^' 	, "	mismatch
+051	."—^' 	. —' 	mismatch
+051	, ^^	, "	replace
+051	^ 		nolocate
+051	, ^^ 		nolocate
+051	—^	—	delete
+051	« 	, 	replace
+051	^ 		nolocate
+051	, ^^ 	, "	replace
+051	—^	—	delete
+051	"—^	"—	delete
+051	 *^'* 	 " 	mismatch
+051	—^	—	delete
+051	—^	—	delete
+051	 €		nolocate
+051	^		nolocate
+051	—^	—	delete
+051	, ^\* 	, " 	replace
+051	." ^^	." '	replace
+051	, ^^ 	, " 	replace
+051	 59: *^^		nolocate
+051	? <\* *		nolocate
+051	^ 	, 	replace
+051	. \*^ 	. " 	replace
+051	."\*—" 	." *—" 	mismatch
+051	 *\** 	 * 	mismatch
+051	. '^ 	. ' 	delete
+051	; '^ 	; "	mismatch
+051	, ^' 	, '	delete
+051	, ^^ 	, " 	replace
+051	, ^' 	, '¢ 	mismatch
+051	 • 	 * 	mismatch
+051	. 9. $ 		nolocate
+051	. *'^	. " 	mismatch
+051	^		nolocate
+051	. ^^ 	. '	replace
+051	, ^^ 	, " 	replace
+051	^ 		nolocate
+051	^ 		nolocate
+051	, ^^ 	, " 	replace
+051	, ^' 		nolocate
+051	—^	—	delete
+051	£		nolocate
+051	 •		nolocate
+051	 • 		nolocate
+051	. 1^. 		nolocate
+051	 «		nolocate
+051	«		nolocate
+051	|«^^«/ 		nolocate
+051	^		nolocate
+051	^		nolocate
+052	,) "«		nolocate
+052	^ *		nolocate
+052	 ^^ 	 "	replace
+052	-^	——	mismatch
+052	^		nolocate
+052	 ^		nolocate
+052	^		nolocate
+052	 ♦ 		nolocate
+052	^ 	, 	replace
+052	^ 	, 	replace
+052	^* 	, 	replace
+052	., ^^ 	., " 	replace
+052	^		nolocate
+052	^ 		nolocate
+052	£		nolocate
+052	/'| 	."{ 	mismatch
+052	 • 		nolocate
+052	: '^ 	: " 	mismatch
+052	, \*^ *		nolocate
+052	^ 		nolocate
+052	^ 		nolocate
+052	^ 		nolocate
+052	^ 		nolocate
+052	.—^	.—	delete
+052	, *^'	, "	mismatch
+052	^ 	, 	replace
+052	^ 	, 	replace
+052	, *^^ 		nolocate
+052	!"\*—		nolocate
+052	: *^"		nolocate
+052	^ 		nolocate
+052	^ 		nolocate
+052	^ 		nolocate
+052	 17: "-4«		nolocate
+052	, ^^ *		nolocate
+052	^		nolocate
+052	 *^^		nolocate
+052	, ^' / *		nolocate
+052	^ 		nolocate
+052	^ 		nolocate
+052	. 18: ^^	. 18: "	mismatch
+052	. 17: ^^ 	. 17: " 	mismatch
+052	. '^ 	. '	delete
+052	, '^	, "	mismatch
+052	^ 	, 	replace
+052	^ 		nolocate
+052	. ^' 	. * 	mismatch
+052	^' 	 '	delete
+052	- ♦ 		nolocate
+052	^* 	, 	replace
+052	«?^? 		nolocate
+052	—^	—	delete
+052	^ 		nolocate
+052	^* 		nolocate
+052	! ^^ 	! '	replace
+052	^		nolocate
+052	." •	." '	replace
+052	.167 --> ♦ 2 		nolocate
+052	.^^—*		nolocate
+052	^ 		nolocate
+052	 ^		nolocate
+052	^		nolocate
+052	»*—\*		nolocate
+052	 ^		nolocate
+052	^		nolocate
+052	^* 		nolocate
+052	^		nolocate
+052	.^'—*		nolocate
+052	. *^* 		nolocate
+052	/\* 	; 	replace
+052	/\*—	,"—	replace
+053	^ 	, 	replace
+053	^ 		nolocate
+053	*—^		nolocate
+053	^ 	? 	replace
+053	£ 		nolocate
+053	 '^ *	 " 	mismatch
+053	, ^' 	, "	mismatch
+053	"\** 		nolocate
+053	, *^^		nolocate
+053	^'* 		nolocate
+053	, *^^		nolocate
+053	 ¥3%%		nolocate
+053	^ 		nolocate
+053	^ 		nolocate
+053	^* 		nolocate
+053	^* 		nolocate
+053	. 39: '^ 		nolocate
+053	^		nolocate
+053	^		nolocate
+053	, ^\* 	, " 	replace
+053	 ^^ 	 "	replace
+053	. '^ 	. " 	mismatch
+053	, ^^ 	, "	replace
+053	, ^^ 	, " 	replace
+053	, ^' 	, " 	mismatch
+053	. ^^	. '	replace
+053	» 		nolocate
+053	"—*^* 	."——" 	mismatch
+053	 « 	 * 	mismatch
+053	 ^' 	 " 	mismatch
+053	^ 	, 	replace
+053	^ 		nolocate
+053	: *''^ 		nolocate
+053	^ 	, 	replace
+053	;^'* 		nolocate
+053	—^	—	delete
+053	^ 	, 	replace
+053	/\** 	," 	replace
+053	$ 		nolocate
+053	: ^' 	: * '	mismatch
+053	^		nolocate
+053	 '^ *	 " 	mismatch
+053	^ *	, 	replace
+053	 ^	 	delete
+053	 (^		nolocate
+053	^ 	, 	replace
+053	, '^ *	, " 	mismatch
+053	^ 	, 	replace
+053	^		nolocate
+053	 ^' 	 "	mismatch
+053	, ^		nolocate
+053	^ 		nolocate
+053	 ^' 	 " 	mismatch
+053	^ 		nolocate
+053	. '^ 	. ' 	delete
+053	^ 	, 	replace
+053	^ 		nolocate
+053	. 10.—^		nolocate
+054	/\**— 		nolocate
+054	, *\*•''* 	, " 	mismatch
+054	^ 		nolocate
+054	^* (		nolocate
+054	. ♦ 	. * 	mismatch
+054	. 6. + 		nolocate
+054	 '^ 	 " 	mismatch
+054	^ 		nolocate
+054	. '^ 	. ' 	delete
+054	."—'^ 	."—" 	mismatch
+054	."— ^^ 	.'— "	mismatch
+054	 '^ 	 "	mismatch
+054	. •' 	. '© 	mismatch
+054	. '^ 	. "	mismatch
+054	^		nolocate
+054	: ^' 	: " 	mismatch
+054	—^	—	delete
+054	—^	—	delete
+054	^ 	, 	replace
+054	^ 		nolocate
+054	^\** 	," 	replace
+054	^ 		nolocate
+054	"\**—		nolocate
+054	 *""^ 	 "	mismatch
+054	^ 		nolocate
+054	 *^"^ 		nolocate
+054	« *		nolocate
+054	^ 		nolocate
+054	^ 		nolocate
+054	^ 		nolocate
+054	, *^'		nolocate
+054	^		nolocate
+054	^ 		nolocate
+054	^ 	, 	replace
+054	 '^ 	 "	mismatch
+054	», 		nolocate
+054	8<|		nolocate
+054	 ^		nolocate
+054	^^		nolocate
+054	« *9		nolocate
+054	»		nolocate
+054	^		nolocate
+054	/^ *^		nolocate
+054	^* 		nolocate
+054	 «		nolocate
+054	^		nolocate
+054	^		nolocate
+054	^«		nolocate
+054	^		nolocate
+054	^		nolocate
+054	^		nolocate
+054	.207 --> *\* ^		nolocate
+054	^		nolocate
+055	^		nolocate
+055	^ 		nolocate
+055	^		nolocate
+055	« 		nolocate
+055	, '^ 	, ' 	delete
+055	—^	—	delete
+055	, ^' 	, "	mismatch
+055	£		nolocate
+055	 ^' *	 " 	mismatch
+055	, *^'	, " 	mismatch
+055	^ 	, 	replace
+055	^ 	, 	replace
+055	^ 	, 	replace
+055	^ 		nolocate
+055	 ^^ 	 "	replace
+055	 ^^ 	 " 	replace
+055	 ^^ 	 " 	replace
+055	^		nolocate
+055	^ 	, 	replace
+055	 ^^ 	 "	replace
+055	, ^^ 	, * 	mismatch
+055	. '^ 	. '	delete
+055	. ^^ 	. '	replace
+055	£^" 		nolocate
+055	 ^' 	 " 	mismatch
+055	» 	, 	replace
+055	^ 		nolocate
+055	 '^ 	 " 	mismatch
+055	, ^^ 	,* "	mismatch
+055	 ♦ 		nolocate
+055	, ^^	, "	replace
+055	^		nolocate
+055	 ^		nolocate
+055	£		nolocate
+055	 ^		nolocate
+055	 *'^* 	 " 	mismatch
+055	, ^' 	, " 	mismatch
+055	 ^'	 "	mismatch
+055	. <\* 	. ' 	replace
+055	, ^' 	, " 	mismatch
+055	 ^ 		nolocate
+055	^ 	, 	replace
+055	. ^^ 	. '¢ 	mismatch
+055	 ^^ 	 "	replace
+055	." ^		nolocate
+055	» 		nolocate
+055	^		nolocate
+055	.—^		nolocate
+055	^ 		nolocate
+055	^		nolocate
+055	 ^		nolocate
+055	^		nolocate
+055	^		nolocate
+055	 ^		nolocate
+055	^		nolocate
+055	 ^		nolocate
+055	^		nolocate
+055	.213 --> ♦ *		nolocate
+055	^		nolocate
+055	^		nolocate
+055	^^		nolocate
+055	^		nolocate
+055	.219 --> ♦ 		nolocate
+055	, \*0		nolocate
+055	/« *		nolocate
+055	» *^9		nolocate
+055	^		nolocate
+055	^		nolocate
+055	;^^ 	;" 	replace
+056	^ 	, 	replace
+056	^ 		nolocate
+056	^		nolocate
+056	 *^^		nolocate
+056	- *^^^		nolocate
+056	—^	—	delete
+056	^* 	, 	replace
+056	. '^ 	. "	mismatch
+056	^		nolocate
+056	—^^ 	—' 	replace
+056	. \*^ 	. " 	replace
+056	 ^' 	 " 	mismatch
+056	, '^ 	, " 	mismatch
+056	, '^ *		nolocate
+056	, '^ 	, " 	mismatch
+056	^ 	* 	mismatch
+056	 ^' 	 "	mismatch
+056	 *^		nolocate
+056	: ^' 	: " 	mismatch
+056	, *'^ 		nolocate
+056	: '^	: " 	mismatch
+056	^ 	 	delete
+056	 '^ 	 "	mismatch
+056	: *^'		nolocate
+056	: ^^ 	: "	replace
+056	^ 	, 	replace
+056	^" 	?" 	replace
+056	.227 --> ♦ 		nolocate
+056	^		nolocate
+056	^ 	, 	replace
+056	^	'	replace
+056	»9 		nolocate
+056	^		nolocate
+056	 ^		nolocate
+056	^		nolocate
+056	» »		nolocate
+056	^		nolocate
+056	^		nolocate
+056	/\* 	," 	replace
+056	 ^		nolocate
+056	^		nolocate
+056	^		nolocate
+056	^		nolocate
+056	^		nolocate
+056	^		nolocate
+056	/\* 	," 	replace
+056	 *\*%^		nolocate
+056	%* 		nolocate
+056	: *\*		nolocate
+056	^		nolocate
+056	»		nolocate
+056	^		nolocate
+056	, ^\** 		nolocate
+056	»		nolocate
+057	, ¥		nolocate
+057	 ♦ 	 * 	mismatch
+057	"—^	"—	delete
+057	 «	 	delete
+057	^		nolocate
+057	^ 		nolocate
+057	^ 		nolocate
+057	^ 		nolocate
+057	^ 	, 	replace
+057	^ 		nolocate
+057	. *\*^* 	. <' 	mismatch
+057	^ 	, 	replace
+057	^ 		nolocate
+057	^ 		nolocate
+057	^		nolocate
+057	^ 		nolocate
+057	—^	—	delete
+057	: *'-^		nolocate
+057	^ 		nolocate
+057	^ 		nolocate
+057	 ♦ 		nolocate
+057	 <\* 	 " 	replace
+057	, *\*-\*-* 	, " 	mismatch
+057	, ♦ 		nolocate
+057	^ 		nolocate
+057	; ^^	; "	replace
+057	: ^^ 	: ' 	replace
+057	, <\* 	, "	replace
+057	» 		nolocate
+057	^ 		nolocate
+057	—^	—	delete
+057	. ^ 	. ~ 	mismatch
+057	 ^\* 		nolocate
+057	: ♦ 		nolocate
+057	. ^^ 	. ' 	replace
+057	^		nolocate
+057	« 		nolocate
+057	? + 		nolocate
+057	 | 	; 	replace
+057	.''—\*< 	."—' 	mismatch
+058	. 17\* 		nolocate
+058	¥		nolocate
+058	 '^ 	 " 	mismatch
+058	—^	—	delete
+058	 ^' *	 "	mismatch
+058	, ^^ 	, " 	replace
+058	. ^' 	. '	delete
+058	 15: *^''		nolocate
+058	 «		nolocate
+058	 ^		nolocate
+058	^ 	, 	replace
+058	^'* 	," 	mismatch
+058	^ 		nolocate
+058	^		nolocate
+058	^ 		nolocate
+058	«		nolocate
+058	^ 		nolocate
+058	^ 	, 	replace
+058	^ 		nolocate
+058	^ 		nolocate
+058	^ 		nolocate
+058	^ 		nolocate
+058	. 19. *^		nolocate
+058	 '• 	 " 	mismatch
+058	; <^ 	; ' 	replace
+058	 —^	 —	delete
+058	^* 		nolocate
+058	: ^^ 		nolocate
+058	, '^ *	, " 	mismatch
+058	^ 	, 	replace
+058	^ 		nolocate
+058	^ 		nolocate
+058	^ 		nolocate
+058	^ 		nolocate
+058	^ 		nolocate
+058	 • 		nolocate
+058	. '^ 	. " 	mismatch
+058	. '^ 	. " 	mismatch
+058	 ^		nolocate
+059	^ 		nolocate
+059	^ 	, 	replace
+059	:* '^	: " 	mismatch
+059	 ♦ 		nolocate
+059	^		nolocate
+059	. *\** 		nolocate
+059	. '^ 	.* "	mismatch
+059	."^,	."4 ,	mismatch
+059	^		nolocate
+059	 ^' 	 " 	mismatch
+059	 '^ 	 " 	mismatch
+059	, ^^ 	, " 	replace
+059	^		nolocate
+059	. *\** 		nolocate
+059	. 45, ^ 		nolocate
+059	 '^ 	 " 	mismatch
+059	?—^	 ?—	delete
+059	?—«	?—	delete
+059	 ^^ 	 ' 	replace
+059	 ^^ 	 " 	replace
+059	^	, 	replace
+059	^ 		nolocate
+059	^ 	, 	replace
+059	, "• 	, " 	delete
+059	?—^	 ?—-	replace
+059	. ^^ 	. " 	replace
+059	?—^	?—	delete
+059	, '^ 	, '© 	mismatch
+059	 "■ 	 ** 	mismatch
+059	?—^	 ?/—	mismatch
+059	, ^^	, "	replace
+059	 '^ 	 "	mismatch
+059	 '^ 	 " 	mismatch
+059	. '^ 	. '	delete
+059	—^	—	delete
+059	? '■' 	? '*' 	mismatch
+059	 *'^* 	 "	mismatch
+059	^		nolocate
+059	^ 		nolocate
+059	^		nolocate
+059	—^	—	delete
+059	—^	—	delete
+059	/^ 	, 	replace
+059	. '^	. '	delete
+059	 €		nolocate
+060	^	 	delete
+060	, ^' *	, " 	mismatch
+060	^		nolocate
+060	—^	—	delete
+060	—^	—	delete
+060	: *^^		nolocate
+060	, "^ *		nolocate
+060	^'* 	," 	mismatch
+060	 '^ *	 "	mismatch
+060	^ 		nolocate
+060	 ♦		nolocate
+060	 '^ 	 "	mismatch
+060	 '^	 "	mismatch
+060	^^	 	delete
+060	^ 		nolocate
+060	 ^		nolocate
+060	^ 	, 	replace
+060	^ 		nolocate
+060	^ 		nolocate
+060	 ♦ 		nolocate
+060	 33: *"^		nolocate
+060	^ 		nolocate
+060	^ 		nolocate
+060	^ 		nolocate
+060	^ 		nolocate
+060	^ 		nolocate
+060	 ^		nolocate
+060	^* 	, 	replace
+061	, '^ *	, '	replace
+061	^* 		nolocate
+061	^* 	, 	replace
+061	^		nolocate
+061	, '^ 		nolocate
+061	, ^^ 	, " 	replace
+061	—^	—	delete
+061	—^	—	delete
+061	 "• 	 '	mismatch
+061	^^* 		nolocate
+061	^ 		nolocate
+061	^ 		nolocate
+061	^ 		nolocate
+061	^ 	, 	replace
+061	^* 	.' 	replace
+061	 *^^ 		nolocate
+061	^* 		nolocate
+061	. ^' *	. ' 	replace
+061	^ 		nolocate
+061	^ 		nolocate
+061	^ 		nolocate
+061	^ 	, 	replace
+061	^ 		nolocate
+061	^ 		nolocate
+061	;" '^ 	;" " 	mismatch
+061	^*		nolocate
+061	^ 	, 	replace
+061	« 		nolocate
+061	« 		nolocate
+061	 ^^ 	 '	replace
+061	, ^^ 	, ** 	mismatch
+061	^ 	, 	replace
+061	^ 	, 	replace
+061	^	 	delete
+061	. '^ 	. ' 	delete
+061	 ^^ 	 "	replace
+061	« 	- * 	mismatch
+061	." —^^ 	." —'* 	mismatch
+061	."—"• 	."—" 	delete
+061	 ^		nolocate
+061	« |		nolocate
+061	«		nolocate
+061	«		nolocate
+061	«, 		nolocate
+061	^		nolocate
+061	 ^		nolocate
+061	^		nolocate
+062	^		nolocate
+062	^ 		nolocate
+062	^ 		nolocate
+062	^ 		nolocate
+062	/\* 	." 	replace
+062	. 30. "• 	. 30. " 	delete
+062	^* 	, 	replace
+062	. ^^ 	. "	replace
+062	."—^^ 		nolocate
+062	^ 		nolocate
+062	^ 		nolocate
+062	^ 	, 	replace
+062	^ 		nolocate
+062	^ 		nolocate
+062	^ 	, 	replace
+062	^ 		nolocate
+062	^ 		nolocate
+062	^ 	, 	replace
+062	- • 2 	- _* 2 	mismatch
+062	, ^^ 	, "	replace
+062	« 		nolocate
+062	, ^^ *	, " 	replace
+062	^ 		nolocate
+062	^ 	, 	replace
+062	, ^' 	, " 	mismatch
+062	. ^^ 	. " 	replace
+062	 —^	 —	delete
+062	^ 	, 	replace
+062	 €		nolocate
+062	: *^'' 	: " 	mismatch
+062	^ 		nolocate
+062	^ 		nolocate
+062	. 15: ^^ 	. 15: " 	mismatch
+062	 '^ 	 " 	mismatch
+062	 ^' 	 "	mismatch
+062	.329 --> ♦ 		nolocate
+063	. "7» *		nolocate
+063	^* 	," 	replace
+063	^ 	, 	replace
+063	^"* 	," 	replace
+063	^ 		nolocate
+063	. ^^ 		nolocate
+063	, ^' 	, * 	mismatch
+063	 ^^ 	 "	replace
+063	: ^^ 	: "	replace
+063	&« *		nolocate
+063	 %		nolocate
+063	^* 		nolocate
+063	: ^^ 	: "	replace
+063	 ^^ 	 " 	replace
+063	^ 		nolocate
+063	, ^^ 	, '	replace
+063	"— ^^ 		nolocate
+063	^ 		nolocate
+063	^ 		nolocate
+063	'^		nolocate
+063	^ 		nolocate
+063	^ 		nolocate
+063	^ 		nolocate
+063	 ♦ 		nolocate
+063	/\* 		nolocate
+063	 ^		nolocate
+063	 £		nolocate
+063	, ^^ 	, " 	replace
+063	,§ 	,§ 	mismatch
+063	, '^	, "	mismatch
+063	, '^ 	, " 	mismatch
+063	, ^'	, "	mismatch
+063	. '^	. '	delete
+063	. ^^ 	. '	replace
+063	,^ 	," 	replace
+063	, ^^ 	, " 	replace
+063	^		nolocate
+063	." • 	." - 	replace
+063	, \*< 	, " 	replace
+063	, ^' 	, " 	mismatch
+063	, '^ 	, " 	mismatch
+063	—^	—	delete
+063	/\* 	." 	replace
+063	 ^^ 		nolocate
+063	:"—^^ 		nolocate
+063	^ 		nolocate
+063	^ 	, 	replace
+063	^ 	, 	replace
+063	—^	—	delete
+063	 '^ 	 " 	mismatch
+063	."—^ 	."—" 	replace
+063	^* 		nolocate
+063	. ^^ 	. '	replace
+063	, *"^* 	, *' 	mismatch
+063	^		nolocate
+063	^ 	, 	replace
+063	, '^ 	, "	mismatch
+063	." ^^ 	." " 	replace
+063	^		nolocate
+063	^* 		nolocate
+063	. ^' 	. '	delete
+063	: '^		nolocate
+063	, '^ 	, " 	mismatch
+063	.338 --> • « 		nolocate
+063	 •' 		nolocate
+063	.338 --> § 		nolocate
+063	^ *		nolocate
+063	^		nolocate
+063	 ^^		nolocate
+064	—^	—	delete
+064	: —^	: —	delete
+064	, '^ 	, " 	mismatch
+064	^ 	 	delete
+064	?"—^	?"—	delete
+064	."— ^^ 	."—~ '¢ 	mismatch
+064	, ^^ 	, " 	replace
+064	."—'^ 	."—' 	delete
+064	, '^ 	, " 	mismatch
+064	^ 		nolocate
+064	 • 	.- 	replace
+064	, \*< 		nolocate
+064	, ^'	, "	mismatch
+064	 '^ 		nolocate
+064	^ 	, 	replace
+064	^ 	, 	replace
+064	^ 	, 	replace
+064	^		nolocate
+064	^ 		nolocate
+064	^ 		nolocate
+064	^ 		nolocate
+064	^ 	, 	replace
+064	^ 	, 	replace
+064	^ 		nolocate
+064	 £^		nolocate
+064	. ^^ 	. ' 	replace
+064	;—^	 ;—	delete
+064	 ♦ 		nolocate
+064	 ^^ 	 "* 	mismatch
+064	—^	—	delete
+064	:—^	 :—	delete
+064	^ 		nolocate
+064	^ 		nolocate
+064	^ 		nolocate
+064	^ 	, 	replace
+064	^		nolocate
+064	^		nolocate
+064	/\* 	." 	replace
+064	! ♦ 	! * 	mismatch
+064	. 10. + 		nolocate
+064	; '^ 	; " 	mismatch
+064	. ^' 		nolocate
+064	^		nolocate
+065	^	'	replace
+065	, *^^		nolocate
+065	—^	—	delete
+065	^ 		nolocate
+065	^"* 	?" 	replace
+065	^ 	, 	replace
+065	^ 		nolocate
+065	* ♦ 		nolocate
+065	^ 		nolocate
+065	^ 		nolocate
+065	^ 	, 	replace
+065	^ 		nolocate
+065	^ 	, 	replace
+065	^ 		nolocate
+065	^ 		nolocate
+065	. ^^ *	. ' 	replace
+065	, ^^ *	, " 	replace
+065	^ 	, 	replace
+065	"\** 	."* 	mismatch
+065	. ^^ 	. " 	replace
+065	? ♦ 		nolocate
+065	: *^^		nolocate
+065	^ 		nolocate
+065	^^ 		nolocate
+065	^ 		nolocate
+065	"*—^		nolocate
+065	—^^ 	—" 	replace
+065	^ 		nolocate
+065	 ^^ 	 "	replace
+065	: ^^ 		nolocate
+065	 ♦ 		nolocate
+065	—^	—	delete
+065	^ 	 	delete
+065	;—^	 ;—	delete
+065	^* 		nolocate
+065	, ^^ 		nolocate
+065	^"* 	," 	replace
+065	^* 		nolocate
+065	;—*^^ 		nolocate
+065	^'* 	," 	mismatch
+065	, ^^ *	, "* 	mismatch
+065	» 		nolocate
+065	 ♦ 		nolocate
+065	, ^' 	, "	mismatch
+065	. 6, ^^ 	. 6, * 	mismatch
+065	 ^^ 	 "	replace
+065	—^	—	delete
+065	 ^		nolocate
+065	. ^^ 	. " 	replace
+065	"—^" 	"—*" 	mismatch
+065	.368 --> ♦ " 		nolocate
+065	." \*		nolocate
+065	 »		nolocate
+065	^		nolocate
+065	^ 9		nolocate
+065	^ 		nolocate
+066	 ^		nolocate
+066	^ 		nolocate
+066	^"* 		nolocate
+066	^ 		nolocate
+066	^ 		nolocate
+066	""^* " 	."— '	mismatch
+066	 *\** 		nolocate
+066	—^	—	delete
+066	. ^^ *	. " 	replace
+066	^ 	, 	replace
+066	^ 		nolocate
+066	; ^^ 	 ; " 	replace
+066	 • 	 * 	mismatch
+066	. ^' *	. "	mismatch
+066	^ 		nolocate
+066	^ 		nolocate
+066	 ^^ 	 " 	replace
+066	, '^ 	, "	mismatch
+066	, '^ *		nolocate
+066	^ 		nolocate
+066	^ 	, 	replace
+066	» 		nolocate
+066	^ 		nolocate
+066	. ^^ 		nolocate
+066	, ^\* 		nolocate
+066	; ^^ 	; " 	replace
+066	^ 	, 	replace
+066	£ 		nolocate
+066	 29: ••' *		nolocate
+066	^ 		nolocate
+066	 «	 	delete
+066	^		nolocate
+066	, ^^ 		nolocate
+066	 *%* 	 { 	mismatch
+066	 ^		nolocate
+066	^		nolocate
+066	9$		nolocate
+066	, '^ *	, " 	mismatch
+066	^		nolocate
+066	 ^' 	 " 	mismatch
+066	-^ 		nolocate
+066	^ 		nolocate
+066	, '^ 	, " 	mismatch
+066	: ^ *		nolocate
+066	" ^' 	" "	mismatch
+066	 ^^ 	 " 	replace
+066	^		nolocate
+066	^		nolocate
+066	^' 		nolocate
+066	) ^<		nolocate
+066	—^	—	delete
+066	^		nolocate
+066	^		nolocate
+067	^		nolocate
+067	. "•! 		nolocate
+067	, <\* 	, "	replace
+067	. *'''•	. "	mismatch
+067	^ 	, 	replace
+067	 ^	 	delete
+067	; *'•''		nolocate
+067	, ^^ 	, "	replace
+067	^		nolocate
+067	^ 		nolocate
+067	 ^' 	 "	mismatch
+067	, '^ 	, "	mismatch
+067	 ^^ 	 '	replace
+067	: ^^ 	: "	replace
+067	. ^' 	. "	mismatch
+067	^ <		nolocate
+067	." • 		nolocate
+067	?^ 	?* 	mismatch
+067	^ 	, 	replace
+067	, ^^ 	, "	replace
+067	 • 		nolocate
+067	, \*^ 	, '* 	mismatch
+067	^ 		nolocate
+067	^ 		nolocate
+067	: ^^ 	: " 	replace
+067	^		nolocate
+067	, '^ 	, " 	mismatch
+067	." <\* 	." '	replace
+067	, '^ 	, "	mismatch
+067	^ 		nolocate
+068	^	'	replace
+068	^\** 	," 	replace
+068	. ^^ 	. '	replace
+068	^		nolocate
+068	 '^ *		nolocate
+068	 ••' *	 "	mismatch
+068	, "*€		nolocate
+068	^ 	, 	replace
+068	 ^^ 		nolocate
+068	^ 		nolocate
+068	^ 		nolocate
+068	, »\* 	, ** 	mismatch
+068	^ 		nolocate
+068	^'* 	?" 	mismatch
+068	, *^^ 		nolocate
+068	—^	—	delete
+068	^ 	, 	replace
+068	^ 		nolocate
+068	^ 		nolocate
+068	, ^' *	, "	mismatch
+068	^		nolocate
+068	«		nolocate
+068	^ 		nolocate
+068	, *^'		nolocate
+068	"\** 	, * 	mismatch
+068	 *^^/		nolocate
+068	^ 		nolocate
+068	« 		nolocate
+068	 ^	 	delete
+068	^ 		nolocate
+068	^ 		nolocate
+068	, ^^ 	, * 	mismatch
+068	 '^ 	 "	mismatch
+068	. ^\* 	. "	replace
+068	, '^ 	, " 	mismatch
+068	, ^'		nolocate
+068	. '^ 		nolocate
+068	—^	—	delete
+068	—^	—	delete
+068	, ^^ 	, '* 	mismatch
+068	, '^ 	, " 	mismatch
+068	: '•• 	: '*' 	mismatch
+068	 '^ 	 " 	mismatch
+068	.404 --> *%		nolocate
+068	»		nolocate
+068	» *		nolocate
+068	 ^		nolocate
+068	^		nolocate
+068	»		nolocate
+068	.405 --> *^		nolocate
+068	^		nolocate
+068	 ^		nolocate
+068	^		nolocate
+068	>^		nolocate
+068	 ^		nolocate
+068	;^^—	 ;"—	mismatch
+069	^		nolocate
+069	^ 		nolocate
+069	: '^ 	: " 	mismatch
+069	^ 		nolocate
+069	, ^^ 	, " 	replace
+069	: ^' 	: " 	mismatch
+069	, « 	, " 	replace
+069	, « 	, * 	mismatch
+069	^ 	é 	mismatch
+069	: ^'	: "	mismatch
+069	^\** 	," 	replace
+069	—^	—	delete
+069	, '^ 	, " 	mismatch
+069	, ^' 	, " 	mismatch
+069	 '^ 		nolocate
+069	^ 		nolocate
+069	^ 		nolocate
+069	^ 		nolocate
+069	^		nolocate
+069	^ 		nolocate
+069	^ 		nolocate
+069	—^	—	delete
+069	—^	—	delete
+069	?"—^	?"—	delete
+069	- ♦ 		nolocate
+069	^		nolocate
+069	. '•' 		nolocate
+069	«< 		nolocate
+069	«		nolocate
+069	« «/ *		nolocate
+069	\* 		nolocate
+069	7»		nolocate
+069	»;,—		nolocate
+070	^ 		nolocate
+070	^ 		nolocate
+070	^ 		nolocate
+070	^ 		nolocate
+070	 \*	 '	replace
+070	.^ 	.* 	mismatch
+070	, '^ 	, " 	mismatch
+070	—^	—	delete
+070	$ 		nolocate
+070	?"\** 	?"* 	delete
+070	^ 	, 	replace
+070	^ 		nolocate
+070	^ 	, 	replace
+070	^ 		nolocate
+070	« 		nolocate
+070	/\* 	." 	replace
+070	/\* 	," 	replace
+070	^ 		nolocate
+070	^		nolocate
+070	^ 		nolocate
+070	 —^	 —	delete
+070	, "• 	, " 	delete
+070	^ 		nolocate
+070	^ 		nolocate
+070	^ 		nolocate
+070	^ 		nolocate
+070	£		nolocate
+070	^ 		nolocate
+070	 • '		nolocate
+070	»		nolocate
+070	«;		nolocate
+070	^		nolocate
+070	 ^		nolocate
+070	^		nolocate
+070	^		nolocate
+070	, \*		nolocate
+070	«'		nolocate
+070	«		nolocate
+070	« 		nolocate
+070	 ^^	 "	replace
+070	.429 --> + 		nolocate
+070	^		nolocate
+070	^		nolocate
+070	^		nolocate
+070	^		nolocate
+070	^		nolocate
+070	^		nolocate
+070	'^		nolocate
+071	. 37: ^' 		nolocate
+071	^		nolocate
+071	^		nolocate
+071	|		nolocate
+071	"\*—" 	" *—" 	mismatch
+071	 ^' 	 " 	mismatch
+071	^ 	, 	replace
+071	^ 	, 	replace
+071	^ 		nolocate
+071	^ 		nolocate
+071	^ 		nolocate
+071	^ 	, 	replace
+071	^ 	, 	replace
+071	: '^ 	: ' 	delete
+071	^ 	, 	replace
+071	^ 		nolocate
+071	, ♦ 		nolocate
+071	^		nolocate
+071	^ 	, 	replace
+071	^ 		nolocate
+071	^		nolocate
+071	^ 		nolocate
+071	^* 	." 	replace
+071	^		nolocate
+071	, *"^* 	, '* 	mismatch
+071	^		nolocate
+071	, '^ 	, " 	mismatch
+071	. ^^ 	. '	replace
+071	^ 		nolocate
+071	 '^ 	 "	mismatch
+071	.^ 		nolocate
+071	. ^^ 	. "	replace
+071	^ 		nolocate
+071	^ 		nolocate
+071	. '^ 	. " 	mismatch
+071	^ 	, 	replace
+071	.^' *	." 	mismatch
+071	^* 	, 	replace
+071	^		nolocate
+071	^		nolocate
+071	 *»/\*»§»>$.* 		nolocate
+072	 ^	 	delete
+072	: ^^ 	: " 	replace
+072	, ^^ 	, " 	replace
+072	»		nolocate
+072	 ^^ 		nolocate
+072	 *^		nolocate
+072	, ^^ 	, "	replace
+072	 ^^ 	 " 	replace
+072	^		nolocate
+072	, ^' 		nolocate
+072	 ^^ *		nolocate
+072	^ 		nolocate
+072	^ 	, 	replace
+072	^ 	, 	replace
+072	. ^\* 	. ' 	replace
+072	 ^^ 	 " 	replace
+072	 ^\* 	 " 	replace
+072	''*—^		nolocate
+072	— *^'' 		nolocate
+072	^ 		nolocate
+072	^ 		nolocate
+072	^		nolocate
+072	^"^* 		nolocate
+072	. ^^ 		nolocate
+072	^ 		nolocate
+072	^ 		nolocate
+072	^ 		nolocate
+072	^		nolocate
+072	, ^^ 		nolocate
+072	 '^ 	 " 	mismatch
+072	 *"•* 		nolocate
+072	^ 		nolocate
+072	 ^'	 "	mismatch
+072	^		nolocate
+072	 ♦ 		nolocate
+072	 '^ 	 " 	mismatch
+072	, ^^ 	, "	replace
+072	^ 		nolocate
+072	 €		nolocate
+072	%		nolocate
+072	^ 		nolocate
+072	, '^ 	, " 	mismatch
+072	^		nolocate
+072	. ^'	. " 	mismatch
+072	, ^^	, "	replace
+072	 ^^ 	 " 	replace
+072	, ^^ 	, "	replace
+072	^ 	, 	replace
+072	, ^' 	, " 	mismatch
+072	.457 --> ♦ 		nolocate
+072	.458 --> ♦ 		nolocate
+072	«		nolocate
+072	$		nolocate
+072	 »		nolocate
+072	^9		nolocate
+072	«		nolocate
+072	* ^		nolocate
+072	 ^»		nolocate
+072	 ^		nolocate
+072	^		nolocate
+072	^		nolocate
+072	^		nolocate
+072	 ^		nolocate
+072	^		nolocate
+072	^* &		nolocate
+072	«» /		nolocate
+073	, ^' 	, "	mismatch
+073	." ^^ 	." '¢ 	mismatch
+073	, ^' 	, " 	mismatch
+073	, '^ 	, " 	mismatch
+073	^ 	, 	replace
+073	 '^ *	 "	mismatch
+073	^ 		nolocate
+073	^ 	, 	replace
+073	, '^ 	, " 	mismatch
+073	 '^ 		nolocate
+073	 '^ 	 "	mismatch
+073	 ^^ 	 " 	replace
+073	 • 	 -	replace
+073	, ^^ *		nolocate
+073	^ 		nolocate
+073	^ 		nolocate
+073	^ 		nolocate
+073	, ^^ 	, *' 	mismatch
+073	^ *		nolocate
+073	^ 		nolocate
+073	 «\* 	 '	replace
+073	 <^ 		nolocate
+073	^ 	, 	replace
+073	^ 	, 	replace
+073	, ^' 	, "	mismatch
+073	, ^' 	, "	mismatch
+073	 *""^	 " 	mismatch
+073	. \*< 	. ' 	replace
+073	 ^^ 	 " 	replace
+073	 "«		nolocate
+073	^		nolocate
+073	^* 		nolocate
+073	^ 	, 	replace
+073	^ 		nolocate
+073	^ 		nolocate
+073	^ 		nolocate
+073	^ 		nolocate
+073	^ 		nolocate
+073	^ 		nolocate
+073	^ 		nolocate
+073	 4^		nolocate
+073	 ^	 6	mismatch
+073	^ 	 	delete
+073	 $ 		nolocate
+073	 '^	 '	delete
+073	. 14. *%* 		nolocate
+073	. + 	. + 	mismatch
+073	 £		nolocate
+074	^		nolocate
+074	» 		nolocate
+074	, ^^ 	, *' 	mismatch
+074	^\** 	." 	replace
+074	 ♦ 		nolocate
+074	, ^^ 	, "	replace
+074	^ 	, 	replace
+074	: ^' 	: " 	mismatch
+074	^* 	, 	replace
+074	, ♦ 	, * 	mismatch
+074	5^* 		nolocate
+074	 '^ 	 "	mismatch
+074	-\* 		nolocate
+074	. ^^ 	. ' 	replace
+074	«		nolocate
+074	, ^^ 	, "	replace
+074	^		nolocate
+074	^ 	, 	replace
+074	^		nolocate
+074	 £		nolocate
+074	—^	—	delete
+074	.481 --> • 		nolocate
+074	/« *		nolocate
+074	^, 		nolocate
+075	^ 		nolocate
+075	^ 		nolocate
+075	, '^ 	, " 	mismatch
+075	), '^ 	), " 	mismatch
+075	 *^'		nolocate
+075	: *^'* 	: "	mismatch
+075	^* 	, 	replace
+075	. *\*•''* 	. '	mismatch
+075	, '^ 	, "	mismatch
+075	^* 	, 	replace
+075	^ 		nolocate
+075	^ 		nolocate
+075	. ^^ 	. '	replace
+075	/\** 	. 	replace
+075	 ^^ 	 "	replace
+075	. '^ 	. ' 	delete
+075	^ 		nolocate
+075	 ^		nolocate
+075	^ 		nolocate
+075	^ 		nolocate
+075	^ 		nolocate
+075	^ 		nolocate
+075	^ 		nolocate
+075	^ 		nolocate
+075	^ 		nolocate
+075	^ 		nolocate
+075	. • 		nolocate
+075	^ 		nolocate
+075	 ^' 	 "* 	mismatch
+075	 %		nolocate
+075	^ 		nolocate
+075	^ 		nolocate
+075	, '^ 	, " 	mismatch
+075	 ^^ 	 "* 	mismatch
+075	^ 		nolocate
+075	^ 		nolocate
+075	^, 		nolocate
+075	^ 	, 	replace
+075	^ 	, 	replace
+075	^		nolocate
+075	^* 		nolocate
+075	. • 		nolocate
+075	 ^' 	 " 	mismatch
+075	» 		nolocate
+075	 ^		nolocate
+075	%		nolocate
+075	* {«>		nolocate
+075	»		nolocate
+076	^. 33. 		nolocate
+076	^ 		nolocate
+076	^ 		nolocate
+076	^ 		nolocate
+076	^ 		nolocate
+076	:" ^		nolocate
+076	^ 1 		nolocate
+076	^ 		nolocate
+076	. ^^ 	. '	replace
+076	«		nolocate
+076	—^	—	delete
+076	 "^	 " 	delete
+076	, ^^ 		nolocate
+076	; *''^	; " 	mismatch
+076	^ 		nolocate
+076	^ 		nolocate
+076	.^\** 	." 	replace
+076	;! ^^^ ^^^ ^0\*^ 		nolocate
+076	^		nolocate
+076	^. 		nolocate
+076	, ^' *	, "	mismatch
+076	^ 	, 	replace
+076	^ 	, 	replace
+076	^ 	, 	replace
+076	, ^' 	, ' 	delete
+076	^ 		nolocate
+076	^ 		nolocate
+076	^ 		nolocate
+076	^ 	, 	replace
+076	. 7. + 		nolocate
+076	^ 	, 	replace
+076	\*	"	replace
+076	. ♦ 		nolocate
+076	%		nolocate
+076	, '^ 	, "	mismatch
+076	 '^	 "	mismatch
+076	^ 		nolocate
+076	^* " 		nolocate
+076	^* 		nolocate
+076	^* 		nolocate
+076	. '^ 	. " 	mismatch
+076	,^\* 	," 	replace
+077	^\** 	,"* 	mismatch
+077	^* 	, 	replace
+077	^* 	, 	replace
+077	&\* 		nolocate
+077	^ 	, 	replace
+077	^ 		nolocate
+077	 %% 		nolocate
+077	 ^^ 	 " 	replace
+077	^ 	, 	replace
+077	; ♦ 		nolocate
+077	. ^' *		nolocate
+077	^ 		nolocate
+077	. *"^ 		nolocate
+077	^		nolocate
+077	, ^^ *		nolocate
+077	^ »(		nolocate
+077	^ 		nolocate
+077	^ 		nolocate
+077	^ 		nolocate
+077	^ 		nolocate
+077	 ^' 	 "	mismatch
+077	, ^^ 	, " 	replace
+077	 *^		nolocate
+077	^ 		nolocate
+077	^ 	; 	replace
+077	^	é	mismatch
+077	£ 		nolocate
+077	^ 	, 	replace
+077	—^	—	delete
+077	 «	 	delete
+077	 <\* 	 " 	replace
+077	^ 	, 	replace
+077	, ^^ 	, " 	replace
+077	, ^^ 	, " 	replace
+077	^* 	, 	replace
+077	^		nolocate
+077	£ 		nolocate
+077	, ^^ 	, " 	replace
+078	. ^. 	. 22. 	mismatch
+078	^ 		nolocate
+078	^ 		nolocate
+078	^ 		nolocate
+078	^ 	, 	replace
+078	^ 	, 	replace
+078	^ 		nolocate
+078	$		nolocate
+078	 *\*		nolocate
+078	^		nolocate
+078	^ 		nolocate
+078	. ^< 		nolocate
+078	, ^' 		nolocate
+078	."—^^	." —" 	replace
+078	^ 	, 	replace
+078	^ 	, 	replace
+078	 ^^ 	 "	replace
+078	 ^^	 "	replace
+078	 ^^ 	 "	replace
+078	, ^^ 	, "	replace
+078	, ^^ 	, "	replace
+078	—^	—	delete
+078	. '^ 	. " 	mismatch
+078	, ^^ 	, " 	replace
+078	—^	—	delete
+078	 ^^ 	 "	replace
+078	, *'•'• 	, " 	mismatch
+078	^ 	, 	replace
+078	^ 		nolocate
+078	^ 	, 	replace
+078	^ 		nolocate
+078	^* 	." '	replace
+078	^ 		nolocate
+078	 \*^ 	 "	replace
+078	^		nolocate
+078	^ 	 	delete
+078	), *'^	), "	mismatch
+078	^ 		nolocate
+078	^ 		nolocate
+078	^ 		nolocate
+078	 "^		nolocate
+078	^	:	replace
+078	 £		nolocate
+078	. ^' 	. "	mismatch
+078	^ 		nolocate
+078	^ 		nolocate
+078	^ 	, 	replace
+078	.529 --> ♦ "		nolocate
+078	," ««•• *		nolocate
+078	^		nolocate
+078	^		nolocate
+078	^^		nolocate
+078	^	'	replace
+078	^		nolocate
+078	^		nolocate
+078	.532 --> *^		nolocate
+078	^		nolocate
+078	^		nolocate
+078	^^		nolocate
+078	, \*		nolocate
+078	«		nolocate
+078	\*		nolocate
+078	^«		nolocate
+078	«< *		nolocate
+078	 ^		nolocate
+078	^		nolocate
+078	»		nolocate
+078	 ^		nolocate
+079	^ 		nolocate
+079	 €	 	delete
+079	 ^^ 	 " 	replace
+079	, '^ 	, " 	mismatch
+079	—^	—	delete
+079	^ 		nolocate
+079	^	-	replace
+079	^ 		nolocate
+079	^ 		nolocate
+079	^ 		nolocate
+079	^ 		nolocate
+079	^ 		nolocate
+079	;—^'	 ;—" 	mismatch
+079	^		nolocate
+079	^		nolocate
+079	^ 		nolocate
+079	, ^^ 	, "	replace
+079	^ 		nolocate
+079	^ 		nolocate
+079	 • 		nolocate
+079	. *^^		nolocate
+079	^ 		nolocate
+079	,\*		nolocate
+079	. '^ *	. ' 	replace
+079	, ^^ 		nolocate
+079	 ^'		nolocate
+079	^		nolocate
+079	^ 	, 	replace
+079	, '^ 		nolocate
+079	^		nolocate
+079	.^\*—^		nolocate
+079	, £		nolocate
+079	^, 	, 	delete
+079	.543 --> ♦ 		nolocate
+079	.546 --> ♦ " 		nolocate
+080	 •\* 		nolocate
+080	^ 		nolocate
+080	^ 		nolocate
+080	. 8. ^ 		nolocate
+080	^		nolocate
+080	:"*—^	:'—	mismatch
+080	^		nolocate
+080	 • 	 - 	replace
+080	^ 		nolocate
+080	^* 		nolocate
+080	 *\** 		nolocate
+080	»^	, 	replace
+080	 ^^ 	 "	replace
+080	—^^	—' 	replace
+080	 ♦		nolocate
+080	^ 		nolocate
+080	^"* 		nolocate
+080	, *^\*		nolocate
+080	^ 		nolocate
+080	 *^^ 	 * 	delete
+080	. '^ 	. " 	mismatch
+080	^ 		nolocate
+080	^ 		nolocate
+080	^ 		nolocate
+080	^ 	, 	replace
+080	^ 	, 	replace
+081	^		nolocate
+081	^		nolocate
+081	. 31. ^		nolocate
+081	, '^ 	, " 	mismatch
+081	—^	—	delete
+081	^		nolocate
+081	 ^		nolocate
+081	 '^ 	 " 	mismatch
+081	^		nolocate
+081	€ 		nolocate
+081	^ 		nolocate
+081	^ 		nolocate
+081	€		nolocate
+081	^ 		nolocate
+081	 ^^ *	 * 	delete
+081	^'* 	" 	mismatch
+081	 •\* *	 * 	delete
+081	^ 	, 	replace
+081	 ^ 		nolocate
+081	 ^^ *		nolocate
+081	^		nolocate
+081	» 		nolocate
+081	^		nolocate
+081	^		nolocate
+081	—^	—	delete
+081	£		nolocate
+081	 '^ 	 '	delete
+081	£		nolocate
+081	 €		nolocate
+081	 '^ 	 " 	mismatch
+081	."^-^ " 	."— *"* 	mismatch
+081	 ^		nolocate
+081	. ♦\*	. "	replace
+081	? '^ 	? " 	mismatch
+081	<»		nolocate
+081	. ^^ 	. ' 	replace
+081	 ^^ 	 " 	replace
+081	^		nolocate
+081	 ^^ 	 "	replace
+081	 ^^ 	 " 	replace
+081	." —'^ 	." —' 	delete
+081	. ^^ 	. '* 	mismatch
+081	^	 	delete
+081	^ 		nolocate
+081	."—'^ 	."—' 	delete
+081	, ^ 		nolocate
+081	 ^' 	 "	mismatch
+081	 ^^	 "	replace
+081	 \*^ 	 " 	replace
+081	. ^' 	. ' 	delete
+081	 ^' *	 " 	mismatch
+081	. '^ *	. " 	mismatch
+081	^ 		nolocate
+081	 ^' 	 " 	mismatch
+081	 €		nolocate
+081	 ^		nolocate
+081	. ^' 	. " 	mismatch
+081	, ^^ 	, " 	replace
+081	, •\* 	, "	replace
+081	 <»	 	mismatch
+081	^ 	, 	replace
+081	«		nolocate
+081	* «•• *		nolocate
+081	^		nolocate
+081	 »		nolocate
+081	^		nolocate
+081	»		nolocate
+081	^*— 		nolocate
+081	 *$		nolocate
+081	» 		nolocate
+081	^		nolocate
+082	^		nolocate
+082	: <\* 	: " 	replace
+082	^ 	, 	replace
+082	, ^^ 	, "	replace
+082	^ 	, 	replace
+082	, ^^ 	, '* 	mismatch
+082	^ 		nolocate
+082	, ^^		nolocate
+082	, '^ 	, "	mismatch
+082	, ^^ 	, " 	replace
+082	 ^^ 	 " 	replace
+082	."\*—*^^	." *—" 	mismatch
+082	^* 	," 	replace
+082	, ^^ 		nolocate
+082	^		nolocate
+082	; \*\/(>		nolocate
+082	, *^^		nolocate
+082	 %» 		nolocate
+082	 *^^		nolocate
+082	—^	—	delete
+082	^* 	," 	replace
+082	, \*^ *		nolocate
+082	. ^^ 	. "	replace
+082	^; 	; 	delete
+082	." —^' 	." —'* 	mismatch
+082	."—'^ 	."——" 	mismatch
+082	, '^ 		nolocate
+082	, '^ 	, "	mismatch
+082	: '^ 	: '	delete
+082	 ^^ 	 "	replace
+082	 ^^ 	 "	replace
+082	^ 	, 	replace
+082	 ♦ 		nolocate
+082	: '^	: "	mismatch
+082	 ^' 	 "	mismatch
+082	 '^ 	 "	mismatch
+082	. ^^ 	. '	replace
+082	."— '^ 	.' — " 	mismatch
+082	^* 	 	mismatch
+082	^ 		nolocate
+082	^ 		nolocate
+082	 • 		nolocate
+082	[^ 		nolocate
+082	^ 	; 	replace
+082	. ^ 	. "	replace
+082	;"—^^	 ;"—" 	replace
+082	, ^' 	, '	delete
+082	, \*^ 	, " 	replace
+082	/«		nolocate
+082	«^, 		nolocate
+082	- ♦ 		nolocate
+082	; ^'	; "	mismatch
+082	; ^' 	; '	delete
+082	:—^ " *		nolocate
+082	^ 		nolocate
+082	^		nolocate
+082	^ 		nolocate
+082	 ^^ 		nolocate
+082	: '^ 		nolocate
+082	^		nolocate
+082	 '^ 	 "	mismatch
+082	, ^^ 	, " 	replace
+082	-^	—	mismatch
+082	 ^^ 	 "	replace
+082	 ^' 	 " 	mismatch
+082	^* 	, 	replace
+082	 ^^ 	 " 	replace
+082	 ^' 	 " 	mismatch
+082	^		nolocate
+082	^ 	, 	replace
+082	^	, 	replace
+082	^ 		nolocate
+082	, ^' 	, " 	mismatch
+082	, '^ 	, "	mismatch
+082	. ^^ 		nolocate
+082	."— ^' 		nolocate
+082	. ^^ 		nolocate
+082	 €		nolocate
+082	, ^^ 	, '	replace
+082	—<\*	—" 	replace
+082	 ♦ 		nolocate
+082	, ^\* 	, '	replace
+082	 ^^ 	 "	replace
+082	^	"	replace
+082	 '^ 	 "	mismatch
+082	, *'•"* 		nolocate
+083	, '^ *	, " 	mismatch
+083	^* 		nolocate
+083	, ^' 	, " 	mismatch
+083	, '^ *		nolocate
+083	 ^^ *		nolocate
+083	^ 		nolocate
+083	. ^^ 		nolocate
+083	, '^ 	, " 	mismatch
+083	^ 		nolocate
+083	, • 		nolocate
+083	. '^ 	. " 	mismatch
+083	, '^ 	, " 	mismatch
+083	 ^^ 	 " 	replace
+083	, ^^ 	, ' 	replace
+083	^ 		nolocate
+083	?—^	?—	delete
+083	» 	, 	replace
+083	 ^'	 "	mismatch
+083	, ^^ 	, " 	replace
+083	^		nolocate
+083	^ 		nolocate
+083	,* '^ *	. " 	mismatch
+083	: '^ 	: " 	mismatch
+083	. " 2%		nolocate
+083	 ^		nolocate
+083	: ^^ 		nolocate
+083	, ^ 		nolocate
+083	^		nolocate
+083	—^	— 	delete
+083	^		nolocate
+083	 ^		nolocate
+083	, ^^ *		nolocate
+083	^ 		nolocate
+083	, ^' *	, " 	mismatch
+083	), *^^	), "6 	mismatch
+083	^ 	, 	replace
+083	^ 	, 	replace
+083	"\** 	." 	replace
+083	^		nolocate
+083	. ^^ 	. "	replace
+083	^ 		nolocate
+083	^ 		nolocate
+083	' 03\*0; 		nolocate
+083	^		nolocate
+083	—^	—	delete
+083	—^	—	delete
+083	.587 --> • 		nolocate
+083	^ 	, 	replace
+083	 ^$^		nolocate
+083	^ 		nolocate
+083	^		nolocate
+083	 ^		nolocate
+083	«^«		nolocate
+084	^		nolocate
+084	^ 	, 	replace
+084	 <^ 		nolocate
+084	^ 	, 	replace
+084	^* —		nolocate
+084	. *^''	. "	mismatch
+084	, '^ 	, "	mismatch
+084	^ 		nolocate
+084	 \** 		nolocate
+084	^ 		nolocate
+084	^ 		nolocate
+084	^		nolocate
+084	» *		nolocate
+084	^		nolocate
+084	^\* 		nolocate
+084	^\* ^^ (^ 		nolocate
+084	. *''^ 		nolocate
+084	^'* 		nolocate
+084	 *^''	 *"	mismatch
+084	"\* 		nolocate
+084	^		nolocate
+084	 ^^ 	 " 	replace
+084	 ^^ (^		nolocate
+084	. '^ 	. ' 	delete
+084	, ^		nolocate
+084	 ^		nolocate
+084	, '^ 		nolocate
+084	, '^ 		nolocate
+084	^		nolocate
+084	 ^' 		nolocate
+084	^		nolocate
+084	;" ^' 	;" "	mismatch
+084	^ 	, 	replace
+084	^		nolocate
+084	? '^ 	? '	delete
+084	^		nolocate
+084	 €		nolocate
+084	^ 		nolocate
+084	? '^ 	? ' 	delete
+084	 '^ 	 " 	mismatch
+084	^ 		nolocate
+084	^		nolocate
+084	^ 	, 	replace
+084	, <\* 	, " 	replace
+084	.602 --> 0«» *		nolocate
+084	;^		nolocate
+085	^		nolocate
+085	^ 		nolocate
+085	^ 		nolocate
+085	 ^	 	delete
+085	 ^^	 " 	replace
+085	(»		nolocate
+085	 ^^ 	 " 	replace
+085	: ^' 		nolocate
+085	 <%		nolocate
+085	^ " 		nolocate
+085	 £		nolocate
+085	^ 		nolocate
+085	, '^ 	, " 	mismatch
+085	—^	—	delete
+085	» 	, 	replace
+085	/\* 	." 	replace
+085	, '^ 	, "	mismatch
+085	. "^	. " 	delete
+085	: « 	: « 	mismatch
+085	 \** 	 . * 	mismatch
+085	/^		nolocate
+085	 '^	 "	mismatch
+085	^ 	, 	replace
+085	 ^		nolocate
+085	^ 		nolocate
+085	^ 		nolocate
+085	^ 		nolocate
+085	 \*^ 	 " 	replace
+085	 ^' 		nolocate
+085	 ^		nolocate
+085	^ 		nolocate
+085	^ 		nolocate
+085	, ^^ 	, " 	replace
+085	, «\* 	, " 	replace
+085	, ^' 	, '	delete
+085	," *^* 		nolocate
+085	^	'	replace
+085	 '^ 	 " 	mismatch
+085	^ 	, 	replace
+085	.^ "		nolocate
+085	^ 		nolocate
+085	^ 		nolocate
+085	 ♦ 2 		nolocate
+085	. 39, *%* 		nolocate
+085	. 5. ¥		nolocate
+085	^ 	, 	replace
+085	^		nolocate
+085	^* 	, 	replace
+085	 «		nolocate
+085	 ^^ 	 " 	replace
+085	^		nolocate
+085	, ^' 	, " 	mismatch
+085	$, 		nolocate
+085	^ 		nolocate
+085	—^		nolocate
+085	."—^' 		nolocate
+085	."—^^' 	."——" 	mismatch
+085	.614 --> ♦ " 		nolocate
+085	.614 --> *\*,* <( 		nolocate
+085	. \*		nolocate
+085	»		nolocate
+085	«		nolocate
+085	 ^		nolocate
+085	\*		nolocate
+085	^		nolocate
+085	^		nolocate
+085	.618 --> \*		nolocate
+085	»		nolocate
+085	$		nolocate
+085	 »		nolocate
+085	^		nolocate
+085	^ 		nolocate
+085	.619 --> *\*		nolocate
+085	^		nolocate
+085	« 		nolocate
+085	^		nolocate
+085	^		nolocate
+085	^		nolocate
+085	^ ^		nolocate
+085	* «"'"" *^"		nolocate
+085	* ^'^		nolocate
+085	^\* •''"'^«»^		nolocate
+085	 *^		nolocate
+085	»		nolocate
+085	^		nolocate
+085	 ^		nolocate
+085	^		nolocate
+085	^		nolocate
+085	 »		nolocate
+085	»		nolocate
+085	^		nolocate
+085	^\*^"" 		nolocate
+085	^		nolocate
+085	^ 		nolocate
+085	 *^»		nolocate
+085	^9		nolocate
+085	/»		nolocate
+085	^		nolocate
+085	^		nolocate
+085	«		nolocate
+085	^		nolocate
+085	«		nolocate
+085	 ^		nolocate
+085	^		nolocate
+085	^		nolocate
+085	«		nolocate
+085	 ^		nolocate
+085	»		nolocate
+085	^		nolocate
+085	* «		nolocate
+085	« 		nolocate
+085	^/		nolocate
+085	^^		nolocate
+085	»		nolocate
+085	9«		nolocate
+085	»		nolocate
+085	^		nolocate
+085	^		nolocate
+085	^		nolocate
+085	^^—		nolocate
+085	©, § 63, 		nolocate
+085	, ^		nolocate
+085	."—^«»		nolocate
+086	^ 		nolocate
+086	^ 	, 	replace
+086	^ 		nolocate
+086	(^		nolocate
+086	, <\* 	, " 	replace
+086	/\* 		nolocate
+086	 ♦ 		nolocate
+086	»		nolocate
+086	."—.•" 	."—." 	delete
+086	^ 		nolocate
+086	 ♦ 2 		nolocate
+086	—^	—	delete
+086	, ^' 	, " 	mismatch
+086	, ^^ 		nolocate
+086	 <\*		nolocate
+086	 ^' 	 "	mismatch
+086	. '^(		nolocate
+086	^ 		nolocate
+086	 \*•' 	 " 	mismatch
+086	/\* 	." 	replace
+086	, '^ 	, "	mismatch
+086	. *^'* 	. " 	mismatch
+086	." «' 	." '<	mismatch
+086	 \*^	 "	replace
+086	 '^ 	 '	delete
+086	^		nolocate
+086	^ 		nolocate
+086	 • 		nolocate
+086	^. 		nolocate
+086	: ^^ 	: '¢ 	mismatch
+086	^		nolocate
+086	 £		nolocate
+086	."\** 	."* 	delete
+086	» 		nolocate
+086	, '^ 		nolocate
+086	 *\** 		nolocate
+086	^ 		nolocate
+086	^ 	, 	replace
+086	^ 	, 	replace
+086	^ 		nolocate
+086	^		nolocate
+086	^		nolocate
+086	^		nolocate
+086	»		nolocate
+086	» 		nolocate
+086	^		nolocate
+086	^ 		nolocate
+086	^ 		nolocate
+086	 €		nolocate
+086	 ^^ 	 "	replace
+086	, '^ 	, "	mismatch
+086	^ 		nolocate
+086	: ^' 	: " 	mismatch
+086	:" '^ 	:" " 	mismatch
+086	" ^' 		nolocate
+086	:" ^' 		nolocate
+086	.635 --> *\*		nolocate
+086	^		nolocate
+086	^		nolocate
+087	^		nolocate
+087	\*8 		nolocate
+087	«%		nolocate
+087	 €1 		nolocate
+087	»- 		nolocate
+087	^* 	, 	replace
+087	^		nolocate
+087	^ 	, 	replace
+087	."-^" 	."—<'* 	mismatch
+087	 *^^/		nolocate
+087	,! *"^ 		nolocate
+087	. ♦ " 	. * « 	mismatch
+087	,* + 	. + 	mismatch
+087	^* 	, 	replace
+087	^ 		nolocate
+087	^ 		nolocate
+087	^ 	, 	replace
+087	^ 	, 	replace
+087	^ 	. 	replace
+087	 *''^	 " 	mismatch
+087	^^* 	," 	replace
+087	»* 		nolocate
+087	^ 	, 	replace
+087	, '^ *		nolocate
+087	\*8 		nolocate
+087	: *\*^\*^ 		nolocate
+087	£ 		nolocate
+087	 «		nolocate
+087	« \*«/, 		nolocate
+087	^		nolocate
+087	."—"• 	."—' 	mismatch
+087	^	 	delete
+087	. '^ 	. "	mismatch
+087	^ 	. 	replace
+087	^ 	, 	replace
+087	; '^ 	; "	mismatch
+087	 ^' 	 "	mismatch
+087	^ 	, 	replace
+087	^ 	, 	replace
+087	. ^^ 	. '© 	mismatch
+087	 " «		nolocate
+087	^ 		nolocate
+087	, ^^ 	, "* 	mismatch
+087	^-* 		nolocate
+087	^		nolocate
+087	^ " 		nolocate
+087	, *^		nolocate
+087	^		nolocate
+087	^		nolocate
+087	/;^		nolocate
+087	»\* 		nolocate
+087	^		nolocate
+087	^		nolocate
+087	»^»		nolocate
+087	;^		nolocate
+087	 *-^		nolocate
+087	^		nolocate
+088	-^		nolocate
+088	: *^^ 	: "* 	mismatch
+088	^ 	, 	replace
+088	^ 	, 	replace
+088	 ^' 	 " 	mismatch
+088	: *^^ 		nolocate
+088	^, 		nolocate
+088	^ 		nolocate
+088	, *^^ 		nolocate
+088	, *^^	,* "	mismatch
+088	€		nolocate
+088	$ 		nolocate
+088	^* 	," 	replace
+088	, ^' 	, " 	mismatch
+088	 ^		nolocate
+088	, «		nolocate
+088	^ 		nolocate
+088	^ 	: 	replace
+088	. ^' 	. ' 	delete
+088	, \*^ 	, ' 	replace
+088	. + 		nolocate
+088	!—^	!—	delete
+088	 €		nolocate
+088	 " £		nolocate
+088	^		nolocate
+088	^ 		nolocate
+088	^ 		nolocate
+088	^ 		nolocate
+088	. *^^		nolocate
+088	^ 		nolocate
+088	^ 		nolocate
+088	^ 	, 	replace
+088	^ 		nolocate
+088	?-\*—	?——	mismatch
+088	^ 		nolocate
+088	^ 		nolocate
+088	. ^' 	. ' 	delete
+088	^ 		nolocate
+088	^ 		nolocate
+088	^ 	, 	replace
+088	 ^^ 	 "	replace
+088	^ 		nolocate
+088	^ 		nolocate
+088	^		nolocate
+088	^ 		nolocate
+088	, ♦ 		nolocate
+088	 4, 6(^2 		nolocate
+088	^		nolocate
+088	^ 	, 	replace
+088	^ 	, 	replace
+088	.655 --> *\** 		nolocate
+088	,^\* *		nolocate
+088	^'		nolocate
+088	^ 		nolocate
+089	^ 		nolocate
+089	 • 		nolocate
+089	^* 	, 	replace
+089	; ^^ 	: * 	mismatch
+089	,* \*|\* 		nolocate
+089	, ^' 		nolocate
+089	, '^ 	, ' 	delete
+089	^ 	, 	replace
+089	 ^^ 	 '	replace
+089	; ^' 	 ; '	delete
+089	^ 		nolocate
+089	\*8 		nolocate
+089	- *\** 1 		nolocate
+089	^ 		nolocate
+089	; \*^ 	; '	replace
+089	^ 		nolocate
+089	^ 	, 	replace
+089	^ 	, 	replace
+089	 \** 1 		nolocate
+089	^		nolocate
+089	«		nolocate
+089	, '^ 	, " 	mismatch
+089	^ " 	: "	replace
+089	, *^^		nolocate
+089	^ 		nolocate
+089	^ " 	, " 	replace
+089	^^7» *		nolocate
+089	 (^ 		nolocate
+089	: ^^ 		nolocate
+089	^ 	, 	replace
+089	^: 		nolocate
+089	^ 		nolocate
+089	"\** 		nolocate
+089	"\* (		nolocate
+089	^ 		nolocate
+089	^* 		nolocate
+089	^		nolocate
+089	^'		nolocate
+089	^ 		nolocate
+089	$ 		nolocate
+089	;§ ^' 	; § "	mismatch
+089	; '^ *	; " 	mismatch
+089	^ 	, 	replace
+089	^ 		nolocate
+089	^ 		nolocate
+089	^ 	, 	replace
+089	^ 	, 	replace
+089	^ 		nolocate
+089	^ 		nolocate
+089	, ^' 		nolocate
+089	- ^		nolocate
+089	.667 --> *\*		nolocate
+089	^		nolocate
+089	»»^		nolocate
+089	^		nolocate
+089	^		nolocate
+089	 »(		nolocate
+089	^		nolocate
+089	%.* 		nolocate
+089	§ 		nolocate
+089	»		nolocate
+089	^		nolocate
+089	* «'		nolocate
+089	«'		nolocate
+089	.674 --> ♦ 		nolocate
+089	. 21. + 2 		nolocate
+089	.674 --> + 		nolocate
+089	. 1. § 		nolocate
+089	^		nolocate
+089	^		nolocate
+089	. 7\* 	. 7. 	mismatch
+089	. 1. *\*		nolocate
+089	 ^		nolocate
+089	^		nolocate
+089	 ^		nolocate
+089	.676 --> ♦ 		nolocate
+090	^ 	, 	replace
+090	^		nolocate
+090	^ 	, 	replace
+090	, ^^ 	, " 	replace
+090	,^\** 	." 	mismatch
+090	 ^		nolocate
+090	^^'* 		nolocate
+090	^		nolocate
+090	^ 		nolocate
+090	/\** 	." 	replace
+090	: ^^ 	: " 	replace
+090	^\** 	," 	replace
+090	^ 		nolocate
+090	^ 		nolocate
+090	^ 		nolocate
+090	 ♦ 2 		nolocate
+090	 •	 	delete
+090	^ 	. 	replace
+090	^ 		nolocate
+090	^ 	, 	replace
+090	^ " *	, " 	replace
+090	^ 	, 	replace
+090	^ 	, 	replace
+090	^ 		nolocate
+090	^ 	, 	replace
+090	 "^		nolocate
+090	^		nolocate
+090	 '^	 "	mismatch
+090	^ 		nolocate
+090	. ^^ 		nolocate
+090	 ♦ 		nolocate
+090	 11 ^	 116	mismatch
+090	, ^^ 	, "	replace
+090	^ 	, 	replace
+090	."-^" 	."——" 	mismatch
+090	. '^	. '	delete
+090	. '^ 	. '	delete
+090	, ♦ 		nolocate
+090	 •		nolocate
+090	» 		nolocate
+090	 ^		nolocate
+090	 ^		nolocate
+090	^ 		nolocate
+091	 «		nolocate
+091	^'		nolocate
+091	^ 		nolocate
+091	. 30. £	. 30. 	delete
+091	^	'	replace
+091	^		nolocate
+091	. *^^ 		nolocate
+091	^^ 		nolocate
+091	^ 		nolocate
+091	^ 		nolocate
+091	/\* 	." 	replace
+091	/\* 	." 	replace
+091	 { 	} 	mismatch
+091	^ 	, 	replace
+091	€ 		nolocate
+091	^ 		nolocate
+091	. ''^	. '	mismatch
+091	^	'	replace
+091	 ♦ 		nolocate
+091	^		nolocate
+091	, ^' *		nolocate
+091	^ 		nolocate
+091	^ 		nolocate
+091	-—^'^ *		nolocate
+091	^ 		nolocate
+091	 \*		nolocate
+091	^ 	, 	replace
+091	 ♦		nolocate
+091	»		nolocate
+091	,^ 		nolocate
+091	^ 		nolocate
+091	^ 		nolocate
+091	^ 		nolocate
+091	^ 		nolocate
+091	^ 		nolocate
+091	%$ 		nolocate
+091	^ 		nolocate
+091	 *^^	 "<	mismatch
+091	.'^* 		nolocate
+091	), ^^	), "	replace
+091	^		nolocate
+091	^		nolocate
+091	^ 		nolocate
+091	^"* 	," 	replace
+091	, '^ 	, '	delete
+091	. ^^ *	. " 	replace
+091	^"* 	?" 	replace
+091	: | " 	:{ '	mismatch
+091	^. 	. 	delete
+091	. 25: '^ 		nolocate
+091	.^ 		nolocate
+091	.^ 	." 	replace
+091	 ^^ 	 "	replace
+091	, ^^ 	, " 	replace
+091	,+ " 		nolocate
+091	:|; 		nolocate
+091	^		nolocate
+091	^		nolocate
+091	,^^ 	,* 	mismatch
+091	, «		nolocate
+091	^* 		nolocate
+091	^ 		nolocate
+091	, \*^ 	, " 	replace
+091	." ♦\* 	." " 	replace
+091	^ 		nolocate
+091	. ^^ 	. "* 	mismatch
+091	. ^' 	. ' 	delete
+091	, '^ 	, " 	mismatch
+091	.5 --> *\* 		nolocate
+091	.11 --> ♦ 		nolocate
+091	. 3. + 		nolocate
+091	.11 --> *^* 		nolocate
+091	.13 --> • 		nolocate
+091	\*		nolocate
+092	? ^"^^ *^^^* ^ 		nolocate
+092	^ 		nolocate
+092	^ *	, 	replace
+092	^ 		nolocate
+092	 ♦ 		nolocate
+092	^ 	 	delete
+092	^ 		nolocate
+092	"* \*•'		nolocate
+092	^ 	; 	replace
+092	/\* 	." 	replace
+092	» 	. 	replace
+092	^ 	, 	replace
+092	^ 		nolocate
+092	^ 		nolocate
+092	^ 	, 	replace
+092	^ 	, 	replace
+092	 ^^ 	 '	replace
+092	.''^ 	."[ 	mismatch
+092	^ 	, 	replace
+092	: ^' 	: ' 	delete
+092	, ^' 		nolocate
+092	 £		nolocate
+092	^		nolocate
+092	« 	 	delete
+092	» 	. 	replace
+092	^ 		nolocate
+092	, ^^ *	, "	replace
+092	. • 	. - 	replace
+092	^ 	, 	replace
+092	—^^ *	—'* 	mismatch
+092	^ 		nolocate
+092	^ 		nolocate
+092	 ♦ 		nolocate
+092	^ 	, 	replace
+092	. *'•^ 		nolocate
+092	^ 		nolocate
+092	, *^^ 		nolocate
+092	^ 	, 	replace
+092	^ 	, 	replace
+092	^ 	, 	replace
+092	."^ 	."* 	mismatch
+092	 '^ 	 " 	mismatch
+092	.^	."	replace
+092	^	'	replace
+092	 • 		nolocate
+092	, "^ 	, " 	delete
+092	."—*"•* 		nolocate
+092	.^* 		nolocate
+092	. ^^ 	. ' 	replace
+092	^\** 		nolocate
+092	^^		nolocate
+092	^		nolocate
+092	 ^		nolocate
+092	^		nolocate
+092	^		nolocate
+092	* ^		nolocate
+092	 *^		nolocate
+092	^		nolocate
+092	^ 		nolocate
+092	^		nolocate
+092	^		nolocate
+092	^\* 		nolocate
+092	^		nolocate
+092	^		nolocate
+092	^		nolocate
+092	: ^ 	: " 	replace
+092	.26 --> ♦ 		nolocate
+092	. 3. + 		nolocate
+092	.32 --> + 		nolocate
+092	» *'		nolocate
+093	^ 		nolocate
+093	 • 		nolocate
+093	^ 		nolocate
+093	 • 	 * 	mismatch
+093	. 15. + 		nolocate
+093	 ^' 	 " 	mismatch
+093	 • 		nolocate
+093	^ 	, 	replace
+093	^ 		nolocate
+093	^ 		nolocate
+093	, '^ 	, " 	mismatch
+093	^		nolocate
+093	, ^^ 	, " 	replace
+093	," ^^ *		nolocate
+093	^ 	, 	replace
+093	 ^		nolocate
+093	^ 	, 	replace
+093	, ^^ 		nolocate
+093	,§ " 	,§ '* 	mismatch
+093	-\* 		nolocate
+093	 ♦ 	 * 	mismatch
+093	 «		nolocate
+093	.37 --> • 1 		nolocate
+093	 14, 54; ^ 		nolocate
+093	.40 --> ♦ 		nolocate
+093	. 23, 35. + 		nolocate
+094	, "• 	, " 	delete
+094	: ^' 	: "* 	mismatch
+094	,^* 		nolocate
+094	^ 	, 	replace
+094	»		nolocate
+094	^ 		nolocate
+094	^ 	 	delete
+094	, '^ 	, " 	mismatch
+094	^ 	 	delete
+094	^ 		nolocate
+094	- ♦ 		nolocate
+094	.^" 	.~" 	mismatch
+094	/\* 		nolocate
+094	 • 2 		nolocate
+094	, •	, 	delete
+094	^ 	, 	replace
+094	 • 		nolocate
+094	^	'	replace
+094	: ^'	: " 	mismatch
+094	—^	—	delete
+094	^ 	, 	replace
+094	^* 	, 	replace
+094	^ 	, 	replace
+094	, ^^ 	, '	replace
+094	^ 	, 	replace
+094	^ 		nolocate
+094	^, 	, 	delete
+094	 %%* 		nolocate
+094	^		nolocate
+094	^		nolocate
+094	^		nolocate
+094	* ^		nolocate
+094	^		nolocate
+094	.46 --> ^' 		nolocate
+094	."^—*	."—	replace
+094	^«7		nolocate
+094	^		nolocate
+094	 \*\		nolocate
+094	 \*		nolocate
+094	§ 		nolocate
+094	.51 --> ♦ 		nolocate
+094	. 20. + 		nolocate
+095	.'' ^' 	." "	mismatch
+095	^ 	, 	replace
+095	^ 	, 	replace
+095	^ 		nolocate
+095	^ 	, 	replace
+095	^ 		nolocate
+095	^ 		nolocate
+095	^ 	, 	replace
+095	 '^ *		nolocate
+095	/\** 		nolocate
+095	, ^^ 	, '	replace
+095	 £		nolocate
+095	, ^' 	, "	mismatch
+095	^ 		nolocate
+095	|^		nolocate
+095	^ 	, 	replace
+095	^ *		nolocate
+095	^"* 	," 	replace
+095	^ 	, 	replace
+095	^ 	, 	replace
+095	. ^' 	. '	delete
+095	 ♦ 		nolocate
+095	^	,	replace
+095	. 14. $ 		nolocate
+095	"\*^	"——	replace
+095	^ 	, 	replace
+095	^ 		nolocate
+095	 «6		nolocate
+095	^ 		nolocate
+095	 ♦ 		nolocate
+095	 •		nolocate
+095	, ^^ 	, "¢ 	mismatch
+095	^ 		nolocate
+095	 }	 	delete
+095	^ 		nolocate
+095	^ 		nolocate
+095	^ 	, 	replace
+095	^		nolocate
+095	/\* 	," 	replace
+095	^* 		nolocate
+095	^* 		nolocate
+095	." • 1 		nolocate
+095	^		nolocate
+095	^^		nolocate
+095	^		nolocate
+095	^		nolocate
+095	.59 --> ♦ 		nolocate
+096	<^ 		nolocate
+096	 ^' 		nolocate
+096	.^' 	." 	mismatch
+096	 ^' 	 "	mismatch
+096	 ^^ 	 " 	replace
+096	^ 		nolocate
+096	^ 		nolocate
+096	^		nolocate
+096	^ 		nolocate
+096	 ^^	 "	replace
+096	^		nolocate
+096	%* 		nolocate
+096	,^ 	, 	delete
+096	/\* 	." 	replace
+096	" • 		nolocate
+096	^		nolocate
+096	."— '• 	.'— "* 	mismatch
+096	 ♦ 		nolocate
+096	 ^^ 	 " 	replace
+096	 ^ 		nolocate
+096	^ 	, 	replace
+096	^		nolocate
+096	£		nolocate
+096	^ 		nolocate
+096	^ 		nolocate
+096	 ^' 	 " 	mismatch
+096	 ^' 	 " 	mismatch
+096	. '^ 		nolocate
+096	^		nolocate
+096	^		nolocate
+096	^ 		nolocate
+096	^		nolocate
+096	^ 	, 	replace
+096	. 9. + ^		nolocate
+096	« *		nolocate
+096	, '^ 	, " 	mismatch
+096	^ 	, 	replace
+096	^* 	," 	replace
+096	^ 		nolocate
+096	^ 		nolocate
+096	^ 		nolocate
+096	^ 		nolocate
+096	 —^	 —	delete
+096	. ^'		nolocate
+096	, *\*•\*•* 	,* "	mismatch
+096	: *^^		nolocate
+096	^ 		nolocate
+096	;" '^ 	;" " 	mismatch
+096	,"^ 	,"{ 	mismatch
+096	« 		nolocate
+096	,§ " 	,§ '	mismatch
+096	: ^^ *	: ' 	replace
+096	^ 	-~ 	mismatch
+096	, ^^ 	, "	replace
+096	." ^' 	." "	mismatch
+096	 '^ 	 " 	mismatch
+096	^		nolocate
+096	^ 	, 	replace
+096	 \** 		nolocate
+096	 '^		nolocate
+096	. »\* 	. ' 	replace
+096	. ^' 	. '	delete
+096	 ^< 	 " 	replace
+096	."—^^ 	."——" 	replace
+096	^ 	, 	replace
+096	^ 	, 	replace
+096	^ 	, 	replace
+096	^ 		nolocate
+096	^ 		nolocate
+096	^ 		nolocate
+096	^ 		nolocate
+096	^ 	, 	replace
+096	^		nolocate
+096	^ 	, 	replace
+096	^ 	, 	replace
+096	 ^^ 	 " 	replace
+096	.81 --> ♦ 		nolocate
+096	~		nolocate
+096	^		nolocate
+096	/^0		nolocate
+096	\* 		nolocate
+096	»		nolocate
+096	»		nolocate
+096	^		nolocate
+096	^		nolocate
+096	^		nolocate
+096	 ^		nolocate
+096	^		nolocate
+096	¥		nolocate
+096	9^		nolocate
+096	»		nolocate
+096	^		nolocate
+096	.82 --> *\* 		nolocate
+096	. § 		nolocate
+096	.85 --> ♦ 1 		nolocate
+097	^		nolocate
+097	. 31. ^ 		nolocate
+097	. 3\*2. 		nolocate
+097	, '^ 	, " 	mismatch
+097	, ^^ 	, " 	replace
+097	 (^^		nolocate
+097	, '^ 	, " 	mismatch
+097	 ^^ 	 "	replace
+097	 \*^ 	 "	replace
+097	^ 		nolocate
+097	/\* 	," 	replace
+097	 *\*•\*•* 		nolocate
+097	: *''^ 	: " 	mismatch
+097	^ 		nolocate
+097	^ 	, 	replace
+097	^ 		nolocate
+097	^ 		nolocate
+097	^ 		nolocate
+097	^ 	, 	replace
+097	—^	—	delete
+097	-^	-	delete
+097	^ 	, 	replace
+097	^ 	, 	replace
+097	.^^ 	." 	replace
+097	^		nolocate
+097	,^ 	, 	delete
+097	 ^< 	 " 	replace
+097	^" '^ 	," " 	mismatch
+097	: '^ 	: " 	mismatch
+097	." ^ 		nolocate
+097	, ^^	, " 	replace
+097	, ^' 	,* " 	mismatch
+097	 €		nolocate
+097	, ^' 	, " 	mismatch
+097	 ♦ 		nolocate
+097	."—\*< 	."—" 	replace
+097	 '^		nolocate
+097	, ^' *	, * 	mismatch
+097	^ 		nolocate
+097	^ 		nolocate
+097	 " «		nolocate
+097	 ♦ 		nolocate
+097	^-^ 		nolocate
+097	, ^^ 	, " 	replace
+097	^ 		nolocate
+097	^ 		nolocate
+097	^ 		nolocate
+097	^ 		nolocate
+097	^ 		nolocate
+097	 ^^ 	 "	replace
+097	 \** 		nolocate
+097	- « 		nolocate
+097	:%		nolocate
+097	 • 		nolocate
+097	, ^^ 		nolocate
+097	 ^		nolocate
+097	^ 		nolocate
+097	.90 --> ♦ 		nolocate
+098	 ♦ 	 * 	mismatch
+098	^ 	, 	replace
+098	» 		nolocate
+098	^ 		nolocate
+098	 ^^	 "	replace
+098	« 		nolocate
+098	^ 		nolocate
+098	^		nolocate
+098	^ 		nolocate
+098	* #» *		nolocate
+098	^ 	, 	replace
+098	"\** 	."* 	mismatch
+098	^ 		nolocate
+098	^ 		nolocate
+098	 •\* 	 *' 	mismatch
+098	,§ " 	,§ "* 	mismatch
+098	^ 		nolocate
+098	. <\* 	. ' 	replace
+098	; •\* 	; "	replace
+098	: *^^		nolocate
+098	: *"^		nolocate
+098	! '^	! '	delete
+098	^ 	, 	replace
+098	 ♦ 		nolocate
+098	, ^^ 	, " 	replace
+098	." "■ 	." " 	delete
+098	^		nolocate
+098	 \*		nolocate
+098	^		nolocate
+098	^-* 		nolocate
+098	^		nolocate
+098	. 39. § 		nolocate
+098	.106 --> ♦ 		nolocate
+098	. 9. + 	. 9. + 	mismatch
+098	^	'	replace
+098	.108 --> + 		nolocate
+099	;^ 		nolocate
+099	^ 		nolocate
+099	. 9. ^		nolocate
+099	^ *		nolocate
+099	.^\** 	."* 	mismatch
+099	 ^^ *		nolocate
+099	 ^^ 		nolocate
+099	, ♦ 		nolocate
+099	 ^^ *	 " 	replace
+099	 ^' *	 "	mismatch
+099	^ 	, 	replace
+099	 ♦ 1 	 * 1 	mismatch
+099	 14. + 		nolocate
+099	: *""^ 	: "	mismatch
+099	 *^^ 		nolocate
+099	^		nolocate
+099	. ^' 	. " 	mismatch
+099	^ ^		nolocate
+099	^ 		nolocate
+099	 ♦ 		nolocate
+099	^ 		nolocate
+099	^ 		nolocate
+099	^ 		nolocate
+099	^ 		nolocate
+099	^ 1 	, 1 	mismatch
+099	^		nolocate
+099	, ^^ 	, " 	replace
+099	, ^^ 	, "	replace
+099	, ^^ 	, "	replace
+099	.§ 		nolocate
+099	^		nolocate
+099	, ^^ *	, "* 	mismatch
+099	: ^' 	: " 	mismatch
+099	:" ^^	:" "	replace
+099	^«		nolocate
+099	^»		nolocate
+099	 ♦ 	 * 	mismatch
+099	^ 	, 	replace
+099	^ 		nolocate
+099	^ 	, 	replace
+099	^ 	, 	replace
+099	, ^^	, "	replace
+099	, '^ 	, " 	mismatch
+099	^ 		nolocate
+099	 <\* 	 "	replace
+099	 <\* 	 " 	replace
+099	;" '^ 	;" '	delete
+099	^		nolocate
+099	^		nolocate
+099	— ♦ 2 	— * 2 	mismatch
+099	: ^^	: '** 	mismatch
+099	^ 		nolocate
+099	—^	—	delete
+099	^* 	, 	replace
+099	;^/		nolocate
+099	«		nolocate
+099	»»		nolocate
+099	.120 --> ♦ 1 		nolocate
+099	.120 --> \*		nolocate
+099	 *\*		nolocate
+099	9^		nolocate
+099	.120 --> § 		nolocate
+100	« *		nolocate
+100	^ 		nolocate
+100	. ^^ 		nolocate
+100	\*8 		nolocate
+100	^\** 	," 	replace
+100	, ^^ *		nolocate
+100	^\** 		nolocate
+100	/\** 		nolocate
+100	 '^ 	 " 	mismatch
+100	 '^ 	 " 	mismatch
+100	 ^' 	 " 	mismatch
+100	 ▼		nolocate
+100	. ^' *		nolocate
+100	^ 	, 	replace
+100	^ 		nolocate
+100	. '^ *	. ' 	replace
+100	^ 		nolocate
+100	^ 		nolocate
+100	, '^ *	, " 	mismatch
+100	^ 		nolocate
+100	^ 	, 	replace
+100	^ 	, 	replace
+100	^* 	," 	replace
+100	, '^ *	, "	mismatch
+100	^ 		nolocate
+100	. *''^ 	. ' 	mismatch
+100	^ 	, 	replace
+100	^ 		nolocate
+100	^ 		nolocate
+100	^ 		nolocate
+100	^ 		nolocate
+100	^ 	, 	replace
+100	^ 		nolocate
+100	^ 		nolocate
+100	^ 		nolocate
+100	^ 		nolocate
+100	^		nolocate
+100	^ 		nolocate
+100	,^* 		nolocate
+100	 ♦ 2 		nolocate
+100	^* 	, 	replace
+100	- ♦ 		nolocate
+100	 '^ 	 "	mismatch
+100	 «	 	delete
+100	.—^	.—	delete
+100	 ^ 	 " 	replace
+100	 '^ 	 " 	mismatch
+100	."^ 		nolocate
+100	 £		nolocate
+100	 *''^		nolocate
+100	^ 		nolocate
+100	 ^		nolocate
+100	. ^^ *		nolocate
+100	^* 		nolocate
+100	, '^ *		nolocate
+100	^ 		nolocate
+100	, § 	,§ 	mismatch
+100	: '^ *		nolocate
+100	/\** 	," 	replace
+100	, *^-^ 		nolocate
+100	, *^"		nolocate
+100	, *'•^		nolocate
+100	, ^' *	, "	mismatch
+100	^ 		nolocate
+100	 ^^ 	 "	replace
+100	. \*^ 	. '	replace
+100	, '^ 	, " 	mismatch
+100	, \*^ 	, "	replace
+100	-^ 		nolocate
+100	^		nolocate
+100	. ^^ 	. ' 	replace
+100	, ^ 	, "	replace
+100	."—'^ 	."—" 	mismatch
+100	 ♦ 2 		nolocate
+100	, ^' 	, "	mismatch
+100	^ 	, 	replace
+100	, <\* 	, " 	replace
+100	^		nolocate
+100	.135 --> ♦ 		nolocate
+100	«<		nolocate
+100	?;«. *%* 		nolocate
+100	.135 --> *%* 		nolocate
+101	 ^' 	 "	mismatch
+101	, ♦ 		nolocate
+101	« 		nolocate
+101	 '^ 		nolocate
+101	, '^ 		nolocate
+101	, <^ 		nolocate
+101	» 	, 	replace
+101	« 		nolocate
+101	^ 		nolocate
+101	 \*		nolocate
+101	 ^^ 	 "	replace
+101	, ^^ 	, '	replace
+101	, *^^ 		nolocate
+101	^ 		nolocate
+101	. 16. «\*		nolocate
+101	^ 		nolocate
+101	." *^"^ 	." '	mismatch
+101	^ 		nolocate
+101	, *'•^	, "	mismatch
+101	, ^' 	, "	mismatch
+101	 ^^	 "	replace
+101	^ 		nolocate
+101	, ^^	, "	replace
+101	 ♦ 	 * 	mismatch
+101	 "• 	 '* 	mismatch
+101	, *^^ 		nolocate
+101	% 		nolocate
+101	^ 		nolocate
+101	. *^^ 		nolocate
+101	^ 		nolocate
+101	^ 		nolocate
+101	^ 	 	delete
+101	^ 	 	delete
+101	^		nolocate
+101	," <\* 	," " 	replace
+101	 ^^ 		nolocate
+101	:"—^^ 	:"—*° 	mismatch
+101	, ^^ *		nolocate
+101	, ^^	, " 	replace
+101	^		nolocate
+101	.^ 		nolocate
+101	, ^^ 	, "	replace
+101	 ^		nolocate
+101	^ 		nolocate
+101	^ 	, 	replace
+101	. *^^ 		nolocate
+101	, ^' / *		nolocate
+101	, ^^ 	, "	replace
+101	, ^^ 	, " 	replace
+101	, <^ 	, ' 	replace
+101	, '^ 	, " 	mismatch
+101	 ♦		nolocate
+101	 ♦ 		nolocate
+101	^		nolocate
+101	.'» 	." 	mismatch
+101	<» 		nolocate
+101	«		nolocate
+101	.« 		nolocate
+101	. 7. *\*		nolocate
+101	»		nolocate
+101	0'»9 		nolocate
+101	; \*		nolocate
+101	«>«		nolocate
+101	^		nolocate
+101	^^		nolocate
+101	^		nolocate
+101	^		nolocate
+101	* •^•		nolocate
+101	«^«		nolocate
+101	«		nolocate
+101	»» *		nolocate
+101	^		nolocate
+101	^		nolocate
+101	^		nolocate
+102	^\** 		nolocate
+102	, ^' *	, ' 	replace
+102	"\** 		nolocate
+102	, ^^ 	, "	replace
+102	^. 		nolocate
+102	^		nolocate
+102	?—^	 ?—-	replace
+102	, ^^ 	, " 	replace
+102	 ^^ 		nolocate
+102	."\*—"	."*—"	mismatch
+102	;^*—	 ;"—	mismatch
+102	: "/^		nolocate
+102	^ 		nolocate
+102	. \*^ 	. '	replace
+102	—^	—	delete
+102	 ^		nolocate
+102	 ^^ 	 " 	replace
+102	."{ 	."¢ 	mismatch
+102	^	_	mismatch
+102	." —'^ 	." —' 	delete
+102	, ^' 	, " 	mismatch
+102	 •'' 	 '	mismatch
+102	. "• 	. ' 	mismatch
+102	^ 		nolocate
+102	: ^^ 	: " 	replace
+102	. '^ 	. " 	mismatch
+102	« 		nolocate
+102	^ 	, 	replace
+102	^ 	, 	replace
+102	~ 		nolocate
+102	- ♦ 		nolocate
+102	, '^ 	, "	mismatch
+102	^ 		nolocate
+102	, '^ 	, "	mismatch
+102	 ^^		nolocate
+102	. '^ 	. ' 	delete
+102	^ 	, 	replace
+102	^		nolocate
+102	/^ 		nolocate
+102	.157 --> ♦ 2 		nolocate
+102	» 		nolocate
+102	.161 --> • 		nolocate
+102	^»		nolocate
+103	 ♦ 		nolocate
+103	: ^'	: " 	mismatch
+103	:—^^	:—" 	replace
+103	^ 		nolocate
+103	« 	. 	replace
+103	« /		nolocate
+103	^«		nolocate
+103	, *'-^	, "	mismatch
+103	^* 		nolocate
+103	, '•'		nolocate
+103	 '^	 "	mismatch
+103	 '^ 	 " 	mismatch
+103	, <\* 	, "	replace
+103	 ^' 	 "	mismatch
+103	 «		nolocate
+103	, '^ 		nolocate
+103	«		nolocate
+103	$ 		nolocate
+103	. 11: ^^ 	. 11: "	mismatch
+103	. ^^ *	. " 	replace
+103	$9 		nolocate
+103	^"* 	," 	replace
+103	, ^^ *		nolocate
+103	^ 		nolocate
+103	^ 	, 	replace
+103	^		nolocate
+103	^ 		nolocate
+103	^ 		nolocate
+103	^ 		nolocate
+103	^		nolocate
+103	 ^		nolocate
+103	 ^		nolocate
+103	 ^		nolocate
+103	^		nolocate
+103	 ^		nolocate
+103	^ 		nolocate
+103	^		nolocate
+103	 ^		nolocate
+103	 ^	 	delete
+103	^ 		nolocate
+103	 ^11 		nolocate
+103	^ 		nolocate
+103	^		nolocate
+103	^ 		nolocate
+103	^		nolocate
+103	^ 	, 	replace
+104	» 	, 	replace
+104	^ 		nolocate
+104	^ 	, 	replace
+104	, *'-^		nolocate
+104	 '^ 	 "	mismatch
+104	 ^^ 	 "	replace
+104	,'^ 		nolocate
+104	 »		nolocate
+104	 ^^ 	 "	replace
+104	 ^^	 "	replace
+104	^ 		nolocate
+104	^ 		nolocate
+104	^ 		nolocate
+104	^ 		nolocate
+104	^ 	 	delete
+104	," ^^ 	," " 	replace
+104	^,	 	mismatch
+104	 ▼		nolocate
+104	, ♦ 		nolocate
+104	, ^^ 	, " 	replace
+104	, ^^		nolocate
+104	, '^ 	, "	mismatch
+104	 *^^ 		nolocate
+104	^ 		nolocate
+104	^ 		nolocate
+104	^ 		nolocate
+104	, \*< 		nolocate
+104	, ^^ 	, ' 	replace
+104	» 	, 	replace
+104	: ^^	: "	replace
+104	^		nolocate
+104	 «		nolocate
+104	- (^		nolocate
+104	^ 		nolocate
+104	"—^	'—	mismatch
+104	 ♦ 		nolocate
+104	: ^' 	: " 	mismatch
+104	. 5. + 		nolocate
+104	, ^^	, "	replace
+104	: ^'	: "	mismatch
+104	^ 	, 	replace
+104	. 30. *%* 		nolocate
+104	^\** 		nolocate
+104	^		nolocate
+104	^ 	; 	replace
+104	: ^' 	: "* 	mismatch
+104	« 	 	delete
+104	 ^	 	delete
+104	."—^" 	."—*' 	mismatch
+104	«		nolocate
+104	, ^		nolocate
+104	 «	 	delete
+104	^'		nolocate
+104	 ♦ 		nolocate
+104	€		nolocate
+104	 ^^ 	 " 	replace
+104	. ^^ 	. " 	replace
+104	^ 	, 	replace
+104	^ 	, 	replace
+104	^ 	, 	replace
+104	^ 		nolocate
+104	^ 	, 	replace
+105	. '^	. '	delete
+105	, *'"•* 	, " 	mismatch
+105	: ^^ 	: " 	replace
+105	:^ ^^ 	 :* " 	mismatch
+105	^ 		nolocate
+105	 ♦ 	 * 	mismatch
+105	«		nolocate
+105	» ^^ 23. 		nolocate
+105	^"* 		nolocate
+105	^ 		nolocate
+105	 ■		nolocate
+105	. ^' 	. "	mismatch
+105	^ 		nolocate
+105	^ 		nolocate
+105	^ 		nolocate
+105	 €	 	delete
+105	. ^^ *	. ' 	replace
+105	^ 	, 	replace
+105	: ^' *	: " 	mismatch
+105	^ 	, 	replace
+105	^ 	, 	replace
+105	: ^^	: " 	replace
+105	 43. •		nolocate
+105	^ 	, 	replace
+105	^ 	, 	replace
+105	. '^ 	. "	mismatch
+105	^		nolocate
+105	 »		nolocate
+105	^«		nolocate
+105	8/\*		nolocate
+105	^	? 	replace
+105	—^	—	delete
+105	 '^ 	 " 	mismatch
+105	: '^ 	: " 	mismatch
+105	: '^ 	: " 	mismatch
+105	^ 	, 	replace
+105	." • 	." - 	replace
+105	 *^		nolocate
+105	,.^^		nolocate
+105	:^ 	:" 	replace
+105	« 	 " 	replace
+105	.209 --> ♦ 		nolocate
+106	 ^		nolocate
+106	^ 		nolocate
+106	^ 	, 	replace
+106	^ 		nolocate
+106	^ 	, 	replace
+106	^ 		nolocate
+106	^ 		nolocate
+106	^		nolocate
+106	-^ 		nolocate
+106	. ^ 	. " 	replace
+106	, ^^ 	, " 	replace
+106	 '^ 	 "	mismatch
+106	 ^^ 		nolocate
+106	 ^^ 	 " 	replace
+106	:"—^^	 :"—" 	replace
+106	. *"^ 		nolocate
+106	^ 		nolocate
+106	^ 		nolocate
+106	^ 	, 	replace
+106	. 15: ^' 		nolocate
+106	^		nolocate
+106	 ♦ 		nolocate
+106	^* 	," 	replace
+106	^ 		nolocate
+106	, ^^ *	, " 	replace
+106	^		nolocate
+106	: ^^ 	: " 	replace
+106	» 		nolocate
+106	^ 		nolocate
+106	, '^ *		nolocate
+106	^ 		nolocate
+106	$		nolocate
+106	^		nolocate
+106	. ^^ *	. ' 	replace
+106	^ 		nolocate
+106	- ♦ 		nolocate
+106	—^	—	delete
+106	^* 	, 	replace
+106	^		nolocate
+106	^* 		nolocate
+106	.''-\*-'' 	."-—" 	mismatch
+106	»		nolocate
+106	 ♦ 		nolocate
+106	£ 		nolocate
+106	-^ 		nolocate
+106	^* 	, 	replace
+106	 ♦ 		nolocate
+106	^* 		nolocate
+106	^		nolocate
+106	^ 	, 	replace
+106	,^ 	., 	replace
+106	—^	—	delete
+106	 ♦ 	 * 	mismatch
+106	.211 --> ♦ 		nolocate
+106	.213 --> *^\** 		nolocate
+107	^	'	replace
+107	^ 		nolocate
+107	^ 		nolocate
+107	 ♦ 		nolocate
+107	, ^^ 	, " 	replace
+107	, ^' 	, " 	mismatch
+107	. ^' 	. " 	mismatch
+107	?"—^^ 	?"—" 	replace
+107	^ 		nolocate
+107	^'* 		nolocate
+107	^ 		nolocate
+107	^ 	, 	replace
+107	^ 	, 	replace
+107	 ^' 	 " 	mismatch
+107	 ^	 '	replace
+107	, *^^		nolocate
+107	^ 		nolocate
+107	; '^ 	; "	mismatch
+107	^ 	; 	replace
+107	^ 		nolocate
+107	^ 		nolocate
+107	^ 		nolocate
+107	, *^^		nolocate
+107	^ 		nolocate
+107	^ 	, 	replace
+107	^ 	, 	replace
+107	^ 		nolocate
+107	:—^^ 	 :—** 	mismatch
+107	, £	, 	delete
+107	^ 	, 	replace
+107	^ 	, 	replace
+107	, ^< 	, "	replace
+107	.* + 		nolocate
+107	, ^^ 		nolocate
+107	.230 --> ♦ 		nolocate
+107	 »		nolocate
+107	\»		nolocate
+107	^* « 		nolocate
+108	^	'	replace
+108	? 45. *%* 	? 45, 4 	mismatch
+108	^ 	' 	replace
+108	 ♦ 		nolocate
+108	 '^ 	 "*	mismatch
+108	. |		nolocate
+108	."— ^^ 	." — '	replace
+108	, '^ 	, ' 	delete
+108	, *'^* 	, '*' 	mismatch
+108	, ♦ 		nolocate
+108	^ 		nolocate
+108	^ 		nolocate
+108	^		nolocate
+108	 ^^ 	 "	replace
+108	." «^ 	." ' 	replace
+108	: '^ 	: '¢ 	mismatch
+108	^ " 	, " 	replace
+108	 ♦ 		nolocate
+108	^ 		nolocate
+108	.''^ 	.* 	mismatch
+108	^ 	, 	replace
+108	^ 	, 	replace
+108	 ♦ 		nolocate
+108	. ^' 		nolocate
+108	^ 		nolocate
+108	 ^^	 "	replace
+108	."—^^ 	." —" 	replace
+108	^* 	, 	replace
+108	^* 	, 	replace
+108	 ♦ 		nolocate
+108	^* 	, 	replace
+108	: ^^ 	: "* 	mismatch
+108	, ^^ 	, "* 	mismatch
+108	 ■	 	delete
+108	, \*< 	, " 	replace
+108	: '^ 	: ' 	delete
+108	^		nolocate
+108	, ^' 	, " 	mismatch
+108	%		nolocate
+108	, ^^ 	, "	replace
+108	, ^^ *	, "	replace
+108	 *\** 		nolocate
+108	. ^' 	. '	delete
+108	 '^ *	 " 	mismatch
+108	, *'•^ 		nolocate
+108	^		nolocate
+108	;"^* 		nolocate
+108	. ^^ *		nolocate
+108	^ 		nolocate
+108	^\** 		nolocate
+108	. ^< 	. ' 	replace
+108	 ^		nolocate
+108	,:^ 		nolocate
+108	 *\*^* 		nolocate
+108	 7\* 		nolocate
+108	. 7\* *%* 		nolocate
+108	. ^^ 	. " 	replace
+108	.242 --> • 2 		nolocate
+109	), ^^ 	), '	replace
+109	."§ 	.'§ 	mismatch
+109	|| 	|| 	mismatch
+109	^ 	, 	replace
+109	^ 		nolocate
+109	—^	—	delete
+109	^ 		nolocate
+109	^ 	, 	replace
+109	 ♦ 1 		nolocate
+109	: ^' 	: " 	mismatch
+109	.^		nolocate
+109	, '^ 	, " 	mismatch
+109	^ 		nolocate
+109	 ^^ 	 " 	replace
+109	 '^ 	 "	mismatch
+109	^ 		nolocate
+109	 • 1 		nolocate
+109	\|		nolocate
+109	 '^ 		nolocate
+109	. 1-4. '^		nolocate
+109	 ^^ 	 '	replace
+109	 '^	 "	mismatch
+109	. + 		nolocate
+109	^		nolocate
+109	.256 --> § 		nolocate
+109	»,* 		nolocate
+109	^^^		nolocate
+109	.261 --> ♦ 		nolocate
+109	^		nolocate
+109	»» *		nolocate
+109	^		nolocate
+109	* ««•• */		nolocate
+109	»^»>		nolocate
+109	« 		nolocate
+109	«		nolocate
+109	^		nolocate
+109	 ^«		nolocate
+109	* «'«		nolocate
+109	« ««/ */		nolocate
+109	» 		nolocate
+109	*—*^		nolocate
+109	» 		nolocate
+110	 ^ 		nolocate
+110	^ 	, 	replace
+110	: ^' 	: " 	mismatch
+110	^ 		nolocate
+110	), ^< 	), " 	replace
+110	^ 	, 	replace
+110	 ^ 	 "	replace
+110	, ^^		nolocate
+110	 *^"		nolocate
+110	\* 		nolocate
+110	^ 		nolocate
+110	, •' 		nolocate
+110	 7: *^^ 		nolocate
+110	^ 		nolocate
+110	 ♦ 		nolocate
+110	. 13. + 		nolocate
+110	^ 	, 	replace
+110	^ 	, 	replace
+110	, ^' 	, *' 	mismatch
+110	, '^ 	, " 	mismatch
+110	, '^ 	, "	mismatch
+110	. ^^ *	. " 	replace
+110	^ 	, 	replace
+110	^ 		nolocate
+110	~ 		nolocate
+110	; "^		nolocate
+110	, '^ 		nolocate
+110	), '^ 	), " 	mismatch
+110	^ 		nolocate
+110	^		nolocate
+110	: '^ *	: " 	mismatch
+110	^		nolocate
+110	^ 		nolocate
+110	^ 		nolocate
+110	. '^ 	. * 	mismatch
+110	^^ 		nolocate
+110	. '^ 	. " 	mismatch
+110	: '^ 	: '	delete
+110	; ^' 	; " 	mismatch
+110	;" ^ 	;" " 	replace
+110	^ 		nolocate
+110	: ^' *		nolocate
+110	!^* 	." 	mismatch
+110	: '^ 	: " 	mismatch
+110	), ^^ 	), "¢ 	mismatch
+110	^ 	, 	replace
+110	^ 		nolocate
+110	 ♦ 		nolocate
+110	% 		nolocate
+110	^		nolocate
+110	, ^ 	, '	replace
+110	^ 		nolocate
+110	^ 		nolocate
+110	, ^^ 	, " 	replace
+110	 *\*		nolocate
+110	»		nolocate
+110	^		nolocate
+110	^		nolocate
+110	« *		nolocate
+110	^		nolocate
+110	«		nolocate
+110	» »		nolocate
+110	.268 --> \*		nolocate
+110	 ^		nolocate
+110	%« *		nolocate
+110	 ^		nolocate
+110	: '£>^» *		nolocate
+110	^		nolocate
+110	 \*		nolocate
+110	»		nolocate
+110	>.»		nolocate
+110	%, ^		nolocate
+110	^		nolocate
+110	^		nolocate
+110	^		nolocate
+110	: \*		nolocate
+110	« *^^		nolocate
+110	;^		nolocate
+110	/«» *		nolocate
+110	^		nolocate
+110	»		nolocate
+110	 ^		nolocate
+110	^		nolocate
+110	^0		nolocate
+110	»		nolocate
+110	^ 		nolocate
+110	^ 	, 	replace
+110	.273 --> ♦ 		nolocate
+110	.273 --> + 		nolocate
+110	.275 --> ♦ 		nolocate
+110	^		nolocate
+111	^ 		nolocate
+111	 »	 	delete
+111	^ 		nolocate
+111	^	'	replace
+111	^ 		nolocate
+111	^ 		nolocate
+111	^ 		nolocate
+111	^^ 		nolocate
+111	^ 		nolocate
+111	:" ^^ 	 :" " 	replace
+111	, *^'* 	, "	mismatch
+111	 • 		nolocate
+111	. ^' 	. "	mismatch
+111	, ^^ 	, "	replace
+111	 ^^ 	 " 	replace
+111	 ^		nolocate
+111	: ^^ 		nolocate
+111	^ 	, 	replace
+111	 ^		nolocate
+111	 ^ 		nolocate
+111	^ 		nolocate
+111	; '^ 	: " 	mismatch
+111	^* 		nolocate
+111	:"§ 	:"§ 	mismatch
+111	^ 		nolocate
+111	^ 	~ 	mismatch
+111	 ^	 	delete
+111	^		nolocate
+111	^		nolocate
+111	. 9), \*^ 	. 9), " 	mismatch
+111	, ^^ 		nolocate
+111	, ^' 	, " 	mismatch
+111	^ 	, 	replace
+111	^^ %		nolocate
+111	^ 		nolocate
+111	^ 		nolocate
+111	: '^ 	: " 	mismatch
+111	^ 		nolocate
+111	^ 		nolocate
+111	.'':^ 	. $ 	mismatch
+111	, ^^ 	, "	replace
+111	» 		nolocate
+111	 '^ 	 " 	mismatch
+111	," '^ 	," " 	mismatch
+111	« 		nolocate
+111	: *^^ 		nolocate
+111	^ 		nolocate
+111	^ 		nolocate
+111	^ 		nolocate
+111	^" 	." 	replace
+111	 «	 	delete
+111	 ^ 		nolocate
+111	^ 	, 	replace
+111	 '^		nolocate
+111	:—^	:—	delete
+111	 ^' 	 "	mismatch
+111	, ^' 	, '	delete
+111	, ^' 	, '¢ 	mismatch
+111	^\** 	," 	replace
+111	»		nolocate
+111	^		nolocate
+111	« 		nolocate
+111	: ^' 	: " 	mismatch
+111	 '^ 	 " 	mismatch
+111	^		nolocate
+111	^ 	, 	replace
+111	.282 --> ♦ 		nolocate
+111	 4. + 		nolocate
+111	. 17. § 		nolocate
+111	.283 --> ♦ 		nolocate
+111	. >^73		nolocate
+111	 «		nolocate
+111	« *^		nolocate
+111	 ^9>.>		nolocate
+111	 ^		nolocate
+111	^		nolocate
+111	^		nolocate
+111	^^		nolocate
+111	^		nolocate
+111	^		nolocate
+111	^		nolocate
+111	» 		nolocate
+111	% 		nolocate
+111	^ 		nolocate
+111	.287 --> ♦ 		nolocate
+111	. 235, \*< 		nolocate
+111	"—^" 		nolocate
+111	.293 --> ♦ 2 		nolocate
+112	£		nolocate
+112	. 31: ^^ 	. 31: " 	mismatch
+112	, '^ 	, "	mismatch
+112	^* 	, 	replace
+112	, *^''	, " 	mismatch
+112	^"* 	," 	replace
+112	, »\* *	, " 	replace
+112	; \*^ *	; "	replace
+112	^"* 	," 	replace
+112	^ 	* 	mismatch
+112	. '^ 	. '* 	mismatch
+112	^ 		nolocate
+112	^ 		nolocate
+112	^		nolocate
+112	^ 		nolocate
+112	^ 	, 	replace
+112	 ♦ 		nolocate
+112	^^ 		nolocate
+112	 ♦ 		nolocate
+112	."—'^	."—" 	mismatch
+112	!!"\*—	! !" *—	mismatch
+112	, ^^	, " 	replace
+112	» 		nolocate
+112	««-		nolocate
+112	^		nolocate
+112	 • *		nolocate
+112	.298 --> ♦ 		nolocate
+112	^		nolocate
+112	,«	, "	replace
+112	.300 --> ♦ 		nolocate
+112	.304 --> ♦ 		nolocate
+113	« 		nolocate
+113	, ^'	, "	mismatch
+113	^		nolocate
+113	^		nolocate
+113	 ♦ 		nolocate
+113	^ ^^ 	, '¢ 	mismatch
+113	 6} 		nolocate
+113	."+ 		nolocate
+113	* 3^® 		nolocate
+113	, ^'	, "	mismatch
+113	." *^* 		nolocate
+113	. '^ 	. "	mismatch
+113	. '^ 	. ' 	delete
+113	» 	, 	replace
+113	, ^' 		nolocate
+113	. '^ 	. ' 	delete
+113	^		nolocate
+113	;" *^'* 		nolocate
+113	^ 	, 	replace
+113	."—^^ 	."—" 	replace
+113	."—^^ 	."—" 	replace
+113	. ^' 	. ' 	delete
+113	: '^ 	: " 	mismatch
+113	, ^ 	, " 	replace
+113	: ^' 	: " 	mismatch
+113	8» 		nolocate
+113	, '^ 	, " 	mismatch
+113	. 12): '^	. 12): '* 	mismatch
+113	« 		nolocate
+113	. § 	.§ 	mismatch
+113	« 		nolocate
+113	 1. + 		nolocate
+113	» 		nolocate
+113	. 1*16. § 		nolocate
+113	: *^^ 		nolocate
+113	^ 		nolocate
+113	 ^		nolocate
+113	^ 		nolocate
+113	^ 		nolocate
+113	^ 		nolocate
+113	 ^		nolocate
+113	^ 	 	delete
+113	: ^^ 	: " 	replace
+113	^	é	mismatch
+113	^ 		nolocate
+113	^		nolocate
+113	^ 		nolocate
+113	^ 		nolocate
+113	^ 	, 	replace
+113	 ♦ 		nolocate
+113	^ 		nolocate
+113	^ 		nolocate
+113	! '^ 	! "	mismatch
+113	. 26: <^ 	. 26: " 	mismatch
+113	\*		nolocate
+114	^		nolocate
+114	^ 		nolocate
+114	^		nolocate
+114	^^ 		nolocate
+114	^* 	, 	replace
+114	^* 	, 	replace
+114	 ^		nolocate
+114	. *^"-		nolocate
+114	^ 		nolocate
+114	^ 		nolocate
+114	^% 	, 	replace
+114	 '^ 	 " 	mismatch
+114	« 		nolocate
+114	^ 		nolocate
+114	, ^' 	, " 	mismatch
+114	,§ 	,§ 	mismatch
+114	, ^' 	, "	mismatch
+114	, ^' 	, " 	mismatch
+114	.^		nolocate
+114	« 		nolocate
+114	 \*^ 	 " 	replace
+114	 '^ 	 "	mismatch
+114	." ^^ 	." ' 	replace
+114	,^ ^' 	} " 	mismatch
+114	, ^' 	, " 	mismatch
+114	—^	—	delete
+114	 ^' 		nolocate
+114	^ 		nolocate
+114	^/		nolocate
+114	^ 		nolocate
+114	^ 		nolocate
+114	 *\** 		nolocate
+114	. 39^ 		nolocate
+114	, ^^ 	, " 	replace
+114	^		nolocate
+114	^ 		nolocate
+114	« 		nolocate
+114	,^		nolocate
+114	 '^ 	 " 	mismatch
+114	^ 	, 	replace
+114	^ 	, 	replace
+114	^ 		nolocate
+114	^		nolocate
+114	 «\*, 		nolocate
+114	;* ««		nolocate
+114	.:|: 		nolocate
+114	 £▼. 9. 		nolocate
+114	: *^' 		nolocate
+114	^ 		nolocate
+114	^ 		nolocate
+114	^ 	, 	replace
+114	 *\* 		nolocate
+114	. 4. ^ 		nolocate
+114	. 47\* 		nolocate
+114	 ♦ 		nolocate
+114	." ^^ 	." " 	replace
+114	^ 		nolocate
+114	^ 		nolocate
+114	^		nolocate
+114	.327 --> ♦ 		nolocate
+114	 \*		nolocate
+114	«		nolocate
+114	«		nolocate
+114	^		nolocate
+114	 ^		nolocate
+114	.328 --> • 		nolocate
+114	^		nolocate
+114	/\* 	," 	replace
+114	.329 --> ♦ 2 		nolocate
+114	.332 --> ♦ 		nolocate
+114	.^ 	., 	replace
+114	^		nolocate
+114	 >«		nolocate
+114	«		nolocate
+114	.334 --> + *		nolocate
+114	^		nolocate
+114	^		nolocate
+114	^,* 		nolocate
+115	^ 	, 	replace
+115	 ^ 	 * 	mismatch
+115	, ^^ 	, " 	replace
+115	^ 		nolocate
+115	^ 		nolocate
+115	^ 		nolocate
+115	^* 	." 	replace
+115	 '^ 		nolocate
+115	 ^		nolocate
+115	. \*< 	. " 	replace
+115	."§ 	."§ 	mismatch
+115	, ^		nolocate
+115	: ^^ 		nolocate
+115	^* 	, 	replace
+115	 £3, 15		nolocate
+115	 *£4		nolocate
+115	^ 	, 	replace
+115	^ 	, 	replace
+115	 '^ 	 "	mismatch
+115	 ^' 	 " 	mismatch
+115	, '^ 	, "	mismatch
+115	. ^' 		nolocate
+115	, ^^ 		nolocate
+115	."-\*-" 	."—'* 	mismatch
+115	» 	, 	replace
+115	^* 	," 	replace
+115	^ 		nolocate
+115	^ 		nolocate
+115	^ 		nolocate
+115	^ 		nolocate
+115	^ 		nolocate
+115	^ 		nolocate
+115	^ 		nolocate
+115	^ 		nolocate
+115	^ 	, 	replace
+115	^ 	, 	replace
+115	:% 		nolocate
+115	^		nolocate
+115	\*		nolocate
+115	^ 		nolocate
+115	^ 1 		nolocate
+115	» 		nolocate
+115	/\* 	." 	replace
+115	^\** 	," 	replace
+115	^\** 		nolocate
+115	^ 		nolocate
+115	, ^^		nolocate
+115	. 9. + 		nolocate
+115	., ▼. 8. 		nolocate
+115	^		nolocate
+115	. *^		nolocate
+115	.344 --> + 		nolocate
+115	^		nolocate
+115	.350 --> ♦ 		nolocate
+115	.350 --> + 		nolocate
+115	^		nolocate
+115	^		nolocate
+115	^		nolocate
+115	» 		nolocate
+115	^		nolocate
+115	 ^		nolocate
+115	^		nolocate
+115	^ <		nolocate
+115	»		nolocate
+115	 *^^^		nolocate
+115	* «		nolocate
+115	«\*«'«^«'« 		nolocate
+115	^		nolocate
+115	* \*«^<		nolocate
+115	^		nolocate
+115	 ^		nolocate
+116	^* 		nolocate
+116	^		nolocate
+116	^* 		nolocate
+116	. *^^		nolocate
+116	^ ^^		nolocate
+116	, ^^ 	,* " 	mismatch
+116	, ^^ 		nolocate
+116	 ♦ 		nolocate
+116	"\** 	," * 	mismatch
+116	." *%* 	.' { 	mismatch
+116	 '• 	 ' 	delete
+116	,"§ 	,"§ 	mismatch
+116	, ^' 	, " 	mismatch
+116	"\** 	"* 	delete
+116	 ^\* 		nolocate
+116	: ^' 	: " 	mismatch
+116	^^		nolocate
+116	, ^^ 	, " 	replace
+116	, "• 	, "	delete
+116	. '^	. '	delete
+116	^ ^^		nolocate
+116	^		nolocate
+116	^* 		nolocate
+116	, '^		nolocate
+116	) '^ 	) "	mismatch
+116	 ^^ 		nolocate
+116	; ^^ 		nolocate
+116	* £^^»>^ 		nolocate
+116	, *^'* 	, "	mismatch
+116	?"\** 		nolocate
+116	, ^^ 	, " 	replace
+116	- ♦ 	- * 	mismatch
+116	^		nolocate
+116	^ 		nolocate
+116	^		nolocate
+116	\*8* 		nolocate
+116	, '^ 	,* " 	mismatch
+116	, '^ *	, " 	mismatch
+116	, \*"' 	, "	mismatch
+116	. • 1 		nolocate
+116	. 21. + 		nolocate
+116	.360 --> + *		nolocate
+116	»^		nolocate
+116	^'		nolocate
+116	.360 --> § 		nolocate
+116	.368 --> + 		nolocate
+117	^ 	, 	replace
+117	/^ 		nolocate
+117	, '^ 	, " 	mismatch
+117	^ 	, 	replace
+117	^ 		nolocate
+117	^ 	, 	replace
+117	^ 		nolocate
+117	\*8,* 		nolocate
+117	 » 		nolocate
+117	^* 		nolocate
+117	, ^' 	, " 	mismatch
+117	^ 	, 	replace
+117	, ^^ 	, " 	replace
+117	^* 	, 	replace
+117	 \*^ 	 "	replace
+117	^* 		nolocate
+117	^* 	, 	replace
+117	^* 	, 	replace
+117	, ^ 	, " 	replace
+117	^	*	mismatch
+117	^* 	, 	replace
+117	^* 	, 	replace
+117	^		nolocate
+117	^ 		nolocate
+117	^* 		nolocate
+117	. 10,12-18. + " 		nolocate
+117	^ 		nolocate
+117	 ^		nolocate
+117	^ 		nolocate
+117	, ^^ 		nolocate
+117	^		nolocate
+117	^ 	, 	replace
+117	. ^' 	. '© 	mismatch
+117	." *\*•'* 	." " 	mismatch
+117	, ^^ 	, "	replace
+117	: ^'	: " 	mismatch
+117	 • 		nolocate
+117	^* 	, 	replace
+117	. ^ 	. 	delete
+117	^		nolocate
+117	^* 		nolocate
+117	^* 	, 	replace
+117	.373 --> ♦ 1 		nolocate
+118	. 24. ^ 		nolocate
+118	^ 	, 	replace
+118	^ 	, 	replace
+118	, "• 	, * 	mismatch
+118	^		nolocate
+118	^ 		nolocate
+118	 ♦ 		nolocate
+118	 ♦ 		nolocate
+118	^ 		nolocate
+118	^ 		nolocate
+118	^		nolocate
+118	^ 		nolocate
+118	, *^		nolocate
+118	^		nolocate
+118	^		nolocate
+118	." ^ 		nolocate
+118	, '^ 	, ' 	delete
+118	^ 		nolocate
+118	^ 		nolocate
+118	, '^ 		nolocate
+118	—^	—	delete
+118	 ^^ 	 "	replace
+118	. '^ *	. " 	mismatch
+118	 '^ 	 " 	mismatch
+118	 ^^ 	 " 	replace
+118	—^	—	delete
+118	^		nolocate
+118	^ 	, 	replace
+118	^ 		nolocate
+118	^ 	, 	replace
+118	^ 		nolocate
+118	» 		nolocate
+118	, '^ 	, " 	mismatch
+118	 ^^ 	 " 	replace
+118	: '^ 	: " 	mismatch
+118	.":|: 	."{ 	mismatch
+118	.§ 	.§ 	mismatch
+118	 '^	 "	mismatch
+118	 '^ 	 "	mismatch
+118	.'^ 	." 	mismatch
+118	 ^^'* \*»!• 		nolocate
+118	^«, 		nolocate
+118	 *^		nolocate
+118	^ 	, 	replace
+118	 ♦ 		nolocate
+118	—^	—	delete
+118	^ 		nolocate
+118	. ^\* 	. ' 	replace
+118	£ 		nolocate
+118	^ 	, 	replace
+118	.386 --> + 		nolocate
+118	^		nolocate
+118	^		nolocate
+118	^		nolocate
+118	^		nolocate
+118	^		nolocate
+118	^^		nolocate
+118	^* 		nolocate
+118	^* 		nolocate
+119	. ^. 		nolocate
+119	^ 	, 	replace
+119	^ 	, 	replace
+119	^		nolocate
+119	: « 		nolocate
+119	, ^^ 		nolocate
+119	: ^^ 	: "	replace
+119	: '^ 	: "	mismatch
+119	^ 	, 	replace
+119	^* 	. 	replace
+119	: '^ 	: " 	mismatch
+119	."—\*^ 		nolocate
+119	^		nolocate
+119	."§ 	.'§ 	mismatch
+119	? • 		nolocate
+119	^ 	, 	replace
+119	"\** " 	."* '* 	mismatch
+119	^		nolocate
+119	, ^^ 		nolocate
+119	/'— ^' 	."— " 	mismatch
+119	^ 		nolocate
+119	-;^ ♦ 		nolocate
+119	, '^ 	, "* 	mismatch
+119	, ^' 	, "	mismatch
+119	^ 	, 	replace
+119	^ 		nolocate
+119	^ 		nolocate
+119	^ 		nolocate
+119	 ♦ 		nolocate
+119	, ^' 	, "	mismatch
+119	^ 		nolocate
+119	 ♦ 		nolocate
+119	, ^^ 	, ' 	replace
+119	^ 		nolocate
+119	%$ 		nolocate
+119	« *		nolocate
+119	^ 		nolocate
+119	$' 		nolocate
+119	^ 		nolocate
+119	 | 	{ 	mismatch
+119	^ 		nolocate
+119	^		nolocate
+119	.400 --> *\*		nolocate
+119	^		nolocate
+119	§*: *\*		nolocate
+119	^		nolocate
+119	.404 --> • 		nolocate
+119	. 5. + 2		nolocate
+119	. 30. § 		nolocate
+119	 *\»		nolocate
+119	.406 --> ♦ 		nolocate
+119	. 30. + 		nolocate
+119	. 7. § 		nolocate
+119	^^--" 		nolocate
+119	,^ 		nolocate
+119	^		nolocate
+119	^		nolocate
+119	^		nolocate
+119	-^		nolocate
+119	.413 --> ♦ 		nolocate
+120	^ 		nolocate
+120	^ 		nolocate
+120	^ 		nolocate
+120	, || 	,|| 	mismatch
+120	."§ 	."§ 	mismatch
+120	, ^' 	, " 	mismatch
+120	 *\* 		nolocate
+120	^ 		nolocate
+120	^ 		nolocate
+120	 ^^ 		nolocate
+120	^ 		nolocate
+120	« 		nolocate
+120	, ^ 	, "	replace
+120	, *^^ 		nolocate
+120	 \** 		nolocate
+120	. + 		nolocate
+120	 $^7% ^' 		nolocate
+120	^ 		nolocate
+120	^ 		nolocate
+120	«^ 		nolocate
+120	^ 		nolocate
+120	. ^^ 		nolocate
+120	^ 		nolocate
+120	^		nolocate
+120	^		nolocate
+120	^		nolocate
+120	 ^^ 		nolocate
+120	^ 		nolocate
+120	 ^^ 		nolocate
+120	 ^ 	 " 	replace
+120	."§ 	."§ 	mismatch
+120	« 		nolocate
+120	. *^^ 		nolocate
+120	^ 		nolocate
+120	^ 		nolocate
+120	^ 		nolocate
+120	^ 		nolocate
+120	^ 		nolocate
+120	^ 		nolocate
+120	^ 		nolocate
+120	, ^^ 	, " 	replace
+120	^ 	, 	replace
+120	^		nolocate
+120	, ^^	, "	replace
+120	) ^ 	, " 	mismatch
+120	^		nolocate
+120	^		nolocate
+120	^		nolocate
+120	 ♦ 		nolocate
+120	, ^^ 	, * 	mismatch
+120	: "-4«		nolocate
+120	^\** 		nolocate
+120	, ^' 	, " 	mismatch
+120	 ♦ 		nolocate
+120	» 		nolocate
+120	."§ 	."§ 	mismatch
+120	, '^ 		nolocate
+120	^ 		nolocate
+120	^ 		nolocate
+120	.§ 	.§ 	mismatch
+120	? \** 	?* 	delete
+120	^		nolocate
+120	. '^ 		nolocate
+120	« 		nolocate
+120	? ^^ 		nolocate
+120	." ^' 	." "	mismatch
+120	-^—		nolocate
+120	. ^' 	. * 	mismatch
+120	-\*«\*	--	replace
+120	 \*^ 	 "* 	mismatch
+120	 '^ 	 "	mismatch
+120	^* 	, 	replace
+120	.""-^^ 		nolocate
+120	^ 	, 	replace
+120	.416 --> ♦ 		nolocate
+120	 11. + 	, 11. + 	mismatch
+120	^		nolocate
+120	. § 2 		nolocate
+120	. 4. $ 1 		nolocate
+120	. 18. *\* 		nolocate
+120	.424 --> ♦ " 		nolocate
+120	."—*^		nolocate
+120	. 18. § *		nolocate
+120	^		nolocate
+120	0»9 		nolocate
+120	/\*		nolocate
+120	%		nolocate
+120	^		nolocate
+120	^		nolocate
+120	£		nolocate
+120	^* 		nolocate
+120	.425 --> § 		nolocate
+121	«		nolocate
+121	^ 		nolocate
+121	^ 	, 	replace
+121	^ 	, 	replace
+121	^ 		nolocate
+121	^ 	, 	replace
+121	 ^ 		nolocate
+121	, ^^ 	, "	replace
+121	«,		nolocate
+121	 *£		nolocate
+121	, ^^ 	, " 	replace
+121	^ 	, 	replace
+121	; '^ 	; '	delete
+121	,"+ 		nolocate
+121	^ 		nolocate
+121	. *'•''		nolocate
+121	."—•\* 	."—* 	mismatch
+121	. ^' 	. " 	mismatch
+121	/'—^^ 	."—'* 	mismatch
+121	," '^ 	," "	mismatch
+121	."} 		nolocate
+121	, ^' 	, " 	mismatch
+121	."§ 		nolocate
+121	; ♦ 	; * 	mismatch
+121	^		nolocate
+121	: ^^ 		nolocate
+121	^ 		nolocate
+121	, '^ 	, "* 	mismatch
+121	, ^' 	, " 	mismatch
+121	^ 		nolocate
+121	- ♦ 		nolocate
+121	, \*^ 	, " 	replace
+121	, '^ 	, " 	mismatch
+121	 '^ 		nolocate
+121	 • 		nolocate
+121	 ^'	 "	mismatch
+121	. ^ 	. "	replace
+121	. '^ 	. "	mismatch
+121	."\*---" 	."*-—" 	mismatch
+121	"—^ 		nolocate
+121	^ 		nolocate
+121	^		nolocate
+121	^		nolocate
+121	 ♦ 		nolocate
+121	: *^"		nolocate
+121	^ 		nolocate
+121	^ 		nolocate
+121	^ 	, 	replace
+121	^ 	, 	replace
+121	^ 	, 	replace
+121	'^ 	? 53. 	mismatch
+121	, \*^ 	, " 	replace
+121	^ 		nolocate
+121	. '^ 	. '	delete
+121	: "• 	: '* 	mismatch
+121	, ^^ 	, ' 	replace
+121	«		nolocate
+121	, '^ 		nolocate
+121	, '^ 		nolocate
+121	^ 	, 	replace
+121	. '^ 	. "	mismatch
+121	« 	, 	replace
+121	^		nolocate
+121	»		nolocate
+121	» *(		nolocate
+121	 *^^		nolocate
+121	^»* 		nolocate
+121	.431 --> + *'		nolocate
+121	^		nolocate
+121	^		nolocate
+121	. *%* 		nolocate
+121	. 9. § 		nolocate
+121	^ 		nolocate
+121	.435 --> + 		nolocate
+121	.440 --> '£«		nolocate
+121	»		nolocate
+121	,^\* 	," 	replace
+121	, \*< 		nolocate
+122	^8 		nolocate
+122	^—	—	delete
+122	^		nolocate
+122	^ 		nolocate
+122	,| 		nolocate
+122	," ♦ 		nolocate
+122	. 13,24. *%* 		nolocate
+122	^\** 	," 	replace
+122	^ 		nolocate
+122	^ 		nolocate
+122	^ 		nolocate
+122	: *^^		nolocate
+122	^ 		nolocate
+122	^ 	, 	replace
+122	^ 	, 	replace
+122	^* 	." 	replace
+122	 ♦ 		nolocate
+122	^ 		nolocate
+122	^ 		nolocate
+122	^ 1 		nolocate
+122	 ^' 	 " 	mismatch
+122	^ 	* 	mismatch
+122	 29: *^^ 		nolocate
+122	^ 		nolocate
+122	^ 		nolocate
+122	^ 		nolocate
+122	^ 	, 	replace
+122	^ 	 	delete
+122	. + \*		nolocate
+122	^ 	, 	replace
+122	, ^^ 	, "	replace
+122	, ^^		nolocate
+122	^ 		nolocate
+122	^ 	, 	replace
+122	^ 	, 	replace
+122	^ 		nolocate
+122	^ 		nolocate
+122	. 1\*2; 1 		nolocate
+122	: ^^ 	: ' 	replace
+122	, '^ 		nolocate
+122	, ^^	, * 	mismatch
+122	^ 	? 	replace
+122	. ^'	. '	delete
+122	^ 		nolocate
+122	- ♦ 		nolocate
+122	^* 		nolocate
+122	^ 		nolocate
+122	^ 		nolocate
+122	, ^^ 	, " 	replace
+122	^ 		nolocate
+122	^ 		nolocate
+122	^ 		nolocate
+122	 31. + 		nolocate
+123	^ 	, 	replace
+123	! *^-^ 	! '	mismatch
+123	^ 		nolocate
+123	 ^^ 	 "	replace
+123	^«»		nolocate
+123	,^ ^' 		nolocate
+123	^ 		nolocate
+123	€		nolocate
+123	. ^^ 	. '	replace
+123	 ^'	 "	mismatch
+123	>^ 		nolocate
+123	 ^		nolocate
+123	-\* 		nolocate
+123	| 		nolocate
+123	. 10. + 		nolocate
+123	, *^^ 		nolocate
+123	^ 		nolocate
+123	^ 		nolocate
+123	^ 	, 	replace
+123	. '•■ 	. ' 	delete
+123	 ♦ 	 * 	mismatch
+123	^		nolocate
+123	), ^^ 	), "	replace
+123	, "«		nolocate
+123	^, *		nolocate
+123	: *""^		nolocate
+123	^ 		nolocate
+123	, \*< 	, " 	replace
+123	, '^ *	, " 	mismatch
+123	^ 		nolocate
+123	. 24.:|: 		nolocate
+123	, ^' 	, '	delete
+123	, *^''	, "	mismatch
+123	^«		nolocate
+123	»/^		nolocate
+123	» \*•!. 		nolocate
+123	^		nolocate
+123	^		nolocate
+123	* « 		nolocate
+123	^		nolocate
+123	«		nolocate
+123	«		nolocate
+123	^ 		nolocate
+123	^		nolocate
+123	: *'^ 		nolocate
+123	 (^ 		nolocate
+123	, ^		nolocate
+123	: '^ *		nolocate
+123	^ 		nolocate
+123	^		nolocate
+123	, ^' 	, "	mismatch
+123	: *^^		nolocate
+123	 ^		nolocate
+123	^ 	 	delete
+123	 \*^ 	 " 	replace
+123	—^	—	delete
+123	—^	—	delete
+123	^		nolocate
+123	^ 	, 	replace
+123	—^	—	delete
+123	,* ^'	. '	mismatch
+124	^		nolocate
+124	^		nolocate
+124	^ 		nolocate
+124	^ 		nolocate
+124	 ♦ 		nolocate
+124	^ 		nolocate
+124	^		nolocate
+124	. + 		nolocate
+124	 ^ 	 " 	replace
+124	 '^ 		nolocate
+124	» 	, 	replace
+124	^		nolocate
+124	^ 	, 	replace
+124	. ^' 		nolocate
+124	 ^^ 	 " 	replace
+124	^		nolocate
+124	, ^^ 	, " 	replace
+124	, '^ 	, " 	mismatch
+124	) ^^ 	) "	replace
+124	^ 	, 	replace
+124	^, 		nolocate
+124	, ^' 	, " 	mismatch
+124	, ^' 	, " 	mismatch
+124	^ 	, 	replace
+124	, ^		nolocate
+124	^ 	, 	replace
+124	^		nolocate
+124	^		nolocate
+124	^ 		nolocate
+124	^ 		nolocate
+124	 *'^* 	 * 	mismatch
+124	^		nolocate
+124	, '^ 	, " 	mismatch
+124	^ 		nolocate
+124	^ 		nolocate
+124	, <\* 	,* " 	mismatch
+124	^		nolocate
+124	^ 		nolocate
+124	^		nolocate
+124	£(		nolocate
+124	 ^		nolocate
+124	« 		nolocate
+124	^ 	, 	replace
+124	, \*< *	, " 	replace
+124	^ 	, 	replace
+124	^ 	, 	replace
+124	^ 		nolocate
+124	^		nolocate
+124	 €	 	delete
+124	^ 		nolocate
+124	^ 		nolocate
+124	^\** 		nolocate
+124	, '^ 		nolocate
+124	 • 		nolocate
+124	-\* 		nolocate
+124	: \*< 	: "	replace
+124	^ 		nolocate
+124	^ 		nolocate
+124	^ 		nolocate
+124	» 		nolocate
+124	^ 	, 	replace
+124	^* 		nolocate
+124	. ^^ 	. " 	replace
+124	^		nolocate
+124	^		nolocate
+124	^		nolocate
+124	^		nolocate
+124	.^ 		nolocate
+125	. ^2. 	. 22. 	mismatch
+125	^ 		nolocate
+125	^ 		nolocate
+125	^ 		nolocate
+125	^* /, *		nolocate
+125	^ 		nolocate
+125	^ 		nolocate
+125	^ 		nolocate
+125	—^	—	delete
+125	^ 		nolocate
+125	^ 	, 	replace
+125	^	, 	replace
+125	^ 		nolocate
+125	^		nolocate
+125	^ 		nolocate
+125	^ 		nolocate
+125	^ 		nolocate
+125	^ 		nolocate
+125	^ 	, 	replace
+125	^ 	, 	replace
+125	^ 	, 	replace
+125	,»	,-	replace
+125	. 13. + 		nolocate
+125	^ 		nolocate
+125	 €		nolocate
+125	^ 		nolocate
+125	^ 		nolocate
+125	,^ " 	,* " 	mismatch
+125	^ 		nolocate
+125	 « 		nolocate
+125	^," 		nolocate
+125	 *\** 		nolocate
+125	« 		nolocate
+125	 «< 	 « 	mismatch
+125	 ♦ 	 * 	mismatch
+125	. ^' 	. ' 	delete
+125	, ^' 	, " 	mismatch
+125	^ 		nolocate
+125	! ^' 	! " 	mismatch
+125	^* 	, 	replace
+125	^. 		nolocate
+125	."—\*^ 		nolocate
+125	:" ^	: "	delete
+125	^		nolocate
+125	,^		nolocate
+125	, ^' 		nolocate
+125	^ 		nolocate
+125	^		nolocate
+125	. ^^ 		nolocate
+125	^^		nolocate
+125	^	'	replace
+125	^		nolocate
+125	^		nolocate
+125	^		nolocate
+125	 ^		nolocate
+125	^		nolocate
+125	^		nolocate
+125	: ^^—*		nolocate
+125	« *		nolocate
+125	^		nolocate
+125	^		nolocate
+125	 ^		nolocate
+125	^		nolocate
+126	^ 	, 	replace
+126	 ^' *	 " 	mismatch
+126	.^		nolocate
+126	^ 	, 	replace
+126	^ 	, 	replace
+126	^ 		nolocate
+126	^ 		nolocate
+126	,§ 	,§ 	mismatch
+126	.|| 	.|| 	mismatch
+126	 ■		nolocate
+126	, ^' 	, " 	mismatch
+126	^ 		nolocate
+126	^ 	, 	replace
+126	^^		nolocate
+126	^ 		nolocate
+126	£		nolocate
+126	8^ 		nolocate
+126	^		nolocate
+126	^ 		nolocate
+126	^ 		nolocate
+126	^ 		nolocate
+126	^ 		nolocate
+126	^ 	, 	replace
+126	: '^ 	; "	mismatch
+126	 ^^ 	 "	replace
+126	^ 		nolocate
+126	^ 	, 	replace
+126	^ 	, 	replace
+126	^ 	, 	replace
+126	^ 		nolocate
+126	^ 		nolocate
+126	 ♦ 		nolocate
+126	, '^ 	, "	mismatch
+126	^ 		nolocate
+126	^ 		nolocate
+126	 €		nolocate
+126	. ^ 	. "	replace
+126	« 		nolocate
+126	^		nolocate
+126	^ 	, 	replace
+126	: '^ 		nolocate
+126	 \*^	 "	replace
+126	, ^^ 	, " 	replace
+126	.'^ 	." '	mismatch
+126	, ^^ 	, "	replace
+126	: \*< 	: "	replace
+126	, '^ 	, " 	mismatch
+126	, '^ 	, " 	mismatch
+126	^ 		nolocate
+126	—^		nolocate
+126	^ 		nolocate
+126	^		nolocate
+126	€<		nolocate
+126	»., *		nolocate
+126	,* 75. + 		nolocate
+126	. 14. § " 		nolocate
+127	^ 		nolocate
+127	^ 		nolocate
+127	, «\* 	, " 	replace
+127	."— "• 		nolocate
+127	.} 		nolocate
+127	. + 		nolocate
+127	. ^^ 	. "	replace
+127	» 	, 	replace
+127	: ^' 	: "	mismatch
+127	, '^ 	, " 	mismatch
+127	^* 		nolocate
+127	-\* 		nolocate
+127	 ^^ 		nolocate
+127	-\* 		nolocate
+127	, «^ 		nolocate
+127	^		nolocate
+127	^ 	, 	replace
+127	^ 	, 	replace
+127	^		nolocate
+127	^ 		nolocate
+127	^ 		nolocate
+127	^ 		nolocate
+127	, '^ 	, " 	mismatch
+127	- ♦ 		nolocate
+127	 ^	 "	replace
+127	, ^ 	, " 	replace
+127	^		nolocate
+127	—^^ 	' 	mismatch
+127	."—^" 		nolocate
+127	^ 		nolocate
+127	, ^' 		nolocate
+127	 ♦ 		nolocate
+127	^		nolocate
+127	 €		nolocate
+127	« 	 	delete
+127	^ 	, 	replace
+127	^ 	. 	replace
+127	^ 	, 	replace
+127	^ 		nolocate
+127	^ 	, 	replace
+127	^ 		nolocate
+127	 • 	 - 	replace
+127	 ♦ 		nolocate
+127	^		nolocate
+127	 ^^ 	 " 	replace
+127	, *^ 		nolocate
+127	^ 		nolocate
+127	$ 		nolocate
+127	, ^^ 	, " 	replace
+127	^ 	 	delete
+127	^ 		nolocate
+127	^ 		nolocate
+127	 «2	 22	mismatch
+127	^ 	, 	replace
+128	^ 		nolocate
+128	%		nolocate
+128	¥		nolocate
+128	« 		nolocate
+128	»		nolocate
+128	^ 	, 	replace
+128	« 	. 	replace
+128	 '^ 	 "	mismatch
+128	^ 		nolocate
+128	^		nolocate
+128	^ 		nolocate
+128	^ 		nolocate
+128	"\** 		nolocate
+128	^ 		nolocate
+128	^* 		nolocate
+128	, '^ 		nolocate
+128	^ 		nolocate
+128	^		nolocate
+128	» 		nolocate
+128	: '^ 	: " 	mismatch
+128	« 	, 	replace
+128	^ 	 	delete
+128	^ 		nolocate
+128	« 	. 	replace
+128	^ 		nolocate
+128	, <« 		nolocate
+128	 ♦ 		nolocate
+128	^ 	, 	replace
+128	^ 		nolocate
+128	^ 		nolocate
+128	 ^		nolocate
+128	 '^ 		nolocate
+128	«		nolocate
+128	^ 		nolocate
+128	^ 		nolocate
+128	, ^^ 		nolocate
+128	|^«		nolocate
+128	 '^ 		nolocate
+128	^		nolocate
+128	^ 		nolocate
+128	» 	, 	replace
+128	. ^' 	. " 	mismatch
+128	^ 		nolocate
+128	}^ 		nolocate
+128	» 		nolocate
+128	» 		nolocate
+128	 | 		nolocate
+128	^ 		nolocate
+128	^		nolocate
+128	^^		nolocate
+128	:|; 		nolocate
+128	» 		nolocate
+128	^; 		nolocate
+128	^ 	, 	replace
+128	^ 		nolocate
+128	^ 		nolocate
+128	, « 	, " 	replace
+128	£		nolocate
+128	^, 	, 	delete
+128	^ 		nolocate
+128	^ 		nolocate
+128	."\*—" 	." *—"* 	mismatch
+128	 ♦ 		nolocate
+128	^ 	, 	replace
+128	. ^^ 	. ' 	replace
+128	: *^^ 		nolocate
+128	 ^ 		nolocate
+128	^, 		nolocate
+128	 €		nolocate
+128	^ 	 	delete
+128	^ 	, 	replace
+128	^ 		nolocate
+128	^		nolocate
+128	 ^ 	 ' 	replace
+128	, ^^		nolocate
+128	, ^^ 	, " 	replace
+128	, *^^		nolocate
+128	, '^ 	, " 	mismatch
+128	! ^^ 	! '	replace
+128	-^^		nolocate
+128	^ 		nolocate
+128	 ^^ 		nolocate
+128	 ^		nolocate
+128	 ^^ 	 " 	replace
+128	, \*^ 	, * 	mismatch
+128	^ 		nolocate
+128	, ^' 	, " 	mismatch
+128	^ 		nolocate
+128	^ 		nolocate
+128	^* 		nolocate
+128	, •\* 	, " 	replace
+128	«		nolocate
+128	« 		nolocate
+128	. \*< 	. " 	replace
+128	 •\* 		nolocate
+128	» 		nolocate
+128	«		nolocate
+128	» 	, 	replace
+128	£ 		nolocate
+128	^ 		nolocate
+128	^ 	, 	replace
+128	^		nolocate
+128	^		nolocate
+128	^ 	 	delete
+128	^, 		nolocate
+128	^		nolocate
+128	¥		nolocate
+128	^ 	 	delete
+128	.530 --> + 		nolocate
+128	.532 --> ♦ 		nolocate
+128	 ^		nolocate
+128	^		nolocate
+128	^		nolocate
+128	^		nolocate
+128	.536 --> \*		nolocate
+128	 ^		nolocate
+128	^		nolocate
+128	^		nolocate
+128	§		nolocate
+128	^		nolocate
+128	 *^		nolocate
+128	^		nolocate
+128	^		nolocate
+129	 •	 	delete
+129	^		nolocate
+129	^ 	 	delete
+129	^ 		nolocate
+129	^ 		nolocate
+129	© 		nolocate
+129	," '^ 	," " 	mismatch
+129	/\* 	." 	replace
+129	/\* 	," 	replace
+129	 ♦ 		nolocate
+129	,+ " 		nolocate
+129	, ^' 	, '¢ 	mismatch
+129	. 28): ^' 	. 28): " 	mismatch
+129	. *15:* '^ 		nolocate
+129	 ♦ 		nolocate
+129	. *^		nolocate
+129	^ 		nolocate
+129	^ 		nolocate
+129	. \*« *		nolocate
+129	\* 		nolocate
+130	, "-^		nolocate
+130	^		nolocate
+130	^ 	, 	replace
+130	 ^' 	 " 	mismatch
+130	, ^' 	, " 	mismatch
+130	 *^* 		nolocate
+130	: '^ 		nolocate
+130	, «\* 	, " 	replace
+130	|		nolocate
+130	 ^' *	 " 	mismatch
+130	^ 	, 	replace
+130	, '^ 	, "	mismatch
+130	." § 	."§ 	mismatch
+130	 ^'	 "	mismatch
+130	 ^' 	 *' 	mismatch
+130	 ^		nolocate
+130	^ 		nolocate
+130	^ 		nolocate
+130	 ♦ 		nolocate
+130	^ 		nolocate
+130	^ 	, 	replace
+130	^ 		nolocate
+130	^ 		nolocate
+130	 13. + 		nolocate
+130	? '^		nolocate
+130	 ^^	 "	replace
+130	^ 	, 	replace
+130	^	"	replace
+130	/\* 	." 	replace
+130	—^	—	delete
+130	^ 		nolocate
+130	 ^		nolocate
+130	 ^		nolocate
+130	^ 		nolocate
+130	^		nolocate
+130	^		nolocate
+130	^ 		nolocate
+130	 ^^ 	 "	replace
+130	^		nolocate
+130	« 		nolocate
+130	/ *^		nolocate
+130	«»		nolocate
+130	 \*		nolocate
+130	, *^		nolocate
+130	 ^		nolocate
+130	^		nolocate
+130	.^ 		nolocate
+130	\*		nolocate
+130	^		nolocate
+130	 ^		nolocate
+130	 ^		nolocate
+130	«		nolocate
+130	}«		nolocate
+130	' • *\*		nolocate
+130	^		nolocate
+130	* ^«»		nolocate
+130	^		nolocate
+130	' \*		nolocate
+130	.563 --> \*!< 		nolocate
+130	^»		nolocate
+130	»		nolocate
+130	«^		nolocate
+130	^		nolocate
+130	.* ' 4^ 		nolocate
+130	. 18, *\*		nolocate
+130	^		nolocate
+130	 -^^		nolocate
+131	: 51. ^		nolocate
+131	^ 	, 	replace
+131	: ^^ 	: " 	replace
+131	), '^ 	), '	delete
+131	 • 		nolocate
+131	^ 	, 	replace
+131	^ 		nolocate
+131	^ 		nolocate
+131	^ 		nolocate
+131	 ^' 		nolocate
+131	 ^' 	 "	mismatch
+131	/\* " 	," "	replace
+131	: *\*•'* 	: "	mismatch
+131	 ^' *		nolocate
+131	 \*< 	 '*	mismatch
+131	. 64. + 1 		nolocate
+131	, ^' 	, "	mismatch
+131	 '^ 	 "	mismatch
+131	 ^		nolocate
+131	 • 		nolocate
+131	^ 	, 	replace
+131	, *''^* 	, "	mismatch
+131	 ^^ *		nolocate
+131	^ 	, 	replace
+131	 ^		nolocate
+131	 ^^ 	 "	replace
+131	, ^'	, "	mismatch
+131	, ^^ 	, " 	replace
+131	 ^' 	 "	mismatch
+131	^		nolocate
+131	^»		nolocate
+131	. 41. ^ 		nolocate
+131	 *55*: ^^ *		nolocate
+131	^ 		nolocate
+131	^ 		nolocate
+131	^ 		nolocate
+131	^ 		nolocate
+131	^		nolocate
+131	. *'^	. " 	mismatch
+131	^ 		nolocate
+131	^ 		nolocate
+131	^ 		nolocate
+131	, \*•• 		nolocate
+131	« 	. 	replace
+131	, ^^ 	, "	replace
+131	^- (/		nolocate
+131	^* 		nolocate
+131	. *'^* 		nolocate
+131	^		nolocate
+131	^		nolocate
+131	. <\* 	. ' 	replace
+131	» 	 	delete
+131	: »-	 : —	mismatch
+131	.572 --> ♦ 		nolocate
+131	^		nolocate
+131	^		nolocate
+131	.576 --> ♦ 		nolocate
+131	^		nolocate
+131	^		nolocate
+131	^		nolocate
+131	^^		nolocate
+131	»9 		nolocate
+131	 ^		nolocate
+131	^		nolocate
+131	 ^		nolocate
+131	^		nolocate
+131	, \*		nolocate
+131	»«		nolocate
+131	«»		nolocate
+131	/$		nolocate
+131	, ^		nolocate
+131	;^		nolocate
+131	 ^		nolocate
+131	| *		nolocate
+131	^/		nolocate
+131	»		nolocate
+131	 ^		nolocate
+131	* «		nolocate
+131	^/		nolocate
+131	$«		nolocate
+131	», « 		nolocate
+132	—^	—	delete
+132	? ^^ 	? '* 	mismatch
+132	, ^^ 		nolocate
+132	, ^^ 	, " 	replace
+132	, ^^ 	, " 	replace
+132	^ 		nolocate
+132	^ 		nolocate
+132	^ 		nolocate
+132	^ 		nolocate
+132	^ 		nolocate
+132	 <\* 	 " 	replace
+132	^'* (	," (	mismatch
+132	, ♦ 	, * 	mismatch
+132	 ^^	 "	replace
+132	, ^^ 		nolocate
+132	, ^^ 	, "	replace
+132	^		nolocate
+132	 1^;8, 		nolocate
+132	; ♦ 		nolocate
+132	 • 	. 	replace
+132	 ^' 	 " 	mismatch
+132	, ^' 	, "	mismatch
+132	 ^^ 	 "	replace
+132	^ 		nolocate
+132	,) *^'^ 		nolocate
+132	^		nolocate
+132	^*—		nolocate
+132	. *^^ 		nolocate
+132	^ 		nolocate
+132	^ 		nolocate
+132	.^	."	replace
+132	: ^'	: "	mismatch
+132	. 5\*2. ^		nolocate
+132	, ^\* 	, *"	mismatch
+132	 ^		nolocate
+132	 ^^ 	 '	replace
+132	, *"^		nolocate
+132	^ 		nolocate
+132	* ^ *		nolocate
+132	, '^ *		nolocate
+132	* ^ *		nolocate
+132	,* ^ *		nolocate
+132	: *""^		nolocate
+132	^		nolocate
+132	 ^ 	 	delete
+132	 ^ 	 	delete
+132	 *\* 	 	mismatch
+132	 ^ 	 	delete
+132	 *^* 		nolocate
+132	 ^ 	 	delete
+132	—^	—	delete
+132	^ 		nolocate
+132	, '^	, "	mismatch
+132	^ 		nolocate
+132	 *\* 		nolocate
+132	, ^' 	, " 	mismatch
+132	, ^' 	, " 	mismatch
+132	^ 		nolocate
+132	: ^'		nolocate
+132	« 	. 	replace
+132	« 		nolocate
+132	: ^' 	: " 	mismatch
+132	 » *		nolocate
+132	 ^^ 	 "	replace
+132	- ♦ 		nolocate
+132	. '^	. '	delete
+132	.589 --> ♦ 		nolocate
+133	. '^ 	. ' 	delete
+133	, '^ 	, '© 	mismatch
+133	, '^ 		nolocate
+133	^		nolocate
+133	^		nolocate
+133	£&		nolocate
+133	 £		nolocate
+133	^ 		nolocate
+133	$		nolocate
+133	 '^ 	 " 	mismatch
+133	." *\* 	." { 	mismatch
+133	. ^' *		nolocate
+133	. ^' *	. ' 	replace
+133	^ 	, 	replace
+133	."—^" 	."—" 	delete
+133	£		nolocate
+133	^ 		nolocate
+133	^ 		nolocate
+133	^ 	, 	replace
+133	^ 	, 	replace
+133	^ 	, 	replace
+133	^ 	, 	replace
+133	,^ 	,.	replace
+133	. ^^ *	. " 	replace
+133	^ 		nolocate
+133	^ 	, 	replace
+133	^ 	, 	replace
+133	^ 	, 	replace
+133	^"* 		nolocate
+133	, ^^ *		nolocate
+133	—'^ 	— 	mismatch
+133	^		nolocate
+133	. ^< 	. " 	replace
+133	, ^^ 	, * 	mismatch
+133	^		nolocate
+133	 ♦ 2 		nolocate
+133	 *\*^		nolocate
+133	^ 		nolocate
+133	^ 		nolocate
+133	^ 		nolocate
+133	^ 		nolocate
+133	^ 	, 	replace
+133	^ 		nolocate
+133	^ 		nolocate
+133	^		nolocate
+133	 '^ 	 "* 	mismatch
+133	,^ " 	,* " 	mismatch
+133	- ♦ 		nolocate
+133	. \* ^		nolocate
+133	»^		nolocate
+133	 «		nolocate
+133	'«		nolocate
+133	 ^^ 	 " 	replace
+133	, '^ 	, " 	mismatch
+133	^ 	, 	replace
+133	, ^^ *		nolocate
+133	^ 		nolocate
+133	 '^ 	 "	mismatch
+133	, ^^ 	, " 	replace
+133	 • 		nolocate
+133	: *^^		nolocate
+133	^ 		nolocate
+133	^ 		nolocate
+133	 ^ 		nolocate
+133	^ 		nolocate
+133	^ 	 - 	replace
+133	^ 		nolocate
+133	^		nolocate
+133	^^^		nolocate
+133	^		nolocate
+133	: \*^	: "	replace
+133	^ 	, 	replace
+133	^ 		nolocate
+133	, ^^* 	. '	mismatch
+133	^ 	 	delete
+133	^ 		nolocate
+133	^		nolocate
+133	^ 		nolocate
+133	 ^' 	 " 	mismatch
+133	^ 	, 	replace
+133	, ^^ 	, "	replace
+133	 '^	 "	mismatch
+133	» 		nolocate
+133	.606 --> *\** 		nolocate
+133	.607 --> ♦ 		nolocate
+134	^ 	, 	replace
+134	. ^ 0 	. "0 	mismatch
+134	, ^' 	, "	mismatch
+134	, *^' 	, " 	mismatch
+134	^ 	, 	replace
+134	^	: 	replace
+134	^ 	, 	replace
+134	: ^' 		nolocate
+134	 • 		nolocate
+134	^ 	, 	replace
+134	^ 		nolocate
+134	^ 		nolocate
+134	^ 		nolocate
+134	-^ 		nolocate
+134	^ 	, 	replace
+134	, ^' 	, " 	mismatch
+134	 ^	 	delete
+134	," ♦ 		nolocate
+134	. 36. + 		nolocate
+134	 ^^ 	 "	replace
+134	 '^ 	 " 	mismatch
+134	, '^ 	, " 	mismatch
+134	, ^' *	, " 	mismatch
+134	^, *		nolocate
+134	^ 		nolocate
+134	 ♦ 	 * 	mismatch
+134	— ^^ 	— "« 	mismatch
+134	. ^^* 	. " 	replace
+134	^* 	, 	replace
+134	, ^^ 	, '*	mismatch
+134	: '^ 	: ' 	delete
+134	: ^^ 		nolocate
+134	^		nolocate
+134	^ 		nolocate
+134	—^^ 	—* 	mismatch
+134	, ^^		nolocate
+134	^ 	, 	replace
+134	 ^ 	. " 	replace
+134	" —^' 		nolocate
+134	^		nolocate
+134	 ^		nolocate
+134	, '^ 	, " 	mismatch
+134	, '^ 	, " 	mismatch
+134	- ♦ 		nolocate
+134	^		nolocate
+134	^ 		nolocate
+134	^ 		nolocate
+134	^ 		nolocate
+134	 *^^ 		nolocate
+134	 ♦ 2 		nolocate
+134	. 9. + 		nolocate
+134	. *\*^ 		nolocate
+134	^ 	, 	replace
+134	,^* 		nolocate
+134	^ 	, 	replace
+135	^ 		nolocate
+135	^ 		nolocate
+135	: \*^ 	: * 	mismatch
+135	^		nolocate
+135	^ 		nolocate
+135	: '^ 	: ' 	delete
+135	 ^		nolocate
+135	, <\* 	, " 	replace
+135	» 		nolocate
+135	^ 		nolocate
+135	^ 		nolocate
+135	 ^^ 		nolocate
+135	 *^* 		nolocate
+135	, ^' 	, '* 	mismatch
+135	: ^		nolocate
+135	 ♦ 		nolocate
+135	^ 		nolocate
+135	^^		nolocate
+135	 {		nolocate
+135	^ 		nolocate
+135	, '^ 	, "	mismatch
+135	 ♦ 		nolocate
+135	. \*^ 	. '* 	mismatch
+135	^ 		nolocate
+135	^ 	, 	replace
+135	- ♦ 	- * 	mismatch
+135	^ 		nolocate
+135	^ 		nolocate
+135	7\*		nolocate
+135	: ^^ 		nolocate
+135	^ 		nolocate
+135	^ 		nolocate
+135	: ^ *	: " 	replace
+135	^		nolocate
+135	^ 		nolocate
+135	. ^' 	. "	mismatch
+135	^ 		nolocate
+135	 ^^ 	 " 	replace
+135	—^	—	delete
+135	. ^' 	. "	mismatch
+135	 ^		nolocate
+135	<^ 		nolocate
+135	« 	 	delete
+135	 ^' 	 " 	mismatch
+135	, ^^ 		nolocate
+135	/\* 	." 	replace
+135	, ^' 	, "¢ 	mismatch
+135	^ 		nolocate
+135	*—^		nolocate
+135	, ^^ 	, " 	replace
+135	 ^' *	 " 	mismatch
+135	. '^ 	. "	mismatch
+135	, ^^ 	, " 	replace
+135	, ^' 	, " 	mismatch
+135	, '^ 	, "	mismatch
+135	 '^ 	 ' 	delete
+135	 • 		nolocate
+135	^		nolocate
+135	. ^' 		nolocate
+135	, '^	, "	mismatch
+135	^ 	, 	replace
+135	, ^^ 	, " 	replace
+135	 '^ 	 " 	mismatch
+135	, '^ 	, " 	mismatch
+135	 —^	 ——	replace
+135	« 	, 	replace
+135	, ^' *		nolocate
+135	^"* 		nolocate
+135	 ♦ 		nolocate
+135	|.	,	mismatch
+135	^ 		nolocate
+135	»		nolocate
+135	, ^' *		nolocate
+135	^ 		nolocate
+135	^ 		nolocate
+135	, <^ 	, " 	replace
+135	 '^ 	 "	mismatch
+135	: '^ 	: " 	mismatch
+135	, ^' 	, " 	mismatch
+135	 ^		nolocate
+136	—^	—	delete
+136	 \** 	 * 	delete
+136	 *^		nolocate
+136	, ♦ 		nolocate
+136	. ^' *	. ' 	replace
+136	^"* 		nolocate
+136	, ^^ 		nolocate
+136	^		nolocate
+136	. *^' 	. " 	mismatch
+136	^ 		nolocate
+136	-^ 		nolocate
+136	. ^' 	. " 	mismatch
+136	 ♦ 		nolocate
+136	 ♦ 		nolocate
+136	: '^ 	: * " 	mismatch
+136	^		nolocate
+136	, '^ 		nolocate
+136	 ♦		nolocate
+136	. »		nolocate
+136	. ^' 	. "	mismatch
+136	 • 		nolocate
+136	^ 	. 	replace
+136	^		nolocate
+136	^ 		nolocate
+136	^ 		nolocate
+136	^ 		nolocate
+136	, ^ 	, " 	replace
+136	^ 		nolocate
+136	. 9. +1 		nolocate
+137	;" /^ 		nolocate
+137	 ♦ 		nolocate
+137	. ^^ 	. " 	replace
+137	, ^^ 		nolocate
+137	. ^^ 	. ' 	replace
+137	 ^' *		nolocate
+137	^ 	, 	replace
+137	! '^ 		nolocate
+137	 £		nolocate
+137	 '^ 	 " 	mismatch
+137	."} 		nolocate
+137	 ^^ 	 " 	replace
+137	;"§ 	;'§ 	mismatch
+137	 ♦ 		nolocate
+137	. 11. + 		nolocate
+137	. 64. § 2 		nolocate
+137	^^* 		nolocate
+137	—^	—	delete
+137	—^' 	—" 	mismatch
+137	.^^-^		nolocate
+137	»«		nolocate
+137	 £		nolocate
+137	^		nolocate
+137	."—^		nolocate
+137	.655 --> ♦ 		nolocate
+137	. 8. *%* 		nolocate
+137	.656 --> ♦ 		nolocate

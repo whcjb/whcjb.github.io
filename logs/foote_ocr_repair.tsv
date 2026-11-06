@@ -346,7 +346,6 @@ chapter	from	to	kind
 006	yerj	very	rule
 006	fr		tooshort
 006	Hslavish		unresolved
-006	VI	vi	manual
 006	dishonourable		unresolved
 006	afirighted	affrighted	rule
 006	causiDg		unresolved
@@ -644,7 +643,6 @@ chapter	from	to	kind
 010	afiirm	affirm	rule
 010			leadstar
 010	befell		unresolved
-010	LECTURK		unresolved
 010	Cleophas		unresolved
 010			leadstar
 010	inlmediately		unresolved
@@ -955,6 +953,7 @@ chapter	from	to	kind
 014			leadstar
 014	irom	from	rule
 014	heayen	heaven	rule
+014	ix	ix	manual
 014	ahottt		unresolved
 014			leadstar
 014	difl		unresolved
@@ -1332,8 +1331,6 @@ chapter	from	to	kind
 018	mirancles		unresolved
 018	tnith		unresolved
 018	iidmits		unresolved
-018	LfiCTVRB		unresolved
-018	XVUL		unresolved
 018	Thej	They	rule
 018	belieye	believe	rule
 018	mj		tooshort
@@ -1845,8 +1842,7 @@ chapter	from	to	kind
 023	oome		unresolved
 023	hina		unresolved
 023	hj		tooshort
-023	notwithstand		unresolved
-023	mg		tooshort
+023	notwithstandmg		unresolved
 023	uestions		unresolved
 023	lr		tooshort
 023	conmcience		unresolved
@@ -1998,6 +1994,8 @@ chapter	from	to	kind
 024			leadstar
 024	notgreatlysurprise		unresolved
 024	andespecially		unresolved
+024			leadstar
+024	zxiii		unresolved
 024	LECTTUSXXIT		unresolved
 024	ke		tooshort
 024	wiio		unresolved
@@ -2161,7 +2159,6 @@ chapter	from	to	kind
 025	imme		unresolved
 025	diately		unresolved
 025	hisMessiah8hip		unresolved
-025	LFXTTURE		unresolved
 025	vras		unresolved
 025	mj		tooshort
 025	thott		unresolved
@@ -2250,8 +2247,6 @@ chapter	from	to	kind
 026	fJEUthfuI		unresolved
 026	erery		unresolved
 026	vtrith		unresolved
-026	suf		unresolved
-026	fered		unresolved
 026	fortythird		unresolved
 026	Caligula		unresolved
 026	overtook		unresolved
@@ -2420,6 +2415,7 @@ chapter	from	to	kind
 028			leadstar
 028	jod		unresolved
 028	tempta		unresolved
+028			leadstar
 028	tions		unresolved
 028	uid		unresolved
 028	nd		tooshort
@@ -3424,6 +3420,8 @@ chapter	from	to	kind
 038	tidin		unresolved
 038	Joannti		unresolved
 038	substanco		unresolved
+038			leadstar
+038	iv	iv	manual
 038	propriate		unresolved
 038	hepreached		unresolved
 038			leadstar
@@ -4080,8 +4078,6 @@ chapter	from	to	kind
 047	dth		unresolved
 047	ahotU		unresolved
 047	Jamesl		unresolved
-047	LECJTURE		unresolved
-047	XLVIL		unresolved
 047			leadstar
 047	Gkililee		unresolved
 047	Oliyes	Olives	rule
@@ -5370,6 +5366,7 @@ chapter	from	to	kind
 059	imderstand	understand	rule
 059	efl		unresolved
 059	ectually		unresolved
+059			leadstar
 059	thougavest		unresolved
 059	aflectionate		unresolved
 059	blew		unresolved
@@ -5969,7 +5966,6 @@ chapter	from	to	kind
 066	cessary		unresolved
 066	aifairs		unresolved
 066	encou		unresolved
-066	LEC5TURE		unresolved
 066	Jegus		unresolved
 066	ieek		unresolved
 066	pre		unresolved
@@ -8038,6 +8034,7 @@ chapter	from	to	kind
 086	Jesns		unresolved
 086			leadstar
 086			leadstar
+086			leadstar
 086	Eliab		unresolved
 086	hecause	because	rule
 086	foimd	found	rule
@@ -8574,6 +8571,7 @@ chapter	from	to	kind
 090	deadily		unresolved
 090	desa		unresolved
 090	vedly		unresolved
+090	xviiL		unresolved
 090	sjnritual		unresolved
 090	diffiise		unresolved
 090	aad		unresolved
@@ -8619,6 +8617,7 @@ chapter	from	to	kind
 091	toldt		unresolved
 091	wdsh		unresolved
 091	inan		unresolved
+091	xyi	xvi	rule
 091	probahle	probable	rule
 091	rd		tooshort
 091	thev		unresolved
@@ -8824,8 +8823,10 @@ chapter	from	to	kind
 093	itere		unresolved
 093			leadstar
 093	yarious	various	rule
+093	Ivi	lvi	roman
 093	hoUowness		unresolved
 093	oflBcers		unresolved
+093	ui	ui	manual
 093	Tery		unresolved
 093	tcith		unresolved
 093	haye	have	rule
@@ -9095,7 +9096,6 @@ chapter	from	to	kind
 096	enumerated	enumerated	rule
 096			leadstar
 096	nornroi		unresolved
-096	LECrrURE		unresolved
 096	Gt		tooshort
 096	ohedience	obedience	rule
 096	hroken	broken	rule
@@ -9254,6 +9254,7 @@ chapter	from	to	kind
 097	spdce		unresolved
 097	shsdl		unresolved
 097	llie		unresolved
+097	ix	ix	manual
 097	circumstaDces		unresolved
 097	sufierings	sufferings	rule
 097	llingly		unresolved
@@ -9406,6 +9407,7 @@ chapter	from	to	kind
 099	Zaccheus		unresolved
 099	gmve		unresolved
 099	gtiest		unresolved
+099	xy		tooshort
 099	Zaccheus		unresolved
 099	Zaccheus		unresolved
 099	Zaccheus		unresolved
@@ -9559,6 +9561,8 @@ chapter	from	to	kind
 100	xxiL		unresolved
 100	Tf		tooshort
 100	ri		tooshort
+100	viiL		unresolved
+100	xxr		unresolved
 101	np		tooshort
 101	Jern	Jem	rule
 101	thev		unresolved
@@ -9932,6 +9936,8 @@ chapter	from	to	kind
 104			leadstar
 104	determir		unresolved
 104	tl		tooshort
+104			leadstar
+104	xziL		unresolved
 104	thoa		unresolved
 104	ft		tooshort
 104	Ijord		unresolved
@@ -10311,7 +10317,6 @@ chapter	from	to	kind
 109	indi	indi	manual
 109			leadstar
 109	zii		unresolved
-109	j8		tooshort
 109	wonld		unresolved
 109	difiiision		unresolved
 109	alwa3r8		unresolved
@@ -10720,7 +10725,6 @@ chapter	from	to	kind
 111	Nero		unresolved
 111	Tacitus		unresolved
 111	somie		unresolved
-111	LEC5TUEE		unresolved
 111	dangeis		unresolved
 111	tiuth		unresolved
 111	rdations		unresolved
@@ -10977,7 +10981,6 @@ chapter	from	to	kind
 113	vras		unresolved
 113			leadstar
 113	VI	vi	manual
-113	go9		unresolved
 113	overtook		unresolved
 113	femilies		unresolved
 113			leadstar
@@ -11480,8 +11483,11 @@ chapter	from	to	kind
 116	YiiL		unresolved
 116	zv		tooshort
 116	iy		tooshort
+116	ZY		tooshort
 116	Dr		tooshort
 116	Clarke		unresolved
+116			leadstar
+116	zxiv		unresolved
 116	vfitvfirmfns		unresolved
 116			leadstar
 116	Whitby		unresolved
@@ -11912,7 +11918,6 @@ chapter	from	to	kind
 120	merey		unresolved
 120	M7n		unresolved
 120	yum		unresolved
-120	LECnrURE		unresolved
 120	Teu	Tell	rule
 120	tmv		unresolved
 120	Kii		unresolved
@@ -12652,7 +12657,6 @@ chapter	from	to	kind
 126	Guyse		unresolved
 126	ptoud		unresolved
 126	loviDg		unresolved
-126	LECTUftE		unresolved
 126	Salration		unresolved
 126	Jesna		unresolved
 126	ahide	abide	rule
@@ -12953,7 +12957,6 @@ chapter	from	to	kind
 128			leadstar
 128	Lightfoot'8		unresolved
 128	Whitby		unresolved
-128	LECTtJRE		unresolved
 128	nevertlieless	nevertheless	rule
 128	manj	many	rule
 128	UB		tooshort
@@ -13137,6 +13140,9 @@ chapter	from	to	kind
 129	Christ9		unresolved
 129			leadstar
 129	ix	ix	manual
+129			leadstar
+129	ii	ii	manual
+129	ii	ii	manual
 129	Blackwairs		unresolved
 129			leadstar
 129	ywai		unresolved
@@ -13941,7 +13947,6 @@ chapter	from	to	kind
 135	beprectcked		unresolved
 135	Jeriisalem		unresolved
 135	tAct8Xx		unresolved
-135	LEC5TUBE		unresolved
 135	caref		unresolved
 135	jou	you	rule
 135	Grod	God	rule
@@ -13992,6 +13997,8 @@ chapter	from	to	kind
 136	eaine		unresolved
 136	pciss		unresolved
 136	theniy		unresolved
+136	Lw		tooshort
+136	ix	ix	manual
 136			leadstar
 136	angeU		unresolved
 136	ActB		unresolved
@@ -14043,7 +14050,6 @@ chapter	from	to	kind
 137	hke	like	rule
 137			leadstar
 137	Eedeemer		unresolved
-137	LECrrUEE		unresolved
 137	gratefiil		unresolved
 137	Gt		tooshort
 137	liyeth	liveth	rule
@@ -14364,7 +14370,6 @@ chapter	from	to	kind
 006	onr		unresolved
 006	fr		tooshort
 006	Hslavish		unresolved
-006	VI	vi	manual
 006	dishonourable		unresolved
 006	causiDg		unresolved
 006	aflrighted		unresolved
@@ -14591,7 +14596,6 @@ chapter	from	to	kind
 010	Mohammedaiis		unresolved
 010	Fea		unresolved
 010	befell		unresolved
-010	LECTURK		unresolved
 010	Cleophas		unresolved
 010	inlmediately		unresolved
 010	ts		tooshort
@@ -14821,6 +14825,7 @@ chapter	from	to	kind
 014	bj		tooshort
 014	thera		unresolved
 014	Toice		unresolved
+014	ix	ix	manual
 014	ahottt		unresolved
 014	difl		unresolved
 014	erence		unresolved
@@ -15125,8 +15130,6 @@ chapter	from	to	kind
 018	mirancles		unresolved
 018	tnith		unresolved
 018	iidmits		unresolved
-018	LfiCTVRB		unresolved
-018	XVUL		unresolved
 018	mj		tooshort
 018	everlast		unresolved
 018	unquestion		unresolved
@@ -15533,8 +15536,7 @@ chapter	from	to	kind
 023	oome		unresolved
 023	hina		unresolved
 023	hj		tooshort
-023	notwithstand		unresolved
-023	mg		tooshort
+023	notwithstandmg		unresolved
 023	uestions		unresolved
 023	lr		tooshort
 023	conmcience		unresolved
@@ -15657,6 +15659,7 @@ chapter	from	to	kind
 024	certjiin		unresolved
 024	notgreatlysurprise		unresolved
 024	andespecially		unresolved
+024	zxiii		unresolved
 024	LECTTUSXXIT		unresolved
 024	ke		tooshort
 024	wiio		unresolved
@@ -15796,7 +15799,6 @@ chapter	from	to	kind
 025	imme		unresolved
 025	diately		unresolved
 025	hisMessiah8hip		unresolved
-025	LFXTTURE		unresolved
 025	vras		unresolved
 025	mj		tooshort
 025	thott		unresolved
@@ -15868,8 +15870,6 @@ chapter	from	to	kind
 026	fJEUthfuI		unresolved
 026	erery		unresolved
 026	vtrith		unresolved
-026	suf		unresolved
-026	fered		unresolved
 026	fortythird		unresolved
 026	Caligula		unresolved
 026	overtook		unresolved
@@ -16770,6 +16770,7 @@ chapter	from	to	kind
 038	tidin		unresolved
 038	Joannti		unresolved
 038	substanco		unresolved
+038	iv	iv	manual
 038	propriate		unresolved
 038	hepreached		unresolved
 038	shofjcing		unresolved
@@ -17266,8 +17267,6 @@ chapter	from	to	kind
 047	dth		unresolved
 047	ahotU		unresolved
 047	Jamesl		unresolved
-047	LECJTURE		unresolved
-047	XLVIL		unresolved
 047	Gkililee		unresolved
 047	circumstancs		unresolved
 047	lustre		unresolved
@@ -18624,7 +18623,6 @@ chapter	from	to	kind
 066	cessary		unresolved
 066	aifairs		unresolved
 066	encou		unresolved
-066	LEC5TURE		unresolved
 066	Jegus		unresolved
 066	ieek		unresolved
 066	pre		unresolved
@@ -20559,6 +20557,7 @@ chapter	from	to	kind
 090	deadily		unresolved
 090	desa		unresolved
 090	vedly		unresolved
+090	xviiL		unresolved
 090	sjnritual		unresolved
 090	diffiise		unresolved
 090	aad		unresolved
@@ -20745,6 +20744,7 @@ chapter	from	to	kind
 093	itere		unresolved
 093	hoUowness		unresolved
 093	oflBcers		unresolved
+093	ui	ui	manual
 093	Tery		unresolved
 093	tcith		unresolved
 093	tmjtist		unresolved
@@ -20951,7 +20951,6 @@ chapter	from	to	kind
 096	Eedeemer		unresolved
 096	ofl		unresolved
 096	nornroi		unresolved
-096	LECrrURE		unresolved
 096	Gt		tooshort
 096	l8t		unresolved
 096	yetr		unresolved
@@ -21078,6 +21077,7 @@ chapter	from	to	kind
 097	spdce		unresolved
 097	shsdl		unresolved
 097	llie		unresolved
+097	ix	ix	manual
 097	circumstaDces		unresolved
 097	llingly		unresolved
 097	oin		unresolved
@@ -21195,6 +21195,7 @@ chapter	from	to	kind
 099	Zaccheus		unresolved
 099	gmve		unresolved
 099	gtiest		unresolved
+099	xy		tooshort
 099	Zaccheus		unresolved
 099	Zaccheus		unresolved
 099	Zaccheus		unresolved
@@ -21314,6 +21315,8 @@ chapter	from	to	kind
 100	xxiL		unresolved
 100	Tf		tooshort
 100	ri		tooshort
+100	viiL		unresolved
+100	xxr		unresolved
 101	np		tooshort
 101	thev		unresolved
 101	rehire		unresolved
@@ -21598,6 +21601,7 @@ chapter	from	to	kind
 104	heaifen		unresolved
 104	determir		unresolved
 104	tl		tooshort
+104	xziL		unresolved
 104	thoa		unresolved
 104	ft		tooshort
 104	Ijord		unresolved
@@ -21861,7 +21865,6 @@ chapter	from	to	kind
 109	Toluntary		unresolved
 109	indi	indi	manual
 109	zii		unresolved
-109	j8		tooshort
 109	wonld		unresolved
 109	difiiision		unresolved
 109	alwa3r8		unresolved
@@ -22216,7 +22219,6 @@ chapter	from	to	kind
 111	Nero		unresolved
 111	Tacitus		unresolved
 111	somie		unresolved
-111	LEC5TUEE		unresolved
 111	dangeis		unresolved
 111	tiuth		unresolved
 111	rdations		unresolved
@@ -22421,7 +22423,6 @@ chapter	from	to	kind
 113	historiant		unresolved
 113	vras		unresolved
 113	VI	vi	manual
-113	go9		unresolved
 113	overtook		unresolved
 113	femilies		unresolved
 113	Wari		unresolved
@@ -22793,8 +22794,10 @@ chapter	from	to	kind
 116	YiiL		unresolved
 116	zv		tooshort
 116	iy		tooshort
+116	ZY		tooshort
 116	Dr		tooshort
 116	Clarke		unresolved
+116	zxiv		unresolved
 116	vfitvfirmfns		unresolved
 116	Whitby		unresolved
 116	perfidum		unresolved
@@ -23101,7 +23104,6 @@ chapter	from	to	kind
 120	merey		unresolved
 120	M7n		unresolved
 120	yum		unresolved
-120	LECnrURE		unresolved
 120	tmv		unresolved
 120	Kii		unresolved
 120	geems		unresolved
@@ -23679,7 +23681,6 @@ chapter	from	to	kind
 126	Guyse		unresolved
 126	ptoud		unresolved
 126	loviDg		unresolved
-126	LECTUftE		unresolved
 126	Salration		unresolved
 126	Jesna		unresolved
 126	Ilius		unresolved
@@ -23910,7 +23911,6 @@ chapter	from	to	kind
 128	tcith		unresolved
 128	Lightfoot'8		unresolved
 128	Whitby		unresolved
-128	LECTtJRE		unresolved
 128	UB		tooshort
 128	uniyersalljr		unresolved
 128	improrement		unresolved
@@ -24045,6 +24045,8 @@ chapter	from	to	kind
 129	improTe		unresolved
 129	Christ9		unresolved
 129	ix	ix	manual
+129	ii	ii	manual
+129	ii	ii	manual
 129	Blackwairs		unresolved
 129	ywai		unresolved
 129	Liyia		unresolved
@@ -24625,7 +24627,6 @@ chapter	from	to	kind
 135	beprectcked		unresolved
 135	Jeriisalem		unresolved
 135	tAct8Xx		unresolved
-135	LEC5TUBE		unresolved
 135	caref		unresolved
 135	oi		tooshort
 135	infcNmed		unresolved
@@ -24665,6 +24666,8 @@ chapter	from	to	kind
 136	eaine		unresolved
 136	pciss		unresolved
 136	theniy		unresolved
+136	Lw		tooshort
+136	ix	ix	manual
 136	angeU		unresolved
 136	ActB		unresolved
 136	iv	iv	manual
@@ -24693,7 +24696,6 @@ chapter	from	to	kind
 137	yrks		unresolved
 137	eveh		unresolved
 137	Eedeemer		unresolved
-137	LECrrUEE		unresolved
 137	gratefiil		unresolved
 137	Gt		tooshort
 137	Uiem		unresolved
@@ -25005,7 +25007,6 @@ chapter	from	to	kind
 006	onr		unresolved
 006	fr		tooshort
 006	Hslavish		unresolved
-006	VI	vi	manual
 006	dishonourable		unresolved
 006	causiDg		unresolved
 006	aflrighted		unresolved
@@ -25232,7 +25233,6 @@ chapter	from	to	kind
 010	Mohammedaiis		unresolved
 010	Fea		unresolved
 010	befell		unresolved
-010	LECTURK		unresolved
 010	Cleophas		unresolved
 010	inlmediately		unresolved
 010	ts		tooshort
@@ -25462,6 +25462,7 @@ chapter	from	to	kind
 014	bj		tooshort
 014	thera		unresolved
 014	Toice		unresolved
+014	ix	ix	manual
 014	ahottt		unresolved
 014	difl		unresolved
 014	erence		unresolved
@@ -25766,8 +25767,6 @@ chapter	from	to	kind
 018	mirancles		unresolved
 018	tnith		unresolved
 018	iidmits		unresolved
-018	LfiCTVRB		unresolved
-018	XVUL		unresolved
 018	mj		tooshort
 018	everlast		unresolved
 018	unquestion		unresolved
@@ -26174,8 +26173,7 @@ chapter	from	to	kind
 023	oome		unresolved
 023	hina		unresolved
 023	hj		tooshort
-023	notwithstand		unresolved
-023	mg		tooshort
+023	notwithstandmg		unresolved
 023	uestions		unresolved
 023	lr		tooshort
 023	conmcience		unresolved
@@ -26298,6 +26296,7 @@ chapter	from	to	kind
 024	certjiin		unresolved
 024	notgreatlysurprise		unresolved
 024	andespecially		unresolved
+024	zxiii		unresolved
 024	LECTTUSXXIT		unresolved
 024	ke		tooshort
 024	wiio		unresolved
@@ -26437,7 +26436,6 @@ chapter	from	to	kind
 025	imme		unresolved
 025	diately		unresolved
 025	hisMessiah8hip		unresolved
-025	LFXTTURE		unresolved
 025	vras		unresolved
 025	mj		tooshort
 025	thott		unresolved
@@ -26509,8 +26507,6 @@ chapter	from	to	kind
 026	fJEUthfuI		unresolved
 026	erery		unresolved
 026	vtrith		unresolved
-026	suf		unresolved
-026	fered		unresolved
 026	fortythird		unresolved
 026	Caligula		unresolved
 026	overtook		unresolved
@@ -27411,6 +27407,7 @@ chapter	from	to	kind
 038	tidin		unresolved
 038	Joannti		unresolved
 038	substanco		unresolved
+038	iv	iv	manual
 038	propriate		unresolved
 038	hepreached		unresolved
 038	shofjcing		unresolved
@@ -27907,8 +27904,6 @@ chapter	from	to	kind
 047	dth		unresolved
 047	ahotU		unresolved
 047	Jamesl		unresolved
-047	LECJTURE		unresolved
-047	XLVIL		unresolved
 047	Gkililee		unresolved
 047	circumstancs		unresolved
 047	lustre		unresolved
@@ -29264,7 +29259,6 @@ chapter	from	to	kind
 066	cessary		unresolved
 066	aifairs		unresolved
 066	encou		unresolved
-066	LEC5TURE		unresolved
 066	Jegus		unresolved
 066	ieek		unresolved
 066	pre		unresolved
@@ -31199,6 +31193,7 @@ chapter	from	to	kind
 090	deadily		unresolved
 090	desa		unresolved
 090	vedly		unresolved
+090	xviiL		unresolved
 090	sjnritual		unresolved
 090	diffiise		unresolved
 090	aad		unresolved
@@ -31385,6 +31380,7 @@ chapter	from	to	kind
 093	itere		unresolved
 093	hoUowness		unresolved
 093	oflBcers		unresolved
+093	ui	ui	manual
 093	Tery		unresolved
 093	tcith		unresolved
 093	tmjtist		unresolved
@@ -31591,7 +31587,6 @@ chapter	from	to	kind
 096	Eedeemer		unresolved
 096	ofl		unresolved
 096	nornroi		unresolved
-096	LECrrURE		unresolved
 096	Gt		tooshort
 096	l8t		unresolved
 096	yetr		unresolved
@@ -31718,6 +31713,7 @@ chapter	from	to	kind
 097	spdce		unresolved
 097	shsdl		unresolved
 097	llie		unresolved
+097	ix	ix	manual
 097	circumstaDces		unresolved
 097	llingly		unresolved
 097	oin		unresolved
@@ -31835,6 +31831,7 @@ chapter	from	to	kind
 099	Zaccheus		unresolved
 099	gmve		unresolved
 099	gtiest		unresolved
+099	xy		tooshort
 099	Zaccheus		unresolved
 099	Zaccheus		unresolved
 099	Zaccheus		unresolved
@@ -31954,6 +31951,8 @@ chapter	from	to	kind
 100	xxiL		unresolved
 100	Tf		tooshort
 100	ri		tooshort
+100	viiL		unresolved
+100	xxr		unresolved
 101	np		tooshort
 101	thev		unresolved
 101	rehire		unresolved
@@ -32238,6 +32237,7 @@ chapter	from	to	kind
 104	heaifen		unresolved
 104	determir		unresolved
 104	tl		tooshort
+104	xziL		unresolved
 104	thoa		unresolved
 104	ft		tooshort
 104	Ijord		unresolved
@@ -32501,7 +32501,6 @@ chapter	from	to	kind
 109	Toluntary		unresolved
 109	indi	indi	manual
 109	zii		unresolved
-109	j8		tooshort
 109	wonld		unresolved
 109	difiiision		unresolved
 109	alwa3r8		unresolved
@@ -32856,7 +32855,6 @@ chapter	from	to	kind
 111	Nero		unresolved
 111	Tacitus		unresolved
 111	somie		unresolved
-111	LEC5TUEE		unresolved
 111	dangeis		unresolved
 111	tiuth		unresolved
 111	rdations		unresolved
@@ -33061,7 +33059,6 @@ chapter	from	to	kind
 113	historiant		unresolved
 113	vras		unresolved
 113	VI	vi	manual
-113	go9		unresolved
 113	overtook		unresolved
 113	femilies		unresolved
 113	Wari		unresolved
@@ -33433,8 +33430,10 @@ chapter	from	to	kind
 116	YiiL		unresolved
 116	zv		tooshort
 116	iy		tooshort
+116	ZY		tooshort
 116	Dr		tooshort
 116	Clarke		unresolved
+116	zxiv		unresolved
 116	vfitvfirmfns		unresolved
 116	Whitby		unresolved
 116	perfidum		unresolved
@@ -33741,7 +33740,6 @@ chapter	from	to	kind
 120	merey		unresolved
 120	M7n		unresolved
 120	yum		unresolved
-120	LECnrURE		unresolved
 120	tmv		unresolved
 120	Kii		unresolved
 120	geems		unresolved
@@ -34319,7 +34317,6 @@ chapter	from	to	kind
 126	Guyse		unresolved
 126	ptoud		unresolved
 126	loviDg		unresolved
-126	LECTUftE		unresolved
 126	Salration		unresolved
 126	Jesna		unresolved
 126	Ilius		unresolved
@@ -34550,7 +34547,6 @@ chapter	from	to	kind
 128	tcith		unresolved
 128	Lightfoot'8		unresolved
 128	Whitby		unresolved
-128	LECTtJRE		unresolved
 128	UB		tooshort
 128	uniyersalljr		unresolved
 128	improrement		unresolved
@@ -34685,6 +34681,8 @@ chapter	from	to	kind
 129	improTe		unresolved
 129	Christ9		unresolved
 129	ix	ix	manual
+129	ii	ii	manual
+129	ii	ii	manual
 129	Blackwairs		unresolved
 129	ywai		unresolved
 129	Liyia		unresolved
@@ -35265,7 +35263,6 @@ chapter	from	to	kind
 135	beprectcked		unresolved
 135	Jeriisalem		unresolved
 135	tAct8Xx		unresolved
-135	LEC5TUBE		unresolved
 135	caref		unresolved
 135	oi		tooshort
 135	infcNmed		unresolved
@@ -35305,6 +35302,8 @@ chapter	from	to	kind
 136	eaine		unresolved
 136	pciss		unresolved
 136	theniy		unresolved
+136	Lw		tooshort
+136	ix	ix	manual
 136	angeU		unresolved
 136	ActB		unresolved
 136	iv	iv	manual
@@ -35333,7 +35332,6 @@ chapter	from	to	kind
 137	yrks		unresolved
 137	eveh		unresolved
 137	Eedeemer		unresolved
-137	LECrrUEE		unresolved
 137	gratefiil		unresolved
 137	Gt		tooshort
 137	Uiem		unresolved

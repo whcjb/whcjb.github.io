@@ -40,13 +40,16 @@ FIRST_LECT = {1: 1, 2: 41, 3: 91}
 LAST_LECT = {1: 40, 2: 90, 3: 137}
 
 ROMAN_CH = '[IVXLCDMl1J]'
-RUNHEAD = re.compile(r'^\W{0,3}(?:\d{1,3}\s*)?\W{0,2}(?:LECTURE|LUKE|LECTUKE|LUEE|LDKE)\b.{0,25}$', re.I)
+# 不开 re.I：脚注出处 `‡ Luke ii. 40, 52.` 与 recto 页眉同形，页眉的 LUKE 是全大写。
+# lecture 有一处小写页眉（vol3 leaf 262 `2j8 lecture CIX.`），单独放宽
+RUNHEAD = re.compile(r'^\W{0,3}(?:[\dIlSJjOo]{1,4}\s*)?\W{0,2}(?:[Ll][Ee][Cc][Tt][Uu]\w{1,3}|LECTUKE|LUKE|LUEE|LDKE)\b.{0,25}$')
 PAGENUM = re.compile(r'^\W{0,2}\d{1,3}\W{0,2}$')
 # OCR 变体实测：LECTUEE / LECTUSE / LECTXJEE；罗马数字尾 I 常读成 L（XIIL / XVUL）
 # vol3 另有：C 读成 O（`LECTURE OXIII.`）、小写（`LECTURE cm.`）、讲题与序号粘连（`LECTUHEXCIL`）
 LECT_HEAD = re.compile(r'^\W{0,2}(?:[Il]\s+)?L[A-Za-z]{2,3}T[A-Z]{2,4}\s*([IVXLCDMl1JUOonmcivx][IVXLCDMl1JUOonmcivxrY\s]*)[.,;:\-]?\W{0,2}$')
 END_PUNCT = re.compile(r'[.!?:;"”’\'*)\]—]\W{0,2}$')
-LOWER_START = re.compile(r'^\W{0,3}[a-z]')
+# 续段可能先有几个噪点（`\*, and his meat…`、`"jy^ *saw two…`）再接小写
+LOWER_START = re.compile(r'^\W{0,10}[a-z]')
 # 书帖签名 `VOL. II. K`（装订用，不是正文）
 SIGNATURE = re.compile(r'^\W{0,2}VOL[.,]?\s*[IVXl1]+[.,]?\s*\S{0,3}\s*\S{0,3}$')
 END_VOL = re.compile(r'^\W{0,2}END\s+O[FP]\s+VOL', re.I)
@@ -109,13 +112,21 @@ def par_info(par, drop_line):
 
 
 # 读花的页眉：`94 LECTUBB TIL` / `LUKB XI. fi^ift. 241` —— 一头是页码，另一头是 L 起头的短词
-RUNHEAD_LOOSE = re.compile(r'^\W{0,3}\S{1,4}\s+\W{0,2}L\S{2,6}\s+[IVXLCOTilnmUY1J\-]{1,7}\W{0,3}$'
-                           r'|^\W{0,2}L\S{2,5}\s+[IVXLTilnUY1J]{1,6}[.,]?\s*\S{1,9}\s+\S{1,4}\W{0,2}$')
+RUNHEAD_LOOSE = re.compile(r'^\W{0,3}\S{1,4}\s+\W{0,2}L(?![a-z]+\b)\S{2,7}\s+[IVXLCOTilnmUY1J\-]{1,7}\W{0,3}$'
+                           r'|^\W{0,2}L(?![a-z]+\b)\S{2,5}\s+[IVXLTilnUY1J]{1,6}[.,]?\s*\S{1,9}\s+\S{1,4}\W{0,2}$')
+
+
+# 页码前还夹着噪点 token（`J 14 LECTURE VIII.`、`1 ] 8 LECTURE XCIX.`、`t LUKE V. 12-15. 287`）
+# L 打头的词不得是「L＋全小写」：脚注出处 `‡ Luke ii. 40, 52.` 与页眉同形，页眉的 LUKE/LECTURE 是大写
+RUNHEAD_NOISY = re.compile(r'^(?:\S{1,2}\s+){1,2}(?:\S{1,4}\s+)?L(?![a-z]+\b)\S{2,6}\s+[IVXLCOTilnmUY1J\-]{1,7}[.,]?'
+                           r'(?:\s*\S{1,9}\s+\S{1,4})?\W{0,3}$')
 
 
 def drop_line(t):
     if len(t) > 40:
         return False
+    if RUNHEAD_NOISY.match(t) and re.search(r'\d', t):
+        return True
     return (bool(RUNHEAD.match(t)) and bool(re.search(r'\d', t))) or bool(RUNHEAD_LOOSE.match(t))
 
 
@@ -195,6 +206,7 @@ def extract(vol):
     expect = FIRST_LECT[vol]
     body_fs = Counter(p['fs'] for pg in pages for p in pg['pars'] for _ in range(p['nlines'])).most_common(1)[0][0]
     ended = False
+    pending_prefix = ''
     for pg in pages:
         if ended:
             break
@@ -235,12 +247,23 @@ def extract(vol):
                     continue
                 cur['notes'].append({'text': p['text'], 'page': page_no})
                 continue
+            # 没有字母的碎段（页顶一颗 `*`、一个引号）：不删（原书影像上确有墨点，留给后层取证），
+            # 但也不让它单独占「本页第一段」——挂到下一段开头，续段判据照常看下一段
+            if not re.search(r'[A-Za-z]', t):
+                pending_prefix += p['text'] + ' '
+                continue
+            if pending_prefix:
+                p = dict(p, text=pending_prefix + p['text'])
+                pending_prefix = ''
             # 正文。续段两条判据（skill §3.1）：
             #   ① 页内第一段且无首行缩进（ABBYY 的版面信号）
             #   ② 上段末尾无句末标点 + 本段小写起头（两条同时成立；ABBYY 偶尔给续段也标了缩进）
             cont = bool(cur['paras']) and (
                 (first_body_on_page and (p['si'] is None or p['si'] < 30))
                 or (not END_PUNCT.search(bare(cur['paras'][-1]['text'])) and LOWER_START.match(bare(p['text']))))
+            if not cont and cur['paras'] and LOWER_START.match(bare(p['text']).lstrip('*"\'^ ')) \
+                    and not END_PUNCT.search(bare(cur['paras'][-1]['text'])):
+                cont = True
             mode = 'body'
             if cont:
                 cur['paras'][-1]['text'] += BREAK + p['text']

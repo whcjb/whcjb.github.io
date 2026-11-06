@@ -19,8 +19,10 @@
 `--apply` 按表落到 en_chapters/：每条须恰好命中一次，否则报错。publish 之前跑，
 重跑 extract→repair 之后再跑一次即可全量恢复（skill §3 硬约束 1）。
 
-    python3 scripts/adjudicate_foote_ocr.py            # 判读 → 写规则表 + logs/foote_adjudicate.tsv
-    python3 scripts/adjudicate_foote_ocr.py --apply    # 按规则表落盘
+    python3 scripts/adjudicate_foote_ocr.py [--witness ed3|tess]          # 判读 → 写规则表 + logs
+    python3 scripts/adjudicate_foote_ocr.py --apply [--witness ed3|tess]  # 按规则表落盘（默认 ed3 → tess 按序）
+
+注意：tess 的判读要在 ed3 落盘**之后**跑（它判的是 ed3 修完还剩的残字），规则锚也是那时的文本。
 """
 import argparse
 import csv
@@ -39,13 +41,29 @@ from repair_alexander_ocr import foote_kjv_words  # noqa: E402
 ROOT = Path(__file__).resolve().parent.parent
 RAW = ROOT / 'foote_raw' / 'luke'
 SRC = RAW / 'en_chapters'
-RULES = RAW / 'witness_fixes.tsv'
-LOG = ROOT / 'logs' / 'foote_adjudicate.tsv'
 WITNESS_ID = 'lecturesongospe01footgoog'
-LAST = 66
+# 两个证人，按序落：
+#   ed3   第 3 版卷一 ABBYY，Lect. 1–66（另一份印本）
+#   tess  第 2 版本身的 tesseract 重扫（foote_tesseract.py），全书——同一份扫描、换一个引擎
+#         （skill §3.2c：第二条非生成式字流）。Lect. 67–137 只有它。
+WITNESSES = {
+    'ed3': dict(lectures=range(1, 67), rules=RAW / 'witness_fixes.tsv',
+                log=ROOT / 'logs' / 'foote_adjudicate.tsv'),
+    'tess': dict(lectures=range(1, 138), rules=RAW / 'witness_fixes_tess.tsv',
+                 log=ROOT / 'logs' / 'foote_adjudicate_tess.tsv'),
+}
+TESS = RAW / 'tess'
 TOKEN = re.compile(r"[A-Za-zÀ-ÖØ-öø-ÿ][A-Za-zÀ-ÖØ-öø-ÿ'’]*")
 TAG = re.compile(r'<!--.*?-->')
 MAX_DIST_RATIO = 1 / 3
+
+
+def load_tess(vol):
+    """tesseract 重扫一卷 → 词流。行末断词（`desig-` + `nate`）先接上，否则与我们的切分对不齐。"""
+    pages = sorted((TESS / f'v{vol}').glob('*.txt'))
+    text = '\n'.join(p.read_text(encoding='utf-8') for p in pages)
+    text = re.sub(r'([A-Za-z])-\s*\n\s*([a-z])', r'\1\2', text)
+    return TOKEN.findall(text), text
 
 
 def load_witness():
@@ -74,6 +92,13 @@ def body_tokens(text):
 FN_MARK = '\ue010'
 # 我们这侧本来就对、证人读错的（逐条看过）：Gallio 迦流（徒 18）证人读 Gallic；Csesar 是 Cæsar 读成，证人读 Cesar
 KEEP = {'gallio', 'csesar', 'snfler'}
+# tesseract 证人那一轮逐条看过、不放行的（改成别的真词 hready→bread、oftn→oven、fowlsf→fouls、
+# zxiv→XXII、Grsece→Grace(=Græce)；碎片 ssion/Tersation；证人也崩 TnE→Tue、tnan→quan；
+# 脚注 † 判断可疑 thet/mef/farf；候选不唯一 ahoot(shoot/about)、rhen(they/When)、yent）→ 留看图
+TESS_HOLD = {'ahoot', 'cau', 'baie', 'eejeed', 'ephafu', 'feneral', 'fii', 'fint', 'fibuces', 'fowlsf',
+             'freni', 'gmve', 'hatht', 'hereai', 'hready', 'iofe', 'ivn', 'maity', 'miine', 'ners', 'ofr',
+             'oftn', 'oit', 'ooils', 'redrew', 'rhen', 'ruinse', 'ssion', 'suae', 'tersation', 'tmngs', 'tnan',
+             'tne', 'tteo', 'uest', 'yim', 'yent', 'zxiv', 'thet', 'mef', 'farf', 'eaor', 'grsece'}
 # 等长两处替换里拿不准的（Thsi 可 This 可 They；fiul 可 full 可 fail …）
 SHAPE2_HOLD = {'thsi', 'eist', 'fiul', 'merc', 'noine', 'orcu', 'inme', 'wtot'}
 
@@ -134,13 +159,24 @@ def verdict(tok, reading, lex, wvocab, prev_w, next_w):
     return 'fix', reading
 
 
-def judge():
+def judge(wname):
+    cfg = WITNESSES[wname]
     lex = build() | foote_kjv_words()
-    wwords, _ = load_witness()
-    idx, wlow = build_index(wwords)
-    wvocab = Counter(wlow)
+    streams = {}
+    if wname == 'ed3':
+        w, _ = load_witness()
+        streams = {v: w for v in (1, 2)}
+    else:
+        for v in (1, 2, 3):
+            streams[v] = load_tess(v)[0]
+    built = {}
     rules, log, stat = [], [], Counter()
-    for n in range(1, LAST + 1):
+    for n in cfg['lectures']:
+        vol = next(v for v in (1, 2, 3) if F.FIRST_LECT[v] <= n <= F.LAST_LECT[v])
+        if vol not in built:
+            idx, wlow = build_index(streams[vol])
+            built[vol] = (idx, wlow, streams[vol], Counter(wlow))
+        idx, wlow, wwords, wvocab = built[vol]
         path = SRC / f'{n:03d}.md'
         text = path.read_text(encoding='utf-8')
         toks = body_tokens(text)
@@ -152,11 +188,15 @@ def judge():
             reading = look_up(words, i, idx, wlow, wwords)
             v, to = verdict(tok, reading, lex, wvocab, words[i - 1] if i else '',
                             words[i + 1] if i + 1 < len(words) else '')
+            # 'tne' 只挡大写混写的 TnE（→Tue 证人崩）；小写 tne→the 是对的
+            if v == 'fix' and wname == 'tess' and tok.lower() in TESS_HOLD and tok != 'tne':
+                v = 'reject:hold'
             stat[v] += 1
             log.append((f'{n:03d}', tok, reading or '', v))
             if v == 'fix':
                 anchor = ' '.join(words[max(0, i - 3):i])
                 rules.append((f'{n:03d}', anchor, tok, to))
+    RULES, LOG = cfg['rules'], cfg['log']
     with open(RULES, 'w', encoding='utf-8') as f:
         f.write('# lecture\tanchor(前三词)\tfrom\tto —— adjudicate_foote_ocr.py 生成；手改须同步说明\n')
         for r in rules:
@@ -167,10 +207,25 @@ def judge():
         for r in log:
             f.write('\t'.join(r) + '\n')
     stat['confirm'] = stat.get('confirm', 0)
-    print('判读：', dict(stat), f'→ 规则 {len(rules)} 条 {RULES.name}', file=sys.stderr)
+    print(f'[{wname}] 判读：', dict(stat), f'→ 规则 {len(rules)} 条 {RULES.name}', file=sys.stderr)
 
 
-def apply():
+def _all_rules():
+    out = {}
+    for cfg in WITNESSES.values():
+        if not cfg['rules'].exists():
+            continue
+        for ln in cfg['rules'].read_text(encoding='utf-8').splitlines():
+            if ln.strip() and not ln.startswith('#'):
+                lec, anchor, old, new = ln.split('\t')
+                out.setdefault(lec, []).append((anchor, old, new))
+    return out
+
+
+ALLMAP = {}
+
+
+def apply(RULES):
     """按规则表落盘。每讲内**从后往前**落：规则的锚是判读时的前三词，前一条改掉的词
     可能正是后一条的锚，顺着落会定位失败（实测 22 条）。幂等判断时锚也按本讲修正表换算。"""
     by = {}
@@ -183,7 +238,8 @@ def apply():
     for lec, rs in by.items():
         path = SRC / f'{lec}.md'
         text = path.read_text(encoding='utf-8')
-        fixmap = {o: re.sub(r'[^A-Za-z\'’]+$', '', n) for _, o, n in rs}
+        # 锚换算用**所有**证人表的修正（ed3 的锚里可能有词后来被 tess 那一轮改掉）
+        fixmap = {o: re.sub(r'[^A-Za-z\'’]+$', '', n) for _, o, n in ALLMAP.get(lec, [])}
         for anchor, old, new in reversed(rs):
             toks = body_tokens(text)
             words = [t for _, _, t in toks]
@@ -210,11 +266,15 @@ def apply():
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument('--apply', action='store_true')
+    ap.add_argument('--witness', choices=list(WITNESSES), help='只跑一个证人（默认按序全跑）')
     a = ap.parse_args()
-    if a.apply:
-        apply()
-    else:
-        judge()
+    ALLMAP.update(_all_rules())
+    for w in ([a.witness] if a.witness else list(WITNESSES)):
+        if a.apply:
+            if WITNESSES[w]['rules'].exists():
+                apply(WITNESSES[w]['rules'])
+        else:
+            judge(w)
 
 
 if __name__ == '__main__':

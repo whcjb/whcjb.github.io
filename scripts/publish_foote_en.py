@@ -4,7 +4,8 @@
     python3 scripts/extract_foote.py                 # ABBYY → work/md/
     cp foote_raw/luke/work/md/*.md foote_raw/luke/en_chapters/
     python3 scripts/repair_alexander_ocr.py foote    # 第 ① 层
-    python3 scripts/adjudicate_foote_ocr.py --apply  # 第 ② 层（按 witness_fixes.tsv 落盘，Lect. 1–66）
+    python3 scripts/adjudicate_foote_ocr.py --apply  # 第 ② 层：ed3 证人(Lect.1–66) → tesseract 证人(全书)
+    python3 scripts/foote_symbols.py --apply         # 游离符号逐个取证（symbol_fixes.tsv）
     python3 scripts/publish_foote_en.py              # 试跑（自检）
     python3 scripts/publish_foote_en.py --apply
 
@@ -165,7 +166,14 @@ def build():
                           subtitle=f'{AUTHOR} · {vlabel(spec)}', body='\n\n'.join(out), n=n, vol=vol,
                           ch=vv[0][0], vv=vv, spec=spec, start=u['paras'][0][0] if u['paras'] else ''))
     missing = [(c, v) for c in NV for v in range(1, NV[c] + 1) if (c, v) not in seen]
-    return pages, missing
+    # 三卷扉页：照原书影像手排（skill §5.6），不走抽取
+    front = []
+    for v in (1, 2, 3):
+        mp = RAW / 'manual_pages' / f'title-{v}.html'
+        front.append(dict(slug=f'title-{v}', title=f'Title Page · Vol. {roman(v)}', label=f'Title Page, Vol. {roman(v)}',
+                          subtitle='Second edition, Edinburgh: John Johnstone, 1849',
+                          body=mp.read_text(encoding='utf-8'), vol=v, front=True))
+    return front + pages, missing
 
 
 def fm_nav(pg, key):
@@ -182,7 +190,7 @@ def yq(s):
 def chapter_pages(pages, meta, stamp):
     out = []
     for c in range(1, 25):
-        lst = [p for p in pages if any(cc == c for cc, _ in p['vv'])]
+        lst = [p for p in pages if not p.get('front') and any(cc == c for cc, _ in p['vv'])]
         meta.setdefault(str(c), stamp)
         fm = ['---', 'layout: foote-chapter', f'book_id: {BOOK_ID}', f'book_name: "{BOOK_NAME}"',
               f'title: "Luke {c}"', f'subtitle: "{AUTHOR}"', f'date: {meta[str(c)]}', f'chapter: {c}',
@@ -211,8 +219,10 @@ def build_index(pages):
                 f'<small>{vlabel(p["spec"])}</small></a></li>')
     for v, (a, b) in VOLS.items():
         out.append(f'<h2 class="ft-group">Volume {roman(v)} · Lectures {roman(a)}–{roman(b)}</h2>')
+        out.append(f'<p class="ft-part-sub"><a href="{{{{ site.baseurl }}}}/foote/{BOOK_ID}/title-{v}/">'
+                   f'Title page of Volume {roman(v)}</a></p>')
         out.append('<ul class="ft-toc ft-toc-sm">')
-        out += [li(p) for p in pages if p['vol'] == v]
+        out += [li(p) for p in pages if p['vol'] == v and not p.get('front')]
         out.append('</ul>')
     out.append('<h2 class="ft-group">By Chapter</h2>')
     out.append('<ul class="ft-chgrid">')
@@ -254,8 +264,9 @@ def main():
         slug = pg['slug']
         meta.setdefault(slug, stamp)
         fm = ['---', 'layout: foote-chapter', f'book_id: {BOOK_ID}', f'book_name: "{BOOK_NAME}"',
-              f'title: {yq(pg["title"])}', f'subtitle: {yq(pg["subtitle"])}', f'date: {meta[slug]}',
-              f'chapter: {pg["ch"]}', f'lecture: {pg["n"]}']
+              f'title: {yq(pg["title"])}', f'subtitle: {yq(pg["subtitle"])}', f'date: {meta[slug]}']
+        if not pg.get('front'):
+            fm += [f'chapter: {pg["ch"]}', f'lecture: {pg["n"]}']
         fm += fm_nav(pg, 'prev') + fm_nav(pg, 'next')
         if (OUT / 'zh' / f'{slug}.md').exists():
             fm.append(f'zh_url: "/foote/{BOOK_ID}/zh/{slug}/"')

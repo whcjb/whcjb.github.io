@@ -303,6 +303,8 @@ def foote_kjv_words():
 
 
 FOOTE_PRE = [
+    # 词中间起头的斜体（`suf*fered*`、`en*abled*`）：ABBYY 把半个词标成斜体，全书 3 处，去掉标记
+    (r'(?<=[A-Za-z])(?<!\\)\*([a-z]+)\*(?![A-Za-z*])', r'\1'),
     # `Christ*s` —— 撇号读成星号
     ('([A-Za-z])' + LIT_STAR + r"s\b", r"\1's"),
     # 词尾星号＝脚注标号（`Matthew*`、`him*`）。换成脚注哨兵，token 正则切不进去，规则碰不到

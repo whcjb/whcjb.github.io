@@ -115,3 +115,6 @@ petter_raw/mark/witness/
 # 福特路加讲义：ABBYY / 扫描 PDF 不入库（item id 见 foote_raw/luke/PROVENANCE.md）
 foote_raw/luke/src/
 foote_raw/luke/pdf/
+
+# 琼斯约翰二、三书：证人整页图、裁图（可重跑 jones_witness 重建）
+jones_raw/witness/
