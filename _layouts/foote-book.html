@@ -1,0 +1,87 @@
+---
+layout: default
+---
+{%- comment -%}
+  福特《路加福音讲义》书首页。配色与讲次页同源（覃红 #d14457）。
+  目录：137 讲按原书三卷分组 → 按路加福音章次检索。
+{%- endcomment -%}
+
+<div class="container foote-book" style="padding-top: 70px;">
+  <div class="row">
+    <div class="col-lg-9 col-lg-offset-1 col-md-10 col-md-offset-1">
+
+      <div class="ft-booklang">
+        {% if page.zh %}{% if page.en_url %}<a href="{{ site.baseurl }}{{ page.en_url }}">English edition &rarr;</a>{% endif %}
+        {% else %}{% if page.zh_url %}<a href="{{ site.baseurl }}{{ page.zh_url }}">中文版 &rarr;</a>{% endif %}{% endif %}
+      </div>
+      <div class="ft-hero">
+        <h1>{{ page.book_name }}</h1>
+        <p class="ft-hero-author">{{ page.author }}</p>
+        <p class="ft-hero-meta">{{ page.edition }}</p>
+      </div>
+
+      {{ content }}
+
+    </div>
+  </div>
+</div>
+
+<style>
+.foote-book { --ft-ink: #d14457; --ft-ink-dark: #a13140; --ft-rule: #f9e3e3; --ft-paper: #fdf5f4; }
+.foote-book .ft-booklang { text-align: right; margin: 0 0 10px; font-size: 13px; font-family: Georgia, serif; }
+.foote-book .ft-booklang a { color: var(--ft-ink); border: 1px solid var(--ft-rule);
+  border-radius: 4px; padding: 4px 10px; text-decoration: none; }
+.foote-book .ft-booklang a:hover { background: var(--ft-ink); color: #fff; }
+/* 书首：不用大色块横幅（用户 2026-10-22），书名 + 作者 + 版本加细线 */
+.foote-book .ft-hero {
+  margin: 4px 0 22px; padding: 0 0 12px; border-bottom: 2px solid var(--ft-ink);
+  font-family: Georgia, "Times New Roman", "Songti SC", serif;
+}
+.foote-book .ft-hero h1 { font-family: Georgia, "Times New Roman", "Songti SC", serif; margin: 0 0 4px;
+  font-size: 26px; font-weight: normal; line-height: 1.3; color: var(--ft-ink-dark); }
+.foote-book .ft-hero-author { margin: 0; font-size: 14.5px; color: #44444f; }
+.foote-book .ft-hero-meta { margin: 2px 0 0; font-size: 13px; color: #8a8a99; font-style: italic; }
+.foote-book .ft-group {
+  font-family: Georgia, "Times New Roman", "Songti SC", serif; margin: 30px 0 12px;
+  font-size: 15px; color: var(--ft-ink-dark); letter-spacing: .05em;
+  padding-bottom: 6px; border-bottom: 1px solid var(--ft-rule);
+}
+.foote-book .ft-toc { list-style: none; padding: 0; margin: 0; display: grid;
+  grid-template-columns: 1fr; gap: 8px; }
+.foote-book .ft-toc li { margin: 0; }
+.foote-book .ft-toc .ft-ref { display: block; font-size: 12.5px; color: #8a8a99; margin-top: 2px; }
+.foote-book .ft-part-sub { margin: -6px 0 12px; font-size: 13px; color: #8a8a99; font-style: italic; font-family: Georgia, serif; }
+.foote-book .ft-toc a { display: block; padding: 9px 13px; border: 1px solid var(--ft-rule);
+  border-radius: 4px; background: var(--ft-paper); text-decoration: none;
+  font-family: Georgia, "Times New Roman", "Songti SC", serif; font-size: 15px; color: #2a2a33; line-height: 1.45; }
+.foote-book .ft-toc a:hover { border-color: var(--ft-ink); background: #fff; color: var(--ft-ink-dark); }
+.foote-book .ft-toc-sm { grid-template-columns: repeat(auto-fill, minmax(96px, 1fr)); gap: 6px; }
+.foote-book .ft-toc-sm a { padding: 5px 6px; text-align: center; font-size: 14px; line-height: 1.35; }
+.foote-book .ft-toc-sm small { display: block; font-size: 11.5px; color: #8a8a99; font-family: Georgia, serif; }
+.foote-book .ft-toc-sm a:hover small { color: var(--ft-ink-dark); }
+.foote-book .ft-note { font-family: Georgia, "Times New Roman", "Songti SC", serif; font-size: 13.5px;
+  color: #6f6f85; line-height: 1.8; margin: 34px 0 0; padding-top: 16px; border-top: 1px solid var(--ft-rule); }
+.foote-book .ft-chgrid { list-style: none; padding: 0; margin: 0; display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(92px, 1fr)); gap: 8px; }
+.foote-book .ft-chgrid a { display: block; text-align: center; padding: 10px 6px; border: 1px solid var(--ft-rule);
+  border-radius: 4px; background: var(--ft-paper); text-decoration: none; color: #2a2a33;
+  font-family: Georgia, "Times New Roman", "Songti SC", serif; font-size: 15px; }
+.foote-book .ft-chgrid a:hover { border-color: var(--ft-ink); background: #fff; color: var(--ft-ink-dark); }
+@media (max-width: 767px) {
+  .foote-book .ft-hero h1 { font-size: 22px; }
+}
+.foote-book .ft-note p { margin: 0 0 12px; }
+.foote-book .ft-note-zh { font-family: "Songti SC", STSong, serif; }
+.foote-book .ft-lost { color: #8a8a99; border-bottom: 1px dotted #b8b8c4; font-style: italic; }
+.foote-book .ft-ed { color: #8a5a00; background: #fff6e0; border-radius: 2px; padding: 0 1px; font-style: normal; }
+/* 编者改动逐条说明 */
+.foote-book .ft-edhead { font-family: "Songti SC", STSong, Georgia, serif; font-size: 16px; color: var(--ft-ink-dark); margin: 26px 0 10px; }
+.foote-book .ft-edtab { width: 100%; border-collapse: collapse; font-size: 13px; line-height: 1.6; margin: 10px 0 16px; }
+.foote-book .ft-edtab th, .foote-book .ft-edtab td { border-bottom: 1px solid var(--ft-rule); padding: 6px 6px; vertical-align: top; text-align: left; }
+.foote-book .ft-edtab th { background: var(--ft-paper); color: var(--ft-ink-dark); white-space: nowrap; }
+.foote-book .ft-edtab td:first-child, .foote-book .ft-edtab td:nth-child(2) { white-space: nowrap; }
+.foote-book .ft-edtab td:nth-child(3), .foote-book .ft-edtab td:nth-child(4) { font-family: Georgia, serif; }
+.foote-book .ft-edtab td a { color: var(--ft-ink-dark); }
+.foote-book .ft-edtab .ft-edgrp td { background: var(--ft-paper); color: var(--ft-ink-dark); font-family: "Songti SC", STSong, serif; padding-top: 10px; }
+@media (max-width: 767px) { .foote-book .ft-edtab { display: block; overflow-x: auto; } }
+</style>

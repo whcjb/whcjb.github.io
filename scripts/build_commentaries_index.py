@@ -188,6 +188,13 @@ AUTHORS = OrderedDict([
                     years='?–1654', dir='petter',
                     work_cn='马可福音注释',
                     work_en='A Learned, Pious, and Practical Commentary upon the Gospel according to St. Mark')),
+    # 福特：苏格兰阿伯丁 East Church 牧师，1843 年随自由教会出走，任 Free East Church 牧师。
+    # 生卒未核到可靠来源（Logos 简介与另一同名者 1781–1856 混淆待辨），按约翰斯通先例留空。
+    # 本站据第 2 版三卷（爱丁堡 John Johnstone；卷一序署 1838 年 8 月），见 foote_raw/luke/PROVENANCE.md。
+    ('foote', dict(name='詹姆斯·福特', short='福特', en='James Foote',
+                   years='', dir='foote',
+                   work_cn='路加福音讲义',
+                   work_en='Lectures on the Gospel according to Luke')),
     ('alexander', dict(name='约瑟·亚历山大', short='亚历山大', en='Joseph Addison Alexander',
                        years='1809–1860', dir='alexander',
                        work_cn='诗篇、以赛亚书、马太福音、使徒行传注释',
@@ -272,6 +279,9 @@ AUTHOR_COLORS = {
     # 最小 ΔE 27.0（CIE76，赫奇森绿 #2f8f46）。色板深端一侧已挤（L≤48 一档最好只有 22.3），只能取亮端；
     # 深端 #2a7d16 与赫奇森两端 ΔE 15–20，卡片靠亮端区分。
     'petter': ('#2a7d16', '#38a622'),
+    # 福特覃红：L 28–55、C 20–60 网格里与既有二十五色及站点 Hux 蓝最小 ΔE 27.3（詹金赤陶 #cd5f37），
+    # 与先例同档；非红系（H 45–300）候选最好的只有 22.7（毕列志棕），弃用。
+    'foote': ('#a13140', '#d14457'),
 }
 
 # 书卷卡片的入口注释家：历代解经版面每卷只显示 links 的第一条（commentaries/index.html
@@ -372,6 +382,8 @@ BOOK_TITLES = {
                                 'A Commentarie vpon the Epistle of Saint Paule to Philemon'),
     ('dickson', 'matthew'):    ('马太福音简释',
                                 'A Brief Exposition of the Evangel of Jesus Christ according to Matthew'),
+    ('foote', 'luke'):         ('路加福音讲义',
+                                'Lectures on the Gospel according to Luke'),
     ('petter', 'mark'):        ('马可福音注释',
                                 'A Learned, Pious, and Practical Commentary upon the Gospel according to St. Mark'),
     ('manton', 'james'):       ('雅各书注释',
@@ -400,7 +412,7 @@ COMPARE_ACCENT = {
     'adams': '#66666c', 'rollock': '#786000', 'jenkyn': '#cd5f37',
     'candlish': '#b07080', 'fairbairn': '#bc65ac', 'taylor': '#6f77e0',
     'hall': '#769019', 'barlow': '#2b9b8a', 'attersoll': '#8e8cbd', 'dickson': '#8b2499',
-    'petter': '#38a622',
+    'petter': '#38a622', 'foote': '#d14457',
 }
 COMPARE_LABEL = {
     'calvin': '加尔文注释', 'mhenry': '马太亨利注释', 'owen': '约翰欧文注释',
@@ -411,7 +423,7 @@ COMPARE_LABEL = {
     'adams': '亚当斯注释', 'rollock': '罗洛克讲章', 'jenkyn': '詹金讲解',
     'candlish': '坎德利什讲解', 'fairbairn': '费尔贝恩注释', 'taylor': '泰勒注释',
     'hall': '霍尔注释', 'barlow': '巴洛讲解', 'attersoll': '阿特索尔注释', 'dickson': '迪克森简释',
-    'petter': '佩特注释',
+    'petter': '佩特注释', 'foote': '福特讲义',
 }
 
 
@@ -433,7 +445,8 @@ PRIMARY_LANG = {'calvin': 'zh', 'mhenry': 'zh', 'bridges': 'zh',
                 'johnstone': 'en', 'perkins': 'en', 'hutcheson': 'en', 'leighton': 'en',
                 'adams': 'en', 'rollock': 'en', 'jenkyn': 'en',
                 'candlish': 'en', 'fairbairn': 'en', 'taylor': 'en',
-                'hall': 'en', 'barlow': 'en', 'attersoll': 'en', 'dickson': 'en', 'petter': 'en'}
+                'hall': 'en', 'barlow': 'en', 'attersoll': 'en', 'dickson': 'en', 'petter': 'en',
+                'foote': 'en'}
 
 
 def _lang_variants(aid, d: Path, name: str):

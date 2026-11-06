@@ -107,4 +107,8 @@ python3 scripts/extract_foote.py          # ABBYY → work/lectures.json + work/
 1. ~~第 ① 层~~ 已完成
 2. 第 ② 层：Lect. I–LXVI 用第 3 版作第二证人按位置判读
 3. 经文段：钦定本同位词校正（参照 `extract_alexander_acts.py` 的 `header_fix`）
-4. 发布：`foote/luke/` 独立目录与样式、经文弹层、章节 date 取真实时刻
+4. ~~发布~~ 2026-11-06 英文版上线（只过第 ① 层，书首页注明为校勘中的工作本）：
+   `python3 scripts/publish_foote_en.py --apply` → `foote/luke/lecture-1…137` + 章目录 `1…24`；
+   版式 `_layouts/foote-{book,chapter}.html`（覃红 #d14457）；历代解经登记见 build_commentaries_index.py。
+   各讲经文范围写死在 `VERSES`（印本出处 OCR 读花，按连续性定、四讲以经文段末节号核过）。
+   渲染验收：误生表格 0、正文 `<ol>` 0、经节锚点 1151＝路加全书节数、重复 id 0。
