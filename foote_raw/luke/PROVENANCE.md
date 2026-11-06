@@ -80,9 +80,31 @@ python3 scripts/extract_foote.py          # ABBYY → work/lectures.json + work/
 | 漏网页眉 | 6（读花形，待 repair） |
 | 经文出处为空 | 5 讲（82、83、88、113、117：讲题后先排小标题，待查） |
 
+### 第 ① 层（`python3 scripts/repair_alexander_ocr.py foote`，2026-11-06）
+
+`en_chapters/` 由 `work/md/` 复制而来，repair 原地改写。全书试跑 824 种改法逐条看过：
+
+- 放行：`h→b`（heen/hecause）、`li→h`（tlie/liave）、`im→un`（imto/imder）、
+  `fi/fl→ff`（difierent/oflf）、`u→ll`（wiu/stiu）、`w→iv/to/vn`（ivith/toas/vnth）等成套连字误读。
+- 原样保留（`FOOTE_KEEP`）：人名 Heli／Noe／Jair（规则会改成 heb／woe／fair），
+  短罗马数字 ii/iv/ix（章号），以及 au/cau/fau/iu/ui/ths/tus 等 n・ll・iii 读法判不了的短词。
+- 手工改（`FOOTE_MANUAL`）：dauy→daily、mauy→many、settung→setting、tliej→they、shajt→shalt
+  （规则原会改成 dally／mally／settling／thief／shaft）。
+- 词尾 `*` 是脚注标号（1097 个），换成哨兵 `\ue010`，不进规则；`Christ*s` → `Christ's`；
+  词首 `*` 多为开引号读错，跳过留给后层。
+- 一次调用迭代到不动点（`iterate`，`*cliap` 次轮才露出 `cliap`）。
+
+| 验收 | 结果 |
+|---|---|
+| 原串全真词、改后出现非词 | 0 |
+| 对 repair 输出再跑 repair | 零变化 |
+| 非词率（≥2 字母 token） | 1.56% → **1.42%**（81.7 万词） |
+
+剩余非词大头：希腊／拉丁引文、脚注出处缩写、两字母碎片（tooshort），留给第 ②③ 层。
+
 ## 待做
 
-1. 第 ① 层：字形规则 + 判词典 + 语料自证（`repair_alexander_ocr.py` 加 `foote` 一项）
+1. ~~第 ① 层~~ 已完成
 2. 第 ② 层：Lect. I–LXVI 用第 3 版作第二证人按位置判读
 3. 经文段：钦定本同位词校正（参照 `extract_alexander_acts.py` 的 `header_fix`）
 4. 发布：`foote/luke/` 独立目录与样式、经文弹层、章节 date 取真实时刻

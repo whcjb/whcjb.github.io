@@ -26,6 +26,7 @@ from alexander_lexicon import build, is_word
 ROOT = Path(__file__).resolve().parent.parent
 
 LIT_STAR = ''      # extract 留下的「字面星号待判」哨兵
+FN_MARK = '\ue010'      # 脚注标号哨兵（福特那本）：不在 TOKEN 字符集里，规则切不进去
 
 RULES = [
     # 连字 li 被拆成单个字形 —— 本扫描件最大的一类错
@@ -267,6 +268,27 @@ ISAIAH_PRE = [
     (r"\bunit\}'", 'unity'),
 ]
 
+# ── 福特《路加福音讲义》──────────────────────────────────────
+# 2026-11-06 全书试跑 824 种改法逐条看过后定的。原样保留＝判词典会放行、
+# 语料自证却会改成另一个真词的；要改的只收上下文能定的。
+FOOTE_KEEP = {w: w for w in (
+    'heli', 'noe', 'jair',                       # 人名：路 3:23 希里、17:26 挪亚(钦定本拼法)、睚鲁
+    'ii', 'iv', 'ix', 'iii', 'vi',               # 合法罗马数字（章号），不许按 Ix→lx 改
+    'au', 'cau', 'fau', 'iu', 'ui', 'tli', 'ths', 'tus', 'une', 'uest', 'xvin',   # n/ll/iii 读法判不了
+    'alio', 'doxo', 'eive', 'heui', 'irri', 'j08', 'jonn', 'jour', 'jond', 'jit',
+    'liatt', 'liie', 'liile', 'liying', 'nishing', 'ratv', 'toath', 'vath', 'toiu',
+    'hase', 'loi', 'xoa', 'toe')}
+FOOTE_MANUAL = dict(FOOTE_KEEP, **{
+    'dauy': 'daily', 'mauy': 'many', 'settung': 'setting', 'tliej': 'they', 'shajt': 'shalt',
+})
+FOOTE_PRE = [
+    # `Christ*s` —— 撇号读成星号
+    ('([A-Za-z])' + LIT_STAR + r"s\b", r"\1's"),
+    # 词尾星号＝脚注标号（`Matthew*`、`him*`）。换成脚注哨兵，token 正则切不进去，规则碰不到
+    # 后面可紧跟斜体标记 `*`、破折号、页面噪点 `^»«/`（全书试跑实测）
+    ('(?<=[A-Za-z.,;:!?])' + LIT_STAR + r'(?=[\s,.;:!?)\]"\'*—^»«/]|$)', FN_MARK),
+]
+
 BOOKS = {
     # short_len：多短的 token 才需要把语料门槛从「出现过」抬到 20 次。
     # 诗篇必须是 3。抬到 4 会连带杀掉四字母的 li→U/h 整类——faUs/waUs/
@@ -291,6 +313,16 @@ BOOKS = {
                    # 开引号」根本不能当判据。开着它＝把收引号一个个删掉，
                    # 引号配对随之全毁，而只换来三四处真正多余的撇号。
                    stray_apostrophe=False),
+    # 福特《路加福音讲义》（foote_raw/luke/PROVENANCE.md）。手工表先空着：
+    # 别的书的条目不搬过来（skill §5「先量，再用」），按本书试跑结果逐条加。
+    # stray_apostrophe 先关：本书单引号引语多（`' for their author…'`），
+    # 收引号与「真词+多余撇号」同形，未量之前宁可不判。
+    'foote': dict(src=ROOT / 'foote_raw/luke/en_chapters',
+                  log=ROOT / 'logs/foote_ocr_repair.tsv',
+                  manual=FOOTE_MANUAL, real={}, pre=FOOTE_PRE,
+                  short_len=3, stray_apostrophe=False,
+                  # 词首星号多半是开引号读错（skill §4.4），留给后面的层，不许规则把它剥掉
+                  skip_lead_star=True, iterate=True),
 }
 
 # 私用区哨兵必须靠拼接进正则：写在 r"..." 里 `\ue002` 不会被解释成那个字符，
@@ -583,88 +615,101 @@ def main(book='psalms'):
     vocab = corpus_vocab(lex, src)
     log = []
     stat = Counter()
-    for path in sorted(src.glob('*.md')):
-        text = path.read_text(encoding='utf-8')
+    # 修复链里后面的步骤会造出新的可修对象（`*cliap` 首轮因词首星号跳过，星号转义后
+    # 次轮才露出 `cliap`）。skill §4.1b：一次调用里迭代到不动点，上限三轮。
+    # 只对开了 iterate 的书生效，诗篇／以赛亚的产物不变。
+    for rnd in range(3 if cfg.get('iterate') else 1):
+        changed = False
+        for path in sorted(src.glob('*.md')):
+            text = path.read_text(encoding='utf-8')
+            orig = text
 
-        def repl(m):
-            w = m.group(0)
-            low = w.lower()
-            if low in manual_fix:
-                stat['manual'] += 1
-                log.append((path.stem, w, manual_fix[low], 'manual'))
-                return restore_case(w, manual_fix[low])
-            if low in real_word_fix:
-                stat['realword'] += 1
-                log.append((path.stem, w, real_word_fix[low], 'realword'))
-                return restore_case(w, real_word_fix[low])
-            # 罗马数字里的 l 被读成 I：Ixxviii → lxxviii。
-            # 这一条必须**排在 is_word 之前**：is_word 把任何由 ivxlcdm 组成
-            # 的串都当罗马数字放行，而 I 恰好也在这个集合里（大小写不敏感），
-            # 于是 Ixxviii 被判成「合法罗马数字」，永远轮不到修（踩过）。
-            if re.fullmatch(r'I[xvi]{1,7}', w):
-                stat['roman'] += 1
-                log.append((path.stem, w, 'l' + w[1:], 'roman'))
-                return 'l' + w[1:]
-            # 词首的 w 被拆成 iv/tv/vn/ui/vv/to/lo/xo 之后，**碰巧还是个
-            # 词典词**（ivas 由 iva+s 派生、ivill 曾被当罗马数字），判词典
-            # 拦不住。这里用语料证据翻案：w 形在本书出现 5 次以上、且是该
-            # 拼法的三倍以上，才改。
-            if low in NOT_WORDS:
-                cands = [c for c in candidates(low, lex) if vocab.get(c, 0) >= 20]
+            def repl(m):
+                w = m.group(0)
+                low = w.lower()
+                if low in manual_fix:
+                    stat['manual'] += 1
+                    log.append((path.stem, w, manual_fix[low], 'manual'))
+                    return restore_case(w, manual_fix[low])
+                if cfg.get('skip_lead_star') and w.startswith(LIT_STAR):
+                    stat['leadstar'] += 1
+                    log.append((path.stem, w, '', 'leadstar'))
+                    return w
+                if low in real_word_fix:
+                    stat['realword'] += 1
+                    log.append((path.stem, w, real_word_fix[low], 'realword'))
+                    return restore_case(w, real_word_fix[low])
+                # 罗马数字里的 l 被读成 I：Ixxviii → lxxviii。
+                # 这一条必须**排在 is_word 之前**：is_word 把任何由 ivxlcdm 组成
+                # 的串都当罗马数字放行，而 I 恰好也在这个集合里（大小写不敏感），
+                # 于是 Ixxviii 被判成「合法罗马数字」，永远轮不到修（踩过）。
+                if re.fullmatch(r'I[xvi]{1,7}', w):
+                    stat['roman'] += 1
+                    log.append((path.stem, w, 'l' + w[1:], 'roman'))
+                    return 'l' + w[1:]
+                # 词首的 w 被拆成 iv/tv/vn/ui/vv/to/lo/xo 之后，**碰巧还是个
+                # 词典词**（ivas 由 iva+s 派生、ivill 曾被当罗马数字），判词典
+                # 拦不住。这里用语料证据翻案：w 形在本书出现 5 次以上、且是该
+                # 拼法的三倍以上，才改。
+                if low in NOT_WORDS:
+                    cands = [c for c in candidates(low, lex) if vocab.get(c, 0) >= 20]
+                    if len(set(cands)) == 1:
+                        stat['rule'] += 1
+                        log.append((path.stem, w, cands[0], 'rule'))
+                        return restore_case(w, cands[0])
+                alt = _w_misread(low, vocab)
+                if alt:
+                    stat['wform'] += 1
+                    log.append((path.stem, w, alt, 'wform'))
+                    return restore_case(w, alt)
+                if is_word(w, lex):
+                    return w
+                if len(low) < 3:          # oi / co / ia 这类两字母残片，规则一碰就错
+                    stat['tooshort'] += 1
+                    log.append((path.stem, w, '', 'tooshort'))
+                    return w
+                # 三字母的 token 证据太薄：一次替换就能变成好几个真词
+                # （thg→thig、oui→ow、Joh→Job）。对它们把语料自证的门槛从
+                # 「出现过」抬到「出现过 20 次以上」，只放行 like/life/lips
+                # 这类全书高频词。
+                # 四字母以下证据太薄：coun→colin、unum→unurn、har→bar 都是
+                # 这么来的。语料门槛从「出现过」抬到「出现过 20 次以上」。
+                floor = 20 if len(low) <= cfg.get('short_len', 3) else 1
+                cands = [c for c in candidates(low, lex) if vocab.get(c, 0) >= floor]
                 if len(set(cands)) == 1:
+                    fixed = restore_case(w, cands[0])
                     stat['rule'] += 1
-                    log.append((path.stem, w, cands[0], 'rule'))
-                    return restore_case(w, cands[0])
-            alt = _w_misread(low, vocab)
-            if alt:
-                stat['wform'] += 1
-                log.append((path.stem, w, alt, 'wform'))
-                return restore_case(w, alt)
-            if is_word(w, lex):
+                    log.append((path.stem, w, fixed, 'rule'))
+                    return fixed
+                if cands:
+                    stat['ambiguous'] += 1
+                    log.append((path.stem, w, '|'.join(sorted(set(cands))[:5]), 'ambiguous'))
+                    return w
+                stat['unresolved'] += 1
+                log.append((path.stem, w, '', 'unresolved'))
                 return w
-            if len(low) < 3:          # oi / co / ia 这类两字母残片，规则一碰就错
-                stat['tooshort'] += 1
-                log.append((path.stem, w, '', 'tooshort'))
-                return w
-            # 三字母的 token 证据太薄：一次替换就能变成好几个真词
-            # （thg→thig、oui→ow、Joh→Job）。对它们把语料自证的门槛从
-            # 「出现过」抬到「出现过 20 次以上」，只放行 like/life/lips
-            # 这类全书高频词。
-            # 四字母以下证据太薄：coun→colin、unum→unurn、har→bar 都是
-            # 这么来的。语料门槛从「出现过」抬到「出现过 20 次以上」。
-            floor = 20 if len(low) <= cfg.get('short_len', 3) else 1
-            cands = [c for c in candidates(low, lex) if vocab.get(c, 0) >= floor]
-            if len(set(cands)) == 1:
-                fixed = restore_case(w, cands[0])
-                stat['rule'] += 1
-                log.append((path.stem, w, fixed, 'rule'))
-                return fixed
-            if cands:
-                stat['ambiguous'] += 1
-                log.append((path.stem, w, '|'.join(sorted(set(cands))[:5]), 'ambiguous'))
-                return w
-            stat['unresolved'] += 1
-            log.append((path.stem, w, '', 'unresolved'))
-            return w
 
-        for pat, rep in pre_fix:
-            text = re.sub(pat, rep, text)
-        if cfg.get('stray_apostrophe', True):
-            text = drop_stray_apostrophe(text, lex)
-        text = split_apostrophe_gap(text, lex)
-        text = space_after_punct(text, lex)
-        text = rejoin_split_words(text, lex, vocab)
-        text = join_across_star(text, lex)
-        # 注释行（<!-- PAGE n -->）不参与
-        parts = re.split(r'(<!--.*?-->)', text)
-        parts = [p if p.startswith('<!--') else TOKEN.sub(repl, p) for p in parts]
-        text = ''.join(parts)
-        # 规则跑完再过一遍：字形规则自己会**造出**新的真词错误
-        # （'Uve' → 'lire'），只有在它后面才拦得住。
-        for pat, rep in pre_fix:
-            text = re.sub(pat, rep, text)
-        text = settle_stars(text, lex)
-        path.write_text(text, encoding='utf-8')
+            for pat, rep in pre_fix:
+                text = re.sub(pat, rep, text)
+            if cfg.get('stray_apostrophe', True):
+                text = drop_stray_apostrophe(text, lex)
+            text = split_apostrophe_gap(text, lex)
+            text = space_after_punct(text, lex)
+            text = rejoin_split_words(text, lex, vocab)
+            text = join_across_star(text, lex)
+            # 注释行（<!-- PAGE n -->）不参与
+            parts = re.split(r'(<!--.*?-->)', text)
+            parts = [p if p.startswith('<!--') else TOKEN.sub(repl, p) for p in parts]
+            text = ''.join(parts)
+            # 规则跑完再过一遍：字形规则自己会**造出**新的真词错误
+            # （'Uve' → 'lire'），只有在它后面才拦得住。
+            for pat, rep in pre_fix:
+                text = re.sub(pat, rep, text)
+            text = settle_stars(text, lex)
+            path.write_text(text, encoding='utf-8')
+            changed |= text != orig
+        if not changed:
+            break
 
     logfile.parent.mkdir(exist_ok=True)
     with open(logfile, 'w', encoding='utf-8') as f:
