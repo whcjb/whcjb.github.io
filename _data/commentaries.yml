@@ -194,6 +194,14 @@ authors:
     work_cn: "马可福音注释"
     work_en: "A Learned, Pious, and Practical Commentary upon the Gospel according to St. Mark"
     books: 1
+  - id: foote
+    name: "詹姆斯·福特"
+    short: "福特"
+    en: "James Foote"
+    years: ""
+    work_cn: "路加福音讲义"
+    work_en: "Lectures on the Gospel according to Luke"
+    books: 1
   - id: alexander
     name: "约瑟·亚历山大"
     short: "亚历山大"
@@ -473,6 +481,7 @@ books:
     testament: nt
     chapters: 24
     links:
+      - {author: foote, path: "/foote/luke/", url_tpl: "/foote/luke/__CH__/", title_cn: "路加福音讲义", title_en: "Lectures on the Gospel according to Luke", c0: "#a13140", c1: "#d14457"}
   - id: john
     name: "约翰福音"
     en: "John"
