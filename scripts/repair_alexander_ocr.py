@@ -277,10 +277,31 @@ FOOTE_KEEP = {w: w for w in (
     'au', 'cau', 'fau', 'iu', 'ui', 'tli', 'ths', 'tus', 'une', 'uest', 'xvin',   # n/ll/iii 读法判不了
     'alio', 'doxo', 'eive', 'heui', 'irri', 'j08', 'jonn', 'jour', 'jond', 'jit',
     'liatt', 'liie', 'liile', 'liying', 'nishing', 'ratv', 'toath', 'vath', 'toiu',
-    'hase', 'loi', 'xoa', 'toe')}
+    'hase', 'loi', 'xoa', 'toe',
+    # 第二轮（加 v/y・y/j 等本书规则后）：逗号读成 y/j（`not,`→noty、`Lord,`→lordj）、
+    # 断词碎片、候选不唯一（soul/foul、four/your、went/vent）、罗马数字 xviii 读成 xviu
+    'noty', 'andj', 'lordj', 'ying', 'indi', 'iyets', 'ioul', 'iour', 'yent', 'iain', 'iit',
+    'iix', 'iiu', 'orey', 'caus', 'bable', 'xviu')}
 FOOTE_MANUAL = dict(FOOTE_KEEP, **{
     'dauy': 'daily', 'mauy': 'many', 'settung': 'setting', 'tliej': 'they', 'shajt': 'shalt',
+    'gloiy': 'glory', 'heliering': 'believing',
 })
+# 本书扫描件特有的成套误读（2026-11-06 抽样正文待判前 80 高频）：
+#   v→y  haye/yery/heayen/eyil/giye/salyation    y→j  thej/jou/maj
+#   h→b  tbe                                       ch→di whidi
+FOOTE_RULES = [('y', 'v'), ('j', 'y'), ('b', 'h'), ('di', 'ch')]
+#   God 读成 Grod / Ood / Qod；from 读成 irom
+FOOTE_HEAD = [('gr', 'g'), ('o', 'g'), ('q', 'g'), ('i', 'f')]
+
+
+def foote_kjv_words():
+    """钦定本路加福音的全部词形（含人名地名、古体变位）并入判词典：
+    Capernaum / Zaccheus / Jairus / goest 是真词，不许当残字去「修」。"""
+    usfm = (ROOT / 'foote_raw/luke/src/72-LUKeng-kjv2006.usfm').read_text(encoding='utf-8')
+    usfm = re.sub(r'\\\+?w\*?|\|strong="[^"]*"|\\[a-z]+\d?\*?', ' ', usfm)
+    return {w.lower() for w in re.findall(r"[A-Za-z]+", usfm) if len(w) >= 3}
+
+
 FOOTE_PRE = [
     # `Christ*s` —— 撇号读成星号
     ('([A-Za-z])' + LIT_STAR + r"s\b", r"\1's"),
@@ -322,7 +343,8 @@ BOOKS = {
                   manual=FOOTE_MANUAL, real={}, pre=FOOTE_PRE,
                   short_len=3, stray_apostrophe=False,
                   # 词首星号多半是开引号读错（skill §4.4），留给后面的层，不许规则把它剥掉
-                  skip_lead_star=True, iterate=True),
+                  skip_lead_star=True, iterate=True,
+                  extra_rules=FOOTE_RULES, extra_head=FOOTE_HEAD, extra_lex=foote_kjv_words),
 }
 
 # 私用区哨兵必须靠拼接进正则：写在 r"..." 里 `\ue002` 不会被解释成那个字符，
@@ -335,12 +357,18 @@ BOOKS = {
 TOKEN = re.compile('[A-Za-z' + LIT_STAR + "][A-Za-z0-9" + LIT_STAR + "'’]*")
 
 
+# 按书挂载的附加字形规则（main 按 BOOKS[book]['extra_rules'/'extra_head'] 设置；
+# 其他书为空，行为与加这两个变量之前完全一致）
+BOOK_RULES = []
+BOOK_HEAD_RULES = []
+
+
 def _apply_once(w):
     out = set()
-    for a, b in HEAD_RULES:
+    for a, b in HEAD_RULES + BOOK_HEAD_RULES:
         if w.startswith(a):
             out.add(b + w[len(a):])
-    for a, b in RULES:
+    for a, b in RULES + BOOK_RULES:
         start = 0
         while True:
             i = w.find(a, start)
@@ -609,9 +637,13 @@ def drop_stray_apostrophe(text, lex):
 
 def main(book='psalms'):
     cfg = BOOKS[book]
+    BOOK_RULES[:] = cfg.get('extra_rules', [])
+    BOOK_HEAD_RULES[:] = cfg.get('extra_head', [])
     src, logfile = cfg['src'], cfg['log']
     manual_fix, real_word_fix, pre_fix = cfg['manual'], cfg['real'], cfg['pre']
     lex = build()
+    if cfg.get('extra_lex'):
+        lex |= cfg['extra_lex']()
     vocab = corpus_vocab(lex, src)
     log = []
     stat = Counter()

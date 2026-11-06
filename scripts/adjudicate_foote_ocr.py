@@ -1,0 +1,221 @@
+#!/usr/bin/env python3
+"""福特《路加福音讲义》第 ② 层：第二证人按位置判读（skill old-book-ocr §1 第 ② 层）。
+
+证人＝第 3 版两卷本卷一（IA lecturesongospe01footgoog，Lect. I–LXVI），覆盖本书第 1–66 讲。
+第 67–137 讲没有第二份扫描，本脚本不碰，留给第 ③ 层看图。
+
+判读对象是第 ① 层之后 en_chapters/ 里仍不是真词的 token。做法照诗篇那套
+（adjudicate_alexander_ocr.look_up）：可疑词前后各六词窗口里滑动取三词锚，在证人词流里
+定位，读出证人在**同一位置**印的是什么，并要求另一侧相邻词也对得上。
+
+两版之间作者可能有修订，所以读数要过闸才落：
+  字形闸  读数与 OCR 串编辑距离占比 ≤ 1/3，或从 OCR 串按字形规则走得到读数
+          ——挡住两版之间真正的改写（拿第 3 版覆盖第 2 版＝篡改底本）
+  判词闸  读数是真词（含钦定本路加词形），或在证人里出现 ≥ 3 次
+  形状闸  读数不得是单个字母；不得只差大小写（那是 confirm）
+两版一致的记 confirm（已核实原样，以后不必再挖）。
+
+判决落成规则表 foote_raw/luke/witness_fixes.tsv（讲次、前三词锚、原样、改作），
+`--apply` 按表落到 en_chapters/：每条须恰好命中一次，否则报错。publish 之前跑，
+重跑 extract→repair 之后再跑一次即可全量恢复（skill §3 硬约束 1）。
+
+    python3 scripts/adjudicate_foote_ocr.py            # 判读 → 写规则表 + logs/foote_adjudicate.tsv
+    python3 scripts/adjudicate_foote_ocr.py --apply    # 按规则表落盘
+"""
+import argparse
+import csv
+import re
+import sys
+import unicodedata
+from collections import Counter
+from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+import extract_foote as F  # noqa: E402
+from adjudicate_alexander_ocr import build_index, edit_distance, glyph_reachable, look_up  # noqa: E402
+from alexander_lexicon import build, is_word  # noqa: E402
+from repair_alexander_ocr import foote_kjv_words  # noqa: E402
+
+ROOT = Path(__file__).resolve().parent.parent
+RAW = ROOT / 'foote_raw' / 'luke'
+SRC = RAW / 'en_chapters'
+RULES = RAW / 'witness_fixes.tsv'
+LOG = ROOT / 'logs' / 'foote_adjudicate.tsv'
+WITNESS_ID = 'lecturesongospe01footgoog'
+LAST = 66
+TOKEN = re.compile(r"[A-Za-zÀ-ÖØ-öø-ÿ][A-Za-zÀ-ÖØ-öø-ÿ'’]*")
+TAG = re.compile(r'<!--.*?-->')
+MAX_DIST_RATIO = 1 / 3
+
+
+def load_witness():
+    F.VOLS[9] = WITNESS_ID
+    pages = F.load_pages(9)
+    chunks = []
+    for pg in pages:
+        for par in pg['pars']:
+            chunks.append(''.join(c for c in par['text'] if unicodedata.category(c) != 'Co'))
+    text = '\n'.join(chunks)
+    return TOKEN.findall(text), text
+
+
+def body_tokens(text):
+    """正文（含经文段、注区）→ [(start, end, token)]，跳过 PAGE/NOTE 注释。"""
+    out = []
+    pos = 0
+    for m in TAG.finditer(text + '<!---->'):
+        seg = text[pos:m.start()]
+        for t in TOKEN.finditer(seg):
+            out.append((pos + t.start(), pos + t.end(), t.group(0)))
+        pos = m.end()
+    return out
+
+
+FN_MARK = '\ue010'
+# 我们这侧本来就对、证人读错的（逐条看过）：Gallio 迦流（徒 18）证人读 Gallic；Csesar 是 Cæsar 读成，证人读 Cesar
+KEEP = {'gallio', 'csesar', 'snfler'}
+# 等长两处替换里拿不准的（Thsi 可 This 可 They；fiul 可 full 可 fail …）
+SHAPE2_HOLD = {'thsi', 'eist', 'fiul', 'merc', 'noine', 'orcu', 'inme', 'wtot'}
+
+
+def verdict(tok, reading, lex, wvocab, prev_w, next_w):
+    """→ (kind, 改作)。kind == 'fix' 才落。全书试跑 1058 种改法逐条看过后定的闸。"""
+    if reading is None:
+        return 'nowitness', ''
+    if reading.lower() == tok.lower():
+        return 'confirm', reading
+    if tok.lower() in KEEP:
+        return 'reject:keep', ''
+    reading = reading.rstrip("'’") or reading
+    t, r = tok.lower(), reading.lower()
+    if len(reading) == 1 and r not in ('a', 'i', 'o'):
+        return 'reject:single', ''
+    # 词尾 y/j＝逗号读错（Christy / saidy / Gody）：改成「词＋逗号」，删掉就丢了逗号
+    if len(t) == len(r) + 1 and t.startswith(r) and t[-1] in 'yj' and is_word(reading, lex):
+        return 'fix', reading + ','
+    # 词尾 t/f＝脚注标号 † 读错（Jesusf / Bethlehemt）：保留成脚注哨兵
+    if len(t) == len(r) + 1 and t.startswith(r) and t[-1] in 'tf' and is_word(reading, lex):
+        return 'fix', reading + FN_MARK
+    # 一头丢字（ofAbia→Abia、Sth→th）：证人与我们切分不同或读出隔壁，丢的可能是真字
+    if t != r and t.endswith(r) and len(t) > len(r):
+        return 'reject:dropfront', ''
+    if t != r and t.startswith(r) and len(t) > len(r):
+        return 'reject:dropback', ''
+    # 截断（Gosp→Gospel）／前缺（ith→with）：缺的那截若正是相邻 token，就是被拆开的词，单改一处会叠字
+    if r.startswith(t) and r[len(t):] == (next_w or '').lower():
+        return 'reject:split', ''
+    if r.endswith(t) and r[:len(r) - len(t)] == (prev_w or '').lower():
+        return 'reject:split', ''
+    if r.startswith(t) and len(r) - len(t) >= 2:
+        return 'reject:truncated', ''
+    # 我们只多一个尾字（generationl）：去掉尾字就是真词，证人读出别的词（feneration）多半是证人错。
+    # 只对长词（去尾 ≥ 6 字母）：短串去尾碰巧成词太常见（hini→hin、whai→wha），会挡掉正确的修正
+    # 只是最后一个字母读错（privilegei→privileges、beliere→believe、divinel→divinely）：
+    # 与证人共享整个词干，不算这一类
+    # 只差中间一个字母的（beliere→believe、serrant→servant）也不算：编辑距离 1 是普通误读
+    if len(t) - 1 >= 6 and is_word(tok[:-1], lex) and r != t[:-1] and not r.startswith(t[:-1]) \
+            and edit_distance(t, r) > 1:
+        return 'reject:tailnoise', ''
+    d = edit_distance(t, r)
+    shape = d / max(len(t), len(r)) <= MAX_DIST_RATIO or glyph_reachable(tok, reading)
+    # 等长、两处替换、读数是真词（coidd→could、qmet→quiet、muen→much）：69 条逐条看过，
+    # 拿不准的 8 条（SHAPE2_HOLD）留给看图
+    if not shape and len(t) == len(r) >= 4 and d == 2 and is_word(reading, lex) and t not in SHAPE2_HOLD:
+        shape = True
+    if not shape:
+        return 'reject:shape', ''
+    # 证人自己读崩：从证人读数按字形规则走得到我们的串（Satuminus→Saturninus）
+    if glyph_reachable(reading, tok):
+        return 'reject:witnessbroken', ''
+    # 判词闸：读数必须是真词（判词典＋钦定本路加词形）。不开「证人里出现 ≥3 次」的后门——
+    # 第 3 版的 OCR 也有同样的成套错（imderstood / oflf / sufier / IsraeV / Markf 都出现多次）
+    if not is_word(reading, lex):
+        return 'reject:word', ''
+    return 'fix', reading
+
+
+def judge():
+    lex = build() | foote_kjv_words()
+    wwords, _ = load_witness()
+    idx, wlow = build_index(wwords)
+    wvocab = Counter(wlow)
+    rules, log, stat = [], [], Counter()
+    for n in range(1, LAST + 1):
+        path = SRC / f'{n:03d}.md'
+        text = path.read_text(encoding='utf-8')
+        toks = body_tokens(text)
+        words = [t for _, _, t in toks]
+        for i, (a, b, tok) in enumerate(toks):
+            parts = [x for x in re.split(r"['’]", tok) if x]
+            if len(tok) < 3 or all(is_word(x, lex) for x in parts) or is_word(tok, lex):
+                continue
+            reading = look_up(words, i, idx, wlow, wwords)
+            v, to = verdict(tok, reading, lex, wvocab, words[i - 1] if i else '',
+                            words[i + 1] if i + 1 < len(words) else '')
+            stat[v] += 1
+            log.append((f'{n:03d}', tok, reading or '', v))
+            if v == 'fix':
+                anchor = ' '.join(words[max(0, i - 3):i])
+                rules.append((f'{n:03d}', anchor, tok, to))
+    with open(RULES, 'w', encoding='utf-8') as f:
+        f.write('# lecture\tanchor(前三词)\tfrom\tto —— adjudicate_foote_ocr.py 生成；手改须同步说明\n')
+        for r in rules:
+            f.write('\t'.join(r) + '\n')
+    LOG.parent.mkdir(exist_ok=True)
+    with open(LOG, 'w', encoding='utf-8') as f:
+        f.write('lecture\tfrom\treading\tkind\n')
+        for r in log:
+            f.write('\t'.join(r) + '\n')
+    stat['confirm'] = stat.get('confirm', 0)
+    print('判读：', dict(stat), f'→ 规则 {len(rules)} 条 {RULES.name}', file=sys.stderr)
+
+
+def apply():
+    """按规则表落盘。每讲内**从后往前**落：规则的锚是判读时的前三词，前一条改掉的词
+    可能正是后一条的锚，顺着落会定位失败（实测 22 条）。幂等判断时锚也按本讲修正表换算。"""
+    by = {}
+    for ln in RULES.read_text(encoding='utf-8').splitlines():
+        if not ln.strip() or ln.startswith('#'):
+            continue
+        lec, anchor, old, new = ln.split('\t')
+        by.setdefault(lec, []).append((anchor, old, new))
+    done, already, bad = 0, 0, []
+    for lec, rs in by.items():
+        path = SRC / f'{lec}.md'
+        text = path.read_text(encoding='utf-8')
+        fixmap = {o: re.sub(r'[^A-Za-z\'’]+$', '', n) for _, o, n in rs}
+        for anchor, old, new in reversed(rs):
+            toks = body_tokens(text)
+            words = [t for _, _, t in toks]
+            hits = [k for k, (_, _, t) in enumerate(toks)
+                    if t == old and ' '.join(words[max(0, k - 3):k]) == anchor]
+            if len(hits) == 1:
+                a, b, _ = toks[hits[0]]
+                text = text[:a] + new + text[b:]
+                done += 1
+                continue
+            anchor2 = ' '.join(fixmap.get(w, w) for w in anchor.split())
+            new_w = re.sub(r'[^A-Za-z\'’]+$', '', new)
+            if any(t == new_w and ' '.join(words[max(0, k - 3):k]) in (anchor, anchor2)
+                   for k, (_, _, t) in enumerate(toks)):
+                already += 1
+                continue
+            bad.append((lec, anchor, old, len(hits)))
+        path.write_text(text, encoding='utf-8')
+    print(f'落盘 {done} 条；已落过 {already}；定位失败 {len(bad)} {bad[:5]}', file=sys.stderr)
+    if bad:
+        raise SystemExit(1)
+
+
+def main():
+    ap = argparse.ArgumentParser()
+    ap.add_argument('--apply', action='store_true')
+    a = ap.parse_args()
+    if a.apply:
+        apply()
+    else:
+        judge()
+
+
+if __name__ == '__main__':
+    main()

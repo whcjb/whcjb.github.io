@@ -4,6 +4,7 @@
     python3 scripts/extract_foote.py                 # ABBYY → work/md/
     cp foote_raw/luke/work/md/*.md foote_raw/luke/en_chapters/
     python3 scripts/repair_alexander_ocr.py foote    # 第 ① 层
+    python3 scripts/adjudicate_foote_ocr.py --apply  # 第 ② 层（按 witness_fixes.tsv 落盘，Lect. 1–66）
     python3 scripts/publish_foote_en.py              # 试跑（自检）
     python3 scripts/publish_foote_en.py --apply
 

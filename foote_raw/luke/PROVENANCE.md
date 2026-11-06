@@ -102,9 +102,45 @@ python3 scripts/extract_foote.py          # ABBYY → work/lectures.json + work/
 
 剩余非词大头：希腊／拉丁引文、脚注出处缩写、两字母碎片（tooshort），留给第 ②③ 层。
 
+### 第 ① 层第二轮（2026-11-06，按 skill 补过）
+
+抽样正文待判前 80 高频，发现本扫描件特有的成套误读第一轮没收：`v→y`（haye/heayen/giye）、
+`y→j`（thej/jou/maj）、`h→b`（tbe）、`ch→di`（whidi）、词首 `G` 读成 Gr/O/Q、`f` 读成 i。
+作为本书附加规则挂上（`FOOTE_RULES` / `FOOTE_HEAD`，其他书不受影响）；钦定本路加全部词形并入判词典
+（`foote_kjv_words`，人名地名不再被当残字）。1030 种改法逐条看过，另挡 17 种（逗号读成 y/j 的
+`noty`/`andj`/`lordj`、断词碎片、候选不唯一）＋手工 2 条（gloiy→glory、heliering→believing）。
+
+### 第 ② 层（`scripts/adjudicate_foote_ocr.py`，Lect. 1–66）
+
+证人＝第 3 版卷一 ABBYY。照诗篇 look_up（前后六词窗口滑动三词锚＋另一侧确认）读出证人同位读数，
+过闸才落。1058 种改法逐条看过后定的闸：
+
+| 闸 | 挡什么 |
+|---|---|
+| 判词闸 | 读数必须是真词（不开「证人出现 ≥3 次」后门：第 3 版 OCR 也有 imderstood/oflf/IsraeV 成套错） |
+| 证人读崩 | 从证人读数按字形规则走得到我们的串（Satuminus→Saturninus） |
+| 一头丢字／截断／拆词 | ofAbia→Abia、Sth→th、Gosp→Gospel（下一 token 是 el 时会叠字） |
+| 尾字噪点 | 去尾 ≥6 字母已成词、证人另读（generationl→feneration） |
+| 字形闸 | 编辑距离占比 ≤1/3 或字形可达；另放行等长两处替换（coidd→could，69 条看过，8 条留看图） |
+| 词尾 y/j | 是逗号读错：Christy → `Christ,` |
+| 词尾 t/f | 是脚注标号 † 读错：Jesusf → `Jesus`＋脚注哨兵 |
+
+判读 1086 改（规则表 `witness_fixes.tsv`，每讲从后往前落、幂等）、371 两版一致、386 无证人、
+其余被闸挡下。逐词回退判据 0。
+
+### 分账（`python3 scripts/foote_ledger.py`）
+
+| | 第①层后 | 第①层二轮 | 第②层后 |
+|---|---|---|---|
+| 已核实原样 | 0 | 0 | 376 |
+| 外文与活字残渣 | 828 | 824 | 813 |
+| 两字母碎片 | 1521 | 1520 | 1522 |
+| 脚注区 | 1723 | 1718 | 1595 |
+| **正文待判** | 11649 | 10444 | **9183** |
+
 ## 待做
 
-1. ~~第 ① 层~~ 已完成
+1. ~~第 ① 层~~ 已完成；~~第 ② 层~~ 已完成（Lect. 67–137 无证人）
 2. 第 ② 层：Lect. I–LXVI 用第 3 版作第二证人按位置判读
 3. 经文段：钦定本同位词校正（参照 `extract_alexander_acts.py` 的 `header_fix`）
 4. ~~发布~~ 2026-11-06 英文版上线（只过第 ① 层，书首页注明为校勘中的工作本）：
