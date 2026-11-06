@@ -34,21 +34,13 @@ layout: default
                 {% if page.completed_by %}
                 <p class="mh-en-completer">{{ page.completed_by }}</p>
                 {% endif %}
-                <div class="row">
+                <div class="mh-en-chapter-grid">
                     {% if has_preface %}
-                    <div class="col-xs-4 col-sm-3 col-md-3" style="margin-bottom:10px;">
-                        <a href="{{ site.baseurl }}/mhenry/{{ page.book_id }}/preface/" class="mh-en-chapter-btn mh-en-chapter-btn--preface">
-                            Preface
-                        </a>
-                    </div>
+                    <a href="{{ site.baseurl }}/mhenry/{{ page.book_id }}/preface/" class="mh-en-chapter-btn mh-en-chapter-btn--preface">Preface</a>
                     {% endif %}
                     {% for i in (1..page.total_chapters) %}
                     {% if chapter_nums contains i %}
-                    <div class="col-xs-4 col-sm-3 col-md-3" style="margin-bottom:10px;">
-                        <a href="{{ site.baseurl }}/mhenry/{{ page.book_id }}/{{ i }}/" class="mh-en-chapter-btn">
-                            Chapter {{ i }}
-                        </a>
-                    </div>
+                    <a href="{{ site.baseurl }}/mhenry/{{ page.book_id }}/{{ i }}/" class="mh-en-chapter-btn" title="Chapter {{ i }}" aria-label="Chapter {{ i }}">{{ i }}</a>
                     {% endif %}
                     {% endfor %}
                 </div>
@@ -77,18 +69,34 @@ body { background: #F4F8FC; }
     letter-spacing: 0.04em;
 }
 .mh-en-completer { color: #4A6D8C; font-size: 13px; font-style: italic; margin: 0 0 16px; }
+.mh-en-chapter-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(52px, 1fr));
+    gap: 8px;
+    margin-bottom: 10px;
+}
 .mh-en-chapter-btn {
-    display: block;
-    padding: 9px 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 44px;
+    padding: 0 4px;
+    font-variant-numeric: tabular-nums;
+    -webkit-tap-highlight-color: transparent;
     background: #FFFFFF;
     border: 2px solid #4A6D8C;
     border-radius: 8px;
     color: #1F3A52 !important;
     text-decoration: none !important;
-    font-size: 13px;
+    font-size: 16px;
     font-weight: 600;
     text-align: center;
     transition: background 0.2s, color 0.2s, border-color 0.2s;
+}
+.mh-en-chapter-btn--preface { grid-column: 1 / -1; font-size: 15px; letter-spacing: .08em; }
+@media (max-width: 767px) {
+    .mh-en-chapter-grid { grid-template-columns: repeat(auto-fill, minmax(46px, 1fr)); gap: 6px; }
+    .mh-en-chapter-btn { height: 42px; font-size: 15px; }
 }
 .mh-en-chapter-btn:hover { background: #1F3A52; border-color: #1F3A52; color: #fff !important; }
 .mh-en-chapter-btn--preface { background: #E4EDF5; border-color: #2A5070; }
