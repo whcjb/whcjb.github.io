@@ -111,3 +111,7 @@ dickson_raw/matthew/witness/
 
 # 佩特马可福音：证人整页图、本地 OCR、判读图（可重跑 petter_witness anchors / petter_bim_ocr 重建）
 petter_raw/mark/witness/
+
+# 福特路加讲义：ABBYY / 扫描 PDF 不入库（item id 见 foote_raw/luke/PROVENANCE.md）
+foote_raw/luke/src/
+foote_raw/luke/pdf/
