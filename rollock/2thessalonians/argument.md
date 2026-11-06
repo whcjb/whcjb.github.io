@@ -8,6 +8,7 @@ prev_url: "/rollock/2thessalonians/title/"
 prev_label: "Title Page"
 next_url: "/rollock/2thessalonians/1-1/"
 next_label: "Lecture 1"
+zh_url: "/rollock/2thessalonians/zh/argument/"
 ---
 
 ## <span class="rl-pb" data-facs="182"></span><span class="rl-pb" data-facs="182"></span>THE ARGVMENT OF THE SECOND EPISTLE TO THE THESSALONIANS.

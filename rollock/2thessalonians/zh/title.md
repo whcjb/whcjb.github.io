@@ -5,6 +5,8 @@ book_name: "罗洛克《帖撒罗尼迦后书讲章》"
 title: "书名页"
 subtitle: "爱丁堡，1606"
 date: 2026-11-07 01:32
+next_url: "/rollock/2thessalonians/zh/argument/"
+next_label: "后书提要"
 en_url: "/rollock/2thessalonians/title/"
 zh: true
 ---
