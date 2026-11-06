@@ -154,13 +154,23 @@ def judge():
             # 硬闸：斜体标记（未转义 `*`）一个不许少——证人没有格式，`^*` 里的 `*` 往往是斜体收尾，
             # 删了整段强调配对就乱（实测页面露出近 900 个字面星号，skill §4.4「修复表自己会制造错误」）
             if len(re.findall(r'(?<!\\)\*', gap)) != len(re.findall(r'(?<!\\)\*', ng)):
-                k = gap.rstrip()
-                if k.endswith('*') and not k.endswith('\\*') and len(re.findall(r'(?<!\\)\*', ng)) == 0:
-                    # 只有收尾一颗：把它补回证人标点之后
-                    ng = ng.rstrip() + '*' + (ng[len(ng.rstrip()):] or '')
+                stars = [m2.start() for m2 in re.finditer(r'(?<!\\)\*', gap)]
+                if len(stars) == 1 and not re.findall(r'(?<!\\)\*', ng):
+                    i = stars[0]
+                    body = ng.strip()
+                    if i > 0 and gap[i - 1].isspace():
+                        # 前有空白＝下一个词的开斜体：放在空白之后、紧贴下一个词
+                        ng = (' ' if ng[:1].isspace() else '') + body + ' *'
+                    else:
+                        # 紧贴前文＝上一个词的闭斜体：紧贴前一个词，放在新缝最前（him* "— → him* "—）
+                        ng = '*' + ng
+                    ng = re.sub(r'^ +(?=[,;:.!?])', '', ng)
                 if len(re.findall(r'(?<!\\)\*', gap)) != len(re.findall(r'(?<!\\)\*', ng)):
                     stat['star'] += 1
                     continue
+            # 证人在这道缝里有空白、我们的新缝没有（And^as → And as）：补一个空格
+            if re.search(r'\s', wgap) and not re.search(r'\s', ng) and not ng.endswith('*'):
+                ng = ng + ' '
             # 硬闸：只准动标点与空白，字母数字一个不许变（`8^"*` 里的 8 是真字）
             if re.sub(r'[^A-Za-z0-9]', '', gap) != re.sub(r'[^A-Za-z0-9]', '', ng):
                 stat['letters'] += 1

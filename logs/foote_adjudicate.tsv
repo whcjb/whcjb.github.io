@@ -192,9 +192,6 @@ lecture	from	reading	kind
 006	Malachi	Malachi	confirm
 006	thmc	thou	fix
 006	Mai	Mai	confirm
-006	Liikevu	instruct	reject:shape
-006	tMatt	and	reject:shape
-006	xiT	impress	reject:shape
 006	xxl	xxi	fix
 006	gire	by	reject:shape
 006	Malachi	Malachi	confirm
@@ -240,10 +237,6 @@ lecture	from	reading	kind
 007	erent	event	fix
 007	Crod	God	reject:shape
 007	kii	kingdom	reject:shape
-007	obrioudy	obviously	fix
-007	dirine	divine	fix
-007	receire	he	reject:shape
-007	ofken	often	fix
 007	dirine	divine	fix
 007	norelty	novelty	fix
 007	plaintire	plaintive	fix
@@ -412,7 +405,6 @@ lecture	from	reading	kind
 010	Mohammedaiis	Mohammedans	fix
 010	Fea	Yea	fix
 010	befell	befell	confirm
-010	LECTURK	and	reject:shape
 010	Cleophas	Cleophas	confirm
 010	inlmediately	immediately	fix
 010	cLiy	of	reject:shape
@@ -440,8 +432,6 @@ lecture	from	reading	kind
 011	Wotton's	and	reject:shape
 011	Miscell	our	reject:shape
 011	Clarke	till	reject:shape
-011	iliey		nowitness
-011	soi		nowitness
 011	sittii	sitting	fix
 011	catechising	catechising	confirm
 011	patf	of	reject:shape
@@ -599,9 +589,6 @@ lecture	from	reading	kind
 014	uch	an	reject:shape
 014	difl	absolute	reject:shape
 014	culty	denial	reject:shape
-014	keaveriy	heaven	reject:shape
-014	saidy	said	fix
-014	rrty		nowitness
 014	lovedst		nowitness
 014	ith	with	fix
 014	thera	in	reject:shape
@@ -742,9 +729,7 @@ lecture	from	reading	kind
 017	countrjrmen	countrymenor	reject:word
 017	ncition	nation	fix
 017	theif	they	reject:shape
-017	hsard	heard	fix
-017	tke	these	reject:shape
-017	wratk		nowitness
+017	wratk	him	reject:shape
 017	thruat	thrust	fix
 017	headlongf	headlomgy	reject:tailnoise
 017	eeeded	proceed	reject:shape
@@ -811,12 +796,7 @@ lecture	from	reading	kind
 018	Plutarch	Clemens	reject:shape
 018	peaccy	and	reject:shape
 018	dirine	divine	fix
-018	ipaki	spake	fix
-018	thsmselves	themselves	fix
-018	ying	saying	fix
 018	thi	this	fix
-018	fcith	with	reject:shape
-018	aiUhority	authority	fix
 018	commandetk	commandeth	fix
 018	tpi		nowitness
 018	thet	they	fix
@@ -864,8 +844,6 @@ lecture	from	reading	kind
 018	mirancles	miracles	fix
 018	tnith	of	reject:shape
 018	iidmits	aamits	reject:shape
-018	LfiCTVRB	They	reject:shape
-018	XVUL	are	reject:shape
 018	everlast	everlastinglife	reject:truncated
 018	unquestion	imquestionably	reject:shape
 018	LUKB		nowitness
@@ -896,7 +874,6 @@ lecture	from	reading	kind
 019	refliected	every	reject:shape
 019	Imd	and	reject:shape
 019	sUence	silence	fix
-019	vrhioh		nowitness
 019	suppoM	suppose	fix
 019	ipeakhig	speaking	reject:shape
 019	wto	into	reject:shape
@@ -934,8 +911,6 @@ lecture	from	reading	kind
 019	mth	wiih	reject:shape
 019	fbrih	shalt	reject:shape
 019	temark	remark	fix
-019	frmn	from	fix
-019	iohich	which	fix
 019	fnen	men	reject:shape
 019	dre	drew	fix
 019	appeaf	appear	fix
@@ -1102,8 +1077,6 @@ lecture	from	reading	kind
 021	aiB	and	reject:shape
 021	glori	glorify	reject:truncated
 021	willmg	wiUing	reject:shape
-021	preseilt	us	reject:shape
-021	iis	us	reject:shape
 021	istrengthen	strengthenus	reject:word
 021	Lwd	Lord	reject:shape
 021	foi	forgiven	reject:shape
@@ -1153,13 +1126,11 @@ lecture	from	reading	kind
 022	giren	given	fix
 022	oostly	ointment	reject:shape
 022	bleanng	blessing	reject:shape
-022	wclb	was	reject:shape
-022	cwnpany	of	reject:shape
 022	aee	see	fix
 022	oonsideration	consideration	fix
 022	Zaccheus	Zaccheus	confirm
 022	feek	seek	fix
-022	pre	presence	reject:split
+022	pre	presence	reject:truncated
 022	mination	ofhis	reject:shape
 022	diatinction	distinction	fix
 022	Uiem	them	fix
@@ -1173,9 +1144,6 @@ lecture	from	reading	kind
 022	Btck	sick	fix
 022	dck	sick	reject:shape
 022	iowledge	knowledge	fix
-022	kiad	kind	fix
-022	hereditarf	of	reject:shape
-022	loDg	long	fix
 022	physickii	physician	fix
 022	aoy	any	fix
 022	cmd	and	reject:shape
@@ -1198,8 +1166,6 @@ lecture	from	reading	kind
 022	trae	true	fix
 022	Tolence	is	reject:shape
 022	Ohrt	Christ	reject:shape
-022	liie	the	reject:shape
-022	ctmyersion	conversion	fix
 022	fiora	from	reject:shape
 022	observaticms	observations	fix
 022	cet	came	reject:shape
@@ -1220,7 +1186,7 @@ lecture	from	reading	kind
 023	disdpU	disciples	reject:shape
 023	oome	come	fix
 023	hina	him	reject:shape
-023	notwithstand	notwithstanding	reject:truncated
+023	notwithstandmg	notwithstanding	fix
 023	uestions	in	reject:shape
 023	conmcience	conscience	fix
 023	omething	something	fix
@@ -1236,8 +1202,6 @@ lecture	from	reading	kind
 023	yinto	unto	reject:shape
 023	sevveth	seweth	fix
 023	Maxkii	an	reject:shape
-023	mdketh	maketh	fix
-023	renty	rent	fix
 023	woollen	woollen	confirm
 023	bottleg	bottles	fix
 023	nenf	new	reject:shape
@@ -1248,7 +1212,6 @@ lecture	from	reading	kind
 023	alsOy'	aho	reject:shape
 023	oldwine	totney	reject:shape
 023	traightijcay	straightway	fix
-023	taith	saith	fix
 023	Suish	or	reject:shape
 023	roQght	brought	fix
 023	theni	them	reject:shape
@@ -1265,8 +1228,6 @@ lecture	from	reading	kind
 023	jdead	dead	reject:dropfront
 024	com	fields	reject:shape
 024	com	com	confirm
-024	com	com	confirm
-024	eids	fields	reject:shape
 024	riew	view	fix
 024	diis	this	fix
 024	lawfril	but	reject:shape
@@ -1291,8 +1252,6 @@ lecture	from	reading	kind
 024	JBut	Buty	reject:shape
 024	diTine	divine	fix
 024	Kedeemer	search	reject:shape
-024	witk	as	reject:shape
-024	henerolent	was	reject:shape
 024	tcho	who	reject:shape
 024	ths		nowitness
 024	ttithered		nowitness
@@ -1319,7 +1278,8 @@ lecture	from	reading	kind
 024	certjiin	certain	fix
 024	notgreatlysurprise	not	reject:dropback
 024	andespecially	greatly	reject:shape
-024	LECTTUSXXIT	sake	reject:shape
+024	zxiii	of	reject:shape
+024	LECTTUSXXIT	liiin	reject:shape
 024	wiio		nowitness
 024	fsur		nowitness
 024	olwdieBee		nowitness
@@ -1349,12 +1309,8 @@ lecture	from	reading	kind
 024	toaght	blind	reject:shape
 024	tnmthe	sight	reject:shape
 024	icfcicnce		nowitness
-024	ftir	feiir	reject:shape
-024	groond		nowitness
-024	positire		nowitness
-024	aignmcnt		nowitness
 024	anadogical	analogical	fix
-024	illostration		nowitness
+024	illostration	The	reject:shape
 024	emMnn		nowitness
 024	nrntmrml		nowitness
 024	tiaU		nowitness
@@ -1362,12 +1318,6 @@ lecture	from	reading	kind
 024	kwumam		nowitness
 024	wmd		nowitness
 024	ioos	action	reject:shape
-024	acoeptaUe	of	reject:shape
-024	serrice		nowitness
-024	Crod	God	reject:shape
-024	trae	true	fix
-024	measore	measure	fix
-024	penrerted	perverted	fix
 024	wlueh	which	reject:shape
 024	oTercome	by	reject:shape
 024	merdj	human	reject:shape
@@ -1380,8 +1330,6 @@ lecture	from	reading	kind
 024	beliere	believe	fix
 024	nerer	never	fix
 024	depraritj	ty	reject:shape
-024	condfnde	conclude	reject:shape
-024	ooght	ought	fix
 024	unconrerted	unconverted	fix
 024	fiuth	faith	fix
 024	whaferer	whatevermay	reject:shape
@@ -1436,7 +1384,6 @@ lecture	from	reading	kind
 025	imme		nowitness
 025	diately		nowitness
 025	hisMessiah	the	reject:shape
-025	LFXTTURE	exclusive	reject:shape
 025	vras	was	reject:shape
 025	thott	thou	reject:shape
 025	Wehave	have	reject:dropfront
@@ -1496,8 +1443,6 @@ lecture	from	reading	kind
 026	fJEUthfuI	faithful	reject:shape
 026	erery	every	fix
 026	vtrith	with	reject:shape
-026	suf		nowitness
-026	fered		nowitness
 026	fortythird	forty	reject:dropback
 026	Caligula	Caligula	confirm
 026	overtook	the	reject:shape
@@ -1586,8 +1531,6 @@ lecture	from	reading	kind
 027	strikitig	strikiui	reject:word
 027	fultilment	fulfilment	fix
 027	bishoprick	bishoprick	confirm
-027	ziit	xiii	fix
-027	Mme		nowitness
 027	currence	LUKE	reject:shape
 027	awftd	awfid	reject:word
 027	nst	to	reject:shape
@@ -1599,8 +1542,6 @@ lecture	from	reading	kind
 028	igour	And	reject:shape
 028	oflPensive	oflFensive	reject:word
 028	despemte	desperate	fix
-028	perraded	prevaded	reject:shape
-028	mnltitude	on	reject:shape
 028	impnv	say	reject:shape
 028	bable	xmto	reject:shape
 028	evangelisr	that	reject:shape
@@ -1611,7 +1552,7 @@ lecture	from	reading	kind
 028	consdlalion	consolation	fix
 028	jod	God	fix
 028	tempta	while	reject:shape
-028	tions	they	reject:shape
+028	tions		nowitness
 028	uid	and	reject:shape
 028	lauyhJ	laughs	fix
 028	tulmed	turned	fix
@@ -1624,8 +1565,6 @@ lecture	from	reading	kind
 028	wnto	unto	reject:witnessbroken
 028	fkose	those	fix
 028	Micaiah	Micaiah	confirm
-028	hoic	how	reject:shape
-028	erroneousy	erroneotis	reject:tailnoise
 029	efiecting	effecting	fix
 029	cau	calculated	reject:shape
 029	culated	was	reject:shape
@@ -1678,8 +1617,6 @@ lecture	from	reading	kind
 030	tsure		nowitness
 030	withiJ	withal	fix
 030	uBio	unto	fix
-030	continuatioii	coiitiiiuatiou	reject:shape
-030	rmoii	in	reject:shape
 030	importaat	important	fix
 030	instrae	instruction	reject:shape
 030	tion	eachof	reject:shape
@@ -1688,8 +1625,6 @@ lecture	from	reading	kind
 030	condemnatoiy	condemnatory	fix
 030	admimsteredy	administered	fix
 030	nion	of	reject:shape
-030	chanty	charitywhich	reject:shape
-030	iereth	things	reject:shape
 030	tand	before	reject:shape
 030	iue	of	reject:shape
 030	qpeaketh	speaketh	fix
@@ -1705,16 +1640,12 @@ lecture	from	reading	kind
 030	rsubstance	essence	reject:shape
 030	eiK	enjoined	reject:shape
 030	impcMrteince	importance	fix
-030	ccmtinuir	continuing	reject:shape
-030	unlbrgivmg	ourselves	reject:shape
 030	gpve	our	reject:shape
 030	desiredstme	me	reject:dropfront
 030	iian	in	reject:shape
 030	shcUl	shall	fix
 030	ycu	good	reject:shape
 030	ioaetker	together	reject:shape
-030	yonir	your	reject:shape
-030	Por	For	fix
 030	com	com	confirm
 030	com	com	confirm
 030	CroesuB	Crcesus	reject:word
@@ -1799,19 +1730,13 @@ lecture	from	reading	kind
 031	thoa		nowitness
 031	thoa	thou	fix
 031	afitf	off	reject:shape
-031	eUarUf	clearly	reject:shape
-031	puU	pull	fix
-031	oui	out	fix
 031	ofl	oflSce	reject:truncated
 031	fortn	forth	fix
 031	hramUe	bi	reject:shape
 031	hushgather		nowitness
 031	mayjbe	may	reject:dropback
 031	arei	are	reject:dropback
-031	iteurt	heart	reject:shape
-031	hriiigeth	bringeth	fix
 031	evU	evil	reject:shape
-031	jcharacter	character	reject:dropfront
 031	sefulness	to	reject:shape
 031	direqt	direct	fix
 031	emy	to	reject:shape
@@ -1879,9 +1804,6 @@ lecture	from	reading	kind
 032	disciplesMp	discipleship	fix
 032	aearing	hearing	fix
 032	coidd	could	fix
-032	heaierSy	Jigurattvely	reject:shape
-032	urativefy	illustrated	reject:shape
-032	illuitrated		nowitness
 032	ycu	you	fix
 032	diggei	digged	fix
 032	thefrood	the	reject:dropback
@@ -1927,8 +1849,6 @@ lecture	from	reading	kind
 033	vour	your	fix
 033	Christif	andiret	reject:shape
 033	shgdt	shalt	fix
-033	pnder	imder	reject:shape
-033	roo	roof	fix
 033	duti	V	reject:single
 033	amost	a	reject:dropback
 033	feithful		nowitness
@@ -1971,8 +1891,6 @@ lecture	from	reading	kind
 033	builtus	built	reject:dropback
 033	Btill	or	reject:shape
 033	moreclosely	still	reject:shape
-033	houscy	house	fix
-033	ent	sent	fix
 033	trouUe	trouble	fix
 033	shotddest	shouldest	fix
 033	mysdf	myself	fix
@@ -1987,13 +1905,10 @@ lecture	from	reading	kind
 033	grateiiil	tothee	reject:shape
 033	afficted	afflicted	fix
 033	reaslon	reason	fix
-033	tchen	when	reject:shape
-033	Jeszts	JesfiJt	reject:shape
-033	tellecT'		nowitness
+033	tellecT'	marvelled'	reject:shape
 033	y'ou	you	fix
 033	hav	have	reject:split
 033	foith	and	reject:shape
-033	properij	properly	fix
 033	beHeveis	believersto	reject:shape
 033	suinpassed	what	reject:shape
 033	whdt	had	reject:shape
@@ -2065,8 +1980,6 @@ lecture	from	reading	kind
 034	fizekiel	Ezekielave	reject:shape
 034	instructmi	instruction	fix
 034	jour	your	fix
-034	Ioyc	faith	reject:shape
-034	Sariour	Saviour	fix
 034	befors	before	fix
 034	hav	have	fix
 034	injudi	injudicious	reject:split
@@ -2074,15 +1987,11 @@ lecture	from	reading	kind
 034	faei	here	reject:shape
 034	amiaUe	amiable	fix
 034	ars	areiany	reject:shape
-034	gftve	gave	reject:shape
-034	aad	and	fix
 034	enlirened	your	reject:shape
 034	jour	youi	reject:shape
 034	iiiends	friends	fix
 034	mom	mom	confirm
 034	oome	comeiwith	reject:shape
-034	jcfu	you	reject:shape
-034	ignoianl	ignorant	fix
 034	rith	him	reject:shape
 034	Lkmh	Lamb	fix
 034	circnmstances	circumstancescommon	reject:shape
@@ -2184,8 +2093,6 @@ lecture	from	reading	kind
 036	dren	out	reject:shape
 036	fipom	from	reject:shape
 036	employe	employs	fix
-036	wtriety	variety	fix
-036	talenUf	talents	fix
 036	merC	mens	reject:shape
 036	fervour	fervour	confirm
 036	dly	dly	confirm
@@ -2320,8 +2227,6 @@ lecture	from	reading	kind
 038	erven	even	fix
 038	Avould	would	fix
 038	peadiarhf	peculiarly	reject:shape
-038	tcithy	with	reject:shape
-038	tXi	the	reject:shape
 038	whonr	whom	reject:shape
 038	sexeSr	Man	reject:shape
 038	urt	of	reject:shape
@@ -2463,8 +2368,6 @@ lecture	from	reading	kind
 042	Tiberias	Tiberias	confirm
 042	Gergesenes	Gergesenes	confirm
 042	Gadara		nowitness
-042	inan	man	reject:shape
-042	devUa	deviW	reject:shape
 042	pos	possessions	reject:split
 042	tiine	timey	reject:shape
 042	hotkey	lousey	reject:shape
@@ -2485,8 +2388,6 @@ lecture	from	reading	kind
 042	Gadara		nowitness
 042	ottt	out	reject:shape
 042	Gadara	Gadara	confirm
-042	hesoiight	besought	fix
-042	himto	him	reject:dropback
 042	Decapolis	Decapolis	confirm
 042	iserable	demoniac	reject:shape
 042	Gadara	Gadara	confirm
@@ -2653,8 +2554,6 @@ lecture	from	reading	kind
 046	nchen	ohen	reject:shape
 046	Pharoah's	Pharoah's	confirm
 046	pleasares	pleasures	fix
-046	OMX	onr	reject:shape
-046	friendu	friends	fix
 046	omt	our	reject:shape
 046	thingSfjuust	things	reject:dropback
 046	befal	befall	fix
@@ -2678,8 +2577,6 @@ lecture	from	reading	kind
 046	crucijSied	reproach	reject:shape
 046	idctorious	victorious	fix
 046	kingd	kingdom	reject:truncated
-046	ahready	already	fix
-046	pven	given	reject:shape
 046	Summum		nowitness
 046	crede		nowitness
 046	nefas	nefas	confirm
@@ -2697,17 +2594,11 @@ lecture	from	reading	kind
 047	dth		nowitness
 047	ahotU	about	reject:shape
 047	Jamesl	James	reject:dropback
-047	LECJTURE	of	reject:shape
-047	XLVIL	similarities	reject:shape
 047	Gkililee	Galilee	fix
 047	circumstancs	circumstances	fix
 047	lustre	with	reject:shape
 047	lustre	lustre	confirm
 047	fultilled	fulfilledthe	reject:word
-047	tcith	with	reject:shape
-047	meUy	men	reject:shape
-047	Moiet	Moses	fix
-047	EliaSy	Elias	fix
 047	eharacters	characters	fix
 047	tchich	which	fix
 047	Redeemei	grand	reject:shape
@@ -2758,9 +2649,6 @@ lecture	from	reading	kind
 048	osr	or	fix
 048	tke	ground	reject:shape
 048	uation	here	reject:shape
-048	Jesvs		nowitness
-048	rehukei		nowitness
-048	spiriU		nowitness
 048	opirion	opinion	fix
 048	meiely	merely	fix
 048	hiraself	himself	fix
@@ -2800,8 +2688,6 @@ lecture	from	reading	kind
 048	comethand	cometh	reject:dropback
 049	vou	you	fix
 049	ihe	the	fix
-049	comparativelt	comparaiively	reject:word
-049	teorldliness	toorldliness	reject:word
 049	pre	pre	confirm
 049	yriW	his	reject:shape
 049	necksy	necks	fix
@@ -2854,16 +2740,12 @@ lecture	from	reading	kind
 050	Cbxist	Christand	reject:shape
 050	Fisipgs	risings	fix
 050	tthen	when	reject:shape
-050	saidy	said	fix
-050	Lordf	Lord	fix
 050	ciri	circumstancesreferred	reject:shape
 050	umstances	to	reject:shape
 050	Ahaziah	Ahaziah	confirm
 050	Samari	Samaritans	reject:split
 050	cojnmand	was	reject:shape
 050	accesisible	to	reject:shape
-050	imiiaUy	liim	reject:shape
-050	Jirmneas		nowitness
 050	accom	accomplished	reject:split
 050	plished	How	reject:shape
 050	conaesuon	connexion	fix
@@ -2925,8 +2807,6 @@ lecture	from	reading	kind
 051	peacefrd	peaceful	fix
 051	folioweth	after	reject:shape
 051	runneth	runneth	confirm
-051	saidy	said	fix
-051	Loi	Lord	reject:shape
 051	Tnefirst	first	reject:dropfront
 051	faretcell	farewell	fix
 051	Shaphat	Shaphat	confirm
@@ -3054,8 +2934,6 @@ lecture	from	reading	kind
 053	afi	that	reject:shape
 053	rmed	all	reject:shape
 053	amo	among	reject:truncated
-053	hearenly	heavenly	fix
-053	foliy	folly	fix
 053	prudeni	prudent	fix
 053	praisef'	Consider	reject:shape
 053	oome	come	fix
@@ -3084,9 +2962,6 @@ lecture	from	reading	kind
 053	Phenice	and	reject:tailnoise
 053	ovon	own	reject:shape
 053	Serle	believing	reject:shape
-053	prvwUeges	privileges	fix
-053	cmd	and	reject:shape
-053	eoerything	everything	fix
 053	beautiftd	beautiful	fix
 053	eace	peace	fix
 054	vrritten	wn'tten	reject:shape
@@ -3099,14 +2974,11 @@ lecture	from	reading	kind
 054	wnatsoever	whatsoeverthou	reject:shape
 054	himu	him	reject:dropback
 054	stifficient	sufficient	fix
-054	Thx	Thou	reject:shape
-054	shcdt	love	reject:shape
 054	etteem	esteem	fix
 054	com	communion	reject:split
 054	munion	withGodj	reject:shape
 054	Gody	Christ	reject:shape
 054	fiul	fail	reject:shape
-054	jztdiciotis	judiciotis	reject:word
 054	Avith	with	reject:shape
 054	petam	mireasonable	reject:shape
 054	idque	ungrateful	reject:shape
@@ -3126,8 +2998,6 @@ lecture	from	reading	kind
 054	raimenty	raiment	fix
 054	highwaymen	highwaymen	confirm
 054	woful	knew	reject:shape
-054	ofibeD	often	reject:shape
-054	othera	others	fix
 054	awrf	and	reject:shape
 054	whm	when	reject:shape
 054	beasty	beastj	reject:word
@@ -3142,8 +3012,6 @@ lecture	from	reading	kind
 054	vdth	with	fix
 054	imbounded	unbounded	fix
 054	Paith	Faith	fix
-054	FaiUi	Faith	fix
-054	vdll	Avill	reject:shape
 054	Maimonides	LECTURE	reject:shape
 054	Adamim	LUKE	reject:shape
 054	Adummim	Adummim	confirm
@@ -3308,8 +3176,6 @@ lecture	from	reading	kind
 056	corenant	covenant	fix
 056	Seeke	Seekestthou	reject:truncated
 056	rigfateousnesSy	righteousness	fix
-056	dns	sins	reject:shape
-056	ciUo	also	reject:shape
 056	cUsoforgive	cuso	reject:dropback
 056	tis	us	reject:shape
 056	tis	u	reject:single
@@ -3415,8 +3281,6 @@ lecture	from	reading	kind
 057	hency	ofsuch	reject:shape
 057	fervour	fervour	confirm
 057	spue	spue	confirm
-057	onr	our	fix
-057	persererance	made	reject:shape
 057	jects	we	reject:shape
 057	obtaid	obtain	fix
 057	eflbrt	eflFort	reject:word
@@ -3537,8 +3401,6 @@ lecture	from	reading	kind
 059	hiBre	here	reject:shape
 059	religwu	religious	fix
 059	lOth	th	reject:dropfront
-059	eminentlt	eminerUly	reject:word
-059	piotM	pious	fix
 059	diy	heart	reject:shape
 059	mayst	mayest	fix
 059	superstitioit	superstition	fix
@@ -3581,8 +3443,6 @@ lecture	from	reading	kind
 060	fsiicntxi	fatentcs	reject:shape
 060	ong	long	fix
 060	atfd	will	reject:shape
-060	oflighty	light	reject:shape
-060	whm	when	reject:shape
 060	lightr	light	reject:dropback
 060	ftiU	full	reject:shape
 060	Clarke	Clarko	reject:word
@@ -3630,7 +3490,6 @@ lecture	from	reading	kind
 061	ymi	you	reject:shape
 061	necessaiy	necessarycharacteristic	reject:shape
 061	rightiiil	rightful	fix
-061	useof	useof	confirm
 061	untoyou	unto	reject:dropback
 061	andfoolishly	and	reject:dropback
 061	importan	importance	reject:truncated
@@ -3717,8 +3576,6 @@ lecture	from	reading	kind
 063	Whosoeder	Whosoever	fix
 063	occO	occasionswhich	reject:shape
 063	repromh	reproocA	reject:shape
-063	yotsr	your	reject:shape
-063	conmctionB	convictions	fix
 063	sinfiil	sinfulfear	reject:shape
 063	abotfe	above	fix
 063	potcer	of	reject:shape
@@ -3866,7 +3723,6 @@ lecture	from	reading	kind
 066	fidbd	rest	reject:shape
 066	tltey	they	reject:shape
 066	noty	not	fix
-066	ylory	glory	fix
 066	Mordecai	Mordecai	confirm
 066	readt	readf	reject:word
 066	Jod's	God's	fix
@@ -3884,8 +3740,6 @@ lecture	from	reading	kind
 066	cessary	foryou	reject:shape
 066	aifairs	affairs	fix
 066	encou	encouraging	reject:split
-066	LEC	love	reject:shape
-066	TURE	you	reject:shape
 066	Jegus	Jesus	fix
 066	ieek	seek	fix
 066	pre	pre	confirm

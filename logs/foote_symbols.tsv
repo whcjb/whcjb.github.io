@@ -13,7 +13,9 @@ lecture	gap	witness	kind
 001	'^ 		nolocate
 001	—^	—	delete
 001	^		nolocate
+001	"*—^	"—	replace
 001	^		nolocate
+001	: *^^	: " 	replace
 001	—^		nolocate
 001	-^ 		nolocate
 002	—^	—	delete
@@ -139,6 +141,7 @@ lecture	gap	witness	kind
 006	^		nolocate
 006	^ 		nolocate
 006	^ 	, 	replace
+006	 *^^	 " 	replace
 006	: *^^ 		nolocate
 006	«		nolocate
 006	 "• 	 "	delete
@@ -152,7 +155,8 @@ lecture	gap	witness	kind
 006	* ««, *		nolocate
 006	/\** 	." 	replace
 006	^ 		nolocate
-006	 \*		nolocate
+006	 \*	 * 	mismatch
+006	 26. + 	 26. + 	mismatch
 006	^ 		nolocate
 006	^ 		nolocate
 006	^ 		nolocate
@@ -182,6 +186,7 @@ lecture	gap	witness	kind
 007	^ 		nolocate
 007	 ♦ 1 	 * 1 	mismatch
 007	^ 		nolocate
+007	, *^^	, "	replace
 007	^* 	," 	replace
 007	^ 		nolocate
 007	—^	—	delete
@@ -221,6 +226,7 @@ lecture	gap	witness	kind
 008	, ^^ 	, " 	replace
 008	. ^^ 	. "	replace
 008	^ 	, 	replace
+008	: *^^	: "	replace
 008	^ 	, 	replace
 008	 *^'•/	 "	mismatch
 008	 *^^		nolocate
@@ -243,7 +249,10 @@ lecture	gap	witness	kind
 009	^ 	, 	replace
 009	 \*^ *		nolocate
 009	 ♦ 	 - * 	mismatch
+009	 *"^ 	 "	replace
+009	 *^^	 "	replace
 009	 *^^ 		nolocate
+009	: *^^	: "	replace
 009	^ 		nolocate
 009	 *''^	 "	mismatch
 009	/^ 		nolocate
@@ -278,6 +287,7 @@ lecture	gap	witness	kind
 011	 ^		nolocate
 011	 ^ 		nolocate
 011	^	'	replace
+011	 *^"^	 "	replace
 011	^ 		nolocate
 011	^ 		nolocate
 011	 40: *^''		nolocate
@@ -288,8 +298,7 @@ lecture	gap	witness	kind
 011	, *''^	, "	mismatch
 011	<\* 		nolocate
 011	^ 	; 	replace
-011	^		nolocate
-011	^\** 		nolocate
+011	^\** 	," 	replace
 011	, "• *	, " 	replace
 011	^		nolocate
 011	^ 	, 	replace
@@ -318,6 +327,7 @@ lecture	gap	witness	kind
 012	^ 		nolocate
 012	898^ 		nolocate
 012	^ 	, 	replace
+012	, *^"	, "	replace
 012	^* 	." 	replace
 012	: ^' 	: " 	mismatch
 012	!-^ 	!— 	mismatch
@@ -348,6 +358,7 @@ lecture	gap	witness	kind
 012	, \*•\* 	, "	replace
 012	^ 		nolocate
 013	, "»		nolocate
+013	 *^^	 "	replace
 013	^ 		nolocate
 013	^ 		nolocate
 013	^ 		nolocate
@@ -471,6 +482,7 @@ lecture	gap	witness	kind
 016	,«	,	delete
 016	. *"^		nolocate
 016	^\** 		nolocate
+016	 *^^	 "	replace
 016	« *		nolocate
 016	^		nolocate
 016	 ♦ 		nolocate
@@ -544,7 +556,9 @@ lecture	gap	witness	kind
 018	. 24: *\*^* 		nolocate
 018	^		nolocate
 018	, ^^ 	, "	replace
+018	, *^^	, "	replace
 018	^^* 	," 	replace
+018	, *^^ 	, "	replace
 018	^"* 	," 	replace
 018	^ 		nolocate
 018	^ 	? 	replace
@@ -556,7 +570,6 @@ lecture	gap	witness	kind
 018	 • 		nolocate
 018	. 16. $ 		nolocate
 018	^ 	, 	replace
-018	^ ^	, 	replace
 018	^ 		nolocate
 018	» 		nolocate
 018	^ 		nolocate
@@ -581,7 +594,9 @@ lecture	gap	witness	kind
 018	^\** 		nolocate
 018	. *^^		nolocate
 018	^* 		nolocate
+018	^\**—	,"—	replace
 018	 \*^ 	 "	replace
+018	: *"^ 	: " 	replace
 018	^ 		nolocate
 018	^* 		nolocate
 018	»		nolocate
@@ -639,9 +654,9 @@ lecture	gap	witness	kind
 019	^ *		nolocate
 019	; *^^		nolocate
 019	^ 	, 	replace
+019	 *^^ 	 "	replace
 019	 }>	 	mismatch
 019	.!^		nolocate
-019	<»:		nolocate
 019	^ 		nolocate
 019	 ^^ *		nolocate
 019	^ 		nolocate
@@ -728,6 +743,7 @@ lecture	gap	witness	kind
 020	^ 		nolocate
 020	^ 		nolocate
 020	^ 		nolocate
+020	: *^^	: "	replace
 020	^ 		nolocate
 020	 '^/		nolocate
 020	: ^^ 	: " 	replace
@@ -758,6 +774,7 @@ lecture	gap	witness	kind
 020	^ 	, 	replace
 020	—^	—	delete
 021	^ 		nolocate
+021	 *^^ 	 " 	replace
 021	^ 	, 	replace
 021	"^ 	 = 	mismatch
 021	^ 		nolocate
@@ -910,7 +927,6 @@ lecture	gap	witness	kind
 022	. ^^ *		nolocate
 022	^		nolocate
 022	 %		nolocate
-022	—^	—	delete
 022	^ 	, 	replace
 022	 ^		nolocate
 022	^ 	— 	replace
@@ -926,7 +942,7 @@ lecture	gap	witness	kind
 022	 ♦ 		nolocate
 022	£		nolocate
 022	«		nolocate
-022	—^		nolocate
+022	—^	—	delete
 022	^		nolocate
 022	: " / *•		nolocate
 022	^ 		nolocate
@@ -968,6 +984,7 @@ lecture	gap	witness	kind
 023	, ^		nolocate
 023	: *^^		nolocate
 023	^ 		nolocate
+023	: *^^ 	: "	replace
 023	^ 		nolocate
 023	^ 		nolocate
 023	^ 		nolocate
@@ -975,14 +992,12 @@ lecture	gap	witness	kind
 023	 *'^.		nolocate
 023	^		nolocate
 023	^ 9		nolocate
-023	^ 		nolocate
 023	 • 		nolocate
 023	^* 	, 	replace
 023	^	 	delete
 023	. \*^ 	. '	replace
 023	. ^^ 	. '	replace
 024	« *		nolocate
-024	^		nolocate
 024	 «		nolocate
 024	^ 		nolocate
 024	^ 		nolocate
@@ -1047,6 +1062,7 @@ lecture	gap	witness	kind
 024	^«		nolocate
 024	«		nolocate
 025	- • 	- '	replace
+025	 *^^ 	 "	replace
 025	 «/ *		nolocate
 025	^		nolocate
 025	 ^^ 	 ' 	replace
@@ -1054,6 +1070,7 @@ lecture	gap	witness	kind
 025	^ 		nolocate
 025	, *\** " 	, * " 	mismatch
 025	, ^^ 	, * 	mismatch
+025	 *\*•\*• 	 " 	replace
 025	^ 	, 	replace
 025	, ^^ 	, " 	replace
 025	 "• 	 " 	delete
@@ -1157,6 +1174,7 @@ lecture	gap	witness	kind
 027	. 12: ^^ 	. 12: " 	mismatch
 027	^ 	, 	replace
 027	^		nolocate
+028	, *"^	, "	replace
 028	, *^''	, "	mismatch
 028	^\** 	," 	replace
 028	 *''^	 "	mismatch
@@ -1168,8 +1186,10 @@ lecture	gap	witness	kind
 028	, •	, 	delete
 028	€		nolocate
 028	, €		nolocate
+028	: *^^ 	: " 	replace
 028	^ *		nolocate
 028	 • 	- 	replace
+028	: *^^	: " 	replace
 028	^* 		nolocate
 028	 '■'' 	 " 	mismatch
 028	: *^''	: "	mismatch
@@ -1207,6 +1227,7 @@ lecture	gap	witness	kind
 029	^ 		nolocate
 029	^ 		nolocate
 029	^ 		nolocate
+029	: *^^ 	: "	replace
 029	. ••' *		nolocate
 029	: *^'£		nolocate
 029	^ 		nolocate
@@ -1227,22 +1248,20 @@ lecture	gap	witness	kind
 029	.415 --> ♦		nolocate
 030	 ^		nolocate
 030	^		nolocate
-030	^		nolocate
 030	^ 		nolocate
 030	^		nolocate
 030	 ^\* 	 "	replace
-030	^		nolocate
 030	. ^^ 		nolocate
 030	 «	 	delete
 030	 *})		nolocate
 030	 •	. 	replace
 030	 *\** 		nolocate
+030	: *^^	: "	replace
 030	^ 		nolocate
 030	^ 		nolocate
 030	^		nolocate
 030	, (», 		nolocate
 030	^ 	, 	replace
-030	^		nolocate
 030	, ^\* 	, " 	replace
 030	: ^^ 	: "	replace
 030	» 	, 	replace
@@ -1297,6 +1316,7 @@ lecture	gap	witness	kind
 030	/\* 	." 	replace
 031	—^	—	delete
 031	 *^'•		nolocate
+031	 *^^	 "	replace
 031	 ^^ 	 " 	replace
 031	^ 	 	delete
 031	^ 	, 	replace
@@ -1315,7 +1335,6 @@ lecture	gap	witness	kind
 031	 • 	-	replace
 031	 ^^ 	 "	replace
 031	: ^' *	: '	replace
-031	^ 		nolocate
 031	^ 		nolocate
 031	, ^		nolocate
 031	^ 		nolocate
@@ -1373,7 +1392,6 @@ lecture	gap	witness	kind
 032	; ^^ 		nolocate
 032	, •	, 	delete
 032	: ^^ 	: " 	replace
-032	 ^^	, 	replace
 032	^* 	, 	replace
 032	^ 	, 	replace
 032	^ 		nolocate
@@ -1431,7 +1449,7 @@ lecture	gap	witness	kind
 033	, *^^		nolocate
 033	^		nolocate
 033	, ^^ 	, " 	replace
-033	 §	, 	replace
+033	 *^^	 "	replace
 033	^ 	, 	replace
 033	^ 		nolocate
 033	^		nolocate
@@ -1453,6 +1471,7 @@ lecture	gap	witness	kind
 033	 *^^		nolocate
 033	^ 		nolocate
 033	^ 	, 	replace
+033	. *'^	. '	replace
 033	^ 	, 	replace
 033	^ 1 		nolocate
 033	^* 		nolocate
@@ -1520,6 +1539,7 @@ lecture	gap	witness	kind
 034	^ 		nolocate
 034	^		nolocate
 034	, £		nolocate
+034	, *^^ 	, "	replace
 034	^		nolocate
 034	»{* 		nolocate
 034	^ 		nolocate
@@ -1535,7 +1555,7 @@ lecture	gap	witness	kind
 034	» 		nolocate
 034	« 		nolocate
 034	» 		nolocate
-034	: ^' 		nolocate
+034	: ^' 	: " 	mismatch
 034	—\*	—-	replace
 034	^ 	— 	replace
 034	: ^^ 	: " 	replace
@@ -1555,6 +1575,7 @@ lecture	gap	witness	kind
 035	^		nolocate
 035	^		nolocate
 035	 '^ 	 "	mismatch
+035	: *\*^	: " 	replace
 035	^		nolocate
 035	, ^' 	, "	mismatch
 035	. 2: ^^ 	. 2: " 	mismatch
@@ -1634,6 +1655,7 @@ lecture	gap	witness	kind
 036	^ 		nolocate
 036	: ^^	: * 	mismatch
 036	 •		nolocate
+036	 *^"	 "	replace
 036	 '^	 "	mismatch
 036	 30: *^^ 		nolocate
 036	^ 		nolocate
@@ -1653,7 +1675,6 @@ lecture	gap	witness	kind
 036	;^* 		nolocate
 036	^ 		nolocate
 036	—^	—	delete
-036	^ 	, 	replace
 036	^ 		nolocate
 036	% 		nolocate
 036	^		nolocate
@@ -1677,17 +1698,22 @@ lecture	gap	witness	kind
 037	. ^' *	. " 	mismatch
 037	^ 		nolocate
 037	^ 		nolocate
+037	, *^^ 	, "	replace
 037	. ^^ 	. "	replace
 037	—^ 	— 	delete
+037	, *^^ 	, " 	replace
 037	^ 	, 	replace
 037	 ^' 	 " 	mismatch
 037	, ^^ 	, "	replace
+037	 *^^ 	 " 	replace
+037	 *^\* 	 "	replace
 037	—^	—	delete
 037	 *^^		nolocate
 037	^* 		nolocate
 037	^ 		nolocate
 037	 *''^	 "	mismatch
 037	. ^' 	. "	mismatch
+037	. " *^	. "	replace
 037	^ 		nolocate
 037	» 		nolocate
 037	—^	—	delete
@@ -1709,6 +1735,7 @@ lecture	gap	witness	kind
 037	."^ 	." 	delete
 037	^ 		nolocate
 037	: ^^	: "	replace
+037	, *^^ 	, "	replace
 037	^ 	, 	replace
 037	. <^ / *		nolocate
 037	, \*• 	, " 	replace
@@ -1859,6 +1886,7 @@ lecture	gap	witness	kind
 041	^ 	, 	replace
 041	^\** 		nolocate
 041	 '^ 	 "	mismatch
+041	, *^^ 	, " 	replace
 041	^ 		nolocate
 041	^ 		nolocate
 041	^		nolocate
@@ -1882,6 +1910,7 @@ lecture	gap	witness	kind
 041	^ 	, 	replace
 041	^* 	, 	replace
 042	 ^		nolocate
+042	* "—^	 "—	replace
 042	: "^ *		nolocate
 042	^ 	, 	replace
 042	^ 		nolocate
@@ -1902,9 +1931,10 @@ lecture	gap	witness	kind
 042	—^	—	delete
 042	^"* 		nolocate
 042	^ 		nolocate
+042	 *^^ 	 "	replace
 042	, *^^		nolocate
 042	;"\** 		nolocate
-042	, *^^		nolocate
+042	, *^^	, "	replace
 042	* ^		nolocate
 042	'^ 		nolocate
 042	^ 	, 	replace
@@ -1919,6 +1949,7 @@ lecture	gap	witness	kind
 042	^ 		nolocate
 042	^ 		nolocate
 043	« 		nolocate
+043	 *^^	 "	replace
 043	. 13, '^ 	. 13, " 	mismatch
 043	 *'^	 "	mismatch
 043	"—*^^ 	'—" 	mismatch
@@ -1951,6 +1982,7 @@ lecture	gap	witness	kind
 043	/\** 	." 	replace
 043	 *'-^ 		nolocate
 043	,^\** 		nolocate
+043	 *^^ 	 " 	replace
 043	 '^ *	 " 	mismatch
 043	^		nolocate
 044	 ♦ 		nolocate
@@ -1961,6 +1993,7 @@ lecture	gap	witness	kind
 044	^ 		nolocate
 044	^ 		nolocate
 044	^ 		nolocate
+044	: *^^ 	: "	replace
 044	^ 		nolocate
 044	^ 	, 	replace
 044	. *'-^	. '	mismatch
@@ -1968,11 +2001,15 @@ lecture	gap	witness	kind
 044	^ 	, 	replace
 044	—^	—	delete
 044	—^	—	delete
+044	, *^^	, "	replace
 044	 ^' *		nolocate
 044	. *^''	. " 	mismatch
+044	 *^^ 	 "	replace
+044	, *^^ 	, '	replace
 044	^ 		nolocate
 044	^ 		nolocate
 044	, '^	, "	mismatch
+044	 *^^ 	 " 	replace
 044	^ 	, 	replace
 044	 •		nolocate
 044	. ^' 	. ' 	delete
@@ -2005,11 +2042,14 @@ lecture	gap	witness	kind
 045	^ 		nolocate
 045	^ 		nolocate
 045	, '^ 	, " 	mismatch
+045	: *^"	: "	replace
 045	^ 		nolocate
 045	. ^^ *	. " 	replace
 045	^ 		nolocate
 045	^ 		nolocate
 045	 *''^	 "	mismatch
+045	, *"^	, "	replace
+045	^*—	" —	replace
 045	^* 		nolocate
 045	. ^^ 	. '	replace
 045	 ^'	 "	mismatch
@@ -2018,6 +2058,7 @@ lecture	gap	witness	kind
 045	, ^^ 	, " 	replace
 046	^* 		nolocate
 046	 ▼		nolocate
+046	, *^^	, "	replace
 046	^ 		nolocate
 046	^ 	é 	mismatch
 046	^* 	," 	replace
@@ -2082,7 +2123,7 @@ lecture	gap	witness	kind
 047	 ^' 	 " 	mismatch
 047	: ^' 	: "* 	mismatch
 047	^		nolocate
-047	^ 		nolocate
+047	^ 	, 	replace
 047	—^		nolocate
 047	^		nolocate
 047	 33. *^^ 		nolocate
@@ -2092,6 +2133,7 @@ lecture	gap	witness	kind
 047	^ 		nolocate
 047	^ 		nolocate
 047	^ 		nolocate
+047	, *"^	, "	replace
 047	, '^ *	, "	mismatch
 047	^* 		nolocate
 047	:*—^		nolocate
@@ -2147,6 +2189,7 @@ lecture	gap	witness	kind
 048	 ^' 	 "	mismatch
 048	: *^^		nolocate
 048	^"* 	," 	replace
+048	: *"\*	: " 	replace
 048	 \** 		nolocate
 048	-^	—	mismatch
 048	^		nolocate
@@ -2170,6 +2213,7 @@ lecture	gap	witness	kind
 048	. *\** 		nolocate
 048	, '^ 	, " 	mismatch
 049	. 49. ^ 	. 49. 4 	mismatch
+049	: *^^	: "	replace
 049	, ^^ 	, "	replace
 049	," • 		nolocate
 049	 ♦		nolocate
@@ -2215,7 +2259,7 @@ lecture	gap	witness	kind
 050	 *^^		nolocate
 050	 "^0 *		nolocate
 050	^ 		nolocate
-050	^ 		nolocate
+050	^ 	, 	replace
 050	 ^'	 "	mismatch
 050	: ^^ 	:* " 	mismatch
 050	, ^^ 	, "	replace
@@ -2284,7 +2328,6 @@ lecture	gap	witness	kind
 051	 • 	 * 	mismatch
 051	. 9. $ 		nolocate
 051	. *'^	. " 	mismatch
-051	^		nolocate
 051	. ^^ 	. '	replace
 051	, ^^ 	, " 	replace
 051	^ 		nolocate
@@ -2301,6 +2344,7 @@ lecture	gap	witness	kind
 051	|«^^«/ 		nolocate
 051	^		nolocate
 051	^		nolocate
+052	^* (	," (	replace
 052	,) "«		nolocate
 052	^ *		nolocate
 052	 ^^ 	 "	replace
@@ -2377,6 +2421,7 @@ lecture	gap	witness	kind
 053	*—^		nolocate
 053	^ 	? 	replace
 053	£ 		nolocate
+053	;"*—^	;"—	replace
 053	 '^ *	 " 	mismatch
 053	, ^' 	, "	mismatch
 053	"\** 		nolocate
@@ -2428,9 +2473,9 @@ lecture	gap	witness	kind
 053	^ 		nolocate
 053	. '^ 	. ' 	delete
 053	^ 	, 	replace
-053	^ 		nolocate
 053	. 10.—^		nolocate
 054	/\**— 		nolocate
+054	 *^^	 " 	replace
 054	, *\*•''* 	, " 	mismatch
 054	^ 		nolocate
 054	^* (		nolocate
@@ -2454,6 +2499,7 @@ lecture	gap	witness	kind
 054	^ 		nolocate
 054	"\**—		nolocate
 054	 *""^ 	 "	mismatch
+054	 *^^	 " 	replace
 054	^ 		nolocate
 054	 *^"^ 		nolocate
 054	« *		nolocate
@@ -2489,6 +2535,7 @@ lecture	gap	witness	kind
 055	« 		nolocate
 055	, '^ 	, ' 	delete
 055	—^	—	delete
+055	 *"^	 "	replace
 055	, ^' 	, "	mismatch
 055	£		nolocate
 055	 ^' *	 " 	mismatch
@@ -2496,6 +2543,7 @@ lecture	gap	witness	kind
 055	^ 	, 	replace
 055	^ 	, 	replace
 055	^ 	, 	replace
+055	, *^^	, "	replace
 055	^ 		nolocate
 055	 ^^ 	 "	replace
 055	 ^^ 	 " 	replace
@@ -2648,6 +2696,8 @@ lecture	gap	witness	kind
 057	.''—\*< 	."—' 	mismatch
 058	. 17\* 		nolocate
 058	¥		nolocate
+058	 *^^	 " 	replace
+058	^\**—	"—	replace
 058	 '^ 	 " 	mismatch
 058	—^	—	delete
 058	 ^' *	 "	mismatch
@@ -2656,6 +2706,7 @@ lecture	gap	witness	kind
 058	 15: *^''		nolocate
 058	 «		nolocate
 058	 ^		nolocate
+058	. *^^ 	. " 	replace
 058	^ 	, 	replace
 058	^'* 	," 	mismatch
 058	^ 		nolocate
@@ -2685,6 +2736,8 @@ lecture	gap	witness	kind
 058	. '^ 	. " 	mismatch
 058	. '^ 	. " 	mismatch
 058	 ^		nolocate
+059	 *^^ 	 "	replace
+059	, *^^ 	, " 	replace
 059	^ 		nolocate
 059	^ 	, 	replace
 059	:* '^	: " 	mismatch
@@ -2715,6 +2768,7 @@ lecture	gap	witness	kind
 059	, '^ 	, '© 	mismatch
 059	 "■ 	 ** 	mismatch
 059	?—^	 ?/—	mismatch
+059	?*—^	 ?—	replace
 059	, ^^	, "	replace
 059	 '^ 	 "	mismatch
 059	 '^ 	 " 	mismatch
@@ -2758,6 +2812,7 @@ lecture	gap	witness	kind
 060	^ 		nolocate
 060	 ^		nolocate
 060	^* 	, 	replace
+061	, *^^ 	, " 	replace
 061	, '^ *	, '	replace
 061	^* 		nolocate
 061	^* 	, 	replace
@@ -2767,6 +2822,7 @@ lecture	gap	witness	kind
 061	—^	—	delete
 061	—^	—	delete
 061	 "• 	 '	mismatch
+061	!)—*'•^	!)—' 	replace
 061	^^* 		nolocate
 061	^ 		nolocate
 061	^ 		nolocate
@@ -2853,8 +2909,10 @@ lecture	gap	witness	kind
 063	&« *		nolocate
 063	 %		nolocate
 063	^* 		nolocate
+063	:—*^^ 	:—" 	replace
 063	: ^^ 	: "	replace
 063	 ^^ 	 " 	replace
+063	; *^^ 	; "	replace
 063	^ 		nolocate
 063	, ^^ 	, '	replace
 063	"— ^^ 		nolocate
@@ -3078,6 +3136,7 @@ lecture	gap	witness	kind
 067	: ^^ 	: "	replace
 067	. ^' 	. "	mismatch
 067	^ <		nolocate
+067	 *^^	 ' 	replace
 067	." • 		nolocate
 067	?^ 	?* 	mismatch
 067	^ 	, 	replace
@@ -3097,13 +3156,16 @@ lecture	gap	witness	kind
 068	. ^^ 	. '	replace
 068	^		nolocate
 068	 '^ *		nolocate
+068	 *^^	 "	replace
 068	 ••' *	 "	mismatch
+068	 *^^	 "	replace
 068	, "*€		nolocate
 068	^ 	, 	replace
 068	 ^^ 		nolocate
 068	^ 		nolocate
 068	^ 		nolocate
 068	, »\* 	, ** 	mismatch
+068	—*\*^	—" 	replace
 068	^ 		nolocate
 068	^'* 	?" 	mismatch
 068	, *^^ 		nolocate
@@ -3149,7 +3211,6 @@ lecture	gap	witness	kind
 068	 ^		nolocate
 068	;^^—	 ;"—	mismatch
 069	^		nolocate
-069	^ 		nolocate
 069	: '^ 	: " 	mismatch
 069	^ 		nolocate
 069	, ^^ 	, " 	replace
@@ -3206,7 +3267,6 @@ lecture	gap	witness	kind
 070	^ 		nolocate
 070	^ 		nolocate
 070	^ 		nolocate
-070	^ 		nolocate
 070	£		nolocate
 070	^ 		nolocate
 070	 • '		nolocate
@@ -3220,6 +3280,7 @@ lecture	gap	witness	kind
 070	«'		nolocate
 070	«		nolocate
 070	« 		nolocate
+070	 *\* 	 ;" 	replace
 070	 ^^	 "	replace
 070	.429 --> + 		nolocate
 070	^		nolocate
@@ -3294,6 +3355,7 @@ lecture	gap	witness	kind
 072	^		nolocate
 072	^"^* 		nolocate
 072	. ^^ 		nolocate
+072	. *^^ 	. " 	replace
 072	^ 		nolocate
 072	^ 		nolocate
 072	^ 		nolocate
@@ -3302,6 +3364,7 @@ lecture	gap	witness	kind
 072	 '^ 	 " 	mismatch
 072	 *"•* 		nolocate
 072	^ 		nolocate
+072	! *^^	! ' 	replace
 072	 ^'	 "	mismatch
 072	^		nolocate
 072	 ♦ 		nolocate
@@ -3425,7 +3488,6 @@ lecture	gap	witness	kind
 075	 ^^ 	 "	replace
 075	. '^ 	. ' 	delete
 075	^ 		nolocate
-075	 ^		nolocate
 075	^ 		nolocate
 075	^ 		nolocate
 075	^ 		nolocate
@@ -3550,6 +3612,7 @@ lecture	gap	witness	kind
 078	. ^< 		nolocate
 078	, ^' 		nolocate
 078	."—^^	." —" 	replace
+078	: *^^ 	: '	replace
 078	^ 	, 	replace
 078	^ 	, 	replace
 078	 ^^ 	 "	replace
@@ -3562,6 +3625,7 @@ lecture	gap	witness	kind
 078	, ^^ 	, " 	replace
 078	—^	—	delete
 078	 ^^ 	 "	replace
+078	 *^^	 "	replace
 078	, *'•'• 	, " 	mismatch
 078	^ 	, 	replace
 078	^ 		nolocate
@@ -3571,6 +3635,7 @@ lecture	gap	witness	kind
 078	^ 		nolocate
 078	 \*^ 	 "	replace
 078	^		nolocate
+078	^*—	," —	replace
 078	^ 	 	delete
 078	), *'^	), "	mismatch
 078	^ 		nolocate
@@ -3580,8 +3645,8 @@ lecture	gap	witness	kind
 078	^	:	replace
 078	 £		nolocate
 078	. ^' 	. "	mismatch
-078	^ 		nolocate
-078	^ 		nolocate
+078	^ 	 	delete
+078	^ 	, 	replace
 078	^ 	, 	replace
 078	.529 --> ♦ "		nolocate
 078	," ««•• *		nolocate
@@ -3718,6 +3783,7 @@ lecture	gap	witness	kind
 081	 ^' *	 " 	mismatch
 081	. '^ *	. " 	mismatch
 081	^ 		nolocate
+081	 *^^	 " 	replace
 081	 ^' 	 " 	mismatch
 081	 €		nolocate
 081	 ^		nolocate
@@ -3738,11 +3804,15 @@ lecture	gap	witness	kind
 081	^		nolocate
 082	^		nolocate
 082	: <\* 	: " 	replace
+082	 *^"^ 	 " 	replace
 082	^ 	, 	replace
 082	, ^^ 	, "	replace
 082	^ 	, 	replace
 082	, ^^ 	, '* 	mismatch
 082	^ 		nolocate
+082	, *^^	, " 	replace
+082	—*"^ 	—"	replace
+082	: *^^	: " 	replace
 082	, ^^		nolocate
 082	, '^ 	, "	mismatch
 082	, ^^ 	, " 	replace
@@ -3753,9 +3823,9 @@ lecture	gap	witness	kind
 082	^		nolocate
 082	; \*\/(>		nolocate
 082	, *^^		nolocate
-082	 %» 		nolocate
 082	 *^^		nolocate
 082	—^	—	delete
+082	 *^^	 "	replace
 082	^* 	," 	replace
 082	, \*^ *		nolocate
 082	. ^^ 	. "	replace
@@ -3879,6 +3949,8 @@ lecture	gap	witness	kind
 084	^ 	, 	replace
 084	 <^ 		nolocate
 084	^ 	, 	replace
+084	 *^^	 "	replace
+084	"*—^	" —	replace
 084	^* —		nolocate
 084	. *^''	. "	mismatch
 084	, '^ 	, "	mismatch
@@ -3922,6 +3994,7 @@ lecture	gap	witness	kind
 084	.602 --> 0«» *		nolocate
 084	;^		nolocate
 085	^		nolocate
+085	, *^^	, " 	replace
 085	^ 		nolocate
 085	^ 		nolocate
 085	 ^	 	delete
@@ -3963,7 +4036,7 @@ lecture	gap	witness	kind
 085	.^ "		nolocate
 085	^ 		nolocate
 085	^ 		nolocate
-085	 ♦ 2 		nolocate
+085	 ♦ 2 	 _ * 2 	mismatch
 085	. 39, *%* 		nolocate
 085	. 5. ¥		nolocate
 085	^ 	, 	replace
@@ -4117,8 +4190,7 @@ lecture	gap	witness	kind
 087	. ♦ " 	. * « 	mismatch
 087	,* + 	. + 	mismatch
 087	^* 	, 	replace
-087	^ 		nolocate
-087	^ 		nolocate
+087	^ 	, 	replace
 087	^ 	, 	replace
 087	^ 	, 	replace
 087	^ 	. 	replace
@@ -4236,6 +4308,7 @@ lecture	gap	witness	kind
 089	^		nolocate
 089	«		nolocate
 089	, '^ 	, " 	mismatch
+089	 *^^ 	 " 	replace
 089	^ " 	: "	replace
 089	, *^^		nolocate
 089	^ 		nolocate
@@ -4548,17 +4621,19 @@ lecture	gap	witness	kind
 095	.'' ^' 	." "	mismatch
 095	^ 	, 	replace
 095	^ 	, 	replace
+095	. *^^	. " 	replace
 095	^ 		nolocate
 095	^ 	, 	replace
 095	^ 		nolocate
 095	^ 		nolocate
 095	^ 	, 	replace
-095	 '^ *		nolocate
-095	/\** 		nolocate
+095	 '^ *	 " 	mismatch
+095	/\** 	;" 	replace
 095	, ^^ 	, '	replace
 095	 £		nolocate
 095	, ^' 	, "	mismatch
 095	^ 		nolocate
+095	, *^^ 	, "	replace
 095	|^		nolocate
 095	^ 	, 	replace
 095	^ *		nolocate
@@ -4633,6 +4708,7 @@ lecture	gap	witness	kind
 096	^ 		nolocate
 096	^ 		nolocate
 096	^ 		nolocate
+096	, *^^ 	, " 	replace
 096	^ 		nolocate
 096	 —^	 —	delete
 096	. ^'		nolocate
@@ -4737,6 +4813,7 @@ lecture	gap	witness	kind
 097	^ 		nolocate
 097	^ 		nolocate
 097	 ^^ 	 "	replace
+097	: *^^ 	: '	replace
 097	 \** 		nolocate
 097	- « 		nolocate
 097	:%		nolocate
@@ -4764,6 +4841,7 @@ lecture	gap	witness	kind
 098	^ 		nolocate
 098	. <\* 	. ' 	replace
 098	; •\* 	; "	replace
+098	, *^^ 	, " 	replace
 098	: *^^		nolocate
 098	: *"^		nolocate
 098	! '^	! '	delete
@@ -4794,6 +4872,7 @@ lecture	gap	witness	kind
 099	^ 	, 	replace
 099	 ♦ 1 	 * 1 	mismatch
 099	 14. + 		nolocate
+099	, *^^ 	, " 	replace
 099	: *""^ 	: "	mismatch
 099	 *^^ 		nolocate
 099	^		nolocate
@@ -4848,6 +4927,7 @@ lecture	gap	witness	kind
 100	. ^^ 		nolocate
 100	\*8 		nolocate
 100	^\** 	," 	replace
+100	*—^	'—	replace
 100	, ^^ *		nolocate
 100	^\** 		nolocate
 100	/\** 		nolocate
@@ -4875,7 +4955,7 @@ lecture	gap	witness	kind
 100	^ 		nolocate
 100	^ 		nolocate
 100	^ 	, 	replace
-100	^ 		nolocate
+100	^ 	, 	replace
 100	^ 		nolocate
 100	^ 		nolocate
 100	^ 		nolocate
@@ -4892,7 +4972,7 @@ lecture	gap	witness	kind
 100	 '^ 	 " 	mismatch
 100	."^ 		nolocate
 100	 £		nolocate
-100	 *''^		nolocate
+100	 *''^	 " 	mismatch
 100	^ 		nolocate
 100	 ^		nolocate
 100	. ^^ *		nolocate
@@ -4932,6 +5012,7 @@ lecture	gap	witness	kind
 101	, '^ 		nolocate
 101	, <^ 		nolocate
 101	» 	, 	replace
+101	. *^^ 	. ' 	replace
 101	« 		nolocate
 101	^ 		nolocate
 101	 \*		nolocate
@@ -4940,6 +5021,7 @@ lecture	gap	witness	kind
 101	, *^^ 		nolocate
 101	^ 		nolocate
 101	. 16. «\*		nolocate
+101	^"* (	" (	replace
 101	^ 		nolocate
 101	." *^"^ 	." '	mismatch
 101	^ 		nolocate
@@ -5031,11 +5113,12 @@ lecture	gap	witness	kind
 102	~ 		nolocate
 102	- ♦ 		nolocate
 102	, '^ 	, "	mismatch
-102	^ 		nolocate
+102	^ 	, 	replace
 102	, '^ 	, "	mismatch
 102	 ^^		nolocate
 102	. '^ 	. ' 	delete
 102	^ 	, 	replace
+102	.* ^^ 	. '	replace
 102	^		nolocate
 102	/^ 		nolocate
 102	.157 --> ♦ 2 		nolocate
@@ -5066,6 +5149,7 @@ lecture	gap	witness	kind
 103	^"* 	," 	replace
 103	, ^^ *		nolocate
 103	^ 		nolocate
+103	, *^^ 	, "	replace
 103	^ 	, 	replace
 103	^		nolocate
 103	^ 		nolocate
@@ -5078,7 +5162,6 @@ lecture	gap	witness	kind
 103	^		nolocate
 103	 ^		nolocate
 103	^ 		nolocate
-103	^		nolocate
 103	 ^		nolocate
 103	 ^	 	delete
 103	^ 		nolocate
@@ -5137,8 +5220,6 @@ lecture	gap	witness	kind
 104	« 	 	delete
 104	 ^	 	delete
 104	."—^" 	."—*' 	mismatch
-104	«		nolocate
-104	, ^		nolocate
 104	 «	 	delete
 104	^'		nolocate
 104	 ♦ 		nolocate
@@ -5173,6 +5254,7 @@ lecture	gap	witness	kind
 105	^ 	, 	replace
 105	: ^^	: " 	replace
 105	 43. •		nolocate
+105	 *^^ 	 "	replace
 105	^ 	, 	replace
 105	^ 	, 	replace
 105	. '^ 	. "	mismatch
@@ -5194,9 +5276,12 @@ lecture	gap	witness	kind
 105	.209 --> ♦ 		nolocate
 106	 ^		nolocate
 106	^ 		nolocate
+106	. *^^ 	. " 	replace
+106	, *"^	, "	replace
 106	^ 	, 	replace
 106	^ 		nolocate
 106	^ 	, 	replace
+106	:—*^^ 	:—' 	replace
 106	^ 		nolocate
 106	^ 		nolocate
 106	^		nolocate
@@ -5278,6 +5363,7 @@ lecture	gap	witness	kind
 107	, £	, 	delete
 107	^ 	, 	replace
 107	^ 	, 	replace
+107	, *^^ 	, " 	replace
 107	, ^< 	, "	replace
 107	.* + 		nolocate
 107	, ^^ 		nolocate
@@ -5295,6 +5381,7 @@ lecture	gap	witness	kind
 108	, '^ 	, ' 	delete
 108	, *'^* 	, '*' 	mismatch
 108	, ♦ 		nolocate
+108	," *^^	," " 	replace
 108	^ 		nolocate
 108	^ 		nolocate
 108	^		nolocate
@@ -5327,6 +5414,7 @@ lecture	gap	witness	kind
 108	, ^^ 	, "	replace
 108	, ^^ *	, "	replace
 108	 *\** 		nolocate
+108	 *^^	 " 	replace
 108	. ^' 	. '	delete
 108	 '^ *	 " 	mismatch
 108	, *'•^ 		nolocate
@@ -5347,6 +5435,7 @@ lecture	gap	witness	kind
 109	."§ 	.'§ 	mismatch
 109	|| 	|| 	mismatch
 109	^ 	, 	replace
+109	), *^^ 	), "	replace
 109	^ 		nolocate
 109	—^	—	delete
 109	^ 		nolocate
@@ -5503,7 +5592,6 @@ lecture	gap	witness	kind
 111	^ 		nolocate
 111	^ 	~ 	mismatch
 111	 ^	 	delete
-111	^		nolocate
 111	^		nolocate
 111	. 9), \*^ 	. 9), " 	mismatch
 111	, ^^ 		nolocate
@@ -5679,6 +5767,7 @@ lecture	gap	witness	kind
 114	 ^' 		nolocate
 114	^ 		nolocate
 114	^/		nolocate
+114	. *^^ 	. '	replace
 114	^ 		nolocate
 114	^ 		nolocate
 114	 *\** 		nolocate
@@ -5731,7 +5820,6 @@ lecture	gap	witness	kind
 115	^ 	, 	replace
 115	 ^ 	 * 	mismatch
 115	, ^^ 	, " 	replace
-115	^ 		nolocate
 115	^ 		nolocate
 115	^ 		nolocate
 115	^* 	." 	replace
@@ -5802,8 +5890,8 @@ lecture	gap	witness	kind
 116	^* 		nolocate
 116	^		nolocate
 116	^* 		nolocate
-116	. *^^		nolocate
-116	^ ^^		nolocate
+116	. *^^	. " 	replace
+116	^ ^^	, '	replace
 116	, ^^ 	,* " 	mismatch
 116	, ^^ 		nolocate
 116	 ♦ 		nolocate
@@ -5897,6 +5985,7 @@ lecture	gap	witness	kind
 118	 ♦ 		nolocate
 118	 ♦ 		nolocate
 118	^ 		nolocate
+118	, *^^	, "	replace
 118	^ 		nolocate
 118	^		nolocate
 118	^ 		nolocate
@@ -5971,6 +6060,7 @@ lecture	gap	witness	kind
 119	-;^ ♦ 		nolocate
 119	, '^ 	, "* 	mismatch
 119	, ^' 	, "	mismatch
+119	. *^^ 	. " 	replace
 119	^ 	, 	replace
 119	^ 		nolocate
 119	^ 		nolocate
@@ -6020,6 +6110,7 @@ lecture	gap	witness	kind
 120	^ 		nolocate
 120	« 		nolocate
 120	, ^ 	, "	replace
+120	, *^^	, " 	replace
 120	, *^^ 		nolocate
 120	 \** 		nolocate
 120	. + 		nolocate
@@ -6029,7 +6120,7 @@ lecture	gap	witness	kind
 120	«^ 		nolocate
 120	^ 		nolocate
 120	. ^^ 		nolocate
-120	^ 		nolocate
+120	^ 	, 	replace
 120	^		nolocate
 120	^		nolocate
 120	^		nolocate
@@ -6052,7 +6143,6 @@ lecture	gap	witness	kind
 120	^		nolocate
 120	, ^^	, "	replace
 120	) ^ 	, " 	mismatch
-120	^		nolocate
 120	^		nolocate
 120	^		nolocate
 120	 ♦ 		nolocate
@@ -6185,6 +6275,7 @@ lecture	gap	witness	kind
 122	," ♦ 		nolocate
 122	. 13,24. *%* 		nolocate
 122	^\** 	," 	replace
+122	, *^^	, "	replace
 122	^ 		nolocate
 122	^ 		nolocate
 122	^ 		nolocate
@@ -6226,9 +6317,6 @@ lecture	gap	witness	kind
 122	^ 		nolocate
 122	^ 		nolocate
 122	, ^^ 	, " 	replace
-122	^ 		nolocate
-122	^ 		nolocate
-122	^ 		nolocate
 122	 31. + 		nolocate
 123	^ 	, 	replace
 123	! *^-^ 	! '	mismatch
@@ -6296,6 +6384,7 @@ lecture	gap	witness	kind
 124	^ 		nolocate
 124	^ 		nolocate
 124	 ♦ 		nolocate
+124	, *^^ 	, " 	replace
 124	^ 		nolocate
 124	^		nolocate
 124	. + 		nolocate
@@ -6507,7 +6596,6 @@ lecture	gap	witness	kind
 127	^		nolocate
 127	—^^ 	' 	mismatch
 127	."—^" 		nolocate
-127	^ 		nolocate
 127	, ^' 		nolocate
 127	 ♦ 		nolocate
 127	^		nolocate
@@ -6627,7 +6715,6 @@ lecture	gap	witness	kind
 128	« 		nolocate
 128	. \*< 	. " 	replace
 128	 •\* 		nolocate
-128	» 		nolocate
 128	«		nolocate
 128	» 	, 	replace
 128	£ 		nolocate
@@ -6658,6 +6745,7 @@ lecture	gap	witness	kind
 129	 •	 	delete
 129	^		nolocate
 129	^ 	 	delete
+129	: *^^ 	: " 	replace
 129	^ 		nolocate
 129	^ 		nolocate
 129	© 		nolocate
@@ -6783,6 +6871,8 @@ lecture	gap	witness	kind
 131	. *'^	. " 	mismatch
 131	^ 		nolocate
 131	^ 		nolocate
+131	. *^^	. "	replace
+131	, *^	, " 	replace
 131	^ 		nolocate
 131	, \*•• 		nolocate
 131	« 	. 	replace
@@ -6835,6 +6925,7 @@ lecture	gap	witness	kind
 132	^ 		nolocate
 132	 <\* 	 " 	replace
 132	^'* (	," (	mismatch
+132	) *^^ 	) "	replace
 132	, ♦ 	, * 	mismatch
 132	 ^^	 "	replace
 132	, ^^ 		nolocate
@@ -6847,11 +6938,11 @@ lecture	gap	witness	kind
 132	, ^' 	, "	mismatch
 132	 ^^ 	 "	replace
 132	^ 		nolocate
-132	,) *^'^ 		nolocate
-132	^		nolocate
-132	^*—		nolocate
-132	. *^^ 		nolocate
+132	,) *^'^ 	,) "	mismatch
+132	^*—	,"—	replace
+132	. *^^ 	. "	replace
 132	^ 		nolocate
+132	"*—^	" —	replace
 132	^ 		nolocate
 132	.^	."	replace
 132	: ^'	: "	mismatch
@@ -6897,8 +6988,6 @@ lecture	gap	witness	kind
 133	^		nolocate
 133	£&		nolocate
 133	 £		nolocate
-133	^ 		nolocate
-133	$		nolocate
 133	 '^ 	 " 	mismatch
 133	." *\* 	." { 	mismatch
 133	. ^' *		nolocate
@@ -6979,9 +7068,11 @@ lecture	gap	witness	kind
 134	. ^ 0 	. "0 	mismatch
 134	, ^' 	, "	mismatch
 134	, *^' 	, " 	mismatch
+134	, *^^ 	, " 	replace
 134	^ 	, 	replace
 134	^	: 	replace
 134	^ 	, 	replace
+134	. *^^	. "	replace
 134	: ^' 		nolocate
 134	 • 		nolocate
 134	^ 	, 	replace
@@ -7097,7 +7188,7 @@ lecture	gap	witness	kind
 135	 —^	 ——	replace
 135	« 	, 	replace
 135	, ^' *		nolocate
-135	^"* 		nolocate
+135	^"* 	." 	replace
 135	 ♦ 		nolocate
 135	|.	,	mismatch
 135	^ 		nolocate

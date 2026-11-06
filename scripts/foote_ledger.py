@@ -4,7 +4,7 @@
     python3 scripts/foote_ledger.py            # 读 foote_raw/luke/en_chapters/
 
 分类（互斥，按顺序判）：
-  verified   已核实原样：logs/foote_adjudicate.tsv 里证人同位一致（confirm）的 token
+  verified   已核实原样：两个证人（第 3 版、tesseract）任一同位一致（confirm）的 token
   foreign    外文与活字残渣：token 含非 ASCII 字母，或两侧紧邻非 ASCII 字母的 token（希腊引文一片）
   fragment   两字母以内的碎片
   note       脚注区（注文本身满是出处缩写）里的非词
@@ -21,7 +21,7 @@ from alexander_lexicon import build, is_word  # noqa: E402
 
 ROOT = Path(__file__).resolve().parent.parent
 SRC = ROOT / 'foote_raw' / 'luke' / 'en_chapters'
-ADJ = ROOT / 'logs' / 'foote_adjudicate.tsv'
+ADJ = [ROOT / 'logs' / 'foote_adjudicate.tsv', ROOT / 'logs' / 'foote_adjudicate_tess.tsv']
 TOK = re.compile(r"\S+")
 
 
@@ -30,10 +30,11 @@ def main():
     from repair_alexander_ocr import foote_kjv_words
     lex |= foote_kjv_words()
     verified = set()
-    if ADJ.exists():
-        for r in csv.DictReader(open(ADJ, encoding='utf-8'), delimiter='\t'):
-            if r['kind'] == 'confirm':
-                verified.add((r['lecture'], r['from'].lower()))
+    for adj in ADJ:
+        if adj.exists():
+            for r in csv.DictReader(open(adj, encoding='utf-8'), delimiter='\t'):
+                if r['kind'] == 'confirm':
+                    verified.add((r['lecture'], r['from'].lower()))
     c = Counter()
     for p in sorted(SRC.glob('*.md')):
         text = re.sub(r'<!--.*?-->', ' ', p.read_text(encoding='utf-8'))
