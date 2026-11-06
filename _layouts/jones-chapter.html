@@ -167,10 +167,43 @@ layout: default
 .jones-wrap .jw-trailer { text-align: center !important; letter-spacing: .1em; color: #5e5b49; }
 .jones-wrap .jw-tp p { text-align: center !important; font-size: 16px; letter-spacing: .03em; }
 
+/* 扉页：照 1635 原书版式手排（jones_raw/manual_pages/title.html） */
+.jones-wrap .jw-tpg { max-width: 600px; margin: 10px auto 30px; padding: 6px 26px 18px;
+  border: 1.5px solid #2b2a24; background: #fff; text-align: center;
+  font-family: Georgia, "Times New Roman", serif; color: #1f1d16; line-height: 1.2; }
+.jones-wrap .jw-tpg-l { margin: 0 0 5px; text-align: center; }
+.jones-wrap .jw-tpg .s0 { font-size: 44px; letter-spacing: .02em; line-height: 1.05; }
+.jones-wrap .jw-tpg .s0b { font-size: 34px; letter-spacing: .03em; line-height: 1.1; }
+.jones-wrap .jw-tpg .s1 { font-size: 22px; }
+.jones-wrap .jw-tpg .s2 { font-size: 18px; }
+.jones-wrap .jw-tpg .s3 { font-size: 15.5px; }
+.jones-wrap .jw-tpg .s4 { font-size: 14px; }
+.jones-wrap .jw-tpg .it, .jones-wrap .jw-tpg i { font-style: italic; }
+.jones-wrap .jw-tpg .ls { letter-spacing: .14em; }
+.jones-wrap .jw-tpg .sc { font-variant: small-caps; text-transform: lowercase; letter-spacing: .06em; }
+.jones-wrap .jw-tpg sup { font-size: .6em; }
+.jones-wrap .jw-tpg-by { margin-top: 12px; }
+.jones-wrap .jw-tpg-left { text-align: left; }
+.jones-wrap .jw-tpg-ind { padding-left: 2.2em; }
+.jones-wrap .jw-tpg-gap { margin-top: 12px; }
+.jones-wrap .jw-tpg-rule { border: 0; border-top: 1.5px solid #2b2a24; margin: 12px -14px; }
+.jones-wrap .jw-tpg-dev { margin: 14px 0; }
+.jones-wrap .jw-tpg-dev img { width: 22%; max-width: 130px; height: auto; display: inline-block; mix-blend-mode: multiply; }
+@media (max-width: 600px) {
+  .jones-wrap .jw-tpg { padding: 6px 10px 14px; }
+  .jones-wrap .jw-tpg .s0 { font-size: 28px; }
+  .jones-wrap .jw-tpg .s0b { font-size: 22px; }
+  .jones-wrap .jw-tpg .s1 { font-size: 16px; }
+  .jones-wrap .jw-tpg .s2 { font-size: 14px; }
+  .jones-wrap .jw-tpg .s3 { font-size: 12.5px; }
+  .jones-wrap .jw-tpg .s4 { font-size: 11.5px; }
+}
+
 /* 底本里读不出的字、未录的希腊文 */
 .jones-wrap .jw-gap { color: #c0392b; background: #fdecea; border-radius: 2px; padding: 0 2px; cursor: help; }
 /* 编者推补：方括号 + 另色，与原文区分 */
-.jones-wrap .jw-conj { color: #8a5a00; background: #fff6e0; border-radius: 2px; padding: 0 1px; cursor: help; font-style: normal; }
+.jones-wrap .jw-conj { font-family: "Helvetica Neue", Arial, "PingFang SC", sans-serif; font-size: .9em;
+  color: #8a5a00; background: #fff6e0; border-radius: 2px; padding: 0 1px; cursor: help; font-style: normal; }
 
 .jones-wrap .jw-stamp {
   margin-top: 32px; font-size: 12px; color: #a3a08c; text-align: right;

@@ -58,8 +58,16 @@ layout: default
 .jones-book .jw-note a { color: var(--jw-ink-dark); }
 .jones-book .jw-note-zh { font-family: "Songti SC", STSong, serif; }
 .jones-book .jw-gap { color: #c0392b; background: #fdecea; border-radius: 2px; padding: 0 2px; }
+/* 推补：换对比字体（无衬线）+ 方括号 + 另色，不只靠颜色区分 */
+.jones-book .jw-conj { font-family: "Helvetica Neue", Arial, "PingFang SC", sans-serif; font-size: .92em;
+  color: #8a5a00; background: #fff6e0; border-radius: 2px; padding: 0 1px; font-style: normal; }
+.jones-book .jw-conjhead { font-family: "Songti SC", STSong, Georgia, serif; font-size: 16px; color: var(--jw-ink-dark); margin: 26px 0 10px; }
+.jones-book .jw-conjtab { width: 100%; border-collapse: collapse; font-size: 13px; line-height: 1.6; margin: 10px 0 20px; }
+.jones-book .jw-conjtab th, .jones-book .jw-conjtab td { border-bottom: 1px solid var(--jw-rule); padding: 6px 6px; vertical-align: top; text-align: left; }
+.jones-book .jw-conjtab th { background: var(--jw-paper); color: var(--jw-ink-dark); white-space: nowrap; }
 @media (max-width: 767px) {
   .jones-book .jw-hero h1 { font-size: 22px; }
   .jones-book .jw-toc { grid-template-columns: 1fr 1fr; }
+  .jones-book .jw-conjtab { display: block; overflow-x: auto; }
 }
 </style>
