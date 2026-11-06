@@ -6,6 +6,8 @@ title: "后书提要"
 date: 2026-11-07 01:33
 prev_url: "/rollock/2thessalonians/zh/title/"
 prev_label: "书名页"
+next_url: "/rollock/2thessalonians/zh/1-1/"
+next_label: "第一讲"
 en_url: "/rollock/2thessalonians/argument/"
 zh: true
 ---
