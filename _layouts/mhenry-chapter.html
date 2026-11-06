@@ -839,7 +839,7 @@ function ttsUpdateUI(state) {
 
     // Explicit markers: body <sup>N</sup> (outside aside / verse boxes) wins over the digit heuristic
     var bodySups = Array.from(col.querySelectorAll('sup')).filter(function(s) {
-        return /^\d+$/.test(s.textContent.trim()) && !s.closest('aside') && !s.closest('.mh-verse');
+        return /^\d+$/.test(s.textContent.trim()) && !s.closest('aside');
     });
     if (bodySups.length) {
         bodySups.forEach(function(s, i) {

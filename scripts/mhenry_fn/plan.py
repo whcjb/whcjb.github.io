@@ -38,6 +38,7 @@ for b in sorted(W):
     for o in w:
         r,why=align.locate(chs,o['ctx'],after=prev)
         if r: prev=r
+        if why=='ok-verse': report['inverse'].append((chs[r[0]][0],o['ctx'][-12:]))
         if not r: report['unlocated'].append((b,o['page'],why,o['ctx'][-15:],o['def'][:30])); continue
         ci,p=r; body=chs[ci][2]
         r2=marker_pos(body,p,o['ctx'])
@@ -53,7 +54,7 @@ for b in sorted(W):
             elif len(d)<=2: pass
             else: report['digitmismatch'].append((chs[ci][0],o['page'],o['n'],body[j-10:k+4])); continue
         per[ci].append(dict(j=j,k=k,digits=body[j:k],pdfdef=o['def'],page=o['page']))
-    for ci,(f,s,body,n,idx) in enumerate(chs):
+    for ci,(f,s,body,n,idx,nv,idxv) in enumerate(chs):
         sd=site_defs(s)
         ms=sorted(per.get(ci,[]),key=lambda x:x['j'])
         if not ms and not sd: continue
@@ -69,4 +70,4 @@ st=Counter()
 for f,p in plans.items():
     for m in p['markers']: st['m_'+('hasdigit' if m['digits'] else 'nodigit')]+=1; st['def_'+m['src']]+=1
     st['unused_defs']+=len(p['unused'])
-print(dict(st)); print('unlocated',len(report['unlocated']),'tailmismatch',len(report['tailmismatch']),'digitmismatch',len(report['digitmismatch']))
+print(dict(st)); print('in-verse',report['inverse']); print('unlocated',len(report['unlocated']),'tailmismatch',len(report['tailmismatch']),'digitmismatch',len(report['digitmismatch']))
