@@ -30,28 +30,12 @@ layout: default
 
             <div class="col-md-12 mh-book-chapters-col">
                 <h3 class="mh-section-title">❧ {{ page.book_name }} · 章节目录</h3>
-                <div class="row">
+                <div class="mh-chapter-grid">
                     {% if book_preface %}
-                    <div class="col-xs-4 col-sm-4 col-md-4" style="margin-bottom:10px;">
-                        <a href="{{ site.baseurl }}/mhenry/{{ page.book_id }}/preface/" class="mhenry-chapter-btn mhenry-chapter-btn--has-content mhenry-chapter-btn--preface">
-                            前言
-                        </a>
-                    </div>
+                    <a href="{{ site.baseurl }}/mhenry/{{ page.book_id }}/preface/" class="mhenry-chapter-btn mhenry-chapter-btn--has-content mhenry-chapter-btn--preface">前言</a>
                     {% endif %}
                     {% for i in (1..page.chapters) %}
-                    {% if chapter_nums contains i %}
-                    <div class="col-xs-4 col-sm-4 col-md-4" style="margin-bottom:10px;">
-                        <a href="{{ site.baseurl }}/mhenry/{{ page.book_id }}/{{ i }}/" class="mhenry-chapter-btn mhenry-chapter-btn--has-content">
-                            第 {{ i }} 章
-                        </a>
-                    </div>
-                    {% else %}
-                    <div class="col-xs-4 col-sm-4 col-md-4" style="margin-bottom:10px;">
-                        <a href="{{ site.baseurl }}/mhenry/{{ page.book_id }}/{{ i }}/" class="mhenry-chapter-btn">
-                            第 {{ i }} 章
-                        </a>
-                    </div>
-                    {% endif %}
+                    <a href="{{ site.baseurl }}/mhenry/{{ page.book_id }}/{{ i }}/" class="mhenry-chapter-btn{% if chapter_nums contains i %} mhenry-chapter-btn--has-content{% endif %}" title="第 {{ i }} 章" aria-label="第 {{ i }} 章">{{ i }}</a>
                     {% endfor %}
                 </div>
             </div>
@@ -61,18 +45,38 @@ layout: default
 </div>
 
 <style>
+/* 章节目录：数字格（圣经类应用通行做法），只放章号，宽度自适应；前言单独一行 */
+.mh-chapter-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(52px, 1fr));
+    gap: 8px;
+}
 .mhenry-chapter-btn {
-    display: block;
-    padding: 8px 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 44px;
+    padding: 0 4px;
     background: #F5F5F5;
     border: 1px solid #DDD;
-    border-radius: 3px;
+    border-radius: 6px;
     color: #BBB !important;
     text-decoration: none !important;
-    font-size: 13px;
-    text-align: center;
+    font-size: 16px;
+    font-variant-numeric: tabular-nums;
+    line-height: 1;
     cursor: default;
     pointer-events: none;
+    -webkit-tap-highlight-color: transparent;
+}
+.mhenry-chapter-btn--preface {
+    grid-column: 1 / -1;
+    font-size: 15px;
+    letter-spacing: .3em;
+}
+@media (max-width: 767px) {
+    .mh-chapter-grid { grid-template-columns: repeat(auto-fill, minmax(46px, 1fr)); gap: 6px; }
+    .mhenry-chapter-btn { height: 42px; font-size: 15px; }
 }
 .mhenry-chapter-btn--has-content {
     background: #FFF8E1;
