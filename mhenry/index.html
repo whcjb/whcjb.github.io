@@ -35,9 +35,9 @@ header-img: img/mhenry-land-55.jpg
             <div class="mhenry-book-grid" style="margin-bottom:36px;">
                 {% for book in site.data.mhenry_books.old_testament %}
                 {% if books_with_content contains book.id %}
-                <a href="{{ site.baseurl }}/mhenry/{{ book.id }}/" class="mhenry-book-btn mhenry-book-btn--has-content">{{ book.name }}<small>（{{ book.chapters }}章）</small></a>
+                <a href="{{ site.baseurl }}/mhenry/{{ book.id }}/" class="mhenry-book-btn mhenry-book-btn--has-content{% if book.name.size > 5 %} mhenry-book-btn--long{% endif %}">{{ book.name }}<small>（{{ book.chapters }}章）</small></a>
                 {% else %}
-                <a href="{{ site.baseurl }}/mhenry/{{ book.id }}/" class="mhenry-book-btn">{{ book.name }}<small>（{{ book.chapters }}章）</small></a>
+                <a href="{{ site.baseurl }}/mhenry/{{ book.id }}/" class="mhenry-book-btn{% if book.name.size > 5 %} mhenry-book-btn--long{% endif %}">{{ book.name }}<small>（{{ book.chapters }}章）</small></a>
                 {% endif %}
                 {% endfor %}
             </div>
@@ -47,9 +47,9 @@ header-img: img/mhenry-land-55.jpg
             <div class="mhenry-book-grid">
                 {% for book in site.data.mhenry_books.new_testament %}
                 {% if books_with_content contains book.id %}
-                <a href="{{ site.baseurl }}/mhenry/{{ book.id }}/" class="mhenry-book-btn mhenry-book-btn--has-content">{{ book.name }}<small>（{{ book.chapters }}章）</small></a>
+                <a href="{{ site.baseurl }}/mhenry/{{ book.id }}/" class="mhenry-book-btn mhenry-book-btn--has-content{% if book.name.size > 5 %} mhenry-book-btn--long{% endif %}">{{ book.name }}<small>（{{ book.chapters }}章）</small></a>
                 {% else %}
-                <a href="{{ site.baseurl }}/mhenry/{{ book.id }}/" class="mhenry-book-btn">{{ book.name }}<small>（{{ book.chapters }}章）</small></a>
+                <a href="{{ site.baseurl }}/mhenry/{{ book.id }}/" class="mhenry-book-btn{% if book.name.size > 5 %} mhenry-book-btn--long{% endif %}">{{ book.name }}<small>（{{ book.chapters }}章）</small></a>
                 {% endif %}
                 {% endfor %}
             </div>
@@ -69,7 +69,7 @@ header-img: img/mhenry-land-55.jpg
                     {% for book in site.data.mhenry_books.new_testament %}
                     {% assign en_id = book.id | append: '-en' %}
                     {% if en_ids contains en_id %}
-                    <a href="{{ site.baseurl }}/mhenry/{{ en_id }}/" class="mhenry-book-btn mhenry-book-btn--en">{{ book.name }}<small>（{{ book.chapters }} ch.）</small></a>
+                    <a href="{{ site.baseurl }}/mhenry/{{ en_id }}/" class="mhenry-book-btn mhenry-book-btn--en{% if book.name.size > 5 %} mhenry-book-btn--long{% endif %}">{{ book.name }}<small>（{{ book.chapters }} ch.）</small></a>
                     {% endif %}
                     {% endfor %}
                 </div>
@@ -190,6 +190,40 @@ header-img: img/mhenry-land-55.jpg
     transform: translateY(-3px);
     box-shadow: 0 9px 20px rgba(31,58,82,0.20);
     border-color: #3d6486;
+}
+
+/* ── 触屏：悬浮上浮只给有鼠标的设备，触屏改为按下反馈 ── */
+@media (hover: none) {
+    .mhenry-book-btn--has-content:hover,
+    .mhenry-book-btn--en:hover { transform: none; }
+    .mhenry-book-btn--has-content:active,
+    .mhenry-book-btn--en:active { transform: scale(.97); filter: brightness(.97); }
+}
+
+/* ── 手机：紧凑书卷格，每行 3 个（窄屏自动退 2 个），名称居中、章数在下 ── */
+@media (max-width: 767px) {
+    .mhenry-book-grid {
+        grid-template-columns: repeat(auto-fill, minmax(92px, 1fr));
+        gap: 6px;
+    }
+    .mhenry-book-btn {
+        min-height: 48px;
+        padding: 7px 4px 6px 6px;
+        text-align: center;
+        font-size: 14px;
+        letter-spacing: 0;
+        line-height: 1.25;
+        box-shadow: none;
+        -webkit-tap-highlight-color: transparent;
+    }
+    .mhenry-book-btn::before { top: 9px; bottom: 9px; width: 2px; }
+    .mhenry-book-btn small { margin-top: 2px; font-size: 10.5px; }
+    .mhenry-section-heading { margin-bottom: 14px; font-size: 20px; }
+    .mhenry-book-btn--long { font-size: 12px; }
+}
+@media (max-width: 359px) {
+    .mhenry-book-btn { font-size: 13px; }
+    .mhenry-book-btn--long { font-size: 11px; }
 }
 
 </style>
