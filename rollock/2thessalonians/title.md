@@ -7,6 +7,7 @@ subtitle: "Edinburgh, 1606"
 date: 2026-10-22 14:21
 next_url: "/rollock/2thessalonians/argument/"
 next_label: "The Argument of the Second Epistle"
+zh_url: "/rollock/2thessalonians/zh/title/"
 ---
 
 <div class="rl-tpg">
