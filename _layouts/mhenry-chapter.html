@@ -837,6 +837,30 @@ function ttsUpdateUI(state) {
     var col = document.getElementById('mhenry-col');
     if (!col) return;
 
+    // Explicit markers: body <sup>N</sup> (outside aside / verse boxes) wins over the digit heuristic
+    var bodySups = Array.from(col.querySelectorAll('sup')).filter(function(s) {
+        return /^\d+$/.test(s.textContent.trim()) && !s.closest('aside') && !s.closest('.mh-verse');
+    });
+    if (bodySups.length) {
+        bodySups.forEach(function(s, i) {
+            var n = i + 1;
+            if (n > total) return;
+            var a = document.createElement('a');
+            a.id = 'fnref-' + n;
+            a.href = '#fn-' + n;
+            a.className = 'fn-ref';
+            a.title = '查看脚注 ' + n;
+            a.textContent = s.textContent.trim();
+            a.addEventListener('click', function(e) {
+                e.preventDefault();
+                var target = document.getElementById('fn-' + n);
+                if (target) { target.scrollIntoView({behavior:'smooth', block:'center'}); flashEl(target); }
+            });
+            s.replaceWith(a);
+        });
+        return;
+    }
+
     var markerIdx = 0;
 
     function isChinese(code) { return code >= 0x4e00 && code <= 0x9fff; }
