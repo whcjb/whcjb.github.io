@@ -202,6 +202,14 @@ authors:
     work_cn: "路加福音讲义"
     work_en: "Lectures on the Gospel according to Luke"
     books: 1
+  - id: jones
+    name: "威廉·琼斯"
+    short: "琼斯"
+    en: "William Jones"
+    years: "1561–1636"
+    work_cn: "约翰二书、三书简释"
+    work_en: "A Compendious Explication of the Second and Third Epistles of Saint Iohn"
+    books: 2
   - id: alexander
     name: "约瑟·亚历山大"
     short: "亚历山大"
@@ -631,12 +639,14 @@ books:
     testament: nt
     chapters: 1
     links:
+      - {author: jones, path: "/jones/2john/", url_tpl: "/jones/2john/__CH__/", title_cn: "约翰二书简释", title_en: "A Compendious Explication of the Second Epistle of Saint Iohn", c0: "#685e37", c1: "#9c9066"}
   - id: 3john
     name: "约翰三书"
     en: "3 John"
     testament: nt
     chapters: 1
     links:
+      - {author: jones, path: "/jones/3john/", url_tpl: "/jones/3john/__CH__/", title_cn: "约翰三书简释", title_en: "A Compendious Explication of the Third Epistle of Saint Iohn", c0: "#685e37", c1: "#9c9066"}
   - id: jude
     name: "犹大书"
     en: "Jude"
