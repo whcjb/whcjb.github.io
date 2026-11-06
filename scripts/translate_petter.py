@@ -28,6 +28,7 @@ import os
 import re
 import subprocess
 import sys
+import time
 import unicodedata
 from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
@@ -649,12 +650,42 @@ def autopublish(slug: str) -> None:
                             '--', *paths],
                            cwd=ROOT, capture_output=True, text=True, timeout=120)
         if c.returncode == 0:
-            ps = subprocess.run(['git', 'push', '-q', 'origin', 'master'], cwd=ROOT,
-                                capture_output=True, text=True, timeout=300)
-            print('    [autopublish] 已提交' + ('并推送' if ps.returncode == 0
-                  else f'，推送失败 {ps.stderr[:160]}'), flush=True)
+            # Pages 一次构建要 4–5 分钟；每篇（约 3 分钟）都推，新推送会把排队的构建取消，
+            # 结果一次都部署不成。所以只在距上次推送满 PUSH_GAP 秒时推，其余留到章末 flush_push()
+            if time.time() - last_push_time() >= PUSH_GAP:
+                print('    [autopublish] 已提交' + push_now(), flush=True)
+            else:
+                print('    [autopublish] 已提交（攒着，稍后统一推送）', flush=True)
     except Exception as e:                                   # noqa: BLE001
         print(f'    [autopublish] 异常，已跳过：{e}', flush=True)
+
+
+PUSH_GAP = 900
+PUSH_STAMP = ROOT / 'logs' / '.petter_last_push'
+
+
+def last_push_time() -> float:
+    try:
+        return float(PUSH_STAMP.read_text())
+    except (OSError, ValueError):
+        return 0.0
+
+
+def push_now() -> str:
+    ps = subprocess.run(['git', 'push', '-q', 'origin', 'master'], cwd=ROOT,
+                        capture_output=True, text=True, timeout=300)
+    if ps.returncode == 0:
+        PUSH_STAMP.write_text(str(time.time()))
+        return '并推送'
+    return f'，推送失败 {ps.stderr[:160]}'
+
+
+def flush_push() -> None:
+    """章末/中止前把攒下的提交推上去。"""
+    ahead = subprocess.run(['git', 'rev-list', '--count', 'origin/master..master'], cwd=ROOT,
+                           capture_output=True, text=True).stdout.strip()
+    if ahead and ahead != '0':
+        print(f'[autopublish] 推送攒下的 {ahead} 个提交' + push_now(), flush=True)
 
 
 def all_slugs():
@@ -704,8 +735,11 @@ def main():
         except RuntimeError as e:
             if 'session limit' in str(e).lower() or 'limit' in str(e).lower():
                 print(f'⛔ 额度用尽，中止：{e}', flush=True)
+                flush_push()
                 sys.exit(42)          # 用量汇总由 claude_usage 的 atexit 打印
             raise
+    if not a.no_publish and not a.dry_run:
+        flush_push()
     if severe:
         print('\n⛔ 以下段落未通过，所在篇未发布：\n  ' + '\n  '.join(severe), flush=True)
         sys.exit(3)
