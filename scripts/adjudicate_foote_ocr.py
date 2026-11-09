@@ -214,6 +214,36 @@ def judge(wname):
 MANUAL = RAW / 'manual_fixes.tsv'
 
 
+# 人工核定的整串替换（断词并回 `sepa^ rates`→`separates` 这类，跨两个 token，按词规则表落不了）：
+# lecture \t 原串（逐字）\t 改作。原串须在本讲恰好出现一次；已是改作且原串不在＝已落过
+MANUAL_SPANS = RAW / 'manual_spans.tsv'
+
+
+def apply_spans(path):
+    done, already, bad = 0, 0, []
+    by = {}
+    for ln in path.read_text(encoding='utf-8').splitlines():
+        if ln.strip() and not ln.startswith('#'):
+            lec, old, new = ln.split('\t')
+            by.setdefault(lec, []).append((old, new))
+    for lec, rs in by.items():
+        f = SRC / f'{lec}.md'
+        text = f.read_text(encoding='utf-8')
+        for old, new in rs:
+            n = text.count(old)
+            if n == 1:
+                text = text.replace(old, new)
+                done += 1
+            elif n == 0 and new in text:
+                already += 1
+            else:
+                bad.append((lec, old, n))
+        f.write_text(text, encoding='utf-8')
+    print(f'整串落盘 {done} 条；已落过 {already}；定位失败 {len(bad)} {bad[:5]}', file=sys.stderr)
+    if bad:
+        raise SystemExit(1)
+
+
 def _all_rules():
     out = {}
     for cfg in list(WITNESSES.values()) + [dict(rules=MANUAL)]:
@@ -227,6 +257,15 @@ def _all_rules():
 
 
 ALLMAP = {}
+SPANMAP = {}   # lecture → [(原串的词序列, 改作的词序列)]，供「已落过」判断换算锚
+
+
+def _load_spanmap():
+    if MANUAL_SPANS.exists():
+        for ln in MANUAL_SPANS.read_text(encoding='utf-8').splitlines():
+            if ln.strip() and not ln.startswith('#'):
+                lec, old, new = ln.split('\t')
+                SPANMAP.setdefault(lec, []).append((' '.join(TOKEN.findall(old)), ' '.join(TOKEN.findall(new))))
 
 
 def apply(RULES):
@@ -254,10 +293,19 @@ def apply(RULES):
                 text = text[:a] + new + text[b:]
                 done += 1
                 continue
-            anchor2 = ' '.join(fixmap.get(w, w) for w in anchor.split())
-            new_w = re.sub(r'[^A-Za-z\'’]+$', '', new)
-            if any(t == new_w and ' '.join(words[max(0, k - 3):k]) in (anchor, anchor2)
-                   for k, (_, _, t) in enumerate(toks)):
+            # 换算后可能多出词（人工表拆词 hornof→horn of），只取最后三个词，与判读时的三词锚同口径
+            a2 = ' '.join(fixmap.get(w, w) for w in anchor.split())
+            for so, sn in SPANMAP.get(lec, []):          # 人工整串表并回的断词（Abra ham→Abraham）
+                a2 = a2.replace(so, sn)
+            anchor2 = ' '.join(a2.split()[-3:])
+            # 改作按词序列比（人工表拆词的改作是两个词：hornof → horn of）
+            new_t = TOKEN.findall(new)
+            # 撇号当空格比：判读时 centurion^s 是两个词，symbols 之后成了 centurion's 一个词
+            norm = lambda x: ' '.join(re.sub(r"['’]", ' ', x).split())
+            if new_t and any(words[k:k + len(new_t)] == new_t
+                             and (' '.join(words[max(0, k - 3):k]) == anchor
+                                  or norm(' '.join(words[max(0, k - 4):k])).endswith(norm(anchor2)))
+                             for k in range(len(words))):
                 already += 1
                 continue
             bad.append((lec, anchor, old, len(hits)))
@@ -273,6 +321,7 @@ def main():
     ap.add_argument('--witness', choices=list(WITNESSES), help='只跑一个证人（默认按序全跑）')
     a = ap.parse_args()
     ALLMAP.update(_all_rules())
+    _load_spanmap()
     for w in ([a.witness] if a.witness else list(WITNESSES)):
         if a.apply:
             if WITNESSES[w]['rules'].exists():
@@ -281,6 +330,8 @@ def main():
             judge(w)
     if a.apply and not a.witness and MANUAL.exists():
         apply(MANUAL)
+    if a.apply and not a.witness and MANUAL_SPANS.exists():
+        apply_spans(MANUAL_SPANS)
 
 
 if __name__ == '__main__':
