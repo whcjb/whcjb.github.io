@@ -25,6 +25,7 @@
 注意：tess 的判读要在 ed3 落盘**之后**跑（它判的是 ed3 修完还剩的残字），规则锚也是那时的文本。
 """
 import argparse
+import os
 import itertools
 import csv
 import re
@@ -245,8 +246,11 @@ def apply_spans(path):
                 bad.append((lec, old, n))
         f.write_text(text, encoding='utf-8')
     print(f'整串落盘 {done} 条；已落过 {already}；定位失败 {len(bad)} {bad[:5]}', file=sys.stderr)
+    if bad and os.environ.get('FOOTE_FAILLOG'):
+        with open(os.environ['FOOTE_FAILLOG'], 'a') as fh:
+            fh.writelines(f'{path.name}\t' + '\t'.join(map(str, b)) + '\n' for b in bad)
     if bad:
-        raise SystemExit(1)
+        if os.environ.get("FOOTE_LAX") != "1": raise SystemExit(1)
 
 
 def _all_rules():
@@ -262,6 +266,20 @@ def _all_rules():
 
 
 ALLMAP = {}
+_LEX = None
+
+
+def _isword(w):
+    global _LEX
+    if _LEX is None:
+        from alexander_lexicon import build
+        from repair_alexander_ocr import foote_kjv_words
+        _LEX = build() | foote_kjv_words()
+    from alexander_lexicon import is_word
+    return is_word(w, _LEX)
+
+
+ALLNEW = {}    # lecture → 各表的改作集合（某条的原串若是别条的改作，后备「已落过」不认）
 SPANMAP = {}   # lecture → [(原串的词序列, 改作的词序列)]，供「已落过」判断换算锚
 
 
@@ -328,13 +346,29 @@ def apply(RULES):
                 already += 1
                 alr.append((lec, anchor, old, len(hits)))
                 continue
+            # 后备（排在「已落过」之后）：锚失灵（注脚从正文挪进注区后，注脚里那些字的前三词变了），而原串在本讲恰好一处、且是判词典不认的残字、不是别条的改作
+            anyw = [k for k, (ta, _, t) in enumerate(toks)
+                    if t == otok and text[ta - off:ta - off + len(old)] == old]
+            if not hits and len(anyw) == 1 and len(otok) >= 3 and mult[(anchor, old, new)] == 1 \
+                    and not _isword(otok) and old not in ALLNEW.get(lec, ()):
+                a = toks[anyw[0]][0] - off
+                text = text[:a] + new + text[a + len(old):]
+                done += 1
+                continue
+            if not hits and not anyw and len(otok) >= 3 and new.strip() and new in text \
+                    and old not in ALLNEW.get(lec, ()):
+                already += 1                       # 同上，后备落过的在重跑时
+                continue
             bad.append((lec, anchor, old, len(hits)))
         path.write_text(text, encoding='utf-8')
     print(f'落盘 {done} 条；已落过 {already}；定位失败 {len(bad)} {bad[:5]}', file=sys.stderr)
+    if bad and os.environ.get('FOOTE_FAILLOG'):
+        with open(os.environ['FOOTE_FAILLOG'], 'a') as fh:
+            fh.writelines(f'{RULES.name}\t' + '\t'.join(map(str, b)) + '\n' for b in bad)
     if done and alr:
         print(f'  （同一轮里既有落盘又有「已落过」，核一下：{alr[:8]}）', file=sys.stderr)
     if bad:
-        raise SystemExit(1)
+        if os.environ.get("FOOTE_LAX") != "1": raise SystemExit(1)
 
 
 def main():
@@ -344,6 +378,8 @@ def main():
     ap.add_argument('--vlm', action='store_true', help='只落第 ③ 层 vlm_fixes.tsv（symbols 之后）')
     a = ap.parse_args()
     ALLMAP.update(_all_rules())
+    for lec, rs in ALLMAP.items():
+        ALLNEW[lec] = {n for _, _, n in rs}
     _load_spanmap()
     # 「已落过」判断要把锚里被第 ③ 层改过的词也换算进去（锚 teach ils to → teach us to）；
     # 在终态上重跑 ② 层各表时同样要换算，否则 ③ 改过的锚词让 ② 的规则认不出自己

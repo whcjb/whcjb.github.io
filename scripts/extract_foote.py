@@ -52,6 +52,9 @@ END_PUNCT = re.compile(r'[.!?:;"”’\'*)\]—]\W{0,2}$')
 LOWER_START = re.compile(r'^\W{0,10}[a-z]')
 # 书帖签名 `VOL. II. K`（装订用，不是正文）
 SIGNATURE = re.compile(r'^\W{0,2}VOL[.,]?\s*[IVXl1]+[.,]?\s*\S{0,3}\s*\S{0,3}$')
+# 书帖签名的读花形态（`roL. n. D`、`VOL. H. *2* R`、`2 A`、`2g`、`c`）；注脚行末尾粘着的签名另剥（SIG_TAIL）
+SIGNATURE2 = re.compile(r'^\W{0,2}(?:[VvYr][Oo0][Ll][.,]?\s*\S{1,4}[.,]?(?:\s+\S{1,3}){0,2}|\d?\s?[A-Za-z]{1,2})\W{0,2}$')
+SIG_TAIL = re.compile(r'\s+VOL[.,]?\s*[IVXLl1]{1,4}[.,]?\s*\d?\s?[A-Z]{1,2}\.?\s*$')
 END_VOL = re.compile(r'^\W{0,2}END\s+O[FP]\s+VOL', re.I)
 # 经文出处本身也读花（`LUKK V. 27-32.` / `LtTKE Til. 18-23.`）：L 起头、短、带数字
 REF_HEAD = re.compile(r'^\W{0,2}L\S{2,4}\s+[IVXLlTin1]{1,5}[.,]?\s*\S*\d.{0,12}$')
@@ -86,12 +89,73 @@ def _mk(lines, par, fs, drop_line):
     }
 
 
-def par_info(par, drop_line):
+def _par_fs(par):
+    fs = Counter()
+    for fm in par.iter(NS + 'formatting'):
+        n = sum(len(c.text or '') for c in fm.iter(NS + 'charParams'))
+        try:
+            fs[round(float(fm.get('fs') or 0))] += n
+        except ValueError:
+            pass
+    return fs.most_common(1)[0][0] if fs else 0
+
+
+def note_lines(page_el):
+    """页底注脚行（skill §2.6「版面层的硬信号」）：ABBYY 常把注脚那一行并进正文末段、或给它标成正文字号
+    （第 45 讲全讲 9 条注脚都混进了正文句中）。字号靠不住，**行高**靠得住：注脚行高 47–61，正文行 78–90。
+    只看正文字号的段（本来字号就小的段照旧整段归注区，不拆——多行注脚里带希腊字母的行偏高，拆了会把注脚劈开）：
+    取这些段里最后一个正常行高的行之后、行高不到全页中位数 0.8 的行。"""
+    pars = [par for blk in page_el.iter(NS + 'block') if blk.get('blockType') == 'Text'
+            for par in blk.iter(NS + 'par')]
+    pfs = Counter()
+    for par in pars:
+        pfs[_par_fs(par)] += len(list(par.iter(NS + 'line')))
+    if not pfs:
+        return set()
+    body = pfs.most_common(1)[0][0]
+    ls = [ln for par in pars if _par_fs(par) >= body for ln in par.iter(NS + 'line')]
+    hs = sorted(int(ln.get('b') or 0) - int(ln.get('t') or 0) for ln in ls)
+    if len(hs) < 8:
+        return set()
+    med = hs[len(hs) // 2]
+    small = lambda ln: int(ln.get('b') or 0) - int(ln.get('t') or 0) < 0.8 * med
+    last_normal = max((int(ln.get('t') or 0) for ln in ls if not small(ln)), default=0)
+    cand = sorted((ln for ln in ls if small(ln) and int(ln.get('t') or 0) > last_normal),
+                  key=lambda ln: int(ln.get('t') or 0))
+    # 注脚不会以小写起头；打头的小写行是正文末行（页面歪斜时行高也会偏矮，132 讲 p.593）
+    while cand and re.match(r'\s*[a-z]', _line_text(cand[0])):
+        cand.pop(0)
+    if not cand:
+        return set()
+    # 段末短行（讲末 `Amen.`、`for ever."`）行高也矮，但贴左边排；注脚居中或缩排、或以注号起头
+    lefts = sorted(int(ln.get('l') or 0) for ln in ls if not small(ln))
+    left = lefts[len(lefts) // 4] if lefts else 0
+    first = cand[0]
+    head = _line_text(first).lstrip()
+    # 段首行缩进约 80，注脚居中（偏移 100 以上）；页底恰是新段首行时别当注脚
+    if int(first.get('l') or 0) - left < 95 and not re.match(r'[*♦•†‡§|«»^]|[tfJ]\s+[A-Z1-9]', head):
+        return set()
+    return {id(ln) for ln in cand}
+
+
+def par_info(par, drop_line, notes=frozenset()):
     """→ [par, ...]。讲题偶尔与经文出处被 ABBYY 归成同一段（vol2 leaf 245：
-    `LECTURE LVII.` + `LUKE XI. 5-13.` 两行一段），这里按行拆开。"""
+    `LECTURE LVII.` + `LUKE XI. 5-13.` 两行一段），这里按行拆开。
+    页底注脚行（note_lines）从所在段里拆出来，单成一段、字号记 0（下游按「小字号段」归注区）。"""
     lines = list(par.iter(NS + 'line'))
     if not lines:
         return []
+    nl = [l for l in lines if id(l) in notes]
+    if nl and len(nl) < len(lines):
+        # 段里混着注脚行：正文行照原段处理，注脚行合成一段（与整段都是注脚时的口径一致）
+        body = [l for l in lines if id(l) not in notes]
+        whole = par_info(par, drop_line)
+        p = _mk(body, par, whole[0]['fs'] if whole else 0, drop_line)
+        q = _mk(nl, {}, 0, drop_line)
+        return [x for x in (p, q) if x]
+    if nl:
+        p = _mk(lines, par, 0, drop_line)      # 整段都是注脚（字号误读成正文的那类）
+        return [p] if p else []
     fs = Counter()
     for fm in par.iter(NS + 'formatting'):
         n = sum(len(c.text or '') for c in fm.iter(NS + 'charParams'))
@@ -138,11 +202,12 @@ def load_pages(vol):
             if el.tag != NS + 'page':
                 continue
             pars = []
+            notes = note_lines(el)
             for blk in el.iter(NS + 'block'):
                 if blk.get('blockType') != 'Text':
                     continue
                 for par in blk.iter(NS + 'par'):
-                    pars += par_info(par, drop_line)
+                    pars += par_info(par, drop_line, notes)
             pars.sort(key=lambda p: p['t'])
             pages.append({'leaf': idx, 'pars': pars})
             idx += 1
@@ -243,9 +308,9 @@ def extract(vol):
                 mode = 'passage'
                 continue
             if mode == 'body' and i > last_body >= 0 and p['fs'] < body_fs:
-                if SIGNATURE.match(t):
+                if SIGNATURE.match(t) or SIGNATURE2.match(t):
                     continue
-                cur['notes'].append({'text': p['text'], 'page': page_no})
+                cur['notes'].append({'text': SIG_TAIL.sub('', p['text']), 'page': page_no})
                 continue
             # 没有字母的碎段（页顶一颗 `*`、一个引号）：不删（原书影像上确有墨点，留给后层取证），
             # 但也不让它单独占「本页第一段」——挂到下一段开头，续段判据照常看下一段
