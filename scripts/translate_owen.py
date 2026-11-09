@@ -181,6 +181,8 @@ def translate_page(page_path, resume, publish, review=False, limit=0):
             mp = re.match(r'^(<p[^>]*>)(.*)(</p>)$', s, re.S)
             if mh:
                 units.append((i, 'h2', mh.group(1), None))
+            elif mp and not re.search(r'[A-Za-zΑ-ωἀ-ῼא-ת]', re.sub(r'<[^>]+>', '', mp.group(2))):
+                pass   # 分隔线 `—————————` 之类没有文字的段原样保留、不送模型（2026-11-09 Exer. 34 模型对着它回了「请提供需要翻译的英文原文。」并上线）
             elif mp:
                 units.append((i, 'p', mp.group(2), mp.group(1)))   # meta = 原开标签(含 id)
     print(f'{page_path}: {len(units)} 个可译单元', flush=True)
