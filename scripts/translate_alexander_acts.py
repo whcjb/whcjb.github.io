@@ -596,7 +596,7 @@ def autopublish(slug: str) -> None:
             return
         paths = ['alexander/acts', 'alexander_raw/acts/zh_chapters', 'alexander_raw/acts/zh_cache',
                  'alexander_raw/acts/zh_meta.json', 'alexander_raw/acts/en_meta.json',
-                 'alexander_raw/acts/zh_translate_issues.log']
+                 'alexander_raw/acts/zh_translate_issues.log', '_data/compare_sources.yml']
         paths = [p for p in paths if (ROOT / p).exists()]
         subprocess.run(['git', 'add', *paths], cwd=ROOT, check=False, timeout=120)
         c = subprocess.run(['git', 'commit', '-q', '-m',
