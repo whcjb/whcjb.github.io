@@ -8,6 +8,7 @@ prev_url: "/jones/3john/dedication/"
 prev_label: "Epistle Dedicatory"
 next_url: "/jones/3john/1-1/"
 next_label: "1:1"
+zh_url: "/jones/3john/zh/to-the-reader/"
 ---
 
 ## <span class="jw-pb" data-facs="4"></span>TO THE CHRISTIAN READER.

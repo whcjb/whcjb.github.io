@@ -7,6 +7,8 @@ subtitle: "致托马斯·杰明爵士（Sir Thomas Jermyn）"
 date: 2026-11-09 12:21
 prev_url: "/jones/3john/zh/title/"
 prev_label: "书名页"
+next_url: "/jones/3john/zh/to-the-reader/"
+next_label: "致基督徒读者"
 en_url: "/jones/3john/dedication/"
 zh: true
 ---
