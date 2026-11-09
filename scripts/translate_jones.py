@@ -501,7 +501,7 @@ ANNOTATE = {
     r'\bPlato\b': ('Plato', ('柏拉图',)),
     r'\bAristotle\b|\bArist\.': ('Aristotle', ('亚里士多德',)),
     r'\bCicero\b|\bTully\b': ('Cicero', ('西塞罗',)),
-    r'\bTertull': ('Tertullian', ('德尔图良', '特土良')),
+    r'\bTertull(?!us)': ('Tertullian', ('德尔图良', '特土良')),   # Tertullus 是徒 24 的辩士帖土罗（和合本名，不括注）
     r'\bCyprian': ('Cyprian', ('居普良', '西普里安')),
     r'\bAmbrose\b|\bAmbros\.': ('Ambrose', ('安波罗修',)),
     r'\bHierom|\bJerom': ('Jerome', ('哲罗姆', '耶柔米')),
@@ -571,7 +571,11 @@ def run_section(slug: str, resume: bool, dry: bool, jobs: int, publish: bool) ->
             if n % 10 == 0:
                 print(f'  [{slug}] {n}/{len(idx)} 段', flush=True)
     body = '\n\n'.join(done.get(i, b) for i, (_, b) in enumerate(units))
-    body, missing = annotate_terms(body, body_of(slug))
+    # 页边旁注里的引书出处（*Euseb. de vita Const.*、*Hierom. in 6. cap. ad Gal.*）照录拉丁原文、不译，
+    # 中文里本就没有这个人名；只拿正文去认，免得每篇都报「没有原名括注」
+    # 旁注里可能夹着分页标记、缺字记号（内嵌一层 span），正则要跨过它们
+    en_text = re.sub(r'<span class="jw-margin"[^>]*>(?:[^<]|<span[^>]*>[^<]*</span>)*?</span>', '', body_of(slug))
+    body, missing = annotate_terms(body, en_text)
     if missing:
         print(f'    [names] {slug}: 英文源里有 {missing}，译文里没有原名、也找不到已知中文写法，未自动补', flush=True)
     OUT_DIR.mkdir(parents=True, exist_ok=True)
