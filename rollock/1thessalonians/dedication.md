@@ -9,6 +9,7 @@ prev_url: "/rollock/1thessalonians/title/"
 prev_label: "Title Page"
 next_url: "/rollock/1thessalonians/to-the-reader/"
 next_label: "To the Christian Reader"
+zh_url: "/rollock/1thessalonians/zh/dedication/"
 ---
 
 ## <span class="rl-pb" data-facs="2"></span><span class="rl-pb" data-facs="2"></span>TO THE RIGHT WORSHIPFVL THEIR MOST LOVING FRIEND IN THE LORD, MAISTER VVILLIAM SCOT OF ELY, grace in this life and euerlasting glorie in the lyfe to come.

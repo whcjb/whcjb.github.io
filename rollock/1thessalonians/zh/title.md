@@ -5,8 +5,8 @@ book_name: "罗洛克《帖撒罗尼迦前书讲章》"
 title: "书名页"
 subtitle: "爱丁堡，1606"
 date: 2026-11-09 09:22
-next_url: "/rollock/1thessalonians/zh/1-1/"
-next_label: "第一讲"
+next_url: "/rollock/1thessalonians/zh/dedication/"
+next_label: "献辞"
 en_url: "/rollock/1thessalonians/title/"
 zh: true
 ---
