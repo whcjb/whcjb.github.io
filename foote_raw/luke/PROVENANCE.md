@@ -266,11 +266,48 @@ grc 截 ≥4 个希腊字母）后剩 3 条，其中 `ἀσοσσιλλω` 是�
 验收：整链重跑逐字节一致；对第一批产物逐词比对 463 块、回退 0；再跑零变化；渲染 表格 0 / 锚点 1151 / 重复 0 / `<ol>` 0。
 正文待判 6175 → **5736**。
 
+### 第 ③ 层：整页转录当第三证人（2026-11-09）
+
+用户定「脚本整页转录当证人」。`scripts/foote_transcribe.py` 把残字 ≥3 处的 838 页＋希腊引文页 58 页（页单
+`transcribe_pages.json`，共 866，两页在 PDF 之外）的 PDF 内嵌原图（缩到 1300px 宽）各送一次，连版式标记
+（`[HEAD]` 页眉、`*斜体*`、`[FN:*]` 注号、`[SIG:]` 书帖、`[?]` 读不出）整页转录，存 `vlm/v{卷}/{leaf}.txt`。
+864 页、**$41.95**（`logs/foote_transcribe.tsv`）。转录**只当证人，文字不进产物**。
+
+`scripts/foote_vlm_adjudicate.py`：每页三条字流（我们 / tesseract / 转录）按位置逐词对齐（印刷页号经
+`src/*_page_numbers.json` 对到 leaf）。**tesseract 与转录同位读出同一个词、且与我们不同**才成候选：
+- `agree3` 我们不是真词（407）；`realword3` 我们是真词、两家一致改成另一个形近真词（826）——判词典看不见的
+  真词错字，`he→be` 105、`hut→but` 33、`hy→by` 21、`bom→born` 20、`hare→have` 19、`thai→that`、`haying→having`、
+  `hook→book`、`hear→bear`、`feet→fact`、`lore→love`、`Tillage→village`……
+- 不收：两家读出同一个非词（`nbt`）、`realword3_far`（字形差太远 105）、只有转录有读法（`vlm_only` 189）、
+  转录与我们都是真词而 tesseract 同我们（`keep` 216）——转录读错的就挡在这里。
+
+守卫（候选 1241 → 规则 1164，逐组看过；挡下的记 `logs/foote_vlm.tsv` 的 skip 列）：
+- 词前／词后紧粘的残渣算进原串（`«uid`→`and`、`6ase`→`case`、`mean«`→`means`、`U9`→`us`），残渣若是标点／开引号，
+  要两家同位都有才保留，否则整条不落（`punct_disagree`/`lead_disagree`）；残渣前还粘着字母的是残片（`frag_left`）；
+  残渣连着下一个词的（`God^s`）不落（`junk_join`）。`(`、`[` 当残渣：`(o`→`to`、`[Wanting`→`planting`。
+- 多出的词尾是标点读错（`deaths to`→`death, to`、`himP`→`him?`、`tiSy`→`us,`）：两家须同位有同一标点。
+- 我们这串比改作长 3 字母以上且只是首尾含它（`Avulhe`→`he` 会丢 And、`thefooliih`→`the`）：不落（`merge_suspect`）。
+- 证人那边是 `1st` 的 `st`（前面紧挨数字）：不落（`v_frag`，章序数另案）。
+- 证人的弯撇号一律按本书直撇号比（`God’s`≠分歧）；补的引号用直引号；残渣前已有引号就不再补。
+- 诗行省音 `Against`→`'gainst`（088，转录与 tesseract 都读出撇号）。
+- 锚取整讲前三词；本讲同词同锚有几处时往前加长到唯一（118 `ye shall not he so` 两处只有一处有证人）。
+
+落盘：`vlm_fixes.tsv`（讲次、锚、原串、改作），`adjudicate_foote_ocr.py --apply --vlm` 在 `foote_symbols.py --apply`
+**之后**落（锚取自 symbols 之后的文本）。`apply` 支持原串带残渣、锚多于三词；「已落过」换算锚时连本表一起算、
+改作后紧跟收引号（`me'`）照认。
+
+验收：1164 条一次落完、再跑全认作已落过；对落盘前逐词比对 1129 块、回退判据命中 0、新出小写非词 1（`by-tmd^by` 原样残）；
+整链从 extract 重跑逐字节一致；渲染 表格 0 / 锚点 1151 / 重复 0 / 正文 `<ol>` 0。
+正文待判（`foote_ledger.py`，只数非词）5736 → **5439**；真词错字另修 800 余处（判词典本来看不见）。
+
+未落、待看：`vlm_only` 189、`keep` 中 tesseract 读残的、守卫挡下 69 条、同锚而无证人的两处
+（097 p.92 `Son of man shall he accomplished`、118 p.391 第二处 `ye shall not he so`）——属推断，须用户同意。
+
 ## 待做
 
 1. ~~第 ① 层~~ ~~第 ② 层（ed3＋tess）~~ ~~结构清理~~ ~~片段换流~~ 已完成；第 ④ 层评估后不落（见上）
 2. 希腊引文逐处看图转录（约 91 页）——须用户同意
-3. 剩余正文待判按「证人有话说／对不上／无证据」细分后，疑难处看图
+3. 剩余正文待判按「证人有话说／对不上／无证据」细分后，疑难处看图（第 ③ 层整页转录已做，见上；`vlm_only` 待看图）
 2. 第 ② 层：Lect. I–LXVI 用第 3 版作第二证人按位置判读
 3. 经文段：钦定本同位词校正（参照 `extract_alexander_acts.py` 的 `header_fix`）
 4. ~~发布~~ 2026-11-06 英文版上线（只过第 ① 层，书首页注明为校勘中的工作本）：

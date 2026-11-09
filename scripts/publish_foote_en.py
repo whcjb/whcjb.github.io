@@ -7,6 +7,7 @@
     python3 scripts/foote_spans.py --apply           # 两条字流按片段换（ABBYY 读废的一截换 tesseract，§3.2d）
     python3 scripts/adjudicate_foote_ocr.py --apply  # 第 ② 层：ed3 证人(Lect.1–66) → tesseract 证人(全书)
     python3 scripts/foote_symbols.py --apply         # 游离符号逐个取证（symbol_fixes.tsv）
+    python3 scripts/adjudicate_foote_ocr.py --apply --vlm  # 第 ③ 层：整页转录＋tesseract 同位一致（vlm_fixes.tsv）
     python3 scripts/publish_foote_en.py              # 试跑（自检）
     python3 scripts/publish_foote_en.py --apply
 

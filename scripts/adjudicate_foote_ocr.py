@@ -218,6 +218,10 @@ MANUAL = RAW / 'manual_fixes.tsv'
 # lecture \t 原串（逐字）\t 改作。原串须在本讲恰好出现一次；已是改作且原串不在＝已落过
 MANUAL_SPANS = RAW / 'manual_spans.tsv'
 
+# 第 ③ 层：整页转录（第三证人）与 tesseract 同位一致的改字（foote_vlm_adjudicate.py 生成、逐组看过）。
+# 锚取自 symbols 之后的文本，所以链条上排在 foote_symbols.py --apply 之后：adjudicate --apply --vlm
+VLM_RULES = RAW / 'vlm_fixes.tsv'
+
 
 def apply_spans(path):
     done, already, bad = 0, 0, []
@@ -277,40 +281,53 @@ def apply(RULES):
             continue
         lec, anchor, old, new = ln.split('\t')
         by.setdefault(lec, []).append((anchor, old, new))
-    done, already, bad = 0, 0, []
+    done, already, bad, alr = 0, 0, [], []
     for lec, rs in by.items():
         path = SRC / f'{lec}.md'
         text = path.read_text(encoding='utf-8')
+        # 同锚同改的 n 条：本讲里恰有 n 处同形时一起落（判读逐页出的，每处一条）
+        mult = {r: rs.count(r) for r in rs}
+        rs = list(dict.fromkeys(rs))
         # 锚换算用**所有**证人表的修正（ed3 的锚里可能有词后来被 tess 那一轮改掉）
-        fixmap = {o: re.sub(r'[^A-Za-z\'’]+$', '', n) for _, o, n in ALLMAP.get(lec, [])}
+        fixmap = {o: re.sub(r'^[^A-Za-z]+|[^A-Za-z\'’]+$', '', n) for _, o, n in ALLMAP.get(lec, [])}
         for anchor, old, new in reversed(rs):
             toks = body_tokens(text)
             words = [t for _, _, t in toks]
-            hits = [k for k, (_, _, t) in enumerate(toks)
-                    if t == old and ' '.join(words[max(0, k - 3):k]) == anchor]
-            if len(hits) == 1:
-                a, b, _ = toks[hits[0]]
-                text = text[:a] + new + text[b:]
-                done += 1
+            # 原串可带词前/词后紧粘的残渣（vlm_fixes：«uid → and、mean« → means）；词规则表的原串就是词本身
+            m = TOKEN.search(old)
+            off, otok = (m.start(), m.group(0)) if m else (0, old)
+            na = max(3, len(anchor.split()))          # 锚一般三词；同形多处时生成器会加长
+            hits = [k for k, (ta, _, t) in enumerate(toks)
+                    if t == otok and text[ta - off:ta - off + len(old)] == old
+                    and ' '.join(words[max(0, k - na):k]) == anchor]
+            if len(hits) == mult[(anchor, old, new)]:
+                for h in reversed(hits):
+                    a = toks[h][0] - off
+                    text = text[:a] + new + text[a + len(old):]
+                    done += 1
                 continue
             # 换算后可能多出词（人工表拆词 hornof→horn of），只取最后三个词，与判读时的三词锚同口径
             a2 = ' '.join(fixmap.get(w, w) for w in anchor.split())
             for so, sn in SPANMAP.get(lec, []):          # 人工整串表并回的断词（Abra ham→Abraham）
                 a2 = a2.replace(so, sn)
-            anchor2 = ' '.join(a2.split()[-3:])
+            anchor2 = ' '.join(a2.split()[-na:])
             # 改作按词序列比（人工表拆词的改作是两个词：hornof → horn of）
             new_t = TOKEN.findall(new)
             # 撇号当空格比：判读时 centurion^s 是两个词，symbols 之后成了 centurion's 一个词
             norm = lambda x: ' '.join(re.sub(r"['’]", ' ', x).split())
-            if new_t and any(words[k:k + len(new_t)] == new_t
-                             and (' '.join(words[max(0, k - 3):k]) == anchor
-                                  or norm(' '.join(words[max(0, k - 4):k])).endswith(norm(anchor2)))
+            st = lambda ws: [w.rstrip("'’") for w in ws]     # 改作后面紧跟的收引号会被 TOKEN 并进词里（me'）
+            if new_t and any(st(words[k:k + len(new_t)]) == st(new_t)
+                             and (' '.join(words[max(0, k - na):k]) == anchor
+                                  or norm(' '.join(words[max(0, k - na - 1):k])).endswith(norm(anchor2)))
                              for k in range(len(words))):
                 already += 1
+                alr.append((lec, anchor, old, len(hits)))
                 continue
             bad.append((lec, anchor, old, len(hits)))
         path.write_text(text, encoding='utf-8')
     print(f'落盘 {done} 条；已落过 {already}；定位失败 {len(bad)} {bad[:5]}', file=sys.stderr)
+    if done and alr:
+        print(f'  （同一轮里既有落盘又有「已落过」，核一下：{alr[:8]}）', file=sys.stderr)
     if bad:
         raise SystemExit(1)
 
@@ -319,9 +336,20 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument('--apply', action='store_true')
     ap.add_argument('--witness', choices=list(WITNESSES), help='只跑一个证人（默认按序全跑）')
+    ap.add_argument('--vlm', action='store_true', help='只落第 ③ 层 vlm_fixes.tsv（symbols 之后）')
     a = ap.parse_args()
     ALLMAP.update(_all_rules())
     _load_spanmap()
+    if a.vlm:
+        # 「已落过」判断要把锚里被本表改过的词也换算进去（锚 teach ils to → teach us to）
+        for ln in VLM_RULES.read_text(encoding='utf-8').splitlines():
+            if ln.strip() and not ln.startswith('#'):
+                lec, anchor, old, new = ln.split('\t')
+                m = TOKEN.search(old)
+                ALLMAP.setdefault(lec, []).append((anchor, m.group(0) if m else old, new))
+        if a.apply:
+            apply(VLM_RULES)
+        return
     for w in ([a.witness] if a.witness else list(WITNESSES)):
         if a.apply:
             if WITNESSES[w]['rules'].exists():
