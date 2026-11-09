@@ -109,18 +109,23 @@ SYSTEM = (
 RE_GAP = re.compile(r'<span class="rl-(?:gap|conj)"[^>]*>.*?</span>')
 RE_TAG = re.compile(r'<[^<>]{1,400}>')
 RE_IAL = re.compile(r'\{:[^}\n]*\}')          # kramdown 属性行，整个一个占位
-RE_ANY = re.compile(RE_GAP.pattern + '|' + RE_TAG.pattern + '|' + RE_IAL.pattern)
+# 空标签对（开标签紧接闭标签，中间没字）：原书分页标记 <span class="rl-pb" …></span>、首字下沉空框。
+# 原先开、闭各编一号成了 ⟦3⟧⟦4⟧，中间没字，模型偶尔整对删掉（帖前 4-13#8、4-16#5 各被拦一次）；
+# 合成一个占位符就没有「空对」可删。旧编号的缓存由 scripts/rollock_migrate_mask_v2.py 换算成新键。
+RE_EMPTY = re.compile(r'<(?P<etag>[A-Za-z][\w-]*)(?:\s[^<>]{0,400})?></(?P=etag)>')
+RE_ANY = re.compile(RE_GAP.pattern + '|' + RE_EMPTY.pattern + '|' + RE_TAG.pattern + '|' + RE_IAL.pattern)
+RE_ANY_V1 = re.compile(RE_GAP.pattern + '|' + RE_TAG.pattern + '|' + RE_IAL.pattern)   # 仅供迁移旧缓存
 RE_PH = re.compile(r'⟦(\d+)⟧')
 
 
-def mask(text: str):
+def mask(text: str, pattern=RE_ANY):
     tags = []
 
     def put(m):
         tags.append(m.group(0))
         return f'⟦{len(tags)}⟧'
     # 一趟扫完，编号跟着出现顺序走；缺字记号连同里面的 ▪ 整个一个占位
-    return RE_ANY.sub(put, text), tags
+    return pattern.sub(put, text), tags
 
 
 def unmask(text: str, tags):
