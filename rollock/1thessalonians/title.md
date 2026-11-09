@@ -7,6 +7,7 @@ subtitle: "Edinburgh, 1606"
 date: 2026-10-22 14:21
 next_url: "/rollock/1thessalonians/dedication/"
 next_label: "Epistle Dedicatory"
+zh_url: "/rollock/1thessalonians/zh/title/"
 ---
 
 <div class="rl-tpg">
