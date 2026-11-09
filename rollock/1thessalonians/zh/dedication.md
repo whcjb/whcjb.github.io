@@ -7,8 +7,8 @@ subtitle: "致埃利的威廉·司各特（William Scot of Ely）"
 date: 2026-11-09 09:25
 prev_url: "/rollock/1thessalonians/zh/title/"
 prev_label: "书名页"
-next_url: "/rollock/1thessalonians/zh/1-1/"
-next_label: "第一讲"
+next_url: "/rollock/1thessalonians/zh/to-the-reader/"
+next_label: "致基督徒读者"
 en_url: "/rollock/1thessalonians/dedication/"
 zh: true
 ---

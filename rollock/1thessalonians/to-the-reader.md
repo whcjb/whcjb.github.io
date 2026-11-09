@@ -8,6 +8,7 @@ prev_url: "/rollock/1thessalonians/dedication/"
 prev_label: "Epistle Dedicatory"
 next_url: "/rollock/1thessalonians/argument/"
 next_label: "The Argument of the First Epistle"
+zh_url: "/rollock/1thessalonians/zh/to-the-reader/"
 ---
 
 ## <span class="rl-pb" data-facs="6"></span>TO THE CHRISTIAN READER.
