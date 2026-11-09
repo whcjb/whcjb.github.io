@@ -5,6 +5,8 @@ book_name: "琼斯《约翰三书简释》"
 title: "书名页"
 subtitle: "伦敦，1635"
 date: 2026-11-09 12:21
+next_url: "/jones/3john/zh/dedication/"
+next_label: "献辞"
 en_url: "/jones/3john/title/"
 zh: true
 ---
