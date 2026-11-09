@@ -210,9 +210,13 @@ def judge(wname):
     print(f'[{wname}] 判读：', dict(stat), f'→ 规则 {len(rules)} 条 {RULES.name}', file=sys.stderr)
 
 
+# 人工核定表（不是某个证人自动判出来的）：逐条看过才进，--apply 时排在两证人表之后落
+MANUAL = RAW / 'manual_fixes.tsv'
+
+
 def _all_rules():
     out = {}
-    for cfg in WITNESSES.values():
+    for cfg in list(WITNESSES.values()) + [dict(rules=MANUAL)]:
         if not cfg['rules'].exists():
             continue
         for ln in cfg['rules'].read_text(encoding='utf-8').splitlines():
@@ -275,6 +279,8 @@ def main():
                 apply(WITNESSES[w]['rules'])
         else:
             judge(w)
+    if a.apply and not a.witness and MANUAL.exists():
+        apply(MANUAL)
 
 
 if __name__ == '__main__':
