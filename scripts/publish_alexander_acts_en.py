@@ -129,6 +129,8 @@ def page_md(x, date):
           f'title: {yq(x["title"])}', f'subtitle: {yq(AUTHOR)}', f'date: {date}']
     if x.get('chapter'):
         fm.append(f'chapter: {x["chapter"]}')
+    if (OUT / 'zh' / f'{x["slug"]}.md').exists():          # 已有中译（publish_alexander_acts_zh.py）
+        fm.append(f'zh_url: "/alexander/acts/zh/{x["slug"]}/"')
     for k in ('prev', 'next'):
         if x[k]:
             fm += [f'{k}_section: "{x[k]["slug"]}"', f'{k}_label: {yq(x[k]["label"])}']
