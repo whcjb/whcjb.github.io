@@ -5,8 +5,8 @@ book_name: "琼斯《约翰二书简释》"
 title: "书名页"
 subtitle: "伦敦，1635"
 date: 2026-11-09 11:42
-next_url: "/jones/2john/zh/1-13/"
-next_label: "1:13"
+next_url: "/jones/2john/zh/dedication/"
+next_label: "献辞"
 en_url: "/jones/2john/title/"
 zh: true
 ---

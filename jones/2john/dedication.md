@@ -9,6 +9,7 @@ prev_url: "/jones/2john/title/"
 prev_label: "Title Page"
 next_url: "/jones/2john/to-the-reader/"
 next_label: "To the Christian Reader"
+zh_url: "/jones/2john/zh/dedication/"
 ---
 
 ## <span class="jw-pb" data-facs="3"></span>TO THE RIGHT HONOVRABLE, Sir THOMAS IERMYN, *Vice-chamberlaine,* and one of his Majesties most Honourable Privie Councell.
