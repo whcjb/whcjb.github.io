@@ -6,8 +6,8 @@ title: "致基督徒读者"
 date: 2026-11-09 09:25
 prev_url: "/rollock/1thessalonians/zh/dedication/"
 prev_label: "献辞"
-next_url: "/rollock/1thessalonians/zh/1-1/"
-next_label: "第一讲"
+next_url: "/rollock/1thessalonians/zh/argument/"
+next_label: "前书提要"
 en_url: "/rollock/1thessalonians/to-the-reader/"
 zh: true
 ---

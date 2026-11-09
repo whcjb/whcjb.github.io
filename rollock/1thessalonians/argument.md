@@ -8,6 +8,7 @@ prev_url: "/rollock/1thessalonians/to-the-reader/"
 prev_label: "To the Christian Reader"
 next_url: "/rollock/1thessalonians/1-1/"
 next_label: "Lecture 1"
+zh_url: "/rollock/1thessalonians/zh/argument/"
 ---
 
 ## <span class="rl-pb" data-facs="7"></span>THE ARGVMENT OF THE FIRST EPISTLE TO THE THESSALONIANS.
