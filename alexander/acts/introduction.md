@@ -5,6 +5,7 @@ book_name: "Alexander on Acts"
 title: "Introduction"
 subtitle: "Joseph Addison Alexander"
 date: 2026-10-29 11:47
+zh_url: "/alexander/acts/zh/introduction/"
 prev_section: "preface"
 prev_label: "Preface"
 next_section: "1"
