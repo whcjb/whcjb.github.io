@@ -7,6 +7,7 @@ subtitle: "London, 1635"
 date: 2026-11-06 18:01
 next_url: "/jones/2john/dedication/"
 next_label: "Epistle Dedicatory"
+zh_url: "/jones/2john/zh/title/"
 ---
 
 <div class="jw-tpg">
