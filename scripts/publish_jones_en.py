@@ -138,7 +138,10 @@ def publish(book, apply, meta, stamp):
         m.setdefault('1', stamp)
         fm = ['---', 'layout: jones-chapter', f'book_id: {book}', f'book_name: "{NAME[book]}"',
               f'title: "{REF[book]}"', f'subtitle: "{AUTHOR}"', f'date: {m["1"]}', 'chapter: 1',
-              'verse_from: 1', f'verse_to: {NV[book]}', '---']
+              'verse_from: 1', f'verse_to: {NV[book]}']
+        if (out / 'zh' / '1.md').exists():
+            fm.append(f'zh_url: "/jones/{book}/zh/1/"')
+        fm.append('---')
         lst = '\n'.join(f'<li><a href="{{{{ site.baseurl }}}}/jones/{book}/{p["slug"]}/">{p["short"]}'
                         f'<small>{p["rng"]}</small></a></li>' for p in secs)
         (out / '1.md').write_text('\n'.join(fm) + f'\n\n<ul class="jw-chtoc">\n{lst}\n</ul>\n', encoding='utf-8')
