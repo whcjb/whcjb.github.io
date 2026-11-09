@@ -349,6 +349,8 @@ def _swap(w, k, start=False):
     """把 OCR 词 w 的字母部分换成 KJV 词 k 的字母部分，保留 w 两端的标点。大小写一律照 KJV，
     只在句首（经文头开头或句末标点之后）大写——OCR 的首字母大小写不可信（`Avhicli` `Wlien` 的
     大写是把 w 读成 Av / W 造成的，照抄就成了句中的 Which / When）。"""
+    # KJV2006 的 æ/œ 不能直接剥掉（Cæsarea → Csarea）；亚历山大经文头一律拼 Cesarea / Judea（影像核过 25:1）
+    k = k.replace('æ', 'e').replace('Æ', 'E').replace('œ', 'e')
     core = re.sub(r"[^A-Za-z'\-]", '', k).strip("'")
     lead = re.match(r'^[^A-Za-z0-9]*', w).group(0)
     trail = re.search(r'[^A-Za-z0-9]*$', w).group(0) if re.search(r'[A-Za-z0-9]', w) else ''
@@ -373,6 +375,13 @@ def header_fix(words, kjv_words, vocab, confus):
     real = lambda k: k in vocab and (len(k) > 1 or k in SINGLE_OK or k.isdigit())
     for tag, i1, i2, j1, j2 in sm.get_opcodes():
         if tag == 'equal':
+            # 键相同但 OCR 读成全大写（页顶续行的 `us` → `US`，1:22、7:40）：大小写照 KJV
+            for k in range(i2 - i1):
+                w, kj = words[i1 + k], kjv_words[j1 + k]
+                lw = re.sub(r'[^A-Za-z]', '', w)
+                if len(lw) > 1 and lw.isupper() and not re.sub(r'[^A-Za-z]', '', kj).isupper():
+                    out[i1 + k] = _swap(w, kj, start[i1 + k])
+                    changes.append(('大小写', w, out[i1 + k]))
             continue
         if tag == 'replace' and i2 - i1 == j2 - j1:
             for k in range(i2 - i1):

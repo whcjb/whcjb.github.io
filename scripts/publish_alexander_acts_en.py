@@ -101,11 +101,21 @@ def front_body(paras):
     return '\n\n'.join(f'<p>{h}</p>' for h in paras)
 
 
+def title_page(v):
+    """两卷扉页照原书影像手排（old-book-ocr §5.6），文件见 manual_pages/title-<v>.html。
+    影像：actsofapostlesex01alex / ex02alex 第 8 页；馆藏章与铅笔勾不是印刷文字，不排。"""
+    r = 'I' * v
+    return dict(slug=f'title-{v}', title=f'Title Page · Vol. {r}', label=f'Title Page, Vol. {r}',
+                body=(RAW / 'manual_pages' / f'title-{v}.html').read_text(encoding='utf-8').strip())
+
+
 def pages(units):
-    pg = [dict(slug='preface', title='Preface', label='Preface', body=front_body(units['preface'])),
+    pg = [title_page(1), dict(slug='preface', title='Preface', label='Preface', body=front_body(units['preface'])),
           dict(slug='introduction', title='Introduction', label='Introduction',
                body=front_body(units['introduction']))]
     for c in units['chapters']:
+        if c['ch'] == 13:  # 卷二从第 13 章起
+            pg.append(title_page(2))
         pg.append(dict(slug=str(c['ch']), title=f'Acts {c["ch"]}', label=f'Acts {c["ch"]}', chapter=c['ch'],
                        body=chapter_body(c)))
     for i, x in enumerate(pg):
