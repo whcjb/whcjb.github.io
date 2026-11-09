@@ -300,8 +300,16 @@ grc 截 ≥4 个希腊字母）后剩 3 条，其中 `ἀσοσσιλλω` 是�
 整链从 extract 重跑逐字节一致；渲染 表格 0 / 锚点 1151 / 重复 0 / 正文 `<ol>` 0。
 正文待判（`foote_ledger.py`，只数非词）5736 → **5439**；真词错字另修 800 余处（判词典本来看不见）。
 
+章节序数（字流把 `1st` 拆成 `st`，按词对不上）另查：转录与 tesseract 同位一致的 9 处走 `manual_spans.tsv`
+（`2dd`→`23d`、`dd`→`3d`×3、`lOth`→`10th`、`Idth`→`13th`、`14jth`→`14th`、`d5th`→`35th`、`Ist`→`1st`）。
+
+「已落过」换算锚改为每个锚词「换／不换」两种都试：修正表按词全讲统一换算会误伤锚里本来对的同形词
+（021 `as he waz` 被换成 `as be was`）。② 层各表在终态上重跑全认作已落过；symbols 排在 ③ 之前，终态上重跑不作数。
+
 未落、待看：`vlm_only` 189、`keep` 中 tesseract 读残的、守卫挡下 69 条、同锚而无证人的两处
-（097 p.92 `Son of man shall he accomplished`、118 p.391 第二处 `ye shall not he so`）——属推断，须用户同意。
+（097 p.92 `Son of man shall he accomplished`、118 p.391 第二处 `ye shall not he so`）——属推断，须用户同意；
+序数只有一家证人或无证人的 11 处同（002 `dd chapter of the Acts`、002 `e2d`→tess `62d`、019 `L4th`、054 `BSd and d4th`、
+079 `I5th`、080 `I8th`、103 `Idth verse`、107 `I7th`→tess `17th`、115 `Sd chapter`、119 `I7th chapter`、133 `5dd`）。
 
 ## 待做
 

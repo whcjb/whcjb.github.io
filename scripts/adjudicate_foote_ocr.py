@@ -25,6 +25,7 @@
 注意：tess 的判读要在 ed3 落盘**之后**跑（它判的是 ed3 修完还剩的残字），规则锚也是那时的文本。
 """
 import argparse
+import itertools
 import csv
 import re
 import sys
@@ -307,10 +308,14 @@ def apply(RULES):
                     done += 1
                 continue
             # 换算后可能多出词（人工表拆词 hornof→horn of），只取最后三个词，与判读时的三词锚同口径
-            a2 = ' '.join(fixmap.get(w, w) for w in anchor.split())
-            for so, sn in SPANMAP.get(lec, []):          # 人工整串表并回的断词（Abra ham→Abraham）
-                a2 = a2.replace(so, sn)
-            anchor2 = ' '.join(a2.split()[-na:])
+            # 修正表按词全讲统一换算会误伤锚里本来就对的同形词（he→be 一讲里有对有错），
+            # 所以每个锚词「换／不换」两种都试（最多 2^na 个候选）
+            cands = set()
+            for combo in itertools.product(*[{w, fixmap.get(w, w)} for w in anchor.split()]):
+                a2 = ' '.join(combo)
+                for so, sn in SPANMAP.get(lec, []):      # 人工整串表并回的断词（Abra ham→Abraham）
+                    a2 = a2.replace(so, sn)
+                cands.add(' '.join(a2.split()[-na:]))
             # 改作按词序列比（人工表拆词的改作是两个词：hornof → horn of）
             new_t = TOKEN.findall(new)
             # 撇号当空格比：判读时 centurion^s 是两个词，symbols 之后成了 centurion's 一个词
@@ -318,7 +323,7 @@ def apply(RULES):
             st = lambda ws: [w.rstrip("'’") for w in ws]     # 改作后面紧跟的收引号会被 TOKEN 并进词里（me'）
             if new_t and any(st(words[k:k + len(new_t)]) == st(new_t)
                              and (' '.join(words[max(0, k - na):k]) == anchor
-                                  or norm(' '.join(words[max(0, k - na - 1):k])).endswith(norm(anchor2)))
+                                  or any(norm(' '.join(words[max(0, k - na - 1):k])).endswith(norm(c)) for c in cands))
                              for k in range(len(words))):
                 already += 1
                 alr.append((lec, anchor, old, len(hits)))
@@ -340,13 +345,15 @@ def main():
     a = ap.parse_args()
     ALLMAP.update(_all_rules())
     _load_spanmap()
-    if a.vlm:
-        # 「已落过」判断要把锚里被本表改过的词也换算进去（锚 teach ils to → teach us to）
+    # 「已落过」判断要把锚里被第 ③ 层改过的词也换算进去（锚 teach ils to → teach us to）；
+    # 在终态上重跑 ② 层各表时同样要换算，否则 ③ 改过的锚词让 ② 的规则认不出自己
+    if VLM_RULES.exists():
         for ln in VLM_RULES.read_text(encoding='utf-8').splitlines():
             if ln.strip() and not ln.startswith('#'):
                 lec, anchor, old, new = ln.split('\t')
                 m = TOKEN.search(old)
                 ALLMAP.setdefault(lec, []).append((anchor, m.group(0) if m else old, new))
+    if a.vlm:
         if a.apply:
             apply(VLM_RULES)
         return
