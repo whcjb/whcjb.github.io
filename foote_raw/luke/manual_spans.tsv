@@ -57,7 +57,7 @@
 135	fol^^lowing	following
 135	remem^ brance	remembrance
 061	Woe untoyou^ Pharisees	Woe unto you, Pharisees
-# 章节序数：整页转录与 tesseract 同位一致（第 ③ 层核对，2026-11-09；字流里 1st 拆成 st，按词对不上，走整串）
+# 章节序数：整页转录与 tesseract 同位一致，且逐条裁原生分辨率页图核过（2026-11-09；字流里 1st 拆成 st，按词对不上，走整串）
 012	in the Ist chapter	in the 1st chapter
 030	In the 2dd chapter	In the 23d chapter
 036	before in the dd chapter	before in the 3d chapter
@@ -67,3 +67,18 @@
 068	of the Idth chapter	of the 13th chapter
 116	in the 14jth verse	in the 14th verse
 119	At the d5th verse	At the 35th verse
+# 用户 2026-11-09：「需要有图片证明才能落盘」——以下逐条裁原生分辨率页图读定（scratchpad crops，印面读法见 PROVENANCE）
+012	chapter and.5th verse	chapter and 5th verse
+097	Son of man shall he accomplished	Son of man shall be accomplished
+118	Benefactor. " But ye shall not he so	Benefactor. " But ye shall not be so
+002	beginning of the dd chapter	beginning of the 3d chapter
+002	from the e2d verse	from the 62d verse
+019	in the L4th chapter	in the 14th chapter
+054	in the *BSd* and d4th	in the 33d and 34th
+079	Epictetos employs the I5th chapter	Epictetus employs the 15th chapter
+080	in the I8th chapter of Matthew	in the 18th chapter of Matthew
+103	from the Idth verse	from the 13th verse
+107	from the I7th verse	from the 17th verse
+115	of the Sd chapter	of the 3d chapter
+119	the I7th chapter of John	the 17th chapter of John
+133	the 5dd chapter of Isaiah	the 53d chapter of Isaiah

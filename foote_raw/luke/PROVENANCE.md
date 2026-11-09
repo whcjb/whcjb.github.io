@@ -306,10 +306,15 @@ grc 截 ≥4 个希腊字母）后剩 3 条，其中 `ἀσοσσιλλω` 是�
 「已落过」换算锚改为每个锚词「换／不换」两种都试：修正表按词全讲统一换算会误伤锚里本来对的同形词
 （021 `as he waz` 被换成 `as be was`）。② 层各表在终态上重跑全认作已落过；symbols 排在 ③ 之前，终态上重跑不作数。
 
+**看图落盘（用户 2026-11-09：「需要有图片证明才能落盘」）**：上面的推断清单逐条裁 PDF 内嵌原图（原生分辨率，不放大）
+定位到行读定，14 处全部有图为证，进 `manual_spans.tsv`：097 `shall he accomplished`→`be`、118 第二处 `not he so`→`be`、
+002 `dd chapter of the Acts`→**`3d`**（原先按经文推的 2d 是错的——推断不看图会改错）、002 `e2d`→`62d`、019 `L4th`→`14th`、
+054 `*BSd* and d4th`→`33d and 34th`、079 `Epictetos … I5th`→`Epictetus … 15th`、080 `I8th`→`18th`、103 `Idth`→`13th`、
+107 `I7th`→`17th`、115 `Sd`→`3d`、119 `I7th`→`17th`、133 `5dd`→`53d`、012 `and.5th`→`and 5th`。
+前一轮两证人一致的 9 处序数也补看了图，全部相符。
+
 未落、待看：`vlm_only` 189、`keep` 中 tesseract 读残的、守卫挡下 69 条、同锚而无证人的两处
-（097 p.92 `Son of man shall he accomplished`、118 p.391 第二处 `ye shall not he so`）——属推断，须用户同意；
-序数只有一家证人或无证人的 11 处同（002 `dd chapter of the Acts`、002 `e2d`→tess `62d`、019 `L4th`、054 `BSd and d4th`、
-079 `I5th`、080 `I8th`、103 `Idth verse`、107 `I7th`→tess `17th`、115 `Sd chapter`、119 `I7th chapter`、133 `5dd`）。
+（097 p.92 `Son of man shall he accomplished`、118 p.391 第二处 `ye shall not he so`）、单证人序数 11 处——已看图落盘，见上。
 
 ## 待做
 
