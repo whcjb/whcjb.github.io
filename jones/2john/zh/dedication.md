@@ -3,12 +3,12 @@ layout: jones-chapter
 book_id: 2john
 book_name: "琼斯《约翰二书简释》"
 title: "献辞"
-subtitle: "致托马斯·杰尔明爵士（Sir Thomas Jermyn）"
+subtitle: "致托马斯·杰明爵士（Sir Thomas Jermyn）"
 date: 2026-11-09 11:42
 prev_url: "/jones/2john/zh/title/"
 prev_label: "书名页"
-next_url: "/jones/2john/zh/1-13/"
-next_label: "1:13"
+next_url: "/jones/2john/zh/to-the-reader/"
+next_label: "致基督徒读者"
 en_url: "/jones/2john/dedication/"
 zh: true
 ---
