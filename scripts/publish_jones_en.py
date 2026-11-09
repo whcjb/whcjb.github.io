@@ -11,6 +11,7 @@
 date 一律沿用 en_meta.json 里的原值，新页才写当前真实时间。
 """
 import argparse
+import collections
 import html
 import json
 import re
@@ -78,8 +79,8 @@ def add_anchors(book, body, pg):
 
 
 RE_CONJ = re.compile(r'⟦([^⟧]*)⟧')
-CONJ_TITLE = ('Editorial conjecture: illegible in the 1635 source; supplied from the stated evidence '
-              '(编者推补；非原书原文)')
+CONJ_TITLE = ('Editorial conjecture: not certain in the original (1635, checked against the 1636 issue); '
+              'see the table on this book\'s front page (编者推补；非原书确定文字，依据见本卷首页)')
 RE_OL = re.compile(r'^(\d+)\. ', re.M)
 GAP_TITLE = {'〈Greek〉': 'TCP: Greek not keyed by the transcribers (录入本未录的希腊文)'}
 
@@ -163,7 +164,8 @@ def notes_tables(book):
         return []
     sites = {s['gid']: s for s in json.loads(f.read_text(encoding='utf-8'))}
     review = {int(r[0]): r for r in jc.tsv(book, 'gap_review.tsv')}
-    appr = [(int(r[0]), r[1]) for r in jc.tsv(book, 'gap_approved.tsv')]
+    appr = [r + [''] * (5 - len(r)) for r in jc.tsv(book, 'gap_approved.tsv')]
+    done = {int(r[0]) for r in appr}
 
     def where(s):
         return (f'<a href="{{{{ site.baseurl }}}}/jones/{book}/{s["slug"]}/'
@@ -171,17 +173,25 @@ def notes_tables(book):
                 + (f' · p.{s["page"]}' if s.get('page') else '') + '</a>')
     out = []
     if appr:
+        kinds = collections.Counter(r[2] for r in appr)
         out.append(f'<h3 class="jw-conjhead">编者推补逐条说明（{len(appr)} 处）</h3>')
-        out.append('<p class="jw-note-zh">以下各处在 1635 年原版胶片影像上只能认出一部分字形，编者按可见字形与上下文补出，'
-                   '经本站同意后发布。正文中以 <span class="jw-conj">[另一种字体加方括号]</span> 标出，<b>不是原书确定的文字</b>。</p>')
-        out.append('<table class="jw-conjtab"><tr><th>位置</th><th>录入本原样（前后文）</th><th>现作</th><th>依据</th></tr>')
-        for g, v in appr:
-            s = sites[g]
-            note = review.get(g, ['', '', '', ''])
-            out.append(f'<tr><td>{where(s)}</td><td>{_ctx(s)}</td><td>[{html.escape(v.replace("*", ""))}]</td>'
-                       f'<td>{html.escape(note[3] if len(note) > 3 else "")}</td></tr>')
+        out.append('<p class="jw-note-zh">以下各处录入本空着，原书在 1635 年胶片影像上又读不定；编者再拿 1636 年印本'
+                   '（Internet Archive 另一份扫描）逐处看图对照，仍须编者下判断，经本站同意后发布。正文中以 '
+                   '<span class="jw-conj">[另一种字体加方括号]</span> 标出，<b>不是原书确定的文字</b>。分三类：</p>')
+        out.append('<ul class="jw-note-zh">'
+                   + (f'<li><b>残缺补</b>（{kinds["残缺补"]} 处）：两本同一处字母都残缺或墨淡，按看得见的笔画与上下文补出。</li>' if kinds['残缺补'] else '')
+                   + (f'<li><b>误植改</b>（{kinds["误植改"]} 处）：两本字形一致、看得清楚，是原书印错了；按文意改正，原书印作什么见「原书所见」一栏。</li>' if kinds['误植改'] else '')
+                   + (f'<li><b>照录</b>（{kinds["照录"]} 处）：两本字形一致，照印本录，但词形可疑，存疑待考。</li>' if kinds['照录'] else '')
+                   + '</ul>')
+        out.append('<table class="jw-conjtab"><tr><th>位置</th><th>录入本原样（前后文）</th><th>原书所见（1635、1636 两本）</th>'
+                   '<th>现作</th><th>类别与依据</th></tr>')
+        for r in appr:
+            s = sites[int(r[0])]
+            out.append(f'<tr><td>{where(s)}</td><td>{_ctx(s)}</td><td>{html.escape(r[3])}</td>'
+                       f'<td>[{html.escape(r[1].replace("*", ""))}]</td>'
+                       f'<td><b>{html.escape(r[2])}</b>：{html.escape(r[4])}</td></tr>')
         out.append('</table>')
-    pend = [g for g, r in sorted(review.items()) if r[1].startswith('P:')]
+    pend = [g for g, r in sorted(review.items()) if r[1].startswith('P:') and g not in done]
     if pend:
         out.append(f'<h3 class="jw-conjhead">推断待同意（{len(pend)} 处）</h3>')
         out.append('<p class="jw-note-zh">这些位置在 1635 年原版胶片影像上只认得出一部分字形，下列「拟补」是按可见字形与上下文的推断，'
@@ -192,10 +202,10 @@ def notes_tables(book):
             out.append(f'<tr><td>{where(s)}</td><td>{_ctx(s)}</td><td>{html.escape(r[1][2:].replace("*", ""))}</td>'
                        f'<td>{html.escape(r[3] if len(r) > 3 else "")}</td></tr>')
         out.append('</table>')
-    left = [g for g, r in sorted(review.items()) if r[1] == '?']
+    left = [g for g, r in sorted(review.items()) if r[1] == '?' and g not in done]
     if left:
         out.append(f'<h3 class="jw-conjhead">读不出的（{len(left)} 处）</h3>')
-        out.append('<p class="jw-note-zh">这些位置在 1635 年原版的胶片影像上读不出，正文中标红留在明面，不推补。</p>')
+        out.append('<p class="jw-note-zh">这些位置在 1635 年胶片与 1636 年印本两份影像上都读不出，正文中标红留在明面，不推补。</p>')
         out.append('<table class="jw-conjtab"><tr><th>位置</th><th>录入本原样（前后文）</th><th>原因</th></tr>')
         for g in left:
             s, r = sites[g], review[g]
@@ -243,7 +253,8 @@ def build_index(book, pages):
     g, o = gap_counts(pages)
     n, w, c = gap_stats(book)
     rv = jc.tsv(book, 'gap_review.tsv')
-    n_p = sum(1 for r in rv if r[1].startswith('P:'))
+    done = {int(r[0]) for r in jc.tsv(book, 'gap_approved.tsv')}
+    n_p = sum(1 for r in rv if r[1].startswith('P:') and int(r[0]) not in done)
     n_q = sum(1 for r in rv if r[1] == '?')
     out.append('<div class="jw-note">')
     out.append(f'<p><b>About this text.</b> The second and third Epistles of St John are expounded at the end of William '
@@ -254,10 +265,11 @@ def build_index(book, pages):
     if w or c:
         out.append(f'<p><b>Gaps.</b> The keyers left {n:,} places blank: Greek, which they did not transcribe, and letters '
                    f'they could not read from the film. {w:,} have been read from the grayscale scan of the same microfilm '
-                   '(Internet Archive), place by place against the page image'
-                   + (f'; {c:,} are editorial conjectures shown <span class="jw-conj">[in brackets]</span>' if c else '')
-                   + (f'. {n_p + n_q:,} places remain marked <span class="jw-gap">in red</span> ({n_p} proposed readings awaiting '
-                      f'approval, {n_q} unreadable); all are listed below.' if n_p + n_q else '.') + '</p>')
+                   '(Internet Archive), place by place against the page image, with the 1636 issue as a second witness for doubtful places'
+                   + (f'; {c:,} are editorial conjectures shown <span class="jw-conj">[in brackets]</span>, each explained in the table below' if c else '')
+                   + (f'. {n_p + n_q:,} place{"s" if n_p + n_q > 1 else ""} remain{"" if n_p + n_q > 1 else "s"} marked <span class="jw-gap">in red</span> ('
+                      + ', '.join(x for x in (f'{n_p} proposed readings awaiting approval' if n_p else '', f'{n_q} unreadable' if n_q else '') if x)
+                      + '); all are listed below.' if n_p + n_q else '.') + '</p>')
     else:
         out.append(f'<p><b>Gaps.</b> The keyers did not transcribe Greek: {g} Greek words or phrases in these pages are '
                    f'marked <span class="jw-gap">〈Greek〉</span>, and {o} other places they could not read are marked '
@@ -267,9 +279,9 @@ def build_index(book, pages):
                f'（另一卷见 <a href="{{{{ site.baseurl }}}}/jones/{other}/">{NAME[other]}</a>）。底本是 EEBO-TCP 人工录入本 A04619'
                '（据 EEBO 缩微胶片录入，第一期，已进入公有领域）。保留原书拼写与斜体，长 ſ 作 s；印本页码保留为页内锚点。'
                + (f'录入本空着的 {n:,} 处（录入者不录的希腊文与读不出的字），{w:,} 处已对照同一卷缩微胶片的灰度扫描'
-                  '（Internet Archive）逐处看图读出'
-                  + (f'；{c:,} 处为编者推补，以 <span class="jw-conj">[另一种字体加方括号]</span> 标出' if c else '')
-                  + (f'；其余 {n_p + n_q:,} 处（推断待同意 {n_p}、读不出 {n_q}）标红留在明面，逐条列在下表' if n_p + n_q else '')
+                  '（Internet Archive）逐处看图读出，读不定的再拿 1636 年印本对照'
+                  + (f'；{c:,} 处为编者推补，以 <span class="jw-conj">[另一种字体加方括号]</span> 标出，原书所见与补改依据逐条列在下表' if c else '')
+                  + (f'；其余 {n_p + n_q:,} 处（' + '、'.join(x for x in (f'推断待同意 {n_p}' if n_p else '', f'读不出 {n_q}' if n_q else '') if x) + '）标红留在明面，逐条列在下表' if n_p + n_q else '')
                   + f'。判读记录见 <code>jones_raw/{book}/gap_review.tsv</code>。</p>'
                   if (w or c) else
                   f'录入者没有录希腊文，本卷正文 {g} 处以 <span class="jw-gap">〈Greek〉</span> 标出；另有 {o} 处读不出的字标红。'
