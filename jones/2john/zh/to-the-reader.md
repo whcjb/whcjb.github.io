@@ -6,8 +6,8 @@ title: "致基督徒读者"
 date: 2026-11-09 11:43
 prev_url: "/jones/2john/zh/dedication/"
 prev_label: "献辞"
-next_url: "/jones/2john/zh/1-13/"
-next_label: "1:13"
+next_url: "/jones/2john/zh/1-1/"
+next_label: "1:1"
 en_url: "/jones/2john/to-the-reader/"
 zh: true
 ---
