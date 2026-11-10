@@ -5,6 +5,8 @@ book_name: "费尔贝恩《教牧书信》 · 提摩太前书"
 title: "序言"
 subtitle: "Patrick Fairbairn"
 date: 2026-11-10 13:47
+next_url: "/fairbairn/1timothy/zh/introduction-1/"
+next_label: "导论　第一节"
 en_url: "/fairbairn/1timothy/preface/"
 zh: true
 ---

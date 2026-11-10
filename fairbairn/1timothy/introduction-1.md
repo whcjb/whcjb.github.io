@@ -9,6 +9,7 @@ prev_url: "/fairbairn/1timothy/preface/"
 prev_label: "Preface"
 next_url: "/fairbairn/1timothy/introduction-2/"
 next_label: "Introduction § 2"
+zh_url: "/fairbairn/1timothy/zh/introduction-1/"
 ---
 
 <h2 class="fb-sec">The Authorship of the Epistles</h2>
