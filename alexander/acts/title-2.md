@@ -5,6 +5,7 @@ book_name: "Alexander on Acts"
 title: "Title Page · Vol. II"
 subtitle: "Joseph Addison Alexander"
 date: 2026-11-09 14:30
+zh_url: "/alexander/acts/zh/title-2/"
 prev_section: "12"
 prev_label: "Acts 12"
 next_section: "13"
