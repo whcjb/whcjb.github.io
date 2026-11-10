@@ -167,6 +167,7 @@ def main():
     # G/J/H 的落点按讲从后往前转成整串规则（同讲多处时各自扩到唯一；扩不到唯一的记 X 行不落）
     texts = {}
     grules = []
+    edits = list({(x[0], x[1]): x for x in edits}.values())   # 跳过的页借上一页那截：同一落点只留一条
     for lec, s, e, rep, cls in sorted(edits, key=lambda x: (x[0], -x[1])):
         text = texts.setdefault(lec, (A.SRC / f'{lec:03d}.md').read_text(encoding='utf-8'))
         r = unique_span(text, s, e, rep)
@@ -186,6 +187,11 @@ def main():
         # 与旧表合并：在已落过的产物上重跑判不出已改的那些，不能因此把旧规则丢掉
         old = [tuple(ln.split('\t')) for ln in (RULES.read_text(encoding='utf-8').splitlines()
                                                  if RULES.exists() else []) if ln and not ln.startswith('#')]
+        # 旧条的原串已被上游改掉（020 `*\\ij*`，改字层把 \\ij 改成 by 了）、改作也不在的，丢掉
+        def _alive(r):
+            t = (A.SRC / f'{r[0]}.md').read_text(encoding='utf-8')
+            return t.count(r[1]) == 1 or r[2] in t
+        old = [r for r in old if _alive(r)]
         seen = {(r[0], r[1]) for r in old}
         krules = (old + [r for r in krules if (r[0], r[1]) not in seen
                                and not any(o[0] == r[0] and o[2] == r[1] for o in old)])

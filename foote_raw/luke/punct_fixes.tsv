@@ -1,18 +1,39 @@
 # lecture	anchor(缝左三词)	old(缝)	new	right(缝右词) —— foote_punct.py 生成，须逐类看过
+013	saying unto them all	^ 	, 	I
+017	said unto them	^ 	, 	Ye
+017	Ye will surely say unto me this proverb	^ 	, 	Physician
+018	Hold thy peace	 	, 	and
+020	was in a certain city	^ 	, 	behold
+023	said unto him	^ 	, 	Why
+046	come after me	,, *	, *	let
+046	after me let him deny himself	 	, 	and
+055	no doubt that	 	, 	in
+057	a stone or	^ 	, 	if
+077	into a pit	^ 	, 	and
+079	not his father	^ 	, 	and
+079	his father and mother and wife	^ 	, 	and
+089	but that offences	 	 	will
+106	know that thou sayest and teachest rightly	^ 	, 	neither
+125	they were instant with loud voices	^ 	, 	requiring
 001	the d place	. *	, *	The
 001	but a nobleman	 	, 	and
 001	order a declaration	"* 	,"* 	or
 001	of the word	"* 	."* 	Those
 001	to me also	"* 	,"* 	says
+001	often be found	—^	— 	has
 002	it was in the days of Herod	^ 	, 	the
 002	the Lord blameless	"* 	."* 	It
 002	Messiah's death which	) 	 	was
 002	according to the custom of the priest's office	^ 	, 	his
 002	of the Lord	^'* 	."* 	It
+002	altar of incense	 "* 	 ."* 	No
+002	that when Zacharias saw him he was troubled	^ 	, 	and
+002	fell upon him	"* 	."* 	Such
 002	not Fear not Zacharias for thy	 '	 	prayer
-002	hear thee a son	^ 	, 	and
-002	hit name John	,"* 	."* 	If
+002	and thy wife Elisabeth shall bear thee a son	^ 	, 	and
+002	his name John	,"* 	."* 	If
 002	should rejoice First	, ''	, "	For
+002	nor strong drink	.* 	."* 	One
 002	was to be	 *^'	 *"	filled
 002	to be filled with the Holy Ghost	^ 	, 	even
 002	his mother's womb	"* 	."* 	He
@@ -43,9 +64,13 @@
 003	his name Jesus	* 	."* 	He
 003	shall be great	"* 	,"* 	continues
 003	Son of David	, 	. 	is
+003	this world but	; 	 	in
 003	Son of God	"* 	."* 	In
+003	in order to	 	 	comfort
+003	difficulties Many therefore	,.	, 	prefer
 003	to thy word	"* 	."* 	On
 003	us Admire adore	^ 	, 	and
+004	voice and said	. 	, 	Blessed
 004	and saluted Elisabeth	. "	. 	We
 004	the Holy Ghost	;* 	;"* 	that
 004	of thy womb	"* 	."* 	The
@@ -65,7 +90,10 @@
 004	verses He hath holpen his servant Israel	^ 	, 	in
 004	as he spake to our fathers	^ 	, 	to
 004	am a companion	/' 	," 	said
+004	and of zeal	. '^ 	. " 	Iron
 004	Son of God	,* 	.* 	Though
+005	and wrote saying	. 	, 	His
+005	in their hearts	,'	, 	saying
 005	forth a son	,"* 	."* 	Thus
 005	rejoiced with her	"* 	."* 	In
 005	for thy daughter	 	- 	in
@@ -74,11 +102,12 @@
 005	of his father	"* 	."* 	From
 005	but answered and said Not so	^ 	, 	but
 005	be called John	 "* 	 ."* 	This
-005	hy this name	"* 	."* 	They
+005	by this name	"* 	."* 	They
 005	a writing table	"* 	."* 	It
 005	of thine heart	." 	."( 	Prov
-005	name ia John	"* 	."* 	Not
+005	name is John	"* 	."* 	Not
 005	be called John	» 	, 	or
+005	whole company marvelled	"* 	,"* 	being
 005	opened and his tongue loosed	^ 	, 	and
 005	and praised God	"* 	."* 	The
 005	say unto them	. 	, 	Thus
@@ -88,6 +117,7 @@
 005	people of God	,* 	.* 	Unbelief
 005	like a moth	.'' 	." 	It
 005	and to whom	, 	 	they
+006	ways To give knowledge of salvation unto his	^	 	people
 006	His father Zacharias	"* 	,"* 	who
 006	God of Israel	,"* 	."* 	Jehovah
 006	and David said	. 	, 	Blessed
@@ -136,7 +166,8 @@
 007	astonishing how gracious	^ 	, 	and
 007	gracious and how	) 	 	instructive
 007	and how instructive	 	, 	the
-007	bom and that	^ 	, 	too
+007	born and that	^ 	, 	too
+008	their flock by	 	 	night
 008	in the fields	"* 	."* 	The
 008	shepherds Fear not	"* 	."* 	He
 008	to rejoice Behold	"* 	,"* 	said
@@ -159,6 +190,9 @@
 009	it is written in the law of the Lord	^ 	, 	Every
 009	acted by Simeon	"* 	,"* 	who
 009	He was a	 *''''	 *"	just
+009	Consolation of Israel	"* 	."* 	The
+009	had a general	] 	 	expectation
+009	in his salvation	." "	." 	We
 009	Lord now lettest thou thy servant depart in peace	^ 	, 	according
 009	seen thy salvation	"* 	."* 	Now
 009	mankind This happened	 *''^	 *"	according
@@ -175,9 +209,14 @@
 010	in this sense	 ^"^ 	 " 	all
 010	attention is Behold	^ 	, 	this
 010	fall of many	,"* 	."* 	He
+010	for a sanctuary	,''—	,"— 	this
 010	David their king	, " 	. " 	Have
-010	he spoken against	!* 	."* 	He
+010	be spoken against	!* 	."* 	He
 010	own soul also	"* 	."* 	There
+010	into one place	,'' 	," 	and
+011	they were amazed and his mother said unto him	. 	, 	Son
+011	sorrowing And he said unto them	. 	, 	How
+011	was subject unto	. 	 	them
 011	The name Anna	"* 	,"* 	or
 011	was the daughter of Phanuel	"* 	,"* 	of
 011	tribe of Aser	"* 	."* 	Aser
@@ -197,6 +236,13 @@
 011	of Jesus Christ	,* 	.* 	Our
 011	saith unto them	. 	, 	Yea
 011	ye never read	. 	, 	Out
+012	Pontius Pilate being	^ 	 	governor
+012	say unto you	. 	, 	That
+012	fire And the people asked him saying	. 	, 	What
+012	then He answereth and saith unto them	. 	, 	He
+012	also publicans to be baptized and said unto him	. 	, 	Master
+012	of him saying	. 	, 	And
+012	said unto them	. 	, 	Do
 012	tetrarch of Abilene	"* 	."* 	The
 012	most extended sense	 	, 	and
 012	tribe of Manasseh	, 	. 	The
@@ -208,8 +254,8 @@
 012	th verse that	 *""	 *"	all
 012	that all flesh	"* 	,"* 	Gentiles
 012	bringeth good tidings	!-^ 	!— 	Behold
-012	he baptized of him	^ 	, 	O
-012	he baptized of him O generation of vipers	^ 	, 	who
+012	multitude that came forth to be baptized of him	^ 	, 	O
+012	to be baptized of him O generation of vipers	^ 	, 	who
 012	them Bring forth	 	, 	therefore
 012	them Bring forth therefore	^ 	, 	fruits
 012	And begin not to say within yourselves	. 	, 	We
@@ -220,25 +266,39 @@
 012	of all some	 ''*	 "*	soldiers
 012	all some soldiers	* 	"* 	asked
 012	of true repentance	^ 	, 	and
+013	of whose shoes I am not worthy to unloose	; 	: 	he
 013	and were musing	"* 	,"* 	or
 013	instruction John answered	^ 	, 	saying
-013	saying unto them all	^ 	, 	I
+013	instruction John answered saying unto them all	^ 	, 	I
 013	you with water but one mightier than I cometh	^ 	, 	the
 013	and with fire	!* 	."* 	Taking
+013	willgatJier the wheat into his garner	; 	; 	but
 013	reproved by him for Herodias his brother Philip's wife	^ 	, 	and
+013	To her question	. 	, 	What
+013	John the Baptist	/' 	." 	Shameless
 013	none of his	/' 	." 	Let
 013	example of faithfulness	,* 	.* 	John
 013	for awful reflection	^ 	, 	and
 013	and however prosperous	-	 	their
+014	a voice came from heaven which said	. 	, 	Thou
 014	d chapter from	, 	 	the
+014	people were baptized	,"* 	."* 	This
 014	beaten was opened	^"* 	,"* 	or
 014	am well pleased	"* 	."* 	As
 014	Jesus was praying	"* 	."* 	Though
+014	there a voice from heaven	. 	, 	saying
 014	of the Trinity	* 	.* 	All
 014	of reflections plaintive	^ 	, 	humbling
+015	answered him saying	. 	, 	It
+015	And the devil said unto him	. 	, 	All
+015	it is written	. 	, 	Thou
+015	hence For it is written	. 	, 	He
 015	the Holy Ghost	!* 	."* 	In
 015	of the Spirit	 	. 	Some
 015	of the devil	* 	."* 	The
+015	however he hungered	:'* 	:"* 	he
+015	said unto Jesus	^ 	, 	If
+015	Luke And the devil	^ 	, 	taking
 015	Ajid the devil said unto him	^ 	, 	All
 015	will give thee	^ 	, 	and
 015	that he would	 *''^	 *"	fall
@@ -252,17 +312,30 @@
 015	written He shall give his angels charge over thee	^ 	, 	to
 015	all the temptation	"* 	,"* 	when
 015	all he departed	"* 	,"* 	making
+015	to expect temptation	^ 	, 	and
+016	their synagogues being	? 	 	glorified
 016	Spirit into Galilee	"* 	."* 	This
+016	unto them saying	. 	, 	Ye
+016	into the synagogue	* 	"* 	of
+016	was to read	"* 	."* 	Reading
+016	of the synagogue	 	- 	service
+016	Lord stood up	* 	"* 	to
+016	up Having opened	"* 	,"* 	or
+016	hath anointed me	"* 	."* 	You
+016	in Hebrew namely	. 	, 	Anointed
 016	hath sent me	"* 	,"* 	the
 016	closed the book	"* 	,"* 	or
 016	gave the book	,\** 	,"* 	or
 016	to the minister	"* 	,"* 	or
 016	Jesus sat down	"* 	."* 	The
+016	fastened on him	,"* 	."* 	There
 016	in your ears	"* 	."* 	More
 016	of his mouth	"* 	."* 	They
+017	IV And they said	. 	, 	Is
+017	synagogue when they heard these things were filled with	 -	 	wrath
 017	narrative And they said	. 	, 	Is
-017	said unto them	^ 	, 	Ye
-017	Ye will surely say unto me this proverb	^ 	, 	Physician
+017	Verse And he said unto them	^ 	, 	Ye
+017	them Ye will surely say unto me this proverb	^ 	, 	Physician
 017	heal thyself whatsoever we have heard done in Capernaum	^ 	, 	do
 017	in thy country	!* 	."* 	Our
 017	of a truth	^ 	, 	Many
@@ -271,6 +344,7 @@
 017	but unto none of them was Elias sent	^ 	, 	save
 017	none of them was Elias sent save unto Sarepta	^ 	, 	a
 017	Elias sent save unto Sarepta a city of Sidon	^ 	, 	unto
+017	Elisha the prophet and none of them was cleansed	^ 	, 	saving
 017	salvation And all they in the synagogue	^ 	, 	when
 017	all they in the synagogue when they heard these	» 	 	things
 017	they in the synagogue when they heard these things	^ 	, 	were
@@ -279,12 +353,23 @@
 017	applause of men	! "	! 	What
 017	went his way	!* 	."* 	Whether
 017	returned to Capernaum	"* 	,"* 	where
+017	at his doctrine	;''* 	;"* 	struck
+017	was with power	"* 	."* 	This
 017	taught in the	 '	 	proverb
 017	in the proverb	^ 	, 	No
 017	Christ we may	 *%	 *	infer
 017	of religious privileges	^ 	, 	and
+017	escape with life	. "	. 	What
+017	such opposers most	 &	 	falsely
+017	Lord grant that	 '^ 	 " 	the
+017	and may he	 ^' 	 " 	fulfil
+018	Jesus rebuked him saying Hold thy	;^ 	 	peace
+018	and entered into	 $	 	Simon's
+018	reason to depart	—^	— 	it
+018	be understood literally	 	. 	Thus
+018	been real possessions	—-	— 	just
 018	declaration He therefore	 *^''	 *"	rebuked
-018	Hold thy peace	 	, 	and
+018	therefore rebuked him saying Hold thy peace	 	, 	and
 018	in the midst	"* 	,"* 	and
 018	him he came out of him	^ 	, 	and
 018	hurt him not	"* 	."* 	Though
@@ -293,6 +378,8 @@
 018	house of Simon	"* 	,"* 	that
 018	was King of	 ""^^^ 	  	kings
 018	His wife's mother	^\** 	"* 	was
+018	instantly left her	,"* 	."* 	Mark
+018	And immediately she arose	^ 	, 	and
 018	the living Fever	^* 	,* 	of
 018	of his sanctuary	^ 	. 	Does
 018	same Sabbath and	 \*^ *	 " *	when
@@ -301,6 +388,10 @@
 018	ha laid his hands on every one of them	^ 	, 	and
 018	devils came out of many	^ 	, 	crying
 018	of the week	. '^ *	. " *	When
+018	say unto thee	. 	, 	Except
+019	said unto him	. 	, 	Master
+019	Simon Fear not	: 	; 	from
+019	that these fishermen	 *''''* 	 *"* 	were
 019	lake of Gennesaret	* 	."* 	This
 019	saw two ships	"* 	,"* 	of
 019	which was Simon's	,"* 	."* 	It
@@ -329,23 +420,51 @@
 019	saith unto them	. 	, 	Follow
 019	for they forsook all	^* 	,* 	and
 019	to notice more	, 	 	particularly
+019	blessing' of Providence	,* 	.* 	We
 019	divine commandment Though	. 	 	the
 019	caught nothing yet	^ 	 	at
+019	to follow Christ	,* 	.* 	Though
+019	the tli verse	: ^^	: "	If
 020	put some water	 	 	taken
 020	in his st	 -	 	chapter
 020	came to pass	"* 	,"* 	says
-020	was in a certain city	^ 	, 	behold
+020	that when he was in a certain city	^ 	, 	behold
 020	uU of leprosy	!* 	."* 	If
+020	sought Christy saying	^ 	, 	Lord
+020	Christy saying Lord if thou wilt	^ 	, 	thou
+020	wilt thou canst make me clean	,"* 	."* 	The
+020	and touched him	,"* 	."* 	The
+020	he said will	"* 	,"* 	I
+020	be thou clean	 "* 	 ."* 	His
+020	to the priest	"* 	."* 	Christ
+020	all its righteousness	" 	:" 	he
+020	as Moses commanded	"* 	."* 	Christ
 020	of their infirmities	"* 	."* 	His
 020	x ntinued on	 «	 	earth
+020	character and to	 ^' 	 " 	cleanse
+020	convinced of sin	^ 	, 	and
+020	ourselves before God	,* 	.* 	Let
+020	Lord Jesus Christ	,* 	.* 	The
+020	and the oil	 '	 	Were
 020	Those of you	^* 	,* 	finally
+020	delightful and interesting	 	. 	You
+021	to reason saying	. 	, 	Who
+021	say Thy sins be forgiven thee or to say	. 	, 	Rise
+021	the sick of the palsy I say unto thee	. 	, 	Arise
 021	kept up secret	 ' 	  	intercourse
+021	law sitting by	"* 	."* 	As
 021	appointment out of every town of Galilee and Judea	"* 	,"* 	and
 021	Judea and especially	" 	 	from
 021	and especially from	 *'''	 *"	Jerusalem
 021	them And behold	"* 	,"* 	says
 021	They sought means	"* 	,"* 	or
 021	they might bring him in because of the multitude	^ 	, 	they
+021	the Iiouse top	^ 	, 	and
+021	midst before Jesus	,"* 	."* 	In
+021	When Jesus saw	"* 	,"* 	both
+021	was a general	 '	 	title
+021	of the apostles	, ''' 	, " 	men
+021	also bade him	 ''	 "	be
 021	iniquity anctf transgression	,^	, 	and
 021	said unto them	^ 	, 	What
 021	What reason ye in your hearts	^ 	? 	Whether
@@ -366,33 +485,70 @@
 021	were sitting by	"* 	."* 	They
 021	considered as only	 *\*"\** 	 *"* 	sitting
 021	paralytic to Christ	,* 	.* 	It
+021	which may illustrate	^ 	, 	in
+021	way of analogy	^ 	, 	the
+021	to heal us	—	.— 	Divine
+021	on the earth	) 	, 	didst
+021	redeemed in saying	, ^^ 	, " 	Unto
+022	him And Levi	! 	 	made
 022	receipt of custom	,"* 	."* 	Mark
 022	of his Gospel	.. 	. 	This
 022	words Follow me	>''* 	."* 	The
 022	loss is gain	 	, 	and
 022	contempt glory But	. 	, 	my
+022	former acquaintances farewelL	 	. 	In
+022	Elijah and said	. 	, 	Let
+022	plough no more	, '^ 	, " 	and
+022	down with them	"* 	."* 	He
+022	continue without God	, 	. 	In
 022	scribes and Pharisees	^* 	,"* 	who
 022	his disciples saying	. 	, 	Why
 022	scribes murmured saying	. 	, 	This
 022	all murmured saying	. 	, 	That
+022	of evil and	, '^ 	, " 	Let
 022	implication for them	. ^^ *	. " *	And
 022	that are sick	,"* 	."* 	While
+022	necessarily presupposes the	 &	 	knowledge
 022	Matthew's account contains	: ^' 	: " 	But
 022	sight of God	 	. 	Of
-023	said unto him	^ 	, 	Why
+022	me not to call the righteous	^ 	, 	but
+022	sinners to repentance	"* 	."* 	Christ
+022	and to say	. 	, 	Repent
+022	ever Cry out	. 	, 	Unclean
+023	application And they said unto him	^ 	, 	Why
 023	M fast often	 	, 	and
 023	M fast often and make prayers	^ 	, 	and
+023	superstitiously or from	 «	 	alarm
 023	come when the bridegroom shall be taken away from	, 	 	them
 023	painful to their	 "	 	feelings
 023	going away sorrow	 "	 	filled
+023	subject of fasting	; " 	: " 	Wherefore
 023	upon an old	"* 	,"* 	or
 023	And no man putteth new wine into old bottles	^ 	, 	else
 023	bottles else the new wine will burst the bottles	^ 	, 	and
 023	new wine will burst the bottles and be spilled	^ 	, 	and
 023	But new wine must be put into new bottles	^ 	, 	and
 023	both are preserved	"* 	."* 	Bottles
+023	No man also	* 	,"* 	adds
+023	old is better	"* 	."* 	The
+023	to any habit	 "	 	whatever
+023	In all this	, ''	, "	wisdom
+023	of other circumstances	. "	. 	We
+023	nature and convenience	 	, 	and
+024	answering them said	. 	, 	Have
+024	said unto them	. 	, 	That
+024	unto the man	. 	, 	Stretch
+024	after the first	!* 	."* 	It
+024	qfcorn and did eat	^ 	, 	rubbing
+024	in their hands	.* 	."* 	This
+024	Certain of the Pharisees said unto them	^ 	, 	Why
+024	read what David did	^ 	, 	when
+024	read what David did when himself was an hungred	^ 	, 	and
+024	how he went into the house of God	^ 	, 	and
 024	our Saviour said	; " *	: " *	The
 024	the words are	: ^^ 	: " 	I
+024	hand was withered	,"* 	."* 	That
+024	universal application that	 '^ 	 " 	he
 024	and stood forth	!* 	."* 	Rising
 024	lay to do good	^ 	, 	or
 024	on your ruin	; 	: 	and
@@ -403,18 +559,28 @@
 024	on the soul	 	. 	We
 024	as without strength	.'' 	." 	Their
 024	be your strength	, 	," 	and
+025	in those days	"* 	,"* 	about
 025	mountain to pray	"* 	."* 	The
+025	be duly qualified	. "	. 	We
+025	prayer our Lord	, '^ *	, " *	as
+025	it was day	^ 	, 	called
 025	be a credible	 ])	 	profession
 025	of their history	^ 	, 	as
 025	known from Scripture	^ 	, 	or
 025	say unto thee	. 	, 	Thou
+025	rebuke him saying	. 	, 	Be
+025	far from thee	. 	, 	Lord
 025	thou wouldest not	 	. 	This
 025	his own precept	: '^	: "	If
+025	saith unto him	. 	, 	There
 025	question bring him	: ^	: '	Master
 025	in his mind	: ^	: '	Come
 026	said unto her	. 	, 	What
 026	saith unto him	. 	, 	Grant
 026	saith unto them	. 	, 	Ye
+026	iii that Christ	 '^ 	 " 	surnamed
+026	Spirit enlightens awakens	 	, 	alarms
+026	from their lethargy	 	. 	Yet
 026	not received as authentic	 	. 	It
 026	a shout saying	. 	, 	It
 026	a faithful apostle	. 	, 	The
@@ -424,15 +590,28 @@
 026	catalogue is Philip	!* 	."* 	The
 026	saith unto him	. 	, 	Follow
 026	same Lord various	. 	 	means
+026	of due reflection	 	. 	He
+026	sayest thou then	. 	, 	Show
+026	who obtain it	 	. 	The
+026	As for me	/' 	," 	says
 026	against a pillar	 	. 	Upon
 027	next to Matthew	!'* 	."* 	Having
 027	mentioned is Thomas	"* 	."* 	He
+027	but by me	," 	." 	Let
+027	midst and said	. 	, 	Peace
+027	said unto him	. 	, 	My
 027	till his death	 	. 	He
 027	for his murderers	. "	. 	While
 027	was the traitor	"* 	."* 	Of
+027	say unto you	. 	, 	That
+027	hanged himself and	 ^^ 	 " 	falling
+027	natural to ask	. 	, 	Why
 027	said unto them	. 	, 	If
 027	said unto me	. 	, 	Cast
 027	of an enemy	 	, 	and
+028	disciples and said	. 	, 	Blessed
+028	Rejoice ye in that day and leap for joy	; 	: 	for
+028	down with them	"* 	,"* 	from
 028	of his disciples	"* 	,"* 	who
 028	Tyre and Sidon	"* 	,"* 	on
 028	of their diseases	"* 	;"* 	that
@@ -441,13 +620,22 @@
 028	they were healed	"* 	."* 	In
 028	many wonders They	 *^^	 *"	sought
 028	to touch him	"* 	."* 	Of
+028	kingdom of God	, 	. 	But
+028	mighty hand of	 (	 	God
+028	ye shall hunger	"* 	."* 	By
 028	follows Blessed are ye when	, 	 	men
 028	follows Blessed are ye when men shall hate you	^ 	, 	and
 028	in that day and leap for joy for behold	^ 	, 	your
 028	unto the prophets	!'* 	."* 	This
+028	the false prophets	"* 	."* 	The
+028	learn how erroneous	 	, 	and
+029	enemies do good to them	 -	 	which
 029	you who hear	^ 	, 	Love
 029	Love your enemies	"* 	."* 	He
 029	say unto you	. 	, 	Love
+029	that hate you	"* 	."* 	He
+029	to the Romans	; " 	: " 	If
+029	that curse you	,"* 	."* 	The
 029	directs us to	 *"^ 	 *" 	pray
 029	who despitefully use	* 	"* 	us
 029	thy coat also	.* 	."* 	These
@@ -455,6 +643,8 @@
 029	them not again	!* 	."* 	In
 029	to them likewise	!* 	."* 	Were
 029	We observe first	. 	, 	That
+029	who do good to you	^ 	, 	what
+029	f for sinners also lend to sinners	^ 	, 	to
 029	of the Highest	/'* 	;"* 	that
 029	to the evil	"* 	."* 	To
 029	on the good	; 	: 	and
@@ -463,9 +653,13 @@
 029	e ye therefore merciful	^ 	, 	as
 029	also is merciful	"* 	."* 	What
 029	it is written	. 	, 	Be
+029	called natural antipathy	,* 	.* 	The
+030	again And he spake a parable unto them	. 	, 	Can
+030	ditch The disciple is not above his master	; 	: 	but
 030	order Judge not	^ 	, 	and
 030	not be condemned	"* 	."* 	These
 030	to be administered	 	, 	and
+030	to this precept	 	. 	There
 030	to exhort Forgive	^ 	, 	and
 030	Christ and said	: ''	: "	Lord
 030	benevolence in the th	.* 	* 	verse
@@ -473,29 +667,77 @@
 030	you good measure	^ 	, 	pressed
 030	measure pressed down and shaken together and running over	^ 	, 	shall
 030	the best are	 &	 	fallible
+030	whatever be its	» 	 	moral
+030	thou not thyself	 	?" 	But
+030	as his master	"* 	."* 	This
+031	with a beam	"* 	,"* 	or
+031	their own while	, 	 	they
+031	us my friends	 	, 	occasionally
+031	that to be	 $	 	severe
+031	hypocritical Thou hypocrite	"* 	."* 	It
+031	This is hypocritical	,, 	, 	as
+031	man purge himself	 	 "	from
+031	Cast first the beam out of thine own	, 	 	eye
+031	Cast first the beam out of thine own eye	^ 	, 	and
 031	hushgather they grapes	"* 	."* 	These
 031	d of him	: '^ 	: " 	He
 031	good hearted man	;—^	;— 	he
 031	which is demonstrably	 /	 	scriptural
 031	his Holy Spirit	^ 	, 	brings
+031	not that faith	 "	 	which
+031	ofpiett and morality	/.* 	.* 	By
 031	characterized by humility	/.* 	.* 	Humility
+031	With regard to	^	 	you
 031	for out of	.	 	them
 031	the good man	: ^'	: "	A
 032	his weightiest Why	/ 	 	call
 032	weightiest Why call ye me Lord	^ 	, 	Lord
 032	weightiest Why call ye me Lord Lord	^ 	, 	and
+032	accordingly Why call ye me	. 	, 	Lord
 032	merely nominal Christians	,* 	.* 	Those
 032	said unto them	. 	, 	This
 032	is God's commandment	. 	, 	That
+032	say unto thee	. 	, 	Except
+032	or in the	> 	 	neglect
+032	not so for	, ^'	, "	in
+032	saith unto me	. 	, 	Lord
 032	to the faith	, 	 	and
 032	him in spirit	 	, 	as
 032	to Christ as	 '^ 	 " 	hearing
 032	sayings and as	 '^ 	 " 	doing
+032	coming to Christ	,* 	.* 	Our
+032	say to them	; ^^ 	:"  	Ye
+032	who built an house and digged deep	^ 	, 	and
+032	when thefrood arose	^ 	, 	the
+032	upon that house	^ 	, 	and
+032	upon that house and could not shake it	^ 	, 	for
+032	class Christ says	: ^' *	: " *	He
+032	without a foundation	"* 	,"* 	that
+032	upon the earth	"* 	,"* 	upon
+032	loose earth against which the stream did beat vehemently	^ 	, 	and
+032	house was great	,"* 	."* 	The
 032	pardon and acceptance	;-^	;— 	the
 032	a sure foundation	: 	:" 	and
 032	not make haste	.'' 	." 	But
 032	the keeper maketh	 	. 	Terrors
+033	of the people	 	, 	he
+033	servant And when	 -	 	they
+033	him instantly saying	. 	, 	That
+033	to him saying unto him	. 	, 	Lord
+033	and I say unto one	. 	, 	Go
+033	to my servant	. 	, 	Do
+033	an illustrious example	 ^ 	."  	There
+033	their own masters	,, 	, 	and
+033	ready to die	"* 	."* 	In
+033	When he heard of Jesus	^ 	, 	he
+033	he sent unto him the elders of the Jews	^ 	, 	beseeching
+033	heal his servant	!'* 	."* 	On
 033	call for it	 	. 	Have
+033	unto him saying unto him	^ 	, 	Lord
+033	unto him saying unto him Lord	^	, 	trouble
+033	my roof wherefore	^ 	, 	neither
+033	come unto thee	"* 	."* 	Mark
+033	boast before God	-—	— 	he
 033	my in a word	^ 	, 	and
 033	even I who	) \*^ *	) " *	am
 033	company I say unto one	^ 	, 	Go
@@ -510,7 +752,21 @@
 033	say unto you	. 	, 	That
 033	our Lord appears	» 	 	to
 033	our own salvation	,* 	.* 	In
+033	Lord I am not worthy	.	 	of
+033	elders besought him	 '' 	 " 	instantly
+033	besought him instantly	. 	." 	Now
+033	he notices it	 	. 	No
+033	faith in Israel	, 	. 	Let
+034	And he said	. 	, 	Young
+034	and they glorified God saying	. 	, 	That
+034	that the very	 ^' *	 " *	day
+034	very day after	^ 	, 	Jesus
+034	of other people	"* 	,"* 	attracted
 034	man carried out	"* 	,"* 	for
+034	her only son	"* 	."* 	The
+034	known to humanity	: '^ 	: " 	They
+034	were with her	^* 	,"* 	attending
+034	unto thee Arise	,"* 	."* 	This
 034	his own power	^ 	, 	and
 034	voice of Elijah	. 	." 	When
 034	temple Peter said	: '^ 	: " 	In
@@ -525,11 +781,18 @@
 034	matter of doubt	 	. 	Some
 034	rumour of him	 "* 	 ,"* 	says
 034	parents who have	$ 	 	been
+034	persons toko know	^ 	, 	and
+034	with each other	^ 	, 	on
+034	it It iS	) 	, 	indeed
+035	to Jesus saying	. 	, 	Art
+035	said unto them	. 	, 	Go
 035	No wonder that	 '^ 	 " 	this
 035	him the report	; 	 	of
 035	all these things	"* 	."* 	We
 035	John the Baptist	, ^' 	, " 	for
 035	John in prison	/' 	." 	The
+035	of his disciples	^ 	, 	he
+035	Messiah the prince	:' 	:" 	Zechariah
 035	Baptist hath sent us unto thee	^ 	, 	saying
 035	of evil spirits	"* 	,"* 	casting
 035	he gave sight	"* 	."* 	Having
@@ -538,7 +801,27 @@
 035	heard how that the blind see the lame walk	^ 	, 	the
 035	blind see the lame walk the lepers are cleansed	^ 	, 	the
 035	dead are raised	"* 	."* 	As
+035	hour was come	^ 	, 	a
+035	answered and said	. 	, 	Who
+035	said unto him	. 	, 	Thou
+035	of the world	."—^^ 	."—" 	If
+035	said unto him	. 	, 	How
+035	John vii that	 ^' 	 " 	many
+035	gospel was preached	 "* 	 ."* 	The
+035	priests and Pharisees	 *""* 	 *"* 	sought
+035	for a prophet	" 	." 	It
+035	Messiahship of Jesus	, 	, 	not
 035	his divine mission	* 	.* 	Some
+035	as his people	. ^'	. "	If
+035	of the truth	, "	, 	with
+035	thou me up	. 	, 	and
+036	of whom it is written	. 	, 	Behold
+036	y unto you	. 	, 	Among
+036	market place and calling one to another and saying	. 	, 	We
+036	and ye say	. 	, 	Behold
+036	are told that	 ^' 	 " 	when
+036	worse than useless	. ^' 	. " 	If
+036	to and fro	, 	. 	and
 036	raiment f Behold	^ 	, 	they
 036	who are gorgeously apparelled and live delicately	^ 	, 	are
 036	in kings courts	"* 	."* 	It
@@ -548,6 +831,7 @@
 036	isheoj whom it is written	^ 	, 	Behold
 036	before thy face	^ 	, 	who
 036	way before thee	"* 	."* 	This
+036	greater than he	,"* 	."* 	The
 036	jected the counsel of God against themselves	^ 	, 	being
 036	ministry and these	 '^ 	 " 	justified
 036	these justified God	/' 	," 	and
@@ -558,13 +842,26 @@
 036	tee have mourned to you	^ 	, 	and
 036	have not wept	"* 	."* 	The
 036	nor drinking wine	,"* 	."* 	He
+036	hath a devil	,"* 	."* 	They
+036	eating and drinking	;^* 	;"* 	that
+036	said Behold a gluttonous man	^ 	, 	and
+036	publicans and sinners	"* 	."* 	They
 036	of means talents	 	, 	and
 036	talents and characters	^ 	, 	to
 036	of the Baptist	 	. 	We
 036	terrors of helL	 	. 	To
+036	gos' pel itself	* 	.* 	The
 036	we should be	 ^' 	 " 	made
+037	whom he forgave most And he said unto him	. 	, 	Thou
+037	said unto her	. 	, 	Thy
+037	at meat with him began to say within themselves	. 	, 	Who
+037	he said to the woman	. 	, 	Thy
+037	its circumstances the	. 	 	case
 037	would present itself	. ^' *	. " *	He
 037	Pharisee b house	^ 	, 	and
+037	was a sinner	,"* 	."* 	It
+037	was her humility	,* 	.* 	Though
+037	wash his feet	!'* 	."* 	The
 037	with her tears	,"* 	."* 	She
 037	of her hair	"* 	,"* 	which
 037	kissed his feet	"* 	."* 	And
@@ -575,6 +872,10 @@
 037	on Him who	 '^ 	 " 	searcheth
 037	proud and self	-^	- 	righteous
 037	Those who say	. 	, 	Stand
+037	And Jesus answering	"* 	,"* 	that
+037	entertained said unto him	^ 	, 	Simon
+037	him Simon I have somewhat to say unto thee	"* 	."* 	And
+037	styling him Master	^'* 	,"* 	or
 037	forgave them both	,"* 	."* 	Both
 037	f Simon answered and said	 	, 	I
 037	hast rightly judged	"* 	."* 	The
@@ -588,14 +889,24 @@
 037	she loved much	"* 	."* 	To
 037	her being pardoned	 	. 	This
 037	same loveth little	"* 	."* 	The
+037	for more heart	 	- 	affecting
+037	Consider this example	 "	 	well
+037	of you say	. 	, 	There
 038	and village preaching	/'* 	."* 	He
 038	preached unto them	/' 	." 	In
 038	but earnest words	. 	, 	Are
+038	were with him	"* 	."* 	In
 038	spirits and infirmities	* 	."* 	Some
 038	Lord is Joanna	^ 	, 	the
 038	first of the	"	 	three
 038	and exhort Susanna	"* 	,"* 	the
+038	of their substance	"* 	."* 	They
+038	the two sexes	 	. 	Man
+038	said before me	. 	, 	To
 038	by the woman	. 	, 	He
+039	things he cried	. 	, 	He
+039	be And he said	. 	, 	Unto
+039	of every city	"* 	."* 	Now
 039	Aw disciples asked him	^ 	, 	saying
 039	naturally And he said	^ 	, 	Unto
 039	might not understand	"* 	."* 	Our
@@ -605,15 +916,39 @@
 039	the th verse	: '' *	: " *	Those
 039	and taketh away the word out of their hearts	^ 	, 	lest
 039	and be saved	"* 	."* 	The
+039	as it was sprung up it withered away	^ 	, 	because
+039	temptation fall away	"* 	."* 	On
+039	are the thorny	/	- 	ground
+039	thorny ground hearers	. ^^ 	. " 	And
+039	and choked it	"* 	."* 	The
+039	overcharged with surfeiting	, 	. 	and
+039	is too with	 '' 	 " 	the
 039	described And other fell on good ground	^ 	, 	and
 039	are they who	^ 	, 	in
 039	and good heart having heard the word keep it	^ 	, 	and
 039	fruit with patience	"* 	."* 	What
+039	let him hear	"* 	."* 	This
+039	hope shall perish	," 	." 	Seek
 039	thank we God	 ¥	 	without
+040	verse No man	"* 	,"* 	says
+040	hath lighted a candle covereth it with a vessel	^ 	, 	or
+040	see the light	"* 	."* 	The
+040	of the world	/' 	." 	Peculiarly
+040	Verse For nothing is secret	^ 	, 	that
+040	any thing hid	^ 	, 	that
+040	and come abroad	* 	."* 	Probably
+040	Verse Take heed	^ 	, 	therefore
+040	how ye hear	"* 	."* 	The
+040	to him shall be given and whosoever hath not	^	, 	from
+040	said in Matthew	, ^' 	, " 	he
+040	called his own	, ^' 	, " 	from
 040	iii as follows	: '^ 	: " 	And
 040	for they said	. 	, 	He
 040	him Thy mother and thy brethren stand without	^ 	, 	desiring
 040	wn to them	^ 	, 	My
+040	avail for safety	,* 	.* 	John
+041	Mark states that	 ^^ 	 " 	there
+041	Jesus fell asleep	"* 	."* 	Partaker
 041	so that they	/ 	 	were
 041	were in jeopardy	^\** 	,"* 	in
 041	and that they	 '^ 	 " 	must
@@ -621,9 +956,25 @@
 041	and awoke him	"* 	."* 	According
 041	awoke Christ Master	^ 	, 	Master
 041	Christ Master Master	^ 	, 	we
+041	his mercy saying	. 	, 	Lord
+041	Then he arose	"* 	,"* 	that
+041	of the water	"* 	."* 	Mark
+041	unto the sea	. 	, 	Peace
+041	that they were	 *""- 	 *" 	afraid
+041	they were afraid	"* 	,"* 	and
 041	witnessed saying one to another	. 	, 	What
 041	they obey him	"* 	."* 	And
 041	worshipped him saying	. 	, 	Of
+041	forgets his people	^ 	, 	though
+041	God my rock	. 	, 	Why
+041	And I said	. 	, 	This
+041	for it because	 ^'	 "	at
+041	to the uttermost	 	. 	Whatever
+041	rational calm cheerful	. 	, 	Christian
+042	loud voice said	. 	, 	What
+042	And he said	. 	, 	Legion
+042	of the Gadarenes	,"* 	."* 	This
+042	called by Matthew	 '' 	 " 	the
 042	devils long time	"* 	."* 	The
 042	ware no clothes	:'* 	:"* 	they
 042	brake the bands	"* 	,"* 	both
@@ -631,6 +982,10 @@
 042	Verse When he saw Jesus	^ 	, 	he
 042	voice he said	. 	, 	What
 042	he said What have I to do with thee	^ 	, 	Jesus
+042	into the deep	"* 	."* 	The
+042	into the swine	!* 	."* 	In
+042	unto them Go	/' \*^ *	.""  *	Then
+042	they exerted that	 ^' *	 " *	the
 042	the adjacent country	"* 	."* 	On
 042	feet of Jesus	"* 	,"* 	in
 042	his right mind	"* 	,"* 	restored
@@ -639,8 +994,27 @@
 042	show how great things God hath done unto thee	 	. 	And
 042	the whole city	"* 	,"* 	nay
 042	done for him	.* 	."* 	The
+042	he may devour	.'' 	." 	Those
+042	Do not they	 ^'	 "	take
+042	mark with satisfaction	^ 	, 	the
+042	power of Satan	,* 	.* 	It
+042	for those who	, 	 	are
+042	all unrenewed men	; ^^ 	; " 	they
 042	of this man	^ 	, 	after
 042	of the converted	* 	.* 	Did
+043	And Jesus said	. 	, 	Who
+043	were with him said Master the multitude throng thee	« 	, 	and
+043	And Jesus said	. 	, 	Somebody
+043	answered him saying	. 	, 	Fear
+043	but he said	* 	,* 	Weep
+043	of the synagogue	"* 	."* 	The
+043	his only daughter	"* 	,"* 	after
+043	lay a dying	,* 	."* 	In
+043	at Jesus feet	"* 	,"* 	in
+043	people thronged him	"* 	."* 	While
+043	even twelve years	"* 	,"* 	afflicted
+043	medicines and who	 *'^	 *"	had
+043	of his garment	"* 	."* 	According
 043	particular design Peter	^ 	, 	and
 043	design Peter and they that were with him	^ 	, 	said
 043	design Peter and they that were with him said	^ 	, 	Master
@@ -652,12 +1026,22 @@
 043	was healed immediately	"* 	."* 	Our
 043	that her faith	"* 	,"* 	which
 043	Go in peace	"* 	."* 	It
+043	province of God	,* 	.* 	This
+043	and he is	 '^	 "	set
 043	si nagogms house	^ 	, 	saying
 043	nagogms house saying to him	^ 	, 	Thy
 043	with their voices	, 	. 	and
+043	be an enlightened	. 	, 	Christian
+043	of our friends	,' 	, 	there
+044	sick And he said unto them	. 	, 	Take
+044	to his disciples	. 	, 	The
+044	send them Then	"* 	,"* 	says
+044	heal the sick	"* 	."* 	The
 044	Verse And he said unto them	^ 	, 	Take
 044	Take nothing for your journey neither staves nor scrip	^ 	, 	neither
 044	two coats apiece	,"* 	."* 	He
+044	of the gospel	) 	, 	previously
+044	Luke And whatsoever house ye enter into	^ 	, 	there
 044	gospel And whosoever will not receive you	^ 	, 	when
 044	a considerable degree	, "	, 	by
 044	themselves as unholy	, 	 	and
@@ -666,17 +1050,24 @@
 044	he was perplexed	;* 	;"* 	he
 044	and of some	^ 	, 	that
 044	of some that Elias had appeared and of others	^ 	, 	that
+044	here several rules	 	, 	in
 044	on no man	/' 	," 	writes
 044	also says that	 ^' 	 " 	a
+044	office after they	, 	 	are
 044	companions at Puteoli	. ^' 	. " 	Be
 044	they make they	, 	 	should
 044	grace of God	. "	. 	We
+045	And the apostles	/	, 	when
+045	away then came the twelve and said unto him	. 	, 	Send
+045	them Give ye them to eat And they said	. 	, 	We
+045	he said to his disciples	. 	, 	Make
 045	privately into a desert place belonging to the city	^ 	, 	called
 045	city called Bethsaida	"* 	."* 	The
 045	prophetic words fulfilled	: ''	: "	Unto
 045	Verses And when the day began to wear away	^ 	, 	then
 045	day began to wear away then came the twelve	^ 	, 	and
-045	them Give ye them to eat And they said	. 	, 	We
+045	Jesus said to his disciples	^ 	, 	Make
+045	all sit down	"* 	."* 	Or
 045	Jesus took the five loaves and the two fishes	^ 	, 	and
 045	took the five loaves and the two fishes and	^ 	, 	looking
 045	up to heaven	"* 	,"* 	a
@@ -684,16 +1075,46 @@
 045	He then brake	"* 	,"* 	divided
 045	after distribution He	 *''^	 *"	gave
 045	distribution He gave	* 	"* 	the
+045	it is written	. 	, 	He
+045	his people that	 ^'	 "	bread
+045	of Jesus Christ	,* 	.* 	This
+045	Jesus did said	. 	, 	This
+046	He sudunto them	. 	, 	But
+046	Peter answering said	. 	, 	The
+046	he said to them all	. 	, 	If
+046	that Jesus was	 ^^ *	 " *	Elias
+046	Jesus was Elias	"* 	,"* 	or
+046	this question Peter	"* 	,"* 	who
 046	man that thing	"* 	."* 	There
 046	our Lord proceeded	: ^' *	: " *	Saying
 046	Saying The Son of man must suffer many things	^ 	, 	and
 046	chief' priests and scribes	^ 	, 	and
 046	far from thee	. 	, 	Lord
-046	come after me	,, *	, *	let
-046	after me let him deny himself	 	, 	and
+046	wUl come after me	,, *	, *	let
+046	wUl come after me let him deny himself	 	, 	and
 046	and follow me	,"* 	."* 	If
+046	of sin and	. 	 	to
+046	in the world	/'' 	." 	We
+046	his cross daily	/' 	." 	This
+046	way that is	, >	, 	we
+046	But whosoever will lose his life for my sake	^ 	, 	the
+046	shall save it	"* 	."* 	In
+046	a man advantaged if he gain the whole world	^ 	, 	and
+046	on this behalf	." "	." 	When
+046	kingdom of God	:* 	:"* 	or
+047	came to pass	"* 	,"* 	says
+047	pass says Luke	, '^ *	, " *	about
+047	Jesus took Peter	^ 	, 	and
+047	Jesus took Peter and John	^ 	, 	and
+047	John and James	* 	."* 	It
+047	disciples our Lord	 '^ *	 " *	went
+047	into a mountain	"* 	."* 	Tradition
+047	on its summit	 	. 	Several
 047	prayer It was	 '^ *	 " *	as
 047	as he prayed	"* 	,"* 	that
+047	of his raiment	"* 	,"* 	also
+047	Moses and Elias	 	, 	who
+047	appeared in glory	"* 	."* 	The
 047	were with him	"* 	,"* 	namely
 047	heavy with sleep	"* 	."* 	They
 047	it came to pass as they departed from him	^ 	, 	Peter
@@ -709,6 +1130,12 @@
 047	them and said	. 	, 	Arise
 047	n the voice was past	^ 	, 	Jesus
 047	was found alone	"* 	."* 	Moses
+047	you heareth me	.'' 	." 	Let
+048	cried out saying	. 	, 	Master
+048	child And lo a spirit taketh him	^ 	, 	and
+048	and healed the	 ' 	  	child
+048	the next day	* 	,"* 	the
+048	people met them	,"* 	."* 	Mark
 048	and eagerly Master	^* 	,"* 	Teacher
 048	mine only child	"* 	,"* 	which
 048	the man came	 ^''	 "	kneeling
@@ -717,12 +1144,41 @@
 048	and it teareth him that he foameth again and	 	, 	bruising
 048	departeth from him	"* 	."* 	But
 048	And I besought thy disciples to cast him out	 	, 	and
+048	asked his father	. 	, 	How
+048	And he said	. 	, 	Of
+048	and more illustrious	. '^ 	. " 	And
+048	And oft times	,'' 	," 	continues
+048	saying unto him	. 	, 	Thou
+048	to his father	"* 	,"* 	who
 048	has been called	 ^' 	 " 	the
 048	unto his disciples	"* 	,"* 	during
 048	hands of men	"* 	."* 	He
 048	Have compassion on us	^* 	,* 	and
 048	related by blood	, '' 	, " 	He
+048	sin and Satan	,* 	.* 	It
+048	and he adds	, ^' 	, " 	Among
+048	the diabolical temptation	: ''	: "	All
+048	unto the Father	, '^ 	, " 	who
+049	reasoning among them	"* 	,"* 	that
+049	that town saying	, " "	, " 	What
+049	of their heart	,* 	,"* 	and
+049	him by him	"* 	,"* 	in
+049	name receiveth me	"* 	."* 	Jesus
+049	that sent me	"* 	."* 	Such
+049	He that is least among you all	^ 	, 	the
+049	shall be great	,"* 	."* 	Instead
+049	the apostle Peter	,* 	.* 	If
+049	when he says	, '' 	, " 	Repent
+049	of his history	^ '' 	,"  	When
+049	any other individuaL	 	. 	Such
 049	grace shall be	 	, 	according
+049	we saw one casting out devils in thy name	^ 	, 	and
+049	loweth not with us And Jesus said unto him	. 	, 	Forbid
+049	him to desist	 	. 	This
+049	not with us	.'' 	." 	He
+049	his enemies Here	^* 	,* 	however
+049	tabernacle Joshua said	, '' 	, " 	My
+050	and rebuked them and said	. 	, 	Ye
 050	r ceived up	^* 	,"* 	suggests
 050	he stedfastly set	"* 	,"* 	he
 050	go to Jerusalem	"* 	."* 	This
@@ -730,13 +1186,38 @@
 050	the Old Testament	 	. 	Though
 050	Let us admire	^ 	, 	and
 050	and he has	 ^'	 "	stedfastly
+050	Lord Jesus Christ	,* 	.* 	Though
 050	Let us be	 '	 	very
+051	man said unto him	. 	, 	Lord
+051	Jesus said unto him	. 	, 	Foxes
+051	have holes and birds of the air have nests	: 	; 	but
+051	head And he said unto another	. 	, 	Follow
+051	But he said	. 	, 	Lord
+051	said unto him	. 	, 	Let
+051	God And another also said	. 	, 	Lord
+051	said unto him	. 	, 	No
 051	consideration And it came to pass	^ 	, 	that
 051	consideration And it came to pass that as they	\^ 	 	went
 051	in the way	;* 	;"* 	but
+051	Luke said unto him Lord	^ 	, 	I
+051	soever thou goest	,* 	."* 	Matthew
+051	air have nests	:'' 	:" 	even
+051	conies saith Solomon	, ^' 	, " 	are
+051	we have said	^ 	, 	excellent
+051	in that light	 	. 	Shall
+051	apostle exhorts children	 ''	 "	to
+051	is alive again	;" '' 	;" " 	Dead
+051	earth says he	; '^ 	; " 	I
+051	her mother in	 	- 	law
+051	to the former	. 	, 	Give
+051	whom he will	.'' 	." 	May
+051	at my house	.* 	."* 	Though
 051	said unto him	. 	, 	Go
 051	JiavingpiU his hand to the plough	^ 	, 	and
 051	JiavingpiU his hand to the plough and looking	^ 	 	back
+052	enter first say	. 	, 	Peace
+052	say unto you	. 	, 	That
+052	again with joy saying	. 	, 	Lord
 052	After these things	"* 	,"* 	says
 052	two and two	-—	— 	their
 052	all self indulgence	—-	— 	the
@@ -752,6 +1233,7 @@
 052	judgment for Sodom	^ 	, 	than
 052	iorazinJ woe unto thee	^ 	, 	Bethsaida
 052	ting in sackcloth and ashes	 	. 	But
+052	exalted unto heaven	"* 	,"* 	that
 052	ou heareth me and he that despiseth you	^ 	, 	despiseth
 052	despiseth you despiseth me and he that despiseth me	^ 	, 	despiseth
 052	that sent me	"* 	."* 	It
@@ -761,12 +1243,31 @@
 052	gou power to tread on serpents and scorpions	^ 	, 	and
 052	trample under feet	" 	." 	Our
 052	Jesus to Paul	, '^	, "	but
+052	joy Notwithstanding in this rejoice not	^ 	, 	that
+052	written in heaven	"* 	."* 	It
 052	with worldly power	??^? 	? 	Notwithstanding
+052	you kind and	 *"	 *	pious
+052	said unto him	. 	, 	Blessed
+052	thou hast sucked	/' 	," 	he
+052	this and say	, ''	, "	Bless
 052	again I say	. 	, 	Rejoice
+053	set before him	,' 	, 	and
+053	himself to his	 '^ *	 " *	Father
+053	to his Father	"* 	."* 	God
+053	divine he says	, ^' 	, " 	I
+053	cry Abba Father	;'' 	;" 	and
+053	hid these things	^'* 	,"* 	the
+053	e and prudent	^ 	, 	and
+053	them unto babes	"* 	."* 	There
 053	in and hardening	^* 	,* 	which
 053	had said again	. 	, 	He
 053	are these words	. 	, 	Acts
 053	people and say	. 	, 	Hearing
+053	human wisdom and	 "	 	who
+053	written in heaven	; 	;" 	though
+053	words Even so	^ 	, 	Father
+053	of my Father	"* 	."* 	As
+053	but the Father	;^'* 	;"* 	that
 053	a nd kings	"* 	,"* 	or
 053	and righteous men	, '^ *	, " *	have
 053	them and to hear those things which ye hear	\ 	, 	and
@@ -776,9 +1277,28 @@
 053	certain other Christians	 ''	 "	passed
 053	this last question	, '' 	, " 	is
 053	say unto you	. 	, 	Whosoever
+053	good tidings of	?	 	peace
+054	was and when he saw him	. 	, 	he
+054	And he said	. 	, 	He
+054	mercy on him	 	. 	Then
+054	was a lawyer	"* 	,"* 	or
+054	appellation of Master	"* 	,"* 	or
+054	love to God	,* 	.* 	And
+054	esteem of God	,* 	.* 	Love
+054	While many say	. 	, 	Who
+054	keep his commandments	."—'^ 	."—" 	All
+054	which is like unto it	. 	, 	Thou
+054	by his actions	: ^' 	: " 	For
 054	thou shalt live	"* 	."* 	If
 054	the lawyer willing	"* 	,"* 	that
 054	wishing to justify himself said unto Jesus	^ 	, 	And
+054	fell among thieves	"* 	,"* 	or
+054	who stripped him of his raiment and wounded him	^ 	, 	and
+054	him half dead	"* 	."* 	What
+054	priest that way	"* 	,"* 	who
+054	he saw him	"* 	,"* 	instead
+054	his eye and	 *""^ 	 *" 	passed
+054	the other side	"* 	."* 	No
 054	despised as he journeyed	^ 	, 	came
 054	the wounded Jew	 *^"^ 	 *" 	was
 054	sa uo him	"* 	,"* 	rising
@@ -789,13 +1309,16 @@
 054	heal and set him	, 	 	on
 054	his own beast	,* 	,"* 	as
 054	care of him	"* 	,"* 	that
+054	Samaritan was neighbour	"* 	,"* 	that
+054	mercy on him	"* 	."* 	As
+054	do thou likewise	"* 	,"* 	said
 054	ours In conclusion	^ 	, 	then
 054	God It is	? 	 	the
 054	at last but	 '^ 	 " 	charity
 055	ssage Now it came to pass as they	/ 	 	went
 055	village and a certain woman named Martha	^ 	, 	received
+055	heard his word	"* 	."* 	According
 055	about much serving	"* 	."* 	Being
-055	no doubt that	 	, 	in
 055	gentle rebuke for	 ^' *	 " *	he
 055	said unto her	"* 	,"* 	addressing
 055	about many things	"* 	."* 	The
@@ -806,49 +1329,128 @@
 055	only one thing	,'' 	," 	but
 055	be taken away	!* 	."* 	It
 055	It is the	 '^ 	 " 	part
+055	the world who	 '' 	 " 	have
+055	seemeth to have	/' 	." 	When
+055	while he is	 *'^* 	 *"* 	not
+055	the same time	, ^' 	, " 	fervent
+055	other characteristics of	 ^'	 "	a
+055	we eat or	. 	, 	What
+055	consider the folly	 ^ 	 , 	guilt
 055	of the gospeL	 	. 	Remember
+056	said unto them	. 	, 	When
+056	art in heaven	. 	, 	Hallowed
 056	agreeable to his will	^ 	, 	in
 056	his heavenly Father	. "	. 	We
 056	read of his	 *^^	 *"	praying
 056	a certain place	"* 	,"* 	most
 056	he had ceased	"* 	,"* 	for
 056	us to pray	"* 	."* 	This
+056	Prayer is the	 *'	 *	preface
+056	art in heaven	,"* 	."* 	Among
+056	all by creation	. '^ 	. " 	It
+056	use social prayer	—'' 	—" 	to
+056	be thy name	"* 	."* 	God's
+056	it includes his	 ^' 	 " 	names
+056	it is said	, '^ 	, " 	Holy
+056	Thy kingdom come	"* 	."* 	May
+056	third petition is	, '^ *	, " *	Thy
+056	so in earth	,* 	."* 	The
+056	the glorified saints	, '^ 	, " 	they
+056	saith unto me	. 	, 	Lord
+056	of God ourselves	. '' 	. " 	This
+056	of this life	!" "	!" 	We
+056	life We should	 ^' 	 " 	seek
+056	industry of righteousness	 	, 	and
 056	indebted to us	" 	." 	We
 056	indebted to us	"* 	."* 	No
 056	language of James	: '^	: "	Let
+056	The word Amen	"* 	,"* 	with
+056	the unlearned say	. 	, 	Amen
+057	said unto them	. 	, 	Which
+057	say unto him	. 	, 	Friend
+057	answer and say	. 	, 	Trouble
+057	say unto you	. 	, 	Though
+057	needeth And I say unto you	. 	, 	Ask
 057	to persevering importunity	/* 	* 	in
 057	enabling us to	 -	 	do
-057	a stone or	^ 	, 	if
+057	promises And I say unto you	^ 	, 	Ask
+057	audit shall be given you seek	^ 	, 	and
+057	he that seeketh findeth and to him that knocketh	^ 	, 	it
+057	shall be opened	"* 	."* 	In
+057	a father will he give him a stone or	^ 	, 	if
 057	sk an egg	^ 	, 	will
 057	this If ye then	^ 	, 	being
 057	parallel passage Matt	, 	. 	vii
+057	any such case	. 	, 	Providence
 057	whom fee address	^ 	, 	contrasted
 057	Lord who am	 	 	but
+057	of Elias who	 ^\* 	 " 	was
+057	is neces sary	 -	 	to
+057	seek and knock	. '' 	. " 	Pray
 058	itself ceased for	 ^' *	 " *	the
 058	the dumb spake	"* 	,"* 	or
 058	moment they wondered	"* 	."* 	Matthew
+058	of the devils	"* 	."* 	Matthew
+058	knowing their thoughts	"* 	,"* 	having
+058	said unto them	^'* 	,"* 	replied
+058	om divided against itself is brought to desolation	^ 	, 	and
+058	a house falleth	* 	."* 	When
+058	hand If Satan also be divided against himself	 	, 	how
+058	devils through Beelzebub	"* 	."* 	If
 058	verse And if I by Beelzebub cast out devils	^ 	, 	by
 058	Lord Jesus saying	. 	, 	We
 058	and When a strong man armed keepeth his palace	^ 	, 	his
 058	corns upon him	^ 	, 	and
 058	corns upon him and overcome him	^ 	, 	he
 058	taketh from him all his armour wherein he trusted	^ 	, 	and
+058	stronger than he	 	. 	But
+058	well compared to	 *\*^* 	 *"* 	a
+058	not with me	^* 	,"* 	says
+058	he against me	!'* 	."* 	We
+058	verses run thus	: '' *	: " *	When
+058	dry places seeking rest and finding none he saith	^ 	, 	I
+058	Icam out And when he cometh	^ 	, 	he
+058	to him seven other spirits more wicked than himself	 	, 	and
+058	than himself and they enter in and dwell there	^ 	, 	and
+058	a partial reformation	^ 	, 	without
 059	they shall say	. 	, 	Blessed
 059	teach and exhort	,'' 	," 	A
 059	mother of Christ	,* 	.* 	Great
 059	it are truly	 '^ 	 " 	blessed
+059	That those who are believers	^ 	, 	are
+059	who are thus	 '' 	 " 	wise
 059	with joy saying	. 	, 	Lord
+059	the time to	 *'^* 	 *"* 	take
+059	and to say	, '' 	, " 	I
+059	of all families	) 	, 	and
 059	views of Mary	^ 	, 	the
+059	in thine heart	. 	, 	Who
+059	from above or	. 	, 	Who
 060	sign from heaven	"* 	."* 	Matthew
+060	gathered thick together	"* 	,"* 	crowding
+060	heaven began to say	. 	, 	This
+060	an evil generation	"* 	."* 	According
+060	that no sign	^'* 	,"* 	of
+060	should he given	"* 	,"* 	to
+060	here designates as	 '^ *	 " *	the
+060	he was a sign unto the Ninevites	^ 	, 	so
+060	to this generation	:'* 	:"* 	and
 060	with this generation	: 	: 	for
 060	for they repented at the preaching of Jonas and	^ 	, 	behold
 060	Jonas is here	 "* 	 ."* 	From
 060	the earth to hear the wisdom of Solomon and	^ 	, 	behold
 060	earth to hear the wisdom of Solomon and behold	^ 	, 	a
+060	Verse No man	^ 	, 	when
+060	it in a secret place neither under a bushel	^ 	, 	but
+060	see the light	"* 	."* 	We
+060	is the eye therefore when thine eye is single	^ 	, 	thy
+060	full of light but when thine eye is evil	^ 	, 	thy
+060	full of darkness	—-	— 	is
 060	beware of covetousness	"* 	,"* 	for
 060	rather than light	,.	, 	because
 060	spirit of envy	/, 	, 	malice
 060	and hear the	 "	 	Word
+061	these ought ye to have done and not to	.	 	leave
 061	as he spake	"* 	."* 	It
 061	forward and besought	"* 	,"* 	or
 061	dine with him	!* 	."* 	The
@@ -858,10 +1460,31 @@
 061	passage in Matt	, 	. 	xxiii
 061	which is without	^^* 	,"* 	or
 061	is within also	"* 	,"* 	or
+061	Pharisees for ye tithe mint and rue	^ 	, 	and
+061	love of God	,"* 	."* 	They
+061	does not These	"* 	,"* 	namely
+061	the other undone	"* 	."* 	They
+061	say unto you	. 	, 	Till
+061	Pharisees loved also	 *^^ 	 *" 	greetings
+061	in the markets	^* 	."* 	They
+061	hypocrisy Woe unto you	^ 	, 	scribes
+061	hypocrisy Woe unto you scribes and Pharisees	^ 	, 	hypocrites
+061	men Woe unto you scribes and Pharisees hypocrites	 	! 	for
+061	hypocrites for ye are as graves which appear not	^ 	, 	and
+061	aware of them	"* 	."* 	On
 061	trine and duty	^ 	, 	to
 061	and New Testaments	;" '^ 	;" " 	which
+062	And he said	. 	, 	Woe
+062	us Then answered one of the lawyers	^ 	, 	and
+062	answered one of the lawyers and said unto him	^ 	, 	Master
+062	one of the lawyers and said unto him Master	^ 	, 	thus
 062	verse Woe unto you also	^ 	, 	ye
 062	of your fingers	"* 	."* 	The
+062	you for ye build the sepulchres of the prophets	^ 	, 	and
+062	build their sepulchres	"* 	."* 	The
+062	passage in Matt	, 	. 	xxiii
+062	condemned in general	], 	, 	the
+062	city told him	. 	, 	It
 062	follows Therefore also said the wisdom of God	^ 	, 	I
 062	of God I will send them prophets and apostles	^ 	, 	and
 062	of this generation	^ 	, 	from
@@ -874,33 +1497,87 @@
 062	scribes and the Pharisees began to urge him vehemently	 	, 	and
 062	ma ny things	^ 	, 	laying
 062	might accuse him	.* 	."* 	Being
+062	and wisdom which	 ^' 	 " 	all
+063	say unto you my friends	. 	, 	Be
+063	the mean time	"* 	,"* 	continues
+063	first of all	^* 	,"* 	as
+063	of the Pharisees	"* 	."* 	That
+063	my unto you my friends	^ 	, 	Be
+063	Be not afraid of them that kill the body	^ 	, 	and
+063	forewarn you whom ye shall fear Fear him	^ 	, 	who
+063	him Are not five sparrows sold for two farthings	^ 	, 	and
+063	hairs of your head are all numbered Fear not	^ 	, 	therefore
+063	to cast into hell yea I say unto you	. 	, 	Fear
+063	ruleth over all	" 	." 	Circumstances
+063	improve the doctrine	, >>	, 	was
+063	aspect Also I say unto you	^	, 	Whosoever
+063	angels of God	"* 	."* 	The
+063	as his own	, ^' 	, " 	before
+063	the applauding words	, '^ 	, " 	Well
+063	say to do	,' 	, 	or
+063	that men may	 '^ 	 " 	take
+063	to resist temptation	,* 	.* 	Satan
+063	to such apprehension	, '^ 	, " 	Fear
 063	hope in God's	! 	 	mercy
 063	sufl ce here	: '^	: "	Fear
 063	that awaits you	>* 	* 	from
+064	say unto you	. 	, 	All
+064	he has said	, '^ 	, " 	Him
+064	right with God	/' 	." 	And
+064	apostle John says	, ^'	, "	There
 064	is here described	^ 	, 	they
 064	and And when they bring you unto the synagogues	^ 	, 	and
 064	you unto the synagogues and unto magistrates and powers	^ 	, 	take
 064	no thought how or what thing ye shall answer	^ 	, 	or
 064	ought to say	"* 	."* 	The
+064	It would certainly	^ 	, 	be
+064	would countenance them	^ 	, 	in
+064	God says Paul	; '^ 	; " 	not
+064	of Israel said	. 	, 	The
+065	them Take heed	,'	, 	and
+065	unto them saying	. 	, 	The
+065	within himself saying	. 	, 	What
+065	But God said unto him	. 	, 	Thou
+065	of the company	"* 	,"* 	or
+065	crowd said unto him	. 	, 	Master
+065	inheritance with me	"* 	."* 	As
 065	affair saying Man	 	, 	who
 065	saying Man who made me a judge	^ 	, 	or
 065	Christ was indeed	. 	, 	King
 065	did the wrong	. 	, 	Wherefore
 065	And he said	. 	, 	Who
+065	a latter will	^ 	, 	so
+065	may be done	^ 	, 	and
+065	with civil rights	^ 	, 	or
 065	business and especially	^ 	, 	in
 065	said unto them	"*	,"* 	that
+065	ransom for him	; (	: (	for
+065	good principle and	. 	 	good
 065	thine ea eat	^ 	, 	drink
 065	and be merry	"* 	."* 	This
+065	does God said unto him	. *	, *	Thou
+065	night thy soul shall be required of thee then	^ 	, 	whose
+065	thou hast provided	?"—''''* 	?"—"* 	Thou
+065	too commonly regarded	: ^^ 	: " 	Their
+065	dwelt on Thy	^* 	* 	soul
+065	required of thee	"* 	,"* 	thine
+065	treasure for himself	,* 	,"* 	for
+065	rich toward God	^'* 	,"* 	with
+065	address to you	, ^^ *	, " *	Take
+065	beware of covetousness	"* 	."* 	And
 065	silver says Solomon	, ^' 	, " 	shall
 065	history of believers	. '' 	. " 	One
 065	witness against you	.'' 	." 	Let
 065	kingdom of heaven	!" "	!" 	What
+065	need of nothing	"—^" 	"—" 	for
 066	chapter of Matthew	 	. 	Though
 066	on different occasions	 	. 	He
 066	things Therefore I say unto you	^ 	, 	Take
 066	say unto you Take no thought for your life	^ 	, 	what
 066	original which signifies	. 	, 	Be
 066	There is certainly	, 	. 	incumbent
+066	to the other	 	. 	He
+066	ofyouy with taking thought	^ 	, 	can
 066	of the field	. ^' *	. " *	Consider
 066	not and yet I say unto you that Solomon	^ 	, 	in
 066	say unto you that Solomon in all his glory	^ 	, 	was
@@ -909,18 +1586,43 @@
 066	the beauty of	 (	 	God's
 066	lilies If then	^ 	, 	God
 066	the oven how much more will he clothe you	^ 	, 	O
+066	pride in clothes	 	. 	It
 066	Verse And seek not ye what ye shall eat	^ 	, 	or
 066	of doubtful mind	"* 	."* 	The
 066	language of Isaiah	, ^^ 	, " 	Thou
 066	of the Spirit	 	. 	All
+066	these beautiful words	, '^ *	, " *	And
+066	of these things	"* 	."* 	What
+066	art in heaven	.'' 	." 	And
+066	this time cry	. 	, 	Thou
 066	are Seek ye	" ^' 	" " 	the
 066	unto everlasting life	 " 	 ." 	And
 066	added unto you	"* 	:"* 	you
+067	is my shepherd	," 	." 	Hence
+067	Being the Lamb	 ^' 	 " 	slain
+067	flock Fear not	"* 	."* 	Distinguished
+067	the gospel covenant	. ^' 	. " 	He
+067	you the kingdom	"* 	."* 	The
+067	of heaven hereafter	 	. 	With
+067	the word give	"* 	."* 	Salvation
+067	Verse Sell that ye have	^ 	, 	and
 067	so foolish in	) 	 	any
+067	with him For	"* 	,"* 	adds
+067	w there will your heart be also	"* 	."* 	The
+067	general proposition is	. 	 	unquestionable
+067	expressing himself thus	, '^ 	, " 	I
+068	said unto him	. 	, 	Lord
+068	truth I say unto you	. 	, 	That
+068	and if that servant say in his heart	. 	, 	My
 068	home to receive their	 '^ *	 " *	master
 068	from a wedding	"* 	."* 	The
 068	be found watching	;* 	;"* 	of
 068	be girded about	"* 	,"* 	The
+068	our lights burning	"* 	."* 	If
+068	should gird himself	"* 	,"* 	as
+068	and serve them	"* 	."* 	This
+068	the third watch	"* 	."* 	Originally
+068	sea The term	 ^^ 	 " 	watch
 068	ready Be ye	^ 	, 	therefore
 068	ready Be ye therefore	^ 	, 	ready
 068	ye think not	"* 	."* 	The
@@ -936,9 +1638,17 @@
 068	kind of him	, 	 	shall
 068	be much required	"* 	."* 	According
 068	for death judgment	^ 	, 	and
+068	are told that	 '^ 	 " 	of
+068	most minute alteration	 	. 	Without
+068	not in darkness	?!, 	, 	that
+068	him with an	 '^ 	 " 	Amen
+068	even so come	. 	, 	Lord
 069	at his employment	 	. 	It
 069	of Messiah's decision	: ^' 	: " 	And
+069	before his death	: ^'	: "	The
+069	redemption he exclaimed	, '^ 	, " 	It
 069	X Christ said	, ^' 	, " 	Think
+069	for some said	. 	, 	He
 069	of God and	) 	, 	therefore
 069	ties For from henceforth	^ 	, 	there
 069	henceforth there shall be five in one house divided	^ 	, 	three
@@ -946,28 +1656,65 @@
 069	gainst the son	^ 	, 	and
 069	the mother in law against her daughter in law	^ 	, 	and
 069	mother in law	"* 	."* 	We
+069	put to death	/' 	." 	In
 069	we would say	. 	, 	Consider
+070	cloud rise out of the west straightway ye say	. 	, 	There
+070	Messiahship And he said also to the people	^ 	, 	When
+070	cloud rise out of the west straightway ye say	^ 	, 	There
+070	is And when ye see the south wind blow	^ 	, 	ye
+070	when ye see the south wind blow ye say	^ 	, 	There
+070	cometh to pass	,"* 	."* 	All
+070	Verse Yea and why even of yourselves	$ 	 	judge
+070	are called We	. 	 	observe
+070	called We observe	^ 	, 	from
+070	in other things	^ 	, 	but
+070	regard to them	^ 	, 	by
+070	On indications then	., 	, 	of
+070	to the magistrate as thou art in the way	/, 	, 	give
+070	judge and the judge deliver thee to the officer	^ 	, 	and
+070	prison I tell thee thou shalt not depart thence	^ 	, 	till
+070	very last mite	!'* 	."* 	What
 070	is the plaintiff	 	, 	prosecutor
 070	when thy neighbour	: 	 	hath
+071	all men that dwelt in Jerusalem I tell you	. 	, 	Nay
 071	Je iL answering	^ 	, 	said
 071	that these Galileans were sinners above all the Galileans	^ 	, 	because
 071	above all the Galileans because they suffered such things	^ 	? 	I
 071	tell you Nay	"* 	."* 	In
+071	of genuine repentance	* 	.* 	Our
+071	true penitent says	, '^ 	, " 	Against
+071	and he is	 '^ 	 " 	set
+071	gift of God	,* 	.* 	Nature
+071	it gross darkness	.^' *	." *	Now
 072	his vineyardJ The	 ^^ 	 " 	certain
 072	f th fruit	" 	." 	So
 072	the fig tree	 ^^ *	 " *	came
 072	and eottghtjruit thereon	^ 	, 	and
 072	of his vineyard	*—^	*"— 	perhaps
 072	law and government	. ^^ 	. " 	The
+072	prayer And he	"* 	,"* 	that
+072	the vineyard answering	^ 	, 	said
+072	vineyard answering said unto him	^ 	, 	Lord
+072	vineyard answering said unto him Lord	^ 	, 	let
+072	this year also	"* 	."* 	We
+072	them But when	 '^ 	 " 	Moses
 072	and dung it	"* 	."* 	This
 072	bear fruit well	"* 	."* 	The
 072	cut it down	"* 	."* 	Surely
+072	you be barren	^ 	, 	or
+072	abuse God's goodness	, ^' 	, " 	Despisest
+072	to the earth	 	, 	may
+073	he called her to him and said unto her	. 	, 	Woman
 073	on the Sabbath	,"* 	."* 	From
 073	Rabbi said Nicodemus	, '^ 	, " 	we
 073	there was present	 '^ *	 " *	a
 073	ofinjirfnity eighteen years	^ 	, 	and
 073	lift up herself	"* 	."* 	She
 073	devil J as	 '^ 	 " 	having
+073	to say And	^ 	, 	when
+073	say And when Jesus saw her	^ 	, 	he
+073	he called her to him and said unto her	^ 	, 	Woman
+073	from thine infirmity	"* 	."* 	He
 073	he said unto her	. 	, 	Woman
 073	hands on her	"* 	."* 	This
 073	was made straight	"* 	."* 	The
@@ -976,13 +1723,34 @@
 073	the Psalmist says	, ^' 	, " 	The
 073	suitable manner she	 *""^	 *"	glorified
 073	of the synagogue	" 	." 	We
+073	conduct The Lord then answered him	^ 	, 	and
+073	conduct The Lord then answered him and said	. 	, 	Thou
+073	said Thou hypocrite doth not each one of you	^ 	, 	on
+073	doth not each one of you on the Sabbath	 	, 	loose
+073	and ought not this woman	^ 	, 	being
+073	ought not this woman being a daughter of Abraham	^ 	, 	whom
 073	had said these things all his adversaries were ashamed	 $ 	 ; 	and
 073	all the people	"* 	,"* 	as
+073	in such cases	. 	, 	Christians
+074	branches of it	"* 	."* 	It
 074	unbelievers and enemies	,* 	.* 	Tacitus
 074	that there was	 '^ 	 " 	a
 074	of the leaven	* 	* "	being
 074	from it Our	: 	 	Lord
+074	whither it goeth	; 	: 	so
 074	in your souls	 	? 	If
+074	heavenly and eternal	? "	? 	Will
+075	villages towards Jerusalem	:'* 	:"* 	and
+075	said unto him	^ 	, 	Lord
+075	said unto him Lord	^ 	, 	are
+075	question our Lord	 *^'	 *"	said
+075	said unto them	"* 	,"* 	that
+075	at the strait gate	"* 	."* 	Let
+075	me says Christ	, '^ 	, " 	let
+075	enforced For many	^ 	, 	I
+075	For many I say unto you	^ 	, 	will
+075	not be able	"* 	."* 	These
+075	In the language	. 	 	of
 075	is risen up and hath shut to the door	^ 	, 	and
 075	to stand without and to knock at the door	^ 	, 	saying
 075	stand without and to knock at the door saying	^ 	, 	Lord
@@ -995,10 +1763,29 @@
 075	Verse Then shall ye begin to say	^ 	, 	We
 075	in our streets	"* 	."* 	These
 075	whereas they were	 ^' 	 " 	eating
+075	ay I tell you	^ 	, 	I
+075	workers of iniquity	"* 	."* 	It
+075	say unto them	, '^ 	, " 	Depart
+075	that they are	 ^^ 	 " 	workers
+075	of disobedience There	"* 	,"* 	or
+075	gnashing of teeth	"* 	,"* 	or
+075	when ye shall see Abraham and Isaac and Jacob	 	, 	and
+075	and all the prophets in the kingdom of God	^ 	, 	and
+075	yourselves thrust out	"* 	."* 	By
+075	in that day	. 	, 	Lord
+075	shall come from the east and from the west	 	, 	and
+075	kingdom of God	"* 	."* 	Let
+075	to the north	. 	, 	Give
+075	Briefly in conclusion	^* 	,* 	let
 075	May the Lord	 ^' 	 " 	deliver
+076	them Go ye and tell that fox	. 	, 	Behold
+076	Nevertheless I must walk to day	^ 	, 	and
+076	and verily I say unto you	. 	, 	Ye
+076	me until the time come when ye shall say	. 	, 	Blessed
 076	there came certain of the Pharisees saying unto him	^ 	, 	Get
 076	and do cures to day and to morrow	^ 	, 	and
 076	day I shall be perfected	"* 	."* 	This
+076	to Christ himself	 	. 	It
 076	to death Nevertheless	"* 	,"* 	says
 076	before I must walk to day	^ 	, 	and
 076	before I must walk to day and to morrow	^ 	, 	and
@@ -1007,18 +1794,23 @@
 076	how often would I have gathered thy children together	^ 	, 	as
 076	awful calamities Behold	^ 	, 	your
 076	unto you desolate	.* 	."* 	Their
-076	me until the time come when ye shall say	. 	, 	Blessed
 076	of the Lord	!'* 	."* 	Various
 076	But Nehemiah said	, '^ 	, " 	Should
 076	without hesitation as	 '^	 "	the
 076	welcome the Redeemer	^* 	,* 	while
 076	t te gospel	^* 	,* 	to
+077	say to thee	. 	, 	Give
+077	that bade thee cometh he may say unto thee	. 	, 	Friend
 077	they watched him	"* 	,"* 	that
+077	had the dropsy	"* 	."* 	It
+077	promoted And Jesus answering	^ 	, 	spake
+077	scribes and Pharisees	"* 	,"* 	who
+077	held their peace	!* 	."* 	They
 077	took the man	"* 	,"* 	or
 077	having healed him	, ^^ *	, " *	he
 077	ying Which of you shall have an ass	^ 	, 	or
 077	of you shall have an ass or an ox	^ 	, 	fallen
-077	into a pit	^ 	, 	and
+077	an ass or an ox fallen into a pit	^ 	, 	and
 077	to these things	"* 	."* 	They
 077	forth a parable	"* 	."* 	It
 077	ambitiously chose out	"* 	,"* 	for
@@ -1028,38 +1820,81 @@
 077	entertainment sit not down in the highest room	; 	, 	lest
 077	more honourable man	"* 	,"* 	a
 077	this man place	"* 	,"* 	or
+077	about thy neck	/' 	." 	Besides
+077	to think soberly	/' 	," 	and
+078	with him heard these things he said unto him	. 	, 	Blessed
+078	to his servant	. 	, 	Go
+078	the servant said	. 	, 	Lord
+078	unto the servant	. 	, 	Go
+078	say unto you	. 	, 	That
 078	Then said he also to him that bade him	^ 	, 	When
 078	him that bade him When thou makest a dinner	^ 	, 	or
 078	him When thou makest a dinner or a supper	^ 	, 	call
+078	not thy friends nor thy brethren neither thy kinsmen	^ 	, 	nor
+078	of the just	,"* 	."* 	There
+078	is said that	 '	 "	the
+078	to this feast	 	. 	It
+078	and without price	- 	. 	Wherefore
+078	heart and life	 	. 	Whoso
 078	expressed the poor and the maimed	^ 	, 	and
 078	expressed the poor and the maimed and the halt	^ 	, 	and
 078	and the blind	"* 	."* 	The
+078	I cannot come	"* 	."* 	But
+078	on this pretence	. 	, 	Why
 078	saying Lord it is done as thou hast commanded	"* 	,"* 	and
 078	Lord is angry	* 	."* 	Yet
 078	to come in	"* 	."* 	Not
+078	in inviting you	. ^' 	. " 	The
+078	there is room	"* 	."* 	Yet
+079	tower sitteth not down first and counteth the cost	^ 	, 	whether
+079	prophets of old	, '^ 	, " 	prophesied
 079	Christians If any man come to me	^ 	, 	and
-079	not his father	^ 	, 	and
-079	his father and mother and wife	^ 	, 	and
+079	man come to me and hate not his father	^ 	, 	and
+079	and hate not his father and mother and wife	^ 	, 	and
 079	father and mother and wife and children and brethren	^ 	, 	and
 079	be my disciple	"* 	."* 	This
-079	tower sitteth not down first and counteth the cost	^ 	, 	whether
 079	able to finish	"* 	."* 	Such
+079	against another king sitteth not down first and consulteth	^ 	, 	whether
+079	desireth conditions peace	"* 	."* 	Solomon
 079	Terse So likewise	"* 	,"* 	or
 079	all that he hath	^ 	, 	he
 079	be my disciple	"* 	."* 	As
 079	for his sake	,\*	, 	when
+079	proper sphere But	"* 	,"* 	says
+079	his savour wherewith shall it be seasoned	"* 	."* 	If
+079	such a thing	 ^'	 	were
+079	let him hear	!* 	."* 	Let
+079	and useful purpose	, '^ 	, " 	Have
 080	scribes murmured saying	. 	, 	This
 080	an hundred sheep	^ 	, 	if
 080	lost I say unto you	. 	, 	That
 080	lost Likewise I say unto you	. 	, 	There
 080	Pharisees and scribes	"* 	,"* 	of
 080	eateth with them	"* 	."* 	The
+080	the hundred sheep	"* 	,"* 	is
+080	for I say unto you	. 	, 	That
+080	say unto you	. 	, 	He
+080	than of the	. 	 	ninety
 080	in the wilderness	,"* 	."* 	The
 080	of strayed property	, 	, 	a
 080	Isa unto you	^"* 	,"* 	adds
 080	nine just persons	^ 	, 	who
+080	piece of silver	.'* 	.* 	Following
+080	of the Eternal	 "	 	Word
+080	tedious Likewise I say unto you	. 	, 	There
+080	sinner that repenteth	,* 	."* 	The
+080	the Lord Jesus	^ 	, 	in
+080	welfare How beautifully	/ 	 	and
+080	strongly are Christians	^ 	, 	and
 080	us on earth	. "	. 	When
 080	he was glad	." "	." 	When
+081	the younger of them said to his father	. 	, 	Father
+081	himself he said	. 	, 	How
+081	said unto him	. 	, 	Father
+081	said unto him	. 	, 	Thy
+081	said unto him	. 	, 	Son
+081	silver namely to	. 	 	obviate
+081	hear him said	, '^ 	, " 	This
 081	had two sons	,"* 	."* 	Those
 081	divided God takes	 '^ 	 " 	one
 081	h younger of them said to his father	^ 	, 	Father
@@ -1069,13 +1904,21 @@
 081	gathered all together	* 	"* 	that
 081	a far country	* 	."* 	Under
 081	swine did eat	"* 	."* 	Nay
+081	Lord of alL	 	. 	The
+081	he gives them	 '^ 	 " 	life
+081	a goodly heritage	."^-^ " 	."— " 	God
 081	the white raiment	 	. 	Let
 081	as most sinfuL	 	. 	This
+081	spiritual degradation Ahaz	, '' 	, " 	in
+081	turned the sinner	 ^' 	 " 	aside
+081	will heal him	. 	." 	But
 081	was his son	. '^ *	. " *	How
 081	fathers have bread enough	^ 	, 	and
 081	appellation of father	:* 	:"* 	he
 081	his hired servants	"* 	,"* 	whose
 081	delay Ife arose	"* 	,"* 	and
+081	of the Redeemer	. ^' 	. " 	Now
+081	He comes saying	, '' 	, " 	I
 082	and kissed him	"* 	,"* 	leaning
 082	called thy son	"* 	."* 	You
 082	it on him	"* 	."* 	The
@@ -1091,28 +1934,51 @@
 082	the divine law	: '^ 	: " 	Death
 082	is a being	 '^ 	 " 	dead
 082	is death indeed	-^	— 	death
+082	godliness which is	 ^' 	 " 	profitable
 082	dry bones saying	, '' 	, " 	Hear
 082	feel when they	? 	 	think
 082	made alive again	"* 	."* 	It
+083	THE PRODIGAL SON	 	— 	CONCLUDED
 083	music and dancing	"* 	."* 	In
 083	Be was angry	"* 	."* 	It
 083	angry And thus	, '^ 	, " 	when
 083	with him saying	. 	, 	Thou
 083	eat with them	/' 	." 	But
 083	glorified God saying	. 	, 	Then
+083	do serve thee	"* 	,"* 	said
+083	time thy commandment	"* 	."* 	He
+083	with my friends	"* 	."* 	He
+083	son was come	 	, 	who
+083	living with harlots	"* 	."* 	Perhaps
 083	brother w thy	/ 	 	son
 083	w thy son	"*	,"* 	said
+083	not come in	, ^^ *	, " *	he
+083	c iildren parents	^ 	, 	and
 083	in entirely casting	; 	 	off
+084	give an account of thy stewardship	: 	; 	for
+084	So he called	 	 	every
+084	unto the first	. 	, 	How
+084	And he said	. 	, 	An
+084	And he said unto him	^ 	, 	Take
+084	AiA he said	. 	, 	An
+084	God at times	 	, 	sends
+084	had a steward	"* 	."* 	According
 084	enough to dig	"* 	,"* 	or
 084	an hundred measures	"* 	,"* 	or
 084	And the lord	^'* 	,"* 	that
 084	the unjust steward	,"* 	."* 	No
 084	done wisely For	"* 	,"* 	adds
 084	than the children of light	"* 	."* 	This
+084	says the apostle	, '^ 	, " 	take
 084	then as these	, '^ 	, " 	the
 084	wisdom and security	^ 	, 	to
 084	soul Let them	 '^ 	 " 	cease
+085	say unto you	. 	, 	Make
 085	to yourselves friends of the mammon of unrighteousness that	^ 	, 	when
+085	by or with	, '^ 	, " 	the
+085	also in much	,"* 	."* 	This
+085	says of the	 '^	 "	true
+085	are very rich	) 	, 	and
 085	lf t therefore	^ 	, 	ye
 085	substantial and permanent	 	. 	These
 085	this world are	 ^' 	 " 	rich
@@ -1126,18 +1992,33 @@
 085	suggests two exhortations	 	, 	in
 085	exhortations in conclusion	. 	, 	First
 085	to be careful	^ 	, 	on
+085	blessings of grace	. "	. 	When
 085	decided for God	,* 	.* 	Do
 085	important of them	—^	— 	you
 085	enemy of God	."—^' 	."—" 	Love
+086	said unto them	. 	, 	Ye
 086	nd the Pharisees also who were covetous	^ 	, 	heard
 086	they derided him	,"* 	."* 	That
+086	exceedingly contemptuous treatment	 	. 	They
+086	characteristic of sinners	, 	. 	it
+086	to deride it	 	. 	Various
+086	errors and sins	 	. 	The
+086	one mocketh me	." "	." 	When
+086	dead some mocked	/\* 	." 	Many
 086	sight of God	"* 	."* 	They
 086	hypocrisy and iniquity	/' 	." 	More
 086	Eliab he said	, '^ 	, " 	Surely
+086	my soul hateth	."—" "	."—" 	When
+086	since that time the kingdom of God is preached	^ 	, 	and
+086	presseth into it	"* 	."* 	Very
 086	law to fail	"* 	."* 	That
 086	on the mount	, '^ 	, " 	Think
 086	way his wife and marrieth another	^ 	, 	committeth
 086	husband committeth adultery	"* 	."* 	Some
+086	God in heaven	," 	." 	And
+086	said unto them	. 	, 	Have
+086	female and said	. 	, 	For
+086	say unto him	. 	, 	Why
 086	his holy wilL	 	. 	Then
 086	ym of God	,* 	.* 	It
 086	to do so	^ 	, 	if
@@ -1146,10 +2027,16 @@
 086	thou bless me	"* 	."* 	It
 086	as the following	: ^' 	: " 	Work
 086	Strive to enter	: 	 	in
+087	be fed with	,* 	* 	the
+087	cried and said	. 	, 	Father
+087	But Abraham said	. 	, 	Son
+087	And he said	. 	, 	Nay
+087	book of Job	»- 	; 	but
 087	certain rich man	"* 	."* 	God
 087	The Supreme Disposer	.	 	of
 087	of outward prosperity	. "	. 	Wealth
 087	splendidly every day	"* 	."* 	This
+087	kingdom of God	 *\"* 	 *!"* 	said
 087	distress He was	 *''^	 *"	full
 087	hour of prayer	, ''	, "	a
 087	to be fed	"* 	,"* 	anxious
@@ -1168,6 +2055,10 @@
 087	saw Abraham afar off	^ 	, 	and
 087	in his bosom	"* 	."* 	The
 087	of this hell	! "	! 	What
+088	MAN AND LAZARUS	-	— 	CONTINUED
+088	branch which is	. *	, *	The
+088	cried and said	. 	, 	Father
+088	body in hell	;" 	:" 	and
 088	he is comforted	,, 	, 	and
 088	thou art tormented	"* 	."* 	He
 088	to the flesh	/' 	," 	though
@@ -1175,6 +2066,9 @@
 088	miserable beings walk	, 	,' 	Dying
 088	yet never dead	. 	.' 	Some
 088	other side of	,	 	the
+088	I pray thee	^ 	, 	therefore
+088	pray thee therefore	^ 	, 	father
+088	thee therefore father	^ 	, 	that
 088	them hear them	"* 	."* 	From
 088	he said Nay	^ 	, 	father
 088	and the prophets	^ 	, 	neither
@@ -1190,17 +2084,31 @@
 088	they were wrought	^ 	, 	would
 088	not new meanS	) 	, 	but
 088	be all found	, 	. 	Jesus
+089	this sycamine tree	. 	, 	Be
+089	and by when he is come from the field	. 	, 	Go
+089	si unto him	. 	, 	Make
+089	shall have done all those things which are commanded	, 	 	you
+089	that of offences	"* 	,"* 	that
+089	before the blind	.'' 	." 	Scripture
+089	stumble and falL	 	. 	It
+089	he is offended	/' 	," 	he
 089	It is impossible	"* 	,"* 	says
-089	but that offences	 	 	will
+089	Lord but that offences	 	 	will
 089	offences will come	"* 	."* 	Considering
 089	him that a millstone were hanged about his neck	^ 	, 	and
 089	other lessott is	 	, 	that
+089	heed to yourselves	"* 	."* 	It
 089	publican Ifhe repent	"* 	,"* 	says
 089	he trespass against thee seven times in a day	^ 	, 	and
 089	shalt forgive him	"* 	."* 	You
 089	that is often	> 	, 	or
 089	him and said	. 	, 	Lord
 089	seven times but	. 	, 	Until
+089	the Lord said	. 	, 	If
+089	u plucked up by the root	^ 	, 	and
+089	should obey you	.* 	."* 	The
+089	said unto them	. 	, 	Because
+089	say unto you	. 	, 	If
 089	some true faith	^* 	,* 	in
 089	judging of others	. 	 	because
 089	you having a servant plowing or feeding cattle	^ 	, 	will
@@ -1214,6 +2122,9 @@
 090	not in it	 	. 	It
 090	up their voices	"* 	,"* 	they
 090	but he said unto them	. 	, 	Go
+090	in when he saw that he was healed	^ 	, 	turned
+090	was healed turned back and with a loud voice	^ 	, 	glorified
+090	giving him thanks	,"* 	."* 	The
 090	woman who testified	. 	, 	He
 090	tarry with them	! 	: 	and
 090	there two days	 	. 	And
@@ -1223,6 +2134,7 @@
 090	unbelieving and impenitent	 	. 	In
 090	down with Abraham	^ 	, 	and
 090	go his way	;* 	;"* 	and
+090	derived from Adam	> 	, 	all
 091	Lo therer For	"* 	,"* 	adds
 091	midst of you	/' 	." 	The
 091	the Holy Ghost	/' 	." 	Hence
@@ -1238,6 +2150,7 @@
 091	say unto him	. 	, 	He
 091	saith unto them	. 	, 	Did
 091	I unto you	. 	, 	The
+091	of Sodom it rained fire and brimstone from heaven	^ 	, 	and
 091	Sodom In that day	^ 	, 	he
 091	who shall be upon the house top	^ 	, 	and
 091	take it away	,"* 	."* 	The
@@ -1247,11 +2160,24 @@
 091	answered and said	"* 	,"* 	that
 091	be gathered together	"* 	."* 	It
 091	it is written	. 	, 	There
+091	of providence Indeed	,, 	, 	many
+091	within you Secondly	^* 	,* 	but
+091	God within you	^ 	, 	that
 091	his power Thirdly	^ 	, 	We
 091	our ruin Lastly	/,* 	,* 	Let
+091	them that believe	.'' 	." 	His
+091	these things saying	, '^ 	, " 	Surely
+092	pray faint Saying	. 	, 	There
+092	said within himself	. 	, 	Though
+092	Jesus spake a parable unto them to this end	 	, 	that
+092	end that men	"* 	,"* 	or
+092	they ought always to pray	^ 	, 	and
 092	excellent Observe farther	^ 	, 	that
 092	fainted within me	/' 	," 	said
 092	who feared not God	^ 	, 	neither
+092	said to him	 "	 :"	Thou
+092	to the judges	. 	, 	Take
+092	in the judgment	. "	. 	wherefore
 092	widow and she came unto him	^ 	, 	saying
 092	widow and she came unto him saying	^ 	, 	Avenge
 092	of mine adversary	"* 	."* 	This
@@ -1266,11 +2192,18 @@
 092	said that is	^ 	, 	the
 092	his own elect	/' 	," 	or
 092	eternal electing love	 	. 	They
+092	but that he	 '^ 	 " 	hath
+092	avenge them speedily	.^* 	."* 	That
+092	not tarry Nevertheless	^\** 	,"* 	adds
+093	who trusted in themselves that they were righteous	^ 	, 	and
+093	into the temple to pray the one a Pharisee	^ 	, 	and
+093	the one a Pharisee and the other a publican	,"* 	."* 	The
 093	thus with himself	"* 	."* 	He
 093	men Verily I say unto you	. 	, 	They
 093	he that I am not as other men are	^ 	, 	extortioners
 093	that I am not as other men are extortioners	^ 	, 	unjust
 093	extortioners unjust adulterers	"* 	."* 	If
+093	abase himself Thus	, '^ 	, " 	I
 093	other men are	," ^^ *	," " *	or
 093	as this publican	,"* 	."* 	It
 093	by this time	> 	, 	have
@@ -1278,13 +2211,17 @@
 093	fast Verily I say unto you	. 	, 	They
 093	that I possess	"* 	,"* 	or
 093	Pharisees is amazing	, 	. 	A
+094	stood afar off	"* 	."* 	The
 094	eyes unto heaven	"* 	."* 	Filled
 094	upon his breast	"* 	."* 	This
 094	as thus described	: '' 	: " 	I
 094	than the other	"* 	."* 	The
 094	other should be	,.	, 	or
 094	the parable to your consciences	^ 	, 	in
+094	justification and sanctification	; 	: 	hence
 094	way of praying	* 	.* 	It
+094	impressed with a	 	 	sense
+094	go home justified	^ 	, 	or
 094	to pray again	? "	? 	Would
 095	Judea beyond Jordan	.'' ^' 	.""  	Great
 095	a different word	^ 	, 	in
@@ -1293,16 +2230,34 @@
 095	at his ascension	, ^' 	, " 	lifted
 095	disciples with delight	,, 	, 	and
 095	with some sharpnesS	) 	, 	their
+095	kingdom of God	"* 	."* 	Let
+095	Christ It implies	. 	, 	First
 095	This declaration implies	. 	, 	Secondly
 095	This declaration implies	. 	, 	Fourthly
 095	a good degree	^ 	, 	of
+095	Verily say unto you	^ 	, 	Whosoever
+095	wise enter therein	"* 	."* 	Similar
+095	say unto you	. 	, 	Except
+095	First by parents	^ 	, 	ministers
+095	by parents ministers	^ 	, 	and
+095	my lambs Teachers	^* 	,* 	too
+095	instructing in meekness	/' 	." 	The
+095	unto us Secondly	^* 	,* 	Let
 095	find me Lastly	/,* 	,* 	Let
+096	commandments Do not commit adultery Do not kill	. 	, 	Do
+096	not commit adultery Do not kill Do not steal	. 	, 	Do
+096	kill Do not steal Do not bear false witness	. 	, 	Honour
+096	sorrowful he said	. 	, 	How
+096	heard it said	. 	, 	Who
 096	Judea beyond Jordan	.^' 	." 	Matthew
 096	when Jesus had	 ^' 	 " 	laid
 096	inherit eternal life	* 	?"* 	The
 096	of life diligence	,, 	, 	and
 096	was a teacher	 ''	 "	come
 096	call ye me	. 	, 	Lord
+096	of Tarsus when	, '' 	, " 	trembling
+096	Silas and said	. 	, 	Sirs
+096	self willed spirit	 	. 	He
 096	iere is none good but one	^ 	, 	that
 096	that is God	"* 	."* 	It
 096	to object to	 	 	the
@@ -1313,8 +2268,17 @@
 096	this scheme is	, '' 	, " 	This
 096	Which that is	. 	, 	What
 096	knowest the commandments	/'* 	;"* 	intimating
-096	not commit adultery Do not kill Do not steal	. 	, 	Do
 096	and thy mother	"* 	."* 	You
+096	any youth up	"* 	."* 	The
+096	lack I yet	 	?" 	This
+096	question he said unto him	. 	, 	Yet
+096	thou one thing	"* 	."* 	By
+096	come follow me	"* 	."* 	In
+096	When he heard this	^ 	, 	he
+096	When he heard this he was very sorrowful	^ 	, 	for
+096	was very rich	;* 	;"* 	or
+096	they do depart	 	. 	They
+096	neglect it stilL	 	. 	Many
 096	dom of God	"* 	!"* 	Riches
 096	his own conceit	" 	." 	Thus
 096	of a needle	^ 	, 	than
@@ -1329,32 +2293,54 @@
 096	ruler are steady	^ 	, 	courteous
 096	are steady courteous	^ 	, 	and
 096	courteous and engaging	^ 	, 	but
+097	he said unto them Verily I say unto you	. 	, 	There
 097	mount of transfiguration	, '' 	, " 	It
 097	make three tabernacles	/' 	." 	He
 097	he said Lord	) 	, 	to
 097	not deny thee	/' 	." 	And
 097	Lord Lo we have left all	 	, 	and
+097	Luke And he said unto them	^ 	, 	Verily
+097	is no man that hath left house or parents	^ 	, 	or
+097	house or parents or brethren or wife or children	^ 	, 	for
+097	shall not receive manifold more in this present time	^ 	, 	and
+097	Matthew and Mark	) 	, 	he
 097	Matthew and Mark	, ''	, "	an
 097	The Lord God	 " 	 "" 	will
+097	tried of them	: '^ 	: " 	The
+097	the present time	 '^	 ;"	rejoice
+097	ttcelve and said unto them	^ 	, 	Behold
+097	ttcelve and said unto them Behold	^ 	, 	we
+097	shall be accomplished	"* 	."* 	Our
 097	man shall be delivered unto the Gentiles	^ 	, 	and
 097	be delivered unto the Gentiles and shall be mocked	^ 	, 	and
 097	the Gentiles and shall be mocked and spitefully entreated	^ 	, 	and
 097	and spitted on	^ 	, 	and
 097	and they shall scourge him	^ 	, 	and
 097	shall rise again	,"* 	."* 	According
+097	understand the Scriptures	.'' 	." 	Illustrated
 098	Jerusalem and six	.* 	* 	or
 098	way side begging	,"* 	."* 	Three
 098	with Matthew and	. 	 	Mark
+098	what it meant	"* 	."* 	Very
+098	Nazareth passed by	"* 	."* 	It
 098	have mercy me	"* 	."* 	He
 098	Observe again the	/	 	faith
 098	him he cried so much the more	^ 	, 	Thou
 098	mercy on me	"* 	."* 	So
 098	brought unto him	"* 	."* 	On
 098	saying unto him	. 	, 	Be
+098	was come near	^ 	, 	Jesus
+098	that I shall do unto thee And he said	. 	, 	Lord
+098	receive my sight	"* 	."* 	The
 098	Bartimeus'application Jesus said unto him	. 	, 	Receive
 098	hath saved thee	"* 	."* 	Matthew
 098	Believest thou this	?'' 	?" 	said
 098	received his sight	"* 	."* 	Surely
+098	And Jesus said	. 	, 	For
+099	all murmured saying	. 	, 	That
+099	said unto him	. 	, 	This
+099	entered and passed	"* 	,"* 	or
+099	have been rich	!'* 	."* 	Riches
 099	of Zaccheus that	 ^^ *	 " *	he
 099	who he was	"* 	."* 	We
 099	strong desire to see	 ^^ 	 " 	who
@@ -1369,27 +2355,88 @@
 099	they saw it	"* 	,"* 	that
 099	noticed And Zaccheus stood and said unto the Lord	^ 	, 	Behold
 099	And Zaccheus stood and said unto the Lord Behold	^ 	, 	Lord
+099	restore him fourfold	!* 	."* 	Tax
 099	this frank declaration	,'' *	," *	Jesus
 099	said concerning him	, ^^ *	, " *	This
 099	to this house	"* 	."* 	This
 099	to the jailer	: ^' 	: " 	Believe
 099	house forsomuch as	"* 	,"* 	or
 099	son of Abraham	"* 	."* 	This
+099	house of God	^ 	, 	be
+099	it is true	, '' 	, " 	must
+099	is now saying	, '^ 	, " 	Look
+099	be ye saved	.'' 	." 	Endeavour
 099	a s Zaccheus	,* 	.* 	Remember
+099	place Consider well	^ 	, 	and
+100	said unto them	. 	, 	Occupy
+100	message after him saying	. 	, 	We
+100	the first saying	. 	, 	Lord
+100	second came saying	. 	, 	Lord
+100	likewise to him	. 	, 	Be
+100	cities And another came saying	. 	, 	Lord
+100	saith unto him	. 	, 	Out
+100	he said unto them that stood by	. 	, 	Take
+100	said unto him	. 	, 	Lord
 100	heard these things	"* 	,"* 	very
+100	added and spake	"* 	,"* 	or
+100	s nigh to Jerusalem	^ 	, 	and
+100	should immediately appear	"* 	."* 	Not
 100	on his journey	, ^^ *	, " *	called
 100	his ten servants	^\** 	,"* 	or
 100	them ten pounds	/\** 	;"* 	that
 100	to them Occupy	"* 	,"* 	trade
+100	it came to pass that when he was returned	^ 	, 	having
+100	he commanded these servants to be called unto him	^ 	, 	to
+100	unto him to whom he had given the money	^ 	, 	that
+100	gained by trading	"* 	."* 	The
+100	forward first saying	, '^ *	, " *	Lord
+100	should rather say	. 	, 	My
+100	gained ten pounds	"* 	."* 	This
+100	unto him Well	"* 	,"* 	or
+100	thou good servant	,"* 	."* 	Besides
+100	gained five pounds	"* 	."* 	This
+100	man's conduct also	, '^ *	, " *	and
+100	likewise unto him	^ 	, 	Be
+100	over five cities	"* 	."* 	Two
+100	complexion And another came saying	^ 	, 	Lord
+100	complexion And another came saying Lord	^ 	, 	behold
+100	complexion And another came saying Lord behold	^ 	, 	here
+100	for I feared thee	^ 	, 	because
+100	didst not sow	"* 	."* 	How
 100	up Thou knewest that I was an austere man	^ 	, 	taking
 100	austere man taking up that I laid not down	^ 	, 	and
 100	might have required	,^* 	,"* 	or
+100	money As a	 £	 	farther
+100	servant the master	 *''^	 *"	said
+100	master said unto them that stood by	^ 	, 	Take
+100	said unto them that stood by Take from him	, 	 	the
+100	hath ten pounds	,"* 	."* 	This
+100	gained to himself	. ^^ *	. " *	And
+100	And they said	,* 	,"* 	perhaps
+100	so much already	, '^ *	, " *	Lord
+100	much already Lord	^ 	, 	he
+100	hath ten pounds	,"* 	."* 	Jesus
+100	shall be given	"* 	,"* 	that
+100	rather an embassy	, ^' *	, " *	after
+100	embassy after him saying	. 	, 	We
+100	not that I should reign over them bring hither	^ 	, 	and
+100	and my Father	."—'^ 	."—" 	He
+100	and the Just	" 	." 	They
+101	ye loose him thus shall ye say unto him	. 	, 	Because
+101	loosing the colt the owners thereof said unto them	. 	, 	Why
+101	as to be	 ^' 	 " 	nigh
+101	up to Jerusalem	* "	* ."	We
 101	them away saying	. 	, 	Go
 101	bring him hither	"* 	."* 	In
 101	labour either in	 \*	 	the
 101	said And if any man ask you	. 	, 	Why
 101	ye loose him thus shall ye say unto him	^ 	, 	Because
 101	need of him	"* 	:"* 	and
+101	disciples that were sent	., 	, 	went
+101	disciples that were sent went their way	^ 	, 	and
+101	said unto them	:'"* 	:"* 	or
+101	loosing the colt the owners thereof said unto them	^ 	, 	Why
+101	two disciples said	. 	, 	The
 101	set Jesus thereon	"* 	."* 	According
 101	said by Moses	, '' 	, " 	He
 101	king of Israel	, '' 	, " 	shall
@@ -1402,17 +2449,27 @@
 101	to rejoice and praise God with a loud voice	^	, 	for
 101	they had seen	"* 	."* 	It
 101	be the King	"* 	,"* 	or
+101	he might be	 ^^ 	 " 	blessed
+101	save the king	!'' 	!" 	The
 101	of the Pharisees	 	, 	who
 101	the Pharisees from among the multitude said unto him	^ 	, 	Master
 101	immediately cry out	"* 	."* 	This
 101	of his friends	, '^ 	, " 	the
 101	be he that cometh in the name of the	^	 	Lord
 102	when he was come near	^\** 	,"* 	in
+102	or the days shall come upon thee	^ 	, 	that
 102	on every side	/' 	." 	The
 102	or mounds again	,'' 	," 	which
 102	to be conquered	/'—" 	."—" 	Titus
+102	he expressed it	, '	, "	laid
+102	be called our	 ^^	 "	day
+102	called our day	" 	," 	and
+102	of our visitation	"* 	."* 	We
 102	thing is it	^	, 	finally
 102	is it finally	/^ 	, 	that
+103	Saying unto them	. 	, 	It
+103	It is written	. 	, 	My
+103	was moved saying	. 	, 	Who
 103	find it written	: ^'	: "	And
 103	into the temple	,"* 	."* 	That
 103	temple he began	^* 	,"* 	says
@@ -1420,6 +2477,7 @@
 103	them that bought	"* 	."* 	Matthew
 103	Mark say that	 '^	 "	he
 103	Mark adds that	 '^ 	 " 	he
+103	and hasted out	 	. 	And
 103	house of prayer	/' 	," 	or
 103	passage runs thus	: '' 	: " 	Also
 103	shall be called	. 	, 	An
@@ -1440,32 +2498,85 @@
 104	ie spake unto him saying	^ 	, 	Tell
 104	ie spake unto him saying Tell us	^ 	, 	by
 104	us by what authority doest thou these things or	 	, 	who
+104	midst they asked	. 	, 	By
+104	priesthood and other	^,	 	ministrations
+104	him and said	. 	, 	How
+104	witness of me	," 	." 	In
+104	manner we read that	, ^^	, "	as
+104	of his death	, '^ 	, " 	the
+104	their council saying	. 	, 	Art
+104	said in triumph	, " "	, " 	What
+104	them And he answered and said unto them	^ 	, 	I
+104	one thing and answer me The baptism of John	^ 	, 	was
+104	or of men	/'* 	."* 	The
 104	themselves And they reasoned with themselves saying	. 	, 	If
 104	they reasoned with themselves saying If we shall say	. 	, 	From
 104	If we shall say From heaven he will say	^ 	, 	Why
+104	king over Israel	: ^'	: "	I
+104	whence it was	"* 	."* 	If
 104	tell I you	^\** 	,"* 	said
 104	do these things	"* 	."* 	The
 104	is learned saying	. 	, 	Read
+104	and more particularly	. *	, *	Let
+104	and command respect	 	. 	Instead
+104	him That is	, "	, 	Why
+104	his true character	? "	? 	Why
+105	the husbandmen saw him they reasoned among themselves saying	. 	, 	This
+105	them and said	. 	, 	What
+105	and said What is this then that is written	. 	, 	The
 105	people this parable	"* 	."* 	He
 105	out to husbandmen	"* 	,"* 	or
 105	a long time	"* 	."* 	After
 105	the season he sent a servant to the husbandmen	^ 	, 	that
 105	of the vineyard	"* 	."* 	According
 105	cast him out	"* 	."* 	According
+105	them Then said the lord of the vineyard	^ 	, 	What
+105	God But when the husbandmen saw him	^ 	, 	they
+105	when the husbandmen saw him they reasoned among themselves	^ 	, 	saying
+105	This is the heir come let us kill him	^ 	, 	that
+105	may be ours	"* 	."* 	On
 105	elders and asks	: ^' *	: " *	What
 105	in their seasons	.'' 	." 	On
 105	they heard it	"* 	,"* 	when
+105	Jesus beheld them	"* 	,"* 	that
 105	him to powder	,"* 	."* 	The
+105	said of us	: '^ 	: " 	Israel
+105	also resemble them	, 	 	in
 105	the last place	. *	, *	See
+106	and said unto them	. 	, 	Why
+106	said unto them	. 	, 	Render
 106	and the same hour	^ 	, 	sought
+106	who should feign themselves just men	^ 	, 	that
+106	might deliver him	, 	 	into
+106	of the governor	"* 	."* 	It
 106	inquiring with the	 "	 	view
-106	know that thou sayest and teachest rightly	^ 	, 	neither
+106	Master we know that thou sayest and teachest rightly	^ 	, 	neither
 106	teachest rightly neither acceptest thou the person of any	^ 	, 	but
 106	of God truly	"* 	."* 	If
+106	Jesus said unto them	^ 	, 	Why
 106	cattle He answered	. 	, 	Your
 106	which he answered	. 	, 	Did
 106	which be God's	"* 	."* 	This
+106	before the people	"* 	."* 	They
+106	And they marvelled at his answer	^ 	, 	and
+106	accuse him saying	. 	, 	We
+106	owe to the king	^* 	,* 	as
+106	brethren said Paul	, '' 	, " 	that
+106	it is written	. 	, 	Thou
+106	too ranks with	 '' 	 " 	unjust
+106	duties to God	,* 	.* 	While
 106	his benefits Finally	^* 	,* 	The
+107	wrote unto us	. 	, 	If
+107	scribes answering said	. 	, 	Master
+107	look into it	 	. 	Those
+107	in another place	, ^' 	, " 	The
+107	woman died also	* 	,"* 	and
+107	Sadducees The children of this world marry	^ 	, 	and
+107	and also that	 ^' 	 " 	there
+107	die any more	"* 	,"* 	adds
+107	unto the angels	"* 	."* 	This
+107	And are the children of God	^ 	, 	being
+107	of eternal life	; '^ 	; " 	for
 107	iat the dead are raised	^ 	, 	even
 107	dead are raised even Moses showed at the bush	^ 	, 	when
 107	calleth the Lord the God of Abraham	 	, 	and
@@ -1476,15 +2587,46 @@
 107	of the scribes	"* 	,"* 	who
 107	hast well said	"* 	."* 	Matthew
 107	himself Once more	. 	, 	Let
+108	said unto them	. 	, 	How
 108	passage just read	. "	. 	We
+108	say unto him	. 	, 	The
+108	dynasty for ever	" 	 	in
+108	he saith himself	. 	, 	The
+108	ye have crucified	^ 	, 	both
 108	of Messiah's Godhead	,* 	.* 	His
+108	at any time	. 	, 	Thou
+108	Son he saith	. 	, 	Thy
+108	he is called	 '' 	 " 	The
+108	soul and body	: ^^ 	: " 	My
+108	exceeding sorrowful and	, ^^ 	, " 	A
+108	prepared for me	/' 	," 	said
+108	shall be called	. 	, 	Wonderful
 108	permanently impressed Then	"* 	,"* 	as
 108	of the scribes	"* 	."* 	As
+108	in the markets	"* 	,"* 	or
+108	ye not called	. 	, 	Rabbi
+108	Master even Christ	/' 	." 	The
+108	loved the highest seats in the synagogues	 	, 	and
+108	the chief rooms	"* 	,"* 	or
+108	is abundantly plain	. ^^ *	. " *	Who
+108	vour widows houses	^\** 	,"* 	added
+108	make long prayers	,"* 	."* 	We
+108	said that he	 *\*^* 	 *"* 	went
+108	receive greater damnation	"* 	."* 	As
+108	which is this	. 	, 	To
 109	religion And he	"* 	,"* 	that
 109	Jesus looked up	?, *	, *	and
 109	into the treasury	.," 	." 	We
+109	safety the money	 -	 	which
+109	Of a truth	"* 	,"* 	or
+109	observed I say unto you	^ 	, 	that
 109	which they flow	 	, 	as
+109	offerings of God	^ 	, 	by
+109	adds f said	. 	, 	Lord
+109	and do minister	," 	." 	Thus
 109	repayment we reply	. 	, 	There
+110	pass And he said	. 	, 	Take
+110	by Then said he unto them	. 	, 	Nation
 110	these pathetic words	: ^' 	: " 	O
 110	the Lord And	"* 	,"* 	says
 110	Luke as some spake of the temple	^ 	, 	how
@@ -1493,6 +2635,10 @@
 110	be thrown down	"* 	."* 	The
 110	fashion of this	 -	 	world
 110	they asked him	^ 	, 	saying
+110	this chapter throughout	, 	. 	Some
+110	it is said	, '^ 	, " 	So
+110	with the promise	, '^ 	, " 	Lo
+110	in the Acts	), '^ 	), " 	persuaded
 110	of Jerusalem says	, '' 	, " 	Beloved
 110	wars and tumults	: '^ *	: " *	Ye
 110	by tmd by	"* 	."* 	He
@@ -1500,10 +2646,16 @@
 110	the last day	. 	, 	Christians
 110	verse Then said he unto them	^ 	, 	Nation
 110	kingdom against kingdom	"* 	."* 	This
+110	in divers places	"* 	."* 	If
 110	shall be famines	"* 	."* 	In
 110	is thus given	: ^' *	: " *	And
 110	be from heaven	!^* 	."* 	The
 110	belied God himself	 (	 "(	still
+110	was his cry	> 	, 	as
+110	proved to be	^ 	, 	that
+110	in the man	^ 	, 	brought
+110	his answer was	, 	,' 	Woe
+110	his utmost force	, 	,' 	Woe
 111	ore all these	^ 	, 	they
 111	ieir hands on you	^ 	, 	and
 111	and persecute you	^ 	, 	delivering
@@ -1519,29 +2671,44 @@
 111	ye shall be betrayed both by parents and brethren	^ 	, 	and
 111	be betrayed both by parents and brethren and kinsfolks	^ 	, 	and
 111	y name's sake	"* 	."* 	In
+112	compassed with armies	"* 	."* 	In
 112	to the phrase	, '^ 	, " 	the
 112	are in Judea	"* 	,"* 	in
 112	flight For these be the days of vengeance	^ 	, 	that
 112	accomplishment But woe unto them that are with child	^ 	, 	and
 112	in those days	"* 	."* 	While
+112	For there shall be great distress in the land	^ 	, 	and
 112	trench about thee	/' 	," 	or
+112	doing They also	 "	 	invented
 112	pity them greatly	, 	. 	while
+113	confining this clause	, ^'	, "	for
 113	of the sword	"* 	."* 	Not
 113	and the infirm	.'' 	." 	The
 113	of the sword	,'' 	," 	we
 113	mind the signal	. '^ 	. " 	And
+113	before the event	: '^ 	: " 	Open
 113	of the Gentiles	^ 	, 	until
 113	consequences of sin	^ 	, 	especially
+113	them When Pilate	 '' 	 " 	took
+113	remission of sins	 ^	 	should
 113	What an evidence	^ 	, 	in
 113	that extraordinary people	^ 	, 	the
+113	and fellow sinners	,* 	.* 	Is
+113	at six millions	. "	. 	We
 114	Matthew And there shall be signs in the sun	^ 	, 	and
 114	be signs in the sun and in the moon	 	, 	and
 114	the stars and upon the earth distress of nations	^ 	, 	with
 114	shall be shaken	"* 	."* 	Perhaps
 114	reference to the	 '^ 	 " 	fearful
+114	and great glory	 "* 	 ."* 	Primarily
+114	and his coming	 '^ 	 " 	in
 114	Jesus ascending and	 ^' 	 " 	a
 114	And when these things begin to come to pass	^ 	, 	then
 114	redemption draweth nigh	"* 	."* 	In
+114	spake to them a parable Behold the fig tree	^ 	, 	and
+114	when they now shoot forth	^ 	, 	ye
+114	own selves that summer is now nigh at hand	 	. 	So
+114	all be fulfilled	"* 	."* 	We
 114	with surfeiting and drunkenness and cares of this life	^ 	, 	and
 114	of this life and so that day come upon	, 	 	you
 114	cultivate Watch ye therefore and pray always	^ 	, 	that
@@ -1554,9 +2721,16 @@
 114	to hear him	"* 	."* 	So
 114	you steady Lastly	* 	.* 	Be
 114	meeting the Lord	^ 	, 	and
+115	prepare And he said unto them	. 	, 	Behold
+115	him And he said unto them	. 	, 	With
 115	But they said	. 	, 	Not
 115	expected Then entered Satan into Judas surnamed Iscariot	 	, 	being
 115	number of the twelve And he went his way	^ 	, 	and
+115	heel against me	.'' 	." 	Our
+115	of the multitude	"* 	,"* 	or
+115	Lord puts good	. ^' 	. " 	Blessed
+115	Titus for you	,'' 	," 	writes
+115	in this passage	—.	— 	that
 115	must be killed	"* 	."* 	It
 115	ing Go and prepare us the passover	^ 	, 	that
 115	tee may eat	,"* 	."* 	They
@@ -1569,27 +2743,48 @@
 115	Jesus sat down	 	, 	and
 115	apostles with him	,"* 	."* 	The
 115	supper And he said unto them	^ 	, 	With
+115	took the cup	"* 	,"* 	the
+115	ii among yourselves	^\** 	,"* 	that
+115	saith the Lord	, ^^	, "	Ye
+116	after supper saying	. 	, 	This
 116	circumstances of place	^* 	,* 	to
 116	Jesus took bread	"* 	,"* 	says
 116	Jesus sat down	* 	"* 	with
+116	it unto them	"* 	,"* 	that
 116	would have been	. 	, 	This
 116	of my body and	. 	, 	This
 116	g ifyt denote	^* 	,* 	though
+116	body just means	. 	, 	This
+116	terms to express	. 	, 	This
+116	represents my body and	. 	, 	This
+116	atonement This do	"* 	,"* 	added
+116	remembrance of me	"* 	."* 	We
+116	how Likewise also	 	 (	he
+116	the cup saying	. 	, 	This
+116	shed for you	"* 	."* 	Here
 116	called a Sacrament	,* 	.* 	It
 116	called the Eucharist	,* 	.* 	This
 116	called in Scripture	, '^ *	, " *	The
 116	breaking of bread	"* 	."* 	Though
 116	it is said	, \*"' 	, " 	Upon
+117	our divine Benefactor	. "	. 	We
 117	general and especially	/^ 	, 	of
 117	acceptance with God	* 	.* 	When
 117	action in particular	, '^ 	, " 	confession
 117	proclaim the Lord's death till he come	." "	." 	We
+117	are one bread	/' 	," 	or
+117	design and therefore	^ 	, 	administers
+117	Son and Spirit	* 	.* 	In
+117	covenanting with God	^ 	, 	and
 117	to increase knowledge	^* 	,* 	both
 117	say with Thomas	, ^' 	, " 	Except
 117	will not believe	/' 	," 	Jesus
+117	errors of Protestants	^* 	,* 	which
 117	Saviour's love Finally	^* 	,* 	You
+118	on the table	!* 	."* 	Anxious
 118	he is betrayed	* 	!"* 	The
 118	do this thing	,"* 	."* 	According
+118	him and said	. 	, 	Ye
 118	followers And he said unto them	^ 	, 	The
 118	of the Gentiles	"* 	,"* 	or
 118	nations exercise lordship	"* 	,"* 	or
@@ -1611,9 +2806,27 @@
 118	that the clause	, '^ 	, " 	My
 118	world when they	 '^ 	 " 	shall
 118	kingdom of heaven	.'^ 	." 	Our
+118	true greatness consists	^ 	, 	and
+118	would be great	* 	.* 	However
+119	me And he said unto them	. 	, 	When
+119	And they said	. 	, 	Nothing
+119	likewise his scrip and he that hath no sword	!, 	, 	let
+119	end And they said	. 	, 	Lord
+119	he said unto them	. 	, 	It
 119	even startling words	: ">	: "	Simon
+119	sift you wheat	!'* 	."* 	It
+119	by Satan's agency	. 	, 	Job
+119	them as wheat	" 	." 	The
+119	Baptist concerning Christ	: « 	: " 	Whose
 119	feet shortly But	"* 	,"* 	adds
 119	faith fail not	"* 	."* 	These
+119	prayed for thee	"* 	,"* 	is
+119	to the singular	: '^ 	: " 	Satan
+119	singular Satan hath desired to have you	"* 	,"* 	that
+119	that is you	, 	 	all
+119	prayed for thee	"* 	."* 	Not
+119	was that his	 '' 	 " 	faith
+119	the Holy Spirit	,* 	.* 	He
 119	say unto you	. 	, 	He
 119	said unto Jesus	 	, 	Lord
 119	Jesus Lord I am ready to go with thee	^ 	, 	both
@@ -1625,12 +2838,17 @@
 119	subject And he said unto them	^ 	, 	When
 119	money and scrip	"* 	,"* 	or
 119	had lacked nothing	"* 	."* 	A
+119	thing Then said he unto them	^ 	, 	But
+119	and buy one	"* 	."* 	On
+119	to the words	, "' 	, " 	He
 119	ay unto you	^ 	, 	that
 119	t written must yet be accomplished in me	^ 	, 	And
 119	have an end	"* 	."* 	The
 119	he had said	. 	, 	My
 119	f And they said Lord	^ 	, 	behold
 119	are two swords	"* 	."* 	It
+119	He said unto them	^ 	, 	It
+119	It is enough	,"* 	."* 	Two
 120	read And he came out	^ 	, 	and
 120	read And he came out and went	^ 	, 	as
 120	he came out and went as he was wont	^ 	, 	to
@@ -1642,11 +2860,24 @@
 120	he unto them	. 	, 	My
 120	even unto death	." "	." 	We
 120	a stone's cast	"* 	."* 	Deep
+120	He prayed saying	^ 	, 	Father
+120	prayed saying Father	^ 	, 	if
+120	saying Father if thou be willing	^ 	, 	remove
+120	thou be willing remove this cup from me nevertheless	^ 	, 	not
+120	remove this cup from me nevertheless not my will	^ 	, 	but
+120	not my will but thine	^ 	, 	be
+120	my cup thou	. 	 	maintainest
 120	heaven strengthening him	"* 	."* 	The
 120	by their ministrations	. "	. 	We
 120	instrumentality of angels	 	, 	or
 120	the three discipleS	) ^ 	,"  	he
 120	partly to their	? 	 	being
+120	in cm agony	 	, 	he
+120	to the ground	^\** 	."* 	The
+120	to the Colossians	, ^' 	, " 	I
+120	history Who in	,* 	* 	the
+120	blood And when he rose up from prayer	^ 	, 	and
+120	up from prayer and was come to his disciples	^ 	, 	he
 120	Jesus said unto them	. 	, 	Why
 120	the third time	, '' 	, " 	Sleep
 120	follows in Matthew	: '' 	: " 	Behold
@@ -1655,14 +2886,38 @@
 120	sin for us	." ^' 	." " 	The
 120	at all But	* 	,* 	when
 120	but Jesus was	 '^ 	 " 	stricken
+120	through the Saviour	,* 	.* 	A
+121	him saw what would follow they said unto him	. 	, 	Lord
+121	answered and said	. 	, 	Suffer
+121	which were come to him	. 	, 	Be
+121	related And while he yet spake	^ 	, 	behold
+121	was called Judas one of the twelve	^ 	, 	went
+121	to kiss him	"* 	."* 	You
+121	infamous purpose and	 ^ 	 " 	was
+121	of the temple	,"' 	," 	or
 121	him and saith	. 	, 	Master
 121	kissed him But Jesus said unto him Judas	^ 	, 	betrayest
+121	the fifth rib	," '^ 	," " 	and
+121	him saw what would follow they said unto him	^ 	, 	Lord
 121	a servant of the high priest	^ 	, 	and
 121	priest and cut off his right ear	"* 	."* 	The
-121	come to him	. 	, 	Be
+121	directed them to	 '' 	 " 	do
+121	steered and said	^ 	, 	Suffer
+121	said to them	. 	, 	Let
+121	Let this suffice	. 	, 	Proceed
+121	who were come to him	. 	, 	Be
 121	power of darkness	,"* 	."* 	It
+121	answer says Paul	, '^ 	, " 	no
+121	us stedfast saying	. 	, 	Let
+122	the fire and earnestly looked upon him and said	. 	, 	This
+122	he denied him saying	. 	, 	Woman
+122	after a little while another saw him and said	. 	, 	Thou
+122	another confidently affirmed saying	. 	, 	Of
 122	us took they him and led him	^ 	, 	and
 122	high priest's house	"* 	."* 	Matthew
+122	followed afar off	"* 	."* 	You
+122	among the rest	 	. 	Peter
+122	the high priest	 	. 	Thus
 122	a nwng them	"* 	,"* 	that
 122	withstand But a certain maid beheld him	^ 	, 	as
 122	maid beheld him as he sat by the fire	^ 	, 	and
@@ -1674,16 +2929,29 @@
 122	man confidently affirmed	^ 	, 	saying
 122	is a Galilean	"* 	."* 	What
 122	cut off saith	. 	, 	Did
+122	what thou sayest	* 	,"* 	asserting
+122	Let us consider	. 	, 	Secondly
+122	Secondly Peter recovery	, ^^	." 	And
+122	recovery And immediately	^ 	, 	while
+122	the cock crew	!'* 	."* 	While
+122	looked upon Peter	"* 	."* 	Jesus
+122	deny me thrice	"* 	."* 	A
 122	Peter went out	!'* 	."* 	He
 122	He wept bitterly	,* 	."* 	The
 122	in this case	^ 	, 	teach
 122	that bought them	 	, 	and
 122	to confess him	^ 	, 	and
+122	to remember that	 *""* 	 *"* 	he
+123	struck him on the face and asked him saying	. 	, 	Prophesy
+123	said unto them	. 	, 	If
+123	said they all	. 	, 	Art
+123	he said unto them	. 	, 	Ye
+123	And they said	. 	, 	What
 123	review And the men that held Jesus mocked him	^ 	, 	and
 123	Jesus mocked him and smote him And when they	/ 	 	had
-123	struck him on the face and asked him saying	. 	, 	Prophesy
 123	they against him	"* 	."* 	Matthew
 123	men who said	. 	, 	We
+123	witnesses and said	. 	, 	This
 123	say And as soon as it was day	^ 	, 	the
 123	and the chief priests and the scribes came together	^ 	, 	and
 123	into their council	"* 	."* 	They
@@ -1697,10 +2965,15 @@
 123	again confessed plainly	: '^ *	: " *	He
 123	heaven Matthew adds	, ^' 	, " 	Then
 123	and perishing sinners	! "	! 	We
+123	because of him	. £	. 	Even
+124	accuse him saying	. 	, 	We
 124	When the morning	; 	 	was
 124	chapter And the whole multitude of them arose	^ 	, 	and
 124	him unto Pilate	!'* 	."* 	As
 124	Christ a king	"* 	."* 	Though
+124	himself And Pilate asked him saying	. 	, 	Art
+124	of the Jews	* 	?"* 	Before
+124	and said unto him	. 	, 	Art
 124	consideration And Pilate asked him	^ 	, 	saying
 124	consideration And Pilate asked him saying	^ 	, 	Art
 124	king of the Jews	 	? 	And
@@ -1712,12 +2985,27 @@
 124	Jesus When Pilate heard of Galilee	^ 	, 	he
 124	Herod's jurisdiction he sent him to Herod	^ 	, 	who
 124	the multitude said	, '^ 	, " 	This
+124	was desirous to see him of a long season	^ 	, 	because
+124	done by him	!'* 	."* 	We
+124	in many words	"* 	,"* 	that
+124	questions but he answered him	, 	 	nothing
+124	righteously And the chief priests and scribes stood	^ 	, 	and
 124	guilt And Herod	^ 	, 	with
 124	and mocked him	"* 	."* 	Not
 124	a gorgeous robe	^* 	,"* 	a
 124	shall choose thee	.'' 	." 	Having
 124	again to Pilate	"* 	."* 	He
 124	itg between themselves	" 	." 	We
+125	feast And they cried out all at once saying	. 	, 	Away
+125	they cried saying	. 	, 	Crucify
+125	they cried saying Crucify him	. 	, 	crucify
+125	him And he said unto them the third time	. 	, 	Why
+125	might be crucified	- 	. 	And
+125	said unto them	. 	, 	Ye
+125	unto me as one that perverteth the people and	^ 	, 	behold
+125	him before you	^ 	, 	have
+125	xuse him no	^ 	, 	nor
+125	yet Herod for I sent you to him and	^ 	, 	lo
 125	proposal I will therefore	^ 	, 	chastise
 125	and release him	!'* 	."* 	Strange
 125	Lord And they cried out all at once saying	^ 	, 	Away
@@ -1729,15 +3017,28 @@
 125	Doddridge And he said unto them the third time	^ 	, 	Why
 125	he said unto them the third time Why what	 €	 	evil
 125	said will therefore chastise him	^ 	, 	and
-125	they were instant with loud voices	^ 	, 	requiring
+125	liberty And they were instant with loud voices	^ 	, 	requiring
 125	chief priests prevailed	"* 	."* 	Without
 125	the more exceedingly	. 	, 	Let
+125	a voice saying	. 	, 	Shall
 125	prevailed And noW	) 	, 	Pilate
+125	if thou sayest	. 	, 	Behold
+125	people and said	. 	, 	His
 125	as they required	"* 	."* 	This
 125	and saith unto them	. 	, 	Behold
+125	said unto him	. 	, 	Whence
+125	Luke And Pilate gave sentence	^ 	, 	that
+125	to their will	"* 	."* 	How
 125	priests and rulers	 	, 	and
 125	for ever Finally	,* 	.* 	Let
 125	Lord Jesus Christ	* 	,* 	as
+125	folds of light	 	. 	Let
+125	the just for	 	 	the
+125	us unto God	."—\*^ 	."—" 	Surely
+125	aiost our Master	,^	, 	no
+125	patience and fortitude	^ 	, 	which
+126	the which they shall say	. 	, 	Blessed
+126	the mountains Fall on us and to the hills	. 	, 	Cover
 126	now read that	 ^' *	 " *	they
 126	read that they	/ 	 	led
 126	led him away	"* 	."* 	It
@@ -1755,15 +3056,24 @@
 126	for your children	"* 	."* 	He
 126	takes it welL	 	. 	When
 126	despising the shame	/' 	," 	and
+126	in which they shall say	^ 	, 	Blessed
+126	are the barren and the wombs that never bare	^ 	, 	and
+126	never gave suck	,"* 	."* 	Having
+126	heard to say	, '^ 	, " 	I
+126	to the hills	. 	, 	Fall
+126	cover her slain	/' 	." 	But
 126	it but its	- 	 	great
 126	for this proverb	, 	. 	But
 126	this proverb But	> 	, 	again
 126	trees in Scripture	 	. 	As
 126	people are called	 '' 	 " 	trees
 126	is the wicked	.. 	. 	In
+126	up the voice	—^	— 	no
 127	words And there were also two other	^ 	, 	malefactors
 127	words And there were also two other malefactors	^ 	, 	led
 127	is called Calvary	,"* 	."* 	Matthew
+127	on this wise	. 	, 	Say
+127	from above or	. 	, 	Who
 127	they crucified him	"* 	."* 	But
 127	in this case	> 	, 	terrible
 127	but that a	 ^^ 	 " 	quaternion
@@ -1778,13 +3088,20 @@
 127	of the seven	.	 	sayings
 127	of the chapter	, '^ 	, " 	He
 127	they were doing	 " 	. " 	Ye
+127	what is wrong	^ 	, 	except
 127	and cast lots	"* 	."* 	This
 127	was without seam	) 	, 	woven
 127	the top throughout	 	. 	They
 127	him thus signified	 	. 	We
+128	And the soldiers also mocked him coming to him	^ 	, 	and
+128	us But the other answering rebuked him	. 	, 	saying
+128	And we indeed justly	;, 	; 	for
+128	kingdom And Jesus said unto him	. 	, 	Verily
 128	God to the	, 	 	cross
 128	Matthew mentions that	 '^ 	 " 	they
 128	others let him save himself	^ 	, 	if
+128	the contiguous road	^ 	, 	catching
+128	scorn and saying	. 	, 	Thou
 128	very chief priests	 	, 	scribes
 128	the true Messiah	 	. 	It
 128	the very expressions	 	, 	nay
@@ -1797,16 +3114,37 @@
 128	JewSy save thyself	"* 	."* 	Urged
 128	Greek and Latin	^ 	, 	and
 128	of the Jews	"* 	."* 	It
+128	a white board	 ^	 	which
+128	by John was	 '^ 	 " 	Jesus
+128	to the gospel	. ^' 	. " 	He
+128	King of kings	^ 	, 	and
+128	and his kingdom	» 	 	that
 128	I have written	.'' 	." 	As
 128	of their Messiah	;; 	; 	they
 128	who were hanged	^ 	, 	railed
 128	on him saying	^ 	, 	If
+128	companion But the other answering	^ 	, 	rebuked
+128	answering rebuked him saying Dost not thou fear God	^ 	, 	seeing
+128	of our deeds	"* 	."* 	This
+128	done nothing amiss	"* 	."* 	This
+128	In like manner	,, 	, 	every
+128	into thy kingdom	"* 	."* 	His
 128	prayer And Jesus said unto him	^ 	, 	Verily
 128	he with me	,"* 	."* 	This
 128	crucifying f that	^ 	, 	in
 128	Herein Jesus signally	 ^^ 	 " 	spoiled
 128	Christ for it	 	. 	Peter
+128	they would say	, ^' 	, " 	If
+128	their wicked ways	^ 	, 	and
 128	as we are	> 	, 	there
+128	tenement of clay	,, 	, 	thou
+129	Mary in Scripture	., 	.. 	There
+129	Luke And it was about the sixth hour	^ 	, 	and
+129	that Jesus was	 '' 	 " 	the
+129	mentioned in Matt	, 	. 	xxvii
+129	to say My	 (	 	God
+129	in the midst	,"* 	."* 	Matthew
+129	the law were	^ 	, 	at
 129	having opened up	^ 	, 	by
 130	finished Luke says	, "-"	, "	And
 130	Luke says And	?, *	, *	when
@@ -1815,15 +3153,22 @@
 130	and permanently established	* 	.* 	The
 130	off he should	 ^' 	 " 	cause
 130	to the Hebrews	, ^' 	, " 	that
+130	commend my spirit	"* 	."* 	This
+130	offering for sin	," 	." 	He
+130	verse runs thus	: '^ 	: " 	Into
 130	concerning Jesus that	 ^' *	 " *	having
 130	up the ghost	"* 	."* 	Different
 130	life said he	, '^ 	, " 	that
+130	centurion saw what was done he glorified God saying	^ 	, 	Certainly
+130	a righteous person	"* 	."* 	While
 130	sights beholding the things which were done	^ 	, 	smote
 130	Ghost And all his acquaintance	^ 	, 	and
 130	acquaintance and the women that followed him from Galilee	^ 	, 	stood
 130	trod the wine	>	- 	press
 130	the obstinately wicked	^ 	, 	in
+130	motives to repentance	^ 	, 	the
 130	in his blood	/' 	." 	This
+131	Joseph a counsellor	 	; 	and
 131	to mark And	^ 	, 	behold
 131	mark And behold	^ 	, 	there
 131	mark And behold there was a man named Joseph	^ 	, 	a
@@ -1834,6 +3179,7 @@
 131	Luke says Joseph	 ^^ *	 " *	laid
 131	before was laid	"* 	."* 	The
 131	in Matthew are	. 	, 	He
+131	gone about the whole	 '	 	operation
 131	tie war be	 '' 	 " 	brought
 131	fi om Galilee	^ 	, 	followed
 131	om Galilee followed after	^ 	, 	and
@@ -1842,6 +3188,7 @@
 131	the week And	"* 	,"* 	having
 131	they rested the Sabbath day	^ 	, 	according
 131	Saviour Jesus Christ	,* 	.* 	This
+131	the Christian Sabbath	,* 	.* 	You
 131	of the Sabbath	,* 	.* 	The
 131	every other iniquity	: »-	: —	it
 131	point of view	 	. 	Lord
@@ -1863,13 +3210,38 @@
 132	the living among the dead He is not here	^ 	, 	but
 132	also demands attention	: ^'	: "	And
 132	that Christ actually	/ 	 	rose
+132	the soldiers saying	. 	, 	Say
+132	while we slept	 	. 	And
+132	day of the week very early in the morning	^ 	, 	they
+132	body of the Lord Jesus And it came to	* ^ *	*  *	pass
+132	that Christ had	 ' 	  	risen
+132	of the angels	, '^ *	, " *	they
+132	Peter on this	: 	 	occasion
+132	other disciple whom	! 	 	Jesus
+132	not where they	 *\* 	 * 	have
+132	Peter and came	 *^* 	 ** 	first
+132	not in Then	 ' 	  	Cometh
+132	and the napkin	 ' 	  	that
+132	the linen clothes	, ' 	,  	but
+132	Then went in	 ' 	  	also
+132	the sepulchre and	 ' 	  	he
 132	the Christian Sabbath	,* 	.* 	The
 132	above all principality	 	, 	and
+133	him And he said unto them	. 	, 	What
+133	days And he said unto them	. 	, 	What
+133	and beside all	;	 	this
+133	reason thus approves	. 	, 	Scripture
+133	is called to	>	- 	day
 133	time And behold	 	, 	two
 133	was married to	 '^ 	 " 	the
 133	the other Mary	/' 	," 	and
 133	the same name	> 	, 	which
+133	or restrained that	^ 	, 	from
 133	heaven And he said unto them	^ 	, 	What
+133	beloved And he said unto them	 	, 	What
+133	them What things	"* 	?"* 	Still
+133	length And they said unto him	^ 	, 	Concerning
+133	have crucified him	"* 	."* 	To
 133	trusted continued they	, ^^ *	, " *	that
 133	have redeemed Israel	,"* 	."* 	These
 133	of this world	/' 	," 	said
@@ -1889,6 +3261,8 @@
 133	added Ought not Christ to have suffered these things	^ 	, 	and
 133	that so it	.	 	should
 133	he might be	 '^ 	 " 	just
+133	things concerning himself	"* 	."* 	What
+133	testify of Christ	 	. 	May
 133	to knowledge The	 "	 	Word
 133	time to speak	." "	." 	When
 133	stirred Be ready	 ^ 	 , 	however
@@ -1900,12 +3274,25 @@
 133	only m name	^ 	, 	but
 133	called religious conversation	) 	, 	cannot
 133	and John that	 '^	 "	as
+134	one to another	. 	, 	Did
+134	fools said he	, ^' 	, " 	and
+134	whither they went	"* 	,"* 	that
+134	they constrained him	 "* 	 ,"* 	that
+134	successfully saying Abide with us	: 	, 	for
+134	is far spent	"* 	."* 	They
+134	tarry with them	"* 	."* 	So
+134	And they said	. 	, 	Nay
+134	unto her husband	. 	, 	Behold
+134	besought us saying	. 	, 	If
 134	him And it came to pass	^ 	, 	as
 134	to pass as he sat at meat with them	^ 	, 	he
 134	them he took bread and blessed it and brake	^ 	, 	and
 134	gave to them	"* 	."* 	Though
 134	of their sight	"* 	."* 	The
 134	was removed So	, ^' 	, " 	God
+134	one to another	"* 	,"* 	they
+134	with one consent	, ^' *	, " *	Did
+134	t while he talked with us by the way	^ 	, 	and
 134	saith the Psalmist	; '' 	; " 	I
 134	in the Lord	." '' 	." " 	Thy
 134	did eat them	,'' 	," 	saith
@@ -1913,6 +3300,21 @@
 134	such as these	: ^^ 	: " 	Blessed
 134	the hearty response	, ^^	, "	Amen
 134	even so come	. 	, 	Lord
+134	more careful attention	, 	. 	and
+134	ready to say	, '^ 	, " 	Had
+134	Verse And they rose up the same hour	^ 	, 	and
+134	rose up the same hour and returned to Jerusalem	^ 	, 	and
+134	returned to Jerusalem and found the eleven gathered together	^ 	, 	and
+134	were with them	"* 	."* 	If
+134	and these disciples	 *^^ 	 *" 	saying
+134	these disciples saying	. 	, 	The
+134	appeared to Simon	"* 	."* 	The
+134	of the twelve	/' 	." 	His
+134	breaking of bread	,^* 	."* 	They
+134	experiences and views	—-	— 	to
+135	them And he said unto them	. 	, 	These
+135	as they thus spake	^ 	, 	Jesus
+135	be unto you	,"* 	."* 	The
 135	folly But they were terrified and affrighted	^ 	, 	and
 135	seen a spirit	"* 	."* 	There
 135	i I myself	, 	. 	Handle
@@ -1923,10 +3325,16 @@
 135	crucifixion So John	 *^* 	 *"* 	beheld
 135	and my god	.'' 	." 	Memorable
 135	Jesus then spoke	: ^	: "	Thomas
+135	with the Lord	.'' 	." 	In
+135	proceeds on this	 {	 	principle
+135	exclaim in ecstasy	, '^ 	, " 	Is
+135	land of Egypt	 	. 	And
+135	believed them not	.'' 	." 	The
 135	not for joy and wondered he said unto them	^ 	, 	Have
 135	eat before them	"* 	."* 	Hence
 135	verse it is said that he	 *^* 	 *"* 	opened
 135	open the understanding	. ^' 	. " 	These
+135	unintelligible and uninteresting	. ^' 	. " 	The
 135	he said unto them	^ 	, 	Thus
 135	perfect through sufferings	/' 	." 	He
 135	how it behoved Christ	 '' *	 " *	to
@@ -1936,14 +3344,30 @@
 135	said to them	, ^' *	, " *	And
 135	them And behold	^ 	, 	I
 135	gift was called	 '^ 	 " 	The
+136	He led them out	^"* 	,"* 	says
+136	He led them out says Luke	, ^^ 	, " 	as
 136	And he lifted up his hands	^ 	, 	and
 136	And it came to pass while he blessed them	 	, 	he
+136	of their sight	"* 	."* 	Clouds
+136	the cloud saying	. 	, 	This
+136	attended by angels	,* 	.* 	In
 136	the Holy Spirit	,* 	.* 	These
 136	gift of Christ	 	. 	Wherefore
 136	fulness of Christ	" 	." 	These
 136	interpretation of tongues	.'' 	." 	These
 136	that heard him	, '^ 	, " 	God
 136	the mercy seat	. ^' 	. " 	For
+136	infinite power happiness	^ 	, 	and
+136	happiness and glory	^ 	, 	as
+136	throne of God	.'' 	." 	His
+136	for hu followers	^ 	, 	and
+136	entered even Jesus	" 	." 	As
 137	disciples worshipped him	,"* 	."* 	To
+137	Christ the disciples	 '' *	 " *	returned
+137	Master's ascension they	 ^' *	 " *	were
+137	and blessing God	" 	." 	We
 137	should raise our thoughts and	 £	 	affections
 137	that the disciples	 '^ 	 " 	looked
+137	emphatic word Amen	.* 	."* 	This
+137	In here saying	. 	, 	Amen
+137	most honoured Redeemer	—^' 	—" 	unto

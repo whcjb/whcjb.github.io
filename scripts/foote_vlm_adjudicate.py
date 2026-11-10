@@ -50,22 +50,44 @@ def leaf_pages(vol):
 
 
 def page_segments(vol):
-    """印刷页 → [(讲次, 起, 止)]，只取正文（`---` 注区之前）。讲首在第一个 PAGE 标记之前的部分属于上一页。"""
+    """印刷页 → [(讲次, 起, 止)]，只取正文（`---` 注区之前）。讲首页、整页在一段中间的页另有补法（见下）。"""
     segs = defaultdict(list)
-    cur = None
+    cur = last = None
     for lec in LECS[vol]:
         text = (A.SRC / f'{lec:03d}.md').read_text(encoding='utf-8')
         body_end = text.find('\n---\n')
         body_end = len(text) if body_end < 0 else body_end
         pos = 0
+        # 讲首页不排页眉、没有 PAGE 标记：本讲第一个标记是 N、上一讲止于 N-2 以前时，标记前那截（讲题＋经文段）
+        # 归第 N-1 页（原先一律归上一页，讲首页 137 张的转录整页对不上）；它也可能与第一段同在第 N 页（122 讲），
+        # 两页都给，由 trim 按对齐留下真在本页的。上一讲末段跨过的无标记页（121 讲 442–443）借上一讲末截。
+        m0 = PAGE.search(text, 0, body_end)
+        extra = None
+        if m0 and m0.group(1).strip().isdigit():
+            n = int(m0.group(1).strip())
+            if cur is not None and cur.isdigit() and last and 0 < n - int(cur) - 1 <= 3:
+                for k in range(int(cur) + 1, n):
+                    segs[str(k)].append(last)
+            if cur is None or (cur.isdigit() and int(cur) < n - 1):
+                cur = str(n - 1)
+            if m0.start() > 0 and cur != str(n):
+                extra = str(n)
         for m in PAGE.finditer(text, 0, body_end):
+            pg = m.group(1).strip()
+            if extra and m.start() == m0.start() and m.start() > pos:
+                segs[extra].append((lec, pos, m.start()))
             if cur is not None and m.start() > pos:
                 segs[cur].append((lec, pos, m.start()))
-            pg = m.group(1).strip()
+                # 标记只打在段首：整页落在一段中间的那页没有标记（22 → 24），它的字在上一页那截里，
+                # 跳过的页借同一截（对齐按词找到本页那部分；候选仍须 tesseract 同位一致）
+                if pg.isdigit() and cur.isdigit() and 0 < int(pg) - int(cur) - 1 <= 2:
+                    for k in range(int(cur) + 1, int(pg)):
+                        segs[str(k)].append((lec, pos, m.start()))
             cur = pg if pg else (str(int(cur) + 1) if cur and cur.isdigit() else cur)
             pos = m.end()
         if cur is not None:
-            segs[cur].append((lec, pos, body_end))
+            last = (lec, pos, body_end)
+            segs[cur].append(last)
     return segs
 
 
@@ -90,8 +112,30 @@ PUNCT = set(',.;:!?')
 QUOTE = set('"“‘\'([')
 
 
+# 逐条看过、两家同位一致但读错的（讲次, 原, 改）：001 `*The orwmal language*` 印面是 original；
+# 讲首页补进来后经文段里错位对上的——钦定本原文就是我们的读法（路 7:38 feet、9:30 two men、9:34 a cloud、
+# 10:16 despiseth me、11:1 teach us、20:39 certain of、21:27 the Son）；121 `serve his interest` 两可
+VLM_HOLD = {('001', 'orwmal', 'consequent'), ('037', 'tet', 'obedience'), ('047', 'two', 'to'),
+            ('047', 'a', 'are'), ('052', 'me', 'come'), ('056', 'ns', 'you'), ('107', 'certain', 'certainly'),
+            ('114', 'Son', 'song'), ('121', 'interest', 'interests')}
+
+
 def vtoks(s):
     return [(m.start(), m.end(), m.group(0)) for m in VWORD.finditer(s)]
+
+
+def trim(ow, vw):
+    """本页转录在我们这截里真正对得上的范围 [lo, hi)：首尾两个 ≥4 词的相等块之间，且相等词占一半以上；否则 (0, 0)。
+    页段是按 PAGE 标记推的（讲首页、整页在段中的页都是借来的），不对齐就判会把别页的字与转录凑成「两家一致」：
+    tesseract 与转录读的是同一页，错位时两家错得一样，同位一致挡不住。"""
+    sm = SequenceMatcher(None, [x.lower() for x in ow], [x.lower() for x in vw], autojunk=False)
+    bl = [b for b in sm.get_matching_blocks() if b.size >= 4]
+    if not bl:
+        return 0, 0
+    lo, hi = bl[0].a, bl[-1].a + bl[-1].size
+    if sum(b.size for b in sm.get_matching_blocks() if lo <= b.a < hi) < 0.5 * (hi - lo):
+        return 0, 0
+    return lo, hi
 
 
 def align_map(a, b):
@@ -175,6 +219,7 @@ def main():
     W = lambda w: is_word(w, lex) or is_word(w.replace('’', "'"), lex)
     stat, skip = Counter(), Counter()
     rows, rules, pend = [], [], []
+    ruled = set()      # (讲, 起)：跳过的页借上一页那截，同一个词可能被两页各判一次，只收一条
     for vol in (1, 2, 3):
         if not (VLM / f'v{vol}').exists():
             continue
@@ -194,9 +239,11 @@ def main():
             for lec, s, e in segs[pg]:
                 for (ts_, te_, t) in A.body_tokens(texts[lec][s:e]):
                     ours.append((lec, s + ts_, s + te_, t))
-            ow = [t for *_, t in ours]
             vs = clean_vlm(f.read_text(encoding='utf-8'))
             vt = vtoks(vs)
+            lo, hi = trim([t for *_, t in ours], [x[2] for x in vt])
+            ours = ours[lo:hi]
+            ow = [t for *_, t in ours]
             tf = TESS / f'v{vol}' / f'{leaf:04d}.txt'
             tsx = tf.read_text(encoding='utf-8') if tf.exists() else ''
             tt = [(m.start(), m.end(), m.group(0)) for m in TOKEN.finditer(tsx)]
@@ -247,12 +294,18 @@ def main():
                     kind = 'agree3_nonword'        # 两家读出同一个非词（nbt）：不落
                     stat['agree3'] -= 1
                     stat[kind] += 1
+                if kind in ('agree3', 'realword3') and (f'{lec:03d}', o, v) in VLM_HOLD:
+                    stat['hold'] += 1
+                    kind = 'hold'
                 if kind in ('agree3', 'realword3'):
                     nxt = ours[i + 1][3] if i + 1 < len(ours) and ours[i + 1][0] == lec else ''
                     r, why = make_rule(text, s, e, o, v, vs, va, vb,
                                        tsx if ti is not None else None, tt[ti][0] if ti is not None else 0,
                                        tt[ti][1] if ti is not None else 0, nxt)
-                    if r:                              # 同锚同改的多条＝本讲里同形的几处，apply 按条数一起落
+                    if r and (lec, s) in ruled:
+                        pass
+                    elif r:                            # 同锚同改的多条＝本讲里同形的几处，apply 按条数一起落
+                        ruled.add((lec, s))
                         rules.append((f'{lec:03d}', anchor, r[0], r[1]))
                     else:
                         skip[why] += 1
@@ -266,6 +319,17 @@ def main():
     print(dict(stat), file=sys.stderr)
     print('守卫挡下', dict(skip), file=sys.stderr)
     if a.rules:
+        # 与旧表合并（旧表逐条看过；trim 收紧后，残字密的页对不上 ≥4 词块，会判不出旧表里对的条，不能因此丢）。
+        # 同一行可重复（＝本讲同形几处），按行计数取两边较多者；VLM_HOLD 里的旧条一并剔除。
+        from collections import Counter as _C
+        old = [tuple(ln.split('\t')) for ln in (RULES.read_text(encoding='utf-8').splitlines() if RULES.exists() else [])
+               if ln and not ln.startswith('#')]
+        old = [r for r in old if (r[0], A.TOKEN.search(r[2]).group(0) if A.TOKEN.search(r[2]) else r[2], r[3]) not in VLM_HOLD]
+        have = _C(old)
+        extra = []
+        for r, k in _C(rules).items():
+            extra += [r] * max(0, k - have[r])
+        rules = old + extra
         RULES.write_text('# lecture\tanchor(前三词)\tfrom(词＋紧粘残渣)\tto —— foote_vlm_adjudicate.py 生成（agree3/realword3），须逐条看过\n'
                          + ''.join('\t'.join(r) + '\n' for r in rules), encoding='utf-8')
         print(f'规则 {len(rules)} 条 → {RULES}', file=sys.stderr)

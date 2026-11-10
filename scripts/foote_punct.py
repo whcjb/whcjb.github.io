@@ -125,6 +125,8 @@ def page_pairs():
                     ours.append((lec, s + ts_, s + te_, t))
             vs = clean_vlm(f.read_text(encoding='utf-8'))
             vt = [(m.start(), m.end(), m.group(0)) for m in V.VWORD.finditer(vs)]
+            lo, hi = V.trim([t for *_, t in ours], [x[2] for x in vt])   # 只判真在本页、对得上的那截
+            ours = ours[lo:hi]
             tf = V.TESS / f'v{vol}' / f'{leaf:04d}.txt'
             ts = tf.read_text(encoding='utf-8') if tf.exists() else ''
             tt = [(m.start(), m.end(), m.group(0)) for m in TOKEN.finditer(ts)]
@@ -194,6 +196,17 @@ def judge():
     return stat, rows, rules
 
 
+def _locate(lec, anchor, old, new, right):
+    """旧条在当前文本上恰好几处可落（锚＝缝左词、缝逐字等于 old、右词等于 right）。"""
+    text = (A.SRC / f'{lec}.md').read_text(encoding='utf-8')
+    toks = A.body_tokens(text)
+    words = [t for *_, t in toks]
+    n = len(anchor.split())
+    return sum(1 for k in range(n - 1, len(toks) - 1)
+               if ' '.join(words[k - n + 1:k + 1]) == anchor and words[k + 1] == right
+               and text[toks[k][1]:toks[k + 1][0]] == old)
+
+
 def apply():
     """落表：锚＝缝左三词（含左词），缝须逐字等于原缝、右词须等于记录的右词；本讲恰好一处。"""
     by = {}
@@ -243,6 +256,21 @@ def main():
         w.writerows(rows)
     print(dict(stat), file=sys.stderr)
     if a.rules:
+        rules = list(dict.fromkeys(rules))     # 跳过的页借上一页那截：同一道缝两页各判一次
+        # 与旧表合并：trim 收紧后判不出的旧条（逐类看过、已落），在当前文本上锚＋缝＋右词仍恰好一处的照留；
+        # 锚里的词已被改字层改过的旧条定位不到，丢掉（新判出的同一道缝锚已换新，2026-11-10 逐条核过 23/25 已由新条覆盖）
+        have = set(rules)
+        keep = []
+        for ln in (RULES.read_text(encoding='utf-8').splitlines() if RULES.exists() else []):
+            if not ln.strip() or ln.startswith('#'):
+                continue
+            r = tuple(x.replace('\\n', '\n') for x in ln.split('\t'))
+            if r in have or (r[0], r[1], r[4]) in REJECT:
+                continue
+            if _locate(*r) == 1:
+                keep.append(r)
+        rules = keep + rules
+        print(f'旧表留 {len(keep)} 条', file=sys.stderr)
         RULES.write_text('# lecture\tanchor(缝左三词)\told(缝)\tnew\tright(缝右词) —— foote_punct.py 生成，须逐类看过\n'
                          + ''.join('\t'.join(x.replace('\n', '\\n') for x in r) + '\n' for r in rules),
                          encoding='utf-8')
