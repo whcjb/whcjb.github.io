@@ -5,6 +5,8 @@ book_name: "费尔贝恩《教牧书信》 · 提摩太后书"
 title: "提摩太后书：原文与译文"
 subtitle: "Patrick Fairbairn"
 date: 2026-11-10 14:47
+next_url: "/fairbairn/2timothy/zh/1/"
+next_label: "提摩太后书 第一章"
 en_url: "/fairbairn/2timothy/text/"
 zh: true
 ---
