@@ -70,13 +70,22 @@ def ok(en_masked, zh):
     return D.check_block(en_masked, zh)
 
 
-def one(t, label):
-    """单段翻译（补遗段落、批量里不合格的条目）。重译一次仍不合格 → 抛错停下。"""
+ONE_RULES = (
+    "把下面这段（达文南特《歌罗西书注释》1831 年英译本卷一的「补遗」或书末索引）译成简体中文。规则：\n"
+    "1. 人名、地名、书名一律先写中文译名，紧跟全角括号注原名：克雷格（Craig）、居普良（Cyprian）、"
+    "鲍尔（Bower）《教皇史》（History of the Popes）；同一人前后用同一译名，罗马主教 Stephen 译「斯德望」\n"
+    "2. 列举的序数前后一致：First / Second / Third → 第一 / 第二 / 第三\n"
+    "3. 补遗小标题「For Note *, p. 14.」意为「第 14 页注 * 之补遗」，「Note at the end of … p. 16」意为「第 16 页……之注」\n"
+    "4. ⟦N⟧ 占位符原样保留，`*` 斜体成对照留；不加任何说明\n"
+    "5. 译文放在 <译文> 与 </译文> 之间，标签外的文字一律丢弃\n")
+
+
+def one(t, label, ctx=''):
+    """单段翻译（补遗段落、批量里不合格的条目、小标题）。重译一次仍不合格 → 抛错停下。"""
     c = cache_get(t)
     if c is not None and not ok(t, c):
         return c
-    base = ("把下面这段译成简体中文，⟦N⟧ 占位符原样保留，`*` 斜体成对照留；"
-            "译文放在 <译文> 与 </译文> 之间，标签外的文字一律丢弃。\n\n")
+    base = ONE_RULES + (f"\n【前一段英文，只供理解上下文，不要翻译、不要输出】\n{ctx}\n" if ctx else '') + "\n【要翻译的段落】\n"
     for n in range(2):
         raw = tf.call_claude(base + t, timeout=900, label=f'{label}' + (f'·retry{n}' if n else ''))
         m = re.findall(r'<译文>(.*?)</译文>', raw, re.S)
@@ -96,6 +105,9 @@ def batch(items, label):
         body = '\n'.join(f'[{i}] {t}' for i, t in enumerate(chunk, 1))
         prompt = ("下面是十七世纪神学著作英译本（1831）书末索引的若干条目，每行以 [编号] 开头。逐行译成简体中文："
                   "**行数、编号一一对应，不并行、不拆行、不漏行**；每行保留行首 [编号]；⟦N⟧ 占位符原样保留。"
+                  "人名、书名、术语一律先写中文，紧跟全角括号注原名（鲍尔（Bower）、换称法（Antonomasia））；"
+                  "教派名照本站定译：Arians 阿里乌派、Pelagians 柏拉糾派、Arminians 阿民念派、Socinians 苏西尼派、"
+                  "Donatists 多纳徒派、Jesuits 耶稣会士；卷次 I. / II. 写作卷一 / 卷二，页码照抄。"
                   "译文放在 <译文> 与 </译文> 之间，标签外的文字一律丢弃。\n\n" + body)
         raw = tf.call_claude(prompt, timeout=900, label=f'{label}·batch{bi // SIZE + 1}')
         m = re.findall(r'<译文>(.*?)</译文>', raw, re.S)
@@ -127,12 +139,22 @@ def translate_page(page, dry):
             if m:
                 t, tags = mask(m.group(2))
                 lines[i] = m.group(1) + unmask(zh[t], tags) + m.group(3)
+        # 小标题（IN VOL. I.、PAGE、VOL. PAGE. 之类）：单字母分节头（A、B…）照留，其余译出
+        for i, ln in enumerate(lines):
+            h = re.match(r'^(<h\d[^>]*>|<p class="dv-idx-caption">)(.*)(</h\d>|</p>)$', ln)
+            if h and re.search(r'[A-Za-z]{2}', RE_TAG.sub('', h.group(2))):
+                t, tags = mask(h.group(2))
+                lines[i] = h.group(1) + unmask(one(t, page + '·head'), tags) + h.group(3)
         out_body = '\n'.join(lines)
     else:
         out_body = body.strip()
+        prev = ''
         for b in paras:
             t, tags = mask(b)
-            out_body = out_body.replace(b, unmask(one(t, page), tags), 1)
+            out_body = out_body.replace(b, unmask(one(t, page, prev[-600:]), tags), 1)
+            prev = RE_TAG.sub('', b)
+    # 达文南特正文中文页同一套落盘处理：省略号规范、教派名补原名、原名括注转 dv-orig 灰字方括号
+    out_body = D.bracket_glosses(D.annotate_sects(D.normalize_etc(out_body), body))
     # 中文页 front matter：照英文，换标题、加 en_url，去掉翻页链（中文页之间不串）
     keep = [ln for ln in fm.split('\n') if ln and not ln.startswith(('title:', 'prev_', 'next_', 'zh_url:', '---'))]
     date = subprocess.run(['date', '+%Y-%m-%d %H:%M'], capture_output=True, text=True).stdout.strip()

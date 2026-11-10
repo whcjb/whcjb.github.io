@@ -11,6 +11,7 @@ prev_url: "/davenant/colossians/addenda/"
 prev_label: "Addenda to Vol. I"
 next_url: "/davenant/colossians/indexes/questions/"
 next_label: "Index of Questions"
+zh_url: "/davenant/colossians/indexes/general/zh/"
 ---
 
 <p class="dv-idx-lead">总索引 · 原书页码指 <strong>1831 年 Allport 英译本</strong>的印本页码，不是本站的章节编号。</p>

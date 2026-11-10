@@ -4,6 +4,7 @@ title: "Addenda to Vol. I"
 up_url: "/davenant/colossians/"
 up_label: "Davenant on Colossians"
 date: 2026-09-21 13:16
+zh_url: "/davenant/colossians/addenda/zh/"
 prev_url: "/davenant/colossians/gallican/"
 prev_label: "The Gallican Controversy"
 next_url: "/davenant/colossians/indexes/general/"

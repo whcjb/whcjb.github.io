@@ -11,6 +11,7 @@ prev_url: "/davenant/colossians/indexes/biographical/"
 prev_label: "Index to the Biographical Sketches"
 next_url: "/davenant/colossians/indexes/scripture/"
 next_label: "Index of Passages of Scripture"
+zh_url: "/davenant/colossians/indexes/notes/zh/"
 ---
 
 <p class="dv-idx-lead">注中人事索引 · 原书页码指 <strong>1831 年 Allport 英译本</strong>的印本页码，不是本站的章节编号。</p>

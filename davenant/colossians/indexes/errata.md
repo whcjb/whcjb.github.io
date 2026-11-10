@@ -8,6 +8,7 @@ dense: true
 date: 2026-09-15 17:02
 prev_url: "/davenant/colossians/indexes/scripture/"
 prev_label: "Index of Passages of Scripture"
+zh_url: "/davenant/colossians/indexes/errata/zh/"
 ---
 
 <p class="dv-idx-lead">勘误 · 原书页码指 <strong>1831 年 Allport 英译本</strong>的印本页码，不是本站的章节编号。</p>
