@@ -5,6 +5,7 @@ subtitle: "Geerhardus Vos · The Princeton Theological Review 18 (1920): 1–43"
 author_en: "Geerhardus Vos"
 description: "Geerhardus Vos, Eschatology of the Psalter (Princeton Theological Review, January 1920). Full text with footnotes, collated against the original printing."
 date: 2026-11-10 10:02
+zh_url: /vos/psalter/zh/
 ---
 
 <div class="vs-source" markdown="0">Text: Ted Hildebrandt’s transcription (biblicalelearning.org), collated word by word against the original printing in <i>The Princeton Theological Review</i> 18 (Jan. 1920) 1–43 (Internet Archive <code>princetontheolog1811arms</code>); 93 transcription slips corrected from the page images. Misprints of the original are kept as printed. Grey <span class="vs-pbk">p.N</span> marks give the 1920 pagination.</div>
