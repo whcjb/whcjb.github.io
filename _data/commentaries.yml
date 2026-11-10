@@ -218,6 +218,14 @@ authors:
     work_cn: "诗篇、以赛亚书、马太福音、使徒行传注释"
     work_en: ""
     books: 4
+  - id: haldane
+    name: "罗伯特·霍尔丹"
+    short: "霍尔丹"
+    en: "Robert Haldane"
+    years: "1764–1842"
+    work_cn: "罗马书释义"
+    work_en: "Exposition of the Epistle to the Romans"
+    books: 1
   - id: vos
     name: "霍志恒"
     short: "霍志恒"
@@ -517,8 +525,13 @@ books:
     en: "Romans"
     testament: nt
     chapters: 16
+    pick: true
+    pick_n: 2
+    pick_c0: "#591c70"
+    pick_c1: "#7b3695"
     links:
       - {author: hodge, path: "/hodge/romans/zh/", url_tpl: "/hodge/romans/zh/__CH__/", title_cn: "罗马书注释", title_en: "Commentary on the Epistle to the Romans", c0: "#152840", c1: "#2b5080"}
+      - {author: haldane, path: "/haldane/romans/", url_tpl: "/haldane/romans/__CH__/", title_cn: "罗马书释义", title_en: "Exposition of the Epistle to the Romans", c0: "#774e76", c1: "#9b6899"}
   - id: 1corinthians
     name: "哥林多前书"
     en: "1 Corinthians"

@@ -1,0 +1,221 @@
+---
+layout: default
+---
+{%- comment -%}
+  霍尔丹《罗马书释义》(Robert Haldane, Exposition of the Epistle to the Romans, 1835–39) 逐章注释页。
+
+  ⚠️ 不复用别家 layout：每本书独立样式（用户既定规矩）。骨架取自 fairbairn-chapter（同为 StudyLight / BibleSupport 录入本）。
+  配色灰紫 #9b6899 / 深端 #774e76：色板已挤，在卡片明度彩度区间内与全部既有色最小 ΔE 15.3（曼顿、费尔贝恩）；
+  罗马书在历代解经是合列卡片（书卷独立色），作者色只在选择页与生平页出现。
+  本书版式要点：一章一页；每章首有章首概述（Introduction）`.hd-intro`；每条注释以「Ver. N.」起段 `.hd-ver`，
+  前面放 commentary-anchor；脚注全书连号 [^fN]，录入本缺正文的 7 条注明。
+{%- endcomment -%}
+
+<div class="container haldane-wrap{% if page.zh %} hd-zh{% endif %}" style="padding-top: 70px;">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1" id="cmpCol">
+
+      <div class="hd-chrome">
+        <a href="{{ site.baseurl }}/haldane/{{ page.book_id }}/">&larr; {{ page.book_name }}</a>
+        {% if page.zh %}{% if page.en_url %}<a class="hd-lang" href="{{ site.baseurl }}{{ page.en_url }}">English &rarr;</a>{% endif %}
+        {% else %}{% if page.zh_url %}<a class="hd-lang" href="{{ site.baseurl }}{{ page.zh_url }}">中文版 &rarr;</a>{% endif %}{% endif %}
+      </div>
+
+      <h1 class="hd-title">{{ page.title }}</h1>
+      {% if page.subtitle %}<p class="hd-subtitle">{{ page.subtitle }}</p>{% endif %}
+
+      <div class="hd-nav">
+        {% if page.prev_url %}<a href="{{ site.baseurl }}{{ page.prev_url }}">&larr; {{ page.prev_label }}</a>
+        {% else %}<span></span>{% endif %}
+        {% if page.next_url %}<a href="{{ site.baseurl }}{{ page.next_url }}">{{ page.next_label }} &rarr;</a>
+        {% else %}<span></span>{% endif %}
+      </div>
+
+      {%- comment -%}
+        对比注释抽屉：只给正文页（有 page.chapter）。self 把本书自己排除，中英两版 key 不同。
+      {%- endcomment -%}
+      {% if page.chapter %}
+      {% assign cc_self = "haldane-en" %}
+      {% include compare-commentary-head.html self=cc_self content_class="hd-content" self_label="霍尔丹" %}
+      {% endif %}
+      <div class="hd-content">
+        {{ content }}
+      </div>
+      {% if page.chapter %}{% include compare-commentary-foot.html %}{% endif %}
+
+      {% if page.date %}
+      <div class="hd-stamp">{% if page.zh %}译于{% else %}Published{% endif %} {{ page.date | date: "%Y-%m-%d %H:%M" }}</div>
+      {% endif %}
+
+      <div class="hd-nav hd-nav-foot">
+        {% if page.prev_url %}<a href="{{ site.baseurl }}{{ page.prev_url }}">&larr; {{ page.prev_label }}</a>
+        {% else %}<span></span>{% endif %}
+        {% if page.next_url %}<a href="{{ site.baseurl }}{{ page.next_url }}">{{ page.next_label }} &rarr;</a>
+        {% else %}<span></span>{% endif %}
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<script>
+// 本书暂无中文页，经文弹层不挂（模块只认中文书卷名）。
+</script>
+
+{%- comment -%}
+  经文引用弹层：只给中文页（模块认的是中文书卷名）。accent/vnum 必须写字面量
+  （Jekyll 3 的 include 参数不接受变量）——与下方 CSS 的 --hd-ink 两处同值，改色要一起改。
+{%- endcomment -%}
+{% if page.zh %}
+{% include scripture-popup.html container_selector=".hd-content" accent="#9b6899" vnum="#774e76" slide="down" %}
+{% endif %}
+
+<style>
+.haldane-wrap {
+  --hd-ink: #9b6899;
+  --hd-ink-dark: #774e76;
+  --hd-rule: #f0e2ee;
+  --hd-paper: #fbf7fa;
+  --hd-body: #2a2a33;
+}
+.haldane-wrap .hd-chrome,
+.haldane-wrap .hd-nav {
+  font-size: 13px; display: flex; justify-content: space-between; gap: 12px;
+  align-items: center; font-family: Georgia, "Times New Roman", serif;
+}
+.haldane-wrap .hd-chrome { margin: 18px 0 22px; }
+.haldane-wrap .hd-chrome a,
+.haldane-wrap .hd-nav a { color: var(--hd-ink-dark); text-decoration: none; }
+.haldane-wrap .hd-chrome a:hover,
+.haldane-wrap .hd-nav a:hover { color: var(--hd-ink-dark); text-decoration: underline; }
+.haldane-wrap .hd-lang { border: 1px solid var(--hd-rule); border-radius: 4px; padding: 4px 10px; }
+.haldane-wrap .hd-lang:hover { background: var(--hd-ink); color: #fff !important; text-decoration: none; }
+.haldane-wrap .hd-title {
+  font-family: Georgia, "Times New Roman", serif; font-size: 30px; font-weight: normal;
+  color: var(--hd-ink-dark); text-align: center; margin: 10px 0 4px; line-height: 1.3;
+}
+.haldane-wrap .hd-subtitle {
+  text-align: center; font-size: 14px; color: #8a8a99; margin: 0 0 18px;
+  font-family: Georgia, "Times New Roman", serif; font-style: italic;
+}
+.haldane-wrap .hd-nav { margin: 14px 0 26px; }
+.haldane-wrap .hd-nav-foot { margin-top: 44px; padding-top: 16px; border-top: 1px solid var(--hd-rule); }
+
+/* 正文 */
+.haldane-wrap .hd-content {
+  font-family: Georgia, "Times New Roman", "Songti SC", STSong, serif;
+  font-size: 17px; line-height: 1.85; color: var(--hd-body);
+}
+.haldane-wrap .hd-content p { margin: 0 0 16px; text-align: justify; }
+.haldane-wrap .hd-content a { color: var(--hd-ink-dark); }
+
+/* 部分标题（每部分第一讲前） */
+.haldane-wrap .hd-part {
+  text-align: center; margin: 0 0 26px; padding: 10px 0 12px;
+  border-top: 1px solid var(--hd-rule); border-bottom: 1px solid var(--hd-rule);
+  font-family: Georgia, "Times New Roman", serif; color: var(--hd-ink-dark);
+  font-size: 13.5px; letter-spacing: .12em; line-height: 1.6;
+}
+.haldane-wrap .hd-part small { display: block; letter-spacing: .04em; color: #8a8a99; font-size: 12.5px; }
+/* 讲题：原书全大写，排小一号、加字距 */
+.haldane-wrap .hd-content h2.hd-head {
+  font-family: Georgia, "Times New Roman", serif; font-size: 16px; font-weight: normal;
+  text-align: center; color: var(--hd-ink-dark); margin: 4px 0 22px; line-height: 1.6;
+  letter-spacing: .08em;
+}
+/* 题记经文 */
+.haldane-wrap .hd-text {
+  background: var(--hd-paper); border-left: 3px solid var(--hd-ink);
+  padding: 12px 18px; margin: 6px 0 22px; color: #3e3e55; font-size: 16px; line-height: 1.75;
+}
+.haldane-wrap .hd-text p { margin: 0; text-align: left; }
+.haldane-wrap .hd-text p + p { margin-top: 8px; }
+.haldane-wrap .commentary-anchor {
+  display: block; height: 0; line-height: 0; margin: 0; padding: 0;
+  overflow: hidden; visibility: hidden; scroll-margin-top: 80px;
+}
+
+/* 作者脚注：kramdown 的 sup.footnote + div.footnotes */
+.haldane-wrap .hd-content sup { line-height: 0; }
+.haldane-wrap .hd-content a.footnote { text-decoration: none; padding: 0 1px; font-size: 12px; }
+.haldane-wrap .hd-content .footnotes {
+  margin-top: 36px; padding-top: 14px; border-top: 1px solid var(--hd-rule);
+  font-size: 14.5px; line-height: 1.7; color: #44444f;
+}
+.haldane-wrap .hd-content .footnotes ol { padding-left: 1.6em; margin: 0; }
+.haldane-wrap .hd-content .footnotes li { margin: 0 0 10px; }
+.haldane-wrap .hd-content .footnotes p { margin: 0 0 8px; }
+.haldane-wrap .hd-content .footnotes a.reversefootnote { text-decoration: none; }
+.haldane-wrap .hd-notehead { font-variant: small-caps; letter-spacing: .05em; color: var(--hd-ink-dark); }
+/* 两份录入本都缺的字（经文出处被导出程序吃掉、脚注正文缺失） */
+.haldane-wrap .hd-lost { color: #8a8a99; border-bottom: 1px dotted #b8b8c4; cursor: help; font-style: italic; }
+.haldane-wrap .hd-edit { color: #8a8a99; font-style: italic; }
+/* 编者补出的经文出处（两份录入本都被吃掉）：方括号 + 另色 */
+.haldane-wrap .hd-ed { color: #8a5a00; background: #fff6e0; border-radius: 2px; padding: 0 1px; cursor: help; font-style: normal; }
+
+/* 章目录页、目录页 */
+.haldane-wrap .hd-chtoc { list-style: none; padding: 0; margin: 10px 0; }
+.haldane-wrap .hd-chtoc li { margin: 0 0 8px; }
+.haldane-wrap .hd-chtoc a { display: block; padding: 9px 13px; border: 1px solid var(--hd-rule);
+  border-radius: 4px; background: var(--hd-paper); text-decoration: none; color: #2a2a33; line-height: 1.5; }
+.haldane-wrap .hd-chtoc a:hover { border-color: var(--hd-ink); color: var(--hd-ink-dark); }
+.haldane-wrap .hd-chtoc .hd-ref { display: block; font-size: 13px; color: #8a8a99; }
+.haldane-wrap .hd-content h2.hd-group { font-size: 14px; text-align: left; letter-spacing: .08em;
+  margin: 28px 0 10px; padding-bottom: 6px; border-bottom: 1px solid var(--hd-rule);
+  font-family: Georgia, "Times New Roman", serif; font-weight: normal; color: var(--hd-ink-dark); }
+.haldane-wrap .hd-contents p { margin: 0 0 10px; text-align: left; padding-left: 2.6em; text-indent: -2.6em; }
+
+.haldane-wrap .hd-stamp {
+  margin-top: 32px; font-size: 12px; color: #9c9cb0; text-align: right;
+  font-family: Georgia, "Times New Roman", serif; letter-spacing: .03em;
+}
+.haldane-wrap :target { background: #fff6cc; transition: background .4s; }
+
+/* 中文页 */
+.haldane-wrap.hd-zh .hd-content {
+  font-family: "Songti SC", STSong, "Noto Serif CJK SC", "Source Han Serif SC", Georgia, serif;
+}
+.haldane-wrap.hd-zh .hd-title { font-family: "Songti SC", STSong, Georgia, serif; }
+/* 中文页：音译专名后的原名对照，小一号灰字 */
+.haldane-wrap.hd-zh .hd-orig { font-size: .82em; color: #8a8a99; margin: 0 1px; font-family: Georgia, "Times New Roman", serif; }
+.haldane-wrap.hd-zh .hd-text { font-family: "Kaiti SC", STKaiti, KaiTi, "Songti SC", serif; }
+
+@media (max-width: 767px) {
+  .haldane-wrap .hd-title { font-size: 24px; }
+  .haldane-wrap .hd-content { font-size: 16px; line-height: 1.8; }
+  .haldane-wrap .hd-contents p { padding-left: 0; text-indent: 0; }
+}
+/* 费尔贝恩：经节起首「Ver. 5.」 */
+.haldane-wrap .hd-ver { font-weight: normal; font-variant: small-caps; letter-spacing: .04em; color: var(--hd-ink-dark); }
+/* 录入本整节缺文 */
+.haldane-wrap .hd-lost { color: #8a8a99; font-style: italic; border-left: 3px solid var(--hd-rule);
+  padding: 6px 0 6px 14px; text-align: left !important; }
+.haldane-wrap .hd-lost .hd-ver { font-style: normal; }
+/* 章内小节标题（导论、附录） */
+.haldane-wrap .hd-content h2.hd-sec { font-family: Georgia, "Times New Roman", serif; font-size: 17px; font-weight: normal;
+  text-align: center; color: var(--hd-ink-dark); margin: 6px 0 22px; letter-spacing: .06em; line-height: 1.6; }
+/* 经文与译文：希腊文 / 英文两栏 */
+.haldane-wrap .hd-par { display: grid; grid-template-columns: 1fr 1fr; gap: 26px; margin: 0 0 30px; }
+.haldane-wrap .hd-par h3 { grid-column: 1 / -1; margin: 6px 0 -10px; font-family: Georgia, serif; font-size: 15px;
+  font-weight: normal; color: var(--hd-ink-dark); letter-spacing: .1em; text-align: center;
+  border-bottom: 1px solid var(--hd-rule); padding-bottom: 6px; }
+.haldane-wrap .hd-par .hd-gk { font-family: "Gentium Plus", "GFS Didot", "Palatino Linotype", Palatino, Georgia, serif;
+  font-size: 16.5px; line-height: 1.9; text-align: left; }
+.haldane-wrap .hd-par .hd-en { text-align: left; }
+.haldane-wrap .hd-par sup.hd-vn { color: var(--hd-ink-dark); font-size: 11px; font-weight: bold; margin-right: 2px; }
+.haldane-wrap .hd-title p { text-align: center !important; margin: 0 0 6px; letter-spacing: .04em; }
+@media (max-width: 767px) {
+  .haldane-wrap .hd-par { grid-template-columns: 1fr; gap: 12px; }
+}
+
+/* 霍尔丹：章首概述（每章开头 Introduction）——左细线、略小一号 */
+.haldane-wrap .hd-intro { border-left: 3px solid var(--hd-rule); padding: 2px 0 2px 14px; margin: 0 0 26px; }
+.haldane-wrap .hd-intro p { font-size: .96em; }
+.haldane-wrap .hd-intro-h { font-size: 13px; letter-spacing: .12em; text-transform: uppercase; color: var(--hd-ink-dark);
+  margin: 0 0 8px !important; font-family: Georgia, serif; }
+/* 节首所讲经文：「Ver. N.」小型大写 + 斜体经文 */
+.haldane-wrap .hd-lemma { margin: 26px 0 10px !important; }
+.haldane-wrap .hd-lemma em { color: #3d3540; }
+/* 录入本缺正文的脚注 */
+.haldane-wrap .hd-fnmiss { color: #8a8a99; font-style: italic; }
+</style>

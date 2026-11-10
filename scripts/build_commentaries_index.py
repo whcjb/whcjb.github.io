@@ -209,6 +209,13 @@ AUTHORS = OrderedDict([
     # 霍志恒：生卒据英文维基（引 Olinger 2018、Dennison）：1862-03-14 生于荷兰弗里斯兰 Heerenveen，
     # 1949-08-13 卒于密歇根大急流城。本站只收单篇论文 Eschatology of the Psalter（PTR 18, 1920），
     # 不是逐章注释——见下面的 ESSAY_ENTRIES / PICK_BOOKS。
+    # 霍尔丹：生卒据英文维基（引 1852 年兄弟合传、1911 年大英百科）：1764-02-28 生于伦敦，1842-12-12 卒于爱丁堡。
+    # 救恩论加尔文主义，教会实践行浸礼、各堂自治（受格拉斯、桑德曼影响），不是长老会——写介绍时照此表述。
+    # 底本 StudyLight / BibleSupport 录入本（第 1–16 章），见 haldane_raw/romans/PROVENANCE.md。
+    ('haldane', dict(name='罗伯特·霍尔丹', short='霍尔丹', en='Robert Haldane',
+                     years='1764–1842', dir='haldane',
+                     work_cn='罗马书释义',
+                     work_en='Exposition of the Epistle to the Romans')),
     ('vos', dict(name='霍志恒', short='霍志恒', en='Geerhardus Vos',
                  years='1862–1949', dir='vos',
                  work_cn='诗篇的末世论',
@@ -303,6 +310,9 @@ AUTHOR_COLORS = {
     # （LCh 40→52, 58→63），与全部作者色、加尔文酒红、马太亨利金、站点蓝、缺字红、两卷合列色最小 ΔE 17.2（达拉谟紫，新约区）。
     # 更早试的梅紫 #6a4c6b 与曼顿只差 12.9，弃用。
     'vos': ('#7b46a3', '#9e61ca'),
+    # 霍尔丹灰紫：卡片明度彩度区间内与全部既有色最小 ΔE 15.3（曼顿、费尔贝恩）；色板已挤。罗马书是合列卡片，
+    # 作者色只在选择页（与贺智深蓝并排）与生平页出现。
+    'haldane': ('#774e76', '#9b6899'),
 }
 
 # 书卷卡片的入口注释家：历代解经版面每卷只显示 links 的第一条（commentaries/index.html
@@ -323,7 +333,8 @@ DUO_BOOKS = {}
 # 一张卡片写几家名字、点进去是选择页（/commentaries/<书>/，每家一张卡片、各用各的主题色）。
 # 与 DUO_BOOKS 不同：那边卡片分色带、各带直接链到各家；这里整张卡片只链到选择页。
 # 诗篇：用户 2026-11-10 指定亚历山大与霍志恒合列，点进去再选；同日马太福音（原 DUO_BOOKS 三家色带）也改用此方案。
-PICK_BOOKS = {'psalms': ('alexander', 'vos'), 'matthew': ('spurgeon', 'dickson', 'alexander')}
+PICK_BOOKS = {'psalms': ('alexander', 'vos'), 'matthew': ('spurgeon', 'dickson', 'alexander'),
+              'romans': ('hodge', 'haldane')}   # 2026-11-10 霍尔丹上线，罗马书两家合列
 # 合列卡片用书卷自己的独立色，不用任何一家的作者色（用户 2026-11-10：「专门为诗篇挑选」；同日「颜色不能太相近」）。
 # 全站作者色已占满色板，与全部颜色都 ≥25 的只剩一族艳粉，挑不出两种；改按**同区可见**比：
 # 诗篇与旧约区卡片（亚历山大、毕列志、赫奇森）、马太福音与新约区全部卡片、各自选择页上的作者卡片，
@@ -333,7 +344,10 @@ PICK_BOOKS = {'psalms': ('alexander', 'vos'), 'matthew': ('spurgeon', 'dickson',
 # 先试过的诗篇覆盆子红 #aa0679、马太深靛紫 #673996 与邻色只差 19–22，被用户指出太近；
 # 马太洋红 #d51296（ΔE 30.9）用户嫌太亮——合列卡片色要落在现有卡片的明度/彩度区间里
 # （c0 明度中位 31、c1 中位 43，c1 彩度中位 38），在此区间内取离全页最远的；赭铜 #7d4e34 与毕列志棕只差 4.9，弃用。
-PICK_COLORS = {'psalms': ('#2c2864', '#4a4382'), 'matthew': ('#764000', '#9b5b15')}
+# 罗马书深紫 LCh (24→36, 55→60, 319°)：与新约区卡片、马太合列色、毕列志棕最小 ΔE 17.8；
+# 铜棕一档（19.3）与马太古铜琥珀同族同一行，弃用。
+PICK_COLORS = {'psalms': ('#2c2864', '#4a4382'), 'matthew': ('#764000', '#9b5b15'),
+               'romans': ('#591c70', '#7b3695')}
 
 PICK_PAGE = '''---
 layout: default
@@ -372,6 +386,8 @@ def duo_geometry(n, colors):
 
 # 逐卷书名（同一注释家的不同分册书名不同时用）。取各卷扉页的实际书名。
 BOOK_TITLES = {
+    ('haldane', 'romans'):     ('罗马书释义',
+                                'Exposition of the Epistle to the Romans'),
     ('hodge', 'romans'):       ('罗马书注释',
                                 'Commentary on the Epistle to the Romans'),
     ('hodge', '1corinthians'): ('哥林多前书注释',
@@ -468,7 +484,7 @@ COMPARE_ACCENT = {
     'adams': '#66666c', 'rollock': '#786000', 'jenkyn': '#cd5f37',
     'candlish': '#b07080', 'fairbairn': '#bc65ac', 'taylor': '#6f77e0',
     'hall': '#769019', 'barlow': '#2b9b8a', 'attersoll': '#8e8cbd', 'dickson': '#8b2499',
-    'petter': '#38a622', 'foote': '#d14457', 'jones': '#9c9066',
+    'petter': '#38a622', 'foote': '#d14457', 'jones': '#9c9066', 'haldane': '#9b6899',
 }
 COMPARE_LABEL = {
     'calvin': '加尔文注释', 'mhenry': '马太亨利注释', 'owen': '约翰欧文注释',
@@ -479,7 +495,7 @@ COMPARE_LABEL = {
     'adams': '亚当斯注释', 'rollock': '罗洛克讲章', 'jenkyn': '詹金讲解',
     'candlish': '坎德利什讲解', 'fairbairn': '费尔贝恩注释', 'taylor': '泰勒注释',
     'hall': '霍尔注释', 'barlow': '巴洛讲解', 'attersoll': '阿特索尔注释', 'dickson': '迪克森简释',
-    'petter': '佩特注释', 'foote': '福特讲义', 'jones': '琼斯简释',
+    'petter': '佩特注释', 'foote': '福特讲义', 'jones': '琼斯简释', 'haldane': '霍尔丹释义',
 }
 
 
@@ -495,7 +511,7 @@ def _chapter_range(d: Path):
 
 # 各家的「原生语种」：加尔文 / 马太亨利 / 毕列志的主目录是中译，
 # 欧文与贺智的主目录是英文原著（中译在子路径里）。
-PRIMARY_LANG = {'calvin': 'zh', 'mhenry': 'zh', 'bridges': 'zh',
+PRIMARY_LANG = {'calvin': 'zh', 'mhenry': 'zh', 'bridges': 'zh', 'haldane': 'en',
                 'owen': 'en', 'hodge': 'en', 'manton': 'en', 'davenant': 'en',
                 'alexander': 'en', 'spurgeon': 'en', 'durham': 'en',
                 'johnstone': 'en', 'perkins': 'en', 'hutcheson': 'en', 'leighton': 'en',

@@ -1,0 +1,92 @@
+---
+layout: default
+---
+{%- comment -%}
+  霍尔丹《罗马书释义》(Robert Haldane, Exposition of the Epistle to the Romans, 1835–39) 书首页。
+
+  ⚠️ 不复用别家 layout：每本书独立样式（用户既定规矩）。骨架取自 fairbairn-book（同为 StudyLight / BibleSupport 录入本）。
+  配色灰紫 #9b6899 / 深端 #774e76：色板已挤，在卡片明度彩度区间内与全部既有色最小 ΔE 15.3（曼顿、费尔贝恩）；
+  罗马书在历代解经是合列卡片（书卷独立色），作者色只在选择页与生平页出现。
+  本书版式要点：一章一页；每章首有章首概述（Introduction）`.hd-intro`；每条注释以「Ver. N.」起段 `.hd-ver`，
+  前面放 commentary-anchor；脚注全书连号 [^fN]，录入本缺正文的 7 条注明。
+{%- endcomment -%}
+
+<div class="container haldane-book{% if page.zh %} hd-zh{% endif %}" style="padding-top: 70px;">
+  <div class="row">
+    <div class="col-lg-9 col-lg-offset-1 col-md-10 col-md-offset-1">
+
+      {% if page.zh %}{% if page.en_url %}<p class="hd-booklang"><a href="{{ site.baseurl }}{{ page.en_url }}">English &rarr;</a></p>{% endif %}
+      {% elsif page.zh_url %}<p class="hd-booklang"><a href="{{ site.baseurl }}{{ page.zh_url }}">中文版 &rarr;</a></p>{% endif %}
+
+      <div class="hd-hero">
+        <h1>{{ page.book_name }}</h1>
+        <p class="hd-hero-author">{{ page.author }}</p>
+        <p class="hd-hero-meta">{{ page.edition }}</p>
+      </div>
+
+      {{ content }}
+
+    </div>
+  </div>
+</div>
+
+<style>
+.haldane-book { --hd-ink: #9b6899; --hd-ink-dark: #774e76; --hd-rule: #f0e2ee; --hd-paper: #fbf7fa; }
+.haldane-book .hd-booklang { text-align: right; margin: 0 0 10px; font-size: 13px; font-family: Georgia, serif; }
+.haldane-book .hd-booklang a { color: var(--hd-ink); border: 1px solid var(--hd-rule);
+  border-radius: 4px; padding: 4px 10px; text-decoration: none; }
+.haldane-book .hd-booklang a:hover { background: var(--hd-ink); color: #fff; }
+/* 书首：不用大色块横幅（用户 2026-10-22），书名 + 作者 + 版本加细线 */
+.haldane-book .hd-hero {
+  margin: 4px 0 22px; padding: 0 0 12px; border-bottom: 2px solid var(--hd-ink);
+  font-family: Georgia, "Times New Roman", "Songti SC", serif;
+}
+.haldane-book .hd-hero h1 { font-family: Georgia, "Times New Roman", "Songti SC", serif; margin: 0 0 4px;
+  font-size: 26px; font-weight: normal; line-height: 1.3; color: var(--hd-ink-dark); }
+.haldane-book .hd-hero-author { margin: 0; font-size: 14.5px; color: #44444f; }
+.haldane-book .hd-hero-meta { margin: 2px 0 0; font-size: 13px; color: #8a8a99; font-style: italic; }
+.haldane-book .hd-group {
+  font-family: Georgia, "Times New Roman", "Songti SC", serif; margin: 30px 0 12px;
+  font-size: 15px; color: var(--hd-ink-dark); letter-spacing: .05em;
+  padding-bottom: 6px; border-bottom: 1px solid var(--hd-rule);
+}
+.haldane-book .hd-toc { list-style: none; padding: 0; margin: 0; display: grid;
+  grid-template-columns: 1fr; gap: 8px; }
+.haldane-book .hd-toc li { margin: 0; }
+.haldane-book .hd-toc .hd-ref { display: block; font-size: 12.5px; color: #8a8a99; margin-top: 2px; }
+.haldane-book .hd-part-sub { margin: -6px 0 12px; font-size: 13px; color: #8a8a99; font-style: italic; font-family: Georgia, serif; }
+.haldane-book .hd-toc a { display: block; padding: 9px 13px; border: 1px solid var(--hd-rule);
+  border-radius: 4px; background: var(--hd-paper); text-decoration: none;
+  font-family: Georgia, "Times New Roman", "Songti SC", serif; font-size: 15px; color: #2a2a33; line-height: 1.45; }
+.haldane-book .hd-toc a:hover { border-color: var(--hd-ink); background: #fff; color: var(--hd-ink-dark); }
+.haldane-book .hd-note { font-family: Georgia, "Times New Roman", "Songti SC", serif; font-size: 13.5px;
+  color: #6f6f85; line-height: 1.8; margin: 34px 0 0; padding-top: 16px; border-top: 1px solid var(--hd-rule); }
+.haldane-book .hd-chgrid { list-style: none; padding: 0; margin: 0; display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(92px, 1fr)); gap: 8px; }
+.haldane-book .hd-chgrid a { display: block; text-align: center; padding: 10px 6px; border: 1px solid var(--hd-rule);
+  border-radius: 4px; background: var(--hd-paper); text-decoration: none; color: #2a2a33;
+  font-family: Georgia, "Times New Roman", "Songti SC", serif; font-size: 15px; }
+.haldane-book .hd-chgrid a:hover { border-color: var(--hd-ink); background: #fff; color: var(--hd-ink-dark); }
+@media (max-width: 767px) {
+  .haldane-book .hd-hero h1 { font-size: 22px; }
+}
+.haldane-book .hd-note p { margin: 0 0 12px; }
+.haldane-book .hd-note-zh { font-family: "Songti SC", STSong, serif; }
+.haldane-book .hd-lost { color: #8a8a99; border-bottom: 1px dotted #b8b8c4; font-style: italic; }
+.haldane-book .hd-ed { color: #8a5a00; background: #fff6e0; border-radius: 2px; padding: 0 1px; font-style: normal; }
+/* 编者改动逐条说明 */
+.haldane-book .hd-edhead { font-family: "Songti SC", STSong, Georgia, serif; font-size: 16px; color: var(--hd-ink-dark); margin: 26px 0 10px; }
+.haldane-book .hd-edtab { width: 100%; border-collapse: collapse; font-size: 13px; line-height: 1.6; margin: 10px 0 16px; }
+.haldane-book .hd-edtab th, .haldane-book .hd-edtab td { border-bottom: 1px solid var(--hd-rule); padding: 6px 6px; vertical-align: top; text-align: left; }
+.haldane-book .hd-edtab th { background: var(--hd-paper); color: var(--hd-ink-dark); white-space: nowrap; }
+.haldane-book .hd-edtab td:first-child, .haldane-book .hd-edtab td:nth-child(2) { white-space: nowrap; }
+.haldane-book .hd-edtab td:nth-child(3), .haldane-book .hd-edtab td:nth-child(4) { font-family: Georgia, serif; }
+.haldane-book .hd-edtab td a { color: var(--hd-ink-dark); }
+.haldane-book .hd-edtab .hd-edgrp td { background: var(--hd-paper); color: var(--hd-ink-dark); font-family: "Songti SC", STSong, serif; padding-top: 10px; }
+@media (max-width: 767px) { .haldane-book .hd-edtab { display: block; overflow-x: auto; } }
+</style>
+<style>
+.haldane-book .hd-siblings { margin: -12px 0 18px; font-size: 13.5px; font-family: Georgia, serif; color: #8a8a99; }
+.haldane-book .hd-siblings a { color: var(--hd-ink-dark); margin-right: 10px; }
+.haldane-book .hd-siblings b { color: var(--hd-ink-dark); margin-right: 10px; font-weight: normal; border-bottom: 2px solid var(--hd-ink); }
+</style>
