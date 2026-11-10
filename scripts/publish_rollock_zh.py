@@ -157,9 +157,40 @@ def publish(book, meta, now):
         body = clean((zh_raw / f'{slug}.md').read_text(encoding='utf-8'))
         body = sect_names.annotate(body, (en / f'{slug}.md').read_text(encoding='utf-8'), 'rl-orig')
         path.write_text('\n'.join(fm) + '\n\n' + body + '\n', encoding='utf-8')
+    chapters_zh(book, en, out, pages, done, meta, now)
     (en / 'index.html').write_text(build_index(book, pages, done), encoding='utf-8')
     print(f'{book}: 发布中文 {len(names)}/{len(pages)} 篇 → {out}')
     return len(names)
+
+
+def chapters_zh(book, en, out, pages, done, meta, now):
+    """章目录页 zh/<章>.md：照英文章目录页（en/<章>.md 的 rl-chtoc）列的讲章次序，只列已译的讲。
+    章目录是导航页、不是正文，不送模型（2026-11-10 用户令补齐辅助页）。"""
+    by = {pg['slug']: pg for pg in pages}
+    chs = sorted(int(f.stem) for f in en.glob('*.md') if f.stem.isdigit())
+    made = []
+    for c in chs:
+        t = (en / f'{c}.md').read_text(encoding='utf-8')
+        slugs = [x for x in re.findall(rf'/rollock/{book}/([\w-]+)/', t) if x in done and x in by]
+        if slugs:
+            made.append((c, slugs, t))
+    for i, (c, slugs, t) in enumerate(made):
+        fm_en = dict(re.findall(r'^(verse_from|verse_to): *(\d+)', t, re.M))
+        items = '\n'.join(f'<li><a href="{{{{ site.baseurl }}}}/rollock/{book}/zh/{x}/">{label(book, by[x])}'
+                          f'<small>{rng_zh(book, by[x])}</small></a></li>' for x in slugs)
+        date = max((meta.get(f'{book}/{x}') or now) for x in slugs)
+        fm = ['---', 'layout: rollock-chapter', f'book_id: {book}', f'book_name: "{BOOK_ZH[book]["name"]}"',
+              f'title: "{BOOK_ZH[book]["ref"]} 第{cn(c)}章"', f'subtitle: "{AUTHOR_EN}"', f'date: {date}',
+              f'chapter: {c}']
+        fm += [f'{k}: {v}' for k, v in fm_en.items()]
+        if i > 0:
+            fm += [f'prev_url: "/rollock/{book}/zh/{made[i - 1][0]}/"',
+                   f'prev_label: "{BOOK_ZH[book]["ref"]} 第{cn(made[i - 1][0])}章"']
+        if i + 1 < len(made):
+            fm += [f'next_url: "/rollock/{book}/zh/{made[i + 1][0]}/"',
+                   f'next_label: "{BOOK_ZH[book]["ref"]} 第{cn(made[i + 1][0])}章"']
+        fm += [f'en_url: "/rollock/{book}/{c}/"', 'zh: true', '---']
+        (out / f'{c}.md').write_text('\n'.join(fm) + f'\n\n<ul class="rl-chtoc">\n{items}\n</ul>\n', encoding='utf-8')
 
 
 def build_index(book, pages, done):

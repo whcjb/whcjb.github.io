@@ -169,6 +169,8 @@ def publish(book, apply, meta, stamp):
                 fm += [f'prev_url: "/rollock/{book}/{ch - 1}/"', f'prev_label: "{cfg["ref"]} {ch - 1}"']
             if ch < nch:
                 fm += [f'next_url: "/rollock/{book}/{ch + 1}/"', f'next_label: "{cfg["ref"]} {ch + 1}"']
+            if (out_dir / 'zh' / f'{slug}.md').exists():          # 中文章目录页（publish_rollock_zh.chapters_zh）
+                fm.append(f'zh_url: "/rollock/{book}/zh/{slug}/"')
             fm.append('---')
             lst = '\n'.join(f'<li><a href="{{{{ site.baseurl }}}}/rollock/{book}/{p["slug"]}/">{p["short"]}'
                             f'<small>{p["rng"]}</small></a></li>' for p in secs)
