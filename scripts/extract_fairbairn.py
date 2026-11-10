@@ -49,6 +49,21 @@ K = 6
 KEEP = {'em', 'strong', 'sup', 'sub'}
 
 
+
+# titus-2 的互联网档案馆快照是「双重编码」存的：希腊文、§ 的 UTF-8 字节被当成 Latin-1 再编码一次，
+# 页面上成了 `ÏÏÎµÏÎ²ÏÏÎ±Ï`、`Â§`（2026-11-10 中译时翻译闸查出，英文版上线时漏了，603 处）。
+# 只挑「Latin-1 高位字符起头、后跟续字节」的片段按 Latin-1→UTF-8 还原，还原不成的原样留着——干净页面无影响。
+_MOJI = re.compile(r'(?:[\u00c2-\u00f4][\u0080-\u00bf]{1,3})+')
+
+
+def demojibake(t: str) -> str:
+    def fix(m):
+        try:
+            return m.group(0).encode('latin-1').decode('utf-8')
+        except UnicodeError:
+            return m.group(0)
+    return _MOJI.sub(fix, t)
+
 def clean_inline(s: str) -> str:
     """录入本段落 HTML → 只留 em/strong/sup/sub 的干净 HTML；修好错层的 em/strong。"""
     s = re.sub(r'<br\s*/?>', ' ', s)
@@ -132,7 +147,7 @@ HEADING_RE = re.compile(r'^(The (First|Second) Epistle (to|of Paul to) (Timothy|
 
 
 def chapter_entries(book, page, ch, idx):
-    t = (SRC / f'{page}-{ch}.html').read_text(encoding='utf-8', errors='ignore')
+    t = demojibake((SRC / f'{page}-{ch}.html').read_text(encoding='utf-8', errors='ignore'))
     i = t.find('<div class="commentaries-entry-div">')
     out = []
     for seg in re.split(r'(?=<div class="commentaries-entry-div">)', t[i:])[1:]:
