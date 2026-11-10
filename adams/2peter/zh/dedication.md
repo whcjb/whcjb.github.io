@@ -5,6 +5,8 @@ book_name: "亚当斯《彼得后书注释》"
 title: "献辞"
 subtitle: "致亨利·马滕爵士（Sir Henry Marten）"
 date: 2026-10-26 17:48
+prev_url: "/adams/2peter/zh/title1/"
+prev_label: "书名页（卷一）"
 next_url: "/adams/2peter/zh/1-1/"
 next_label: "彼得后书 1:1（第 1/2 部分）"
 en_url: "/adams/2peter/dedication/"

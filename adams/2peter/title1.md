@@ -7,6 +7,7 @@ subtitle: "London, 1633"
 date: 2026-10-21 16:31
 next_url: "/adams/2peter/dedication/"
 next_label: "Epistle Dedicatory"
+zh_url: "/adams/2peter/zh/title1/"
 ---
 
 <div class="ad-tp">
