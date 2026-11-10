@@ -7,6 +7,8 @@ subtitle: "Patrick Fairbairn"
 date: 2026-11-10 14:01
 prev_url: "/fairbairn/1timothy/zh/introduction-4/"
 prev_label: "导论　第四节"
+next_url: "/fairbairn/1timothy/zh/1/"
+next_label: "提摩太前书 第一章"
 en_url: "/fairbairn/1timothy/text/"
 zh: true
 ---
