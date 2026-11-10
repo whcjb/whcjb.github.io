@@ -7,6 +7,8 @@ subtitle: "提多生平 · Patrick Fairbairn"
 date: 2026-11-10 13:58
 prev_url: "/fairbairn/1timothy/zh/introduction-3/"
 prev_label: "导论　第三节"
+next_url: "/fairbairn/1timothy/zh/text/"
+next_label: "提摩太前书：原文与译文"
 en_url: "/fairbairn/1timothy/introduction-4/"
 zh: true
 ---
