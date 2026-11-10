@@ -7,6 +7,8 @@ subtitle: "书信的作者 · Patrick Fairbairn"
 date: 2026-11-10 13:53
 prev_url: "/fairbairn/1timothy/zh/preface/"
 prev_label: "序言"
+next_url: "/fairbairn/1timothy/zh/introduction-2/"
+next_label: "导论　第二节"
 en_url: "/fairbairn/1timothy/introduction-1/"
 zh: true
 ---

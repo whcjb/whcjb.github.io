@@ -9,6 +9,7 @@ prev_url: "/fairbairn/1timothy/introduction-1/"
 prev_label: "Introduction § 1"
 next_url: "/fairbairn/1timothy/introduction-3/"
 next_label: "Introduction § 3"
+zh_url: "/fairbairn/1timothy/zh/introduction-2/"
 ---
 
 <h2 class="fb-sec">Time and Places of Writing</h2>
