@@ -5,6 +5,8 @@ book_name: "费尔贝恩《教牧书信》 · 提多书"
 title: "提多书：原文与译文"
 subtitle: "Patrick Fairbairn"
 date: 2026-11-10 14:55
+next_url: "/fairbairn/titus/zh/1/"
+next_label: "提多书 第一章"
 en_url: "/fairbairn/titus/text/"
 zh: true
 ---
