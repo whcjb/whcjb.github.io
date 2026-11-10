@@ -56,7 +56,7 @@ def label(book, pg):
 
 
 def title(book, pg):
-    return label(book, pg) if pg['group'] == 'front' else rng_zh(book, pg)
+    return label(book, pg) if pg['group'] == 'front' or pg['slug'] in FRONT_ZH else rng_zh(book, pg)
 
 
 def subtitle(book, pg):
@@ -176,6 +176,12 @@ def build_index(book, pages, done):
     out.append('<ul class="jw-toc">')
     out.extend(li(pg, f'<small>{rng_zh(book, pg)}</small>') for pg in pages if pg['group'] == 'section')
     out.append('</ul>')
+    back = [pg for pg in pages if pg['group'] == 'back']
+    if back:
+        out.append('<h2 class="jw-group">卷末</h2>')
+        out.append('<ul class="jw-toc">')
+        out.extend(li(pg) for pg in back)
+        out.append('</ul>')
     n = sum(1 for pg in pages if pg['group'] == 'section' and pg['slug'] in done)
     nl = sum(1 for pg in pages if pg['group'] == 'section')
     out.append(f'<p class="jw-note-zh">中译已上线 {n} / {nl} 篇；标「英文」的篇暂只有英文。'

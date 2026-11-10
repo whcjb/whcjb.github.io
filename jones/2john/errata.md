@@ -7,6 +7,7 @@ subtitle: "In Epist. Iohan."
 date: 2026-11-06 18:01
 prev_url: "/jones/2john/1-13/"
 prev_label: "1:13"
+zh_url: "/jones/2john/zh/errata/"
 ---
 
 ## In Epist. Iohan.
