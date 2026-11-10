@@ -153,6 +153,8 @@ def page_md(x, date):
     for k in ('prev', 'next'):
         if x[k]:
             fm += [f'{k}_url: "{url(x[k])}"', f'{k}_label: {yq(x[k]["label"])}']
+    if (OUT / x['book'] / 'zh' / f'{x["slug"]}.md').exists():      # 中译已发布：挂「中文版 →」（publish_fairbairn_zh 产出）
+        fm.append(f'zh_url: "/fairbairn/{x["book"]}/zh/{x["slug"]}/"')
     fm.append('---')
     return '\n'.join(fm) + '\n\n' + x['body'] + '\n'
 
@@ -168,7 +170,9 @@ def index_html(book, pg, units):
     out = ['---', 'layout: fairbairn-book', f'book_id: {book}', f'book_name: "{WORK}"',
            f'title: "{WORK} · {name}"', f'author: "{AUTHOR} (1805–1874)"',
            'edition: "The Greek Text and Translation, with Introduction, Expository Notes, and Dissertations · '
-           'Edinburgh: T. &amp; T. Clark, 1874"', '---', '',
+           'Edinburgh: T. &amp; T. Clark, 1874"',
+           *([f'zh_url: "/fairbairn/{book}/zh/"'] if (OUT / book / 'zh' / 'index.html').exists() else []),
+           '---', '',
            f'<p class="fb-siblings">{sib}</p>', '',
            '<h2 class="fb-group">Preface and Introduction</h2>', '<ul class="fb-toc">']
     out += [li(by[(SHARED, s)]) for s in ['preface'] + [f'introduction-{n}' for n in range(1, 5)]]

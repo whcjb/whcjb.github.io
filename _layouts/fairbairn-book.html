@@ -6,9 +6,12 @@ layout: default
   目录按原书：序言、导论四节 → 本卷经文与译文 → 逐章注释 → 附录 A–C。
 {%- endcomment -%}
 
-<div class="container fairbairn-book" style="padding-top: 70px;">
+<div class="container fairbairn-book{% if page.zh %} fb-zh{% endif %}" style="padding-top: 70px;">
   <div class="row">
     <div class="col-lg-9 col-lg-offset-1 col-md-10 col-md-offset-1">
+
+      {% if page.zh %}{% if page.en_url %}<p class="fb-booklang"><a href="{{ site.baseurl }}{{ page.en_url }}">English &rarr;</a></p>{% endif %}
+      {% elsif page.zh_url %}<p class="fb-booklang"><a href="{{ site.baseurl }}{{ page.zh_url }}">中文版 &rarr;</a></p>{% endif %}
 
       <div class="fb-hero">
         <h1>{{ page.book_name }}</h1>
