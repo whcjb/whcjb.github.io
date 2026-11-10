@@ -75,7 +75,7 @@ SYSTEM = (
     "`i. e.` / `that is` → 即 / 就是\n"
     "8. 拉丁文、希腊文、希伯来文一律保留原文，其后用圆括号附中文译义，如 *Mira res*（奇事）；"
     "**原文紧接着已自己用英文译出的（*Mira res, Evangelista,* a strange thing, O Evangelist!），照译他那句英文，不再另加括注**；"
-    "希腊文、希伯来文逐字照抄，一个字母、一个重音符号都不许改\n"
+    "希腊文、希伯来文逐字照抄，一个字母、一个重音符号都不许改；**原文里没有的希腊文、希伯来文一个字母也不许添**（专名括注只写英文原名，不写希腊文；不替原文补词尾、冠词、介词）\n"
     "9. 圣经书卷名、人名、地名用和合本标准译名：Iohn→约翰，the elect Lady→蒙拣选的太太，Gaius→该犹，"
     "Diotrephes→丢特腓，Demetrius→低米丢，Paul→保罗，Peter→彼得，Iesus→耶稣，Iewes→犹太人，"
     "Gentiles→外邦人，Tyrus→推罗，Sidon→西顿\n"

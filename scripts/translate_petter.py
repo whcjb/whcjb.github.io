@@ -79,7 +79,7 @@ SYSTEM = (
     "7. `&c.` → ……（不作「等等」）；`v.` / `ver.` / `verse` → 第 N 节；`Chap.` → 第 N 章；"
     "`i. e.` / `that is` → 即 / 就是；`viz.` → 就是\n"
     "8. 拉丁文、希腊文、希伯来文一律保留原文，其后用圆括号附中文译义，如 *Tanquam Breviator Ejus*（如同他的节略者）；"
-    "希腊文、希伯来文逐字照抄，一个字母、一个重音符号都不许改\n"
+    "希腊文、希伯来文逐字照抄，一个字母、一个重音符号都不许改；**原文里没有的希腊文、希伯来文一个字母也不许添**（专名括注只写英文原名，不写希腊文；不替原文补词尾、冠词、介词）\n"
     "9. 圣经书卷名、人名、地名用和合本标准译名：Jesus→耶稣，John the Baptist→施洗的约翰，Esaias/Isaiah→以赛亚，"
     "Elias→以利亚，Pharisees→法利赛人，Sadduces→撒都该人，Scribes→文士，Galilee→加利利，Jordan→约旦河，"
     "Capernaum→迦百农，Nazareth→拿撒勒，Judea→犹太，Jerusalem→耶路撒冷，Simon→西门，Andrew→安得烈，"
