@@ -1,0 +1,1 @@
+{"raw": "#1: A", "ans": {"1": "A"}, "qs": [{"kind": "span", "lec": "124", "s": 21808, "e": 21818, "i": 61, "ours": "granduncle", "vlm": "grand-uncle", "box": [255, 821, 2161, 901], "ctx": "od Agrippa, who slew with the sword James the elder—and the ⟦granduncle⟧ of that Agrippa who said to Paul, \" Almost thou persuadest ", "swap": true}]}

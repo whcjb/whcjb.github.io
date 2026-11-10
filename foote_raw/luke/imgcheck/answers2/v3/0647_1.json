@@ -1,0 +1,1 @@
+{"raw": "#1: A", "ans": {"1": "A"}, "qs": [{"kind": "span", "lec": "136", "s": 2178, "e": 2189, "i": 19, "ours": "en veloped", "vlm": "enveloped", "box": [272, 509, 2165, 572], "ctx": "hus we have sometimes seen the natural sun in the firmament ⟦en veloped⟧ in misty vapours, and veiled, for the greater part of the d", "swap": true}]}

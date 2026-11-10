@@ -1,0 +1,1 @@
+{"raw": "#1: A", "ans": {"1": "A"}, "qs": [{"kind": "span", "lec": "043", "s": 4315, "e": 4323, "i": 275, "ours": "seacoast", "vlm": "sea-coast", "box": [264, 2654, 2142, 2732], "ctx": "Nazareth, he came and dwelt in Capernaum, which is upon the ⟦seacoast⟧.\"  <!-- PAGE 31 --> A person of note and of worth, as Jairu", "swap": true}]}

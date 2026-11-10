@@ -1,0 +1,1 @@
+{"raw": "#1: A", "ans": {"1": "A"}, "qs": [{"kind": "span", "lec": "061", "s": 4262, "e": 4268, "i": 333, "ours": "w^hich", "vlm": "which", "box": [363, 3019, 2251, 3096], "ctx": "if he did not express his wonder in words, that a ceremony, ⟦w^hich⟧ he considered so essential, was neglected by one who bore s", "swap": true}]}

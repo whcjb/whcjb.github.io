@@ -1,0 +1,1 @@
+{"raw": "#1: = person,†", "ans": {"1": "= person,†"}, "qs": [{"kind": "span", "lec": "124", "s": 6285, "e": 6293, "i": 376, "ours": "per8on,t", "vlm": "person", "box": [259, 3365, 2149, 3447], "ctx": " of a Gentile. The Jews were forbidden to touch any unclean ⟦per8on,t⟧ and Gentiles were generally considered to be ceremonially u", "swap": true}]}

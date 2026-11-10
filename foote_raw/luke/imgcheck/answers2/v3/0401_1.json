@@ -1,0 +1,1 @@
+{"raw": "#1: A", "ans": {"1": "A"}, "qs": [{"kind": "span", "lec": "118", "s": 32149, "e": 32160, "i": 160, "ours": "desirous of", "vlm": "desirousof", "box": [257, 1771, 2150, 1854], "ctx": " and Judah shall not vex Ephraim.\"—\" Let us not,\" then, \"be ⟦desirous of⟧ vain-glory, provoking one another, envying one another.\"  <", "swap": true}]}

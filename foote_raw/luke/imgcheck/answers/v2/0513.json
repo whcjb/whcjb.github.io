@@ -1,0 +1,1 @@
+{"raw": "The print reads \"invitations, \" How\" with a comma, then a space, then an opening quote, then a space. B is \"invitations, \"How\", which has no space after the quote. A uses ^ rather than a comma. The spot is the comma, the space and the opening quote, with the extra space before How.\n\n#1: B", "ans": {"1": "B"}}

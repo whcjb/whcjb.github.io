@@ -119,10 +119,9 @@ def page_pairs():
             pg = pn.get(leaf, '')
             if pg not in segs:
                 continue
-            ours = []
-            for lec, s, e in segs[pg]:
-                for (ts_, te_, t) in A.body_tokens(texts[lec][s:e]):
-                    ours.append((lec, s + ts_, s + te_, t))
+            ours = V.page_ours(segs, pn, leaf, texts) if V.PREV else [
+                (lec, s + ts_, s + te_, t) for lec, s, e in segs[pg]
+                for (ts_, te_, t) in A.body_tokens(texts[lec][s:e])]
             vs = clean_vlm(f.read_text(encoding='utf-8'))
             vt = [(m.start(), m.end(), m.group(0)) for m in V.VWORD.finditer(vs)]
             lo, hi = V.trim([t for *_, t in ours], [x[2] for x in vt])   # 只判真在本页、对得上的那截

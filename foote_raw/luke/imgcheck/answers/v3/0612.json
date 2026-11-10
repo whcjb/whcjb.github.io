@@ -1,0 +1,1 @@
+{"raw": "Both show opening double quotes “ printed as low-ish 66. B uses straight \" which represents the quote mark.\n\n#1: B\n#2: B", "ans": {"1": "B", "2": "B"}}

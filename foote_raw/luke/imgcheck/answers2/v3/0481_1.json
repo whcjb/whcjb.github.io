@@ -1,0 +1,1 @@
+{"raw": "#1: A", "ans": {"1": "A"}, "qs": [{"kind": "span", "lec": "124", "s": 15791, "e": 15798, "i": 316, "ours": "say est", "vlm": "sayest", "box": [255, 2880, 2152, 2961], "ctx": "e said unto him, Art thou a king then? Jesus answered, Thou ⟦say est⟧ that I am a king.\" This part of John's account corresponds ", "swap": true}]}

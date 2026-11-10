@@ -1,0 +1,1 @@
+{"raw": "#1: A", "ans": {"1": "A"}, "qs": [{"kind": "span", "lec": "117", "s": 16079, "e": 16089, "i": 300, "ours": "pre vious", "vlm": "previous", "box": [256, 2742, 2152, 2826], "ctx": "articularly, it serves to increase *knowledge,* both by the ⟦pre vious⟧ examination whether we discern the Lord's body, and also by", "swap": true}]}

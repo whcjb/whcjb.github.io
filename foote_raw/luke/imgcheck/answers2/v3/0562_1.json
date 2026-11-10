@@ -1,0 +1,1 @@
+{"raw": "#1: A", "ans": {"1": "A"}, "qs": [{"kind": "span", "lec": "130", "s": 3844, "e": 3849, "i": 301, "ours": "w^ith", "vlm": "with", "box": [284, 2716, 2201, 2796], "ctx": "s and cruelties to which he was exposed; his being numbered ⟦w^ith⟧ the transgressors; the drink offered to him; the precise wo", "swap": true}]}

@@ -1,0 +1,1 @@
+{"raw": "#1: A", "ans": {"1": "A"}, "qs": [{"kind": "span", "lec": "119", "s": 32267, "e": 32276, "i": 90, "ours": "would est", "vlm": "wouldest", "box": [250, 1065, 2156, 1142], "ctx": " to prove thee, to know what was in thy heart, whether thou ⟦would est⟧ keep his commandments or no. And he humbled thee, and suffe", "swap": true}]}

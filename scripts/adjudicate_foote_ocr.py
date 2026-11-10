@@ -235,15 +235,22 @@ def apply_spans(path):
     for lec, rs in by.items():
         f = SRC / f'{lec}.md'
         text = f.read_text(encoding='utf-8')
-        for old, new in rs:
-            n = text.count(old)
-            if n == 1:
-                text = text.replace(old, new)
-                done += 1
-            elif n == 0 and new in text:
-                already += 1
-            else:
-                bad.append((lec, old, n))
+        # 一时不唯一的（旧表 `*Let*` 要等新表那条 ` tidings. *Let* all` 先落才唯一）押后重试，直到一轮没进展
+        while rs:
+            later = []
+            for old, new in rs:
+                n = text.count(old)
+                if n == 1:
+                    text = text.replace(old, new)
+                    done += 1
+                elif n == 0 and new in text:
+                    already += 1
+                else:
+                    later.append((old, new))
+            if len(later) == len(rs):
+                bad += [(lec, o, text.count(o)) for o, _ in later]
+                break
+            rs = later
         f.write_text(text, encoding='utf-8')
     print(f'整串落盘 {done} 条；已落过 {already}；定位失败 {len(bad)} {bad[:5]}', file=sys.stderr)
     if bad and os.environ.get('FOOTE_FAILLOG'):

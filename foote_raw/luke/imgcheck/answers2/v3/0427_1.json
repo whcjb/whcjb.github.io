@@ -1,0 +1,1 @@
+{"raw": "#1: = was", "ans": {"1": "= was"}, "qs": [{"kind": "span", "lec": "120", "s": 20483, "e": 20487, "i": 183, "ours": "teas", "vlm": "was as", "box": [185, 1768, 2076, 1848], "ctx": "*being in cm agony, he prayed more earnestly; and his sweat ⟦teas⟧ 08 it were great drops of blood falling down to the ground.", "swap": true}]}

@@ -1,0 +1,1 @@
+{"raw": "#1: A", "ans": {"1": "A"}, "qs": [{"kind": "span", "lec": "075", "s": 27860, "e": 27865, "i": 37, "ours": "th^re", "vlm": "there", "box": [313, 651, 2134, 728], "ctx": "s, \" *And, behold, there are last which shall be first, and ⟦th^re⟧ are first which shall be last.\"* Neither the admission, nor", "swap": true}]}

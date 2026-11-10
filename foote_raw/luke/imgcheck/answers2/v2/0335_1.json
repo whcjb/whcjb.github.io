@@ -1,0 +1,1 @@
+{"raw": "#1: A", "ans": {"1": "A"}, "qs": [{"kind": "span", "lec": "062", "s": 32793, "e": 32799, "i": 16, "ours": "word s", "vlm": "words", "box": [250, 519, 2084, 599], "ctx": "type, the words of the Psalmist: \" Every day they wrest my ⟦word s⟧; all their thoughts are against me for evil. They gather th", "swap": true}]}

@@ -1,0 +1,1 @@
+{"raw": "#1: = my feet.", "ans": {"1": "= my feet."}, "qs": [{"kind": "span", "lec": "037", "s": 22629, "e": 22635, "i": 9, "ours": "myfeeU", "vlm": "my feet", "box": [116, 459, 2010, 547], "ctx": "<^ / *entered into thine house, thou gavest me no water for ⟦myfeeU⟧\"* To present water to guests for washing their feet when th", "swap": true}]}

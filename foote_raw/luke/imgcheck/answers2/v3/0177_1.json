@@ -1,0 +1,1 @@
+{"raw": "#1: A", "ans": {"1": "A"}, "qs": [{"kind": "span", "lec": "103", "s": 4589, "e": 4601, "i": 8, "ours": "supposi-tion", "vlm": "supposition", "box": [254, 415, 2157, 497], "ctx": "if these actions were different, as seems the more probable ⟦supposi-tion⟧, they were so similar as to be mutually illustrative of eac", "swap": true}]}

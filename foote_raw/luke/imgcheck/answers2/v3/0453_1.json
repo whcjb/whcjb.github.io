@@ -1,0 +1,1 @@
+{"raw": "#1: A", "ans": {"1": "A"}, "qs": [{"kind": "span", "lec": "122", "s": 13460, "e": 13469, "i": 237, "ours": "an^ other", "vlm": "another", "box": [340, 2140, 2144, 2218], "ctx": "49 --> Verse 29: *^^ And about the space of one hour after^ ⟦an^ other⟧* (man) *confidently affirmed, saying, Of a truth this fello", "swap": false}]}

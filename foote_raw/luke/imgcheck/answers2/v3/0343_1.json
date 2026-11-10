@@ -1,0 +1,1 @@
+{"raw": "#1: B", "ans": {"1": "B"}, "qs": [{"kind": "span", "lec": "114", "s": 35620, "e": 35626, "i": 303, "ours": "w^hich", "vlm": "which", "box": [193, 2755, 2094, 2836], "ctx": "distance; but you must be aware that there is another event ⟦w^hich⟧ will be equally decisive of your fate, an event which canno", "swap": false}]}

@@ -21,6 +21,7 @@
 import argparse
 import csv
 import json
+import os
 import re
 import sys
 from collections import Counter, defaultdict
@@ -42,6 +43,9 @@ LOG = ROOT / 'logs' / 'foote_vlm.tsv'
 RULES = RAW / 'vlm_fixes.tsv'
 TOKEN = A.TOKEN
 PAGE = re.compile(r'<!-- PAGE ([^>]*?) ?-->')
+
+
+PREV = os.environ.get('FOOTE_PREV', '1') == '1'     # 量覆盖用：FOOTE_PREV=0 回到只拿本页那截
 
 
 def leaf_pages(vol):
@@ -91,6 +95,21 @@ def page_segments(vol):
     return segs
 
 
+def page_ours(segs, pn, leaf, texts):
+    """第 leaf 张图对应的我们的词：本页那截，前面再接上一页那截。
+    标记只打在段首，上一页那截一直伸到本页第一个段首——本页页首到第一个段首的字在上一页那截里，
+    只拿本页那截比，这些字对不上本页转录、又被 trim 从上一页切掉，哪一页也没比过（第 45 讲 `seated hy`）。
+    两截都给，由 trim 留下真在本页、对得上的那段；同一截借给几页的，按 (讲, 起) 去重。"""
+    out, seen = [], set()
+    for pg in (pn.get(leaf - 1), pn.get(leaf)):
+        for lec, s, e in segs.get(pg, []) if pg else []:
+            for (ts_, te_, t) in A.body_tokens(texts[lec][s:e]):
+                if (lec, s + ts_) not in seen:
+                    seen.add((lec, s + ts_))
+                    out.append((lec, s + ts_, s + te_, t))
+    return out
+
+
 def clean_vlm(t):
     lines = [ln for ln in t.splitlines() if not ln.startswith('[HEAD]')]
     body = []
@@ -124,6 +143,9 @@ def vtoks(s):
     return [(m.start(), m.end(), m.group(0)) for m in VWORD.finditer(s)]
 
 
+EDGE = True    # 页边外放：两证人层（改字/标点/字形）开；单证人看图层关——页边对位常错（`sinner`↔`I`），模型照错位答 B
+
+
 def trim(ow, vw):
     """本页转录在我们这截里真正对得上的范围 [lo, hi)：首尾两个 ≥4 词的相等块之间，且相等词占一半以上；否则 (0, 0)。
     页段是按 PAGE 标记推的（讲首页、整页在段中的页都是借来的），不对齐就判会把别页的字与转录凑成「两家一致」：
@@ -135,6 +157,11 @@ def trim(ow, vw):
     lo, hi = bl[0].a, bl[-1].a + bl[-1].size
     if sum(b.size for b in sm.get_matching_blocks() if lo <= b.a < hi) < 0.5 * (hi - lo):
         return 0, 0
+    # 页首页尾 1–3 个词（第 45 讲页 72 起首 `and *mj* blood`）落在第一个 ≥4 词块之外：转录在块外还有几个词，
+    # 我们这边就往外放几个（至多 3），按位置与转录逐词对上；放多了的对不上，自然不成候选
+    if EDGE:
+        lo -= min(bl[0].b, 3, lo)
+        hi += min(len(vw) - (bl[-1].b + bl[-1].size), 3, len(ow) - hi)
     return lo, hi
 
 
@@ -235,10 +262,9 @@ def main():
             if pg not in segs:
                 stat['页对不上'] += 1
                 continue
-            ours = []
-            for lec, s, e in segs[pg]:
-                for (ts_, te_, t) in A.body_tokens(texts[lec][s:e]):
-                    ours.append((lec, s + ts_, s + te_, t))
+            ours = page_ours(segs, pn, leaf, texts) if PREV else [
+                (lec, s + ts_, s + te_, t) for lec, s, e in segs[pg]
+                for (ts_, te_, t) in A.body_tokens(texts[lec][s:e])]
             vs = clean_vlm(f.read_text(encoding='utf-8'))
             vt = vtoks(vs)
             lo, hi = trim([t for *_, t in ours], [x[2] for x in vt])

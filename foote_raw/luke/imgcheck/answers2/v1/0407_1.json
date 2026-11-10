@@ -1,0 +1,1 @@
+{"raw": "#1: B", "ans": {"1": "B"}, "qs": [{"kind": "span", "lec": "028", "s": 20662, "e": 20670, "i": 113, "ours": "they are", "vlm": "theyare", "box": [262, 1138, 2173, 1216], "ctx": " and proud; those who, in reference to divine things, think ⟦they are⟧ \"rich and increased in goods, and stand in need of nothing,", "swap": false}]}

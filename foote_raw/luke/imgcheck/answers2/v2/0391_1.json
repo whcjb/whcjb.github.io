@@ -1,0 +1,1 @@
+{"raw": "#1: A", "ans": {"1": "A"}, "qs": [{"kind": "span", "lec": "067", "s": 82, "e": 90, "i": 7, "ours": "Father^s", "vlm": "Father's", "box": [206, 1167, 2051, 1280], "ctx": "XII. 32-34.**  > *\"* Pear not, little flock; for it is your ⟦Father^s⟧ good pleasure to give you the kingdom. 33. Sell that ye hav", "swap": true}]}

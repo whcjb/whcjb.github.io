@@ -1,0 +1,1 @@
+{"raw": "#1: A", "ans": {"1": "A"}, "qs": [{"kind": "span", "lec": "128", "s": 11770, "e": 11778, "i": 396, "ours": "afl&xing", "vlm": "affixing", "box": [258, 3607, 2154, 3690], "ctx": "ow the crime for which condemned persons were to suffer, by ⟦afl&xing⟧ an inscription to the top of the cross, and, sometimes, by ", "swap": true}]}

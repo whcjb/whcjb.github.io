@@ -1,0 +1,1 @@
+{"raw": "#1: A", "ans": {"1": "A"}, "qs": [{"kind": "span", "lec": "003", "s": 22291, "e": 22294, "i": 449, "ours": "b^t", "vlm": "but", "box": [242, 3840, 2142, 3921], "ctx": "lal-hash-baz, of whom we read at length in the 8th chapter, ⟦b^t⟧ to whom there could hardly be any reference in the 7th chap", "swap": true}]}

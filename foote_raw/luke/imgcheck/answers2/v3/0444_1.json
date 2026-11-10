@@ -1,0 +1,1 @@
+{"raw": "#1: A", "ans": {"1": "A"}, "qs": [{"kind": "span", "lec": "121", "s": 24185, "e": 24196, "i": 27, "ours": "an^ steered", "vlm": "answered", "box": [414, 579, 2232, 658], "ctx": "E 440 --> The account, in Luke, proceeds thus: *^\"And Jesus ⟦an^ steered⟧ and said, Suffer ye thus far. And he touched his ear, and h", "swap": true}]}

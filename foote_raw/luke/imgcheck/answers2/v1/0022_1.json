@@ -1,0 +1,1 @@
+{"raw": "#1: = instruc-^ tion", "ans": {"1": "= instruc-^ tion"}, "qs": [{"kind": "span", "lec": "001", "s": 27995, "e": 28009, "i": 45, "ours": "instrue-^ tion", "vlm": "instruction", "box": [269, 771, 2172, 853], "ctx": "f great consequence to aim at a constant course of rational ⟦instrue-^ tion⟧; it being of much more importance that the affections shoul", "swap": false}]}

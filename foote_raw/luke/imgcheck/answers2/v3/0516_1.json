@@ -1,0 +1,1 @@
+{"raw": "#1: B", "ans": {"1": "B"}, "qs": [{"kind": "span", "lec": "127", "s": 2294, "e": 2304, "i": 54, "ours": "cutthroats", "vlm": "cut-throats", "box": [253, 791, 2170, 868], "ctx": "d of robbers arose in Jerusalem, called Sicarii (assassins, ⟦cutthroats⟧), who slew men in the day-time, and in the midst of the cit", "swap": false}]}

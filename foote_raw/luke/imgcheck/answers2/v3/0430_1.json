@@ -1,0 +1,1 @@
+{"raw": "#1: = my", "ans": {"1": "= my"}, "qs": [{"kind": "span", "lec": "120", "s": 28426, "e": 28429, "i": 411, "ours": "ray", "vlm": "O my", "box": [341, 3533, 2244, 3614], "ctx": "say, \" My soul is exceeding sorrowful, even unto death\"—\" 0 ⟦ray⟧ Father, if it be possible, let this cup pass from me?\" What", "swap": false}]}

@@ -1,0 +1,1 @@
+{"raw": "#1: A", "ans": {"1": "A"}, "qs": [{"kind": "span", "lec": "123", "s": 3581, "e": 3595, "i": 238, "ours": "blasphem/ously", "vlm": "blasphemously", "box": [253, 2358, 2164, 2437], "ctx": " Prophesy, who is it that smote thee? And many other things ⟦blasphem/ously⟧ spake they against him.\"* Matthew and Mark introduce an acc", "swap": true}]}

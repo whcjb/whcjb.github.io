@@ -1,0 +1,1 @@
+{"raw": "#1: = me.\"†", "ans": {"1": "= me.\"†"}, "qs": [{"kind": "span", "lec": "119", "s": 17938, "e": 17944, "i": 141, "ours": "nie.\"f", "vlm": "me", "box": [253, 1378, 2106, 1456], "ctx": "ut my fear in their hearts, that they shall not depart from ⟦nie.\"f⟧  <!-- PAGE 406 --> This doctrine may also be inferred *from", "swap": true}]}

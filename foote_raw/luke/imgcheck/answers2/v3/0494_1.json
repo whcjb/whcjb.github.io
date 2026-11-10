@@ -1,0 +1,1 @@
+{"raw": "#1: A", "ans": {"1": "A"}, "qs": [{"kind": "span", "lec": "125", "s": 13985, "e": 13994, "i": 408, "ours": "Sup pose", "vlm": "Suppose", "box": [247, 3549, 2164, 3636], "ctx": "man mind, and for the ordinary providence and grace of God. ⟦Sup pose⟧ a man should dream that he was drowned in crossing a river,", "swap": true}]}

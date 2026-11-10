@@ -1,0 +1,1 @@
+{"raw": "#1: A", "ans": {"1": "A"}, "qs": [{"kind": "span", "lec": "128", "s": 29653, "e": 29658, "i": 135, "ours": "Today", "vlm": "To-day", "box": [344, 1378, 2151, 1456], "ctx": "37 --> A strong emphasis is here to be laid on the word, \" *⟦Today⟧\"* which is to be immediately connected, not with what goes ", "swap": true}]}
