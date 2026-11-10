@@ -9,6 +9,7 @@ prev_url: "/adams/2peter/3-18-5/"
 prev_label: "2 Peter 3:18 (part 5 of 5)"
 next_url: "/adams/2peter/errata/"
 next_label: "Errata"
+zh_url: "/adams/2peter/zh/alphabetical-index/"
 ---
 
 ## AN ALPHABETICALL DIRECTION TO THE PRINCIPALL points of Doctrine contained in this *EXPOSITION.*
