@@ -7,6 +7,8 @@ subtitle: "写作的时间与地点 · Patrick Fairbairn"
 date: 2026-11-10 13:56
 prev_url: "/fairbairn/1timothy/zh/introduction-1/"
 prev_label: "导论　第一节"
+next_url: "/fairbairn/1timothy/zh/introduction-3/"
+next_label: "导论　第三节"
 en_url: "/fairbairn/1timothy/introduction-2/"
 zh: true
 ---

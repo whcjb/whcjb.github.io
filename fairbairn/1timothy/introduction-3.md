@@ -9,6 +9,7 @@ prev_url: "/fairbairn/1timothy/introduction-2/"
 prev_label: "Introduction § 2"
 next_url: "/fairbairn/1timothy/introduction-4/"
 next_label: "Introduction § 4"
+zh_url: "/fairbairn/1timothy/zh/introduction-3/"
 ---
 
 <h2 class="fb-sec">Notices of Timothy</h2>
