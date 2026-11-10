@@ -7,6 +7,7 @@ subtitle: "Patrick Fairbairn"
 date: 2026-10-28 11:07
 next_url: "/fairbairn/1timothy/introduction-1/"
 next_label: "Introduction § 1"
+zh_url: "/fairbairn/1timothy/zh/preface/"
 ---
 
 <p>THIS expository volume on the Pastoral Epistles had its origin in a department of labour connected with my official duties. Till lately, it was for many years my lot to conduct a class of Pastoral Theology for advanced students preparing for the work of the Christian ministry; and a portion of the time during each session was usually devoted to the exposition and illustration of more or less of those Epistles. Practically, it was found impossible to overtake more, in any particular session, than a comparatively limited portion of them. But as comments on the whole had been prepared, I have thought that the publication of them might be of some advantage to students of Sacred Scripture, especially to those who are either in the position of candidates for the ministry, or without lengthened experience in the discharge of its duties. The requirements and interests of such have been kept specially in view throughout the volume. On that account also, particular respect has been had, both in the course of exposition, and in the introduction and supplementary dissertations, to the objections which have been urged latterly, indeed, with great boldness and persistency against the apostolic authorship and divine inspiration of these portions of New Testament Scripture.</p>

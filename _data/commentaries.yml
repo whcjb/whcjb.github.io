@@ -581,7 +581,7 @@ books:
     testament: nt
     chapters: 6
     links:
-      - {author: fairbairn, path: "/fairbairn/1timothy/", url_tpl: "/fairbairn/1timothy/__CH__/", title_cn: "提摩太前书注释", title_en: "The Pastoral Epistles: The Greek Text and Translation, with Introduction, Expository Notes, and Dissertations", c0: "#8e3f82", c1: "#bc65ac"}
+      - {author: fairbairn, path: "/fairbairn/1timothy/zh/", url_tpl: "/fairbairn/1timothy/zh/__CH__/", title_cn: "提摩太前书注释", title_en: "The Pastoral Epistles: The Greek Text and Translation, with Introduction, Expository Notes, and Dissertations", c0: "#8e3f82", c1: "#bc65ac"}
   - id: 2timothy
     name: "提摩太后书"
     en: "2 Timothy"
