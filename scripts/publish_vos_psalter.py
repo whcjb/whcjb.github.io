@@ -65,6 +65,7 @@ def main():
         sys.exit(f'注号不连续或与注文不符：{refs}')
 
     def pb(t):
+        t = re.sub(r'(⟦p\d+⟧)([,.;:!?’”"\']+)', r'\2\1', t)    # 标记挪到紧跟的标点之后，免得「词 p.2 ,」
         return re.sub(r'⟦p(\d+)⟧', r'<span class="vs-pb" id="p\1" data-p="\1"></span>', t)
 
     def he(t):                                         # 希伯来文包一层，给字体和方向
