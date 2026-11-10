@@ -9,6 +9,7 @@ prev_url: "/fairbairn/1timothy/introduction-3/"
 prev_label: "Introduction § 3"
 next_url: "/fairbairn/1timothy/text/"
 next_label: "1 Timothy: Text"
+zh_url: "/fairbairn/1timothy/zh/introduction-4/"
 ---
 
 <h2 class="fb-sec">Notices of Titus</h2>

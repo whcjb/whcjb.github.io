@@ -7,6 +7,8 @@ subtitle: "提摩太生平 · Patrick Fairbairn"
 date: 2026-11-10 13:57
 prev_url: "/fairbairn/1timothy/zh/introduction-2/"
 prev_label: "导论　第二节"
+next_url: "/fairbairn/1timothy/zh/introduction-4/"
+next_label: "导论　第四节"
 en_url: "/fairbairn/1timothy/introduction-3/"
 zh: true
 ---
