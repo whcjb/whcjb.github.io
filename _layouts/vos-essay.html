@@ -13,7 +13,6 @@ layout: default
   - 1920 年原刊页码 → `.vs-pb`（空锚点，id `#pN`，行内小灰字）。
   - 希伯来文 → `.vs-he`（右到左）。
   - 脚注走 kramdown 的 [^n]，样式在下面 .footnotes。
-  中文页若日后出，再接 scripture-popup（只给中文页）。
 {%- endcomment -%}
 
 <div class="container vos-wrap{% if page.zh %} vs-zh{% endif %}" style="padding-top: 70px;">
@@ -40,6 +39,14 @@ layout: default
     </div>
   </div>
 </div>
+
+{%- comment -%}
+  经文引用弹层：只给中文页（模块认中文书卷名）。accent/vnum 写字面量（Jekyll 3 include 参数不接受变量），
+  与下方 --vs-ink / --vs-ink-dark 同值，改色要一起改。
+{%- endcomment -%}
+{% if page.zh %}
+{% include scripture-popup.html container_selector=".vs-content" accent="#9e61ca" vnum="#6a3a8f" slide="down" %}
+{% endif %}
 
 <style>
 .vos-wrap {
@@ -110,6 +117,11 @@ layout: default
   font-family: Georgia, "Times New Roman", serif; letter-spacing: .03em;
 }
 .vos-wrap :target { background: #f2ecf2; transition: background .4s; }
+
+/* 中文页 */
+.vos-wrap.vs-zh .vs-content { font-family: "Songti SC", STSong, "Noto Serif CJK SC", "Source Han Serif SC", Georgia, serif; }
+.vos-wrap.vs-zh .vs-content p { text-indent: 2em; }
+.vos-wrap.vs-zh .vs-title { font-family: "Songti SC", STSong, Georgia, serif; letter-spacing: .12em; }
 
 @media (max-width: 767px) {
   .vos-wrap .vs-title { font-size: 24px; }

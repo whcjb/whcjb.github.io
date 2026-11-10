@@ -81,6 +81,7 @@ def main():
            'author_en: "Geerhardus Vos"',
            'description: "Geerhardus Vos, Eschatology of the Psalter (Princeton Theological Review, January 1920). Full text with footnotes, collated against the original printing."',
            f'date: {DATE}',
+           *(['zh_url: /vos/psalter/zh/'] if (ROOT / 'vos' / 'psalter' / 'zh' / 'index.md').exists() else []),
            '---',
            '']
     out.append('<div class="vs-source" markdown="0">'
