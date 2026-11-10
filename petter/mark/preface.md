@@ -9,6 +9,7 @@ prev_url: "/petter/mark/title/"
 prev_label: "Title Page"
 next_url: "/petter/mark/alphabetical-table/"
 next_label: "An Alphabetical Table"
+zh_url: "/petter/mark/zh/preface/"
 ---
 
 ### <span class="pt-pb" data-facs="3"></span><span class="pt-pb" data-facs="3"></span>THE *Preface to the Pious Reader.*

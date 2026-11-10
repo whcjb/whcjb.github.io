@@ -5,8 +5,8 @@ book_name: "佩特《马可福音注释》"
 title: "书名页"
 subtitle: "伦敦，1661"
 date: 2026-11-10 16:25
-next_url: "/petter/mark/zh/1-1/"
-next_label: "马可福音 1:1"
+next_url: "/petter/mark/zh/preface/"
+next_label: "致敬虔读者的序"
 en_url: "/petter/mark/title/"
 zh: true
 ---
