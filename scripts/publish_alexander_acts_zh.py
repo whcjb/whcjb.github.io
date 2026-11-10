@@ -29,7 +29,8 @@ def em(t: str) -> str:
 
 
 def label(slug: str) -> str:
-    return {'preface': '著者序', 'introduction': '导论'}.get(slug, f'使徒行传 {slug}')
+    return {'preface': '著者序', 'introduction': '导论', 'title-1': '书名页（上卷）',
+            'title-2': '书名页（下卷）'}.get(slug, f'使徒行传 {slug}')
 
 
 CMP = ROOT / '_data' / 'compare_sources.yml'
@@ -56,7 +57,7 @@ def compare_range(chs):
 
 def main():
     meta = json.loads(META.read_text(encoding='utf-8')) if META.exists() else {}
-    order = ['preface', 'introduction'] + [str(n) for n in range(1, 29)]
+    order = ['title-1', 'preface', 'introduction'] + [str(n) for n in range(1, 13)] + ['title-2'] + [str(n) for n in range(13, 29)]
     have = [s for s in order if (SRC / f'{s}.md').exists()]
     OUT.mkdir(parents=True, exist_ok=True)
     for s in have:

@@ -6,7 +6,7 @@
 
 骨架照搬 publish_rollock_zh.py。英文版一节一页，中文版同样：zh/1-<节>.md、卷首 zh/<篇名>.md、章目录 zh/1.md。
 与英文版共用 jones-chapter / jones-book 两个 layout，靠 `zh: true` 切换（中文页才挂经文引用弹层）。
-卷末勘误表（errata）是印本页行号对照，不译、中文版不出。
+卷末勘误表（errata）原先不译；2026-11-10 用户令也译出。
 
 - 上下篇导航**只在已译的篇之间串**（指向未译的篇等于送读者去 404）。
 - date 取 zh_meta.json 里该篇**实际译完的时刻**（键 "<book>/<slug>"）；取不到才沿用已发布文件原值，再取不到才用当前时间。
@@ -32,11 +32,12 @@ META = RAW / 'zh_meta.json'
 AUTHOR_ZH = '威廉·琼斯'
 AUTHOR_EN = 'William Jones'   # 页面副标题一律写英文原名（用户 2026-10-16 定）
 FM_DATE = re.compile(r'^date:\s*(.+)$', re.M)
-SKIP = {'errata'}
+SKIP = set()   # 2026-11-10 用户令勘误表也译
 
 FRONT_ZH = {'title': ('书名页', '伦敦，1635'),
-            'dedication': ('献辞', '致托马斯·杰尔明爵士（Sir Thomas Jermyn）'),
-            'to-the-reader': ('致基督徒读者', '')}
+            'dedication': ('献辞', '致托马斯·杰明爵士（Sir Thomas Jermyn）'),
+            'to-the-reader': ('致基督徒读者', ''),
+            'errata': ('勘误表', '印本页行号对照')}
 BOOK_ZH = {
     '2john': dict(name='琼斯《约翰二书简释》', ref='约翰二书'),
     '3john': dict(name='琼斯《约翰三书简释》', ref='约翰三书'),
@@ -51,7 +52,7 @@ def rng_zh(book, pg):
 
 
 def label(book, pg):
-    return FRONT_ZH[pg['slug']][0] if pg['group'] == 'front' else pg['short']
+    return FRONT_ZH[pg['slug']][0] if pg['group'] == 'front' or pg['slug'] in FRONT_ZH else pg['short']
 
 
 def title(book, pg):
@@ -59,7 +60,7 @@ def title(book, pg):
 
 
 def subtitle(book, pg):
-    return FRONT_ZH[pg['slug']][1] if pg['group'] == 'front' else AUTHOR_EN
+    return FRONT_ZH[pg['slug']][1] if pg['group'] == 'front' or pg['slug'] in FRONT_ZH else AUTHOR_EN
 
 
 # 原书分条「2. …」各自成段——段首「数字 + 点 + 空格」会被 kramdown 当成有序列表。转义那个点。
