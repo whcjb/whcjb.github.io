@@ -9,6 +9,7 @@ prev_url: "/petter/mark/preface/"
 prev_label: "The Preface to the Pious Reader"
 next_url: "/petter/mark/1-1/"
 next_label: "1:1"
+zh_url: "/petter/mark/zh/alphabetical-table/"
 ---
 
 ### <span class="pt-pb" data-facs="6"></span>*AN* Alphabetical TABLE wherein is comprised the principal matter contained in the Commentary upon the Gospel of St. *MARK.*

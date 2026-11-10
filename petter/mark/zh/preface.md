@@ -7,8 +7,8 @@ subtitle: "作者之弟约翰·佩特（John Petter），1661"
 date: 2026-11-10 16:30
 prev_url: "/petter/mark/zh/title/"
 prev_label: "书名页"
-next_url: "/petter/mark/zh/1-1/"
-next_label: "马可福音 1:1"
+next_url: "/petter/mark/zh/alphabetical-table/"
+next_label: "主题索引"
 en_url: "/petter/mark/preface/"
 zh: true
 ---
