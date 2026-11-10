@@ -10,6 +10,10 @@
 # 用 `--config _config.yml,_config_lite.yml` 叠加（Jekyll 合并时数组整体覆盖，所以要带上原 exclude）。
 set -e
 cd "$(dirname "$0")/.."
+# 必须是 UTF-8 环境：nohup / 后台启动时没有 LANG，Ruby 把路径当 ASCII-8BIT，仓库里有中文文件名
+# （_posts/馬太福音…、根目录 mp3），一有变动文件监视线程就抛 Encoding::CompatibilityError 死掉，
+# 进程还在、端口还通，但之后改什么都不再重建（2026-11-10 踩过）。
+export LANG=en_US.UTF-8 LC_ALL=en_US.UTF-8 RUBYOPT="-EUTF-8:UTF-8"
 PORT=${PORT:-4002}
 KEEP=" commentaries $* "
 python3 - "$KEEP" <<'PY'

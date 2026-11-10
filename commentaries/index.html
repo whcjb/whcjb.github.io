@@ -188,9 +188,10 @@ description: 加尔文与马太亨利之外的历代改革宗注释——欧文�
     .cx-book-btn--duo { padding: 10px 11px 28px; }
   }
   /* 尚无别家注释：虚线描边，不可点（同加尔文主页 --pending） */
-  /* 合列卡片的几家名字：不折行，卡片高度与其他卡片一致（用户 2026-11-10：马太三家名字折成两行把卡片撑大了） */
+  /* 合列卡片的几家名字：不折行，卡片高度与其他卡片一致（用户 2026-11-10：马太三家名字折成两行把卡片撑大了）；
+     几家之间用斜线分隔，不用间隔号——单作者卡片的全名里本身就有「·」（约瑟·亚历山大），用「·」分家会看成一个人名 */
   .cx-book-meta--pick { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; letter-spacing: 0; font-size: 10.5px; }
-  .cx-book-meta--pick .cx-sep { font-family: Georgia, serif; margin: 0 2px; }
+  .cx-book-meta--pick .cx-sep { font-family: Georgia, serif; margin: 0 .5px; opacity: .75; }
   .cx-book-btn--none {
     background: transparent; border: 1px dashed var(--cx-pending-border);
     color: var(--cx-pending-text) !important; cursor: default;
@@ -329,7 +330,7 @@ description: 加尔文与马太亨利之外的历代改革宗注释——欧文�
           {%- for l in b.links limit: b.pick_n -%}
             {%- assign au_ = author_map | where: "id", l.author | first -%}
             {%- if forloop.first -%}{%- assign pk_names = au_.short -%}
-            {%- else -%}{%- assign pk_names = pk_names | append: '<span class="cx-sep">·</span>' | append: au_.short -%}{%- endif -%}
+            {%- else -%}{%- assign pk_names = pk_names | append: '<span class="cx-sep">/</span>' | append: au_.short -%}{%- endif -%}
           {%- endfor -%}
           <a href="{{ site.baseurl }}/commentaries/{{ b.id }}/"
              class="cx-book-btn cx-book-btn--has"
