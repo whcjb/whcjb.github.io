@@ -348,7 +348,7 @@ books:
     pick_c1: "#4a4382"
     links:
       - {author: alexander, path: "/alexander/psalms/zh/", url_tpl: "/alexander/psalms/zh/__CH__/", title_cn: "诗篇注释", title_en: "The Psalms Translated and Explained", c0: "#5f2323", c1: "#7d2f2f"}
-      - {author: vos, path: "/vos/psalter/", url_tpl: "/vos/psalter/__CH__/", title_cn: "诗篇的末世论（论文）", title_en: "Eschatology of the Psalter", c0: "#b455d4", c1: "#d171ee"}
+      - {author: vos, path: "/vos/psalter/", url_tpl: "/vos/psalter/__CH__/", title_cn: "诗篇的末世论", title_en: "Eschatology of the Psalter", c0: "#7b46a3", c1: "#9e61ca"}
   - id: proverbs
     name: "箴言"
     en: "Proverbs"

@@ -299,9 +299,10 @@ AUTHOR_COLORS = {
     # 琼斯橄榄褐：LCh 网格 (60, 24, 95°)，亮端与既有各色及加尔文酒红、马太亨利金、站点 Hux 蓝、缺字红
     # 最小 ΔE 24.5（CIE76）。色板已挤，两端同时 ≥ 20 的找不到，同佩特先例只比亮端；粉红一档 25.4 太跳，弃用。
     'jones': ('#685e37', '#9c9066'),
-    # 霍志恒丁香紫：LCh 网格搜过，亮端与既有各色及加尔文酒红、马太亨利金、站点 Hux 蓝、缺字红最小 ΔE 27.5
-    # （迪克森紫）。先试的梅紫 #6a4c6b 与曼顿只差 12.9，弃用。色板已挤，同佩特先例只比亮端（深端对迪克森 18.4）。
-    'vos': ('#b455d4', '#d171ee'),
+    # 霍志恒紫：原丁香紫 #b455d4/#d171ee 用户嫌太亮（2026-11-10），同色相（314°）压到其他卡片的明度/彩度区间
+    # （LCh 40→52, 58→63），与全部作者色、加尔文酒红、马太亨利金、站点蓝、缺字红、两卷合列色最小 ΔE 17.2（达拉谟紫，新约区）。
+    # 更早试的梅紫 #6a4c6b 与曼顿只差 12.9，弃用。
+    'vos': ('#7b46a3', '#9e61ca'),
 }
 
 # 书卷卡片的入口注释家：历代解经版面每卷只显示 links 的第一条（commentaries/index.html
@@ -383,7 +384,7 @@ BOOK_TITLES = {
                                 'The Gospel of the Kingdom'),
     ('durham', 'revelation'):  ('启示录注释',
                                 'A Commentary upon the Book of the Revelation'),
-    ('vos', 'psalms'):         ('诗篇的末世论（论文）',
+    ('vos', 'psalms'):         ('诗篇的末世论',
                                 'Eschatology of the Psalter'),
     ('alexander', 'psalms'):   ('诗篇注释',
                                 'The Psalms Translated and Explained'),
