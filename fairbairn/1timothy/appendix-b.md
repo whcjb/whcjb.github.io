@@ -9,6 +9,7 @@ prev_url: "/fairbairn/1timothy/appendix-a/"
 prev_label: "Appendix A"
 next_url: "/fairbairn/1timothy/appendix-c/"
 next_label: "Appendix C"
+zh_url: "/fairbairn/1timothy/zh/appendix-b/"
 ---
 
 <h2 class="fb-sec">On the Meaning of the Expression “Husband of One Wife,” in 1 Timothy 3:2 ; 1 Timothy 3:12 , Titus 1:6</h2>

@@ -7,6 +7,8 @@ subtitle: "福音时代的特别见证（提摩太前书 2:6） · Patrick Fairb
 date: 2026-11-10 15:02
 prev_url: "/fairbairn/1timothy/zh/6/"
 prev_label: "提摩太前书 第六章"
+next_url: "/fairbairn/1timothy/zh/appendix-b/"
+next_label: "附录 B"
 en_url: "/fairbairn/1timothy/appendix-a/"
 zh: true
 ---
