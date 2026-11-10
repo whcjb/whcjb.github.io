@@ -316,12 +316,30 @@ LEAD_AUTHOR = {'titus': 'taylor', '2timothy': 'barlow'}
 # （commentaries/index.html 的 .cx-book-btn--duo）。links 前 n 条按这里的次序排；yml 里写 duo: true、
 # duo_n，以及 duo_seams（每道交界的位置与混色）、duo_bands（每条色带的点击区与作者名位置），模板只管循环。
 # 马太福音：用户 2026-11-03 指定司布真与迪克森合用一张卡片；2026-11-04 加上亚历山大，三家合一。
-DUO_BOOKS = {'matthew': ('spurgeon', 'dickson', 'alexander')}
+# 2026-11-10 用户令马太福音也改成 PICK_BOOKS 方案（独立书卷色 + 选择页），这里清空；模板里的色带分支保留备用。
+DUO_BOOKS = {}
 
 # 一张卡片写几家名字、点进去是选择页（/commentaries/<书>/，每家一张卡片、各用各的主题色）。
 # 与 DUO_BOOKS 不同：那边卡片分色带、各带直接链到各家；这里整张卡片只链到选择页。
-# 诗篇：用户 2026-11-10 指定亚历山大与霍志恒合列，点进去再选。
-PICK_BOOKS = {'psalms': ('alexander', 'vos')}
+# 诗篇：用户 2026-11-10 指定亚历山大与霍志恒合列，点进去再选；同日马太福音（原 DUO_BOOKS 三家色带）也改用此方案。
+PICK_BOOKS = {'psalms': ('alexander', 'vos'), 'matthew': ('spurgeon', 'dickson', 'alexander')}
+# 合列卡片用书卷自己的独立色，不用任何一家的作者色（用户 2026-11-10：「专门为诗篇挑选」；同日「颜色不能太相近」）。
+# 全站作者色已占满色板，与全部颜色都 ≥25 的只剩一族艳粉，挑不出两种；改按**同区可见**比：
+# 诗篇与旧约区卡片（亚历山大、毕列志、赫奇森）、马太福音与新约区全部卡片、各自选择页上的作者卡片，
+# 外加加尔文酒红、马太亨利金、站点 Hux 蓝、缺字红、历代解经墨绿；两卷之间另要 ΔE ≥ 45。
+#   诗篇深靛蓝   LCh (20→32, 40, 300°)  同区最小 ΔE 45.6
+#   马太福音洋红 LCh (48→60, 79, 345°)  同区最小 ΔE 30.9（新约区作者多，其余色相都 < 26）
+# 先试过的诗篇覆盆子红 #aa0679、马太深靛紫 #673996 与邻色只差 19–22，被用户指出太近。
+PICK_COLORS = {'psalms': ('#2c2864', '#4a4382'), 'matthew': ('#d51296', '#fa46b6')}
+
+PICK_PAGE = '''---
+layout: default
+title: {cn} · 历代解经
+description: 「历代解经」{cn}条目：{names}，选择进入。
+---
+{{%- comment -%}} 由 scripts/build_commentaries_index.py 生成（PICK_BOOKS），勿手改。 {{%- endcomment -%}}
+{{% include commentary-pick.html book="{bid}" %}}
+'''
 
 # 单篇论文（没有逐章页面）：has_content 认不出来，在这里登记 {作者: {书卷: 入口}}。
 # 不进对比抽屉（compare_sources 只收有章节的目录）。
@@ -821,7 +839,9 @@ def main():
             lines += ['    duo_bands:']
             lines += [f'      - {{clip: {yaml_escape(x["clip"])}, label: {x["label"]}}}' for x in bands]
         if pick:
-            lines += ['    pick: true', f'    pick_n: {len(pick)}']
+            pc0, pc1 = PICK_COLORS[bid]
+            lines += ['    pick: true', f'    pick_n: {len(pick)}',
+                      f'    pick_c0: {yaml_escape(pc0)}', f'    pick_c1: {yaml_escape(pc1)}']
         lines.append('    links:')
         for aid, path, ov_cn, ov_en, note in entries:
             # 中英书名都**按卷**生成，一一对应。曾经中文一律输出各家的总书名
@@ -869,6 +889,13 @@ def main():
 
     out = ROOT / '_data' / 'commentaries.yml'
     out.write_text('\n'.join(lines) + '\n', encoding='utf-8')
+    # 合列书卷的选择页入口
+    for bid, aids in PICK_BOOKS.items():
+        cn = next(c for b, c, _, _ in BOOKS if b == bid)
+        names = '、'.join(AUTHORS[a]['name'] for a in aids)
+        pp = ROOT / 'commentaries' / bid / 'index.html'
+        pp.parent.mkdir(parents=True, exist_ok=True)
+        pp.write_text(PICK_PAGE.format(cn=cn, names=names, bid=bid), encoding='utf-8')
 
     # 对比注释数据源（见 build_compare_sources 上方说明）
     cs = ROOT / '_data' / 'compare_sources.yml'

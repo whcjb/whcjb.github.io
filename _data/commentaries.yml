@@ -344,6 +344,8 @@ books:
     chapters: 150
     pick: true
     pick_n: 2
+    pick_c0: "#2c2864"
+    pick_c1: "#4a4382"
     links:
       - {author: alexander, path: "/alexander/psalms/zh/", url_tpl: "/alexander/psalms/zh/__CH__/", title_cn: "诗篇注释", title_en: "The Psalms Translated and Explained", c0: "#5f2323", c1: "#7d2f2f"}
       - {author: vos, path: "/vos/psalter/", url_tpl: "/vos/psalter/__CH__/", title_cn: "诗篇的末世论（论文）", title_en: "Eschatology of the Psalter", c0: "#b455d4", c1: "#d171ee"}
@@ -474,15 +476,10 @@ books:
     en: "Matthew"
     testament: nt
     chapters: 28
-    duo: true
-    duo_n: 3
-    duo_seams:
-      - {t: 0.3333, top: 37.33, bot: 29.33, mix: "#351a2c"}
-      - {t: 0.6667, top: 70.67, bot: 62.67, mix: "#461538"}
-    duo_bands:
-      - {clip: "polygon(0% 0, 37.33% 0, 29.33% 100%, 0% 100%)", label: 14.66}
-      - {clip: "polygon(37.33% 0, 70.67% 0, 62.67% 100%, 29.33% 100%)", label: 46.0}
-      - {clip: "polygon(70.67% 0, 100% 0, 100% 100%, 62.67% 100%)", label: 81.34}
+    pick: true
+    pick_n: 3
+    pick_c0: "#d51296"
+    pick_c1: "#fa46b6"
     links:
       - {author: spurgeon, path: "/spurgeon/matthew/zh/", url_tpl: "/spurgeon/matthew/zh/__CH__/", title_cn: "马太福音注释", title_en: "The Gospel of the Kingdom", c0: "#3a3018", c1: "#4a3b22"}
       - {author: dickson, path: "/dickson/matthew/", url_tpl: "/dickson/matthew/__CH__/", title_cn: "马太福音简释", title_en: "A Brief Exposition of the Evangel of Jesus Christ according to Matthew", c0: "#661b6f", c1: "#8b2499"}

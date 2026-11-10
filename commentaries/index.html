@@ -188,7 +188,6 @@ description: 加尔文与马太亨利之外的历代改革宗注释——欧文�
     .cx-book-btn--duo { padding: 10px 11px 28px; }
   }
   /* 尚无别家注释：虚线描边，不可点（同加尔文主页 --pending） */
-  .cx-book-btn--pick .cx-book-name, .cx-book-btn--pick .cx-book-name-en, .cx-book-btn--pick .cx-book-meta { text-shadow: 0 1px 2px rgba(0,0,0,.28); }
   .cx-book-btn--none {
     background: transparent; border: 1px dashed var(--cx-pending-border);
     color: var(--cx-pending-text) !important; cursor: default;
@@ -320,21 +319,18 @@ description: 加尔文与马太亨利之外的历代改革宗注释——欧文�
           </div>
           {%- elsif b.pick and b.links.size >= b.pick_n -%}
           {%- comment -%}
-            几家合列、点进去再选（build_commentaries_index.py 的 PICK_BOOKS）：卡片斜分成几块，
-            各填一家的主题色；整张卡片链到 /commentaries/<书>/ 选择页。
+            几家合列、点进去再选（build_commentaries_index.py 的 PICK_BOOKS）：卡片用书卷自己的独立色
+            （PICK_COLORS，不是哪一家的作者色），写几家的名字；整张卡片链到 /commentaries/<书>/ 选择页。
           {%- endcomment -%}
-          {%- assign pk_bg = "" -%}{%- assign pk_names = "" -%}{%- assign pk_n = b.pick_n | times: 1.0 -%}
+          {%- assign pk_names = "" -%}
           {%- for l in b.links limit: b.pick_n -%}
             {%- assign au_ = author_map | where: "id", l.author | first -%}
-            {%- assign lo = forloop.index0 | divided_by: pk_n | times: 100 | round: 2 -%}
-            {%- assign hi = forloop.index | divided_by: pk_n | times: 100 | round: 2 -%}
-            {%- capture seg -%}{{ l.c0 }} {{ lo }}%, {{ l.c1 }} {{ hi }}%{%- endcapture -%}
-            {%- if forloop.first -%}{%- assign pk_bg = seg -%}{%- assign pk_names = au_.short -%}
-            {%- else -%}{%- assign pk_bg = pk_bg | append: ", " | append: seg -%}{%- assign pk_names = pk_names | append: " · " | append: au_.short -%}{%- endif -%}
+            {%- if forloop.first -%}{%- assign pk_names = au_.short -%}
+            {%- else -%}{%- assign pk_names = pk_names | append: " · " | append: au_.short -%}{%- endif -%}
           {%- endfor -%}
           <a href="{{ site.baseurl }}/commentaries/{{ b.id }}/"
-             class="cx-book-btn cx-book-btn--has cx-book-btn--pick"
-             style="background: linear-gradient(115deg, {{ pk_bg }});"
+             class="cx-book-btn cx-book-btn--has"
+             style="--c0: {{ b.pick_c0 }}; --c1: {{ b.pick_c1 }};"
              title="{{ b.name }} · {{ pk_names }}">
             <span class="cx-book-name">{{ b.name }}</span>
             <span class="cx-book-name-en">{{ b.en }}</span>
