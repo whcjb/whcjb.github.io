@@ -9,6 +9,7 @@ prev_url: "/adams/2peter/2-10-3/"
 prev_label: "2 Peter 2:10 (part 3 of 3)"
 next_url: "/adams/2peter/2-11/"
 next_label: "2 Peter 2:11"
+zh_url: "/adams/2peter/zh/title2/"
 ---
 
 <div class="ad-tp">
