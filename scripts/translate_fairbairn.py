@@ -31,17 +31,23 @@ import translate_filibi as tf          # noqa: E402
 import translate_alexander_acts as T   # noqa: E402  复用全部质检闸与 run_section 骨架
 
 ROOT = Path(__file__).resolve().parent.parent
-BOOK = '1timothy'
-SRC = ROOT / 'fairbairn' / BOOK
 RAW = ROOT / 'fairbairn_raw' / 'pastoral'
-OUT_DIR = RAW / 'zh_chapters' / BOOK
 CACHE = RAW / 'zh_cache'
-META = RAW / 'zh_meta.json'
+# 卷由 --book 选（默认提前）；两卷可各开一路并行：译完时刻各记一个文件，免得两个进程同时改一个 json 互相覆盖
+BOOK = '1timothy'
+for _i, _a in enumerate(sys.argv):
+    if _a == '--book' and _i + 1 < len(sys.argv):
+        BOOK = sys.argv[_i + 1]
+SRC = ROOT / 'fairbairn' / BOOK
+OUT_DIR = RAW / 'zh_chapters' / BOOK
+META = RAW / ('zh_meta.json' if BOOK == '1timothy' else f'zh_meta_{BOOK}.json')
 KEY_NS = 'FAIRBAIRN_PASTORAL::'
 MAX_CHARS = 3200
 
-SLUGS = (['preface'] + [f'introduction-{n}' for n in range(1, 5)] + ['text']
-         + [str(c) for c in range(1, 7)] + [f'appendix-{L}' for L in 'abc'])
+NCH = {'1timothy': 6, 'titus': 3, '2timothy': 4}[BOOK]
+# 序言、导论、附录三卷共用，放在提前目录下，只随提前译
+SLUGS = ((['preface'] + [f'introduction-{n}' for n in range(1, 5)] if BOOK == '1timothy' else []) + ['text']
+         + [str(c) for c in range(1, NCH + 1)] + ([f'appendix-{L}' for L in 'abc'] if BOOK == '1timothy' else []))
 
 SYSTEM = (
     "你是一位精通希腊文与改革宗解经传统的中文译者，正在翻译帕特里克·费尔贝恩（Patrick Fairbairn, 1805–1874，"
@@ -243,11 +249,13 @@ def autopublish(slug: str) -> None:
             print(f'    [autopublish] 发布失败 {r.stderr[-300:]}', flush=True)
             return
         paths = ['fairbairn', 'fairbairn_raw/pastoral/zh_chapters', 'fairbairn_raw/pastoral/zh_cache',
-                 'fairbairn_raw/pastoral/zh_meta.json', 'fairbairn_raw/pastoral/en_meta.json',
+                 'fairbairn_raw/pastoral/zh_meta.json', f'fairbairn_raw/pastoral/zh_meta_{BOOK}.json',
+                 'fairbairn_raw/pastoral/en_meta.json',
                  'fairbairn_raw/pastoral/zh_translate_issues.log', '_data/commentaries.yml', '_data/compare_sources.yml']
         paths = [p for p in paths if (ROOT / p).exists()]
         subprocess.run(['git', 'add', '--', *paths], cwd=ROOT, check=False, timeout=120)
-        c = subprocess.run(['git', 'commit', '-q', '-m', f'feat(fairbairn): 教牧书信中译 · 提前 {slug}（自动发布）\n\n'
+        bk = {'1timothy': '提前', 'titus': '提多', '2timothy': '提后'}[BOOK]
+        c = subprocess.run(['git', 'commit', '-q', '-m', f'feat(fairbairn): 教牧书信中译 · {bk} {slug}（自动发布）\n\n'
                             'Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>', '--', *paths],
                            cwd=ROOT, capture_output=True, text=True, timeout=120)
         if c.returncode == 0:
@@ -264,6 +272,7 @@ def main():
     ap.add_argument('--resume', action='store_true')
     ap.add_argument('--dry-run', action='store_true')
     ap.add_argument('--no-publish', action='store_true')
+    ap.add_argument('--book', default='1timothy', choices=['1timothy', 'titus', '2timothy'])
     a = ap.parse_args()
     tf.SYSTEM = SYSTEM
     slugs = SLUGS if a.all else a.section
