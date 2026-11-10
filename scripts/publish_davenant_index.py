@@ -151,6 +151,8 @@ def main():
         if i + 1 < len(chain):
             fm += [f'next_url: "{url(chain[i+1])}"',
                    f'next_label: "{PAGES[chain[i+1]][1]}"']
+        if (OUT / slug / 'zh' / 'index.md').exists():     # translate_davenant_aux.py 产出的中文页
+            fm.append(f'zh_url: "{url(k)}zh/"')
         fm.append('---')
         lead = LEAD_BIO if k == 'index-biographical' else LEAD
         body = [f'<p class="dv-idx-lead">{cn} · {lead}</p>'] + render(sec)
