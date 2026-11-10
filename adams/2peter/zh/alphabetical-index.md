@@ -7,6 +7,8 @@ subtitle: "按字母排列的要点索引"
 date: 2026-11-10 16:06
 prev_url: "/adams/2peter/zh/3-18-5/"
 prev_label: "彼得后书 3:18（第 5/5 部分）"
+next_url: "/adams/2peter/zh/errata/"
+next_label: "勘误表"
 en_url: "/adams/2peter/alphabetical-index/"
 zh: true
 ---
