@@ -9,7 +9,9 @@
 {%- assign author_map = site.data.commentaries.authors -%}
 
 <style>
-  .cxp-wrap { --cxp-ink: #3a342c; --cxp-ink-light: #8a8275; --cxp-rule: #d4c5a8;
+  /* 卡片尺寸、网格、字号一律照「历代解经」首页（commentaries/index.html 的 .cx-book-grid / .cx-book-btn），
+     宽高比与首页一致（用户 2026-11-10）；类名 cxp- 前缀，改这里不波及首页。 */
+  .cxp-wrap { --cxp-ink: #3a342c; --cxp-ink-light: #8a8275;
     font-family: 'Source Han Serif SC', 'Noto Serif SC', 'Songti SC', serif; color: var(--cxp-ink); }
   body:has(.cxp-wrap) { background-color: #faf7f0; }
   .cxp-back { font-size: 13px; margin: 6px 0 18px; }
@@ -18,26 +20,31 @@
   .cxp-head { text-align: center; margin: 0 0 26px; }
   .cxp-head h1 { font-size: 26px; letter-spacing: .3em; text-indent: .3em; margin: 0; font-weight: 600; }
   .cxp-head .cxp-en { font-family: Georgia, serif; font-style: italic; font-size: 13px; color: var(--cxp-ink-light); margin-top: 4px; }
-  .cxp-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 14px; }
-  .cxp-grid > div { display: flex; flex-direction: column; }
-  .cxp-card { flex: 1; display: flex; flex-direction: column; padding: 18px 20px 16px; min-height: 150px; border-radius: 4px;
-    color: #fff !important; text-decoration: none !important; background: linear-gradient(135deg, var(--c0), var(--c1));
-    box-shadow: 0 1px 3px rgba(45,74,58,.14); transition: transform .15s ease, box-shadow .15s ease, filter .2s ease; }
-  .cxp-card:hover { transform: translateY(-1px); box-shadow: 0 5px 12px rgba(45,74,58,.26); filter: brightness(.9); }
-  .cxp-au { font-size: 19px; letter-spacing: .06em; }
-  .cxp-au-en { font-family: Georgia, serif; font-size: 12.5px; opacity: .82; margin-top: 2px; }
-  .cxp-work { font-size: 15px; margin-top: 14px; }
-  .cxp-work-en { font-family: Georgia, serif; font-style: italic; font-size: 12.5px; opacity: .82; margin-top: 2px; }
-  .cxp-go { margin-top: auto; padding-top: 12px; font-size: 12px; opacity: .8; letter-spacing: .05em; }
-  .cxp-card:hover .cxp-go { opacity: 1; }
-  .cxp-bio { display: block; text-align: right; font-size: 12px; margin-top: 6px; color: var(--cxp-ink-light); }
-  .cxp-bio a { color: var(--cxp-ink-light); }
-  @media (max-width: 600px) { .cxp-head h1 { font-size: 22px; } .cxp-card { min-height: 128px; } }
+  .cxp-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 10px; }
+  .cxp-card { display: flex; flex-direction: column; justify-content: center; padding: 12px 14px; min-height: 82px;
+    border-radius: 3px; color: #fff !important; text-decoration: none !important; border: 1px solid transparent;
+    background: linear-gradient(135deg, var(--c0), var(--c1)); box-shadow: 0 1px 3px rgba(45,74,58,.14);
+    transition: transform .15s ease, box-shadow .15s ease, filter .2s ease; }
+  .cxp-card:hover { transform: translateY(-1px); box-shadow: 0 5px 12px rgba(45,74,58,.26); filter: brightness(.82); }
+  .cxp-au { font-size: 15px; line-height: 1.3; letter-spacing: .02em; }
+  .cxp-au-en { font-family: Georgia, 'Times New Roman', serif; font-style: italic; font-size: 11px; line-height: 1.25;
+    margin-top: 3px; opacity: .72; letter-spacing: .02em; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .cxp-work { font-size: 11px; margin-top: 4px; letter-spacing: .04em; opacity: .78;
+    white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .cxp-card:hover .cxp-work { opacity: .95; }
+  .cxp-bios { margin-top: 18px; font-size: 12px; color: var(--cxp-ink-light); }
+  .cxp-bios a { color: var(--cxp-ink-light); margin-right: 14px; }
+  @media (max-width: 768px) {
+    .cxp-head h1 { font-size: 22px; }
+    .cxp-grid { grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); gap: 8px; }
+    .cxp-card { min-height: 74px; padding: 10px 11px; }
+    .cxp-au { font-size: 14px; }
+  }
 </style>
 
 <div class="container cxp-wrap" style="padding-top: 40px;">
   <div class="row">
-    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+    <div class="col-lg-10 col-lg-offset-1 col-md-12">
       <div class="cxp-back"><a href="{{ site.baseurl }}/commentaries/">&larr; 历代解经</a></div>
       <div class="cxp-head">
         <h1>{{ book.name }}</h1>
@@ -46,16 +53,17 @@
       <div class="cxp-grid">
         {%- for l in book.links -%}
         {%- assign au = author_map | where: "id", l.author | first -%}
-        <div>
-          <a class="cxp-card" href="{{ site.baseurl }}{{ l.path }}" style="--c0: {{ l.c0 }}; --c1: {{ l.c1 }};">
-            <span class="cxp-au">{{ au.name }}</span>
-            <span class="cxp-au-en">{{ au.en }}{% if au.years != "" %} · {{ au.years }}{% endif %}</span>
-            <span class="cxp-work">《{{ l.title_cn }}》</span>
-            {%- if l.title_en != "" %}<span class="cxp-work-en">{{ l.title_en }}</span>{% endif %}
-            <span class="cxp-go">进入 &rsaquo;</span>
-          </a>
-          <span class="cxp-bio"><a href="{{ site.baseurl }}/commentaries/authors/{{ au.id }}/">{{ au.short }}生平 &rsaquo;</a></span>
-        </div>
+        <a class="cxp-card" href="{{ site.baseurl }}{{ l.path }}" style="--c0: {{ l.c0 }}; --c1: {{ l.c1 }};"
+           title="{{ au.name }} · 《{{ l.title_cn }}》{% if l.title_en != '' %} · {{ l.title_en }}{% endif %}">
+          <span class="cxp-au">{{ au.name }}</span>
+          <span class="cxp-au-en">{{ au.en }}</span>
+          <span class="cxp-work">《{{ l.title_cn }}》</span>
+        </a>
+        {%- endfor -%}
+      </div>
+      <div class="cxp-bios">生平：
+        {%- for l in book.links -%}{%- assign au = author_map | where: "id", l.author | first -%}
+        <a href="{{ site.baseurl }}/commentaries/authors/{{ au.id }}/">{{ au.short }}</a>
         {%- endfor -%}
       </div>
     </div>
