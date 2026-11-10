@@ -9,6 +9,7 @@
     python3 scripts/foote_symbols.py --apply         # 游离符号逐个取证（symbol_fixes.tsv）
     python3 scripts/adjudicate_foote_ocr.py --apply --vlm  # 第 ③ 层：整页转录＋tesseract 同位一致（vlm_fixes.tsv）
     python3 scripts/foote_punct.py --apply           # 第 ③ 层·标点：逐缝两家一致（punct_fixes.tsv）
+    python3 scripts/foote_glyphs.py --apply          # 撇号 / æ 连写 / 多余斜体 / 断词（glyph_fixes.tsv）
     python3 scripts/publish_foote_en.py              # 试跑（自检）
     python3 scripts/publish_foote_en.py --apply
 

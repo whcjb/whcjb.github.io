@@ -348,6 +348,20 @@ K 断词未接（`be- -lieveth`）；L 漏逗号；M 书帖签名进注区（`VO
 **其余各类**须每页都有第三证人：已转录 866 页之外的 1086 页（tess 文本 >300 字的页）续转录（`transcribe_pages2.json`，单路守护，
 `logs/foote_transcribe2.log`）；转录完再做逐词（F/G）与逐缝标点（B/C/D/E/I/L）、斜体（H）、æ（J）、断词（K）的两家一致判读。
 
+**G/J/H/K 字形类（`scripts/foote_glyphs.py`，`glyph_fixes.tsv`，链条排在 `foote_punct.py --apply` 之后，2026-11-10）**：
+- **G 撇号**（`Master s`）：转录同位读 `X's`、tesseract 同位也读出 `X's` 才落；tesseract 不一致的记 `G?`。
+- **J æ/œ**（`Caesar`→`Cæsar`、`Phoenicia`→`Phœnicia`、`Irenaeus`→`Irenæus`）：tesseract 全书读不出 æ，只有转录读得出，
+  按单证人看图：3 处裁原生分辨率图（含 tesseract 读成平写 `Caesars`/`Caesar` 的两处），印面全是连写。
+- **H 多余斜体**（`*We*`）：我们整段 `*…*` 每个词都与转录同位、转录里一个也不是斜体，才去星号；部分斜体（边界不同）记 `H?` 不动。
+  tesseract 无斜体信息，看图 8 处（very×2、Let、my、mercy、more、after my、spake）印面全是正体。多与 OCR 残字同现（`*oi*`、`*mk*`）。
+- **K 断词**（`follow- ing`、`be- -lieveth`）：多在页缝，三条字流都对不上，按全书语料定：整词是真词且他处出现过、连字符形 0 次→并词；
+  连字符形他处出现过、整词 0 次、两截都是真词→留连字符去空格（`self-righteous`、`wine-press`）；其余 76 处（后半截有残字
+  `uni- Tcrsally`、破折号读成连字符 `against- God`、两形都未见 `simple- hearted`）记 `K?` 不动。
+- 规则逐讲从后往前生成、每条两头扩到本讲唯一，表**不排序**（同讲后一条的唯一性依赖前一条已改）；`--rules` 与旧表合并，在已落盘产物上重跑不丢旧条。
+- 首轮（已转录 1123 页）：H 134、G 48、J 23、K 120＋8，共 333 条。验收：整链从 extract 重跑到 punct 逐字节一致；再跑零变化；
+  每条只动星号／撇号／连字符空白／连写（字母序列不变）；段内星号奇数段 14→14；锚点 1151、重复 0、表格 0、`<ol>` 0。
+  续转录跑完后重跑 `--rules`（合并）补全书。
+
 ## 待做
 
 1. ~~第 ① 层~~ ~~第 ② 层（ed3＋tess）~~ ~~结构清理~~ ~~片段换流~~ 已完成；第 ④ 层评估后不落（见上）
