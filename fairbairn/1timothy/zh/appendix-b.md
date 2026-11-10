@@ -7,6 +7,8 @@ subtitle: "论「作一个妇人的丈夫」一语的意义（提摩太前书 3:
 date: 2026-11-10 15:08
 prev_url: "/fairbairn/1timothy/zh/appendix-a/"
 prev_label: "附录 A"
+next_url: "/fairbairn/1timothy/zh/appendix-c/"
+next_label: "附录 C"
 en_url: "/fairbairn/1timothy/appendix-b/"
 zh: true
 ---

@@ -7,6 +7,7 @@ subtitle: "The Treatment of Slavery in New Testament Scripture (1 Timothy 6:2 ; 
 date: 2026-10-28 11:07
 prev_url: "/fairbairn/1timothy/appendix-b/"
 prev_label: "Appendix B"
+zh_url: "/fairbairn/1timothy/zh/appendix-c/"
 ---
 
 <h2 class="fb-sec">The Treatment of Slavery in New Testament Scripture (1 Timothy 6:2 ; Titus 2:10 )</h2>
