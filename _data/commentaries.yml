@@ -478,8 +478,8 @@ books:
     chapters: 28
     pick: true
     pick_n: 3
-    pick_c0: "#d51296"
-    pick_c1: "#fa46b6"
+    pick_c0: "#764000"
+    pick_c1: "#9b5b15"
     links:
       - {author: spurgeon, path: "/spurgeon/matthew/zh/", url_tpl: "/spurgeon/matthew/zh/__CH__/", title_cn: "马太福音注释", title_en: "The Gospel of the Kingdom", c0: "#3a3018", c1: "#4a3b22"}
       - {author: dickson, path: "/dickson/matthew/", url_tpl: "/dickson/matthew/__CH__/", title_cn: "马太福音简释", title_en: "A Brief Exposition of the Evangel of Jesus Christ according to Matthew", c0: "#661b6f", c1: "#8b2499"}
