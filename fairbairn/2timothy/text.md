@@ -9,6 +9,7 @@ prev_url: "/fairbairn/titus/text/"
 prev_label: "Titus: Text"
 next_url: "/fairbairn/1timothy/1/"
 next_label: "1 Timothy 1"
+zh_url: "/fairbairn/2timothy/zh/text/"
 ---
 
 <div class="fb-par" id="ch1">
