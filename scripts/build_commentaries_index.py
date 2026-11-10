@@ -206,6 +206,13 @@ AUTHORS = OrderedDict([
                        years='1809–1860', dir='alexander',
                        work_cn='诗篇、以赛亚书、马太福音、使徒行传注释',
                        work_en='')),
+    # 霍志恒：生卒据英文维基（引 Olinger 2018、Dennison）：1862-03-14 生于荷兰弗里斯兰 Heerenveen，
+    # 1949-08-13 卒于密歇根大急流城。本站只收单篇论文 Eschatology of the Psalter（PTR 18, 1920），
+    # 不是逐章注释——见下面的 ESSAY_ENTRIES / PICK_BOOKS。
+    ('vos', dict(name='霍志恒', short='霍志恒', en='Geerhardus Vos',
+                 years='1862–1949', dir='vos',
+                 work_cn='诗篇的末世论',
+                 work_en='Eschatology of the Psalter')),
 ])
 
 # ── 主题色 ─────────────────────────────────────────────────────
@@ -292,6 +299,9 @@ AUTHOR_COLORS = {
     # 琼斯橄榄褐：LCh 网格 (60, 24, 95°)，亮端与既有各色及加尔文酒红、马太亨利金、站点 Hux 蓝、缺字红
     # 最小 ΔE 24.5（CIE76）。色板已挤，两端同时 ≥ 20 的找不到，同佩特先例只比亮端；粉红一档 25.4 太跳，弃用。
     'jones': ('#685e37', '#9c9066'),
+    # 霍志恒丁香紫：LCh 网格搜过，亮端与既有各色及加尔文酒红、马太亨利金、站点 Hux 蓝、缺字红最小 ΔE 27.5
+    # （迪克森紫）。先试的梅紫 #6a4c6b 与曼顿只差 12.9，弃用。色板已挤，同佩特先例只比亮端（深端对迪克森 18.4）。
+    'vos': ('#b455d4', '#d171ee'),
 }
 
 # 书卷卡片的入口注释家：历代解经版面每卷只显示 links 的第一条（commentaries/index.html
@@ -307,6 +317,15 @@ LEAD_AUTHOR = {'titus': 'taylor', '2timothy': 'barlow'}
 # duo_n，以及 duo_seams（每道交界的位置与混色）、duo_bands（每条色带的点击区与作者名位置），模板只管循环。
 # 马太福音：用户 2026-11-03 指定司布真与迪克森合用一张卡片；2026-11-04 加上亚历山大，三家合一。
 DUO_BOOKS = {'matthew': ('spurgeon', 'dickson', 'alexander')}
+
+# 一张卡片写几家名字、点进去是选择页（/commentaries/<书>/，每家一张卡片、各用各的主题色）。
+# 与 DUO_BOOKS 不同：那边卡片分色带、各带直接链到各家；这里整张卡片只链到选择页。
+# 诗篇：用户 2026-11-10 指定亚历山大与霍志恒合列，点进去再选。
+PICK_BOOKS = {'psalms': ('alexander', 'vos')}
+
+# 单篇论文（没有逐章页面）：has_content 认不出来，在这里登记 {作者: {书卷: 入口}}。
+# 不进对比抽屉（compare_sources 只收有章节的目录）。
+ESSAY_ENTRIES = {'vos': {'psalms': '/vos/psalter/'}}
 # 交界斜度：顶边比底边右移 2×DUO_SLANT 个百分点。原先 20 个百分点，三家时最左一带底边太窄放不下作者名，收到 8。
 DUO_SLANT = 4
 
@@ -344,6 +363,8 @@ BOOK_TITLES = {
                                 'The Gospel of the Kingdom'),
     ('durham', 'revelation'):  ('启示录注释',
                                 'A Commentary upon the Book of the Revelation'),
+    ('vos', 'psalms'):         ('诗篇的末世论（论文）',
+                                'Eschatology of the Psalter'),
     ('alexander', 'psalms'):   ('诗篇注释',
                                 'The Psalms Translated and Explained'),
     ('alexander', 'isaiah'):   ('以赛亚书注释',
@@ -697,6 +718,9 @@ def scan(author_id: str) -> dict:
     base = ROOT / AUTHORS[author_id]['dir']
     if not base.is_dir():
         return {}
+    if author_id in ESSAY_ENTRIES:
+        return {b: (path, 1) for b, path in ESSAY_ENTRIES[author_id].items()
+                if (ROOT / path.strip('/')).is_dir()}
     found = {}
     for d in sorted(base.iterdir()):
         if not d.is_dir() or SKIP.search(d.name) or not has_content(d):
@@ -753,6 +777,11 @@ def main():
             if not all(any(e[0] == a for e in entries) for a in duo):
                 raise SystemExit(f'DUO_BOOKS {bid}: {duo} 不全在本卷条目里')
             entries.sort(key=lambda e: duo.index(e[0]) if e[0] in duo else len(duo))
+        pick = PICK_BOOKS.get(bid)
+        if pick:
+            if not all(any(e[0] == a for e in entries) for a in pick):
+                raise SystemExit(f'PICK_BOOKS {bid}: {pick} 不全在本卷条目里')
+            entries.sort(key=lambda e: pick.index(e[0]) if e[0] in pick else len(pick))
         # 合参覆盖的书卷：加尔文没有分卷注释，补一条指向对应的合参索引页。
         # 放在最前，与其他卷「加尔文在先」的次序一致。
         if bid in HARMONY_MAP and 'calvin' not in EXCLUDED_AUTHORS:
@@ -791,6 +820,8 @@ def main():
                       for x in seams]
             lines += ['    duo_bands:']
             lines += [f'      - {{clip: {yaml_escape(x["clip"])}, label: {x["label"]}}}' for x in bands]
+        if pick:
+            lines += ['    pick: true', f'    pick_n: {len(pick)}']
         lines.append('    links:')
         for aid, path, ov_cn, ov_en, note in entries:
             # 中英书名都**按卷**生成，一一对应。曾经中文一律输出各家的总书名

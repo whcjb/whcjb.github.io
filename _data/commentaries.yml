@@ -218,6 +218,14 @@ authors:
     work_cn: "诗篇、以赛亚书、马太福音、使徒行传注释"
     work_en: ""
     books: 4
+  - id: vos
+    name: "霍志恒"
+    short: "霍志恒"
+    en: "Geerhardus Vos"
+    years: "1862–1949"
+    work_cn: "诗篇的末世论"
+    work_en: "Eschatology of the Psalter"
+    books: 1
 
 books:
   - id: genesis
@@ -334,8 +342,11 @@ books:
     en: "Psalms"
     testament: ot
     chapters: 150
+    pick: true
+    pick_n: 2
     links:
       - {author: alexander, path: "/alexander/psalms/zh/", url_tpl: "/alexander/psalms/zh/__CH__/", title_cn: "诗篇注释", title_en: "The Psalms Translated and Explained", c0: "#5f2323", c1: "#7d2f2f"}
+      - {author: vos, path: "/vos/psalter/", url_tpl: "/vos/psalter/__CH__/", title_cn: "诗篇的末世论（论文）", title_en: "Eschatology of the Psalter", c0: "#b455d4", c1: "#d171ee"}
   - id: proverbs
     name: "箴言"
     en: "Proverbs"
