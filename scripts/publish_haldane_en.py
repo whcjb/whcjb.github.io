@@ -113,7 +113,8 @@ def index_html(u):
     out = ['---', 'layout: haldane-book', 'book_id: romans', 'book_name: "Haldane on Romans"',
            'title: "Robert Haldane · Exposition of the Epistle to the Romans"', 'author: "Robert Haldane (1764–1842)"',
            'edition: "Exposition of the Epistle to the Romans, with Remarks on the Commentaries of Dr. Macknight, '
-           'Professor Moses Stuart, and Professor Tholuck · first published 1835–1839"', '---', '',
+           'Professor Moses Stuart, and Professor Tholuck · first published 1835–1839"',
+           *(['zh_url: "/haldane/romans/zh/"'] if (OUT / 'zh' / 'index.html').exists() else []), '---', '',
            '<h2 class="hd-group">Exposition</h2>', '<ul class="hd-chgrid">']
     out += [f'  <li><a href="{{{{ site.baseurl }}}}/haldane/romans/{c}/">Romans {c}</a></li>' for c in range(1, 17)]
     out += ['</ul>', '',
