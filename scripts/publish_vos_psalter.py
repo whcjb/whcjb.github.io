@@ -53,6 +53,9 @@ def main():
         return t
 
     paras = [tidy(t) for t in paras]
+    # 录入本把篇末署名「Princeton. / GEERHARDUS VOS.」录成两段正文；署名由下面的 .vs-sign 照原刊版式排，这里去掉
+    while paras and re.fullmatch(r'(⟦p\d+⟧)?\s*(Princeton\.|GEERHARDUS VOS\.)\s*', paras[-1]):
+        paras.pop()
     notes = {k: tidy(v) for k, v in notes.items()}
 
     left = [t for t in paras + list(notes.values()) if '⟪heb:' in t]
@@ -90,7 +93,7 @@ def main():
     for t in paras:
         out.append(he(pb(t)))
         out.append('')
-    out.append('<p class="vs-sign"><span>Princeton.</span><span>GEERHARDUS VOS.</span></p>')
+    out.append('<p class="vs-sign"><i>Princeton.</i><span>Geerhardus Vos.</span></p>')   # 原刊：斜体地名 + 小型大写署名
     out.append('')
     for k in sorted(notes):
         out.append(f'[^{k}]: {he(notes[k])}')
