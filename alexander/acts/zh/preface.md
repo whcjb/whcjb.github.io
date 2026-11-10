@@ -8,6 +8,8 @@ subtitle: "Joseph Addison Alexander"
 date: 2026-11-09 15:35
 zh: true
 en_url: "/alexander/acts/preface/"
+prev_section: "title-1"
+prev_label: "书名页（上卷）"
 next_section: "introduction"
 next_label: "导论"
 ---
