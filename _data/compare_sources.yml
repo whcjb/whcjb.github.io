@@ -236,7 +236,7 @@ sources:
     - {key: mhenry, author: mhenry, lang: zh, label: "马太亨利注释", url_tpl: "/mhenry/titus/__CH__/", accent: "#C9922A", ch_from: 1, ch_to: 3}
     - {key: mhenry-en, author: mhenry, lang: en, label: "马太亨利注释（英文版）", url_tpl: "/mhenry/titus-en/__CH__/", accent: "#C9922A", ch_from: 1, ch_to: 3}
     - {key: fairbairn-en, author: fairbairn, lang: en, label: "费尔贝恩注释（英文版）", url_tpl: "/fairbairn/titus/__CH__/", accent: "#bc65ac", ch_from: 1, ch_to: 3}
-    - {key: fairbairn, author: fairbairn, lang: zh, label: "费尔贝恩注释", url_tpl: "/fairbairn/titus/zh/__CH__/", accent: "#bc65ac", ch_from: 1, ch_to: 1}
+    - {key: fairbairn, author: fairbairn, lang: zh, label: "费尔贝恩注释", url_tpl: "/fairbairn/titus/zh/__CH__/", accent: "#bc65ac", ch_from: 1, ch_to: 2}
     - {key: taylor-en, author: taylor, lang: en, label: "泰勒注释（英文版）", url_tpl: "/taylor/titus/__CH__/", accent: "#6f77e0", ch_from: 1, ch_to: 3}
     - {key: taylor, author: taylor, lang: zh, label: "泰勒注释", url_tpl: "/taylor/titus/zh/__CH__/", accent: "#6f77e0", ch_from: 1, ch_to: 3}
   zechariah:
