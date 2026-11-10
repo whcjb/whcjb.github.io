@@ -112,7 +112,7 @@ def units_of(slug: str):
         b = block.strip()
         if not b:
             continue
-        m = re.match(r'<p class="fb-lost"><b class="fb-ver">Vers?\. (\d+)\.</b>.*?pp\. ([\d–-]+)\).*</p>$', b, re.S)
+        m = re.match(r'<p class="fb-lost"><b class="fb-ver">Vers?\. (\d+)\.</b>.*?pp?\. ([\d–-]+)\).*</p>$', b, re.S)
         if m:
             out.append(('keep', LOST_ZH.format(v=m.group(1), pp=m.group(2))))
             continue
