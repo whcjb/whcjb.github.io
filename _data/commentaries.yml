@@ -531,7 +531,7 @@ books:
     pick_c1: "#7b3695"
     links:
       - {author: hodge, path: "/hodge/romans/zh/", url_tpl: "/hodge/romans/zh/__CH__/", title_cn: "罗马书注释", title_en: "Commentary on the Epistle to the Romans", c0: "#152840", c1: "#2b5080"}
-      - {author: haldane, path: "/haldane/romans/", url_tpl: "/haldane/romans/__CH__/", title_cn: "罗马书释义", title_en: "Exposition of the Epistle to the Romans", c0: "#774e76", c1: "#9b6899"}
+      - {author: haldane, path: "/haldane/romans/zh/", url_tpl: "/haldane/romans/zh/__CH__/", title_cn: "罗马书释义", title_en: "Exposition of the Epistle to the Romans", c0: "#774e76", c1: "#9b6899"}
   - id: 1corinthians
     name: "哥林多前书"
     en: "1 Corinthians"
