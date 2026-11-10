@@ -9,6 +9,7 @@ prev_url: "/fairbairn/2timothy/4/"
 prev_label: "2 Timothy 4"
 next_url: "/fairbairn/1timothy/appendix-b/"
 next_label: "Appendix B"
+zh_url: "/fairbairn/1timothy/zh/appendix-a/"
 ---
 
 <h2 class="fb-sec">The Peculiar Testimony for Gospel Times 1 Timothy 2:6</h2>
