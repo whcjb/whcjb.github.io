@@ -1,0 +1,118 @@
+---
+layout: default
+---
+{%- comment -%}
+  霍志恒（Geerhardus Vos）单篇论文页。首篇：Eschatology of the Psalter（PTR 18, 1920）。
+
+  ⚠️ 不复用别家 layout：每本书独立样式（用户既定规矩）。骨架取自 jones-chapter。
+  按 2026-10-16 起的新书规矩：不放「跳到某节」下拉，副标题作者写英文原名。
+  配色梅紫 #6a4c6b / 深端 #4a3350，避开 Hux 蓝、加尔文酒红、马太亨利金与缺字红。
+
+  版式要点（底本与校勘见 vos_raw/psalter/corrections.tsv、scripts/publish_vos_psalter.py）：
+  - 1920 年原刊页码 → `.vs-pb`（空锚点，id `#pN`，行内小灰字）。
+  - 希伯来文 → `.vs-he`（右到左）。
+  - 脚注走 kramdown 的 [^n]，样式在下面 .footnotes。
+  中文页若日后出，再接 scripture-popup（只给中文页）。
+{%- endcomment -%}
+
+<div class="container vos-wrap{% if page.zh %} vs-zh{% endif %}" style="padding-top: 70px;">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+
+      <div class="vs-chrome">
+        <a href="{{ site.baseurl }}/commentaries/">&larr; 历代解经</a>
+        {% if page.zh %}{% if page.en_url %}<a class="vs-lang" href="{{ site.baseurl }}{{ page.en_url }}">English &rarr;</a>{% endif %}
+        {% else %}{% if page.zh_url %}<a class="vs-lang" href="{{ site.baseurl }}{{ page.zh_url }}">中文版 &rarr;</a>{% endif %}{% endif %}
+      </div>
+
+      <h1 class="vs-title">{{ page.title }}</h1>
+      {% if page.subtitle %}<p class="vs-subtitle">{{ page.subtitle }}</p>{% endif %}
+
+      <div class="vs-content">
+        {{ content }}
+      </div>
+
+      {% if page.date %}
+      <div class="vs-stamp">{% if page.zh %}译于{% else %}Published{% endif %} {{ page.date | date: "%Y-%m-%d %H:%M" }}</div>
+      {% endif %}
+
+    </div>
+  </div>
+</div>
+
+<style>
+.vos-wrap {
+  --vs-ink: #6a4c6b;
+  --vs-ink-dark: #4a3350;
+  --vs-rule: #ece6ec;
+  --vs-paper: #f9f6f9;
+  --vs-body: #2a252b;
+}
+.vos-wrap .vs-chrome {
+  font-size: 13px; display: flex; justify-content: space-between; gap: 12px; align-items: center;
+  font-family: Georgia, "Times New Roman", serif; margin: 18px 0 22px;
+}
+.vos-wrap .vs-chrome a { color: var(--vs-ink-dark); text-decoration: none; }
+.vos-wrap .vs-chrome a:hover { text-decoration: underline; }
+.vos-wrap .vs-lang { border: 1px solid var(--vs-rule); border-radius: 4px; padding: 4px 10px; }
+.vos-wrap .vs-lang:hover { background: var(--vs-ink); color: #fff !important; text-decoration: none; }
+.vos-wrap .vs-title {
+  font-family: Georgia, "Times New Roman", serif; font-size: 30px; font-weight: normal;
+  color: var(--vs-ink-dark); text-align: center; margin: 10px 0 4px; line-height: 1.3; letter-spacing: .02em;
+}
+.vos-wrap .vs-subtitle {
+  text-align: center; font-size: 14px; color: #857c86; margin: 0 0 22px;
+  font-family: Georgia, "Times New Roman", serif; font-style: italic;
+}
+
+/* 底本说明：一行小字，不做色块 */
+.vos-wrap .vs-source {
+  font-size: 12.5px; line-height: 1.6; color: #857c86; margin: 0 0 26px; padding: 0 0 12px;
+  border-bottom: 1px solid var(--vs-rule); font-family: Georgia, "Times New Roman", serif;
+}
+.vos-wrap .vs-source code { font-size: 11.5px; background: none; color: inherit; padding: 0; }
+
+/* 正文 */
+.vos-wrap .vs-content {
+  font-family: Georgia, "Times New Roman", "Songti SC", STSong, serif;
+  font-size: 17px; line-height: 1.85; color: var(--vs-body);
+}
+.vos-wrap .vs-content p { margin: 0 0 16px; text-align: justify; text-indent: 1.6em; }
+.vos-wrap .vs-content .vs-source, .vos-wrap .vs-content .vs-sign { text-indent: 0; }
+.vos-wrap .vs-content a { color: var(--vs-ink-dark); }
+.vos-wrap .vs-sign { display: flex; justify-content: space-between; margin-top: 26px !important;
+  font-variant: small-caps; letter-spacing: .05em; color: #5e5560; }
+
+/* 1920 原刊页码 */
+.vos-wrap .vs-pb { scroll-margin-top: 80px; }
+.vos-wrap .vs-pb[data-p]::before, .vos-wrap .vs-pbk {
+  font-size: 10.5px; color: #b0a6b1; font-style: normal; font-family: Georgia, serif;
+  border: 1px solid var(--vs-rule); border-radius: 3px; padding: 0 3px; margin: 0 4px; vertical-align: 1px;
+  text-indent: 0; letter-spacing: .02em;
+}
+.vos-wrap .vs-pb[data-p]::before { content: "p." attr(data-p); }
+
+/* 希伯来文 */
+.vos-wrap .vs-he { font-family: "SBL Hebrew", "Ezra SIL", "Times New Roman", serif; font-size: 1.12em; unicode-bidi: isolate; }
+
+/* 脚注 */
+.vos-wrap sup[role="doc-noteref"] a, .vos-wrap .footnote { text-decoration: none; font-size: .78em; padding: 0 1px; }
+.vos-wrap .footnotes { margin-top: 34px; padding-top: 14px; border-top: 1px solid var(--vs-rule);
+  font-size: 14px; line-height: 1.65; color: #463f47; }
+.vos-wrap .footnotes ol { padding-left: 2em; }
+.vos-wrap .footnotes li { margin-bottom: 8px; }
+.vos-wrap .footnotes p { text-indent: 0; margin: 0; text-align: left; }
+.vos-wrap .reversefootnote { text-decoration: none; margin-left: 4px; }
+
+.vos-wrap .vs-stamp {
+  margin-top: 32px; font-size: 12px; color: #a59ba6; text-align: right;
+  font-family: Georgia, "Times New Roman", serif; letter-spacing: .03em;
+}
+.vos-wrap :target { background: #f2ecf2; transition: background .4s; }
+
+@media (max-width: 767px) {
+  .vos-wrap .vs-title { font-size: 24px; }
+  .vos-wrap .vs-content { font-size: 16px; line-height: 1.8; }
+  .vos-wrap .vs-content p { text-indent: 1.2em; }
+}
+</style>

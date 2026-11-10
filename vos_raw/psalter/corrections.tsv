@@ -1,0 +1,76 @@
+# Hildebrandt 录入本（bel.pdf）对照 PTR 1920 原刊扫描（IA princetontheolog1811arms，原生 JP2）的改正表。
+# 每条都已裁原刊页图读定（2026-11-10）；find 在 extract.json 的正文/脚注里须恰好出现一次。
+# 原书本身的误植照原样保留，不在此表：Schäpfung、Ausgewähte、Ausgewaählte、Qurterly、Acording、
+#   "motive force ,and"、lxxxix. 38. 51、xxxix. 47、p, 295。
+# page	find	replace	why
+4	*Zeitschrift fur Theologie and Kirche*	*Zeitschrift für Theologie und Kirche*	原刊 für/und
+4	*Schap und and Chaos, in Urzeit and Endzeit*	*Schäpfung und Chaos, in Urzeit und Endzeit*	原刊如此（Schäpfung 系原书误植，照录）
+4	*Ausgewahlte Psalmen,* 1911	*Ausgewählte Psalmen,* 1911	原刊 ä
+4	1go5	1905	录入本 g 代 0
+4	Der alttesta.mentliche Prophetismus	Der alttestamentliche Prophetismus	录入本断字残留
+4	*Alter, Wesen and Ursprung	*Alter, Wesen und Ursprung	原刊 und
+4	Hoheslied* *and Verwandtes	Hoheslied* *und Verwandtes	原刊 und
+5	Zeitschrift fur die alttesta-* *mentliche	Zeitschrift für die alttestamentliche	原刊 für；行末断字
+5	*Volksgemeinde and die Gemeinde	*Volksgemeinde und die Gemeinde	原刊 und
+5	Cobienz	Coblenz	原刊 Coblenz
+5	*Zeitschrift far die Alttestamentliche*	*Zeitschrift für die Alttestamentliche*	原刊 für
+6	a church nation of Israel	a church-nation of Israel	原刊行末 church- 断在复合词处
+6	⟪heb:ynf⟫	עני	原刊希伯来文
+6	⟪heb:vnf⟫	ענו	原刊希伯来文
+8	pp. lxxix if.	pp. lxxix ff.	原刊 ff.
+14	xcvi. I ; xcviii. 1	xcvi. 1; xcviii. 1	原刊旧体数字 1
+14	cxlix. I,	cxlix. 1.	原刊 1.
+14	2 Cor. V.. 17	2 Cor. v. 17	原刊 v.
+14	iii, 12; V. 9	iii, 12; v. 9	原刊 v.
+14	XC. 14; exxx. 6	xc. 14; cxxx. 6	原刊 xc. / cxxx.
+15	the judgment written!”[^19]	the judgment written.”[^19]	原刊句点
+15	Rom. xiii. II If. I Thess.	Rom. xiii. 11 ff. 1 Thess.	原刊 11 ff. 1 Thess.
+15	PS. Vi. 4 ; xiii. I ; Ixxiv. 10; lxxvii. 8; lxxix. 5; Ixxxv. 6	Ps. vi. 4; xiii. 1; lxxiv. 10; lxxvii. 8; lxxix. 5; lxxxv. 6	原刊
+16	reproached 0 Lord; 0 deliver	reproached O Lord; O deliver	原刊呼格 O
+16	arise 0 God	arise O God	原刊呼格 O
+17	cxviii. 8, 7	cxviii. 8, 9	原刊 8, 9
+17	xx. 7; xli . 6	xx. 7; xliv. 6	原刊 xliv.
+18	Pss. xxxii. 17; 1. 15; lXxx. i8, 19.	Pss. xxxii. 17; l. 15; lxxx. 18, 19.	原刊（l. = 诗 50）
+18	*Origin*, P. 344.	*Origin*, p. 344.	原刊 p.
+18	crown," P. 340.	crown," p. 340.	原刊 p.
+20	0 Jerusalem, praise thy God, 0 Zion	O Jerusalem, praise thy God, O Zion	原刊呼格 O
+20	cxlvii. II, 12	cxlvii. 11, 12	原刊 11
+20	Isa. xxiv. 23; hi. 7	Isa. xxiv. 23; lii. 7	原刊 lii.
+20	2 Sam. xv. 30.	2 Sam. xv. 10.	原刊 10
+20	*Ausgewahlte Psalmen*, pp. 186-192	*Ausgewählte Psalmen*, pp. 186-192	原刊 ä
+21	Ps. xlvii. i; I Kings	Ps. xlvii. 1; 1 Kings	原刊 1
+21	*Die Psalmen*, who observes that ⟪heb:Mvrm⟫	*Die Psalmen*³, who observes that מרום	原刊上标 3（第三版）；希伯来文
+21	⟪heb:hlAfA⟫	עָלָה	原刊希伯来文
+21	⟪heb:bwayA⟫	יָשַׁב	原刊希伯来文
+21	p, 295, note a.	p, 295, note 1.	原刊 note 1（p, 系原书误植，照录）
+22	II. p. 407, the. scene	II. p. 407, the scene	原刊无句点
+23	*Der alttestarnentliche Prophetismus,*	*Der alttestamentliche Prophetismus,*	原刊
+23	prophecy, eft.. Isa. ii.	prophecy, cfr. Isa. ii.	原刊 cfr.
+23	cfr. Ps. xlvi. io "Be still	cfr. Ps. xlvi. 10 "Be still	原刊 10
+24	the attitude towards to latter	the attitude towards the latter	原刊 the
+25	"How long, 0 Jehovah?	"How long, O Jehovah?	原刊呼格 O
+25	. . . 0 remember how short	. . . O remember how short	原刊呼格 O
+25	from that standpoint." The world	from that standpoint."[^44] The world	录入本漏注号 44
+25	xviii. 47 ff.: xxii.	xviii. 47 ff.; xxii.	原刊分号
+25	xlvi. to; xlvii. 1-3, 8, g; lxxxvi. 8-to;	xlvi. 10; xlvii. 1-3, 8, 9; lxxxvi. 8-10;	原刊
+25	xcviii. 2, 3. 9;	xcviii. 2, 3, 9;	原刊逗号
+27	meant as .pure symbolism	meant as pure symbolism	原刊无句点
+28	Ps. Ixxiii. 28 to the Jewish Kirbath Elohirn	Ps. lxxiii. 28 to the Jewish Kirbath Elohim	原刊
+28	eschatologically ,approached ;	eschatologically approached;	原刊无逗号
+30	*Ausgewahlte Psalmen*, under	*Ausgewählte Psalmen*, under	原刊 ä
+30	pp. 236-293	pp. 286-293	原刊 286
+32	*Ausgewahte* *Psalmen*, p. 18	*Ausgewähte* *Psalmen*, p. 18	原刊如此（缺 l 系原书误植，照录）
+32	der ursprunglich eschatologisch	der ursprünglich eschatologisch	原刊 ü
+32	Usually Isa. 1v. 3	Usually Isa. lv. 3	原刊 lv.
+33	*Ausgewaahlte* *Psalmen*, p. 223	*Ausgewaählte* *Psalmen*, p. 223	原刊如此（误植，照录）
+33	Baethgen. *Die Psalmen*,3 p. 4	Baethgen, *Die Psalmen*,³ p. 4	原刊逗号、上标 3
+34	*Das Ratsel des	*Das Rätsel des	原刊 ä
+35	several coequal and cooperative forces	several coëqual and coöperative forces	原刊分音符
+35	"Behold 0 God our shield	"Behold O God our shield	原刊呼格 O
+4	*Der Ursprung der israelitisch-* *judischen Eschatologie,*	*Der Ursprung der israelitisch-jüdischen Eschatologie,*	原刊 ü；行末断在复合词连字符处
+4	Ursprung der alt-* *testamentlichen Eschatologie	Ursprung der alttestamentlichen Eschatologie	行末断字
+4	1912; Stark, *Lyrik	1912; Stärk, *Lyrik	原刊 Stärk
+5	131-135; Stark, ibid.	131-135; Stärk, ibid.	原刊 Stärk
+24	parallel is I Thess. iv. 13-18	parallel is 1 Thess. iv. 13-18	原刊旧体数字 1
+29	"Messianic psalms,"	"Messianic Psalms,"	原刊大写
+5	p. 146; Sellin. *De Origine	p. 146; Sellin, *De Origine	原刊逗号（注跨页）
