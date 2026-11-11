@@ -29,7 +29,9 @@ for d in sorted(pathlib.Path('.').iterdir()):
         continue
     if any(d.rglob('*.md')) or any(d.rglob('*.html')):
         exc.append(n)
-exc += ['_posts']
+# 别的会话跑全量 `jekyll build` 会写几千个文件进 _site；_site 不在 exclude 里时监视线程照样盯着它，
+# 每次全量构建都触发这边整站重建（2026-11-11 日志里一次 7599 个文件），重建期间页面 404，看着像停了
+exc += ['_posts', '_site', '_site_lite']
 yaml.safe_dump({'exclude': exc, 'incremental': False}, open('_config_lite.yml', 'w'), allow_unicode=True)
 print('排除', len(exc), '项；保留：', ' '.join(sorted(keep)))
 PY
