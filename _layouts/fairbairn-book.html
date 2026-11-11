@@ -20,8 +20,8 @@ layout: default
       </div>
 
       {%- comment -%} 三卷切换：原书一部书分三卷出页，各卷首页之间原先没有互链（用户 2026-11-11 问
-        「怎么没有提摩太后书及提多书的入口」）。顺序照原书：提前 → 提多 → 提后；中文页指中文首页。{%- endcomment -%}
-      {%- assign fb_vols = "1timothy|提摩太前书|1 Timothy,titus|提多书|Titus,2timothy|提摩太后书|2 Timothy" | split: "," -%}
+        「怎么没有提摩太后书及提多书的入口」）。顺序按圣经书卷：提前 → 提后 → 提多（用户 2026-11-11 定，不照原书卷序）；中文页指中文首页。{%- endcomment -%}
+      {%- assign fb_vols = "1timothy|提摩太前书|1 Timothy,2timothy|提摩太后书|2 Timothy,titus|提多书|Titus" | split: "," -%}
       <nav class="fb-vols">
         {%- for v in fb_vols -%}{%- assign vp = v | split: "|" -%}
         {%- if vp[0] == page.book_id -%}<span class="fb-vol-on">{% if page.zh %}{{ vp[1] }}{% else %}{{ vp[2] }}{% endif %}</span>
