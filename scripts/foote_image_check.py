@@ -48,6 +48,7 @@ ANS = WORK / 'answers'
 CAND1 = WORK / 'candidates_r1.json'
 ANS2 = WORK / 'answers2'
 RULES = RAW / 'image_fixes.tsv'
+HAND = RAW / 'hand_image_fixes.tsv'   # 人工裁原生分辨率页图读定，排在 RULES 之后落
 LOG = A.ROOT / 'logs' / 'foote_image_check.tsv'
 COST = A.ROOT / 'logs' / 'foote_image_check_cost.tsv'
 PDF = {1: 'vol1_ed2_lecturesongospe03footgoog.pdf', 2: 'vol2_ed2_lecturesongospe02footgoog.pdf',
@@ -492,6 +493,8 @@ def main():
         rules()
     elif a.apply:
         A.apply_spans(RULES)
+        if HAND.exists():
+            A.apply_spans(HAND)
 
 
 if __name__ == '__main__':
