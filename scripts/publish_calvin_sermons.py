@@ -25,9 +25,16 @@ CFG = {
                         title_cn='加尔文《申命记讲章》', year='1583', tcp='A17698', stc='STC 4442', total=200,
                         printed='At London: Printed by Henry Middleton for George Bishop, 1583',
                         preached='1555-03-20 – 1556-07-15'),   # 取自第 1 篇与第 200 篇标题所记日期
+    # 撒母耳记上：法文讲章原稿已佚，只存 1604 年日内瓦的拉丁文译本（David Claudus 译），本站据《加尔文全集》重排本
+    '1samuel': dict(name='1 Samuel', cn='撒母耳记上', title_en='Homiliae in I. librum Samuelis',
+                    title_cn='加尔文《撒母耳记上讲章》（拉丁文）', year='1604', total=107,
+                    printed='Calvini Opera vol. XXIX–XXX (Brunsvigae, 1885–86), after the Geneva edition of 1604 (Gabriel Cartier)',
+                    translator='Latin translation from the French by David Claudus',
+                    preached=''),
 }
 FRONT_CN = {'title': '书名页', 'dedication': '献辞', 'to-the-reader': '致读者', 'to-the-reader-1': '致读者（一）',
             'to-the-reader-2': '致读者（二）', 'to-the-reader-3': '致读者（三）',
+            'prolegomena': '全集编者导言（1885，拉丁文）',
             'prayer-before': '讲道前的祷告', 'prayer-after': '讲道后的祷告'}
 
 
@@ -68,6 +75,8 @@ def main():
     def label_of(kind, x):
         if kind == 'front':
             return x['title']
+        if book == '1samuel':
+            return f'Homilia {x["num"]}'
         if x.get('absorbs'):                    # 并页（申命记缺页处）：两篇同页
             return f'Sermons {x["num"]} & ' + ' & '.join(map(str, x['absorbs']))
         return f'Sermon {x["num"]}'
@@ -145,13 +154,15 @@ def main():
     meta_f.write_text(json.dumps(meta, ensure_ascii=False, indent=1, sort_keys=True) + '\n', encoding='utf-8')
     fm = ['---', 'layout: calvin-sermons-book', f'book_id: {book}', f'title: {ystr(c["title_cn"])}',
           f'book_name: {ystr(c["title_en"])}', f'book_cn: {ystr(c["title_cn"])}',
-          f'edition: {ystr(c["printed"] + " · Translated out of French by Arthur Golding")}',
+          f'edition: {ystr(c["printed"] + " · " + c.get("translator", "Translated out of French by Arthur Golding"))}',
           f'preached: {ystr(c["preached"])}', f'date: {idx_meta}', '---']
     (OUT / 'index.html').write_text('\n'.join(fm) + '\n\n' + '\n'.join(lines) + '\n', encoding='utf-8')
     print(f'{book}: 写入 {written} 页 + 书首页 → {OUT}')
 
 
 def about(book, c, u, merged):
+    if book == '1samuel':
+        return about_1sam(u)
     g = u['gaps']
     gl = g.get('letter', 0)
     gw = g.get('word', 0)
@@ -183,6 +194,29 @@ def about(book, c, u, merged):
                '篇次与归章按书中实际次序。')
     en += 'The indexes at the end of the volume are not yet included.</p>'
     zh += '卷末索引暂未收录。</p>'
+    return f'<div class="cs-note">\n{en}\n{zh}\n</div>'
+
+
+def about_1sam(u):
+    r = u.get('repair', {})
+    en = ('<p><b>About this text.</b> Calvin preached on 1 Samuel in French; the sermons were taken down by a scribe, '
+          'but the French text has not survived. What survives is the Latin translation by David Claudus, '
+          '<i>Homiliae in I. librum Samuelis. Ex Gallicis Latinae factae</i> (Geneva: Gabriel Cartier, 1604), 107 homilies. '
+          'The text given here is that of the reprint in <i>Calvini Opera</i> vols. XXIX–XXX (Corpus Reformatorum 57–58, '
+          'Brunswick 1885–86), read from the scans in the University of Geneva open archive; the column numbers of that edition '
+          'are marked in the margin. The editors\' footnotes are given at the end of each homily. '
+          f'The Opera text was recognised by OCR and checked word by word against a second, independent OCR reading; '
+          f'{r.get("fixed", 0)} words were corrected where the second reading and the Latin lexicon agreed, and '
+          f'{r.get("residue", 0)} words that neither reading resolves are still printed as the scan was read and await '
+          'checking against the page images. The indexes are not included.</p>')
+    zh = ('<p class="cs-note-zh"><b>文本说明。</b>加尔文用法文讲撒母耳记上，由书记员当场记录，但法文原稿已经失传。'
+          '现存的是 David Claudus 的拉丁文译本《Homiliae in I. librum Samuelis. Ex Gallicis Latinae factae》'
+          '（日内瓦：Gabriel Cartier，1604），共 107 篇。本站正文据《加尔文全集》（Calvini Opera）第 29–30 卷'
+          '（Corpus Reformatorum 第 57–58 卷，不伦瑞克 1885–86）的重排本，用日内瓦大学开放档案的扫描件识读；'
+          '页边标的是全集本的栏码。全集编者的脚注排在各篇之末。'
+          f'正文由 OCR 识读，并与另一份独立的 OCR 逐词对照：两份读法与拉丁文词典相合而改正的有 {r.get("fixed", 0)} 词；'
+          f'两份都判不了的 {r.get("residue", 0)} 词暂按扫描件读出的样子照录，待对照页图核定。'
+          '全集编者导言见卷首。卷末索引暂未收录。</p>')
     return f'<div class="cs-note">\n{en}\n{zh}\n</div>'
 
 

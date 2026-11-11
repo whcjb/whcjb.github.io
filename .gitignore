@@ -123,3 +123,7 @@ foote_raw/luke/tess_grc/
 _site_lite/
 _config_lite.yml
 haldane_raw/romans/src/
+
+# 加尔文撒母耳记上讲章（拉丁文）：CO 29/30 扫描 PDF（各 40MB+，日内瓦大学开放档案可重新下载）与拉丁文 hunspell 展开词表（1800 万行），不入库；见 calvin_sermons_raw/1samuel/PROVENANCE.md
+calvin_sermons_raw/1samuel/src/
+calvin_sermons_raw/1samuel/lexicon/

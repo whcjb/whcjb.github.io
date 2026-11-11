@@ -2,12 +2,13 @@
 layout: default
 ---
 {%- comment -%}
-  加尔文讲章（戈尔丁英译，约伯记 1574 / 申命记 1583）单篇页。
+  加尔文讲章单篇页：约伯记 1574 / 申命记 1583（戈尔丁英译）；撒母耳记上（拉丁文，《加尔文全集》29–30 卷重排的 1604 年译本）。
   底本 EEBO-TCP A69056 / A17698（CC0），由 scripts/publish_calvin_sermons.py 生成，见 calvin_sermons_raw/<书>/。
 
   ⚠️ 不复用 calvin-en / calvin-chapter：讲章是另一种书，样式独立（每本书独立样式）。
   配色沿用加尔文首页的古典书卷方向（米色底 #faf7f0、墨绿 #2d4a3a、暖金 #c9a96e），只取色值，类名 cs- 前缀。
   - 所讲经文 → `.cs-text`（框）；篇首提要 → `.cs-argument`；页边旁注 → `.cs-margin`；印本页码 → `.cs-pb`（#pN）。
+  - 经文框节号 → `.cs-vn`；全集编者脚注 → 正文 `.cs-edn` 记号 + 篇末 `.cs-ednote`（撒母耳记上）。
   - 录入本读不出的字 → `.cs-gap`（标红）；申命记缺页 → `.cs-lost`；两篇并一页的说明 → `.cs-merge`。
   - 英文页，不接经文弹层（模块只认中文书卷名）。
 {%- endcomment -%}
@@ -76,6 +77,10 @@ body:has(.calvin-sermon-wrap) { background-color: #faf7f0; }
 .cs-content .cs-lost, .cs-content .cs-merge { color: #8a8275; font-style: italic; font-size: 14.5px; border-left: 3px solid #b3261e;
   padding: 6px 0 6px 14px; text-align: left; }
 .cs-content .cs-merge { border-left-color: var(--cs-gold); }
+.cs-content .cs-vn { font-weight: normal; color: var(--cs-gold); font-size: .85em; margin-right: 2px; }
+.cs-content .cs-edn { font-size: 11px; color: #8a7a55; }
+.cs-content .cs-ednote { font-size: 13.5px; color: #6d6455; border-top: 1px solid var(--cs-rule); padding-top: 8px; margin-top: 1.6em;
+  text-align: left; }
 .cs-content .cs-quote { margin-left: 1.5em; font-size: 15.5px; }
 .cs-content .cs-closer { text-align: right; font-style: italic; }
 .cs-content .cs-item { margin-left: 1.2em; }
