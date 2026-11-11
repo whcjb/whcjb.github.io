@@ -19,6 +19,16 @@ layout: default
         <p class="fb-hero-meta">{{ page.edition }}</p>
       </div>
 
+      {%- comment -%} 三卷切换：原书一部书分三卷出页，各卷首页之间原先没有互链（用户 2026-11-11 问
+        「怎么没有提摩太后书及提多书的入口」）。顺序照原书：提前 → 提多 → 提后；中文页指中文首页。{%- endcomment -%}
+      {%- assign fb_vols = "1timothy|提摩太前书|1 Timothy,titus|提多书|Titus,2timothy|提摩太后书|2 Timothy" | split: "," -%}
+      <nav class="fb-vols">
+        {%- for v in fb_vols -%}{%- assign vp = v | split: "|" -%}
+        {%- if vp[0] == page.book_id -%}<span class="fb-vol-on">{% if page.zh %}{{ vp[1] }}{% else %}{{ vp[2] }}{% endif %}</span>
+        {%- else -%}<a href="{{ site.baseurl }}/fairbairn/{{ vp[0] }}/{% if page.zh %}zh/{% endif %}">{% if page.zh %}{{ vp[1] }}{% else %}{{ vp[2] }}{% endif %}</a>{%- endif -%}
+        {%- endfor -%}
+      </nav>
+
       {{ content }}
 
     </div>
@@ -40,6 +50,12 @@ layout: default
   font-size: 26px; font-weight: normal; line-height: 1.3; color: var(--fb-ink-dark); }
 .fairbairn-book .fb-hero-author { margin: 0; font-size: 14.5px; color: #44444f; }
 .fairbairn-book .fb-hero-meta { margin: 2px 0 0; font-size: 13px; color: #8a8a99; font-style: italic; }
+.fairbairn-book .fb-vols { display: flex; flex-wrap: wrap; gap: 8px; margin: -8px 0 6px;
+  font-family: Georgia, "Times New Roman", "Songti SC", serif; font-size: 14.5px; }
+.fairbairn-book .fb-vols a, .fairbairn-book .fb-vols .fb-vol-on { padding: 5px 14px; border: 1px solid var(--fb-rule);
+  border-radius: 4px; background: var(--fb-paper); color: var(--fb-ink-dark); text-decoration: none; }
+.fairbairn-book .fb-vols a:hover { border-color: var(--fb-ink); background: #fff; }
+.fairbairn-book .fb-vols .fb-vol-on { background: var(--fb-ink); border-color: var(--fb-ink); color: #fff; }
 .fairbairn-book .fb-group {
   font-family: Georgia, "Times New Roman", "Songti SC", serif; margin: 30px 0 12px;
   font-size: 15px; color: var(--fb-ink-dark); letter-spacing: .05em;
