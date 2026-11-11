@@ -83,6 +83,9 @@ def chapter_body(book, ch, notes):
             if k == 0 or VER_RE.match(h):
                 h = VER_RE.sub(lambda m: f'{m.group(1)}<b class="fb-ver">{m.group(2).strip()}</b>', h, count=1)
             out.append(p(h))
+        if e.get('restored'):      # 录入本缺、据 1874 年原版页图补录（gap_fill.json）
+            out.append(p(f'[The comment on this verse is wanting in the keyed text; it is supplied here from '
+                         f'the 1874 edition, {e["restored"]}, transcribed from the page images.]', 'fb-restored'))
     return '\n\n'.join(out)
 
 
@@ -195,6 +198,9 @@ def about(units):
         if e.get('missing'):
             rows.append(f'<tr><td>{names[e["book"]]} {e["ch"]}:{e["vv"][0]}</td><td>录入本缺此节注释（原书 {e["missing"]}）</td>'
                         f'<td>页面注明缺文，未从扫描本补</td></tr>')
+        if e.get('restored'):
+            rows.append(f'<tr><td>{names[e["book"]]} {e["ch"]}:{e["vv"][0]}</td><td>录入本缺此节注释（原书 {e["restored"]}）</td>'
+                        f'<td>据 1874 年原版扫描本逐页看图转录补入，段末注明</td></tr>')
     mv = {'1-timothy-1#verse-8': ('1 Tim. 2:8', '录入本挂在 1 Tim. 1:8 名下'),
           '2-timothy-2#verses-9-10': ('1 Tim. 2:9–10', '录入本挂在 2 Tim. 2:9–10 名下'),
           '1-timothy-1#verse-15': ('1 Tim. 5:15', '录入本挂在 1 Tim. 1:15 名下')}
@@ -211,13 +217,15 @@ def about(units):
         'that refer to them. The keyed text has been checked against a scan of the 1874 Edinburgh edition '
         '(Princeton Theological Seminary copy, Internet Archive <i>pastoralepistle00fair</i>), used only to '
         'restore the order of the book: three comments filed under the wrong verse have been put back in their '
-        'place, the repeated appendices removed from the verse comments, and five comments missing from the keyed '
-        'text are marked where they stand. The wording is that of the keyed text throughout.</p>',
+        'place, the repeated appendices removed from the verse comments. Five comments missing from the keyed text '
+        '(1 Tim. 1:8, 1:15, 5:19; Tit. 3:14; 2 Tim. 4:3) have been transcribed from the page images of the scan '
+        'and are marked as such. Elsewhere the wording is that of the keyed text.</p>',
         '<p class="fb-note-zh"><b>文本说明。</b>本书正文据现代人工录入本（e-Sword / BibleSupport 模块，出自 2008 年 '
         'Libronix 本，经 StudyLight 刊布）。该本把作者的页脚注改作正文里的圆括号插注，又把三篇附录整篇重复嵌在'
         f'引到它们的经节之下（共 {L["appendix_paras"]} 段）。我们拿 1874 年爱丁堡初版的扫描本（普林斯顿神学院藏本，'
         '互联网档案馆 pastoralepistle00fair）作顺序证人，只用来恢复原书的次序：挂错经节的三条注释移回原处，'
-        '嵌在经节下的附录副本删去（附录另有单页），录入本整节缺失的五处注释在原位注明。字句一律照录入本，'
+        '嵌在经节下的附录副本删去（附录另有单页）。录入本整节缺失的五处注释（1 Tim. 1:8、1:15、5:19，Tit. 3:14，'
+        '2 Tim. 4:3）据扫描本逐页看原图转录补入，段末注明；经文出处照录入本体例改作现代写法。其余字句一律照录入本，'
         '未据扫描本改动；希腊文里被拆开的重音符号已按 Unicode 合并。</p>',
         '<table class="fb-edtab"><tr><th>位置</th><th>录入本</th><th>处理</th></tr>',
         *rows, '</table>', '</div>'])

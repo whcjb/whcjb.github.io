@@ -9,7 +9,8 @@
 源取已发布的英文页 fairbairn/1timothy/<slug>.md：
   - 节首 `<b class="fb-ver">Vers. 1, 2.</b> <em>…</em>` 是**费尔贝恩自己的译文**（不是钦定本），照他的英文译出，不换和合本；
   - 「原文与译文」页：希腊文段（fb-gk）原样保留不送模型，只译他的英译（fb-en）；章标题程序换中文；
-  - 缺文占位（fb-lost，本站英文页自己加的说明）程序换成中文说明，不送模型。
+  - 缺文占位（fb-lost）与补录段的出处说明（fb-restored，2026-11-11 五处缺文据原版补录），都是本站英文页自己加的，
+    程序换成中文说明，不送模型。
 
 缓存  fairbairn_raw/pastoral/zh_cache/<md5>.txt   ← 必须保留
 输出  fairbairn_raw/pastoral/zh_chapters/1timothy/<slug>.md ← 翻完 chmod 444
@@ -97,6 +98,7 @@ T.BAD_LOG, T.ITALIC_LOG, T.ACCEPTED = RAW / 'zh_translate_issues.log', RAW / 'zh
 
 CN_NUM = '〇一二三四五六'
 LOST_ZH = '<p class="fb-lost"><b class="fb-ver">第 {v} 节</b>　本节注释（原书第 {pp} 页）在本站所据的录入本中缺失。</p>'
+RESTORED_ZH = '<p class="fb-restored">〔本节注释为录入本所缺，据 1874 年原版第 {pp} 页页图转录补入。〕</p>'
 
 
 def body_of(slug: str) -> str:
@@ -115,6 +117,10 @@ def units_of(slug: str):
         m = re.match(r'<p class="fb-lost"><b class="fb-ver">Vers?\. (\d+)\.</b>.*?pp?\. ([\d–-]+)\).*</p>$', b, re.S)
         if m:
             out.append(('keep', LOST_ZH.format(v=m.group(1), pp=m.group(2))))
+            continue
+        m = re.match(r'<p class="fb-restored">.*?pp?\. ([\d–-]+),.*</p>$', b, re.S)
+        if m:                                           # 补录段的出处说明（publish_fairbairn_en 加的），程序换中文
+            out.append(('keep', RESTORED_ZH.format(pp=m.group(1))))
             continue
         if b.startswith('<div class="fb-par"'):        # 原文与译文：一章一块，希腊文保留，只译英译
             for ln in b.split('\n'):

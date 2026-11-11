@@ -12,7 +12,7 @@ layout: default
 
   本书版式要点（底本 StudyLight / BibleSupport 录入本，见 fairbairn_raw/pastoral/PROVENANCE.md）：
   - 一章一页；每条注释以原书的「Ver. N.」起段 → `.fb-ver`，前面放 commentary-anchor。
-  - 录入本整节缺文 → `.fb-lost`（不从扫描本补，待用户定）。
+  - 录入本整节缺文 → 2026-11-11 五处已据原版页图补录，段末 `.fb-restored` 注明出处；`.fb-lost` 占位留作通用样式。
   - 原书页脚注录入本已改作正文圆括号插注，照录入本。
   - 经文与译文页：希腊文 / 英文左右两栏 `.fb-par`，手机上上下排。
 {%- endcomment -%}
@@ -197,6 +197,8 @@ layout: default
 .fairbairn-wrap .fb-lost { color: #8a8a99; font-style: italic; border-left: 3px solid var(--fb-rule);
   padding: 6px 0 6px 14px; text-align: left !important; }
 .fairbairn-wrap .fb-lost .fb-ver { font-style: normal; }
+/* 录入本缺、据 1874 年原版页图补录的注释：段末一行出处说明（gap_fill.json） */
+.fairbairn-wrap .fb-restored { color: #8a8a99; font-size: .88em; font-style: italic; text-align: left !important; margin-top: -4px; }
 /* 章内小节标题（导论、附录） */
 .fairbairn-wrap .fb-content h2.fb-sec { font-family: Georgia, "Times New Roman", serif; font-size: 17px; font-weight: normal;
   text-align: center; color: var(--fb-ink-dark); margin: 6px 0 22px; letter-spacing: .06em; line-height: 1.6; }

@@ -37,10 +37,14 @@ NV = {'1timothy': [20, 15, 16, 16, 25, 21], 'titus': [16, 15, 15], '2timothy': [
 MISSING = [
     ('1timothy', 1, 8, 'pp. 85–86'),
     ('1timothy', 1, 15, 'pp. 95–97'),
-    ('1timothy', 5, 19, 'pp. 219–220'),
-    ('titus', 3, 14, 'p. 305'),
-    ('2timothy', 4, 3, 'pp. 383–384'),
+    ('1timothy', 5, 19, 'p. 220'),          # 原记 pp. 219–220；看图：本条整条在 220 页（2026-11-11）
+    ('titus', 3, 14, 'pp. 304–305'),        # 原记 p. 305
+    ('2timothy', 4, 3, 'pp. 385–386'),      # 原记 pp. 383–384（扫描本叶号表在这一段错位）
 ]
+# 补录：gap_fill.json 里有的，据 1874 年原版页图转录填进去（用户 2026-11-11 令补）；没有的仍出占位说明
+GAP_FILL = {(e['book'], e['ch'], e['v']): e for e in
+            json.loads((Path(__file__).resolve().parent.parent / 'fairbairn_raw' / 'pastoral' / 'gap_fill.json')
+                       .read_text(encoding='utf-8'))['entries']}
 
 K = 6
 
@@ -238,6 +242,13 @@ def build_notes(idx, appx):
         anchor = max((e for e in entries if e['book'] == book and e['ch'] == ch and e['vv'] and e['vv'][0] < v),
                      key=lambda e: e['pos'])
         k = entries.index(anchor) + 1
+        fill = GAP_FILL.get((book, ch, v))
+        if fill:
+            assert fill['pages'] == pages, (book, ch, v, fill['pages'], pages)
+            entries.insert(k, dict(book=book, ch=ch, key=f'verse-{v}', src=f'(1874 scan, {pages})', vv=[v],
+                                   label=f'Ver. {v}.', pos=anchor['pos'] + 0.5, restored=pages,
+                                   paras=[dict(html=h) for h in fill['paras']]))
+            continue
         entries.insert(k, dict(book=book, ch=ch, key=f'verse-{v}', src='(missing)', vv=[v], label=None,
                                pos=anchor['pos'] + 0.5, missing=pages, paras=[]))
     return entries, log
@@ -321,7 +332,8 @@ def main():
             if miss:
                 uncovered.append(f'{book} {ch}: {miss}')
     units = dict(notes=[dict(book=e['book'], ch=e['ch'], vv=e['vv'], label=e['label'], src=e['src'],
-                             missing=e.get('missing'), paras=[p['html'] for p in e['paras']]) for e in entries],
+                             missing=e.get('missing'), restored=e.get('restored'),
+                             paras=[p['html'] for p in e['paras']]) for e in entries],
                  front=front, text=text, uncovered=uncovered,
                  log=dict(appendix_paras=log['appendix_paras'], heading_paras=log['heading_paras'],
                           moved=log['moved']))
