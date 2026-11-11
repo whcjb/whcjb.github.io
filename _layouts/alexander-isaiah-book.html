@@ -18,7 +18,7 @@ layout: default
   **深浅两色**（用户 2026-09-15 定）：已有中译的格子用深色，点进去是中文页；
   只有英文的用浅色，**照样可点**，点进去是英文页。不做成「浅色＝不可点的虚格」
   ——诗篇那页是那么做的，但这本书的英文版本身就是成品，拦着不让点没有道理。
-  中文页右上角有「English →」按钮回到英文页，所以深色格子不必再给英文入口。
+  中文章节页不放英文入口（用户 2026-11-11 定）；英文版只从书卷首页右上角的「English edition →」进。
 {%- endcomment -%}
 
 <div class="container alexander-wrap" style="padding-top: 70px;">
@@ -27,7 +27,8 @@ layout: default
 
       <div class="ax-chrome" style="margin: 18px 0 22px;">
         <a href="{{ site.baseurl }}/commentaries/">&larr; 历代解经</a>
-        <span></span>
+        {% if page.zh %}<a href="{{ site.baseurl }}/alexander/{{ page.book_id }}/">English edition &rarr;</a>
+        {% else %}<a href="{{ site.baseurl }}/alexander/{{ page.book_id }}/zh/">中文版 &rarr;</a>{% endif %}
       </div>
 
       <h1 class="ax-title">{{ page.book_name }}</h1>

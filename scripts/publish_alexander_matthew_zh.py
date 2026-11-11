@@ -47,7 +47,7 @@ def main():
         prev = next((x for x in reversed(order[:i]) if x in have), None)
         nxt = next((x for x in order[i + 1:] if x in have), None)
         fm = ['---', 'layout: alexander-matthew-chapter', 'book_id: matthew',
-              'book_name: "亚历山大《马太福音释义》"', 'book_url: "/alexander/matthew/"',
+              'book_name: "亚历山大《马太福音释义》"', 'book_url: "/alexander/matthew/zh/"',
               f'title: "{label(s)}"', 'subtitle: "Joseph Addison Alexander"', f'date: {meta[s]}', 'zh: true',
               f'en_url: "/alexander/matthew/{s}/"']
         if s.isdigit():

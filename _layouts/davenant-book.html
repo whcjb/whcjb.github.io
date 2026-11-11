@@ -12,8 +12,10 @@ layout: default
 
       <div class="dv-chrome" style="margin: 18px 0 22px;">
         <a href="{{ site.baseurl }}/commentaries/">&larr; 历代解经</a>
-        {% if page.zh %}<a class="dv-lang" href="{{ site.baseurl }}/davenant/colossians/">中文版 &rarr;</a>
-        {% else %}<span></span>{% endif %}
+        {%- comment -%} 首页（/davenant/<书>/）是中文入口，英文目录在 /en/（page.en）。英文版只从这里进，
+          中文章节页不放英文入口（用户 2026-11-11 定）。{%- endcomment -%}
+        {% if page.en %}<a class="dv-lang" href="{{ site.baseurl }}/davenant/{{ page.book_id }}/">中文版 &rarr;</a>
+        {% else %}<a class="dv-lang" href="{{ site.baseurl }}/davenant/{{ page.book_id }}/en/">English edition &rarr;</a>{% endif %}
       </div>
 
       <h1 class="dv-title">{{ page.book_name }}</h1>
@@ -35,7 +37,7 @@ layout: default
 
       {%- comment -%}
         章卡片指向**中译**（有中译时），与欧文那边同一套做法：中文页顶上有
-        `English →` 可切回原文。早先卡片一律只指英文页，四章中译在本页
+        `English →` 可切回原文（2026-11-11 起章节页不再放，英文版只从首页右上角进）。早先卡片一律只指英文页，四章中译在本页
         没有任何入口，只能从 /commentaries/ 进去。
         中译清单按 `site.pages` 里 `<章>/zh/index.md` 是否存在判，不写死章号：
         将来补新章不用回来改这里。
@@ -45,11 +47,11 @@ layout: default
       <div class="dv-ch-grid">
         {% for i in (1..page.chapters) %}
         {%- assign zk = "davenant/" | append: page.book_id | append: "/" | append: i | append: "/zh/index.md" -%}
-        {%- assign has_zh = false -%}{% if zh_paths contains zk %}{% assign has_zh = true %}{% endif %}
+        {%- assign has_zh = false -%}{% if zh_paths contains zk and page.en != true %}{% assign has_zh = true %}{% endif %}
         <a class="dv-ch" href="{{ site.baseurl }}/davenant/{{ page.book_id }}/{{ i }}/{% if has_zh %}zh/{% endif %}"
-           title="{% if has_zh %}中文版（页内可切回英文原文）{% else %}仅英文{% endif %}">
+           title="{% if has_zh %}中文版{% elsif page.en %}English{% else %}仅英文{% endif %}">
           <span class="dv-ch-n">CHAP. {% case i %}{% when 1 %}I{% when 2 %}II{% when 3 %}III{% when 4 %}IV{% else %}{{ i }}{% endcase %}</span>
-          <span class="dv-ch-cn">歌罗西书 第 {{ i }} 章{% unless has_zh %} · 仅英文{% endunless %}</span>
+          <span class="dv-ch-cn">歌罗西书 第 {{ i }} 章{% unless has_zh or page.en %} · 仅英文{% endunless %}</span>
         </a>
         {% endfor %}
       </div>
@@ -79,10 +81,10 @@ layout: default
           <p class="dv-appx-note">{{ grp.note }}</p>
           <div class="dv-appx-list">
             {% for it in grp.items %}
-            {%- comment -%} 有中译（<篇>/zh/index.md）就指中文页，页内可切回英文；与章卡片同一判法 {%- endcomment -%}
+            {%- comment -%} 有中译（<篇>/zh/index.md）就指中文页（英文目录 page.en 一律指英文）；与章卡片同一判法 {%- endcomment -%}
             {%- assign azk = it.url | remove_first: "/" | append: "zh/index.md" -%}
-            {%- assign a_zh = false -%}{% if zh_paths contains azk %}{% assign a_zh = true %}{% endif %}
-            <a href="{{ site.baseurl }}{{ it.url }}{% if a_zh %}zh/{% endif %}" title="{% if a_zh %}中文版（页内可切回英文原文）{% else %}仅英文{% endif %}">
+            {%- assign a_zh = false -%}{% if zh_paths contains azk and page.en != true %}{% assign a_zh = true %}{% endif %}
+            <a href="{{ site.baseurl }}{{ it.url }}{% if a_zh %}zh/{% endif %}" title="{% if a_zh %}中文版{% elsif page.en %}English{% else %}仅英文{% endif %}">
               <span class="dv-appx-cn">{{ it.cn }}</span>
               <span class="dv-appx-en">{{ it.label }}</span>
             </a>

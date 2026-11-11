@@ -25,7 +25,7 @@ layout: default
             中英切换：英文页有 zh_url 时给「中文版」，中文页给回英文原著。
             两侧锚点 id 同源（james-<ch>-<v>），切过去仍落在同一节。
           {%- endcomment -%}
-          {% if page.zh %}<a class="manton-lang" href="{{ site.baseurl }}{{ page.en_url }}">English &harr;</a>
+          {% if page.zh %}{%- comment -%} 中文章节页不放英文入口：英文版只从书卷首页进（用户 2026-11-11 定，历代解经全部书卷通行）。{%- endcomment -%}
           {% elsif page.zh_url %}<a class="manton-lang" href="{{ site.baseurl }}{{ page.zh_url }}">中文版 &harr;</a>{% endif %}
         </span>
       </div>

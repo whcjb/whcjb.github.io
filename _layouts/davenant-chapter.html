@@ -32,7 +32,7 @@ layout: default
           只认 `zh_url`，于是**中文页根本没有回英文版的链接**（四章全中招）。
         {%- endcomment -%}
         {% if page.zh_url %}<a class="dv-lang" href="{{ site.baseurl }}{{ page.zh_url }}">中文版 &rarr;</a>{% endif %}
-        {% if page.en_url %}<a class="dv-lang" href="{{ site.baseurl }}{{ page.en_url }}">English &rarr;</a>{% endif %}
+        {%- comment -%} 中文章节页不放英文入口：英文版只从书卷首页进（用户 2026-11-11 定，历代解经全部书卷通行）。{%- endcomment -%}
       </div>
 
       <h1 class="dv-title">{{ page.title }}</h1>

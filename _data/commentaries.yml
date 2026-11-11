@@ -356,7 +356,7 @@ books:
     pick_c1: "#4a4382"
     links:
       - {author: alexander, path: "/alexander/psalms/zh/", url_tpl: "/alexander/psalms/zh/__CH__/", title_cn: "诗篇注释", title_en: "The Psalms Translated and Explained", c0: "#5f2323", c1: "#7d2f2f"}
-      - {author: vos, path: "/vos/psalter/", url_tpl: "/vos/psalter/__CH__/", title_cn: "诗篇的末世论", title_en: "Eschatology of the Psalter", c0: "#7b46a3", c1: "#9e61ca"}
+      - {author: vos, path: "/vos/psalter/zh/", url_tpl: "/vos/psalter/zh/__CH__/", title_cn: "诗篇的末世论", title_en: "Eschatology of the Psalter", c0: "#7b46a3", c1: "#9e61ca"}
   - id: proverbs
     name: "箴言"
     en: "Proverbs"
@@ -491,7 +491,7 @@ books:
     links:
       - {author: spurgeon, path: "/spurgeon/matthew/zh/", url_tpl: "/spurgeon/matthew/zh/__CH__/", title_cn: "马太福音注释", title_en: "The Gospel of the Kingdom", c0: "#3a3018", c1: "#4a3b22"}
       - {author: dickson, path: "/dickson/matthew/", url_tpl: "/dickson/matthew/__CH__/", title_cn: "马太福音简释", title_en: "A Brief Exposition of the Evangel of Jesus Christ according to Matthew", c0: "#661b6f", c1: "#8b2499"}
-      - {author: alexander, path: "/alexander/matthew/", url_tpl: "/alexander/matthew/__CH__/", title_cn: "马太福音释义", title_en: "The Gospel according to Matthew Explained", c0: "#5f2323", c1: "#7d2f2f"}
+      - {author: alexander, path: "/alexander/matthew/zh/", url_tpl: "/alexander/matthew/zh/__CH__/", title_cn: "马太福音释义", title_en: "The Gospel according to Matthew Explained", c0: "#5f2323", c1: "#7d2f2f"}
   - id: mark
     name: "马可福音"
     en: "Mark"
@@ -519,7 +519,7 @@ books:
     testament: nt
     chapters: 28
     links:
-      - {author: alexander, path: "/alexander/acts/", url_tpl: "/alexander/acts/__CH__/", title_cn: "使徒行传注释", title_en: "The Acts of the Apostles Explained", c0: "#5f2323", c1: "#7d2f2f"}
+      - {author: alexander, path: "/alexander/acts/zh/", url_tpl: "/alexander/acts/zh/__CH__/", title_cn: "使徒行传注释", title_en: "The Acts of the Apostles Explained", c0: "#5f2323", c1: "#7d2f2f"}
   - id: romans
     name: "罗马书"
     en: "Romans"
@@ -559,7 +559,7 @@ books:
     testament: nt
     chapters: 6
     links:
-      - {author: hodge, path: "/hodge/ephesians/zh/", url_tpl: "/hodge/ephesians/zh/__CH__/", title_cn: "以弗所书注释", title_en: "An Exposition of Ephesians", c0: "#152840", c1: "#2b5080"}
+      - {author: hodge, path: "/hodge/ephesians/", url_tpl: "/hodge/ephesians/__CH__/", title_cn: "以弗所书注释", title_en: "An Exposition of Ephesians", c0: "#152840", c1: "#2b5080"}
   - id: philippians
     name: "腓立比书"
     en: "Philippians"

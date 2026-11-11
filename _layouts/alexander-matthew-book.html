@@ -8,7 +8,11 @@ layout: default
   配色取注释家身份色石榴石 #7d2f2f。
 
   分组按原书实际体例：第 1–16 章逐节详注，第 17–28 章只有每章一段纲要（作者 1860 年 1 月去世前赶完，
-  见著者序）。中译未开始，章号格子一律进英文页。页面要紧凑：不放大色块横幅（用户 2026-10-19 定）。
+  见著者序）。页面要紧凑：不放大色块横幅（用户 2026-10-19 定）。
+
+  中英两份目录共用本 layout，靠 page.zh 切换：/alexander/matthew/zh/ 是中文目录（「历代解经」入口指这里），
+  已有中译的章进中文页，其余浅色虚线格进英文页（照以赛亚书、迪克森那页的做法）；/alexander/matthew/ 是英文目录。
+  英文版只从中文目录右上角「English edition →」进，中文章节页不放英文入口（用户 2026-11-11 定）。
 {%- endcomment -%}
 
 <div class="container alexander-matthew-wrap" style="padding-top: 70px;">
@@ -17,7 +21,8 @@ layout: default
 
       <div class="am-chrome" style="margin: 18px 0 22px;">
         <a href="{{ site.baseurl }}/commentaries/">&larr; 历代解经</a>
-        <span></span>
+        {% if page.zh %}<a href="{{ site.baseurl }}/alexander/matthew/">English edition &rarr;</a>
+        {% else %}<a href="{{ site.baseurl }}/alexander/matthew/zh/">中文版 &rarr;</a>{% endif %}
       </div>
 
       <h1 class="am-title">{{ page.title }}</h1>
@@ -27,6 +32,7 @@ layout: default
         <a href="{{ site.baseurl }}/alexander/matthew/preface/"><span class="am-extra-cn">序</span><span class="am-extra-en">Preface</span></a>
       </div>
 
+      {%- assign zh_paths = site.pages | where_exp: "p", "p.path contains 'alexander/matthew/zh/'" | map: "path" | join: "," -%}
       {% assign groups = "1,16,逐节详注,Notes|17,28,各章纲要,Analysis only" | split: "|" %}
       {% for g in groups %}
         {% assign gp = g | split: "," %}
@@ -35,7 +41,9 @@ layout: default
         <h2 class="am-grp">{{ gp[2] }}<span>Matthew {{ lo }}–{{ hi }} · {{ gp[3] }}</span></h2>
         <div class="am-ch-grid">
           {% for i in (lo..hi) %}
-          <a class="am-ch" href="{{ site.baseurl }}/alexander/matthew/{{ i }}/">{{ i }}</a>
+          {%- assign zk = "alexander/matthew/zh/" | append: i | append: ".md" -%}
+          {%- assign has_zh = false -%}{% if page.zh and zh_paths contains zk %}{% assign has_zh = true %}{% endif %}
+          <a class="am-ch{% if page.zh and has_zh == false %} am-en-only{% endif %}" href="{{ site.baseurl }}/alexander/matthew/{% if has_zh %}zh/{% endif %}{{ i }}/"{% if page.zh and has_zh == false %} title="暂只有英文"{% endif %}>{{ i }}</a>
           {% endfor %}
         </div>
       {% endfor %}
@@ -47,7 +55,7 @@ layout: default
         <em>正文中的斜体是他所讲解的经文字词与他自己的译法</em>。</p>
         <p>据书前的序（署名 S. D. A.，1860 年 12 月），全书<strong>逐节详注只到第 16 章</strong>；
         第 17–28 章只有每章一段纲要，是他病后复笔、赶在去世前一周又一天写完的；原拟的总导论也没有写成。
-        与马可福音平行的经文，他多把马可福音注释里的讲解整段移来，按马太的经文改动。全书<strong>尚无中译</strong>。</p>
+        与马可福音平行的经文，他多把马可福音注释里的讲解整段移来，按马太的经文改动。{% if page.zh %}中译逐章推进中，深色格子已有中译，浅色虚线格暂只有英文；底本与编者改动说明见<a href="{{ site.baseurl }}/alexander/matthew/">英文版首页</a>。{% else %}已有中译的章见<a href="{{ site.baseurl }}/alexander/matthew/zh/">中文版</a>。{% endif %}</p>
       </div>
 
       {{ content }}
@@ -83,6 +91,7 @@ layout: default
 .am-ch { display: flex; align-items: center; justify-content: center; min-height: 40px;
   font-family: Georgia, serif; font-size: 15px; color: var(--am-ink); background: var(--am-paper);
   border: 1px solid var(--am-rule); border-radius: 3px; text-decoration: none !important; }
+.am-ch.am-en-only { border-style: dashed; color: #b39a95; background: #fff; }
 .am-ch:hover { background: var(--am-ink); color: #fff !important; border-color: var(--am-ink); }
 
 .am-blurb { font-size: 15px; line-height: 1.95; color: #3d3532; margin: 28px 0 0; }

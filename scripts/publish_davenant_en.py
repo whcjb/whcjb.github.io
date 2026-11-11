@@ -617,6 +617,12 @@ def main():
     (OUT / 'index.html').write_text(
         '---\nlayout: davenant-book\nbook_id: colossians\n'
         f'book_name: "{BOOK_NAME}"\nchapters: {n_ch}\n---\n', encoding='utf-8')
+    # 英文目录：首页（上面那份）是中文入口、章卡片指中译；英文版只从首页右上角
+    # 「English edition →」进到这里，卡片一律指英文页（用户 2026-11-11 定）。
+    (OUT / 'en').mkdir(exist_ok=True)
+    (OUT / 'en' / 'index.html').write_text(
+        '---\nlayout: davenant-book\nbook_id: colossians\n'
+        f'book_name: "{BOOK_NAME}"\nchapters: {n_ch}\nen: true\n---\n', encoding='utf-8')
     tot_fn = sum(len(c['fns']) for c in chapters)
     print(f'[ok] {n_ch} 章，行内配对脚注 {tot_fn} / 共 '
           f'{sum(len(v) for v in notes.values())} 条')

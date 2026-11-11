@@ -28,7 +28,7 @@ layout: default
 
       <div class="dv-chrome" style="margin: 18px 0 22px;">
         <a href="{{ site.baseurl }}{{ page.up_url }}">&larr; {{ page.up_label }}</a>
-        <span>{% if page.zh_url %}<a class="dv-lang" href="{{ site.baseurl }}{{ page.zh_url }}">中文版 &rarr;</a>{% endif %}{% if page.en_url %}<a class="dv-lang" href="{{ site.baseurl }}{{ page.en_url }}">English &rarr;</a>{% endif %}</span>
+        <span>{% if page.zh_url %}<a class="dv-lang" href="{{ site.baseurl }}{{ page.zh_url }}">中文版 &rarr;</a>{% endif %}{%- comment -%} 中文章节页不放英文入口：英文版只从书卷首页进（用户 2026-11-11 定，历代解经全部书卷通行）。{%- endcomment -%}</span>
       </div>
 
       {% if page.kicker %}<div class="dv-kicker">{{ page.kicker }}</div>{% endif %}

@@ -2,7 +2,7 @@
 layout: alexander-acts-chapter
 book_id: acts
 book_name: "亚历山大《使徒行传释义》"
-book_url: "/alexander/acts/"
+book_url: "/alexander/acts/zh/"
 title: "书名页（下卷）"
 subtitle: "Joseph Addison Alexander"
 date: 2026-11-10 16:35

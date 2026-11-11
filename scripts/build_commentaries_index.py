@@ -360,7 +360,7 @@ description: 「历代解经」{cn}条目：{names}，选择进入。
 
 # 单篇论文（没有逐章页面）：has_content 认不出来，在这里登记 {作者: {书卷: 入口}}。
 # 不进对比抽屉（compare_sources 只收有章节的目录）。
-ESSAY_ENTRIES = {'vos': {'psalms': '/vos/psalter/'}}
+ESSAY_ENTRIES = {'vos': {'psalms': '/vos/psalter/zh/'}}   # 入口一律指中文版（用户 2026-11-11）
 # 交界斜度：顶边比底边右移 2×DUO_SLANT 个百分点。原先 20 个百分点，三家时最左一带底边太窄放不下作者名，收到 8。
 DUO_SLANT = 4
 
@@ -729,7 +729,10 @@ def entry_path(author_id: str, dirname: str) -> str:
     只认书卷级 `<book>/zh/index.html`。欧文是章级 `<ch>/zh/`（整卷没有中文
     索引页），这里不会误指过去。"""
     d = AUTHORS[author_id]['dir']
-    if (ROOT / d / dirname / 'zh' / 'index.html').exists():
+    zi = ROOT / d / dirname / 'zh' / 'index.html'
+    # 贺智以弗所书的 zh/index.html 只是跳回书首页的 meta refresh 空壳（中文版就在书首页），
+    # 指过去要多跳一次，按跳转壳处理。
+    if zi.exists() and 'http-equiv="refresh"' not in zi.read_text(encoding='utf-8'):
         return f'/{d}/{dirname}/zh/'
     return f'/{d}/{dirname}/'
 

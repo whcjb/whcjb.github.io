@@ -8,7 +8,9 @@ layout: default
   （每本书独立样式）。配色取注释家身份色石榴石 #7d2f2f。
 
   分组按原书两卷：卷一第 1–12 章、卷二第 13–28 章（1857 纽约 Scribner 初版）。
-  中译未开始，章号格子一律进英文页；将来出中译时照以赛亚书那页的深浅两色做法加。
+  中英两份目录共用本 layout，靠 page.zh 切换：/alexander/acts/zh/ 是中文目录（「历代解经」入口指这里），
+  /alexander/acts/ 是英文目录。全书 28 章 2026-11-10 已全部中译，中文目录的格子一律进中文页。
+  中文目录右上角给「English edition →」——英文版只从书卷首页进，中文章节页不放英文入口（用户 2026-11-11 定）。
   页面要紧凑：不放大色块横幅（用户 2026-10-19 定）。
 {%- endcomment -%}
 
@@ -18,16 +20,18 @@ layout: default
 
       <div class="aa-chrome" style="margin: 18px 0 22px;">
         <a href="{{ site.baseurl }}/commentaries/">&larr; 历代解经</a>
-        <span></span>
+        {% if page.zh %}<a href="{{ site.baseurl }}/alexander/acts/">English edition &rarr;</a>
+        {% else %}<a href="{{ site.baseurl }}/alexander/acts/zh/">中文版 &rarr;</a>{% endif %}
       </div>
 
       <h1 class="aa-title">{{ page.title }}</h1>
       <div class="aa-sub">Joseph Addison Alexander · 1809–1860 · New York: Charles Scribner, 1857 · 2 vols.</div>
 
+      {%- assign zseg = "" -%}{% if page.zh %}{% assign zseg = "zh/" %}{% endif %}
       <div class="aa-extra">
-        <a href="{{ site.baseurl }}/alexander/acts/title-1/"><span class="aa-extra-cn">扉页</span><span class="aa-extra-en">Title Page</span></a>
-        <a href="{{ site.baseurl }}/alexander/acts/preface/"><span class="aa-extra-cn">著者序</span><span class="aa-extra-en">Preface</span></a>
-        <a href="{{ site.baseurl }}/alexander/acts/introduction/"><span class="aa-extra-cn">导论</span><span class="aa-extra-en">Introduction</span></a>
+        <a href="{{ site.baseurl }}/alexander/acts/{{ zseg }}title-1/"><span class="aa-extra-cn">扉页</span><span class="aa-extra-en">Title Page</span></a>
+        <a href="{{ site.baseurl }}/alexander/acts/{{ zseg }}preface/"><span class="aa-extra-cn">著者序</span><span class="aa-extra-en">Preface</span></a>
+        <a href="{{ site.baseurl }}/alexander/acts/{{ zseg }}introduction/"><span class="aa-extra-cn">导论</span><span class="aa-extra-en">Introduction</span></a>
       </div>
 
       {% assign groups = "1,12,卷一|13,28,卷二" | split: "|" %}
@@ -38,7 +42,7 @@ layout: default
         <h2 class="aa-grp">{{ gp[2] }}<span>Acts {{ lo }}–{{ hi }} · Vol. {% if lo == 1 %}I{% else %}II{% endif %}</span></h2>
         <div class="aa-ch-grid">
           {% for i in (lo..hi) %}
-          <a class="aa-ch" href="{{ site.baseurl }}/alexander/acts/{{ i }}/">{{ i }}</a>
+          <a class="aa-ch" href="{{ site.baseurl }}/alexander/acts/{{ zseg }}{{ i }}/">{{ i }}</a>
           {% endfor %}
         </div>
       {% endfor %}
@@ -50,7 +54,7 @@ layout: default
         随即辨析希腊文的词义、语法与平行经文。<em>正文中的斜体是他所讲解的经文字词
         与他自己的译法</em>。著者序说明，此书原为神学生而写，改为面向一般读者之后，
         尽量少引希腊原文，也不逐家罗列他人的解释，而以「把译文做准」为主要目的。
-        全书<strong>尚无中译</strong>。</p>
+        {% if page.zh %}全书 28 章已有中译；底本与编者改动的逐条说明见<a href="{{ site.baseurl }}/alexander/acts/">英文版首页</a>。{% else %}全书 28 章中译见<a href="{{ site.baseurl }}/alexander/acts/zh/">中文版</a>。{% endif %}</p>
       </div>
 
       {{ content }}

@@ -1,0 +1,127 @@
+{%- comment -%}
+  欧文《希伯来书注释》目录，中英两份共用：/owen/hebrews/ 是中文入口（有中译的格子进中文页），
+  /owen/hebrews/en/ 是英文目录（include.en，格子一律进英文页）。英文版只从中文目录右上角
+  「English edition →」进，中文章节页不放英文入口（用户 2026-11-11 定）。
+{%- endcomment -%}
+<div class="container{% if include.en %} owen-en{% endif %}" style="padding-top:80px; max-width:840px;">
+  <div style="text-align:right; font-size:13px;">
+    {% if include.en %}<a href="{{ site.baseurl }}/owen/hebrews/" style="color:#1f5a4b;">中文版 &rarr;</a>
+    {% else %}<a href="{{ site.baseurl }}/owen/hebrews/en/" style="color:#1f5a4b;">English edition &rarr;</a>{% endif %}
+  </div>
+  <div style="text-align:center; margin-bottom:8px;">
+    <h1 style="font-family:Georgia,'Songti SC',serif; color:#1f4a3f; font-size:30px; letter-spacing:.04em;">希伯来书</h1>
+    <div style="color:#1f5a4b; font-size:14px; letter-spacing:.12em; margin-top:6px;">约翰·欧文注释 · An Exposition of the Epistle to the Hebrews</div>
+    <div style="color:#9a9a92; font-size:12px; margin-top:6px;">{% if include.en %}English edition · 英文原著{% else %}有中译的直接进中文版；英文原著见右上角{% endif %}</div>
+  </div>
+  {%- comment -%}
+    已发布中译的页面清单。中文页出在 <英文页>/zh/index.md（见 owen-pipeline 05），
+    所以扫 site.pages 里路径含 /zh/index.md 的，拼成一个字符串，循环里用 contains
+    查——比在每个格子里做一次 where 过滤便宜得多（48 个格子）。
+  {%- endcomment -%}
+  {%- assign zh_pages = site.pages | where_exp: "p", "p.path contains '/zh/index.md'" -%}
+  {%- assign zh_paths = zh_pages | map: "path" | join: "," -%}
+  {%- if include.en -%}{%- assign zh_paths = "" -%}{%- endif -%}
+
+  <!-- 卷首·导论(全书之首, 置于逐章注释之前) -->
+  <div class="owen-sec-hd">卷首 · 导论 Front Matter &amp; Exercitations
+    <a href="{{ site.baseurl }}/owen/hebrews/exercitations/" class="owen-listlink">全部列表 &rarr;</a></div>
+
+  <div class="owen-sub">卷首 Front Matter · 8 篇（编者总序 · Owen 献词 · 5 篇原序）</div>
+  <div class="owen-grid">
+    {% for n in (1..8) %}
+    {%- assign zk = "owen/hebrews/prefaces/" | append: n | append: "/zh/index.md" -%}
+    <a href="{{ site.baseurl }}/owen/hebrews/prefaces/{{ n }}/{% if zh_paths contains zk %}zh/{% endif %}"
+       class="owen-tile owen-tile-exer owen-tile-pref{% if zh_paths contains zk %} owen-tile-zh{% endif %}"
+       title="{% if include.en %}English{% elsif zh_paths contains zk %}中文版{% else %}仅英文（中译进行中）{% endif %}"><span>Pref</span>{{ n }}</a>
+    {% endfor %}
+  </div>
+
+  <div class="owen-sub">释经导论 Exercitations · 34 篇</div>
+  <div class="owen-grid">
+    {% for n in (1..34) %}
+    {%- assign zk = "owen/hebrews/exercitations/" | append: n | append: "/zh/index.md" -%}
+    <a href="{{ site.baseurl }}/owen/hebrews/exercitations/{{ n }}/{% if zh_paths contains zk %}zh/{% endif %}"
+       class="owen-tile owen-tile-exer{% if zh_paths contains zk %} owen-tile-zh{% endif %}"
+       title="{% if include.en %}English{% elsif zh_paths contains zk %}中文版{% else %}仅英文（中译进行中）{% endif %}"><span>Exer</span>{{ n }}</a>
+    {% endfor %}
+  </div>
+
+  <div class="owen-sub">安息日与主日专论 Day of Sacred Rest · 6 篇</div>
+  <div class="owen-grid">
+    {% for n in (35..40) %}
+    {%- assign zk = "owen/hebrews/exercitations/" | append: n | append: "/zh/index.md" -%}
+    <a href="{{ site.baseurl }}/owen/hebrews/exercitations/{{ n }}/{% if zh_paths contains zk %}zh/{% endif %}"
+       class="owen-tile owen-tile-exer{% if zh_paths contains zk %} owen-tile-zh{% endif %}"
+       title="{% if include.en %}English{% elsif zh_paths contains zk %}中文版{% else %}仅英文（中译进行中）{% endif %}"><span>Exer</span>{{ n }}</a>
+    {% endfor %}
+  </div>
+
+  <!-- 逐章注释 -->
+  <div class="owen-sec-hd" style="margin-top:40px;">逐章注释 Verse-by-verse Exposition</div>
+  <div class="owen-grid">
+    {% for n in (1..13) %}
+    {%- assign zk = "owen/hebrews/" | append: n | append: "/zh/index.md" -%}
+    <a href="{{ site.baseurl }}/owen/hebrews/{{ n }}/{% if zh_paths contains zk %}zh/{% endif %}"
+       class="owen-tile owen-tile-ch{% if zh_paths contains zk %} owen-tile-zh{% endif %}"
+       title="{% if include.en %}English{% elsif zh_paths contains zk %}中文版{% else %}仅英文（中译进行中）{% endif %}"><span>Ch</span>{{ n }}</a>
+    {% endfor %}
+  </div>
+  <p style="text-align:center; color:#8a8a82; font-size:13px; line-height:1.8; max-width:600px; margin:34px auto 0;">
+    约翰·欧文（John Owen, 1616–1683），清教神学家、牛津大学副校长。<br>
+    《希伯来书注释》共 7 卷，其中 1–13 章逐节注释取自 Vol 3–7。
+  </p>
+</div>
+
+<style>
+.owen-sec-hd{margin:30px 0 4px;font-size:12px;font-weight:bold;letter-spacing:.14em;
+  color:#7a8f85;text-transform:uppercase;text-align:center}
+.owen-listlink{font-size:11px;color:#1f5a4b;letter-spacing:0;text-transform:none;margin-left:8px;white-space:nowrap}
+.owen-sub{margin:16px 0 8px;font-size:12.5px;color:#8a8a82;text-align:center;letter-spacing:.02em}
+.owen-grid{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin:0 auto 8px;max-width:760px}
+.owen-tile{display:flex;align-items:center;justify-content:center;font-family:Georgia,serif;
+  text-decoration:none;transition:all .15s}
+/* 逐章: 实心纸底大方块 */
+.owen-tile-ch{flex-direction:column;line-height:1;width:70px;height:70px;
+  border:1px solid #cfe0d6;border-radius:10px;
+  background:#fbfaf6;color:#1f5a4b;font-size:24px;box-shadow:0 1px 4px rgba(31,90,75,.10)}
+.owen-tile-ch span{font-size:10px;letter-spacing:.08em;text-transform:uppercase;
+  opacity:.55;margin-bottom:3px}
+.owen-tile-ch:hover{background:#1f5a4b;color:#fff}
+/* 卷首/导论: 描边小方块(与章节区分) */
+.owen-tile-intro{width:48px;height:48px;border:1.5px solid #1f5a4b;border-radius:8px;
+  background:transparent;color:#1f5a4b;font-size:15px}
+.owen-tile-intro:hover{background:#1f5a4b;color:#fff}
+/* 导论/卷首带标签: EXER / 序 小字 + 大号编号(两行) */
+.owen-tile-exer{flex-direction:column;width:56px;height:52px;line-height:1;
+  border:1.5px solid #1f5a4b;border-radius:8px;background:transparent;color:#1f5a4b;font-size:19px}
+.owen-tile-exer span{font-size:9px;letter-spacing:.08em;text-transform:uppercase;
+  opacity:.62;margin-bottom:2px}
+.owen-tile-exer:hover{background:#1f5a4b;color:#fff}
+.owen-tile-pref{border-style:dashed}
+
+/* ── 格子配色：已译清晰 / 未译朦胧 ─────────────────────────
+   2026-09-03 三次调整后的终态，三条要求叠起来看才成立：
+     ① 去掉右上角小圆「中」字角标——48 个圆点太吵
+     ② 已译不要填墨绿底 #e6f0ea + 深边框 + 加粗——「太难看」，和旁边打架
+     ③ 已译不要跟着一起朦胧——要「清晰些」
+   所以：**已译用基础色**（上面 .owen-tile-ch 那套：浅纸底 #fbfaf6、
+   边框 #cfe0d6、墨绿字 #1f5a4b、带微阴影），不额外加任何装饰；
+   **只有未译**往下压一档（边框与字色调淡、去阴影），退成背景。
+   区分靠「清晰 vs 朦胧」，不靠填色，是三条要求的交集。
+   图例已删——差别是明度而非色块，画两个方块说明不了。状态另在 title 提示里。 */
+.owen-tile{position:relative}
+/* 未译：不是禁用态，仍可点（英文版本来就能读），只是退一步 */
+.owen-tile-exer:not(.owen-tile-zh),
+.owen-tile-ch:not(.owen-tile-zh){border-color:#b6cfc3;color:#6e9285}
+.owen-tile-ch:not(.owen-tile-zh){background:#fdfcf9;box-shadow:none}
+/* 英文目录：没有「已译/未译」之分，格子一律用基础色 */
+.owen-en .owen-tile-exer:not(.owen-tile-zh){border-color:#1f5a4b;color:#1f5a4b}
+.owen-en .owen-tile-ch:not(.owen-tile-zh){border-color:#cfe0d6;color:#1f5a4b;background:#fbfaf6;box-shadow:0 1px 4px rgba(31,90,75,.10)}
+.owen-en .owen-tile:hover{background:#1f5a4b !important;color:#fff !important}
+@media(max-width:600px){
+  .owen-tile-ch{width:58px;height:58px;font-size:18px}
+  .owen-tile-intro{width:42px;height:42px;font-size:14px}
+  .owen-tile-exer{width:50px;height:46px;font-size:17px}
+  .owen-tile-exer span{font-size:8px}
+}
+</style>
