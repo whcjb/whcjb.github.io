@@ -154,6 +154,18 @@ class Repairer:
         up = collections.Counter(norm(w) for w in primary_words if w[:1].isupper())
         CAPITALIZED.update(w for w, n in up.items() if n >= 5 and n > 4 * (pc[w] - n))
         self.log = []
+        self.image = {}
+        cf = RAW / 'image_confirmed.tsv'
+        self.confirmed = set()
+        if cf.exists():
+            for ln in cf.read_text(encoding='utf-8').splitlines()[1:]:
+                v, pg, col, prim, n = ln.split('\t')
+                self.confirmed.add((v, int(pg), int(col), prim, int(n)))
+        img = RAW / 'image_fixes.tsv'
+        if img.exists():
+            for ln in img.read_text(encoding='utf-8').splitlines()[1:]:
+                v, pg, col, prim, n, printed = ln.split('\t')
+                self.image[(v, int(pg), int(col), prim, int(n))] = printed
 
     def fix_word(self, p, w, where):
         """主文本词 p，证人对位词 w（可为 None）→ (新词, 动作)；不改返回 (p, None)。"""
@@ -237,8 +249,17 @@ class Repairer:
                 for k in range(i2 - i1):
                     pair[i1 + k] = wit[j1 + k]
         edits = collections.defaultdict(list)
+        occ = collections.Counter()
         for i, (ri, si, a, b, word) in enumerate(toks):
             new, act = self.fix_word(word, pair.get(i), key)
+            if act and 'residue' in act:
+                # 第 ③ 层看图（calvin_1sam_image_check.py → image_fixes.tsv）：键＝卷、页、栏、原词、本栏第几处同形 residue
+                k = (key[0], key[1], key[2], word, occ[(key[2], word)])
+                occ[(key[2], word)] += 1
+                if k in self.image:
+                    new, act = self.image[k], 'residue>image'
+                elif k in self.confirmed:
+                    act = 'residue>confirmed'
             if act:
                 self.log.append((key[0], key[1], key[2], word, pair.get(i) or '', new, act))
             if new != word:

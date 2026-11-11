@@ -469,7 +469,6 @@ abysso
 abyssum
 abyssus
 ac
-aca
 academiis
 academus
 acarnis
@@ -1052,7 +1051,6 @@ adepta
 adepti
 adeptos
 adeptus
-aderant
 aderat
 ades
 adesse
@@ -1862,7 +1860,6 @@ adterentes
 adteret
 adterimus
 adterunt
-adtexo
 adtorrentem
 adtuendum
 adulando
@@ -1917,7 +1914,6 @@ adurit
 adustae
 adustarum
 adusti
-adve
 advecta
 advecto
 advehere
@@ -2647,7 +2643,6 @@ ai
 aiacis
 aiamur
 aias
-aie
 aiebant
 aiebat
 aiendis
@@ -2933,7 +2928,6 @@ altque
 altum
 altus
 alu
-alui
 aluisse
 aluisset
 aluit
@@ -4233,7 +4227,6 @@ asportant
 asportare
 asportatas
 asportaverunt
-aspro
 asse
 assectata
 assecuti
@@ -5195,6 +5188,7 @@ beneficum
 beneficus
 beneplacito
 beneplacitum
+benevole
 benevolentia
 benevolentiae
 benevolentiam
@@ -5268,7 +5262,6 @@ biones
 bipennis
 bis
 bistonis
-bitiis
 bium
 blande
 blandiloquentia
@@ -6347,7 +6340,6 @@ chartis
 charybdi
 charybdin
 cherubim
-chi
 chiliarchos
 chlamvdem
 chlamvdis
@@ -6670,13 +6662,13 @@ clementis
 clementissime
 clementius
 cleone
-clepe
 clere
 cleri
 clericum
 clientela
 clientelae
 clientelam
+clientes
 clinem
 clinis
 clio
@@ -8609,7 +8601,6 @@ coniicite
 coniicitur
 coniiciunt
 coniiciuntur
-conituri
 coniugatas
 coniugatis
 coniugatos
@@ -11708,6 +11699,7 @@ deous
 deousque
 depascunt
 depastorum
+depeculatos
 depeilamur
 depeilant
 depeilat
@@ -13127,7 +13119,6 @@ discamus
 discamusne
 discant
 discat
-discau
 discaut
 disce
 discebant
@@ -13626,7 +13617,6 @@ dociliorem
 docilis
 docilitate
 docilitatem
-doct
 docti
 doctissimorum
 doctor
@@ -13928,14 +13918,12 @@ ducor
 ducta
 ductae
 ductas
-ductes
 ducti
 ductis
 ducto
 ductore
 ductorem
 ductoribus
-ductos
 ductu
 ductum
 ductus
@@ -20042,10 +20030,8 @@ icitur
 icne
 iconis
 icrunt
-icta
 icti
 ictibus
-ictos
 ictu
 ictum
 ictus
@@ -20280,7 +20266,6 @@ illecebris
 illegitimas
 illene
 illeue
-illev
 illevere
 illevero
 illi
@@ -22747,6 +22732,7 @@ inperpetuo
 inperpetuum
 inpetendo
 inpilato
+inpios
 inplorandum
 inpollutus
 inpotentem
@@ -23495,7 +23481,6 @@ interfectum
 interfecturi
 interfecturum
 interfectus
-interfi
 interfice
 interficere
 interficerent
@@ -23730,7 +23715,6 @@ introspicere
 introspiciendo
 intrudant
 intrudere
-intue
 intueamur
 intueantur
 intuearis
@@ -24323,6 +24307,7 @@ irretiuntur
 irreverenter
 irreverentiae
 irrevocabile
+irrevocabilem
 irrevocabiles
 irrevocabili
 irrevocabilia
@@ -24475,7 +24460,6 @@ iteret
 iterum
 itidem
 itii
-itiis
 itiner
 itinera
 itinere
@@ -24485,7 +24469,6 @@ itius
 itum
 itur
 iturum
-itus
 iu
 iubare
 iubeamur
@@ -24673,6 +24656,7 @@ iunctae
 iunctam
 iuncti
 iunctis
+iunctos
 iunctum
 iunctus
 iungebat
@@ -24740,7 +24724,6 @@ iuro
 ius
 iusiurandum
 iussa
-iusse
 iussent
 iusseram
 iusserat
@@ -24815,7 +24798,6 @@ iut
 iute
 iuto
 iutoque
-iutue
 iutum
 iutus
 iuu
@@ -25261,7 +25243,6 @@ laqueo
 laqueos
 laqueum
 laqueus
-lara
 lare
 lares
 larga
@@ -25527,6 +25508,7 @@ legimusne
 legique
 legis
 legislator
+legislatore
 legislatorem
 legislatori
 legislatoris
@@ -25817,7 +25799,6 @@ licuisse
 licuisset
 licuit
 liem
-lien
 lieram
 lieris
 liero
@@ -26214,7 +26195,6 @@ luserit
 lusisse
 lusisset
 lusit
-lusse
 lust
 lusti
 lustis
@@ -27163,7 +27143,6 @@ meum
 meus
 meusque
 mi
-mia
 micam
 micante
 micat
@@ -30643,7 +30622,6 @@ ouarius
 ouem
 ouere
 oueris
-ouet
 oui
 ouinos
 ouinque
@@ -38435,7 +38413,6 @@ ritu
 ritum
 ritus
 rituum
-riua
 rivi
 rivos
 rivuli
@@ -38513,7 +38490,6 @@ rorum
 rotabitur
 rro
 rt
-ru
 ruamus
 ruant
 ruat
@@ -40610,7 +40586,6 @@ sopito
 sopitus
 sopor
 soporem
-sopori
 soporis
 sorde
 sordes
@@ -42840,7 +42815,6 @@ testaque
 testarentur
 testaretur
 testari
-testat
 testata
 testatam
 testati
@@ -42899,7 +42873,6 @@ teutatis
 texentium
 texisse
 texit
-texo
 textu
 textum
 textus
@@ -44106,11 +44079,9 @@ uia
 uiam
 uiamus
 uiarum
-uiat
 uic
 uid
 uie
-uiem
 uientem
 uietum
 uiis
@@ -45728,7 +45699,6 @@ violentus
 violet
 violetur
 vir
-vira
 viram
 viras
 virentem
@@ -45957,7 +45927,6 @@ vmeam
 vmeas
 vnci
 vne
-vniat
 vnicviqve
 vobis
 vobiscum

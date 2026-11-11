@@ -203,7 +203,9 @@ def classify_page(rows):
     body, notes = [], []
     head_y = None
     toprows = [r for r in rows if r['y'] < top + 5]
-    if toprows and any(HEAD_RE.search(r['text']) or re.fullmatch(r'\d{1,3}\.?', r['text']) for r in toprows) and top < 75:
+    # 栏眉：「255 HOMILIA II. 256」，HOMILIA 常读花（HOM / HOHIL / HUMILIA / flOMILIA），以栏码数字打头或收尾即认
+    if toprows and top < 75 and any(HEAD_RE.search(r['text']) or re.match(r'^\W{0,2}\d{1,3}\b', r['text'])
+                                    or re.search(r'\b\d{1,3}\W{0,2}$', r['text']) for r in toprows):
         head_y = top
         nums = []
         for r in sorted(toprows, key=lambda r: r['x0']):
@@ -378,6 +380,33 @@ def main():
             for x in (r, n):
                 x['text'] = ''.join(s for s, _ in x['segs']).strip()
 
+    # 看图整串替换（calvin_1sam_image_check → image_whole_fixes.tsv：希腊词、词中夹符号的脏串），在逐词判读之前落到行文字上；
+    # 原串两头的标点保留（答案只给词本身）
+    wf = RAW / 'image_whole_fixes.tsv'
+    if wf.exists() and not NO_REPAIR:
+        rows_by = collections.defaultdict(list)
+        for r in stream:
+            rows_by[(r['vol'], r['page'], r['col'])].append(r)
+        miss = 0
+        for ln in wf.read_text(encoding='utf-8').splitlines()[1:]:
+            v, pg, col, raw, printed = ln.split('\t')
+            lead = re.match(r'^[(\[«"\'„]*', raw).group(0)
+            trail = re.search(r'[.,;:!?)\]»"\']*$', raw).group(0)
+            rep = lead + printed + trail
+            done = False
+            for r in rows_by.get((v, int(pg), int(col)), []):
+                for k, (t, it) in enumerate(r['segs']):
+                    if raw in t:
+                        r['segs'][k] = (t.replace(raw, rep, 1), it)
+                        r['text'] = ''.join(x for x, _ in r['segs']).strip()
+                        done = True
+                        break
+                if done:
+                    break
+            miss += not done
+        if miss:
+            print(f'⚠️ 看图整串替换未落 {miss} 条')
+
     # OCR 判读：主文本对 tesseract 证人逐栏对齐（repair_calvin_1sam）
     if not NO_REPAIR:
         words = [w for r in stream for s, _ in r['segs'] for w in WORD.findall(s)]
@@ -395,7 +424,9 @@ def main():
         cnt = rep.write_log(RAW / 'repair_log.tsv')
         print('判读：', dict(cnt))
         REPAIR_STATS['fixed'] = sum(1 for r in rep.log if r[3] != r[5])
-        REPAIR_STATS['residue'] = sum(1 for r in rep.log if 'residue' in r[6])
+        REPAIR_STATS['residue'] = sum(1 for r in rep.log if 'residue' in r[6] and '>' not in r[6])
+        REPAIR_STATS['confirmed'] = sum(1 for r in rep.log if 'confirmed' in r[6])
+        REPAIR_STATS['image'] = sum(1 for r in rep.log if 'image' in r[6])
 
     print(f'重扫页（已跳过）{len(dup_pages)}：{dup_pages}')
     print(f'栏码真跳号（左右两数一致）：{col_gaps}')
@@ -464,8 +495,15 @@ def main():
                 return a + ' ' + b
             STAR_LOG.append((a, b, m.group(0), 'keep'))
             return m.group(0)
+        def hyph(m):                                  # 看图改正后断词才接得上（flagel- Jans → flagel- lans → flagellans）
+            j = m.group(1) + m.group(2)
+            if REP.lex.ok(j) and not (REP.lex.ok(m.group(1)) and len(m.group(1)) > 3):
+                STAR_LOG.append((m.group(1), m.group(2), j, 'hyphen'))
+                return j
+            return m.group(0)
         for x in front + out:
             x['md'] = re.sub(r'([A-Za-z]+)&#42;\s?([a-z]+)', star, x['md'])
+            x['md'] = re.sub(r'\b([A-Za-z]+)- ([a-z]+)\b', hyph, x['md'])
         print('散星号：', collections.Counter(r[3] for r in STAR_LOG))
 
     # 手工修订表（看图读定的），落在最终 markdown 上；每条须恰好命中一次

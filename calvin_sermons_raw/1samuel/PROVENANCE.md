@@ -55,3 +55,15 @@ IA `bub_gb_riKCSWlJrdoC`（1667 阿姆斯特丹版第二卷，异版，OCR 很�
 - 两边都是真词只改白名单（ilia→illa、ilium→illum、tarnen→tamen 等典型误读）。
 - 字形混淆规则生成候选，词表**唯一**命中才改。
 - 其余照录，记 `residue`，待看图。
+
+## 第 ③ 层：看图判读（2026-11-11 用户令「剩下的看图判读，图只看一次」）
+
+`scripts/calvin_1sam_image_check.py`：
+- `--collect`：repair_log 里的 residue → 在 PDF 文字层逐词框里定位（同栏、同词形、第 n 次出现；行末断词连下一行词头一起框）。
+  文字层里整串读烂的（希腊词 `l&tlo&Qt]oxtlaiç`、词中夹符号 `exb-ibiturum,`）按「整串」问（kind=whole）。
+- `--run`：**每页一次调用**，该页全部待判词所在行按带状裁条（PDF 内嵌原图、原生分辨率），红框标号，答印面上的词；
+  答案存 `imgcheck/answers/<卷>_<页>.json`，已答的页永不重问（重收候选时保留当时的题目）。
+- `--rules`：→ `image_fixes.tsv`（逐词，键＝卷/页/栏/原词/本栏第几处同形 residue，由 Repairer 落）与
+  `image_whole_fixes.tsv`（整串替换，extract 在判读前落到行文字上，原串两头标点保留）。
+  守卫：答 ? 不落；答案字母数不足原读法八成（只读了一截 / 框错了词）、与两份读法都不相近（相似度 < 0.5）→ `imgcheck/held.tsv`。
+  答案等于我们的读法＝看图确认原书即如此印（含印错），照录。
