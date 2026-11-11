@@ -1,0 +1,1 @@
+{"raw": "#1: A", "ans": {"1": "A"}, "qs": [{"kind": "junk", "lec": "102", "s": 40, "e": 42, "i": 2, "left": "\n> ", "right": "And", "ours": "^ ", "vlm": "\"", "box": [389, 1249, 2243, 1320], "ctx": "## LECTURE 102  **LUKE XIX. 41-44.**  > ⟦^ ⟧And when he was come near, he beheld the city, and wept over", "swap": true}]}

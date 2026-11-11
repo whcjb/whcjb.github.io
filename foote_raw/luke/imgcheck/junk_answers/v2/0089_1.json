@@ -1,0 +1,1 @@
+{"raw": "#1: = \" *And", "ans": {"1": "= \" *And"}, "qs": [{"kind": "junk", "lec": "047", "s": 3679, "e": 3683, "i": 219, "left": "\n", "right": "And", "ours": "^^ *", "vlm": "\"*", "box": [340, 2263, 2074, 2341], "ctx": "r of Matthew, and the dth chapter of Mark.  <!-- PAGE 85 --> ⟦^^ *⟧And it came to pass,\"* says Luke, \" *about an eight days aft", "swap": false}]}

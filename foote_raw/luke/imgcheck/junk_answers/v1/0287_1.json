@@ -1,0 +1,1 @@
+{"raw": "#1: A", "ans": {"1": "A"}, "qs": [{"kind": "junk", "lec": "020", "s": 13872, "e": 13880, "i": 288, "left": "offerings", "right": "a", "ours": " '^/or *", "vlm": " \"*for ", "box": [241, 2442, 2074, 2521], "ctx": ".\"* Christ ordered him to go to the priest, and present his offerings⟦ '^/or *⟧a testimony unto them.\"* It being the business of the priest", "swap": true}]}

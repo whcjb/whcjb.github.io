@@ -1,0 +1,1 @@
+{"raw": "#1: A", "ans": {"1": "A"}, "qs": [{"kind": "junk", "lec": "101", "s": 40, "e": 42, "i": 2, "left": "\n> ", "right": "And", "ours": "^ ", "vlm": "\"", "box": [208, 1206, 2109, 1266], "ctx": "## LECTURE 101  **LUKE XIX. 28-40.**  > ⟦^ ⟧And when he had thus spoken, he went before, ascending up to", "swap": true}]}

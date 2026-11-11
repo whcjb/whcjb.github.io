@@ -1,0 +1,1 @@
+{"raw": "#1: A", "ans": {"1": "A"}, "qs": [{"kind": "junk", "lec": "111", "s": 1145, "e": 1149, "i": 185, "left": "\n", "right": "But", "ours": "^^ *", "vlm": "\"*", "box": [397, 2351, 2171, 2432], "ctx": "he whole of the passage now under review.  <!-- PAGE 281 --> ⟦^^ *⟧But before all these, they shall lay their hands on you, and", "swap": true}]}

@@ -1,0 +1,1 @@
+{"raw": "#1: A", "ans": {"1": "A"}, "qs": [{"kind": "junk", "lec": "124", "s": 21228, "e": 21233, "i": 366, "left": "time", "right": "Jesus", "ours": "^\\** ", "vlm": ".*\" ", "box": [257, 3469, 2143, 3546], "ctx": "ent him to Herod, who himself also was at Jerusalem at that time⟦^\\** ⟧Jesus was considered a Galilean, because, though he was born", "swap": true}]}

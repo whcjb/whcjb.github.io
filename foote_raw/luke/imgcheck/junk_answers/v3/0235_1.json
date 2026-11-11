@@ -1,0 +1,1 @@
+{"raw": "#1: A", "ans": {"1": "A"}, "qs": [{"kind": "junk", "lec": "107", "s": 17307, "e": 17311, "i": 391, "left": "marriage", "right": "By", "ours": "^'* ", "vlm": ".*\" ", "box": [306, 3434, 2164, 3513], "ctx": "cees, \" *The children of this world marry, and are given in marriage⟦^'* ⟧By \" the children of this world,\" we are here to understand ", "swap": true}]}

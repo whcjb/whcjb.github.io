@@ -1,0 +1,1 @@
+{"raw": "#1: A", "ans": {"1": "A"}, "qs": [{"kind": "junk", "lec": "003", "s": 4500, "e": 4502, "i": 360, "left": "for", "right": "five", "ours": " ^", "vlm": " ", "box": [243, 3212, 2134, 3301], "ctx": "sabeth, having conceived, remained in a state of retirement for⟦ ^⟧five months, that she might avoid contracting any ceremonial", "swap": true}]}

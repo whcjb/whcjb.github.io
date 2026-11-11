@@ -1,0 +1,1 @@
+{"raw": "#1: A", "ans": {"1": "A"}, "qs": [{"kind": "junk", "lec": "079", "s": 39, "e": 41, "i": 2, "left": "\n> ", "right": "And", "ours": "^ ", "vlm": "\"", "box": [308, 1311, 2150, 1370], "ctx": "## LECTURE 79  **LUKE XIV. 25-35.**  > ⟦^ ⟧And there went great multitudes with him: and he turned, and", "swap": true}]}

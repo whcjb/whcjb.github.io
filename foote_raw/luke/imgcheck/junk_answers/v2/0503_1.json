@@ -1,0 +1,1 @@
+{"raw": "#1: = ᵃ The", "ans": {"1": "= ᵃ The"}, "qs": [{"kind": "junk", "lec": "076", "s": 40, "e": 44, "i": 2, "left": "\n> ", "right": "The", "ours": "*^* ", "vlm": "\"", "box": [249, 1161, 2121, 1222], "ctx": "## LECTURE 76  **LUKE XIII. 31-35.**  > ⟦*^* ⟧The same day there came certain of the Pharisees, saying unt", "swap": false}]}
