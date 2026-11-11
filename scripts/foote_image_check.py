@@ -48,6 +48,7 @@ ANS = WORK / 'answers'
 CAND1 = WORK / 'candidates_r1.json'
 ANS2 = WORK / 'answers2'
 RULES = RAW / 'image_fixes.tsv'
+HEADERS = RAW / 'header_fixes.tsv'     # 页眉/页码漏入正文、页脚注卷入正文；串可跨段（\\n）
 HAND = RAW / 'hand_image_fixes.tsv'   # 人工裁原生分辨率页图读定，排在 RULES 之后落
 LOG = A.ROOT / 'logs' / 'foote_image_check.tsv'
 COST = A.ROOT / 'logs' / 'foote_image_check_cost.tsv'
@@ -476,6 +477,32 @@ def rules():
     print(dict(Counter(r[0] for r in rows)), f'规则 {len(out)} → {RULES}', file=sys.stderr)
 
 
+def apply_multiline(path):
+    """同 apply_spans，但原串/改作里的字面 \\n 表换行（页眉常夹在段落与 PAGE 标记之间）。"""
+    done = already = 0
+    bad = []
+    for ln in path.read_text(encoding='utf-8').splitlines():
+        if not ln.strip() or ln.startswith('#'):
+            continue
+        lec, old, new = ln.split('\t')
+        old, new = old.replace('\\n', '\n'), new.replace('\\n', '\n')
+        f = A.SRC / f'{lec}.md'
+        text = f.read_text(encoding='utf-8')
+        n = text.count(old)
+        if old in new and new in text:   # 改作含原串（脚注插入）：见到改作即已落过
+            already += 1
+        elif old not in new and n == 0 and new in text:
+            already += 1
+        elif n == 1:
+            f.write_text(text.replace(old, new), encoding='utf-8')
+            done += 1
+        else:
+            bad.append((lec, old[:40], n))
+    print(f'跨段整串落盘 {done} 条；已落过 {already}；定位失败 {len(bad)} {bad[:5]}', file=sys.stderr)
+    if bad:
+        raise SystemExit(1)
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument('--collect', action='store_true')
@@ -495,6 +522,8 @@ def main():
         A.apply_spans(RULES)
         if HAND.exists():
             A.apply_spans(HAND)
+        if HEADERS.exists():
+            apply_multiline(HEADERS)
 
 
 if __name__ == '__main__':
