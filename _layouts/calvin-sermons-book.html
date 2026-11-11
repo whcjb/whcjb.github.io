@@ -1,0 +1,63 @@
+---
+layout: default
+---
+{%- comment -%}
+  加尔文讲章书首页（约伯记 / 申命记）。目录由 scripts/publish_calvin_sermons.py 写进 index.html 正文：
+  卷首 → 按章分组的篇次格子 → 祷文 → 文本说明。灰色虚线格 `.cs-merged` = 开头随缺页散失、余文并在前一篇页内。
+  样式独立（cs- 前缀），配色与 calvin-sermon.html 同源。页面紧凑，不放大色块横幅。
+{%- endcomment -%}
+
+<div class="container calvin-sermons-book" style="padding-top: 70px;">
+  <div class="row">
+    <div class="col-lg-9 col-lg-offset-1 col-md-10 col-md-offset-1">
+
+      <div class="cs-chrome"><a href="{{ site.baseurl }}/calvin/">&larr; 加尔文圣经注释</a><span></span></div>
+
+      <div class="cs-hero">
+        <h1>{{ page.book_cn }}</h1>
+        <p class="cs-hero-en">John Calvin · {{ page.book_name }}</p>
+        <p class="cs-hero-meta">{{ page.edition }}{% if page.preached != "" %} · preached {{ page.preached }}{% endif %}</p>
+      </div>
+
+      {{ content }}
+
+    </div>
+  </div>
+</div>
+
+<style>
+.calvin-sermons-book { --cs-ink: #3a342c; --cs-light: #8a8275; --cs-primary: #2d4a3a; --cs-gold: #c9a96e;
+  --cs-rule: #d4c5a8; --cs-paper: #fdfbf6; color: var(--cs-ink); }
+body:has(.calvin-sermons-book) { background-color: #faf7f0; }
+.calvin-sermons-book .cs-chrome { display: flex; justify-content: space-between; margin: 18px 0 16px; font-size: 13px; }
+.calvin-sermons-book .cs-chrome a { color: var(--cs-primary); }
+.calvin-sermons-book .cs-hero { margin: 0 0 20px; padding-bottom: 12px; border-bottom: 2px solid var(--cs-gold); }
+.calvin-sermons-book .cs-hero h1 { font-family: "Source Han Serif SC", "Noto Serif SC", "Songti SC", serif; font-size: 26px;
+  color: var(--cs-primary); margin: 0 0 4px; font-weight: 600; letter-spacing: .06em; }
+.calvin-sermons-book .cs-hero-en { font-family: Georgia, serif; font-style: italic; margin: 0; color: #5d564b; }
+.calvin-sermons-book .cs-hero-meta { font-family: Georgia, serif; font-size: 13px; color: var(--cs-light); margin: 2px 0 0; }
+.calvin-sermons-book .cs-group { font-family: Georgia, "Songti SC", serif; font-size: 16px; color: var(--cs-primary);
+  margin: 26px 0 12px; padding-bottom: 6px; border-bottom: 1px solid var(--cs-rule); font-weight: normal; }
+.calvin-sermons-book .cs-group span { font-size: 13px; color: var(--cs-light); margin-left: 8px; }
+.calvin-sermons-book .cs-toc { list-style: none; padding: 0; margin: 0; display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 8px; }
+.calvin-sermons-book .cs-toc a { display: block; padding: 8px 12px; border: 1px solid var(--cs-rule); border-radius: 3px;
+  background: var(--cs-paper); color: var(--cs-ink); text-decoration: none; font-family: Georgia, serif; font-size: 14.5px; }
+.calvin-sermons-book .cs-toc a:hover { border-color: var(--cs-primary); }
+.calvin-sermons-book .cs-ref { display: block; font-size: 12px; color: var(--cs-light); }
+.calvin-sermons-book .cs-ch { display: grid; grid-template-columns: 110px 1fr; gap: 10px; align-items: start;
+  padding: 7px 0; border-bottom: 1px dotted #e4dac4; }
+.calvin-sermons-book .cs-ch-h { font-family: Georgia, serif; font-size: 14px; color: var(--cs-primary); padding-top: 5px; }
+.calvin-sermons-book .cs-ch-h span { display: block; font-size: 11.5px; color: var(--cs-light); }
+.calvin-sermons-book .cs-grid { display: flex; flex-wrap: wrap; gap: 6px; }
+.calvin-sermons-book .cs-grid a { min-width: 40px; text-align: center; padding: 5px 6px; border: 1px solid var(--cs-rule);
+  border-radius: 3px; background: var(--cs-paper); color: var(--cs-primary); text-decoration: none; font-family: Georgia, serif; font-size: 14px; }
+.calvin-sermons-book .cs-grid a:hover { background: var(--cs-primary); color: #fff; border-color: var(--cs-primary); }
+.calvin-sermons-book .cs-grid a.cs-merged { border-style: dashed; color: #b0a690; background: transparent; }
+.calvin-sermons-book .cs-note { font-size: 13.5px; line-height: 1.85; color: #5d564b; margin: 30px 0 0; padding-top: 14px;
+  border-top: 1px solid var(--cs-rule); }
+.calvin-sermons-book .cs-note p { margin: 0 0 10px; }
+@media (max-width: 600px) {
+  .calvin-sermons-book .cs-ch { grid-template-columns: 1fr; gap: 4px; }
+}
+</style>

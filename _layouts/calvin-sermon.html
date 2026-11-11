@@ -1,0 +1,92 @@
+---
+layout: default
+---
+{%- comment -%}
+  加尔文讲章（戈尔丁英译，约伯记 1574 / 申命记 1583）单篇页。
+  底本 EEBO-TCP A69056 / A17698（CC0），由 scripts/publish_calvin_sermons.py 生成，见 calvin_sermons_raw/<书>/。
+
+  ⚠️ 不复用 calvin-en / calvin-chapter：讲章是另一种书，样式独立（每本书独立样式）。
+  配色沿用加尔文首页的古典书卷方向（米色底 #faf7f0、墨绿 #2d4a3a、暖金 #c9a96e），只取色值，类名 cs- 前缀。
+  - 所讲经文 → `.cs-text`（框）；篇首提要 → `.cs-argument`；页边旁注 → `.cs-margin`；印本页码 → `.cs-pb`（#pN）。
+  - 录入本读不出的字 → `.cs-gap`（标红）；申命记缺页 → `.cs-lost`；两篇并一页的说明 → `.cs-merge`。
+  - 英文页，不接经文弹层（模块只认中文书卷名）。
+{%- endcomment -%}
+
+<div class="container calvin-sermon-wrap" style="padding-top: 70px;">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+
+      <div class="cs-chrome">
+        <a href="{{ site.baseurl }}/calvin/{{ page.book_id }}-sermons/">&larr; {{ page.book_cn }}</a>
+        <a href="{{ site.baseurl }}/calvin/">加尔文圣经注释</a>
+      </div>
+
+      <h1 class="cs-title">{{ page.title }}</h1>
+      {% if page.subtitle %}<p class="cs-subtitle">{{ page.subtitle }}</p>{% endif %}
+
+      <div class="cs-nav">
+        {% if page.prev_url %}<a href="{{ site.baseurl }}{{ page.prev_url }}">&larr; {{ page.prev_label }}</a>{% else %}<span></span>{% endif %}
+        {% if page.next_url %}<a href="{{ site.baseurl }}{{ page.next_url }}">{{ page.next_label }} &rarr;</a>{% else %}<span></span>{% endif %}
+      </div>
+
+      <div class="cs-content">
+        {{ content }}
+      </div>
+
+      {% if page.date %}<div class="cs-stamp">Published {{ page.date | date: "%Y-%m-%d %H:%M" }}</div>{% endif %}
+
+      <div class="cs-nav cs-nav-foot">
+        {% if page.prev_url %}<a href="{{ site.baseurl }}{{ page.prev_url }}">&larr; {{ page.prev_label }}</a>{% else %}<span></span>{% endif %}
+        {% if page.next_url %}<a href="{{ site.baseurl }}{{ page.next_url }}">{{ page.next_label }} &rarr;</a>{% else %}<span></span>{% endif %}
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<style>
+.calvin-sermon-wrap {
+  --cs-bg: #faf7f0; --cs-ink: #3a342c; --cs-light: #8a8275; --cs-primary: #2d4a3a;
+  --cs-gold: #c9a96e; --cs-rule: #d4c5a8; --cs-paper: #fdfbf6;
+}
+body:has(.calvin-sermon-wrap) { background-color: #faf7f0; }
+.cs-chrome { display: flex; justify-content: space-between; margin: 18px 0 22px; font-size: 13px; }
+.cs-chrome a { color: var(--cs-primary); }
+.cs-title { font-family: Georgia, "Times New Roman", serif; font-size: 26px; font-weight: normal; color: var(--cs-primary);
+  margin: 0 0 6px; line-height: 1.35; }
+.cs-subtitle { font-family: Georgia, serif; font-style: italic; color: var(--cs-light); font-size: 14px; margin: 0 0 14px;
+  padding-bottom: 12px; border-bottom: 1px solid var(--cs-rule); }
+.cs-nav { display: flex; justify-content: space-between; gap: 12px; font-size: 13px; margin: 0 0 22px; }
+.cs-nav a { color: var(--cs-primary); }
+.cs-nav-foot { margin-top: 26px; padding-top: 14px; border-top: 1px solid var(--cs-rule); }
+.cs-content { font-family: Georgia, "Times New Roman", serif; font-size: 17px; line-height: 1.85; color: var(--cs-ink); }
+.cs-content p { margin: 0 0 1.05em; text-align: justify; hyphens: auto; }
+.cs-content .cs-head { font-variant: small-caps; letter-spacing: .04em; color: var(--cs-primary); text-align: center; font-size: 15px; }
+.cs-content .cs-argument { font-style: italic; color: #5d564b; text-align: center; font-size: 15px; }
+.cs-content .cs-text { background: var(--cs-paper); border-left: 3px solid var(--cs-gold); padding: 10px 16px; margin: 0 0 1.4em;
+  font-size: 15.5px; line-height: 1.75; }
+.cs-content .cs-text p { margin: 0 0 .5em; text-align: left; }
+.cs-content .cs-dropcap { font-size: 1.9em; line-height: 1; float: left; margin: 2px 6px 0 0; color: var(--cs-primary); }
+.cs-content .cs-margin { display: inline-block; font-size: 12.5px; color: #8a7a55; background: #f4eedf; border-radius: 3px;
+  padding: 0 5px; margin: 0 2px; line-height: 1.5; font-style: normal; }
+.cs-content .cs-pb { display: inline-block; width: 0; }
+.cs-content .cs-pb[data-p]::before { content: attr(data-p); position: relative; font-size: 10px; color: #c0b49a; margin-left: -2px;
+  vertical-align: super; font-family: Georgia, serif; }
+.cs-content .cs-gap { color: #b3261e; cursor: help; }
+.cs-content .cs-lost, .cs-content .cs-merge { color: #8a8275; font-style: italic; font-size: 14.5px; border-left: 3px solid #b3261e;
+  padding: 6px 0 6px 14px; text-align: left; }
+.cs-content .cs-merge { border-left-color: var(--cs-gold); }
+.cs-content .cs-quote { margin-left: 1.5em; font-size: 15.5px; }
+.cs-content .cs-closer { text-align: right; font-style: italic; }
+.cs-content .cs-item { margin-left: 1.2em; }
+.cs-content .cs-poem { margin: 0 0 1em 1.5em; }
+.cs-content .cs-l { margin: 0; text-align: left; }
+.cs-content h3, .cs-content h4 { font-family: Georgia, serif; font-weight: normal; color: var(--cs-primary); text-align: center;
+  font-size: 18px; margin: 1.2em 0 .8em; }
+.cs-stamp { margin-top: 24px; font-size: 12px; color: #a89e8c; text-align: right; }
+@media (max-width: 768px) {
+  .cs-title { font-size: 21px; }
+  .cs-content { font-size: 16px; }
+  .cs-content p { text-align: left; }
+}
+</style>

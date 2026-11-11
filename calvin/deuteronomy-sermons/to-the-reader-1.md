@@ -1,0 +1,19 @@
+---
+layout: calvin-sermon
+book_id: deuteronomy
+book_name: "Sermons upon the Fifth Book of Moses called Deuteronomy"
+book_cn: "加尔文《申命记讲章》"
+title: "To the Reader"
+subtitle: "致读者（一）"
+date: 2026-11-11 11:35
+prev_url: "/calvin/deuteronomy-sermons/dedication/"
+prev_label: "The Epistle Dedicatory"
+next_url: "/calvin/deuteronomy-sermons/to-the-reader-2/"
+next_label: "To the Reader"
+---
+
+<p class="cs-head" markdown="1"><span class="cs-pb" data-facs="3"></span>To the Christian Reader, Grace and Peace from GOD, &c.</p>
+
+<span class="cs-dropcap">I</span>T is no small fauour that wee daily receiue from the hands of our God<span class="cs-gap" title="TCP: illegible in source（底本此处读不出）">▪</span> partly by the publike ministerie of his word, and partlie by the priuate reading of such good workes as by the meanes of manie his faithfull seruants he hath published and spread abroad in this last age of the world. But as the beholding of this doth make manie Godly mindes to reioyce in that they see Gods great goodnes striuing continuallie to ouercome the malice and frowardnesse of mans minde: So on the otherside it pincheth them at the heart when they perceiue not only what slender entertainment Gods graces haue amongst vs, but euen what manifest contempt is offered vnto them, while men notwithstanding the woonderful sunshine of Gods holie trueth, remaine in as great darkenesse almost, in respect of iudgement, and be as dissolute and carelesse in their conuersation as euer they were, in the time of the most grosse and palpable blindnes. Would to God that the miserable experience of our dayes were not too plaine a proofe of this point: And yet this is not spoken either as in dislike of our state with some discontented people, or to the discrediting and defacing of Gods religion which we professe, with the practising Papists (who with one blow at the Gospel, would if they could, craf<span class="cs-gap" title="TCP: illegible in source（底本此处读不出）">••</span>lie cut the throate both of Religion and policie,) but in all holie loue and affection, to make this carelesse generation more studious to labour to abound both in sound knowledge of the trueth, and in all holie obedience to the same. In which respect, not onelie are these few lines written at this present, but this notable worke of Master Caluins Sermons vpon Deuteronomie published, & that in our owne natiue Language: wherein what paine and cost hath beene bestowed, that they might come foorth as beneficiall to the Christian Reader as might be, though I my selfe may speake much in trueth as an argument of some weight, to induce the godly brethren to the buying and reading thereof; yet letting that point passe as a matter not much to be stoode vpon, I minde onely to presse those things, and that also in very fewe words, which shalbe most material. And that is; that as al states and conditions of men may out of the same fetch many profitable points for their instruction both in faith and obedience towards God and man: so particularly if a man would ouerthrow Atheists, or confute Papists, and other Heretikes, or wound the wicked, or encourage the faint hearted, or comfort the afflicted conscience cast downe with the sight of sinne, or performe any other seruice towards God, himselfe, or other men, he shall haue matter, and that in great store plentifully ministred vnto him for the performance of these and all other dueties whatsoeuer. Wherefore I would aduise thee (good Reader) to get it speedilie, to reade it diligentlie, to remember it faithfullie, and to expresse it fruitfullie in thy conuersation, to the glorie of God, the profite of his people, and the saluation of thine owne soule through Christ. In whom I rest alwaies.
+
+<p class="cs-closer" markdown="1">*Thine vnfayned, T. W. the Lord* his vnvvoorthie Seruaunt.</p>

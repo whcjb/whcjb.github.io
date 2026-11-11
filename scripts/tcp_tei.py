@@ -98,7 +98,7 @@ class R:
             elif t == 'seg' and c.get('rend') == 'decorInit':
                 out.append(self.hold(f'<span class="{self.P}-dropcap">' + norm(self, self.inline(c)) + '</span>'))
             elif t in ('seg', 'q', 'p', 'signed', 'bibl', 'head', 'trailer', 'expan', 'am', 'ex', 'date',
-                       'dateline', 'item', 'closer', 'label', 'l', 'salute', 'cell'):
+                       'dateline', 'item', 'closer', 'label', 'l', 'salute', 'cell', 'unclear'):   # unclear：录入者给出读法、存疑，照录
                 if t in ('item', 'p', 'l', 'label') and out and not out[-1].endswith(' '):
                     out.append(' ')
                 out.append(self.inline(c, italic))
