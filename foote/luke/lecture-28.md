@@ -83,12 +83,16 @@ From these blessings and woes, we learn *how erroneous, and how contrary to Scri
 
 <div class="ft-notes" markdown="1">
 
-Henry. f Matt ix. 20; Luke viu. 43.
+♦ Henry.
 
-♦ Matt. ix. 9. t Luke v. 27.
+† Matt. ix. 20; Luke viii. 43.
 
-::: Matt xii. 49; Mark iii. 34. 2c
+♦ Matt. ix. 9.
 
-Luke Ti. 20, 24.
+† Luke v. 27.
+
+‡ Matt. xii. 49; Mark iii. 34.
+
+♦ Luke vi. 20, 24.
 
 </div>

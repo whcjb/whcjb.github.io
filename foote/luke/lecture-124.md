@@ -81,23 +81,27 @@ Nay, let us, from the combinations of the wicked, learn a lesson of mutual agree
 
 ♦ Matt. xxvii. 1.
 
-There is considerable diversity of opinion among the learned as to how this matter stood, some holding that the power of life and death was authoritatively taken from the Sanhedrim by the Romans; some, that the exercise of this power had gradually gone into disuse from the general laxity of morals and prevalence of crimes, which deterred the Sanhedrim from acting with decision; and some, that their not proceeding to inflict capital punishments had a connection with the removal of the council from the apartment called Gazith, which wb9 appropriated for it in the temple. Lightfoot, on Matt. xxvi. 3, quotes largely in support of the two last ideas. Stephen was put to death without the authority of the Roman governor; but that was a deed of hasty violence. On the whole, it is sufficiently plain that the Jews no longer regularly retained the power of capital punishment. See Pearce OUmet. and I^ardner's Credibility, part i., book i.^ chapter 1. '
+♦ There is considerable diversity of opinion among the learned as to how this matter stood, some holding that the power of life and death was authoritatively taken from the Sanhedrim by the Romans; some, that the exercise of this power had gradually gone into disuse from the general laxity of morals and prevalence of crimes, which deterred the Sanhedrim from acting with decision; and some, that their not proceeding to inflict capital punishments had a connection with the removal of the council from the apartment called Gazith, which was appropriated for it in the temple. Lightfoot, on Matt. xxvi. 3, quotes largely in support of the two last ideas. Stephen was put to death without the authority of the Roman governor; but that was a deed of hasty violence. On the whole, it is sufficiently plain that the Jews no longer regularly retained the power of capital punishment. See Pearce, Calmet, and Lardner's Credibility, part i., book i., chapter 1.
 
-4\* John xviii. 12.
+† John xviii. 12.
 
-Beza. + Lev. xv. 10,
+♦ Beza.
 
-, See Lecture on xxii 7, &c.
+† Lev. xv. 10.
 
-Luke zz. 25. f John xviii. 33w
+♦ See Lecture on xxii. 7, &c.
+
+♦ Luke xx. 25.
+
+† John xviii. 33.
 
 1 Tim. vi. 12-14.
 
-• Acts xvii. 6.
+♦ Acts xvii. 6.
 
-Matt. xxi 11.
+♦ Matt. xxi. 11.
 
-Pb. Izzxiii. 5.
+♦ Ps. lxxxiii. 5.
 
 Scott.
 

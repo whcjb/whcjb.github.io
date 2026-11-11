@@ -61,15 +61,19 @@ And, if you have already obtained admittance into the kingdom of God on earth, s
 
 <div class="ft-notes" markdown="1">
 
-♦ M»tt. xxiii. R
+♦ Matt. xxiii. 14.
 
 ♦ 2 Chron. xxxvi. 15.
 
-Luke X. 29. f Matt, xxiii. 5.
+♦ Luke x. 29.
 
-Jer. xvii 10.
+† Matt. xxiii. 5.
 
-Ps. X. 3. t Prov. xvi. 5.
+♦ Jer. xvii. 10.
+
+♦ Ps. x. 3.
+
+† Prov. xvi. 5.
 
 *\** Isa. zi. 8.
 

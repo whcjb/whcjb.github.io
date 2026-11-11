@@ -77,22 +77,24 @@ I *i*
 
 <div class="ft-notes" markdown="1">
 
-Scott.—" Snrdum te amatisaimis tui prsesto<sup class="ft-fn">*</sup> — Be deaf to your dea^t friends.^\*—^eneca, £p. xxxi.
+♦ Scott.—"Surdum te amatissimis tui præsta — Be deaf to your dearest friends."—*Seneca*, Ep. xxxi,<sup class="ft-fn">*</sup>
 
-Prov. xxiv. 27.
+♦ Prov. xxiv. 27.
 
-*f* Plato (Repub. x.) compares pretenders to moral worth to those who set out briskly in a race, but soon flag, and retire with shame; and goes on to recommend very serious and deliberate consideration. Epictetus employs the 15th chapter of his 3d book in recommending the most careful weighing of the difficulties, before assuming the character of a philosopher, lest the result should be a disgraceful failure.
+† Plato (Repub. x.) compares pretenders to moral worth to those who set out briskly in a race, but soon flag, and retire with shame; and goes on to recommend very serious and deliberate consideration. Epictetus employs the 15th chapter of his 3d book in recommending the most careful weighing of the difficulties, before assuming the character of a philosopher, lest the result should be a disgraceful failure.
 
-• Prov. XX. 18, XXV. 8.
+♦ Prov. xx. 18, xxv. 8.
 
 *Ovrttts 4Vf,*
 
-♦ Matt V. 13. t Lev. ii. 13w
+♦ Matt. v. 13.
 
-Maundreirs Travels, *adJiTiem.* f Schoettgenius, Horae Hebraicse; Dr A. Clarke. VOL. II. 2 M
+† Lev. ii. 13.
 
-♦ " He that hath ears," &c. " Habeo aures: loquere quod yis."—
+♦ Maundrell's Travels, *ad finem.*
 
-*Plautus, Mil. Glor,*
+† Schoettgenius, Horæ Hebraicæ; Dr A. Clarke.
+
+♦ "He that hath ears," &c. "Habeo aures: loquere quod vis."—*Plautus, Mil. Glor.*
 
 </div>

@@ -83,11 +83,11 @@ The rosary, or string of beads.
 
 " Obe! jam desine decs, uxor, gratulando obtundere, Tuam esse inventam gnatam: nisi illos ex tuo ingenio judicas, Ur nil credas intelligere, nisi idem dictum sit centies." " Now, cease, wife, from stunning the gods with thanksgivings that thy daughter is found; unless thou judgest of them from thy own disposition, and believest that they do not understand any thing, unless it be told a hundred times."—The priests of Baal (1 Kings xviii. 26) " called on the name of Baal from morning even until noon, saying, O Baal, hear us! But there was no voice, nor any that answered." Then Elijah said ironically, " Cry aloud, for he is a god: either he is talking, or he is pursuing, or he is on a journey, or peradventure he sleepeth, and must be awakened." Dr Adam Clarke furnishes a most striking illustration of the same point, in the following form of prayer used by Tippoo Sahib, which the doctor met with in a book of devotion taken out of his pocket, when he was found among the slain at the storming of Seringapatam; in which book there were several prayers written with his own hand, and signed with his own name. " O God, O God, O God, O God!—O Lord, O Lord, O Lord, O Lord!—O living, O immortal, O living, O imr mortal, O living, O immortal, O living, O immortal!—O Creator of the heavens and the earth!—O thou who art endowed with majesty and authority, O wonderful," &c.
 
-John xvi. 23-
+♦ John xvi. 23.
 
-f Sine monitore, quia de pectore oramus.
+† Sine monitore, quia de pectore oramus.
 
-i The Directory of the Church of Scotland does not enjoin the constant use of this (or of any other particular part of Scripture), in worship; but it recommends its occasional use, and the Lord's Prayer is fully explained in the Larger and Shorter Catechisms. Accordingly, it is occasionally introduced, but not as a matter of course, in our public worship; and it must be supposed to be well understood by those who
+‡ The Directory of the Church of Scotland does not enjoin the constant use of this (or of any other particular part of Scripture), in worship; but it recommends its occasional use, and the Lord's Prayer is fully explained in the Larger and Shorter Catechisms. Accordingly, it is occasionally introduced, but not as a matter of course, in our public worship; and it must be supposed to be well understood by those who
 
 belong to our communion. All these remarks are made, merely to explain our views on this subject, and by no means with the wish to attack those of others.
 
@@ -95,17 +95,17 @@ Leighton.
 
 *T»9 k^n nfAw m iirtovncv ^i^ou hfnv t» »etf tifAt^av,* There has been considerable diversity of opinion as to the precise meaning of the word *iitiovg'iov.* As the idea of " daily " is fully expressed by the phrase *xaf fifit^etv,* it seems probable that the word *Wtovo'tev* is intended to express something different. The idea that this is a petition for the bread of " to-morrow," though adopted by Lightfoot, is surely untenable and paradoxical. Origen says that the word *Wiovo'ios* seems to have been formed by the evangelists; as it does not occur in any of the earlier Greek writers—*lotxt ^t^XetaSai v^ro ratv thayyiXt^rvf*: he renders the word, however, *l^nfAt^ovt* " daily;" as does also Chrysostom. I adhere to the opinion of those who think the word is intended to signify " sufficient," or, sufficient for subsistence: *quasi iirt olvutf.* As *\*%^iou9it%* signifies abundant, *Wtovries* seems to signify sufficient. This explanation of the word is given by Theophylact: *\*A^roi Wt rif ohffiet k»i wvffrnvi vfAct<sup class="ft-fn">*</sup> ai/ra^ftn, ^\** bread sufficient for our subsistence, and sustenance."
 
-Rom. iii 25.
+♦ Rom. iii. 25.
 
 The *K»t yet(* is not causal, but explanatory.
 
 t See also the parable of the unmerciful servant, Matt. xviu. 23.
 
-In respect to what is sinful, God is sometimes said to do what he only permits to be done, and does not positively interfere to prevent; and, though he never tempts men to sin, he may permit them to be tempted to it: hence the suitableness of this petition, in this particular view. Quod igitur dicimus Deo, Ne nos inferas in tentationem, quid dicimus, nisi Ne nos inferri sinas?—" When we say to God, Lead us not into temptation, what do we say but, Suffer us not to be led?"—*Augustine, De Bono Perseverantice,* cap. vi
+♦ In respect to what is sinful, God is sometimes said to do what he only permits to be done, and does not positively interfere to prevent; and, though he never tempts men to sin, he may permit them to be tempted to it: hence the suitableness of this petition, in this particular view. Quod igitur dicimus Deo, Ne nos inferas in tentationem, quid dicimus, nisi Ne nos inferri sinas?—"When we say to God, Lead us not into temptation, what do we say but, Suffer us not to be led?"—*Augustine, De Bono Perseverantiæ*, cap. vi.
 
-t I Cor. X. 13.
+† 1 Cor. x. 13.
 
-*t* Matt. xiii. 19, 38; 1 John iL 13,14, iii 12, v. 18.
+‡ Matt. xiii. 19, 38; 1 John ii. 13, 14, iii. 12, v. 18.
 
 1 Cor. xiv. 16.
 

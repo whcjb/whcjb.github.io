@@ -79,7 +79,7 @@ To this course we exhort you, not as to a course which will involve you in unava
 
 *i^^\** vivos capieni. *T»9* K^Mrav i^«y(iir«v. *'Arrvmynf litty^n^n<sup class="ft-fn">*</sup>* Horodotuf.
 
-Matt. iy. 19.
+♦ Matt. iv. 19.
 
 Luke xviii. 28.
 

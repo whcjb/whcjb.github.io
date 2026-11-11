@@ -71,18 +71,20 @@ Lastly, and more particularly, *Let us beware of resembling the chief priests, s
 
 Acts vi. 4.
 
-Soe 1 Chron. xxiv. 1-19.
+♦ See 1 Chron. xxiv. 1-19.
 
 1 Kings xxii 24; Jer. xx. 1.
 
 ♦ Jolm V. 31, X. 24.
 
-Luke xziL 66.
+♦ Luke xxii. 66.
 
-♦ Matt. xu. 10; Luke xiv. 3.
+♦ Matt. xii. 10; Luke xiv. 3.
 
-Matt. xiv. 5. + Acts v. 26.
+♦ Matt. xiv. 5.
 
-♦ I>Q€ldridge.
+† Acts v. 26.
+
+♦ Doddridge.
 
 </div>

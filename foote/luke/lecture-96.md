@@ -93,7 +93,7 @@ Lastly. *It would be well if the followers of Christ would always, like this rul
 
 • Matt. xix. 20, 22. *Utavi^xeg.*, f 1 Kings xi. 28.
 
-♦ Luke XX. 2L
+♦ Luke xx. 21.
 
 Scott.
 
@@ -107,6 +107,8 @@ t Plato (lib. V. De Legibus) says that it is very rare for men to be at once pro
 
 t Koran vii. 37. *t* Matthew and Mark. § Jer. xiii 23.
 
-♦ 1 Kings xviii. 12. f 1 Sam. xvi. 7.
+♦ 1 Kings xviii. 12.
+
+† 1 Sam. xvi. 7.
 
 </div>

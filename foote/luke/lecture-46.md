@@ -77,20 +77,24 @@ Again, the terms in which this declaration is couched, suggests that there will 
 
 <div class="ft-notes" markdown="1">
 
-Dml vii 18.
+♦ Dan. vii. 13.
 
 1 John V. 1.
 
-♦ Matt xvi. 17,
+♦ Matt. xvi. 17.
 
-1 Cor. ii ». t Joim xix. 7. *%* Matt. xvi. 21.
+♦ 1 Cor. ii. 8.
 
-Mark viii 34.
+† John xix. 7.
 
-Summum crede nefas animam praeferre pudori, £t propter vitam viveudi perdere causae.
+‡ Matt. xvi. 21.
 
-*Jwcm,* viii. 79.
+♦ Mark viii. 34.
 
-*\** Matt, xvi 28. f Mark ix. 1.
+♦ Summum crede nefas animam præferre pudori, Et propter vitam vivendi perdere causas. *Juven.* viii. 79.
+
+♦ Matt. xvi. 28.
+
+† Mark ix. 1.
 
 </div>

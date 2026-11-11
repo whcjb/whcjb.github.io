@@ -69,7 +69,9 @@ Lastly. *Let us be very thankful when we think of the gracious purpose for which
 
 <div class="ft-notes" markdown="1">
 
-See John xi. 54; Luke xix. 1; and Doddridge's Note, t Verses 2,11,22.
+♦ See John xi. 54; Luke xix. 1; and Doddridge's Note.
+
+† Verses 2, 11, 22.
 
 Ezek. iii. 8.
 
@@ -79,7 +81,7 @@ Acts iv. 29.
 
 ♦ Mark x. 32.
 
-John L 12.
+♦ John i. 12.
 
 ♦ Scott.
 

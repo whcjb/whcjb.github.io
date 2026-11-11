@@ -93,12 +93,12 @@ I shall only add, that these truly enlightened and truly charitable and liberal 
 
 ♦ Matt. X. 40.
 
-Matt. xvi 18.
+♦ Matt. xvi. 18.
 
-Matt, vii 22.
+♦ Matt. vii. 22.
 
-Numb, xi 24.
+♦ Numb. xi. 24.
 
-♦ Phil *1*15.
+♦ Phil. i. 15.
 
 </div>

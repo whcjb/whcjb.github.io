@@ -63,20 +63,26 @@ To conclude. *Let us all see that we place our sole hope of acceptance with God 
 
 <div class="ft-notes" markdown="1">
 
-♦ See Acts iii. 21; 2 Pet. iii. 13; Rev. xxi. f 1 Cor. tL 2.
+♦ See Acts iii. 21; 2 Pet. iii. 13; Rev. xxi.
 
-*X* Luke zzii. 28.
+† 1 Cor. vi. 2.
 
-Jobziii.
+‡ Luke xxii. 28.
 
-♦ Lake *xxf,* 33. f 2 Chron. xxy, 9.
+♦ Job xiii.
 
-♦ Deut. zzziii. 9; Pa. xIt. 10.
+♦ Luke xiv. 33.
 
-*\** Matthew xx. 19. f Luke xxiv. 25.
+† 2 Chron. xxv. 9.
 
-« Luke ix. 45.
+♦ Deut. xxxiii. 9; Ps. xlv. 10.
 
-• Mark x. 32.
+♦ Matthew xx. 19.
+
+† Luke xxiv. 25.
+
+♦ Luke ix. 45.
+
+♦ Mark x. 32.
 
 </div>

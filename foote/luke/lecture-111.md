@@ -73,27 +73,35 @@ Such are the ten signs which our Lord gave to denote that Jerusalem's fatal day 
 
 <div class="ft-notes" markdown="1">
 
-• Mark xUL 9j Acts iy. 5, y. 27, xxii. 19, xxvi. 10.
+♦ Mark xiii. 9; Acts iv. 5, v. 27, xxii. 19, xxvi. 10.
 
-♦ Acta iv. 3, V. 18, xii 4. + Acts xvi 22, &c.
+♦ Acts iv. 3, v. 18, xii. 4.
 
-*t* Matt. X. 17. § John xvi 1.
+† Acts xvi. 22, &c.
+
+‡ Matt. x. 17.
+
+§ John xvi. 1.
 
 ♦ Dr Campbell's translation. See his remarks on Mark xiii. *9.* ^
 
 *X* See Lecture Ixiy. Odyss. iii. 26,27., Eumenid. >^73w
 
-*"* Cui nihil contradici possit, quod yen habeat speciem."—*Orotim. f Acta* vi. 10, vii«
+♦ "Cui nihil contradici possit, quod veri habeat speciem."—*Grotius.*
+
+† *Acts* vi. 10, vii.
 
 'TiT<sup class="ft-fn">*</sup> frayrwv, ab omnibus, *i.e.,* a plerisque (that is, by most, or, almost universally) Ita et Graeci «r0XX« *^etvrett* et Latini *pUraque omnia* dicunt. Herodotus, lib. ii. *Aiyuvrrm vet ^9>.>xt ^etvret ift^aXtv rdifi aXXot^t av^^uvai^i l^Tfi^nvra n6i» r% xut vefAovf.* Raphelius.—In Scrip^ ture, the indefinite word " all" often requires to be understood with some explanation and limitation, and as signifying some, or many, of all nations and of all descriptions. Matt. iii. 5; Phil. ii. 21; Tit. ii. 11. The words in Matt. xxiv. 9, are, " Ye shall be hated of all nations for my name's sake.". t Annal. xv. 44
 
-♦ Juvenal, viii. 235, \*&lt; Molesta tunica;" and Martial, x. 26. *f* " Circulo insistens."
+♦ Juvenal, viii. 235, "Molesta tunica;" and Martial, x. 26.
+
+† "Circulo insistens."
 
 *"* Odio humani generis."
 
 " Afflicti suppliciis, genus hominumsuperstitionisnoyaBetmalificae.'" f " NominiB praelium"—^" a war against the very name."—TertwWiaTi. VOL. III. T
 
-1 Sam. xiv. 45; 2 Sam. xiv. 7, U; Acts xxvii. 22, 34.
+♦ 1 Sam. xiv. 45; 2 Sam. xiv. 7, 11; Acts xxvii. 22, 34.
 
 See Dr Campbeirs Translation and Notes.
 
@@ -105,6 +113,6 @@ iv. 13; Mark xiii. 13. *t* Jortin.
 
 ♦ 2 Thess. ii. 3.
 
-t Doddridge. Dr Arthur Young on Idolatry, vol. iL p. 216, &c. See Rom.x. 18; Ck>L L 6, 23.
+† Doddridge. Dr Arthur Young on Idolatry, vol. ii. p. 216, &c. See Rom. x. 18; Col. i. 6, 23.
 
 </div>

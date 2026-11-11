@@ -61,20 +61,24 @@ The other exhortation which this passage suggests is this, *Let all of you who d
 
 <div class="ft-notes" markdown="1">
 
-♦ " Lucrum punice mammon dicitur/\*
+♦ "Lucrum punice mammon dicitur."
 
-f Rom. ii. 8; 1 Cor. xiii. 6.
+† Rom. ii. 8; 1 Cor. xiii. 6.
 
-*\*,* &lt;( Quod si dolosi refulserit spes nummi."—Pem««.
+‡ "Quod si dolosi refulserit spes nummi."—*Persius.*
 
 *'ExktirtiTi. \*E»Xtituf fA«t ^ottvtrcu h ypvx\*i*—*Xen. Cyr,* viii. 'E<sup class="ft-fn">*</sup> *ftfit^etia, xat U kifitv ixku^trt,*—Jer. zlu. 22. *SeptuaginU*
 
-*\** See also Rev. xii. 6, xvi. 15.
+♦ See also Rev. xii. 6, xvi. 15.
 
 \*H *rofv etruf ivTw xrurtt ittt f»fr$tffif »v iti^iytnrett,* " The acqui- Bition of true, or real, possessions, comes not from doth."—*DemophUus^ Sentences,* f Prov. TiiL IS
 
 *\*AXy.or^icf,* T« AXXtfr^Mv and *rd fifittrt^av, cUienum* and *proprium,* or, ittifcm, are contrasted, somewhat in this way, by several Greek and Latin authors. Thus, Ba^t/y *x^ ^H<sup class="ft-fn">*</sup> Vf* «"'"" *^"XV* ^'^f^\* •''"'^«»^f *^iijt r»i fiUf akXett n^ovag rms ^t^t f<sup class="ft-fn">*</sup> rt^fiw »eu r»vs Ko^f/tout uutri x^\*^"" MS aWer^eui rt ivrag^ tuu* irXsAV *^»Tt^9it iiyncra/»tws aiti^ya^t«r^at'* T«f ^i frtgi *TO fiMvfieivuv itr^rovia^t* ti, *xett xoffAn«rets rtiv ^vxnv ohx &X.X»r^tf* «XA« ry *avrns xc^/am, trot^^Mwtif* ri *xat hx»i9«rvtp x»t avi^utf xat* IXic;*it^iif, xm ikn^tte^^—PlatOy* Phoed©, § 63, ad finem. " Nihil horum, ^uae circa ipsom sunt, suum jadicat, sed ut commodatis utitur peregnnus et properans."—^«»e&lt;;a, Ep. 120. " Parva munera dintina, locupletia non i)ropria esse consaeverunt."—*Neposy* Thrasyb. " Nam propria telluris herum natura neque ilium, Nee me, nee quemquam statuit."— *Horace.*
 
-♦ 2 Kinge xvu. 24 to end. f Ezek. xx. 39, *%* Zeph. i. 5.
+♦ 2 Kings xvii. 24 to end.
+
+† Ezek. xx. 39.
+
+‡ Zeph. i. 5.
 
 </div>

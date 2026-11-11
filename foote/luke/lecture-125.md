@@ -87,13 +87,15 @@ But Pilate is, in some respects, a beacon to us all. Let it be an instructive wa
 
 *Tlt^^etyfiifov avrof,* without the preposition. Though somewhat uncommon, instances of this occur in Greek; and it is much more natural to understand it thus here, than to suppose that the passing of a capital sentence, or anything done by Herod to Christ, should be called a thing deserving death on Christ's part. Polybius says Hermiad finished his life in this way, undergoing a punishment by no means equal to the things done by him, that is, as his crimes deserved, *Uhfiumv viroff^etf TtfMt^ttiv ei^Mv rttv tiury ^rt^r^etyfiivuv.* And Josephus, at the end of his life, written by himself, says, "These are the things done by me during (or the actions of) my whole life: ^^—*Tavra fitv* r« *irtir^y^tjm fi9t 2m irttfr9i row ^tw i^rtK*
 
-Matt. xxvii. 16; Mark xy. 6.
+♦ Matt. xxvii. 15; Mark xv. 6.
 
-Job zzziii. 14.
+♦ Job xxxiii. 14.
 
-Eccles. V. 7. t Eccles. v. 3.
+♦ Eccles. v. 7.
 
-« llati. xxvii 24.
+† Eccles. v. 3.
+
+♦ Matt. xxvii. 24.
 
 Among the other ceremonies at a solemn league, Homer (Iliad, iii. 270) says, " They poured water on the hands of the kings,"
 
@@ -101,7 +103,7 @@ Among the other ceremonies at a solemn league, Homer (Iliad, iii. 270) says, " T
 
 ♦ Lev. xxiv. 16; Deut. xviii. 20.
 
-Job. Antic^. XVIII, iv. 1, 2; Euseb. ii. 7.
+♦ Jos. Antiq. XVIII. iv. 1, 2; Euseb. ii. 7.
 
 Doddridge.
 

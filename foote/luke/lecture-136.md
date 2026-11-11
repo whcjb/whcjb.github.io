@@ -65,28 +65,32 @@ Once more here: Our Lord ascended into heaven, *that he might prepare a place fo
 
 <div class="ft-notes" markdown="1">
 
-*\** Matt. xxviii. 18 to end; John xx. and xxi.
+♦ Matt. xxviii. 18 to end; John xx. and xxi.
 
-See2Kiiig8iy.23.
+♦ See 2 Kings iv. 23.
 
-♦ Markxiy. 26-32; Luke xxiL 39.
+♦ Mark xiv. 26-32; Luke xxii. 39.
 
-Acts z. 40.
+♦ Acts x. 40.
 
-♦ Lw. ix. 22.
+♦ Lev. ix. 22.
 
-Exod. xxiv. 16, xxxiii. 9. +1 Kings viii. 10.
+♦ Exod. xxiv. 16, xxxiii. 9.
 
-*t* Harmony of Evangelists.
+† 1 Kings viii. 10.
 
-♦ Acts L 7.
+‡ Harmony of Evangelists.
 
-♦ICor. »i
+♦ Acts i. 7.
 
-• John xvi. 7. t Heb. vii. 23.
+♦ 1 Cor. xii.
+
+♦ John xvi. 7.
+
+† Heb. vii. 23.
 
 Eph. i. 20.
 
-John xiv. I.
+♦ John xiv. 1.
 
 </div>

@@ -93,12 +93,12 @@ Matt. xxiii. 13.
 
 ♦ Rom. ix. 31.
 
-• Matt. xxv. 10.
+♦ Matt. xxv. 10.
 
 *Ov» cthet vftetf ^chv Ur%t* seems to be for *Oh<sup class="ft-fn">*</sup> otha, irofitv iftttf* {«>rf. SOj in Herodotus, lib. It., *Ov AtQvnv tlhrtf o<sup class="ft-fn">*</sup>»u yns tin,* Non noverant ubi terrftrum Libya esset.
 
-Pa. cxii. 10.
+♦ Ps. cxii. 10.
 
-• Matt. viii. 10.
+♦ Matt. viii. 10.
 
 </div>

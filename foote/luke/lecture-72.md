@@ -63,14 +63,16 @@ In the last place. *Let none of us so abuse God's sparing mercy as to presume on
 
 <div class="ft-notes" markdown="1">
 
-♦ Exod. xxxii. 9. f Pa. cvi. 23.
+♦ Exod. xxxii. 9.
 
-:J: Josh. vii. 7; Jer. xxxii. 16; Dan.ix.5; James v. 18.
+† Ps. cvi. 23.
+
+‡ Josh. vii. 7; Jer. xxxii. 16; Dan. ix. 5; James v. 18.
 
 ♦ K«y */Aiv lir$i9ifn »et^9r«if ti* ^f ^»jyi, &c. This sort of an ellipsis, requiring a whole clause to be supplied, as the sense may demand, is quite according to the use of pure classical writers. Thus, in Thucydides, near the beginning of his third book, 'Hv ^ey *wft^n h iruoei' tl h fttit* If the attempt succeed (well), but if not, &c.—In Aristophanes, Plutus, 144, —Kay */Ai9 a^o^prifM*— — *u ^i fAtI*—
 
 In Xenophon, this figure occurs frequently; as in Cyropaed., lib. iv., *Kmi vvv tl fttv Ku^cf fiauXtrar tl h fiti^* &c. And in Polybius, 'E«» /civ *InowTtg a-fiiuftt- tl h fAfi,* &c.
 
-♦ PhU. ii. 15.
+♦ Phil. ii. 15.
 
 </div>

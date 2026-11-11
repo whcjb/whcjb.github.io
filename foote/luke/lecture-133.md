@@ -99,18 +99,20 @@ The only other rule we shall mention is this—*Implore divine direction.* It mu
 
 <div class="ft-notes" markdown="1">
 
-Deut. tL 6.
+♦ Deut. vi. 6.
 
 Mark xvi. 12.
 
-*\** This is an allusion to a custom which prevailed among some nations of collecting the tears shed on the death of a friend in a small.phiaL which was deposited on his tomb. These phials were called laehryma. tories.
+♦ This is an allusion to a custom which prevailed among some nations of collecting the tears shed on the death of a friend in a small phial, which was deposited on his tomb. These phials were called lachrymatories.
 
-♦ Henry. f Matt. xxi. 11.
+♦ Henry.
+
+† Matt. xxi. 11.
 
 ♦ 2 Cor. iii. 4.
 
 ♦ MaU. V. *"SI. \* ^Q\. it<sup class="ft-fn">*</sup>»^w Wt «t#sH'«i.
 
-• Heb. ii. 10
+♦ Heb. ii. 10
 
 </div>

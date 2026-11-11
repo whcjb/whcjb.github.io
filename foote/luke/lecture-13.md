@@ -75,7 +75,9 @@ But perhaps the most generally applicable, and most awakening consideration of a
 
 John X. 41
 
-Jer. xxiii. 29. -h Isa. iv.
+♦ Jer. xxiii. 29.
+
+† Isa. iv.
 
 ♦ Isa. xxi. 10. † Jer. xv. 7. ‡ Matt. xiii. 30. ‖ Mal. iii. 18.
 

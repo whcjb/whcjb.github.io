@@ -75,7 +75,9 @@ Let us beware, too, of the particular sins with which the Pharisees are, in this
 
 <div class="ft-notes" markdown="1">
 
-Life, sect. 54. f Gen. xliii. 16.
+♦ Life, sect. 54.
+
+† Gen. xliii. 16.
 
 Whitby on Mark vii.
 
@@ -87,6 +89,6 @@ Council of Trent.
 
 Mal. ii. 9.
 
-Henry on Matt, xxiii. 6.
+♦ Henry on Matt. xxiii. 6.
 
 </div>

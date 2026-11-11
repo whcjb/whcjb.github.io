@@ -93,8 +93,8 @@ Polybius thus speaks of some who, from unskilfulness, and a perverse way of judg
 
 ♦ Matt. xiii. 19.
 
-♦ John vi. *66,*
+♦ John vi. 66.
 
-lTim.m.5
+♦ 1 Tim. iii. 5
 
 </div>

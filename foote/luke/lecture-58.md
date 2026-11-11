@@ -89,9 +89,9 @@ Believers! remember that, though you are delivered from the reign of Satan, he w
 
 <div class="ft-notes" markdown="1">
 
-Luke iy. 33, viii. 26, ix. 37.
+♦ Luke iv. 33, viii. 26, ix. 37.
 
-Henry,
+♦ Henry.
 
 Josephus, Justin Martyr, &c. Whitby on Matt. xii. 27.
 
@@ -99,6 +99,6 @@ Exod. viii. 19.
 
 Henry.
 
-Cicero thus addresses Ccesar: *"* We have heard ^ou say that we reckon all those our enemies, except those who are with us; but that you reckon all those your friends who are not against you.—Nos omnes adversarios putare nisi qui nobiscum essent: te omnes qui contra te non essenty tuos."—*OrcU. pro Ligaiio^ adjinem.*
+♦ Cicero thus addresses Cæsar: "We have heard you say that we reckon all those our enemies, except those who are with us; but that you reckon all those your friends who are not against you.—Nos omnes adversarios putare nisi qui nobiscum essent: te omnes qui contra te non essent, tuos."—*Orat. pro Ligario, ad finem.*
 
 </div>

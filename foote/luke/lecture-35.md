@@ -79,12 +79,12 @@ As for you, on whom this blessedness does indeed already rest, never forget the 
 
 <div class="ft-notes" markdown="1">
 
-• Luke *vau* 19.
+♦ Luke iii. 19.
 
 ♦ Johnx. 23. 2 I
 
-• Matt. xiii 54.
+♦ Matt. xiii. 54.
 
-John xvi 1.
+♦ John xvi. 1.
 
 </div>

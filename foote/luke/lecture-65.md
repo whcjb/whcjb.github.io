@@ -77,7 +77,7 @@ And finally, whatever be your situation, or circumstances, seek to become posses
 
 <div class="ft-notes" markdown="1">
 
-♦ Exod. il 13.
+♦ Exod. ii. 13.
 
 Surely the appointment of ministers as justice of peace is very objectionable.
 
@@ -95,6 +95,6 @@ Non possidentem multa Yocaveris Recte beatum: rectius occupat Nomen, &c. *Hor. C
 
 TOL. II. 2 A
 
-♦ Eccles. it 18.
+♦ Eccles. ii. 18.
 
 </div>

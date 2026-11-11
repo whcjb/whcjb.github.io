@@ -85,19 +85,31 @@ Let those of you, finally, who are restored to sight, in the spiritual sense, be
 
 <div class="ft-notes" markdown="1">
 
-♦ Deut. xxxiv. 3; 2 Chron. xxviii. 15. f Josh, vi 26; 1 Kings xvi. 34.
+♦ Deut. xxxiv. 3; 2 Chron. xxviii. 15.
+
+† Josh. vi. 26; 1 Kings xvi. 34.
 
 'En TM *lyyi^uv etlrev ut \*U^ix^-* Dr Campbell T^ill not admit the justness of this rendering; yet authorities preponderate in favour of it. Reference is made to Luke x. 9, xviii. 40, and the Septuagint, Isa. 1.8; Jer. xxiii. 23. " Comme il etait pres de Jerico."—*Le CI.* and *Beau,* It would be unfair, indeed, not to observe that Luke says, in the beginning of the following chapter, and after the account of this miracle, that "Jesus entered and passed through Jericho:" but our Lord may have remained for some days at Jericho, and the miracle may have been performed when he went out of it. to some place in the vicinity, though he afterwards returned to it.—See *Grotius Lightfoot, Campbell, Scott, Doddridge,*
 
 t Scott.
 
-Or, charged him to hold his peace. f Verse 15.
+♦ Or, charged him to hold his peace.
 
-*X* Luke xix. 39. § Pb. lxxii. 12.
+† Verse 15.
 
-♦ lea. XXX. 18. t Ezek. xxxvi, 37.
+‡ Luke xix. 39.
 
-♦ John xi. 26; Acts xiv. 9. + Matt. ix. 29; Luke viii. 48, xvii. 19. *X* Luke vii. 50.
+§ Ps. lxxii. 12.
+
+♦ Isa. xxx. 18.
+
+† Ezek. xxxvi. 37.
+
+♦ John xi. 26; Acts xiv. 9.
+
+† Matt. ix. 29; Luke viii. 48, xvii. 19.
+
+‡ Luke vii. 50.
 
 " Seasons return; but not to me returns Day, or the sweet approach of even or mom. Or sight of vernal bloom, or summer's rose, Or flocks, or herds, or human face divine; But cloud instead, and ever-during dark Surrounds me: from the cheerful ways of men j
 

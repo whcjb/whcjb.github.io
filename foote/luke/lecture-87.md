@@ -99,16 +99,18 @@ A parable, similar to this, is found in the Jewish Talmud. Lightfoot quotes it f
 
 ♦ " Purpurei tyranni."—*Horace,* + Judges viii. 26; Esth. viii 15.
 
-Amos Ti 1, 3. t Job xxi. 12.
+♦ Amos vi. 1, 3.
+
+† Job xxi. 12.
 
 ♦ Acts m. 1.
 
 t *'Em^vfiMv,* Eisner thinks this word should be here rendered," being contented,"or," reckoning it a great matter;" and remarks that the word is used for, " being delighted," in the Septuagint of Isa. l?iii. 2; and for^ " being contented," Dj Lysias, Orat. xxiv.
 
-Ps, xci 11.
+♦ Ps. xci. 11.
 
 Plato (in Phoedo) teaches, that the soul which has passed through life pure and temperate (when it dies) has the gods for its companions and guides, *^wtfiTo^atv xm fiytfAovan B^atv* ti/;^i/i»\* The Greeks and Romans generally assigned this office to Mercury, who was thence called, the Conductor, *IlcfA^os, Ucft^ettag, 'St»^»irefATcft ypv;^o9'ofAvrcf,* and *-^v^ayuyos.* Sophocles (Ajac. Flagell. 843) represents Ajax, when about to die, as invoking Mercury, the Conductor, to lay him sweetly asleep, and to remove him by a gentle and quick leap. " Mercuri facunde, —— Tu pias laetis animas reponis Sedibus."—JSTor. Od., lib. i. 10. t See John xui. 23. *X* Matt. viii. 11.
 
-*\** Luke xiii. SB,
+♦ Luke xiii. 28.
 
 </div>

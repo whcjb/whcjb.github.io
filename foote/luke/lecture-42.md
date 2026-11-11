@@ -89,6 +89,6 @@ Finally. *The situation and conduct of this man, after he was dispossessed, are 
 
 ♦ See Lecture on Luke iv. 1-13.
 
-Josephus<sup class="ft-fn">*</sup> Jewish Wars, Book iv.
+♦ Josephus' Jewish Wars, Book iv.<sup class="ft-fn">*</sup>
 
 </div>

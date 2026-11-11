@@ -71,6 +71,8 @@ As the whole of this subject is peculiarly appropriate to *seafaring people*, so
 
 <div class="ft-notes" markdown="1">
 
-♦Matt.xiv.33. f Pb. lxv. 6.
+♦ Matt. xiv. 33.
+
+† Ps. lxv. 5.
 
 </div>

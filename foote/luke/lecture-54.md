@@ -111,9 +111,11 @@ In conclusion, then, my friends, let us, by all this, be admonished and encourag
 
 <div class="ft-notes" markdown="1">
 
-♦ Deut. XXX. 6. + Rom. v. 5.
+♦ Deut. xxx. 6.
 
-Id petam, idque persequar corde, et animo, atque viribus.—*Plautus,*
+† Rom. v. 5.
+
+♦ Id petam, idque persequar corde, et animo, atque viribus.—*Plautus.*
 
 Quoted bv Lightfoot from Maimonides.
 

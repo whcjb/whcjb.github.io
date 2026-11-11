@@ -87,17 +87,17 @@ Though the closing scene of the history of this man was so extraordinary that it
 
 <div class="ft-notes" markdown="1">
 
-The Chosen, or the Elect one. of God, seems to hare been one of the designations by which the Messiah was known among the Jews, and borrowed, no doubt, from Isa. xlii. 1: " Behold my servant, whom I uphold; mine elect, in whom my soul delighteth.^
+♦ The Chosen, or the Elect one, of God, seems to have been one of the designations by which the Messiah was known among the Jews, and borrowed, no doubt, from Isa. xlii. 1: "Behold my servant, whom I uphold; mine elect, in whom my soul delighteth."
 
-♦ Rfiv. xi. 9.
+♦ Rev. xi. 9.
 
 L. liv. 3. Seefother examples in Lipsius de Cruce, L. U. \*"
 
 \+ See Pearson on the Creed, i Antiq. xv. 11; Wan, VI. 11
 
-Julius Capitolinus. See Ekner on John xix. 20.
+♦ Julius Capitolinus. See Elsner on John xix. 20.
 
-♦ For example, Bee Gen. viii. 4, and xix. 29; also Matt, xxvi 8, compared with Mark xiv. 4,5; John xii. 4.
+♦ For example, see Gen. viii. 4, and xix. 29; also Matt. xxvi. 8, compared with Mark xiv. 4, 5; John xii. 4.
 
 ♦ Lev. xix. 17.
 
@@ -105,6 +105,6 @@ Julius Capitolinus. See Ekner on John xix. 20.
 
 \*f<sup class="ft-fn">*</sup> *"Eyyuf ^et^niuirdu xeiXov xett fAiyetXdUt* "' *ott^tog vraw§tm9* iiOjMVf —*Xen, de Exj^ed, Cyriy* lib. ii. The word *^et^etiurav* is used in the sieptua^nt, Gen. li. 8.—Hence the ancient heathens seem to have borrowed their ideas of the gardens of the Hesperides, the trees of which were fabled to have borne golden fruit. ^
 
-Iiigbtfoot'8 Sermon.
+♦ Lightfoot's Sermon.
 
 </div>

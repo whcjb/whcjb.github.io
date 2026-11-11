@@ -77,16 +77,18 @@ Lastly. *The history of Judas furnishes a most awful warning to all who profess 
 
 <div class="ft-notes" markdown="1">
 
-• John i 47.
+♦ John i. 47.
 
-Eusebius, Socrates. *f* Pantaenus, according to Eosebios.
+♦ Eusebius, Socrates.
 
-• John xi. 16.
+† Pantænus, according to Eusebius.
+
+♦ John xi. 16.
 
 From Eusebius, Josephus, &c.
 
-John Ti. 70.
+♦ John vi. 70.
 
-John xii *5.*
+♦ John xii. 5.
 
 </div>

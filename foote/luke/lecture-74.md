@@ -73,13 +73,15 @@ And whereas both these parables suppose small beginnings, and afterwards great p
 
 <div class="ft-notes" markdown="1">
 
-♦ Matt. xiii. 31. f Mark iv..SO,
+♦ Matt. xiii. 31.
+
+† Mark iv. 30.
 
 ♦ Dr A. Clarke on Matt. xiii. 31, and Whitby and Buxtorf.
 
 Acts ii. 47, xvi. 5, viii. 4.
 
-The effects of a moral address are compared, by Seneca (Epistle xxxviii.) to the growth of seed: " Seminis modo, quod, quamvis sit exiguum, cum occupavit idoneum locum, vires suas explicat, et ex minimo in maximos auctus diffundatur. Idem facit oratio.'^
+♦ The effects of a moral address are compared, by Seneca (Epistle xxxviii.) to the growth of seed: "Seminis modo, quod, quamvis sit exiguum, cum occupavit idoneum locum, vires suas explicat, et ex minimo in maximos auctus diffundatur. Idem facit oratio."
 
 • Tg/« *ffttra.* Three of these measures were equal to one ephah, a measure of things dr^, corresponding to the bath, a measure of bquids. t Shorter Catechism. VOL. II. 2 H
 

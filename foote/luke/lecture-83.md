@@ -71,8 +71,8 @@ If you have not returned to the Lord, but are afar off from him in open profliga
 
 K«^«if. Le Clerc thinks this word here means, not dancing, but a choir of singers, or musicians, t Exod. XT. 20; 2 Sam. tI. 14.
 
-• Acts xi. 1-3,18.
+♦ Acts xi. 1-3, 18.
 
-Acts iz. 17; Gal. i. 22.
+♦ Acts ix. 17; Gal. i. 22.
 
 </div>

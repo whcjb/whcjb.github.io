@@ -101,9 +101,9 @@ With regard to the spiritual prosperity of children; if they not only are tracta
 
 • Gen. xvii.
 
-See Eisner on this passage.
+♦ See Elsner on this passage.
 
-• Dr. Hunter.
+♦ Dr. Hunter.
 
 • 1 Chron. xxviii. 19.
 

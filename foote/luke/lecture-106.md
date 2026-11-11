@@ -79,29 +79,43 @@ But, all these duties to the king should be performed in consistency with *our d
 
 ♦ Mark viii. 15.
 
-t The opposite view of their principles is given in Calmet; but, surely, the very name Herodians implied that they were friendly to Herod. *X* Prideaux; Joseph. Antiq. xv.
+† The opposite view of their principles is given in Calmet; but, surely, the very name Herodians implied that they were friendly to Herod.
 
-Mark iii. 6. f John ZYiiL 31.
+‡ Prideaux; Joseph. Antiq. xv.
+
+♦ Mark iii. 6.
+
+† John xviii. 31.
 
 *^\** Chi ti fa carezze piik che non suole, O t<sup class="ft-fn">*</sup> ha ingannato, o ingannar ti Tuole."'
 
 *Italian proverb, quoted by J)r A. Clarke,*
 
-♦ Jer. xxvii. 12. f Acts v. 37.
+♦ Jer. xxvii. 12.
+
+† Acts v. 37.
 
 ♦ Rev. ii. 23.
 
-See Lightfoot<sup class="ft-fn">*</sup>» Horse on Matt. zxii. 20.
+♦ See Lightfoot's Horæ on Matt. xxii. 20.<sup class="ft-fn">*</sup>
 
-Dr A. Clarke on Matt. xxii. 20. f Exod. xzx. 13.
+♦ Dr A. Clarke on Matt. xxii. 20.
 
-♦ Matthew. t Doddridge.
+† Exod. xxx. 13.
 
-♦ Horn, xiii 1; Tit iii. 1; 1 Pet. iL 13.
+♦ Matthew.
 
-Rom. ziU. 6. f Matt, xvil 24.
+† Doddridge.
 
-♦ Ezra vi. 10. f Acts iv. 19, v. 29.
+♦ Rom. xiii. 1; Tit. iii. 1; 1 Pet. ii. 13.
+
+♦ Rom. xiii. 6.
+
+† Matt. xvii. 24.
+
+♦ Ezra vi. 10.
+
+† Acts iv. 19, v. 29.
 
 ♦ Dr Dwight, of the United States.
 

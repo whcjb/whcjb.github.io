@@ -101,7 +101,9 @@ Acts xiii. 15.
 
 *6b* cvfxfy.
 
-♦ Matt. xi. 4. t Forbes' Oriental Memoirs.
+♦ Matt. xi. 4.
+
+† Forbes' Oriental Memoirs.
 
 . John viii. 2,
 

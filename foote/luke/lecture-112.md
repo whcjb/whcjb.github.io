@@ -69,19 +69,23 @@ f Jer. xxvii<sup class="ft-fn">*</sup> • *X* I adhere to this as the most natu
 
 *TvfAvav h afitauf.*—Hesiodi *Opera et Dies,* 391. *"* Nadus arft, sere nudus. Hiems ignava colono."—Vibg. *Georg,* L 299, 4: Doddridge,
 
-For example, the flight of the French from Moscow, mider Bona<sup class="ft-fn">*</sup> XMkrte. Light^t quotes a passage from a Jewish Rabbi to this effect: " God vouchsafed a great favour to Israel (when the first temple was destroyed), for they ought to have gone out of the land on the 10th day of the month Tebeth (December). If they shall now go out in the winter," saith he, "they will all die; therefore, he prolonged the time, and carried them away in summer." Josephus (Wars, book vL) says, that the second temple was burnt on the same day of the year with the first, namely, on the 10th day of the month Ab, which corresponded nearly to July; and that the Romans got entire possession of the whole city on the 8th day of Ebul, which corresponded nearly to August. The Chrifttians, however, seem to have escaped long before.
+♦ For example, the flight of the French from Moscow, under Bonaparte. Lightfoot quotes a passage from a Jewish Rabbi to this effect: "God vouchsafed a great favour to Israel (when the first temple was destroyed), for they ought to have gone out of the land on the 10th day of the month Tebeth (December). If they shall now go out in the winter," saith he, "they will all die; therefore, he prolonged the time, and carried them away in summer." Josephus (Wars, book vi.) says, that the second temple was burnt on the same day of the year with the first, namely, on the 10th day of the month Ab, which corresponded nearly to July; and that the Romans got entire possession of the whole city on the 8th day of Ebul, which corresponded nearly to August. The Christians, however, seem to have escaped long before.<sup class="ft-fn">*</sup>
 
-♦ WaM, II. xix. 7, XX. 1.
+♦ Wars, II. xix. 7, xx. 1.
 
-*f* Euseb. Eccl. Hist lib. iii Epiph. adyersus Nazaraeoe, L 7.
+† Euseb. Eccl. Hist. lib. iii. Epiph. adversus Nazaræos, i. 7.
 
 ♦ Wars, IV. ix. 1.
 
-V. ii. 3. Whiston's translation is generally quoted, though not always, f See Lecture cii.. ^
+♦ V. ii. 3. Whiston's translation is generally quoted, though not always.
 
-♦ Wars, V. X. 2, 3. f Wars, VI. iii 3, 4.
+† See Lecture cii.
 
-;J: Deut. xxvul; 2 Kings vL 26; Lam. iy. *9,*
+♦ Wars, V. x. 2, 3.
+
+† Wars, VI. iii. 3, 4.
+
+‡ Deut. xxviii.; 2 Kings vi. 26; Lam. iv. 9.
 
 Wars,V.,xi. 1.
 

@@ -75,16 +75,20 @@ They are recorded, too, as connected with a most important subject, namely, the 
 
 <div class="ft-notes" markdown="1">
 
-Josephus, Justin Martyr, Irenaeus, Plutarch.
+♦ Josephus, Justin Martyr, Irenæus, Plutarch.
 
 Doddridge.
 
-• Matt. viii. 29. f Acts xvi. 16. $ Mark i. 26.
+♦ Matt. viii. 29.
+
+† Acts xvi. 16.
+
+‡ Mark i. 26.
 
 See 1 Cor. ix.
 
-Lev. xxiii 32.
+♦ Lev. xxiii. 32.
 
-♦ Scott,
+♦ Scott.
 
 </div>

@@ -109,18 +109,14 @@ See, then, that actual reformation be the immediate effect of the ministry of th
 
 <div class="ft-notes" markdown="1">
 
-Lightfoot, Horse Hebr. et Talm. Annas being named first because be waB his father-in-law. t Ezra viiL 24, X. 5.
+♦ Lightfoot, Horæ Hebr. et Talm. Annas being named first because he was his father-in-law.
 
-John i. 29, ui. 36.
+† Ezra viii. 24, x. 5.
+
+♦ John i. 29, iii. 36.
 
 ♦ Lev. xi. 21, 22.
 
-" Stemmata quid faciunt,
-
-Si coram Lepidis male viyitur?
-
-Misermn est aliorum incumbere fame."
-
-*Juvenal,* Sat. viii.
+♦ "Stemmata quid faciunt,———— Si coram Lepidis male vivitur? Miserum est aliorum incumbere famæ." *Juvenal*, Sat. viii.
 
 </div>

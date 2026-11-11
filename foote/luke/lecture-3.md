@@ -99,10 +99,16 @@ Finally. Rightly interpreted, there is something truly *encouraging* in the sayi
 
 <div class="ft-notes" markdown="1">
 
-John vii 52, f John i. 46.
+♦ John vii. 52.
 
-♦ Gen. vi 8, xxxix. 4; Acts vii. 46. + Judg. tL 12; Jer. L 8; Acts xviii 10. *%* Judg. v. 24.
+† John i. 46.
 
-♦ See also P». lxxxix. t>0, 21,28-37.
+♦ Gen. vi. 8, xxxix. 4; Acts vii. 46.
+
+† Judg. vi. 12; Jer. i. 8; Acts xviii. 10.
+
+‡ Judg. v. 24.
+
+♦ See also Ps. lxxxix. 20, 21, 28-37.
 
 </div>

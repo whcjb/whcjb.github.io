@@ -77,15 +77,19 @@ Finally. *Suffer the gospel to have its proper heart-searching effect on you.* I
 
 <div class="ft-notes" markdown="1">
 
-♦ Job xvi 11. t l8a.Tiii. 18.
+♦ Job xvi. 11.
+
+† Isa. viii. 18.
 
 Acts xxviii. 22.
 
-♦ Ps. xlu. 10. t Prov. xii. 18.
+♦ Ps. xlii. 10.
 
-♦ John xix. 25-117.
+† Prov. xii. 18.
 
-♦ Rom. XV. 3,4
+♦ John xix. 25-27.
+
+♦ Rom. xv. 3, 4.
 
 ♦ 1 Cor. xiv. 23-25.
 

@@ -73,20 +73,24 @@ Luke ii. 35. f John ii. 4.
 
 Andreas Cretensis.
 
-This question is fully discussed by Lardner, vol. vii., p. 371, edition 1788. *> > tr,*
+♦ This question is fully discussed by Lardner, vol. vii., p. 371, edition 1788.
 
-♦ And Mark xt. 34.
+♦ And Mark xv. 34.
 
-John X. 17. t Ps. IxxxYiii. 14.
+♦ John x. 17.
+
+† Ps. lxxxviii. 14.
 
 How, or to what, hast thou forsaken me! In Matthew, *Uart\* in Mark, *ui rt.*
 
-♦ Doddridge. f PoBca.
+♦ Doddridge.
+
+† Posca.
 
 ♦ Heb. X. 20.
 
 ♦ Heb. ix. 24.
 
-• Heb. ix. 7.
+♦ Heb. ix. 7.
 
 </div>

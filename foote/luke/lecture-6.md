@@ -103,18 +103,20 @@ And let those of you who have the proper reverential fear of God, guard against 
 
 <div class="ft-notes" markdown="1">
 
-• Gen. ix. 27.,. f 1 Chron. xxix. 10.
+♦ Gen. ix. 27.
 
-In ancient times, among the Jews, as still<sup class="ft-fn">*</sup> in Abyssinia, kings and warriors sometimes had a horn of steel on their helmet. *(Bru«e''9 Travels,)* A horn of silver was also worn as an ornament by persons of both sexes.
+† 1 Chron. xxix. 10.
 
-t Fs. Uxxix. 20.
+♦ In ancient times, among the Jews, as still in Abyssinia, kings and warriors sometimes had a horn of steel on their helmet. (*Bruce's Travels.*) A horn of silver was also worn as an ornament by persons of both sexes.
 
-♦ Ps. cxxxii 17.
+† Ps. lxxxix. 20.<sup class="ft-fn">*</sup>
 
-John i 29, iii. 36.]
+♦ Ps. cxxxii. 17.
+
+♦ John i. 29, iii. 36.
 
 *Vf(9* \*Aiwr«Xif. f Jer. xxlil 6, xzziii. 15; Zech. iiL 8, yi. 12.
 
-John L 30.
+♦ John i. 30.
 
 </div>

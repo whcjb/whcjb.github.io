@@ -97,15 +97,19 @@ Let those of you who are conscientious in this respect feel admonished and encou
 
 <div class="ft-notes" markdown="1">
 
-• Deut. xxi. 22.
+♦ Deut. xxi. 22.
 
 ♦ Dr Mackniglit, &c.
 
 t Lightfoot on Mark says, *^* He was a priest, and one of that sacerdotal bench." *X* Mark x?. 43. *Ei/t'xnf^i'f fi^vXtvrnt<sup class="ft-fn">*</sup>*
 
-♦ John xii. 42. f Matt. xxvu. 57.
+♦ John xii. 42.
 
-• Luke ii. 25-38. f John xix. 38.
+† Matt. xxvii. 57.
+
+♦ Luke ii. 25-38.
+
+† John xix. 38.
 
 ♦ Doddridge.
 
@@ -113,6 +117,6 @@ t Herodotus, (lib. ii.) says that the Egyptians wrapped up the corpse in this wa
 
 ♦ Doddridge. † Exod. xvi. 22.
 
-♦ Nttmb. XV. 32.
+♦ Numb. xv. 32.
 
 </div>

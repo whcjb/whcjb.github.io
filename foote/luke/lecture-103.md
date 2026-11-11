@@ -69,12 +69,14 @@ Lastly. *In all we attempt for the benefit of others, or of ourselves, let us im
 
 <div class="ft-notes" markdown="1">
 
-♦ Matt xxi. 10.
+♦ Matt. xxi. 10.
 
-The scheme which -would identify the cases is justly exploded, t Biatt. xxi 12,13; Mark xi. 16-17.
+♦ The scheme which would identify the cases is justly exploded.
 
-Lev. xix. 30,
+† Matt. xxi. 12, 13; Mark xi. 15-17.
 
-2 Chron. xxix. and xjp^iv.
+♦ Lev. xix. 30.
+
+♦ 2 Chron. xxix. and xxxiv.
 
 </div>

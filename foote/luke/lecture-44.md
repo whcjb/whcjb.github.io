@@ -83,17 +83,25 @@ Finally, *ought you not all to be thankful that the kingdom of God is now preach
 
 ♦ Matt. ix. 36.
 
-Mark iii. 14. f Numb. xi. 16-25. *%* Acts viU. 15.
+♦ Mark iii. 14.
+
+† Numb. xi. 16-25.
+
+‡ Acts viii. 15.
 
 Eccles. iv. 9.
 
-Luke xxiv. 47; Acts xiii. 46. f Mark vi. 8.
+♦ Luke xxiv. 47; Acts xiii. 46.
 
-•Matt xiv. 1; Mark vi. 14.
+† Mark vi. 8.
+
+♦ Matt. xiv. 1; Mark vi. 14.
 
 2 Tim. ii. 2.
 
-Tit. i. 5. *f \* Cor. Tii. 20.
+♦ Tit. i. 5.
+
+† 1 Cor. vii. 20.
 
 ,,. Numb. xi. 26.
 

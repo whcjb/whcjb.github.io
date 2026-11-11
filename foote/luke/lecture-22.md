@@ -91,14 +91,16 @@ Doddridge.
 
 ♦ Luke xix. 7.
 
-♦ 1 Cor. V. d-11.
+♦ 1 Cor. v. 9-11.
 
 ♦ 1 Cor. X. 27.
 
-♦ Mutt. ix. 13. t Mutt. xU. 7.
+♦ Matt. ix. 13.
 
-• M»fct. iv. 17.
+† Matt. xii. 7.
 
-• John xiii. 10.
+♦ Matt. iv. 17.
+
+♦ John xiii. 10.
 
 </div>

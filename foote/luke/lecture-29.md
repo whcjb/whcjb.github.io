@@ -81,9 +81,13 @@ Think, my friends, of the delightful effects this spirit would produce on your h
 
 <div class="ft-notes" markdown="1">
 
-• Matt. T. 43. t Lev. xix. 18. J See also Prov. xxiv. 17.
+♦ Matt. v. 43.
 
-♦P8.XXXV. 11.
+† Lev. xix. 18.
+
+‡ See also Prov. xxiv. 17.
+
+♦ Ps. xxxv. 11.
 
 ♦A similar sentiment occurs in Homer, Herodotus, Polybius, Isocrates, Qointilian, and other ancient writers. Of this numerous examples are given by Wetstein.
 

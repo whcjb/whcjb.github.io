@@ -91,6 +91,6 @@ Mark iii. 13.
 
 ♦ Mark i. 29.
 
-John tL 8.
+♦ John vi. 8.
 
 </div>

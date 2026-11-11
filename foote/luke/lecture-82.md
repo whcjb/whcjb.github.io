@@ -55,22 +55,22 @@ Let all of you who feel any thing of this life within you, be very thankful. Pri
 
 <div class="ft-notes" markdown="1">
 
-Gen. zxziiL 3, zIt. 14.
+♦ Gen. xxxiii. 3, xlv. 14.
 
 SraXu. t Gen, xxviL 15. *t* Eath. iit 10, viiL 2; Gen. xH. 42.
 
-Isa. XX. 2, 4; 2 Chron. xxviii. 15.
+♦ Isa. xx. 2, 4; 2 Chron. xxviii. 15. "Si effexis hoc, soleas tibi dabo, et annulum in digito aureum, et bona plurima."—*Plaut. Casin.* iii. 5.
 
-" Si effexis hoc, soleas tibi dabo, et annulum in digito aureuxn, et bona plurima."—*Plant. Casin.* iii. 5.
+† Odyss. xiv. 414, and xxiv. 214.
 
-t Odyss. xiv. 414, and xxiv. 214.
+♦ Ezek. xvi. 63.
 
-♦ E2ek. xvi. 63.
+♦ Ps. xlv. 13.
 
-• Pa. xlv. 13. t Cant. yu. 1; Eph. vi. 15.
+† Cant. vii. 1; Eph. vi. 15.
 
 ♦ Ezek. xvi. 10,
 
-♦ Col il 13.
+♦ Col. ii. 13.
 
 </div>

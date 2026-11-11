@@ -71,9 +71,13 @@ The conduct of the disciples at this time, on both sides, furnishes us with an e
 
 <div class="ft-notes" markdown="1">
 
-• Gen. xix. 2, f 2 Kings iv. 8.
+♦ Gen. xix. 2.
 
-♦ Matt. xiv. 19, xr. 36. + Acts xxvii. 36.
+† 2 Kings iv. 8.
+
+♦ Matt. xiv. 19, xv. 36.
+
+† Acts xxvii. 35.
 
 ♦ Wilcox.
 

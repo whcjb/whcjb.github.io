@@ -65,7 +65,7 @@ It must neither be forgotten nor disguised, that when the blind lead the blind, 
 
 <div class="ft-notes" markdown="1">
 
-*\** Rom xiv. 3.
+♦ Rom xiv. 3.
 
 -vrith as much gold as he could carry about bis person, be, among various contrivances, put on a very large robe, and filled all the bosom, or wide
 
@@ -73,10 +73,10 @@ fold of it, with the precious metal. *^Evivg xtfiuw fMyav^ m* »«Xir«f
 
 flToByrA *^XriffafAivos x^vffau.* The following passage occurs in IdTj, " Ihmi Romanus, sinu ex toga facto, Hie, inquit, vobis pacem et bellum portamus." A similar passage occurs in Polybius. In the words of Raphelius, " Est ergo hoc loco *mX'tos* laza curvitas sen cavitas in veste, qua aliquid excipere possumus."
 
-Judg. i 7—Adoni-bezek.
+♦ Judg. i. 7—Adoni-bezek.
 
 2 Pet. ii. 1; see also 1 Tim. iv. 1.
 
-Matt. X. 24. 2e
+♦ Matt. x. 24.
 
 </div>

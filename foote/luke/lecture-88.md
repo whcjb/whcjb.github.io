@@ -73,8 +73,12 @@ Such is this most remarkable and most impressive parable: see that you all apply
 
 *\** Profane writers also speak of a " great gulf,^\* *x^'M^ fAtyet,* in the unseen world. There is a very striking passage of this kind in Hesiod's Theogonia, *linea:* 729-745. The same idea also occurs in Plato, Plu^ tatob, Ovid, andliuciaa.
 
-PoUok. + Isa. xxxiii. 14.
+♦ Pollok.
 
-♦ Rev. xiii. 13,14. f Job xviiu 4,
+† Isa. xxxiii. 14.
+
+♦ Rev. xiii. 13, 14.
+
+† Job xviii. 4.
 
 </div>

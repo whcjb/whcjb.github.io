@@ -69,16 +69,24 @@ Let us, therefore, also improve this miracle *figuratively*, or, in reference to
 
 <div class="ft-notes" markdown="1">
 
-♦ Mark vi 30.
+♦ Mark vi. 30.
 
-• Doddridge. f Josh, iil 3.
+♦ Doddridge.
 
-♦ Matt. XT. 32. t Mark viii. 1. J John vi. 5.
+† Josh. iii. 3.
 
-Matt. xiv. 21. t Mark tl 39.
+♦ Matt. xv. 32.
 
-2 Cor. iz. 9.
+† Mark viii. 1.
 
-John yi. U.
+‡ John vi. 5.
+
+♦ Matt. xiv. 21.
+
+† Mark vi. 39.
+
+♦ 2 Cor. ix. 9.
+
+♦ John vi. 14.
 
 </div>

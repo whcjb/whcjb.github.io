@@ -101,7 +101,7 @@ But this history is still more directly and more affectingly applicable to those
 
 <div class="ft-notes" markdown="1">
 
-1 Sam. zzv. 41.
+♦ 1 Sam. xxv. 41.
 
 It is mentioned, in the 15th book of Polybios, that the Carthaginian ambassadors, in token of humiliation and entreaty, prostrated themaeiyei on the ground and kissed the feet of the members of the council In Xenophon (Cyrop., Ub. vii.) it is stated that certain persons kissedTthe feet of Cyrus, and wept for joy. In the 9th book of Pol^bius, it is said that when Hannibal approached Rome, the Roman ladies went to the temples and supplicated the gods, " washing the pavement of the temples with their hair," as their custom was on such occasions: *^Xvf§u^tu rtus xofAKtf r» Ttnv* /t^Ary l^«^\*f<sup class="ft-fn">*</sup> *r9vr» ya^ \hs Wrt*—.
 
@@ -109,6 +109,6 @@ Stemitur et pedibus crebro payida oscola figens.—SiL Ital., lib. xL
 
 Judg. xix. 20. t 1 Tim. r. 10.
 
-Matt, ix., Luke v.
+♦ Matt. ix., Luke v.
 
 </div>

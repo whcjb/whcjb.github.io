@@ -65,14 +65,18 @@ Matt. iv. 21.
 
 Matt. XX. 20.
 
-Eccl. Hist., lib. ii 9.
+♦ Eccl. Hist., lib. ii. 9.
 
-♦ John xiii. 23, xxi. 20. f John xviiL 15.
+♦ John xiii. 23, xxi. 20.
+
+† John xviii. 15.
 
 John xix. 26.
 
-♦ Acts iv. 3, V. 40. t C<sup class="ft-fn">*</sup>«l- Ji.»-
+♦ Acts iv. 3, v. 40.
 
-John xu. 20.
+† Gal. ii. 9.<sup class="ft-fn">*</sup>
+
+♦ John xii. 20.
 
 </div>

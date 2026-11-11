@@ -77,9 +77,13 @@ Finally. Let those of you who are following Christ, that is, living in the faith
 
 Rev. xiv, 4,
 
-*\** Lev. xxi 10; Numb. vi. 6.
+♦ Lev. xxi. 10; Numb. vi. 6.
 
-• Matt. X. 34; Luke xiv. 26. f Deut. xxxiii. 9. $ Pb. xlv. 10.
+♦ Matt. x. 34; Luke xiv. 26.
+
+† Deut. xxxiii. 9.
+
+‡ Ps. xlv. 10.
 
 See the use of the Greek word «ir«Ta«^^«/ in Mark vi. 46; Luke xiv. 33; Acts xviii. 18,21, end 2 Cor. U. 13.
 

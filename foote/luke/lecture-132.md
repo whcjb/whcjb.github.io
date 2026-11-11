@@ -87,26 +87,36 @@ Lastly. The resurrection of Christ should *keep* us in » *mind that we shall st
 
 <div class="ft-notes" markdown="1">
 
-♦ Matt. xvi 21, xvii, 23, xx. 19. f Luke xviii. 34.
+♦ Matt. xvi. 21, xvii. 23, xx. 19.
 
-♦ John ii. 22..
+† Luke xviii. 34.
 
-♦ Obsignate cellas, referte annalum ad me.—*Plawt, Ceu.* II. i. I. t Esth. iv. 16, V. 1. See also 1 Kings xx. 29; 2 Chron. x. 5,12,
+♦ John ii. 22.
 
-Matt, xxviii. 2. f Rom. vi. 4; John x. 18, ii. 19; 1 Pet. iii. 1&
+♦ Obsignate cellas, referte annulum ad me.—*Plaut. Cas.* II. i. 1.
 
-Matt, xxxvii. 5\*2.
+† Esth. iv. 16, v. 1. See also 1 Kings xx. 29; 2 Chron. x. 5, 12,
 
-Mark xvi. 1. f John xx. 2.
+♦ Matt. xxviii. 2.
+
+† Rom. vi. 4; John x. 18, ii. 19; 1 Pet. iii. 18.
+
+♦ Matt. xxxvii. 52.
+
+♦ Mark xvi. 1.
+
+† John xx. 2.
 
 Mark xvi. 13.
 
 Rom. iv. 25.
 
-Isa. lxv. 17. t John xx. 19, 26.
+♦ Isa. lxv. 17.
 
-Rom. Yi. 4-13.
+† John xx. 19, 26.
 
-• Acts xvii. *HO.*
+♦ Rom. vi. 4-13.
+
+♦ Acts xvii. 30.
 
 </div>

@@ -79,7 +79,7 @@ Lastly, though it does not seem to have been immediately in the view of our Lord
 
 0«» *U;^uv.*
 
-*\** A *bath* contained *7i* gallons, and was the same as an ephah.
+♦ A *bath* contained 7½ gallons, and was the same as an ephah.
 
 The cor was the same as the *homer;* it contained ten *hatht* or *ephafu,* and was their largest measure of capacity.
 
@@ -87,8 +87,8 @@ James iii. 13,
 
 John xii. 36.
 
-See Gen. ri. 9, xxxvii. 2.
+♦ See Gen. vi. 9, xxxvii. 2.
 
-• Jer. iy. 22.
+♦ Jer. iv. 22.
 
 </div>

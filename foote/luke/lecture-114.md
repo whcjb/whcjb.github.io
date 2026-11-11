@@ -91,7 +91,7 @@ How many and how dreadful are its evils! It is expressly contrary to the divine 
 
 <div class="ft-notes" markdown="1">
 
-Matt xxiv. 29.
+♦ Matt. xxiv. 29.
 
 ♦ Evfoff. f Doddridge.
 
@@ -103,13 +103,17 @@ Matt xxiv. 29.
 
 *f* Whether it bear directly on the illustration of this language or not, it IS worthy of remark, that the meteors called *^* falling stars," eclipses, and other striking appearances in the sky, were thought, by the common people, to be omens of calamity. See Virg. Georg. i. 365, and 462. *Statius,* Jib. 2, near th9 beginning.
 
-♦ 2 Pet. iiL 7. f Rev. xx. 11.
+♦ 2 Pet. iii. 7.
 
-*X* Isa. xix. 1, xxvi 21; sec aJSo 2 Sam. xxii 8-12; Ps. xviii. 9-12; Nahum i. 3-6.
+† Rev. xx. 11.
+
+‡ Isa. xix. 1, xxvi. 21; see also 2 Sam. xxii. 8-12; Ps. xviii. 9-12; Nahum i. 3-6.
 
 ♦ ActgLU; Rev.i.7.
 
-*\** Bom. viii. 23; Eph. *I* 13. f Matt xiii. 39^
+♦ Rom. viii. 23; Eph. i. 13.
+
+† Matt. xiii. 39.
 
 ♦ John xxi 22. " There were some Rabbins alive at the time when Christ spoke these things, that lived till the city was destroyed, viz., Rab. Simeon, who perished with the city—B. Jochanan Ben Zaccai, who outlived it—R. Zadoch, B. Ismael, and others."—Zt^A(/bot on Matt. zxiv. 34.
 
@@ -119,6 +123,6 @@ Matt xxiv. 29.
 
 \+ *Ba^vvivftf, BiCa^fifttfoi vifv^,* heavy "with sleep, Luke ix. 32. Xenophon says that Lycurgus directed men to take food only to an extent by which they might not be rendered heavy, or dull, by repletion, ^;
 
-♦ Jer. U. 39.
+♦ Jer. li. 39.
 
 </div>

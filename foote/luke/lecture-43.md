@@ -101,9 +101,11 @@ Faithfulness, however, requires the statement that none can scripturally partake
 
 <div class="ft-notes" markdown="1">
 
-♦ Mark v. 26. f Numb. xt. 38.
+♦ Mark v. 26.
 
-»Mark.
+† Numb. xv. 38.
+
+♦ Mark.
 
 2 Chron. xvi. 12.
 

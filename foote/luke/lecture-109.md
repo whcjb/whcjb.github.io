@@ -73,7 +73,7 @@ il *AttrT»,* corresponding to nnia^^^s.
 
 Mark xii. 43.
 
-♦ 1 Cor. x?i. 1.
+♦ 1 Cor. xvi. 1.
 
 ♦ Mark xiv. 8. t 2 Cor. *y\\\,* 1.
 
@@ -83,7 +83,7 @@ Hac ego contentos auguror esse deos. Haec facit, ut veniat pauper quoque gratus 
 
 *Ovid, El.* Xenophon, in his *Memorabilia,* states this as having been the opinion of Socrates, *ev^ias h* St/A»» *finx^as* ««•• */ii»^»>f, tlfhv iiytir« fitt«v^Pat rtn, Jtvo ^«XXmv xat /AtyakMf* «'«XX« ««/ */ityaX» BvofrMf*—*^Eweunrfit V fi» Mat rov W9US r«ur«u.*
 
-• 1 Cor. xHi. 8.
+♦ 1 Cor. xiii. 3.
 
 Cor. viii. 9. f Ps. xli. 1-4.
 

@@ -65,16 +65,14 @@ How awakening, then, ought this parable to prove to us all! As we cannot escape,
 
 <div class="ft-notes" markdown="1">
 
-Job xxxvii. 17: "Thy garments are warm when he quieteth the earth by the south wind.^^
+♦ Job xxxvii. 17: "Thy garments are warm when he quieteth the earth by the south wind."
 
-\+ Coeruleus pluviam denunciat, igneus Euros: Sin macule incipient rutilo immiscerier igni, Omnia tunc pariter yento nimbisque videbis Fervere.
-
-*Virg, Oeorg.* i. 453,
+† Cœruleus pluviam denunciat, igneus Euros: Sin maculæ incipient rutilo immiscerier igni, Omnia tunc pariter vento nimbisque videbis Fervere. *Virg. Georg.* i. 453.
 
 locum. *'T^tx^tTfis* est occultus judex, occultarum et abstrusarum rerum judex, conjector, ut, *vv'ox^irat om^atvy* conjectores somniomm." There is an example of this use of the word in Lucian in Somnio sub finem. The verb *v^ox^mo'^ai* is used by Homer, and often by Herodotus, to signify uttering oracles.
 
-Tertullian (de Corona.) argues from this verse in favour of the exercise of reason and the right of private judgment, in religious matters: "An non putas omni fideli licere, concipere et constituere dumtazat quod Deo congruat, quod disciplinae conducat, quod saluti proficiat, dicente Domino, Cur autem non et a vobis-ipsis quod judtum judicatis?'^
+♦ Tertullian (de Coronâ) argues from this verse in favour of the exercise of reason and the right of private judgment, in religious matters: "An non putas omni fideli licere, concipere et constituere dumtaxat quod Deo congruat, quod disciplinæ conducat, quod saluti proficiat, dicente Domino, Cur autem non et a vobis-ipsis quod justum judicatis?"
 
-1 Chron. xii 32.
+♦ 1 Chron. xii. 32.
 
 </div>

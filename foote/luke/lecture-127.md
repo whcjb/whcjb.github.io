@@ -79,11 +79,13 @@ t Gal. iii. 13.
 
 ♦ Isa. liii. 9,12.
 
-♦ Acts iii. 17. t 1 Cor. ii. 8.
+♦ Acts iii. 17.
 
-♦ John XT. 22.
+† 1 Cor. ii. 8.
 
-Lev. iy.
+♦ John xv. 22.
+
+♦ Lev. iv.
 
 John xix. 23.
 

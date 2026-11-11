@@ -73,16 +73,18 @@ After what has been already said in the way of application to ourselves in going
 
 <div class="ft-notes" markdown="1">
 
-Luke iy. 16. See Lecture on that passage, for an account of the institution of S3magogues.
+♦ Luke iv. 16. See Lecture on that passage, for an account of the institution of Synagogues.
 
-Job ii 7> t 1 Sam. xvi. 14. *%* Heb. iL 14; and Scott, *in locum.*
+♦ Job ii. 7.
 
-See Lecture xliii. on chap. viii. 40, &c. + Mark v. 22; Acts xviii. 8.
+† 1 Sam. xvi. 14.
 
-Wotton'8 Miscell. it 41; Lightfoot, Hor. Heb. These lines of Virgil naturally occur here, though they are £Eur from being a parallel to the iiiicred text;—
+‡ Heb. ii. 14; and Scott, *in locum.*
 
-" Quippe et!am festls qusdam exercere diebus Fas et jura sinunt: JBalanturrxiue *gregem* flu vie mersare salubrL"
+♦ See Lecture xliii. on chap. viii. 40, &c.
 
-*Oeorg^ U* 368.
+† Mark v. 22; Acts xviii. 8.
+
+♦ Wotton's Miscell. ii. 41; Lightfoot, Hor. Heb. These lines of Virgil naturally occur here, though they are far from being a parallel to the sacred text:— "Quippe etiam festis quædam exercere diebus Fas et jura sinunt: Balantumque gregem fluvio mersare salubri." *Georg.*, i., 268.
 
 </div>

@@ -57,8 +57,12 @@ But, though nothing of this more fierce kind of temptation come upon you, you wi
 
 <div class="ft-notes" markdown="1">
 
-♦ Mark xiii 11.
+♦ Mark xiii. 11.
 
-♦ Exod. iv. 10. + Jer. i. 6. Isa. ri.
+♦ Exod. iv. 10.
+
+† Jer. i. 6.
+
+‡ Isa. vi.
 
 </div>

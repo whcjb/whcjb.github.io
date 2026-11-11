@@ -75,15 +75,21 @@ Matthew and Mark use the word *irtti^en* Luke uses both *l^^tpfi* and *itatlta s
 
 ♦ Cren. xlviii. 14. f Ley. ix. 22; Luke xxiv. 50.
 
-♦ I>eut. xxix. 10. t Rom. iv. 11.
+♦ Deut. xxix. 10.
 
-Acts u. 38. t 1 Cor. tu. 14. $ l8a. xxviii. 9.
+† Rom. iv. 11.
+
+♦ Acts ii. 38.
+
+† 1 Cor. vii. 14.
+
+‡ Isa. xxviii. 9.
 
 2 Kings iv. 26.
 
 ♦ Matt. xviii. 3.
 
-•Isa. xl. 11.
+♦ Isa. xl. 11.
 
 Nicephorus, Eccl. Hist., lib. ii. c. 35. Doddridge, however, is of opinion that Nicephorus refers to the event which is the subject of this lecture.
 
@@ -91,6 +97,6 @@ Nicephorus, Eccl. Hist., lib. ii. c. 35. Doddridge, however, is of opinion that 
 
 Ps. cxxxi.
 
-• 1 Pet. ii. 1.
+♦ 1 Pet. ii. 1.
 
 </div>

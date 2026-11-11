@@ -61,21 +61,31 @@ We should next consider the prayer of the publican; but this, with the remainder
 
 <div class="ft-notes" markdown="1">
 
-• Luke X. 29,
+♦ Luke x. 29.
 
-• Luke xvi. 15. + Isa. lvi. 7.
+♦ Luke xvi. 15.
 
-• Luke V. 30, ui. 12, &c.
+† Isa. lvi. 7.
 
-• 1 Kings viiL 14, 54; ^ Chron. tl 3,13.
+♦ Luke v. 30, iii. 12, &c.
 
-t See atoo Marie xL 25; Pa. cxxxW. 1, cxxxv. 2.
+♦ 1 Kings viii. 14, 54; 2 Chron. vi. 3, 13.
 
-♦ Jer. ii. 23, 35. + Lev. xxiii. 27.
+† See also Mark xi. 25; Ps. cxxxiv. 1, cxxxv. 2.
 
-J Numb, xxiii. 4. § Isa. lviii. 3.
+♦ Jer. ii. 23, 35.
 
-♦ Lev. xxvii 30; Deut. xiv. 22. f Mai. iu. 8, 9. J Matt, xxiii. 23.
+† Lev. xxiii. 27.
+
+‡ Numb. xxiii. 4.
+
+§ Isa. lviii. 3.
+
+♦ Lev. xxvii. 30; Deut. xiv. 22.
+
+† Mal. iii. 8, 9.
+
+‡ Matt. xxiii. 23.
 
 Dr Adam Clarke.
 

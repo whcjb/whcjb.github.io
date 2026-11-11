@@ -83,13 +83,25 @@ Lastly. *Let us practically anticipate the time when we shall see the Saviour si
 
 <div class="ft-notes" markdown="1">
 
-Doddridge. t Matt. xxvi. 59. J Pb. xxxv. 11.
+♦ *Doddridge.*
 
-Acts Yi. 10. + Deut. xvii. 6. J Mark xiv. 57.
+† Matt. xxvi. 59.
 
-♦ See Macknight^s Harmony.
+‡ Ps. xxxv. 11.
 
-Matt. xi. 4. t John x. 24.:: Luke xx. 7.
+♦ Acts vi. 10.
+
+† Deut. xvii. 6.
+
+‡ Mark xiv. 57.
+
+♦ See Macknight's Harmony.
+
+♦ Matt. xi. 4.
+
+† John x. 24.
+
+‡ Luke xx. 7.
 
 ♦ Isa. 1.6.
 

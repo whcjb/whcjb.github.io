@@ -85,6 +85,8 @@ Nil habuit Codrus: quis enim negat? et tamen illud Perdidit infelix totum nil.
 
 *X* Andromache says to Hector, \*E\*r«^, ar«g *trv fAoi iwt ^urn^ xas voTvtet fAfirm^ \*nh xaasyvtiroi,*—Thou art my father, and venerable mother and brother.—//tW, vi. 429.
 
-Ps. xlv. 10. I<sup class="ft-fn">*</sup> John vii. 5.
+♦ Ps. xlv. 10.
+
+† John vii. 5.<sup class="ft-fn">*</sup>
 
 </div>

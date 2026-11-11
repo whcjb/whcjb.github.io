@@ -59,15 +59,23 @@ Stand in awe, then, of the judgments of God, ye who are as dry trees, ye who are
 
 <div class="ft-notes" markdown="1">
 
-Matt. XX. 18. t Matt, xxvii. 31; Mark xv. 20.
+♦ Matt. xx. 18.
 
-" Senatus consulto cautum ut poena daiimatorum in decimum semper diem differretur."—/Sw€&lt;o»., *Vita Tiber,* 75. + Lardner's Cred. Part 1.
+† Matt. xxvii. 31; Mark xv. 20.
 
-*t* Numb. XV. 36; 1 Kings xxi. 13; Acts vii. 58; Ex. xxix. 14. § " Furca," hence " furcifer," and sometimes " crucifer." II Antenna.
+♦ "Senatus consulto cautum ut pœna damnatorum in decimum semper diem differretur."—*Sueton.*, *Vita Tiber.* 75.
+
+† Lardner's Cred. Part 1.
+
+‡ Numb. xv. 36; 1 Kings xxi. 13; Acts vii. 58; Ex. xxix. 14.
+
+§ "Furca," hence "furcifer," and sometimes "crucifer."
+
+‖ Antenna.
 
 Mark XV, 40.
 
-♦ Luke xxi 23.
+♦ Luke xxi. 23.
 
 Matt. xxiv.
 

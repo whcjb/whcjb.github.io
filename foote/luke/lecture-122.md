@@ -75,7 +75,9 @@ Finally, *Let those who, like Peter, have fallen, imitate Peter in his repentanc
 
 <div class="ft-notes" markdown="1">
 
-2 Chron. xzxiL 31. + John xviii. 15.
+♦ 2 Chron. xxxii. 31.
+
+† John xviii. 15.
 
 Lightfoot on John.
 
@@ -83,7 +85,7 @@ Lightfoot on John.
 
 "AAXn. + \*H *9rmltirxn.*
 
-Acts zu. 1\*2; 1 Pet. V. 13; Ck>l. iv. 10.
+♦ Acts xii. 12; 1 Pet. v. 13; Col. iv. 10.
 
 ♦ Jude 4.
 

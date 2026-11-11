@@ -61,7 +61,9 @@ Mal. iuL Z
 
 Dr Campbell.—K«&lt; r&lt; S«X« «/ *fUti avn&lt;ph\* id est, nihU jam restat amplios.—*Raphelius and Camerarius,* Utinamjam jam accendatur.— *Grotius. 'Eu* seems to be here a particle of wishing, as in Luke xix. 42, Ei i7»a»;,—if thou hadst known; that is, O that thou hadst known! Lightfoot says that " What will I," is the same with " This I will," and that the meaning is, " This I will that it be already kindled/'
 
-John vii. 12, 43. f Acts xiii. 45, 48.
+♦ John vii. 12, 43.
+
+† Acts xiii. 45, 48.
 
 Acts xiv.
 

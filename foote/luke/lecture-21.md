@@ -87,11 +87,15 @@ Doddridge.
 
 Compare Matt. xxii. 35, and Mark xii. 28.
 
-*•* Sm Matt. xi. 1, xii. 9; Luke v. 30.
+♦ See Matt. xi. 1, xii. 9; Luke v. 30.
 
 ♦ 2 Sam. xi. 2; Josh. ii. 6; Judg. xvi. 27; 1 Sam. ix. 25.
 
-\+ Jer. xWiu. 3«. *X* ^eph. i. 5. § Deut. xxii. 8; see also Matt. xxiv. 17.
+† Jer. xlviii. 38.
+
+‡ Zeph. i. 5.
+
+§ Deut. xxii. 8; see also Matt. xxiv. 17.
 
 ♦ Shaw's Travels.
 

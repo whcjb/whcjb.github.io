@@ -91,6 +91,6 @@ Happy are those of you who are blessed with a favourable disposition, not only t
 
 <div class="ft-notes" markdown="1">
 
-\*.0r, towards themselves.
+♦ Or, towards themselves.
 
 </div>

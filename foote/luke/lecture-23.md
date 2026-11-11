@@ -81,18 +81,24 @@ At the same time, let none imagine that there is here to be found any palliation
 
 <div class="ft-notes" markdown="1">
 
-• Matt ix. 14. I- Mark il 18. J John iii 25.
+♦ Matt. ix. 14.
 
-• Matt, vi 5.
+† Mark ii. 18.
 
-♦ Doddridge *in locum,* + John xvi. 6, 20.
+‡ John iii. 25.
+
+♦ Matt. vi. 5.
+
+♦ Doddridge *in locum.*
+
+† John xvi. 6, 20.
 
 Acts xiii. 3, xiv. 23.
 
-Lev. xtL 29.:\_
+♦ Lev. xvi. 29.
 
-♦Maxkii.21.
+♦ Mark ii. 21.
 
-• Isa. xlii. 3. " The bruised reed," &c.
+♦ Isa. xlii. 3. "The bruised reed," &c.
 
 </div>

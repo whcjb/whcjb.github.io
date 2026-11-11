@@ -87,22 +87,22 @@ In the way of instruction—we are here taught that when we are called on to spe
 
 Jer. vi. 10.
 
-Matt, zxiii. 3.
+♦ Matt. xxiii. 3.
 
 TOL. II. X
 
 Lib. xvi.
 
-• 2 Chron- xxxvi. 15; Neh. ix. 26.
+♦ 2 Chron. xxxvi. 15; Neh. ix. 26.
 
-Among whom is Scott.
+♦ Among whom is Scott.
 
-f The opinions which refer this to the father of John the Baptist, and to a later person still, are altogether untenable.
+† The opinions which refer this to the father of John the Baptist, and to a later person still, are altogether untenable.
 
 ♦ Isa. xxii. 22; Rev. iii. 7.
 
-t Dr A. Clarke on Matt. xxiii 13. See also Grotius and Doddridge.
+† Dr A. Clarke on Matt. xxiii. 13. See also Grotius and Doddridge.
 
-Ps. lvi. 6, 6.
+♦ Ps. lvi. 5, 6.
 
 </div>

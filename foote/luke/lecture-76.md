@@ -65,18 +65,20 @@ Finally, *let us all welcome the Redeemer,* while he is represented to the eye o
 
 efXf/. See also John viL 17.
 
-LactaQtiuB, Instit., lib. iy. 18.
+♦ Lactantius, Instit., lib. iv. 18.
 
-Iba. i. 10; Ezek. xxii. 27; Zeph. iii. 3.
+♦ Isa. i. 10; Ezek. xxii. 27; Zeph. iii. 3.
 
-Job V. 19; Amos i. 3; Matt, xviii. 21; Hos. vi. 2. And, somewhat in the same way, with reference to past time, the phrase, " yesterday and the third day," signifies some time before, or sunply, before. See in Hebrew, Exod iv. 10 j Deut. xix. 4; 1 Sam. xix. 7.
+♦ Job v. 19; Amos i. 3; Matt. xviii. 21; Hos. vi. 2. And, somewhat in the same way, with reference to past time, the phrase, "yesterday and the third day," signifies some time before, or simply, before. See in Hebrew, Exod. iv. 10; Deut. xix. 4; 1 Sam. xix. 7.
 
-♦ Matt, xxiii. 35; 2 Chron. xxiv. 21. f Jer. xxvi. 2a
+♦ Matt. xxiii. 35; 2 Chron. xxiv. 21.
+
+† Jer. xxvi. 23.
 
 Exod. xxxii. 7. + E&lt;Viiri.
 
 ♦ Mark xiv. 62.
 
-\*Neh.Ti.lO.
+♦ Neh. vi. 10.
 
 </div>

@@ -75,12 +75,14 @@ Finally. *As we have the opportunity, let us make it our habitual study to secur
 
 ♦ Luke i. 28, 42,48.
 
-*\** John xix. 25. f i&lt;uk6 u. 34.
+♦ John xix. 25.
+
+† Luke ii. 34.
 
 Matt. xii. 46.
 
 John vii. 5.
 
-Zech. viii. 2a
+♦ Zech. viii. 23.
 
 </div>

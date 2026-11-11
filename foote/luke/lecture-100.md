@@ -99,18 +99,16 @@ But this part of the parable is also applicable to all unbelievers of every age 
 
 Dr Adam Clarke says, " I believe the participle of the present tense here is used for the participle of the past, or rather, that the participle of the present conveys sometimes the sense of the past." Dr Campbell translates the clause simply, " As the people were attentive."
 
-Josephus, Ant. lib. zir. 14, xvii. 9,10,11.- Whi8ton\*8 translation.
+♦ Josephus, Ant. lib. xiv. 14, xvii. 9, 10, 11. Whiston's translation.
 
-TOL. III. I
+♦ For more full information on this subject, which is perplexingly involved, the following authors may be consulted. Calmet on Weights and Mina. Arbuthnot's Tables. Prideaux, Preface, and on Shekel, Mina, Talent, as by Index. Dr Campbell's Dissert. VIII. i. 7.
 
-For more full information on this subject, which is perplexingly involved, the following authors may be consulted. Calmet on Weights and Mina. Arbuthnot^s Tables. Prideaux, Preface, and on Shekel, Mina, Talent, as by Index. Dr CampbeU's Dissert. viii. i 7\*
-
-♦ 2 Sam. L 16.
+♦ 2 Sam. i. 16.
 
 ♦ Exod. xxiL 21. f Tf«&lt;ri?;«. *%* Matt. xxi. 12.
 
 *%* Luke viii 18; Matt xxr. 29.
 
-♦ 2 Sam. Yi. *9.*
+♦ 2 Sam. vi. 9.
 
 </div>

@@ -71,11 +71,11 @@ Lastly: Are we blessed because our eyes see, and our ears hear these things?—t
 
 <div class="ft-notes" markdown="1">
 
-« Eph. iii. 3; Gal. i 12.
+♦ Eph. iii. 3; Gal. i. 12.
 
-1 Cor. ii. 10.—^This mutual and equal knowledge is declared, John at. 15, q. V.
+♦ 1 Cor. ii. 10.—This mutual and equal knowledge is declared, John x. 15, q. v.
 
-t Mat. xiii. 17.
+† Mat. xiii. 17.
 
 Serle.
 

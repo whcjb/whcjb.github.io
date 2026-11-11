@@ -81,11 +81,11 @@ In the last place, *How affectionately are impenitent sinners here admonished to
 
 <div class="ft-notes" markdown="1">
 
-*\** Luke T. 30. See Lecture on.
+♦ Luke v. 30. See Lecture on.
 
 Johnx. 11, &c.
 
-♦Matt, ill Ij Mark vi. 31.
+♦ Matt. iii. 1; Mark vi. 31.
 
 John xiii. 8,10.
 

@@ -107,7 +107,7 @@ And, finally, mindful of your own weakness, and how certainly both your strength
 
 <div class="ft-notes" markdown="1">
 
-♦ John XV, 15.
+♦ John xv. 15.
 
 • « As" or "aBBarius." f •' Denarius." *t* Matt x. 29.
 

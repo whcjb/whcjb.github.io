@@ -89,18 +89,26 @@ Having noticed the chief practical lessons in passing along, we have only, in co
 
 <div class="ft-notes" markdown="1">
 
-Acts zil 10.
+♦ Acts xii. 10.
 
-♦ John XX. 20. t Ecv. v. 6.
+♦ John xx. 20.
 
-♦ Gen. xlv. 26.J
+† Rev. v. 6.
 
-♦ See also John xxi. 5-13, f Acts x. 41.
+♦ Gen. xlv. 26.
 
-Josephus, Against Apion, 1. 8.
+♦ See also John xxi. 5-13.
 
-• Acts V. 31 tAct8Xx.21.
+† Acts x. 41.
 
-Acts X. 3d. t John vii. 38.
+♦ Josephus, Against Apion, l. 8.
+
+♦ Acts v. 31
+
+† Acts xx. 21.
+
+♦ Acts x. 39.
+
+† John vii. 38.
 
 </div>

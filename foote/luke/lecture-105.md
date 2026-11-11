@@ -77,7 +77,9 @@ In the last place, *See that you give to the Lord Jesus that place in your spiri
 
 <div class="ft-notes" markdown="1">
 
-Matt. xxi. 33; Mark xii. 1. f Matt. xxi. 33.
+♦ Matt. xxi. 33; Mark xii. 1.
+
+† Matt. xxi. 33.
 
 Zech. ii. 5; see also Isa. xxvii. 2.
 
@@ -89,7 +91,9 @@ Zech. ii. 5; see also Isa. xxvii. 2.
 
 Mark, we have the simple and positive affirmation, " They will reverence:" from all which he concludes that the word is to be so understood here. Dr Campbell renders it" surely." It may be doubtful which is the more exact translation; but, according to both, the general meaning ifjU jbe jnuoh the same.
 
-Matt. xxi. 41. t Matt, xxl 43.
+♦ Matt. xxi. 41.
+
+† Matt. xxi. 43.
 
 ♦ Serle'B Horae Solitariae,
 

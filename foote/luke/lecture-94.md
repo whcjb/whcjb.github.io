@@ -59,7 +59,7 @@ Are there any of you who are to be contented to go down to your houses unjustifi
 
 <div class="ft-notes" markdown="1">
 
-Luke xix. 1-10. 29; Matt. xxi. 31.
+♦ Luke xix. 1-10, 29; Matt. xxi. 31.
 
 Ps. xl. 12; Ezra ix. 6; Dan. ix. 7.
 
@@ -79,14 +79,22 @@ Hectora flemus."
 
 Not *i^tnfot ftt,* but *IXctffinrt fAot<sup class="ft-fn">*</sup> \*\X.etUt \*lketfx6fAa.it* propitius lum. " Maxime convenit illi placationi et reconciliationi, quae fit inter Deum et hominem, offerendo sacrificium, seu hostiam ad obtinendam peccati remissionem. Ita saepkia usiirpatur a lxx. in LeviticoJ'—*StochitLt.* Rom. ill. 25: " Whom God hath set forth to be a propitiation, *Ixavrn' (lof,* through faith in his blood." Heb. ii. 17: " To make reconciliation, *tif r§ l>MffMir4euy* for the Kns of the people;" and ix. 5: " The mercy-seat.
 
-Eph. IF. 28, y. 4,11; Heb. xi. 26. f Isa. Ixt. 5.
+♦ Eph. iv. 28, v. 4, 11; Heb. xi. 25.
 
-♦ Luke v. 20. f Luke xiv. 11.
+† Isa. lxv. 5.
 
-♦ Job ix. 20. + Prov. xi. 12, xiv. 21. *t* Rom. xiv. 10.
+♦ Luke v. 20.
 
-• 2 Cor. X. 12.
+† Luke xiv. 11.
 
-• Phil. iy. 6.
+♦ Job ix. 20.
+
+† Prov. xi. 12, xiv. 21.
+
+‡ Rom. xiv. 10.
+
+♦ 2 Cor. x. 12.
+
+♦ Phil. iv. 6.
 
 </div>

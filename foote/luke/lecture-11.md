@@ -119,9 +119,9 @@ You may remember that, in considering how the grace of God was upon Christ, we r
 
 <div class="ft-notes" markdown="1">
 
-Grotius, Lightfoot, Wotton's Miscell., Dr. A. Clarke..
+♦ Grotius, Lightfoot, Wotton's Miscell., Dr. A. Clarke.
 
-John u. 19-22.
+♦ John ii. 19-22.
 
 Scott.
 

@@ -63,7 +63,7 @@ But surely those of you who have never yet repented, are especially called on, b
 
 <div class="ft-notes" markdown="1">
 
-Matt, xxiii. 35; 2 Chron. xxiv. 20. Josephus says that Archelaus sent soldiers into the temple, and slew three thousand men, while they were offering sacrifices at the feast of the passover.—War<sup class="ft-fn">*</sup>, ii. 1. In *LucMit FlortUf* iii. 18, there is an account of a frustrated design to kill the two consuls of Rome, at the time of a solemn festival. Inter sacras et aras—at the foot of the altar, and in the very midst of the sacred rite?.
+♦ Matt. xxiii. 35; 2 Chron. xxiv. 20. Josephus says that Archelaus sent soldiers into the temple, and slew three thousand men, while they were offering sacrifices at the feast of the passover.—*Wars*, ii. 1. In *Lucius Florus*, iii. 18, there is an account of a frustrated design to kill the two consuls of Rome, at the time of a solemn festival, Inter sacras et aras—at the foot of the altar, and in the very midst of the sacred rites.<sup class="ft-fn">*</sup>
 
 ♦ John ix. 2.
 

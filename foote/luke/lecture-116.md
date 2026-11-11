@@ -83,9 +83,11 @@ Once more here, this ordinance is called " *The communion."* " The cup of blessi
 
 <div class="ft-notes" markdown="1">
 
-♦ Matt. xxvi. 26. f 1 Cor. xi. 23.
+♦ Matt. xxvi. 26.
 
-♦ ICor. X.21.
+† 1 Cor. xi. 23.
+
+♦ 1 Cor. x. 21.
 
 \+ *EvXcyticag*: Many mannscripts, however, read *tvx»^i^'rticas.* Compare Matt. xiv. 19 and John vi. ll.
 
@@ -93,9 +95,15 @@ Once more here, this ordinance is called " *The communion."* " The cup of blessi
 
 § Exod, xxiii. 25; 1 Cor. x. 16 j to supply isr/, as some would do, is to take too great a liberty.
 
-Dr A. Clarke on Matthew, f Gen. xviL 10. *X* £^^»>^ ziL 11.
+♦ Dr A. Clarke on Matthew.
 
-Luke viii 9; see also John z. 6, zv. 5; Acts z. 17; Gal. iy. 24; Luke ZY. 26, in the original, t Dr Clarke.
+† Gen. xvii. 10.
+
+‡ Exod. xii. 11.
+
+♦ Luke viii. 9; see also John x. 6, xv. 5; Acts x. 17; Gal. iv. 24; Luke xv. 26, in the original.
+
+† Dr Clarke.
 
 Doddridge.
 
@@ -107,6 +115,8 @@ See the most of the commentators, especially Grotius, Lightfoot and Whitby.
 
 Dixi sacramentum.—HoR.
 
-• 1 Cor. X. 21. + Acta u. 42, xx. 7.
+♦ 1 Cor. x. 21.
+
+† Acts ii. 42, xx. 7.
 
 </div>

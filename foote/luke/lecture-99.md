@@ -89,11 +89,13 @@ By those of you who are found of him, and saved and called with a holy calling, 
 
 'Af;^/XIX«i»»f;. VOL. III. H
 
-1 Sam. ix. 2, xvi 7.
+♦ 1 Sam. ix. 2, xvi. 7.
 
-♦ 1 Kings X. 27; Amos vii 14. + Luke y. 19.
+♦ 1 Kings x. 27; Amos vii. 14.
 
-♦ Luke v. 30, vii. 39, xy. 2.
+† Luke v. 19.
+
+♦ Luke v. 30, vii. 39, xv. 2.
 
 ♦ 1 Tim. vi. 17,18.
 
@@ -103,7 +105,9 @@ By those of you who are found of him, and saved and called with a holy calling, 
 
 § See Doddridge *in locum.*
 
-♦ Ezra ii. 9; Neh. vii 14. f Luke xiii. 16.
+♦ Ezra ii. 9; Neh. vii. 14.
+
+† Luke xiii. 16.
 
 Ezek. xxxiii. 15.
 

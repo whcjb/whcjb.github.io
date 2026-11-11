@@ -75,16 +75,24 @@ So, let us beware of all such characters, lest they injure us in our temporal or
 
 <div class="ft-notes" markdown="1">
 
-♦ Matt. xxu. 41 to the end; Mark xii. 35-37.
+♦ Matt. xxii. 41 to the end; Mark xii. 35-37.
 
 ♦ John vii. 42.
 
-• 2 Sam. xxiii. 2. *f* Acts i. 16; 1 Pet. i. 11; 2.Pet. L 21.
+♦ 2 Sam. xxiii. 2.
 
-♦ Bishop Patrick. t Scott.
+† Acts i. 16; 1 Pet. i. 11; 2 Pet. i. 21.
 
-Matt. xxiii 7\* t See. Lecture on Luke xiv. 7\* *%* Luke yL 12.
+♦ Bishop Patrick.
 
-See Lightfoot on Matt, xxii 14.
+† Scott.
+
+♦ Matt. xxiii. 7.
+
+† See Lecture on Luke xiv. 7.
+
+‡ Luke vi. 12.
+
+♦ See Lightfoot on Matt. xxii. 14.
 
 </div>

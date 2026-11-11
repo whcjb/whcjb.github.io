@@ -91,27 +91,31 @@ And then, when we reflect on Christ's conduct on this particular occasion, how b
 
 <div class="ft-notes" markdown="1">
 
-See Lecture on Luke Ti 16.
+♦ See Lecture on Luke vi. 16.
 
-Ps. xli. 9. + John xiii. 18,19.
+♦ Ps. xli. 9.
 
-*X* John xiiL 2, 27. 8 John xii. 6.
+† John xiii. 18, 19.
 
-II See Josephug, Ware, VI., ▼. 8. Bishop Pcarce, Dr A. Clarke, and especially Lightfoot^s Horse, *in locum.* The captain of the temple (Acts i7. 1) seems to have been over the whole captains and watches.
+‡ John xiii. 2, 27.
 
-" Quid non mortalia pectora cogis
+§ John xii. 6.
 
-Auri sacra fames?"—Virg. *^n.* iii. *56.*
+‖ See Josephus, Wars, VI., v. 3. Bishop Pearce, Dr A. Clarke, and especially Lightfoot's Horæ, *in locum.* The captain of the temple (Acts iv. 1) seems to have been over the whole captains and watches.
 
-\+ Prideaox and others. J Exod. xxi. 32.
+♦ "Quid non mortalia pectora cogis Auri sacra fames?"—VIRG. *Æn.* iii. 56.
+
+† Prideaux and others.
+
+‡ Exod. xxi. 32.
 
 Gen. iii.; 1 Chron. xxi. 1; Acts v. 3.
 
 Especially Grotius.
 
-The Chagigah. See Lightfoot, *in locum.* Dent, xvi., " Sacrifice the passover of the herd," as well as of the flock.
+♦ The Chagigah. See Lightfoot, *in locum.* Deut. xvi., "Sacrifice the passover of the herd," as well as of the flock.
 
-t Prospect of the Temple *Service.—Maimonidis.* 2 Chron. xxxv. 14. Ainsworth^s note on Exod. xii. 3 contains a good account of the later custurns of the passover.
+† Prospect of the Temple Service.—*Maimonides.* 2 Chron. xxxv. 14. Ainsworth's note on Exod. xii. 3 contains a good account of the later customs of the passover.
 
 ♦ See, in defence of this view, Whitby's Appendix to Mark xiv., and Lightfoot on the different evangelists: see, on the other side, Grotius.
 
@@ -119,7 +123,9 @@ t Prospect of the Temple *Service.—Maimonidis.* 2 Chron. xxxv. 14. Ainsworth^s
 
 *X* 'Etf'r^ar^iMv, &lt;&lt; instructum ad epulas, lectulis nimirum stratis," &c., *Cameranut;*—with everything ready for a company to sit down.
 
-1 SaBL X. t Hor» Hebr. et Talm. ia Matt. xxvi 20.
+♦ 1 Sam. x.
+
+† Horæ Hebr. et Talm. in Matt. xxvi. 20.
 
 *TtvvYtfAaroi ms xfA^tXov.* The word *etvog,* like the English word wine, is ambiguous, as wine was made of other things besides grapes. Herodotus (lib. ii.) speaks of wine made of barley by the Egyptians, because of the want of vines in their country: O/vy *l» x^ihav ^lax^tevrat' ov yec^ &lt;r(pt tlirt U* t»j *^^^V* «i«\*«'«^«'« The same author (lib. ii.) uses the expression, *ifi^tXivM* \*«^&lt;ry, or, the fruit of the vine, to signify wine made of grapes; and also, in the same distinguishing sense, in book iii., the expression, *oivg afi^iXtvos.* He also makes mention of wine made of palms, that is, of dates, the fruit of the palm tree, *ohov ^omxnttv.* The phrase, then, employed by our Lord, intimates that it was wine of grapes which was used in the passover, and in the Lord's supper.
 

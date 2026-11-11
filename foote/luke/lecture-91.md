@@ -99,26 +99,34 @@ From this it follows, that the reign of Christ on earth during the millennium wi
 
 *X 'Evraf* Beza, however, contends for " among.^^
 
-♦ Luke V. 35. f John xvi 6.
+♦ Luke v. 35.
 
-See also Josephus<sup class="ft-fn">*</sup> Wars, ii. 13, and vi. 5, and vii. 11.
+† John xvi. 6.
 
-♦M»tt.xxi37. \_
+♦ See also Josephus' Wars, ii. 13, and vi. 5, and vii. 11.<sup class="ft-fn">*</sup>
 
-1 These, u. 15.
+♦ Matt. xxi. 37.
 
-♦ Sec Lecture on Luke xii. 3. + Gen. xix. 26.
+♦ 1 Thess. ii. 15.
 
-*^* See Calmet and Le Clerc.
+♦ See Lecture on Luke xii. 3.
 
-• Deut. xxiv. 6.
+† Gen. xix. 26.
 
-f Exod. xi. 5; Isa. xWii. 2; See Harmer\*B Obs., vol. i. p. 253.
+‡ See Calmet and Le Clerc.
 
-*X* Job xxxix. 28.
+♦ Deut. xxiv. 6.
 
-2 These, ii. 8. f Isa. lix. 20. *t* Zech. xii. 10.
+† Exod. xi. 5; Isa. xlvii. 2; See Harmer's Obs., vol. i. p. 253.
 
-1 These, iv. 16.
+‡ Job xxxix. 28.
+
+♦ 2 Thess. ii. 8.
+
+† Isa. lix. 20.
+
+‡ Zech. xii. 10.
+
+♦ 1 Thess. iv. 15.
 
 </div>

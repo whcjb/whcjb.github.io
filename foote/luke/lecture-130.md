@@ -93,6 +93,6 @@ Ka/ *^min(rot.i* &lt;p«»J *itiya.X'n e \*lfiffoviy* i/Vi. Dr Campbell's transl
 
 ♦ See this expression illustrated in Lecture xciv. on Luke xviii. 13.
 
-\+ Henry.
+† Henry.
 
 </div>

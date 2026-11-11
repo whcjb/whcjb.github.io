@@ -71,22 +71,18 @@ Let all truly pious and praying persons, also, be admonished of their duty in th
 
 ♦ Scott. VOL. II. Q
 
-Martial^B Epigram, lib. iv. 15, though much surpassed by this parable in variety and beauty of imagery, cannot fail to interest th« classical scholar:—
+♦ Martial's Epigram, lib. iv. 15, though much surpassed by this parable in variety and beauty of imagery, cannot fail to interest the classical scholar:— Mille tibi nummos hesterna nocti roganti In sex aut septem, Cœciliane, dies, Non habeo, dixi; sed tu causatus amici Adventum, lancem paucaque vasa rogas, Stultus es an stultum me credis, amice? negavi Mille tibi nummos, millia quinque dabo?
 
-Mille tibi nummos hesterna nocti roganti
+† Henry.
 
-In sex aut septem, Coeciliane, dies, Non babeo, dixi; sed tu causatus amici
+♦ Scorpions are large insects, of which there are several different species, varying from an inch and a half, to six inches or more in length, and of various colours; most being dark, but one species white. Their sting causes a very painful inflammation, and is often dangerous, and sometimes even fatal. Their appearance is somewhat like that of the lobster; and the shape of their bodies has some resemblance to that of an egg.—*Buffon and Bochart.* We have the following figurative description of the miseries to be inflicted by certain cruel people, in the 9th chapter of the Revelation: "Unto them was given power, as the scorpions of the earth have power."—"And to them it was given that they should not kill men, but that they should be tormented (by them) five months: and their torment was as the torment of a scorpion when it striketh a man."—"And they had tails like unto scorpions, and there were stings in their tails."
 
-Adventum, lancem paucaque vasa roKas, Stultus es an stultum me credis, amice? negavi
-
-Mille tibi nummos, millia quinque dabo? + Henry.
-
-Scorpions are large insects, of which there are several different species, varying from an inch and a half ; to six inches or more in length, and of various colours; most being dark, but one species white. Their sting causes a very painful inflammation, and is often dangerous, and sometimes even fatal. Their appearance is somewhat like that of the lobster; and the shape of their bodies has some resemblance to that of an egg.—*Buffon and Bochart.* We have the following figurative description of the miseries to be inflicted by certain cruel people, in the 9th chapter of the Revelation: " Unto them was given power, as the scorpions of the earth have power."—"And to them it was given that they should not kill men, but that they should be tormented (by them) five months: and their torment was as the torment of a scorpion when it striketh a man.''—\*&lt; And they had tails like unto scorpions, and there were stings in their tails."
-
-♦ Ezek. xxxvi 27, 37.
+♦ Ezek. xxxvi. 27, 37.
 
 ♦ Rom. xii. 12.
 
-♦ Matt. XT. 22-28. t Heb. v. 7.
+♦ Matt. xv. 22-28.
+
+† Heb. v. 7.
 
 </div>

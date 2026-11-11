@@ -73,9 +73,15 @@ Now, my friends, you are either spiritually leprous, or a cure has been performe
 
 <div class="ft-notes" markdown="1">
 
-Calmet and Celsus. f 2 Kings xv. 5.
+♦ Calmet and Celsus.
 
-• Nmnb. xii f 2 Kings v. 27. *t* 2 Chron. xxri 16.
+† 2 Kings xv. 5.
+
+♦ Numb. xii.
+
+† 2 Kings v. 27.
+
+‡ 2 Chron. xxvi. 16.
 
 ♦ John V. 40.
 

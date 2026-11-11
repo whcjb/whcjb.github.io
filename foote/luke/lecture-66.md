@@ -77,14 +77,16 @@ Let these brief hints, on this rich verse, suffice. See here, all of you, where 
 
 <div class="ft-notes" markdown="1">
 
-*\** Soinyene 11.
+♦ So in verse 11.
 
 *Olf ovx Wrt rttfittaf* (locu8 secretior, serarium), *evlt u^o^nxn* (horrenni). Lightfoot thinks that the former irord means a storehouse for fruits, and the latter a storehouse for grain.
 
-• Dr A, Clarke on Matt. vi. 36.
+♦ Dr A. Clarke on Matt. vi. 26.
 
-Esth. Till. 15. 12 Chron. ix. 4,24.
+♦ Esth. viii. 15.
 
-Pa. cxxii. 9: " Because of the house of the Lord our God, I will seek thy good."
+† 2 Chron. ix. 4, 24.
+
+♦ Ps. cxxii. 9: "Because of the house of the Lord our God, I will seek thy good."
 
 </div>

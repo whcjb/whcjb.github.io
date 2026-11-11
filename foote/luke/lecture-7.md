@@ -95,10 +95,10 @@ To this we shall only add, that the lowly birth of Jesus, which is merely a spec
 
 Polybiua calls the Roman Empire *^rafetf mv \*tK$vfnvfiv,*
 
-Prideauz. See, however, Lardner's Credibility, part i.
+♦ Prideaux. See, however, Lardner's Credibility, part i.
 
-♦ 1 Sam. xvi 1, xvii. 12. G
+♦ 1 Sam. xvi. 1, xvii. 12.
 
-• John viL 40.
+♦ John vii. 40.
 
 </div>

@@ -59,27 +59,35 @@ The difficulties in the way of their conversion are, doubtless, great, but ultim
 
 <div class="ft-notes" markdown="1">
 
-Matt. xxiv. 22. f See Eph. L 4; 2 Theas. ii. 13; I Pet. i. 2,
+♦ Matt. xxiv. 22.
 
-♦ Rom. xi 5. t Wars, VI., v. 2.
+† See Eph. i. 4; 2 Thess. ii. 13; 1 Pet. i. 2.
 
-Another account says the ninth: the fire lasted more days than one. f So Whi8ton''8 translation is.
+♦ Rom. xi. 5.
 
-♦ Wars, VII., L 1. + Ps. cxxxvii. 7: *"* The children of Edom in the day of Jerusalem, tMd, Baie it, raze it» even to the foundation thereof!" *t* " Ir»—
+† Wars, VI., v. 2.
 
-altia urbibus ultimas Stetere causse cur perirent ^
+♦ Another account says the ninth: the fire lasted more days than one.
 
-Funditus: imprimeretque muris Hostile antrum exercitus insolens."
+† So Whiston's translation is.
 
-HoK., *Od. 1*16. § Wars, VII., v.
+♦ Wars, VII., i. 1.
 
-Reland, De Spoliis Templi. There was also a medal struck in commemoration of the same triumph. On the one side of the medal there is a head of Vespasian, encircled with laurel, together with his titles. On the other side there are a representation of the emperor standing with a trophy, or emblem of victory; a palm tree, which is the emblem of Palestine; and, under the tree, the figure of a dejected woman, sitting weeping, with her head bowed down, and resting on her left hand. The inscription on this side is JUD-ffiA CAPTA (Judea taken). How striking<sup class="ft-fn">*</sup> an illustration of the prophecy in Isa. iii. 26: &lt;^ And she, being desolate, shall sit upon the ground."
+† Ps. cxxxvii. 7: "The children of Edom in the day of Jerusalem, said, Raze it, raze it, even to the foundation thereof."
 
-The substance of the account is confirmed by Gregory Nazianzen, Ambrose, and Chrysostom, who lived during the age referred to, and by Socrates, Sozomen, and Theodoret, who lived in the next age. See Mosheim and Lardner. Am. Marcel, xxxiii. 1.
+‡ "Iræ— altis urbibus ultimæ Stetere causæ cur perirent Funditus: imprimeretque muris Hostile aratrum exercitus insolens." HOR., *Od.* i. 16.
 
-t Home\*B Introduction, and Newton on the Prophecies.
+§ Wars, VII., v.
 
-See Ezek. zzvL 16 to the end; xxxvii. 16 to the end; xxxix. 23 to the end; Amos iz. 11, &c. *f* Bom. zi.
+♦ Reland, De Spoliis Templi. There was also a medal struck in commemoration of the same triumph. On the one side of the medal there is a head of Vespasian, encircled with laurel, together with his titles. On the other side there are a representation of the emperor standing with a trophy, or emblem of victory; a palm tree, which is the emblem of Palestine; and, under the tree, the figure of a dejected woman, sitting weeping, with her head bowed down, and resting on her left hand. The inscription on this side is JUDÆA CAPTA (Judea taken). How striking an illustration of the prophecy in Isa. iii. 26: "And she, being desolate, shall sit upon the ground."<sup class="ft-fn">*</sup>
+
+♦ The substance of the account is confirmed by Gregory Nazianzen, Ambrose, and Chrysostom, who lived during the age referred to, and by Socrates, Sozomen, and Theodoret, who lived in the next age. See Mosheim and Lardner. Am. Marcel. xxxiii. 1.
+
+† Horne's Introduction, and Newton on the Prophecies.
+
+♦ See Ezek. xxvi. 16 to the end; xxxvii. 16 to the end; xxxix. 23 to the end; Amos ix. 11, &c.
+
+† Rom. xi.
 
 ♦ Jer. XXX 11.
 

@@ -119,8 +119,12 @@ Lastly, There is here *a warning against the remains of unbelief in the people o
 
 <div class="ft-notes" markdown="1">
 
-Acts X. 38; 1 Cor. ii. 4; I Thess. i.3-5. f Gen. xy. 8.
+♦ Acts x. 38; 1 Cor. ii. 4; 1 Thess. i. 3-5.
 
-♦ Ver. 34. f Judg. yi. 17.
+† Gen. xv. 8.
+
+♦ Ver. 34.
+
+† Judg. vi. 17.
 
 </div>

@@ -101,7 +101,7 @@ Finally. If God has given us any degree of that singleness of eye which admits t
 
 <div class="ft-notes" markdown="1">
 
-♦Mattxu. 40.
+♦ Matt. xii. 40.
 
 Matt. xii. 41,42.
 
@@ -109,6 +109,6 @@ Nil oritunim alias, nil ortum tale *fsiicntxi,—Horace,*,
 
 Dr A. Clarke.
 
-Aiigustme''8 Meditations,\*chap. xviii.
+♦ Augustine's Meditations, chap. xviii.
 
 </div>

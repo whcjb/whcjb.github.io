@@ -91,11 +91,11 @@ A.D. 1831. t 1 Kings xviii. 46; 2 Kings iv. 29.
 
 vol.. II. 2 C
 
-1 Pet. i. 13.
+♦ 1 Pet. i. 13.
 
-f Veluti Buccinctus cursitat hospes.—*Hor, SoL* vi 107. In the Saturnalia of the Romans, the Saccas of the Babylonians, and the Hermaea of the Cretans, the servants sat at table, while their masters waited on them.
+† Veluti succinctus cursitat hospes.—*Hor. Sat.* vi. 107. In the Saturnalia of the Romans, the Saccas of the Babylonians, and the Hermæa of the Cretans, the servants sat at table, while their masters waited on them.
 
-*t* Matt. xiv. 25.
+‡ Matt. xiv. 25.
 
 *%vv»fAtv* i» *rov ^s^i»eiruXn(pfitvTOf fftrou,* '&lt; After these things, haying measured out an allowance of com to the army for thirty days, out of the com which remained," *ke,—Folybius,* iv. 63.
 

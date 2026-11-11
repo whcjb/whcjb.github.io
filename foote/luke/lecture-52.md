@@ -113,7 +113,7 @@ But, the right dividing of the word of truth calls for the concluding admonition
 
 ♦ 2 Kings iv. 29.
 
-f " Salutationes istae non fiebant levi gestu verbove, sed multis percunctationibus, bonisque ominibus trahebantur, non sine multis corporis fiexionibus, osculis, amplexibus.^^—*Grotius^ in Locum.*
+† "Salutationes istæ non fiebant levi gestu verbove, sed multis percunctationibus, bonisque ominibus trahebantur, non sine multis corporis flexionibus, osculis, amplexibus."—*Grotius, in locum.*
 
 • Pa. XXXV. 13.
 
@@ -123,7 +123,7 @@ i" *Tet ^et^etri6ifjt,iv»*—\*Hy ^i *ret fAiv 9rot^etri6tfi,iv(t itu l&lt;ret 
 
 See Ezek. iii. 6.
 
-Job XX. 6; Isa. xiv. 12-15. Addressing himself to Antony, concerning; the fall of his colleague, Cicero says. *^* CoUegam tuum de coelo detraxisti—Thou hast pulled down thy colleague from heaven; and he says of the overthrow of Pompey, " Ex astris decidisse,"—that he had fallen from the stars.—*Philippic* ii. and *JBp,* lib. i. 20.
+♦ Job xx. 6; Isa. xiv. 12-15. Addressing himself to Antony, concerning the fall of his colleague, Cicero says, "Collegam tuum de cœlo detraxisti—Thou hast pulled down thy colleague from heaven;" and he says of the overthrow of Pompey, "Ex astris decidisse,"—that he had fallen from the stars.—*Philippic* ii. and *Ep.* lib. i. 20.
 
 ♦ Ps. lxxxvii. 6,
 

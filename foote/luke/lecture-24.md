@@ -93,15 +93,19 @@ To those of you who have obeyed the Gospel call, and in so doing have been heale
 
 *X* Lightfoot, Whitby, Doddridge, Dr. Clarke, &c
 
-Deut. xxiii 25.
+♦ Deut. xxiii. 25.
 
-• Lev. xxiv. S-, Exod. xxix. 33.
+♦ Lev. xxiv. 5; Exod. xxix. 33.
 
-♦Matt. xii 7.
+♦ Matt. xii. 7.
 
-♦ Mark ii 27.
+♦ Mark ii. 27.
 
-• Matt. xxii 16. f Mark xii. 13. *I* Mark viii. 15.
+♦ Matt. xxii. 16.
+
+† Mark xii. 13.
+
+‡ Mark viii. 15.
 
 Luke xxiii. 12.
 

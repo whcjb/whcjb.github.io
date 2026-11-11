@@ -89,18 +89,22 @@ Once more, Let us improve this passage in reference to *the endearing relations 
 
 <div class="ft-notes" markdown="1">
 
-Lev. xviii 16.
+♦ Lev. xviii. 16.
 
-♦ Doddridge. f Matt. xxii. 29.
+♦ Doddridge.
 
-*X* Ps. xvi. 9 to the end; Job xix. 25; Dan. xii. 2.
+† Matt. xxii. 29.
+
+‡ Ps. xvi. 9 to the end; Job xix. 25; Dan. xii. 2.
 
 Henry.
 
 Matt. xxii. 30, and Mark xii. 25, *itt »yytXu,* Luke, *lvayyt\»i^* « angel-like."—/>r *Campbell.*
 
-Dnisiug, De Tribus Sectig, ui 9; Reland, Antiq. ii. 11; Scaliger, Elench. chap. 16.
+♦ Drusius, De Tribus Sectis, iii. 9; Reland, Antiq. ii. 11; Scaliger, Elench. chap. 16.
 
-Dr Adam Clarke *in locum.* + Heb. zi. 16.
+♦ Dr Adam Clarke *in locum.*
+
+† Heb. xi. 16.
 
 </div>

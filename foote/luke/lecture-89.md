@@ -99,13 +99,17 @@ Oct. Aug. c. 67. Aristophanes in *Equites,* 1359.
 
 *\*Ex. rov Xtt^uyyos i»»^tfieto'ets vxt^SaXof.* Diodoms Siculus, hook xvi., says, " Philip hanged OnomarchuB," *revs h uXXevs MS U^offvXovs »(trt^ovriff%.* Halhed, in his Code of Gentoo Laws, inserts the following, '&lt; If a woman cause any person to take poison, set fire to any person's house, or murder a man, then the magistrate, having bound a stone to her neck, shall drown her." " A millstone;" in Luke, *fAvXos ofixast* a large millstone, such a millstone as could not be turned with the hand, but required an ass, orother working animal, to move it. In Mark is. 42, *ktfo§ f4,v>.m»t.*
 
-Matt, xviii. 15.
+♦ Matt. xviii. 15.
 
 *n^offdit fifiuf* «'i«'rif, " add faith to us." *f* Said to be the same as the sycamore; see chapter xix. 4. VOL. II. 2 u
 
-♦ Matt. xvii. 20, xxi. 21. + 2 Theas. L 3.
+♦ Matt. xvii. 20, xxi. 21.
 
-\+ Rom. xiv. 1. § Mark U. 23.
+† 2 Thess. i. 3.
+
+‡ Rom. xiv. 1.
+
+§ Mark ix. 23.
 
 Rather, " come," or " come in," so the word *ira^tk^atv* is occasionally used. For example, in Luke xii. 37, and Acts xxiv. 7\* Arrian, i. 8, and ii. 1. *\*ils ^ei^nxhv* ciVa; *rtis ^oktatft* quum ingressi essent urbem.
 

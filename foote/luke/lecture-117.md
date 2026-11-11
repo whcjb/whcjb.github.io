@@ -67,11 +67,11 @@ If, on examination, a person is fully persuaded that he is a true Christian, if 
 
 *KKTmyyiXXirt.*
 
-♦ 1 Cor. X. 16, 17. See Eisner's note on this text. " Pagani in sacris eonyiviis firmlBsimum amicitiae vinculum inesse existimabant," &c.
+♦ 1 Cor. x. 16, 17. See Elsner's note on this text. "Pagani in sacris conviviis firmissimum amicitiæ vinculum inesse existimabant," &c.
 
-» Pa. U. 17; Heb. xiii. 15,16.
+♦ Ps. li. 17; Heb. xiii. 15, 16.
 
-• Dr Dwight.
+♦ Dr Dwight.
 
 Exod. xii, 15; Numb. ix. 13.
 

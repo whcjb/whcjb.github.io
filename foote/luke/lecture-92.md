@@ -83,7 +83,9 @@ When Christ comes in any way, he seeks for faith, and he is entitled to expect i
 
 <div class="ft-notes" markdown="1">
 
-♦ Ps. It. 16,17, cxix. 164. f Eph. vi. 18.
+♦ Ps. lv. 16, 17, cxix. 164.
+
+† Eph. vi. 18.
 
 Jer. xxix. 12.
 
@@ -93,13 +95,17 @@ Exod. xviii. 21. f 2 Chron. xix. 6.
 
 *Odyss.* xxi. 28. See also Odyss. xxii. 39, 40, 414, 415. Thucydides (book ii.) says of the Athenians, during the calamities of a plague, that neither the fear of the gods nor the law of men restrained them: *Stuv* ^c *^o^os^ h otvS^M^aiv vofAos, oti^\* il^a^u^yt.* Qumtiliansays, a parricide must arrive at such a pitch of wickedness by a long course, and by contempt of the gods and of men: " Ad tantum nefas magna oportet serie parricida veniat, et per hominum deorumque contemptum ad ultimum nefas conscendat.^\*
 
-♦ Rom. xiii. 3. + Qaesnel.
+♦ Rom. xiii. 3.
 
-4: Exod. xxiil. 3; Lev, xix. 15.
+† Quesnel.
+
+‡ Exod. xxiii. 3; Lev. xix. 15.
 
 ♦ Isa. L 16,24. f Ps. IxYui. 5.
 
-• Eph. i. 4. t 2 Tim. i. 9.
+♦ Eph. i. 4.
+
+† 2 Tim. i. 9.
 
 There are many opinions, and critical difficulties, connected with this clause, which the scholar may examine, but which it would be of little importance here to discuss.
 

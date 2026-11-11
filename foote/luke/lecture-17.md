@@ -79,9 +79,13 @@ That we may escape such danger, and partake in the blessings of his grace, let u
 
 <div class="ft-notes" markdown="1">
 
-♦JohnTii. 5. f Mark iii 21. $ Matt. xiii 68.
+♦ John vii. 5.
 
-♦ Lightfoot and Grotius,
+† Mark iii. 21.
+
+‡ Matt. xiii. 58.
+
+♦ Lightfoot and Grotius.
 
 ♦ See Matt. iv. 13-16.
 

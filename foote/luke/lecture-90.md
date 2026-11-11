@@ -69,19 +69,23 @@ Secondly, *in reference to spiritual disease and recovery.* Sin is the disease o
 
 *Asa, fAiffau* (like *av» fAiffof)* here seems to signify that Christ passed not through the heart of Samaria and Galilee, but between them, or through ^eir confines.
 
-J Numb, xii 10; 2 Kings v. 27; 2 Chron. xxvi 1^
+♦ Numb. xii. 10; 2 Kings v. 27; 2 Chron. xxvi. 19.
 
-f Herodotus (book i.) says, that if any Persian was affected with the leprosy he was not allowed to enter into a city, or to mix with other ^Persians.
+† Herodotus (book i.) says, that if any Persian was affected with the leprosy he was not allowed to enter into a city, or to mix with other Persians.
 
-2 Kings vii. 3. f John iv. 50.
+♦ 2 Kings vii. 3.
+
+† John iv. 50.
 
 ♦ 2 Kings v.
 
-For a more full account of the Samaritans^ see Lecture L. t John iy. 39,
+♦ For a more full account of the Samaritans, see Lecture L.
 
-Matt. viii. lO.j
+† John iv. 39.
 
-♦ Luke xviiL 42.
+♦ Matt. viii. 10.
+
+♦ Luke xviii. 42.
 
 ♦ Lev. xiii. 1.
 

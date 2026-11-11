@@ -85,13 +85,19 @@ Finally, *What a call for gratitude, and what a source of consolation are here f
 
 Mark V. 37; Luke ix. 28.
 
-1 Kings xix. 4. $ 1 Kings viii.
+♦ 1 Kings xix. 4.
 
-t 2 Sam. Tii. 18. *\* Numb. xyj. 22; 1 Chron. xxi. 16.
+† 2 Sam. vii. 18.
 
-John xi 41.
+‡ 1 Kings viii.
 
-♦ Pa. lxxxix. 21. t Dan. x. 8-12; Luke xxii. 32; 2 Cor. xii. 9.
+§ Numb. xvi. 22; 1 Chron. xxi. 16.
+
+♦ John xi. 41.
+
+♦ Ps. lxxxix. 21.
+
+† Dan. x. 8-12; Luke xxii. 32; 2 Cor. xii. 9.
 
 ♦ " Turn gelidus toto manabat corpore sudor."—*^neid,* iii. 175.
 
@@ -113,6 +119,6 @@ totum est pro vulnere corpus."—*LvAian^* ix. 812, &c.
 
 § As in the well-known and beautiful words of Young:— " TirM nature<sup class="ft-fn">*</sup>! sweet restorer, balmy sleep! He, like the world, his ready visit pays Where fortune smiles; the wretched he forsakes; Swift on his downy pinion flies from woe, And lights on Uda unsullied with a tear."
 
-Qeihardi Harm, pars i.
+♦ Gerhardi Harm, pars i.
 
 </div>

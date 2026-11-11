@@ -73,7 +73,7 @@ But here we must stop. Time does not permit the subjoining of any reflections. T
 
 <div class="ft-notes" markdown="1">
 
-Matt zziii.
+♦ Matt. xxiii.
 
 Horae Hebraiese et TAlmudicaB in Matt. xsiv. 1.
 
@@ -81,32 +81,42 @@ i<sup class="ft-fn">*</sup> *\*A»a^fifiiafi Ktftof/Afirat.* Josephus, Antiq. xu
 
 \*Er&lt;ri ^i *xmt* i%« *itmSnfMtra ^oXXn,* He also (lib. vii.) speaks of the temple of Apollo as very rich, and furnished out with many votive gifts: '£>^» *hv i^ov \*A9r»XXttvof 9r>.»v9f%, ^n^au^tt^i rt xai KvetififiMft iroXXoirt xartvxtueig'fittifov.* It appears from Polybius (iv. 62) that such gifts were partly for the ornament of the temples, and partly for the use of those who assembled at the festivals: \*Or« *^^og xoa-fitov, ii* A;^i/«» *virfi^X<sup class="ft-fn">*</sup> r»tt tlf rat ^avnyv^ut rufit^0piv»fitivotf.* See also Yirg. *Mu, xiu* 768; Hor. Od. i. 5; Cicero. De Nat. Deorum, iii. 37. ' Prospect of the Temple^ chap, xiii sect. 4.
 
-♦ Pb. xlv. 13. + Scott.
+♦ Ps. xlv. 13.
+
+† Scott.
 
 *Tvis fvvnXtetf rov ettttvaf.* See, in the original, Matt. xiii. 39,40,49, *and xjLY'm,* 20.'
 
-This view of the passage was clearly entertained and expressed by Tertullian (De Resurrectione, xxii.) " Interrogatus a discipulis, quando eyentnra essent quae interim de tempi! exitn eruperant, ordinem temporum, primo Judaicorum usque ad excidium Hierusalem; dehinc com<sup class="ft-fn">*</sup> munium, usque ad conclusionem seculi, (Urigit."—*"* Being asked by his disciples, when the events would taJce place which had just broken from
+♦ This view of the passage was clearly entertained and expressed by Tertullian (De Resurrectione, xxii.) "Interrogatus a discipulis, quando eventura essent quæ interim de templi exitu eruperant, ordinem temporum, primo Judaicorum usque ad excidium Hierusalem; dehinc communium, usque ad conclusionem seculi, dirigit."—"Being asked by his disciples, when the events would take place which had just broken from<sup class="ft-fn">*</sup>
 
 his lips concerning the destruction of the temple, Jesus arranges the order of the times, first, relating to the Jews, eyen to the overthrow of Jerusalem, and then, relating to all men, even to the end of the world." Mark zuu 32.
 
-♦ It is doubtful, however, whether the words, " The time draweth near," should be considered as a part of the impostor's speech, or as spoken by Christ in his own person, and so intimating that such impostors were soon to appear. See Dr Gampbell's note on this passage.
+♦ It is doubtful, however, whether the words, "The time draweth near," should be considered as a part of the impostor's speech, or as spoken by Christ in his own person, and so intimating that such impostors were soon to appear. See Dr Campbell's note on this passage.
 
-\+ Antiq. XX. v. 1, and viii. 5, 6; Wars, II. xiii 4, 6. Euseb. Hist. Eccl.iv.3i.
+† Antiq. XX. v. 1, and viii. 5, 6; Wars, II. xiii. 4, 5. Euseb. Hist. Eccl. iv. 22.
 
-See also Matt xxiv. 23-25. f Simpson's Key to the Prophecies. *t* A.D. 1833.
+♦ See also Matt. xxiv. 23-25.
 
-♦ Home's Introduction. See Jos. Antiq. XVIII. viii.. and Wars, II. v: Bishop Newton"8 excellent work on the prophecies iriil be often made use of in this and the two following Lectures.
+† Simpson's Key to the Prophecies.
 
-Homers Introduction; Newton and Lardner.
+‡ A.D. 1833.
 
-Annals, xiv. 27, xv. 2. Seneca, Nat. Quaes, vi. 1. Suetonius, Gbdbse, 18. Whitby on Matt. xxiv. 7.
+♦ Horne's Introduction. See Jos. Antiq. XVIII. viii., and Wars, II. v. Bishop Newton's excellent work on the prophecies will be often made use of in this and the two following Lectures.
 
-t Sueton. in Claudio, 18. Tac. Ann. xii 43. Euseb. IL 8. Joseph. Antiq. XX. ii. 2.
+♦ Horne's Introduction; Newton and Lardner.
 
-*X* Whitby on Matthew.
+♦ Annals, xiv. 27, xv. 2. Seneca, Nat. Quæs. vi. 1. Suetonius, Galbæ, 18. Whitby on Matt. xxiv. 7.
 
-♦ Ware, IV. 7i. 1. f War% vi. 3.
+† Sueton. in Claudio, 18. Tac. Ann. xii. 43. Euseb. ii. 8. Joseph. Antiq. XX. ii. 2.
 
-Histor. v. 13. " Evenerant prodigia," &c. t Jortin'B Remarks on^Eccl. Hist. vol. i. p. 41.
+‡ Whitby on Matthew.
+
+♦ Wars, IV. vi. 1.
+
+† Wars, vi. 3.
+
+♦ Histor. v. 13. "Evenerant prodigia," &c.
+
+† Jortin's Remarks on Eccl. Hist. vol. i. p. 41.
 
 </div>

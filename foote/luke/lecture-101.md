@@ -107,11 +107,11 @@ The lively exercise of the affections on earthly objects is applauded; why, then
 
 ♦ Mark X. 32.
 
-Lev. zzUL 32.
+♦ Lev. xxiii. 32.
 
-See Exod. xii.; Deut. zyI. 1-8. Dr Macknight has a long dissertation to prove that Christ anticipated the usual time of the passover by a day—an opinion held by many, but, I am persuaded, erroneously.
+♦ See Exod. xii.; Deut. xvi. 1-8. Dr Macknight has a long dissertation to prove that Christ anticipated the usual time of the passover by a day—an opinion held by many, but, I am persuaded, erroneously.
 
-*f* See Lightfoot's Harmony; and Calmet and Stackhouse on the articles "Passover," and "Jesus Christ." Doddridge, on John xii. 1,2, holds that Christ's " entrance into Jerusalem must have been on the first day of the week," and the entertainment given to him in the house of Simon, in Bethany, " on the evening of the day before, when the Jewish *Sabbath yras* over." But Dr Adam Clarke adopts the other opinion.
+† See Lightfoot's Harmony; and Calmet and Stackhouse on the articles "Passover," and "Jesus Christ." Doddridge, on John xii. 1, 2, holds that Christ's "entrance into Jerusalem must have been on the first day of the week," and the entertainment given to him in the house of Simon, in Bethany, "on the evening of the day before, when the Jewish *Sabbath was* over." But Dr Adam Clarke adopts the other opinion.
 
 vol. III. K
 

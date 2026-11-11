@@ -77,23 +77,23 @@ Think, then, thou sinner who art neglecting the things which belong to thy peace
 
 <div class="ft-notes" markdown="1">
 
-♦ 2 Sam. XV. 30.
+♦ 2 Sam. xv. 30.
 
-f *"* MoIlisBima oorda Humano generi dare se nahira fatetur, Qa» lacrymas dedit. Haec noitri pars optima sensfiis.<sup class="ft-fn">*</sup>^
+† "Mollissima corda Humano generi dare se natura fatetur, Quæ lacrymas dedit. Hæc nostri pars optima sensûs." *Juvenal.*<sup class="ft-fn">*</sup>
 
-*Juvenal,*
+♦ Deut. v. 29; Isa. xlviii. 18; Ps. lxxxi. 13.
 
-Dent T. 29; Isa. xlviii. 18; Ps. lxxxi. 13.
-
-•3Cor.iii.l4.
+♦ 2 Cor. iii. 14.
 
 • Matt. xxiv. 36.
 
 f *Xm^»a.* Not elsewhere in the New Testament. But extracts from Arrian, Polvbius and others, show it signifies a rampart in general t Book V. IT. I. VOL. III. L
 
-lap. 12, &c.; Ti. 9; vii. 1. f Isa. xxix. 1.
+♦ Book v. chap. 12, &c.; vi. 9; vii. 1.
 
-*X* Luke xiii
+† Isa. xxix. 1.
+
+‡ Luke xiii. 34.
 
 Josephus, v., v. 6.
 
@@ -101,7 +101,7 @@ Howe's Redeemer's Tears.
 
 ♦ Howe.
 
-Scott
+♦ Scott.
 
 Howe.
 

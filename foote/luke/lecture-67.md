@@ -75,10 +75,12 @@ And then, as to *direction:*—let this declaration lead those of you whose hear
 
 <div class="ft-notes" markdown="1">
 
-• Rom. XV. 26,
+♦ Rom. xv. 26.
 
-• See Eph. 15; PhU. iL 13; 2 Thess. *I* 11.
+♦ See Eph. i. 5; Phil. ii. 13; 2 Thess. i. 11.
 
-Gallidus effract^ nummos fur auferet area; Mercibus extructas obruet unda rates; Extra fortunam est quicquid donatur amicis; Quas dederis, solas semper habebis opes.—*Martial.* t Plautus. " Nam ego sum hie; animus domiest, scilieet eum argeuto meo."
+♦ Callidus effractâ nummos fur auferet arcâ; Mercibus extructas obruet unda rates; Extra fortunam est quicquid donatur amicis; Quas dederis, solas semper habebis opes.—*Martial.*
+
+† Plautus. “Nam ego sum hic; animus domi est, scilicet cum argento meo.”
 
 </div>

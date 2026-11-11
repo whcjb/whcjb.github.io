@@ -89,8 +89,10 @@ Deut. xxxiv. 5.
 
 JT 'E«J«». The same word occurs in 2 Peter i. 15. It teaches the immortality of the soul, and intimates that the soul is the man, and, at death, does not cease to exist, but only goes elsewhere.
 
-Exodus xL 34; 1 Kings viU. 10.
+♦ Exodus xl. 34; 1 Kings viii. 10.
 
-Doddridge. 2 Pet. L 16.
+♦ Doddridge.
+
+♦ 2 Pet. i. 16.
 
 </div>

@@ -55,7 +55,7 @@ Now, let it not be thought that it is only the rich, and those who have much to 
 
 Luke iv. 43.
 
-*\** John iv. 46.
+♦ John iv. 46.
 
 \*Johnxix.25. 2m
 

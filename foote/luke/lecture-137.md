@@ -45,11 +45,17 @@ Now, unto Him who is all and in all in this history—unto Him who is all our sa
 
 <div class="ft-notes" markdown="1">
 
-♦ See also Rom. ix. 5; Tit. n. 13; Heb. i. 8; 1 John v. 20; Rev. i. 8, xix. 16. t Matk. xxTiii. 20; Heb. i. 12; xiii. 8. *%* Rev. i. 8.
+♦ See also Rom. ix. 5; Tit. ii. 13; Heb. i. 8; 1 John v. 20; Rev. i. 8, xix. 16.
 
-♦ See Col. i. 16; Heb. i. 2; Markii. 5-10.
+† Matt. xxviii. 20; Heb. i. 12; xiii. 8.
 
-f See also Matt. viii. 2, xxviii. 9; Luke xxiii. 42; John ix. 38, xx. 28; Acts vii 9; Phil. ii. 9, &c.; Rev. i. 5, v. 11-13. *t* See John i. 14, x. 30; PhU. n. 6; Heb. i. 3; Rev. xxu. 16.
+‡ Rev. i. 8.
+
+♦ See Col. i. 16; Heb. i. 2; Mark ii. 5-10.
+
+† See also Matt. viii. 2, xxviii. 9; Luke xxiii. 42; John ix. 38, xx. 28; Acts vii. 9; Phil. ii. 9, &c.; Rev. i. 5, v. 11-13.
+
+‡ See John i. 14, x. 30; Phil. ii. 6; Heb. i. 3; Rev. xxii. 16.
 
 ♦ John xiv. 28.
 

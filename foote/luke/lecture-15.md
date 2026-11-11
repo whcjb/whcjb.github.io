@@ -105,14 +105,18 @@ Though, unquestionably, Satan is a formidable adversary, there is no reason why 
 
 <div class="ft-notes" markdown="1">
 
-♦ Mark i. 1\*2.
+♦ Mark i. 12.
 
-♦ Matt. iy. 1. f Exod. xxxiv. 28. *%* 1 Kings xix. 8.
+♦ Matt. iv. 1.
+
+† Exod. xxxiv. 28.
+
+‡ 1 Kings xix. 8.
 
 As preceding Easter.
 
 ♦ *iviMtt»9 fui,*—Luke. † *itrt^vytcv,* pinna.
 
-♦ Exod. xvU. 2-7; Numb. xiv. 22; Matt. xvi. 1.
+♦ Exod. xvii. 2-7; Numb. xiv. 22; Matt. xvi. 1.
 
 </div>
