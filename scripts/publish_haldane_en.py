@@ -31,6 +31,11 @@ def now():
 def md_para(t: str) -> str:
     t = re.sub(r'^(\d+)\. ', r'\1\\. ', t)          # 段首「1. 」别被 kramdown 当有序列表
     t = re.sub(r'^([#>+\-]) ', r'\\\1 ', t)
+    # 录入本的 <i> 在节首经文段开、到下一段段首引句「… —」后才关，抽出来段首引句只剩一个孤立的 </em>。
+    # 补开标签带 class，translate_haldane.py 读入时剥掉，段落文本（缓存键）与补之前逐字节一致
+    i, j = t.find('</em>'), t.find('<em>')
+    if i >= 0 and (j < 0 or i < j):
+        t = '<em class="hd-q">' + t
     return t
 
 
@@ -67,7 +72,8 @@ def chapter_md(c, defs_all):
             out.append(f'<div class="commentary-anchor" id="romans-{ch}-{v}"></div>')
             covered.add(v)
         out.append('')
-        lemma = f' <em>{e["lemma"]}</em>' if e['lemma'] else ''
+        lem = re.sub(r'^<em>(?!.*</em>)', '', e['lemma'])     # 同上，经文段里没关的那个 <em>
+        lemma = f' <em>{lem}</em>' if lem else ''
         out += [f'<b class="hd-ver">{vlabel(e)}</b>{lemma}', '{: .hd-lemma}', '']
         for p in e['paras']:
             out += [md_para(p), '']

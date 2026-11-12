@@ -31,7 +31,20 @@ def cn(n):
     return ('' if t == 1 else CN[t]) + '十' + (CN[u] if u else '')
 
 
+def open_lead_em(p):
+    """段首引句只有孤立 </em>（录入本 <i> 跨段，见 publish_haldane_en.md_para）→ 补开标签。
+    模型偶尔把 </em> 挪到「——」后面去（12 章「这里的“</em>世界”」），那就收在「——」处。"""
+    i, j = p.find('</em>'), p.find('<em>')
+    if i < 0 or (0 <= j < i):
+        return p
+    k = p.find('——')
+    if 0 <= k and k + 2 < i:
+        return '<em>' + p[:k + 2] + '</em>' + p[k + 2:i] + p[i + 5:]
+    return '<em>' + p
+
+
 def clean(body):
+    body = '\n\n'.join(open_lead_em(p) for p in body.split('\n\n'))
     body = re.sub(r'(?<!\*)\*\*(?!\*)', '', body)
     body = ORIG_NAME.sub(r'<span class="hd-orig">（\1）</span>', body)
     return body.strip()

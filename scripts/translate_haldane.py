@@ -93,6 +93,7 @@ RE_LEMMA = re.compile(r'^<b class="hd-ver">Vers?\. (\d+)(?:–(\d+))?\.</b>(?: <
 def blocks(ch):
     """→ [(kind, text, gid)]。kind: text（送模型）/ keep（原样或程序填好）。同 gid 的块拼回时直接相连。"""
     t = (SRC / f'{ch}.md').read_text(encoding='utf-8').split('\n---\n', 1)[1].strip()
+    t = t.replace('<em class="hd-q">', '')                    # 英文发布补的段首开标签，剥掉保持缓存键不变
     t = re.sub(r'<em>([^<>]*)</em>', r'*\1*', t)             # 斜体转星号，模型按星号对位
     out = []
     for gid, b in enumerate(t.split('\n\n')):
