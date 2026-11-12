@@ -61,7 +61,7 @@ This encouragement, then, addresses itself to enlightened views of prudence and 
 
 <div class="ft-notes" markdown="1">
 
-Josephus, Lightfoofs Prospect of the Temple, from Maimonides, &c. + n'T^B'-iUJ, trumpets, so called from their being narrow at the top, and
+Josephus, Lightfoofs Prospect of the Temple, from Maimonides, &c. + שׁוֹפָרוֹת trumpets, so called from their being narrow at the top, and
 
 wide at the bottom. *Vide* Relandi Antiq. part i., sect. 12; and Do Spoliis Templi, cap. xx., Utrecht edition, 1/16, with the Engraving.
 
@@ -69,7 +69,7 @@ wide at the bottom. *Vide* Relandi Antiq. part i., sect. 12; and Do Spoliis Temp
 
 § Lightfoot's Prospect of the Temple.
 
-il *AttrT»,* corresponding to nnia^^^s.
+Λεπτα, corresponding to פְּרוּטוֹת
 
 Mark xii. 43.
 

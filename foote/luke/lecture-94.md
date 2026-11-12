@@ -77,7 +77,7 @@ Hectora flemus."
 
 " Tearing her dishevelled hair, and smiting her breast with frequent strokes—she thus speaks in grief*."—Lucan,* ii. 335. *"* Motis ad pectora palmis.''—4S^«7tMj *Italicus,* lib. zii.
 
-Not *i^tnfot ftt,* but *IXctffinrt fAot<sup class="ft-fn">*</sup> \*\X.etUt \*lketfx6fAa.it* propitius lum. " Maxime convenit illi placationi et reconciliationi, quae fit inter Deum et hominem, offerendo sacrificium, seu hostiam ad obtinendam peccati remissionem. Ita saepkia usiirpatur a lxx. in LeviticoJ'—*StochitLt.* Rom. ill. 25: " Whom God hath set forth to be a propitiation, *Ixavrn' (lof,* through faith in his blood." Heb. ii. 17: " To make reconciliation, *tif r§ l>MffMir4euy* for the Kns of the people;" and ix. 5: " The mercy-seat.
+Not *i^tnfot ftt,* but ἱλασθητι μοι. Ἱλαω, Ἱλασκομαι,<sup class="ft-fn">*</sup> propitius lum. " Maxime convenit illi placationi et reconciliationi, quae fit inter Deum et hominem, offerendo sacrificium, seu hostiam ad obtinendam peccati remissionem. Ita saepkia usiirpatur a lxx. in LeviticoJ'—*StochitLt.* Rom. ill. 25: " Whom God hath set forth to be a propitiation, *Ixavrn' (lof,* through faith in his blood." Heb. ii. 17: " To make reconciliation, εἰς το ἱλασκεσθαι, for the Kns of the people;" and ix. 5: " The mercy-seat.
 
 ♦ Eph. iv. 28, v. 4, 11; Heb. xi. 25.
 

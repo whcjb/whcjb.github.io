@@ -95,7 +95,7 @@ Matt. xxiii. 13.
 
 ♦ Matt. xxv. 10.
 
-*Ov» cthet vftetf ^chv Ur%t* seems to be for *Oh<sup class="ft-fn">*</sup> otha, irofitv iftttf* {«>rf. SOj in Herodotus, lib. It., *Ov AtQvnv tlhrtf o<sup class="ft-fn">*</sup>»u yns tin,* Non noverant ubi terrftrum Libya esset.
+Οὐκ οἰδα ὑμας ποθεν ἐστε, seems to be for *Oh<sup class="ft-fn">*</sup> otha, irofitv iftttf* {«>rf. SOj in Herodotus, lib. It., *Ov AtQvnv tlhrtf o<sup class="ft-fn">*</sup>»u yns tin,* Non noverant ubi terrftrum Libya esset.
 
 ♦ Ps. cxii. 10.
 

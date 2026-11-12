@@ -79,7 +79,7 @@ Let these brief hints, on this rich verse, suffice. See here, all of you, where 
 
 ♦ So in verse 11.
 
-*Olf ovx Wrt rttfittaf* (locu8 secretior, serarium), *evlt u^o^nxn* (horrenni). Lightfoot thinks that the former irord means a storehouse for fruits, and the latter a storehouse for grain.
+*Olf ovx Wrt rttfittaf* (locu8 secretior, serarium), ουδε αποθηκη (horrenni). Lightfoot thinks that the former irord means a storehouse for fruits, and the latter a storehouse for grain.
 
 ♦ Dr A. Clarke on Matt. vi. 26.
 

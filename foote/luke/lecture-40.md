@@ -75,9 +75,9 @@ On these words of our Lord, we may remark, 1st, That *they are not intended to c
 
 <div class="ft-notes" markdown="1">
 
-♦ See also 2 John 10. f BXiflrtrt *rt »K$vtrt,*
+♦ See also 2 John 10. f Βλεπετε τι ἀκουετε.
 
-♦ Matt. xiii. 12, xxv. 29; Mark iv. 24; Luke xix. 26. i<sup class="ft-fn">*</sup> Some critics, however, are of opinion that the word *^oxxt* is here an expletive, signifying reality, and not appearance. Dr Ad. Clarke *in locum;* and Pearce's Note on Mark x. 42.—An apt illustration of tliiB clause is found in Juvenal, Sat. iii.
+♦ Matt. xiii. 12, xxv. 29; Mark iv. 24; Luke xix. 26. i<sup class="ft-fn">*</sup> Some critics, however, are of opinion that the word δοκει is here an expletive, signifying reality, and not appearance. Dr Ad. Clarke *in locum;* and Pearce's Note on Mark x. 42.—An apt illustration of tliiB clause is found in Juvenal, Sat. iii.
 
 Nil habuit Codrus: quis enim negat? et tamen illud Perdidit infelix totum nil.
 

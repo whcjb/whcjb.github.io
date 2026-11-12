@@ -7,12 +7,12 @@
     **不给任何提示**，让模型把页上每段希腊/希伯来文照印面转录，连同紧挨前后的一个词作锚；
   · 锚在我们文本（该页所属各讲正文＋注区）里找，夹在两锚之间的就是我们的残串；
   · 与整页转录同位的读法比：去重音后一致＝两读一致（推荐），否则只列出；
-  · 全部写 greek_pending.tsv 交用户核；**本脚本不落盘**，用户同意的条目另抄入 greek_fixes.tsv 才进链条。
+  · 全部写 greek_pending.tsv 交用户核；**本脚本不落盘**，用户同意的条目另抄入 greek_read_fixes.tsv 才进链条。
 
     python3 scripts/foote_greek_read.py --collect
     python3 scripts/foote_greek_read.py --run --sample 3 | --run --all
     python3 scripts/foote_greek_read.py --report       # → foote_raw/luke/greek_pending.tsv
-    python3 scripts/foote_greek_read.py --apply        # greek_fixes.tsv（用户同意过的）落盘，链条最末
+    python3 scripts/foote_greek_read.py --apply        # greek_read_fixes.tsv（用户同意过的）落盘，链条最末
 """
 import argparse
 import base64
@@ -41,7 +41,7 @@ WORK = RAW / 'imgcheck'
 CAND = WORK / 'greek_pages.json'
 ANS = WORK / 'greek_answers'
 PENDING = RAW / 'greek_pending.tsv'
-FIXES = RAW / 'greek_fixes.tsv'
+FIXES = RAW / 'greek_read_fixes.tsv'
 COST = A.ROOT / 'logs' / 'foote_greek_read_cost.tsv'
 GH = re.compile(r'[Ͱ-Ͽἀ-῿֐-׿]')
 
@@ -244,7 +244,7 @@ def proposal(ours, gk):
 
 
 def propose():
-    """greek_pending.tsv 的「推荐」→ greek_proposed.tsv（用户同意后整份或逐条抄进 greek_fixes.tsv）。"""
+    """greek_pending.tsv 的「推荐」→ greek_proposed.tsv（用户同意后整份或逐条抄进 greek_read_fixes.tsv）。"""
     rows = list(csv.reader(open(PENDING, encoding='utf-8'), delimiter='\t'))[1:]
     out, skip = [], 0
     for r in rows:

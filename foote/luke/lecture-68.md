@@ -99,6 +99,6 @@ vol.. II. 2 C
 
 *%vv»fAtv* i» *rov ^s^i»eiruXn(pfitvTOf fftrou,* '&lt; After these things, haying measured out an allowance of com to the army for thirty days, out of the com which remained," *ke,—Folybius,* iv. 63.
 
-*^a^fifftrm ^oXXetf'* wXfjyaj being understood. So in *Xenoph, de Mxped.* lib. iv.: *Tcvret fttv ivut^ctyev vravrtg a>s h>^iyets ^etto'titv,* " They all cried out that the man had been beaten with few;^^—that is, with too few stripes—that he had not been beaten sufficiently, or, so much as he deBerved.
+Δαρησεται πολλας· πληγας being understood. So in *Xenoph, de Mxped.* lib. iv.: *Tcvret fttv ivut^ctyev vravrtg a>s h>^iyets ^etto'titv,* " They all cried out that the man had been beaten with few;^^—that is, with too few stripes—that he had not been beaten sufficiently, or, so much as he deBerved.
 
 </div>

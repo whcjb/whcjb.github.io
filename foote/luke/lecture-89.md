@@ -97,7 +97,7 @@ Finally, let all of you who are the Lord's servants indeed, make his service you
 
 Oct. Aug. c. 67. Aristophanes in *Equites,* 1359.
 
-*\*Ex. rov Xtt^uyyos i»»^tfieto'ets vxt^SaXof.* Diodoms Siculus, hook xvi., says, " Philip hanged OnomarchuB," *revs h uXXevs MS U^offvXovs »(trt^ovriff%.* Halhed, in his Code of Gentoo Laws, inserts the following, '&lt; If a woman cause any person to take poison, set fire to any person's house, or murder a man, then the magistrate, having bound a stone to her neck, shall drown her." " A millstone;" in Luke, *fAvXos ofixast* a large millstone, such a millstone as could not be turned with the hand, but required an ass, orother working animal, to move it. In Mark is. 42, *ktfo§ f4,v>.m»t.*
+*\*Ex. rov Xtt^uyyos i»»^tfieto'ets vxt^SaXof.* Diodoms Siculus, hook xvi., says, " Philip hanged OnomarchuB," *revs h uXXevs MS U^offvXovs »(trt^ovriff%.* Halhed, in his Code of Gentoo Laws, inserts the following, '&lt; If a woman cause any person to take poison, set fire to any person's house, or murder a man, then the magistrate, having bound a stone to her neck, shall drown her." " A millstone;" in Luke, *fAvXos ofixast* a large millstone, such a millstone as could not be turned with the hand, but required an ass, orother working animal, to move it. In Mark is. 42, λιθος μυλικος.
 
 ♦ Matt. xviii. 15.
 
@@ -111,7 +111,7 @@ Oct. Aug. c. 67. Aristophanes in *Equites,* 1359.
 
 § Mark ix. 23.
 
-Rather, " come," or " come in," so the word *ira^tk^atv* is occasionally used. For example, in Luke xii. 37, and Acts xxiv. 7\* Arrian, i. 8, and ii. 1. *\*ils ^ei^nxhv* ciVa; *rtis ^oktatft* quum ingressi essent urbem.
+Rather, " come," or " come in," so the word παρελθων is occasionally used. For example, in Luke xii. 37, and Acts xxiv. 7\* Arrian, i. 8, and ii. 1. *\*ils ^ei^nxhv* ciVa; *rtis ^oktatft* quum ingressi essent urbem.
 
 ♦ Job xxiL 2j Ps. *xyL 3,*
 

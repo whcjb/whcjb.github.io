@@ -63,7 +63,7 @@ Our Lord's enemies persevered in their design against him; accordingly, he expos
 
 <div class="ft-notes" markdown="1">
 
-T»j» *(rmioav.* Some think the *^^tt^»* corresponded with the cohort, which was the tenth part of a legion, and might contain from four hundred to six hundred men; but Raphelius on Matt, xxvii. 27, seems to have made it out, from Polybius, to have been only the fortieth part of a legion. See on John xviii. 3,*12.* Doddridge, Dr Adam Clarke, Dr Campbell, (who translate it " the cohort"), Whitby. Perhaps, the word, after all, is not intended to express any exact number of men.
+Την σπειραν. Some think the σπειρα corresponded with the cohort, which was the tenth part of a legion, and might contain from four hundred to six hundred men; but Raphelius on Matt, xxvii. 27, seems to have made it out, from Polybius, to have been only the fortieth part of a legion. See on John xviii. 3,*12.* Doddridge, Dr Adam Clarke, Dr Campbell, (who translate it " the cohort"), Whitby. Perhaps, the word, after all, is not intended to express any exact number of men.
 
 \+ *'r^rti^tTdf,* John xviii. 3. See also Matthew, and Mark xir. 43.
 

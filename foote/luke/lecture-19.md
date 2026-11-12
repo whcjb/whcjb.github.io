@@ -77,7 +77,7 @@ To this course we exhort you, not as to a course which will involve you in unava
 
 <div class="ft-notes" markdown="1">
 
-*i^^\** vivos capieni. *T»9* K^Mrav i^«y(iir«v. *'Arrvmynf litty^n^n<sup class="ft-fn">*</sup>* Horodotuf.
+ζωγρῶν vivos capieni. *T»9* K^Mrav i^«y(iir«v. *'Arrvmynf litty^n^n<sup class="ft-fn">*</sup>* Horodotuf.
 
 ♦ Matt. iv. 19.
 

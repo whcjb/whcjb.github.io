@@ -83,7 +83,7 @@ Lightfoot on John.
 
 ♦ Mark xiv. 68, 30.
 
-"AAXn. + \*H *9rmltirxn.*
+"AAXn. + Ἀλλη.
 
 ♦ Acts xii. 12; 1 Pet. v. 13; Col. iv. 10.
 

@@ -71,7 +71,7 @@ Such is this most remarkable and most impressive parable: see that you all apply
 
 <div class="ft-notes" markdown="1">
 
-*\** Profane writers also speak of a " great gulf,^\* *x^'M^ fAtyet,* in the unseen world. There is a very striking passage of this kind in Hesiod's Theogonia, *linea:* 729-745. The same idea also occurs in Plato, Plu^ tatob, Ovid, andliuciaa.
+*\** Profane writers also speak of a " great gulf, χασμα μεγα, in the unseen world. There is a very striking passage of this kind in Hesiod's Theogonia, *linea:* 729-745. The same idea also occurs in Plato, Plu^ tatob, Ovid, andliuciaa.
 
 ♦ Pollok.
 

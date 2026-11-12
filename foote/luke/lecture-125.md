@@ -85,7 +85,7 @@ But Pilate is, in some respects, a beacon to us all. Let it be an instructive wa
 
 <div class="ft-notes" markdown="1">
 
-*Tlt^^etyfiifov avrof,* without the preposition. Though somewhat uncommon, instances of this occur in Greek; and it is much more natural to understand it thus here, than to suppose that the passing of a capital sentence, or anything done by Herod to Christ, should be called a thing deserving death on Christ's part. Polybius says Hermiad finished his life in this way, undergoing a punishment by no means equal to the things done by him, that is, as his crimes deserved, *Uhfiumv viroff^etf TtfMt^ttiv ei^Mv rttv tiury ^rt^r^etyfiivuv.* And Josephus, at the end of his life, written by himself, says, "These are the things done by me during (or the actions of) my whole life: ^^—*Tavra fitv* r« *irtir^y^tjm fi9t 2m irttfr9i row ^tw i^rtK*
+Πεπραγμενον αὐτῳ, without the preposition. Though somewhat uncommon, instances of this occur in Greek; and it is much more natural to understand it thus here, than to suppose that the passing of a capital sentence, or anything done by Herod to Christ, should be called a thing deserving death on Christ's part. Polybius says Hermiad finished his life in this way, undergoing a punishment by no means equal to the things done by him, that is, as his crimes deserved, *Uhfiumv viroff^etf TtfMt^ttiv ei^Mv rttv tiury ^rt^r^etyfiivuv.* And Josephus, at the end of his life, written by himself, says, "These are the things done by me during (or the actions of) my whole life: Ταυτα μεν τα πεπραγμενα μοι δια παντος του βιου ἐστιν.
 
 ♦ Matt. xxvii. 15; Mark xv. 6.
 

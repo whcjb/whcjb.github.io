@@ -127,7 +127,7 @@ Gen. xxii. 3; Exod. iv. 20; Judges x. 4, y. 10. f Doddridge.
 
 *X 'Tv'OTthvrw ret ifiMTtm rats froctv r fimh^ot,* Cato Minor.
 
-*Tdv^^tHi^i vro^ovvrtf rrif* •^•i'. vii. 56. Herodian relates that when the Romans joyfully received the Emperor Commodus, they strewed chaplets and flowers, 2t«^«i«a»» *xett av^t^v (hoXitu v^thxavro*; and that the people of Aquileia scattered leaves on Maximus, *i(pvkko(iakovvTo rov Mali/tdf.* i 18, and viii. 18.
+Μυρσινησι στορουντες την ὁδον. vii. 56. Herodian relates that when the Romans joyfully received the Emperor Commodus, they strewed chaplets and flowers, Στεφανων και ἀνθεων βολαις ὑπεδεχοντο; and that the people of Aquileia scattered leaves on Maximus, *i(pvkko(iakovvTo rov Mali/tdf.* i 18, and viii. 18.
 
 t John xii. 17,18.
 

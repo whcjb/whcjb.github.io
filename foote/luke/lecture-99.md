@@ -99,7 +99,7 @@ By those of you who are found of him, and saved and called with a holy calling, 
 
 ♦ 1 Tim. vi. 17,18.
 
-\*t<sup class="ft-fn">*</sup> *\*EffvK9^avTnffa.* For the derivation and shades of meaning of this word, see Potter's Antiquities, page 127, Boyd's edition, Glasg. 1839; StockiuB, Schleusner, and Campbell's Dissert, xii. part i. § 16.
+'Εσυκοφαντησα.<sup class="ft-fn">*</sup> For the derivation and shades of meaning of this word, see Potter's Antiquities, page 127, Boyd's edition, Glasg. 1839; StockiuB, Schleusner, and Campbell's Dissert, xii. part i. § 16.
 
 *X* Exod. xxii. 1, and Lev. vi. 5. The ox was rated highest because of the value of his labour. Prov. xiv. 4.
 

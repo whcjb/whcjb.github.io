@@ -95,7 +95,7 @@ At the 35th verse our Lord enters on a different subject. " *And he said unto th
 
 ♦ 1 John ii. 19.
 
-Eisner is for translating this clause, thus: " Igitur et tu converte aliquandoetconfirmafVatrestaos^^--" Therefore, do thou also afterwards convert and strengthen thy brethren,<sup class="ft-fn">*</sup>^ rendering the word *iirtrr^t^Mf* transitively, as in Luke i. 16,17; James y. 19,20. But, our own version seems preferable, in which the word is rendered intransitively, as in most other places. See Matt. xiii. 15; Acts iii. 19, ix. 35, xi. 21; 1 Thess. i. 9, &c. The word should have been rendered intransitively in Acta xxvi. 18, the article *rou,* though not before *avoi^ett,* being before both *WKfTPi-^ett,* and *XaUivi* " To open their eyes that they may turn," &c.
+Eisner is for translating this clause, thus: " Igitur et tu converte aliquandoetconfirmafVatrestaos^^--" Therefore, do thou also afterwards convert and strengthen thy brethren,<sup class="ft-fn">*</sup>^ rendering the word ἐπιστρεψας transitively, as in Luke i. 16,17; James y. 19,20. But, our own version seems preferable, in which the word is rendered intransitively, as in most other places. See Matt. xiii. 15; Acts iii. 19, ix. 35, xi. 21; 1 Thess. i. 9, &c. The word should have been rendered intransitively in Acta xxvi. 18, the article *rou,* though not before ἀνοιξαι being before both ἐπιστρεψαι and *XaUivi* " To open their eyes that they may turn," &c.
 
 f John xiii. 8.
 

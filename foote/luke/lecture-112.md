@@ -61,7 +61,7 @@ Let us, before concluding at this time, notice only one other ingredient in the 
 
 <div class="ft-notes" markdown="1">
 
-'E» r««-y *etytift* Sn *a* holy plttoe, or on holy ground, not *h* ry /i^y.
+'E» r««-y *etytift* Sn *a* holy plttoe, or on holy ground, not ἐν τῳ ἱερῳ
 
 f Jer. xxvii<sup class="ft-fn">*</sup> • *X* I adhere to this as the most natural meaning, notwithstanding Dr Campbell's note, which would refer the " it " to Jerusalem.
 

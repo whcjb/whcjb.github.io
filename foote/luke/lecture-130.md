@@ -83,9 +83,9 @@ In the last place, see here *every encouragement to perishing sinners to come to
 
 <div class="ft-notes" markdown="1">
 
-Ka/ *^min(rot.i* &lt;p«»J *itiya.X'n e \*lfiffoviy* i/Vi. Dr Campbell's translik tion is simply, " And Jesus said with a loud voice. Father," &c. Dr Macknight says, " Matthew, Mark, and Luke, tell us that, in speaking these words (" It is finished"), Jesus cried with an exceeding loud voice." —The use of the word in the first Aorist, *^wnveti,* is in favour of our version, rather than the other; 'H ^i *aifa^onffaffet fityetX.^ trtj &lt;pM\*ri,* Ms *ftoi t^offirty ^vo'iy ^fifta*—*PolybiuSf* xv. 27; which words axe thus translated by Raphelius: Ilia clamore edito, Ne me, ait voce alta, O ferse accedatis. In Matt, xxvii. 46, the form of expression is different,' An C«i}«i' • *\*Ifl^ous* ^«»Jj */AtyaX^f Xtyaiv' \*HXt,* &C.
+Ka/ *^min(rot.i* &lt;p«»J *itiya.X'n e \*lfiffoviy* i/Vi. Dr Campbell's translik tion is simply, " And Jesus said with a loud voice. Father," &c. Dr Macknight says, " Matthew, Mark, and Luke, tell us that, in speaking these words (" It is finished"), Jesus cried with an exceeding loud voice." —The use of the word in the first Aorist, φωνησας, is in favour of our version, rather than the other; 'H ^i *aifa^onffaffet fityetX.^ trtj &lt;pM\*ri,* Ms *ftoi t^offirty ^vo'iy ^fifta*—*PolybiuSf* xv. 27; which words axe thus translated by Raphelius: Ilia clamore edito, Ne me, ait voce alta, O ferse accedatis. In Matt, xxvii. 46, the form of expression is different,' An C«i}«i' • *\*Ifl^ous* ^«»Jj */AtyaX^f Xtyaiv' \*HXt,* &C.
 
-\*!&lt; Matthew, a^»i»c; John, ir«^t^A>xf *rd vnvfia.* ' 4^ It is said of Rachel, in the Septuagint, Gen. xxxv. 18, *\*Eyt9tro h if ret u^nfeti eci/rti<sup class="ft-fn">*</sup> rn<sup class="ft-fn">*</sup> -^^xfiK* Examples are also quoted from Herodotus and Euripides. See Eisner, Dr Campbell, &c.
+\*!&lt; Matthew, ἀφηκε; John, ir«^t^A>xf *rd vnvfia.* ' 4^ It is said of Rachel, in the Septuagint, Gen. xxxv. 18, Ἐγενετο δε ἐν τῳ ἀφιεναι αὐτην την ψυχην.<sup class="ft-fn">*</sup><sup class="ft-fn">*</sup> Examples are also quoted from Herodotus and Euripides. See Eisner, Dr Campbell, &c.
 
 § John X. 17.
 

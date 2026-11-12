@@ -127,7 +127,7 @@ Especially Grotius.
 
 † Horæ Hebr. et Talm. in Matt. xxvi. 20.
 
-*TtvvYtfAaroi ms xfA^tXov.* The word *etvog,* like the English word wine, is ambiguous, as wine was made of other things besides grapes. Herodotus (lib. ii.) speaks of wine made of barley by the Egyptians, because of the want of vines in their country: O/vy *l» x^ihav ^lax^tevrat' ov yec^ &lt;r(pt tlirt U* t»j *^^^V* «i«\*«'«^«'« The same author (lib. ii.) uses the expression, *ifi^tXivM* \*«^&lt;ry, or, the fruit of the vine, to signify wine made of grapes; and also, in the same distinguishing sense, in book iii., the expression, *oivg afi^iXtvos.* He also makes mention of wine made of palms, that is, of dates, the fruit of the palm tree, *ohov ^omxnttv.* The phrase, then, employed by our Lord, intimates that it was wine of grapes which was used in the passover, and in the Lord's supper.
+Γεννηματος της ἀμπελου. The word *etvog,* like the English word wine, is ambiguous, as wine was made of other things besides grapes. Herodotus (lib. ii.) speaks of wine made of barley by the Egyptians, because of the want of vines in their country: Οἰνῳ ἐκ κριθεων διαχρεονται· οὐ γαρ σφι εἰσι ἐν τη χωρη ἀμπελοι. The same author (lib. ii.) uses the expression, ἀμπελινῳ καρπῳ or, the fruit of the vine, to signify wine made of grapes; and also, in the same distinguishing sense, in book iii., the expression, οἰνος ἀμπελινος. He also makes mention of wine made of palms, that is, of dates, the fruit of the palm tree, οἰνου φοινικηιου. The phrase, then, employed by our Lord, intimates that it was wine of grapes which was used in the passover, and in the Lord's supper.
 
 t Acts X. 41; Luke xxiv. 30-41. VOL. III Z
 

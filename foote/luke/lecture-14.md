@@ -111,7 +111,7 @@ Melancholy, however, as is the subject, it is not without features of a pleasing
 
 \+ Doddridge.
 
-*X* Some think that the meaning of *ats Uofn^tro* may be, " as was reckoned in the legal records," ut lege sancitum est. The very same word, however, is used by Herodotus, lib. iv., for one who was only supposed the *mm* o/another, *r»vT»u ireus vaftiZ^rah* ejus filius censetur.
+*X* Some think that the meaning of *ats Uofn^tro* may be, " as was reckoned in the legal records," ut lege sancitum est. The very same word, however, is used by Herodotus, lib. iv., for one who was only supposed the *mm* o/another, τουτου παις νομιζεται ejus filius censetur.
 
 ♦ Heb. vii. 14.
 

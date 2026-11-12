@@ -77,9 +77,9 @@ But here we must stop. Time does not permit the subjoining of any reflections. T
 
 Horae Hebraiese et TAlmudicaB in Matt. xsiv. 1.
 
-i<sup class="ft-fn">*</sup> *\*A»a^fifiiafi Ktftof/Afirat.* Josephus, Antiq. xu. 2, and xv. 11; Tacitus Hist. T. 8; 1 Chron. xxvi. 20. Xenophon (De Exped. lib. v.) says that he solemnly deposited, in the temple of Apollo at Delphi, a gift *(avm^tifMt)*,on which he had written his own name, and the name of Proxenus. 'Herodotus (lib. i.) says that the temple of Belus, or Bel, at Babylon, was adorned with many gifts: T« *fin<sup class="ft-fn">*</sup> 'in i^ov t«ut» »vru MMrftnrm,*
+’Αναθημασι κεκοσμηται.<sup class="ft-fn">*</sup> Josephus, Antiq. xu. 2, and xv. 11; Tacitus Hist. T. 8; 1 Chron. xxvi. 20. Xenophon (De Exped. lib. v.) says that he solemnly deposited, in the temple of Apollo at Delphi, a gift ἀναθημαon which he had written his own name, and the name of Proxenus. 'Herodotus (lib. i.) says that the temple of Belus, or Bel, at Babylon, was adorned with many gifts: T« *fin<sup class="ft-fn">*</sup> 'in i^ov t«ut» »vru MMrftnrm,*
 
-\*Er&lt;ri ^i *xmt* i%« *itmSnfMtra ^oXXn,* He also (lib. vii.) speaks of the temple of Apollo as very rich, and furnished out with many votive gifts: '£>^» *hv i^ov \*A9r»XXttvof 9r>.»v9f%, ^n^au^tt^i rt xai KvetififiMft iroXXoirt xartvxtueig'fittifov.* It appears from Polybius (iv. 62) that such gifts were partly for the ornament of the temples, and partly for the use of those who assembled at the festivals: \*Or« *^^og xoa-fitov, ii* A;^i/«» *virfi^X<sup class="ft-fn">*</sup> r»tt tlf rat ^avnyv^ut rufit^0piv»fitivotf.* See also Yirg. *Mu, xiu* 768; Hor. Od. i. 5; Cicero. De Nat. Deorum, iii. 37. ' Prospect of the Temple^ chap, xiii sect. 4.
+'Εστι δε και ιδια ἀναθηματα πολλα. He also (lib. vii.) speaks of the temple of Apollo as very rich, and furnished out with many votive gifts: ''Ενθα ἠν ἱερον 'Απολλωνος πλουσιον, θησαυροισι τε και ἀναθημασι πολλοισι κατεσκευασμενον. It appears from Polybius (iv. 62) that such gifts were partly for the ornament of the temples, and partly for the use of those who assembled at the festivals: 'Οσα προς κοσμον, ἠ χρειαν ὑπηρχε τοις εἰς τας πανηγυρεις συμπορευομενοις.<sup class="ft-fn">*</sup> See also Yirg. *Mu, xiu* 768; Hor. Od. i. 5; Cicero. De Nat. Deorum, iii. 37. ' Prospect of the Temple^ chap, xiii sect. 4.
 
 ♦ Ps. xlv. 13.
 

@@ -85,7 +85,7 @@ I *i*
 
 ♦ Prov. xx. 18, xxv. 8.
 
-*Ovrttts 4Vf,*
+Οὕτως οὖν.
 
 ♦ Matt. v. 13.
 

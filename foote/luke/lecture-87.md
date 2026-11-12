@@ -109,7 +109,7 @@ t *'Em^vfiMv,* Eisner thinks this word should be here rendered," being contented
 
 ♦ Ps. xci. 11.
 
-Plato (in Phoedo) teaches, that the soul which has passed through life pure and temperate (when it dies) has the gods for its companions and guides, *^wtfiTo^atv xm fiytfAovan B^atv* ti/;^i/i»\* The Greeks and Romans generally assigned this office to Mercury, who was thence called, the Conductor, *IlcfA^os, Ucft^ettag, 'St»^»irefATcft ypv;^o9'ofAvrcf,* and *-^v^ayuyos.* Sophocles (Ajac. Flagell. 843) represents Ajax, when about to die, as invoking Mercury, the Conductor, to lay him sweetly asleep, and to remove him by a gentle and quick leap. " Mercuri facunde, —— Tu pias laetis animas reponis Sedibus."—JSTor. Od., lib. i. 10. t See John xui. 23. *X* Matt. viii. 11.
+Plato (in Phoedo) teaches, that the soul which has passed through life pure and temperate (when it dies) has the gods for its companions and guides, ξυνεμπορων και ἡγεμονων θεων τυχειν· The Greeks and Romans generally assigned this office to Mercury, who was thence called, the Conductor, Πομπος, Πομπαιος, Νεκροπομπος, ψυχοπομπος, and ψυχαγωγος. Sophocles (Ajac. Flagell. 843) represents Ajax, when about to die, as invoking Mercury, the Conductor, to lay him sweetly asleep, and to remove him by a gentle and quick leap. " Mercuri facunde, —— Tu pias laetis animas reponis Sedibus."—JSTor. Od., lib. i. 10. t See John xui. 23. *X* Matt. viii. 11.
 
 ♦ Luke xiii. 28.
 

@@ -101,7 +101,7 @@ Let those of you who are conscientious in this respect feel admonished and encou
 
 ♦ Dr Mackniglit, &c.
 
-t Lightfoot on Mark says, *^* He was a priest, and one of that sacerdotal bench." *X* Mark x?. 43. *Ei/t'xnf^i'f fi^vXtvrnt<sup class="ft-fn">*</sup>*
+t Lightfoot on Mark says, *^* He was a priest, and one of that sacerdotal bench." *X* Mark x?. 43. Εὐσχημων βουλευτης.<sup class="ft-fn">*</sup>
 
 ♦ John xii. 42.
 
@@ -113,7 +113,7 @@ t Lightfoot on Mark says, *^* He was a priest, and one of that sacerdotal bench.
 
 ♦ Doddridge.
 
-t Herodotus, (lib. ii.) says that the Egyptians wrapped up the corpse in this way, after having washed it, *I^ov^Mng rof nx^ev, xefruXt^^ivt 9r»9 uvTov re w/Mt ^if^nog ^vfffuftis TtXavftM^t 'McretTfrtcnutfugh* The words in Luke are, \*Ei»«r«»X/$iF *ui/ro triiiint.* The circumstance mentioned by John of Lazarus' dead body being bound about the face with a napkin, finds an illustration in Lucian De Luctu, ^ii;^wXc;rc ^i i *Umt xai ra,* i^/a, *oU ftau r»s ^myovas* «iri&lt;r^/y$«r», « Sed prohibebant (scilicet quo minus riderem) linteum et lanae quibus mmi fibuces a^trisxistis.
+t Herodotus, (lib. ii.) says that the Egyptians wrapped up the corpse in this way, after having washed it, *I^ov^Mng rof nx^ev, xefruXt^^ivt 9r»9 uvTov re w/Mt ^if^nog ^vfffuftis TtXavftM^t 'McretTfrtcnutfugh* The words in Luke are, Ἐνετυλιξεν αὐτο σινδονι. The circumstance mentioned by John of Lazarus' dead body being bound about the face with a napkin, finds an illustration in Lucian De Luctu, ^ii;^wXc;rc ^i i *Umt xai ra,* i^/a, *oU ftau r»s ^myovas* «iri&lt;r^/y$«r», « Sed prohibebant (scilicet quo minus riderem) linteum et lanae quibus mmi fibuces a^trisxistis.
 
 ♦ Doddridge. † Exod. xvi. 22.
 

@@ -99,7 +99,7 @@ Once more, Let us improve this passage in reference to *the endearing relations 
 
 Henry.
 
-Matt. xxii. 30, and Mark xii. 25, *itt »yytXu,* Luke, *lvayyt\»i^* « angel-like."—/>r *Campbell.*
+Matt. xxii. 30, and Mark xii. 25, ὡς ἀγγελοι. Luke, *lvayyt\»i^* « angel-like."—/>r *Campbell.*
 
 ♦ Drusius, De Tribus Sectis, iii. 9; Reland, Antiq. ii. 11; Scaliger, Elench. chap. 16.
 

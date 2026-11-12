@@ -111,7 +111,7 @@ Nor let us forget that the angels still cherish the same desire to promote the s
 
 <div class="ft-notes" markdown="1">
 
-*iy^etvXouvTif* "Qui his gregibus pastores prsesunt, noctem et diem degunt in campis, uxoresque et Sberos circumycctant.in curribus, quibus pro domiciliis utuntur: nisi quod aliquando exigua tabemacula tendant. Longe vero lateque yagantur, modo campos, modo editiora loca, modo yalles, ut ratio temporis et pabuli postulet, persequentes." Busbequius, Epist. I. describing Turkey, &c.—*(pvXeierg-ovrtf ipvXeucae* is an elegant and emphatic form of expression used by Xenophon, De Exped. Cyri Lib. II. and Lib. v. See Baphelius^ Observations.
+ἀγραυλουντες "Qui his gregibus pastores prsesunt, noctem et diem degunt in campis, uxoresque et Sberos circumycctant.in curribus, quibus pro domiciliis utuntur: nisi quod aliquando exigua tabemacula tendant. Longe vero lateque yagantur, modo campos, modo editiora loca, modo yalles, ut ratio temporis et pabuli postulet, persequentes." Busbequius, Epist. I. describing Turkey, &c.—*(pvXeierg-ovrtf ipvXeucae* is an elegant and emphatic form of expression used by Xenophon, De Exped. Cyri Lib. II. and Lib. v. See Baphelius^ Observations.
 
 ♦ Dr. Shaw.
 

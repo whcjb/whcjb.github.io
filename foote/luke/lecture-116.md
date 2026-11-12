@@ -89,11 +89,11 @@ Once more here, this ordinance is called " *The communion."* " The cup of blessi
 
 ♦ 1 Cor. x. 21.
 
-\+ *EvXcyticag*: Many mannscripts, however, read *tvx»^i^'rticas.* Compare Matt. xiv. 19 and John vi. ll.
+\+ *EvXcyticag*: Many mannscripts, however, read εὐχαριστησας. Compare Matt. xiv. 19 and John vi. ll.
 
 *X* Buxtorf. de Caena Domini, et De Synag. Judaeormn; Whitby and others.
 
-§ Exod, xxiii. 25; 1 Cor. x. 16 j to supply isr/, as some would do, is to take too great a liberty.
+§ Exod, xxiii. 25; 1 Cor. x. 16 j to supply ἐστι, as some would do, is to take too great a liberty.
 
 ♦ Dr A. Clarke on Matthew.
 

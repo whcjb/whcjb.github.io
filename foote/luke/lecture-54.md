@@ -129,7 +129,7 @@ t General and great as is the cruelty which characterizes heathenism, many of th
 
 bigotry and cruelty on the part of the professed worshippers of the true God. Herodotus says of the Assyrians, " It is unlawful for them to pass by in silence any person in distress, without first inquiring what is the matter with him/^ *^ty^* dt «ra^t^tX^«iy r^v *xeifAvovrx outu tr^i i^nrri,*
 
-*\* ^mfho^udVf* a place for receiving all.
+πανδοχειον, a place for receiving all.
 
 Doddridge.
 
