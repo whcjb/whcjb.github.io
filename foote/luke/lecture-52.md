@@ -117,9 +117,9 @@ But, the right dividing of the word of truth calls for the concluding admonition
 
 † "Salutationes istæ non fiebant levi gestu verbove, sed multis percunctationibus, bonisque ominibus trahebantur, non sine multis corporis flexionibus, osculis, amplexibus."—*Grotius, in locum.*
 
-<a class="ft-nsym" href="#fnref-52-5" id="fn-52-5">&#42;</a> • Pa. XXXV. 13.
+<a class="ft-nsym" href="#fnref-52-5" id="fn-52-5">&#42;</a> Ps. xxxv. 13.
 
-<a class="ft-nsym" href="#fnref-52-6" id="fn-52-6">†</a> i" *Tet ^et^etri6ifjt,iv»*—\*Hy ^i *ret fAiv 9rot^etri6tfi,iv(t itu l&lt;ret otlri^* n *rotg iutXwfAUfCit Wt TO hi^rvcvf* "The same things were always set before Cyrus, aa before those who were invited to the entertainment.^'—*Ci/ropoed,* lib. ii.
+<a class="ft-nsym" href="#fnref-52-6" id="fn-52-6">†</a> Τα παρατιθεμενα—Ἠν δε τα μεν παρατιθεμενα ἀει ἰσα αὐτῳ τι τοις καλουμενοις ἐπι το δειπνον, “The same things were always set before Cyrus, as before those who were invited to the entertainment.”—*Cyropæd.* lib. ii.
 
 &#42; X* Doddridge.
 
