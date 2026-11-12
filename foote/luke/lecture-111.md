@@ -105,7 +105,7 @@ Such are the ten signs which our Lord gave to denote that Jerusalem's fatal day 
 
 <a class="ft-nsym" href="#fnref-111-16" id="fn-111-16">&#42;</a> "* Odio humani generis."
 
-<a class="ft-nsym" href="#fnref-111-17" id="fn-111-17">&#42;</a> " Afflicti suppliciis, genus hominumsuperstitionisnoyaBetmalificae.'" f " NominiB praelium"—^" a war against the very name."—TertwWiaTi. VOL. III. T
+<a class="ft-nsym" href="#fnref-111-17" id="fn-111-17">&#42;</a> " Afflicti suppliciis, genus hominumsuperstitionisnoyaBetmalificae.'" f " NominiB prælium"—" a war against the very name."—TertwWiaTi. VOL. III. T
 
 <a class="ft-nsym" href="#fnref-111-18" id="fn-111-18">&#42;</a> 1 Sam. xiv. 45; 2 Sam. xiv. 7, 11; Acts xxvii. 22, 34.
 

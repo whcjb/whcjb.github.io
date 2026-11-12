@@ -119,7 +119,7 @@ Let those of you who are conscientious in this respect feel admonished and encou
 
 <a class="ft-nsym" href="#fnref-131-12" id="fn-131-12">&#42;</a> Doddridge.
 
-<a class="ft-nsym" href="#fnref-131-13" id="fn-131-13">†</a> t Herodotus, (lib. ii.) says that the Egyptians wrapped up the corpse in this way, after having washed it, Λουσαντες τον νεκρον, κατειλισσουσι παν αὐτου το σωμα σινδονος βυσσινης τελαμωσι κατατετμημενοισι. The words in Luke are, Ἐνετυλιξεν αὐτο σινδονι. The circumstance mentioned by John of Lazarus' dead body being bound about the face with a napkin, finds an illustration in Lucian De Luctu, Διεχωλυσε δε ἡ *Umt xai ra,* ἐρια, *oU ftau τας σιαγονας* ἀπεσφιγξατε, " Sed prohibebant (scilicet quo minus riderem) linteum et lanae quibus mmi fibuces a^trisxistis.
+<a class="ft-nsym" href="#fnref-131-13" id="fn-131-13">†</a> t Herodotus, (lib. ii.) says that the Egyptians wrapped up the corpse in this way, after having washed it, Λουσαντες τον νεκρον, κατειλισσουσι παν αὐτου το σωμα σινδονος βυσσινης τελαμωσι κατατετμημενοισι. The words in Luke are, Ἐνετυλιξεν αὐτο σινδονι. The circumstance mentioned by John of Lazarus' dead body being bound about the face with a napkin, finds an illustration in Lucian De Luctu, Διεχωλυσε δε ἡ *Umt xai ra,* ἐρια, *oU ftau τας σιαγονας* ἀπεσφιγξατε, " Sed prohibebant (scilicet quo minus riderem) linteum et lanae quibus mmi fibuces adstrinxistis.
 
 <a class="ft-nsym" href="#fnref-131-14" id="fn-131-14">&#42;</a> See Jos. Antiq. Lib. XV. iii. 4; Lib. XVII. viii. 3.
 

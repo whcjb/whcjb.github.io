@@ -113,7 +113,7 @@ The lively exercise of the affections on earthly objects is applauded; why, then
 
 <a class="ft-nsym" href="#fnref-101-8" id="fn-101-8">‡</a> Middleton on the Greek article, and others.
 
-<a class="ft-nsym" href="#fnref-101-9" id="fn-101-9">&#42;</a> Some are of opinion that this clause should be considered as a continuation of what the two disciples were to say to the owners, and, therefore, expressing a promise that the colt was to be returned; andf that it should be translated, " And straightway he (that is, the Lord Jesus Christ) will send him back hither." But, though such a promise was implied, the word 4lir«rriAA.« cannot be justly rendered to send back.
+<a class="ft-nsym" href="#fnref-101-9" id="fn-101-9">&#42;</a> Some are of opinion that this clause should be considered as a continuation of what the two disciples were to say to the owners, and, therefore, expressing a promise that the colt was to be returned; andf that it should be translated, " And straightway he (that is, the Lord Jesus Christ) will send him back hither." But, though such a promise was implied, the word ἀποστελλει cannot be justly rendered to send back.
 
 <a class="ft-nsym" href="#fnref-101-10" id="fn-101-10">&#42;</a> Or a powerful divine influence may have been exerted on their minds, to make them willing.
 

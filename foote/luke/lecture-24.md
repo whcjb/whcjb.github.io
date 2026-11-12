@@ -85,7 +85,7 @@ Our Lord was now exposed to imminent danger from the machinations of his combine
 
 To those of you who have not yet obeyed the call, we cannot say that you have strength to do so of yourselves; but we warn you against sitting down contented in indolence, with the saying: " We are not able;" for, this inability, being moral and voluntary, instead of being any excuse, constitutes the essence and the very worst part of your guilt. It is undeniably criminal if you are not willing to obey: and if you continue so, you must die in your sins, as the man with the withered hand, if he had not been willing to be healed, and had not endeavoured to stretch forth his hand, would, no doubt, have remained without a cure. We say further, that it is well you are within reach of the call, on the great day of healing, the Sabbath, and in the great place of healing, the sanctuary. Listen, then, to the voice of Jesus; and endeavour to stretch forth the withered hand. He is now saying: " Turn at my reproof, and I will pour out my Spirit upon you." Say each of you with earnestness: " Lord, I believe; help thou mine unbelief. Turn thou me, and I shall be turned: make thy grace sufficient for me, and perfect thy strength in my weakness." " Work out your own salvation with fear and trembling," and may "God work in you both to will and to do of his good pleasure."
 
-To those of you who have obeyed the Gospel call, and in so doing have been healed, and have had your faculties restored, we say, Be humble, and thankful, and active. The man, of whom we have been reading, could never think of taking the honour of his cure to himself; but you are as entirely indebted to the grace and power of the Saviour as he was. Give therefore to the Lord grateful and undivided praise. Recollect, too, that your strength is still in him; and that it is still true that of yourselves you can do nothing, though you can do all things through Christ strengthening you. Live, then, habitually in a dependence on the merit of his righteousness, and the aids ot his Spirit. Thus " the joy of the Lord shall be your strength," and you will be encouraged to put forth whatever strength you have in his
+To those of you who have obeyed the Gospel call, and in so doing have been healed, and have had your faculties restored, we say, Be humble, and thankful, and active. The man, of whom we have been reading, could never think of taking the honour of his cure to himself; but you are as entirely indebted to the grace and power of the Saviour as he was. Give therefore to the Lord grateful and undivided praise. Recollect, too, that your strength is still in him; and that it is still true that of yourselves you can do nothing, though you can do all things through Christ strengthening you. Live, then, habitually in a dependence on the merit of his righteousness, and the aids ot his Spirit. Thus " the joy of the Lord shall be your strength," and you will be encouraged to put forth whatever strength you have in his service.
 
 <div class="ft-notes" markdown="1">
 
@@ -110,7 +110,5 @@ To those of you who have obeyed the Gospel call, and in so doing have been heale
 <a class="ft-nsym" href="#fnref-24-10" id="fn-24-10">‡</a> Mark viii. 15.
 
 <a class="ft-nsym" href="#fnref-24-11" id="fn-24-11">&#42;</a> Luke xxiii. 12.
-
-&#42; •€mc6\*
 
 </div>

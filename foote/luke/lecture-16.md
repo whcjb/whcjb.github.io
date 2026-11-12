@@ -97,7 +97,7 @@ And, my brethren, as the gospel is still preached, and the trumpet of the spirit
 
 <a class="ft-nsym" href="#fnref-16-2" id="fn-16-2">&#42;</a> Acts xv. 21.
 
-&#42; % 'Αναπτυξας ra fisfikuv, »tu lifiktytfiifAes l^tiy* &C.—*Herodotus,* lib. i.
+‡ Ἀναπτυξας το βιβλιον, και ἐπιλεγομενος ἐφη, &c.—*Herodotus,* lib. i.
 
 <a class="ft-nsym" href="#fnref-16-4" id="fn-16-4">&#42;</a> οὗ ἵνεκεν.
 

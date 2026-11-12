@@ -83,6 +83,36 @@ PLAIN = [
     ('121', 'own n^ercy."', 'own mercy."'),
     ('050', 'and he and *^^they went"* forward "^0 *another village"*', 'and he and "*they went*" forward "*to another village*"'),
     ('016', 'of Nazareth *^^ on the Sabbath-day', 'of Nazareth "*on the Sabbath-day'),
+    # 收尾一批（转录同位相合，或看页图）：2026-11-12
+    ('001', "says one, '^ for their", 'says one, "for their'),
+    ('001', 'com« manding', 'commanding'),
+    ('041', 'curiosity, aii<|.the exciting', 'curiosity, and the exciting'),
+    ('041', 'is wheii t^erthings which', 'is when the things which'),
+    ('084', '"an *hundred measures^\\* or corg^\\* ^^ (^ reheat,"* he', '"*an hundred measures*," or *cors*,' + FN + ' "*of wheat*," he'),
+    ('090', 'be •omplete.', 'be complete.'),
+    ('128', 'of bea¥en«\n', 'of heaven.\n'),
+    ('131', 'a^trisxistis.', 'adstrinxistis.'),
+    ('111', 'praelium"—^"', 'prælium"—"'),
+    ('094', "palmis.''—4S^«7tMj *Italicus,* lib. zii.", 'palmis."—*Silius Italicus*, lib. xii.'),
+    ('016', "*% 'Αναπτυξας ra fisfikuv, »tu lifiktytfiifAes l^tiy* &C.—*Herodotus,* lib. i.",
+     '‡ Ἀναπτυξας το βιβλιον, και ἐπιλεγομενος ἐφη, &c.—*Herodotus,* lib. i.'),
+    ('030', '*^Evivg xtfiuw fMyav^ m* »«Xir«f\n\n<!-- NOTE p.428 --> flToByrA *^XriffafAivos x^vffau.*',
+     'Ἐνδυς κιθωνα μεγαν,—τον κολπον παντα πλησαμενος χρυσου.'),
+    ('101', '4lir«rriAA.«', 'ἀποστελλει'),
+    # 第 7 讲 p.94：第 2 版扫描页左下缺损一块（几行行首丢失，OCR 乱补），按第 3 版同句补（第 3 版 ABBYY 第 82 叶）
+    ('007', 'the cure is not to be I. found in contemplating', 'the cure is not to be found in contemplating'),
+    ('007', 'On the contrary, re should keep', 'On the contrary, we should keep'),
+    ('007', '<!-- PAGE 94 -->\nad at the same time', '<!-- PAGE 94 -->\nand at the same time'),
+    ('007', 'and i the^aring which', 'and into the bearing which'),
+    ('007', 'individual hope\n\n<!-- PAGE 94 -->\nGod grant', 'individual hope and destiny.\n\n<!-- PAGE 94 -->\nGod grant'),
+    ('007', 'may be accompany the evangelist Luke, in his resting account',
+     'may be promoted, as we accompany the evangelist Luke, in his beautiful and interesting account'),
+    ('007', "<!-- PAGE 94 -->\nI of the Saviour's birth.", "<!-- PAGE 94 -->\nother circumstances of the Saviour's birth."),
+    # 第 17 讲：印面 `un-` 转行接 `per`，原书排错，照录
+    ('017', 'other countries^ un^ per the', 'other countries, un-per the'),
+    # 第 24 讲 p.349 末行 `service.` 被抽进了注区（该页无脚注），挪回正文末
+    ('024', 'strength you have in his\n\n---\n', 'strength you have in his service.\n\n---\n'),
+    ('024', '\n\n<!-- NOTE p.349 --> •€mc6\\*\n', '\n'),
     # 5：注区读花的希腊行
     ('019', "ζωγρῶν vivos capieni. *T»9* K^Mrav i^«y(iir«v. *'Arrvmynf litty^n^n" + FN + '* Horodotuf.',
      '♦ ζωγρῶν vivos capiens. Τον Κροισον ἐζωγρησαν. Ἀστυαγης ἐζωγρηθη. Herodotus.'),
@@ -105,6 +135,12 @@ PLAIN = [
 
 # 2：卷进正文的页脚注：(讲, 正文原串, 正文改作, 页, [注条]) —— 注条空表＝该页注区已有，只删正文
 LEAKS = [
+    ('019', 'either Numb, xxxiv. 11; Josh. xii. 3. f I>€ Bello, iu. 10. see', 'either see', '266', []),
+    ('113', 'massacres. Wars, VI., viii 6} IX., it 3. A very', 'massacres. A very', '309', []),
+    ('070', " \\*Ai«'r«y, their smallest coin« about the third part of our farthing. a thing", ' a thing', '437',
+     ['♦ Λεπτον, their smallest coin, about the third part of our farthing.']),
+    ('078', ' *\\*Afairti^ovf,* the disabled in any way. f Grotius. be profitable', ' be profitable', '523',
+     ["♦ 'Αναπηρους, the disabled in any way.", '† Grotius.']),
     ('025', 'in\n\n<!-- PAGE 351 -->\n " Ede ubi consistas, in qua te qusero proseucha."\n\n<!-- PAGE 351 -->\n*Juvenal,* iii. 29(>.'
      '\n\n<!-- PAGE 351 -->\nPhilo (against Flaccus) complains that αἱ προσευχαι were demolished: and Josephus says the '
      'people were gathered *us m' + FN + '* describing', 'in\n\n<!-- PAGE 351 -->\ndescribing', '351',
