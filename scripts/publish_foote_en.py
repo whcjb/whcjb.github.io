@@ -106,8 +106,12 @@ def parse(path):
     m = re.search(r'^> (.*)$', body, re.M)
     passage = m.group(1) if m else ''
     paras = [(pg, t.strip()) for pg, t in re.findall(r'<!-- PAGE (\S*) -->\n(.*?)(?=\n\n|\Z)', body, re.S)]
+    # 各段第一个注号哨兵在本讲正文里的序号（fn_symbols.json 按正文全序记；未发布的段里也可能有哨兵）
+    pord = [body[:m.start(2)].count(FN_MARK) for m in re.finditer(r'<!-- PAGE (\S*) -->\n(.*?)(?=\n\n|\Z)', body, re.S)]
+    m = re.search(r'^> (.*)$', body, re.M)
+    sord = body[:m.start(1)].count(FN_MARK) if m else 0
     notes = [(pg, t.strip()) for pg, t in re.findall(r'<!-- NOTE p\.(\S*) --> (.*?)(?=\n\n|\Z)', notes_part, re.S)]
-    return dict(head=head, passage=passage, paras=paras, notes=notes)
+    return dict(head=head, passage=passage, paras=paras, pord=pord, sord=sord, notes=notes)
 
 
 RE_OL = re.compile(r'^(\d+)\. ')
@@ -118,7 +122,7 @@ def md_escape(t):
 
     - 竖线一律删（skill §4.4：kramdown 会把整段连同邻段框成表格；本书正文不存在真竖线）
     - `<` 转义，行首 `# > + -` 与 `1. ` 转义（不许变成标题／引用／列表）
-    - 脚注哨兵 → 上标星号
+    - 脚注哨兵原样留着，由 link_notes 换成带链接的上标
     """
     t = t.replace('|', '')
     t = t.replace('<', '&lt;')
@@ -126,7 +130,75 @@ def md_escape(t):
     t = RE_OL.sub(r'\1\\. ', t)
     t = re.sub(r'^([#>+-]) ', r'\\\1 ', t)
     t = re.sub(r' {2,}', ' ', t)
-    return t.replace(FN_MARK, '<sup class="ft-fn">*</sup>')
+    return t
+
+
+SEQ = ['*', '†', '‡', '§', '‖', '¶']
+NSYM = {'♦': '*', '*': '*', '†': '†', '‡': '‡', '§': '§', '‖': '‖', '¶': '¶'}
+
+
+def pgnum(p):
+    m = re.match(r'\d+', p or '')
+    return int(m.group()) if m else -1
+
+
+def link_notes(n, blocks, notes, tags):
+    """正文注号哨兵 ↔ 讲末注条，双向链接，上标显示该条的印本符号（* † ‡ § ‖ ¶）；注区 ♦ 显示成 *。
+
+    blocks：[(该块第一个哨兵在本讲正文里的序号, 文本)]；notes：[(页, 文本)]；tags：fn_symbols.json 本讲一行，
+    [[页, 符号] | null]（链条按转录同位注号定的）。按阅读顺序保序配对（最长公共子序列），一对成立须号与注
+    同页同符号。配不上的号（转录同位无注号或定不了符号、或那条注 OCR 丢了）不链、上标作 *；配不上的注不回链。"""
+    marks = []
+    for k0, b in blocks:
+        marks += [tuple(tags[k0 + k]) if k0 + k < len(tags) and tags[k0 + k] else None
+                  for k in range(b.count(FN_MARK))]
+    # 一条里并了几条注的（`♦ Isa. xxi. 10. † Jer. xv. 7.`）在干净符号处拆开；符号 OCR 读花的（`•` `t` `*X*`）
+    # 按本页次序推：印本每页注号依次为 * † ‡ § ‖ ¶
+    split = [(pg, x) for pg, t in notes for x in re.split(r'\s+(?=[†‡§‖¶] )', t)]
+    syms, prev = [], {}
+    for pg, t in split:
+        c = t[:1]
+        if c in NSYM:
+            sym, body_ = NSYM[c], t[1:].lstrip()
+        else:
+            k = SEQ.index(prev[pg]) + 1 if pg in prev and prev[pg] in SEQ[:-1] else 0
+            sym, body_ = SEQ[k], t
+        prev[pg] = sym
+        syms.append((pg, sym, body_))
+    M, K = len(marks), len(syms)
+    ok = lambda i, j: marks[i] is not None and marks[i][0] == syms[j][0] and NSYM.get(marks[i][1]) == syms[j][1]
+    L = [[0] * (K + 1) for _ in range(M + 1)]
+    for i in range(M - 1, -1, -1):
+        for j in range(K - 1, -1, -1):
+            L[i][j] = max(L[i + 1][j], L[i][j + 1], L[i + 1][j + 1] + 1 if ok(i, j) else 0)
+    pair, i, j = {}, 0, 0
+    while i < M and j < K:
+        if ok(i, j) and L[i][j] == L[i + 1][j + 1] + 1:
+            pair[i] = j
+            i, j = i + 1, j + 1
+        elif L[i + 1][j] >= L[i][j + 1]:
+            i += 1
+        else:
+            j += 1
+    back = {j: i for i, j in pair.items()}
+    it = iter(range(M))
+
+    def ref(_):
+        i = next(it)
+        if i not in pair:
+            return '<sup class="ft-fn">&#42;</sup>'
+        j = pair[i]
+        sym = syms[j][1].replace('*', '&#42;')
+        return f'<sup class="ft-fn"><a href="#fn-{n}-{j + 1}" id="fnref-{n}-{j + 1}">{sym}</a></sup>'
+    out = [re.sub(FN_MARK, ref, b) for _, b in blocks]
+    nl = []
+    for j, (_, sym, t) in enumerate(syms):
+        s_ = (sym or '*').replace('*', '&#42;')
+        if j in back:
+            nl.append(f'<a class="ft-nsym" href="#fnref-{n}-{j + 1}" id="fn-{n}-{j + 1}">{s_}</a> {t}')
+        else:
+            nl.append(f'{s_} {t}' if sym else t)
+    return out, nl, len(pair), M, K
 
 
 def passage_md(p):
@@ -137,6 +209,11 @@ def passage_md(p):
 
 
 # ── 组页 ──────────────────────────────────────────────────────
+
+LINKS = []   # (讲, 配上, 号, 注)
+FNSYM_PATH = RAW / 'fn_symbols.json'   # foote_fnmark_check.py --symbols 产出（链条最末）
+FNSYM = json.loads(FNSYM_PATH.read_text(encoding='utf-8')) if FNSYM_PATH.exists() else {}
+
 
 def build():
     pages = []
@@ -159,12 +236,13 @@ def build():
         seen.update(vv)
         if anchors:
             out.append(anchors.strip())
-        for pg, t in u['paras']:
-            out.append(md_escape(t))
-        if u['notes']:
+        blocks = [(u['sord'], b) for b in out] + [(k, md_escape(t)) for (pg, t), k in zip(u['paras'], u['pord'])]
+        out, notes, *st = link_notes(n, blocks, [(pg, md_escape(t)) for pg, t in u['notes']], FNSYM.get(str(n), []))
+        LINKS.append((n, *st))
+        if notes:
             nn = ['<div class="ft-notes" markdown="1">', '']
-            for pg, t in u['notes']:
-                nn += [md_escape(t), '']
+            for t in notes:
+                nn += [t, '']
             nn.append('</div>')
             out.append('\n'.join(nn))
         pages.append(dict(slug=f'lecture-{n}', title=f'Lecture {roman(n)}', label=f'Lecture {roman(n)}',
@@ -285,6 +363,8 @@ def main():
     if not (OUT / 'zh').exists():
         (OUT / 'index.html').write_text(build_index(pages), encoding='utf-8')
     print(f'写入 {len(pages)} 讲 + 章目录 24 页 → {OUT}', file=sys.stderr)
+    pm, mk, nt = (sum(x[k] for x in LINKS) for k in (1, 2, 3))
+    print(f'注号链接：配上 {pm}／正文注号 {mk}／注条 {nt}', file=sys.stderr)
 
 
 if __name__ == '__main__':

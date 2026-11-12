@@ -189,10 +189,14 @@ layout: default
 .foote-wrap .ft-tp-rule { width: 54px; margin: 6px auto; border: 0; border-top: 1px solid #1f1f26; }
 @media (max-width: 767px) { .foote-wrap .ft-tp .s0 { font-size: 18px; } .foote-wrap .ft-tp .s1 { font-size: 22px; } }
 
-/* 经文段节号、续讲小标题、页脚脚注（本书脚注按原书排在讲末，标号不与注文逐条链接） */
+/* 经文段节号、续讲小标题、页脚脚注（按原书排在讲末；注号与注条个数相等的讲双向链接，符号照印本 * † ‡ §） */
 .foote-wrap .ft-text sup.ft-vn { font-size: 11px; color: var(--ft-ink-dark); margin: 0 2px 0 1px; }
 .foote-wrap .ft-sub { text-align: center; font-size: 13.5px; letter-spacing: .1em; color: #8a8a99; margin: -10px 0 22px !important; }
 .foote-wrap .ft-content sup.ft-fn { font-size: 11px; color: var(--ft-ink-dark); line-height: 0; }
+.foote-wrap .ft-content sup.ft-fn a, .foote-wrap .ft-notes a.ft-nsym { color: var(--ft-ink); text-decoration: none; padding: 0 1px; }
+.foote-wrap .ft-notes a.ft-nsym { font-weight: 600; }
+.foote-wrap .ft-notes a.ft-nsym:target, .foote-wrap .ft-content sup.ft-fn a:target { background: #fbeef1; border-radius: 2px; }
+.foote-wrap [id^="fn-"], .foote-wrap [id^="fnref-"] { scroll-margin-top: 80px; }
 .foote-wrap .ft-notes { margin-top: 36px; padding-top: 14px; border-top: 1px solid var(--ft-rule);
   font-size: 14.5px; line-height: 1.7; color: #44444f; }
 .foote-wrap .ft-notes p { margin: 0 0 8px; text-align: left; }

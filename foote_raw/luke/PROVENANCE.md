@@ -469,6 +469,35 @@ K 断词未接（`be- -lieveth`）；L 漏逗号；M 书帖签名进注区（`VO
 
 - 验收：整链从 extract 重跑逐字节一致；希腊层、末层二跑零变化；锚点 1151、表格 0。
 
+### 脚注号与丢失的脚注（2026-11-12）
+
+用户问 3 讲 `of David.*` 的星号：那是印本注号，但发布时一律显示成 `*`、不链注条；顺查正文注号 795／注条 1167，
+注号多读成字母（`Paul.t` `tent."J` `readf`）、或丢了，注条也有整页丢失、卷进正文的。找过人工录入本：免费的没有
+（archive.org 四份都是我们在用的 Google 扫描；毕经图解只有零星摘段；Logos 有录入本但锁在软件里），用户选续做看图。
+
+- **补号**（`scripts/foote_fnmark_check.py` 第 1 轮 → `fnmark_fixes.tsv`）：转录正文每个 `[FN:x]`，左右最近同位相等词作锚，
+  我们同位无哨兵即一题（A 我们／B 转录，一页一次），只落 B。503 页 $7.12：B 689（落 688），A 17，星号奇偶挡 5。
+  归一：注号紧贴前字；原串 `" X` 的开引号空格照留；132 讲 `."◆.` 看图句点是墨点（OVERRIDE）。
+- **去号**（第 2 轮 → `fnmark_fixes_r2.tsv`）：前面各层把残字认成哨兵（`remnan◆^` `*nn◆*` `Jesus'◆` `."◆*`＝`.*"`），
+  我们有、转录同位无即一题。57 页 $0.77：B 59 落 58。89 讲 `Go◆` 第 1 轮加、第 2 轮去，第 1 轮那条不出（DROP）。
+- **整页丢失的脚注**（`scripts/foote_notes_missing.py` → `notes_missing_fixes.tsv`）：转录有 [FN:] 行、全卷没有该页 NOTE 的
+  136 页里，单讲、无 [?]、不含希腊文的 72 页问图（A＝tess 注区读法，B＝转录）$0.85：B 68 落。希腊 7 页列
+  `notes_missing_greek.tsv` 待同意；读不出 35、跨讲 2 未问。
+- **卷进正文的页脚注**（`scripts/foote_notes_leak.py` → `notes_leak_fixes.tsv`＋`hand_leak_fixes.tsv`）：正文 ♦ 起头的一截，
+  左锚＝♦ 前三词、右锚＝转录里其后三词，♦ 到右锚为卷入串；18 处问图 $0.18 全 B（串与转录一字不差也算两读一致）：
+  删出正文、行末断词并回；该页注已由上一层补进的只删正文（15）。跨段/断词定位不到的 8 处人工看图（并句处
+  If / without / be / disciple / unbelieving 亦看图）。剩 4 处含希腊文（12/60/118/123 讲）待同意。
+  注条插入一律「接在页码 ≤ 本页的最后一条之后」（`foote_notes_missing.insert_row`），连插几页时二跑仍认得出已落过。
+- **配号**（`foote_fnmark_check.py --symbols` → `fn_symbols.json`，链条最末、发布前）：正文每个哨兵按序配转录同位注号的
+  页码与符号（1295/1425 定得出）。发布按「同页同符号」保序配对（最长公共子序列）：上标显示印本符号、双向链接；
+  配不上的作不链的 `*`。注区 ♦ 显示成 `*`；一条并了几条注的在干净 † ‡ § 处拆开；注号 OCR 读花的按本页次序推
+  （* † ‡ § ‖ ¶）。结果：配上 1128／正文注号 1421／注条 1316。
+- 合计 $8.92（含中途停跑前的 $1.80）。验收：整链从 extract 重跑逐字节一致（正文、fn_symbols.json、发布页）；
+  链条后段在终态上二跑零变化；锚点 1151、表格 0；奇数星号段 8 → 6。
+
+链条现序（notes_check 之后）：`foote_greek_read --apply` → `foote_hand_final --apply` → `foote_fnmark_check --apply`
+（两轮）→ `foote_notes_missing --apply` → `foote_notes_leak --apply` → `foote_fnmark_check --symbols` → `publish_foote_en --apply`。
+
 ## 待做
 
 1. ~~第 ① 层~~ ~~第 ② 层（ed3＋tess）~~ ~~结构清理~~ ~~片段换流~~ 已完成；第 ④ 层评估后不落（见上）

@@ -1,0 +1,1 @@
+{"raw": "#1: B", "ans": {"1": "B"}, "qs": [{"kind": "fnmark", "lec": "107", "s": 4635, "e": 4638, "i": 380, "left": "sentiments", "right": "They", "ours": ".t ", "vlm": ". ", "box": [252, 3285, 2158, 3443], "ctx": "uke, this is the proper place for noticing their origin and sentiments⟦.t ⟧They derived their name from their founder, Sadoc, who lived", "swap": false}]}

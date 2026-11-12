@@ -1,0 +1,1 @@
+{"raw": "#1: A", "ans": {"1": "A"}, "qs": [{"kind": "fnmark", "lec": "110", "s": 13724, "e": 13727, "i": 398, "left": "world", "right": "might", "ours": ",\" ", "vlm": ",\" ", "box": [256, 3451, 2162, 3532], "ctx": "true that the words, in Matthew, rendered, \" The end of the world⟦,\" ⟧might be rendered, \"The end of the age,\" so as to determine ", "swap": true}]}

@@ -1,0 +1,1 @@
+{"raw": "#1: A", "ans": {"1": "A"}, "qs": [{"kind": "fnmark", "lec": "127", "s": 32544, "e": 32548, "i": 95, "left": "John", "right": "Then", "ours": ": \" ", "vlm": ": “", "box": [257, 1120, 2165, 1201], "ctx": "ots.\"* This part of the history is thus more fully given by John⟦: \" ⟧Then the soldiers, when they crucified Jesus,\" that is, had ", "swap": true}]}
