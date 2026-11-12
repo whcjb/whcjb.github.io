@@ -39,7 +39,7 @@ It has frequently happened, especially on continents, that a man has been born a
 
 In like manner it is that, in reference to religion also, familiarity has often a very prejudicial influence in diminishing to us the interest of the most astonishing events, and the most sublime doctrines. In the whole range of Christian contemplation, there is not a more wonderful event than the incarnation of the Son of God. It is as striking an object of contemplation in the kingdom of grace, as is the ocean in the kingdom of nature. And yet (to say nothing of those who obviously treat divine things with total neglect) with what indifference do many of us, who profess to receive the gospel, often read and hear of this mysterious and most astonishing display of divine love and condescension to our perishing race! One reason of this is, that we are familiar with it: we have heard of it a thousand times, there is nothing of novelty in its face; and oft as the idea enters into our thoughts, as often can we suffer it to depart without its having made any considerable impression. It is but rarely indeed that it now excites in us feelings so lively, and so tender, as it did when, in the days of our childhood, its knowledge first made its way to our understandings and our hearts, from a mother's lips, as she repeated to us the plaintive and soothing verses of the "Cradle Hymn." Still, however, on many its influence is considerable, though not on any to the full degree that is to be desired: and it is to be hoped, that to not a few who have never considered it attentively, it will yet come home with power. Certain it is, that if familiarity with it have produced comparative indifference, the cure is not to be I. found in contemplating it less frequently. On the contrary, re should keep it as much as possible before our minds;
 
-ad at the same time endeavour, by God's assistance, to ■ more minutely and more deeply into its nature, and i the^aring which it has on our own individual hope
+ad at the same time endeavour, by God's assistance, to enter more minutely and more deeply into its nature, and i the^aring which it has on our own individual hope
 
 God grant that this happy effect may be accompany the evangelist Luke, in his resting account of the time, and place, and
 
@@ -91,9 +91,9 @@ To this we shall only add, that the lowly birth of Jesus, which is merely a spec
 
 <div class="ft-notes" markdown="1">
 
-<a class="ft-nsym" href="#fnref-7-1" id="fn-7-1">&#42;</a> sUufAtffi.* f " Romanum orbis terrarum imperium."
+<a class="ft-nsym" href="#fnref-7-1" id="fn-7-1">&#42;</a> οἰκυμενη.
 
-<a class="ft-nsym" href="#fnref-7-2" id="fn-7-2">†</a> Polybiua calls the Roman Empire πασαν την οἰκουμενην.
+<a class="ft-nsym" href="#fnref-7-2" id="fn-7-2">†</a> "Romanum orbis terrarum imperium." Polybius calls the Roman Empire πασαν την οἰκουμενην.
 
 <a class="ft-nsym" href="#fnref-7-3" id="fn-7-3">&#42;</a> Prideaux. See, however, Lardner's Credibility, part i.
 

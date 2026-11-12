@@ -111,6 +111,6 @@ When Christ comes in any way, he seeks for faith, and he is entitled to expect i
 
 &#42; See more on the subject of importunity in prayer, in Lecture lvii.
 
-<a class="ft-nsym" href="#fnref-92-15" id="fn-92-15">†</a> \+ Tu» *'Ttffriv.* There seems no good reason for confining the sense, with Dr Campbell, in his Note in defence of the rendering, " this belief." The article does not necessarily so limit the sense, neither does the connection.
+<a class="ft-nsym" href="#fnref-92-15" id="fn-92-15">†</a> Την πιστιν. There seems no good reason for confining the sense, with Dr Campbell, in his Note in defence of the rendering, "this belief." The article does not necessarily so limit the sense, neither does the connection.
 
 </div>

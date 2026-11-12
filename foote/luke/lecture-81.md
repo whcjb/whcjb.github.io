@@ -109,6 +109,6 @@ This would lead on to the consideration of the third part of the parable, namely
 
 <a class="ft-nsym" href="#fnref-81-5" id="fn-81-5">†</a> f The fruit of the *charuh* tree, or a kind of pulse, saj some: wild chestnuts, sav others. Grotius, Bochart, Drusius.
 
-<a class="ft-nsym" href="#fnref-81-6" id="fn-81-6">&#42;</a> Εἰς τον οὐρανον some are for rendering this, " Even unto licavenj" that 18, ezceedugly.
+<a class="ft-nsym" href="#fnref-81-6" id="fn-81-6">&#42;</a> Εἰς τον οὐρανον: some are for rendering this, "Even unto heaven;" that is, exceedingly.
 
 </div>

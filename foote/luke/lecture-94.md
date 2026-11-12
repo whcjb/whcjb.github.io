@@ -63,7 +63,7 @@ Are there any of you who are to be contented to go down to your houses unjustifi
 
 &#42; Ps. xl. 12; Ezra ix. 6; Dan. ix. 7.
 
-† f Jer. xxxi. 18; Nah. ii. 7; Luke xxiii. 48. Στηθος δε πληξας,
+† Jer. xxxi. 18; Nah. ii. 7; Luke xxiii. 48. Στηθος δε πληξας,
 
 &#42; κραδίην ἠνίπαπε μύθῳ—" Smiting on his breast, he chid his heart."— *Odyas.* xx. 17.
 

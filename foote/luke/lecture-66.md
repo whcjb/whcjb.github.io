@@ -79,7 +79,7 @@ Let these brief hints, on this rich verse, suffice. See here, all of you, where 
 
 <a class="ft-nsym" href="#fnref-66-1" id="fn-66-1">&#42;</a> So in verse 11.
 
-<a class="ft-nsym" href="#fnref-66-2" id="fn-66-2">&#42;</a> Olf ovx Wrt rttfittaf* (locu8 secretior, serarium), ουδε αποθηκη (horrenni). Lightfoot thinks that the former irord means a storehouse for fruits, and the latter a storehouse for grain.
+<a class="ft-nsym" href="#fnref-66-2" id="fn-66-2">&#42;</a> Οις ουκ εστι ταμειον (locus secretior, ærarium), ουδε αποθηκη (horreum). Lightfoot thinks that the former word means a storehouse for fruits, and the latter a storehouse for grain.
 
 <a class="ft-nsym" href="#fnref-66-3" id="fn-66-3">&#42;</a> Dr A. Clarke on Matt. vi. 26.
 

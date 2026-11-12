@@ -36,6 +36,7 @@ RAW = A.RAW
 WORK = RAW / 'imgcheck'
 # 按轮：第 n 轮在第 n-1 轮落盘后的状态上收题；各轮题目、规则表分开存，--apply 按轮序全落
 ROUNDS = 2
+ROUND = 1
 CAND = WORK / 'junk_candidates.json'
 ANS = WORK / 'junk_answers'
 RULES = RAW / 'junk_fixes.tsv'
@@ -43,7 +44,8 @@ LOG = A.ROOT / 'logs' / 'foote_junk_check.tsv'
 
 
 def use_round(n):
-    global CAND, RULES, LOG
+    global CAND, RULES, LOG, ROUND
+    ROUND = n
     sfx = '' if n == 1 else f'_r{n}'
     CAND = WORK / f'junk_candidates{sfx}.json'
     RULES = RAW / f'junk_fixes{sfx}.tsv'
@@ -299,6 +301,26 @@ def hold(q):
     return ''
 
 
+def keep_stars(q):
+    """第 3 轮起：odd-star 暂扣的 B——转录把斜体起点写在开引号上（`"*He saw`），我们的 `*` 在残字后（`"He^ *saw`），
+    整截换成 B 会拆散斜体。改落「B 的字、我们的星号」：我们这截删去残符号后，除星号与空白外须与 B 逐字相同，
+    且改后本段星号成偶数。返回改作，不合返回 None。"""
+    v = q['vlm'].replace(P.FN, FNM).translate(str.maketrans('“”‘’', '""\'\''))
+    core = lambda t: re.sub(r'\s+', ' ', t.replace('*', ''))     # 空白也要对（`of^producing` 删残字会粘成一词）
+    for rep in ('', ' '):                                        # 残字删去；不行就换成空格（`the^first` → `the first`）
+        o = re.sub(r'[\^<>•■«»|~{}]+', rep, q['ours'])
+        o = re.sub(r'(?<=\S)  +|^  +', ' ', o)
+        if core(o) == core(v) and o != q['ours']:
+            break
+    else:
+        return None
+    text = I.src_text(q['lec'])
+    a = text.rfind('\n\n', 0, q['s'])
+    b = text.find('\n\n', q['e'])
+    para = text[a + 2 if a >= 0 else 0:q['s']] + o + text[q['e']:b if b >= 0 else len(text)]
+    return None if len(re.findall(r'(?<!\\)\*', para)) % 2 else o
+
+
 def joinable(q):
     m = re.fullmatch(r"\s*([A-Za-z]+)-?\s*[\^<>«»~•]+-?\s*([A-Za-z]+)([,.;:]?)\s*|\s*([A-Za-z]+)-?[\^<>«»~•]+\s+([A-Za-z]+)([,.;:]?)\s*",
                      q['ours'])
@@ -326,6 +348,9 @@ def rules():
             if v == 'A' and joinable(q):
                 v = 'B'          # 断词并回：印面行末断开（答 A 如实），转录读整词、两截间只隔残符号——同 manual_spans 口径
             h = hold(q) if v == 'B' else ''
+            if h == 'odd-star' and ROUND >= 3 and keep_stars(q) is not None:
+                q = dict(q, vlm=keep_stars(q).replace(FNM, P.FN))
+                h, v = '', 'B'                         # 记 B·留星号
             if h:
                 v = 'B-hold:' + h
             rows.append((v, q['lec'], p['vol'], p['leaf'], q['ours'], q['vlm'], a, q['ctx']))
@@ -371,6 +396,7 @@ def main():
     ap.add_argument('--rules', action='store_true')
     ap.add_argument('--apply', action='store_true')
     ap.add_argument('--round', type=int, default=ROUNDS, help='收题/问/出规则用第几轮（默认最新一轮）')
+    ap.add_argument('--late', action='store_true', help='--apply 只落第 3 轮（链条末段：greek_notes/notes_fill/junk_ed3 之后收的题）')
     a = ap.parse_args()
     use_round(a.round)
     if a.collect:
@@ -379,6 +405,10 @@ def main():
         run(a.sample, a.all)
     elif a.rules:
         rules()
+    elif a.apply and a.late:
+        use_round(3)
+        if RULES.exists():
+            I.apply_multiline(RULES)
     elif a.apply:
         for n in range(1, ROUNDS + 1):
             use_round(n)

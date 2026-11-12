@@ -119,9 +119,9 @@ And then, when we reflect on Christ's conduct on this particular occasion, how b
 
 <a class="ft-nsym" href="#fnref-115-14" id="fn-115-14">&#42;</a> See, in defence of this view, Whitby's Appendix to Mark xiv., and Lightfoot on the different evangelists: see, on the other side, Grotius.
 
-<a class="ft-nsym" href="#fnref-115-15" id="fn-115-15">†</a> \+ Henry.
+<a class="ft-nsym" href="#fnref-115-15" id="fn-115-15">†</a> Henry.
 
-<a class="ft-nsym" href="#fnref-115-16" id="fn-115-16">‡</a> Ἐστρωμενον, instructum ad epulas, lectulis nimirum stratis," &c., *Cameranut;*—with everything ready for a company to sit down.
+<a class="ft-nsym" href="#fnref-115-16" id="fn-115-16">‡</a> Ἐστρωμενον, "instructum ad epulas, lectulis nimirum stratis," &c., *Camerarius;*—with everything ready for a company to sit down.
 
 <a class="ft-nsym" href="#fnref-115-17" id="fn-115-17">&#42;</a> 1 Sam. x.
 

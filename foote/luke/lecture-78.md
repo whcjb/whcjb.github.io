@@ -93,7 +93,7 @@ If you have already accepted that invitation, and tasted of the blessings of sal
 
 <div class="ft-notes" markdown="1">
 
-<a class="ft-nsym" href="#fnref-78-1" id="fn-78-1">&#42;</a> "With one consent," ἀπο μιας; this ellipsis may be supplied by γνωμης, φωνης, ὡρας, ψυχης, γλωσσης, or *uItms:* the first word seems to deserve the preference; though Lightfoot's judgment in favour of the last, and deriving it from the verb in juxtaposition, παραιτεισθαι, is very ingenious, and deserving of consideration. VOL. II. 2 L
+<a class="ft-nsym" href="#fnref-78-1" id="fn-78-1">&#42;</a> "With one consent," ἀπο μιας; this ellipsis may be supplied by γνωμης, φωνης, ὡρας, ψυχης, γλωσσης, or αἰτιας: the first word seems to deserve the preference; though Lightfoot's judgment in favour of the last, and deriving it from the verb in juxtaposition, παραιτεισθαι, is very ingenious, and deserving of consideration.
 
 <a class="ft-nsym" href="#fnref-78-2" id="fn-78-2">&#42;</a> Ἀναγκασον, press them, importune them, constrain them. Ἀναγκαζω and βιαζω are often used in this sense by the Greek classics, and *cogo* and *compello* by the Latin. Astyachus was compelled ἀναγκαζεται, that is, constrained, or persuaded, by the Cnidians, not to land his men; Thucydides, lib. viii.; on which there is this note by the Greek scholiast, Ἀναγκαζεται ἀντι του πειθεται. In Plato de Legibus, lib. x. the expression occurs, Βιαζεσθαι τοις λογοις. In Cicero de Amicitiâ, when two persons unite in entreating Lælius to discourse of friendship, he says that they were using force and compelling him: "Vim hoc quidem est afferre; quid enim refert qua rogatione cogatis? cogitis certe."—"Precibus compulsus," Justin, ix. 4.
 

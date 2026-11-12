@@ -71,9 +71,9 @@ But surely those of you who have never yet repented, are especially called on, b
 
 &#42; John ix. 2.
 
-&#42; 'Ὀφειλεται debtors.
+&#42; Ὀφειλεται, debtors.
 
-† t 2 Kings u. 20; Neh. iii. 15; Isa. viii. 6; John v. 2, iz. 7.
+† 2 Kings xx. 20; Neh. iii. 15; Isa. viii. 6; John v. 2, ix. 7.
 
 &#42; Perish thus, or in the same manner, ὡσαυτως and ὁμοιως.
 

@@ -89,9 +89,9 @@ Let those of you, finally, who are restored to sight, in the spiritual sense, be
 
 <a class="ft-nsym" href="#fnref-98-2" id="fn-98-2">†</a> Josh. vi. 26; 1 Kings xvi. 34.
 
-<a class="ft-nsym" href="#fnref-98-3" id="fn-98-3">&#42;</a> 'En TM *lyyi^uv etlrev ut \*U^ix^-* Dr Campbell T^ill not admit the justness of this rendering; yet authorities preponderate in favour of it. Reference is made to Luke x. 9, xviii. 40, and the Septuagint, Isa. 1.8; Jer. xxiii. 23. " Comme il etait pres de Jerico."—*Le CI.* and *Beau,* It would be unfair, indeed, not to observe that Luke says, in the beginning of the following chapter, and after the account of this miracle, that "Jesus entered and passed through Jericho:" but our Lord may have remained for some days at Jericho, and the miracle may have been performed when he went out of it. to some place in the vicinity, though he afterwards returned to it.—See *Grotius Lightfoot, Campbell, Scott, Doddridge,*
+<a class="ft-nsym" href="#fnref-98-3" id="fn-98-3">&#42;</a> Ἐν τῳ ἐγγιζειν αὐτον εἰς Ἱεριχω. Dr Campbell will not admit the justness of this rendering; yet authorities preponderate in favour of it. Reference is made to Luke x. 9, xviii. 40, and the Septuagint, Isa. l. 8; Jer. xxiii. 23. "Comme il était près de Jerico."—*Le Cl.* and *Beau.* It would be unfair, indeed, not to observe that Luke says, in the beginning of the following chapter, and after the account of this miracle, that "Jesus entered and passed through Jericho:" but our Lord may have remained for some days at Jericho, and the miracle may have been performed when he went out of it to some place in the vicinity, though he afterwards returned to it.—See *Grotius*, *Lightfoot*, *Campbell*, *Scott*, *Doddridge*.
 
-<a class="ft-nsym" href="#fnref-98-4" id="fn-98-4">†</a> t Scott.
+<a class="ft-nsym" href="#fnref-98-4" id="fn-98-4">†</a> Scott.
 
 <a class="ft-nsym" href="#fnref-98-5" id="fn-98-5">&#42;</a> Or, charged him to hold his peace.
 

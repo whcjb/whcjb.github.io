@@ -87,7 +87,7 @@ Last place, observe the absolute *necessity of paying due attention to the decla
 
 <a class="ft-nsym" href="#fnref-47-1" id="fn-47-1">&#42;</a> Deut. xxxiv. 5.
 
-<a class="ft-nsym" href="#fnref-47-2" id="fn-47-2">&#42;</a> ’Εξοδον The same word occurs in 2 Peter i. 15. It teaches the immortality of the soul, and intimates that the soul is the man, and, at death, does not cease to exist, but only goes elsewhere.
+<a class="ft-nsym" href="#fnref-47-2" id="fn-47-2">&#42;</a> ’Εξοδον. The same word occurs in 2 Peter i. 15. It teaches the immortality of the soul, and intimates that the soul is the man, and, at death, does not cease to exist, but only goes elsewhere.
 
 <a class="ft-nsym" href="#fnref-47-3" id="fn-47-3">&#42;</a> Exodus xl. 34; 1 Kings viii. 10.
 
