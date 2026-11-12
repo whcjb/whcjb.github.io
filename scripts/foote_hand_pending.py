@@ -52,6 +52,21 @@ PLAIN = [
     ('130', 't|iJ', 'the'),
     ('133', 'Sa^V^^^t^kv', 'Sabbath'),
     ('135', ' <m ', ' on '),
+    # 页缝重问后多出的页首英文词（用户同意的第 1 类）
+    ('011', 'their con<\\* elusion.', 'their conclusion.'),
+    ('013', 'abandoned. «\\* Therefore', 'abandoned. "Therefore'),
+    ('043', 'into the home^ he', 'into the house, he'),
+    ('085', 'in that* tr/^icA *is', 'in that* which *is'),
+    ('086', 'are exeecdm^ iadiffeRat', 'are exceedingly iadiffeRat'),
+    ('109', 'fills jo\\|pbeart8 with', 'fills your hearts with'),
+    ('132', 'that is, ^hen the women', 'that is, when the women'),
+    # 第 24 讲 p.348 读崩的一句：看页图整句读定（2026-11-12）
+    ('024', 'willingly and cWcifnHr,', 'willingly and cheerfully.'),
+    ('024', '*Lei m ns^ee ttn ir ikrm mmihmtmig stm/^titi* ly *tke ^fpiieatum \\*if tioM mirmdAt* to*tpirifmiJ iku^tj^td* '
+     'then have done.', '*Let us notice two or three sentiments suggested by the application of this miracle, to spiritual '
+     'things,* and then have done.'),
+    ('024', 'restoring die dead to life, andthehlind toaght—to tnmthe attention',
+     'restoring the dead to life, and the blind to sight—to turn the attention'),
     # 5：注区读花的希腊行
     ('019', "ζωγρῶν vivos capieni. *T»9* K^Mrav i^«y(iir«v. *'Arrvmynf litty^n^n" + FN + '* Horodotuf.',
      '♦ ζωγρῶν vivos capiens. Τον Κροισον ἐζωγρησαν. Ἀστυαγης ἐζωγρηθη. Herodotus.'),
