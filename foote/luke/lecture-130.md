@@ -17,7 +17,7 @@ next_label: "Lecture CXXXI"
 
 <div class="ft-text" markdown="1">
 
-And when Jesus had cried with a loud voice, he said, Father, into thy hands I commend my spirit: and having said thus, he gave up the ghost. <sup class="ft-vn">47</sup>Now when the centurion saw what was done, he glorified God, saying, Certainly this was a righteous man. <sup class="ft-vn">48</sup>And all the people that came together to that sight, beholding the things which were done, smote their breasts, and returned. <sup class="ft-vn">49</sup>And all his acquaintance, and the women that followed him from Galilee, stood afar off, beholding these things.^
+And when Jesus had cried with a loud voice, he said, Father, into thy hands I commend my spirit: and having said thus, he gave up the ghost. <sup class="ft-vn">47</sup>Now when the centurion saw what was done, he glorified God, saying, Certainly this was a righteous man. <sup class="ft-vn">48</sup>And all the people that came together to that sight, beholding the things which were done, smote their breasts, and returned. <sup class="ft-vn">49</sup>And all his acquaintance, and the women that followed him from Galilee, stood afar off, beholding these things."
 
 </div>
 

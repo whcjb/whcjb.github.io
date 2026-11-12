@@ -17,7 +17,7 @@ next_label: "Lecture XXIII"
 
 <div class="ft-text" markdown="1">
 
-And after these things he went forth,''and saw a publican, named Levi ,sitting at the receipt of custom; and he said unto him, Follow me. <sup class="ft-vn">28</sup>And he left all, rose up, and followed him. <sup class="ft-vn">29</sup>And Levi made him a great feast in his own house: and there was a great company of publicans and of others, that sat down with them. <sup class="ft-vn">90</sup>But their scribes and Pharisees murmured against his disciples, saying. Why do ye eat and drink with publicans and sinners? SI. And Jesus answering, said unto them, They that are whole need not a physician; but they that are sick. <sup class="ft-vn">32</sup>I came not to call the righteous, but sinners to repentance.^
+And after these things he went forth,''and saw a publican, named Levi ,sitting at the receipt of custom; and he said unto him, Follow me. <sup class="ft-vn">28</sup>And he left all, rose up, and followed him. <sup class="ft-vn">29</sup>And Levi made him a great feast in his own house: and there was a great company of publicans and of others, that sat down with them. <sup class="ft-vn">90</sup>But their scribes and Pharisees murmured against his disciples, saying. Why do ye eat and drink with publicans and sinners? SI. And Jesus answering, said unto them, They that are whole need not a physician; but they that are sick. <sup class="ft-vn">32</sup>I came not to call the righteous, but sinners to repentance."
 
 </div>
 

@@ -95,8 +95,6 @@ High heav'n's orchestra chants Amen to man."
 
 The lively exercise of the affections on earthly objects is applauded; why, then, do any presume to condemn their lively exercise on heavenly objects, on the divine Redeemer and the blessed God? Whatever others may say or do, it is our plain duty, and let it be our loved exercise, to call the Saviour blessed. Let us lay hold on every opportunity of doing so; and, in particular, let us embrace that which now presents itself. Now that he is brought before our mind's eye in this spirit-stirring description—now that he is coming, and even arrived within sight, let us go forth in heart to meet him, and welcome him as our Saviour and our King. Let us join the procession, and let us take up the simple yet sublime cry, Hosanna! Blessed be he that cometh in the name of the Lord: Hosanna! Blessed be the King of Israel that cometh in the name of the Lord: Hosanna! Blessed be the kingdom of our father David that cometh in the name of the Lord: Hosanna! Peace in heaven, and glory in the highest: Hosanna! Hosanna to the Son of David! Hosanna in the highest!
 
-• Young's Night Thoughts.
-
 <div class="ft-notes" markdown="1">
 
 &#42; Mark X. 32.
@@ -136,5 +134,7 @@ The lively exercise of the affections on earthly objects is applauded; why, then
 <a class="ft-nsym" href="#fnref-101-18" id="fn-101-18">&#42;</a> Habakkuk ii. 10, 11.
 
 <a class="ft-nsym" href="#fnref-101-19" id="fn-101-19">&#42;</a> Rev. xix. 11.
+
+&#42; Young's Night Thoughts.
 
 </div>

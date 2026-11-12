@@ -17,7 +17,7 @@ next_label: "Lecture CXXX"
 
 <div class="ft-text" markdown="1">
 
-And it was about the sixth hour, and there was a darkness over all the earth until the ninth hour. <sup class="ft-vn">45</sup>And the sun was darkened, and the veil of the temple was rent in the midst. ^
+And it was about the sixth hour, and there was a darkness over all the earth until the ninth hour. <sup class="ft-vn">45</sup>And the sun was darkened, and the veil of the temple was rent in the midst. "
 
 </div>
 

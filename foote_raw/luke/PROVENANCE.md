@@ -544,10 +544,16 @@ K 断词未接（`be- -lieveth`）；L 漏逗号；M 书帖签名进注区（`VO
 - **逐处重定位看图**（`scripts/foote_line_check.py` → `line_fixes.tsv`）：残字两旁各至多 3 个无残符号的词，在整卷转录字母流里
   定位（命中叶须在本讲页码范围内——同一句经文别讲也引），行框用残字前后约 15 词与该叶 tess 逐词框序列对齐、锚落在 ≥3 词相合块里。
   **首跑行框定位只认单个锚词，常见词 the/and 撞到别行，裁错图——那 96 题答案作废（`line_answers_badbox_void/`），未落。**
-  重跑 39 题、$0.50：B 25（另 1 条拼出非词 `unper` 被挡），落 24。正文残字 387 → 288。
+  重跑 39 题、$0.50：B 25（另 1 条拼出非词 `unper` 被挡），落 24。之后补两种截型：段末收引号读花（`inn.^\*`，转录 `inn."`，
+  截到本段末）、我们页首另起段而转录接写（左锚到段首间只有标记）；再问 55 题 $0.79。共落 72 处。
+- **卷进正文的页脚注·第二轮**（`scripts/foote_notes_leak2.py` → `notes_leak2_fixes.tsv`）：拿转录每页注条去本讲正文找
+  （注号读成 `•` `f` `t` 或没有的，notes_leak 只认 ♦ 漏了）。闸：该页全部注条按序挨着出现、转录正文里没有这串、
+  后面不接字母数字（挡 `Matt. xxiii. 3`↔`34`）、注文总长 ≥10 字母。16 处删出正文；该页无注的 12 页补注（看图 B 11 用转录，
+  other 1 把我们的 OCR 串原样挪入注区）。$0.15。
 
 链条现序（greek_notes 之后）：`foote_notes_fill --apply` → `foote_junk_ed3 --apply` → `foote_junk_check --apply --late`
-→ `foote_heads --apply` → `foote_line_check --apply` → `foote_fnmark_check --symbols` → `publish_foote_en --apply`。
+→ `foote_heads --apply` → `foote_line_check --apply` → `foote_notes_leak2 --apply` → `foote_fnmark_check --symbols`
+→ `publish_foote_en --apply`。
 
 ## 待做
 

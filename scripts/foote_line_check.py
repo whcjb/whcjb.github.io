@@ -66,16 +66,23 @@ def vol_stream(vol):
 
 
 def find_box(tw, ctx_toks, il, ir):
-    """我们残字前后一段词（ctx_toks，字母小写）与该叶 tess_grc 逐词整段序列对齐；左锚末词 il、右锚首词 ir
-    都须落在长度 ≥3 的相合块里（常见词 the/and 单个对上不算——2026-11-12 首跑因此裁错行，答案作废）。"""
+    """我们残字前后一段词（ctx_toks，字母小写）与该叶 tess_grc 逐词整段序列对齐，取左锚末词 il、右锚首词 ir 所在行。
+    先认长度 ≥3 的相合块（常见词 the/and 单个对上不算——2026-11-12 首跑因此裁错行，答案作废）；不够再认 ≥2 的块，
+    但两锚在 tess 里的间距须与我们这边相当（残字可能被 tess 拆成 0–3 个词）。锚本身没对上的，往外让一词。"""
     sm = SequenceMatcher(None, ctx_toks, [x[0] for x in tw], autojunk=False)
-    m = {}
-    for blk in sm.get_matching_blocks():
-        if blk.size >= 3:
-            for k in range(blk.size):
-                m[blk.a + k] = blk.b + k
-    if il in m and ir in m and 0 < m[ir] - m[il] <= 14:
-        return m[il], m[ir]
+    for need in (3, 2):
+        m = {}
+        for blk in sm.get_matching_blocks():
+            if blk.size >= need:
+                for k in range(blk.size):
+                    m[blk.a + k] = blk.b + k
+        for dl in (0, 1):
+            for dr in (0, 1):
+                a, b = il - dl, ir + dr
+                if a in m and b in m:
+                    gap_o, gap_t = b - a, m[b] - m[a]
+                    if 0 < gap_t <= 14 and gap_o - 2 <= gap_t <= gap_o + 3:
+                        return m[a], m[b]
     return None
 
 
@@ -127,17 +134,24 @@ def collect():
                     skip['跨页标记'] += 1
                     continue
                 found = {}
-                for nl in (3, 2):
-                    for nr in (3, 2):
-                        L = letters(''.join(w for *_, w in left[-nl:]))
-                        R = letters(''.join(w for *_, w in right[:nr]))
-                        if len(L) < 8 or len(R) < 5:
-                            continue
-                        for m in re.finditer(re.escape(L), low):
-                            h = m.start()
-                            j = low.find(R, h + len(L), h + len(L) + 80 + len(R))
-                            if j >= 0:
-                                a0, b0 = pos[h + len(L) - 1] + 1, pos[j]
+
+                def in_lec(lf):
+                    try:
+                        return lo_pg <= int(pn.get(lf, -1)) <= hi_pg
+                    except ValueError:
+                        return False
+                # 锚由长到短试（3/2/1 词），只认本讲页码范围里的命中——锚词本身读花时短锚也能定位
+                for nl, nr in ((3, 3), (3, 2), (2, 3), (2, 2), (2, 1), (1, 2), (1, 1)):
+                    L = letters(''.join(w for *_, w in left[-nl:]))
+                    R = letters(''.join(w for *_, w in right[:nr]))
+                    if len(L) < (8 if nl > 1 else 6) or len(R) < (5 if nr > 1 else 4):
+                        continue
+                    for m in re.finditer(re.escape(L), low):
+                        h = m.start()
+                        j = low.find(R, h + len(L), h + len(L) + 80 + len(R))
+                        if j >= 0:
+                            a0, b0 = pos[h + len(L) - 1] + 1, pos[j]
+                            if in_lec(leaves[a0]):
                                 found[vs[a0:b0]] = leaves[a0]
                     if found:
                         break
@@ -145,21 +159,28 @@ def collect():
                     skip['转录定位不到' if not found else '转录多处'] += 1
                     continue
                 v, lf = found.popitem()
-                try:
-                    in_lec = lo_pg <= int(pn.get(lf, -1)) <= hi_pg
-                except ValueError:
-                    in_lec = False
-                if not in_lec:
-                    skip['命中别讲'] += 1                  # 同一句经文别讲也引（第 1 讲 tw^ 撞到第 35 讲）
-                    continue
                 if V.SENT in v:
                     skip['转录读不出'] += 1
                     continue
+                tailp = para and not re.search('[A-Za-z]', re.sub(r'<!--.*?-->', '', o[o.find('\n\n'):])) \
+                    and re.search(r'\S', o[:o.find('\n\n')])
+                if tailp:
+                    # 段末残字（经文段收引号读花 `inn.^\\*`）：截到本段末，转录取到它分段处
+                    if '\n' not in v.lstrip(' '):
+                        skip['段末·转录不分段'] += 1
+                        continue
+                    o = o[:o.find('\n\n')]
+                    e = s + len(o)
+                    v = v.strip(' ').split('\n')[0]
+                    v = ' ' + v.lstrip() if o.startswith(' ') else v.lstrip()
+                    para = False
                 if para:
-                    if '\n' not in v.strip():
+                    if '\n' in v.strip():
+                        v = v[v.rstrip().rfind('\n') + 1:]
+                    elif re.search('[A-Za-z]', re.sub(r'<!--.*?-->', '', body[s:ps])):
                         skip['跨段·转录不分段'] += 1
                         continue
-                    v = v[v.rstrip().rfind('\n') + 1:]
+                    # 我们在页首另起段、转录接着上页写：左锚到段首之间只有标记没有字，转录那截整段对应
                     s, o = ps, body[ps:e]
                 v = re.sub(r'[ \t]*\n[ \t]*', ' ', v).replace('’', "'")
                 # 两头口径对齐我们这截：左锚词末尾的标点、右锚词开头的标点（引号、星号）已在锚里，B 里去掉
@@ -201,7 +222,7 @@ def collect():
                     continue
                 lstart = left[-1][0] if not para else body.rfind('\n', 0, s) + 1
                 q = {'kind': 'junk', 'lec': f'{lec:03d}', 's': s, 'e': e, 'i': 0,
-                     'left': body[lstart:s], 'right': body[e:right[0][1]], 'ours': o, 'vlm': v, 'box': box,
+                     'left': body[lstart:s], 'right': '' if tailp else body[e:right[0][1]], 'ours': o, 'vlm': v, 'box': box,
                      'ctx': re.sub(r'<!--.*?-->', '', body[max(0, s - 70):s] + '⟦' + o + '⟧' + body[e:e + 70]).replace('\n', ' ')}
                 pages.setdefault((vol, lf), []).append(q)
     out = [{'vol': v, 'leaf': lf, 'qs': qs} for (v, lf), qs in sorted(pages.items())]
