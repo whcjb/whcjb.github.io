@@ -67,6 +67,22 @@ PLAIN = [
      'things,* and then have done.'),
     ('024', 'restoring die dead to life, andthehlind toaght—to tnmthe attention',
      'restoring the dead to life, and the blind to sight—to turn the attention'),
+    # 经文引文里墨渍盖住/读花的字：按钦定本（eBible KJV2006）同节补，用户 2026-11-12 同意「补」。
+    # 雅 5:20；路 13:5、17:21、17:25、17:28、17:37、16:31、9:56、4:16；林前 8:13；诗 38:4–6；拿 2:8
+    ('021', 'the error a^^ his way', 'the error of his way'),
+    ('021', 'a multitud -^ of sins', 'a multitude of sins'),
+    ('071', 'Nay: *hut^ except', 'Nay: *but, except'),
+    ('091', "and he r^'ected of", 'and be rejected of'),
+    ('091', 'of Lot; the^ did eat', 'of Lot; they did eat'),
+    ('091', 'unto them, W^heresoever', 'unto them, Wheresoever'),
+    ('091', 'gathered together.' + FN + '^\n', 'gathered together."' + FN + '\n'),
+    ('091', 'they na^^ Lo^ here I oVy Lo^ therer*', 'they say, Lo here! or, lo there!*'),
+    ('087', 'from the dead.^\n', 'from the dead."\n'),
+    ('089', 'brother to offend«"\n', 'brother to offend."\n'),
+    ('090', 'too heavy for me."-^" I am', 'too heavy for me."—"I am'),
+    ('121', 'own n^ercy."', 'own mercy."'),
+    ('050', 'and he and *^^they went"* forward "^0 *another village"*', 'and he and "*they went*" forward "*to another village*"'),
+    ('016', 'of Nazareth *^^ on the Sabbath-day', 'of Nazareth "*on the Sabbath-day'),
     # 5：注区读花的希腊行
     ('019', "ζωγρῶν vivos capieni. *T»9* K^Mrav i^«y(iir«v. *'Arrvmynf litty^n^n" + FN + '* Horodotuf.',
      '♦ ζωγρῶν vivos capiens. Τον Κροισον ἐζωγρησαν. Ἀστυαγης ἐζωγρηθη. Herodotus.'),
