@@ -91,8 +91,19 @@ def suspect(w):
     return bool(re.fullmatch(r'[a-z]{2,}-', w))
 
 
+MARKS = False
+LONE = re.compile(r'^[*"\'(]*([b-hj-np-zB-HJ-NP-Z]|th)[*"\'.,;:)]*$')
+
+
+def lone(w):
+    """单字母模式（--marks）：问号读成 V/f/T/P/r、注号读成 t/f/J 这类孤立单字母（a、I、O 以外），及拆开的 `th`。"""
+    core = w.strip('*"\'().,;:')
+    return bool(LONE.match(w)) and core not in ('a', 'A', 'I', 'O', 'o', 'th') \
+        and not re.fullmatch(r'[vVcCpPfl]\.', w)            # v. 节、c. 章、p. 页、f. 、l. 是缩写
+
+
 def flag(w):
-    return suspect(w) if WORDS else bad(w)
+    return lone(w) if MARKS else suspect(w) if WORDS else bad(w)
 
 
 def clusters(text, lo_, hi_):
@@ -197,7 +208,7 @@ def collect():
                         tB = found.pop()
                         if V.SENT in tB:
                             tB = None
-                if WORDS and where != 'body':
+                if (WORDS or MARKS) and where != 'body':
                     continue
                 if WORDS and not WORDS2:
                     # 疑似词：转录同位读出、且与我们字母不同的才问（相同＝印面如此，如 catechised、lovedst）
@@ -335,7 +346,8 @@ def answered():
     got = {}
     extra = {'page_check_answers': 'page_check_answers_seam',
              'page_check_words_answers': 'page_check_words_answers_seam',
-             'page_check_words2_answers': 'page_check_words2_answers_seam'}.get(ANS.name)
+             'page_check_words2_answers': 'page_check_words2_answers_seam',
+             'page_check_marks_answers': 'page_check_marks_answers_seam'}.get(ANS.name)
     for f in sorted(ANS.glob('*.json')) + (sorted((WORK / extra).glob('*.json')) if extra else []):
         d = json.loads(f.read_text(encoding='utf-8'))
         for n, q in enumerate(d['qs'], 1):
@@ -559,7 +571,7 @@ def use_seam():
     keep = [dict(p, qs=[q for q in p['qs'] if got.get(qkey(q), '').strip() == '?']) for p in pages]
     keep = [p for p in keep if p['qs']]
     SEAM = True
-    tag = 'words2_' if WORDS2 else 'words_' if WORDS else ''
+    tag = 'marks_' if MARKS else 'words2_' if WORDS2 else 'words_' if WORDS else ''
     ANS = WORK / f'page_check_{tag}answers_seam'
     CAND = WORK / f'page_check_{tag}candidates_seam.json'
     CAND.write_text(json.dumps(keep, ensure_ascii=False, indent=0), encoding='utf-8')
@@ -575,6 +587,16 @@ def use_words2():
     RULES = RAW / 'page_check_words2_fixes.tsv'
     PEND = RAW / 'page_check_words2_pending.tsv'
     LOG = A.ROOT / 'logs' / 'foote_page_check_words2.tsv'
+
+
+def use_marks():
+    global MARKS, CAND, ANS, RULES, PEND, LOG
+    MARKS = True
+    CAND = WORK / 'page_check_marks_candidates.json'
+    ANS = WORK / 'page_check_marks_answers'
+    RULES = RAW / 'page_check_marks_fixes.tsv'
+    PEND = RAW / 'page_check_marks_pending.tsv'
+    LOG = A.ROOT / 'logs' / 'foote_page_check_marks.tsv'
 
 
 def use_words():
@@ -598,8 +620,11 @@ def main():
     ap.add_argument('--seam', action='store_true')
     ap.add_argument('--words', action='store_true', help='疑似词模式（链条在 seam_join 之后）')
     ap.add_argument('--words2', action='store_true', help='疑似词第 2 轮（链条在 hand_pending --late 之后）')
+    ap.add_argument('--marks', action='store_true', help='孤立单字母（问号/注号读成字母；链条在 --late2 之后）')
     a = ap.parse_args()
-    if a.words2:
+    if a.marks:
+        use_marks()
+    elif a.words2:
         use_words2()
     elif a.words:
         use_words()

@@ -43,6 +43,16 @@ def rules():
             if t.count(o) != 1:
                 raise SystemExit(f'{lec}: 不唯一 {o!r}')
             out.append((lec, o, n))
+        # 序数被空格拆开：`the 8 th chapter` → 8th（全书 21 处，后接 chapter/verse/Psalm/book 等）
+        for m in re.finditer(r'\b(\d+) th (chapter|chapters|verse|verses|Psalm|book|year|day|and)\b', body):
+            o = m.group(0)
+            if t.count(o) == 1:
+                out.append((lec, o, f'{m.group(1)}th {m.group(2)}'))
+            else:
+                k = t.find(o)
+                o2 = t[max(0, k - 20):k + len(o)]
+                if t.count(o2) == 1:
+                    out.append((lec, o2, o2.replace(o, f'{m.group(1)}th {m.group(2)}')))
     RULES.write_text('# lecture\t原串\t改作 —— foote_seam_join.py 生成（句中被页码标记切开的接回）；\\n 表换行\n'
                      + ''.join('\t'.join(x.replace('\n', '\\n') for x in r) + '\n' for r in out), encoding='utf-8')
     print(f'规则 {len(out)} → {RULES}', file=sys.stderr)

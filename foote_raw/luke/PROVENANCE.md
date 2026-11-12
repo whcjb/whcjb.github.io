@@ -561,7 +561,7 @@ K 断词未接（`be- -lieveth`）；L 漏逗号；M 书帖签名进注区（`VO
 → `foote_notes_leak2 --apply --round 2` → `foote_line_check --apply --round 2` → `foote_notes_entry --apply`
 → `foote_page_check --apply` → `foote_hand_pending --apply` → `foote_seam_join --apply` → `foote_page_check --apply --words`
 → `foote_hand_pending --apply --late` → `foote_page_check --apply --words2` → `foote_hand_pending --apply --late2`
-→ `foote_fnmark_check --symbols` → `publish_foote_en --apply`。
+→ `foote_page_check --apply --marks` → `foote_hand_pending --apply --late3` → `foote_fnmark_check --symbols` → `publish_foote_en --apply`。
 
 - **疑似词**（`foote_page_check.py --words` → `page_check_words_fixes.tsv`，2026-11-12 用户令「继续」）：白名单看不见的读花真词形。
   判据：不在判词典且大小写混杂（`CroesuB`），或全书至多见两次的小写词（`fovr`、`teceived`），或行末断词没接上的半截。
@@ -573,6 +573,13 @@ K 断词未接（`be- -lieveth`）；L 漏逗号；M 书帖签名进注区（`VO
   与我们字母相似 ≥0.6——第①层的字形＋判词典两道闸）。119 页 + 页缝 43 页 $5.54：放行 33。待核 40 条与 1 处卷入注
   逐条定（`hand_words2_fixes.tsv`：钦定本经文、行末断词接回、卷进正文的页脚注 6 处、印张签名 `VOL. II. D`、`VOL. III. 2 G` 2 处）。
   正文疑似词 294 → 213（余下多为真词：seamen、woollen、lovedst、blotteth 等，及模型看不清的约 25 处）。
+  第 3 批（同表）：余下真错 80 处逐条定——读错的字（`sJl`→all、`fovr`→four、`aud`→and）、粘连（`putamongtheapostles`）、
+  行末断词（`immuta- bility`）、讲题行 `LtTKE`/`LtJKE`、钦定本经文；第 101 讲又一处卷入注（p.152 注区补）。
+- **孤立单字母**（`foote_page_check.py --marks` → `page_check_marks_fixes.tsv`）：问号读成 `V/f/T/P/r`、注号读成 `t/f/J`
+  （`son *V* said`→`son?" said`、`peace."t`→注号）——白名单与疑似词判据都看不见。137 页 + 页缝 $1.85，转录相合放行 32。
+  待核逐条定（`hand_marks_fixes.tsv`）：正文注号 8、问号/钦定本 5、又一批卷进正文的页脚注 13 处（注区缺的 5 页补）、
+  第 101 讲注区印张签名 `vol. III. K` 换成该页注、第 79 讲讲末残码。序数被空格拆开的 `8 th chapter` 38 处由 seam_join 接回。
+  注号配上 1258／1431，注条 1414。
 
 - **注区逐条看图**（`scripts/foote_notes_entry.py` → `notes_entry_fixes.tsv`）：整页一题的几层只要一条对不上就整页不落；
   改逐条——按序配对（我们多出的首条当上页续文），配对须像（字母相似 ≥0.35，希腊文条比长度；转录不得短于我们 0.7，

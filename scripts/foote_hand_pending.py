@@ -226,11 +226,166 @@ LATE2 = [
     ('127', 'Campbell, fcc, may', 'Campbell, &c., may'),
     ('135', 'fr(ym on highJ' + FN + '*', 'from on high."' + FN + '*'),      # 路 24:49
     ('136', 'among Rev. v. 6. fRey. Tiii. 3. the blessings', 'among the blessings'),
+    # 第 3 批（疑似词余下的真错，转录/钦定本/上下文逐条定）
+    ('001', 'understanding of sJl things', 'understanding of all things'),          # 路 1:3
+    ('001', 'which the i¥ord is used', 'which the word is used'),
+    ('001', 'these fovr historians', 'these four historians'),
+    ('006', 'the immuta- bility of', 'the immutability of'),                       # 来 6:17
+    ('009', 'after the cusof the law', 'after the custom of the law'),             # 路 2:27
+    ('010', 'declaring that- God', 'declaring that God'),
+    ('013', 'of Aris' + FN + ' tobulus', 'of Aristobulus' + FN),
+    ('015', 'would pro- Tide, in', 'would provide, in'),
+    ('018', 'the sjrna\\*gogue', 'the synagogue'),
+    ('018', 'the won-\\* ders which', 'the wonders which'),
+    ('019', 'has prospered- us', 'has prospered us'),
+    ('019', 'higher na— ture', 'higher nature'),
+    ('019', 'been alto- gethen or', 'been altogether, or'),
+    ('024', 'notgreatlysurprise,andespecially', 'not greatly surprise, and especially'),
+    ('025', 'was putamongtheapostles,', 'was put among the apostles,'),
+    ('025', 'noble- minded', 'noble-minded'),
+    ('026', 'to in- Tite them', 'to invite them'),
+    ('027', 'occasional oc-*\n\n<!-- PAGE 393 -->\n*currence of', 'occasional occurrence of'),
+    ('028', 'same evangelisr,', 'same evangelist,'),
+    ('028', 'more con- cisely', 'more concisely'),
+    ('030', 'all- sufficiency', 'all-sufficiency'),
+    ('032', 'the hiding- place', 'the hiding-place'),
+    ('033', 'acknowledg-\\* ment', 'acknowledgment'),
+    ('034', 'accomplish this-\n', 'accomplish this.\n'),
+    ('035', '**LtTKE Til. 18-23.**', '**LUKE VII. 18-23.**'),
+    ('037', 'himself frcm guilt', 'himself from guilt'),
+    ('037', 'more heart- affecting', 'more heart-affecting'),
+    ('042', 'This terri- tory', 'This territory'),
+    ('047', 'our floiilfl may live', 'our souls may live'),
+    ('049', '*yriW* say', 'will say'),
+    ('049', 'for pre- eminence', 'for pre-eminence'),
+    ('053', "perfected praisef'", 'perfected praise?"'),                          # 太 21:16
+    ('061', 'the yoke of bond-\n', 'the yoke of bondage."\n'),                   # 加 5:1，下页页首 age." 丢失
+    ('066', 'than the fowlsf"*', 'than the fowls?"*'),
+    ('068', 'guests, aud when', 'guests, and when'),
+    ('070', '"sincereand without', '"sincere and without'),                       # 腓 1:10
+    ("071", "were en- ' gaged", 'were engaged'),
+    ('071', 'the childrenof men', 'the children of men'),
+    ('072', 'and inpre- Tailing for', 'and in prevailing for'),
+    ('074', 'kingdom overthown.', 'kingdom overthrown.'),
+    ('074', 'the testimon of', 'the testimony of'),
+    ('078', 'shalt be blesssd;', 'shalt be blessed;'),                            # 路 14:14
+    ('080', 'to annouce the', 'to announce the'),
+    ('084', 'to fradulent practices', 'to fraudulent practices'),
+    ('084', 'the chil' + FN + ' dren of light', 'the children' + FN + ' of light'),
+    ('084', 'the pro' + FN + ' secution of', 'the prosecution' + FN + ' of'),
+    ('086', '*ihejpressed* into it', 'they *pressed* into it'),
+    ('089', 'this *dntjfrom a regard', 'this *duty from a regard'),
+    ('090', 'and deadily diseases', 'and deadly diseases'),
+    ('091', 'I tell vou, in', 'I tell you, in'),                                   # 路 17:34
+    ('093', 'asso-\\* ciated', 'associated'),
+    ('094', 'of iiis own', 'of his own'),
+    ('094', 'not withstand- ing', 'notwithstanding'),
+    ('099', 'without gruding."', 'without grudging."'),                            # 彼前 4:9
+    ('104', 'Christian mini- Btrj of', 'Christian ministry of'),
+    ('105', 'as havin been', 'as having been'),
+    ('110', 'gold all- over,', 'gold all over,'),
+    ('110', 'run- Ding about', 'running about'),
+    ('111', 'perseverance, pre- serve, or', 'perseverance, preserve, or'),
+    ('115', 'the feast- day,"', 'the feast-day,"'),
+    ('116', 'administered, aud then', 'administered, and then'),
+    ('118', 'not yet consumated.', 'not yet consummated.'),
+    ('118', 'or oppressive- authority', 'or oppressive authority'),
+    ('123', 'the abjectsgathered', 'the abjects gathered'),                        # 诗 35:15
+    ('123', 'have en-\\* couraged', 'have encouraged'),
+    ('124', 'effectual instruetion.', 'effectual instruction.'),
+    ('124', 'Herod Anti-\\* pas,', 'Herod Antipas,'),
+    ('125', 'Awful impre- cation!', 'Awful imprecation!'),
+    ('126', 'senate enact- ing', 'senate enacting'),
+    ('127', '**LtJKE XXIII. 32-34.**', '**LUKE XXIII. 32-34.**'),
+    ('127', 'in in-\\* ward anguish', 'in inward anguish'),
+    ('128', 'as *ockmflh* ledged him', 'as acknowledged him'),
+    ('128', 'for repen' + FN + ' tance?', 'for repentance' + FN + '?'),
+    ('131', 'which eame with', 'which came with'),                                 # 路 23:55
+    ('131', 'simple- hearted', 'simple-hearted'),
+    ('132', 'had pre-* g *pared,', 'had prepared,'),
+    ('133', 'in ge-\n\n<!-- PAGE 610 -->\nI neral, were', 'in general, were'),
 ]
 LATE2_LEAKS = [   # (讲, 正文原串, 改作, 页, 注条)
+    ('101', 'Lord." 2 Sam. xiv. 4; and 2 Kings vL 26, in,Hebrew. f Matt. xzi. 9.', 'Lord."', '152',
+     ['♦ 2 Sam. xiv. 4; and 2 Kings vi. 26, in Hebrew.', '† Matt. xxi. 9.']),
     ('096', 'in Rom. xiii. 9. + Ἀπο *nornroi' + FN + '* any degree', 'in any degree', '77', ['♦ Rom. xiii. 9.', '† Ἀπο νεοτητος.']),
 ]
 LATE2F = A.RAW / 'hand_words2_fixes.tsv'
+
+
+# 单字母（foote_page_check --marks）之后：问号/注号读成字母的待核、又一批卷进正文的页脚注（13 处）。2026-11-12「继续」
+LATE3 = [
+    ('010', 'Mount Zion." t\n', 'Mount Zion."' + FN + '\n'),
+    ('016', 'to death.' + FN + ' "t Not so', 'to death."' + FN + ' Not so'),
+    ('024', 'unleavened bread." J This', 'unleavened bread."' + FN + ' This'),
+    ('026', 'alluded to t as having', 'alluded to' + FN + ' as having'),
+    ('056', 'its very words. J\n', 'its very words.' + FN + '\n'),
+    ('106', '\nRomans." t\n', '\nRomans."' + FN + '\n'),
+    ('130', 'wrought salvation, t\n', 'wrought salvation,' + FN + '\n'),
+    ('135', 'had been slain." t\n', 'had been slain."' + FN + '\n'),
+    ('037', 'love him most f Simon', 'love him most? Simon'),                     # 路 7:42
+    ('047', 'he was H in the form', 'he was "in the form'),
+    ('049', 'in the J 1th chapter', 'in the 11th chapter'),
+    ('050', 'naturally v adapted', 'naturally adapted'),
+    ('057', 'a serpent f or,', 'a serpent? or,'),                                 # 路 11:11
+    ('070', '*S. We are here', '3. *We are here'),
+    ('079', 'endless peace. f t\n\n<!-- PAGE 549 -->\nI *i*\n', 'endless peace.\n'),     # 讲末残码
+    ('101', 'personified X \'\'Behold', 'personified), "Behold'),
+    ('115', 'my disciples f Avulhe shall', 'my disciples? And he shall'),             # 路 22:11–12
+    ('116', 'body of Christ *V* Communion', 'body of Christ?" Communion'),         # 林前 10:16
+]
+LATE3_LEAKS = [   # (讲, 正文原串, 改作, 页, 注条——空表＝注区已有)
+    ('004', '<!-- PAGE 59 -->\n παιδα Acts iv. 25. *"* £o die pueri tui mihi a te literas reddiderunt." —*Cicero ad AUicum.* '
+     'f Jer. xxxi. 20. This he did', '<!-- PAGE 59 -->\nThis he did', '59',
+     ['♦ παιδα, Acts iv. 25. "Eo die pueri tui mihi a te literas reddiderunt." —*Cicero ad Atticum.*', '† Jer. xxxi. 20.']),
+    ('034', 'imply that\n\n<!-- PAGE 484 -->\n 1 Kings xvii. 21. f 2 Kings It. SS. *t* Aotf ix. 34, 40, Si 6. he took',
+     'imply that he took', '484', ['♦ 1 Kings xvii. 21.', '† 2 Kings iv. 33.', '‡ Acts ix. 34, 40, iii. 6.']),
+    ('038', 'of Matt. XXvii 55. f Lake xxiii. 65. *X* Mark xvi. 9. Dorcas', 'of Dorcas', '546', []),
+    ('076', "prophets. John Xvii. 4. f Heb. iL 10, v. 9, vii. 28. *X Olx ἐνδέχεται.*\n", 'prophets.\n', '503', []),
+    ('079', 'without Jolm xU. 25. f Rev. xii, 11.:(: See Lecture on, God,', 'without God,', '539',
+     ['♦ John xii. 25.', '† Rev. xii. 11.', '‡ See Lecture on,']),
+    ('089', 'stumbled hy \\** 1 Cor. viii. t Rom. xiv. 13; 1 Cor. x. 3l *such offences', 'stumbled by such offences', '668', []),
+    ('101', 'however John xi. 18. f Numb. xix. 2; Dent. ui. 3; 1 Sam. vi. 7. fabulous', 'however fabulous', '145', []),
+    ('103', 'or the Maseillon, f Τὸ ἱερόν. house of God', 'or the house of God', '174', ['♦ Massillon.', '† Το ἱερον.']),
+    ('107', 'traditions,\n\n<!-- PAGE 227 -->\n Acts xxiii. 6.\n\n<!-- PAGE 227 -->\nt Antiq. XIII. t. 9, x. 6, xvii. 1, 5; '
+     'and XX. ix. I. Though', 'traditions,\n\n<!-- PAGE 227 -->\nThough', '227', []),
+    ('108', 'by Matthew, f 2 Sam. vii. 12-16; Pg. lxxxix. 4, 29, 36; Isa. xi. 1. Isaiah,', 'by Isaiah,', '240', []),
+    ('112', 'the holy Tertullian, Ap. xvi. f Wan, VI. tL I place,"', 'the holy place,"', '296', []),
+    ('114', 'their Isa. 11. 6; 1 Pet. L 25; Matt. v. 18. guard', 'their guard', '333', []),
+    ('132', 'opportunities 1 Cor. XT. *5-8.*, t Acts i. 3, 21, x. 40. of knowing', 'opportunities of knowing', '594', []),
+]
+LATE3F = A.RAW / 'hand_marks_fixes.tsv'
+
+
+def late3_rules():
+    out, texts = [], {}
+    for lec, o, n in LATE3:
+        t = texts.setdefault(lec, (A.SRC / f'{lec}.md').read_text(encoding='utf-8'))
+        if t.count(o) != 1:
+            raise SystemExit(f'{lec}: 命中 {t.count(o)} 次 {o!r}')
+        texts[lec] = t.replace(o, n)
+        out.append((lec, o, n))
+    for lec, o, n, pg, notes in LATE3_LEAKS:
+        t = texts.setdefault(lec, (A.SRC / f'{lec}.md').read_text(encoding='utf-8'))
+        if t.count(o) != 1:
+            raise SystemExit(f'{lec}: 命中 {t.count(o)} 次 {o!r}')
+        t = t.replace(o, n)
+        out.append((lec, o, n))
+        if notes and pg not in M.NOTE.findall(t):
+            o2, n2 = M.insert_row(t, pg, '\n\n'.join(f'<!-- NOTE p.{pg} --> {x}' for x in notes))
+            t = t.replace(o2, n2)
+            out.append((lec, o2, n2))
+        texts[lec] = t
+    # 第 101 讲注区 p.145 那行 `vol. III. K` 是印张签名，换成该页两条注
+    t = texts.setdefault('101', (A.SRC / '101.md').read_text(encoding='utf-8'))
+    o = '<!-- NOTE p.145 --> vol. III. K'
+    if t.count(o) == 1:
+        n = '<!-- NOTE p.145 --> ♦ John xi. 18.\n\n<!-- NOTE p.145 --> † Numb. xix. 2; Deut. xxi. 3; 1 Sam. vi. 7.'
+        texts['101'] = t.replace(o, n)
+        out.append(('101', o, n))
+    LATE3F.write_text('# lecture\t原串\t改作 —— foote_hand_pending.py LATE3（单字母待核、卷入注第 3 批）；\\n 表换行\n'
+                      + ''.join('\t'.join(x.replace('\n', '\\n') for x in r) + '\n' for r in out), encoding='utf-8')
+    print(f'规则 {len(out)} → {LATE3F}', file=sys.stderr)
 
 
 def late2_rules():
@@ -304,8 +459,14 @@ def main():
     ap.add_argument('--apply', action='store_true')
     ap.add_argument('--late', action='store_true', help='疑似词待核表（链条在 foote_page_check --words 之后）')
     ap.add_argument('--late2', action='store_true', help='疑似词第 2 轮待核表（链条在 --words2 之后）')
+    ap.add_argument('--late3', action='store_true', help='单字母待核表（链条在 --marks 之后）')
     a = ap.parse_args()
-    if a.rules and a.late2:
+    if a.rules and a.late3:
+        late3_rules()
+    elif a.apply and a.late3:
+        if LATE3F.exists():
+            I.apply_multiline(LATE3F)
+    elif a.rules and a.late2:
         late2_rules()
     elif a.apply and a.late2:
         if LATE2F.exists():

@@ -17,7 +17,7 @@ next_label: "Lecture II"
 
 <div class="ft-text" markdown="1">
 
-Forasmuch as many have taken in hand to set forth in order a declaration of those things which are most surely believed among us, <sup class="ft-vn">2</sup>Even as they delivered them unto us, which from the beginning were eye-witnesses, and ministers of the word; <sup class="ft-vn">3</sup>It seemed good to me also, having had perfect understanding of sJl things from the very first, to write unto thee in order, most excellent Theophilus, <sup class="ft-vn">4</sup>That thou mightest know the certainty of those things, wherein thou hast been instructed.
+Forasmuch as many have taken in hand to set forth in order a declaration of those things which are most surely believed among us, <sup class="ft-vn">2</sup>Even as they delivered them unto us, which from the beginning were eye-witnesses, and ministers of the word; <sup class="ft-vn">3</sup>It seemed good to me also, having had perfect understanding of all things from the very first, to write unto thee in order, most excellent Theophilus, <sup class="ft-vn">4</sup>That thou mightest know the certainty of those things, wherein thou hast been instructed.
 
 </div>
 
