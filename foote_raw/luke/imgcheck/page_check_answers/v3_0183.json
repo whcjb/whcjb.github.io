@@ -1,0 +1,1 @@
+{"raw": "The footnote begins with an asterisk mark.\n\n#1: = *", "ans": {"1": "= *"}, "qs": [{"lec": "103", "page": "179", "where": "body", "s": 21798, "e": 21799, "ours": "•", "tB": null, "sB": null, "y": 3576, "ctx": "⟦•⟧ Campbell."}]}

@@ -71,7 +71,7 @@ Are there any of you who are to be contented to go down to your houses unjustifi
 
 ‡ Hectora flemus."
 
-§ ^' Beat your breast with a great stroke; I am not content with a common sound: we weep for Hector."—*Seneca, Troad. Ckor. "* Effusas laniata comas, concussaqve pectus Verberibus crebris •
+§ "Beat your breast with a great stroke; I am not content with a common sound: we weep for Hector."—*Seneca, Troad. Ckor. "* Effusas laniata comas, concussaqve pectus Verberibus crebris ———
 
 ‖ -Sic maesta profatur."
 

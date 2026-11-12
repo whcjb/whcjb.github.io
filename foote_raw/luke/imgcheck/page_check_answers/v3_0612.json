@@ -1,0 +1,1 @@
+{"raw": "The printed opening is a double quote.\n\n#1: = \"", "ans": {"1": "= \""}, "qs": [{"lec": "133", "page": "608", "where": "body", "s": 14501, "e": 14503, "ours": "^'", "tB": ".\n\n\n“ *", "sB": null, "y": 415, "ctx": "⟦^'⟧ *But we trusted,\"* continued they, \" *that it had been he who should have redeemed Israel"}]}

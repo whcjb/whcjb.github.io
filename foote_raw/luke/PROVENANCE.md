@@ -559,13 +559,18 @@ K 断词未接（`be- -lieveth`）；L 漏逗号；M 书帖签名进注区（`VO
 链条现序（greek_notes 之后）：`foote_notes_fill --apply` → `foote_junk_ed3 --apply` → `foote_junk_check --apply --late`
 → `foote_heads --apply` → `foote_line_check --apply` → `foote_notes_leak2 --apply` → `foote_junk_ed3 --apply --round 2`
 → `foote_notes_leak2 --apply --round 2` → `foote_line_check --apply --round 2` → `foote_notes_entry --apply`
-→ `foote_fnmark_check --symbols` → `publish_foote_en --apply`。
+→ `foote_page_check --apply` → `foote_fnmark_check --symbols` → `publish_foote_en --apply`。
 
 - **注区逐条看图**（`scripts/foote_notes_entry.py` → `notes_entry_fixes.tsv`）：整页一题的几层只要一条对不上就整页不落；
   改逐条——按序配对（我们多出的首条当上页续文），配对须像（字母相似 ≥0.35，希腊文条比长度；转录不得短于我们 0.7，
   挡两条并一行的）。同一条注被拆成两行（前行是读花的希腊文开头、本行无注号）的两行一起换（第 51、92 讲）。
   10 题 B 8，$0.17。条数不合（两条并一行／首条是上页续文）的页改问整页（去续文首条，相似 ≥0.6），3 页 B 1。
   注区残字 258 → 147（多为整条读花的希腊文注）。
+- **一页一图**（`scripts/foote_page_check.py` → `page_check_fixes.tsv`，用户令「一个图用多次」）：一页上剩下的残字（正文、注区）
+  编一题组，只送一次图——能按 tess 逐词定到行的页送各处上下约 3 行的横条竖拼成一张（每页约 $0.015），定不到的送整页两条
+  （约 $0.056）。模型答 `= 印面` 不单独作数，须另有一源相合：T 转录同位、S tess 同位字母、P 字母数字都不动只补标点。
+  另挡：读成字面注号（* ‡）、行末断词接不成真词。开引号按本书写 `"*And`。123 页 $4.45：放行 43，待核 90（`page_check_pending.tsv`），
+  看不清 45。正文残字 182 → 140，注区 147 → 137。
 
 - **逐处看图第 2 轮**（`foote_line_check.py --round 2` → `line_fixes_r2.tsv` + 人工 `line_hand_fixes.tsv`）：精确锚定位不到时改用
   词序列对齐（残字两侧各 ≥2 词相合块紧贴）。前几轮答 B 却因注号/斜体/判词典暂扣、或答 other 的 16 处逐条裁图看定：

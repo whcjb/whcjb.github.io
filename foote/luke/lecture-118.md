@@ -63,7 +63,7 @@ Christ, however, teaches that there is a kind of greatness to be sought by his f
 
 2 Cor. i. 24; 1 Pet v. 2.
 
-f Mfi^Afy, *nuTi06s,* Dr Campbell makes them correspond in the other way thus: " Let the greatest become among you as the smallest." ^ great apostle of the Gentiles;" and yet he, with unfeigned humility, called himself, " Less than the least of all saints."
+f Mfi^Afy, *nuTi06s,* Dr Campbell makes them correspond in the other way thus: " Let the greatest become among you as the smallest." great apostle of the Gentiles;" and yet he, with unfeigned humility, called himself, " Less than the least of all saints."
 
 "*For whether is greater he that sitteth at meat, or he that serveth? is not he that sitteth at meat?"* (certainly that is the usual way of judging) "*but I am among you as he that serveth."* He conducted himself as the lowliest, though he was, beyond all comparison, the highest. His whole life was laborious, condescending, and kind. He had lately washed his disciples' feet, and said, " I have given you an example that ye should do as I have done unto you;" and, according to his own words, already quoted, he " came not to be ministered unto, but to minister, and to give his life a ransom for many." He proposes his own example, then, for the imitation of his followers; and, surely, this should be enough to teach them not to strive for precedence, nor affect great dignity—not to " mind high things, but condescend to men of low estate"—to be diligent in doing good to all men, and to be ready to lay down their lives for the brethren.
 
@@ -99,7 +99,7 @@ Once more: *Let the disciples of Christ continue with him, notwithstanding every
 
 &#42; lusion to the ambiguity of the Hebrew word נָדִיב which signifies both
 
-† " prince," and " beneficent," as is remarked by Beza and others. There is no such ambiguity, however, in the word employed in the Syriac version. See Doddridge's note. Though an illustration from the Latin cannot be quite in point, the following, from Dr Adam Clarke, is worthy of notice: *"* It was a custom among the ancient Romans to distribute part of the lands which they had conquered on the frontiers of the enipire to their soldiers. Those who enjoyed such lands were called *beneficiarii^* beneficed persons; and the lands themselves were called *heneficia^* benefices, as being held on the beneficence of the sovereign: and it is no wonder that such sovereigns, however tyrannical or oppressive they might have been in other respects, were termed *Benefactors* by those *who* were thus dependent on their bounty."
+† " prince," and " beneficent," as is remarked by Beza and others. There is no such ambiguity, however, in the word employed in the Syriac version. See Doddridge's note. Though an illustration from the Latin cannot be quite in point, the following, from Dr Adam Clarke, is worthy of notice: *"* It was a custom among the ancient Romans to distribute part of the lands which they had conquered on the frontiers of the enipire to their soldiers. Those who enjoyed such lands were called *beneficiarii,* beneficed persons; and the lands themselves were called *beneficia,* benefices, as being held on the beneficence of the sovereign: and it is no wonder that such sovereigns, however tyrannical or oppressive they might have been in other respects, were termed *Benefactors* by those *who* were thus dependent on their bounty."
 
 <a class="ft-nsym" href="#fnref-118-9" id="fn-118-9">&#42;</a> Rom. ii. 16.
 

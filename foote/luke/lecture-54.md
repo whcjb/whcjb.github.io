@@ -119,7 +119,7 @@ In conclusion, then, my friends, let us, by all this, be admonished and encourag
 
 <a class="ft-nsym" href="#fnref-54-4" id="fn-54-4">&#42;</a> Quoted bv Lightfoot from Maimonides.
 
-† f Adamim (Adummim) quondam yillula, nunc ruinse, in sorte tribus Jud», qui locus U8&lt;ue nooie vocatur Maledomim, et Grsece dicitur' *&9mCmftt ^v^^etvt* Latme autem appeljari potest ascensus ruforum, sive
+† f Adamim (Adummim) quondam yillula, nunc ruinse, in sorte tribus Judæ, qui locus U8&lt;ue nooie vocatur Maledomim, et Grsece dicitur' *&9mCmftt ^v^^etvt* Latme autem appeljari potest ascensus ruforum, sive
 
 &#42; rabentium, propter sangoinem qui illiccrebro a latronibas funditur. Est autem connnium tribus Judse et Benjamin descendentibus ab Aelia Hierichum, ubi et castellum militum situm est ob auxilia yiatorum.— *Hieronymus De locis Hehra'Uis.* Thus, the road referred to in this parable was of equally bad reputation in the days of Jerome, who was bom about the year 329, as it appears to hare been at the time the parable was spoken.
 
