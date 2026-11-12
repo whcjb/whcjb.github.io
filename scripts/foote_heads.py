@@ -34,6 +34,9 @@ BULLETS = [
     ('121', 3, 442, 'content with • Henry. their wages."', 'content with their wages."'),
 ]
 SIGNATURE = ('041', 'without num • VOL. n. ber:"', 'without number:"')
+# 卷三书末 THE END 之后的出版社书目广告（Johnstone 版权页、Foote《有效呼召》书评若干则）被抽进第 137 讲正文，
+# 2026-11-12 看页图 p.663 确认 THE END 后另起广告页，用户同意删出正文
+ADS = ('137', ' ZBINBUfiOH:', '\n---\n')
 ROM = ['', 'I', 'II', 'III', 'IV', 'V', 'VI', 'VII', 'VIII', 'IX', 'X', 'XI', 'XII', 'XIII', 'XIV', 'XV', 'XVI',
        'XVII', 'XVIII', 'XIX', 'XX', 'XXI', 'XXII', 'XXIII', 'XXIV']
 HEAD = re.compile(r'^\*\*LUKE [^\n]*\*\*$', re.M)
@@ -65,8 +68,15 @@ def rules():
 def hand_rules():
     import foote_notes_leak as L
     L.hand_rules(BULLETS, path=HAND)
+    lec, a, b = ADS
+    t = (A.SRC / f'{lec}.md').read_text(encoding='utf-8')
+    i = t.find(a)
+    j = t.find(b, i)
+    if i < 0 or j < 0:
+        raise SystemExit('ADS 定位失败')
     with open(HAND, 'a', encoding='utf-8') as fh:
         fh.write('\t'.join(SIGNATURE) + '\n')
+        fh.write('\t'.join(x.replace('\n', '\\n') for x in (lec, t[i - 12:j + len(b)], t[i - 12:i] + b)) + '\n')
 
 
 def main():

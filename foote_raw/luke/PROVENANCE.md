@@ -537,12 +537,21 @@ K 断词未接（`be- -lieveth`）；L 漏逗号；M 书帖签名进注区（`VO
 - **注号读成 `•` 的卷入**（`--hand-rules` → `hand_bullet_fixes.tsv`）：17/35/51/121 讲正文里的页脚注删出（17、51 讲注区按转录补条，
   35、121 讲注区已有）；41 讲书帖记号 `• VOL. II.` 删去、接回 `number`。注号配上 1188／1421，注条 1358。
 
+- **书末广告**：第 137 讲 THE END 之后混进卷三书末的出版社书目广告（Johnstone 版权页、Foote《有效呼召》书评），
+  看 p.663 页图确认后删出正文（`foote_heads.py` ADS，用户同意）。
+- **墨渍有多严重**（2026-11-12 量）：转录正文里看图读不出的 [?] 全书只 33 页 94 处，集中在卷一 p.94/266/298/302/307
+  五页（右栏行末墨团，字母多半露半截）；卷二、三零星 9 处。其余残字页印面干净，是 OCR 读错。
+- **逐处重定位看图**（`scripts/foote_line_check.py` → `line_fixes.tsv`）：残字两旁各至多 3 个无残符号的词，在整卷转录字母流里
+  定位（命中叶须在本讲页码范围内——同一句经文别讲也引），行框用残字前后约 15 词与该叶 tess 逐词框序列对齐、锚落在 ≥3 词相合块里。
+  **首跑行框定位只认单个锚词，常见词 the/and 撞到别行，裁错图——那 96 题答案作废（`line_answers_badbox_void/`），未落。**
+  重跑 39 题、$0.50：B 25（另 1 条拼出非词 `unper` 被挡），落 24。正文残字 387 → 288。
+
 链条现序（greek_notes 之后）：`foote_notes_fill --apply` → `foote_junk_ed3 --apply` → `foote_junk_check --apply --late`
-→ `foote_heads --apply` → `foote_fnmark_check --symbols` → `publish_foote_en --apply`。
+→ `foote_heads --apply` → `foote_line_check --apply` → `foote_fnmark_check --symbols` → `publish_foote_en --apply`。
 
 ## 待做
 
-1. 正文残字约 380 处：多为墨渍盖住行末（第 67–137 讲只有一份扫描，第 3 版也定位不到的），只能按上下文推补——须逐条列清单待用户同意。
+1. 正文残字约 288 处：多为转录定位不到（65）、行框对不齐（52）、段首而转录不分段（33）、墨渍页读不出（14）。
 2. 注区残字约 255 处：[?] 补不全的 23 页、看图答 A/other 的 21 页、两边对不上的 22 页（转录只记本页起头的注）。
 3. 残串第 3 轮 odd-star 仍暂扣 14 处、fn-mismatch 4 处；奇数星号段 4。
 4. 经文段按钦定本同位词校正（参照 `extract_alexander_acts.py` 的 `header_fix`）。
