@@ -105,7 +105,7 @@ Though the closing scene of the history of this man was so extraordinary that it
 
 &#42; Lev. xix. 17.
 
-&#42; 'O-ra/f xnToi rt io'avreti, tl ^a^e^tiffoi xeiXovfitfot, veivrSv xmXSv Tt* jmu *ityafiiv fito'rot a^affec h yn (puin ἐθελει.*—*Xen. (Econ,*
+&#42; 'O-ra/f xnToi rt io'avreti, tl παραδεισοι xeiXovfitfot, veivrSv xmXSv Tt* jmu *ityafiiv fito'rot ὁποσα h yn (puin ἐθελει.*—*Xen. (Econ,*
 
 <a class="ft-nsym" href="#fnref-128-11" id="fn-128-11">†</a> \*f *"Eyyuf παραδεισου xeiXov xett fAiyetXdUt* "' *δασεος παντοιων* iiOjMVf —*Xen, de Exped. Cyriy* lib. ii. The word *παραδεισου* is used in the Septuagint, Gen. li. 8.—Hence the ancient heathens seem to have borrowed their ideas of the gardens of the Hesperides, the trees of which were fabled to have borne golden fruit.
 

@@ -236,16 +236,43 @@ def band_image(vol, leaf, ys):
     return buf.getvalue()
 
 
+def seam_image(vol, leaf):
+    """本页页尾四分之一 + 下一页页首四分之一竖拼（残字在下页页首、锚词在本页页尾的，第 1 轮整页图上找不到）。"""
+    doc = fitz.open(RAW / 'pdf' / I.PDF[vol])
+    ims = [Image.open(io.BytesIO(doc.extract_image(doc[k].get_images(full=True)[0][0])['image'])).convert('L')
+           for k in (leaf, leaf + 1)]
+    a = ims[0].crop((0, ims[0].height * 3 // 4, ims[0].width, ims[0].height))
+    b = ims[1].crop((0, 0, ims[1].width, ims[1].height // 4))
+    out = Image.new('L', (max(a.width, b.width), a.height + b.height + 12), 255)
+    out.paste(a, (0, 0))
+    out.paste(0, (0, a.height + 4, out.width, a.height + 8))
+    out.paste(b, (0, a.height + 12))
+    k_ = 1568 / max(out.size)
+    if k_ < 1:
+        out = out.resize((round(out.width * k_), round(out.height * k_)), Image.LANCZOS)
+    buf = io.BytesIO()
+    out.save(buf, 'PNG')
+    return buf.getvalue()
+
+
+SEAM = False
+
+
 def ask(vol, leaf, qs):
     content = []
+    if SEAM:
+        content.append({'type': 'text', 'text': 'Foot of one page (above the black rule) and the head of the NEXT page '
+                                                '(below it); the spot may be at the very top of the next page:'})
+        content.append({'type': 'image', 'source': {'type': 'base64', 'media_type': 'image/png',
+                                                    'data': base64.b64encode(seam_image(vol, leaf)).decode()}})
     ys = [q.get('y') for q in qs]
-    if all(y is not None for y in ys) and sum(1 for _ in set(ys)) <= 3:
+    if not SEAM and all(y is not None for y in ys) and sum(1 for _ in set(ys)) <= 3:
         imgs = [band_image(vol, leaf, ys)]
         content.append({'type': 'text', 'text': 'The relevant lines of the page (several bands of the same page, '
                                                 'separated by black rules):'})
         content.append({'type': 'image', 'source': {'type': 'base64', 'media_type': 'image/png',
                                                     'data': base64.b64encode(imgs[0]).decode()}})
-    for k, png in enumerate(page_strips(vol, leaf) if len(content) == 0 else [], 1):
+    for k, png in enumerate(page_strips(vol, leaf) if len(content) == 0 and not SEAM else [], 1):
         content.append({'type': 'text', 'text': f'Strip {k} of 2:'})
         content.append({'type': 'image', 'source': {'type': 'base64', 'media_type': 'image/png',
                                                     'data': base64.b64encode(png).decode()}})
@@ -273,7 +300,8 @@ def qkey(q):
 
 def answered():
     got = {}
-    for f in sorted(ANS.glob('*.json')):
+    for f in sorted(ANS.glob('*.json')) + (sorted((WORK / 'page_check_answers_seam').glob('*.json'))
+                                           if ANS.name == 'page_check_answers' else []):
         d = json.loads(f.read_text(encoding='utf-8'))
         for n, q in enumerate(d['qs'], 1):
             got[qkey(q)] = d['ans'].get(str(n), '')
@@ -337,11 +365,32 @@ def second_read_has(vol, leaf, x):
     return bool(words) and all(G.bare(w) in pool for w in words)
 
 
+def vlm_wild_has(vol, leaf, x):
+    """x 的每个希腊词都能在同页转录（正文与 [FN:] 行）里找到相合的词：转录读出的字母相同、[?] 处任意 0–3 字母。"""
+    import foote_greek_read as G
+    import foote_notes_fill as NF
+    f = V.VLM / f'v{vol}' / f'{leaf:04d}.txt'
+    if not f.exists():
+        return False
+    toks = [t.strip('.,;:—"\'()*') for t in f.read_text(encoding='utf-8').split()]
+    toks = [t for t in toks if re.search(r'[Ͱ-Ͽἀ-῿]', t)]
+    words = re.findall(r'[Ͱ-Ͽἀ-῿᾿῾ʼ\']+', x)
+    if not words:
+        return False
+    for w in words:
+        bw = G.bare(w)
+        if not any((NF.wild(t).match(bw) if '[?]' in t else G.bare(t) == bw) for t in toks):
+            return False
+    return True
+
+
 def gate(q, x):
     """模型读法 x 过哪道闸：'T' / 'S' / 'P' / 'G' / ''。"""
     lx = LC.letters(x)
     if re.search(r'[Ͱ-Ͽἀ-῿]', x) and not re.search(r'[A-Za-z]', x) and second_read_has(q['vol'], q['leaf'], x):
         return 'G'                                  # 希腊文：与同页第二读（另一次照印面读）字母相同
+    if re.search(r'[Ͱ-Ͽἀ-῿]', x) and vlm_wild_has(q['vol'], q['leaf'], x):
+        return 'W'                                  # 希腊文：与同页转录（[?] 作通配）相合
     if q['tB'] is not None and re.sub(r'[\s*]', '', norm(q['tB'])) == re.sub(r'[\s*]', '', norm(x).replace(FNS, P_FN)):
         return 'T'
     if q['tB'] is not None and LC.letters(q['tB']) == lx and lx:
@@ -457,6 +506,20 @@ def rules():
     print(dict(Counter(r[0] for r in rows)), f'规则 {len(out)} → {RULES}；待核 {len(pend)} → {PEND}', file=sys.stderr)
 
 
+def use_seam():
+    """第 2 轮（页缝）：第 1 轮答 ? 的各处，改送本页页尾＋下页页首。答案另存 page_check_answers_seam/。"""
+    global SEAM, ANS, CAND
+    got = answered()
+    pages = json.loads(CAND.read_text(encoding='utf-8'))
+    keep = [dict(p, qs=[q for q in p['qs'] if got.get(qkey(q), '').strip() == '?']) for p in pages]
+    keep = [p for p in keep if p['qs']]
+    SEAM = True
+    ANS = WORK / 'page_check_answers_seam'
+    CAND = WORK / 'page_check_candidates_seam.json'
+    CAND.write_text(json.dumps(keep, ensure_ascii=False, indent=0), encoding='utf-8')
+    return got
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument('--collect', action='store_true')
@@ -465,9 +528,13 @@ def main():
     ap.add_argument('--all', action='store_true')
     ap.add_argument('--rules', action='store_true')
     ap.add_argument('--apply', action='store_true')
+    ap.add_argument('--seam', action='store_true')
     a = ap.parse_args()
     if a.collect:
         collect()
+    elif a.run and a.seam:
+        use_seam()
+        run(a.sample, a.all)
     elif a.run:
         run(a.sample, a.all)
     elif a.rules:

@@ -109,7 +109,7 @@ But this part of the parable is also applicable to all unbelievers of every age 
 
 <a class="ft-nsym" href="#fnref-100-6" id="fn-100-6">†</a> Ezek. xviii. 8.
 
-<a class="ft-nsym" href="#fnref-100-7" id="fn-100-7">&#42;</a> Exod. xxiL 21. f Tf«&lt;ri?;«. *%* Matt. xxi. 12.
+<a class="ft-nsym" href="#fnref-100-7" id="fn-100-7">&#42;</a> Exod. xxiL 21. f Τραπεζα. *%* Matt. xxi. 12.
 
 &#42; %* Luke viii 18; Matt xxr. 29.
 
