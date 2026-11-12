@@ -20,11 +20,13 @@ import json
 import re
 import sys
 from collections import Counter
+from difflib import SequenceMatcher
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import adjudicate_foote_ocr as A  # noqa: E402
 import foote_image_check as I  # noqa: E402
+import foote_junk_check as J  # noqa: E402
 import foote_notes_check as N  # noqa: E402
 import foote_notes_missing as M  # noqa: E402
 import foote_punct as P  # noqa: E402
@@ -72,6 +74,43 @@ def locate(bk, vn):
     return None
 
 
+ROUND = 1
+
+
+def use_round(n):
+    """第 2 轮：注文在正文里也读花了（`1 Cor. viil t Rom. xiv. l3`），按字母流模糊定位——整页注文与正文某窗口
+    相似度 ≥0.75、最长相合段 ≥8 且不在转录正文里。题、答、表另存 *_r2。"""
+    global ROUND
+    ROUND = n
+    if n == 2:
+        N.CAND = N.WORK / 'notes_leak2_candidates_r2.json'
+        N.ANS = N.WORK / 'notes_leak2_answers_r2'
+        N.RULES = N.RAW / 'notes_leak2_fixes_r2.tsv'
+        N.LOG = A.ROOT / 'logs' / 'foote_notes_leak2_r2.tsv'
+        N.COST = A.ROOT / 'logs' / 'foote_notes_leak2_r2_cost.tsv'
+
+
+def locate_fuzzy(bk, vn):
+    allk = ''.join(key(t) for _, t in vn)
+    if len(allk) < 15:
+        return None
+    sm = SequenceMatcher(None, bk, allk, autojunk=False)
+    m = sm.find_longest_match(0, len(bk), 0, len(allk))
+    if m.size < 8:
+        return None
+    a = max(0, m.a - m.b - 8)
+    win = bk[a:a + len(allk) + 16]
+    s2 = SequenceMatcher(None, win, allk, autojunk=False)
+    if s2.ratio() < 0.75:
+        return None
+    blks = [b for b in s2.get_matching_blocks() if b.size >= 3]
+    if not blks or blks[0].b > 4 or len(allk) - (blks[-1].b + blks[-1].size) > 4:
+        return None                                       # 注文头尾都要对上，才定得准起止
+    head = blks[0].b                                      # 注文开头没对上的字母数（读花的 Gen.→Geo.）
+    tail = len(allk) - (blks[-1].b + blks[-1].size)
+    return a + blks[0].a, a + blks[-1].a + blks[-1].size, head, tail
+
+
 def collect():
     out, skip = [], Counter()
     for vol in (1, 2, 3):
@@ -86,19 +125,45 @@ def collect():
             for pg in sorted(set(re.findall(r'<!-- PAGE (\d+) -->', body)), key=int):
                 lf = leaf_of.get(pg)
                 vn = N.vlm_notes(vol, lf) if lf is not None else None
-                if not vn or any('[?]' in t for _, t in vn):
+                if not vn or (ROUND == 1 and any('[?]' in t for _, t in vn)):
                     continue
                 if sum(len(key(t)) for _, t in vn) < 10:
                     continue                              # 太短（Henry、Dr Guyse）易撞正文里本有的词
-                loc = locate(bk, vn)
+                loc = locate(bk, vn) if ROUND == 1 else locate_fuzzy(bk, vn)
                 if not loc:
                     continue
                 vb = ''.join(key(P.clean_vlm((V.VLM / f'v{vol}' / f'{x:04d}.txt').read_text(encoding='utf-8')))
                              for x in (lf - 1, lf, lf + 1) if (V.VLM / f'v{vol}' / f'{x:04d}.txt').exists())
-                if key(vn[0][1])[:14] in vb:
+                kk = ''.join(key(t) for _, t in vn)
+                if key(vn[0][1])[:14] in vb or (ROUND == 2 and bk[loc[0]:loc[0] + 12] in vb):
                     skip['转录正文也有'] += 1
                     continue
                 s, e = bpos[loc[0]], bpos[loc[1] - 1] + 1
+                if ROUND == 2:
+                    # 对齐到词边界，再按没对上的字母往外按词走：只吞非真词（读花的 Geo.、Izi.）、带残符号的、
+                    # 希腊/希伯来词；遇真词即停（第 131 讲往后补会吞掉正文的 of）
+                    head, tail = loc[2], loc[3]
+                    s = max(body.rfind(' ', 0, s), body.rfind('\n', 0, s)) + 1
+                    e += len(re.match(r'\S*', body[e:]).group())
+
+                    def junky(w, budget):
+                        lw = re.sub(r'[^a-z]', '', w.lower())
+                        return (bool(re.search(r'[Ͱ-Ͽἀ-῿א-ת]', w)) or bool(J.BAD.search(w))
+                                or (budget > 0 and re.fullmatch(r'[A-Z][a-z]{1,3}\.', w) is not None)
+                                or (budget > 0 and lw and not A._isword(lw)) or (budget > 0 and not lw and w.strip()))
+                    while s > 0 and body[s - 1] == ' ':
+                        p0 = max(body.rfind(' ', 0, s - 1), body.rfind('\n', 0, s - 1)) + 1
+                        w = body[p0:s - 1]
+                        if not w or not junky(w, head):
+                            break
+                        head -= len(re.sub(r'[^a-z0-9]', '', w.lower()))
+                        s = p0
+                    while e < len(body) and body[e] == ' ':
+                        m_ = re.match(r' (\S+)', body[e:])
+                        if not m_ or not junky(m_.group(1), tail):
+                            break
+                        tail -= len(re.sub(r'[^a-z0-9]', '', m_.group(1).lower()))
+                        e += len(m_.group())
                 while e < len(body) and body[e] in '.,;:)*"\'':
                     e += 1
                 if e < len(body) and body[e].isalnum():
@@ -180,7 +245,7 @@ def rules():
         if not q['has']:
             a_ = got.get(N.qkey(q)) if q['box'] else None
             v = N.verdict(q, a_) if a_ else 'unasked'
-            if v == 'B':
+            if v == 'B' and not any('[?]' in x for _, x in q['vn']):
                 ent = '\n\n'.join(f"<!-- NOTE p.{q['page']} --> {N.SYM.get(s, s)} {x}".rstrip() for s, x in q['vn'])
             else:
                 ent = f"<!-- NOTE p.{q['page']} --> {q['ours']}"
@@ -209,7 +274,9 @@ def main():
     ap.add_argument('--all', action='store_true')
     ap.add_argument('--rules', action='store_true')
     ap.add_argument('--apply', action='store_true')
+    ap.add_argument('--round', type=int, default=1)
     a = ap.parse_args()
+    use_round(a.round)
     if a.collect:
         collect()
     elif a.run:

@@ -550,10 +550,15 @@ K 断词未接（`be- -lieveth`）；L 漏逗号；M 书帖签名进注区（`VO
   （注号读成 `•` `f` `t` 或没有的，notes_leak 只认 ♦ 漏了）。闸：该页全部注条按序挨着出现、转录正文里没有这串、
   后面不接字母数字（挡 `Matt. xxiii. 3`↔`34`）、注文总长 ≥10 字母。16 处删出正文；该页无注的 12 页补注（看图 B 11 用转录，
   other 1 把我们的 OCR 串原样挪入注区）。$0.15。
+  **第 2 轮**（`--round 2` → `notes_leak2_fixes_r2.tsv`）：注文在正文里也读花的，整页注文字母流与正文窗口模糊比（≥0.75、
+  头尾各至多差 4 字母），起止对齐到词边界后按词往外吞——只吞非真词、带残符号、希腊/希伯来词、书卷缩写，遇真词即停
+  （第 131 讲曾会吞掉正文的 `of`）。23 处：19 页注区已有只删正文，4 页补注（B 1、other 3 原样挪）。$0.06。
+- **正文残字·第 3 版第 2 轮**（`foote_junk_ed3.py --round 2` → `junk_ed3_fixes_r2.tsv`）：锚只须不带残符号、3/2/1 词由长到短；
+  第 3 版的引号不搬（两版排法可能不同）、行末断词不问。15 题全 B，落 15。$0.15。
 
 链条现序（greek_notes 之后）：`foote_notes_fill --apply` → `foote_junk_ed3 --apply` → `foote_junk_check --apply --late`
-→ `foote_heads --apply` → `foote_line_check --apply` → `foote_notes_leak2 --apply` → `foote_fnmark_check --symbols`
-→ `publish_foote_en --apply`。
+→ `foote_heads --apply` → `foote_line_check --apply` → `foote_notes_leak2 --apply` → `foote_junk_ed3 --apply --round 2`
+→ `foote_notes_leak2 --apply --round 2` → `foote_fnmark_check --symbols` → `publish_foote_en --apply`。
 
 ## 待做
 

@@ -54,6 +54,19 @@ ORD = re.compile(r'\b\d+(st|nd|rd|th|d)\b')
 CLEAN = re.compile(r"[A-Za-z][A-Za-z']*")
 WORD = re.compile(r"[^\s]+")
 REACH = 4
+ROUND = 1
+
+
+def use_round(n):
+    """第 2 轮（链条末段，notes_leak2 之后）：锚放宽——锚词只须不带残符号（墨渍页附近的锚词本身也常读花），
+    由长到短试 3/2/1 词。题、答、表另存 *_r2。"""
+    global ROUND, CAND, ANS, RULES, LOG
+    ROUND = n
+    if n == 2:
+        CAND = WORK / 'junk_ed3_candidates_r2.json'
+        ANS = WORK / 'junk_ed3_answers_r2'
+        RULES = RAW / 'junk_ed3_fixes_r2.tsv'
+        LOG = A.ROOT / 'logs' / 'foote_junk_ed3_r2.tsv'
 
 SYSTEM = (
     'You are proof-reading a digitised 19th-century printed book. Our copy of a passage is damaged (ink blots over '
@@ -140,7 +153,34 @@ def junk_spans(text):
     return spans
 
 
+def spans_r2(text):
+    """第 2 轮的截：残字两旁各至多 3 个不带残符号的词（不求真词），返回 (左锚词列, 截起, 截止, 右锚词列)。"""
+    body = text.partition('\n---\n')[0]
+    tags = [(m.start(), m.end()) for m in re.finditer(r'<!--.*?-->', body, re.S)]
+    toks = [(m.start(), m.end(), m.group()) for m in WORD.finditer(body) if not any(a <= m.start() < b for a, b in tags)]
+    bad = lambda w: bool(J.BAD.search(ORD.sub('', w)))
+    out, i = [], 0
+    while i < len(toks):
+        if not bad(toks[i][2]) or (toks[i][2] == '>' and body[toks[i][0] - 1] == '\n'):
+            i += 1
+            continue
+        lo = hi = i
+        while hi + 1 < len(toks) and bad(toks[hi + 1][2]):
+            hi += 1
+        i = hi + 1
+        left, right = toks[max(0, lo - 3):lo], toks[hi + 1:hi + 4]
+        if not left or not right or any(bad(w) for *_, w in left + right):
+            continue
+        s, e = left[-1][1], right[0][0]
+        if '\n\n' in body[s:e] or '<!--' in body[s:e]:
+            continue
+        out.append(([w for *_, w in left], s, e, [w for *_, w in right]))
+    return out
+
+
 def collect():
+    if ROUND == 2:
+        return collect_r2()
     lines = ed3_lines()
     etext, low, pos, lno = stream(lines)
     pages, skip = {}, Counter()
@@ -201,6 +241,80 @@ def collect():
     WORK.mkdir(parents=True, exist_ok=True)
     CAND.write_text(json.dumps(out, ensure_ascii=False, indent=0), encoding='utf-8')
     print(f'题 {sum(len(p["qs"]) for p in out)}  页 {len(out)}  跳过 {dict(skip)} → {CAND}', file=sys.stderr)
+
+
+def collect_r2():
+    lines = ed3_lines()
+    etext, low, pos, lno = stream(lines)
+    pages, skip = {}, Counter()
+    for lec in range(1, 67):
+        text = (A.SRC / f'{lec:03d}.md').read_text(encoding='utf-8')
+        for lw, s, e, rw in spans_r2(text):
+            found = set()
+            for nl, nr in ((3, 3), (3, 2), (2, 3), (2, 2), (2, 1), (1, 2), (1, 1)):
+                if nl > len(lw) or nr > len(rw):
+                    continue
+                L, R = letters(''.join(lw[-nl:])), letters(''.join(rw[:nr]))
+                if len(L) < 7 or len(R) < 4:
+                    continue
+                for m in re.finditer(re.escape(L), low):
+                    h = m.start()
+                    j = low.find(R, h + len(L), h + len(L) + 40 + len(R))
+                    if j >= 0:
+                        found.add((pos[h + len(L) - 1] + 1, pos[j]))
+                if found:
+                    break
+            if len(found) != 1:
+                skip['第3版定位不到' if not found else '第3版多处'] += 1
+                continue
+            cs, ce = found.pop()
+            b = re.sub(r'(?<=[a-z])-\n(?=[a-z])', '', etext[cs:ce]).replace('\n', ' ')
+            # 左锚词末标点、右锚词首标点已在锚里：B 两头去掉
+            lt = re.search(r"[^A-Za-z]*$", lw[-1]).group()
+            rh = re.match(r"[^A-Za-z]*", rw[0]).group()
+            if lt and b.lstrip().startswith(lt):
+                k = len(b) - len(b.lstrip())
+                b = b[:k] + b[k + len(lt):]
+            if rh and b.rstrip().endswith(rh):
+                k = len(b.rstrip())
+                b = b[:k - len(rh)] + b[k:]
+            o = text[s:e]
+            if not b.strip() or J.BAD.search(ORD.sub('', b)) or any(
+                    not A._isword(x.strip("'").lower()) for x in re.findall(r"[A-Za-z']+", b)):
+                skip['第3版也残'] += 1
+                continue
+            if abs(len(o.split()) - len(b.split())) > 1:
+                skip['词数不同'] += 1
+                continue
+            if re.search(r'-\W*$', o.strip()) or re.fullmatch(r'\s*[b-hj-z]\s*', b):
+                skip['行末断词'] += 1                  # `mean--^ ing`、`multitud -^ of`（补出孤立的 e）
+                continue
+            if any(b.count(c) > o.count(c) for c in '"\''):
+                skip['引号'] += 1                      # 两版引号排法可能不同，第 3 版的引号不搬
+                continue
+            lo_, lb = letters(o), letters(b)
+            if lo_ and SequenceMatcher(None, lo_, lb, autojunk=False).ratio() < 0.4:
+                skip['字母不合'] += 1
+                continue
+            core = re.sub(r'\s+', ' ', b.strip())
+            core = re.sub(r'^"\s+(?=[A-Za-z])', '"', core)   # ABBYY 在开引号后多读一个空格
+            if o.strip().startswith('*') and o.strip().endswith('*') and len(o.strip()) > 1:
+                core = '*' + core + '*'
+            core += A.FN_MARK * o.count(A.FN_MARK)
+            new = o[:len(o) - len(o.lstrip())] + core + o[len(o.rstrip()):]
+            l0, l1 = lno[cs], lno[max(cs, ce - 1)]
+            leaf = lines[l0][0]
+            if lines[l1][0] != leaf:
+                skip['跨页'] += 1
+                continue
+            box = [min(lines[k][1][0] for k in range(l0, l1 + 1)), lines[l0][1][1],
+                   max(lines[k][1][2] for k in range(l0, l1 + 1)), lines[l1][1][3]]
+            ctx = (text[max(0, s - 70):s] + '⟦' + o + '⟧' + text[e:e + 70]).replace('\n', ' ')
+            pages.setdefault(leaf, []).append({'lec': f'{lec:03d}', 's': s, 'e': e, 'ours': o, 'vlm': new,
+                                               'box': box, 'ctx': re.sub(r'<!--.*?-->', '', ctx)})
+    out = [{'leaf': k, 'qs': v} for k, v in sorted(pages.items())]
+    CAND.write_text(json.dumps(out, ensure_ascii=False, indent=0), encoding='utf-8')
+    print(f'第2轮 题 {sum(len(p["qs"]) for p in out)}  页 {len(out)}  跳过 {dict(skip)} → {CAND}', file=sys.stderr)
 
 
 def strips(leaf, qs):
@@ -369,7 +483,9 @@ def main():
     ap.add_argument('--all', action='store_true')
     ap.add_argument('--rules', action='store_true')
     ap.add_argument('--apply', action='store_true')
+    ap.add_argument('--round', type=int, default=1)
     a = ap.parse_args()
+    use_round(a.round)
     if a.collect:
         collect()
     elif a.run:

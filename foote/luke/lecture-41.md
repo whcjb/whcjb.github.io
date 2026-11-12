@@ -17,7 +17,7 @@ next_label: "Lecture XLII"
 
 <div class="ft-text" markdown="1">
 
-Now it came to pass on a certain day, that he went into a ship with his disciples: and he said unto them. Let us go over unto the other side of the lake. And they launched forth. <sup class="ft-vn">23</sup>But as they sailed he fell asleep: and there came down a storm of wind on the lake; and they were filled with ^ater, and were in jeopardy, <sup class="ft-vn">24</sup>And they came to him, and awoke him, saying, Master, Master, we perish. Then he arose, and rebuked the wind, and the raging of the water; and they ceased, and there was a calm. <sup class="ft-vn">25</sup>And he said unto them. Where is your faith? And they, being afraid, wondered, saying one to another. What manner of man is this? for he commandeth even the winds and water, and they obey him."
+Now it came to pass on a certain day, that he went into a ship with his disciples: and he said unto them. Let us go over unto the other side of the lake. And they launched forth. <sup class="ft-vn">23</sup>But as they sailed he fell asleep: and there came down a storm of wind on the lake; and they were filled with water, and were in jeopardy, <sup class="ft-vn">24</sup>And they came to him, and awoke him, saying, Master, Master, we perish. Then he arose, and rebuked the wind, and the raging of the water; and they ceased, and there was a calm. <sup class="ft-vn">25</sup>And he said unto them. Where is your faith? And they, being afraid, wondered, saying one to another. What manner of man is this? for he commandeth even the winds and water, and they obey him."
 
 </div>
 
