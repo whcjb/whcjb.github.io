@@ -321,9 +321,27 @@ def norm(t):
     return re.sub(r'\s+', ' ', t.translate(str.maketrans('“”‘’', '""\'\''))).strip()
 
 
+_SR = None
+
+
+def second_read_has(vol, leaf, x):
+    """x 的希腊词是否都在同页看图第二读（foote_greek_read，不给提示照印面读）里出现（比去重音字母）。"""
+    global _SR
+    if _SR is None:
+        import foote_greek_notes as GN
+        import foote_greek_read as G
+        _SR = ({k: {G.bare(w) for r in v for w in r.split()} for k, v in GN.second_reads().items()}, G)
+    sr, G = _SR
+    words = re.findall(r'[Ͱ-Ͽἀ-῿]+', x)
+    pool = sr[0].get((vol, leaf), set()) if False else _SR[0].get((vol, leaf), set())
+    return bool(words) and all(G.bare(w) in pool for w in words)
+
+
 def gate(q, x):
-    """模型读法 x 过哪道闸：'T' / 'S' / 'P' / ''。"""
+    """模型读法 x 过哪道闸：'T' / 'S' / 'P' / 'G' / ''。"""
     lx = LC.letters(x)
+    if re.search(r'[Ͱ-Ͽἀ-῿]', x) and not re.search(r'[A-Za-z]', x) and second_read_has(q['vol'], q['leaf'], x):
+        return 'G'                                  # 希腊文：与同页第二读（另一次照印面读）字母相同
     if q['tB'] is not None and re.sub(r'[\s*]', '', norm(q['tB'])) == re.sub(r'[\s*]', '', norm(x).replace(FNS, P_FN)):
         return 'T'
     if q['tB'] is not None and LC.letters(q['tB']) == lx and lx:
@@ -360,6 +378,7 @@ def rules():
     texts = {}
     for p in pages:
         for q in p['qs']:
+            q = dict(q, vol=p['vol'], leaf=p['leaf'])
             a = got.get(qkey(q))
             if a is None:
                 rows.append(('unasked', q['lec'], q['page'], q['ours'], '', ''))

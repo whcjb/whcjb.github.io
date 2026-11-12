@@ -89,7 +89,7 @@ But perhaps the most generally applicable, and most awakening consideration of a
 
 &#42; Henry.
 
-<a class="ft-nsym" href="#fnref-13-9" id="fn-13-9">†</a> \+ r^^rf/ffxc. Bcelera scelere auxit. *rovrm V i\ns re ^vnx's i^u^yu^evro.*
+<a class="ft-nsym" href="#fnref-13-9" id="fn-13-9">†</a> \+ προσεθηκε. Bcelera scelere auxit. *rovrm V i\ns re συνεχες ἐξειργαζοντο,*
 
 <a class="ft-nsym" href="#fnref-13-10" id="fn-13-10">&#42;</a> Driving a bodkin through the tongue, as Antony's wife did to Cicero. On the authority of Jerome.
 

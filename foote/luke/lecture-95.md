@@ -71,7 +71,7 @@ Surely, if you have never yet come to Christ so as to obtain an interest in the 
 
 &#42; Matthew and Mark use the word παιδια; Luke uses both βρεφη and παιδια: The word παιδιον is used for a new-born infant in Matthew ii. 8,
 
-<a class="ft-nsym" href="#fnref-95-2" id="fn-95-2">&#42;</a> 9, 11,13, 14, 20, 21; Luke ii. 17, 21; John xvi. 21: for a child somewhat advanced in Matthew xviii. 2, 3,4, 5; Mark ix. 24: and for a girl twelve years of age, m Mark y. 39, 40. 41, 42. The word *fi^t^cs* is used for a new-bom child in Luke iL 12,16; Acts vii. 19; 1 Peter ii. 2: and for a child so far advanced as to be capable of knowing something of Scripture, in 2 Timothy iii. 15.
+<a class="ft-nsym" href="#fnref-95-2" id="fn-95-2">&#42;</a> 9, 11,13, 14, 20, 21; Luke ii. 17, 21; John xvi. 21: for a child somewhat advanced in Matthew xviii. 2, 3,4, 5; Mark ix. 24: and for a girl twelve years of age, m Mark y. 39, 40. 41, 42. The word *βρεφος* is used for a new-bom child in Luke iL 12,16; Acts vii. 19; 1 Peter ii. 2: and for a child so far advanced as to be capable of knowing something of Scripture, in 2 Timothy iii. 15.
 
 &#42; Cren. xlviii. 14. f Ley. ix. 22; Luke xxiv. 50.
 

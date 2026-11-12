@@ -115,7 +115,7 @@ Though, unquestionably, Satan is a formidable adversary, there is no reason why 
 
 <a class="ft-nsym" href="#fnref-15-5" id="fn-15-5">&#42;</a> As preceding Easter.
 
-<a class="ft-nsym" href="#fnref-15-6" id="fn-15-6">&#42;</a> *iviMtt»9 fui,*—Luke.
+<a class="ft-nsym" href="#fnref-15-6" id="fn-15-6">&#42;</a> *ἐνωπιον fui,*—Luke.
 
 <a class="ft-nsym" href="#fnref-15-7" id="fn-15-7">†</a> πτερυγιον, pinna.
 
