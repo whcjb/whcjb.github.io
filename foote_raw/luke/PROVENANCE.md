@@ -559,7 +559,8 @@ K 断词未接（`be- -lieveth`）；L 漏逗号；M 书帖签名进注区（`VO
 链条现序（greek_notes 之后）：`foote_notes_fill --apply` → `foote_junk_ed3 --apply` → `foote_junk_check --apply --late`
 → `foote_heads --apply` → `foote_line_check --apply` → `foote_notes_leak2 --apply` → `foote_junk_ed3 --apply --round 2`
 → `foote_notes_leak2 --apply --round 2` → `foote_line_check --apply --round 2` → `foote_notes_entry --apply`
-→ `foote_page_check --apply` → `foote_hand_pending --apply` → `foote_fnmark_check --symbols` → `publish_foote_en --apply`。
+→ `foote_page_check --apply` → `foote_hand_pending --apply` → `foote_seam_join --apply` → `foote_fnmark_check --symbols`
+→ `publish_foote_en --apply`。
 
 - **注区逐条看图**（`scripts/foote_notes_entry.py` → `notes_entry_fixes.tsv`）：整页一题的几层只要一条对不上就整页不落；
   改逐条——按序配对（我们多出的首条当上页续文），配对须像（字母相似 ≥0.35，希腊文条比长度；转录不得短于我们 0.7，
@@ -588,6 +589,11 @@ K 断词未接（`be- -lieveth`）；L 漏逗号；M 书帖签名进注区（`VO
   （`into the bearing`、`hope and destiny.`、`may be promoted, as we accompany … beautiful and interesting account`、
   `other circumstances`）；第 17 讲印面 `un-`/`per` 原书排错照录 `un-per`；第 24 讲 p.349 末行 `service.` 被抽进注区，挪回正文。
   **白名单残字全书归零**（仅余第 36 讲 `2dly`，是序数词，不是残字）。注号配上 1238／1425，注条 1399。
+- **句中被页码标记切成两段**（`scripts/foote_seam_join.py` → `seam_join_fixes.tsv`，链条最末，用户指出第 1 讲
+  `the antidote of` ／ `superstition`）：发布时每个 PAGE 标记起一段；卷入的注常夹在翻页处，删出后前后两半没接回。
+  判据：上一块末无收束标点、下一块小写起头 → 去掉分隔接回（行末断词接成真词的去连字符：`wor-shipping`→worshipping）。
+  24 处，句中断段归零。顺带查出 `foote_notes_leak2` 第 2 轮按词往后吞时把第 114 讲正文的 `ter,`（`mas-ter`）当注文吞了：
+  改为卷入串前以连字符断词时不吞后面的字母词（无字母、带怪符号的照吞），重出该表只变 114（复原 ter,）与 126（多去残码 `*,*`）。
 
 - **逐处看图第 2 轮**（`foote_line_check.py --round 2` → `line_fixes_r2.tsv` + 人工 `line_hand_fixes.tsv`）：精确锚定位不到时改用
   词序列对齐（残字两侧各 ≥2 词相合块紧贴）。前几轮答 B 却因注号/斜体/判词典暂扣、或答 other 的 16 处逐条裁图看定：

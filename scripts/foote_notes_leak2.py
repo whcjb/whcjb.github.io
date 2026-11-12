@@ -150,7 +150,8 @@ def collect():
                         lw = re.sub(r'[^a-z]', '', w.lower())
                         return (bool(re.search(r'[Ͱ-Ͽἀ-῿א-ת]', w)) or bool(J.BAD.search(w))
                                 or (budget > 0 and re.fullmatch(r'[A-Z][a-z]{1,3}\.', w) is not None)
-                                or (budget > 0 and lw and not A._isword(lw)) or (budget > 0 and not lw and w.strip()))
+                                or (budget > 0 and lw and not A._isword(lw)) or (not lw and bool(w.strip()))
+                                or bool(re.search(r'[^\x00-\x7fͰ-῿’‘“”—–æœÆŒ]', w)))
                     while s > 0 and body[s - 1] == ' ':
                         p0 = max(body.rfind(' ', 0, s - 1), body.rfind('\n', 0, s - 1)) + 1
                         w = body[p0:s - 1]
@@ -158,6 +159,9 @@ def collect():
                             break
                         head -= len(re.sub(r'[^a-z0-9]', '', w.lower()))
                         s = p0
+                    # 卷入串前面以连字符断词（`his own mas-` ／ 注 ／ `ter, every`）：后半截是正文，不往后吞（第 114 讲曾吞掉 ter,）
+                    if re.search(r'[A-Za-z]-\s*(?:<!--[^>]*-->\s*)*$', body[:s]):
+                        tail = 0
                     while e < len(body) and body[e] == ' ':
                         m_ = re.match(r' (\S+)', body[e:])
                         if not m_ or not junky(m_.group(1), tail):
