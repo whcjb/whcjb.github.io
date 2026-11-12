@@ -95,7 +95,7 @@ Finally, while we give ourselves diligently to the business of salvation, let us
 
 <a class="ft-nsym" href="#fnref-75-3" id="fn-75-3">&#42;</a> Matt. xxv. 10.
 
-<a class="ft-nsym" href="#fnref-75-4" id="fn-75-4">&#42;</a> Οὐκ οἰδα ὑμας ποθεν ἐστε, seems to be for *Oh otha, irofitv iftttf* ἐστε. SOj in Herodotus, lib. It., *Ov AtQvnv tlhrtf o»u yns tin,* Non noverant ubi terrftrum Libya esset.
+<a class="ft-nsym" href="#fnref-75-4" id="fn-75-4">&#42;</a> Οὐκ οἰδα ὑμας ποθεν ἐστε, seems to be for *Oh otha, irofitv iftttf* ἐστε. SOj in Herodotus, lib. It., *Ov AtQvnv tlhrtf ὁκου yns tin,* Non noverant ubi terrftrum Libya esset.
 
 <a class="ft-nsym" href="#fnref-75-5" id="fn-75-5">&#42;</a> Ps. cxii. 10.
 

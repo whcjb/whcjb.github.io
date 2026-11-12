@@ -85,7 +85,7 @@ Such are the ten signs which our Lord gave to denote that Jerusalem's fatal day 
 
 <a class="ft-nsym" href="#fnref-111-6" id="fn-111-6">&#42;</a> Dr Campbell's translation. See his remarks on Mark xiii. *9.*
 
-&#42; X* See Lecture Ixiy. Odyss. iii. 26,27., Eumenid. >^73w
+&#42; X* See Lecture Ixiy. Odyss. iii. 26,27., Eumenid. 9-73.
 
 <a class="ft-nsym" href="#fnref-111-8" id="fn-111-8">&#42;</a> "Cui nihil contradici possit, quod veri habeat speciem."—*Grotius.*
 

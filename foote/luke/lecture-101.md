@@ -113,11 +113,11 @@ The lively exercise of the affections on earthly objects is applauded; why, then
 
 <a class="ft-nsym" href="#fnref-101-8" id="fn-101-8">‡</a> Middleton on the Greek article, and others.
 
-<a class="ft-nsym" href="#fnref-101-9" id="fn-101-9">&#42;</a> Some are of opinion that this clause should be considered as a continuation of what the two disciples were to say to the owners, and, therefore, expressing a promise that the colt was to be returned; andf that it should be translated, " And straightway he (that is, the Lord Jesus Christ) will send him back hither." But, though such a promis&lt;» was implied, the word 4lir«rriAA.« cannot be justly rendered to send back.
+<a class="ft-nsym" href="#fnref-101-9" id="fn-101-9">&#42;</a> Some are of opinion that this clause should be considered as a continuation of what the two disciples were to say to the owners, and, therefore, expressing a promise that the colt was to be returned; andf that it should be translated, " And straightway he (that is, the Lord Jesus Christ) will send him back hither." But, though such a promise was implied, the word 4lir«rriAA.« cannot be justly rendered to send back.
 
 <a class="ft-nsym" href="#fnref-101-10" id="fn-101-10">&#42;</a> Or a powerful divine influence may have been exerted on their minds, to make them willing.
 
-<a class="ft-nsym" href="#fnref-101-11" id="fn-101-11">†</a> f Matt. zxi. 7. *\*Ein»mft0'»9 Waw avv09,* thai is, on the clothes; Ἐπανω των ἱματιων says Theophylact. Others account for this form of expression by the figure " enallage numeri," as in Gen. viii. 4, ziz. 29.
+<a class="ft-nsym" href="#fnref-101-11" id="fn-101-11">†</a> Matt. xxi. 7. Ἐπεκαθισαν ἐπανω αὐτων, that is, on the clothes; Ἐπανω των ἱματιων says Theophylact. Others account for this form of expression by the figure " enallage numeri," as in Gen. viii. 4, ziz. 29.
 
 ‡ J 2 Kings ix. 13.
 

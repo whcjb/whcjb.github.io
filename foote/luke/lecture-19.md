@@ -81,7 +81,7 @@ To this course we exhort you, not as to a course which will involve you in unava
 
 † De Bello, iii. 10.
 
-<a class="ft-nsym" href="#fnref-19-3" id="fn-19-3">&#42;</a> ζωγρῶν vivos capieni. *T»9* K^Mrav i^«y(iir«v. *'Arrvmynf litty^n^n* Horodotuf.
+<a class="ft-nsym" href="#fnref-19-3" id="fn-19-3">&#42;</a> ζωγρῶν vivos capiens. Τον Κροισον ἐζωγρησαν. Ἀστυαγης ἐζωγρηθη. Herodotus.
 
 <a class="ft-nsym" href="#fnref-19-4" id="fn-19-4">&#42;</a> Matt. iv. 19.
 

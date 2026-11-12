@@ -99,7 +99,7 @@ The difficulties in the way of their conversion are, doubtless, great, but ultim
 
 <a class="ft-nsym" href="#fnref-113-20" id="fn-113-20">&#42;</a> Jer. XXX 11.
 
-<a class="ft-nsym" href="#fnref-113-21" id="fn-113-21">&#42;</a> Chateaubriand. t *1>t* Richardson.
+<a class="ft-nsym" href="#fnref-113-21" id="fn-113-21">&#42;</a> Chateaubriand. t Dr Richardson.
 
 <a class="ft-nsym" href="#fnref-113-22" id="fn-113-22">†</a> TOL. 111. X
 

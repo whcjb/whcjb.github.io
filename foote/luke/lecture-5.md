@@ -99,7 +99,7 @@ With regard to the spiritual prosperity of children; if they not only are tracta
 
 <div class="ft-notes" markdown="1">
 
-<a class="ft-nsym" href="#fnref-5-1" id="fn-5-1">&#42;</a> • Gen. xvii.
+<a class="ft-nsym" href="#fnref-5-1" id="fn-5-1">&#42;</a> Gen. xvii.
 
 <a class="ft-nsym" href="#fnref-5-2" id="fn-5-2">&#42;</a> See Elsner on this passage.
 
