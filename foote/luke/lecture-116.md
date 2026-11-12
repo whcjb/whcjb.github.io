@@ -65,7 +65,7 @@ And now, our Lord seems, from Matthew, to have repeated the sentiment he uttered
 
 It appears, from what follows, in Luke, that Jesus said other things before he left the place where the passover and Lord's supper were observed; and many hold, with much probability, that it was now he spoke what is found in the 15th, 16th, and 17th chapters of John; but we must here notice, as intimately connected with the ordinances in which he had been engaged with his disciples, that, at the close of the service, and before they went out to the Mount of Olives, " they sung a hymn."<sup class="ft-fn"><a href="#fn-116-16" id="fnref-116-16">†</a></sup> Now, it is known, from Jewish writers, that the Jews were accustomed to sing at the passover the Psalms, from the lldth to the 118th inclusive, of which the 11-lth expressly relates to the deliverance of Israel out of Egypt. Our Lord and his disciples may have sung these psalms on this occasion; or, they may have sung some other hymn still more exactly appropriate to the Christian feast.<sup class="ft-fn"><a href="#fn-116-17" id="fnref-116-17">&#42;</a></sup> A solemn act of praise was well suited to the occasion, and furnishes an example which we should follow both in form and in spirit, on every similar opportunity.
 
-Such, in the first<sup class="ft-fn">&#42;</sup>^ place, were the chief circumstances attending the institution and first observance of the Lord's supper. Let us now briefly consider
+Such, in the *first* place, were the chief circumstances attending the institution and first observance of the Lord's supper. Let us now briefly consider
 
 II. The *names* of this ordinance.
 

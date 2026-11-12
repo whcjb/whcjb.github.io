@@ -558,7 +558,13 @@ K 断词未接（`be- -lieveth`）；L 漏逗号；M 书帖签名进注区（`VO
 
 链条现序（greek_notes 之后）：`foote_notes_fill --apply` → `foote_junk_ed3 --apply` → `foote_junk_check --apply --late`
 → `foote_heads --apply` → `foote_line_check --apply` → `foote_notes_leak2 --apply` → `foote_junk_ed3 --apply --round 2`
-→ `foote_notes_leak2 --apply --round 2` → `foote_fnmark_check --symbols` → `publish_foote_en --apply`。
+→ `foote_notes_leak2 --apply --round 2` → `foote_line_check --apply --round 2` → `foote_fnmark_check --symbols`
+→ `publish_foote_en --apply`。
+
+- **逐处看图第 2 轮**（`foote_line_check.py --round 2` → `line_fixes_r2.tsv` + 人工 `line_hand_fixes.tsv`）：精确锚定位不到时改用
+  词序列对齐（残字两侧各 ≥2 词相合块紧贴）。前几轮答 B 却因注号/斜体/判词典暂扣、或答 other 的 16 处逐条裁图看定：
+  114 讲印面就是 `watchfulne: ssLet us`（原书排错，照录）；116、135 讲印面无注号，误补的去掉；085 讲 `mount.*` 有注号；
+  128 讲 `rejectedst` 是古二人称。第 2 轮答案目录与第 1 轮分开，22 页重问了一遍（多花约 $0.3）。正文残字 202 → 182。
 
 ## 待做
 

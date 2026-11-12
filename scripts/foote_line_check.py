@@ -38,6 +38,40 @@ J.LOG = A.ROOT / 'logs' / 'foote_line_check.tsv'
 ORD = re.compile(r'\b\d+(st|nd|rd|th|d)\b')
 TOK = re.compile(r'\S+')
 REACH = 3
+ROUND = 1
+
+
+def use_round(n):
+    """第 2 轮（链条末段，notes_leak2 第 2 轮之后）：精确锚定位不到时，改用词序列对齐——残字前后各 8 词与本讲转录
+    词流对齐，残字两侧各有 ≥2 词的相合块紧贴着，两块之间的转录就是 B。题、答、表另存 *_r2。"""
+    global ROUND
+    ROUND = n
+    if n == 2:
+        J.CAND = J.WORK / 'line_candidates_r2.json'
+        J.ANS = J.WORK / 'line_answers_r2'
+        J.RULES = J.RAW / 'line_fixes_r2.tsv'
+        J.LOG = A.ROOT / 'logs' / 'foote_line_check_r2.tsv'
+
+
+def align_fallback(toks, lo, hi, vs, leaves, in_lec):
+    """词序列对齐定位：返回 (B 串, 叶) 或 None。"""
+    vt = [(m.start(), m.end(), letters(m.group())) for m in TOK.finditer(vs) if in_lec(leaves[m.start()])]
+    if not vt:
+        return None
+    c0, c1 = max(0, lo - 8), min(len(toks), hi + 9)
+    ow = [letters(w) or w for *_, w in toks[c0:c1]]
+    sm = SequenceMatcher(None, ow, [x[2] for x in vt], autojunk=False)
+    lb = rb = None
+    for b in sm.get_matching_blocks():
+        if b.size >= 2 and b.a + b.size - 1 == lo - 1 - c0:
+            lb = b.b + b.size - 1                       # 左锚末词在转录里的位置
+        if b.size >= 2 and b.a == hi + 1 - c0:
+            rb = b.b
+    if lb is None or rb is None or not 0 < rb - lb <= 8:
+        return None
+    a0, b0 = vt[lb][1], vt[rb][0]
+    # B 两头对齐：左锚词尾标点、右锚词头标点照我们的口径另行去掉（同精确定位）
+    return vs[a0:b0], leaves[a0]
 
 
 def letters(t):
@@ -155,6 +189,11 @@ def collect():
                                 found[vs[a0:b0]] = leaves[a0]
                     if found:
                         break
+                if not found and ROUND == 2:
+                    fb = align_fallback(toks, lo, hi, vs, leaves, in_lec)
+                    if fb:
+                        found[fb[0]] = fb[1]
+                        skip['对齐定位'] += 1
                 if len(found) != 1:
                     skip['转录定位不到' if not found else '转录多处'] += 1
                     continue
@@ -247,6 +286,44 @@ def rules():
     print(f'规则 {len(keep) - 1}（挡 {len(drop)}）', file=sys.stderr)
 
 
+# 逐处看图答过 B、但因注号/斜体/判词典暂扣，或答 other 的，2026-11-12 逐条按页图与上下文定（链条：第 2 轮表之后）。
+# 114 讲印面就是 `watchfulne: ssLet us`（原书排错，照录）；116、135 讲印面无注号，我们这边误补的去掉；
+# 085 讲 `mount.*` 有注号、下行 "No servant," 斜体；128 讲 rejectedst 是古二人称（同段 despisedst），判词典不认。
+HAND = [
+    ('012', 'them: "2>j *violence', 'them: "*Do violence'),
+    ('053', ' *rejoiced\ue010*—^greatly rejoiced', ' *rejoiced*"\ue010—greatly rejoiced'),
+    ('079', 'let him hear.\ue010^\n', 'let him hear."\ue010\n'),
+    ('080', 'receiveth sinners^* or gives', 'receiveth sinners,* or gives'),
+    ('081', '" *71The€ younger', '" *The younger'),
+    ('085', 'the mount.^ "No *servant,"*', 'the mount.\ue010 "*No servant,"*'),
+    ('102', 'terms: "/^For *the days', 'terms: "*For the days'),
+    ('114', '*watchfulne;* ««Let us', '*watchfulne*: *ss*Let us'),
+    ('116', 'in the first\ue010^ place', 'in the *first* place'),
+    ('118', 'tribes of Israel.\ue010^\n', 'tribes of Israel."\ue010\n'),
+    ('120', 'verse: "-4«And, *being', 'verse: "*And, being'),
+    ('128', 'inexcusably rejectedsfe^ will', 'inexcusably rejectedst, will'),
+    ('132', 'counsel, they ^gave large', 'counsel, they gave large'),
+    ('132', 'chapter, *"^NoWy upon', 'chapter, "*Now, upon'),
+    ('132', 'women: *""^It was', 'women: "*It was'),
+    ('135', 'to suffer V\ue010*—^he quoted', 'to suffer?*"—he quoted'),
+]
+HANDF = J.RAW / 'line_hand_fixes.tsv'
+
+
+def hand_rules():
+    out = []
+    for lec, o, n in HAND:
+        o, n = o.encode().decode('unicode_escape').encode('latin1').decode('utf-8'), \
+            n.encode().decode('unicode_escape').encode('latin1').decode('utf-8')
+        t = (A.SRC / f'{lec}.md').read_text(encoding='utf-8')
+        if t.count(o) != 1:
+            raise SystemExit(f'{lec}: 命中 {t.count(o)} 次 {o!r}')
+        out.append((lec, o, n))
+    HANDF.write_text('# lecture\t原串\t改作 —— foote_line_check.py HAND（暂扣/other 逐条看图定）；\\n 表换行\n'
+                     + ''.join('\t'.join(x.replace('\n', '\\n') for x in r) + '\n' for r in out), encoding='utf-8')
+    print(f'人工 {len(out)} → {HANDF}', file=sys.stderr)
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument('--collect', action='store_true')
@@ -255,15 +332,23 @@ def main():
     ap.add_argument('--all', action='store_true')
     ap.add_argument('--rules', action='store_true')
     ap.add_argument('--apply', action='store_true')
+    ap.add_argument('--round', type=int, default=1)
+    ap.add_argument('--hand-rules', action='store_true')
     a = ap.parse_args()
+    use_round(a.round)
     if a.collect:
         collect()
     elif a.run:
         J.run(a.sample, a.all)
     elif a.rules:
         rules()
-    elif a.apply and J.RULES.exists():
-        I.apply_multiline(J.RULES)
+    elif a.hand_rules:
+        hand_rules()
+    elif a.apply:
+        if J.RULES.exists():
+            I.apply_multiline(J.RULES)
+        if ROUND == 2 and HANDF.exists():
+            I.apply_multiline(HANDF)
 
 
 if __name__ == '__main__':
