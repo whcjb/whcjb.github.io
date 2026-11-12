@@ -67,7 +67,7 @@ Secondly, *in reference to spiritual disease and recovery.* Sin is the disease o
 
 <div class="ft-notes" markdown="1">
 
-<a class="ft-nsym" href="#fnref-90-1" id="fn-90-1">&#42;</a> Asa, fAiffau* (like ἀνα μεσον here seems to signify that Christ passed not through the heart of Samaria and Galilee, but between them, or through ^eir confines.
+<a class="ft-nsym" href="#fnref-90-1" id="fn-90-1">&#42;</a> Δια μεσου (like ἀνα μεσον) here seems to signify that Christ passed not through the heart of Samaria and Galilee, but between them, or through their confines.
 
 <a class="ft-nsym" href="#fnref-90-2" id="fn-90-2">&#42;</a> Numb. xii. 10; 2 Kings v. 27; 2 Chron. xxvi. 19.
 

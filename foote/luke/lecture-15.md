@@ -117,7 +117,7 @@ Though, unquestionably, Satan is a formidable adversary, there is no reason why 
 
 <a class="ft-nsym" href="#fnref-15-6" id="fn-15-6">&#42;</a> *iviMtt»9 fui,*—Luke.
 
-<a class="ft-nsym" href="#fnref-15-7" id="fn-15-7">†</a> *itrt^vytcv,* pinna.
+<a class="ft-nsym" href="#fnref-15-7" id="fn-15-7">†</a> πτερυγιον, pinna.
 
 <a class="ft-nsym" href="#fnref-15-8" id="fn-15-8">&#42;</a> Exod. xvii. 2-7; Numb. xiv. 22; Matt. xvi. 1.
 

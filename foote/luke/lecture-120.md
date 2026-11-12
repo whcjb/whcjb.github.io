@@ -109,7 +109,7 @@ Finally, *What a call for gratitude, and what a source of consolation are here f
 
 <a class="ft-nsym" href="#fnref-120-15" id="fn-120-15">§</a> *Tmt t^t0»9 al/\*aTt%n ti^ttrtt,*—*Hist, Anion,* iii. 19.
 
-<a class="ft-nsym" href="#fnref-120-16" id="fn-120-16">&#42;</a> Kai fvfts fh^atros etifitecratMs xetrux.*—Lib. xvii. This seems to signify that the sweat was of the colour of blood.
+<a class="ft-nsym" href="#fnref-120-16" id="fn-120-16">&#42;</a> Και ῥυτις ἰδρωτος αἱματοειδοῦς κατειχε.—Lib. xvii. This seems to signify that the sweat was of the colour of blood.
 
 <a class="ft-nsym" href="#fnref-120-17" id="fn-120-17">†</a> f Gerhardi Harm, pars 1. See also Turretin De satisfactione; and Pearce, quoting from Thuanus.
 

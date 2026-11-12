@@ -93,7 +93,7 @@ To this we shall only add, that the lowly birth of Jesus, which is merely a spec
 
 <a class="ft-nsym" href="#fnref-7-1" id="fn-7-1">&#42;</a> sUufAtffi.* f " Romanum orbis terrarum imperium."
 
-<a class="ft-nsym" href="#fnref-7-2" id="fn-7-2">†</a> Polybiua calls the Roman Empire *^rafetf mv \*tK$vfnvfiv,*
+<a class="ft-nsym" href="#fnref-7-2" id="fn-7-2">†</a> Polybiua calls the Roman Empire πασαν την οἰκουμενην.
 
 <a class="ft-nsym" href="#fnref-7-3" id="fn-7-3">&#42;</a> Prideaux. See, however, Lardner's Credibility, part i.
 

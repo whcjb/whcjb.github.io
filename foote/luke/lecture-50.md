@@ -75,7 +75,7 @@ Lastly. *Let us be very thankful when we think of the gracious purpose for which
 
 <a class="ft-nsym" href="#fnref-50-3" id="fn-50-3">&#42;</a> Ezek. iii. 8.
 
-<a class="ft-nsym" href="#fnref-50-4" id="fn-50-4">&#42;</a> Οὐ συγχρῶνται. The English version," have no dealings," is rather too strong. Neither B^zs^^s translation," non utuntur," nor the Vulgate, " non co-utuntur," brings out the exact meaning. Lightfoot produces several quotations to proTe that the Jews had intercourse with the Samaritans and heathens, of a certain kind, but no friendly intercourse. Lexicographers, too, furnish ground for this interpretation of the work συγχραομαι, as they render it, not only " commercium habeo," but also, " una cum aliis utor, familiariter utor aliquo, mutuo accipio, utendum rogo."
+<a class="ft-nsym" href="#fnref-50-4" id="fn-50-4">&#42;</a> Οὐ συγχρῶνται. The English version, "have no dealings," is rather too strong. Neither Beza's translation, "non utuntur," nor the Vulgate, "non co-utuntur," brings out the exact meaning. Lightfoot produces several quotations to prove that the Jews had intercourse with the Samaritans and heathens, of a certain kind, but no friendly intercourse. Lexicographers, too, furnish ground for this interpretation of the work συγχραομαι, as they render it, not only "commercium habeo," but also, "una cum aliis utor, familiariter utor aliquo, mutuo accipio, utendum rogo."
 
 &#42; Acts iv. 29.
 

@@ -496,7 +496,22 @@ K 断词未接（`be- -lieveth`）；L 漏逗号；M 书帖签名进注区（`VO
   链条后段在终态上二跑零变化；锚点 1151、表格 0；奇数星号段 8 → 6。
 
 链条现序（notes_check 之后）：`foote_greek_read --apply` → `foote_hand_final --apply` → `foote_fnmark_check --apply`
-（两轮）→ `foote_notes_missing --apply` → `foote_notes_leak --apply` → `foote_fnmark_check --symbols` → `publish_foote_en --apply`。
+（两轮）→ `foote_notes_missing --apply` → `foote_notes_leak --apply` → `foote_greek_notes --apply` → `foote_fnmark_check --symbols` → `publish_foote_en --apply`。
+
+### 希腊/希伯来文放进书里（2026-11-12，用户令「放进书里」）
+
+- **正文「待看」**（两读不一、定位唯一）48 段：按看图第二读落，追加进 `greek_read_fixes.tsv`（40 段；带 [?] 2、会拆斜体 6 不落）。
+- **注区**（`scripts/foote_greek_notes.py` → `greek_notes_fixes.tsv`，链条在 notes_leak 之后）：`notes_greek_pending.tsv` 26 页
+  （注区整页看图答 B）整块换成转录各条；`notes_missing_greek.tsv` 7 页按页序插入。希腊字形：每段先找同页看图第二读里
+  字母相同的一段、用它的写法（61 段；印面偶有长音符 συγχρῶνται、γῆν，照第二读），找不到的去锐音、钝音（7 段）。
+- **卷进正文、含希腊文的 4 处**（12/60/118/123 讲，`hand_greek_leak_fixes.tsv`，`--hand-rules` 按 GREEK_LEAKS 出表）：看图核定。
+  12 讲印面是 `μηδε συκοφοντησητε`（ο，第二读对，转录 α 错）、`Matt. viii. 5`；60 讲注下的 Horace 引文行转录漏了，
+  原注区那条读花，按图改作 `Nil oriturum alias, nil ortum tale fatentes.—*Horace.*`；12 讲 `ftilly`→`fully` 看图。
+- 卷入脚注的人工 8 处也改成 `foote_notes_leak.py --hand-rules`（HAND_CASES）出表，重出逐字节同前。
+- 结果：第二读 322 段里 177 段已在书中；145 段未落——多在注区转录带 [?]、整页没问过图的页上（notes_check 跳过的），
+  或正文里残串定位不到。正文 ♦ 卷入 0；重复注条 0；注号配上 1152／1421，注条 1339。
+- 验收：整链从 extract 重跑逐字节一致（正文、fn_symbols.json、发布页）。注：foote_greek_notes 整块换掉的注条若曾是
+  notes_missing 的插入锚，终态上单独二跑 notes_missing 会再插一遍——链条只从 extract 跑一次，不要在终态上单跑前段。
 
 ## 待做
 

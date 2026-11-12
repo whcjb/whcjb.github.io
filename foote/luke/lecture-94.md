@@ -63,9 +63,9 @@ Are there any of you who are to be contented to go down to your houses unjustifi
 
 &#42; Ps. xl. 12; Ezra ix. 6; Dan. ix. 7.
 
-† f Jer. xxxi. 18; Nah. ii. 7; Luke xxiii. 48. *Irnht %%* ff-Xn^cf,
+† f Jer. xxxi. 18; Nah. ii. 7; Luke xxiii. 48. Στηθος δε πληξας,
 
-&#42; x^iihtm hiTit^t* ^t^y—" Smiting on his breast, he chid his heart."— *Odyas.* xx. 17.
+&#42; κραδίην ἠνίπαπε μύθῳ—" Smiting on his breast, he chid his heart."— *Odyas.* xx. 17.
 
 † " Pulsu vasto tundite pectus; Non sum solito contenta souo:
 
@@ -77,7 +77,7 @@ Are there any of you who are to be contented to go down to your houses unjustifi
 
 ¶ " Tearing her dishevelled hair, and smiting her breast with frequent strokes—she thus speaks in grief*."—Lucan,* ii. 335. *"* Motis ad pectora palmis.''—4S^«7tMj *Italicus,* lib. zii.
 
-<a class="ft-nsym" href="#fnref-94-10" id="fn-94-10">&#42;</a> Not *i^tnfot ftt,* but ἱλασθητι μοι. Ἱλαω, Ἱλασκομαι, propitius lum. " Maxime convenit illi placationi et reconciliationi, quae fit inter Deum et hominem, offerendo sacrificium, seu hostiam ad obtinendam peccati remissionem. Ita saepkia usiirpatur a lxx. in LeviticoJ'—*StochitLt.* Rom. ill. 25: " Whom God hath set forth to be a propitiation, *Ixavrn' (lof,* through faith in his blood." Heb. ii. 17: " To make reconciliation, εἰς το ἱλασκεσθαι, for the Kns of the people;" and ix. 5: " The mercy-seat.
+<a class="ft-nsym" href="#fnref-94-10" id="fn-94-10">&#42;</a> Not ἱλεωσον με, but ἱλασθητι μοι. Ἱλαω, Ἱλασκομαι, propitius lum. " Maxime convenit illi placationi et reconciliationi, quae fit inter Deum et hominem, offerendo sacrificium, seu hostiam ad obtinendam peccati remissionem. Ita saepkia usiirpatur a lxx. in LeviticoJ'—*StochitLt.* Rom. ill. 25: " Whom God hath set forth to be a propitiation, *Ixavrn' (lof,* through faith in his blood." Heb. ii. 17: " To make reconciliation, εἰς το ἱλασκεσθαι, for the Kns of the people;" and ix. 5: " The mercy-seat.
 
 <a class="ft-nsym" href="#fnref-94-11" id="fn-94-11">&#42;</a> Eph. iv. 28, v. 4, 11; Heb. xi. 25.
 

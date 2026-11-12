@@ -69,7 +69,7 @@ How awakening, then, ought this parable to prove to us all! As we cannot escape,
 
 † Cœruleus pluviam denunciat, igneus Euros: Sin maculæ incipient rutilo immiscerier igni, Omnia tunc pariter vento nimbisque videbis Fervere. *Virg. Georg.* i. 453.
 
-<a class="ft-nsym" href="#fnref-70-3" id="fn-70-3">&#42;</a> locum. Ὑποκριτης est occultus judex, occultarum et abstrusarum rerum judex, conjector, ut, ὑποκριται ὀνειρων conjectores somniomm." There is an example of this use of the word in Lucian in Somnio sub finem. The verb *v^ox^mo'^ai* is used by Homer, and often by Herodotus, to signify uttering oracles.
+<a class="ft-nsym" href="#fnref-70-3" id="fn-70-3">&#42;</a> Raphelius and Schmidius are of opinion that the word ὑποκριται should be here rendered, not hypocrites, but diviners or foretellers:—"Harioli, communis enim, quæ huic voci subjicitur notio, nihil ad hunc locum. Ὑποκριτης est occultus judex, occultarum et abstrusarum rerum judex, conjector, ut, ὑποκριται ὀνειρων, conjectores somniorum." There is an example of this use of the word in Lucian in Somnio sub finem. The verb ὑποκρινεσθαι is used by Homer, and often by Herodotus, to signify uttering oracles.
 
 <a class="ft-nsym" href="#fnref-70-4" id="fn-70-4">&#42;</a> Tertullian (de Coronâ) argues from this verse in favour of the exercise of reason and the right of private judgment, in religious matters: "An non putas omni fideli licere, concipere et constituere dumtaxat quod Deo congruat, quod disciplinæ conducat, quod saluti proficiat, dicente Domino, Cur autem non et a vobis-ipsis quod justum judicatis?"
 

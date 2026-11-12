@@ -85,7 +85,7 @@ Finally. Let those of you who are following Christ, that is, living in the faith
 
 <a class="ft-nsym" href="#fnref-51-5" id="fn-51-5">‡</a> Ps. xlv. 10.
 
-&#42; See the use of the Greek word «ir«Ta«^^«/ in Mark vi. 46; Luke xiv. 33; Acts xviii. 18,21, end 2 Cor. U. 13.
+&#42; See the use of the Greek word ἀποτάξασθαι in Mark vi. 46; Luke xiv. 33; Acts xviii. 18, 21, and 2 Cor. ii. 13.
 
 <a class="ft-nsym" href="#fnref-51-7" id="fn-51-7">&#42;</a> Ufizirt irairraifatf /Atf off^ktKat, akk* iw) *i^yat*
 

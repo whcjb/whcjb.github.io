@@ -83,7 +83,7 @@ On these words of our Lord, we may remark, 1st, That *they are not intended to c
 
 <a class="ft-nsym" href="#fnref-40-4" id="fn-40-4">&#42;</a> . Matt. xiii. 55. f Matt. xii. 48.
 
-&#42; X* Andromache says to Hector, \*E\*r«^, ar«g *trv fAoi iwt ^urn^ xas voTvtet fAfirm^ \*nh xaasyvtiroi,*—Thou art my father, and venerable mother and brother.—//tW, vi. 429.
+&#42; X* Andromache says to Hector, ʽΕκτορ, ἀταρ συ μοι ἐσσι πατηρ και ποτνια μητηρ ʼΗδε κασιγνητος,—Thou art my father, and venerable mother and brother.—//tW, vi. 429.
 
 <a class="ft-nsym" href="#fnref-40-6" id="fn-40-6">&#42;</a> Ps. xlv. 10.
 

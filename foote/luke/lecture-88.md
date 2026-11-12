@@ -71,7 +71,7 @@ Such is this most remarkable and most impressive parable: see that you all apply
 
 <div class="ft-notes" markdown="1">
 
-<a class="ft-nsym" href="#fnref-88-1" id="fn-88-1">&#42;</a> \** Profane writers also speak of a " great gulf, χασμα μεγα, in the unseen world. There is a very striking passage of this kind in Hesiod's Theogonia, *linea:* 729-745. The same idea also occurs in Plato, Plu^ tatob, Ovid, andliuciaa.
+<a class="ft-nsym" href="#fnref-88-1" id="fn-88-1">&#42;</a> Profane writers also speak of a "great gulf," χασμα μεγα, in the unseen world. There is a very striking passage of this kind in Hesiod's Theogonia, *lineæ* 729-745. The same idea also occurs in Plato, Plutarch, Ovid, and Lucian.
 
 <a class="ft-nsym" href="#fnref-88-2" id="fn-88-2">&#42;</a> Pollok.
 

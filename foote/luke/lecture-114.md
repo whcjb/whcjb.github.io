@@ -117,7 +117,7 @@ How many and how dreadful are its evils! It is expressly contrary to the divine 
 
 <a class="ft-nsym" href="#fnref-114-13" id="fn-114-13">&#42;</a> John xxi 22. " There were some Rabbins alive at the time when Christ spoke these things, that lived till the city was destroyed, viz., Rab. Simeon, who perished with the city—B. Jochanan Ben Zaccai, who outlived it—R. Zadoch, B. Ismael, and others."—Zt^A(/bot on Matt. zxiv. 34.
 
-&#42; f rutm,* not >«y«r..
+&#42; f rutm,* not γενος.
 
 <a class="ft-nsym" href="#fnref-114-15" id="fn-114-15">&#42;</a> Isa. li. 6; 1 Pet. i. 25; Matt. v. 18.
 

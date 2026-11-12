@@ -99,7 +99,7 @@ This would lead on to the consideration of the third part of the parable, namely
 
 <div class="ft-notes" markdown="1">
 
-<a class="ft-nsym" href="#fnref-81-1" id="fn-81-1">&#42;</a> "* Give me the portion of goods that falleth to me"—A«f */tM* «•• *iin CmXXn fu^tf mt »u^i»s* Herodotus (lib. iv.) says, that the men who married the Amazons, previously claimed, and obtained, from their own parents, the portion of property that fell to them, tmv *xrfiftariv ra fu^*— TMf *$bTtifdMrM9 T» Iv'iCaXXn i* that they might live apart from them. A similar phrase is used by Demosthenes and Aristides.
+<a class="ft-nsym" href="#fnref-81-1" id="fn-81-1">&#42;</a> "* Give me the portion of goods that falleth to me"— Δος μοι το ἐπι-βαλλον μερος της οὐσιας. Herodotus (lib. iv.) says, that the men who married the Amazons, previously claimed, and obtained, from their own parents, the portion of property that fell to them, tmv *xrfiftariv ra fu^*— TMf *$bTtifdMrM9 T» Iv'iCaXXn i* that they might live apart from them. A similar phrase is used by Demosthenes and Aristides.
 
 <a class="ft-nsym" href="#fnref-81-2" id="fn-81-2">&#42;</a> Dr A. Clarke, quoting from the code of Gentoo laws.
 
@@ -109,6 +109,6 @@ This would lead on to the consideration of the third part of the parable, namely
 
 <a class="ft-nsym" href="#fnref-81-5" id="fn-81-5">†</a> f The fruit of the *charuh* tree, or a kind of pulse, saj some: wild chestnuts, sav others. Grotius, Bochart, Drusius.
 
-<a class="ft-nsym" href="#fnref-81-6" id="fn-81-6">&#42;</a> EiV *rtv dv^avav:* some are for rendering this, " Even unto licavenj" that 18, ezceedugly.
+<a class="ft-nsym" href="#fnref-81-6" id="fn-81-6">&#42;</a> Εἰς τον οὐρανον some are for rendering this, " Even unto licavenj" that 18, ezceedugly.
 
 </div>

@@ -166,6 +166,49 @@ def rules():
     print(dict(Counter(r[0] for r in rows)), f'规则 {len(out)} → {N.RULES}', file=sys.stderr)
 
 
+# 人工看图核定的 8 处（跨段/断词，本脚本定位不到）：(讲, 卷, 叶, 正文原串, 正文改作)。注文取该页转录 [FN:]（看图核过）；
+# 并句处的字 If / without / be / disciple / unbelieving 亦看图读定（2026-11-12）
+HAND_CASES = [
+    ('085', 2, 624, "have his\n\n<!-- PAGE 620 -->\n♦ Matt. vi. 24. f Campbell's rendering. heart supremely", 'have his heart supremely'),
+    ('101', 3, 150, 'accomplish his will\n\n<!-- PAGE 146 -->\n♦ Ovid, Met. III. x. 16. «\\*Bo8 tibi," &c.\n\n<!-- PAGE 146 -->\n'
+     't Georg. iv. 551; Aen. vi. 36. See also Iliad x. 291, and Odyss. iii. 382.\n\n<!-- PAGE 146 -->\n'
+     "*%* Middleton on the Greek article, and others. 'mthout them.", 'accomplish his will without them.'),
+    ('109', 3, 263, 'this duty. Jf,\n\n<!-- PAGE 259 -->\n♦ Deut. xvi. 16. f Acts xi. 29. indeed,', 'this duty. If, indeed,'),
+    ('116', 3, 370, 'only to the disci- ♦ See Exod. xxiv. 8; Zech. ix. 11; Heb. ix. 15, xiii 20. pie, or disciples',
+     'only to the disciple, or disciples'),
+    ('127', 3, 516, 'its top would he a\n\n<!-- PAGE 512 -->\n♦ Quesnel. + Matt, xxvii. 33; Mark xv. 22; John xix. 17,\n\n'
+     '<!-- PAGE 512 -->\n:): Like the *"* Gemonise Scalae," near Kome. fit place', 'its top would be a fit place'),
+    ('131', 3, 581, 'these two last\n\n<!-- PAGE 577 -->\n♦ See J08. Antiq. Lib. XV. iii. 4; Lib. XVII. viu. 3. f gen. xxiii.; '
+     'John xi. 38. cases,', 'these two last cases,'),
+    ('132', 3, 604, 'of the imbelier- ♦ Rom. viii. 11. f Rom. xiv. 9. ing and', 'of the unbelieving and'),
+    ('134', 3, 629, 'when the ♦ 2 Kings vu. 9. + John xx. 24. J Matt, xxviii. 17. eleven saw', 'when the eleven saw'),
+]
+
+
+def hand_rules(cases=HAND_CASES, path=None, note_text=None):
+    """人工条目 → 表：正文删卷入串；该页注区还没有注的，按页序插转录各条（note_text 可覆写某页注文）。"""
+    path = path or HAND
+    rows, texts = [], {}
+    for lec, vol, leaf, old, new in cases:
+        t = texts.setdefault(lec, (A.SRC / f'{lec}.md').read_text(encoding='utf-8'))
+        if t.count(old) != 1:
+            raise SystemExit(f'{lec}: 原串命中 {t.count(old)} 次')
+        t = t.replace(old, new)
+        rows.append((lec, old, new))
+        pg = str(V.leaf_pages(vol)[leaf])
+        if pg not in M.NOTE.findall(t):
+            ent = (note_text or {}).get(lec) or '\n\n'.join(
+                f"<!-- NOTE p.{pg} --> {N.SYM.get(s, s)} {x}".rstrip() for s, x in N.vlm_notes(vol, leaf))
+            o2, n2 = M.insert_row(t, pg, ent)
+            t = t.replace(o2, n2)
+            rows.append((lec, o2, n2))
+        texts[lec] = t
+    head = path.read_text(encoding='utf-8').splitlines()[0] if path.exists() else '# lecture\t原串\t改作'
+    path.write_text(head + '\n' + ''.join('\t'.join(x.replace('\n', '\\n') for x in r) + '\n' for r in rows),
+                    encoding='utf-8')
+    print(f'人工 {len(rows)} 条 → {path}', file=sys.stderr)
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument('--collect', action='store_true')
@@ -174,8 +217,11 @@ def main():
     ap.add_argument('--all', action='store_true')
     ap.add_argument('--rules', action='store_true')
     ap.add_argument('--apply', action='store_true')
+    ap.add_argument('--hand-rules', action='store_true', help='人工条目（HAND_CASES）在链条位置上出表')
     a = ap.parse_args()
-    if a.collect:
+    if a.hand_rules:
+        hand_rules()
+    elif a.collect:
         collect()
     elif a.run:
         N.run(a.sample, a.all)

@@ -119,7 +119,7 @@ The lively exercise of the affections on earthly objects is applauded; why, then
 
 <a class="ft-nsym" href="#fnref-101-10" id="fn-101-10">&#42;</a> Or a powerful divine influence may have been exerted on their minds, to make them willing.
 
-<a class="ft-nsym" href="#fnref-101-11" id="fn-101-11">†</a> f Matt. zxi. 7. *\*Ein»mft0'»9 Waw avv09,* thai is, on the clothes; \*E«>«vw *ru9 Ifiarmfy* says Theophylact. Others account for this form of expression by the figure " enallage numeri," as in Gen. viii. 4, ziz. 29.
+<a class="ft-nsym" href="#fnref-101-11" id="fn-101-11">†</a> f Matt. zxi. 7. *\*Ein»mft0'»9 Waw avv09,* thai is, on the clothes; Ἐπανω των ἱματιων says Theophylact. Others account for this form of expression by the figure " enallage numeri," as in Gen. viii. 4, ziz. 29.
 
 ‡ J 2 Kings ix. 13.
 
@@ -127,11 +127,11 @@ The lively exercise of the affections on earthly objects is applauded; why, then
 
 <a class="ft-nsym" href="#fnref-101-14" id="fn-101-14">&#42;</a> Gen. xxii. 3; Exod. iv. 20; Judges x. 4, y. 10. f Doddridge.
 
-&#42; X 'Tv'OTthvrw ret ifiMTtm rats froctv r fimh^ot,* Cato Minor.
+† Ὑποτιθεντων τα ἱματια τοις ποσιν ᾗ βαδιζοι, Cato Minor.
 
-<a class="ft-nsym" href="#fnref-101-16" id="fn-101-16">&#42;</a> Μυρσινησι στορουντες την ὁδον. vii. 56. Herodian relates that when the Romans joyfully received the Emperor Commodus, they strewed chaplets and flowers, Στεφανων και ἀνθεων βολαις ὑπεδεχοντο; and that the people of Aquileia scattered leaves on Maximus, *i(pvkko(iakovvTo rov Mali/tdf.* i 18, and viii. 18.
+<a class="ft-nsym" href="#fnref-101-16" id="fn-101-16">&#42;</a> Μυρσινησι στορουντες την ὁδον. vii. 56. Herodian relates that when the Romans joyfully received the Emperor Commodus, they strewed chaplets and flowers, Στεφανων και ἀνθεων βολαις ὑπεδεχοντο; and that the people of Aquileia scattered leaves on Maximus, ἐφυλλοβολουντο τον Μαξιμον. i. 18, and viii. 18.
 
-† t John xii. 17,18.
+† John xii. 17, 18.
 
 <a class="ft-nsym" href="#fnref-101-18" id="fn-101-18">&#42;</a> Habakkuk ii. 10, 11.
 

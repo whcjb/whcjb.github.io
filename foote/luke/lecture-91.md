@@ -95,7 +95,7 @@ From this it follows, that the reign of Christ on earth during the millennium wi
 
 <div class="ft-notes" markdown="1">
 
-<a class="ft-nsym" href="#fnref-91-1" id="fn-91-1">&#42;</a> \* Uifoi vfAon'* John i. 26. f Matt xii. 28.
+<a class="ft-nsym" href="#fnref-91-1" id="fn-91-1">&#42;</a> Μισος ὑμων· John i. 26. f Matt xii. 28.
 
 &#42; X 'Evraf* Beza, however, contends for " among.^^
 

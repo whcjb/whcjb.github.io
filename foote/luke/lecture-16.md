@@ -99,7 +99,7 @@ And, my brethren, as the gospel is still preached, and the trumpet of the spirit
 
 &#42; % 'Ava^rv^t ra fisfikuv, »tu lifiktytfiifAes l^tiy* &C.—*Herodotus,* lib. i.
 
-<a class="ft-nsym" href="#fnref-16-4" id="fn-16-4">&#42;</a> 6b* cvfxfy.
+<a class="ft-nsym" href="#fnref-16-4" id="fn-16-4">&#42;</a> οὗ ἵνεκεν.
 
 <a class="ft-nsym" href="#fnref-16-5" id="fn-16-5">&#42;</a> Matt. xi. 4.
 

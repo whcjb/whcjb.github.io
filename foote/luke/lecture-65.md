@@ -89,7 +89,7 @@ And finally, whatever be your situation, or circumstances, seek to become posses
 
 <a class="ft-nsym" href="#fnref-65-6" id="fn-65-6">&#42;</a> " Ede, bibe, lude, post mortem nulla voluptas." \*flj *evv* 8T *tvVi icrtv Kett 9rtny »at Kv^tvt,* &c.
 
-&#42; Anacr,* Od. xv. 11. Epictetus thus addresses the Epicurean, *Kuhvhit USu^ 9rm^ hyxt.*
+&#42; Anacr,* Od. xv. 11. Epictetus thus addresses the Epicurean, Καθευδε, ἐσθιε, πινε, ὀεγκε.
 
 <a class="ft-nsym" href="#fnref-65-8" id="fn-65-8">&#42;</a> Pt. xlix. 11.
 

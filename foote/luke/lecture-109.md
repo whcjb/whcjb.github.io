@@ -83,7 +83,7 @@ This encouragement, then, addresses itself to enlightened views of prudence and 
 
 <a class="ft-nsym" href="#fnref-109-12" id="fn-109-12">†</a> Hac ego contentos auguror esse deos. Haec facit, ut veniat pauper quoque gratus ad aras, Et placeat csbso non mmus agna bove.
 
-&#42; Ovid, El.* Xenophon, in his *Memorabilia,* states this as having been the opinion of Socrates, *ev^ias h* St/A»» *finx^as* ««•• */ii»^»>f, tlfhv iiytir« fitt«v^Pat rtn, Jtvo ^«XXmv xat /AtyakMf* «'«XX« ««/ */ityaX» BvofrMf*—*^Eweunrfit V fi» Mat rov W9US r«ur«u.*
+&#42; Ovid, El.* Xenophon, in his *Memorabilia,* states this as having been the opinion of Socrates, Θυσιας δε θυων μικρας ἀπο μικρων, οὐδεν ἡγειτο μειουσθαι των ἀπο πολλων και μεγαλων πολλα και μεγαλα θυοντων·—'Επαινετης δ' ἠν και του ἐπους τουτου, Καδδυναμιν δ' ἐρδειν ἱερ' ἀθανατοισι θεοισι.
 
 <a class="ft-nsym" href="#fnref-109-14" id="fn-109-14">&#42;</a> 1 Cor. xiii. 3.
 

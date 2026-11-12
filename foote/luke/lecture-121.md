@@ -95,7 +95,7 @@ Our Lord's enemies persevered in their design against him; accordingly, he expos
 
 <a class="ft-nsym" href="#fnref-121-16" id="fn-121-16">†</a> John xviii. 11.
 
-<a class="ft-nsym" href="#fnref-121-17" id="fn-121-17">&#42;</a> '£«rf Iai; *r»VTov»*
+<a class="ft-nsym" href="#fnref-121-17" id="fn-121-17">&#42;</a> 'Εατε εως τουτου.
 
 <a class="ft-nsym" href="#fnref-121-18" id="fn-121-18">†</a> f The only difficulty I can see in the way of this interpretation is the alleged improbability of our Lord asking permission to work a miracle; yet, would there not have been something very wise and decorous in preferring the request here supposed, as intimating that he was to make no attempt to escape? Dr Campbell translates the clause, *"* Let this suffice," which certainly is not a literal version. Dr Campbell has a long note in opposition to Eisner, and the above opinion; but, his reasoning proceeds on the supposition of the word *rcvrav* being in the mas culine gender; now (though the idea does not seem to have occurred to either of these learned men), why may not the word be in the neater gender, and thus the clause be very properly rendered, \*&lt; Suffer thus for," or, " this much," or, " to this extent"?
 

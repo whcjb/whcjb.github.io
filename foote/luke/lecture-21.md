@@ -81,7 +81,7 @@ Lastly, *It is delightful to think that the Son of man has still power to forgiv
 
 <div class="ft-notes" markdown="1">
 
-<a class="ft-nsym" href="#fnref-21-1" id="fn-21-1">&#42;</a> r.9 vvro^u^uyy Ktti 9r^affiv^efAivo{,* He frequently withdrew and prayed;—this was his custom. + Matt. xiv. 23.
+<a class="ft-nsym" href="#fnref-21-1" id="fn-21-1">&#42;</a> ἦν ὑποχωρῶν, και προσευχομενος. He frequently withdrew and prayed;—this was his custom. + Matt. xiv. 23.
 
 <a class="ft-nsym" href="#fnref-21-2" id="fn-21-2">&#42;</a> Doddridge.
 

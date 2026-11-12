@@ -107,7 +107,7 @@ Once more, Let us improve this passage in reference to *the endearing relations 
 
 <a class="ft-nsym" href="#fnref-107-9" id="fn-107-9">&#42;</a> Henry.
 
-<a class="ft-nsym" href="#fnref-107-10" id="fn-107-10">&#42;</a> Matt. xxii. 30, and Mark xii. 25, ὡς ἀγγελοι. Luke, *lvayyt\»i^* « angel-like."—/>r *Campbell.*
+<a class="ft-nsym" href="#fnref-107-10" id="fn-107-10">&#42;</a> Matt. xxii. 30, and Mark xii. 25, ὡς ἀγγελοι. Luke, ἰσαγγελοι, "angel-like."—*Dr Campbell.*
 
 <a class="ft-nsym" href="#fnref-107-11" id="fn-107-11">&#42;</a> Drusius, De Tribus Sectis, iii. 9; Reland, Antiq. ii. 11; Scaliger, Elench. chap. 16.
 

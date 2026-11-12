@@ -71,9 +71,10 @@ def vlm_notes(vol, leaf):
     return out
 
 
-def note_blocks(lec):
-    """本讲注区 → {页: (起, 止, [条文])}；同页条须连续，否则不收。"""
-    text = (A.SRC / f'{lec:03d}.md').read_text(encoding='utf-8')
+def note_blocks(lec, text=None):
+    """本讲注区 → {页: (起, 止, [条文])}；同页条须连续，否则不收。text 给了就按它算（批量改同一讲时用改过的文本）。"""
+    if text is None:
+        text = (A.SRC / f'{lec:03d}.md').read_text(encoding='utf-8')
     base = text.find('\n---\n')
     if base < 0:
         return text, {}
