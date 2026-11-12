@@ -113,6 +113,8 @@ PLAIN = [
     # 第 24 讲 p.349 末行 `service.` 被抽进了注区（该页无脚注），挪回正文末
     ('024', 'strength you have in his\n\n---\n', 'strength you have in his service.\n\n---\n'),
     ('024', '\n\n<!-- NOTE p.349 --> •€mc6\\*\n', '\n'),
+    # 第 1 讲 p.13：段首 `3d` 左边的墨点读成了句点（看页图）；其前的分段是原书排版（`in the` 末行、`3d place` 缩进另起），照录
+    ('001', '<!-- PAGE 13 -->\n.3d place,', '<!-- PAGE 13 -->\n3d place,'),
     # 5：注区读花的希腊行
     ('019', "ζωγρῶν vivos capieni. *T»9* K^Mrav i^«y(iir«v. *'Arrvmynf litty^n^n" + FN + '* Horodotuf.',
      '♦ ζωγρῶν vivos capiens. Τον Κροισον ἐζωγρησαν. Ἀστυαγης ἐζωγρηθη. Herodotus.'),
