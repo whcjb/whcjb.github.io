@@ -532,8 +532,13 @@ K 断词未接（`be- -lieveth`）；L 漏逗号；M 书帖签名进注区（`VO
   注号配上 1152 → 1187／1421，注条 1339 → 1356。
 - 验收：整链从 extract 重跑逐字节一致（正文、fn_symbols.json、发布页）；锚点 1151、表格 0。
 
+- **讲题下经文出处行**（`scripts/foote_heads.py --rules` → `heads_fixes.tsv`）：读花的 28 讲（`LUKE XXn. 47-^3.`），
+  publish 的 VERSES 与看图转录的出处行相合才改，写法照转录（129 讲印 `44, 45.`）。
+- **注号读成 `•` 的卷入**（`--hand-rules` → `hand_bullet_fixes.tsv`）：17/35/51/121 讲正文里的页脚注删出（17、51 讲注区按转录补条，
+  35、121 讲注区已有）；41 讲书帖记号 `• VOL. II.` 删去、接回 `number`。注号配上 1188／1421，注条 1358。
+
 链条现序（greek_notes 之后）：`foote_notes_fill --apply` → `foote_junk_ed3 --apply` → `foote_junk_check --apply --late`
-→ `foote_fnmark_check --symbols` → `publish_foote_en --apply`。
+→ `foote_heads --apply` → `foote_fnmark_check --symbols` → `publish_foote_en --apply`。
 
 ## 待做
 
