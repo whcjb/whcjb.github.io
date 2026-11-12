@@ -559,8 +559,15 @@ K 断词未接（`be- -lieveth`）；L 漏逗号；M 书帖签名进注区（`VO
 链条现序（greek_notes 之后）：`foote_notes_fill --apply` → `foote_junk_ed3 --apply` → `foote_junk_check --apply --late`
 → `foote_heads --apply` → `foote_line_check --apply` → `foote_notes_leak2 --apply` → `foote_junk_ed3 --apply --round 2`
 → `foote_notes_leak2 --apply --round 2` → `foote_line_check --apply --round 2` → `foote_notes_entry --apply`
-→ `foote_page_check --apply` → `foote_hand_pending --apply` → `foote_seam_join --apply` → `foote_fnmark_check --symbols`
-→ `publish_foote_en --apply`。
+→ `foote_page_check --apply` → `foote_hand_pending --apply` → `foote_seam_join --apply` → `foote_page_check --apply --words`
+→ `foote_hand_pending --apply --late` → `foote_fnmark_check --symbols` → `publish_foote_en --apply`。
+
+- **疑似词**（`foote_page_check.py --words` → `page_check_words_fixes.tsv`，2026-11-12 用户令「继续」）：白名单看不见的读花真词形。
+  判据：不在判词典且大小写混杂（`CroesuB`），或全书至多见两次的小写词（`fovr`、`teceived`），或行末断词没接上的半截。
+  只问转录同位读出、且与我们字母不同的（相同＝印面如此：catechised、lovedst、blotteth）——56 处 55 页，一页一图 + 页缝重问
+  $2.90；放行 39（T 为主），模型照印面读的行末断词 `pro- phets` 接成真词；`magis-strate` 多出连字符不放。
+  待核 6 条按转录拼（`hand_words_fixes.tsv`：our sins、is justified of all her children、It is written、whose hearts、
+  execution、magistrate）。
 
 - **注区逐条看图**（`scripts/foote_notes_entry.py` → `notes_entry_fixes.tsv`）：整页一题的几层只要一条对不上就整页不落；
   改逐条——按序配对（我们多出的首条当上页续文），配对须像（字母相似 ≥0.35，希腊文条比长度；转录不得短于我们 0.7，

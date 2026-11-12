@@ -174,6 +174,30 @@ LEAKS = [
 ]
 
 
+# 疑似词模式（foote_page_check --words）待核 6 条：转录同位读法＋模型看图读法，斜体/连字符按我们的口径拼（链条：words 之后）
+LATE = [
+    ('033', 'save us from *mit* nns.', 'save us from our sins.'),
+    ('036', '" *Wisdom ujiMtifiedafaU her* Mt/*dren"*', '" *Wisdom is justified of all her children."*'),
+    ('103', '"*it wrkten, My house', '"*It is written, My house'),
+    ('118', 'those *vrhose* hearU are', 'those whose hearts are'),
+    ('127', 'into extcn-\\* tion,', 'into execution,'),
+    ('131', 'civil magisstrate.', 'civil magistrate.'),
+]
+LATEF = A.RAW / 'hand_words_fixes.tsv'
+
+
+def late_rules():
+    out = []
+    for lec, o, n in LATE:
+        t = (A.SRC / f'{lec}.md').read_text(encoding='utf-8')
+        if t.count(o) != 1:
+            raise SystemExit(f'{lec}: 命中 {t.count(o)} 次 {o!r}')
+        out.append((lec, o, n))
+    LATEF.write_text('# lecture\t原串\t改作 —— foote_hand_pending.py LATE（疑似词待核逐条定）\n'
+                     + ''.join('\t'.join(r) + '\n' for r in out), encoding='utf-8')
+    print(f'规则 {len(out)} → {LATEF}', file=sys.stderr)
+
+
 def rules():
     texts, out = {}, []
     for lec, o, n in PLAIN:
@@ -207,9 +231,15 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument('--rules', action='store_true')
     ap.add_argument('--apply', action='store_true')
+    ap.add_argument('--late', action='store_true', help='疑似词待核表（链条在 foote_page_check --words 之后）')
     a = ap.parse_args()
-    if a.rules:
+    if a.rules and a.late:
+        late_rules()
+    elif a.rules:
         rules()
+    elif a.apply and a.late:
+        if LATEF.exists():
+            I.apply_multiline(LATEF)
     elif a.apply and RULES.exists():
         I.apply_multiline(RULES)
 

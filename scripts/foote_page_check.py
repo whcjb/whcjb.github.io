@@ -70,6 +70,30 @@ def bad(w):
     return bool(J.BAD.search(ORD.sub('', w)))
 
 
+WORDS = False
+_ALLW = None
+
+
+def suspect(w):
+    """疑似词模式（--words）：不在判词典、且大小写混杂（`CroesuB`），或全书至多见两次的小写词（`fovr`、`teceived`）；
+    行末断词没接上的半截（`immuta-`）。"""
+    global _ALLW
+    if _ALLW is None:
+        from collections import Counter as C
+        _ALLW = C(x.lower() for f in sorted(A.SRC.glob('*.md'))
+                  for x in re.findall(r'[A-Za-z]+', re.sub(r'<!--.*?-->', '', f.read_text(encoding='utf-8'))))
+    for x in re.findall(r'[A-Za-z]+', w):
+        if len(x) < 3 or A._isword(x.lower()):
+            continue
+        if re.search(r'[a-z][A-Z]', x) or (x[0].islower() and _ALLW[x.lower()] <= 2):
+            return True
+    return bool(re.fullmatch(r'[a-z]{2,}-', w))
+
+
+def flag(w):
+    return suspect(w) if WORDS else bad(w)
+
+
 def clusters(text, lo_, hi_):
     """text[lo_:hi_] 里的残字截：[(起, 止, 左锚词列, 右锚词列)]。"""
     tags = [(m.start(), m.end()) for m in re.finditer(r'<!--.*?-->', text, re.S)]
@@ -79,11 +103,11 @@ def clusters(text, lo_, hi_):
     while i < len(toks):
         w = toks[i][2]
         line = text[text.rfind('\n', 0, toks[i][0]) + 1:]
-        if not bad(w) or (w == '>' and text[toks[i][0] - 1] == '\n') or line.startswith(('## ', '**LUKE')):
+        if not flag(w) or (w == '>' and text[toks[i][0] - 1] == '\n') or line.startswith(('## ', '**LUKE')):
             i += 1
             continue
         lo = hi = i
-        while hi + 1 < len(toks) and (bad(toks[hi + 1][2]) or (hi + 2 < len(toks) and bad(toks[hi + 2][2])
+        while hi + 1 < len(toks) and (flag(toks[hi + 1][2]) or (hi + 2 < len(toks) and flag(toks[hi + 2][2])
                                                                and hi + 2 - lo <= 3)):
             hi += 1
         i = hi + 1
@@ -172,6 +196,10 @@ def collect():
                         tB = found.pop()
                         if V.SENT in tB:
                             tB = None
+                if WORDS:
+                    # 疑似词：转录同位读出、且与我们字母不同的才问（相同＝印面如此，如 catechised、lovedst）
+                    if tB is None or LC.letters(tB) == LC.letters(text[s:e]) or re.search(r'[Ͱ-Ͽἀ-῿]', tB):
+                        continue
                 # S：tess 同位
                 tw = I.tsv_words(vol, lf)
                 sB = tess_span(tw, ctx, il, ir)
@@ -300,8 +328,9 @@ def qkey(q):
 
 def answered():
     got = {}
-    for f in sorted(ANS.glob('*.json')) + (sorted((WORK / 'page_check_answers_seam').glob('*.json'))
-                                           if ANS.name == 'page_check_answers' else []):
+    extra = {'page_check_answers': 'page_check_answers_seam',
+             'page_check_words_answers': 'page_check_words_answers_seam'}.get(ANS.name)
+    for f in sorted(ANS.glob('*.json')) + (sorted((WORK / extra).glob('*.json')) if extra else []):
         d = json.loads(f.read_text(encoding='utf-8'))
         for n, q in enumerate(d['qs'], 1):
             got[qkey(q)] = d['ans'].get(str(n), '')
@@ -413,6 +442,9 @@ def rebuild(q, x):
     lead = re.match(r'\s*\**', o).group()
     tail = re.search(r'\**\s*$', o).group()
     core = core.strip('*')
+    # 行末断词照印面读成 `pro- phets`：接成真词的去连字符与空格
+    core = re.sub(r'\b([A-Za-z]+)- ([a-z]+)\b',
+                  lambda m: m.group(1) + m.group(2) if A._isword((m.group(1) + m.group(2)).lower()) else m.group(0), core)
     inner = o.strip().strip('*')
     # 我们这截中间的斜体星号（`*rejoiced*—`）模型不判：中间有星号的不自动落
     if '*' in inner:
@@ -442,6 +474,8 @@ def rules():
             t0 = (A.SRC / f"{q['lec']}.md").read_text(encoding='utf-8')
             if re.search(r'[*†‡§‖¶]', x):
                 g, why = '', '注号读成字面符号'          # 模型把注号写成 * ‡（应作 ⁽ⁿ⁾），落进正文会当斜体符
+            elif new and re.search(r'[a-z]-[a-z]', new) and not re.search(r'[a-z]-', q['ours']):
+                g, why = '', '多出连字符'                   # `magisstrate`→`magis-strate`：印面行末断词照读，接不成真词
             elif new and new.rstrip().endswith('-'):
                 # 行末断词：接后一词成真词才落（`mean- ing`→meaning），否则不落
                 m2 = re.match(r'\s+([a-z]+)', t0[q['e']:])
@@ -514,10 +548,20 @@ def use_seam():
     keep = [dict(p, qs=[q for q in p['qs'] if got.get(qkey(q), '').strip() == '?']) for p in pages]
     keep = [p for p in keep if p['qs']]
     SEAM = True
-    ANS = WORK / 'page_check_answers_seam'
-    CAND = WORK / 'page_check_candidates_seam.json'
+    ANS = WORK / ('page_check_words_answers_seam' if WORDS else 'page_check_answers_seam')
+    CAND = WORK / ('page_check_words_candidates_seam.json' if WORDS else 'page_check_candidates_seam.json')
     CAND.write_text(json.dumps(keep, ensure_ascii=False, indent=0), encoding='utf-8')
     return got
+
+
+def use_words():
+    global WORDS, CAND, ANS, RULES, PEND, LOG
+    WORDS = True
+    CAND = WORK / 'page_check_words_candidates.json'
+    ANS = WORK / 'page_check_words_answers'
+    RULES = RAW / 'page_check_words_fixes.tsv'
+    PEND = RAW / 'page_check_words_pending.tsv'
+    LOG = A.ROOT / 'logs' / 'foote_page_check_words.tsv'
 
 
 def main():
@@ -529,7 +573,10 @@ def main():
     ap.add_argument('--rules', action='store_true')
     ap.add_argument('--apply', action='store_true')
     ap.add_argument('--seam', action='store_true')
+    ap.add_argument('--words', action='store_true', help='疑似词模式（链条在 seam_join 之后）')
     a = ap.parse_args()
+    if a.words:
+        use_words()
     if a.collect:
         collect()
     elif a.run and a.seam:
