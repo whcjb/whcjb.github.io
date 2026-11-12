@@ -74,7 +74,35 @@ def collect():
             if len(ours) == len(vn) + 1:
                 ours = ours[1:]                     # 首条是上页注的续文，转录不记
             if len(ours) != len(vn):
-                skip['条数不合'] += 1
+                # 条数不合（我们两条并一行、或首条是上页续文）：改问整页——A＝我们本页起头的各条（去掉续文首条），
+                # B＝转录各条；须相像（字母相似 ≥0.6）且转录不短于我们 0.8，转录带 [?] 的不问
+                allm2 = [m for m in LINE.finditer(text, s, e)]
+                vv = ' ¦ '.join(f"{N.SYM.get(x, x)} {GN.greekify(t, sr.get((vol, lf), []), stat)}".replace('ȣ', 'ου')
+                                for x, t in vn)
+                best = None
+                for cut in (0, 1):
+                    ms = allm2[cut:]
+                    if not ms:
+                        continue
+                    oo = ' ¦ '.join(m.group(2) for m in ms)
+                    r = SequenceMatcher(None, N.key(oo), N.key(vv), autojunk=False).ratio()
+                    if best is None or r > best[0]:
+                        best = (r, cut, ms, oo)
+                if (not best or best[0] < 0.6 or len(N.key(vv)) < 0.8 * len(N.key(best[3]))
+                        or any('[?]' in t for _, t in vn) or not bad(best[3])):
+                    skip['条数不合'] += 1
+                    continue
+                r, cut, ms, oo = best
+                box = N.box_for(vol, lf, vn)
+                if not box:
+                    skip['定位不到'] += 1
+                    continue
+                pages.append({'vol': vol, 'leaf': lf, 'qs': [{
+                    'kind': 'notes', 'lec': f'{lec:03d}', 'page': pg, 's': ms[0].start(), 'e': ms[-1].end(), 'page_mode': True,
+                    'ours': oo.replace(A.FN_MARK, ''), 'raw': text[ms[0].start():ms[-1].end()], 'vlm': vv,
+                    'vn': [[x, GN.greekify(t, sr.get((vol, lf), []), stat).replace('ȣ', 'ου')] for x, t in vn],
+                    'greek': False, 'box': box, 'ctx': f'footnotes of p. {pg}'}]})
+                skip['整页题'] += 1
                 continue
             qs = []
             allm = [m for m in LINE.finditer(text, s, e)]
@@ -134,8 +162,13 @@ def rules():
             rows.append((v, q['lec'], q['page'], q['ours'], q['vlm'], a or ''))
             if v != 'B':
                 continue
-            o = q.get('merge', '') + f"<!-- NOTE p.{q['page']} --> {q['raw']}"
-            n = f"<!-- NOTE p.{q['page']} --> {q['vlm']}" + A.FN_MARK * q['raw'].count(A.FN_MARK)
+            if q.get('page_mode'):
+                o = q['raw']
+                n = '\n\n'.join(f"<!-- NOTE p.{q['page']} --> {N.SYM.get(x, x)} {t}".rstrip() for x, t in q['vn']) \
+                    + A.FN_MARK * q['raw'].count(A.FN_MARK)
+            else:
+                o = q.get('merge', '') + f"<!-- NOTE p.{q['page']} --> {q['raw']}"
+                n = f"<!-- NOTE p.{q['page']} --> {q['vlm']}" + A.FN_MARK * q['raw'].count(A.FN_MARK)
             t = (A.SRC / f"{q['lec']}.md").read_text(encoding='utf-8')
             if t.count(o) != 1:
                 rows[-1] = ('X-not-unique',) + rows[-1][1:]

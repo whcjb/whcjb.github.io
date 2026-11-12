@@ -1,6 +1,37 @@
 [
 {
 "vol": 1,
+"leaf": 131,
+"qs": [
+{
+"kind": "notes",
+"lec": "009",
+"page": "127",
+"s": 31882,
+"e": 32007,
+"page_mode": true,
+"ours": "- \"Jam respice canos; ¦ Ad mortem dimitte senes/^ ¦ Zacaii,'T. 276.",
+"raw": "<!-- NOTE p.127 --> - \"Jam respice canos;\n\n<!-- NOTE p.127 --> Ad mortem dimitte senes/^\n\n<!-- NOTE p.127 --> Zacaii,'T. 276.",
+"vlm": "♦ ———————— \"Jam respice canos; Ad mortem dimitte senes.\" *Lacan*, v. 275.",
+"vn": [
+[
+"*",
+"———————— \"Jam respice canos; Ad mortem dimitte senes.\" *Lacan*, v. 275."
+]
+],
+"greek": false,
+"box": [
+645,
+3706,
+1631,
+3814
+],
+"ctx": "footnotes of p. 127"
+}
+]
+},
+{
+"vol": 1,
 "leaf": 231,
 "qs": [
 {
@@ -294,6 +325,84 @@
 2228,
 3899
 ]
+}
+]
+},
+{
+"vol": 3,
+"leaf": 293,
+"qs": [
+{
+"kind": "notes",
+"lec": "111",
+"page": "289",
+"s": 33186,
+"e": 33354,
+"page_mode": true,
+"ours": "\" Afflicti suppliciis, genus hominumsuperstitionisnoyaBetmalificae.'\" f \" NominiB praelium\"—^\" a war against the very name.\"—TertwWiaTi. VOL. III. T",
+"raw": "<!-- NOTE p.289 --> \" Afflicti suppliciis, genus hominumsuperstitionisnoyaBetmalificae.'\" f \" NominiB praelium\"—^\" a war against the very name.\"—TertwWiaTi. VOL. III. T",
+"vlm": "♦ \"Afflicti suppliciis, genus hominum superstitionis novæ et maleficæ.\" ¦ † \"Nominis prælium\"—\"a war against the very name.\"—*Tertullian.*",
+"vn": [
+[
+"*",
+"\"Afflicti suppliciis, genus hominum superstitionis novæ et maleficæ.\""
+],
+[
+"†",
+"\"Nominis prælium\"—\"a war against the very name.\"—*Tertullian.*"
+]
+],
+"greek": false,
+"box": [
+427,
+3794,
+2170,
+3916
+],
+"ctx": "footnotes of p. 289"
+}
+]
+},
+{
+"vol": 3,
+"leaf": 332,
+"qs": [
+{
+"kind": "notes",
+"lec": "114",
+"page": "328",
+"s": 38406,
+"e": 38829,
+"page_mode": true,
+"ours": "• Isa. xiii. 10. f Ezek. xxxil 7. *t* I^an. viii. 10. ¦ *f* Whether it bear directly on the illustration of this language or not, it IS worthy of remark, that the meteors called *^* falling stars,\" eclipses, and other striking appearances in the sky, were thought, by the common people, to be omens of calamity. See Virg. Georg. i. 365, and 462. *Statius,* Jib. 2, near th9 beginning.",
+"raw": "<!-- NOTE p.328 --> • Isa. xiii. 10. f Ezek. xxxil 7. *t* I^an. viii. 10.\n\n<!-- NOTE p.328 --> *f* Whether it bear directly on the illustration of this language or not, it IS worthy of remark, that the meteors called *^* falling stars,\" eclipses, and other striking appearances in the sky, were thought, by the common people, to be omens of calamity. See Virg. Georg. i. 365, and 462. *Statius,* Jib. 2, near th9 beginning.",
+"vlm": "♦ Isa. xiii. 10. ¦ † Ezek. xxxii. 7. ¦ ‡ Dan. viii. 10. ¦ § Whether it bear directly on the illustration of this language or not, it is worthy of remark, that the meteors called \"falling stars,\" eclipses, and other striking appearances in the sky, were thought, by the common people, to be omens of calamity. See Virg. Georg. i. 365, and 462. *Statius, lib.* x. near the beginning.",
+"vn": [
+[
+"*",
+"Isa. xiii. 10."
+],
+[
+"†",
+"Ezek. xxxii. 7."
+],
+[
+"‡",
+"Dan. viii. 10."
+],
+[
+"§",
+"Whether it bear directly on the illustration of this language or not, it is worthy of remark, that the meteors called \"falling stars,\" eclipses, and other striking appearances in the sky, were thought, by the common people, to be omens of calamity. See Virg. Georg. i. 365, and 462. *Statius, lib.* x. near the beginning."
+]
+],
+"greek": false,
+"box": [
+351,
+3457,
+2266,
+3934
+],
+"ctx": "footnotes of p. 328"
 }
 ]
 }
