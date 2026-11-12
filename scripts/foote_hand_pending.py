@@ -185,6 +185,77 @@ LATE = [
 ]
 LATEF = A.RAW / 'hand_words_fixes.tsv'
 
+# 疑似词第 2 轮（foote_page_check --words2）之后：待核逐条定（转录/钦定本/上下文明显的行末断词），印张签名删去，
+# 卷进正文的页脚注删出（注区缺的补）。用户 2026-11-12「继续」。链条：words2 之后（--late2）
+LATE2 = [
+    ('004', 'Jer. zxxL 20.', 'Jer. xxxi. 20.'),
+    ('012', 'no matiy neither', 'no man, neither'),                       # 路 3:14
+    ('015', 'in parti-\\* cular,', 'in particular,'),
+    ('016', 'the synagogue- service', 'the synagogue-service'),
+    ('016', 'the prison- house."', 'the prison-house."'),
+    ('019', 'peculiarly *ilbisr* trious.', 'peculiarly illustrious.'),
+    ('021', 'goodness anctf truth', 'goodness and truth'),                  # 出 34:6–7
+    ('021', 'iniquity, anctf transgression', 'iniquity, and transgression'),
+    ('023', 'to van-\n\n<!-- PAGE 331 -->\nSuish their', 'to vanquish their'),
+    ('024', 'and indepen- dentlj on', 'and independently on'),
+    ('027', 'Matt. xiii. *bbi* "', 'Matt. xiii. 55: "'),
+    ('030', 'condemn nhtt and', 'condemn not, and'),                        # 路 6:37
+    ('031', "of which au ipi'ho are", 'of which all who are'),
+    ('032', 'as oer- tainly', 'as certainly'),
+    ('036', 'not be ngnt for', 'not be right for'),
+    ('038', 'important deli- Terance', 'important deliverance'),
+    ('044', 'one of* VOL. n. D *the old', 'one of the old'),                # 印张签名 VOL. II. D
+    ('046', 'sajiDgunto them', 'saying unto them'),
+    ('052', 'in hea' + FN + ' ven, then', 'in heaven,' + FN + ' then'),
+    ('071', 'treacherously Antiquities, ztUL 1. f Luke xxiii. 12. on certain', 'treacherously on certain'),
+    ('072', 'his vineyardJ' + FN + '*', 'his vineyard."' + FN + '*'),
+    ('089', 'to the Co- *\\** 1 Sam. 11.17; MfOtUtSi rinthians,', 'to the Corinthians,'),
+    ('098', 'all repects most', 'all respects most'),
+    ('099', "Zaccheus' con- Tersion", "Zaccheus' conversion"),
+    ('103', 'nature men- Mark xi 17. t 1 Kings viil 28. tioned by', 'nature mentioned by'),
+    ('103', 'any uu- seemly', 'any unseemly'),
+    ('106', 'is mar- yelled at', 'is marvelled at'),
+    ('112', 'the *iSmah* historian', 'the Jewish historian'),
+    ('114', 'coming of *\\* RoBU* ziy. 4. f Luke xix. 47\\* Matt, zxu 17. Christ', 'coming of Christ'),
+    ('119', 'to /tave t/oUy that he may sift you 08 wheat', 'to have you, that he may sift you as wheat'),   # 路 22:31
+    ('119', 'the ear- / nest of', 'the earnest of'),
+    ('121', 'He volun' + FN + ' tarily', 'He voluntarily' + FN),
+    ('123', 'They might\n\n<!-- PAGE 465 -->\nVOL. III. 2 G disbelieve him', 'They might disbelieve him'),   # 印张签名
+    ('126', 'green fir- tree.', 'green fir-tree.'),
+    ('127', 'parts, *ffXh* nishing', 'parts, furnishing'),
+    ('127', 'Campbell, fcc, may', 'Campbell, &c., may'),
+    ('135', 'fr(ym on highJ' + FN + '*', 'from on high."' + FN + '*'),      # 路 24:49
+    ('136', 'among Rev. v. 6. fRey. Tiii. 3. the blessings', 'among the blessings'),
+]
+LATE2_LEAKS = [   # (讲, 正文原串, 改作, 页, 注条)
+    ('096', 'in Rom. xiii. 9. + Ἀπο *nornroi' + FN + '* any degree', 'in any degree', '77', ['♦ Rom. xiii. 9.', '† Ἀπο νεοτητος.']),
+]
+LATE2F = A.RAW / 'hand_words2_fixes.tsv'
+
+
+def late2_rules():
+    out, texts = [], {}
+    for lec, o, n in LATE2:
+        t = texts.setdefault(lec, (A.SRC / f'{lec}.md').read_text(encoding='utf-8'))
+        if t.count(o) != 1:
+            raise SystemExit(f'{lec}: 命中 {t.count(o)} 次 {o!r}')
+        texts[lec] = t.replace(o, n)
+        out.append((lec, o, n))
+    for lec, o, n, pg, notes in LATE2_LEAKS:
+        t = texts.setdefault(lec, (A.SRC / f'{lec}.md').read_text(encoding='utf-8'))
+        if t.count(o) != 1:
+            raise SystemExit(f'{lec}: 命中 {t.count(o)} 次 {o!r}')
+        t = t.replace(o, n)
+        out.append((lec, o, n))
+        if pg not in M.NOTE.findall(t):
+            o2, n2 = M.insert_row(t, pg, '\n\n'.join(f'<!-- NOTE p.{pg} --> {x}' for x in notes))
+            t = t.replace(o2, n2)
+            out.append((lec, o2, n2))
+        texts[lec] = t
+    LATE2F.write_text('# lecture\t原串\t改作 —— foote_hand_pending.py LATE2（疑似词第 2 轮待核逐条定）；\\n 表换行\n'
+                      + ''.join('\t'.join(x.replace('\n', '\\n') for x in r) + '\n' for r in out), encoding='utf-8')
+    print(f'规则 {len(out)} → {LATE2F}', file=sys.stderr)
+
 
 def late_rules():
     out = []
@@ -232,8 +303,14 @@ def main():
     ap.add_argument('--rules', action='store_true')
     ap.add_argument('--apply', action='store_true')
     ap.add_argument('--late', action='store_true', help='疑似词待核表（链条在 foote_page_check --words 之后）')
+    ap.add_argument('--late2', action='store_true', help='疑似词第 2 轮待核表（链条在 --words2 之后）')
     a = ap.parse_args()
-    if a.rules and a.late:
+    if a.rules and a.late2:
+        late2_rules()
+    elif a.apply and a.late2:
+        if LATE2F.exists():
+            I.apply_multiline(LATE2F)
+    elif a.rules and a.late:
         late_rules()
     elif a.rules:
         rules()

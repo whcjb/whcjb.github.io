@@ -71,6 +71,7 @@ def bad(w):
 
 
 WORDS = False
+WORDS2 = False
 _ALLW = None
 
 
@@ -196,10 +197,14 @@ def collect():
                         tB = found.pop()
                         if V.SENT in tB:
                             tB = None
-                if WORDS:
+                if WORDS and where != 'body':
+                    continue
+                if WORDS and not WORDS2:
                     # 疑似词：转录同位读出、且与我们字母不同的才问（相同＝印面如此，如 catechised、lovedst）
                     if tB is None or LC.letters(tB) == LC.letters(text[s:e]) or re.search(r'[Ͱ-Ͽἀ-῿]', tB):
                         continue
+                if WORDS2 and tB is not None and LC.letters(tB) == LC.letters(text[s:e]):
+                    continue                            # 转录同位与我们相同＝印面如此
                 # S：tess 同位
                 tw = I.tsv_words(vol, lf)
                 sB = tess_span(tw, ctx, il, ir)
@@ -329,7 +334,8 @@ def qkey(q):
 def answered():
     got = {}
     extra = {'page_check_answers': 'page_check_answers_seam',
-             'page_check_words_answers': 'page_check_words_answers_seam'}.get(ANS.name)
+             'page_check_words_answers': 'page_check_words_answers_seam',
+             'page_check_words2_answers': 'page_check_words2_answers_seam'}.get(ANS.name)
     for f in sorted(ANS.glob('*.json')) + (sorted((WORK / extra).glob('*.json')) if extra else []):
         d = json.loads(f.read_text(encoding='utf-8'))
         for n, q in enumerate(d['qs'], 1):
@@ -426,6 +432,11 @@ def gate(q, x):
         return 'T'
     if q['sB'] and q['sB'] == lx and lx:
         return 'S'
+    if WORDS2 and lx and lx != LC.letters(q['ours']):
+        ws = re.findall(r"[A-Za-zæœÆŒ']+", x)
+        if ws and all(A._isword(w.strip("'").lower()) or re.search('[æœÆŒ]', w) for w in ws) and \
+                SequenceMatcher(None, LC.letters(q['ours']), lx, autojunk=False).ratio() >= 0.6:
+            return 'D'                              # 字形相近＋全是真词（第①层的两道闸）＋模型看图
     o = JUNKC.sub('', q['ours'].replace(A.FN_MARK, ''))
     if LC.letters(o) == lx and re.findall(r'\d', o) == re.findall(r'\d', x):   # 只补标点：字母、数字都不许动（`29(>.`→`296.` 不放）
         return 'P'
@@ -548,10 +559,22 @@ def use_seam():
     keep = [dict(p, qs=[q for q in p['qs'] if got.get(qkey(q), '').strip() == '?']) for p in pages]
     keep = [p for p in keep if p['qs']]
     SEAM = True
-    ANS = WORK / ('page_check_words_answers_seam' if WORDS else 'page_check_answers_seam')
-    CAND = WORK / ('page_check_words_candidates_seam.json' if WORDS else 'page_check_candidates_seam.json')
+    tag = 'words2_' if WORDS2 else 'words_' if WORDS else ''
+    ANS = WORK / f'page_check_{tag}answers_seam'
+    CAND = WORK / f'page_check_{tag}candidates_seam.json'
     CAND.write_text(json.dumps(keep, ensure_ascii=False, indent=0), encoding='utf-8')
     return got
+
+
+def use_words2():
+    """疑似词第 2 轮：转录定位不到的也问（正文），第二来源用 D（字形＋判词典）：模型读法全是真词、与我们字母相似 ≥0.6。"""
+    global WORDS, WORDS2, CAND, ANS, RULES, PEND, LOG
+    WORDS = WORDS2 = True
+    CAND = WORK / 'page_check_words2_candidates.json'
+    ANS = WORK / 'page_check_words2_answers'
+    RULES = RAW / 'page_check_words2_fixes.tsv'
+    PEND = RAW / 'page_check_words2_pending.tsv'
+    LOG = A.ROOT / 'logs' / 'foote_page_check_words2.tsv'
 
 
 def use_words():
@@ -574,8 +597,11 @@ def main():
     ap.add_argument('--apply', action='store_true')
     ap.add_argument('--seam', action='store_true')
     ap.add_argument('--words', action='store_true', help='疑似词模式（链条在 seam_join 之后）')
+    ap.add_argument('--words2', action='store_true', help='疑似词第 2 轮（链条在 hand_pending --late 之后）')
     a = ap.parse_args()
-    if a.words:
+    if a.words2:
+        use_words2()
+    elif a.words:
         use_words()
     if a.collect:
         collect()

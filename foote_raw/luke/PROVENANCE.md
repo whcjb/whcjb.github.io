@@ -560,7 +560,8 @@ K 断词未接（`be- -lieveth`）；L 漏逗号；M 书帖签名进注区（`VO
 → `foote_heads --apply` → `foote_line_check --apply` → `foote_notes_leak2 --apply` → `foote_junk_ed3 --apply --round 2`
 → `foote_notes_leak2 --apply --round 2` → `foote_line_check --apply --round 2` → `foote_notes_entry --apply`
 → `foote_page_check --apply` → `foote_hand_pending --apply` → `foote_seam_join --apply` → `foote_page_check --apply --words`
-→ `foote_hand_pending --apply --late` → `foote_fnmark_check --symbols` → `publish_foote_en --apply`。
+→ `foote_hand_pending --apply --late` → `foote_page_check --apply --words2` → `foote_hand_pending --apply --late2`
+→ `foote_fnmark_check --symbols` → `publish_foote_en --apply`。
 
 - **疑似词**（`foote_page_check.py --words` → `page_check_words_fixes.tsv`，2026-11-12 用户令「继续」）：白名单看不见的读花真词形。
   判据：不在判词典且大小写混杂（`CroesuB`），或全书至多见两次的小写词（`fovr`、`teceived`），或行末断词没接上的半截。
@@ -568,6 +569,10 @@ K 断词未接（`be- -lieveth`）；L 漏逗号；M 书帖签名进注区（`VO
   $2.90；放行 39（T 为主），模型照印面读的行末断词 `pro- phets` 接成真词；`magis-strate` 多出连字符不放。
   待核 6 条按转录拼（`hand_words_fixes.tsv`：our sins、is justified of all her children、It is written、whose hearts、
   execution、magistrate）。
+- **疑似词第 2 轮**（`--words2` → `page_check_words2_fixes.tsv`）：转录定位不到的也问，第二来源加 D（模型读法全是真词、
+  与我们字母相似 ≥0.6——第①层的字形＋判词典两道闸）。119 页 + 页缝 43 页 $5.54：放行 33。待核 40 条与 1 处卷入注
+  逐条定（`hand_words2_fixes.tsv`：钦定本经文、行末断词接回、卷进正文的页脚注 6 处、印张签名 `VOL. II. D`、`VOL. III. 2 G` 2 处）。
+  正文疑似词 294 → 213（余下多为真词：seamen、woollen、lovedst、blotteth 等，及模型看不清的约 25 处）。
 
 - **注区逐条看图**（`scripts/foote_notes_entry.py` → `notes_entry_fixes.tsv`）：整页一题的几层只要一条对不上就整页不落；
   改逐条——按序配对（我们多出的首条当上页续文），配对须像（字母相似 ≥0.35，希腊文条比长度；转录不得短于我们 0.7，
