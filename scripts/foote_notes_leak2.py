@@ -211,6 +211,10 @@ def collect():
                     if m1 and m2 and A._isword((m1.group(1) + m2.group()).lower()):
                         old_s -= 1                        # 断词中间夹着卷入串：`express- ⟦注⟧ ing` → expressing
                         new = ''
+                # 卷入串里夹着斜体收/起号（第 96 讲 `*the sin and danger of an \\** Gen. …* *undue`）：
+                # 删去的不转义星号若成单，补回一个，斜体才不断
+                if len(re.findall(r'(?<!\\)\*', body[old_s:old_e])) % 2:
+                    new = '*' + new
                 has = pg in M.NOTE.findall(text)
                 out.append({'vol': vol, 'leaf': lf, 'qs': [{
                     'kind': 'notes-leak2', 'lec': f'{lec:03d}', 'page': pg, 'old_s': old_s, 'old_e': old_e, 'new': new,
