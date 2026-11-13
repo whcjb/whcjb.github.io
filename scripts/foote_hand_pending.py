@@ -409,6 +409,21 @@ LATE3 = [
     ('115', 'any such deviation. 1 incline', 'any such deviation. I incline'),
     ('110', 'the day of judgment. 1 cannot', 'the day of judgment. I cannot'),
     ('100', 'do business, " *till 1 comer* He', 'do business, " *till I come."* He'),     # 路 19:13；tess 同位 `till I come.”`
+    # 数字/符号当字母的单处（2026-11-13 全书扫；tess 同位读法一致，或看图）
+    ('019', 'sinful man, O, 0 Lord."*', 'sinful man, O Lord."*'),                 # 看图 v1 p.273
+    ('019', 'Alas, O 0 Lord God!', 'Alas, O Lord God!'),                          # 同上
+    ('022', 'company of 0/publicans', 'company of publicans'),                    # tess 无 0/
+    ('028', 'speak well of you I for 80 did', 'speak well of you! for 80 did'),  # tess `you! for so`；80 归 sweep
+    ('034', 'opportunity, £0 about doing good', 'opportunity, go about doing good'),  # 看图 v1 p.484
+    ('058', '" *\\9 against me."*', '" *is against me."*'),                      # tess `“ is`
+    ('100', 'apply to bim for it', 'apply to him for it'),                        # tess 同
+    ('103', 'the scribe$9 and the chief', 'the scribes and the chief'),           # tess 同
+    ('117', 'those i/?ho are willing', 'those who are willing'),
+    ('120', '" 0 ray Father, if it be', '" O my Father, if it be'),               # tess `O my Father`
+    ('122', 'end here. Let us consider, Secondly, *Peter\'s 9 recovery." And immediately, while he yet spake, the cock crew."* While',
+     'end here.\n\n<!-- PAGE 450 -->\nLet us consider, Secondly, *Peter\'s recovery.*\n\n<!-- PAGE 450 -->\n" *And immediately, while he yet spake, the cock crew."* While'),  # 看图 v3 leaf 455＝印本 p.450：两处分段（分段须带页码标记，publish 只收带标记的段）
+    ('131', 'speak in 1(8 support', 'speak in its support'),                      # tess 同
+    # 第 43 讲 `We arc borne`：看图 v2 p.40 原书即印 arc，照录
     # 印张签名混入（VOL. II. P 一类）
     ('056', 'Shorter Catechism. VOL. II. P', 'Shorter Catechism.'),
     ('087', 'article Byssus. VOL. II. 2 s', 'article Byssus.'),

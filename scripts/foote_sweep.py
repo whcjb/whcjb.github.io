@@ -12,6 +12,8 @@
   born   `bom` → born（全书 4 处均是）
   stop   句末引号前多空格：`incense ."*` → `incense."*`
   fn     `."t This` → 注号读成 t
+  so     `80 that` → so that（此版字体 s 形近 8）
+  O      呼格 `0 Lord` `" 0 send` → O
 
     python3 scripts/foote_sweep.py --rules    # 链条：foote_hand_pending --apply --late3 之后 → sweep_fixes.tsv
     python3 scripts/foote_sweep.py --apply
@@ -37,6 +39,8 @@ PATS = [
     ('born', re.compile(r'\bbom\b'), 'born'),
     ('stop', re.compile(r'(?<=[a-z]) \.(?=")'), '.'),
     ('fn', re.compile(r'(?<=[.,;]")t(?= [A-Z])'), A.FN_MARK),
+    ('so', re.compile(r'\b80(?= [a-z])'), 'so'),                       # 此版 s 形近 8（全书 16 处均是）
+    ('O', re.compile(r'(?:^|(?<=[ "(*—]))0(?= [A-Za-z])', re.M), 'O'),  # 呼格 O 读成 0（看图 v2 p.105）
 ]
 
 

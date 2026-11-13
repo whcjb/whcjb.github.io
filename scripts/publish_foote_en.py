@@ -105,6 +105,11 @@ def parse(path):
     head = m.group(1) if m else ''
     m = re.search(r'^> (.*)$', body, re.M)
     passage = m.group(1) if m else ''
+    # 只有带 PAGE 标记的块才进正文；不带标记的块会被静默丢掉（2026-11-13 第 122 讲手加分段吞了 3800 字），报错不放行
+    loose = [b.strip()[:60] for b in body.split('\n\n')
+             if b.strip() and not b.lstrip().startswith(('<!-- PAGE', '**', '>', '#'))]
+    if loose:
+        raise SystemExit(f'{path.name}: 段落缺页码标记，发布会丢掉：{loose}')
     paras = [(pg, t.strip()) for pg, t in re.findall(r'<!-- PAGE (\S*) -->\n(.*?)(?=\n\n|\Z)', body, re.S)]
     # 各段第一个注号哨兵在本讲正文里的序号（fn_symbols.json 按正文全序记；未发布的段里也可能有哨兵）
     pord = [body[:m.start(2)].count(FN_MARK) for m in re.finditer(r'<!-- PAGE (\S*) -->\n(.*?)(?=\n\n|\Z)', body, re.S)]
