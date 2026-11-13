@@ -89,7 +89,7 @@ Passion is reason, transport temper here.
 
 Devotion, when lukewarm, is undevout;
 
-But when it glows, its heat is struck to heav'n;,
+But when it glows, its heat is struck to heav'n;
 
 To human hearts her golden harps are strung;
 
