@@ -79,7 +79,7 @@ On these words of our Lord, we may remark, 1st, That *they are not intended to c
 
 <a class="ft-nsym" href="#fnref-40-2" id="fn-40-2">&#42;</a> Matt. xiii. 12, xxv. 29; Mark iv. 24; Luke xix. 26.
 
-<a class="ft-nsym" href="#fnref-40-3" id="fn-40-3">†</a> Some critics, however, are of opinion that the word δοκει is here an expletive, signifying reality, and not appearance. Dr Ad. Clarke *in locum;* and Pearce's Note on Mark x. 42.—An apt illustration of this clause is found in Juvenal, Sat. iii. Nil habuit Codrus: quis enim negat? et tamen illud Perdidit infelix totum nil.
+<a class="ft-nsym" href="#fnref-40-3" id="fn-40-3">†</a> Some critics, however, are of opinion that the word δοκει is here an expletive, signifying reality, and not appearance. Dr Ad. Clarke *in locum;* and Pearce's Note on Mark x. 42.—An apt illustration of this clause is found in Juvenal, Sat. iii. Nil habuit Codrus: quis enim negat? et tamen illud Perdidit infelix totum nil.
 
 <a class="ft-nsym" href="#fnref-40-4" id="fn-40-4">&#42;</a> Matt. xiii. 55.
 
@@ -89,6 +89,6 @@ On these words of our Lord, we may remark, 1st, That *they are not intended to c
 
 <a class="ft-nsym" href="#fnref-40-7" id="fn-40-7">&#42;</a> Ps. xlv. 10.
 
-<a class="ft-nsym" href="#fnref-40-8" id="fn-40-8">†</a> John vii. 5.
+<a class="ft-nsym" href="#fnref-40-8" id="fn-40-8">†</a> John vii. 5.
 
 </div>

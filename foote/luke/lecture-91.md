@@ -105,7 +105,7 @@ From this it follows, that the reign of Christ on earth during the millennium wi
 
 <a class="ft-nsym" href="#fnref-91-5" id="fn-91-5">†</a> John xvi. 6.
 
-<a class="ft-nsym" href="#fnref-91-6" id="fn-91-6">&#42;</a> See also Josephus' Wars, ii. 13, and vi. 5, and vii. 11.
+<a class="ft-nsym" href="#fnref-91-6" id="fn-91-6">&#42;</a> See also Josephus' Wars, ii. 13, and vi. 5, and vii. 11.
 
 <a class="ft-nsym" href="#fnref-91-7" id="fn-91-7">&#42;</a> Matt. xxi. 37.
 

@@ -111,7 +111,7 @@ But, the right dividing of the word of truth calls for the concluding admonition
 
 <a class="ft-nsym" href="#fnref-52-1" id="fn-52-1">&#42;</a> Exod. i. 5, xv. 27, xxiv. 1; Numb. xi. 16. The number now sent out by Christ was, unquestionably, exactly seventy. The number seventy-two, in the Vulgate, is an unjustifiable departure from the Greek, and a manifest corruption. Some writers speak of the sanhedrim, or chief council of the Jews, having consisted of seventy-two, or six from each tribe; but there is no sufficient foundation for that opinion. If, indeed, Moses be counted as presiding over the seventy elders, and if the president of the sanhedrim in later times be counted, the number would be seventy-one.
 
-<a class="ft-nsym" href="#fnref-52-2" id="fn-52-2">&#42;</a> Matt. X. 16.
+<a class="ft-nsym" href="#fnref-52-2" id="fn-52-2">&#42;</a> Matt. x. 16.
 
 <a class="ft-nsym" href="#fnref-52-3" id="fn-52-3">&#42;</a> 2 Kings iv. 29.
 

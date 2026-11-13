@@ -97,7 +97,7 @@ In a word, we are all concerned in this call. The Lord " commandeth all men ever
 
 &#42; 1 Cor. v. 9-11.
 
-<a class="ft-nsym" href="#fnref-22-6" id="fn-22-6">&#42;</a> 1 Cor. X. 27.
+<a class="ft-nsym" href="#fnref-22-6" id="fn-22-6">&#42;</a> 1 Cor. x. 27.
 
 <a class="ft-nsym" href="#fnref-22-7" id="fn-22-7">&#42;</a> Matt. ix. 13.
 

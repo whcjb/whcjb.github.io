@@ -85,7 +85,7 @@ And finally, whatever be your situation, or circumstances, seek to become posses
 
 <a class="ft-nsym" href="#fnref-65-4" id="fn-65-4">&#42;</a> Scott.
 
-<a class="ft-nsym" href="#fnref-65-5" id="fn-65-5">&#42;</a> " Ede, bibe, lude, post mortem nulla voluptas." \*flj *evv* 8T *tvVi icrtv Kett πινε, και κυβευε,* &c.
+<a class="ft-nsym" href="#fnref-65-5" id="fn-65-5">&#42;</a> " Ede, bibe, lude, post mortem nulla voluptas." \*flj *evv* 8T *tvVi icrtv Kett πινε, και κυβευε,* &c.
 
 &#42; Anacr,* Od. xv. 11. Epictetus thus addresses the Epicurean, Καθευδε, ἐσθιε, πινε, ὀεγκε.
 

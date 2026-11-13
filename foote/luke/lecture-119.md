@@ -103,7 +103,7 @@ At the 35th verse our Lord enters on a different subject. " *And he said unto th
 
 <a class="ft-nsym" href="#fnref-119-12" id="fn-119-12">&#42;</a> Elsner is for translating this clause, thus: "Igitur et tu converte aliquando et confirma fratres tuos"—"Therefore, do thou also afterwards convert and strengthen thy brethren," rendering the word ἐπιστρεψας transitively, as in Luke i. 16, 17; James v. 19, 20. But, our own version seems preferable, in which the word is rendered intransitively, as in most other places. See Matt. xiii. 15; Acts iii. 19, ix. 35, xi. 21; 1 Thess. i. 9, &c. The word should have been rendered intransitively in Acts xxvi. 18, the article του, though not before ἀνοιξαι, being before both ἐπιστρεψαι, and λαβειν: "To open their eyes that they may turn," &c.
 
-<a class="ft-nsym" href="#fnref-119-13" id="fn-119-13">†</a> John xiii. 8.
+<a class="ft-nsym" href="#fnref-119-13" id="fn-119-13">†</a> John xiii. 8.
 
 <a class="ft-nsym" href="#fnref-119-14" id="fn-119-14">&#42;</a> Ps. li. 12; see also Isa. xxxv. 3, 4.
 

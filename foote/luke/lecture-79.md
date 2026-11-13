@@ -75,7 +75,7 @@ Believers, who are on the whole stedfast in your profession!—you have counted 
 
 <div class="ft-notes" markdown="1">
 
-<a class="ft-nsym" href="#fnref-79-1" id="fn-79-1">&#42;</a> Scott.—"Surdum te amatissimis tui præsta — Be deaf to your dearest friends."—*Seneca*, Ep. xxxi,
+<a class="ft-nsym" href="#fnref-79-1" id="fn-79-1">&#42;</a> Scott.—"Surdum te amatissimis tui præsta — Be deaf to your dearest friends."—*Seneca*, Ep. xxxi,
 
 <a class="ft-nsym" href="#fnref-79-2" id="fn-79-2">&#42;</a> John xii. 25.
 

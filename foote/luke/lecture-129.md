@@ -93,7 +93,7 @@ Once more: The miraculous rending of the veil was typical of *Christ's having op
 
 <a class="ft-nsym" href="#fnref-129-12" id="fn-129-12">†</a> Posca.
 
-<a class="ft-nsym" href="#fnref-129-13" id="fn-129-13">&#42;</a> Heb. X. 20.
+<a class="ft-nsym" href="#fnref-129-13" id="fn-129-13">&#42;</a> Heb. x. 20.
 
 <a class="ft-nsym" href="#fnref-129-14" id="fn-129-14">&#42;</a> Heb. ix. 24.
 

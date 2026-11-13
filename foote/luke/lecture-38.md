@@ -69,7 +69,7 @@ Now, let it not be thought that it is only the rich, and those who have much to 
 
 <a class="ft-nsym" href="#fnref-38-5" id="fn-38-5">†</a> Mr Ledyard.
 
-<a class="ft-nsym" href="#fnref-38-6" id="fn-38-6">&#42;</a> \*Johnxix.25. 2m
+<a class="ft-nsym" href="#fnref-38-6" id="fn-38-6">&#42;</a> John xix. 25.
 
 <a class="ft-nsym" href="#fnref-38-7" id="fn-38-7">&#42;</a> Matt. xxvii. 55.
 

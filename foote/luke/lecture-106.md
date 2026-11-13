@@ -95,7 +95,7 @@ But, all these duties to the king should be performed in consistency with *our d
 
 <a class="ft-nsym" href="#fnref-106-9" id="fn-106-9">&#42;</a> Rev. ii. 23.
 
-<a class="ft-nsym" href="#fnref-106-10" id="fn-106-10">&#42;</a> See Lightfoot's Horæ on Matt. xxii. 20.
+<a class="ft-nsym" href="#fnref-106-10" id="fn-106-10">&#42;</a> See Lightfoot's Horæ on Matt. xxii. 20.
 
 <a class="ft-nsym" href="#fnref-106-11" id="fn-106-11">&#42;</a> Dr A. Clarke on Matt. xxii. 20.
 

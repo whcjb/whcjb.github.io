@@ -85,7 +85,7 @@ In the last place, *See that you give to the Lord Jesus that place in your spiri
 
 <a class="ft-nsym" href="#fnref-105-3" id="fn-105-3">&#42;</a> Zech. ii. 5; see also Isa. xxvii. 2.
 
-<a class="ft-nsym" href="#fnref-105-4" id="fn-105-4">†</a> *In Matthew,* the word is ληνος: in Mark, ὑποληνιον.
+<a class="ft-nsym" href="#fnref-105-4" id="fn-105-4">†</a> *In Matthew,* the word is ληνος: in Mark, ὑποληνιον.
 
 <a class="ft-nsym" href="#fnref-105-5" id="fn-105-5">&#42;</a> Song of Sol. viii. 11.
 

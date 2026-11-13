@@ -63,7 +63,7 @@ Philip is nowhere mentioned in the Book of the Acts, except in the catalogue of 
 
 <a class="ft-nsym" href="#fnref-26-1" id="fn-26-1">&#42;</a> Matt. iv. 21.
 
-<a class="ft-nsym" href="#fnref-26-2" id="fn-26-2">&#42;</a> Matt. XX. 20.
+<a class="ft-nsym" href="#fnref-26-2" id="fn-26-2">&#42;</a> Matt. xx. 20.
 
 <a class="ft-nsym" href="#fnref-26-3" id="fn-26-3">&#42;</a> Eccl. Hist., lib. ii. 9.
 
@@ -75,7 +75,7 @@ Philip is nowhere mentioned in the Book of the Acts, except in the catalogue of 
 
 <a class="ft-nsym" href="#fnref-26-7" id="fn-26-7">&#42;</a> Acts iv. 3, v. 40.
 
-<a class="ft-nsym" href="#fnref-26-8" id="fn-26-8">†</a> Gal. ii. 9.
+<a class="ft-nsym" href="#fnref-26-8" id="fn-26-8">†</a> Gal. ii. 9.
 
 <a class="ft-nsym" href="#fnref-26-9" id="fn-26-9">&#42;</a> John xii. 20.
 

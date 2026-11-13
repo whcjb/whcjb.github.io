@@ -95,7 +95,7 @@ I shall only add, that these truly enlightened and truly charitable and liberal 
 
 &#42; Scott.
 
-<a class="ft-nsym" href="#fnref-49-3" id="fn-49-3">&#42;</a> Matt. X. 40.
+<a class="ft-nsym" href="#fnref-49-3" id="fn-49-3">&#42;</a> Matt. x. 40.
 
 <a class="ft-nsym" href="#fnref-49-4" id="fn-49-4">&#42;</a> Matt. xvi. 18.
 

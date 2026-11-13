@@ -63,7 +63,7 @@ This encouragement, then, addresses itself to enlightened views of prudence and 
 
 <a class="ft-nsym" href="#fnref-109-2" id="fn-109-2">†</a> wide at the bottom. *Vide* Relandi Antiq. part i., sect. 12; and Do Spoliis Templi, cap. xx., Utrecht edition, 1/16, with the Engraving.
 
-&#42; X* Exod. XXX. 11; see Lect. on xx. 22.
+&#42; X* Exod. xxx. 11; see Lect. on xx. 22.
 
 <a class="ft-nsym" href="#fnref-109-4" id="fn-109-4">§</a> Lightfoot's Prospect of the Temple.
 

@@ -97,7 +97,7 @@ Let those of you who are conscientious in this respect feel admonished and encou
 
 <a class="ft-nsym" href="#fnref-131-3" id="fn-131-3">†</a> Lightfoot on Mark says, "He was a priest, and one of that sacerdotal bench."
 
-<a class="ft-nsym" href="#fnref-131-4" id="fn-131-4">‡</a> Mark xv. 43. Εὐσχημων βουλευτης.
+<a class="ft-nsym" href="#fnref-131-4" id="fn-131-4">‡</a> Mark xv. 43. Εὐσχημων βουλευτης.
 
 <a class="ft-nsym" href="#fnref-131-5" id="fn-131-5">&#42;</a> John xii. 42.
 

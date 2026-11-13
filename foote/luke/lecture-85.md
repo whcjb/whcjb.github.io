@@ -67,7 +67,7 @@ The other exhortation which this passage suggests is this, *Let all of you who d
 
 <a class="ft-nsym" href="#fnref-85-3" id="fn-85-3">‡</a> "Quod si dolosi refulserit spes nummi."—*Persius.*
 
-<a class="ft-nsym" href="#fnref-85-4" id="fn-85-4">&#42;</a> Ἐκλιπητε. Ἐκλιπειν μοι φαινεται ἡ ψυχη.—*Xen. Cyr.* viii. Ἐν ῥομφαιᾳ και ἐν λιμῳ ἐκλειψετε.—Jer. xlii. 22. *Septuagint.*
+<a class="ft-nsym" href="#fnref-85-4" id="fn-85-4">&#42;</a> Ἐκλιπητε. Ἐκλιπειν μοι φαινεται ἡ ψυχη.—*Xen. Cyr.* viii. Ἐν ῥομφαιᾳ και ἐν λιμῳ ἐκλειψετε.—Jer. xlii. 22. *Septuagint.*
 
 <a class="ft-nsym" href="#fnref-85-5" id="fn-85-5">&#42;</a> See also Rev. xii. 6, xvi. 15.
 
@@ -77,7 +77,7 @@ The other exhortation which this passage suggests is this, *Let all of you who d
 
 <a class="ft-nsym" href="#fnref-85-8" id="fn-85-8">&#42;</a> Ἀλλοτριῳ. Το ἀλλοτριον and το ἡμετερον, *alienum* and *proprium*, or, *suum*, are contrasted, somewhat in this way, by several Greek and Latin authors. Thus, Θαρρειν χρη περι τη αὐτου ψυχη ἀνδρα, ὁστις ἐν τῳ βιῳ τας μεν ἀλλας ἡδονας τας περι το σωμα και τους κοσμους εἰασε χαιρειν, ὡς ἀλλοτριους τε ὀντας, και πλεον θατερον ἡγησαμενος ἀπεργαζεσθαι· Τας δε περι το μανθανειν ἐσπουδασε τε, και κοσμησας την ψυχην οὐκ ἀλλοτριῳ ἀλλα τῳ αὐτης κοσμῳ, σωφροσυνῃ τε και δικαιοσυνῃ και ἀνδρειᾳ και ἐλευθεριᾳ και ἀληθειᾳ.—*Plato*, Phœdo,
 
-§ 63, ad finem. "Nihil horum, quæ circa ipsum sunt, suum judicat, sed ut commodatis utitur peregrinus et properans."—*Seneca*, Ep. 120. "Parva munera diutina, locupletia non propria esse consueverunt."—*Nepos*, Thrasyb. "Nam propriæ telluris herum natura neque illum, Nec me, nec quemquam statuit."—*Horace*.
+§ 63, ad finem. "Nihil horum, quæ circa ipsum sunt, suum judicat, sed ut commodatis utitur peregrinus et properans."—*Seneca*, Ep. 120. "Parva munera diutina, locupletia non propria esse consueverunt."—*Nepos*, Thrasyb. "Nam propriæ telluris herum natura neque illum, Nec me, nec quemquam statuit."—*Horace*.
 
 <a class="ft-nsym" href="#fnref-85-10" id="fn-85-10">&#42;</a> Matt. vi. 24.
 

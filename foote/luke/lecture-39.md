@@ -89,7 +89,7 @@ Speaking, finally, to those of you who are like the good-ground hearers, how can
 
 <div class="ft-notes" markdown="1">
 
-<a class="ft-nsym" href="#fnref-39-1" id="fn-39-1">&#42;</a> Polybius thus speaks of some who, from unskilfulness, and a perverse way of judging, though they were present were absent, and did not see things which they were looking upon. Οὐ μην ἀλλα διοτι γε συμβαινει δια την ἀπειριαν και κακοκρισιαν πολλους ἐνιοτε καθαπερ εἰς τον παροντα τροπον τινα μη παρειναι και ΒΛΕΠΟΝΤΑΣ ΜΗ ΒΛΕΠΕΙΝ ἐκ των εἰρημενων γε νυν και των Τιμαιῳ συμβεβηκοτων γεγονε φανερον.
+<a class="ft-nsym" href="#fnref-39-1" id="fn-39-1">&#42;</a> Polybius thus speaks of some who, from unskilfulness, and a perverse way of judging, though they were present were absent, and did not see things which they were looking upon. Οὐ μην ἀλλα διοτι γε συμβαινει δια την ἀπειριαν και κακοκρισιαν πολλους ἐνιοτε καθαπερ εἰς τον παροντα τροπον τινα μη παρειναι και ΒΛΕΠΟΝΤΑΣ ΜΗ ΒΛΕΠΕΙΝ ἐκ των εἰρημενων γε νυν και των Τιμαιῳ συμβεβηκοτων γεγονε φανερον.
 
 <a class="ft-nsym" href="#fnref-39-2" id="fn-39-2">&#42;</a> Matt. xiii. 19.
 

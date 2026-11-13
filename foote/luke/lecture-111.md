@@ -93,7 +93,7 @@ Such are the ten signs which our Lord gave to denote that Jerusalem's fatal day 
 
 <a class="ft-nsym" href="#fnref-111-10" id="fn-111-10">&#42;</a> Ὑπο παντων, ab omnibus, *i.e.*, a plerisque (that is, by most, or, almost universally) Ita et Græci πολλα παντα, et Latini *pleraque omnia* dicunt. Herodotus, lib. ii. Αἰγυπτιοι τα πολλα παντα ἐμπαλιν τοισι ἀλλοισι ἀνθρωποισι ἐστησαντο ἠθεα τε και νομους. Raphelius.—In Scripture, the indefinite word "all" often requires to be understood with some explanation and limitation, and as signifying some, or many, of all nations and of all descriptions. Matt. iii. 5; Phil. ii. 21; Tit. ii. 11. The words in Matt. xxiv. 9, are, "Ye shall be hated of all nations for my name's sake."
 
-<a class="ft-nsym" href="#fnref-111-11" id="fn-111-11">†</a> Annal. xv. 44
+<a class="ft-nsym" href="#fnref-111-11" id="fn-111-11">†</a> Annal. xv. 44
 
 <a class="ft-nsym" href="#fnref-111-12" id="fn-111-12">&#42;</a> Acts vii. 59, xii. 2.
 

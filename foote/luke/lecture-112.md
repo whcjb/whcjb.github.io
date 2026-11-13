@@ -69,13 +69,13 @@ Let us, before concluding at this time, notice only one other ingredient in the 
 
 <a class="ft-nsym" href="#fnref-112-4" id="fn-112-4">†</a> Jer. xxvii.
 
-<a class="ft-nsym" href="#fnref-112-5" id="fn-112-5">‡</a> I adhere to this as the most natural meaning, notwithstanding Dr Campbell's note, which would refer the "it" to Jerusalem.
+<a class="ft-nsym" href="#fnref-112-5" id="fn-112-5">‡</a> I adhere to this as the most natural meaning, notwithstanding Dr Campbell's note, which would refer the "it" to Jerusalem.
 
 <a class="ft-nsym" href="#fnref-112-6" id="fn-112-6">&#42;</a> Luke xu. 3, xvii. 31.
 
 &#42; TvfAvav h afitauf.*—Hesiodi *Opera et Dies,* 391. *"* Nadus arft, sere nudus. Hiems ignava colono."—Vibg. *Georg,* L 299, 4: Doddridge,
 
-<a class="ft-nsym" href="#fnref-112-8" id="fn-112-8">&#42;</a> For example, the flight of the French from Moscow, under Bonaparte. Lightfoot quotes a passage from a Jewish Rabbi to this effect: "God vouchsafed a great favour to Israel (when the first temple was destroyed), for they ought to have gone out of the land on the 10th day of the month Tebeth (December). If they shall now go out in the winter," saith he, "they will all die; therefore, he prolonged the time, and carried them away in summer." Josephus (Wars, book vi.) says, that the second temple was burnt on the same day of the year with the first, namely, on the 10th day of the month Ab, which corresponded nearly to July; and that the Romans got entire possession of the whole city on the 8th day of Ebul, which corresponded nearly to August. The Christians, however, seem to have escaped long before.
+<a class="ft-nsym" href="#fnref-112-8" id="fn-112-8">&#42;</a> For example, the flight of the French from Moscow, under Bonaparte. Lightfoot quotes a passage from a Jewish Rabbi to this effect: "God vouchsafed a great favour to Israel (when the first temple was destroyed), for they ought to have gone out of the land on the 10th day of the month Tebeth (December). If they shall now go out in the winter," saith he, "they will all die; therefore, he prolonged the time, and carried them away in summer." Josephus (Wars, book vi.) says, that the second temple was burnt on the same day of the year with the first, namely, on the 10th day of the month Ab, which corresponded nearly to July; and that the Romans got entire possession of the whole city on the 8th day of Ebul, which corresponded nearly to August. The Christians, however, seem to have escaped long before.
 
 <a class="ft-nsym" href="#fnref-112-9" id="fn-112-9">&#42;</a> Wars, II. xix. 7, xx. 1.
 

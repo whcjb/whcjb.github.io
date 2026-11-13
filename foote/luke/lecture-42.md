@@ -91,6 +91,6 @@ Finally. *The situation and conduct of this man, after he was dispossessed, are 
 
 <a class="ft-nsym" href="#fnref-42-2" id="fn-42-2">&#42;</a> See Lecture on Luke iv. 1-13.
 
-<a class="ft-nsym" href="#fnref-42-3" id="fn-42-3">&#42;</a> Josephus' Jewish Wars, Book iv.
+<a class="ft-nsym" href="#fnref-42-3" id="fn-42-3">&#42;</a> Josephus' Jewish Wars, Book iv.
 
 </div>

@@ -93,7 +93,7 @@ In the last place, see here *every encouragement to perishing sinners to come to
 
 <a class="ft-nsym" href="#fnref-130-4" id="fn-130-4">‡</a> It is said of Rachel, in the Septuagint, Gen. xxxv. 18, Ἐγενετο δε ἐν τῳ ἀφιεναι αὐτην την ψυχην. Examples are also quoted from Herodotus and Euripides. See Elsner, Dr Campbell, &c.
 
-<a class="ft-nsym" href="#fnref-130-5" id="fn-130-5">§</a> John x. 17.
+<a class="ft-nsym" href="#fnref-130-5" id="fn-130-5">§</a> John x. 17.
 
 <a class="ft-nsym" href="#fnref-130-6" id="fn-130-6">&#42;</a> John xix. 32.
 

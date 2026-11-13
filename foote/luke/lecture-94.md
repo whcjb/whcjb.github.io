@@ -73,13 +73,13 @@ Are there any of you who are to be contented to go down to your houses unjustifi
 
 ‡ Hectora flemus."
 
-§ "Beat your breast with a great stroke; I am not content with a common sound: we weep for Hector."—*Seneca, Troad. Ckor. "* Effusas laniata comas, concussaqve pectus Verberibus crebris ———
+§ "Beat your breast with a great stroke; I am not content with a common sound: we weep for Hector."—*Seneca, Troad. Ckor. "* Effusas laniata comas, concussaqve pectus Verberibus crebris ———
 
 ‖ -Sic maesta profatur."
 
 ¶ " Tearing her dishevelled hair, and smiting her breast with frequent strokes—she thus speaks in grief*."—Lucan,* ii. 335. *"* Motis ad pectora palmis."—*Silius Italicus*, lib. xii.
 
-<a class="ft-nsym" href="#fnref-94-10" id="fn-94-10">&#42;</a> Not ἱλεωσον με, but ἱλασθητι μοι. Ἱλαω, Ἱλασκομαι, propitius lum. " Maxime convenit illi placationi et reconciliationi, quae fit inter Deum et hominem, offerendo sacrificium, seu hostiam ad obtinendam peccati remissionem. Ita saepkia usiirpatur a lxx. in LeviticoJ'—*StochitLt.* Rom. ill. 25: " Whom God hath set forth to be a propitiation, *Ixavrn' (lof,* through faith in his blood." Heb. ii. 17: " To make reconciliation, εἰς το ἱλασκεσθαι, for the Kns of the people;" and ix. 5: " The mercy-seat.
+<a class="ft-nsym" href="#fnref-94-10" id="fn-94-10">&#42;</a> Not ἱλεωσον με, but ἱλασθητι μοι. Ἱλαω, Ἱλασκομαι, propitius lum. " Maxime convenit illi placationi et reconciliationi, quae fit inter Deum et hominem, offerendo sacrificium, seu hostiam ad obtinendam peccati remissionem. Ita saepkia usiirpatur a lxx. in LeviticoJ'—*StochitLt.* Rom. ill. 25: " Whom God hath set forth to be a propitiation, *Ixavrn' (lof,* through faith in his blood." Heb. ii. 17: " To make reconciliation, εἰς το ἱλασκεσθαι, for the Kns of the people;" and ix. 5: " The mercy-seat.
 
 <a class="ft-nsym" href="#fnref-94-11" id="fn-94-11">&#42;</a> Eph. iv. 28, v. 4, 11; Heb. xi. 25.
 
