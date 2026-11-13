@@ -67,7 +67,7 @@ It must neither be forgotten nor disguised, that when the blind lead the blind, 
 
 <a class="ft-nsym" href="#fnref-30-2" id="fn-30-2">&#42;</a> Κολπος. Herodotus says that when CroesuB had presented Alcmaooa
 
-&#42; -vrith as much gold as he could carry about bis person, be, among various contrivances, put on a very large robe, and filled all the bosom, or wide
+&#42; -vrith as much gold as he could carry about his person, be, among various contrivances, put on a very large robe, and filled all the bosom, or wide
 
 † fold of it, with the precious metal. Ἐνδυς κιθωνα μεγαν,—τον κολπον παντα πλησαμενος χρυσου. The following passage occurs in IdTj, " Ihmi Romanus, sinu ex toga facto, Hie, inquit, vobis pacem et bellum portamus." A similar passage occurs in Polybius. In the words of Raphelius, " Est ergo hoc loco *mX'tos* laza curvitas sen cavitas in veste, qua aliquid excipere possumus."
 

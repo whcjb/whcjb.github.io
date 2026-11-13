@@ -7,7 +7,8 @@
          带空格的 200 余处是 OCR 加的）。只动紧挨字母的；`—" These` 照全书开引号后留空格的写法不动
   open   开引号挤到逗号后：`he said," Yea` → `he said, " Yea`。按段内引号奇偶定：此处之前偶数个引号＝开引号；
          第 45 讲 `prayer," Rom.` 前面奇偶乱了、实为收引号，除外
-  I      数字 1 当 I：`verily 1 say` → `I say`（后接 say/am/have/will/was/do/know）
+  I      数字 1 当 I：`verily 1 say` → `I say`（后接小写词，书卷名缩写除外；第 46 讲实读后放宽，2026-11-13）
+  bis    `bis` → his（第 46 讲实读带出，全书 8 处）
   born   `bom` → born（全书 4 处均是）
   stop   句末引号前多空格：`incense ."*` → `incense."*`
   fn     `."t This` → 注号读成 t
@@ -30,7 +31,9 @@ OPEN_SKIP = {('045', 'prayer," Rom.')}
 PATS = [
     ('dash', re.compile(r'(?<=[A-Za-z"*,;:.!?)])— (?=[A-Za-z])'), '—'),
     ('dash', re.compile(r'(?<=[A-Za-z]) —(?=[A-Za-z])'), '—'),
-    ('I', re.compile(r'(?<=[a-z,;:?!"*] )1(?= (?:say|am|have|will|was|do|know)\b)'), 'I'),
+    ('I', re.compile(r'(?<=[a-zA-Z,;:?!"*] )1(?= (?!(?:Cor|Kings|Sam|Chron|John|Pet|Thess|Tim|st)\b)[a-z]+\b(?!\*))'), 'I'),
+    ('bis', re.compile(r'(?<=[a-z] )bis(?= [a-z])'), 'his'),        # 全书 8 处均英文语境（Latin bis 不在其列）
+    ('st', re.compile(r'(?<=\b1) st(?= chapter)'), 'st'),
     ('born', re.compile(r'\bbom\b'), 'born'),
     ('stop', re.compile(r'(?<=[a-z]) \.(?=")'), '.'),
     ('fn', re.compile(r'(?<=[.,;]")t(?= [A-Z])'), A.FN_MARK),

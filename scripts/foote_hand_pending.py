@@ -389,6 +389,26 @@ LATE3 = [
     ('095', '<!-- NOTE p.66 --> Nicephorus', '<!-- NOTE p.66 --> ♦ Nicephorus'),
     ('095', '<!-- NOTE p.68 --> 1 Thess', '<!-- NOTE p.68 --> ♦ 1 Thess'),
     ('095', '<!-- NOTE p.69 --> Ps. cxxxi', '<!-- NOTE p.69 --> ♦ Ps. cxxxi'),
+    # 第 46 讲（卷二 pp.69–83）逐页实读，2026-11-13
+    ('046', 'whosoever wi.l save', 'whosoever will save'),
+    ('046', 'cast away? 26\'. For', 'cast away? 26. For'),
+    ('046', 'John the baptist; but', 'John the Baptist; but'),
+    ('046', 'that 1 (or, according', 'that I (or, according'),
+    ('046', 'was risen again." We* may', 'was risen again."* We may'),
+    ('046', 'inadequate; 80 that', 'inadequate; so that'),                       # so 读成 80
+    ('046', 'though address-. ing', 'though addressing'),
+    ('046', 'both Lord and Christ"\n', 'both Lord and Christ."\n'),
+    ('046', "and chief' priests", 'and chief priests'),
+    ('046', 'will come after* me, *let him', 'will come after me, let him'),
+    ('046', 'in his Father Sy awl of the holy angels', "in his Father's, and of the holy angels"),
+    ('046', 'confidence, and not be ashamed before him at his coming." And now, not to return',
+     'confidence, and not be ashamed before him at his coming."\n\n<!-- PAGE 80 -->\nAnd now, not to return'),  # 印本此处分段
+    ('046', 'If I will-that he', 'If I will that he'),
+    ('046', 'consummation, And that more', 'consummation, and that more'),
+    ('046', '<!-- NOTE p.72 --> 1 John V. 1.', '<!-- NOTE p.72 --> ♦ 1 John v. 1.'),
+    ('115', 'any such deviation. 1 incline', 'any such deviation. I incline'),
+    ('110', 'the day of judgment. 1 cannot', 'the day of judgment. I cannot'),
+    ('100', 'do business, " *till 1 comer* He', 'do business, " *till I come."* He'),     # 路 19:13；tess 同位 `till I come.”`
     # 印张签名混入（VOL. II. P 一类）
     ('056', 'Shorter Catechism. VOL. II. P', 'Shorter Catechism.'),
     ('087', 'article Byssus. VOL. II. 2 s', 'article Byssus.'),
