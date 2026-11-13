@@ -424,6 +424,108 @@ LATE3 = [
      'end here.\n\n<!-- PAGE 450 -->\nLet us consider, Secondly, *Peter\'s recovery.*\n\n<!-- PAGE 450 -->\n" *And immediately, while he yet spake, the cock crew."* While'),  # 看图 v3 leaf 455＝印本 p.450：两处分段（分段须带页码标记，publish 只收带标记的段）
     ('131', 'speak in 1(8 support', 'speak in its support'),                      # tess 同
     # 第 43 讲 `We arc borne`：看图 v2 p.40 原书即印 arc，照录
+    # 整页转录（vlm/，11-09 已做）与现行正文逐词再比（2026-11-13 用户令「上次读过的图直接拿来用」）：
+    # 两边都成词而转录读法不同的；tess 同我们的裁原生分辨率行图看过（原书即如此印的照录：43 arc、48 whick、
+    # 82 these、99 strippling、108 bow、123 bast、126 out off、34 Saviour—as）
+    ('003', 'she was go, no doubt', 'she was so, no doubt'),
+    ('006', 'came, cr the day-spring', 'came, or the day-spring'),
+    ('009', 'passing, i¥hat was noticed', 'passing, what was noticed'),
+    ('010', 'though nut perhaps', 'though not perhaps'),                     # 看图
+    ('012', 'Jt was when', 'It was when'),
+    ('012', 'returned horn Egypt', 'returned from Egypt'),                    # tess 同
+    ('013', 'Aiid as the people', 'And as the people'),
+    ('013', 'with Aretus, the father', 'with Aretas, the father'),            # 看图
+    ('013', 't o wine and', 'to wine and'),
+    ('018', 'And m the synagogue', 'And in the synagogue'),
+    ('020', 'the 1 Sth and 14th', 'the 13th and 14th'),                      # 看图
+    ('021', 'the Iiouse top', 'the house top'),
+    ('025', 'as/ir as it is known', 'as far as it is known'),
+    ('025', 'He Mas one of the two', 'He was one of the two'),
+    ('029', 'Bat I say unto you which hear', 'But I say unto you which hear'),
+    ('029', 'Terse 30:', 'Verse 30:'),
+    ('030', 'thou desireds me', 'thou desiredst me'),                         # tess 同
+    ('033', 'In the cute of the other', 'In the cure of the other'),          # 看图
+    ('033', 'Now, Burely the blessing', 'Now, surely the blessing'),
+    ('034', 'Saviour-—as to have', 'Saviour—as to have'),                     # 看图：原书即 as
+    ('037', '" *alabaster," ta* soft', '" *alabaster,"* or soft'),            # 看图
+    ('041', 'whom it i$ impiety', 'whom it is impiety'),
+    ('048', 'power ef divine', 'power of divine'),                            # 看图
+    ('054', '" 6y *chance', '" *by chance'),
+    ('057', 'eternal Hie hereafter', 'eternal life hereafter'),
+    ('061', 'perhaps, &om the natural', 'perhaps, from the natural'),
+    ('065', 'them: Jos with the mouth', 'them: for with the mouth'),
+    ('067', 'Pear not, little flock', 'Fear not, little flock'),
+    ('068', 'however, cur Lord', 'however, our Lord'),                        # 看图
+    ('074', 'with Trjpho, the Jew', 'with Trypho, the Jew'),
+    ('075', 'Jf any man love God', 'If any man love God'),
+    ('077', 'conscious of haying exposed', 'conscious of having exposed'),
+    ('078', 'He says td his servant', 'He says to his servant'),
+    ('081', 'Their: is, "', 'Their maxim is, "'),                             # tess 同
+    ('082', 'upon his am." The ring', 'upon his arm." The ring'),
+    ('082', 'to the Culossians', 'to the Colossians'),                        # 看图
+    ('083', 'in his fathers house', "in his father's house"),                 # tess 同
+    ('086', 'the less Hkdj are they', 'the less likely are they'),
+    ('087', 'into Abraham\\*8 bosom', "into Abraham's bosom"),                # tess 同
+    ('091', 'the 2]8t chapter', 'the 21st chapter'),
+    ('091', 'where the Biain are', 'where the slain are'),
+    ('093', 'them Tery obnoxious', 'them very obnoxious'),
+    ('094', '**X.UKE XVIII. 9-14.**', '**LUKE XVIII. 9-14.**'),
+    ('094', 'and re turned."', 'and returned."'),
+    ('096', 'me£food?', 'me good?'),                                          # tess 同
+    ('099', 'yea, J said unto thee', 'yea, I said unto thee'),
+    ('103', 'when lie puts forth', 'when he puts forth'),
+    ('104', 'he who DOW preached', 'he who now preached'),
+    ('106', "pay Csdsar's tribute", "pay Cæsar's tribute"),                   # 全书作 Cæsar
+    ('109', 'a Terj small sum', 'a very small sum'),
+    ('110', 'Gessius Floras', 'Gessius Florus'),                              # tess 同
+    ('110', 'place daring the period', 'place during the period'),
+    ('110', 'the nth chapter of the Acts', 'the 11th chapter of the Acts'),   # 徒 11:27–28 饥荒
+    ('111', 'Bat before all these', 'But before all these'),
+    ('123', 'and Joab, came to Hezekiah', 'and Joah, came to Hezekiah'),      # tess 同；赛 36:3
+    ('125', 'wished him Icdie', 'wished him to die'),                         # 看图：t 断
+    ('126', '&mite the proud', 'smite the proud'),
+    ('128', 'a Tnonument in Persia', 'a monument in Persia'),
+    ('128', 'If thou he Christy sam thyself', 'If thou be Christ, save thyself'),  # tess 同；路 23:39
+    ('131', 'and Hamathaim- Zophim', 'and Ramathaim- Zophim'),
+    ('133', 'the Idth of Zechariah', 'the 13th of Zechariah'),                # 看图
+    ('135', 'to ha?e been', 'to have been'),
+    ('135', "Christ 's ministry", "Christ's ministry"),
+    ('059', 'thou mayest be borne aloft', 'thou mayst be borne aloft'),          # 诗行；转录、tess 同作 mayst
+    ('101', 'struck to heaven;', "struck to heav'n;"),                         # 诗行；两家同
+    ('061', 'The Jewish rabbles made', 'The Jewish rabbies made'),              # 两家同；rabbies＝rabbis
+    # 词尾多出的撇号（转录与 tess 同位都没有）：段内前有未收开引号且后接 * 或破折号＝收引号读花，改 "；余删。
+    # 22 `he''`、47 `'And'` 不动
+    ('009', " child, the mother' should ", ' child, the mother should '),
+    ('015', 'ilderness"* The\' express', 'ilderness"* The express'),
+    ('015', ' Mark is: " He\' was the', ' Mark is: " He was the'),
+    ('019', "ends on the blessing' of Prov", 'ends on the blessing of Prov'),
+    ('023', "en they are new'; so tha", 'en they are new; so tha'),
+    ('033', "diers under me'* (for h", 'diers under me"* (for h'),
+    ('034', "Many of his disciples'* accomp", 'Many of his disciples"* accomp'),
+    ('035', " sufferings which' soon ar", ' sufferings which soon ar'),
+    ('037', "ive hundred pence'* (or Ro", 'ive hundred pence"* (or Ro'),
+    ('037', "the greater sin'—greater", 'the greater sin—greater'),
+    ('038', "been healed of' evil sp", 'been healed of evil sp'),
+    ('042', "ins, and in fetters'*—(the f", 'ins, and in fetters"*—(the f'),
+    ('044', "city, shake off' the ver", 'city, shake off the ver'),
+    ('045', "*he blessed them'*—he pra", '*he blessed them"*—he pra'),
+    ('050', " before his face'*—he sen", ' before his face"*—he sen'),
+    ('051', "t his cross and' followe", 't his cross and followe'),
+    ('052', "are told he himself' in that", 'are told he himself in that'),
+    ('053', "n that hour Jesus'* himsel", 'n that hour Jesus"* himsel'),
+    ('053', "are panting to' see and", 'are panting to see and'),
+    ('054', 'lly "*stood up\'* in the', 'lly "*stood up"* in the'),
+    ('054', " the place, came'* (drew ", ' the place, came"* (drew '),
+    ('061', "de the Word of' God of ", 'de the Word of God of '),
+    ('080', "uraged. Let him' bethink", 'uraged. Let him bethink'),
+    ('088', "ed not, and sigh' That al", 'ed not, and sigh That al'),
+    ('093', "s plea with God': let us", 's plea with God: let us'),
+    ('094', 'd " to make satisfaction\'—" a pro', 'd " to make satisfaction"—" a pro'),
+    ('094', "s set forth to' be a pr", 's set forth to be a pr'),
+    ('101', "ursday, and counting' backwar", 'ursday, and counting backwar'),
+    ('102', " beheld the city'*—he vie", ' beheld the city"*—he vie'),
+    ('105', "is an empty vine'; he bri", 'is an empty vine; he bri'),
+    ('108', "id unto his disciples'* (addre", 'id unto his disciples"* (addre'),
     # 印张签名混入（VOL. II. P 一类）
     ('056', 'Shorter Catechism. VOL. II. P', 'Shorter Catechism.'),
     ('087', 'article Byssus. VOL. II. 2 s', 'article Byssus.'),

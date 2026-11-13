@@ -630,6 +630,11 @@ K 断词未接（`be- -lieveth`）；L 漏逗号；M 书帖签名进注区（`VO
   单处 13 条（`bim` `scribe$9` `\9` `1(8` `i/?ho` `£0` `0 ray` 等，tess 同位或看图）入 LATE3；第 43 讲 `arc` 看图系原书印错，照录。
   publish 只收带 `<!-- PAGE -->` 标记的段，手加分段漏标会整段静默丢失（第 122 讲吞 3800 字被发现）——
   `parse()` 现遇无标记段即报错。
+  随后按用户令「上次读过的图直接拿来用」：拿 11-09 的整页转录（`vlm/`，正文词对齐覆盖 98.9%）与现行正文逐词再比
+  （当时 vlm_only／keep 两类未收）。两边成词而读法不同的约 150 处，去掉转录笔误与原书断字后落 66 处（`horn`→from、
+  `Bat`→But、`Terse`→Verse、`cute`→cure、`daring`→during、`he Christy sam`→be Christ, save、`Joab`→Joah 等），
+  词尾多出的撇号 31 处（收引号读花改 `"`，余删）。tess 同我们的裁原生分辨率行图看过：arc／whick／these／strippling／
+  bow／bast／out off 原书即如此印，照录。拿实读 4 讲验过：转录抓到其中真词错 3/4（漏第 5 讲 `its 0/`，与残渣粘连未对齐）。
 
 ## 待做
 

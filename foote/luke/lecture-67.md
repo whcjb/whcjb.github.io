@@ -17,7 +17,7 @@ next_label: "Lecture LXVIII"
 
 <div class="ft-text" markdown="1">
 
-Pear not, little flock; for it is your Father's good pleasure to give you the kingdom. <sup class="ft-vn">33</sup>Sell that ye have, and give alms; provide yourselves bags which wax not old, a treasure in the heavens that faileth not, where no thief approacheth, neither moth corrupteth. <sup class="ft-vn">34</sup>For where your treasure is, there will your heart be also."
+Fear not, little flock; for it is your Father's good pleasure to give you the kingdom. <sup class="ft-vn">33</sup>Sell that ye have, and give alms; provide yourselves bags which wax not old, a treasure in the heavens that faileth not, where no thief approacheth, neither moth corrupteth. <sup class="ft-vn">34</sup>For where your treasure is, there will your heart be also."
 
 </div>
 
