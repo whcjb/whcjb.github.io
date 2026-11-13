@@ -29,6 +29,20 @@ END_MARK = '<div class="flexbox-row-nowrap jc-between'
 
 RE_AGES = re.compile(r'<\d{2}[0-9A-F]{4,5}>')          # AGES 经文锚点编码 <19D601>，录入本从 AGES 转来时留下的
 
+# 录入本从 AGES 转来时，有 9 个希腊词没换成 Unicode，留着 AGES 希腊字体的拉丁转写（> 尖音符、j 柔气号、J 粗气号），
+# 有的还被插了空格（poi >hma）。全书只此 9 处（grep 「字母 >字母」除去 em> 等标签尾），逐条写死。
+# 不还原的代价：英文页显示乱码；中译时模型把它还原成希腊字母，翻译闸在原文里找不到，判「原文没有的希腊词」，
+# 整章不写出（第 14 章 14#45 poi >hma 连挡两夜）。
+# dikaiw>atov 录入本漏了 μ（罗 5:18 δικαιώματος；1874 扫描本 OCR 同位作 dtxatuaros），未看图，照录入本原样还原，待用户定。
+AGES_GREEK = {
+    'Dikaiosu>nh': 'Δικαιοσύνη',
+    'dikaiosu>nh': 'δικαιοσύνη',
+    'cro >noi aijw >nioi': 'χρόνοι αἰώνιοι',
+    'cwri>v no>mou': 'χωρίς νόμου',
+    'di ’ eJno>v dikaiw>atov': 'δι’ ἑνός δικαιώατος',
+    'poi >hma': 'ποίημα',
+}
+
 
 def clean_inline(s: str) -> str:
     s = RE_AGES.sub('', s)
@@ -38,6 +52,8 @@ def clean_inline(s: str) -> str:
     s = re.sub(r'<(/?)(i|b|sup)\b[^>]*>', r'<\1\2>', s)
     s = html.unescape(s)
     s = ''.join(CP1252.get(c, c) for c in s)
+    for k, v in AGES_GREEK.items():
+        s = s.replace(k, v)
     s = unicodedata.normalize('NFC', s)
     s = re.sub(r'\s+', ' ', s).strip()
     s = re.sub(r'<i>\s*</i>', '', s)
