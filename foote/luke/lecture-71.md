@@ -17,7 +17,7 @@ next_label: "Lecture LXXII"
 
 <div class="ft-text" markdown="1">
 
-There were present at that season some that told him of the Galileans, whose blood Pilate had mingled with their sacrifices. <sup class="ft-vn">2</sup>And Jesus, answering, said unto them, Suppose ye that these Galileans were sinners above all the Galileans, because they suffered such things? <sup class="ft-vn">3</sup>I tell you, Nay: but, except ye repent, ye shall all likewise perish. <sup class="ft-vn">4</sup>Or those eighteen, upon whom the tower in Siloam felL, and slew them, think ye that they were sinners above all men that dwelt in Jerusalem? <sup class="ft-vn">5</sup>I tell you, Nay: but, except ye repent, ye shall all likewise perish."
+There were present at that season some that told him of the Galileans, whose blood Pilate had mingled with their sacrifices. <sup class="ft-vn">2</sup>And Jesus, answering, said unto them, Suppose ye that these Galileans were sinners above all the Galileans, because they suffered such things? <sup class="ft-vn">3</sup>I tell you, Nay: but, except ye repent, ye shall all likewise perish. <sup class="ft-vn">4</sup>Or those eighteen, upon whom the tower in Siloam fell, and slew them, think ye that they were sinners above all men that dwelt in Jerusalem? <sup class="ft-vn">5</sup>I tell you, Nay: but, except ye repent, ye shall all likewise perish."
 
 </div>
 

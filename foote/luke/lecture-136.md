@@ -17,7 +17,7 @@ next_label: "Lecture CXXXVII"
 
 <div class="ft-text" markdown="1">
 
-And he led them out as far as to Bethany, and he lifted up his hands, and blessed them. <sup class="ft-vn">51</sup>And it came to pass, while he blessed them, he was parted from them, and carried up into beaTen. <sup class="ft-vn">52</sup>And they worshipped him, and returned to Jerusalem with great joy: <sup class="ft-vn">53</sup>And were continually in the temple, praising and blessing God. Amen."
+And he led them out as far as to Bethany, and he lifted up his hands, and blessed them. <sup class="ft-vn">51</sup>And it came to pass, while he blessed them, he was parted from them, and carried up into heaven. <sup class="ft-vn">52</sup>And they worshipped him, and returned to Jerusalem with great joy: <sup class="ft-vn">53</sup>And were continually in the temple, praising and blessing God. Amen."
 
 </div>
 

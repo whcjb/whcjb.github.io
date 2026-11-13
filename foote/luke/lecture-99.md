@@ -87,7 +87,7 @@ By those of you who are found of him, and saved and called with a holy calling, 
 
 <div class="ft-notes" markdown="1">
 
-<a class="ft-nsym" href="#fnref-99-1" id="fn-99-1">&#42;</a> 'Αρχιτελωνης. VOL. III. H
+<a class="ft-nsym" href="#fnref-99-1" id="fn-99-1">&#42;</a> 'Αρχιτελωνης.
 
 <a class="ft-nsym" href="#fnref-99-2" id="fn-99-2">&#42;</a> 1 Sam. ix. 2, xvi. 7.
 

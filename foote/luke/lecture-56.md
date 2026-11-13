@@ -17,7 +17,7 @@ next_label: "Lecture LVII"
 
 <div class="ft-text" markdown="1">
 
-And it came to pass, that, as he was praying in a certain place, when he ceased, one of his disciples said unto him, Lord, teach us to pray, as John also taught his disciples. <sup class="ft-vn">2</sup>And he said unto them, When ye pray, say, Our Father which art in heaven, Hallowed be thy name. Thy kingdom come. Thy will be done, as in heaven, so in earth. <sup class="ft-vn">3</sup>Give us day by day our daily bread. <sup class="ft-vn">4</sup>And forgive us our sins; for we also forgive every one that is indebted to us. And lead us not into temptation; but deliver us from eviL"
+And it came to pass, that, as he was praying in a certain place, when he ceased, one of his disciples said unto him, Lord, teach us to pray, as John also taught his disciples. <sup class="ft-vn">2</sup>And he said unto them, When ye pray, say, Our Father which art in heaven, Hallowed be thy name. Thy kingdom come. Thy will be done, as in heaven, so in earth. <sup class="ft-vn">3</sup>Give us day by day our daily bread. <sup class="ft-vn">4</sup>And forgive us our sins; for we also forgive every one that is indebted to us. And lead us not into temptation; but deliver us from evil"
 
 </div>
 
@@ -75,7 +75,7 @@ Such is that admirable form and model of prayer, which our Lord has prescribed, 
 
 <div class="ft-notes" markdown="1">
 
-<a class="ft-nsym" href="#fnref-56-1" id="fn-56-1">&#42;</a> Shorter Catechism. VOL. II. P
+<a class="ft-nsym" href="#fnref-56-1" id="fn-56-1">&#42;</a> Shorter Catechism.
 
 <a class="ft-nsym" href="#fnref-56-2" id="fn-56-2">&#42;</a> The rosary, or string of beads.
 

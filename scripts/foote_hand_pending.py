@@ -14,6 +14,7 @@ foote_page_check 的待核 65 条（模型一次看图读法、无第二来源�
     python3 scripts/foote_hand_pending.py --apply
 """
 import argparse
+import re
 import sys
 from pathlib import Path
 
@@ -337,7 +338,26 @@ LATE3 = [
     ('072', 'judgment of God *V' + FN + '* Neither', 'judgment of God?" Neither'),        # 罗 2:5，p.462 看图
     ('034', 'name of the Lord *V* Have', 'name of the Lord?" Have'),              # 伯 1:21，卷一 p.489 看图
     ('083', 'to go in to Aare* m *the feast.*', 'to go in to share in the feast.*'),  # 卷二 p.595 看图：斜体 share in
+    # 第 60 讲逐页实读（卷二 pp.286–302 全部看图，2026-11-13）
+    ('060', 'evil generation:' + FN + ' they seek', 'evil generation: they seek'),   # p.286 是墨点，不是注号
+    ('060', 'Sun, Stand thou still', 'Sun, stand thou still'),                     # p.287 页首 stand
+    ('060', 'greater than Jonas is here ."*', 'greater than Jonas is here."*'),
+    ('060', 'from the.5th verse', 'from the 5th verse'),
+    ('060', "greater than Solomon is here''*", 'greater than Solomon is here."*'),  # p.293 页首 here."
+    ('060', "former rain unto the earth.''", 'former rain unto the earth."'),
+    ('060', 'on a candlestick that they who', 'on a candlestick, that they who'),   # p.296 candle-stick,
+    ('060', 'full of darkness— is in', 'full of darkness—is in'),
+    ('136', 'carried up into beaTen.', 'carried up into heaven.'),
+    ('126', 'from *fooL"* hardiness,', 'from fool-hardiness,'),                  # 卷三 p.507 看图：行末断词 fool-／hardiness                # 路 24:51；按词典会误成 beaten
+    # 印张签名混入（VOL. II. P 一类）
+    ('056', 'Shorter Catechism. VOL. II. P', 'Shorter Catechism.'),
+    ('087', 'article Byssus. VOL. II. 2 s', 'article Byssus.'),
+    ('099', "'Αρχιτελωνης. VOL. III. H", "'Αρχιτελωνης."),
+    ('111', 'the very name."—TertwWiaTi. VOL. III. T', 'the very name."—TertwWiaTi.'),
+    ('085', 'nor steaL" VOL. H. *2* R', 'nor steal"'),
 ]
+# 词中混大写（souL、gospeL、seLf）：只改大小写，改后须是真词；以下是改后虽成词但不对的，不动或另行处理
+CASE_SKIP = {'mX', 'lO', 'PhiL', 'voL', 'beaTen'}
 LATE3_LEAKS = [   # (讲, 正文原串, 改作, 页, 注条——空表＝注区已有)
     ('004', '<!-- PAGE 59 -->\n παιδα Acts iv. 25. *"* £o die pueri tui mihi a te literas reddiderunt." —*Cicero ad AUicum.* '
      'f Jer. xxxi. 20. This he did', '<!-- PAGE 59 -->\nThis he did', '59',
@@ -387,6 +407,31 @@ def late3_rules():
         n = '<!-- NOTE p.145 --> ♦ John xi. 18.\n\n<!-- NOTE p.145 --> † Numb. xix. 2; Deut. xxi. 3; 1 Sam. vi. 7.'
         texts['101'] = t.replace(o, n)
         out.append(('101', o, n))
+    # 词中混大写：小写化后是真词才改（beaTen 那种已在上表手定）；`''` 当作收引号
+    for lec in sorted(p.stem for p in A.SRC.glob('*.md')):
+        t = texts.setdefault(lec, (A.SRC / f'{lec}.md').read_text(encoding='utf-8'))
+        for m in list(re.finditer(r"(?<![\w'])([a-zA-Z]*[a-z][A-Z][a-zA-Z]*)(?!\w)", t)):
+            w = m.group(1)
+            fix = w[0] + w[1:].lower() if w[0].isupper() else w.lower()
+            if w in CASE_SKIP or not A._isword(fix.lower()) \
+                    or re.search(r'[Ͱ-Ͽἀ-῿]', t[max(0, m.start() - 40):m.end() + 40]):
+                continue
+            k = 0
+            while t.count(t[m.start() - k:m.end() + 1]) != 1:
+                k += 5
+            o = t[m.start() - k:m.end() + 1]
+            out.append((lec, o, o[:k] + fix + o[-1]))
+        for m in re.finditer(r"[a-z.,;:!?]''", t):
+            if t[m.end():m.end() + 6] == ' *saw ':      # 第 22 讲 `he'' *saw`：不是收引号
+                continue
+            k = 0
+            while t.count(t[m.start() - k:m.end() + 1]) != 1:
+                k += 5
+            o = t[m.start() - k:m.end() + 1]
+            n = o[:k + 1] + '"' + o[-1]
+            if o[-1].isalpha():
+                n = o[:k + 1] + '" ' + o[-1]
+            out.append((lec, o, n))
     LATE3F.write_text('# lecture\t原串\t改作 —— foote_hand_pending.py LATE3（单字母待核、卷入注第 3 批）；\\n 表换行\n'
                       + ''.join('\t'.join(x.replace('\n', '\\n') for x in r) + '\n' for r in out), encoding='utf-8')
     print(f'规则 {len(out)} → {LATE3F}', file=sys.stderr)

@@ -17,7 +17,7 @@ next_label: "Lecture LXXIII"
 
 <div class="ft-text" markdown="1">
 
-He spake also this parable: A certain man had a fig-tree planted in his vineyard; and he came and sought fruit thereon, and found none. <sup class="ft-vn">7</sup>Then said he unto the dresser of his vineyard, Behold, these three years I come seeking fruit on this fig tree, and find none: cut it down; why cumbereth it the ground? <sup class="ft-vn">8</sup>And he, answering, said unto him, Lord, let it alone this year also, till I shall dig about it, and dung it: <sup class="ft-vn">9</sup>And if it bear fruit, well; and if not, then after that thou Shalt cut it down.''
+He spake also this parable: A certain man had a fig-tree planted in his vineyard; and he came and sought fruit thereon, and found none. <sup class="ft-vn">7</sup>Then said he unto the dresser of his vineyard, Behold, these three years I come seeking fruit on this fig tree, and find none: cut it down; why cumbereth it the ground? <sup class="ft-vn">8</sup>And he, answering, said unto him, Lord, let it alone this year also, till I shall dig about it, and dung it: <sup class="ft-vn">9</sup>And if it bear fruit, well; and if not, then after that thou Shalt cut it down."
 
 </div>
 
