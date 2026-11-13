@@ -17,7 +17,7 @@ next_label: "Lecture LI"
 
 <div class="ft-text" markdown="1">
 
-And it came to pass, when the time was come that he should be received up, he stedfastly set his face to go to Jerusalem. <sup class="ft-vn">52</sup>And sent messengers before his face: and they went, and entered into a village of the Samaritans, to make ready for him. <sup class="ft-vn">53</sup>And they did not receive him, because his face was as though he would go to Jerusalem. <sup class="ft-vn">54</sup>And when his disciples James and John saw this, I they said, Lord, wilt thou that we command fire to come down from heaven, and consume them, even as Elias did? <sup class="ft-vn">55</sup>But he turned, and rebuked them, and said, Ye know not what manner of spirit ye are of. <sup class="ft-vn">56</sup>For the Son of man is not come to destroy men's lives, but to save them. And they went to another village."
+And it came to pass, when the time was come that he should be received up, he stedfastly set his face to go to Jerusalem. <sup class="ft-vn">52</sup>And sent messengers before his face: and they went, and entered into a village of the Samaritans, to make ready for him. <sup class="ft-vn">53</sup>And they did not receive him, because his face was as though he would go to Jerusalem. <sup class="ft-vn">54</sup>And when his disciples James and John saw this, they said, Lord, wilt thou that we command fire to come down from heaven, and consume them, even as Elias did? <sup class="ft-vn">55</sup>But he turned, and rebuked them, and said, Ye know not what manner of spirit ye are of. <sup class="ft-vn">56</sup>For the Son of man is not come to destroy men's lives, but to save them. And they went to another village."
 
 </div>
 

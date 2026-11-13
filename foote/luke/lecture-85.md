@@ -17,7 +17,7 @@ next_label: "Lecture LXXXVI"
 
 <div class="ft-text" markdown="1">
 
-And I say unto you, Make to yourselves friends of the mammon of unrighteousness; that, when ye fail, they may receive you into everlasting habitations. lO. He that is faithful in that which is least is faithful also in much: and he that is unjust in the least, is unjust also in much. <sup class="ft-vn">11</sup>If therefore ye have not been faithful in the unrighteous mammon, who will commit to your trust the true riches? <sup class="ft-vn">12</sup>And if ye have not been faithful in that which is another man's, who shall give you that which is your own? <sup class="ft-vn">13</sup>No servant can serve two masters: for either he will hate the one, and love the other; or else he will hold to the one, and despise the other. Ye cannot serve God and mammon."
+And I say unto you, Make to yourselves friends of the mammon of unrighteousness; that, when ye fail, they may receive you into everlasting habitations. <sup class="ft-vn">10</sup>He that is faithful in that which is least is faithful also in much: and he that is unjust in the least, is unjust also in much. <sup class="ft-vn">11</sup>If therefore ye have not been faithful in the unrighteous mammon, who will commit to your trust the true riches? <sup class="ft-vn">12</sup>And if ye have not been faithful in that which is another man's, who shall give you that which is your own? <sup class="ft-vn">13</sup>No servant can serve two masters: for either he will hate the one, and love the other; or else he will hold to the one, and despise the other. Ye cannot serve God and mammon."
 
 </div>
 

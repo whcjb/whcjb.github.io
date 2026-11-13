@@ -493,6 +493,12 @@ LATE3 = [
     ('059', 'thou mayest be borne aloft', 'thou mayst be borne aloft'),          # 诗行；转录、tess 同作 mayst
     ('101', 'struck to heaven;', "struck to heav'n;"),                         # 诗行；两家同
     ('061', 'The Jewish rabbles made', 'The Jewish rabbies made'),              # 两家同；rabbies＝rabbis
+    # 转录未覆盖的两页单独比（v2 p.65 拿 tess、p.523 页在段中无标记拿转录按正文锚对）
+    ('045', 'and g;we thanks to God', 'and gave thanks to God'),
+    ('045', "which circumstance's require", 'which circumstances require'),
+    ('045', 'to be short, hut which', 'to be short, but which'),
+    ('078', 'rich neighbours; le$i they', 'rich neighbours; lest they'),
+    ('078', 'neglecting them.f In this', 'neglecting them.' + FN + ' In this'),   # 注号 † 读成 f（同页注区 † Grotius）
     # 词尾多出的撇号（转录与 tess 同位都没有）：段内前有未收开引号且后接 * 或破折号＝收引号读花，改 "；余删。
     # 22 `he''`、47 `'And'` 不动
     ('009', " child, the mother' should ", ' child, the mother should '),

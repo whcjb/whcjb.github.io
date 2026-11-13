@@ -17,7 +17,7 @@ next_label: "Lecture LXXV"
 
 <div class="ft-text" markdown="1">
 
-Then said he, Unto what is the kingdom of God like? and whereunto shall I resemble it? <sup class="ft-vn">19</sup>It is like a grain of mustard-seed, which a man took, and cast into his garden; and it grew, and waxed a great tree; and the fowls of the air lodged in the branches of it. <sup class="ft-vn">20</sup>And again he said, Whereunto shall I liken the kingdom of God? 2L It is like leaven, which a woman took and hid in three measures of meal, till the whole was leavened."
+Then said he, Unto what is the kingdom of God like? and whereunto shall I resemble it? <sup class="ft-vn">19</sup>It is like a grain of mustard-seed, which a man took, and cast into his garden; and it grew, and waxed a great tree; and the fowls of the air lodged in the branches of it. <sup class="ft-vn">20</sup>And again he said, Whereunto shall I liken the kingdom of God? <sup class="ft-vn">21</sup>It is like leaven, which a woman took and hid in three measures of meal, till the whole was leavened."
 
 </div>
 
