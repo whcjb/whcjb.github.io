@@ -370,7 +370,7 @@ description: 加尔文与马太亨利之外的历代改革宗注释——欧文�
       </h3>
       <div class="cx-roster">
         {%- for a in author_map -%}
-        {%- unless a.id == "calvin" or a.id == "mhenry" -%}
+        {%- unless a.id == "calvin" or a.id == "mhenry" or a.no_bio -%}
         {%- comment -%} 左侧色标取该注释家书卷链接的主题色（_data 里的 c1），不再在 CSS 里逐家手写——
           以前只写了六家，后加的司布真、达拉谟、约翰斯通、珀金斯都没有色标（用户截图）。{%- endcomment -%}
         {%- assign who_c = "transparent" -%}

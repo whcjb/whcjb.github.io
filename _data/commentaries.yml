@@ -9,6 +9,7 @@ authors:
     years: "1509–1564"
     work_cn: "加尔文圣经注释"
     work_en: ""
+    no_bio: false
     books: 44
   - id: owen
     name: "约翰·欧文"
@@ -17,6 +18,7 @@ authors:
     years: "1616–1683"
     work_cn: "约翰欧文·希伯来书注释"
     work_en: "An Exposition of the Epistle to the Hebrews"
+    no_bio: false
     books: 1
   - id: mhenry
     name: "马太·亨利"
@@ -25,6 +27,7 @@ authors:
     years: "1662–1714"
     work_cn: "马太亨利圣经注释"
     work_en: "An Exposition of the Old and New Testaments"
+    no_bio: false
     books: 66
   - id: bridges
     name: "查理·毕列志"
@@ -33,6 +36,7 @@ authors:
     years: "1794–1869"
     work_cn: "箴言书注释"
     work_en: "An Exposition of the Book of Proverbs"
+    no_bio: false
     books: 1
   - id: hodge
     name: "查尔斯·贺智"
@@ -41,6 +45,7 @@ authors:
     years: "1797–1878"
     work_cn: "罗马书、哥林多前后书注释"
     work_en: ""
+    no_bio: false
     books: 4
   - id: manton
     name: "托马斯·曼顿"
@@ -49,6 +54,7 @@ authors:
     years: "1620–1677"
     work_cn: "雅各书注释"
     work_en: "A Practical Commentary on the Epistle of James"
+    no_bio: false
     books: 1
   - id: davenant
     name: "约翰·达文南特"
@@ -57,6 +63,7 @@ authors:
     years: "1572–1641"
     work_cn: "歌罗西书注释"
     work_en: "An Exposition of the Epistle of St. Paul to the Colossians"
+    no_bio: false
     books: 1
   - id: spurgeon
     name: "查尔斯·司布真"
@@ -65,6 +72,7 @@ authors:
     years: "1834–1892"
     work_cn: "马太福音注释"
     work_en: "The Gospel of the Kingdom"
+    no_bio: false
     books: 1
   - id: durham
     name: "詹姆斯·达拉谟"
@@ -73,6 +81,7 @@ authors:
     years: "1622–1658"
     work_cn: "启示录注释"
     work_en: "A Commentary upon the Book of the Revelation"
+    no_bio: false
     books: 1
   - id: johnstone
     name: "罗伯特·约翰斯通"
@@ -81,6 +90,7 @@ authors:
     years: ""
     work_cn: "腓立比书讲疏"
     work_en: "Lectures Exegetical and Practical on the Epistle of Paul to the Philippians"
+    no_bio: false
     books: 1
   - id: perkins
     name: "威廉·珀金斯"
@@ -89,6 +99,7 @@ authors:
     years: "1558–1602"
     work_cn: "加拉太书注释"
     work_en: "A Commentarie or Exposition vpon the Fiue First Chapters of the Epistle to the Galatians"
+    no_bio: false
     books: 1
   - id: hutcheson
     name: "乔治·赫奇森"
@@ -97,6 +108,7 @@ authors:
     years: "1615–1674"
     work_cn: "约伯记、约翰福音注释"
     work_en: ""
+    no_bio: false
     books: 2
   - id: leighton
     name: "罗伯特·雷登"
@@ -105,6 +117,7 @@ authors:
     years: "1611–1684"
     work_cn: "彼得前书实用注释"
     work_en: "A Practical Commentary upon the First Epistle General of St. Peter"
+    no_bio: false
     books: 1
   - id: adams
     name: "托马斯·亚当斯"
@@ -113,6 +126,7 @@ authors:
     years: "1583–1652"
     work_cn: "彼得后书注释"
     work_en: "A Commentary or, Exposition vpon the Diuine Second Epistle Generall, written by the Blessed Apostle St. Peter"
+    no_bio: false
     books: 1
   - id: rollock
     name: "罗伯特·罗洛克"
@@ -121,6 +135,7 @@ authors:
     years: "1555?–1599"
     work_cn: "帖撒罗尼迦前后书讲章"
     work_en: "Lectures vpon the First and Second Epistles of Paul to the Thessalonians"
+    no_bio: false
     books: 2
   - id: jenkyn
     name: "威廉·詹金"
@@ -129,6 +144,7 @@ authors:
     years: "1613–1685"
     work_cn: "犹大书讲解"
     work_en: "An Exposition of the Epistle of Jude"
+    no_bio: false
     books: 1
   - id: candlish
     name: "罗伯特·坎德利什"
@@ -137,6 +153,7 @@ authors:
     years: "1806–1873"
     work_cn: "约翰一书讲解"
     work_en: "The First Epistle of John, Expounded in a Series of Lectures"
+    no_bio: false
     books: 1
   - id: fairbairn
     name: "帕特里克·费尔贝恩"
@@ -145,6 +162,7 @@ authors:
     years: "1805–1874"
     work_cn: "教牧书信注释"
     work_en: "The Pastoral Epistles"
+    no_bio: false
     books: 3
   - id: taylor
     name: "托马斯·泰勒"
@@ -153,6 +171,7 @@ authors:
     years: "1576–1633"
     work_cn: "提多书注释"
     work_en: "A Commentarie vpon the Epistle of S. Paul written to Titus"
+    no_bio: false
     books: 1
   - id: hall
     name: "托马斯·霍尔"
@@ -161,6 +180,7 @@ authors:
     years: "1610–1665"
     work_cn: "提摩太后书第三、四章注释"
     work_en: "A Practical and Polemical Commentary upon the Third and Fourth Chapters of the Latter Epistle of Saint Paul to Timothy"
+    no_bio: false
     books: 1
   - id: barlow
     name: "约翰·巴洛"
@@ -169,6 +189,7 @@ authors:
     years: "1580/81–?"
     work_cn: "提摩太后书第一章讲解"
     work_en: "An Exposition of the Second Epistle of the Apostle Paul to Timothy, the First Chapter"
+    no_bio: false
     books: 1
   - id: attersoll
     name: "威廉·阿特索尔"
@@ -177,6 +198,7 @@ authors:
     years: "?–1640"
     work_cn: "腓利门书注释"
     work_en: "A Commentarie vpon the Epistle of Saint Paule to Philemon"
+    no_bio: false
     books: 1
   - id: dickson
     name: "大卫·迪克森"
@@ -185,6 +207,7 @@ authors:
     years: "1583?–1663"
     work_cn: "马太福音简释"
     work_en: "A Brief Exposition of the Evangel of Jesus Christ according to Matthew"
+    no_bio: false
     books: 1
   - id: petter
     name: "乔治·佩特"
@@ -193,6 +216,7 @@ authors:
     years: "?–1654"
     work_cn: "马可福音注释"
     work_en: "A Learned, Pious, and Practical Commentary upon the Gospel according to St. Mark"
+    no_bio: false
     books: 1
   - id: foote
     name: "詹姆斯·福特"
@@ -201,6 +225,7 @@ authors:
     years: ""
     work_cn: "路加福音讲义"
     work_en: "Lectures on the Gospel according to Luke"
+    no_bio: false
     books: 1
   - id: jones
     name: "威廉·琼斯"
@@ -209,6 +234,7 @@ authors:
     years: "1561–1636"
     work_cn: "约翰二书、三书简释"
     work_en: "A Compendious Explication of the Second and Third Epistles of Saint Iohn"
+    no_bio: false
     books: 2
   - id: alexander
     name: "约瑟·亚历山大"
@@ -217,6 +243,7 @@ authors:
     years: "1809–1860"
     work_cn: "诗篇、以赛亚书、马太福音、使徒行传注释"
     work_en: ""
+    no_bio: false
     books: 4
   - id: haldane
     name: "罗伯特·霍尔丹"
@@ -225,6 +252,7 @@ authors:
     years: "1764–1842"
     work_cn: "罗马书释义"
     work_en: "Exposition of the Epistle to the Romans"
+    no_bio: false
     books: 1
   - id: vos
     name: "霍志恒"
@@ -233,6 +261,16 @@ authors:
     years: "1862–1949"
     work_cn: "诗篇的末世论"
     work_en: "Eschatology of the Psalter"
+    no_bio: false
+    books: 1
+  - id: anon
+    name: "佚名"
+    short: "佚名"
+    en: "Anonymous"
+    years: ""
+    work_cn: "以赛亚书注释"
+    work_en: ""
+    no_bio: true
     books: 1
 
 books:
@@ -381,8 +419,13 @@ books:
     en: "Isaiah"
     testament: ot
     chapters: 66
+    pick: true
+    pick_n: 2
+    pick_c0: "#567b59"
+    pick_c1: "#6d9c71"
     links:
       - {author: alexander, path: "/alexander/isaiah/zh/", url_tpl: "/alexander/isaiah/zh/__CH__/", title_cn: "以赛亚书注释", title_en: "The Earlier and Later Prophecies of Isaiah", c0: "#5f2323", c1: "#7d2f2f"}
+      - {author: anon, path: "/anon/isaiah/", url_tpl: "/anon/isaiah/__CH__/", title_cn: "以赛亚书注释", title_en: "", c0: "#4a769b", c1: "#5e96c4"}
   - id: jeremiah
     name: "耶利米书"
     en: "Jeremiah"

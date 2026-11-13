@@ -1,0 +1,38 @@
+---
+layout: default
+---
+{%- comment -%}
+  佚名《以赛亚书注释》逐章页（用户 2026-11-13 令加）。目前是占位页，只写「第 N 章」。
+  ⚠️ 不复用别家 layout：每本书独立样式。主题色同书首页（anon-isaiah-book）。
+  有正文后再接经文引用弹层（scripture-popup，container_selector=".an-content"）与对比抽屉。
+{%- endcomment -%}
+
+<div class="container anon-chapter" style="padding-top: 70px;">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <div class="an-chrome"><a href="{{ site.baseurl }}/anon/isaiah/">&larr; {{ page.book_name }}</a></div>
+      <h1 class="an-title">{{ page.title }}</h1>
+      <div class="an-content">{{ content }}</div>
+      <div class="an-nav">
+        {% if page.prev_url %}<a href="{{ site.baseurl }}{{ page.prev_url }}">&larr; {{ page.prev_label }}</a>{% else %}<span></span>{% endif %}
+        {% if page.next_url %}<a href="{{ site.baseurl }}{{ page.next_url }}">{{ page.next_label }} &rarr;</a>{% else %}<span></span>{% endif %}
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+.anon-chapter { --an-ink: #5e96c4; --an-ink-dark: #4a769b; --an-rule: #dfe9f2;
+  font-family: "Songti SC", STSong, "Noto Serif SC", Georgia, serif; }
+.anon-chapter .an-chrome { font-size: 13px; margin-bottom: 14px; }
+.anon-chapter .an-chrome a { color: var(--an-ink-dark); text-decoration: none; }
+.anon-chapter .an-chrome a:hover { text-decoration: underline; }
+.anon-chapter .an-title { font-family: inherit; font-size: 26px; font-weight: normal; color: var(--an-ink-dark);
+  margin: 0 0 18px; padding-bottom: 10px; border-bottom: 2px solid var(--an-ink); letter-spacing: .08em; }
+.anon-chapter .an-content { min-height: 120px; }
+.anon-chapter .an-nav { display: flex; justify-content: space-between; margin: 30px 0 40px;
+  padding-top: 12px; border-top: 1px solid var(--an-rule); font-size: 14px; }
+.anon-chapter .an-nav a { color: var(--an-ink-dark); text-decoration: none; }
+.anon-chapter .an-nav a:hover { text-decoration: underline; }
+@media (max-width: 767px) { .anon-chapter .an-title { font-size: 22px; } }
+</style>

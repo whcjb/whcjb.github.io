@@ -220,7 +220,18 @@ AUTHORS = OrderedDict([
                  years='1862–1949', dir='vos',
                  work_cn='诗篇的末世论',
                  work_en='Eschatology of the Psalter')),
+    # 佚名：用户 2026-11-13 令以赛亚书再加一本，作者写「佚名」；目前只有书首页与 66 章占位页（只写第几章），
+    # 没有生平页（历代解经「本页收录」与选择页的生平链接都跳过 NO_BIO 里的作者）。
+    ('anon', dict(name='佚名', short='佚名', en='Anonymous',
+                  years='', dir='anon',
+                  work_cn='以赛亚书注释',
+                  work_en='')),
 ])
+
+# 没有生平页的作者：commentaries/index.html「本页收录」与 commentary-pick.html 的生平链接都跳过
+NO_BIO = {'anon'}
+# 只有占位页、还没有正文的作者：不进对比抽屉（点过去只有「第 N 章」）
+NO_COMPARE = {'anon'}
 
 # ── 主题色 ─────────────────────────────────────────────────────
 # **按注释家一色**：同一位注释家的所有书卷共用（用户 2026-08-31 指定）。
@@ -313,6 +324,8 @@ AUTHOR_COLORS = {
     # 霍尔丹灰紫：卡片明度彩度区间内与全部既有色最小 ΔE 15.3（曼顿、费尔贝恩）；色板已挤。罗马书是合列卡片，
     # 作者色只在选择页（与贺智深蓝并排）与生平页出现。
     'haldane': ('#774e76', '#9b6899'),
+    # 佚名钢蓝：LCh (48→60, 25→30, 260°)，卡片明度彩度区间内与全部既有色最小 ΔE 16.1；只在以赛亚选择页上与亚历山大石榴石并排。
+    'anon': ('#4a769b', '#5e96c4'),
 }
 
 # 书卷卡片的入口注释家：历代解经版面每卷只显示 links 的第一条（commentaries/index.html
@@ -334,7 +347,8 @@ DUO_BOOKS = {}
 # 与 DUO_BOOKS 不同：那边卡片分色带、各带直接链到各家；这里整张卡片只链到选择页。
 # 诗篇：用户 2026-11-10 指定亚历山大与霍志恒合列，点进去再选；同日马太福音（原 DUO_BOOKS 三家色带）也改用此方案。
 PICK_BOOKS = {'psalms': ('alexander', 'vos'), 'matthew': ('spurgeon', 'dickson', 'alexander'),
-              'romans': ('hodge', 'haldane')}   # 2026-11-10 霍尔丹上线，罗马书两家合列
+              'romans': ('hodge', 'haldane'),   # 2026-11-10 霍尔丹上线，罗马书两家合列
+              'isaiah': ('alexander', 'anon')}  # 2026-11-13 用户令以赛亚书加一本佚名注释，两家合列
 # 合列卡片用书卷自己的独立色，不用任何一家的作者色（用户 2026-11-10：「专门为诗篇挑选」；同日「颜色不能太相近」）。
 # 全站作者色已占满色板，与全部颜色都 ≥25 的只剩一族艳粉，挑不出两种；改按**同区可见**比：
 # 诗篇与旧约区卡片（亚历山大、毕列志、赫奇森）、马太福音与新约区全部卡片、各自选择页上的作者卡片，
@@ -347,7 +361,9 @@ PICK_BOOKS = {'psalms': ('alexander', 'vos'), 'matthew': ('spurgeon', 'dickson',
 # 罗马书深紫 LCh (24→36, 55→60, 319°)：与新约区卡片、马太合列色、毕列志棕最小 ΔE 17.8；
 # 铜棕一档（19.3）与马太古铜琥珀同族同一行，弃用。
 PICK_COLORS = {'psalms': ('#2c2864', '#4a4382'), 'matthew': ('#764000', '#9b5b15'),
-               'romans': ('#591c70', '#7b3695')}
+               'romans': ('#591c70', '#7b3695'),
+               # 以赛亚灰绿 LCh (48→60, 25→30, 145°)：与全部既有色（含三张合列卡片色）最小 ΔE 17.2，网格里最远的一档
+               'isaiah': ('#567b59', '#6d9c71')}
 
 PICK_PAGE = '''---
 layout: default
@@ -566,6 +582,8 @@ def build_compare_sources() -> str:
     from collections import defaultdict
     out = defaultdict(list)
     for aid, meta in AUTHORS.items():
+        if aid in NO_COMPARE:
+            continue
         base = ROOT / meta['dir']
         if not base.is_dir():
             continue
@@ -803,6 +821,7 @@ def main():
                   # 索引行里就只出现注释家的名字，不必把同一个书名重复 116 遍。
                   f'    work_cn: {yaml_escape(a["work_cn"])}',
                   f'    work_en: {yaml_escape(a["work_en"])}',
+                  f'    no_bio: {"true" if aid in NO_BIO else "false"}',
                   f'    books: {n}']
     lines += ['', 'books:']
     total_links = 0

@@ -62,9 +62,9 @@
         {%- endfor -%}
       </div>
       <div class="cxp-bios">生平：
-        {%- for l in book.links -%}{%- assign au = author_map | where: "id", l.author | first -%}
+        {%- for l in book.links -%}{%- assign au = author_map | where: "id", l.author | first -%}{%- unless au.no_bio -%}
         <a href="{{ site.baseurl }}/commentaries/authors/{{ au.id }}/">{{ au.short }}</a>
-        {%- endfor -%}
+        {%- endunless -%}{%- endfor -%}
       </div>
     </div>
   </div>
