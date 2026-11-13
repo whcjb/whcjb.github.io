@@ -81,7 +81,7 @@ This encouragement, then, addresses itself to enlightened views of prudence and 
 
 <a class="ft-nsym" href="#fnref-109-11" id="fn-109-11">†</a> 2 Cor. viii. 1.
 
-‡ Even heathens could see the reasonableness of this principle:— Ut desint vires, tamen est laudanda voluntas: Hac ego contentos auguror esse deos. Hæc facit, ut veniat pauper quoque gratus ad aras, Et placeat cæso non minus agna bove. *Ovid. El.* Xenophon, in his *Memorabilia*, states this as having been the opinion of Socrates. Θυσιας δε ϑυων μικρας ἀπο μικρων, οὐδεν ἡγειτο μειουσθαι των ἀπο πολλων και μεγαλων πολλα και μεγαλα ϑυοντων·—Ἐπαινετης δ' ἦν και του ἐπους τουτου, Καδδυναμιν δ' ἐρδειν ἱερ' ἀθανατοισι ϑεοισι.
+‡ Even heathens could see the reasonableness of this principle:—Ut desint vires, tamen est laudanda voluntas: Hac ego contentos auguror esse deos. Hæc facit, ut veniat pauper quoque gratus ad aras, Et placeat cæso non minus agna bove. *Ovid. El.* Xenophon, in his *Memorabilia*, states this as having been the opinion of Socrates. Θυσιας δε ϑυων μικρας ἀπο μικρων, οὐδεν ἡγειτο μειουσθαι των ἀπο πολλων και μεγαλων πολλα και μεγαλα ϑυοντων·—Ἐπαινετης δ' ἦν και του ἐπους τουτου, Καδδυναμιν δ' ἐρδειν ἱερ' ἀθανατοισι ϑεοισι.
 
 <a class="ft-nsym" href="#fnref-109-13" id="fn-109-13">&#42;</a> 1 Cor. xiii. 3.
 

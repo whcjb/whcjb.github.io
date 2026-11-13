@@ -561,7 +561,7 @@ K 断词未接（`be- -lieveth`）；L 漏逗号；M 书帖签名进注区（`VO
 → `foote_notes_leak2 --apply --round 2` → `foote_line_check --apply --round 2` → `foote_notes_entry --apply`
 → `foote_page_check --apply` → `foote_hand_pending --apply` → `foote_seam_join --apply` → `foote_page_check --apply --words`
 → `foote_hand_pending --apply --late` → `foote_page_check --apply --words2` → `foote_hand_pending --apply --late2`
-→ `foote_page_check --apply --marks` → `foote_hand_pending --apply --late3` → `foote_fnmark_check --symbols` → `publish_foote_en --apply`。
+→ `foote_page_check --apply --marks` → `foote_hand_pending --apply --late3` → `foote_sweep --apply` → `foote_fnmark_check --symbols` → `publish_foote_en --apply`。
 
 - **疑似词**（`foote_page_check.py --words` → `page_check_words_fixes.tsv`，2026-11-12 用户令「继续」）：白名单看不见的读花真词形。
   判据：不在判词典且大小写混杂（`CroesuB`），或全书至多见两次的小写词（`fovr`、`teceived`），或行末断词没接上的半截。
@@ -618,6 +618,13 @@ K 断词未接（`be- -lieveth`）；L 漏逗号；M 书帖签名进注区（`VO
   词序列对齐（残字两侧各 ≥2 词相合块紧贴）。前几轮答 B 却因注号/斜体/判词典暂扣、或答 other 的 16 处逐条裁图看定：
   114 讲印面就是 `watchfulne: ssLet us`（原书排错，照录）；116、135 讲印面无注号，误补的去掉；085 讲 `mount.*` 有注号；
   128 讲 `rejectedst` 是古二人称。第 2 轮答案目录与第 1 轮分开，22 页重问了一遍（多花约 $0.3）。正文残字 202 → 182。
+
+- **实读抽查与成类清理**（2026-11-13）：第 5、60、95 讲（三卷各一，45 页）逐页对图实读，正文约每页 0.8 处错，
+  多为标点空格；读成别的真词仅 1 例（第 5 讲 `its 0/`→`us of`）。逐条改入 `foote_hand_pending.py` LATE3
+  （另随实读带出全书词中混大写 40、`''` 收引号 8、印张签名 5）。按读出的错误类型写 `scripts/foote_sweep.py`
+  全书清：破折号两侧空格 200、开引号挤到逗号后 13（按段内引号奇偶判，第 45 讲一处除外）、`1`→I 18、
+  `bom`→born 4、句末引号前空格 19、`."t` 注号 1 → `sweep_fixes.tsv`（整段换）。注条开头缺注号 139 条不改：
+  发布时按页内次序补符号，其中不少是上页注的续文。
 
 ## 待做
 
