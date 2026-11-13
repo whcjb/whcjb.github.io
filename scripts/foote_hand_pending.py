@@ -335,6 +335,8 @@ LATE3 = [
     ('116', 'body of Christ *V* Communion', 'body of Christ?" Communion'),         # 林前 10:16
     ('072', 'but let us M improve', 'but let us all improve'),                    # 卷二 p.461 末行看图：斜体 all
     ('072', 'judgment of God *V' + FN + '* Neither', 'judgment of God?" Neither'),        # 罗 2:5，p.462 看图
+    ('034', 'name of the Lord *V* Have', 'name of the Lord?" Have'),              # 伯 1:21，卷一 p.489 看图
+    ('083', 'to go in to Aare* m *the feast.*', 'to go in to share in the feast.*'),  # 卷二 p.595 看图：斜体 share in
 ]
 LATE3_LEAKS = [   # (讲, 正文原串, 改作, 页, 注条——空表＝注区已有)
     ('004', '<!-- PAGE 59 -->\n παιδα Acts iv. 25. *"* £o die pueri tui mihi a te literas reddiderunt." —*Cicero ad AUicum.* '
