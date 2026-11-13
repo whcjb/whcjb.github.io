@@ -18,6 +18,7 @@
     python3 scripts/foote_vlm_recheck.py --apply
 """
 import argparse
+import re
 import sys
 from pathlib import Path
 
@@ -26,6 +27,7 @@ import adjudicate_foote_ocr as A  # noqa: E402
 import foote_image_check as I  # noqa: E402
 
 RULES = A.RAW / 'vlm_recheck_fixes.tsv'
+LITERAL = [('013', r'(?<=ἁμαρτιαν\.—\*Polybius\.\*)\\ns re συνεχες ἐξειργαζοντο,\*')]
 RULES2 = A.RAW / 'vlm_recheck2_fixes.tsv'   # --late：foote_sweep --late 之后落（句中误大写、漏句点等，第 48 讲实读带出）
 
 
@@ -37,6 +39,14 @@ def main():
     R = RULES2 if a.late else RULES
     if a.apply and R.exists():
         I.apply_multiline(R)
+    if a.apply and a.late:
+        # 表里写不出字面反斜杠 n（apply_multiline 把 \\n 当换行）：013 p.185 Polybius 注上一条换完后残下的尾巴
+        for lec, rx in LITERAL:
+            f = A.SRC / f'{lec}.md'
+            t = f.read_text(encoding='utf-8')
+            t2 = re.sub(rx, '', t)
+            if t2 != t:
+                f.write_text(t2, encoding='utf-8')
 
 
 if __name__ == '__main__':

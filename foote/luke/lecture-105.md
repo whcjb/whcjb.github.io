@@ -109,6 +109,6 @@ In the last place, *See that you give to the Lord Jesus that place in your spiri
 
 <a class="ft-nsym" href="#fnref-105-15" id="fn-105-15">‡</a> Henry.
 
-&#42; Serle'B Horae Solitariae,
+&#42; Serle's Horæ Solitariæ.
 
 </div>

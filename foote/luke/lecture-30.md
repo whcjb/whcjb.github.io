@@ -65,7 +65,7 @@ It must neither be forgotten nor disguised, that when the blind lead the blind, 
 
 <a class="ft-nsym" href="#fnref-30-1" id="fn-30-1">&#42;</a> Rom xiv. 3.
 
-<a class="ft-nsym" href="#fnref-30-2" id="fn-30-2">&#42;</a> Κολπος. Herodotus says that when CroesuB had presented Alcmaooa
+<a class="ft-nsym" href="#fnref-30-2" id="fn-30-2">&#42;</a> Κολπος. Herodotus says that when Crœsus had presented Alcmæon
 
 &#42; -vrith as much gold as he could carry about his person, be, among various contrivances, put on a very large robe, and filled all the bosom, or wide
 

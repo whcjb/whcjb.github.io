@@ -41,7 +41,7 @@ Whatever may have been the arguments they advanced, no wonder that they hesitate
 
 But, that we may have a full account of what our Lord now said, let us take in what we read in Matthew. Jesus said, " Verily I say unto you, Except ye be converted, and become as little children, ye shall not enter into the kingdom of heaven." This declaration was peculiarly applicable to the state of the disciples' minds at that time; and yet, it embodied a momentous truth of universal application—a mode of teaching which Christ very often employed.
 
-Let us consider how little children furnish an apt emblem of conversion, or rather, of those who are being converted. It is not as to their being absolutely holy and innocent, and not standing in need of pardon and regeneration; for, the very reverse of this is the fact: but, it is as to some traits in their disposition, when they are viewed comparatively with unconverted adults. " Though not innocent, strictly speaking, they are comparatively harmless; as the young, even of the most ferocious animals, are at first innoxious, but soon begin to discover the nature of that stock from which they spring."
+Let us consider how little children furnish an apt emblem of conversion, or rather, of those who are being converted. It is not as to their being absolutely holy and innocent, and not standing in need of pardon and regeneration; for, the very reverse of this is the fact: but, it is as to some traits in their disposition, when they are viewed comparatively with unconverted adults. " Though not innocent, strictly speaking, they are comparatively harmless; as the young, even of the most ferocious animals, are at first innoxious, but soon begin to discover the nature of that stock from which they spring."<sup class="ft-fn"><a href="#fn-49-2" id="fnref-49-2">&#42;</a></sup>
 
 More particularly, and in reference to those qualifications in which the disciples now showed that they were very deficient, and yet of which we must all be possessed, if we are to be saved;—little children are *comparatively humble.* Whatever seeds of evil may lurk in their minds, it is almost impossible that they should imagine themselves equal to those who are grown up. They are almost unavoidably sensible of their inferiority and dependence. And this is the state of mind towards God to which we, as sinners, must be brought. Let us not think more highly of ourselves than we ought to think; but let us think soberly. Let us not imagine that we are rich and increased in goods, and have need of nothing; but let us feel and confess that we are wretched, and miserable, and poor, and blind, and naked. Let us acknowledge and deplore our utter guilt, condemnation, and depravity: and let us rely on the divine mercy and aid, which are ready to be extended to us, through the righteousness of the Lord Jesus Christ, and the influence of the Holy Spirit.
 
@@ -93,7 +93,7 @@ I shall only add, that these truly enlightened and truly charitable and liberal 
 
 <a class="ft-nsym" href="#fnref-49-1" id="fn-49-1">&#42;</a> Mark.
 
-&#42; Scott.
+<a class="ft-nsym" href="#fnref-49-2" id="fn-49-2">&#42;</a> Scott.
 
 <a class="ft-nsym" href="#fnref-49-3" id="fn-49-3">&#42;</a> Matt. x. 40.
 

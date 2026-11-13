@@ -85,9 +85,9 @@ As for you who are so far prepared already, as to be at least safe, let it not h
 
 <div class="ft-notes" markdown="1">
 
-<a class="ft-nsym" href="#fnref-68-1" id="fn-68-1">&#42;</a> A.D. 1831. t 1 Kings xviii. 46; 2 Kings iv. 29.
+<a class="ft-nsym" href="#fnref-68-1" id="fn-68-1">&#42;</a> A.D. 1831.
 
-<a class="ft-nsym" href="#fnref-68-2" id="fn-68-2">†</a> vol.. II. 2 C
+<a class="ft-nsym" href="#fnref-68-2" id="fn-68-2">†</a> 1 Kings xviii. 46; 2 Kings iv. 29.
 
 <a class="ft-nsym" href="#fnref-68-3" id="fn-68-3">&#42;</a> 1 Pet. i. 13.
 

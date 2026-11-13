@@ -91,7 +91,7 @@ Think, my friends, of the delightful effects this spirit would produce on your h
 
 <a class="ft-nsym" href="#fnref-29-4" id="fn-29-4">&#42;</a> Ps. xxxv. 11.
 
-<a class="ft-nsym" href="#fnref-29-5" id="fn-29-5">&#42;</a> A similar sentiment occurs in Homer, Herodotus, Polybius, Isocrates, Qointilian, and other ancient writers. Of this numerous examples are given by Wetstein.
+<a class="ft-nsym" href="#fnref-29-5" id="fn-29-5">&#42;</a> A similar sentiment occurs in Homer, Herodotus, Polybius, Isocrates, Quintilian, and other ancient writers. Of this numerous examples are given by Wetstein.
 
 <a class="ft-nsym" href="#fnref-29-6" id="fn-29-6">&#42;</a> Ps. cxii. 5.
 

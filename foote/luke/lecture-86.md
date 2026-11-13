@@ -79,7 +79,7 @@ And, if you have already obtained admittance into the kingdom of God on earth, s
 
 <a class="ft-nsym" href="#fnref-86-7" id="fn-86-7">†</a> Prov. xvi. 5.
 
-<a class="ft-nsym" href="#fnref-86-8" id="fn-86-8">&#42;</a> Isa. xi. 8.
+<a class="ft-nsym" href="#fnref-86-8" id="fn-86-8">&#42;</a> Isa. xl. 8.
 
 <a class="ft-nsym" href="#fnref-86-9" id="fn-86-9">&#42;</a> Ἰωτα ἐν ἢ μια κεραια. Iota, or Yod, the smallest letter of the alphabet. Κεραια, in reference to the Hebrew, seems to signify an apex, or corner, of a letter, a very slight variation of which, in several cases, changes the letter, and, of course, the word and the sense altogether.
 

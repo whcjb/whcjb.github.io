@@ -71,7 +71,7 @@ This parable was evidently spoken by our Lord, with the same general design as t
 
 This parable naturally divides itself into four parts, which we shall consider in their order—the prodigal's 8 departure from his father's house—his return—the reception he meets with—and the character and conduct of the elder brother.
 
-Let us consider, First, *The prodigal's departure from his father's house<sup class="ft-fn">&#42;</sup>*
+Let us consider, First, *The prodigal's departure from his father's house*
 
 " *The younger of them said to his father, Father, give me the portion of goods that falleth to me."* There are some who consider this demand so strange, and the father's compliance with it, abused as the compliance was likely to be, so much stranger still, that the supposition can only appear natural, when there is taken into view the custom, which prevailed in Eastern countries, of children claiming their share of their father's property during his life-time, which, it appears, they were legally entitled to do, and with which demand, of course, the father could not refuse to comply.<sup class="ft-fn"><a href="#fn-81-1" id="fnref-81-1">&#42;</a></sup> The intention of this law was to protect children against harsh usage from their parents; but, it was certainly very liable to abuse. The son might be unreasonable in his demand, " yet the demand must first be acceded to, before the matter could be legally inquired into; and then, if it was found that the father was irreproachable in his character, and had given no just cause for the son to separate from him; in that case, the civil magistrate fined the son."<sup class="ft-fn"><a href="#fn-81-2" id="fnref-81-2">&#42;</a></sup> Others, however, are of opinion, that, though the Mosaic law provided against improper partialities and dislikes on the part of a father when disposing of his property,<sup class="ft-fn"><a href="#fn-81-3" id="fnref-81-3">†</a></sup> there is not sufficient ground for affirming that it vested any such right in children, during the life of their parents; and they therefore look on the compliance of the father, here supposed, as an instance of singular generosity, which rendered the undutiful departure and conduct of his son peculiarly base. When the father assigned his portion to the younger son, he, at the same time, assigned his portion to the elder, who, according to the Jewish law, would receive a double portion. The words of the parable are, " *He divided unto them his substance."* In doing so, he may be supposed to have reserved what was merely sufficient for himself.
 
@@ -107,7 +107,7 @@ This would lead on to the consideration of the third part of the parable, namely
 
 <a class="ft-nsym" href="#fnref-81-4" id="fn-81-4">&#42;</a> Herodotus, ii. 47.
 
-<a class="ft-nsym" href="#fnref-81-5" id="fn-81-5">†</a> f The fruit of the *charuh* tree, or a kind of pulse, saj some: wild chestnuts, sav others. Grotius, Bochart, Drusius.
+<a class="ft-nsym" href="#fnref-81-5" id="fn-81-5">†</a> The fruit of the *charub* tree, or a kind of pulse, say some: wild chestnuts, sav others. Grotius, Bochart, Drusius.
 
 <a class="ft-nsym" href="#fnref-81-6" id="fn-81-6">&#42;</a> Εἰς τον οὐρανον: some are for rendering this, "Even unto heaven;" that is, exceedingly.
 

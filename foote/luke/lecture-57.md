@@ -71,7 +71,7 @@ Let all truly pious and praying persons, also, be admonished of their duty in th
 
 <div class="ft-notes" markdown="1">
 
-<a class="ft-nsym" href="#fnref-57-1" id="fn-57-1">&#42;</a> Scott. VOL. II. Q
+<a class="ft-nsym" href="#fnref-57-1" id="fn-57-1">&#42;</a> Scott.
 
 <a class="ft-nsym" href="#fnref-57-2" id="fn-57-2">&#42;</a> Martial's Epigram, lib. iv. 15, though much surpassed by this parable in variety and beauty of imagery, cannot fail to interest the classical scholar:—Mille tibi nummos hesterna nocti roganti In sex aut septem, Cœciliane, dies, Non habeo, dixi; sed tu causatus amici Adventum, lancem paucaque vasa rogas, Stultus es an stultum me credis, amice? negavi Mille tibi nummos, millia quinque dabo?
 

@@ -61,7 +61,7 @@ Finally, How happy the family of which all the members are living together in lo
 
 <div class="ft-notes" markdown="1">
 
-<a class="ft-nsym" href="#fnref-69-1" id="fn-69-1">&#42;</a> Mal. iuL Z
+<a class="ft-nsym" href="#fnref-69-1" id="fn-69-1">&#42;</a> Mal. iii. 2.
 
 <a class="ft-nsym" href="#fnref-69-2" id="fn-69-2">&#42;</a> Dr Campbell.—Και τι θελω εἰ *fUti ἀνηφθη;* id est, nihU jam restat amplios.—*Raphelius and Camerarius,* Utinamjam jam accendatur.— *Grotius. 'Eu* seems to be here a particle of wishing, as in Luke xix. 42, Εἰ ἐγνως,—if thou hadst known; that is, O that thou hadst known! Lightfoot says that " What will I," is the same with " This I will," and that the meaning is, " This I will that it be already kindled/'
 
