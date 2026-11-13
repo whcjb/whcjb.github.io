@@ -185,6 +185,28 @@ def link_notes(n, blocks, notes, tags):
             i += 1
         else:
             j += 1
+    # 第二轮（2026-11-13）：两边剩下的按阅读顺序再配一次，放宽为注条在号的同页或下一页、符号不论——
+    # 号在页尾而注印在下页、或符号 OCR 读花，第一轮配不上；剩下的号与注顺序一致时几乎必是一对
+    ri = [i for i in range(M) if i not in pair and marks[i] is not None]
+    rj = [j for j in range(K) if j not in pair.values()]
+    def ok2(i, j):
+        try:
+            return int(syms[j][0]) - int(marks[i][0]) in (0, 1)
+        except ValueError:
+            return False
+    L2 = [[0] * (len(rj) + 1) for _ in range(len(ri) + 1)]
+    for a in range(len(ri) - 1, -1, -1):
+        for b in range(len(rj) - 1, -1, -1):
+            L2[a][b] = max(L2[a + 1][b], L2[a][b + 1], L2[a + 1][b + 1] + 1 if ok2(ri[a], rj[b]) else 0)
+    a = b = 0
+    while a < len(ri) and b < len(rj):
+        if ok2(ri[a], rj[b]) and L2[a][b] == L2[a + 1][b + 1] + 1:
+            pair[ri[a]] = rj[b]
+            a, b = a + 1, b + 1
+        elif L2[a + 1][b] >= L2[a][b + 1]:
+            a += 1
+        else:
+            b += 1
     back = {j: i for i, j in pair.items()}
     it = iter(range(M))
 

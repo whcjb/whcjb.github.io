@@ -117,7 +117,7 @@ Let those of you, finally, who are restored to sight, in the spiritual sense, be
 
 ‡ Exod. iv. 11.
 
-§ \+ Edward Polhill, Esq., mentioned in Pike and Hay ward's Cases of Conscience.
+† Edward Polhill, Esq., mentioned in Pike and Hayward's Cases of Conscience.
 
 <a class="ft-nsym" href="#fnref-98-18" id="fn-98-18">&#42;</a> Lev. xix. 14; Deut. xxvii. 18.
 

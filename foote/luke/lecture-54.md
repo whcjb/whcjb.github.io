@@ -117,7 +117,7 @@ In conclusion, then, my friends, let us, by all this, be admonished and encourag
 
 <a class="ft-nsym" href="#fnref-54-3" id="fn-54-3">&#42;</a> Id petam, idque persequar corde, et animo, atque viribus.—*Plautus.*
 
-<a class="ft-nsym" href="#fnref-54-4" id="fn-54-4">&#42;</a> Quoted bv Lightfoot from Maimonides.
+<a class="ft-nsym" href="#fnref-54-4" id="fn-54-4">&#42;</a> Quoted by Lightfoot from Maimonides.
 
 <a class="ft-nsym" href="#fnref-54-5" id="fn-54-5">†</a> f Adamim (Adummim) quondam yillula, nunc ruinse, in sorte tribus Judæ, qui locus usque nooie vocatur Maledomim, et Grsece dicitur' *ἀναβασις πυῤῥων,* Latme autem appeljari potest ascensus ruforum, sive
 
@@ -125,7 +125,7 @@ In conclusion, then, my friends, let us, by all this, be admonished and encourag
 
 &#42; Κατα συγκυριαν. It happened by coincidence of time and other circumstances.
 
-<a class="ft-nsym" href="#fnref-54-8" id="fn-54-8">†</a> t General and great as is the cruelty which characterizes heathenism, many of the heathens themselves will rise up in judgment against such
+<a class="ft-nsym" href="#fnref-54-8" id="fn-54-8">†</a> General and great as is the cruelty which characterizes heathenism, many of the heathens themselves will rise up in judgment against such
 
 <a class="ft-nsym" href="#fnref-54-9" id="fn-54-9">&#42;</a> bigotry and cruelty on the part of the professed worshippers of the true God. Herodotus says of the Assyrians, " It is unlawful for them to pass by in silence any person in distress, without first inquiring what is the matter with him." Σιγῇ δε παρεξελθειν τον *xeifAvovrx outu σφι ἐξεστι,*
 
