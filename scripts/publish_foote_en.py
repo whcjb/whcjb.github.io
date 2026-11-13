@@ -153,10 +153,13 @@ def link_notes(n, blocks, notes, tags):
     blocks：[(该块第一个哨兵在本讲正文里的序号, 文本)]；notes：[(页, 文本)]；tags：fn_symbols.json 本讲一行，
     [[页, 符号] | null]（链条按转录同位注号定的）。按阅读顺序保序配对（最长公共子序列），一对成立须号与注
     同页同符号。配不上的号（转录同位无注号或定不了符号、或那条注 OCR 丢了）不链、上标作 *；配不上的注不回链。"""
-    marks = []
-    for k0, b in blocks:
-        marks += [tuple(tags[k0 + k]) if k0 + k < len(tags) and tags[k0 + k] else None
-                  for k in range(b.count(FN_MARK))]
+    marks, mpage = [], []
+    for blk in blocks:
+        k0, b = blk[0], blk[1]
+        bpg = blk[2] if len(blk) > 2 else None          # 块（段落）起始页：号定不了符号时第二轮拿它代页
+        for k in range(b.count(FN_MARK)):
+            marks.append(tuple(tags[k0 + k]) if k0 + k < len(tags) and tags[k0 + k] else None)
+            mpage.append(bpg)
     # 一条里并了几条注的（`♦ Isa. xxi. 10. † Jer. xv. 7.`）在干净符号处拆开；符号 OCR 读花的（`•` `t` `*X*`）
     # 按本页次序推：印本每页注号依次为 * † ‡ § ‖ ¶
     split = [(pg, x) for pg, t in notes for x in re.split(r'\s+(?=[†‡§‖¶] )', t)]
@@ -187,11 +190,13 @@ def link_notes(n, blocks, notes, tags):
             j += 1
     # 第二轮（2026-11-13）：两边剩下的按阅读顺序再配一次，放宽为注条在号的同页或下一页、符号不论——
     # 号在页尾而注印在下页、或符号 OCR 读花，第一轮配不上；剩下的号与注顺序一致时几乎必是一对
-    ri = [i for i in range(M) if i not in pair and marks[i] is not None]
+    ri = [i for i in range(M) if i not in pair and (marks[i] is not None or (mpage[i] or '').isdigit())]
     rj = [j for j in range(K) if j not in pair.values()]
     def ok2(i, j):
         try:
-            return int(syms[j][0]) - int(marks[i][0]) in (0, 1)
+            if marks[i] is not None:
+                return int(syms[j][0]) - int(marks[i][0]) in (0, 1)
+            return int(syms[j][0]) - int(mpage[i]) in (0, 1, 2, 3)   # 段落可跨数页
         except ValueError:
             return False
     L2 = [[0] * (len(rj) + 1) for _ in range(len(ri) + 1)]
@@ -217,7 +222,7 @@ def link_notes(n, blocks, notes, tags):
         j = pair[i]
         sym = syms[j][1].replace('*', '&#42;')
         return f'<sup class="ft-fn"><a href="#fn-{n}-{j + 1}" id="fnref-{n}-{j + 1}">{sym}</a></sup>'
-    out = [re.sub(FN_MARK, ref, b) for _, b in blocks]
+    out = [re.sub(FN_MARK, ref, blk[1]) for blk in blocks]
     nl = []
     for j, (_, sym, t) in enumerate(syms):
         s_ = (sym or '*').replace('*', '&#42;')
@@ -263,7 +268,7 @@ def build():
         seen.update(vv)
         if anchors:
             out.append(anchors.strip())
-        blocks = [(u['sord'], b) for b in out] + [(k, md_escape(t)) for (pg, t), k in zip(u['paras'], u['pord'])]
+        blocks = [(u['sord'], b) for b in out] + [(k, md_escape(t), pg) for (pg, t), k in zip(u['paras'], u['pord'])]
         out, notes, *st = link_notes(n, blocks, [(pg, md_escape(t)) for pg, t in u['notes']], FNSYM.get(str(n), []))
         LINKS.append((n, *st))
         if notes:
