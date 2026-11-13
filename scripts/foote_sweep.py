@@ -17,6 +17,17 @@
 
     python3 scripts/foote_sweep.py --rules    # 链条：foote_hand_pending --apply --late3 之后 → sweep_fixes.tsv
     python3 scripts/foote_sweep.py --apply
+
+第 48 讲实读（2026-11-13）带出的几类，放在 foote_vlm_recheck 之后另跑一轮（--late：现场生成即落，表 sweep2_fixes.tsv）：
+  qstar  `*"*` 在开引号位：引号两侧多读出的星号（140 处左右）→ `"`；收引号位的不动（可能真是斜体收尾）
+  qopen  `*" X` 星号与开引号倒序 → `" *X`
+  qmark  `you*?"` 问号落在斜体外 → `you?"*`
+  vnum   经文段节号中夹 `\*`：`4\*2.` → `42.`
+  ord    序数被拆：`the 2 2d verse` → `22d`
+  slash  `" / *beseech` 的 `/` 是 I
+  god    `of god` → `of God`
+
+    python3 scripts/foote_sweep.py --late --rules && python3 scripts/foote_sweep.py --late --apply
 """
 import argparse
 import re
@@ -29,6 +40,7 @@ import adjudicate_foote_ocr as A  # noqa: E402
 import foote_image_check as I  # noqa: E402
 
 RULES = A.RAW / 'sweep_fixes.tsv'
+RULES2 = A.RAW / 'sweep2_fixes.tsv'
 OPEN_SKIP = {('045', 'prayer," Rom.')}
 PATS = [
     ('dash', re.compile(r'(?<=[A-Za-z"*,;:.!?)])— (?=[A-Za-z])'), '—'),
@@ -42,6 +54,26 @@ PATS = [
     ('so', re.compile(r'\b80(?= [a-z])'), 'so'),                       # 此版 s 形近 8（全书 16 处均是）
     ('O', re.compile(r'(?:^|(?<=[ "(*—]))0(?= [A-Za-z])', re.M), 'O'),  # 呼格 O 读成 0（看图 v2 p.105）
 ]
+
+PATS2 = [
+    ('qstar', re.compile(r'(?<=[ —(\n])\*"\*(?!\*)'), '"'),
+    ('qopen', re.compile(r'(?<=[ (—:;,\n])\*" ?(?=[A-Za-z])'), '" *'),
+    ('qmark', re.compile(r'(?<=[a-z])\*([?!])"'), None),
+    ('vnum', re.compile(r'(?<=[.?!;:] )(\d)\\\*(\d)(?=\. [A-Z])'), None),
+    ('ord', re.compile(r'\b(\d) (\d(?:d|th|st|nd))(?= verse)'), None),
+    ('slash', re.compile(r'(?<=" )/ \*(?=[a-z])'), '*I '),
+    ('god', re.compile(r'\b(?<=of )god\b'), 'God'),
+]
+SUB2 = {'qmark': lambda m: m.group(1) + '"*', 'vnum': lambda m: m.group(1) + m.group(2), 'ord': lambda m: m.group(1) + m.group(2)}
+
+
+def edits2(lec, t):
+    body = t.partition('\n---\n')[0]
+    out = []
+    for kind, rx, rep in PATS2:
+        for m in rx.finditer(body):
+            out.append((m.start(), m.end(), SUB2[kind](m) if rep is None else rep, kind))
+    return sorted(out)
 
 
 def edits(lec, t):
@@ -59,12 +91,12 @@ def edits(lec, t):
     return sorted(out)
 
 
-def rules():
+def rules(late=False):
     """同一段内的几处合成一条（整段换），避免相邻规则上下文互相重叠。"""
     rows, stat = [], Counter()
     for f in sorted(A.SRC.glob('*.md')):
         lec, t = f.stem, f.read_text(encoding='utf-8')
-        ed = edits(lec, t)
+        ed = edits2(lec, t) if late else edits(lec, t)
         pos = 0
         for para in t.split('\n\n'):
             mine = [x for x in ed if pos <= x[0] and x[1] <= pos + len(para)]
@@ -79,20 +111,23 @@ def rules():
                     raise SystemExit(f'{lec}: 段不唯一 {para[:60]!r}')
                 rows.append((lec, para, new))
             pos += len(para) + 2
-    RULES.write_text('# lecture\t原串\t改作 —— foote_sweep.py 生成（实读抽查后成类清理，整段换）；\\n 表换行\n'
-                     + ''.join('\t'.join(x.replace('\n', '\\n') for x in r) + '\n' for r in rows), encoding='utf-8')
-    print(dict(stat), f'规则 {len(rows)} → {RULES}', file=sys.stderr)
+    out = RULES2 if late else RULES
+    out.write_text('# lecture\t原串\t改作 —— foote_sweep.py 生成（实读抽查后成类清理，整段换）；\\n 表换行\n'
+                   + ''.join('\t'.join(x.replace('\n', '\\n') for x in r) + '\n' for r in rows), encoding='utf-8')
+    print(dict(stat), f'规则 {len(rows)} → {out}', file=sys.stderr)
 
 
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument('--rules', action='store_true')
     ap.add_argument('--apply', action='store_true')
+    ap.add_argument('--late', action='store_true')
     a = ap.parse_args()
+    R = RULES2 if a.late else RULES
     if a.rules:
-        rules()
-    elif a.apply and RULES.exists():
-        I.apply_multiline(RULES)
+        rules(a.late)
+    elif a.apply and R.exists():
+        I.apply_multiline(R)
 
 
 if __name__ == '__main__':

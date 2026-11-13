@@ -561,7 +561,7 @@ K 断词未接（`be- -lieveth`）；L 漏逗号；M 书帖签名进注区（`VO
 → `foote_notes_leak2 --apply --round 2` → `foote_line_check --apply --round 2` → `foote_notes_entry --apply`
 → `foote_page_check --apply` → `foote_hand_pending --apply` → `foote_seam_join --apply` → `foote_page_check --apply --words`
 → `foote_hand_pending --apply --late` → `foote_page_check --apply --words2` → `foote_hand_pending --apply --late2`
-→ `foote_page_check --apply --marks` → `foote_hand_pending --apply --late3` → `foote_sweep --apply` → `foote_vlm_recheck --apply` → `foote_fnmark_check --symbols` → `publish_foote_en --apply`。
+→ `foote_page_check --apply --marks` → `foote_hand_pending --apply --late3` → `foote_sweep --apply` → `foote_vlm_recheck --apply` → `foote_sweep --late --rules && --late --apply` → `foote_fnmark_check --symbols` → `publish_foote_en --apply`。
 
 - **疑似词**（`foote_page_check.py --words` → `page_check_words_fixes.tsv`，2026-11-12 用户令「继续」）：白名单看不见的读花真词形。
   判据：不在判词典且大小写混杂（`CroesuB`），或全书至多见两次的小写词（`fovr`、`teceived`），或行末断词没接上的半截。
@@ -642,6 +642,11 @@ K 断词未接（`be- -lieveth`）；L 漏逗号；M 书帖签名进注区（`VO
   续：逐词对齐时数目不等的小块 130 条（孤立字母＝! ? 注号、经文段节号、残词），表尾 `# glue` 段；注号链接 1264→1287。
   转录未覆盖的页：卷一 leaf 590–601 是书末出版书目（页码 10–21 与正文撞号），非正文；卷二 p.65（无转录，拿 tess 比）
   与 p.523（页在段中无标记，按正文锚对）单独比，落 5 处入 LATE3。
+- **第 48 讲逐页实读**（2026-11-13，卷二 pp.100–113，14 页）：约 14 处，真词错 0；多为斜体星号与引号次序
+  （`*"*`、`*" X`、`you*?"`）、`" / *beseech`（/ 是 I）、`4\*2.` 节号、`2 2d`、`kingdom of god`、多出注号 1。
+  按读出的类型全书清（`foote_sweep --late`，recheck 之后现场生成即落 → `sweep2_fixes.tsv`）：开引号位 `*"*` 136、
+  `*" X` 倒序 201、`/`→I 14、`of god` 9、问号落斜体外 6、节号 3、拆开的序数 3；本讲单处 5 条入 recheck 表尾。
+  未动：第 83 讲 `parents' 03\*0;`（疑 eye，待看图）。
 
 ## 待做
 
