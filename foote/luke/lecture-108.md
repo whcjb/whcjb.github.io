@@ -17,7 +17,7 @@ next_label: "Lecture CIX"
 
 <div class="ft-text" markdown="1">
 
-And he said unto them, How say they that Christ is David's son? <sup class="ft-vn">42</sup>And David himself saith in the book of Psalms, The Lord said unto my Lord, Sit thou on my right hand, <sup class="ft-vn">43</sup>Till I make thine enemies thy footstool. <sup class="ft-vn">44</sup>David therefore calleth him Lord, how is he then his son? 45. *%* Then in the audience of all the people, he said unto his disciples, <sup class="ft-vn">46</sup>Beware of the scribes, which desire to walk in long robes, and love greetings in the markets, and the highest seats in the synagogues, and the chief rooms at feasts; <sup class="ft-vn">47</sup>Which devour widows' houses, and for a show make long prayers: the same shall receive greater damnation."
+And he said unto them, How say they that Christ is David's son? <sup class="ft-vn">42</sup>And David himself saith in the book of Psalms, The Lord said unto my Lord, Sit thou on my right hand, <sup class="ft-vn">43</sup>Till I make thine enemies thy footstool. <sup class="ft-vn">44</sup>David therefore calleth him Lord, how is he then his son? 45. ¶ Then in the audience of all the people, he said unto his disciples, <sup class="ft-vn">46</sup>Beware of the scribes, which desire to walk in long robes, and love greetings in the markets, and the highest seats in the synagogues, and the chief rooms at feasts; <sup class="ft-vn">47</sup>Which devour widows' houses, and for a show make long prayers: the same shall receive greater damnation."
 
 </div>
 

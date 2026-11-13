@@ -50,7 +50,8 @@ PREV = os.environ.get('FOOTE_PREV', '1') == '1'     # 量覆盖用：FOOTE_PREV=
 
 def leaf_pages(vol):
     d = json.loads((RAW / 'src' / f'{IDS[vol]}_page_numbers.json').read_text())
-    return {x['leafNum']: x['pageNumber'] for x in d['pages']}
+    from extract_foote import PAGE_FILL
+    return {**{x['leafNum']: x['pageNumber'] for x in d['pages']}, **PAGE_FILL.get(vol, {})}
 
 
 def page_segments(vol):

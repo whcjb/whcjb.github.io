@@ -215,12 +215,19 @@ def load_pages(vol):
     return pages
 
 
+# IA 页码表在各卷首讲首两页、卷末一两页是空的，这几页上的段落原先标成 `<!-- PAGE -->`，整页转录比对也就跳过了它们
+# （2026-11-13 第 91 讲实读带出：p.3 一页十来处错没被前几轮捞到）。按整页转录的页眉（讲首页无页眉，取下一页减一）补上
+PAGE_FILL = {1: {11: '7', 12: '8', 580: '576'},
+             2: {7: '3', 8: '4', 690: '686', 691: '687', 692: '688'},
+             3: {7: '3', 8: '4'}}
+
+
 def printed_numbers(vol):
     p = SRC / f'{VOLS[vol]}_page_numbers.json'
     if not p.exists():
         return {}
     d = json.load(open(p))
-    return {x['leafNum']: x['pageNumber'] for x in d['pages'] if x.get('pageNumber')}
+    return {**{x['leafNum']: x['pageNumber'] for x in d['pages'] if x.get('pageNumber')}, **PAGE_FILL.get(vol, {})}
 
 
 def strip_heads(pg):
