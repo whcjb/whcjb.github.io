@@ -561,7 +561,7 @@ K 断词未接（`be- -lieveth`）；L 漏逗号；M 书帖签名进注区（`VO
 → `foote_notes_leak2 --apply --round 2` → `foote_line_check --apply --round 2` → `foote_notes_entry --apply`
 → `foote_page_check --apply` → `foote_hand_pending --apply` → `foote_seam_join --apply` → `foote_page_check --apply --words`
 → `foote_hand_pending --apply --late` → `foote_page_check --apply --words2` → `foote_hand_pending --apply --late2`
-→ `foote_page_check --apply --marks` → `foote_hand_pending --apply --late3` → `foote_sweep --apply` → `foote_fnmark_check --symbols` → `publish_foote_en --apply`。
+→ `foote_page_check --apply --marks` → `foote_hand_pending --apply --late3` → `foote_sweep --apply` → `foote_vlm_recheck --apply` → `foote_fnmark_check --symbols` → `publish_foote_en --apply`。
 
 - **疑似词**（`foote_page_check.py --words` → `page_check_words_fixes.tsv`，2026-11-12 用户令「继续」）：白名单看不见的读花真词形。
   判据：不在判词典且大小写混杂（`CroesuB`），或全书至多见两次的小写词（`fovr`、`teceived`），或行末断词没接上的半截。
@@ -635,6 +635,10 @@ K 断词未接（`be- -lieveth`）；L 漏逗号；M 书帖签名进注区（`VO
   `Bat`→But、`Terse`→Verse、`cute`→cure、`daring`→during、`he Christy sam`→be Christ, save、`Joab`→Joah 等），
   词尾多出的撇号 31 处（收引号读花改 `"`，余删）。tess 同我们的裁原生分辨率行图看过：arc／whick／these／strippling／
   bow／bast／out off 原书即如此印，照录。拿实读 4 讲验过：转录抓到其中真词错 3/4（漏第 5 讲 `its 0/`，与残渣粘连未对齐）。
+  同一份转录再比分段／标点／斜体（`scripts/foote_vlm_recheck.py` → `vlm_recheck_fixes.tsv`，sweep 之后落，342 条）：
+  转录分段而我们没分 74（看图抽 5 处均是原书分段）；词间标点 tess 同位与转录一致者 238（补漏的句点逗号、删 `/ € £ %` 杂点、
+  `1`→`!`）；两段斜体间夹一两个词＝引文被断开 24 处合并；词尾 y 实为逗号等手工 6。只差注号有无的、经文段节号、
+  动到星号成空斜体的不收；单词强调斜体（我们有、转录无 71 段）多半是转录漏标，不动。
 
 ## 待做
 
