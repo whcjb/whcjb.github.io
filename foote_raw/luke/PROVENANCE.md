@@ -561,7 +561,7 @@ K 断词未接（`be- -lieveth`）；L 漏逗号；M 书帖签名进注区（`VO
 → `foote_notes_leak2 --apply --round 2` → `foote_line_check --apply --round 2` → `foote_notes_entry --apply`
 → `foote_page_check --apply` → `foote_hand_pending --apply` → `foote_seam_join --apply` → `foote_page_check --apply --words`
 → `foote_hand_pending --apply --late` → `foote_page_check --apply --words2` → `foote_hand_pending --apply --late2`
-→ `foote_page_check --apply --marks` → `foote_hand_pending --apply --late3` → `foote_sweep --apply` → `foote_vlm_recheck --apply` → `foote_sweep --late --rules && --late --apply` → `foote_fnmark_check --symbols` → `publish_foote_en --apply`。
+→ `foote_page_check --apply --marks` → `foote_hand_pending --apply --late3` → `foote_sweep --apply` → `foote_vlm_recheck --apply` → `foote_sweep --late --rules && --late --apply` → `foote_vlm_recheck --late --apply` → `foote_fnmark_check --symbols` → `publish_foote_en --apply`。
 
 - **疑似词**（`foote_page_check.py --words` → `page_check_words_fixes.tsv`，2026-11-12 用户令「继续」）：白名单看不见的读花真词形。
   判据：不在判词典且大小写混杂（`CroesuB`），或全书至多见两次的小写词（`fovr`、`teceived`），或行末断词没接上的半截。
@@ -647,6 +647,11 @@ K 断词未接（`be- -lieveth`）；L 漏逗号；M 书帖签名进注区（`VO
   按读出的类型全书清（`foote_sweep --late`，recheck 之后现场生成即落 → `sweep2_fixes.tsv`）：开引号位 `*"*` 136、
   `*" X` 倒序 201、`/`→I 14、`of god` 9、问号落斜体外 6、节号 3、拆开的序数 3；本讲单处 5 条入 recheck 表尾。
   未动：第 83 讲 `parents' 03\*0;`（疑 eye，待看图）。
+  续（用户令「把这一章的错误在其他章里全部清理」）：`foote_sweep --late` 再加 qclose 收引号位 `*"*` 4、qnext 斜体星号挪到
+  引号后一词 9、fnspur 多出的注号 39（本段跨及各页注区无注且整页转录各页无 [FN:]；已链注号不受影响，仍 1287）；
+  `vlm_recheck2_fixes.tsv`（`foote_vlm_recheck --late`，sweep --late 之后）79 条：句中误大写（转录同位小写、tess 多同：
+  `Cometh` `Were` `US` `IS` `Styled`…，第 55 讲 `From` tess 同大写不动）、漏句点 2、注号读成 f 1、`the, people` 1、`21 St`。
+  墨点读成逗号一类无可靠证人（转录读法常错，如 `Brethren, if` 系雅各书原文），只改了冠词后逗号。
 
 ## 待做
 

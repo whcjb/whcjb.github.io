@@ -26,6 +26,9 @@
   ord    序数被拆：`the 2 2d verse` → `22d`
   slash  `" / *beseech` 的 `/` 是 I
   god    `of god` → `of God`
+  qclose 收引号位 `*"*` 前文无开斜体 → `"`（4）
+  qnext  斜体收尾星号挪到引号后一词：`temptation." We*` → `temptation."* We`
+  fnspur 多出的注号哨兵：本段跨及的各页注区都无注、整页转录这几页也都无 [FN:]（第 48 讲 p.106 一例带出）→ 删哨兵
 
     python3 scripts/foote_sweep.py --late --rules && python3 scripts/foote_sweep.py --late --apply
 """
@@ -63,16 +66,58 @@ PATS2 = [
     ('ord', re.compile(r'\b(\d) (\d(?:d|th|st|nd))(?= verse)'), None),
     ('slash', re.compile(r'(?<=" )/ \*(?=[a-z])'), '*I '),
     ('god', re.compile(r'\b(?<=of )god\b'), 'God'),
+    ('qclose', re.compile(r'(?<=[a-z.,;:!?])\*"\*(?!\*)'), '"'),
+    ('qnext', re.compile(r'(?<=[.,;:!?])"(\s+[A-Za-z]+)\*(?=\s)'), None),
 ]
-SUB2 = {'qmark': lambda m: m.group(1) + '"*', 'vnum': lambda m: m.group(1) + m.group(2), 'ord': lambda m: m.group(1) + m.group(2)}
+QNEXT_SKIP = {'102'}           # `our "day," and*` 是斜体小标题本身的收尾
+
+
+def fnspur(lec, body, notes):
+    """注号哨兵所在段跨及的页：注区无该页注、转录各页都在且无 [FN:] → 多出的哨兵位置。"""
+    import foote_vlm_adjudicate as V
+    n = int(lec)
+    vol = 1 if n <= 40 else (2 if n <= 90 else 3)
+    if vol not in _INV:
+        _INV[vol] = {pg: leaf for leaf, pg in sorted(V.leaf_pages(vol).items(), reverse=True) if pg}
+    inv = _INV[vol]
+    npages = set(re.findall(r'<!-- NOTE p\.(\S+?) -->', notes))
+    marks = [(m.start(), m.group(1)) for m in re.finditer(r'<!-- PAGE (\S*) -->', body)]
+    out = []
+    for m in re.finditer(A.FN_MARK, body):
+        prev = [pg for k, pg in marks if k < m.start()]
+        nxt = [pg for k, pg in marks if k > m.start()]
+        if not prev or not prev[-1].isdigit():
+            continue
+        a = int(prev[-1])
+        b = int(nxt[0]) if nxt and nxt[0].isdigit() and int(nxt[0]) >= a else a + 1
+        pages = [str(x) for x in range(a, max(a, b) + 1)]
+        if any(pg in npages for pg in pages):
+            continue
+        ok = True
+        for pg in pages:
+            leaf = inv.get(pg)
+            f = V.VLM / f'v{vol}' / f'{leaf:04d}.txt' if leaf is not None else None
+            if f is None or not f.exists() or '[FN:' in f.read_text(encoding='utf-8'):
+                ok = False
+                break
+        if ok:
+            out.append((m.start(), m.end(), '', 'fnspur'))
+    return out
+
+
+_INV = {}
+SUB2 = {'qnext': lambda m: '"*' + m.group(1), 'qmark': lambda m: m.group(1) + '"*', 'vnum': lambda m: m.group(1) + m.group(2), 'ord': lambda m: m.group(1) + m.group(2)}
 
 
 def edits2(lec, t):
-    body = t.partition('\n---\n')[0]
+    body, _, notes = t.partition('\n---\n')
     out = []
     for kind, rx, rep in PATS2:
+        if kind == 'qnext' and lec in QNEXT_SKIP:
+            continue
         for m in rx.finditer(body):
             out.append((m.start(), m.end(), SUB2[kind](m) if rep is None else rep, kind))
+    out += fnspur(lec, body, notes)
     return sorted(out)
 
 

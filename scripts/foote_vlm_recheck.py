@@ -26,14 +26,17 @@ import adjudicate_foote_ocr as A  # noqa: E402
 import foote_image_check as I  # noqa: E402
 
 RULES = A.RAW / 'vlm_recheck_fixes.tsv'
+RULES2 = A.RAW / 'vlm_recheck2_fixes.tsv'   # --late：foote_sweep --late 之后落（句中误大写、漏句点等，第 48 讲实读带出）
 
 
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument('--apply', action='store_true')
+    ap.add_argument('--late', action='store_true')
     a = ap.parse_args()
-    if a.apply and RULES.exists():
-        I.apply_multiline(RULES)
+    R = RULES2 if a.late else RULES
+    if a.apply and R.exists():
+        I.apply_multiline(R)
 
 
 if __name__ == '__main__':
