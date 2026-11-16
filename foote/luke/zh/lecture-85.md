@@ -7,8 +7,8 @@ subtitle: "詹姆斯·福特 · 路加福音 16:9–13"
 date: 2026-11-17 01:48
 chapter: 16
 lecture: 85
-prev_url: "/foote/luke/zh/lecture-64/"
-prev_label: "第六十四讲"
+prev_url: "/foote/luke/zh/lecture-84/"
+prev_label: "第八十四讲"
 next_url: "/foote/luke/zh/lecture-86/"
 next_label: "第八十六讲"
 en_url: "/foote/luke/lecture-85/"
