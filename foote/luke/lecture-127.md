@@ -17,7 +17,7 @@ next_label: "Lecture CXXVIII"
 
 <div class="ft-text" markdown="1">
 
-And there were also two other, malefactors, led with him to be put to death. <sup class="ft-vn">88</sup>And when they were come to the place which is called Calvary, there they crucified him, and the malefactors, one on the right hand, and the other on the left. <sup class="ft-vn">34</sup>Then said Jesus, Father, forgive them; for they know not what they do. And they parted his raiment, and cast lots."
+And there were also two other, malefactors, led with him to be put to death. <sup class="ft-vn">33</sup>And when they were come to the place which is called Calvary, there they crucified him, and the malefactors, one on the right hand, and the other on the left. <sup class="ft-vn">34</sup>Then said Jesus, Father, forgive them; for they know not what they do. And they parted his raiment, and cast lots."
 
 </div>
 
