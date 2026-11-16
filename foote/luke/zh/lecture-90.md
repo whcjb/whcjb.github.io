@@ -7,8 +7,8 @@ subtitle: "詹姆斯·福特 · 路加福音 17:11–19"
 date: 2026-11-17 01:16
 chapter: 17
 lecture: 90
-prev_url: "/foote/luke/zh/lecture-59/"
-prev_label: "第五十九讲"
+prev_url: "/foote/luke/zh/lecture-89/"
+prev_label: "第八十九讲"
 next_url: "/foote/luke/zh/lecture-91/"
 next_label: "第九十一讲"
 en_url: "/foote/luke/lecture-90/"
