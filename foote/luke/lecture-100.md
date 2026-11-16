@@ -11,6 +11,7 @@ prev_url: "/foote/luke/lecture-99/"
 prev_label: "Lecture XCIX"
 next_url: "/foote/luke/lecture-101/"
 next_label: "Lecture CI"
+zh_url: "/foote/luke/zh/lecture-100/"
 ---
 
 <h2 class="ft-head">Luke 19:11–27</h2>
