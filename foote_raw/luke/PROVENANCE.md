@@ -805,7 +805,9 @@ K 断词未接（`be- -lieveth`）；L 漏逗号；M 书帖签名进注区（`VO
   由此查出一类口径冲突：转录对齐「我们是正字、转录是非词」的约 30 处看原图，近 20 处是**印本误植/倒字被链条悄悄改正**
   （grieviously、overthown、gruding、Sabbuth、deadily、comin、fovr、wildernsss、tabernaele、nbt、dirine、reoresented、
   sacrifiee、somc、goiug、accouut、trubled、aud×3、Theu、pieee、testimon、teaeh、evidenees、commenee、appoiuted、cavilliug……），
-  与第 64 讲「印本误植照录」口径相反。改正 vs 照录待用户定，暂未动。
+  与第 64 讲「印本误植照录」口径相反。
+  **2026-11-16 用户定：印本明显误植一律改正，并在首页说明。** 此前照录的 24 处改正（vlm_recheck2 表尾），全表 58 处入 `misprints.tsv`，
+  publish_foote_en 在书首页文本说明下渲染「原书印刷错字一览」。今后看图见印本误植：改正并补入 misprints.tsv，不再照录。
 
 ## 待做
 

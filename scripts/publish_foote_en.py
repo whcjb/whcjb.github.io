@@ -357,6 +357,21 @@ def build_index(pages):
                '每讲先列钦定本经文。本页正文取自 Google 扫描的牛津大学藏第 2 版三卷 OCR。'
                '<b>目前是校勘中的工作本：</b>成套的连字误读、残字已按规则改正，零星 OCR 错字仍在，'
                '希腊文、拉丁文与脚注出处尤多，正对照页面影像逐步校正。</p>')
+    mp = RAW / 'misprints.tsv'
+    if mp.exists():
+        rows = [l.split('\t') for l in mp.read_text(encoding='utf-8').splitlines()
+                if l.strip() and not l.startswith('#')]
+        out.append('<p><b>Misprints.</b> Obvious printer\'s errors in the original (wrong or inverted letters, '
+                   'dropped letters) have been silently corrected; those confirmed against the page images are '
+                   'listed below.</p>')
+        out.append('<p class="ft-note-zh"><b>印刷错字。</b>原书明显的排印错误（错字、倒字、漏字母）已径改，'
+                   '经页面影像核实者列于下表。</p>')
+        out.append('<details><summary>原书印刷错字一览（' + str(len(rows)) + ' 处）</summary>')
+        out.append('<table class="ft-misprints"><tr><th>Lecture</th><th>Printed</th><th>Corrected</th></tr>')
+        for k, p, c in sorted(rows, key=lambda r: int(r[0])):
+            out.append(f'<tr><td><a href="{{{{ site.baseurl }}}}/foote/{BOOK_ID}/lecture-{int(k)}/">{int(k)}</a></td>'
+                       f'<td><i>{p}</i></td><td>{c}</td></tr>')
+        out.append('</table></details>')
     out.append('</div>')
     return '\n'.join(out) + '\n'
 
