@@ -87,6 +87,6 @@ Lastly. *Let us be very thankful when we think of the gracious purpose for which
 
 <a class="ft-nsym" href="#fnref-50-9" id="fn-50-9">&#42;</a> Rev. xiii. 15.
 
-<a class="ft-nsym" href="#fnref-50-10" id="fn-50-10">&#42;</a> Dr S. Clarke,
+<a class="ft-nsym" href="#fnref-50-10" id="fn-50-10">&#42;</a> Dr S. Clarke.
 
 </div>

@@ -129,6 +129,6 @@ But, the right dividing of the word of truth calls for the concluding admonition
 
 <a class="ft-nsym" href="#fnref-52-10" id="fn-52-10">&#42;</a> Job xx. 6; Isa. xiv. 12-15. Addressing himself to Antony, concerning the fall of his colleague, Cicero says, "Collegam tuum de cœlo detraxisti—Thou hast pulled down thy colleague from heaven;" and he says of the overthrow of Pompey, "Ex astris decidisse,"—that he had fallen from the stars.—*Philippic* ii. and *Ep.* lib. i. 20.
 
-<a class="ft-nsym" href="#fnref-52-11" id="fn-52-11">&#42;</a> Ps. lxxxvii. 6,
+<a class="ft-nsym" href="#fnref-52-11" id="fn-52-11">&#42;</a> Ps. lxxxvii. 6.
 
 </div>
