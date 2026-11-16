@@ -7,8 +7,8 @@ subtitle: "詹姆斯·福特 · 路加福音 20:41–47"
 date: 2026-11-16 23:17
 chapter: 20
 lecture: 108
-prev_url: "/foote/luke/zh/lecture-43/"
-prev_label: "第四十三讲"
+prev_url: "/foote/luke/zh/lecture-107/"
+prev_label: "第一百零七讲"
 next_url: "/foote/luke/zh/lecture-109/"
 next_label: "第一百零九讲"
 en_url: "/foote/luke/lecture-108/"
