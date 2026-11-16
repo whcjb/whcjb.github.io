@@ -11,6 +11,7 @@ prev_url: "/foote/luke/lecture-107/"
 prev_label: "Lecture CVII"
 next_url: "/foote/luke/lecture-109/"
 next_label: "Lecture CIX"
+zh_url: "/foote/luke/zh/lecture-108/"
 ---
 
 <h2 class="ft-head">Luke 20:41–47</h2>
