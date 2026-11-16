@@ -9,8 +9,8 @@ chapter: 9
 lecture: 47
 prev_url: "/foote/luke/zh/lecture-46/"
 prev_label: "第四十六讲"
-next_url: "/foote/luke/zh/lecture-103/"
-next_label: "第一百零三讲"
+next_url: "/foote/luke/zh/lecture-102/"
+next_label: "第一百零二讲"
 en_url: "/foote/luke/lecture-47/"
 zh: true
 ---
