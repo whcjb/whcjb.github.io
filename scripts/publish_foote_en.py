@@ -327,8 +327,10 @@ def build_index(pages):
     out = ['---', 'layout: foote-book', f'book_id: {BOOK_ID}', f'book_name: "{BOOK_NAME}"',
            f'title: "{BOOK_NAME}"', f'author: "{AUTHOR}, A.M., Minister of the Free East Church, Aberdeen"',
            'edition: "Lectures on the Gospel according to Luke · second edition, 3 vols., Edinburgh: '
-           'John Johnstone (vol. I preface dated Aberdeen, August 1838)"',
-           '---', '']
+           'John Johnstone (vol. I preface dated Aberdeen, August 1838)"']
+    if (OUT / 'zh').exists():                      # 中文版上线后书首页是中文目录，英文目录挂回去的入口
+        out.append(f'zh_url: "/foote/{BOOK_ID}/"')
+    out += ['---', '']
 
     def li(p):
         return (f'  <li><a href="{{{{ site.baseurl }}}}/foote/{BOOK_ID}/{p["slug"]}/">{p["title"]}'

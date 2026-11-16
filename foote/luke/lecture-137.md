@@ -9,6 +9,7 @@ chapter: 24
 lecture: 137
 prev_url: "/foote/luke/lecture-136/"
 prev_label: "Lecture CXXXVI"
+zh_url: "/foote/luke/zh/lecture-137/"
 ---
 
 <h2 class="ft-head">Luke 24:50–53</h2>
