@@ -7,8 +7,8 @@ subtitle: "詹姆斯·福特 · 路加福音 24:13–27"
 date: 2026-11-16 20:12
 chapter: 24
 lecture: 133
-prev_url: "/foote/luke/zh/lecture-15/"
-prev_label: "第十五讲"
+prev_url: "/foote/luke/zh/lecture-132/"
+prev_label: "第一百三十二讲"
 next_url: "/foote/luke/zh/lecture-134/"
 next_label: "第一百三十四讲"
 en_url: "/foote/luke/lecture-133/"
