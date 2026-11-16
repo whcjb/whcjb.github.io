@@ -1,0 +1,4 @@
+[6#18·first] 异常字符 ​(U+200B)
+  RAW: '法 \u200b\u200b'
+[6#19·first] 模型自语 And the child grew ... Israel；漏译的英文词 Fine、Luke、Original、Output、mirror
+  RAW: '。Luke 1:80 和合本: “那孩子渐渐长大，心灵强健，住在旷野，直到他显明在以色列人面前的日子。”\n\nOriginal: " *And the child grew ... Israel."* — asterisk opens after quote and closes after closing quote. Keep one pair. Output: “*那孩子渐渐长大，心灵强健，住在旷野，直到他显明在以色列人面前的日子。*”\n\nOriginal has closing quote inside asterisk; mirror? Simpler to wrap content. Fine.'

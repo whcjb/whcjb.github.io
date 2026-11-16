@@ -11,6 +11,7 @@ prev_url: "/foote/luke/lecture-5/"
 prev_label: "Lecture V"
 next_url: "/foote/luke/lecture-7/"
 next_label: "Lecture VII"
+zh_url: "/foote/luke/zh/lecture-6/"
 ---
 
 <h2 class="ft-head">Luke 1:67–80</h2>
