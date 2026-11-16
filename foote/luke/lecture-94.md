@@ -11,6 +11,7 @@ prev_url: "/foote/luke/lecture-93/"
 prev_label: "Lecture XCIII"
 next_url: "/foote/luke/lecture-95/"
 next_label: "Lecture XCV"
+zh_url: "/foote/luke/zh/lecture-94/"
 ---
 
 <h2 class="ft-head">Luke 18:9–14</h2>
