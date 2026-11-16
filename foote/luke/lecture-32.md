@@ -11,6 +11,7 @@ prev_url: "/foote/luke/lecture-31/"
 prev_label: "Lecture XXXI"
 next_url: "/foote/luke/lecture-33/"
 next_label: "Lecture XXXIII"
+zh_url: "/foote/luke/zh/lecture-32/"
 ---
 
 <h2 class="ft-head">Luke 6:46–49</h2>
