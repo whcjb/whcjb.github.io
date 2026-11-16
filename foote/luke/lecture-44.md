@@ -103,7 +103,7 @@ Finally, *ought you not all to be thankful that the kingdom of God is now preach
 
 <a class="ft-nsym" href="#fnref-44-11" id="fn-44-11">†</a> 1 Cor. vii. 20.
 
-<a class="ft-nsym" href="#fnref-44-12" id="fn-44-12">&#42;</a> ,,. Numb. xi. 26.
+<a class="ft-nsym" href="#fnref-44-12" id="fn-44-12">&#42;</a> Numb. xi. 26.
 
 <a class="ft-nsym" href="#fnref-44-13" id="fn-44-13">&#42;</a> See also 3 John 5-8.
 

@@ -99,6 +99,6 @@ Let us, before concluding at this time, notice only one other ingredient in the 
 
 <a class="ft-nsym" href="#fnref-112-19" id="fn-112-19">‡</a> Deut. xxviii.; 2 Kings vi. 26; Lam. iv. 9.
 
-<a class="ft-nsym" href="#fnref-112-20" id="fn-112-20">&#42;</a> Wars,V.,xi. 1.
+<a class="ft-nsym" href="#fnref-112-20" id="fn-112-20">&#42;</a> Wars, V., xi. 1.
 
 </div>
