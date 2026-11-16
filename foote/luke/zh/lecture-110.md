@@ -7,8 +7,8 @@ subtitle: "詹姆斯·福特 · 路加福音 21:5–11"
 date: 2026-11-16 23:04
 chapter: 21
 lecture: 110
-prev_url: "/foote/luke/zh/lecture-40/"
-prev_label: "第四十讲"
+prev_url: "/foote/luke/zh/lecture-41/"
+prev_label: "第四十一讲"
 next_url: "/foote/luke/zh/lecture-111/"
 next_label: "第一百一十一讲"
 en_url: "/foote/luke/lecture-110/"
