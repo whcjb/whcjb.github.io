@@ -7,8 +7,8 @@ subtitle: "詹姆斯·福特 · 路加福音 14:1–11"
 date: 2026-11-17 02:31
 chapter: 14
 lecture: 77
-prev_url: "/foote/luke/zh/lecture-71/"
-prev_label: "第七十一讲"
+prev_url: "/foote/luke/zh/lecture-72/"
+prev_label: "第七十二讲"
 next_url: "/foote/luke/zh/lecture-78/"
 next_label: "第七十八讲"
 en_url: "/foote/luke/lecture-77/"

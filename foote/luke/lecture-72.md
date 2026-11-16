@@ -11,6 +11,7 @@ prev_url: "/foote/luke/lecture-71/"
 prev_label: "Lecture LXXI"
 next_url: "/foote/luke/lecture-73/"
 next_label: "Lecture LXXIII"
+zh_url: "/foote/luke/zh/lecture-72/"
 ---
 
 <h2 class="ft-head">Luke 13:6–9</h2>
