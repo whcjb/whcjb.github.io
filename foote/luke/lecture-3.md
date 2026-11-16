@@ -11,6 +11,7 @@ prev_url: "/foote/luke/lecture-2/"
 prev_label: "Lecture II"
 next_url: "/foote/luke/lecture-4/"
 next_label: "Lecture IV"
+zh_url: "/foote/luke/zh/lecture-3/"
 ---
 
 <h2 class="ft-head">Luke 1:26–38</h2>
