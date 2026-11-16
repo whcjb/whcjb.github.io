@@ -11,6 +11,7 @@ prev_url: "/foote/luke/lecture-132/"
 prev_label: "Lecture CXXXII"
 next_url: "/foote/luke/lecture-134/"
 next_label: "Lecture CXXXIV"
+zh_url: "/foote/luke/zh/lecture-133/"
 ---
 
 <h2 class="ft-head">Luke 24:13–27</h2>

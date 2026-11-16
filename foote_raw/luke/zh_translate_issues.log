@@ -4,3 +4,5 @@
   RAW: '。Luke 1:80 和合本: “那孩子渐渐长大，心灵强健，住在旷野，直到他显明在以色列人面前的日子。”\n\nOriginal: " *And the child grew ... Israel."* — asterisk opens after quote and closes after closing quote. Keep one pair. Output: “*那孩子渐渐长大，心灵强健，住在旷野，直到他显明在以色列人面前的日子。*”\n\nOriginal has closing quote inside asterisk; mirror? Simpler to wrap content. Fine.'
 [8#17·first] 漏译的英文词 Luke、Rule、Use、quote、wording
   RAW: '义 Luke 2:14 和合本: “在至高之处荣耀归与神！在地上平安归与他所喜悦的人！” KJV differs ("good will towards men"). Rule: quote 和合本 wording. Use 和合本.\n\nKeep the asterisks inside quotes.'
+[14#1·first] 模型自语 The Union matrix for the current development workspace is；漏译的英文词 ACE、budget、burnt、token；残留标签 </br>；疑似截断（原文 861 字符，译
+  RAW: '恩</br>\n\nThe Union matrix for the current development workspace is: \n &1&2&3&4&5&6&7&8&9&10\n1&38&ACE&&&&&&&&\n...\n\n<budget:token_budget>200000</budget:token_burnt>\n<budget:token_budget>200000</budget:token_budget>'
