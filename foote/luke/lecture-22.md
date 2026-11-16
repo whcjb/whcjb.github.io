@@ -11,6 +11,7 @@ prev_url: "/foote/luke/lecture-21/"
 prev_label: "Lecture XXI"
 next_url: "/foote/luke/lecture-23/"
 next_label: "Lecture XXIII"
+zh_url: "/foote/luke/zh/lecture-22/"
 ---
 
 <h2 class="ft-head">Luke 5:27–32</h2>
