@@ -11,6 +11,7 @@ prev_url: "/foote/luke/lecture-122/"
 prev_label: "Lecture CXXII"
 next_url: "/foote/luke/lecture-124/"
 next_label: "Lecture CXXIV"
+zh_url: "/foote/luke/zh/lecture-123/"
 ---
 
 <h2 class="ft-head">Luke 22:63–71</h2>

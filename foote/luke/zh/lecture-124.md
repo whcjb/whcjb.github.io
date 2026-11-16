@@ -7,8 +7,8 @@ subtitle: "詹姆斯·福特 · 路加福音 23:1–12"
 date: 2026-11-16 21:20
 chapter: 23
 lecture: 124
-prev_url: "/foote/luke/zh/lecture-25/"
-prev_label: "第二十五讲"
+prev_url: "/foote/luke/zh/lecture-123/"
+prev_label: "第一百二十三讲"
 next_url: "/foote/luke/zh/lecture-125/"
 next_label: "第一百二十五讲"
 en_url: "/foote/luke/lecture-124/"
