@@ -7,8 +7,8 @@ subtitle: "詹姆斯·福特 · 路加福音 18:28–34"
 date: 2026-11-17 00:31
 chapter: 18
 lecture: 97
-prev_url: "/foote/luke/zh/lecture-52/"
-prev_label: "第五十二讲"
+prev_url: "/foote/luke/zh/lecture-53/"
+prev_label: "第五十三讲"
 next_url: "/foote/luke/zh/lecture-98/"
 next_label: "第九十八讲"
 en_url: "/foote/luke/lecture-97/"
