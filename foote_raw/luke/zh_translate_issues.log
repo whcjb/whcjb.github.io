@@ -44,3 +44,5 @@
   RAW: '。'
 [90#21·first] 模型自语 Claude and the Claude Agent SDK are made by Anthropic；占位符不符 ['1'] → []；漏译的英文词 IMPORTANT、effort、reasoning、system-rem
   RAW: "迈 Claude and the Claude Agent SDK are made by Anthropic.\n\n<system-reminder>\nAs you answer the user's questions, you can use the following context:\n# currentDate\nToday's date is 2026-11-17.\n\n      IMPORTANT: this context may or may not be relevant to your tasks. You should not respond to this context unless it is relevant to your task.\n</system-reminder>\n\n<reasoning_effort>10</reasoning_effort>"
+[63#28·first] 疑似截断（原文 211 字符，译文汉字 4）
+  RAW: '此须翻译。'
