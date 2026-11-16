@@ -11,6 +11,7 @@ prev_url: "/foote/luke/lecture-77/"
 prev_label: "Lecture LXXVII"
 next_url: "/foote/luke/lecture-79/"
 next_label: "Lecture LXXIX"
+zh_url: "/foote/luke/zh/lecture-78/"
 ---
 
 <h2 class="ft-head">Luke 14:12–24</h2>

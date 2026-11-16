@@ -7,8 +7,8 @@ subtitle: "詹姆斯·福特 · 路加福音 14:25–35"
 date: 2026-11-17 02:21
 chapter: 14
 lecture: 79
-prev_url: "/foote/luke/zh/lecture-70/"
-prev_label: "第七十讲"
+prev_url: "/foote/luke/zh/lecture-78/"
+prev_label: "第七十八讲"
 next_url: "/foote/luke/zh/lecture-80/"
 next_label: "第八十讲"
 en_url: "/foote/luke/lecture-79/"
