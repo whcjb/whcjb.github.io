@@ -7,8 +7,8 @@ subtitle: "詹姆斯·福特 · 路加福音 21:20–24"
 date: 2026-11-16 22:42
 chapter: 21
 lecture: 113
-prev_url: "/foote/luke/zh/lecture-37/"
-prev_label: "第三十七讲"
+prev_url: "/foote/luke/zh/lecture-112/"
+prev_label: "第一百一十二讲"
 next_url: "/foote/luke/zh/lecture-114/"
 next_label: "第一百一十四讲"
 en_url: "/foote/luke/lecture-113/"

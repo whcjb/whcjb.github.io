@@ -9,8 +9,8 @@ chapter: 7
 lecture: 37
 prev_url: "/foote/luke/zh/lecture-36/"
 prev_label: "第三十六讲"
-next_url: "/foote/luke/zh/lecture-113/"
-next_label: "第一百一十三讲"
+next_url: "/foote/luke/zh/lecture-112/"
+next_label: "第一百一十二讲"
 en_url: "/foote/luke/lecture-37/"
 zh: true
 ---
