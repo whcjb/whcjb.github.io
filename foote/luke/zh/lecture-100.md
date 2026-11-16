@@ -7,8 +7,8 @@ subtitle: "詹姆斯·福特 · 路加福音 19:11–27"
 date: 2026-11-17 00:10
 chapter: 19
 lecture: 100
-prev_url: "/foote/luke/zh/lecture-50/"
-prev_label: "第五十讲"
+prev_url: "/foote/luke/zh/lecture-99/"
+prev_label: "第九十九讲"
 next_url: "/foote/luke/zh/lecture-101/"
 next_label: "第一百零一讲"
 en_url: "/foote/luke/lecture-100/"
