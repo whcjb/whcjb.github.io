@@ -792,6 +792,9 @@ K 断词未接（`be- -lieveth`）；L 漏逗号；M 书帖签名进注区（`VO
   `hut`→but 2、`whick`、`tee`→we、`Mastery`→Master、`places`→place、`Gods`→God、`arc`→are（e 横断）、墨痕撇号 `'to`/`'come`/`'and`/`'whom`、
   `la win`→law in、`m atchless`（字距）、`Ramathaim- Zophim`。照录：`out off`、`bow`、`strippling`、`Whereever`（行末 Where- 断）、`th`（页末）、`lights`（墨团不判）。
   018 空 `**` 残渣 3 删；正文词间双空格 33 统一单空格（全书归零）。注号 1425/1425。
+- **第 57 讲逐页实读**（2026-11-16，卷二 pp.241–253，13 页）：全讲 0 处。成类：整页转录词序列对齐中纯标点差异 89 处逐条裁原图（scratchpad lcrop.py：按上下文词序列在页面词框里定位整行）——
+  词间墨点/墨痕读成标点 16 删（`earth,'`、`ix. 11: '"'`、`the"' sequel`、`James, the`、`- Our`、`mine?'"`、`and ' ready`、`to.Christ`、`which, he`、`' When`、`"While`、`well, calc`、`I.will`、`gospel "were`、`" As`、`(afflictive`），
+  标点读错 2（`influence;`→`,`、正文 `prophets,` 无逗号），编号段 `2,`/`4,` → `2.`/`4.`；其余为转录笔误或印本如此。
 
 ## 待做
 
