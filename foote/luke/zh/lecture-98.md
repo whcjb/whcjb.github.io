@@ -7,8 +7,8 @@ subtitle: "詹姆斯·福特 · 路加福音 18:35–43"
 date: 2026-11-17 00:26
 chapter: 18
 lecture: 98
-prev_url: "/foote/luke/zh/lecture-51/"
-prev_label: "第五十一讲"
+prev_url: "/foote/luke/zh/lecture-52/"
+prev_label: "第五十二讲"
 next_url: "/foote/luke/zh/lecture-99/"
 next_label: "第九十九讲"
 en_url: "/foote/luke/lecture-98/"
