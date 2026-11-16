@@ -7,8 +7,8 @@ subtitle: "詹姆斯·福特 · 路加福音 23:32–34"
 date: 2026-11-16 20:59
 chapter: 23
 lecture: 127
-prev_url: "/foote/luke/zh/lecture-21/"
-prev_label: "第二十一讲"
+prev_url: "/foote/luke/zh/lecture-126/"
+prev_label: "第一百二十六讲"
 next_url: "/foote/luke/zh/lecture-128/"
 next_label: "第一百二十八讲"
 en_url: "/foote/luke/lecture-127/"
