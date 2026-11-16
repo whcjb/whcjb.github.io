@@ -11,6 +11,7 @@ prev_url: "/foote/luke/lecture-53/"
 prev_label: "Lecture LIII"
 next_url: "/foote/luke/lecture-55/"
 next_label: "Lecture LV"
+zh_url: "/foote/luke/zh/lecture-54/"
 ---
 
 <h2 class="ft-head">Luke 10:25–37</h2>
