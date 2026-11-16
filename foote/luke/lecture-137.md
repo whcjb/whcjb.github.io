@@ -43,6 +43,8 @@ And what a wonderful history, from first to last, is this on which we have been 
 
 Now, unto Him who is all and in all in this history—unto Him who is all our salvation and all our desire—unto the Faithful and True Witness, the Prince of the kings of the earth—unto our once rejected and crucified, but now exalted and most honoured Redeemer—" unto Him that loved us, and washed us from our sins in his own blood, and hath made us kings and priests unto God and his Father; to him be glory and dominion, for ever and ever. Amen."
 
+THE END.
+
 <div class="ft-notes" markdown="1">
 
 <a class="ft-nsym" href="#fnref-137-1" id="fn-137-1">&#42;</a> See also Rom. ix. 5; Tit. ii. 13; Heb. i. 8; 1 John v. 20; Rev. i. 8, xix. 16.
@@ -66,7 +68,5 @@ Now, unto Him who is all and in all in this history—unto Him who is all our sa
 <a class="ft-nsym" href="#fnref-137-10" id="fn-137-10">‡</a> Matt. xxvi. 64.
 
 <a class="ft-nsym" href="#fnref-137-11" id="fn-137-11">§</a> 2 Thess. i. 7.
-
-&#42; THE END.
 
 </div>
