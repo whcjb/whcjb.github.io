@@ -9,8 +9,8 @@ chapter: 6
 lecture: 24
 prev_url: "/foote/luke/zh/lecture-23/"
 prev_label: "第二十三讲"
-next_url: "/foote/luke/zh/lecture-124/"
-next_label: "第一百二十四讲"
+next_url: "/foote/luke/zh/lecture-25/"
+next_label: "第二十五讲"
 en_url: "/foote/luke/lecture-24/"
 zh: true
 ---
