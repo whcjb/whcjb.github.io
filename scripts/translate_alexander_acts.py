@@ -186,11 +186,25 @@ def stray_english(zh: str, en: str):
     # 拉丁整句引文：连续多个英文词出现，多半是保留的拉丁原文，不算漏译
     # 原文里带句点的缩写（旁注引书 *Pet. Dam.*、*Bed.*、*Aqu.*）照录不译，三个字母的也放过
     abbr = {w.lower() for w in re.findall(r'\b([A-Z][a-z]{1,3})\.', en)}
-    return [w for w in out if (w.lower() not in en_words or len(w) < 4) and w.lower() not in abbr]
+    # 原文里原样出现的罗马数字（卷号 III / vii、页码 XIV）照录不算漏译（2026-11-10 霍志恒注 3「a. o. III」、
+    # 注 59「vii. pp. 658」）。小写的只认合乎罗马数字写法的（ill、civil 这类英文词不合法，照旧报）
+    romans = {w for w in re.findall(r'\b(?:[IVXLC]{2,}|[ivxlc]{2,})\b', en)
+              if re.fullmatch(r'(?i)c{0,3}(?:xc|xl|l?x{0,3})(?:ix|iv|v?i{0,3})', w)}
+    return [w for w in out if (w.lower() not in en_words or len(w) < 4) and w.lower() not in abbr
+            and w not in romans]
 
 
 HOMO = dict(zip('aAbBeEhHiIkKmMnNoOpPtTuUxXyYzZvs',
                 'ααββεεηηιικκμμννοορρττυυχχυυζζνσ'))
+
+
+def _greek_mend(a: str, b: str, src: set, nfc) -> str:
+    """a + 怪字符 + b → 原文里的词：插入型（去掉即得原词）或替换型（怪字符顶替了一个字母，原文恰有唯一
+    「a + 一个字母 + b」）。都对不上返回空串。"""
+    if nfc(a + b) in src:
+        return a + b
+    cand = [t for t in src if len(t) == len(nfc(a)) + 1 + len(nfc(b)) and t.startswith(nfc(a)) and t.endswith(nfc(b))]
+    return cand[0] if len(cand) == 1 else ''
 
 
 def restore_greek(zh: str, en: str) -> str:
@@ -199,6 +213,11 @@ def restore_greek(zh: str, en: str) -> str:
     唯一命中才原样换回——只是把原文那个词抄回来，不猜；对不上就留给结构闸去拦。"""
     nfc = lambda x: unicodedata.normalize('NFC', x)
     src = set(RE_GREEK_TOK.findall(nfc(en)))
+    # 希腊词中间夹进一个怪字符（U+FFFD、阿拉伯字母……）：模型偶发的字符故障，CLI 返回里就有，不是我们解码截断
+    # （使徒行传 5#3 ἰδι�οποιέω、费尔贝恩 2#17 ἐπλάسθη、3#10 πλήκτ�ην，2026-11-10）。
+    # 去掉那一个字符、两半拼回**正好是原文里的词**才修，否则留给结构闸。
+    zh = re.sub(rf'([{GREEK}̀-ͯ]+)[^\s{GREEK}̀-ͯA-Za-z0-9\u3000-\u303f\u4e00-\u9fff\uff00-\uffef*⟦⟧()\[\].,;:!?\'"‘’“”—–-]([{GREEK}̀-ͯ]+)',
+                lambda m: _greek_mend(m.group(1), m.group(2), src, nfc) or m.group(0), zh)
 
     def fix(m):
         w = m.group(0)
@@ -207,6 +226,13 @@ def restore_greek(zh: str, en: str) -> str:
             return w
         pre = nfc(g.group(0))
         cand = [t for t in src if t.startswith(pre) and len(t) == len(nfc(w)) and t != pre]
+        suf = re.search(rf'[{GREEK}̀-ͯ]+$', w)
+        if len(cand) > 1 and suf and suf.start() > 0:
+            # 同前缀同长的不止一个（ὑποτύπωσις / ὑποτύπωσιν）：先按拉丁字母后面那段希腊字母的结尾分
+            # （模型把 π 写成 P，字形对照会当成 ρ，对不上；费尔贝恩提后 1#22，2026-11-10）
+            by_suf = [t for t in cand if t.endswith(nfc(suf.group(0)))]
+            if len(by_suf) == 1:
+                return by_suf[0]
         if len(cand) > 1:
             # 同前缀同长的不止一个（κατανύσσω / κατάνυξις）：拉丁字母按字形对回希腊字母、去重音后逐字比
             base = lambda x: ''.join(c for c in unicodedata.normalize('NFD', x.lower())
@@ -265,13 +291,35 @@ def en_repeats(en: str) -> bool:
     return False
 
 
-def scripture_repeat(dup, en: str) -> bool:
+def en_sentence_repeats(en: str):
+    ss = [' '.join(re.findall(r"[a-z]+", s.lower())) for s in re.split(r'[.?!;]', re.sub(r'<[^>]+>|⟦\d+⟧', ' ', en))]
+    ss = [s for s in ss if len(s.split()) >= 6]
+    return {s: ss.count(s) for s in set(ss) if ss.count(s) >= 2}
+
+
+def en_sentence_repeat_max(en: str) -> int:
+    """原文里整句重复出现的最多次数（6 词以上的同一句）。讲台排比常把同一句反问重复数遍
+    （福特第 32 讲「Why do you call Christ, Lord, Lord, and do not the things which he says?」一段四次）。"""
+    ss = [' '.join(re.findall(r"[a-z]+", s.lower())) for s in re.split(r'[.?!;]', re.sub(r'<[^>]+>|⟦\d+⟧', ' ', en))]
+    ss = [s for s in ss if len(s.split()) >= 6]
+    return max((ss.count(s) for s in set(ss)), default=0)
+
+
+def scripture_repeat(dup, en: str, zh: str = '') -> bool:
     """译文里重复的句子是否都是照抄的和合本经文、且原文本身就重引了经文。
     约翰一书第 27 讲一段把诗 66:18–20 先引一遍、又在一位古人的话里引一遍，
     忠实的译文必然两次出现「他并没有推却我的祷告……」，三次重试都被当成重复起稿拦下。
     只放行这一种；原文没重复、或重复的不是经文原句，照旧拦。"""
     if not en_repeats(en):
         return False
+    # 2026-11-16 加：原文本身整句重复（排比），译文里同一句的次数不超过原文重复次数 → 照实译出，放行
+    rep = en_sentence_repeat_max(en)
+    reps = en_sentence_repeats(en)
+    if (zh and rep >= 2 and len(dup) <= len(reps) and all(zh.count(x) <= rep for x in dup)
+            and sum(zh.count(x) - 1 for x in set(dup)) <= sum(c - 1 for c in reps.values())
+            # 中文重复句长度要配得上原文重复句（每词约 2.5 字），整段长句被复制不算排比
+            and all(len(re.sub(r'[^\u4e00-\u9fff]', '', x)) <= 2.5 * max(len(s.split()) for s in reps) + 8 for x in dup)):
+        return True
     cuv = cuv_text()
     for x in dup:
         k = re.sub(r'[^\u4e00-\u9fff]', '', x)
@@ -324,7 +372,7 @@ def structural_diff(en: str, zh: str) -> str:
         problems.append('起稿残留（→）')
     sents = [x for x in re.split(r'[。！？；]', zh) if len(x) >= 20]
     dup = [x for x in set(sents) if sents.count(x) > 1]
-    if dup and not scripture_repeat(dup, en):
+    if dup and not scripture_repeat(dup, en, zh):
         problems.append('同一句出现两次（重复起稿）：' + dup[0][:20])
     leak = tf.output_leak(zh)
     if leak:
@@ -334,7 +382,10 @@ def structural_diff(en: str, zh: str) -> str:
     m = re.search(r'</?thinking|——不对|不对，须|须照抄|\bHmm\b|Count asterisks', zh)
     if m and not re.search(re.escape(m.group(0)), en):
         problems.append(f'模型自语「{m.group(0)}」')
-    if len(en) > 200 and len(re.findall(r'[一-鿿]', zh)) < len(en) * 0.1:   # 经文框/卷首页正常比例也只有 0.14 上下
+    # 截断：汉字太少**且**译文总长也不到原文一半。斜体（书名、外文引语）照抄不译，不计入应译长度——
+    # 霍志恒注 3 几乎全是德文书名，旧判据只比汉字个数，三次都误报截断（2026-11-10）
+    en_tr = re.sub(r'\*[^*\n]+\*', '', en)
+    if len(en) > 200 and len(re.findall(r'[一-鿿]', zh)) < len(en_tr) * 0.1 and len(zh) < len(en) * 0.5:
         problems.append(f'疑似截断（原文 {len(en)} 字符，译文汉字 {len(re.findall(r"[一-鿿]", zh))}）')
     if re.search(r'[A-Za-z]{4}', en) and not re.search(r'[一-鿿]', zh):
         problems.append('译文无汉字')
