@@ -7,8 +7,8 @@ subtitle: "詹姆斯·福特 · 路加福音 13:31–35"
 date: 2026-11-17 02:37
 chapter: 13
 lecture: 76
-prev_url: "/foote/luke/zh/lecture-72/"
-prev_label: "第七十二讲"
+prev_url: "/foote/luke/zh/lecture-73/"
+prev_label: "第七十三讲"
 next_url: "/foote/luke/zh/lecture-77/"
 next_label: "第七十七讲"
 en_url: "/foote/luke/lecture-76/"
