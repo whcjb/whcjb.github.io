@@ -7,8 +7,8 @@ subtitle: "詹姆斯·福特 · 路加福音 20:9–18"
 date: 2026-11-16 23:37
 chapter: 20
 lecture: 105
-prev_url: "/foote/luke/zh/lecture-45/"
-prev_label: "第四十五讲"
+prev_url: "/foote/luke/zh/lecture-104/"
+prev_label: "第一百零四讲"
 next_url: "/foote/luke/zh/lecture-106/"
 next_label: "第一百零六讲"
 en_url: "/foote/luke/lecture-105/"
