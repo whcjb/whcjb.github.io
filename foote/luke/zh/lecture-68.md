@@ -9,8 +9,8 @@ chapter: 12
 lecture: 68
 prev_url: "/foote/luke/zh/lecture-67/"
 prev_label: "第六十七讲"
-next_url: "/foote/luke/zh/lecture-79/"
-next_label: "第七十九讲"
+next_url: "/foote/luke/zh/lecture-69/"
+next_label: "第六十九讲"
 en_url: "/foote/luke/lecture-68/"
 zh: true
 ---
