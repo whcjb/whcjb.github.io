@@ -7,8 +7,8 @@ subtitle: "詹姆斯·福特 · 路加福音 1:1–4"
 date: 2026-11-16 18:42
 chapter: 1
 lecture: 1
-next_url: "/foote/luke/zh/lecture-137/"
-next_label: "第一百三十七讲"
+next_url: "/foote/luke/zh/lecture-2/"
+next_label: "第二讲"
 en_url: "/foote/luke/lecture-1/"
 zh: true
 ---
