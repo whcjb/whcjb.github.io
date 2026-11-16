@@ -7,8 +7,8 @@ subtitle: "詹姆斯·福特 · 路加福音 24:28–35"
 date: 2026-11-16 20:06
 chapter: 24
 lecture: 134
-prev_url: "/foote/luke/zh/lecture-12/"
-prev_label: "第十二讲"
+prev_url: "/foote/luke/zh/lecture-13/"
+prev_label: "第十三讲"
 next_url: "/foote/luke/zh/lecture-135/"
 next_label: "第一百三十五讲"
 en_url: "/foote/luke/lecture-134/"
