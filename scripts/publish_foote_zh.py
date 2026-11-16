@@ -70,6 +70,8 @@ def quotes(body):
 
 
 def clean(body):
+    # 和合本合节（路 1:1–2、2:34–35、21:29–30）与不收的经文（17:36、23:17）该节为空：节号不显示
+    body = re.sub(r'<sup class="ft-vn">[\d:]+</sup>\s*(?=<sup class="ft-vn">|\n)', '', body)
     body = quotes(body)
     body = re.sub(r'(?<!\*)\*\*(?!\*)', '', body)
     body = ORIG_NAME.sub(r'<span class="ft-orig">（\1）</span>', body)

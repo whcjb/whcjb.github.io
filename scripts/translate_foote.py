@@ -115,6 +115,7 @@ def verse_range(head):
 
 def scripture_zh(vs):
     parts = []
+    vs = [(c, v) for c, v in vs if cuv(c, v).strip()]          # 和合本合节 / 不收的经文：该节为空，不出节号
     for i, (c, v) in enumerate(vs):
         num = '' if i == 0 else (f'<sup class="ft-vn">{v}</sup>' if c == vs[0][0] or v != 1 else f'<sup class="ft-vn">{c}:{v}</sup>')
         parts.append(num + cuv(c, v))
