@@ -23,6 +23,7 @@ import argparse
 import json
 import os
 import re
+import shutil
 import subprocess
 import sys
 from pathlib import Path
@@ -170,6 +171,20 @@ def blocks(n):
     return out
 
 
+MIN_FREE = 500 * 1024 * 1024
+
+
+class DiskLow(RuntimeError):
+    pass
+
+
+def check_disk():
+    """2026-11-16 磁盘只剩 47MB 时写缓存抛 OSError 崩在半途。改为调用前先查，不够就干净地停（exit 43）。"""
+    free = shutil.disk_usage(RAW).free
+    if free < MIN_FREE:
+        raise DiskLow(f'磁盘剩余 {free / 2**20:.0f} MB < {MIN_FREE / 2**20:.0f} MB')
+
+
 def ctx_block(ctx):
     if not ctx:
         return ''
@@ -188,6 +203,7 @@ def translate_one(text, resume, label, ctx=''):
     base = ("把下面这段福特《路加福音讲义》的十九世纪英文译成简体中文。"
             "整段通读后再译，保证上下文连贯；逐一保留 `*` 斜体标记与 ⟦N⟧ 占位符；"
             "把译文完整放在 <译文> 与 </译文> 之间，标签外的文字一律丢弃。\n\n")
+    check_disk()
     raw = tf.call_claude(base + ctx_block(ctx) + text, timeout=900, label=label)
     out = T.fix_italics(T.restore_greek(T.tidy(T.take_tagged(raw)), text), text, label)
     diff = T.structural_diff(text, out)
@@ -317,6 +333,9 @@ def main():
             r = run_section(int(s), a.resume, a.dry_run, not a.no_publish, a.limit)
             if a.dry_run and r:
                 tot_calls += r[0]; tot_chars += r[1]
+        except DiskLow as e:
+            print(f'⛔ 磁盘空间不足，中止：{e}', flush=True)
+            sys.exit(43)
         except T.SevereTranslation as e:
             print(f'⛔ [{s}] 有段落重试后仍不合格，本篇不写出、不发布：{e}', flush=True)
             sys.exit(3)
