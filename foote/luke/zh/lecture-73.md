@@ -9,8 +9,8 @@ chapter: 13
 lecture: 73
 prev_url: "/foote/luke/zh/lecture-72/"
 prev_label: "第七十二讲"
-next_url: "/foote/luke/zh/lecture-75/"
-next_label: "第七十五讲"
+next_url: "/foote/luke/zh/lecture-74/"
+next_label: "第七十四讲"
 en_url: "/foote/luke/lecture-73/"
 zh: true
 ---

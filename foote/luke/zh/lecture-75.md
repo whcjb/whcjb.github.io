@@ -7,8 +7,8 @@ subtitle: "詹姆斯·福特 · 路加福音 13:22–30"
 date: 2026-11-17 02:43
 chapter: 13
 lecture: 75
-prev_url: "/foote/luke/zh/lecture-73/"
-prev_label: "第七十三讲"
+prev_url: "/foote/luke/zh/lecture-74/"
+prev_label: "第七十四讲"
 next_url: "/foote/luke/zh/lecture-76/"
 next_label: "第七十六讲"
 en_url: "/foote/luke/lecture-75/"
