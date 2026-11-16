@@ -7,8 +7,8 @@ subtitle: "詹姆斯·福特 · 路加福音 18:9–14"
 date: 2026-11-17 00:51
 chapter: 18
 lecture: 94
-prev_url: "/foote/luke/zh/lecture-55/"
-prev_label: "第五十五讲"
+prev_url: "/foote/luke/zh/lecture-93/"
+prev_label: "第九十三讲"
 next_url: "/foote/luke/zh/lecture-95/"
 next_label: "第九十五讲"
 en_url: "/foote/luke/lecture-94/"
