@@ -7,8 +7,8 @@ subtitle: "詹姆斯·福特 · 路加福音 16:14–18"
 date: 2026-11-17 01:41
 chapter: 16
 lecture: 86
-prev_url: "/foote/luke/zh/lecture-63/"
-prev_label: "第六十三讲"
+prev_url: "/foote/luke/zh/lecture-85/"
+prev_label: "第八十五讲"
 next_url: "/foote/luke/zh/lecture-87/"
 next_label: "第八十七讲"
 en_url: "/foote/luke/lecture-86/"
