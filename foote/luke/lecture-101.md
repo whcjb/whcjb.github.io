@@ -11,6 +11,7 @@ prev_url: "/foote/luke/lecture-100/"
 prev_label: "Lecture C"
 next_url: "/foote/luke/lecture-102/"
 next_label: "Lecture CII"
+zh_url: "/foote/luke/zh/lecture-101/"
 ---
 
 <h2 class="ft-head">Luke 19:28–40</h2>

@@ -7,8 +7,8 @@ subtitle: "詹姆斯·福特 · 路加福音 19:41–44"
 date: 2026-11-16 23:55
 chapter: 19
 lecture: 102
-prev_url: "/foote/luke/zh/lecture-48/"
-prev_label: "第四十八讲"
+prev_url: "/foote/luke/zh/lecture-101/"
+prev_label: "第一百零一讲"
 next_url: "/foote/luke/zh/lecture-103/"
 next_label: "第一百零三讲"
 en_url: "/foote/luke/lecture-102/"
