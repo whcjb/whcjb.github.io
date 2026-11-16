@@ -11,6 +11,7 @@ prev_url: "/foote/luke/lecture-54/"
 prev_label: "Lecture LIV"
 next_url: "/foote/luke/lecture-56/"
 next_label: "Lecture LVI"
+zh_url: "/foote/luke/zh/lecture-55/"
 ---
 
 <h2 class="ft-head">Luke 10:38–42</h2>
