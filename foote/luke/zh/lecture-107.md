@@ -7,8 +7,8 @@ subtitle: "詹姆斯·福特 · 路加福音 20:27–40"
 date: 2026-11-16 23:23
 chapter: 20
 lecture: 107
-prev_url: "/foote/luke/zh/lecture-43/"
-prev_label: "第四十三讲"
+prev_url: "/foote/luke/zh/lecture-44/"
+prev_label: "第四十四讲"
 next_url: "/foote/luke/zh/lecture-108/"
 next_label: "第一百零八讲"
 en_url: "/foote/luke/lecture-107/"

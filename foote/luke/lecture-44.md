@@ -11,6 +11,7 @@ prev_url: "/foote/luke/lecture-43/"
 prev_label: "Lecture XLIII"
 next_url: "/foote/luke/lecture-45/"
 next_label: "Lecture XLV"
+zh_url: "/foote/luke/zh/lecture-44/"
 ---
 
 <h2 class="ft-head">Luke 9:1–9</h2>
