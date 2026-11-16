@@ -20,6 +20,7 @@ CLI 调用走 translate_filibi.call_claude → claude_usage.call_cli，自动带
       python3 -u scripts/translate_foote.py --section 20 --limit 3         # 试译前 3 段，只打印不写出
 """
 import argparse
+import fcntl
 import json
 import os
 import re
@@ -296,6 +297,16 @@ def run_section(n, resume, dry, publish, limit=0):
 
 
 def autopublish(n):
+    """两路并跑时（用户 2026-11-16 令）发布 + git 提交推送必须排队：flock 阻塞等前一路做完。"""
+    with open(RAW / '.publish.lock', 'w') as lk:
+        fcntl.flock(lk, fcntl.LOCK_EX)
+        try:
+            _autopublish(n)
+        finally:
+            fcntl.flock(lk, fcntl.LOCK_UN)
+
+
+def _autopublish(n):
     pub = ROOT / 'scripts' / 'publish_foote_zh.py'
     if not pub.exists():
         print('    [autopublish] publish_foote_zh.py 尚未就绪，只写 raw', flush=True)
@@ -324,6 +335,7 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument('--section', action='append', default=[])
     ap.add_argument('--all', action='store_true')
+    ap.add_argument('--range', default='', help='讲次范围 a-b（两路并跑时各取一段，不重叠）')
     ap.add_argument('--resume', action='store_true')
     ap.add_argument('--dry-run', action='store_true')
     ap.add_argument('--no-publish', action='store_true')
@@ -331,6 +343,10 @@ def main():
     a = ap.parse_args()
     tf.SYSTEM = SYSTEM
     secs = [str(c) for c in range(1, N_LECT + 1)] if a.all else a.section
+    if a.range:
+        lo, hi = map(int, a.range.split('-'))
+        step = 1 if lo <= hi else -1                 # 倒序（136-74）：第二路从后往前，与正序那一路相向而行
+        secs = [str(c) for c in range(lo, hi + step, step)]
     if not secs:
         ap.error('--section 或 --all')
     tot_calls = tot_chars = 0
