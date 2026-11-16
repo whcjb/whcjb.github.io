@@ -9,8 +9,8 @@ chapter: 1
 lecture: 4
 prev_url: "/foote/luke/zh/lecture-3/"
 prev_label: "第三讲"
-next_url: "/foote/luke/zh/lecture-137/"
-next_label: "第一百三十七讲"
+next_url: "/foote/luke/zh/lecture-5/"
+next_label: "第五讲"
 en_url: "/foote/luke/lecture-4/"
 zh: true
 ---
