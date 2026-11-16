@@ -292,17 +292,32 @@ def en_repeats(en: str) -> bool:
 
 
 def en_sentence_repeats(en: str):
-    ss = [' '.join(re.findall(r"[a-z]+", s.lower())) for s in re.split(r'[.?!;]', re.sub(r'<[^>]+>|⟦\d+⟧', ' ', en))]
-    ss = [s for s in ss if len(s.split()) >= 6]
-    return {s: ss.count(s) for s in set(ss) if ss.count(s) >= 2}
+    """原文里重复出现的词串（连续 ≥6 词，取最长）→ {词串: 出现次数}。
+    不要求整句相同：福特第 52 讲把路 10:20「rather rejoice because your names are written in heaven」
+    套进五个不同的句子（rejoice not in this / in this rejoice not that you are rich……）。"""
+    w = re.findall(r"[a-z]+", re.sub(r'<[^>]+>|⟦\d+⟧', ' ', en).lower())
+    g = [' '.join(w[i:i + 6]) for i in range(len(w) - 5)]
+    cnt = {}
+    for x in g:
+        cnt[x] = cnt.get(x, 0) + 1
+    out, i = {}, 0
+    while i < len(g):
+        if cnt[g[i]] < 2:
+            i += 1
+            continue
+        j = i
+        while j + 1 < len(g) and cnt[g[j + 1]] >= 2:
+            j += 1
+        phrase = ' '.join(w[i:j + 6])
+        out[phrase] = max(out.get(phrase, 0), min(cnt[g[k]] for k in range(i, j + 1)))
+        i = j + 1
+    return {k: v for k, v in out.items() if v >= 2}
 
 
 def en_sentence_repeat_max(en: str) -> int:
-    """原文里整句重复出现的最多次数（6 词以上的同一句）。讲台排比常把同一句反问重复数遍
-    （福特第 32 讲「Why do you call Christ, Lord, Lord, and do not the things which he says?」一段四次）。"""
-    ss = [' '.join(re.findall(r"[a-z]+", s.lower())) for s in re.split(r'[.?!;]', re.sub(r'<[^>]+>|⟦\d+⟧', ' ', en))]
-    ss = [s for s in ss if len(s.split()) >= 6]
-    return max((ss.count(s) for s in set(ss)), default=0)
+    """原文里同一词串（≥6 词）重复出现的最多次数。讲台排比常把同一句反问重复数遍
+    （福特第 32 讲「Why do you call Christ, Lord, Lord, and do not the things which he says?」一段三次）。"""
+    return max(en_sentence_repeats(en).values(), default=0)
 
 
 def scripture_repeat(dup, en: str, zh: str = '') -> bool:
@@ -312,14 +327,34 @@ def scripture_repeat(dup, en: str, zh: str = '') -> bool:
     只放行这一种；原文没重复、或重复的不是经文原句，照旧拦。"""
     if not en_repeats(en):
         return False
-    # 2026-11-16 加：原文本身整句重复（排比），译文里同一句的次数不超过原文重复次数 → 照实译出，放行
-    rep = en_sentence_repeat_max(en)
+    # 2026-11-16 加：原文本身重复同一词串（讲台排比、叠句），译文里的重复要在位置上对得上 → 照实译出，放行。
+    # 词串只取最短的那些（长的是短的向两头延伸出来的）；中文每处重复出现的相对位置
+    # 都要落在原文某处重复词串附近（±8%）、且各占一处——重复起稿和误复制的两句挨在一起，对不上。
     reps = en_sentence_repeats(en)
-    if (zh and rep >= 2 and len(dup) <= len(reps) and all(zh.count(x) <= rep for x in dup)
-            and sum(zh.count(x) - 1 for x in set(dup)) <= sum(c - 1 for c in reps.values())
-            # 中文重复句长度要配得上原文重复句（每词约 2.5 字），整段长句被复制不算排比
-            and all(len(re.sub(r'[^\u4e00-\u9fff]', '', x)) <= 2.5 * max(len(s.split()) for s in reps) + 8 for x in dup)):
-        return True
+    core = [k for k in reps if not any(o != k and o in k for o in reps)]
+    if zh and core:
+        w = ' '.join(re.findall(r"[a-z]+", re.sub(r'<[^>]+>|⟦\d+⟧', ' ', en).lower()))
+        epos = sorted({m.start() / len(w) for k in core for m in re.finditer(re.escape(k), w)})
+        ok = True
+        for x in dup:
+            ms = list(re.finditer(re.escape(x), zh))
+            # 两处紧挨着（中间不到 10 个汉字）＝起稿两遍
+            if any(len(re.sub(r'[^\u4e00-\u9fff]', '', zh[a.end():b.start()])) < 10 for a, b in zip(ms, ms[1:])):
+                ok = False
+                break
+            zpos = [m.start() / len(zh) for m in ms]
+            used = set()
+            for z in zpos:
+                near = [i for i, p in enumerate(epos) if abs(p - z) <= 0.08 and i not in used]
+                if not near:
+                    ok = False
+                    break
+                used.add(min(near, key=lambda i: abs(epos[i] - z)))
+            ok = ok and len(re.sub(r'[^\u4e00-\u9fff]', '', x)) <= 2.5 * max(len(k.split()) for k in core) + 8
+            if not ok:
+                break
+        if ok:
+            return True
     cuv = cuv_text()
     for x in dup:
         k = re.sub(r'[^\u4e00-\u9fff]', '', x)
