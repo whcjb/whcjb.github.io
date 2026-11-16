@@ -735,6 +735,9 @@ K 断词未接（`be- -lieveth`）；L 漏逗号；M 书帖签名进注区（`VO
   收引号后破折号多空格 12（`iniquity" —given`）。
 - **第 12 讲逐页实读**（2026-11-16，卷一 pp.165–180，16 页）：仅 1 处——`prevalent,,to`（看图为逗号后墨点）→ `prevalent, to`。
   双标点全书查：008 `angels,, born` 看图印本即两逗号，照录；136 `words,:` 图上冒号前有一淡痕，未改；注首符号读坏 2（044 `,,.`、112 `Wars,V.,xi.`）。
+- **第 126 讲逐页实读**（2026-11-16，卷三 pp.498–509，12 页）：4 处——正文行尾混进注文 `will he never Dr Guyse. smite`、
+  `this is a. strongly`（墨点）、注 `Mark XV, 40.`、注漏符号 1。成类：注文短条在正文句中重现全书再 2（121 `j John.`、128 `Scott.`，
+  转录在该处断行、注区本有）→ 0。`I will out off`（Ezek. xxi. 3 钦定本作 cut）图上即 out，照录。
 
 ## 待做
 
