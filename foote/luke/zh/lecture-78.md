@@ -7,8 +7,8 @@ subtitle: "詹姆斯·福特 · 路加福音 14:12–24"
 date: 2026-11-17 02:27
 chapter: 14
 lecture: 78
-prev_url: "/foote/luke/zh/lecture-70/"
-prev_label: "第七十讲"
+prev_url: "/foote/luke/zh/lecture-77/"
+prev_label: "第七十七讲"
 next_url: "/foote/luke/zh/lecture-79/"
 next_label: "第七十九讲"
 en_url: "/foote/luke/lecture-78/"
