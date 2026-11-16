@@ -162,7 +162,8 @@ def link_notes(n, blocks, notes, tags):
             mpage.append(bpg)
     # 一条里并了几条注的（`♦ Isa. xxi. 10. † Jer. xv. 7.`）在干净符号处拆开；符号 OCR 读花的（`•` `t` `*X*`）
     # 按本页次序推：印本每页注号依次为 * † ‡ § ‖ ¶
-    split = [(pg, x) for pg, t in notes for x in re.split(r'\s+(?=[†‡§‖¶] )', t)]
+    # `§` 也是注文里的章节符（`part i. § 16.`、`Phœdo, § 63`）：后接数字的不拆（2026-11-16 第 67 讲带出）
+    split = [(pg, x) for pg, t in notes for x in re.split(r'\s+(?=[†‡‖¶] |§ (?!\d))', t)]
     syms, prev = [], {}
     for pg, t in split:
         c = t[:1]
@@ -196,7 +197,7 @@ def link_notes(n, blocks, notes, tags):
         try:
             if marks[i] is not None:
                 return int(syms[j][0]) - int(marks[i][0]) in (0, 1)
-            return int(syms[j][0]) - int(mpage[i]) in (0, 1, 2, 3)   # 段落可跨数页
+            return int(syms[j][0]) - int(mpage[i]) in range(6)   # 段落可跨数页（071 段内缺 pp.441–443 页码，跨到 +4）
         except ValueError:
             return False
     L2 = [[0] * (len(rj) + 1) for _ in range(len(ri) + 1)]
