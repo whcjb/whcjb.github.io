@@ -95,10 +95,6 @@ To all of you, then, is this great salvation now exhibited, and let it be your e
 
 <a class="ft-nsym" href="#fnref-9-1" id="fn-9-1">&#42;</a> Origen, Jerome, Theophylact, and the Syriac.
 
-<a class="ft-nsym" href="#fnref-9-2" id="fn-9-2">&#42;</a> \- "Jam respice canos;
-
-† Ad mortem dimitte senes."
-
-‡ Zacaii,'T. 276.
+<a class="ft-nsym" href="#fnref-9-2" id="fn-9-2">&#42;</a> ———— "Jam respice canos; Ad mortem dimitte senes."—*Lacan,* v. 275.
 
 </div>

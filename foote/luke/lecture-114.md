@@ -97,7 +97,7 @@ How many and how dreadful are its evils! It is expressly contrary to the divine 
 
 <a class="ft-nsym" href="#fnref-114-4" id="fn-114-4">‡</a> 'Αποψυχοντων ἀνθρωπων ἀπο φοβου, &c., men fainting away, expiring, or ready to die, through fear.
 
-§ " Trepidant, trepidant pectora magno Perculsa metu, ne fatali Cuncta ruina quassata labent, Iterumque decs hominesque premat Defonne cbaoB."——
+§ " Trepidant, trepidant pectora magno Perculsa metu, ne fatali Cuncta ruina quassata labent, Iterumque deos hominesque premat Deforme chaos."——*Senec. Thyest.*
 
 <a class="ft-nsym" href="#fnref-114-6" id="fn-114-6">&#42;</a> Isa. xiii. 10.
 

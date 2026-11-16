@@ -83,7 +83,7 @@ In the last place, *How affectionately are impenitent sinners here admonished to
 
 <a class="ft-nsym" href="#fnref-80-1" id="fn-80-1">&#42;</a> Luke v. 30. See Lecture on.
 
-<a class="ft-nsym" href="#fnref-80-2" id="fn-80-2">&#42;</a> Johnx. 11, &c.
+<a class="ft-nsym" href="#fnref-80-2" id="fn-80-2">&#42;</a> John x. 11, &c.
 
 <a class="ft-nsym" href="#fnref-80-3" id="fn-80-3">&#42;</a> Matt. iii. 1; Mark vi. 31.
 

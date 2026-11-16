@@ -85,7 +85,7 @@ As for you, on whom this blessedness does indeed already rest, never forget the 
 
 <a class="ft-nsym" href="#fnref-35-3" id="fn-35-3">†</a> John viii. 12, 24.
 
-<a class="ft-nsym" href="#fnref-35-4" id="fn-35-4">&#42;</a> Johnx. 23. 2 I
+<a class="ft-nsym" href="#fnref-35-4" id="fn-35-4">&#42;</a> John x. 23.
 
 <a class="ft-nsym" href="#fnref-35-5" id="fn-35-5">&#42;</a> Matt. xiii. 54.
 

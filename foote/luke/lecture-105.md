@@ -95,7 +95,7 @@ In the last place, *See that you give to the Lord Jesus that place in your spiri
 
 <a class="ft-nsym" href="#fnref-105-8" id="fn-105-8">&#42;</a> Ἴσως generally signifies *equaliter*, or *fortasse*. But Elsner shows from Demosthenes, Æschines, and others, that the word sometimes signifies, *profecto, certe*, and remarks that it is so used in the Septuagint, (1 Sam. xxv. 21), and that in the parallel passages of Matthew and
 
-&#42; Mark, we have the simple and positive affirmation, " They will reverence:" from all which he concludes that the word is to be so understood here. Dr Campbell renders it" surely." It may be doubtful which is the more exact translation; but, according to both, the general meaning ifjU jbe jnuoh the same.
+&#42; Mark, we have the simple and positive affirmation, " They will reverence:" from all which he concludes that the word is to be so understood here. Dr Campbell renders it" surely." It may be doubtful which is the more exact translation; but, according to both, the general meaning will be much the same.
 
 <a class="ft-nsym" href="#fnref-105-10" id="fn-105-10">&#42;</a> Matt. xxi. 41.
 

@@ -109,9 +109,9 @@ Though the closing scene of the history of this man was so extraordinary that it
 
 <a class="ft-nsym" href="#fnref-128-10" id="fn-128-10">&#42;</a> Ἀτοπον.
 
-<a class="ft-nsym" href="#fnref-128-11" id="fn-128-11">&#42;</a> 'O-ra/f xnToi rt io'avreti, tl παραδεισοι xeiXovfitfot, veivrSv xmXSv Tt* jmu *ityafiiv fito'rot ὁποσα h yn (puin ἐθελει.*—*Xen. (Econ,*
+<a class="ft-nsym" href="#fnref-128-11" id="fn-128-11">&#42;</a> 'Οπως κηποι τε ἐσονται, οἱ παραδεισοι καλουμενοι, παντων καλων τε και ἀγαθων μεστοι ὁποσα ἡ γη φυειν ἐθελει.—*Xen. Œcon.*
 
-<a class="ft-nsym" href="#fnref-128-12" id="fn-128-12">†</a> \*f *"Eyyuf παραδεισου xeiXov xett fAiyetXdUt* "' *δασεος παντοιων* iiOjMVf —*Xen, de Exped. Cyriy* lib. ii. The word *παραδεισου* is used in the Septuagint, Gen. li. 8.—Hence the ancient heathens seem to have borrowed their ideas of the gardens of the Hesperides, the trees of which were fabled to have borne golden fruit.
+<a class="ft-nsym" href="#fnref-128-12" id="fn-128-12">†</a> 'Εγγυς παραδεισου καλου και μεγαλου, και δασεος παντοιων δενδρων.—*Xen. de Exped. Cyri,* lib. ii. The word παραδεισου is used in the Septuagint, Gen. ii. 8.—Hence the ancient heathens seem to have borrowed their ideas of the gardens of the Hesperides, the trees of which were fabled to have borne golden fruit.
 
 <a class="ft-nsym" href="#fnref-128-13" id="fn-128-13">&#42;</a> Lightfoot's Sermon, and Whitby; see them for authorities.
 

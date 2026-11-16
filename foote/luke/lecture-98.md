@@ -71,9 +71,39 @@ Though we have noticed the lessons which are read to us in many of the particula
 
 Let us improve this miracle, first, *in reference to literal bodily blindness.* As to the improvement which should be made of the trial by those who are themselves blind: let them ever remember who it is that has sent the affliction on them, that they may not murmur nor despond, but bear it submissively and patiently. " Who hath made man's mouth? or who maketh the dumb, or deaf, or the seeing, or the blind? have not I the Lord?"<sup class="ft-fn"><a href="#fn-98-14" id="fnref-98-14">&#42;</a></sup> They can hardly fail to trace up the trial to their Creator if they have been born blind; and they should not forget that, in all other cases, his hand is more or less directly concerned. If they have lost the faculty of sight after being possessed of it for some time, let them endeavour to say, from the heart, " The Lord gave, and the Lord hath taken away; blessed be the name of the Lord." Except in the few cases which are within the reach of natural means, they are not to expect or to seek to be cured. They have no promise of miraculous help, and therefore they have no ground to pray, or to exercise faith for restoration in that way. But they may derive much benefit to their souls from the visitation, and may have the finest consolation under it, however heavy. As they cannot look out, let them look inward, with the more undisturbed and more intense interest, on the spiritual state of their own minds; and let them be the disciples of Him who saith, " He that followeth me shall not walk in darkness, but shall have the light of life." How beautiful and instructive the lines of the first of English poets, who, like the wakeful bird of night, " sung darkling!"
 
+" Seasons return; but not to me returns
+
+Day, or the sweet approach of even or morn,
+
+Or sight of vernal bloom, or summer's rose,
+
+Or flocks, or herds, or human face divine;
+
+But cloud instead, and ever-during dark
+
+Surrounds me: from the cheerful ways of men
+
+Cut off, and for the book of knowledge fair
+
+Presented with a universal blank
+
+Of nature's works, to me expung'd and ras'd,
+
+And wisdom at one entrance quite shut out.
+
+So much the rather Thou, celestial Light,
+
+Shine inward, and the mind through all her powers
+
+Irradiate; there plant eyes, all mist from thence
+
+Purge and disperse, that I may see and tell
+
+Of things invisible to mortal sight."
+
 How dismal the state of those blind persons who have no saving illumination, and whose eyes are never to open till they open on the miseries of the condemned! On the other hand, how happy those whose eyes, though they are never to open on this world, are to open on all the glories of heaven! A person<sup class="ft-fn"><a href="#fn-98-15" id="fnref-98-15">†</a></sup> who had lost his sight, expressed himself, in a letter which he dictated to a friend as follows: " I am blind, but, bless God, content. All that he doth is wise and just. All that comes in his will is welcome. His choice is better than mine. Eyes might have blinded, but blindness shall enlighten me. God hath not cast me off, but called me aside into the invisible world. I may say, It is good being here. I cannot see outward things; but the new creature in the heart is a better sight than all the world. I cannot read the letters in the Bible; but if I have the quickening Spirit it is enough. The veil is upon my eyes; but my work is to rend off the veil of time from my heart, and to look into eternity—to put back all creatures, and to have all in God. Near enough to him I cannot be. If the film were off my eyes, I should see the outward world; but if the flesh were off my heart, I should love the blessed God—which is infinitely better. Through grace I hope to come to that blessed region where God is all. In his light we shall see light, and in his love we shall be blessed for ever."
 
-As to the duty of others to the blind: it is very cruel and sinful to deceive them, or injure them, or in any way treat them ill. " Thou shalt not curse the deaf, nor put a stumbling-block before the blind, but shalt fear thy God; I am the Lord."—" Cursed be he that maketh the blind to wander out of the way; and all the people shall say, Amen."<sup class="ft-fn"><a href="#fn-98-18" id="fnref-98-18">&#42;</a></sup> Instead of this, it is a duty to show them all kindness. If they stand in need of it, it is a duty to contribute to their support. But, though they may be in easy circumstances, they are very dependent in many other respects. It is truly benevolent and Christian to pay attention to their wishes—to conduct them whither they desire to go—to inform them of what is passing around them, and, especially, to read the Word of God to them, and converse with them on the things which belong to their peace. This is indeed to be like Job—" eyes to the blind."
+As to the duty of others to the blind: it is very cruel and sinful to deceive them, or injure them, or in any way treat them ill. " Thou shalt not curse the deaf, nor put a stumbling-block before the blind, but shalt fear thy God; I am the Lord."—" Cursed be he that maketh the blind to wander out of the way; and all the people shall say, Amen."<sup class="ft-fn"><a href="#fn-98-16" id="fnref-98-16">&#42;</a></sup> Instead of this, it is a duty to show them all kindness. If they stand in need of it, it is a duty to contribute to their support. But, though they may be in easy circumstances, they are very dependent in many other respects. It is truly benevolent and Christian to pay attention to their wishes—to conduct them whither they desire to go—to inform them of what is passing around them, and, especially, to read the Word of God to them, and converse with them on the things which belong to their peace. This is indeed to be like Job—" eyes to the blind."
 
 Secondly, Let us improve this miracle in reference to *figurative or spiritual blindness.* To apply the miracle in this way is no improper stretch, but is sanctioned by the example of Christ himself, in the case of the cure of the man who was born blind, which is related in the 9th chapter of John; much of what he said there being of such a nature as would have been equally applicable had he seen fit to introduce it here. That account closes with these words: " And Jesus said, For judgment I am come into this world, that they who see not might see, and that they who see might be made blind. And some of the Pharisees who were with him heard these words, and said unto him, Are we blind also? Jesus said unto them, If ye were blind, ye should have no sin; but now ye say, We see; therefore your sin remaineth." Men are all spiritually blind by nature; that is, they are ignorant of spiritual and eternal things; they have no perception of the evil of sin, of the glory of God, of the excellence of the Saviour, of the beauty of holiness. They are " alienated from the life of God through the ignorance that is in them, because of the blindness of their hearts." " The natural man receiveth not the things of the Spirit of God, for they are foolishness unto him; neither can he know them, because they are spiritually discerned." But believers are enlightened to know these things. " The new man is renewed in knowledge after the image of him that created him."
 
@@ -111,14 +141,10 @@ Let those of you, finally, who are restored to sight, in the spiritual sense, be
 
 <a class="ft-nsym" href="#fnref-98-13" id="fn-98-13">‡</a> Luke vii. 50.
 
-<a class="ft-nsym" href="#fnref-98-14" id="fn-98-14">&#42;</a> " Seasons return; but not to me returns Day, or the sweet approach of even or mom. Or sight of vernal bloom, or summer's rose, Or flocks, or herds, or human face divine; But cloud instead, and ever-during dark Surrounds me: from the cheerful ways of men j
+<a class="ft-nsym" href="#fnref-98-14" id="fn-98-14">&#42;</a> Exod. iv. 11.
 
-<a class="ft-nsym" href="#fnref-98-15" id="fn-98-15">†</a> Cut off, and for the book of knowledge fair Presented with a universal blank Of nature's works, to me expung'd and ras'd. And wisdom at one entrance quite shut out. So much the rather Thou, celestial Light, Shine inward, and the mind through all her powers Irradiate; there plant eyes, all mist from thence Purge and disperse, that I may see and tell Of things invisible to mortal sight."
+<a class="ft-nsym" href="#fnref-98-15" id="fn-98-15">†</a> Edward Polhill, Esq., mentioned in Pike and Hayward's Cases of Conscience.
 
-‡ Exod. iv. 11.
-
-† Edward Polhill, Esq., mentioned in Pike and Hayward's Cases of Conscience.
-
-<a class="ft-nsym" href="#fnref-98-18" id="fn-98-18">&#42;</a> Lev. xix. 14; Deut. xxvii. 18.
+<a class="ft-nsym" href="#fnref-98-16" id="fn-98-16">&#42;</a> Lev. xix. 14; Deut. xxvii. 18.
 
 </div>

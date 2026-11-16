@@ -63,7 +63,7 @@ If, on examination, a person is fully persuaded that he is a true Christian, if 
 
 <div class="ft-notes" markdown="1">
 
-<a class="ft-nsym" href="#fnref-117-1" id="fn-117-1">&#42;</a> KKTmyyiXXirt.*
+<a class="ft-nsym" href="#fnref-117-1" id="fn-117-1">&#42;</a> Καταγγελλετε.
 
 <a class="ft-nsym" href="#fnref-117-2" id="fn-117-2">&#42;</a> 1 Cor. x. 16, 17. See Elsner's note on this text. "Pagani in sacris conviviis firmissimum amicitiæ vinculum inesse existimabant," &c.
 
