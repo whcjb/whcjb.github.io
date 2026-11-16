@@ -11,6 +11,7 @@ prev_url: "/foote/luke/lecture-58/"
 prev_label: "Lecture LVIII"
 next_url: "/foote/luke/lecture-60/"
 next_label: "Lecture LX"
+zh_url: "/foote/luke/zh/lecture-59/"
 ---
 
 <h2 class="ft-head">Luke 11:27–28</h2>
