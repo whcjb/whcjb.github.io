@@ -7,8 +7,8 @@ subtitle: "詹姆斯·福特 · 路加福音 22:31–38"
 date: 2026-11-16 21:58
 chapter: 22
 lecture: 119
-prev_url: "/foote/luke/zh/lecture-30/"
-prev_label: "第三十讲"
+prev_url: "/foote/luke/zh/lecture-31/"
+prev_label: "第三十一讲"
 next_url: "/foote/luke/zh/lecture-120/"
 next_label: "第一百二十讲"
 en_url: "/foote/luke/lecture-119/"
