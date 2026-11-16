@@ -11,6 +11,7 @@ prev_url: "/foote/luke/lecture-16/"
 prev_label: "Lecture XVI"
 next_url: "/foote/luke/lecture-18/"
 next_label: "Lecture XVIII"
+zh_url: "/foote/luke/zh/lecture-17/"
 ---
 
 <h2 class="ft-head">Luke 4:22–32</h2>
