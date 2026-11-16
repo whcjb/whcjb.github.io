@@ -7,8 +7,8 @@ subtitle: "詹姆斯·福特 · 路加福音 22:47–53"
 date: 2026-11-16 21:41
 chapter: 22
 lecture: 121
-prev_url: "/foote/luke/zh/lecture-27/"
-prev_label: "第二十七讲"
+prev_url: "/foote/luke/zh/lecture-28/"
+prev_label: "第二十八讲"
 next_url: "/foote/luke/zh/lecture-122/"
 next_label: "第一百二十二讲"
 en_url: "/foote/luke/lecture-121/"
