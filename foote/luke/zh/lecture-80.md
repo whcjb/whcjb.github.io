@@ -7,8 +7,8 @@ subtitle: "詹姆斯·福特 · 路加福音 15:1–10"
 date: 2026-11-17 02:15
 chapter: 15
 lecture: 80
-prev_url: "/foote/luke/zh/lecture-68/"
-prev_label: "第六十八讲"
+prev_url: "/foote/luke/zh/lecture-79/"
+prev_label: "第七十九讲"
 next_url: "/foote/luke/zh/lecture-81/"
 next_label: "第八十一讲"
 en_url: "/foote/luke/lecture-80/"
