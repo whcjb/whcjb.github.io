@@ -31,6 +31,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import translate_filibi as tf          # noqa: E402
 import translate_alexander_acts as T   # noqa: E402
+import foote_scripture_blocks as SB     # noqa: E402
 
 ROOT = Path(__file__).resolve().parent.parent
 SRC = ROOT / 'foote' / 'luke'
@@ -155,6 +156,10 @@ def blocks(n):
             continue
         if not re.search(r'[A-Za-zΑ-ωἀ-ῼ]', re.sub(r'<[^>]+>', '', b)) or b.startswith('<div') or b.startswith('</div'):
             out.append(('keep', b, gid))
+            continue
+        zb = SB.match(b, vs)                          # 整段一处本讲经文引文 → 程序填和合本（第 6、8 讲两次被拦后加）
+        if zb:
+            out.append(('keep', zb, gid))
             continue
         if len(b) <= MAX_CHARS:
             out.append(('text', b, gid))
