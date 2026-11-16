@@ -11,6 +11,7 @@ prev_url: "/foote/luke/lecture-13/"
 prev_label: "Lecture XIII"
 next_url: "/foote/luke/lecture-15/"
 next_label: "Lecture XV"
+zh_url: "/foote/luke/zh/lecture-14/"
 ---
 
 <h2 class="ft-head">Luke 3:21–38</h2>
