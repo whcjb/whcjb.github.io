@@ -11,6 +11,7 @@ prev_url: "/foote/luke/lecture-115/"
 prev_label: "Lecture CXV"
 next_url: "/foote/luke/lecture-117/"
 next_label: "Lecture CXVII"
+zh_url: "/foote/luke/zh/lecture-116/"
 ---
 
 <h2 class="ft-head">Luke 22:19–20</h2>
