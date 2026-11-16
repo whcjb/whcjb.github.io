@@ -7,8 +7,8 @@ subtitle: "詹姆斯·福特 · 路加福音 24:1–12"
 date: 2026-11-16 20:20
 chapter: 24
 lecture: 132
-prev_url: "/foote/luke/zh/lecture-16/"
-prev_label: "第十六讲"
+prev_url: "/foote/luke/zh/lecture-131/"
+prev_label: "第一百三十一讲"
 next_url: "/foote/luke/zh/lecture-133/"
 next_label: "第一百三十三讲"
 en_url: "/foote/luke/lecture-132/"
