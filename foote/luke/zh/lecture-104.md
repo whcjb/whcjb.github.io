@@ -7,8 +7,8 @@ subtitle: "詹姆斯·福特 · 路加福音 20:1–8"
 date: 2026-11-16 23:42
 chapter: 20
 lecture: 104
-prev_url: "/foote/luke/zh/lecture-45/"
-prev_label: "第四十五讲"
+prev_url: "/foote/luke/zh/lecture-103/"
+prev_label: "第一百零三讲"
 next_url: "/foote/luke/zh/lecture-105/"
 next_label: "第一百零五讲"
 en_url: "/foote/luke/lecture-104/"
