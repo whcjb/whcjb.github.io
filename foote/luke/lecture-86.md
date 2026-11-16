@@ -11,6 +11,7 @@ prev_url: "/foote/luke/lecture-85/"
 prev_label: "Lecture LXXXV"
 next_url: "/foote/luke/lecture-87/"
 next_label: "Lecture LXXXVII"
+zh_url: "/foote/luke/zh/lecture-86/"
 ---
 
 <h2 class="ft-head">Luke 16:14–18</h2>
