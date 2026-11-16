@@ -11,6 +11,7 @@ prev_url: "/foote/luke/lecture-36/"
 prev_label: "Lecture XXXVI"
 next_url: "/foote/luke/lecture-38/"
 next_label: "Lecture XXXVIII"
+zh_url: "/foote/luke/zh/lecture-37/"
 ---
 
 <h2 class="ft-head">Luke 7:36–50</h2>
