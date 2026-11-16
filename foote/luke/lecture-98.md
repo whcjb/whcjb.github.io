@@ -11,6 +11,7 @@ prev_url: "/foote/luke/lecture-97/"
 prev_label: "Lecture XCVII"
 next_url: "/foote/luke/lecture-99/"
 next_label: "Lecture XCIX"
+zh_url: "/foote/luke/zh/lecture-98/"
 ---
 
 <h2 class="ft-head">Luke 18:35–43</h2>
