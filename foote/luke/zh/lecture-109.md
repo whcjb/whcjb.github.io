@@ -7,8 +7,8 @@ subtitle: "詹姆斯·福特 · 路加福音 21:1–4"
 date: 2026-11-16 23:10
 chapter: 21
 lecture: 109
-prev_url: "/foote/luke/zh/lecture-41/"
-prev_label: "第四十一讲"
+prev_url: "/foote/luke/zh/lecture-42/"
+prev_label: "第四十二讲"
 next_url: "/foote/luke/zh/lecture-110/"
 next_label: "第一百一十讲"
 en_url: "/foote/luke/lecture-109/"

@@ -11,6 +11,7 @@ prev_url: "/foote/luke/lecture-41/"
 prev_label: "Lecture XLI"
 next_url: "/foote/luke/lecture-43/"
 next_label: "Lecture XLIII"
+zh_url: "/foote/luke/zh/lecture-42/"
 ---
 
 <h2 class="ft-head">Luke 8:26–39</h2>
