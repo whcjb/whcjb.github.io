@@ -11,6 +11,7 @@ prev_url: "/foote/luke/lecture-75/"
 prev_label: "Lecture LXXV"
 next_url: "/foote/luke/lecture-77/"
 next_label: "Lecture LXXVII"
+zh_url: "/foote/luke/zh/lecture-76/"
 ---
 
 <h2 class="ft-head">Luke 13:31–35</h2>
