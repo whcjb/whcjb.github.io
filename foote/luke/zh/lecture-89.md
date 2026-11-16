@@ -7,8 +7,8 @@ subtitle: "詹姆斯·福特 · 路加福音 17:1–10"
 date: 2026-11-17 01:24
 chapter: 17
 lecture: 89
-prev_url: "/foote/luke/zh/lecture-60/"
-prev_label: "第六十讲"
+prev_url: "/foote/luke/zh/lecture-88/"
+prev_label: "第八十八讲"
 next_url: "/foote/luke/zh/lecture-90/"
 next_label: "第九十讲"
 en_url: "/foote/luke/lecture-89/"
