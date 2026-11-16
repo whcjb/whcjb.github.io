@@ -788,6 +788,10 @@ K 断词未接（`be- -lieveth`）；L 漏逗号；M 书帖签名进注区（`VO
 - **第 98 讲逐页实读**（2026-11-16，卷三 pp.99–112，14 页）：全讲仅 1 处 `Bartimeus'application` 漏空格；同类（标点后紧贴下一词）全书 0。
 - **第 42 讲逐页实读**（2026-11-16，卷二 pp.16–29，14 页）：全讲 2 处——`wilderness; "*—` 收引号前多空格、`spirit, ot`（行末 f 上半残缺）。成类：孤立 `ot` 全书 4 处看图皆残缺 f，补全为 of；收引号前空格全书仅此 1。讲首出处 `26-31`、`af Christ`、`wordly`、`restrains` 印本如此照录。
 - **第 130 讲逐页实读**（2026-11-16，卷三 pp.557–570，14 页）：全讲 2 处——`that sights beholding`（逗号读成 s）、`*the true atonement for* sin`（斜体收尾早一词）。两类全书对转录查各仅此 1。`shalt. thou` 印本墨点照录（与第 117 讲同口径）。
+- **五轮实读后全书成类补查**（2026-11-16）：整页转录逐讲词序列对齐（SequenceMatcher，过滤转录笔误/断字/对齐串位），我们一词与转录另一词者逐个看原图，改 15：
+  `hut`→but 2、`whick`、`tee`→we、`Mastery`→Master、`places`→place、`Gods`→God、`arc`→are（e 横断）、墨痕撇号 `'to`/`'come`/`'and`/`'whom`、
+  `la win`→law in、`m atchless`（字距）、`Ramathaim- Zophim`。照录：`out off`、`bow`、`strippling`、`Whereever`（行末 Where- 断）、`th`（页末）、`lights`（墨团不判）。
+  018 空 `**` 残渣 3 删；正文词间双空格 33 统一单空格（全书归零）。注号 1425/1425。
 
 ## 待做
 
