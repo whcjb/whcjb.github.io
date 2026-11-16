@@ -7,8 +7,8 @@ subtitle: "詹姆斯·福特 · 路加福音 20:19–26"
 date: 2026-11-16 23:30
 chapter: 20
 lecture: 106
-prev_url: "/foote/luke/zh/lecture-44/"
-prev_label: "第四十四讲"
+prev_url: "/foote/luke/zh/lecture-45/"
+prev_label: "第四十五讲"
 next_url: "/foote/luke/zh/lecture-107/"
 next_label: "第一百零七讲"
 en_url: "/foote/luke/lecture-106/"
