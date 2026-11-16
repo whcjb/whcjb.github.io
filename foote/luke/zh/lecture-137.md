@@ -7,8 +7,8 @@ subtitle: "詹姆斯·福特 · 路加福音 24:50–53"
 date: 2026-11-16 18:33
 chapter: 24
 lecture: 137
-prev_url: "/foote/luke/zh/lecture-11/"
-prev_label: "第十一讲"
+prev_url: "/foote/luke/zh/lecture-136/"
+prev_label: "第一百三十六讲"
 en_url: "/foote/luke/lecture-137/"
 zh: true
 ---

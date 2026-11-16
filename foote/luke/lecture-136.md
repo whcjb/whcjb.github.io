@@ -11,6 +11,7 @@ prev_url: "/foote/luke/lecture-135/"
 prev_label: "Lecture CXXXV"
 next_url: "/foote/luke/lecture-137/"
 next_label: "Lecture CXXXVII"
+zh_url: "/foote/luke/zh/lecture-136/"
 ---
 
 <h2 class="ft-head">Luke 24:50–53</h2>
