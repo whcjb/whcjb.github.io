@@ -11,6 +11,7 @@ prev_url: "/foote/luke/lecture-104/"
 prev_label: "Lecture CIV"
 next_url: "/foote/luke/lecture-106/"
 next_label: "Lecture CVI"
+zh_url: "/foote/luke/zh/lecture-105/"
 ---
 
 <h2 class="ft-head">Luke 20:9–18</h2>
