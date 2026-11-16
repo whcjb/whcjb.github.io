@@ -7,8 +7,8 @@ subtitle: "詹姆斯·福特 · 路加福音 17:20–37"
 date: 2026-11-17 01:11
 chapter: 17
 lecture: 91
-prev_url: "/foote/luke/zh/lecture-58/"
-prev_label: "第五十八讲"
+prev_url: "/foote/luke/zh/lecture-90/"
+prev_label: "第九十讲"
 next_url: "/foote/luke/zh/lecture-92/"
 next_label: "第九十二讲"
 en_url: "/foote/luke/lecture-91/"
