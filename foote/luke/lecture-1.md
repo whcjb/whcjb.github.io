@@ -11,6 +11,7 @@ prev_url: "/foote/luke/title-3/"
 prev_label: "Title Page, Vol. III"
 next_url: "/foote/luke/lecture-2/"
 next_label: "Lecture II"
+zh_url: "/foote/luke/zh/lecture-1/"
 ---
 
 <h2 class="ft-head">Luke 1:1–4</h2>
