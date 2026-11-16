@@ -11,6 +11,7 @@ prev_url: "/foote/luke/lecture-20/"
 prev_label: "Lecture XX"
 next_url: "/foote/luke/lecture-22/"
 next_label: "Lecture XXII"
+zh_url: "/foote/luke/zh/lecture-21/"
 ---
 
 <h2 class="ft-head">Luke 5:16–26</h2>
