@@ -7,8 +7,8 @@ subtitle: "詹姆斯·福特 · 路加福音 15:11–32"
 date: 2026-11-17 02:10
 chapter: 15
 lecture: 81
-prev_url: "/foote/luke/zh/lecture-67/"
-prev_label: "第六十七讲"
+prev_url: "/foote/luke/zh/lecture-80/"
+prev_label: "第八十讲"
 next_url: "/foote/luke/zh/lecture-82/"
 next_label: "第八十二讲"
 en_url: "/foote/luke/lecture-81/"
