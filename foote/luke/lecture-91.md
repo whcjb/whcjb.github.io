@@ -11,6 +11,7 @@ prev_url: "/foote/luke/lecture-90/"
 prev_label: "Lecture XC"
 next_url: "/foote/luke/lecture-92/"
 next_label: "Lecture XCII"
+zh_url: "/foote/luke/zh/lecture-91/"
 ---
 
 <h2 class="ft-head">Luke 17:20–37</h2>

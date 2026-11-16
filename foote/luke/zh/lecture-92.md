@@ -7,8 +7,8 @@ subtitle: "詹姆斯·福特 · 路加福音 18:1–8"
 date: 2026-11-17 01:03
 chapter: 18
 lecture: 92
-prev_url: "/foote/luke/zh/lecture-58/"
-prev_label: "第五十八讲"
+prev_url: "/foote/luke/zh/lecture-91/"
+prev_label: "第九十一讲"
 next_url: "/foote/luke/zh/lecture-93/"
 next_label: "第九十三讲"
 en_url: "/foote/luke/lecture-92/"
