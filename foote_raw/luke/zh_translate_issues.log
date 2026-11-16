@@ -27,3 +27,5 @@
   RAW: '了 Psalm 137:7 和合本：“耶路撒冷遭难的日子，以东人说：拆毁！拆毁！直拆到根基！耶和华啊，求你记念这仇。” Quote only the part quoted: "The children of Edom in the day of Jerusalem, said, Raze it..." 和合本: “耶和华啊，耶路撒冷遭难的日子，以东人说：拆毁！拆毁！直拆到根基！求你记念这仇。” Actual 和合本: "耶路撒冷遭难的日子，以东人说：拆毁！拆毁！直拆到根基！耶和华啊，求你记念这仇。" I think it\'s: “耶和华啊，耶路撒冷遭难的日子，以东人说：拆毁！拆毁！直拆到根基！求你记念这仇。” Yes, I believe 和合本 137:7 is: "耶和华啊，耶路撒冷遭难的日子，以东人说：拆毁！拆毁！直拆到根基！求你记念这仇。" Quote: “耶路撒冷遭难的日子，以'
 [37#29·first] 占位符不符 ['1'] → []；漏译的英文词 auto、effort、mode、reasoning、thinking；残留标签 <reasoning_effort>；模型自语「<thinking」
   RAW: '魂<reasoning_effort>10</reasoning_effort>\n\n<thinking_mode>auto</thinking_mode>'
+[40#26·first] 漏译的英文词 translation；残留标签 <translation>
+  RAW: '听<translation>\n⟦1⟧ 马太福音 13:55。\n</translation>'

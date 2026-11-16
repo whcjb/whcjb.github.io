@@ -7,8 +7,8 @@ subtitle: "詹姆斯·福特 · 路加福音 21:12–19"
 date: 2026-11-16 22:56
 chapter: 21
 lecture: 111
-prev_url: "/foote/luke/zh/lecture-39/"
-prev_label: "第三十九讲"
+prev_url: "/foote/luke/zh/lecture-40/"
+prev_label: "第四十讲"
 next_url: "/foote/luke/zh/lecture-112/"
 next_label: "第一百一十二讲"
 en_url: "/foote/luke/lecture-111/"
