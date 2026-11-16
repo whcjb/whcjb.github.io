@@ -7,8 +7,8 @@ subtitle: "詹姆斯·福特 · 路加福音 24:36–49"
 date: 2026-11-16 20:00
 chapter: 24
 lecture: 135
-prev_url: "/foote/luke/zh/lecture-12/"
-prev_label: "第十二讲"
+prev_url: "/foote/luke/zh/lecture-134/"
+prev_label: "第一百三十四讲"
 next_url: "/foote/luke/zh/lecture-136/"
 next_label: "第一百三十六讲"
 en_url: "/foote/luke/lecture-135/"
