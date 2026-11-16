@@ -15,7 +15,11 @@ next_label: "Lecture XXVII"
 
 <h2 class="ft-head">Luke 6:14</h2>
 
-" James and John, Philip."
+<div class="ft-text" markdown="1">
+
+James and John, Philip."
+
+</div>
 
 Having considered, in the last Lecture, the solemn circumstances accompanying the election of the twelve apostles, we entered on a sketch of the history of the individuals whose names compose the illustrious catalogue. We were only able to take a review of the first pair, Simon Peter and Andrew his brother. James and John form the second pair, and we shall proceed to the history of *James.* James is originally the same name with Jacob: it was first borne by the son of Isaac, and signifies " the supplanter."
 
