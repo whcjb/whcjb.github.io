@@ -801,6 +801,11 @@ K 断词未接（`be- -lieveth`）；L 漏逗号；M 书帖签名进注区（`VO
 - **第 69 讲逐页实读**（2026-11-16，卷二 pp.413–426，14 页）：全讲 0 处。p.417 `conolusion` 系 c 字模残缺（同 `ot`→of 口径，保持 conclusion）。
   成类尝试：全书斜体范围按词对齐对转录（scratchpad itdiff.py），差异 493——转录单独斜体的虚词 400 处抽 4 看图皆正体（转录噪声）；
   我们斜体而转录否 90 处多为讲解中引经文斜体段，抽 7 看图（030/078/087/096/133 等正文处）皆我们对、转录漏标。此路无可落改动，记以免重挖。
+- **第 90 讲逐页实读**（2026-11-16，卷二 pp.678–688，11 页）：我们的文本与原图逐字一致；唯一差异 p.684 原书印 `deadily`、我们作 `deadly`。
+  由此查出一类口径冲突：转录对齐「我们是正字、转录是非词」的约 30 处看原图，近 20 处是**印本误植/倒字被链条悄悄改正**
+  （grieviously、overthown、gruding、Sabbuth、deadily、comin、fovr、wildernsss、tabernaele、nbt、dirine、reoresented、
+  sacrifiee、somc、goiug、accouut、trubled、aud×3、Theu、pieee、testimon、teaeh、evidenees、commenee、appoiuted、cavilliug……），
+  与第 64 讲「印本误植照录」口径相反。改正 vs 照录待用户定，暂未动。
 
 ## 待做
 
