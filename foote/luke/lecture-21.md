@@ -105,6 +105,6 @@ Lastly, *It is delightful to think that the Son of man has still power to forgiv
 
 <a class="ft-nsym" href="#fnref-21-11" id="fn-21-11">&#42;</a> Acts ix. 34.
 
-<a class="ft-nsym" href="#fnref-21-12" id="fn-21-12">&#42;</a> Acts V. 31.
+<a class="ft-nsym" href="#fnref-21-12" id="fn-21-12">&#42;</a> Acts v. 31.
 
 </div>

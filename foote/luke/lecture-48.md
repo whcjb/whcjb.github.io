@@ -79,7 +79,7 @@ How thankful ought those of you to be, who, having come to Christ, are delivered
 
 <a class="ft-nsym" href="#fnref-48-2" id="fn-48-2">&#42;</a> Mark ix. 30.
 
-<a class="ft-nsym" href="#fnref-48-3" id="fn-48-3">&#42;</a> Luke V. 12.
+<a class="ft-nsym" href="#fnref-48-3" id="fn-48-3">&#42;</a> Luke v. 12.
 
 <a class="ft-nsym" href="#fnref-48-4" id="fn-48-4">&#42;</a> See also 1 John iii. 10.
 

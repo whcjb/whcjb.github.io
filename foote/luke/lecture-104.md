@@ -77,7 +77,7 @@ Lastly, and more particularly, *Let us beware of resembling the chief priests, s
 
 <a class="ft-nsym" href="#fnref-104-3" id="fn-104-3">&#42;</a> 1 Kings xxii 24; Jer. xx. 1.
 
-<a class="ft-nsym" href="#fnref-104-4" id="fn-104-4">&#42;</a> Jolm V. 31, X. 24.
+<a class="ft-nsym" href="#fnref-104-4" id="fn-104-4">&#42;</a> John v. 31, X. 24.
 
 <a class="ft-nsym" href="#fnref-104-5" id="fn-104-5">&#42;</a> Luke xxii. 66.
 

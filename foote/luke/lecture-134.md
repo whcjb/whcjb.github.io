@@ -85,7 +85,7 @@ The conduct of the disciples at this time, on both sides, furnishes us with an e
 
 &#42; Wilcox.
 
-<a class="ft-nsym" href="#fnref-134-8" id="fn-134-8">&#42;</a> Jer XX. 9.
+<a class="ft-nsym" href="#fnref-134-8" id="fn-134-8">&#42;</a> Jer xx. 9.
 
 <a class="ft-nsym" href="#fnref-134-9" id="fn-134-9">&#42;</a> 2 Kings vii. 9.
 

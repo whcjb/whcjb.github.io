@@ -73,7 +73,7 @@ But perhaps the most generally applicable, and most awakening consideration of a
 
 <div class="ft-notes" markdown="1">
 
-<a class="ft-nsym" href="#fnref-13-1" id="fn-13-1">&#42;</a> John X. 41
+<a class="ft-nsym" href="#fnref-13-1" id="fn-13-1">&#42;</a> John x. 41
 
 <a class="ft-nsym" href="#fnref-13-2" id="fn-13-2">&#42;</a> Jer. xxiii. 29.
 

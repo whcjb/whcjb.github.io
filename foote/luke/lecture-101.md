@@ -99,7 +99,7 @@ The lively exercise of the affections on earthly objects is applauded; why, then
 
 <div class="ft-notes" markdown="1">
 
-<a class="ft-nsym" href="#fnref-101-1" id="fn-101-1">&#42;</a> Mark X. 32.
+<a class="ft-nsym" href="#fnref-101-1" id="fn-101-1">&#42;</a> Mark x. 32.
 
 <a class="ft-nsym" href="#fnref-101-2" id="fn-101-2">&#42;</a> Lev. xxiii. 32.
 
