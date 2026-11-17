@@ -1,0 +1,125 @@
+---
+layout: default
+---
+{%- comment -%}
+  布里奇斯《诗篇 119 篇讲解》章节页（一页一个「部分」，每部分 8 节）。由 scripts/publish_bridges_psalm119_en.py 生成正文。
+  ⚠️ 不复用别家 layout（布里奇斯《箴言》是中译逐节版，版式不同）；配色取布里奇斯的作者色棕 #5B3A29 / #96613F。
+  版式：经文 `.bg-verse`（节号 `.bg-vnum`，锚点 #vN）；落款 `.bg-center`；第十六版序标题 `.bg-h2`；
+  录入本找不到注号的脚注 `.bg-orphan`。目前只有英文版，没有接经文引用弹层。
+{%- endcomment -%}
+
+<div class="container bridgesps-wrap{% if page.zh %} bg-zh{% endif %}" style="padding-top: 70px;">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+
+      <div class="bg-chrome">
+        <a href="{{ site.baseurl }}/bridges/{{ page.book_id }}/{% if page.zh %}zh/{% endif %}">&larr; {{ page.book_name }}</a>
+        {% unless page.zh %}{% if page.zh_url %}<a class="bg-lang" href="{{ site.baseurl }}{{ page.zh_url }}">中文版 &rarr;</a>{% endif %}{% endunless %}
+      </div>
+
+      <h1 class="bg-title">{{ page.title }}{% if page.title_note %}<sup class="bg-fn"><a href="#fn-{{ page.title_note }}" id="fnref-{{ page.title_note }}">{{ page.title_note }}</a></sup>{% endif %}</h1>
+      {% if page.subtitle %}<p class="bg-subtitle">{{ page.subtitle }}</p>{% endif %}
+
+      <div class="bg-nav">
+        {% if page.prev_url %}<a href="{{ site.baseurl }}{{ page.prev_url }}">&larr; {{ page.prev_label }}</a>
+        {% else %}<span></span>{% endif %}
+        {% if page.next_url %}<a href="{{ site.baseurl }}{{ page.next_url }}">{{ page.next_label }} &rarr;</a>
+        {% else %}<span></span>{% endif %}
+      </div>
+
+      <div class="bg-content">
+        {{ content }}
+      </div>
+
+      {% if page.date %}
+      <div class="bg-stamp">{% if page.zh %}译于{% else %}Published{% endif %} {{ page.date | date: "%Y-%m-%d %H:%M" }}</div>
+      {% endif %}
+
+      <div class="bg-nav bg-nav-foot">
+        {% if page.prev_url %}<a href="{{ site.baseurl }}{{ page.prev_url }}">&larr; {{ page.prev_label }}</a>
+        {% else %}<span></span>{% endif %}
+        {% if page.next_url %}<a href="{{ site.baseurl }}{{ page.next_url }}">{{ page.next_label }} &rarr;</a>
+        {% else %}<span></span>{% endif %}
+      </div>
+
+    </div>
+  </div>
+</div>
+
+{% if page.zh %}
+<link href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-webfont@1.7.0/style.css" rel="stylesheet">
+{% include scripture-popup.html container_selector=".bg-content" accent="#96613F" vnum="#5B3A29" slide="down" %}
+{% endif %}
+
+<style>
+.bridgesps-wrap {
+  --bg-ink: #96613F;
+  --bg-ink-dark: #5B3A29;
+  --bg-rule: #e6dbd2;
+  --bg-paper: #fcfaf8;
+  --bg-body: #33302f;
+}
+.bridgesps-wrap .bg-chrome,
+.bridgesps-wrap .bg-nav {
+  font-size: 13px; display: flex; justify-content: space-between;
+  align-items: center; font-family: Georgia, "Times New Roman", serif;
+}
+.bridgesps-wrap .bg-chrome { margin: 18px 0 22px; }
+.bridgesps-wrap .bg-chrome a,
+.bridgesps-wrap .bg-nav a { color: var(--bg-ink-dark); text-decoration: none; }
+.bridgesps-wrap .bg-chrome a:hover,
+.bridgesps-wrap .bg-nav a:hover { color: var(--bg-ink); text-decoration: underline; }
+.bridgesps-wrap .bg-lang { border: 1px solid var(--bg-rule); border-radius: 4px; padding: 4px 10px; }
+.bridgesps-wrap .bg-title {
+  font-family: Georgia, "Times New Roman", serif; font-size: 30px;
+  font-weight: normal; color: var(--bg-ink-dark); text-align: center;
+  margin: 10px 0 4px; line-height: 1.3;
+}
+.bridgesps-wrap .bg-subtitle {
+  text-align: center; font-size: 14px; color: #8f8885; margin: 0 0 6px;
+  font-family: Georgia, "Times New Roman", serif; font-style: italic;
+}
+.bridgesps-wrap .bg-nav { margin: 14px 0 26px; }
+.bridgesps-wrap .bg-nav-foot { margin-top: 44px; padding-top: 16px; border-top: 1px solid var(--bg-rule); }
+
+.bridgesps-wrap .bg-content {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 17px; line-height: 1.85; color: var(--bg-body);
+}
+.bridgesps-wrap .bg-content p { margin: 0 0 16px; text-align: justify; }
+.bridgesps-wrap .bg-content p.bg-verse { font-style: normal; text-align: left; color: var(--bg-ink-dark);
+  margin: 30px 0 14px; padding: 8px 12px; background: var(--bg-paper); border-left: 3px solid var(--bg-ink); }
+.bridgesps-wrap .bg-vnum { font-weight: bold; margin-right: 10px; }
+.bridgesps-wrap .bg-center { text-align: center !important; }
+.bridgesps-wrap .bg-h2 { font-family: Georgia, "Times New Roman", serif; font-size: 21px; font-weight: normal;
+  color: var(--bg-ink-dark); margin: 40px 0 16px; text-align: center; }
+.bridgesps-wrap .bg-orphan-tag { color: #a39a92; font-size: .9em; }
+.bridgesps-wrap .bg-vr {
+  color: var(--bg-ink-dark); font-size: 13px; letter-spacing: .04em;
+  margin-right: 8px; white-space: nowrap;
+}
+.bridgesps-wrap .bg-he {
+  font-family: "SBL Hebrew", "Ezra SIL", "Times New Roman", serif;
+  font-size: 1.12em; unicode-bidi: isolate;
+}
+.bridgesps-wrap sup.bg-fn { font-size: 11px; line-height: 0; margin-left: 1px; }
+.bridgesps-wrap sup.bg-fn a { color: var(--bg-ink-dark); text-decoration: none; padding: 0 2px; }
+.bridgesps-wrap .bg-notes {
+  margin-top: 36px; padding-top: 14px; border-top: 1px solid var(--bg-rule);
+  font-size: 14.5px; line-height: 1.75; color: #4b4644;
+}
+.bridgesps-wrap .bg-notes p { margin: 0 0 10px; text-align: left; }
+.bridgesps-wrap .bg-notes .bg-back {
+  color: var(--bg-ink-dark); text-decoration: none; margin-right: 8px; font-size: 12.5px;
+}
+.bridgesps-wrap .bg-stamp { text-align: right; color: #a9a29f; font-size: 12px; margin-top: 30px;
+  font-family: Georgia, "Times New Roman", serif; }
+.bridgesps-wrap.bg-zh .bg-content,
+.bridgesps-wrap.bg-zh .bg-title { font-family: Georgia, "Songti SC", STSong, "Noto Serif SC", serif; }
+.bridgesps-wrap.bg-zh .bg-content p { text-align: justify; }
+.bridgesps-wrap .bg-orig { color: #9a918e; font-size: .88em; }
+@media (max-width: 767px) {
+  .bridgesps-wrap .bg-title { font-size: 24px; }
+  .bridgesps-wrap .bg-content { font-size: 16px; }
+}
+</style>

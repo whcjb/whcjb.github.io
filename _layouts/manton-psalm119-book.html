@@ -1,0 +1,102 @@
+---
+layout: default
+---
+{%- comment -%}
+  曼顿《诗篇 119 篇讲章》书卷首页。配色与章节页同源（曼顿桑葚紫 #4a2540 / #5b2f4a）。
+  目录：卷首两篇〈致读者〉+ 190 篇讲章（每格带讲章所讲的经文）；未补的篇灰显。
+{%- endcomment -%}
+
+<div class="container mantonps-wrap mantonps-book" style="padding-top: 70px;">
+  <div class="row">
+    <div class="col-lg-9 col-lg-offset-1 col-md-10 col-md-offset-1">
+
+      <div class="mp-booklang">
+        {% if page.zh %}{% if page.en_url %}<a href="{{ site.baseurl }}{{ page.en_url }}">English edition &rarr;</a>{% endif %}
+        {% else %}{% if page.zh_url %}<a href="{{ site.baseurl }}{{ page.zh_url }}">中文版 &rarr;</a>{% endif %}{% endif %}
+      </div>
+      <div class="mp-hero">
+        <h1>{{ page.book_name }}</h1>
+        <p class="mp-hero-author">{{ page.author }}</p>
+        <p class="mp-hero-meta">{{ page.edition }}</p>
+      </div>
+
+      {{ content }}
+
+    </div>
+  </div>
+</div>
+
+<style>
+.mantonps-book {
+  --mp-ink: #5b2f4a;
+  --mp-ink-dark: #4a2540;
+  --mp-rule: #e4d8e0;
+  --mp-paper: #fcf9fb;
+}
+.mantonps-book .mp-booklang { text-align: right; margin: 0 0 10px; font-size: 13px;
+  font-family: Georgia, "Times New Roman", serif; }
+.mantonps-book .mp-booklang a { color: var(--mp-ink-dark); border: 1px solid var(--mp-rule);
+  border-radius: 4px; padding: 4px 10px; text-decoration: none; }
+.mantonps-book .mp-booklang a:hover { background: var(--mp-ink); color: #fff; }
+/* 书首：不用大色块横幅（用户 2026-10-22），书名 + 作者 + 版本加细线 */
+.mantonps-book .mp-hero {
+  margin: 4px 0 22px; padding: 0 0 12px; border-bottom: 2px solid var(--mp-ink);
+  font-family: Georgia, "Times New Roman", "Songti SC", serif;
+}
+.mantonps-book .mp-hero h1 { font-family: Georgia, "Times New Roman", "Songti SC", STSong, serif; margin: 0 0 4px;
+  font-size: 26px; font-weight: normal; line-height: 1.3; color: var(--mp-ink-dark); }
+.mantonps-book .mp-hero-author { margin: 0; font-size: 14.5px; color: #3e3e44; }
+.mantonps-book .mp-hero-meta { margin: 2px 0 0; font-size: 13px; color: #85858f; font-style: italic; }
+
+.mantonps-book .mp-group {
+  font-family: Georgia, "Times New Roman", serif; margin: 30px 0 12px;
+  font-size: 15px; color: var(--mp-ink-dark); letter-spacing: .05em;
+  padding-bottom: 6px; border-bottom: 1px solid var(--mp-rule);
+}
+.mantonps-book .mp-group small { color: #9aa4ad; letter-spacing: 0; font-size: 12px; }
+
+.mantonps-book .mp-toc {
+  list-style: none; padding: 0; margin: 0;
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 8px;
+}
+.mantonps-book .mp-toc li { margin: 0; }
+.mantonps-book .mp-toc a {
+  display: block; padding: 10px 14px; border: 1px solid var(--mp-rule);
+  border-radius: 4px; background: var(--mp-paper); text-decoration: none;
+  font-family: Georgia, "Times New Roman", serif; font-size: 15px;
+  color: #2d3238; line-height: 1.45;
+}
+.mantonps-book .mp-toc a:hover {
+  border-color: var(--mp-ink); background: #fff; color: var(--mp-ink-dark);
+}
+.mantonps-book .mp-toc .mp-no {
+  color: var(--mp-ink); font-size: 12px; letter-spacing: .06em;
+  display: block; margin-bottom: 2px;
+}
+.mantonps-book .mp-toc .mp-ref { color: #98a2aa; font-size: 12.5px; }
+
+.mantonps-book .mp-note {
+  font-family: Georgia, "Times New Roman", serif; font-size: 13.5px;
+  color: #6f7982; line-height: 1.8; margin: 34px 0 0;
+  padding-top: 16px; border-top: 1px solid var(--mp-rule);
+}
+.mantonps-book .mp-toc.mp-wide { grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); }
+.mantonps-book .mp-note p { margin: 0 0 12px; }
+.mantonps-book .mp-note ul { margin: 0 0 12px; padding-left: 20px; }
+.mantonps-book .mp-ed { font-family: Georgia, "Times New Roman", serif; font-size: 13px; margin: 8px 0 0; color: #5d5856; }
+.mantonps-book .mp-ed summary { cursor: pointer; color: var(--mp-ink-dark); }
+.mantonps-book .mp-ed table { width: 100%; border-collapse: collapse; margin-top: 8px; }
+.mantonps-book .mp-ed th, .mantonps-book .mp-ed td { border-bottom: 1px solid var(--mp-rule); padding: 5px 6px; text-align: left; vertical-align: top; }
+.mantonps-book .mp-missing { display: block; padding: 10px 14px; border: 1px dashed var(--mp-rule); border-radius: 4px;
+  color: #b3a9b0; font-family: Georgia, serif; font-size: 14px; }
+.mantonps-book .mp-toc.mp-front { grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); margin-bottom: 10px; }
+.mantonps-book .mp-toc a.mp-other { color: #a09895; }
+.mantonps-book .mp-toc a.mp-other small { display: block; font-size: 11px; color: #b9b1ae; }
+.mantonps-book .mp-he { unicode-bidi: isolate; font-family: "SBL Hebrew", "Times New Roman", serif; }
+@media (max-width: 767px) {
+  .mantonps-book .mp-hero h1 { font-size: 22px; }
+  .mantonps-book .mp-toc { grid-template-columns: repeat(auto-fill, minmax(96px, 1fr)); }
+  .mantonps-book .mp-toc.mp-wide { grid-template-columns: 1fr; }
+}
+</style>

@@ -356,7 +356,7 @@ DUO_BOOKS = {}
 # 与 DUO_BOOKS 不同：那边卡片分色带、各带直接链到各家；这里整张卡片只链到选择页。
 # 诗篇：用户 2026-11-10 指定亚历山大与霍志恒合列，点进去再选；同日马太福音（原 DUO_BOOKS 三家色带）也改用此方案。
 # 2026-11-17 博纳尔上线，诗篇三家合列。
-PICK_BOOKS = {'psalms': ('alexander', 'vos', 'bonar'), 'matthew': ('spurgeon', 'dickson', 'alexander'),
+PICK_BOOKS = {'psalms': ('alexander', 'vos', 'bonar', 'owen', 'manton', 'bridges'), 'matthew': ('spurgeon', 'dickson', 'alexander'),
               'romans': ('hodge', 'haldane'),   # 2026-11-10 霍尔丹上线，罗马书两家合列
               'isaiah': ('alexander', 'anon')}  # 2026-11-13 用户令以赛亚书加一本佚名注释，两家合列
 # 合列卡片用书卷自己的独立色，不用任何一家的作者色（用户 2026-11-10：「专门为诗篇挑选」；同日「颜色不能太相近」）。
@@ -386,6 +386,8 @@ description: 「历代解经」{cn}条目：{names}，选择进入。
 
 # 单篇论文（没有逐章页面）：has_content 认不出来，在这里登记 {作者: {书卷: 入口}}。
 # 不进对比抽屉（compare_sources 只收有章节的目录）。
+# 单篇专书：目录名不是书卷名，归到某卷名下；只讲一两篇，不进逐章对比抽屉（2026-11-17 用户令收欧文、曼顿、布里奇斯论单篇诗篇）
+MONOGRAPHS = {('owen', 'psalm130'): 'psalms', ('manton', 'psalm119'): 'psalms', ('bridges', 'psalm119'): 'psalms'}
 ESSAY_ENTRIES = {'vos': {'psalms': '/vos/psalter/zh/'}}   # 入口一律指中文版（用户 2026-11-11）
 # 交界斜度：顶边比底边右移 2×DUO_SLANT 个百分点。原先 20 个百分点，三家时最左一带底边太窄放不下作者名，收到 8。
 DUO_SLANT = 4
@@ -412,6 +414,12 @@ def duo_geometry(n, colors):
 
 # 逐卷书名（同一注释家的不同分册书名不同时用）。取各卷扉页的实际书名。
 BOOK_TITLES = {
+    ('manton', 'psalms'):      ('诗篇 119 篇讲章',
+                                'One Hundred and Ninety Sermons on the Hundred and Nineteenth Psalm'),
+    ('bridges', 'psalms'):     ('诗篇 119 篇讲解',
+                                'An Exposition of Psalm CXIX'),
+    ('owen', 'psalms'):        ('诗篇 130 篇实践讲解',
+                                'A Practical Exposition upon Psalm CXXX'),
     ('bonar', 'psalms'):       ('诗篇中的基督与教会',
                                 'Christ and His Church in the Book of Psalms'),
     ('haldane', 'romans'):     ('罗马书释义',
@@ -605,6 +613,8 @@ def build_compare_sources() -> str:
             if not d.is_dir() or d.name.endswith('-index') or not has_content(d):
                 continue
             name = d.name
+            if (aid, name) in MONOGRAPHS:
+                continue
             core = name[:-3] if name.endswith('-en') else name
             if core.startswith('harmony'):
                 continue
@@ -797,9 +807,12 @@ def scan(author_id: str) -> dict:
     for d in sorted(base.iterdir()):
         if not d.is_dir() or SKIP.search(d.name) or not has_content(d):
             continue
+        mono = MONOGRAPHS.get((author_id, d.name))
         # 分卷：isaiah-1 / psalms-2 → 归到 isaiah / psalms，取序号最小的那册
         m = re.match(r'^(.+)-(\d+)$', d.name)
-        if m and not d.name.startswith('harmony'):
+        if mono:
+            book, vol = mono, 0
+        elif m and not d.name.startswith('harmony'):
             book, vol = m.group(1), int(m.group(2))
         else:
             book, vol = d.name, 0

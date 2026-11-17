@@ -56,4 +56,8 @@ facts:
 
 他生前出版的只有若干讲章，以及《雅各书注释》（版本有 1653、1657 年等）与《犹大书注释》；其余大量讲章与论著在他身后陆续刊行，后来汇为二十二卷本全集。《雅各书注释》常被认为是他最好的作品。莱尔（J. C. Ryle）评论他是「一个说话、行事、写作都不能不引人注意的人」。
 
+## 本站所收著作
+
+本站收《雅各书注释》（英文）。另收《诗篇 119 篇讲章》（*One Hundred and Ninety Sermons on the Hundred and Nineteenth Psalm*，1681 年他身后出版），一节一篇、共 190 篇；本站据 CCEL 所刊《曼顿全集》（Nichol 版）发布英文，第 159–190 篇待补。
+
 <p class="cb-src">资料来源：<a href="https://en.wikipedia.org/wiki/Thomas_Manton_(minister)">Wikipedia: Thomas Manton (minister)</a>；<a href="https://words.fromoldbooks.org/Chalmers-Biography/m/manton-thomas.html">Chalmers' Biographical Dictionary</a>；<a href="https://thisday.pcahistory.org/2014/10/october-18-2/">PCA Historical Center</a>。</p>

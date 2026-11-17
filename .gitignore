@@ -135,3 +135,9 @@ bonar_raw/psalms/src/
 bonar_raw/psalms/work/*sheets*/
 bonar_raw/psalms/work/fn_cont/
 bonar_raw/psalms/work/wlc_index.json
+
+# 论单篇诗篇的三部专书：src/ 是 CCEL ThML、Biblical eLearning 网页本、Digital Puritan 等下载件，可重新下载；行表是派生物
+owen_raw/psalm130/src/
+manton_raw/psalm119/src/
+bridges_raw/psalm119/src/
+bridges_raw/psalm119/work/

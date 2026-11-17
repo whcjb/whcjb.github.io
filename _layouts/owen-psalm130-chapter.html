@@ -1,0 +1,126 @@
+---
+layout: default
+---
+{%- comment -%}
+  欧文《诗篇 130 篇实践讲解》章节页。由 scripts/publish_owen_psalm130_en.py 生成正文。
+  ⚠️ 不复用别家 layout（欧文《希伯来书》是逐节注释，版式不同）；配色取欧文的作者色深绿 #14382f / #1f5a4b。
+  版式：每章开头的提要 `.op-arg`（Goold 版各章前的内容提要）；「规则一」等小节标题 `.op-sub`；诗篇经文 `.op-verse`；
+  小型大写 `.op-sc`；希伯来文 `.op-he`（dir=rtl）。目前只有英文版，没有接经文引用弹层（弹层只认中文书卷名）。
+{%- endcomment -%}
+
+<div class="container owenps-wrap{% if page.zh %} op-zh{% endif %}" style="padding-top: 70px;">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+
+      <div class="op-chrome">
+        <a href="{{ site.baseurl }}/owen/{{ page.book_id }}/{% if page.zh %}zh/{% endif %}">&larr; {{ page.book_name }}</a>
+        {% unless page.zh %}{% if page.zh_url %}<a class="op-lang" href="{{ site.baseurl }}{{ page.zh_url }}">中文版 &rarr;</a>{% endif %}{% endunless %}
+      </div>
+
+      <h1 class="op-title">{{ page.title }}{% if page.title_note %}<sup class="op-fn"><a href="#fn-{{ page.title_note }}" id="fnref-{{ page.title_note }}">{{ page.title_note }}</a></sup>{% endif %}</h1>
+      {% if page.subtitle %}<p class="op-subtitle">{{ page.subtitle }}</p>{% endif %}
+
+      <div class="op-nav">
+        {% if page.prev_url %}<a href="{{ site.baseurl }}{{ page.prev_url }}">&larr; {{ page.prev_label }}</a>
+        {% else %}<span></span>{% endif %}
+        {% if page.next_url %}<a href="{{ site.baseurl }}{{ page.next_url }}">{{ page.next_label }} &rarr;</a>
+        {% else %}<span></span>{% endif %}
+      </div>
+
+      <div class="op-content">
+        {{ content }}
+      </div>
+
+      {% if page.date %}
+      <div class="op-stamp">{% if page.zh %}译于{% else %}Published{% endif %} {{ page.date | date: "%Y-%m-%d %H:%M" }}</div>
+      {% endif %}
+
+      <div class="op-nav op-nav-foot">
+        {% if page.prev_url %}<a href="{{ site.baseurl }}{{ page.prev_url }}">&larr; {{ page.prev_label }}</a>
+        {% else %}<span></span>{% endif %}
+        {% if page.next_url %}<a href="{{ site.baseurl }}{{ page.next_url }}">{{ page.next_label }} &rarr;</a>
+        {% else %}<span></span>{% endif %}
+      </div>
+
+    </div>
+  </div>
+</div>
+
+{% if page.zh %}
+<link href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-webfont@1.7.0/style.css" rel="stylesheet">
+{% include scripture-popup.html container_selector=".op-content" accent="#1f5a4b" vnum="#14382f" slide="down" %}
+{% endif %}
+
+<style>
+.owenps-wrap {
+  --op-ink: #1f5a4b;
+  --op-ink-dark: #14382f;
+  --op-rule: #d3e0dc;
+  --op-paper: #f9fbfa;
+  --op-body: #33302f;
+}
+.owenps-wrap .op-chrome,
+.owenps-wrap .op-nav {
+  font-size: 13px; display: flex; justify-content: space-between;
+  align-items: center; font-family: Georgia, "Times New Roman", serif;
+}
+.owenps-wrap .op-chrome { margin: 18px 0 22px; }
+.owenps-wrap .op-chrome a,
+.owenps-wrap .op-nav a { color: var(--op-ink-dark); text-decoration: none; }
+.owenps-wrap .op-chrome a:hover,
+.owenps-wrap .op-nav a:hover { color: var(--op-ink); text-decoration: underline; }
+.owenps-wrap .op-lang { border: 1px solid var(--op-rule); border-radius: 4px; padding: 4px 10px; }
+.owenps-wrap .op-title {
+  font-family: Georgia, "Times New Roman", serif; font-size: 30px;
+  font-weight: normal; color: var(--op-ink-dark); text-align: center;
+  margin: 10px 0 4px; line-height: 1.3;
+}
+.owenps-wrap .op-subtitle {
+  text-align: center; font-size: 14px; color: #8f8885; margin: 0 0 6px;
+  font-family: Georgia, "Times New Roman", serif; font-style: italic;
+}
+.owenps-wrap .op-nav { margin: 14px 0 26px; }
+.owenps-wrap .op-nav-foot { margin-top: 44px; padding-top: 16px; border-top: 1px solid var(--op-rule); }
+
+.owenps-wrap .op-content {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 17px; line-height: 1.85; color: var(--op-body);
+}
+.owenps-wrap .op-content p { margin: 0 0 16px; text-align: justify; }
+.owenps-wrap .op-arg { font-style: italic; color: #5d6a66; font-size: .93em; border-left: 3px solid var(--op-rule);
+  padding-left: 12px; margin-bottom: 22px; }
+.owenps-wrap .op-sub { font-family: Georgia, "Times New Roman", serif; font-size: 19px; color: var(--op-ink-dark);
+  margin: 30px 0 12px; font-weight: normal; }
+.owenps-wrap .op-verse { margin-left: 24px; text-align: left; font-style: italic; }
+.owenps-wrap .op-center { text-align: center !important; }
+.owenps-wrap .op-right { text-align: right !important; }
+.owenps-wrap .op-sc { font-variant: small-caps; }
+.owenps-wrap .op-vr {
+  color: var(--op-ink-dark); font-size: 13px; letter-spacing: .04em;
+  margin-right: 8px; white-space: nowrap;
+}
+.owenps-wrap .op-he {
+  font-family: "SBL Hebrew", "Ezra SIL", "Times New Roman", serif;
+  font-size: 1.12em; unicode-bidi: isolate;
+}
+.owenps-wrap sup.op-fn { font-size: 11px; line-height: 0; margin-left: 1px; }
+.owenps-wrap sup.op-fn a { color: var(--op-ink-dark); text-decoration: none; padding: 0 2px; }
+.owenps-wrap .op-notes {
+  margin-top: 36px; padding-top: 14px; border-top: 1px solid var(--op-rule);
+  font-size: 14.5px; line-height: 1.75; color: #4b4644;
+}
+.owenps-wrap .op-notes p { margin: 0 0 10px; text-align: left; }
+.owenps-wrap .op-notes .op-back {
+  color: var(--op-ink-dark); text-decoration: none; margin-right: 8px; font-size: 12.5px;
+}
+.owenps-wrap .op-stamp { text-align: right; color: #a9a29f; font-size: 12px; margin-top: 30px;
+  font-family: Georgia, "Times New Roman", serif; }
+.owenps-wrap.op-zh .op-content,
+.owenps-wrap.op-zh .op-title { font-family: Georgia, "Songti SC", STSong, "Noto Serif SC", serif; }
+.owenps-wrap.op-zh .op-content p { text-align: justify; }
+.owenps-wrap .op-orig { color: #9a918e; font-size: .88em; }
+@media (max-width: 767px) {
+  .owenps-wrap .op-title { font-size: 24px; }
+  .owenps-wrap .op-content { font-size: 16px; }
+}
+</style>

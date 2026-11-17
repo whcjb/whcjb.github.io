@@ -62,4 +62,6 @@ facts:
 
 《希伯来书注释》（*An Exposition of the Epistle to the Hebrews*）自 1668 年起陆续出版，是他晚年倾注心血的巨著，常被视为他最伟大的作品。正文之前有大量绪论（Exercitations），讨论希伯来书的作者、正典地位、旧约祭司制度与基督的大祭司职分；逐节讲解时兼顾希腊原文、旧约背景、教义与应用。本站以中英双语逐章发布。
 
+另收《诗篇 130 篇实践讲解》（*A Practical Exposition upon Psalm CXXX*，1668 年初版），约二百页专讲罪得赦免与得救的确据。本站据 CCEL 所刊 Goold 编《欧文全集》第 6 卷发布英文全文。
+
 <p class="cb-src">资料来源：<a href="https://en.wikipedia.org/wiki/John_Owen_(theologian)">Wikipedia: John Owen (theologian)</a>；<a href="https://wehd.com/litcrit/John_Owen-1616.html">John Owen 1616</a>；<a href="https://www.christianstudylibrary.org/node/37144">Christian Study Library</a>。</p>

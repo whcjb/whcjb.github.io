@@ -1,0 +1,99 @@
+---
+layout: default
+---
+{%- comment -%}
+  欧文《诗篇 130 篇实践讲解》书卷首页。配色与章节页同源（欧文深绿 #14382f / #1f5a4b）。
+  目录按欧文的经节分组（卷首 / 诗篇本文 / 第 1–2 节 … 第 7–8 节），每组下列各章。
+{%- endcomment -%}
+
+<div class="container owenps-wrap owenps-book" style="padding-top: 70px;">
+  <div class="row">
+    <div class="col-lg-9 col-lg-offset-1 col-md-10 col-md-offset-1">
+
+      <div class="op-booklang">
+        {% if page.zh %}{% if page.en_url %}<a href="{{ site.baseurl }}{{ page.en_url }}">English edition &rarr;</a>{% endif %}
+        {% else %}{% if page.zh_url %}<a href="{{ site.baseurl }}{{ page.zh_url }}">中文版 &rarr;</a>{% endif %}{% endif %}
+      </div>
+      <div class="op-hero">
+        <h1>{{ page.book_name }}</h1>
+        <p class="op-hero-author">{{ page.author }}</p>
+        <p class="op-hero-meta">{{ page.edition }}</p>
+      </div>
+
+      {{ content }}
+
+    </div>
+  </div>
+</div>
+
+<style>
+.owenps-book {
+  --op-ink: #1f5a4b;
+  --op-ink-dark: #14382f;
+  --op-rule: #d3e0dc;
+  --op-paper: #f9fbfa;
+}
+.owenps-book .op-booklang { text-align: right; margin: 0 0 10px; font-size: 13px;
+  font-family: Georgia, "Times New Roman", serif; }
+.owenps-book .op-booklang a { color: var(--op-ink-dark); border: 1px solid var(--op-rule);
+  border-radius: 4px; padding: 4px 10px; text-decoration: none; }
+.owenps-book .op-booklang a:hover { background: var(--op-ink); color: #fff; }
+/* 书首：不用大色块横幅（用户 2026-10-22），书名 + 作者 + 版本加细线 */
+.owenps-book .op-hero {
+  margin: 4px 0 22px; padding: 0 0 12px; border-bottom: 2px solid var(--op-ink);
+  font-family: Georgia, "Times New Roman", "Songti SC", serif;
+}
+.owenps-book .op-hero h1 { font-family: Georgia, "Times New Roman", "Songti SC", STSong, serif; margin: 0 0 4px;
+  font-size: 26px; font-weight: normal; line-height: 1.3; color: var(--op-ink-dark); }
+.owenps-book .op-hero-author { margin: 0; font-size: 14.5px; color: #3e3e44; }
+.owenps-book .op-hero-meta { margin: 2px 0 0; font-size: 13px; color: #85858f; font-style: italic; }
+
+.owenps-book .op-group {
+  font-family: Georgia, "Times New Roman", serif; margin: 30px 0 12px;
+  font-size: 15px; color: var(--op-ink-dark); letter-spacing: .05em;
+  padding-bottom: 6px; border-bottom: 1px solid var(--op-rule);
+}
+.owenps-book .op-group small { color: #9aa4ad; letter-spacing: 0; font-size: 12px; }
+
+.owenps-book .op-toc {
+  list-style: none; padding: 0; margin: 0;
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 8px;
+}
+.owenps-book .op-toc li { margin: 0; }
+.owenps-book .op-toc a {
+  display: block; padding: 10px 14px; border: 1px solid var(--op-rule);
+  border-radius: 4px; background: var(--op-paper); text-decoration: none;
+  font-family: Georgia, "Times New Roman", serif; font-size: 15px;
+  color: #2d3238; line-height: 1.45;
+}
+.owenps-book .op-toc a:hover {
+  border-color: var(--op-ink); background: #fff; color: var(--op-ink-dark);
+}
+.owenps-book .op-toc .op-no {
+  color: var(--op-ink); font-size: 12px; letter-spacing: .06em;
+  display: block; margin-bottom: 2px;
+}
+.owenps-book .op-toc .op-ref { color: #98a2aa; font-size: 12.5px; }
+
+.owenps-book .op-note {
+  font-family: Georgia, "Times New Roman", serif; font-size: 13.5px;
+  color: #6f7982; line-height: 1.8; margin: 34px 0 0;
+  padding-top: 16px; border-top: 1px solid var(--op-rule);
+}
+.owenps-book .op-toc.op-wide { grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); }
+.owenps-book .op-note p { margin: 0 0 12px; }
+.owenps-book .op-note ul { margin: 0 0 12px; padding-left: 20px; }
+.owenps-book .op-ed { font-family: Georgia, "Times New Roman", serif; font-size: 13px; margin: 8px 0 0; color: #5d5856; }
+.owenps-book .op-ed summary { cursor: pointer; color: var(--op-ink-dark); }
+.owenps-book .op-ed table { width: 100%; border-collapse: collapse; margin-top: 8px; }
+.owenps-book .op-ed th, .owenps-book .op-ed td { border-bottom: 1px solid var(--op-rule); padding: 5px 6px; text-align: left; vertical-align: top; }
+.owenps-book .op-toc a.op-other { color: #a09895; }
+.owenps-book .op-toc a.op-other small { display: block; font-size: 11px; color: #b9b1ae; }
+.owenps-book .op-he { unicode-bidi: isolate; font-family: "SBL Hebrew", "Times New Roman", serif; }
+@media (max-width: 767px) {
+  .owenps-book .op-hero h1 { font-size: 22px; }
+  .owenps-book .op-toc { grid-template-columns: repeat(auto-fill, minmax(96px, 1fr)); }
+  .owenps-book .op-toc.op-wide { grid-template-columns: 1fr; }
+}
+</style>

@@ -50,4 +50,6 @@ facts:
 
 《箴言书注释》（*An Exposition of the Book of Proverbs*）逐节讲解箴言，重在把智慧书的教训落实到信徒的日常生活。本站所收简体中文版为改革宗翻译社（RTF-USA）译本，并对照英文原书校订。
 
+另收《诗篇 119 篇讲解》（*An Exposition of Psalm CXIX*，1827 年初版），逐节讲解诗篇 119 篇。本站据 Gordon College 录入的 1876 年纽约版发布英文全文。
+
 <p class="cb-src">资料来源：<a href="https://en.wikipedia.org/wiki/Charles_Bridges_(theologian)">Wikipedia: Charles Bridges (theologian)</a>；<a href="https://banneroftruth.org/uk/about/banner-authors/charles-bridges/">Banner of Truth</a>；<a href="https://heraldofgrace.org/charles-bridges/">Herald of Grace</a>。《箴言书注释》初版年份两说并存（维基百科作 1840 年，Banner of Truth 作 1846 年）。</p>
