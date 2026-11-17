@@ -230,3 +230,9 @@ Tarn→Turn、than→thou、eh.→ch.、duodccim、uniruglichen 等 7）。全�
 本章 46 处（外文 18：הור/נשק/Vixftj./adqs/w MS/wees/בה עכז/na os/trig/taw;/שנינים:/vs/th/asa → הוי/נשף/שאול/ᾅδης/ירד בה/נפשה/עלז בה/גרים כבשים/פרח/ינום/שנונים/עליו/ינהם/נבט 等；
 Woo→Woe、Holle/Hohle、Begluckung、Nee/clemere/donee、tenebres/lumiere、引号与斜体错位等 28）。
 全书同类：开引号后多空格与 *'* 残形 5 处；22 章 על for before→על for אל before、墨点误读引号（看图）。
+
+### 第 19 轮：第 43 章（卷二 70–86）
+
+本章 31 处（外文 15：לידאתה→לי־אתה、补 יצרך、"→כי、watt→הביאי、*,*→אל、fcjo→נאם、"f x→אין、dittos→כשדים、lass)?→ישכבו、sa→יגע、rib→שה 等；
+shall→shalt、thysclj、colled、thai、lobe→to be、becked→be cited、math→made、Fiom、IJehovah 等 16）。
+全书同类：thou shall→thou shalt 6 处（看图皆 shalt）。
