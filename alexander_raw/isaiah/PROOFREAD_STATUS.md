@@ -267,3 +267,10 @@ Hook→I look、gradient→gradiens、had→lead、Itst→lest、multitude→mul
 - 全书同类 19 处：开引号后多空格 7、斜体章号 *32:* 等 3（含 ch60 Ps.132:*1*→7 看图）、ch5「an to Job」→and、ch45 「"」→לי、ch14「"」→לא־עץ（均看图）、斜体句内问号断开合并 6。
 - 待看图未改：ch50「*what is*? " by itself」引号位置。
 > 收敛判据（old-book-ocr §4.5）：连续 5 章每页 < 1 处。当前连续达标数：0。
+
+## 第 23 轮（2026-11-17）：第 7 章（卷一书页 100–135，36 页）
+- 章内 59 处（含 Jive 4 处与 ש' י' וחמש），约 1.6 处/页：希伯来/希腊乱码（רכל;/nan)?/rung/theftfl/cortex/13 a a…）、OCR 错字（apoleon Nalways、lo/le、Aiting、mail→man、xn→xii）、引号残片与斜体错位。
+- 照录原书：p.109「2 Kings 27 : 24」、p.112「B. 41 : 5」、p.134「as in v. 24」、p.108「2 Kings, 15 : 29」逗号。
+- 待看图未改：p.112「Deut. 6:__6」（当是 6: 16，页面下划线遮字）；p.130 J. D. Michaelis 所读「drunken」之 שכירה 应作 שכורה 类；p.110「read שנה (for שנה)」两词点符不同、无点本同形。
+- 全书同类 3 处：Jive→five（ch17、ch19）、ch53 nx→את。待看图：ch17/ch30「nan」、ch60「j-in-b?」。
+> 收敛判据（old-book-ocr §4.5）：连续 5 章每页 < 1 处。当前连续达标数：0。
