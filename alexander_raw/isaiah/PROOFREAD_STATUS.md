@@ -179,3 +179,9 @@
 
 本章 34 处（外文 25：Vs→על、b→ל、s→ב、w→ימי、.JLjo→مسلم、fra/"prim/ax→מה/שחין/אט、Gig→σίς 等；Jigs→figs、Aha z、hint→him 等）。
 全书同类 15 处逐条看图：Vs→כל 3、b→ל 8、s→ב/צל/על 3、w→עבד/יתר 2（含 65 章 lam→I am）。
+
+### 第 12 轮：第 65 章（卷二 443–469）
+
+本章 44 处（外文 19：rncrvi→והמיתך、iitfx/ittsxs→אשר/כאשר、h?/'aa→מני、cvja→בטרם、un;→נחש、cd→שם、r.→ימות 等；
+arid→and、lie→he、he→be、111→Ill、Menij、Ldmmlein、cjcaudiam、ᾧ ῶ→ἐρῶ 等 25）。
+全书同类：arid→and 10（保留 42 章 arid desert）、50 章 lie→he、58 章 111→רוד、52 章 'arc→שבי（看图）。
