@@ -219,3 +219,8 @@ quern/nee→quem/nec、Angusti、Ischylus→Æschylus、[accomplishment 等 14�
 
 本章 21 处（外文 13：אלהיהם→מאלהים、补 46: 17、125-133→בני־נכר、""9?/ito→ימר/מור、"inx→אמר、ירפו→ירנו、o→ם、ὡς ὡς 叠印、מצמיח צמחה)→צמחה, תצמיח 等；
 nothgedrungeii、hie、Putzfur、If hath 等 8）。全书同类：拉丁 hie→hic 5（皆拉丁语境）。
+
+### 第 17 轮：第 45 章（卷二 109–125）
+
+本章 26 处（外文 19：7/sn/y../ajhn/intosfi/ntesprna/bx/in:/"o"'is/fijx/njra/lax/*/ax/רבעוף → צדקה/יפרו/ישע/חרשי/תעשה/מה־תעשה/עדת ישראל/הוא/צדקה דבר/ביהוה/אמר/לי/יבשו 等；
+Tarn→Turn、than→thou、eh.→ch.、duodccim、uniruglichen 等 7）。全书同类普查（eh./maybe/Tarn/than）0。
