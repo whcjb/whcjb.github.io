@@ -216,6 +216,12 @@ AUTHORS = OrderedDict([
                      years='1764–1842', dir='haldane',
                      work_cn='罗马书释义',
                      work_en='Exposition of the Epistle to the Romans')),
+    # 博纳尔：Andrew Alexander Bonar，苏格兰自由教会牧师，生卒 1810–1892（英文维基）。
+    # 底本 Monergism 录入本 + 1859 伦敦初版补脚注，见 bonar_raw/psalms/index_note.md。
+    ('bonar', dict(name='安德鲁·博纳尔', short='博纳尔', en='Andrew A. Bonar',
+                   years='1810–1892', dir='bonar',
+                   work_cn='诗篇中的基督与教会',
+                   work_en='Christ and His Church in the Book of Psalms')),
     ('vos', dict(name='霍志恒', short='霍志恒', en='Geerhardus Vos',
                  years='1862–1949', dir='vos',
                  work_cn='诗篇的末世论',
@@ -326,6 +332,9 @@ AUTHOR_COLORS = {
     'haldane': ('#774e76', '#9b6899'),
     # 佚名钢蓝：LCh (48→60, 25→30, 260°)，卡片明度彩度区间内与全部既有色最小 ΔE 16.1；只在以赛亚选择页上与亚历山大石榴石并排。
     'anon': ('#4a769b', '#5e96c4'),
+    # 博纳尔砖红：LCh (48→60, 35→40, 30°)，两端与既有各色及加尔文酒红、马太亨利金、站点 Hux 蓝
+    # 最小 ΔE 16.6（CIE76）；色板已挤，与霍尔丹 15.3、霍志恒 17.2 同档。只在诗篇选择页出现。
+    'bonar': ('#a95c56', '#d2776f'),
 }
 
 # 书卷卡片的入口注释家：历代解经版面每卷只显示 links 的第一条（commentaries/index.html
@@ -346,7 +355,8 @@ DUO_BOOKS = {}
 # 一张卡片写几家名字、点进去是选择页（/commentaries/<书>/，每家一张卡片、各用各的主题色）。
 # 与 DUO_BOOKS 不同：那边卡片分色带、各带直接链到各家；这里整张卡片只链到选择页。
 # 诗篇：用户 2026-11-10 指定亚历山大与霍志恒合列，点进去再选；同日马太福音（原 DUO_BOOKS 三家色带）也改用此方案。
-PICK_BOOKS = {'psalms': ('alexander', 'vos'), 'matthew': ('spurgeon', 'dickson', 'alexander'),
+# 2026-11-17 博纳尔上线，诗篇三家合列。
+PICK_BOOKS = {'psalms': ('alexander', 'vos', 'bonar'), 'matthew': ('spurgeon', 'dickson', 'alexander'),
               'romans': ('hodge', 'haldane'),   # 2026-11-10 霍尔丹上线，罗马书两家合列
               'isaiah': ('alexander', 'anon')}  # 2026-11-13 用户令以赛亚书加一本佚名注释，两家合列
 # 合列卡片用书卷自己的独立色，不用任何一家的作者色（用户 2026-11-10：「专门为诗篇挑选」；同日「颜色不能太相近」）。
@@ -402,6 +412,8 @@ def duo_geometry(n, colors):
 
 # 逐卷书名（同一注释家的不同分册书名不同时用）。取各卷扉页的实际书名。
 BOOK_TITLES = {
+    ('bonar', 'psalms'):       ('诗篇中的基督与教会',
+                                'Christ and His Church in the Book of Psalms'),
     ('haldane', 'romans'):     ('罗马书释义',
                                 'Exposition of the Epistle to the Romans'),
     ('hodge', 'romans'):       ('罗马书注释',
@@ -501,6 +513,7 @@ COMPARE_ACCENT = {
     'candlish': '#b07080', 'fairbairn': '#bc65ac', 'taylor': '#6f77e0',
     'hall': '#769019', 'barlow': '#2b9b8a', 'attersoll': '#8e8cbd', 'dickson': '#8b2499',
     'petter': '#38a622', 'foote': '#d14457', 'jones': '#9c9066', 'haldane': '#9b6899',
+    'bonar': '#d2776f',
 }
 COMPARE_LABEL = {
     'calvin': '加尔文注释', 'mhenry': '马太亨利注释', 'owen': '约翰欧文注释',
@@ -512,6 +525,7 @@ COMPARE_LABEL = {
     'candlish': '坎德利什讲解', 'fairbairn': '费尔贝恩注释', 'taylor': '泰勒注释',
     'hall': '霍尔注释', 'barlow': '巴洛讲解', 'attersoll': '阿特索尔注释', 'dickson': '迪克森简释',
     'petter': '佩特注释', 'foote': '福特讲义', 'jones': '琼斯简释', 'haldane': '霍尔丹释义',
+    'bonar': '博纳尔讲论',
 }
 
 
@@ -534,7 +548,7 @@ PRIMARY_LANG = {'calvin': 'zh', 'mhenry': 'zh', 'bridges': 'zh', 'haldane': 'en'
                 'adams': 'en', 'rollock': 'en', 'jenkyn': 'en',
                 'candlish': 'en', 'fairbairn': 'en', 'taylor': 'en',
                 'hall': 'en', 'barlow': 'en', 'attersoll': 'en', 'dickson': 'en', 'petter': 'en',
-                'foote': 'en', 'jones': 'en'}
+                'foote': 'en', 'jones': 'en', 'bonar': 'en'}
 
 
 def _lang_variants(aid, d: Path, name: str):

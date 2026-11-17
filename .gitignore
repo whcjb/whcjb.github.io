@@ -128,3 +128,10 @@ haldane_raw/romans/src/
 calvin_sermons_raw/1samuel/src/
 calvin_sermons_raw/1samuel/lexicon/
 foote_raw/luke/.publish.lock
+
+# 博纳尔《诗篇》：src/ 是 Monergism PDF、IA 1859 扫描页与 hOCR、WLC，均可重下载；work/ 下对照图与 WLC 索引是派生物。
+# 重建脚注所需的 work/hocr_lines.json 等小文件照常入库。
+bonar_raw/psalms/src/
+bonar_raw/psalms/work/*sheets*/
+bonar_raw/psalms/work/fn_cont/
+bonar_raw/psalms/work/wlc_index.json
