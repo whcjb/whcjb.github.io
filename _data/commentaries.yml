@@ -398,13 +398,14 @@ books:
     testament: ot
     chapters: 150
     pick: true
-    pick_n: 3
+    pick_n: 4
     pick_c0: "#2c2864"
     pick_c1: "#4a4382"
     links:
       - {author: alexander, path: "/alexander/psalms/zh/", url_tpl: "/alexander/psalms/zh/__CH__/", title_cn: "诗篇注释", title_en: "The Psalms Translated and Explained", c0: "#5f2323", c1: "#7d2f2f"}
       - {author: vos, path: "/vos/psalter/zh/", url_tpl: "/vos/psalter/zh/__CH__/", title_cn: "诗篇的末世论", title_en: "Eschatology of the Psalter", c0: "#7b46a3", c1: "#9e61ca"}
       - {author: bonar, path: "/bonar/psalms/zh/", url_tpl: "/bonar/psalms/zh/__CH__/", title_cn: "诗篇中的基督与教会", title_en: "Christ and His Church in the Book of Psalms", c0: "#a95c56", c1: "#d2776f"}
+      - {author: owen, path: "/owen/psalm130/", url_tpl: "/owen/psalm130/__CH__/", title_cn: "诗篇 130 篇实践讲解", title_en: "A Practical Exposition upon Psalm CXXX", c0: "#14382f", c1: "#1f5a4b"}
   - id: proverbs
     name: "箴言"
     en: "Proverbs"
