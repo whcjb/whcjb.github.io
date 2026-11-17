@@ -100,8 +100,30 @@ def ccel_pages():
 
 
 def epub_sermons():
-    """第 159–190 篇：Monergism ePub（放进 src/ 后实现）。"""
-    return {}
+    """第 159–190 篇：Monergism ePub（src/mon/x/text/chapter-*.xhtml，用户 2026-11-17 从 Monergism 下载）。
+
+    底本同为 Nichol 版全集，但 Monergism 重排时去掉了斜体，经文出处改成现代写法（Acts 14:17）；
+    标记只有 h1（SERMON N）、p.quote（篇首经文）、p.division（分论标题，CCEL 本里是普通段）、p。"""
+    out = {}
+    for f in sorted((SRC / 'mon' / 'x' / 'text').glob('chapter-*.xhtml')):
+        s = f.read_text(encoding='utf-8')
+        m = re.search(r'<h1[^>]*>SERMON ([IVXLC]+)</h1>', s)
+        if not m or roman(m.group(1)) < 159:
+            continue
+        n = roman(m.group(1))
+        paras, sub = [], ''
+        for pm in re.finditer(r'<p( class="([^"]*)")?>(.*?)</p>', s[m.end():], re.S):
+            t = re.sub(r'\s+', ' ', pm.group(3)).strip()
+            if not t:
+                continue
+            if pm.group(2) == 'quote':
+                sub = html.unescape(re.sub(r'<[^>]+>', '', re.sub(r'—\s*VER(SE)?S?\.?.*$', '', t, flags=re.I))).strip()
+                q = re.sub(r'(—\s*VER)', r'</em>\1', t, count=1, flags=re.I) if re.search(r'—\s*VER', t, re.I) else t + '</em>'
+                paras.append(f'<p class="mp-center"><em>{q}</p>')
+            else:
+                paras.append(f'<p>{t}</p>')
+        out[n] = dict(slug=str(n), title=f'Sermon {m.group(1)}', sub=sub, vol=9, src='mon', html='\n\n'.join(paras))
+    return out
 
 
 def main():
@@ -131,7 +153,12 @@ def main():
                          f'{html.escape(sermons[n]["sub"])}</a></li>')
         else:
             cells.append(f'  <li><span class="mp-missing"><span class="mp-no">Sermon {n}</span>to be added</span></li>')
-    gap = (f'<p>Sermons {missing[0]}–{missing[-1]} (vol. 9 of the Works) are not in the CCEL edition and will be added '
+    mon = sorted(n for n in sermons if sermons[n].get('src') == 'mon')
+    monote = (f'<p>Sermons {mon[0]}–{mon[-1]} (vol. 9 of the Works, not in the CCEL edition) follow the Monergism Books e-text '
+              f'of the same Nichol edition; that e-text has no italics and gives Scripture references in modern form.</p>\n'
+              f'<p class="mp-note-zh">第 {mon[0]}–{mon[-1]} 篇（全集第 9 卷，CCEL 未收）据 Monergism 电子书，所据同为 Nichol 版；'
+              f'该本没有斜体，经文出处改作现代写法。</p>') if mon else ''
+    gap = monote + (f'<p>Sermons {missing[0]}–{missing[-1]} (vol. 9 of the Works) are not in the CCEL edition and will be added '
            f'from another transcription.</p>\n<p class="mp-note-zh">第 {missing[0]}–{missing[-1]} 篇在全集第 9 卷，CCEL 没有收，另据录入本补上。</p>'
            if missing else '')
     (OUT / 'index.html').write_text(f'''---
