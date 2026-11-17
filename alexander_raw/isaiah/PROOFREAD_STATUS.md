@@ -113,3 +113,8 @@
 本章 55 处（外文 30：i→ו、tnax→אנחם、rnrrin→תשורה、ftbinri→החוסה、Tistfx/yisaix→אשכון、Ort→שובב 等；
 英文 ivories→works、dear→clear、hibemis→hibernis、hie→hic、De. Wette 等）。
 全书同类：希伯来 ו/ל/ב/חצי 读成 i/1/b/a/n 的 9 处逐条看图。
+
+### 第 4 轮：第 24 章（卷一 417–428）
+
+本章 32 处（外文 18：a→כ、ps→ארץ、rs/r→יכת、nan→חמה、Koppe ממרום、ארפה→אדמה 等；句号丢失、Jarch→Jarchi 等）。
+全书同类：经文斜体在 ; — 等处被切成两段 157 处合回（`scripts/isaiah_sweep_italic_join.py`，8 处抽样看图）。
