@@ -197,3 +197,20 @@ quern/nee→quem/nec、Angusti、Ischylus→Æschylus、[accomplishment 等 14�
 本章 28 处（外文 22：תבין→תנין、c→ים、tt/fi?→לה、w/is?→ענה/ענו、nan→חומה、isa→מעוז、siatfja→מלאו、n→תבל、IITI→הרגיו、
 -,3→לכן、naan→חמנים、w→עיר、inx→לאחד אחד、זרת כרם→כרם זית 等；takehold、斜体位置等 6）。全书同类普查（动词+副词粘连）0。
 注：467 页印面作 *unseyen Geschmack*（原书误植），先前 manual_fixes 已改 unseren，暂不回退。
+
+### 第 15 轮：第 16 章（卷一 311–324）
+
+本章 33 处（外文 21：is/rnsa/mi/bllto/rib/nittriax/s/56/&6/Town/naa/im/ביאז/"part/23 → כר/בנות/נדחי/משל/כלה/אשישות/בלעי/לא/השבתי/במה/דבר/מאז/המון/כביר 等；
+德文 betriibt/Getiimmel/Larm/sick muhet/uberstrome、Knobej、What 等 12）。
+全书同类：德文 ü 读成 ii / 变音丢失 10 处（tröstet、beglückenden、Rücken、Glückstadt、Flügels、zurückschrecken、Felsklüfte、Bergklüfte），
+外文读成 ii 乱码 3（Siissjia→מעשה、nxryiin→תשתאה、Spa→כנף，看图）、Vitiinga→Vitringa。
+
+### 第三个五轮小结
+
+| 轮 | 章 | 本章 | 全书同类 |
+|---|---|---|---|
+| 11 | 38 | 34 | 15 |
+| 12 | 65 | 44 | 13 |
+| 13 | 6 | 21 | 10 |
+| 14 | 27 | 28 | 0 |
+| 15 | 16 | 33 | 14 |
