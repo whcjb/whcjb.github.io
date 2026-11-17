@@ -6,6 +6,8 @@ title: "上行之诗"
 date: 2026-11-17 18:31
 prev_url: "/bonar/psalms/zh/119/"
 prev_label: "第 119 篇"
+next_url: "/bonar/psalms/zh/120/"
+next_label: "第 120 篇"
 en_url: "/bonar/psalms/degrees/"
 zh: true
 ---
