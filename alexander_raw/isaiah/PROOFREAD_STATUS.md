@@ -341,3 +341,6 @@ Hook→I look、gradient→gradiens、had→lead、Itst→lest、multitude→mul
   回测：拿第 22–35 轮实读改掉的 212 处外文错（会话前快照 3b6e796568）检验，宽口径捞回 143（67%）；漏的主要是恰好是英文真词又不在提示词后的（fit / into / Pan / map / is）和德文缺变音（不在本检测器范围）。
 - `scripts/isaiah_garble_verify.py`：候选在 IA ABBYY XML 同页按前后词定位 → 600dpi 裁词 → tesseract eng/heb/grc 对读；英文模型原样读出原词（置信≥50）的判 latin 排除，其余 HEB/GRC/unclear 出图。
 - `scripts/isaiah_garble_sheets.py`：待看图条目 24 条一张拼图，看图后按编号落盘。
+- 2026-11-17 首批落盘：全书 8,893 候选 → 三引擎复核 728 条待看（latin 8,097 排除）→ 去人名缩写 663 条、23 张拼图逐张看 → 读定 183 处（希伯来为主，另阿拉伯 عل、希腊 ὀνοκένταυροι/Ἄγαλλα、德拉丁 brüstet/ängstliche/rührt/civitates/meminero/circumfodit 等），涉及 29 章，按位置替换、记入 foreign_image.tsv。其余条目看图为拉丁/英文原文无误，或裁图错位。
+- 首批替换后发现 22 处外文两侧残留 OCR 吃进的 `?` `"` `:`（יד? / "חסד），已就地清掉，并修进 isaiah_garble_apply.py。
+- 留待逐页细看（拼图里判不定或需整句改写）：ch1–34 约 30 处，如 ch3「ordinaryrank」「Kimchi makes r agree with y」、ch10 阿拉伯文、ch13 叙利亚文、ch14 Rashi 引文 [Heb.]、ch15「W"」、ch25「ia in the margin」。

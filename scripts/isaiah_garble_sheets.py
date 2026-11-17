@@ -15,7 +15,10 @@ from PIL import Image, ImageDraw, ImageFont
 out = Path(sys.argv[1])
 per = int(sys.argv[2]) if len(sys.argv) > 2 else 24
 rows = [l.rstrip('\n').split('\t') for l in open(out / 'verified.tsv', encoding='utf-8')][1:]
-rows = [r for r in rows if r[0] in ('HEB', 'GRC', 'unclear')]
+import re
+# 人名缩写（Hn. / Ew.) / Cocc. / Vitr.）三引擎都读不稳，但不是活字残渣，不上图
+ABBREV = re.compile(r'^[(*]*[A-Z][a-z]{0,5}\.[)*,.;:]*$')
+rows = [r for r in rows if r[0] in ('HEB', 'GRC', 'unclear') and not ABBREV.match(r[3])]
 (out / 'sheets').mkdir(exist_ok=True)
 try:
     font = ImageFont.truetype('/System/Library/Fonts/Supplemental/Arial Unicode.ttf', 22)
