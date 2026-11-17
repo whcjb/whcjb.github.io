@@ -107,3 +107,9 @@
 本章 58 处（外文 37：b/a→ל/ב/כ、bab→נבל、ITS→מדי、nrsiatti→שמועה 等；拉丁 quern/audituml/lade→quem/auditum?/lacte）。
 全书同类：希伯来词后黏着的 OCR 问号/冒号 61 处（句末真冒号逐条看图保留 4、修 2：טכמי→שכמו、משליםמשלים 叠印）；
 希伯来单字母读成 a/b 12 处逐条看图（ל/ב/כ/ם）。
+
+### 第 3 轮：第 57 章（卷二 319–336）
+
+本章 55 处（外文 30：i→ו、tnax→אנחם、rnrrin→תשורה、ftbinri→החוסה、Tistfx/yisaix→אשכון、Ort→שובב 等；
+英文 ivories→works、dear→clear、hibemis→hibernis、hie→hic、De. Wette 等）。
+全书同类：希伯来 ו/ל/ב/חצי 读成 i/1/b/a/n 的 9 处逐条看图。
