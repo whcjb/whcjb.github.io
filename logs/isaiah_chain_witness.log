@@ -1,0 +1,59 @@
+行末断词接回 2194 个词
+v1 序(preface): 7 段
+v1 导论(introduction): 112 段
+v1 合并解题归位: 第 [2, 13, 15] 章
+v1 第 1-39 章：39 章
+v2 序(later-preface): 5 段
+v2 导论(later-introduction): 93 段
+v2 第 40-66 章：27 章
+合计 1668 段 → /Users/yanpeifa/Documents/whcjb.github.io/alexander_raw/isaiah/en_chapters
+希伯来/希腊落盘: {'applied': 1754, 'lowconf': 420, 'notfound': 181, 'ambiguous': 4, 'halfword': 45, 'italic': 29, 'superseded': 1223} → /Users/yanpeifa/Documents/whcjb.github.io/logs/alexander_isaiah_hebrew_applied.tsv
+修复统计: {'wform': 113, 'unresolved': 7492, 'tooshort': 1204, 'rule': 245, 'ambiguous': 8, 'realword': 6, 'roman': 6}
+日志: /Users/yanpeifa/Documents/whcjb.github.io/logs/alexander_isaiah_ocr_repair.tsv
+发布 70 篇（含序与导论），节号锚点 1277 个，沿用原 date 70 篇 → /Users/yanpeifa/Documents/whcjb.github.io/alexander/isaiah
+v1 证人 4 份
+v2 证人 5 份
+判读统计: {'ok': 621147, '真词分歧待看': 418, '证据不足': 1581, '改': 558, '无证据': 1961, '证人一致': 4104, '真词改': 106, '人工核定': 118302, '撇号拆词': 6}
+日志: /Users/yanpeifa/Documents/whcjb.github.io/logs/alexander_isaiah_adjudicate.tsv
+  第 1 轮写了 70 篇
+v1 证人 4 份
+v2 证人 5 份
+判读统计: {'ok': 621905, '证据不足': 1250, '无证据': 1878, '证人一致': 4152, '真词分歧待看': 435, '真词改': 3, '改': 8, '人工核定': 318}
+日志: /Users/yanpeifa/Documents/whcjb.github.io/logs/alexander_isaiah_adjudicate.tsv
+  第 2 轮写了 16 篇
+v1 证人 4 份
+v2 证人 5 份
+判读统计: {'ok': 621905, '证据不足': 1250, '无证据': 1878, '证人一致': 4152, '真词分歧待看': 435, '人工核定': 300, '改': 6}
+日志: /Users/yanpeifa/Documents/whcjb.github.io/logs/alexander_isaiah_adjudicate.tsv
+  已核实原样                4173
+  外文/残渣                2342
+  已重扫·外文                673
+  待判·证人还有话说              35
+  待判·证人对不上                9
+  待判·无证据                 54
+  合计                   7286
+  → 真正待判 98（其中只能翻影像的 63）
+待判清单 → /Users/yanpeifa/Documents/whcjb.github.io/logs/alexander_isaiah_backlog.tsv
+待判串 98 个
+重扫读出 103 条，累计 165 条 → /Users/yanpeifa/Documents/whcjb.github.io/alexander_raw/isaiah/english_rescan.tsv
+重扫落盘: {'applied': 17, 'notfound': 15, 'ambiguous': 0} → /Users/yanpeifa/Documents/whcjb.github.io/logs/alexander_isaiah_rescan_applied.tsv
+v1 证人 4 份
+v2 证人 5 份
+判读统计: {'ok': 621921, '证据不足': 1239, '无证据': 1873, '证人一致': 4153, '真词分歧待看': 435, '人工核定': 302, '改': 6}
+日志: /Users/yanpeifa/Documents/whcjb.github.io/logs/alexander_isaiah_adjudicate.tsv
+  第 1 轮写了 2 篇
+v1 证人 4 份
+v2 证人 5 份
+判读统计: {'ok': 621921, '证据不足': 1239, '无证据': 1873, '证人一致': 4153, '真词分歧待看': 435, '人工核定': 300, '改': 6}
+日志: /Users/yanpeifa/Documents/whcjb.github.io/logs/alexander_isaiah_adjudicate.tsv
+  已核实原样                4173
+  外文/残渣                2343
+  已重扫·外文                673
+  待判·证人还有话说              25
+  待判·证人对不上                8
+  待判·无证据                 49
+  合计                   7271
+  → 真正待判 82（其中只能翻影像的 57）
+待判清单 → /Users/yanpeifa/Documents/whcjb.github.io/logs/alexander_isaiah_backlog.tsv
+希伯来/希腊落盘: {'applied': 1275, 'lowconf': 0, 'notfound': 650, 'ambiguous': 3, 'halfword': 44, 'italic': 26} → /Users/yanpeifa/Documents/whcjb.github.io/logs/alexander_isaiah_hebrew_applied.tsv
+^ 与残渣符号清扫：改 70 篇，记录 1929 处 → /Users/yanpeifa/Documents/whcjb.github.io/logs/alexander_isaiah_caret_sweep.tsv；剩余 ^ = 0，残渣符号 = 0

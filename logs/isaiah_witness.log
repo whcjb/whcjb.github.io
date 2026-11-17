@@ -1,0 +1,5 @@
+候选块 17534，其中乱码仍在发布页上 11131
+预筛：17534 → 11410 块（tesseract 读得出外文字母的）
+送证人 13 块，1 批
+证人费用 $0.05
+{'块': 11410, '希伯来全同': 461, '希腊全同': 81, '证人说拉丁': 5208, '对不上': 20, '未问过': 4203, '标 Heb': 1352, '标 Gk': 85} → /Users/yanpeifa/Documents/whcjb.github.io/alexander_raw/isaiah/hebrew_witness.tsv
