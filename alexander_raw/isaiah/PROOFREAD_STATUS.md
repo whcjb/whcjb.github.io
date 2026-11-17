@@ -274,3 +274,8 @@ Hook→I look、gradient→gradiens、had→lead、Itst→lest、multitude→mul
 - 待看图未改：p.112「Deut. 6:__6」（当是 6: 16，页面下划线遮字）；p.130 J. D. Michaelis 所读「drunken」之 שכירה 应作 שכורה 类；p.110「read שנה (for שנה)」两词点符不同、无点本同形。
 - 全书同类 3 处：Jive→five（ch17、ch19）、ch53 nx→את。待看图：ch17/ch30「nan」、ch60「j-in-b?」。
 > 收敛判据（old-book-ocr §4.5）：连续 5 章每页 < 1 处。当前连续达标数：0。
+
+## 第 24 轮（2026-11-17）：第 39 章（卷一书页 645–652，8 页）
+- 章内 7 处，约 0.9 处/页 ✅：Hezckiah→Hezekiah、页缝丢失 *(ἐξουσία)*、a→ב、",73→מן、בצבאות→צבאות、希腊斜体断开、mihimortuo。
+- 照录原书：p.647「Gen. 37 : 43」、p.650「Theasurus」。
+> 收敛判据（old-book-ocr §4.5）：连续 5 章每页 < 1 处。当前连续达标数：1。
