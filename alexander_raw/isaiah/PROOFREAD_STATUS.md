@@ -330,3 +330,8 @@ Hook→I look、gradient→gradiens、had→lead、Itst→lest、multitude→mul
 - **新类：章界错位**——第 41 章第 29 节注释末段（卷二 p.46 页首「begun in the last clause …emptiness.」）被切进第 42 章开头，已直接在页面挪回 41 章并去掉页缝多出的句号（看图 p.45/46）。⚠️ 这处挪动跨文件，未进 manual_fixes 表；若重跑链条会回退。全书普查章首以小写起句：仅此一处。
 - 照录原书：p.53「John 18: 27」。
 > 收敛判据：连续达标数 0。
+
+## 第 35 轮（2026-11-17）：第 44 章（卷二书页 87–108，22 页）
+- 章内 52 处（外文 40），约 2.4 处/页 ❌：希伯来乱码（xvx/"pa/nsai/Witt/sint/into/tohn/tab/fins/ἘΠῚΞ/הצמר…）、页尾丢 LXX 引文 *(ἐπιγράψει χειρί)*、德拉丁（Frömmchen/Röthelstein/remotum/illi/Einleitung/meus）、panicle→particle、caii→can。
+- 照录原书：p.93「Jarch」、p.108「2 Kings 13: 2」。全书同类 2 处（括注后孤立斜体标点）。
+> 收敛判据：连续达标数 0。本五轮（31–35）：35 ❌1.7、23 ❌1.5、50 ❌1.3、42 ❌1.5、44 ❌2.4。
