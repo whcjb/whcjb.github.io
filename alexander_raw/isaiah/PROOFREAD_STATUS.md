@@ -304,3 +304,8 @@ Hook→I look、gradient→gradiens、had→lead、Itst→lest、multitude→mul
 - 章内 39 处（外文 25），约 2.0 处/页 ❌：希伯来乱码（rnsixa/miSE/nisp/ns/STIB/ixisn/03/Bias/w/cnri）、整句丢词（「when we speak of *smelling to*」）、页边批注杂字（j / I / 1 / )）、德文变音、failing→fatling、son o→of。
 - 全书同类：ch10 aufhoren→aufhören。
 > 收敛判据：连续达标数 0。
+
+## 第 30 轮（2026-11-17）：第 60 章（卷二书页 369–392，24 页）
+- 章内 61 处（外文 38），约 2.5 处/页 ❌：希伯来乱码（Tisnb/j-in-b?/SEP)/finn/pn/nssiz?/'ntes'?/nip?/tins/nwato/rang/as）、shah/hut/hy/lie/sec 字母形近、德拉丁文（lästige/wieder/exercitus/adorabunt）、引号残片。
+- 照录原书：p.383「Zechariah 10: 1, 12: 1」。全书同类 3 处：shah→shalt（ch14）、sec→see（ch53）、lie→he（ch44）。
+> 收敛判据：连续达标数 0。本五轮（26–30）：36 ✅0.6、20 ❌1.6、9 ❌2.2、11 ❌2.0、60 ❌2.5。
