@@ -224,3 +224,9 @@ nothgedrungeii、hie、Putzfur、If hath 等 8）。全书同类：拉丁 hie→
 
 本章 26 处（外文 19：7/sn/y../ajhn/intosfi/ntesprna/bx/in:/"o"'is/fijx/njra/lax/*/ax/רבעוף → צדקה/יפרו/ישע/חרשי/תעשה/מה־תעשה/עדת ישראל/הוא/צדקה דבר/ביהוה/אמר/לי/יבשו 等；
 Tarn→Turn、than→thou、eh.→ch.、duodccim、uniruglichen 等 7）。全书同类普查（eh./maybe/Tarn/than）0。
+
+### 第 18 轮：第 5 章（卷一 62–85）
+
+本章 46 处（外文 18：הור/נשק/Vixftj./adqs/w MS/wees/בה עכז/na os/trig/taw;/שנינים:/vs/th/asa → הוי/נשף/שאול/ᾅδης/ירד בה/נפשה/עלז בה/גרים כבשים/פרח/ינום/שנונים/עליו/ינהם/נבט 等；
+Woo→Woe、Holle/Hohle、Begluckung、Nee/clemere/donee、tenebres/lumiere、引号与斜体错位等 28）。
+全书同类：开引号后多空格与 *'* 残形 5 处；22 章 על for before→על for אל before、墨点误读引号（看图）。
