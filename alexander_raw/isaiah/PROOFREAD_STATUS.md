@@ -82,3 +82,16 @@
   链条末尾已经加了。
 - **人工条目的 before 要按判读改完之后的串写**（`apply_manual` 排在 `apply_fixes` 之后），
   否则两边来回推收敛不了（`popule meus` 的 meus 全体证人都读成 mens）。
+
+## 2026-11-17 抽章第 54 章 → 全书同类清理
+
+第 54 章（书页 279–295）逐页看图：外文 28、英文/斜体/标点 42（追记 foreign_image.tsv / manual_fixes.tsv）。
+据此写的全书判据（都直接改发布页；**全链条现与发布页对不上，别重跑 chain**——单跑 adjudicate 会把二十几章写坏）：
+
+| 类 | 处数 | 脚本 |
+|---|---|---|
+| 括注异读斜体收尾在括号外 `(or *X) Y*` | 627（罕见前缀 29 处逐条看图，8:6 例外手改） | `scripts/isaiah_sweep_paren_italic.py` |
+| 开引号后多空格（按段配对，只动确定为开引号的） | 358 | `scripts/isaiah_sweep_quote_space.py` |
+| 经文出处冒号后缺空格 `5:18` | 391 | `scripts/isaiah_sweep_colon_dash.py` |
+| 破折号前后多空格 | 533 | 同上 |
+| `I *will` → `*I will` | 54 | 一次性 re.sub |
