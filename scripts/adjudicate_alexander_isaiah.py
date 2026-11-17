@@ -404,7 +404,8 @@ def load_manual_file():
             continue
         parts = line.split('\t')
         if len(parts) >= 2 and parts[0] != 'before':
-            out.append((parts[0], parts[1]))
+            # 跨段落的条目（拆/并段）用字面 \n 写在一行里
+            out.append((parts[0].replace('\\n', '\n'), parts[1].replace('\\n', '\n')))
     return out
 
 
