@@ -324,3 +324,9 @@ Hook→I look、gradient→gradiens、had→lead、Itst→lest、multitude→mul
 - 章内 23 处（外文 18），约 1.3 处/页 ❌：希伯来乱码（"/Pan/map/MS/b/ns?/an/h/丢 מי）、a-hat→what、starkeri→stärken、重复 הצדיק、希腊斜体与重音、引号残片。
 - 照录原书：p.198「more that」、p.208「Exod. 24: 14」。
 > 收敛判据：连续达标数 0。
+
+## 第 34 轮（2026-11-17）：第 42 章（卷二书页 46–69，24 页）
+- 章内 37 处（外文 19），约 1.5 处/页 ❌：希伯来乱码（xn/ni./os/=2/ox/s? }3/JLwwuo 阿拉伯文/משפם）、动词与形容词对照整组错（רקע נטה→יכהה ירוץ/כהה רצוץ）、拉丁德文、he→be、lias→has、we rid→world、Jury→fury。
+- **新类：章界错位**——第 41 章第 29 节注释末段（卷二 p.46 页首「begun in the last clause …emptiness.」）被切进第 42 章开头，已直接在页面挪回 41 章并去掉页缝多出的句号（看图 p.45/46）。⚠️ 这处挪动跨文件，未进 manual_fixes 表；若重跑链条会回退。全书普查章首以小写起句：仅此一处。
+- 照录原书：p.53「John 18: 27」。
+> 收敛判据：连续达标数 0。
