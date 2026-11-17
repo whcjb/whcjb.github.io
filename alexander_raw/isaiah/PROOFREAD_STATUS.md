@@ -294,3 +294,8 @@ Hook→I look、gradient→gradiens、had→lead、Itst→lest、multitude→mul
 ## 第 27 轮（2026-11-17）：第 20 章（卷一书页 368–375，8 页）
 - 章内 13 处，约 1.6 处/页 ❌：希伯来乱码（figtl/inn/ascis/xix/טק/2）、LXX 名 'Aqva/Ναρυᾶ、丢 τρία、Esdûd/Stäudlin 变音、מבטני→מבטנו。全书同类：Staudlin→Stäudlin。
 > 收敛判据：连续达标数 0。
+
+## 第 28 轮（2026-11-17）：第 9 章（卷一书页 153–182，30 页）
+- 章内 67 处（外文 46），约 2.2 处/页 ❌：希伯来乱码大宗（tsrso/riss/noa/iiab/"152/c?/mm…）、希腊重音、德法变音（Bösen、à pleine、mêlée）、斜体错位、dees→does、al ogether 等。
+- 照录原书：p.169「Dan. 4: 28」、p.178「Neh. 1: 10」、Erkentniss。全书同类：未发现新形态。
+> 收敛判据：连续达标数 0。
