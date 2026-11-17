@@ -236,3 +236,19 @@ Woo→Woe、Holle/Hohle、Begluckung、Nee/clemere/donee、tenebres/lumiere、�
 本章 31 处（外文 15：לידאתה→לי־אתה、补 יצרך、"→כי、watt→הביאי、*,*→אל、fcjo→נאם、"f x→אין、dittos→כשדים、lass)?→ישכבו、sa→יגע、rib→שה 等；
 shall→shalt、thysclj、colled、thai、lobe→to be、becked→be cited、math→made、Fiom、IJehovah 等 16）。
 全书同类：thou shall→thou shalt 6 处（看图皆 shalt）。
+
+### 第 20 轮：第 64 章（卷二 434–443）
+
+本章 20 处（外文 12：on/[Heb.]/itini/sura/tofts/issjmn/אחה → המסים/קש יבש/ירגזו/ונושע/בהם…דרכיך/תמגננו/אתה 等；
+earnest→camest、day→clay、引号/斜体等 8）。原书印错照录：Rom. 15: 26（应作 16: 25）、ch. 29: 6（应作 29: 16）不改。
+全书同类：37 章 thou earnest→camest（看图）。斜体后问号原书为正体，*? 写法无误不动。
+
+### 第四个五轮小结
+
+| 轮 | 章 | 本章 | 全书同类 |
+|---|---|---|---|
+| 16 | 61 | 21 | 5 |
+| 17 | 45 | 26 | 0 |
+| 18 | 5 | 46 | 6 |
+| 19 | 43 | 31 | 6 |
+| 20 | 64 | 20 | 1 |
