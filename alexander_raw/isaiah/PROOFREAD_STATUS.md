@@ -260,3 +260,10 @@ Hook→I look、gradient→gradiens、had→lead、Itst→lest、multitude→mul
 全书同类：书卷前罗马 I 当 1（I Kings→1 Kings 等）14 处；47 章 ftaa→גבירה（看图）。
 
 > 收敛判据（old-book-ocr §4.5）：连续 5 章每页 < 1 处。当前连续达标数：0。
+
+## 第 22 轮（2026-11-17）：第 66 章（卷二书页 469–501，33 页）
+- 章内 83 处（外文 47、其他 36），约 2.5 处/页：希伯来乱码（b?/nx/fix/oar a/"11!/nans…）为主；另 Cretins→Grotius、jinnies→armies、so Air→so far、Gtmss→Genuss、斜体错位、引号多空格等。
+- 照录原书：p.484「The image 48 : 18 is」、p.493 Ludim「Gen. 10 : 3」、p.496「Rom. 15 : 26」、p.498「as a *a church*」、p.477「Germ n」系断字已补作 German。
+- 全书同类 19 处：开引号后多空格 7、斜体章号 *32:* 等 3（含 ch60 Ps.132:*1*→7 看图）、ch5「an to Job」→and、ch45 「"」→לי、ch14「"」→לא־עץ（均看图）、斜体句内问号断开合并 6。
+- 待看图未改：ch50「*what is*? " by itself」引号位置。
+> 收敛判据（old-book-ocr §4.5）：连续 5 章每页 < 1 处。当前连续达标数：0。
