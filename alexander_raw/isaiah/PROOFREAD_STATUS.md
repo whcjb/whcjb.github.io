@@ -290,3 +290,7 @@ Hook→I look、gradient→gradiens、had→lead、Itst→lest、multitude→mul
 - 章内 7 处，约 0.6 处/页 ✅：to he→to be、οἱ→of、met→me?、]→?、מרפה→ברכה、丢 כי、על מצרים 倒序。
 - 照录原书：p.595「ארניך」（原书即作 ר）。全书同类 1 处（ch66 to he→to be）。
 > 收敛判据：连续达标数 1。
+
+## 第 27 轮（2026-11-17）：第 20 章（卷一书页 368–375，8 页）
+- 章内 13 处，约 1.6 处/页 ❌：希伯来乱码（figtl/inn/ascis/xix/טק/2）、LXX 名 'Aqva/Ναρυᾶ、丢 τρία、Esdûd/Stäudlin 变音、מבטני→מבטנו。全书同类：Staudlin→Stäudlin。
+> 收敛判据：连续达标数 0。
