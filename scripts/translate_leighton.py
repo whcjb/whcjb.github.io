@@ -180,7 +180,10 @@ def structural_diff(en: str, zh: str) -> str:
     m = re.search(r'</?thinking|——不对|不对，须|须照抄|\bHmm\b|Count asterisks', zh)
     if m and not re.search(re.escape(m.group(0)), en):
         problems.append(f'模型自语「{m.group(0)}」')
-    if len(en) > 200 and len(re.findall(r'[一-鿿]', zh)) < len(en) * 0.1:   # 经文框/卷首页正常比例也只有 0.14 上下
+    # 截断：汉字太少**且**译文总长也不到原文一半。斜体（书名、外文引语）照抄不译，不计入应译长度——
+    # 霍志恒注 3 几乎全是德文书名，旧判据只比汉字个数，三次都误报截断（2026-11-10）
+    en_tr = re.sub(r'\*[^*\n]+\*', '', en)
+    if len(en) > 200 and len(re.findall(r'[一-鿿]', zh)) < len(en_tr) * 0.1 and len(zh) < len(en) * 0.5:
         problems.append(f'疑似截断（原文 {len(en)} 字符，译文汉字 {len(re.findall(r"[一-鿿]", zh))}）')
     if re.search(r'[A-Za-z]{4}', en) and not re.search(r'[一-鿿]', zh):
         problems.append('译文无汉字')

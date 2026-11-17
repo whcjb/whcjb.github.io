@@ -66,16 +66,18 @@ description: 加尔文与马太亨利之外的历代改革宗注释——欧文�
 
   /* ── 本页收录 ─────────────────────────────────────── */
   .cx-roster {
-    display: grid; grid-template-columns: repeat(auto-fit, minmax(268px, 1fr));
-    gap: 1px; background: #e7e0cc; border: 1px solid #e7e0cc;
-    max-width: 720px; margin: 24px auto 0;
+    display: grid; grid-template-columns: repeat(4, minmax(0, 1fr));
+    /* 格线画在卡片上（右/下边框），末排空位不露底色 */
+    border-top: 1px solid #e7e0cc; border-left: 1px solid #e7e0cc;
+    margin: 20px 0 0;
   }
   /* 「本页收录」两格加左侧色标，与下面书卷格子的填充色呼应 */
   .cx-who {
-    background: #fdfbf6; padding: 15px 17px;
+    background: #fdfbf6; padding: 10px 11px;
     text-decoration: none !important; display: block;
     border-left: 3px solid transparent;
     transition: background .16s ease;
+    border-right: 1px solid #e7e0cc; border-bottom: 1px solid #e7e0cc;
   }
   .cx-who-owen    { border-left-color: #1f5a4b; }
   .cx-who-bridges { border-left-color: #96613F; }
@@ -84,23 +86,24 @@ description: 加尔文与马太亨利之外的历代改革宗注释——欧文�
   .cx-who-davenant{ border-left-color: #556b2f; }
   .cx-who-alexander { border-left-color: #7d2f2f; }
   .cx-who:hover { background: #f4efe2; }
-  .cx-who-pic { float: left; width: 52px; height: 64px; margin: 1px 14px 4px 0; border-radius: 50% / 46%;
+  .cx-who-pic { float: left; width: 36px; height: 44px; margin: 1px 9px 2px 0; border-radius: 50% / 46%;
     object-fit: cover; object-position: 50% 18%; border: 1px solid #e2d9c3; background: #ece5d3; }
-  .cx-who-nopic { display: flex; align-items: center; justify-content: center; font-size: 22px;
+  .cx-who-nopic { display: flex; align-items: center; justify-content: center; font-size: 16px;
     color: #a89c80; font-family: 'Source Han Serif SC', 'Noto Serif SC', 'Songti SC', serif; }
   .cx-who::after { content: ""; display: block; clear: both; }
-  .cx-who-go { float: right; font-size: 11.5px; font-weight: normal; color: #b0a68d; letter-spacing: .06em; }
+  .cx-who-go { float: right; font-size: 10.5px; font-weight: normal; color: #b0a68d; letter-spacing: .06em; }
   .cx-who:hover .cx-who-go { color: var(--cx-primary); }
-  .cx-who-name { font-size: 15px; color: var(--cx-primary); font-weight: 600; letter-spacing: .04em; }
+  .cx-who-name { font-size: 13.5px; color: var(--cx-primary); font-weight: 600; letter-spacing: .04em; }
   .cx-who-meta {
-    font-family: 'Georgia', 'Times New Roman', serif; font-size: 11px;
-    color: var(--cx-ink-light); margin-top: 2px;
+    font-family: 'Georgia', 'Times New Roman', serif; font-size: 10.5px;
+    color: var(--cx-ink-light); margin-top: 1px;
   }
-  .cx-who-work { font-size: 12.5px; color: #6d6455; margin-top: 9px; line-height: 1.5; }
+  .cx-who-work { clear: left; font-size: 12px; color: #6d6455; margin-top: 6px; line-height: 1.45; }
   .cx-who-work em {
     display: block; font-family: 'Georgia', 'Times New Roman', serif;
-    font-size: 11px; color: #b0a68d; margin-top: 1px;
+    font-size: 10.5px; color: #b0a68d; margin-top: 1px;
   }
+  @media (max-width: 991px) { .cx-roster { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
 
   /* ── 分卷标题 ─────────────────────────────────────── */
   .cx-section { margin-top: 46px; }
@@ -205,6 +208,7 @@ description: 加尔文与马太亨利之外的历代改革宗注释——欧文�
     .cx-book-grid { grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); gap: 8px; }
     .cx-book-btn { min-height: 74px; padding: 10px 11px; }
     .cx-book-name { font-size: 14px; }
+    .cx-roster { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   }
 </style>
 
