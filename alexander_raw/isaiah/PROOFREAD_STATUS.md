@@ -365,3 +365,19 @@ Hook→I look、gradient→gradiens、had→lead、Itst→lest、multitude→mul
 - 顺手修：`foreign_image.tsv` 里第 32、35 轮各一条跨行条目（字段夹真换行）使整张表读不进 `isaiah_apply_image.py`（KeyError 'new'），已改写成 `\n` 转义、脚本对 old/new 也做反转义。
   ⚠️ 该脚本对 **old 为空的插入型条目不幂等**：报告模式下仍有 32 条显示「落」，`--apply` 会再插一遍（18/49/50/51 章那几条「去重」条目就是在补这个坑）。修好之前**别跑 `isaiah_apply_image.py --apply` / 整条链**。
 > 收敛判据：连续 5 章每页 < 1 处。按读的顺序 27 ✅、64 ✅、34 ❌、48 ✅ → 当前连续达标数 1。
+
+## 窄检测器（2026-11-17，第 36–39 轮复抽后用户令「接着做这一轮窄检测器」）
+- `scripts/isaiah_lexicon_detector.py`：
+  A. 拉丁/德/法/意词表（本机 tesseract 模型词典 dawg 导出，缓存 ~/.cache/isaiah_lex/）——斜体外文段与非斜体拉丁长句里不在词表的词、形近改一处即成词的词；
+     「英文」只认 tesseract 英文词典 ∩ 系统 words 的 4.3 万常用词（单用哪家都会把 zum/iis/est 判成英文）。
+  B. 希伯来：正文词不在本节 ±3 节 WLC 里、与其中某词只差一个字母、且本章只出现 1 次而那个近形词出现 ≥2 次。
+- `scripts/isaiah_lexicon_verify.py`：600dpi 裁词后用**该语言自己的模型**复读（拉丁用 lat、德用 deu），读数与正文一致判 asis 剔除；希伯来一律上图（heb 模型读小裁图读不出）。
+  `isaiah_garble_sheets.py` 认 CHECK，标签带建议读法。
+- 回测（第 27/34/48/64 章快照，改前 7eb447c837^）：拉丁类 7 处捞回 5（olentcs/ivie/verrath/perpendiculuni/fovei；漏 in Us、in ilia——真词夹在外文段里，形近改一处仍是英文词）；希伯来 2 处捞回 1（עפו；漏 היה→דיה）。
+- 全书一遍：候选 509 → 本语言复读后 238 条上图（拉丁类 101、希伯来 137）→ 看图读定 **26 处**：
+  拉丁/德/法 19（arbusla、Hbhle/Holle×2→Höhle/Hölle、emarcucrunt、fluchtigen、Rauchsdule、scdratos→scelratos（原书拼法）、ya etre magnifie→va être magnifié、(iltcsten→ältesten、(esthetic→æsthetic、fcetas→fœtas、scirefacict→scire faciet、artifcx、Nothbchelf、sapientiâ sua→suâ、vielmehr hort→hört、viclmehr、praeftrt）；
+  希伯来 7（14 חבל→תבל、21 מישא→משא、23 צירם→ציים、40 אלים→איים、46 *אש,*→אש *fire,*（丢词）、47 לחמס→לחמם、53 צל or b→אל or ל）。
+  命中率：拉丁类 19/101，希伯来 7/137（作者本就在讨论近形异读，大多是真词）。
+- 第 53 章 suâ 那条原先由 foreign_image.tsv 整句条目写入（链里排在 manual_fixes 之后），已把该条的 new 一并改掉，免得重跑回退。
+- 待看图未改：10 章「participle of boa (i. q. נוס)」（boa 是页边被切的希伯来词，印面看不全）、3 章 כיה（当作 כוה？点符看不清）、47 章 עור/עוד、65 章 *Shicksal*、40 章 *(Deumfortem)* 定位不到；nofind 14 条未看。
+- 结论：全书 26 处 ≈ 0.02 处/页，对 0.5 处/页的残余量是小头。剩下的主要是标点、斜体范围、以及「拼得出来但错一个字母」的希伯来——文字判据边际收益已经很低，回到随机抽章实读量收敛。

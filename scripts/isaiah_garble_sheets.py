@@ -18,7 +18,7 @@ rows = [l.rstrip('\n').split('\t') for l in open(out / 'verified.tsv', encoding=
 import re
 # 人名缩写（Hn. / Ew.) / Cocc. / Vitr.）三引擎都读不稳，但不是活字残渣，不上图
 ABBREV = re.compile(r'^[(*]*[A-Z][a-z]{0,5}\.[)*,.;:]*$')
-rows = [r for r in rows if r[0] in ('HEB', 'GRC', 'unclear') and not ABBREV.match(r[3])]
+rows = [r for r in rows if r[0] in ('HEB', 'GRC', 'unclear', 'CHECK') and not ABBREV.match(r[3])]
 (out / 'sheets').mkdir(exist_ok=True)
 try:
     font = ImageFont.truetype('/System/Library/Fonts/Supplemental/Arial Unicode.ttf', 22)
@@ -36,6 +36,9 @@ with open(out / 'sheets' / 'index.tsv', 'w', encoding='utf-8') as idx:
             y = k * ROWH
             d.text((6, y + 8), f'{no} {verdict[0]} {ch}:{page}', fill='black', font=font)
             d.text((6, y + 36), tok[:28], fill='red', font=font)
+            if verdict == 'CHECK':      # isaiah_lexicon_verify：建议读法 / 该语言模型的读数
+                hint = r[4].split(':', 1)[1] if ':' in r[4] else r[5].split('|')[0]
+                d.text((200, y + 8), hint[:18], fill='blue', font=font)
             try:
                 im = Image.open(r[9])
                 sc = min((W - LABEL) / im.width, (ROWH - 4) / im.height)
