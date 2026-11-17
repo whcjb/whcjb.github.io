@@ -4,8 +4,8 @@ book_id: psalms
 book_name: "博纳尔《诗篇中的基督与教会》"
 title: "序言"
 date: 2026-11-17 12:42
-next_url: "/bonar/psalms/zh/117/"
-next_label: "第 117 篇"
+next_url: "/bonar/psalms/zh/1/"
+next_label: "第 1 篇"
 en_url: "/bonar/psalms/preface/"
 zh: true
 ---
