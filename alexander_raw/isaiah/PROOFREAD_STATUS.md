@@ -309,3 +309,8 @@ Hook→I look、gradient→gradiens、had→lead、Itst→lest、multitude→mul
 - 章内 61 处（外文 38），约 2.5 处/页 ❌：希伯来乱码（Tisnb/j-in-b?/SEP)/finn/pn/nssiz?/'ntes'?/nip?/tins/nwato/rang/as）、shah/hut/hy/lie/sec 字母形近、德拉丁文（lästige/wieder/exercitus/adorabunt）、引号残片。
 - 照录原书：p.383「Zechariah 10: 1, 12: 1」。全书同类 3 处：shah→shalt（ch14）、sec→see（ch53）、lie→he（ch44）。
 > 收敛判据：连续达标数 0。本五轮（26–30）：36 ✅0.6、20 ❌1.6、9 ❌2.2、11 ❌2.0、60 ❌2.5。
+
+## 第 31 轮（2026-11-17）：第 35 章（卷一书页 574–588，15 页）
+- 章内 25 处（外文 21），约 1.7 处/页 ❌：希伯来乱码（n:/rua/ma/inn/tab/אורלים/ירשע）、德法拉丁变音与错字（blühen/erlöst/rançon/ultionem/tam）、丢省略号与 ).* 闭合、die→the。
+- 照录原书：p.583「Lam. 4: 31」、p.580「Matt. 9: 16」。
+> 收敛判据：连续达标数 0。
