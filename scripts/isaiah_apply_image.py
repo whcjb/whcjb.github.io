@@ -71,7 +71,7 @@ def main():
             todo = []
             for r in batches[batch]:
                 b = r['before'].replace('\\t', '\t').replace('\\n', '\n')
-                old, new = r['old'], r['new']
+                old, new = (r[k].replace('\\t', '\t').replace('\\n', '\n') for k in ('old', 'new'))
                 n = text.count(b + old)
                 if n == 1:
                     todo.append((text.index(b + old) + len(b), old, new))
