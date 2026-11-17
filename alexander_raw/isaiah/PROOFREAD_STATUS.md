@@ -381,3 +381,11 @@ Hook→I look、gradient→gradiens、had→lead、Itst→lest、multitude→mul
 - 第 53 章 suâ 那条原先由 foreign_image.tsv 整句条目写入（链里排在 manual_fixes 之后），已把该条的 new 一并改掉，免得重跑回退。
 - 待看图未改：10 章「participle of boa (i. q. נוס)」（boa 是页边被切的希伯来词，印面看不全）、3 章 כיה（当作 כוה？点符看不清）、47 章 עור/עוד、65 章 *Shicksal*、40 章 *(Deumfortem)* 定位不到；nofind 14 条未看。
 - 结论：全书 26 处 ≈ 0.02 处/页，对 0.5 处/页的残余量是小头。剩下的主要是标点、斜体范围、以及「拼得出来但错一个字母」的希伯来——文字判据边际收益已经很低，回到随机抽章实读量收敛。
+
+## 第 40 轮（2026-11-17）：第 53 章（卷二书页 253–278，约 25.5 页）——窄检测器之后复抽
+- 章内 61 处，约 **2.4 处/页 ❌**：希伯来 35（乱码 29 如 bbina/ns-a/mab/-.noa/1-120/toM/vx/am/ps/xn/span/"PFibia/no/its；整词丢失 5：「whether דור means」「past.—יונק」「סבל means to pardon」「הצדיק ל」「version of ויעל.」；词序 1：תחת אשר）、希腊 4、斜体范围 6、标点 6、其他 10（oft、Lain.、Cleans、ungodlybrethren、「which 1 represent」、页缝吞掉「29.)—」等）。
+- 全书同类 1 处：56 章「The i at the beginning」→ ו（看图）。
+- **宽口径检测器为什么一条没捞到**：154 条 53 章候选里只有 mab、xn 两条与这批重合。漏的主因是希伯来被读成**英文真词或常见缩写**（am、ps、no、its、span、toM、a），以及整词丢失——文字判据本来就看不见；粘在破折号后的乱码（.—bbina）全书只 8 处，次要。
+  这 8 处里另 7 处未看图：4 章 .—nsn、56 章 )—sn、55 章 .—ia / .—rrsirj、15 章 .—fibsa、40 章 .—rftis / )—ris。
+- 本章改动使先前几批 foreign_image 条目（该章 14 条）变成「找不到」：链条按批次顺序落，旧条目先落错值、本批再改对，重跑结果一致；但 `isaiah_apply_image.py --apply` 本来就因上千条「找不到」而拒绝落盘，见上文，别跑。
+> 收敛判据：连续 5 章每页 < 1 处。第 36–40 轮按读的顺序：27 ✅0.4、64 ✅0、34 ❌1.1、48 ✅0.2、53 ❌2.4 → 当前连续达标数 0。
