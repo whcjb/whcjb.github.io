@@ -185,3 +185,9 @@
 本章 44 处（外文 19：rncrvi→והמיתך、iitfx/ittsxs→אשר/כאשר、h?/'aa→מני、cvja→בטרם、un;→נחש、cd→שם、r.→ימות 等；
 arid→and、lie→he、he→be、111→Ill、Menij、Ldmmlein、cjcaudiam、ᾧ ῶ→ἐρῶ 等 25）。
 全书同类：arid→and 10（保留 42 章 arid desert）、50 章 lie→he、58 章 111→רוד、52 章 'arc→שבי（看图）。
+
+### 第 13 轮：第 6 章（卷一 85–100）
+
+本章 21 处（外文 7：*x*→אל、153→היתה לבער、is a/מאבת→בער/מצבת、da/na→בם/בה、διότι 叠印补全句；
+quern/nee→quem/nec、Angusti、Ischylus→Æschylus、[accomplishment 等 14）。
+全书同类：拉丁 quern→quem 4、nee→nec 4（逐条核上下文皆拉丁）、开引号后空格 2。
