@@ -4,6 +4,7 @@ book_id: psalms
 book_name: "Bonar on the Psalms"
 title: "Preface"
 date: 2026-11-17 11:58
+zh_url: "/bonar/psalms/zh/preface/"
 next_url: "/bonar/psalms/1/"
 next_label: "Psalm 1"
 ---
