@@ -319,3 +319,8 @@ Hook→I look、gradient→gradiens、had→lead、Itst→lest、multitude→mul
 - 章内 24 处（外文 19），约 1.5 处/页 ❌：希伯来乱码（n/[Heb.]/fiE"?!?/ns/inx/רעצה）、页首希伯来词整词丢失（p.411 ינוח）、拉丁 banc/ilia、50→so、Johovah、no→not。
 - 照录原书：p.407「Josh. 13: 13」、commerical。页首丢词形态全书普查（页首以 is/are/means 等起句）：无其他。
 > 收敛判据：连续达标数 0。
+
+## 第 33 轮（2026-11-17）：第 50 章（卷二书页 197–214，18 页）
+- 章内 23 处（外文 18），约 1.3 处/页 ❌：希伯来乱码（"/Pan/map/MS/b/ns?/an/h/丢 מי）、a-hat→what、starkeri→stärken、重复 הצדיק、希腊斜体与重音、引号残片。
+- 照录原书：p.198「more that」、p.208「Exod. 24: 14」。
+> 收敛判据：连续达标数 0。
