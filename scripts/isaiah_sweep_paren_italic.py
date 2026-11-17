@@ -3,7 +3,8 @@
 唯 8:6「(because there is)」系星号错位、另行手改。可重跑（幂等）：python3 scripts/isaiah_sweep_paren_italic.py [--apply]"""
 import re,glob,sys
 PRE=r'(?:[^()*\n]|\*[^*()\n]*\*){0,40}?'
-R=re.compile(r'\((' + PRE + r')\*([^*()\n]+)\)([^*()\n]*)\*')
+# 2026-11-17 第 51 章补：括号后的经文里还可夹补词括号 (but)/(if)，否则漏判 57 处
+R=re.compile(r'\((' + PRE + r')\*([^*()\n]+)\)((?:[^*()\n]|\([^*()\n]{1,40}\))*)\*')
 def fix(m):
     pre,x,rest=m.groups()
     if pre.endswith('I ') or x.strip()!=x: return None
