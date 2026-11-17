@@ -55,7 +55,7 @@ authors:
     work_cn: "雅各书注释"
     work_en: "A Practical Commentary on the Epistle of James"
     no_bio: false
-    books: 1
+    books: 2
   - id: davenant
     name: "约翰·达文南特"
     short: "达文南特"
@@ -407,6 +407,7 @@ books:
       - {author: bonar, path: "/bonar/psalms/zh/", url_tpl: "/bonar/psalms/zh/__CH__/", title_cn: "诗篇中的基督与教会", title_en: "Christ and His Church in the Book of Psalms", c0: "#a95c56", c1: "#d2776f"}
       - {author: owen, path: "/owen/psalm130/", url_tpl: "/owen/psalm130/__CH__/", title_cn: "诗篇 130 篇实践讲解", title_en: "A Practical Exposition upon Psalm CXXX", c0: "#14382f", c1: "#1f5a4b"}
       - {author: bridges, path: "/bridges/psalm119/", url_tpl: "/bridges/psalm119/__CH__/", title_cn: "诗篇 119 篇讲解", title_en: "An Exposition of Psalm CXIX", c0: "#5B3A29", c1: "#96613F"}
+      - {author: manton, path: "/manton/psalm119/", url_tpl: "/manton/psalm119/__CH__/", title_cn: "雅各书注释", title_en: "A Practical Commentary on the Epistle of James", c0: "#4a2540", c1: "#5b2f4a"}
   - id: proverbs
     name: "箴言"
     en: "Proverbs"
