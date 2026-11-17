@@ -11,7 +11,8 @@ layout: default
     <div class="col-lg-9 col-lg-offset-1 col-md-10 col-md-offset-1">
 
       <div class="bn-booklang">
-        {% if page.zh_url %}<a href="{{ site.baseurl }}{{ page.zh_url }}">中文版 &rarr;</a>{% endif %}
+        {% if page.zh %}{% if page.en_url %}<a href="{{ site.baseurl }}{{ page.en_url }}">English edition &rarr;</a>{% endif %}
+        {% else %}{% if page.zh_url %}<a href="{{ site.baseurl }}{{ page.zh_url }}">中文版 &rarr;</a>{% endif %}{% endif %}
       </div>
       <div class="bn-hero">
         <h1>{{ page.book_name }}</h1>
@@ -87,6 +88,8 @@ layout: default
 .bonar-book .bn-ed summary { cursor: pointer; color: var(--bn-ink-dark); }
 .bonar-book .bn-ed table { width: 100%; border-collapse: collapse; margin-top: 8px; }
 .bonar-book .bn-ed th, .bonar-book .bn-ed td { border-bottom: 1px solid var(--bn-rule); padding: 5px 6px; text-align: left; vertical-align: top; }
+.bonar-book .bn-toc a.bn-other { color: #a09895; }
+.bonar-book .bn-toc a.bn-other small { display: block; font-size: 11px; color: #b9b1ae; }
 .bonar-book .bn-he { unicode-bidi: isolate; font-family: "SBL Hebrew", "Times New Roman", serif; }
 @media (max-width: 767px) {
   .bonar-book .bn-hero h1 { font-size: 22px; }

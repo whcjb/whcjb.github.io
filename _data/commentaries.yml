@@ -404,7 +404,7 @@ books:
     links:
       - {author: alexander, path: "/alexander/psalms/zh/", url_tpl: "/alexander/psalms/zh/__CH__/", title_cn: "诗篇注释", title_en: "The Psalms Translated and Explained", c0: "#5f2323", c1: "#7d2f2f"}
       - {author: vos, path: "/vos/psalter/zh/", url_tpl: "/vos/psalter/zh/__CH__/", title_cn: "诗篇的末世论", title_en: "Eschatology of the Psalter", c0: "#7b46a3", c1: "#9e61ca"}
-      - {author: bonar, path: "/bonar/psalms/", url_tpl: "/bonar/psalms/__CH__/", title_cn: "诗篇中的基督与教会", title_en: "Christ and His Church in the Book of Psalms", c0: "#a95c56", c1: "#d2776f"}
+      - {author: bonar, path: "/bonar/psalms/zh/", url_tpl: "/bonar/psalms/zh/__CH__/", title_cn: "诗篇中的基督与教会", title_en: "Christ and His Church in the Book of Psalms", c0: "#a95c56", c1: "#d2776f"}
   - id: proverbs
     name: "箴言"
     en: "Proverbs"

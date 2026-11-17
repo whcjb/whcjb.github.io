@@ -15,17 +15,17 @@ layout: default
     缩成「1–6」这样的范围），渲染为 `.bn-vr`；第 119 篇各段同。
   - 脚注据 1859 初版补回，每页从 1 起编，排在页末 `.bn-notes`。
   - 希伯来文 `.bn-he`（dir=rtl），希腊文直接排。
-  - 目前只有英文版，没有中文版，所以没有接经文引用弹层（弹层只认中文书卷名）；
-    将来出中文版时中文页要接 scripture-popup。
+  - 中文页（`zh: true`，publish_bonar_zh.py 生成）挂经文引用弹层；英文页不挂（弹层只认中文书卷名）。
+    中文章节页不放英文入口（英文版只从书卷首页进，用户 2026-11-11 定）。
 {%- endcomment -%}
 
-<div class="container bonar-wrap" style="padding-top: 70px;">
+<div class="container bonar-wrap{% if page.zh %} bn-zh{% endif %}" style="padding-top: 70px;">
   <div class="row">
     <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
 
       <div class="bn-chrome">
-        <a href="{{ site.baseurl }}/bonar/{{ page.book_id }}/">&larr; {{ page.book_name }}</a>
-        {% if page.zh_url %}<a class="bn-lang" href="{{ site.baseurl }}{{ page.zh_url }}">中文版 &rarr;</a>{% endif %}
+        <a href="{{ site.baseurl }}/bonar/{{ page.book_id }}/{% if page.zh %}zh/{% endif %}">&larr; {{ page.book_name }}</a>
+        {% unless page.zh %}{% if page.zh_url %}<a class="bn-lang" href="{{ site.baseurl }}{{ page.zh_url }}">中文版 &rarr;</a>{% endif %}{% endunless %}
       </div>
 
       <h1 class="bn-title">{{ page.title }}{% if page.title_note %}<sup class="bn-fn"><a href="#fn-{{ page.title_note }}" id="fnref-{{ page.title_note }}">{{ page.title_note }}</a></sup>{% endif %}</h1>
@@ -43,7 +43,7 @@ layout: default
       </div>
 
       {% if page.date %}
-      <div class="bn-stamp">Published {{ page.date | date: "%Y-%m-%d %H:%M" }}</div>
+      <div class="bn-stamp">{% if page.zh %}译于{% else %}Published{% endif %} {{ page.date | date: "%Y-%m-%d %H:%M" }}</div>
       {% endif %}
 
       <div class="bn-nav bn-nav-foot">
@@ -56,6 +56,11 @@ layout: default
     </div>
   </div>
 </div>
+
+{% if page.zh %}
+<link href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-webfont@1.7.0/style.css" rel="stylesheet">
+{% include scripture-popup.html container_selector=".bn-content" accent="#d2776f" vnum="#a95c56" slide="down" %}
+{% endif %}
 
 <style>
 .bonar-wrap {
@@ -93,6 +98,12 @@ layout: default
   font-size: 17px; line-height: 1.85; color: var(--bn-body);
 }
 .bonar-wrap .bn-content p { margin: 0 0 16px; text-align: justify; }
+/* 篇旨：初版每篇末另起一行的斜体小结 */
+.bonar-wrap .bn-content p.bn-sum {
+  font-style: italic; text-align: center; color: var(--bn-ink-dark);
+  margin: 4px 24px 22px; font-size: 1.04em;
+}
+.bonar-wrap.bn-zh .bn-content p.bn-sum { font-style: normal; text-align: center; font-weight: bold; }
 .bonar-wrap .bn-vr {
   color: var(--bn-ink-dark); font-size: 13px; letter-spacing: .04em;
   margin-right: 8px; white-space: nowrap;
@@ -113,6 +124,10 @@ layout: default
 }
 .bonar-wrap .bn-stamp { text-align: right; color: #a9a29f; font-size: 12px; margin-top: 30px;
   font-family: Georgia, "Times New Roman", serif; }
+.bonar-wrap.bn-zh .bn-content,
+.bonar-wrap.bn-zh .bn-title { font-family: Georgia, "Songti SC", STSong, "Noto Serif SC", serif; }
+.bonar-wrap.bn-zh .bn-content p { text-align: justify; }
+.bonar-wrap .bn-orig { color: #9a918e; font-size: .88em; }
 @media (max-width: 767px) {
   .bonar-wrap .bn-title { font-size: 24px; }
   .bonar-wrap .bn-content { font-size: 16px; }

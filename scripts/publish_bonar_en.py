@@ -144,7 +144,10 @@ def main():
             m = re.match(r'^(\d+(?:–\d+)?)\s+(?=[A-Z(“"\'(])', t)
             if m and (i == 0 or key == 'psalm-119'):
                 t = f'<span class="bn-vr">{m.group(1)}</span>' + t[m.end():]
-            body.append(f'<p>{t}</p>')
+            # 篇旨：初版每篇末另起一行斜体印出（「…we may inscribe as the title of this Psalm,」之后），
+            # 录入本丢了斜体、成了普通段落 → 末段且上一段以字母或逗号收尾的，标作 bn-sum
+            is_sum = (i == len(paras) - 1 and i > 0 and re.search(r'[A-Za-z,]$', paras[i - 1].strip()))
+            body.append(f'<p class="bn-sum">{t}</p>' if is_sum else f'<p>{t}</p>')
         foot = []
         for s in local:
             n = s['n']
@@ -166,9 +169,14 @@ def main():
         print('\n'.join(bad))
         raise SystemExit(1)
 
+    zh_done = {p.stem for p in (RAW / 'zh_chapters').glob('*.md')}
     for i, pg in enumerate(pages):
+        old = OUT / f'{pg["slug"]}.md'
+        m = re.search(r'^date: (.+)$', old.read_text(encoding='utf-8'), re.M) if old.exists() else None
         fm = ['---', 'layout: bonar-chapter', 'book_id: psalms', f'book_name: "{BOOK_NAME}"',
-              f'title: "{pg["title"]}"', f'date: {stamp}']
+              f'title: "{pg["title"]}"', f'date: {m.group(1) if m else stamp}']   # 重跑不改已发布页的日期
+        if pg['slug'] in zh_done:
+            fm.append(f'zh_url: "{BASE}/zh/{pg["slug"]}/"')
         if pg['title_note']:
             fm.append(f'title_note: {pg["title_note"]}')
         if i > 0:
@@ -218,7 +226,7 @@ book_name: "Christ and His Church in the Book of Psalms"
 author: "Andrew A. Bonar (1810–1892)"
 edition: "London: James Nisbet, 1859"
 title: "Bonar on the Psalms"
----
+{'zh_url: "' + BASE + '/zh/"' + chr(10) if (OUT / 'zh' / 'index.html').exists() else ''}---
 
 <ul class="bn-toc bn-wide">
   <li><a href="{{{{ site.baseurl }}}}{BASE}/preface/">Preface</a></li>
