@@ -314,3 +314,8 @@ Hook→I look、gradient→gradiens、had→lead、Itst→lest、multitude→mul
 - 章内 25 处（外文 21），约 1.7 处/页 ❌：希伯来乱码（n:/rua/ma/inn/tab/אורלים/ירשע）、德法拉丁变音与错字（blühen/erlöst/rançon/ultionem/tam）、丢省略号与 ).* 闭合、die→the。
 - 照录原书：p.583「Lam. 4: 31」、p.580「Matt. 9: 16」。
 > 收敛判据：连续达标数 0。
+
+## 第 32 轮（2026-11-17）：第 23 章（卷一书页 402–417，16 页）
+- 章内 24 处（外文 19），约 1.5 处/页 ❌：希伯来乱码（n/[Heb.]/fiE"?!?/ns/inx/רעצה）、页首希伯来词整词丢失（p.411 ינוח）、拉丁 banc/ilia、50→so、Johovah、no→not。
+- 照录原书：p.407「Josh. 13: 13」、commerical。页首丢词形态全书普查（页首以 is/are/means 等起句）：无其他。
+> 收敛判据：连续达标数 0。
