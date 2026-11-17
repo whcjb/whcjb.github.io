@@ -191,3 +191,9 @@ arid→and、lie→he、he→be、111→Ill、Menij、Ldmmlein、cjcaudiam、ᾧ
 本章 21 处（外文 7：*x*→אל、153→היתה לבער、is a/מאבת→בער/מצבת、da/na→בם/בה、διότι 叠印补全句；
 quern/nee→quem/nec、Angusti、Ischylus→Æschylus、[accomplishment 等 14）。
 全书同类：拉丁 quern→quem 4、nee→nec 4（逐条核上下文皆拉丁）、开引号后空格 2。
+
+### 第 14 轮：第 27 章（卷一 456–469）
+
+本章 28 处（外文 22：תבין→תנין、c→ים、tt/fi?→לה、w/is?→ענה/ענו、nan→חומה、isa→מעוז、siatfja→מלאו、n→תבל、IITI→הרגיו、
+-,3→לכן、naan→חמנים、w→עיר、inx→לאחד אחד、זרת כרם→כרם זית 等；takehold、斜体位置等 6）。全书同类普查（动词+副词粘连）0。
+注：467 页印面作 *unseyen Geschmack*（原书误植），先前 manual_fixes 已改 unseren，暂不回退。
