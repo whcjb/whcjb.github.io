@@ -335,3 +335,9 @@ Hook→I look、gradient→gradiens、had→lead、Itst→lest、multitude→mul
 - 章内 52 处（外文 40），约 2.4 处/页 ❌：希伯来乱码（xvx/"pa/nsai/Witt/sint/into/tohn/tab/fins/ἘΠῚΞ/הצמר…）、页尾丢 LXX 引文 *(ἐπιγράψει χειρί)*、德拉丁（Frömmchen/Röthelstein/remotum/illi/Einleitung/meus）、panicle→particle、caii→can。
 - 照录原书：p.93「Jarch」、p.108「2 Kings 13: 2」。全书同类 2 处（括注后孤立斜体标点）。
 > 收敛判据：连续达标数 0。本五轮（31–35）：35 ❌1.7、23 ❌1.5、50 ❌1.3、42 ❌1.5、44 ❌2.4。
+
+## 乱码检测器（2026-11-17，用户令：先写检测器、全书列可疑处、逐条看图清）
+- `scripts/isaiah_garble_detector.py --broad`：文字判据宽口径列候选（不认识的词、夹 ?"!] 的串、强提示词后的短词/真词、单字母）。
+  回测：拿第 22–35 轮实读改掉的 212 处外文错（会话前快照 3b6e796568）检验，宽口径捞回 143（67%）；漏的主要是恰好是英文真词又不在提示词后的（fit / into / Pan / map / is）和德文缺变音（不在本检测器范围）。
+- `scripts/isaiah_garble_verify.py`：候选在 IA ABBYY XML 同页按前后词定位 → 600dpi 裁词 → tesseract eng/heb/grc 对读；英文模型原样读出原词（置信≥50）的判 latin 排除，其余 HEB/GRC/unclear 出图。
+- `scripts/isaiah_garble_sheets.py`：待看图条目 24 条一张拼图，看图后按编号落盘。
