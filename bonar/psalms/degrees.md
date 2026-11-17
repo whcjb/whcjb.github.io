@@ -4,6 +4,7 @@ book_id: psalms
 book_name: "Bonar on the Psalms"
 title: "The Songs of Degrees"
 date: 2026-11-17 11:58
+zh_url: "/bonar/psalms/zh/degrees/"
 prev_url: "/bonar/psalms/119/"
 prev_label: "Psalm 119"
 next_url: "/bonar/psalms/120/"
