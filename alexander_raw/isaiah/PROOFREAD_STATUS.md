@@ -279,3 +279,9 @@ Hook→I look、gradient→gradiens、had→lead、Itst→lest、multitude→mul
 - 章内 7 处，约 0.9 处/页 ✅：Hezckiah→Hezekiah、页缝丢失 *(ἐξουσία)*、a→ב、",73→מן、בצבאות→צבאות、希腊斜体断开、mihimortuo。
 - 照录原书：p.647「Gen. 37 : 43」、p.650「Theasurus」。
 > 收敛判据（old-book-ocr §4.5）：连续 5 章每页 < 1 处。当前连续达标数：1。
+
+## 第 25 轮（2026-11-17）：第 58 章（卷二书页 336–348，13 页）
+- 章内 37 处（外文 28），约 2.8 处/页 ❌：希伯来乱码仍为大宗（Yn/rvinxnsa/sisa/r,/riri/-,,/"pi…）、页缝吞掉「1.)—」「10.)—」两处、shall→shalt ×2、riot→not、斜体切分。
+- 照录原书：p.346「ch. 42: 14 and 57: 11」、p.345「Lev. 9: 12, 13, 18」、p.346「Hos. 5: 2」。
+- 全书同类：未发现新形态；待看图：ch62「(shall thou be called)」、ch56 v.1 斜体是否含 For。
+> 收敛判据（old-book-ocr §4.5）：连续 5 章每页 < 1 处。当前连续达标数：0（第 39 章达标后第 58 章未达标，重置）。
