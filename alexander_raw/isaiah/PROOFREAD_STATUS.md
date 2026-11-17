@@ -299,3 +299,8 @@ Hook→I look、gradient→gradiens、had→lead、Itst→lest、multitude→mul
 - 章内 67 处（外文 46），约 2.2 处/页 ❌：希伯来乱码大宗（tsrso/riss/noa/iiab/"152/c?/mm…）、希腊重音、德法变音（Bösen、à pleine、mêlée）、斜体错位、dees→does、al ogether 等。
 - 照录原书：p.169「Dan. 4: 28」、p.178「Neh. 1: 10」、Erkentniss。全书同类：未发现新形态。
 > 收敛判据：连续达标数 0。
+
+## 第 29 轮（2026-11-17）：第 11 章（卷一书页 218–237，20 页）
+- 章内 39 处（外文 25），约 2.0 处/页 ❌：希伯来乱码（rnsixa/miSE/nisp/ns/STIB/ixisn/03/Bias/w/cnri）、整句丢词（「when we speak of *smelling to*」）、页边批注杂字（j / I / 1 / )）、德文变音、failing→fatling、son o→of。
+- 全书同类：ch10 aufhoren→aufhören。
+> 收敛判据：连续达标数 0。
