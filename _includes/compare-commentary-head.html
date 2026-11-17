@@ -51,6 +51,27 @@
   {%- assign cc_lang = 'en' -%}
   {%- assign cc_author = include.self | replace: '-en', '' -%}
 {%- endif -%}
+{%- comment -%}
+  界面文案按语种切换（用户 2026-11-17：英文版界面按钮全是中文）。
+  cc_lang 在 foot 里也要用——Jekyll 的 include 与宿主共享上下文，assign 会带过去。
+{%- endcomment -%}
+{%- assign cc_self_en = nil -%}
+{%- for s in site.data.compare_sources.sources[cc_book] -%}
+  {%- if s.key == include.self and s.label_en -%}{%- assign cc_self_en = s.label_en | split: ' ' | last -%}{%- endif -%}
+{%- endfor -%}
+{%- if cc_lang == 'en' -%}
+  {%- assign cc_t_pick = 'Compare with another commentary' -%}
+  {%- assign cc_t_cmp = 'Compare: ' -%}
+  {%- assign cc_t_self = cc_self_en | default: 'This commentary' -%}
+  {%- assign cc_t_other = 'Compare' -%}
+  {%- assign cc_t_close = 'Close' -%}
+{%- else -%}
+  {%- assign cc_t_pick = '对照其他注释' -%}
+  {%- assign cc_t_cmp = '对比' -%}
+  {%- assign cc_t_self = include.self_label | default: '本注释' -%}
+  {%- assign cc_t_other = '对照' -%}
+  {%- assign cc_t_close = '关闭' -%}
+{%- endif -%}
 
 {%- comment -%}
   cc_list  = 别家注释，同语种
@@ -81,24 +102,29 @@
            组件不闭合宿主的任何标签，否则会提前关掉 #cmpCol（见 .cmp-stage 塌成窄条）。 -->
       <div class="cmp-hotwrap">
         <div class="cmp-hotspot" id="cmpHotspot" role="button" tabindex="0"
-             aria-haspopup="true" aria-expanded="false" title="对照其他注释"></div>
+             aria-haspopup="true" aria-expanded="false" title="{{ cc_t_pick }}"></div>
       </div>
       <!-- 对照卡片：直挂 #cmpCol（高 z-index，永在最上层可点），JS 定位到热区下边线，缓慢滑出 -->
       <div class="cmp-drawer" id="cmpDrawer">
         <div class="cmp-card">
-          <div class="cmp-card-title">对照其他注释</div>
+          <div class="cmp-card-title">{{ cc_t_pick }}</div>
           <!-- 选项由 _data/compare_sources.yml 生成；新增注释家改
                scripts/build_commentaries_index.py 的 AUTHORS 后重跑即可 -->
           {%- for s in cc_list %}
           <button type="button" class="cmp-opt" data-source="{{ s.key }}"
                   data-url="{{ site.baseurl }}{{ s.url_tpl | replace: '__CH__', cc_ch }}"
+                  {%- if cc_lang == 'en' and s.label_en %}
+                  data-label="{{ s.label_en }}" data-tg="{{ s.label_en | split: ' ' | last }}"
+                  data-msg="{{ s.label_en }} has no commentary on this chapter.">
+                  {%- else %}
                   data-label="{{ s.label }}" data-tg="{{ s.label | remove: '注释' }}"
                   data-msg="本章暂无{{ s.label }}。">
+                  {%- endif %}
             <svg class="cmp-ic" width="18" height="18" viewBox="0 0 20 20" aria-hidden="true">
               <rect x="2" y="3.5" width="7" height="13" rx="1.6" fill="{{ s.accent }}"></rect>
               <rect x="11" y="3.5" width="7" height="13" rx="1.6" fill="{{ s.accent }}"></rect>
             </svg>
-            <span>对比{{ s.label }}</span>
+            <span>{{ cc_t_cmp }}{% if cc_lang == 'en' and s.label_en %}{{ s.label_en }}{% else %}{{ s.label }}{% endif %}</span>
           </button>
           {%- endfor %}
           {%- if cc_selfen %}
@@ -121,9 +147,9 @@
         <!-- 手机端整屏二选一切换条（桌面隐藏，窄屏 split 时显示） -->
         <div class="cmp-toggle" id="cmpToggle">
           <div class="cmp-tg-group">
-            <button type="button" class="cmp-tg cmp-tg-active" data-target="calvin">{{ include.self_label | default: '本注释' }}</button>
-            <button type="button" class="cmp-tg" data-target="henry" id="cmpTgHenry">对照</button>
+            <button type="button" class="cmp-tg cmp-tg-active" data-target="calvin">{{ cc_t_self }}</button>
+            <button type="button" class="cmp-tg" data-target="henry" id="cmpTgHenry">{{ cc_t_other }}</button>
           </div>
-          <button type="button" class="cmp-tg-close" id="cmpToggleClose">关闭 &times;</button>
+          <button type="button" class="cmp-tg-close" id="cmpToggleClose">{{ cc_t_close }} &times;</button>
         </div>
         <div class="{{ include.content_class }} cmp-calvin" data-book="{{ page.book_id }}">

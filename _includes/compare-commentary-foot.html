@@ -6,11 +6,11 @@
         <aside class="cmp-henry" id="cmpHenry" aria-hidden="true">
           <div class="cmp-henry-inner">
             <div class="cmp-henry-head">
-              <span class="cmp-henry-lbl" id="cmpLbl">马太亨利注释</span>
-              <button type="button" class="cmp-close" id="cmpClose">关闭对比 &times;</button>
+              <span class="cmp-henry-lbl" id="cmpLbl"></span>
+              <button type="button" class="cmp-close" id="cmpClose">{% if cc_lang == 'en' %}Close &times;{% else %}关闭对比 &times;{% endif %}</button>
             </div>
-            <iframe class="cmp-henry-frame" id="cmpFrame" title="对照注释"></iframe>
-            <div class="cmp-henry-msg" id="cmpMsg" hidden>本章暂无对照注释。</div>
+            <iframe class="cmp-henry-frame" id="cmpFrame" title="{% if cc_lang == 'en' %}Compared commentary{% else %}对照注释{% endif %}"></iframe>
+            <div class="cmp-henry-msg" id="cmpMsg" hidden>{% if cc_lang == 'en' %}No commentary on this chapter.{% else %}本章暂无对照注释。{% endif %}</div>
           </div>
         </aside>
       </div>

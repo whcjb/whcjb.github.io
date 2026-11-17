@@ -625,6 +625,9 @@ def build_compare_sources() -> str:
                 label = COMPARE_LABEL.get(aid, aid) + ('（英文版）' if lang == 'en' else '')
                 e = {'key': key, 'author': aid, 'lang': lang, 'label': label,
                      'url_tpl': tpl, 'accent': COMPARE_ACCENT.get(aid, '#555')}
+                if lang == 'en':
+                    # 英文页的对照抽屉显示英文名（用户 2026-11-17：英文版界面按钮全是中文）
+                    e['label_en'] = AUTHORS[aid]['en']
                 if rng:
                     e['ch_from'], e['ch_to'] = rng
                 out[book].append(e)
@@ -649,6 +652,7 @@ def build_compare_sources() -> str:
             lines.append(f'    - {{key: {e["key"]}, author: {e["author"]}, '
                          f'lang: {e["lang"]}, '
                          f'label: {yaml_escape(e["label"])}, '
+                         + (f'label_en: {yaml_escape(e["label_en"])}, ' if 'label_en' in e else '') +
                          f'url_tpl: {yaml_escape(e["url_tpl"])}, '
                          f'accent: {yaml_escape(e["accent"])}{rng}}}')
     return '\n'.join(lines) + '\n'

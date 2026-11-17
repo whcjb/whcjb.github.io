@@ -26,7 +26,7 @@ layout: default
     <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
 
       <div class="ax-chrome" style="margin: 18px 0 22px;">
-        <a href="{{ site.baseurl }}/commentaries/">&larr; 历代解经</a>
+        <a href="{{ site.baseurl }}/commentaries/">&larr; {% if page.zh %}历代解经{% else %}Commentaries{% endif %}</a>
         {% if page.zh %}<a href="{{ site.baseurl }}/alexander/{{ page.book_id }}/">English edition &rarr;</a>
         {% else %}<a href="{{ site.baseurl }}/alexander/{{ page.book_id }}/zh/">中文版 &rarr;</a>{% endif %}
       </div>
@@ -44,52 +44,52 @@ layout: default
       <div class="ax-extra ax-extra-grid">
         {%- assign k = zh_root | append: 'preface.md' -%}
         {%- assign has_zh = false -%}
-        {%- if zh_pages contains k %}{% assign has_zh = true %}{% endif -%}
+        {%- if page.zh and zh_pages contains k %}{% assign has_zh = true %}{% endif -%}
         <a class="ax-extra-item{% unless has_zh %} ax-en-only{% endunless %}"
            href="{{ site.baseurl }}/alexander/{{ page.book_id }}/{% if has_zh %}zh/{% endif %}preface/">
-          <span class="ax-extra-cn">卷一·著者序</span>
-          <span class="ax-extra-en">Preface</span>
+          <span class="ax-extra-cn">{% if page.zh %}卷一·著者序{% else %}Vol. I · Preface{% endif %}</span>
+          {% if page.zh %}<span class="ax-extra-en">Preface</span>{% endif %}
         </a>
         {%- assign k = zh_root | append: 'introduction.md' -%}
         {%- assign has_zh = false -%}
-        {%- if zh_pages contains k %}{% assign has_zh = true %}{% endif -%}
+        {%- if page.zh and zh_pages contains k %}{% assign has_zh = true %}{% endif -%}
         <a class="ax-extra-item{% unless has_zh %} ax-en-only{% endunless %}"
            href="{{ site.baseurl }}/alexander/{{ page.book_id }}/{% if has_zh %}zh/{% endif %}introduction/">
-          <span class="ax-extra-cn">卷一·导论</span>
-          <span class="ax-extra-en">Introduction</span>
+          <span class="ax-extra-cn">{% if page.zh %}卷一·导论{% else %}Vol. I · Introduction{% endif %}</span>
+          {% if page.zh %}<span class="ax-extra-en">Introduction</span>{% endif %}
         </a>
         {%- assign k = zh_root | append: 'later-preface.md' -%}
         {%- assign has_zh = false -%}
-        {%- if zh_pages contains k %}{% assign has_zh = true %}{% endif -%}
+        {%- if page.zh and zh_pages contains k %}{% assign has_zh = true %}{% endif -%}
         <a class="ax-extra-item{% unless has_zh %} ax-en-only{% endunless %}"
            href="{{ site.baseurl }}/alexander/{{ page.book_id }}/{% if has_zh %}zh/{% endif %}later-preface/">
-          <span class="ax-extra-cn">卷二·著者序</span>
-          <span class="ax-extra-en">Preface</span>
+          <span class="ax-extra-cn">{% if page.zh %}卷二·著者序{% else %}Vol. II · Preface{% endif %}</span>
+          {% if page.zh %}<span class="ax-extra-en">Preface</span>{% endif %}
         </a>
         {%- assign k = zh_root | append: 'later-introduction.md' -%}
         {%- assign has_zh = false -%}
-        {%- if zh_pages contains k %}{% assign has_zh = true %}{% endif -%}
+        {%- if page.zh and zh_pages contains k %}{% assign has_zh = true %}{% endif -%}
         <a class="ax-extra-item{% unless has_zh %} ax-en-only{% endunless %}"
            href="{{ site.baseurl }}/alexander/{{ page.book_id }}/{% if has_zh %}zh/{% endif %}later-introduction/">
-          <span class="ax-extra-cn">卷二·导论</span>
-          <span class="ax-extra-en">Introduction</span>
+          <span class="ax-extra-cn">{% if page.zh %}卷二·导论{% else %}Vol. II · Introduction{% endif %}</span>
+          {% if page.zh %}<span class="ax-extra-en">Introduction</span>{% endif %}
         </a>
       </div>
 
-      <div class="ax-legend">
+      {% if page.zh %}<div class="ax-legend">
         <span><i class="ax-dot"></i>深色＝已有中译，点进中文页</span>
         <span><i class="ax-dot ax-dot-en"></i>浅色＝英文原著，点进英文页</span>
-      </div>
+      </div>{% endif %}
 
       {%- comment -%}
         经文索引入口。按 step 07 §5，只放在书卷首页，不进全局书卷列表
         （那是给「一本书」用的位置，索引页挤进去会打乱列表）。
       {%- endcomment -%}
       <a class="ax-vi-link" href="{{ site.baseurl }}/alexander/{{ page.book_id }}/verse-index/">
-        📖 Verse Index<span>逐节检索，点节号直接落到该节注释</span>
+        📖 Verse Index<span>{% if page.zh %}逐节检索，点节号直接落到该节注释{% else %}Find the comment on any verse{% endif %}</span>
       </a>
 
-      {% assign groups = "1,39,前部|40,66,后部" | split: "|" %}
+      {% if page.zh %}{% assign groups = "1,39,前部|40,66,后部" | split: "|" %}{% else %}{% assign groups = "1,39,Volume I|40,66,Volume II" | split: "|" %}{% endif %}
       {% for g in groups %}
         {% assign gp = g | split: "," %}
         {% assign lo = gp[0] | times: 1 %}
@@ -102,14 +102,38 @@ layout: default
           {% for i in (lo..hi) %}
           {%- assign k = zh_root | append: i | append: '.md' -%}
           {%- assign has_zh = false -%}
-          {%- if zh_pages contains k %}{% assign has_zh = true %}{% endif -%}
+          {%- if page.zh and zh_pages contains k %}{% assign has_zh = true %}{% endif -%}
           <a class="ax-ch{% unless has_zh %} ax-en-only{% endunless %}"
              href="{{ site.baseurl }}/alexander/{{ page.book_id }}/{% if has_zh %}zh/{% endif %}{{ i }}/"
-             title="{% if has_zh %}中译{% else %}英文原著（中译未到）{% endif %}">{{ i }}</a>
+             title="{% if page.zh %}{% if has_zh %}中译{% else %}英文原著（中译未到）{% endif %}{% else %}Isaiah {{ i }}{% endif %}">{{ i }}</a>
           {% endfor %}
         </div>
       {% endfor %}
 
+      {% unless page.zh %}
+      <div class="ax-blurb">
+        <p>Joseph Addison Alexander (1809–1860), third son of Archibald Alexander,
+        the first professor at Princeton Theological Seminary, became Charles Hodge's
+        assistant there in 1834 and succeeded him in the chair of Oriental and Biblical
+        Literature in 1840. This commentary on Isaiah, his best-known work, appeared in
+        two volumes: <em>The Earlier Prophecies of Isaiah</em> (1846, chapters 1–39) and
+        <em>The Later Prophecies of Isaiah</em> (1847, chapters 40–66), published by
+        Wiley and Putnam, New York and London.</p>
+        <p>Each chapter opens with an analytical introduction to its structure, followed
+        by Alexander's own rendering of the Hebrew, verse by verse, with discussion of
+        grammar, vocabulary and parallels. <em>The italics in the text are his own
+        translation</em>; the original sets no separate scripture text. His interlocutors
+        are chiefly the German critics of his day (Gesenius, Hitzig, Ewald, Knobel,
+        Hendewerk, Rosenmüller and others). The introduction to the second volume deals
+        with the genuineness of chapters 40–66.</p>
+        <p class="ax-caveat">Text from the Internet Archive scan of the Knox College
+        (Caven Library), Toronto copy, by ABBYY OCR with structural processing and
+        proofreading against the page images; italics restored from the OCR font data.
+        Verse numbers (printed <span class="ax-vnum">V. 7.</span>) follow the English Bible
+        and are linkable. Where the original gives one introduction to a group of chapters
+        (2–4, 13–14, 15–16), it is placed at the head of the first chapter of the group.</p>
+      </div>
+      {% else %}
       <div class="ax-blurb">
         <p>约瑟·亚历山大（Joseph Addison Alexander）是普林斯顿神学院首任教授
         阿奇博尔德·亚历山大的第三子，1834 年入神学院任查尔斯·贺智的助手，
@@ -129,8 +153,9 @@ layout: default
         信息还原。原书节号形如 <span class="ax-vnum">V. 7.</span>，本站渲染成可跳转的
         数字，编号与英文圣经一致。
         原书在第 2–4 章、13–14 章、15–16 章前另有合并的解题，本站把它们放在
-        该组第一章的开头。全书<strong>尚无中译</strong>。</p>
+        该组第一章的开头。</p>
       </div>
+      {% endunless %}
 
     </div>
   </div>
