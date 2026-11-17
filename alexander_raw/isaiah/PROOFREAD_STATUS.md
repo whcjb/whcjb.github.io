@@ -252,3 +252,11 @@ earnest→camest、day→clay、引号/斜体等 8）。原书印错照录：Rom
 | 18 | 5 | 46 | 6 |
 | 19 | 43 | 31 | 6 |
 | 20 | 64 | 20 | 1 |
+
+### 第 21 轮：第 63 章（卷二 414–433，20 页）
+
+本章 39 处（约 2.0/页）（外文 22：b/na/"x/Tipur/iix/w/Frana/niss/127?/tobiaas/tabtea/to → ל/גת/אך/ישקרו/צור/רעי/בהמה/משה/מזער/בוססו/מעולם/נזלו 等；
+Hook→I look、gradient→gradiens、had→lead、Itst→lest、multitude→multitudo、seni 等 17）。
+全书同类：书卷前罗马 I 当 1（I Kings→1 Kings 等）14 处；47 章 ftaa→גבירה（看图）。
+
+> 收敛判据（old-book-ocr §4.5）：连续 5 章每页 < 1 处。当前连续达标数：0。
