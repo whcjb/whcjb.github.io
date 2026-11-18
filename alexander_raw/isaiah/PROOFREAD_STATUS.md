@@ -499,3 +499,6 @@ Hook→I look、gradient→gradiens、had→lead、Itst→lest、multitude→mul
   原书自印不改：127 页末行「great image of Bel at Babylon was not destroyed until the time of Xerxes,」是排版错行（应接 128 页「Herodotus and Diodorus, that the」之后），正文照印面位置保留；133 页 ighteousness 活字缺 r。
 - 第 63 轮全书同类 1 处（卷一 0 / 卷二 1）：阿拉伯词读成拉丁残渣——47 章 `Arabic root >`→خبر。10 章 Peshito `(ji j)` 仍是那处印面糊的待定。o./ch,/斜体吞 as 两卷 0。
 > 收敛判据：连续达标数 0。未读章剩 5（卷二）：47 52 55 56 59。
+- 第 64 轮：未读章第 47 章（卷二 133–151，约 18 页）37 处 ≈ 2.1/页 ❌（希伯来 17：词序倒 3（עד גברת、אל־עבר פניו、אפס אני）、点符 4（חֹבְרֵי、לְחַמֵּם、שֹׁחֲרַיִךְ 等）、读成英文/乱码（Visas→שכול、firsts)→עצמה、said→שובב、san→רגע、5→פקד、n/a→ה/ב 等）；英文 7：sis→its、die→the、arn→am、Tt→It、asch.、''、&；斜体 9；标点 3；段落 2）。
+- 第 64 轮全书同类：die/sis/arn/Tt/asch./''/&* 等两卷 0。「斜体起点早一个词」（*translated profit.* 型）两卷候选数百条、几乎全是正常写法，无干净判据，未扫。
+> 收敛判据：连续达标数 0。未读章剩 4（卷二）：52 55 56 59。
