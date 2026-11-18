@@ -1,0 +1,101 @@
+---
+layout: default
+---
+{%- comment -%}
+  司布真《大卫的宝库》书卷首页。配色与章节页同源（司布真作者色 #3a3018 / #4a3b22）。
+  目录：序言一格，诗篇 150 篇按篇号排成小格。
+{%- endcomment -%}
+
+<div class="container spurgeonps-wrap spurgeonps-book" style="padding-top: 70px;">
+  <div class="row">
+    <div class="col-lg-9 col-lg-offset-1 col-md-10 col-md-offset-1">
+
+      <div class="td-booklang">
+        {% if page.zh %}{% if page.en_url %}<a href="{{ site.baseurl }}{{ page.en_url }}">English edition &rarr;</a>{% endif %}
+        {% else %}{% if page.zh_url %}<a href="{{ site.baseurl }}{{ page.zh_url }}">中文版 &rarr;</a>{% endif %}{% endif %}
+      </div>
+      <div class="td-hero">
+        <h1>{{ page.book_name }}</h1>
+        <p class="td-hero-author">{{ page.author }}</p>
+        <p class="td-hero-meta">{{ page.edition }}</p>
+      </div>
+
+      {{ content }}
+
+    </div>
+  </div>
+</div>
+
+<style>
+.spurgeonps-book {
+  --td-ink: #4a3b22;
+  --td-ink-dark: #3a3018;
+  --td-rule: #e2dac8;
+  --td-paper: #fbf8f1;
+}
+.spurgeonps-book .td-booklang { text-align: right; margin: 0 0 10px; font-size: 13px;
+  font-family: Georgia, "Times New Roman", serif; }
+.spurgeonps-book .td-booklang a { color: var(--td-ink-dark); border: 1px solid var(--td-rule);
+  border-radius: 4px; padding: 4px 10px; text-decoration: none; }
+.spurgeonps-book .td-booklang a:hover { background: var(--td-ink); color: #fff; }
+/* 书首：不用大色块横幅（用户 2026-10-22），书名 + 作者 + 版本加细线 */
+.spurgeonps-book .td-hero {
+  margin: 4px 0 22px; padding: 0 0 12px; border-bottom: 2px solid var(--td-ink);
+  font-family: Georgia, "Times New Roman", "Songti SC", serif;
+}
+.spurgeonps-book .td-hero h1 { font-family: Georgia, "Times New Roman", "Songti SC", STSong, serif; margin: 0 0 4px;
+  font-size: 26px; font-weight: normal; line-height: 1.3; color: var(--td-ink-dark); }
+.spurgeonps-book .td-hero-author { margin: 0; font-size: 14.5px; color: #3e3e44; }
+.spurgeonps-book .td-hero-meta { margin: 2px 0 0; font-size: 13px; color: #85858f; font-style: italic; }
+
+.spurgeonps-book .td-group {
+  font-family: Georgia, "Times New Roman", serif; margin: 30px 0 12px;
+  font-size: 15px; color: var(--td-ink-dark); letter-spacing: .05em;
+  padding-bottom: 6px; border-bottom: 1px solid var(--td-rule);
+}
+.spurgeonps-book .td-group small { color: #9aa4ad; letter-spacing: 0; font-size: 12px; }
+
+.spurgeonps-book .td-toc {
+  list-style: none; padding: 0; margin: 0;
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 8px;
+}
+.spurgeonps-book .td-toc li { margin: 0; }
+.spurgeonps-book .td-toc a {
+  display: block; padding: 10px 14px; border: 1px solid var(--td-rule);
+  border-radius: 4px; background: var(--td-paper); text-decoration: none;
+  font-family: Georgia, "Times New Roman", serif; font-size: 15px;
+  color: #2d3238; line-height: 1.45;
+}
+.spurgeonps-book .td-toc a:hover {
+  border-color: var(--td-ink); background: #fff; color: var(--td-ink-dark);
+}
+.spurgeonps-book .td-toc .td-no {
+  color: var(--td-ink); font-size: 12px; letter-spacing: .06em;
+  display: block; margin-bottom: 2px;
+}
+.spurgeonps-book .td-toc .td-ref { color: #98a2aa; font-size: 12.5px; }
+
+.spurgeonps-book .td-note {
+  font-family: Georgia, "Times New Roman", serif; font-size: 13.5px;
+  color: #6f7982; line-height: 1.8; margin: 34px 0 0;
+  padding-top: 16px; border-top: 1px solid var(--td-rule);
+}
+.spurgeonps-book .td-toc.td-wide { grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); }
+.spurgeonps-book .td-note p { margin: 0 0 12px; }
+.spurgeonps-book .td-note ul { margin: 0 0 12px; padding-left: 20px; }
+.spurgeonps-book .td-ed { font-family: Georgia, "Times New Roman", serif; font-size: 13px; margin: 8px 0 0; color: #5d5856; }
+.spurgeonps-book .td-ed summary { cursor: pointer; color: var(--td-ink-dark); }
+.spurgeonps-book .td-ed table { width: 100%; border-collapse: collapse; margin-top: 8px; }
+.spurgeonps-book .td-ed th, .spurgeonps-book .td-ed td { border-bottom: 1px solid var(--td-rule); padding: 5px 6px; text-align: left; vertical-align: top; }
+.spurgeonps-book .td-toc a.td-other { color: #a09895; }
+.spurgeonps-book .td-toc a.td-other small { display: block; font-size: 11px; color: #b9b1ae; }
+.spurgeonps-book .td-he { unicode-bidi: isolate; font-family: "SBL Hebrew", "Times New Roman", serif; }
+.spurgeonps-book .td-toc.td-nums { grid-template-columns: repeat(auto-fill, minmax(64px, 1fr)); }
+.spurgeonps-book .td-toc.td-nums a { text-align: center; padding: 8px 4px; }
+@media (max-width: 767px) {
+  .spurgeonps-book .td-hero h1 { font-size: 22px; }
+  .spurgeonps-book .td-toc { grid-template-columns: repeat(auto-fill, minmax(96px, 1fr)); }
+  .spurgeonps-book .td-toc.td-wide { grid-template-columns: 1fr; }
+}
+</style>

@@ -221,6 +221,7 @@ sources:
     - {key: calvin, author: calvin, lang: zh, label: "加尔文注释", url_tpl: "/calvin/psalms-2/__CH__/", accent: "#800000", ch_from: 79, ch_to: 150}
     - {key: calvin-en, author: calvin, lang: en, label: "加尔文注释（英文版）", label_en: "John Calvin", url_tpl: "/calvin/psalms-2-en/__CH__/", accent: "#800000", ch_from: 79, ch_to: 150}
     - {key: mhenry, author: mhenry, lang: zh, label: "马太亨利注释", url_tpl: "/mhenry/psalms/__CH__/", accent: "#C9922A", ch_from: 1, ch_to: 150}
+    - {key: spurgeon-en, author: spurgeon, lang: en, label: "司布真注释（英文版）", label_en: "Charles Haddon Spurgeon", url_tpl: "/spurgeon/psalms/__CH__/", accent: "#4a3b22", ch_from: 1, ch_to: 150}
     - {key: alexander-en, author: alexander, lang: en, label: "亚历山大注释（英文版）", label_en: "Joseph Addison Alexander", url_tpl: "/alexander/psalms/__CH__/", accent: "#7d2f2f", ch_from: 1, ch_to: 150}
     - {key: alexander, author: alexander, lang: zh, label: "亚历山大注释", url_tpl: "/alexander/psalms/zh/__CH__/", accent: "#7d2f2f", ch_from: 1, ch_to: 150}
     - {key: bonar-en, author: bonar, lang: en, label: "博纳尔讲论（英文版）", label_en: "Andrew A. Bonar", url_tpl: "/bonar/psalms/__CH__/", accent: "#d2776f", ch_from: 1, ch_to: 150}

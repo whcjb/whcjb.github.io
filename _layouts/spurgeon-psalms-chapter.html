@@ -1,0 +1,143 @@
+---
+layout: default
+---
+{%- comment -%}
+  司布真《大卫的宝库》（The Treasury of David）章节页。由 scripts/publish_spurgeon_psalms_en.py 生成正文。
+  ⚠️ 不复用别家 layout（马太福音的 spurgeon-chapter 是另一套版式）；结构照 owen-psalm130-chapter，
+  配色用司布真的作者色 #3a3018 / #4a3b22（与 _data/commentaries.yml 的 c0/c1 一致）。
+  版式：卷首说明 TITLE / SUBJECT / DIVISION `.td-head`；各分块标题 `.td-sec`（Exposition / Explanatory Notes … /
+  Hints to the Village Preacher / Other Works）；段首节号 `.td-v`。只有英文版（中文另有麦种传道会正式译本）。
+{%- endcomment -%}
+
+<div class="container spurgeonps-wrap{% if page.zh %} td-zh{% endif %}" style="padding-top: 70px;">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+
+      <div class="td-chrome">
+        <a href="{{ site.baseurl }}/spurgeon/{{ page.book_id }}/{% if page.zh %}zh/{% endif %}">&larr; {{ page.book_name }}</a>
+        {% unless page.zh %}{% if page.zh_url %}<a class="td-lang" href="{{ site.baseurl }}{{ page.zh_url }}">中文版 &rarr;</a>{% endif %}{% endunless %}
+      </div>
+
+      <h1 class="td-title">{{ page.title }}{% if page.title_note %}<sup class="td-fn"><a href="#fn-{{ page.title_note }}" id="fnref-{{ page.title_note }}">{{ page.title_note }}</a></sup>{% endif %}</h1>
+      {% if page.subtitle %}<p class="td-subtitle">{{ page.subtitle }}</p>{% endif %}
+
+      <div class="td-nav">
+        {% if page.prev_url %}<a href="{{ site.baseurl }}{{ page.prev_url }}">&larr; {{ page.prev_label }}</a>
+        {% else %}<span></span>{% endif %}
+        {% if page.next_url %}<a href="{{ site.baseurl }}{{ page.next_url }}">{{ page.next_label }} &rarr;</a>
+        {% else %}<span></span>{% endif %}
+      </div>
+
+      <div class="td-content">
+        {{ content }}
+      </div>
+
+      {% if page.date %}
+      <div class="td-stamp">{% if page.zh %}译于{% else %}Published{% endif %} {{ page.date | date: "%Y-%m-%d %H:%M" }}</div>
+      {% endif %}
+
+      <div class="td-nav td-nav-foot">
+        {% if page.prev_url %}<a href="{{ site.baseurl }}{{ page.prev_url }}">&larr; {{ page.prev_label }}</a>
+        {% else %}<span></span>{% endif %}
+        {% if page.next_url %}<a href="{{ site.baseurl }}{{ page.next_url }}">{{ page.next_label }} &rarr;</a>
+        {% else %}<span></span>{% endif %}
+      </div>
+
+    </div>
+  </div>
+</div>
+
+{% if page.zh %}
+<link href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-webfont@1.7.0/style.css" rel="stylesheet">
+{% include scripture-popup.html container_selector=".td-content" accent="#4a3b22" vnum="#3a3018" slide="down" %}
+{% endif %}
+
+<style>
+.spurgeonps-wrap {
+  --td-ink: #4a3b22;
+  --td-ink-dark: #3a3018;
+  --td-rule: #e2dac8;
+  --td-paper: #fbf8f1;
+  --td-body: #33302f;
+}
+.spurgeonps-wrap .td-chrome,
+.spurgeonps-wrap .td-nav {
+  font-size: 13px; display: flex; justify-content: space-between;
+  align-items: center; font-family: Georgia, "Times New Roman", serif;
+}
+.spurgeonps-wrap .td-chrome { margin: 18px 0 22px; }
+.spurgeonps-wrap .td-chrome a,
+.spurgeonps-wrap .td-nav a { color: var(--td-ink-dark); text-decoration: none; }
+.spurgeonps-wrap .td-chrome a:hover,
+.spurgeonps-wrap .td-nav a:hover { color: var(--td-ink); text-decoration: underline; }
+.spurgeonps-wrap .td-lang { border: 1px solid var(--td-rule); border-radius: 4px; padding: 4px 10px; }
+.spurgeonps-wrap .td-title {
+  font-family: Georgia, "Times New Roman", serif; font-size: 30px;
+  font-weight: normal; color: var(--td-ink-dark); text-align: center;
+  margin: 10px 0 4px; line-height: 1.3;
+}
+.spurgeonps-wrap .td-subtitle {
+  text-align: center; font-size: 14px; color: #8f8885; margin: 0 0 6px;
+  font-family: Georgia, "Times New Roman", serif; font-style: italic;
+}
+.spurgeonps-wrap .td-nav { margin: 14px 0 26px; }
+.spurgeonps-wrap .td-nav-foot { margin-top: 44px; padding-top: 16px; border-top: 1px solid var(--td-rule); }
+
+.spurgeonps-wrap .td-content {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 17px; line-height: 1.85; color: var(--td-body);
+}
+.spurgeonps-wrap .td-content p { margin: 0 0 16px; text-align: justify; }
+.spurgeonps-wrap .td-arg { font-style: italic; color: #5d6a66; font-size: .93em; border-left: 3px solid var(--td-rule);
+  padding-left: 12px; margin-bottom: 22px; }
+.spurgeonps-wrap .td-sub { font-family: Georgia, "Times New Roman", serif; font-size: 19px; color: var(--td-ink-dark);
+  margin: 30px 0 12px; font-weight: normal; }
+.spurgeonps-wrap .td-verse { margin-left: 24px; text-align: left; font-style: italic; }
+.spurgeonps-wrap .td-center { text-align: center !important; }
+.spurgeonps-wrap .td-right { text-align: right !important; }
+.spurgeonps-wrap .td-sc { font-variant: small-caps; }
+.spurgeonps-wrap .td-vr {
+  color: var(--td-ink-dark); font-size: 13px; letter-spacing: .04em;
+  margin-right: 8px; white-space: nowrap;
+}
+.spurgeonps-wrap .td-he {
+  font-family: "SBL Hebrew", "Ezra SIL", "Times New Roman", serif;
+  font-size: 1.12em; unicode-bidi: isolate;
+}
+.spurgeonps-wrap sup.td-fn { font-size: 11px; line-height: 0; margin-left: 1px; }
+.spurgeonps-wrap sup.td-fn a { color: var(--td-ink-dark); text-decoration: none; padding: 0 2px; }
+.spurgeonps-wrap .td-notes {
+  margin-top: 36px; padding-top: 14px; border-top: 1px solid var(--td-rule);
+  font-size: 14.5px; line-height: 1.75; color: #4b4644;
+}
+.spurgeonps-wrap .td-notes p { margin: 0 0 10px; text-align: left; }
+.spurgeonps-wrap .td-notes .td-back {
+  color: var(--td-ink-dark); text-decoration: none; margin-right: 8px; font-size: 12.5px;
+}
+.spurgeonps-wrap .td-stamp { text-align: right; color: #a9a29f; font-size: 12px; margin-top: 30px;
+  font-family: Georgia, "Times New Roman", serif; }
+.spurgeonps-wrap.td-zh .td-content,
+.spurgeonps-wrap.td-zh .td-title { font-family: Georgia, "Songti SC", STSong, "Noto Serif SC", serif; }
+.spurgeonps-wrap.td-zh .td-content p { text-align: justify; }
+.spurgeonps-wrap .td-orig { color: #9a918e; font-size: .88em; }
+@media (max-width: 767px) {
+  .spurgeonps-wrap .td-title { font-size: 24px; }
+  .spurgeonps-wrap .td-content { font-size: 16px; }
+}
+.spurgeonps-wrap .td-head { font-size: .95em; color: #4f4a40; }
+.spurgeonps-wrap .td-head b { color: var(--td-ink-dark); letter-spacing: .04em; }
+.spurgeonps-wrap .td-sec { font-family: Georgia, "Times New Roman", serif; font-size: 20px; font-weight: normal;
+  color: var(--td-ink-dark); text-align: center; letter-spacing: .06em; text-transform: uppercase;
+  margin: 40px 0 18px; padding-top: 18px; border-top: 1px solid var(--td-rule); }
+.spurgeonps-wrap .td-v { color: var(--td-ink-dark); }
+#hint ~ p, #othe ~ p { font-size: .95em; }
+.spurgeonps-wrap .td-sub { font-family: Georgia, "Times New Roman", serif; font-size: 15px; font-weight: normal;
+  color: var(--td-ink); letter-spacing: .06em; text-transform: uppercase; margin: 26px 0 12px; }
+.spurgeonps-wrap .td-auth { text-align: right !important; font-size: .92em; color: #6b6355; margin-top: -8px; }
+.spurgeonps-wrap .td-quote { margin-left: 32px; text-align: left !important; }
+.spurgeonps-wrap .td-hint { text-align: left !important; margin-bottom: 8px !important; }
+.spurgeonps-wrap .td-hint-1 { margin-left: 22px; }
+.spurgeonps-wrap .td-hint-2 { margin-left: 44px; }
+.spurgeonps-wrap .td-hint-3 { margin-left: 66px; }
+.spurgeonps-wrap small { font-size: .82em; letter-spacing: .03em; }
+</style>

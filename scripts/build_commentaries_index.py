@@ -356,7 +356,7 @@ DUO_BOOKS = {}
 # 与 DUO_BOOKS 不同：那边卡片分色带、各带直接链到各家；这里整张卡片只链到选择页。
 # 诗篇：用户 2026-11-10 指定亚历山大与霍志恒合列，点进去再选；同日马太福音（原 DUO_BOOKS 三家色带）也改用此方案。
 # 2026-11-17 博纳尔上线，诗篇三家合列。
-PICK_BOOKS = {'psalms': ('alexander', 'vos', 'bonar', 'owen', 'manton', 'bridges'), 'matthew': ('spurgeon', 'dickson', 'alexander'),
+PICK_BOOKS = {'psalms': ('alexander', 'spurgeon', 'vos', 'bonar', 'owen', 'manton', 'bridges'), 'matthew': ('spurgeon', 'dickson', 'alexander'),
               'romans': ('hodge', 'haldane'),   # 2026-11-10 霍尔丹上线，罗马书两家合列
               'isaiah': ('alexander', 'anon')}  # 2026-11-13 用户令以赛亚书加一本佚名注释，两家合列
 # 合列卡片用书卷自己的独立色，不用任何一家的作者色（用户 2026-11-10：「专门为诗篇挑选」；同日「颜色不能太相近」）。
@@ -434,6 +434,8 @@ BOOK_TITLES = {
                                 'An Exposition of Ephesians'),
     ('spurgeon', 'matthew'):   ('马太福音注释',
                                 'The Gospel of the Kingdom'),
+    ('spurgeon', 'psalms'):    ('大卫的宝库',
+                                'The Treasury of David'),
     ('durham', 'revelation'):  ('启示录注释',
                                 'A Commentary upon the Book of the Revelation'),
     ('vos', 'psalms'):         ('诗篇的末世论',
