@@ -6,6 +6,7 @@ title: "Preface"
 date: 2026-11-18 16:37
 next_url: "/haldane/romans/introduction/"
 next_label: "Introduction"
+zh_url: "/haldane/romans/zh/preface/"
 ---
 
 <p class="title-block-h1" style="text-align:center; color:#0000d4; font-size:30px; margin:22px 0 6px;" markdown="1">PREFACE</p>
