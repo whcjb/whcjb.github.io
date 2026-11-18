@@ -32,10 +32,16 @@ from structured_to_md import convert_ages_greek, collapse_spaced_caps   # noqa: 
 
 
 def norm(s: str) -> str:
+    # 两侧同口径（2026-11-18 补，霍尔丹）：去 AGES 经文锚点 `<NNNNNN>`（诗 100 篇以上为十六进制）、
+    # 脚注号 `f12` → `12`（AGES 脚注号带 f 前缀，产物还原成裸数字）、标点前的空白折叠（「2.-」≡「2. -」）
+    s = re.sub(r'<[0-9A-F]{6,8}>', ' ', s)
+    s = re.sub(r'(?<![A-Za-z])f(\d+)(?![A-Za-z])', r' \1 ', s)
     s = s.replace('’', "'").replace('‘', "'")
     s = s.replace('“', '"').replace('”', '"')
     s = s.replace('—', '-').replace('–', '-').replace('‒', '-')
     s = s.replace('\xa0', ' ')
+    s = re.sub(r'\s+([.,;:!?-])', r'\1', s)
+    s = re.sub(r'([.,;:!?-])(?=[.,;:!?-])', r'\1', s)
     return re.sub(r'\s+', ' ', s).strip()
 
 
@@ -78,10 +84,15 @@ def pdf_stream(pdf: str, skip_head: int, skip_tail: int) -> tuple:
 
 def md_stream(out_dir: str) -> tuple:
     paths = sorted(glob.glob(os.path.join(out_dir, '*.md'))) if os.path.isdir(out_dir) else [out_dir]
-    # preface 排前面，章节按数字序——与 PDF 顺序一致
+    # 与 PDF 顺序一致：preface → introduction → 章节（数字序）→ conclusion。
+    # 2026-11-18：原先非数字页一律排 99、再按字母序，conclusion 排到 introduction 前、导论被挪到书末，
+    # 两侧整段错位，按词 SequenceMatcher 退化到十分钟以上（霍尔丹实测）。
     def key(p):
         stem = os.path.basename(p)[:-3]
-        return (0, 0) if stem == 'preface' else (1, int(stem) if stem.isdigit() else 99)
+        front = {'preface': (0, 0), 'introduction': (0, 1)}
+        if stem in front:
+            return front[stem]
+        return (1, int(stem)) if stem.isdigit() else (2, 0)
     bd, nt = [], []
     for p in sorted(paths, key=key):
         raw = open(p, encoding='utf-8').read()
@@ -91,6 +102,7 @@ def md_stream(out_dir: str) -> tuple:
         # 顺序反了会剩下 `[^]` 之类的残骸（实测踩过）。
         body = re.sub(r'<[^>]+>', '', body)                     # HTML
         body = re.sub(r'^#{1,6}\s+', '', body, flags=re.M)      # markdown 标题号
+        body = re.sub(r'^\{:[^}]*\}\s*$', '', body, flags=re.M)  # kramdown 属性行 {: .x}
         body = body.replace('**', '').replace('*', '')          # 强调标记
         body = body.replace('&quot;', '"').replace('&amp;', '&')
         body = body.replace('&lt;', '<').replace('&gt;', '>')
@@ -103,6 +115,30 @@ def md_stream(out_dir: str) -> tuple:
     # 就对齐了。
     strip_ref = lambda x: re.sub(r'\[\^f?t?(\w+?)\]', r' \1 ', x)
     return norm(strip_ref('\n'.join(bd))), norm(strip_ref('\n'.join(nt)))
+
+
+def sysdiff_ops(wa, wb):
+    """一词一行交给系统 diff，解析出 difflib 式的 (tag, i1, i2, j1, j2) 与匹配词数。"""
+    import subprocess
+    import tempfile
+    with tempfile.TemporaryDirectory() as d:
+        fa, fb = os.path.join(d, 'a'), os.path.join(d, 'b')
+        open(fa, 'w', encoding='utf-8').write('\n'.join(wa) + '\n')
+        open(fb, 'w', encoding='utf-8').write('\n'.join(wb) + '\n')
+        out = subprocess.run(['diff', fa, fb], capture_output=True, text=True).stdout
+    ops, removed = [], 0
+    for line in out.splitlines():
+        m = re.match(r'^(\d+)(?:,(\d+))?([acd])(\d+)(?:,(\d+))?$', line)
+        if not m:
+            continue
+        a1, a2, op, b1, b2 = int(m.group(1)), int(m.group(2) or m.group(1)), m.group(3), int(m.group(4)), int(m.group(5) or m.group(4))
+        if op == 'a':
+            ops.append(('insert', a1, a1, b1 - 1, b2)); removed += 0
+        elif op == 'd':
+            ops.append(('delete', a1 - 1, a2, b1, b1)); removed += a2 - a1 + 1
+        else:
+            ops.append(('replace', a1 - 1, a2, b1 - 1, b2)); removed += a2 - a1 + 1
+    return ops, len(wa) - removed
 
 
 def main():
@@ -131,10 +167,16 @@ def main():
     if wa == wb:
         print('\n  逐词完全一致 ✓')
         return 0
-    sm = difflib.SequenceMatcher(None, wa, wb, autojunk=False)
-    print(f'  相似度 {sm.ratio():.5f}')
+    if len(wa) + len(wb) > 400_000:
+        # 大书（霍尔丹 37.5 万词）按词 SequenceMatcher 跑不完十分钟：改用系统 diff（Myers，近似一致的两侧近线性），
+        # 输出同口径的相似度（2·匹配词 / 总词）与差异段（2026-11-18 补）。
+        ops, matched = sysdiff_ops(wa, wb)
+        print(f'  相似度 {2 * matched / (len(wa) + len(wb)):.5f}   （系统 diff）')
+    else:
+        sm = difflib.SequenceMatcher(None, wa, wb, autojunk=False)
+        print(f'  相似度 {sm.ratio():.5f}')
+        ops = [o for o in sm.get_opcodes() if o[0] != 'equal']
     A, B = wa, wb
-    ops = [o for o in sm.get_opcodes() if o[0] != 'equal']
     print(f'  差异段 {len(ops)} 处，前 {a.show} 处：\n')
     for tag, i1, i2, j1, j2 in ops[:a.show]:
         print(f'   [{tag}] PDF@{i1}')

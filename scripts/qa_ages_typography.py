@@ -54,7 +54,14 @@ def pdf_census(pdf_path: str, skip_head: int = 0, skip_tail: int = 0) -> dict:
             btxt = ''.join(sp['text'] for ln in b.get('lines', []) for sp in ln['spans']).strip()
             # 页码块本身就是居中的（410 宽的页面上 x≈198），1cor 有 401 个，
             # 不排掉会把「居中内容」这一项彻底淹没（466 里 401 是页码）。
-            if abs(lm - rm) < 8 and lm > 30 and not btxt.isdigit():
+            # 居中须**逐行**居中（01-diagnose §8 / principles §0.3：只看整块左右对称会把整段缩进、右缘恰好
+            # 对称的段落当居中——霍尔丹 6 处 x=44 起排的缩进段即此；AGES 经文锚点 `<NNNNNN>` 把一行劈开后剩下的
+            # 碎片块（霍尔丹 11 处，如「<500304>Philippians 3:4, 5; …」）同样行不居中，一并排除）。2026-11-18 补。
+            lines_ok = all(abs((ln['bbox'][0] + ln['bbox'][2]) / 2 - W / 2) < 12 for ln in b.get('lines', []))
+            # 锚点残片：以 `<NNNNNN>` 起首、剥掉锚点后又不是全大写标题（如「<191602>Psalm 16:2.」恰好落在页中）
+            m_anc = re.match(r'^\d{0,7}>|^<[0-9A-F]{6,8}>', btxt)
+            frag = bool(m_anc) and not btxt[m_anc.end():].strip().isupper()
+            if abs(lm - rm) < 8 and lm > 30 and not btxt.isdigit() and lines_ok and not frag:
                 c['centered_blocks'] += 1
             for l in b.get('lines', []):
                 for s in l['spans']:
