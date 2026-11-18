@@ -495,3 +495,7 @@ Hook→I look、gradient→gradiens、had→lead、Itst→lest、multitude→mul
   · 小写罗马卷号被读成字母：40 章 vol. n.→vol. ii.。
   · 「p./vol. 后缺数字」「数字代希伯来词」两卷其余候选均为正常引文/节号，0。
 > 收敛判据：连续达标数 0。未读章剩 6（卷二）：46 47 52 55 56 59。
+- 第 63 轮：未读章第 46 章（卷二 125–133，约 8.5 页）10 处 ≈ 1.2/页 ❌（希伯来 4：על→בעל、(s)→(נביא)、07?→עיט、x→אף；阿拉伯 JL→أَسَّ；英文 o.→of；标点 3；斜体 2）。
+  原书自印不改：127 页末行「great image of Bel at Babylon was not destroyed until the time of Xerxes,」是排版错行（应接 128 页「Herodotus and Diodorus, that the」之后），正文照印面位置保留；133 页 ighteousness 活字缺 r。
+- 第 63 轮全书同类 1 处（卷一 0 / 卷二 1）：阿拉伯词读成拉丁残渣——47 章 `Arabic root >`→خبر。10 章 Peshito `(ji j)` 仍是那处印面糊的待定。o./ch,/斜体吞 as 两卷 0。
+> 收敛判据：连续达标数 0。未读章剩 5（卷二）：47 52 55 56 59。
