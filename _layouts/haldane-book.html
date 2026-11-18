@@ -100,6 +100,7 @@ body:has(.haldane-book) { background: #fbfaf9; }
 .haldane-book .hd-bsub { font-style: italic; font-size: 13px; color: #8a8275; margin-bottom: 28px; }
 /* 卡片：卷首卷末宽卡（小号英文标签 + 中文）、章号方格（小号 Chapter + 大号数字），同贺智 */
 .haldane-book .hd-wide2 { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 18px; }
+.haldane-book .hd-wide2 > .hd-tile:only-child { grid-column: 1 / -1; }   /* 结语单卡：通栏，与上方方格左右对齐 */
 .haldane-book .hd-tgrid { display: grid; grid-template-columns: repeat(auto-fill, minmax(78px, 1fr)); gap: 10px; margin-bottom: 18px; }
 .haldane-book .hd-tile { display: flex; flex-direction: column; align-items: center; justify-content: center; height: 68px;
   border: 1px solid var(--hd-rule); border-radius: 4px; background: #fff; color: var(--hd-ink-dark) !important; font-size: 21px;
@@ -139,6 +140,7 @@ body:has(.haldane-book) { background: #fbfaf9; }
 .haldane-book .hd-bsub { font-style: italic; font-size: 13px; color: #8a8275; margin-bottom: 28px; }
 /* 卡片：卷首卷末宽卡（小号英文标签 + 中文）、章号方格（小号 Chapter + 大号数字），同贺智 */
 .haldane-book .hd-wide2 { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 18px; }
+.haldane-book .hd-wide2 > .hd-tile:only-child { grid-column: 1 / -1; }   /* 结语单卡：通栏，与上方方格左右对齐 */
 .haldane-book .hd-tgrid { display: grid; grid-template-columns: repeat(auto-fill, minmax(78px, 1fr)); gap: 10px; margin-bottom: 18px; }
 .haldane-book .hd-tile { display: flex; flex-direction: column; align-items: center; justify-content: center; height: 68px;
   border: 1px solid var(--hd-rule); border-radius: 4px; background: #fff; color: var(--hd-ink-dark) !important; font-size: 21px;
