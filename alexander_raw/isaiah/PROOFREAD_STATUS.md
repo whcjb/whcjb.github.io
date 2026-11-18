@@ -461,3 +461,4 @@ Hook→I look、gradient→gradiens、had→lead、Itst→lest、multitude→mul
   · Mace.、earn、prosopopoeia、Kolln/Colln、per sons 型断词：两卷各 0。
   · 符号残渣判据对本章重跑：0。
   · 没清完、明说：**希伯来短语只丢一半**（ירשו ארץ 丢 ירשו）——空白判据的正文对位过滤要求两侧是英文词，丢半的位置两侧夹着另一个希伯来词，被过滤掉了；放宽会把每个正常希伯来词都报出来，暂无干净判据。
+  · **旧规则左列过短（新发现的一类，比 OCR 错更要紧）**：manual_fixes 里 3 条「只改末尾标点」的旧规则左列只有短语本身，命中全书多处——`saith Jehovah of Hosts,`（14 章 p.289 那个错句点就是它写的，重跑还会改坏 22 章）、`is of no exegetical importance,`（会改坏 2 章、5 章×2）、`would here be out of place,`（会改坏本轮 10 章 p.185 的改正）。三条都收窄到目标句的下一个词；正文现状均已看图核对。lint「命中多次」清零。
