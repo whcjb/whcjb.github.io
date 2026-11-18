@@ -106,7 +106,7 @@ def check_disk():
 
 RE_SUP = re.compile(r'<sup class="op-fn"><a href="#fn-(\d+)" id="fnref-\1">\1</a></sup>')
 RE_NOTE = re.compile(r'^(<p id="fn-(\d+)"><a class="op-back" href="#fnref-\2">\2</a>)(.*)(</p>)$')
-RE_OPEN = re.compile(r'<(p|h3)( class="op-(?:arg|sub|center|right)")?>')
+RE_OPEN = re.compile(r'<(p|h3)( class="op-(?:arg|sub|center|right|verse)")?>')
 
 
 def to_src(inner):
