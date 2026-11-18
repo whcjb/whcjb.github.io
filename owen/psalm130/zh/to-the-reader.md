@@ -6,8 +6,8 @@ title: "致读者"
 date: 2026-11-18 09:52
 prev_url: "/owen/psalm130/zh/prefatory-note/"
 prev_label: "编者说明"
-next_url: "/owen/psalm130/zh/4/"
-next_label: "灵魂的光景与处境"
+next_url: "/owen/psalm130/zh/1/"
+next_label: "诗篇 130 篇"
 en_url: "/owen/psalm130/to-the-reader/"
 zh: true
 ---
