@@ -8,6 +8,7 @@ prev_url: "/haldane/romans/preface/"
 prev_label: "Preface"
 next_url: "/haldane/romans/1/"
 next_label: "Romans 1"
+zh_url: "/haldane/romans/zh/introduction/"
 ---
 
 <p class="title-block-h1" style="text-align:center; color:#0000d4; font-size:30px; margin:22px 0 6px;" markdown="1">INTRODUCTION</p>

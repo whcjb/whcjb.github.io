@@ -4,8 +4,8 @@ book_id: romans
 book_name: "霍尔丹《罗马书释义》"
 title: "序言"
 date: 2026-11-19 05:01
-next_url: "/haldane/romans/zh/1/"
-next_label: "第一章"
+next_url: "/haldane/romans/zh/introduction/"
+next_label: "导论"
 en_url: "/haldane/romans/preface/"
 zh: true
 ---
