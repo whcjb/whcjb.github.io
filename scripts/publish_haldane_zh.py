@@ -50,9 +50,12 @@ def short(slug):
     return NAME.get(slug) or f'第{cn(int(slug))}章'
 
 
-def title(slug):
-    # 英文页题照 AGES：第 1 章页题是 EXPOSITION（CHAPTER 1 在其下），中文同
-    return NAME.get(slug) or ('释义' if slug == '1' else f'第{cn(int(slug))}章')
+def title(slug, body=''):
+    # 英文页题照 AGES：第 1 章页题是 EXPOSITION（CHAPTER 1 在其下）；中文译文是按新版式译的（正文里有「第一章」
+    # 那行 hd-h-ch）才同样用「释义」，旧版译文仍题「第一章」
+    if slug == '1' and 'hd-h-ch' in body:
+        return '释义'
+    return NAME.get(slug) or f'第{cn(int(slug))}章'
 
 
 def clean(body):
@@ -71,8 +74,9 @@ def main():
     now = subprocess.run(['date', '+%Y-%m-%d %H:%M'], capture_output=True, text=True).stdout.strip()
     OUT.mkdir(parents=True, exist_ok=True)
     for k, s in enumerate(done):
+        raw = (ZH_RAW / f'{s}.md').read_text(encoding='utf-8')
         fm = ['---', 'layout: haldane-chapter', 'book_id: romans', 'book_name: "霍尔丹《罗马书释义》"',
-              f'title: "{title(s)}"', f'date: {meta.get(s, now)}']
+              f'title: "{title(s, raw)}"', f'date: {meta.get(s, now)}']
         if s.isdigit():
             fm.append(f'chapter: {s}')
         if k > 0:
@@ -80,7 +84,7 @@ def main():
         if k + 1 < len(done):
             fm += [f'next_url: "/haldane/romans/zh/{done[k + 1]}/"', f'next_label: "{short(done[k + 1])}"']
         fm += [f'en_url: "/haldane/romans/{s}/"', 'zh: true', '---']
-        body = clean((ZH_RAW / f'{s}.md').read_text(encoding='utf-8'))
+        body = clean(raw)
         body = sect_names.annotate(body, (EN / f'{s}.md').read_text(encoding='utf-8'), 'hd-orig')
         (OUT / f'{s}.md').write_text('\n'.join(fm) + '\n\n' + body + '\n', encoding='utf-8')
 

@@ -13,13 +13,14 @@
     `Ver.` / `ftN.` 起首也是新段；否则接上页末段。
     （2026-11-18 改）录入本自己多分了段（1:1「…Church. / From the period…」、15:1「…weak brethren. / Some persons…」，
     1874 版都是同一段），不可作证；跨页改以 1874 第九版扫描 OCR 的段首（空行之后）为证，页内只认 AGES 段距。
-  · 页码（页顶 10pt）丢；页边经文锚点 `<NNNNNN>`（6pt 红）丢；同一高度被锚点劈成两截的合回一行。
+  · 页码（页顶 10pt）丢；经文锚点 `<NNNNNN>`（6pt 红，诗 100 篇以上章号是十六进制如 <19E719>；第 7–16 章章题里
+    有正文字号的）一律丢；同一高度被锚点劈成两截的合回一行。
   · 字色照录：红斜体 #800000 = 经文 → <em>；黑斜体 → <i>；藏青粗体 #000080（分点 1st / 2nd / 1.）
     → <b class="hd-nv">；其余粗体 → <b>；希腊文（Koine 体，蓝 #0000d4）→ <span class="hd-gk">，AGES 转写码
     按 convert_ages_greek 转 Unicode，再以录入本里字母相同的词定送气 / 重音。
   · 小型大写：段首大字母 16pt + 余字 9pt（`T`+`HIS`）、正文 12pt 中 9pt 的大写（S+AUL）→ <span class="hd-sc">。
   · 脚注号：9pt 红色升高的 `fN` → [^fN]；文末 FOOTNOTES 区 `ftN.` 条目 → notes。
-  · 对齐：整段左缘 ≥ 60 且非段首单行 → indent；行中心与版心中心差 < 25 且左右都缩进 → center。
+  · 对齐：整段左缘 ≥ 40 且（多行，或单行以藏青分点起首）→ indent；行中心与版心中心差 < 25 → center。
   · 标题：CHAPTER N（蓝 24pt）/ PART N.（绿 16pt）/ ROMANS a:b-c（黑粗 12pt）均居中，记入下一条目的 heads。
   · p3–4 是 AGES 版加的现代 FOREWORD，不收；p906–907 AGES 出版说明丢。
 结构：front（PREFACE、INTRODUCTION）→ chapters（同章分 PART 的合并；首个 `Ver.` 前是章首概述 introduction；
@@ -43,7 +44,8 @@ PDF = Path.home() / 'Documents' / '论文' / 'haldane' / 'haldane_romans_ages.pd
 OUT = Path(sys.argv[1]) if len(sys.argv) > 1 else RAW / 'units.json'
 FIRST, STOP = 5, 906
 RED, NAVY, BLUE, GREEN = 0x800000, 0x000080, 0x0000d4, 0x006411
-ANCHOR = re.compile(r'^<\d{6,7}>$')
+ANCHOR = re.compile(r'^<[0-9A-F]{6,8}>$')       # 诗篇 100 篇以上章号是十六进制：<19E719> = 诗 147:19
+ANCHOR_ANY = re.compile(r'<[0-9A-F]{6,8}>')
 PAGE_CENTER = 205          # 版心 26–385 的中点
 PARA_GAP = 19
 
@@ -104,8 +106,12 @@ def line_runs(line, body_size=12):
     spans = [s for s in line['spans'] if s['text']]
     for k, s in enumerate(spans):
         t, st, size, col, font = s['text'], s['text'].strip(), s['size'], s['color'], s['font']
-        if size < 7 and ANCHOR.match(st):
+        if ANCHOR.match(st) or size < 7:                         # 全书 6pt 只用于锚点（常拆成 `451301` + `>` 两片）
             continue
+        if ANCHOR_ANY.search(t):                                   # 第 7–16 章章题里锚点是正文字号、与题字同一 span
+            t = ANCHOR_ANY.sub('', t); st = t.strip()
+            if not st:
+                continue
         if size < 10 and col == RED and re.fullmatch(r'f\d+', st):
             out.append(('f', st[1:])); continue
         if 'Koine' in font or ('Symbol' in font and col == BLUE):
@@ -167,9 +173,10 @@ def read_lines():
                 sp = [s for s in l['spans'] if s['text'].strip()]
                 if not sp:
                     continue
-                txt = ''.join(s['text'] for s in l['spans']).strip()
-                if re.fullmatch(r'\d{1,3}', txt) and l['bbox'][1] < 50:
-                    continue
+                txt = ANCHOR_ANY.sub('', ''.join(s['text'] for s in l['spans'] if s['size'] >= 7)).strip()
+                if txt == str(p + 1) and round(max(s['size'] for s in sp)) == 10:
+                    continue                                      # 页码（必须 = 本页印刷页码且 10pt；p330 首行「<470514>2」
+                                                                  # 去锚点后只剩「2」，旧条件把它当页码删了）
                 runs = line_runs(l)
                 if not runs:
                     continue
@@ -190,7 +197,7 @@ def is_heading(r):
 
 
 def blocks(rows):
-    """→ [('h', text) | ('p', runs, lines)]，lines 是该段各行 (x0, x1) 供判对齐。"""
+    """→ [('h', text) | ('p', runs, lines, page)]，lines 是该段各行 (x0, x1) 供判对齐，page 是起始页的印刷页码。"""
     out, cur, prev = [], None, None
     for r in rows:
         if is_heading(r):
@@ -209,13 +216,12 @@ def blocks(rows):
         if new:
             if cur:
                 out.append(cur)
-            cur = ('p', list(r['runs']), [(r['x0'], r['x1'])])
+            cur = ('p', list(r['runs']), [(r['x0'], r['x1'])], r['p'] + 1)     # 第 4 项：起始页（印刷页码 = 0 起页号 + 1）
         else:
             last = cur[1][-1] if cur[1] else None
-            if last and last[0] not in ('f',) and last[1].endswith('-') and not last[1].endswith(' -') \
-                    and re.match(r'[a-z]', r['txt']):
-                cur[1][-1] = (last[0], last[1][:-1])                # 行尾断字
-            else:
+            # AGES 是 Word 排版，行末没有自动断字：行尾的「-」都是真连字符 / 破折号，保留、与下行直接相接
+            # （曾当断字删掉，把「anything- towards」接成「anythingtowards」，Gate X 查出）
+            if not (last and last[0] != 'f' and last[1].endswith('-') and not last[1].endswith(' -')):
                 cur[1].append(('t', ' '))
             cur[1].extend(r['runs'])
             cur[2].append((r['x0'], r['x1']))
@@ -225,17 +231,24 @@ def blocks(rows):
     return out
 
 
-def align_of(lines):
+def align_of(lines, runs):
+    """AGES 段落对齐：居中 / 缩进（整段左缘 ≥ 40）/ 左齐。前半本普通段落首行也缩到 x≈44，故单行段落只在
+    以藏青分点（1. / 1st）起首时才算缩进列表项（如 2:17「1. Their bearing the name of Jew.」等六条，x=44）。"""
     lefts = [x0 for x0, _ in lines]
     if all(abs((x0 + x1) / 2 - PAGE_CENTER) < 25 and x0 > 45 for x0, x1 in lines):
         return 'center'
-    if min(lefts) >= 60:
+    if min(lefts) >= 40 and (len(lines) > 1 or (runs and runs[0][0] == 'nv')):
         return 'indent'
     return ''
 
 
 # 节头变体（逐条实测）：`Ver. 1.` / `Ver. 27 —`（只有 `Ver. 2` 是粗体，`7` 是正文字）/ `Ver. 31:` / `Vers. 1, 2.` /
 # `Ver. 14-15`；破折号有时排成黑斜体 <i>—</i>
+def printed_num(s):
+    m = re.search(r'\d+', s)
+    return m.group(0) if m else ''
+
+
 VER = re.compile(r'^<b>\s*(Vers?)\.?\s*(\d+)\s*(?:[-–,]\s*(\d+))?\s*[.:]?\s*,?\s*</b>(\d*)\s*[.:]?\s*'
                  r'(?:<i>\s*[—–-]+\s*</i>|[—–-]+)?\s*')
 # AGES 自身的节号错印（录入本已改）：(章, lemma 开头, 应作的节)
@@ -247,7 +260,8 @@ def build(items):
     sec, ch, entry, fn_cur, heads = None, None, None, None, []
 
     def new_entry(key, label, lemma=''):
-        e = {'key': key, 'label': label, 'lemma': lemma, 'heads': list(heads), 'paras': [], 'align': [], 'notes': {}}
+        e = {'key': key, 'label': label, 'lemma': lemma, 'heads': list(heads), 'paras': [], 'align': [], 'pages': [],
+             'notes': {}}
         heads.clear()
         return e
 
@@ -262,21 +276,24 @@ def build(items):
                 if not ch or ch['ch'] != n:
                     ch = {'ch': n, 'entries': []}
                     u['chapters'].append(ch)
-                    heads.clear(); heads.append(f'CHAPTER {n}')
+                    heads.clear(); heads.append(it[1].strip())
                     entry = None
+                else:
+                    heads.append(it[1].strip())           # PART 2 前 AGES 重印的章题（1:16、3:21），照印
                 sec = 'ch'; continue
             if h in ('PREFACE', 'INTRODUCTION', 'CONCLUSION'):
                 sec = h.lower(); ch = None
                 (u['back'] if sec == 'conclusion' else u['front']).append(
-                    {'key': sec, 'label': h.title(), 'paras': [], 'align': []})
+                    {'key': sec, 'label': h.title(), 'paras': [], 'align': [], 'pages': []})
                 continue
             if h in ('EXPOSITION', 'THE END'):
                 if h == 'THE END' and u['back']:
                     u['back'][-1]['paras'].append('THE END.'); u['back'][-1]['align'].append('center-end')
+                    u['back'][-1]['pages'].append(u['back'][-1]['pages'][-1])
                 continue
             heads.append(it[1].strip())                              # PART N. / ROMANS a:b-c
             continue
-        html, al = runs_html(it[1]), align_of(it[2])
+        html, al, pg = runs_html(it[1]), align_of(it[2], [r for r in it[1] if r[1].strip()]), it[3]
         if not html:
             continue
         if sec == 'fn':
@@ -288,7 +305,7 @@ def build(items):
             continue
         if sec in ('preface', 'introduction', 'conclusion'):
             tgt = (u['back'] if sec == 'conclusion' else u['front'])[-1]
-            tgt['paras'].append(html); tgt['align'].append(al); continue
+            tgt['paras'].append(html); tgt['align'].append(al); tgt['pages'].append(pg); continue
         if sec != 'ch':
             continue
         m = VER.match(html)
@@ -318,17 +335,20 @@ def build(items):
                         lemma, tail = em.group(1) + body + '</em>', em.group(4).strip()
             entry = new_entry(f'verses-{a}-{b2}' if b2 else f'verse-{a}', f'Verses {a}–{b2}' if b2 else f'Verse {a}',
                               lemma)
-            entry['ver'] = f'Vers. {a}, {b2}.' if b2 else f'Ver. {a}.'
+            # 节号照 AGES 原印（Ver. 31 / Ver. 1: / Ver. 14, / Ver. 14, 15. / Ver. 19-22. / Vers. …）；8:5 编者改号
+            printed = re.sub(r'<[^>]+>', '', m.group(0)).strip().rstrip('—–- ').strip()
+            entry['ver'] = re.sub(r'\d+', a, printed, count=1) if printed_num(printed) != a else printed
+            entry['lemma_page'] = pg
             ch['entries'].append(entry)
             if tail.strip():
-                entry['paras'].append(tail.strip()); entry['align'].append('')
+                entry['paras'].append(tail.strip()); entry['align'].append(''); entry['pages'].append(pg)
             continue
         if entry is None:
             entry = new_entry('introduction', 'Introduction')
             ch['entries'].append(entry)
         if heads:                                                    # 条目中间冒出的 PART / ROMANS 标题
             entry.setdefault('mid_heads', []).append([len(entry['paras']), list(heads)]); heads.clear()
-        entry['paras'].append(html); entry['align'].append(al)
+        entry['paras'].append(html); entry['align'].append(al); entry['pages'].append(pg)
     for c in u['chapters']:
         for e in c['entries']:
             for p in e['paras']:
@@ -354,6 +374,25 @@ GREEK_FIX = [
 ]
 
 
+# AGES 段尾标点错（1874 第九版扫描本为证），Gate 5g 据此把下一段误报为跨页断句：(章, 段尾原样, 改作, 说明)
+TAIL_FIX = [
+    (8, 'the glory of the kingdom of heaven,', 'the glory of the kingdom of heaven.', '8:24 “heaven.” (AGES: comma)'),
+    (15, 'whom we acknowledge that Christ has received', 'whom we acknowledge that Christ has received.',
+     '15:5 “received.” (AGES omits the full stop)'),
+]
+
+
+def fix_tails(u):
+    for ch, a, b, note in TAIL_FIX:
+        hits = [(e, i) for e in u['chapters'][ch - 1]['entries'] for i, x in enumerate(e['paras']) if x.endswith(a)]
+        if len(hits) != 1:
+            raise SystemExit(f'TAIL_FIX 第 {ch} 章「{a}」命中 {len(hits)} 段，应为 1')
+        e, i = hits[0]
+        e['paras'][i] = e['paras'][i][:-len(a)] + b
+        u.setdefault('ed_fixes', []).append(note)
+    return u
+
+
 def fix_greek(u):
     s = json.dumps(u, ensure_ascii=False)
     for a, b, n in GREEK_FIX:
@@ -364,8 +403,40 @@ def fix_greek(u):
     return json.loads(s)
 
 
+# ── 出口：中间 HTML → skill 规定的 markdown + 行内色（pdf-pipeline 01 §9 / hodge 产物同款）────────────
+# 红斜体 `<span style="color:#800000">*X*</span>`、黑斜体 `*X*`、粗体 `**X**`、藏青粗体 `<span style="color:#000080">**X**</span>`、
+# 希腊文 `<span style="color:#0000d4">X</span>`、小型大写 `<span style="font-size:.76em">X</span>`。Gate T 按这套口径数字形。
+MD = [(r'<em>(.*?)</em>', r'<span style="color:#800000">*\1*</span>'),
+      (r'<i>(.*?)</i>', r'*\1*'),
+      (r'<b class="hd-nv">(.*?)</b>', r'<span style="color:#000080">**\1**</span>'),
+      (r'<b>(.*?)</b>', r'**\1**'),
+      (r'<span class="hd-gk">(.*?)</span>', r'<span style="color:#0000d4">\1</span>'),
+      (r'<span class="hd-sc">(.*?)</span>', r'<span style="font-size:.76em">\1</span>')]
+
+
+def to_md(s):
+    # 只含标点的斜体片段（单独一个引号 `“`、斜体破折号 `—`）去掉斜体：视觉无别，且 `*“*` 正是 Gate 1 的 split italic
+    s = re.sub(r'<(em|i)>([^\w<>]*)</\1>', r'\2', s)
+    for a, b in MD:
+        s = re.sub(a, b, s)
+    s = s.replace('****', '')                                     # principles §0.4：紧邻粗体合并
+    return s
+
+
+def md_all(u):
+    for c in u['chapters']:
+        for e in c['entries']:
+            e['lemma'] = to_md(e['lemma'])
+            e['paras'] = [to_md(x) for x in e['paras']]
+            e['notes'] = {k: to_md(v) for k, v in e['notes'].items()}
+    for f in u['front'] + u['back']:
+        f['paras'] = [to_md(x) for x in f['paras']]
+    u['notes'] = {k: to_md(v) for k, v in u['notes'].items()}
+    return u
+
+
 def main():
-    u = fix_greek(build(blocks(read_lines())))
+    u = md_all(fix_tails(fix_greek(build(blocks(read_lines())))))
     OUT.write_text(json.dumps(u, ensure_ascii=False, indent=1), encoding='utf-8')
     n_e = sum(len(c['entries']) for c in u['chapters'])
     n_p = sum(len(e['paras']) for c in u['chapters'] for e in c['entries'])

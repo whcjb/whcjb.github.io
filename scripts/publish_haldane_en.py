@@ -6,10 +6,13 @@
 
 **版式照 AGES**（用户 2026-11-18：「格式全部按照 ages，包括字体颜色，对齐等」）：
 - 卷首 PREFACE / INTRODUCTION、卷末 CONCLUSION 各一页；正文一章一页。
-- 章页：CHAPTER N 蓝色大字居中（第 1 章页题是 EXPOSITION，CHAPTER 1 在其下，同 AGES）；PART N. 绿色居中；ROMANS a:b-c 黑粗居中
+- 页题用普通「Romans N / Preface …」；AGES 的章题照印在正文（同贺智）：EXPOSITION（第 1 章）、CHAPTER N（PART 2 前
+  AGES 重印的也照印）蓝色大字居中；PART N. 绿色居中；ROMANS a:b-c 黑粗居中
   （AGES 在哪条前印，就在哪条前出）；章首概述不加标签。
-- 每条：「**Ver. N.** —」+ 经文（红斜体，AGES 原样的红 / 黑字色）；注释段落里经文短语红斜体 <em>、
-  强调黑斜体 <i>、分点藏青粗体 .hd-nv、希腊文蓝 .hd-gk、小型大写 .hd-sc；左对齐；AGES 居中 / 缩进段照录。
+- 每条：「**Ver. N.** —」+ 经文（AGES 原样的红 / 黑字色）。写法照 pdf-pipeline / hodge 产物：红斜体
+  `<span style="color:#800000">*X*</span>`、黑斜体 `*X*`、粗体 `**X**`、藏青 / 希腊文 / 小型大写用行内 style；
+  标题 `<p class="title-block-h1|h2" style="text-align:center…" markdown="1">`；居中 / 缩进段 `<p style=… markdown="1">`；
+  段落起始页变了插 `<!-- PAGE N -->`（Gate 5g / 13）。左对齐。
 - 每条注释前放 commentary-anchor（id romans-章-节）；没单独讲的经节挂到讲它的那一条（向前找最近的一条）。
 - 正文写成 markdown 段落（内含行内 HTML），脚注 [^fN] 由 kramdown 渲染，定义放该页末尾。
 """
@@ -38,22 +41,41 @@ def label(slug):
 
 
 def md_para(t: str, align: str = '') -> list:
+    """段落 → markdown 行。对齐照 AGES：居中 / 缩进 / 卷末 THE END 用行内样式 <p … markdown="1">（Gate 5b）。"""
     t = re.sub(r'^(\d+)\. ', r'\1\\. ', t)          # 段首「1. 」别被 kramdown 当有序列表
     t = re.sub(r'^([#>+\-]) ', r'\\\1 ', t)
-    out = [t]
-    if align in ('center', 'indent'):
-        out.append('{: .hd-c}' if align == 'center' else '{: .hd-ind}')
-    elif align == 'center-end':
-        out.append('{: .hd-end}')
-    return out + ['']
+    if align == 'center':
+        return [f'<p style="text-align:center" markdown="1">{t}</p>', '']
+    if align == 'indent':
+        return [f'<p style="margin-left:1.5em" markdown="1">{t}</p>', '']
+    if align == 'center-end':
+        return [f'<p style="text-align:center; color:#006411; font-size:20px; margin-top:26px;" markdown="1">{t}</p>', '']
+    return [t, '']
 
 
 def head_html(h):
-    if h.startswith('CHAPTER'):
-        return f'<p class="hd-h-ch">{h}</p>'
+    """AGES 居中标题：PREFACE / INTRODUCTION / EXPOSITION / CHAPTER N / CONCLUSION 蓝 24pt、PART N. 绿 16pt、
+    ROMANS a:b-c 黑粗 12pt。"""
+    if h.startswith('CHAPTER') or h in ('PREFACE', 'INTRODUCTION', 'EXPOSITION', 'CONCLUSION'):
+        return (f'<p class="title-block-h1" style="text-align:center; color:#0000d4; font-size:30px; '
+                f'margin:22px 0 6px;" markdown="1">{h}</p>')
     if h.upper().startswith('PART'):
-        return f'<p class="hd-h-part">{h}</p>'
-    return f'<p class="hd-h-range">{h}</p>'
+        return (f'<p class="title-block-h2" style="text-align:center; color:#006411; font-size:22px; '
+                f'margin:20px 0 10px;" markdown="1">{h}</p>')
+    return (f'<p class="title-block-h2" style="text-align:center; font-size:16px; font-weight:bold; '
+            f'margin:6px 0 18px;" markdown="1">{h}</p>')
+
+
+class Pager:
+    """页码标记 <!-- PAGE N -->：段落起始页变了就在段前插一行（Gate 5g / 13）。"""
+    def __init__(self):
+        self.last = None
+
+    def mark(self, page):
+        if page and page != self.last:
+            self.last = page
+            return [f'<!-- PAGE {page} -->', '']
+        return []
 
 
 def span(e):
@@ -63,31 +85,29 @@ def span(e):
 
 def chapter_md(c):
     ch = c['ch']
-    out, covered, notes_here = [], set(), []
+    out, covered, notes_here, pg = [], set(), [], Pager()
     ves = [e for e in c['entries'] if span(e)]
     owner = {}
     for v in range(1, NV[ch - 1] + 1):
         cand = [e for e in ves if span(e)[0] <= v <= span(e)[1]] or [e for e in ves if span(e)[0] <= v][-1:] or ves[:1]
         owner.setdefault(id(cand[0]), []).append(v)
-    if ch == 1:                                            # AGES：EXPOSITION（页题）在上，CHAPTER 1 在下
-        out += ['<p class="hd-h-ch">CHAPTER 1</p>', '']
+    if ch == 1:                                            # AGES：EXPOSITION 在 CHAPTER 1 之上
+        out += [head_html('EXPOSITION'), '']
     for e in c['entries']:
         refs = re.findall(r'\[\^f(\d+)\]', ' '.join(e['paras'] + [e['lemma']]))
         notes_here += [r for r in refs if r not in notes_here]
         for h in e.get('heads', []):
-            if h.startswith('CHAPTER'):
-                continue                                   # 页题已是 CHAPTER N
-            out += [head_html(h), '']
+            out += [head_html(h), '']                      # 章题照 AGES 印在正文（同贺智：页题另用普通「Romans N」）
         for v in owner.get(id(e), []):
             out.append(f'<div class="commentary-anchor" id="romans-{ch}-{v}"></div>')
             covered.add(v)
         if span(e):
-            out += ['', f'<b class="hd-ver">{e["ver"]}</b> — {e["lemma"]}', '{: .hd-lemma}', '']
+            out += [''] + pg.mark(e.get('lemma_page')) + [f'**{e["ver"]}** — {e["lemma"]}', '{: .hd-lemma}', '']
         mids = {i: hs for i, hs in e.get('mid_heads', [])}
         for i, (p, al) in enumerate(zip(e['paras'], e['align'])):
             for h in mids.get(i, []):
                 out += [head_html(h), '']
-            out += md_para(p, al)
+            out += pg.mark(e['pages'][i]) + md_para(p, al)
     return out, notes_here, covered
 
 
@@ -105,9 +125,9 @@ def main():
     OUT.mkdir(parents=True, exist_ok=True)
     pages, bad = {}, []
     for f in u['front'] + u['back']:
-        lines = []
-        for p, al in zip(f['paras'], f['align']):
-            lines += md_para(p, al)
+        lines, pg = [head_html(f['key'].upper()), ''], Pager()
+        for p, al, pn in zip(f['paras'], f['align'], f['pages']):
+            lines += pg.mark(pn) + md_para(p, al)
         refs = []
         for p in f['paras']:
             refs += [r for r in re.findall(r'\[\^f(\d+)\]', p) if r not in refs]
@@ -122,7 +142,7 @@ def main():
         sys.exit(f'有经节没有锚点：{bad}')
     for i, slug in enumerate(ORDER):
         meta.setdefault(slug, stamp)
-        title = 'EXPOSITION' if slug == '1' else f'CHAPTER {slug}' if slug.isdigit() else LABEL[slug].upper()
+        title = label(slug)                               # 页题用普通「Romans N」；AGES 的章题印在正文（同贺智）
         fm = ['---', 'layout: haldane-chapter', 'book_id: romans', 'book_name: "Haldane on Romans"',
               f'title: "{title}"', f'date: {meta[slug]}']
         if slug.isdigit():
@@ -167,6 +187,7 @@ def index_html(u):
             '<p>Editorial corrections: Greek words, which the AGES edition gives in its own transliteration code, are '
             'given in Greek type; '
             + ('; '.join(f'Romans {x}' for x in fixes) + '; ' if fixes else '')
+            + ''.join(f'Romans {x}; ' for x in u.get('ed_fixes', []))
             + 'Romans 5:18 δικαιώματος (AGES omits the μ).</p>',
             '</div>', '']
     return '\n'.join(out)

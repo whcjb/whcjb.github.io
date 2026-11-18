@@ -88,7 +88,9 @@ def cuv(ch, v):
     return _CUVD['45'][str(ch)][str(v)]
 
 
-RE_LEMMA = re.compile(r'^<b class="hd-ver">Vers?\. (\d+)(?:[–,] ?(\d+))?\.</b>(?: —)?(?: .*)?$')
+RE_LEMMA = re.compile(r'^\*\*Vers?\. ?(\d+)(?:\s*[-–,]\s*(\d+))?\s*[.:,]?\*\*(?: —)?(?: .*)?$')
+RED = re.compile(r'<span style="color:#800000">\*([^*]*)\*</span>')
+WRAP = re.compile(r'^(<p (?:class="[^"]*" )?style="[^"]*" markdown="1">)(.*)(</p>)$', re.S)
 CN = '〇一二三四五六七八九'
 
 
@@ -101,19 +103,17 @@ def cn(n):
 
 def head_zh(line):
     """AGES 版式的居中标题（CHAPTER N / PART N. / ROMANS a:b-c）→ 中文，程序给，不送模型。"""
-    m = re.match(r'^<p class="(hd-h-\w+)">(.*)</p>$', line)
-    cls, txt = m.group(1), m.group(2)
+    m = re.match(r'^(<p class="title-block-h[12]"[^>]*>)(.*)(</p>)$', line)
+    pre, txt, post = m.group(1), m.group(2), m.group(3)
     if (mm := re.fullmatch(r'CHAPTER (\d+)', txt)):
         z = f'第{cn(int(mm.group(1)))}章'
     elif (mm := re.fullmatch(r'PART (\d+)\.?', txt)):
         z = f'第{cn(int(mm.group(1)))}部分'
     elif (mm := re.fullmatch(r'ROMANS (\d+:[\d-]+)\.?', txt)):
         z = f'罗马书 {mm.group(1).replace("-", "–")}'
-    elif txt == 'EXPOSITION':
-        z = '释义'
     else:
-        z = txt
-    return f'<p class="{cls}">{z}</p>'
+        z = {'EXPOSITION': '释义', 'PREFACE': '序言', 'INTRODUCTION': '导论', 'CONCLUSION': '结语'}.get(txt, txt)
+    return f'{pre}{z}{post}'
 
 
 def blocks(ch):
@@ -123,19 +123,29 @@ def blocks(ch):
     藏青分点 .hd-nv、希腊文 .hd-gk），红斜体 <em> 与黑斜体 <i> 都转星号让模型对位，各段的斜体种类按先后记在 kinds，
     译完照次序还原（restore_kinds）——这样文字与旧版相同的段落，缓存键与旧版逐字节一致。"""
     t = (SRC / f'{ch}.md').read_text(encoding='utf-8').split('\n---\n', 1)[1].strip()
-    t = t.replace('<em class="hd-q">', '')
-    t = re.sub(r'<span class="hd-(?:sc|gk)">([^<]*)</span>', r'\1', t)
-    t = re.sub(r'<b class="hd-nv">([^<]*)</b>', r'\1', t)
+    # 英文页写法照 pdf-pipeline（见 publish_haldane_en.py）：只管排版的包装先剥掉（藏青 / 希腊 / 小型大写 / 粗体）
+    t = re.sub(r'<span style="color:#000080">\*\*([^*]*)\*\*</span>', r'\1', t)
+    t = re.sub(r'<span style="(?:color:#0000d4|font-size:\.76em)">([^<]*)</span>', r'\1', t)
     out = []
     for gid, b in enumerate(t.split('\n\n')):
         b = b.strip()
         if not b:
             continue
-        kinds = re.findall(r'<(em|i)>[^<>]*</\1>', b)
-        b = re.sub(r'<(em|i)>([^<>]*)</\1>', r'*\2*', b)
-        lines = b.split('\n')
-        if re.match(r'^<p class="hd-h-\w+">.*</p>$', b):
+        if b.startswith('<!-- PAGE') or b.startswith('<div'):
+            out.append(('keep', b, gid, [])); continue
+        if re.match(r'^<p class="title-block-h[12]"[^>]*>.*</p>$', b):
             out.append(('keep', head_zh(b), gid, [])); continue
+        # 斜体种类按先后记下：红斜体（经文）em / 黑斜体（强调）i；送模型一律星号
+        kinds = ['em' if m.group(1) else 'i'
+                 for m in re.finditer(r'(<span style="color:#800000">\*[^*]*\*</span>)|(?<!\*)\*[^*\n]+\*(?!\*)', b)]
+        b = RED.sub(r'*\1*', b)
+        if not b.startswith('**Ver'):
+            b = re.sub(r'\*\*([^*]+)\*\*', r'\1', b)
+        wrap = WRAP.match(b)
+        wpre = wpost = ''
+        if wrap:
+            wpre, b, wpost = wrap.group(1), wrap.group(2), wrap.group(3)
+        lines = b.split('\n')
         # 节首经文：`<b class="hd-ver">Ver. 1.</b> — *…*` + `{: .hd-lemma}` → 和合本
         m = RE_LEMMA.match(lines[0])
         if m and len(lines) == 2 and lines[1].startswith('{: .hd-lemma'):
@@ -144,8 +154,10 @@ def blocks(ch):
             vs = [cuv(ch, v1)] + [f'{v} {cuv(ch, v)}' for v in range(v1 + 1, v2 + 1)]
             out.append(('keep', f'<b class="hd-ver">{lab}</b> — <em>{" ".join(vs)}</em>\n{lines[1]}', gid, []))
             continue
-        if b == 'THE END.\n{: .hd-end}':
-            out.append(('keep', '全书完\n{: .hd-end}', gid, [])); continue
+        if wpre:
+            out.append(('keep', wpre, gid, []))
+        if b == 'THE END.':
+            out.append(('keep', '全书完' + wpost, gid, [])); continue
         ial = ''
         if len(lines) >= 2 and lines[-1].startswith('{:'):
             ial, b = '\n' + lines[-1], '\n'.join(lines[:-1])
@@ -169,6 +181,8 @@ def blocks(ch):
                     cur = (cur + ' ' + s).strip()
         if ial:
             out.append(('keep', ial, gid, []))
+        if wpost:
+            out.append(('keep', wpost, gid, []))
     return out
 
 
