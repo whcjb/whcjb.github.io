@@ -6,3 +6,7 @@
   RAW: '，Opus 5.5 的子代理。'
 [32#7·first] 模型自语 Claude Code attached this context automatically; it isn't pa；疑似截断（原文 2413 字符，译文汉字 1）
   RAW: "佳\nClaude Code attached this context automatically; it isn't part of the user's message."
+[35#27·first] 漏译的英文词 Claude、haiku、opus
+  RAW: '决定 Claude 为什么选用 opus 而不是 haiku 等较小模型的原因：...'
+[35#34·first] 漏译的英文词 effort、reasoning；残留标签 <reasoning_effort>；疑似截断（原文 299 字符，译文汉字 1）
+  RAW: '涵 <reasoning_effort>10</reasoning_effort>'
