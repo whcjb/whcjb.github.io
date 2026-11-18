@@ -20,6 +20,8 @@
     python3 scripts/sched_haldane_zh.py --status
     python3 scripts/sched_haldane_zh.py --stop-now
     python3 scripts/sched_haldane_zh.py --self-test
+    python3 scripts/sched_haldane_zh.py --start 05:00 --stop 08:00 --once \
+        --sections preface,introduction,conclusion          # 2026-11-19 05:00 只译卷首卷末三页
 """
 import argparse
 import json
@@ -45,10 +47,13 @@ def log(msg):
         f.write(f'{dt.datetime.now():%Y-%m-%d %H:%M:%S} {msg}\n')
 
 
+SECTIONS = [str(c) for c in range(1, 17)]     # --sections 可改（如 preface,introduction,conclusion）
+
+
 def pending():
-    """还没译的章，按章序。每夜重数一遍。"""
+    """还没译的页（没有 zh_chapters/<页>.md 的），按给定次序。每夜重数一遍。"""
     done = {p.stem for p in ZH_RAW.glob('*.md')}
-    return [str(c) for c in range(1, 17) if str(c) not in done]
+    return [s for s in SECTIONS if s not in done]
 
 
 def hhmm(s):
@@ -164,11 +169,16 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument('--start', type=hhmm, default=(2, 0), help='每夜开工时刻')
     ap.add_argument('--stop', type=hhmm, default=(5, 0), help='到点准点收工')
+    ap.add_argument('--sections', default='', help='要译的页，逗号分隔（默认第 1–16 章）')
+    ap.add_argument('--once', action='store_true', help='只跑一夜，跑完退出（不再每晚排班）')
     ap.add_argument('--status', action='store_true')
     ap.add_argument('--stop-now', action='store_true', help='停掉守护')
     ap.add_argument('--self-test', action='store_true',
                     help='不调 CLI，立刻空跑一夜：验排班、FIFO 锁、到点收工')
     a = ap.parse_args()
+    if a.sections:
+        global SECTIONS
+        SECTIONS = [s.strip() for s in a.sections.split(',') if s.strip()]
 
     if a.self_test:
         global DRY
@@ -215,7 +225,8 @@ def main():
             log(f'睡到 {target:%Y-%m-%d %H:%M}')
             while dt.datetime.now() < target:
                 time.sleep(30)          # 墙钟轮询：机器挂起苏醒后自动纠偏
-            if not run_night(*a.stop):
+            if not run_night(*a.stop) or a.once:
+                log('--once：本夜班结束，守护退出。' if a.once else '')
                 break
     finally:
         PIDF.unlink(missing_ok=True)
