@@ -6,6 +6,7 @@ title: "Conclusion"
 date: 2026-11-18 16:37
 prev_url: "/haldane/romans/16/"
 prev_label: "Romans 16"
+zh_url: "/haldane/romans/zh/conclusion/"
 ---
 
 <p class="title-block-h1" style="text-align:center; color:#0000d4; font-size:30px; margin:22px 0 6px;" markdown="1">CONCLUSION</p>
