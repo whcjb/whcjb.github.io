@@ -8,6 +8,7 @@ prev_url: "/owen/psalm130/prefatory-note/"
 prev_label: "Prefatory Note"
 next_url: "/owen/psalm130/1/"
 next_label: "Psalm CXXX"
+zh_url: "/owen/psalm130/zh/to-the-reader/"
 ---
 
 <p>Christian Reader,</p>

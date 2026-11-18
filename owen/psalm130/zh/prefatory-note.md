@@ -4,8 +4,8 @@ book_id: psalm130
 book_name: "欧文《诗篇 130 篇实践讲解》"
 title: "编者说明"
 date: 2026-11-18 09:51
-next_url: "/owen/psalm130/zh/4/"
-next_label: "灵魂的光景与处境"
+next_url: "/owen/psalm130/zh/to-the-reader/"
+next_label: "致读者"
 en_url: "/owen/psalm130/prefatory-note/"
 zh: true
 ---
