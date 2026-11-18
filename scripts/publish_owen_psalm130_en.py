@@ -123,6 +123,8 @@ def main():
             fm += [f'prev_url: "{BASE}/{pages[i-1]["slug"]}/"', f'prev_label: "{pages[i-1]["title"]}"']
         if i + 1 < len(pages):
             fm += [f'next_url: "{BASE}/{pages[i+1]["slug"]}/"', f'next_label: "{pages[i+1]["title"]}"']
+        if (OUT / 'zh' / f'{p["slug"]}.md').exists():
+            fm.append(f'zh_url: "{BASE}/zh/{p["slug"]}/"')
         fm.append('---')
         old.write_text('\n'.join(fm) + '\n\n' + p['html'] + '\n', encoding='utf-8')
     # 书首页
@@ -142,7 +144,7 @@ book_name: "A Practical Exposition upon Psalm CXXX"
 author: "John Owen (1616–1683)"
 edition: "First published 1668; text of The Works of John Owen, ed. W. H. Goold, vol. 6"
 title: "{BOOK}"
----
+{'zh_url: "' + BASE + '/zh/"' + chr(10) if (OUT / 'zh' / 'index.html').exists() else ''}---
 
 {chr(10).join(toc)}
 
