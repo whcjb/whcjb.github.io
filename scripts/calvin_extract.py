@@ -264,6 +264,21 @@ VOLUMES = {
         'pdf':  '/Users/yanpeifa/Documents/论文/hodge/hodge_romans_ages.pdf',
         'out':  os.path.join(BASE, 'hodge_raw/romans/hodge_romans_structured.txt'),
     },
+    # 霍尔丹《罗马书释义》(2026-11-18 诊断，见 haldane_raw/romans/DIAGNOSIS.md)——实际没用这条：锚点续行被误判
+    # 成 [FOOTNOTE]，改由 scripts/extract_haldane_ages.py 单独提取；配置留作记录
+    # 与 hodge-romans 同为 ages_phil 单列（正文 x26 / 段首 x44–48）。
+    #   · p0–2 封面 / TOC / 书名页；p3–4 是 AGES 版加的现代 FOREWORD（非原书，不收）
+    #   · p5 PREFACE 起；文末脚注区标题是 FOOTNOTES（p893），条目 `ftN.`
+    #   · p906–907 AGES 出版说明（丢）
+    #   · 希腊文 Koine 仅 58 词；页边经文锚点 `<NNNNNN>`（6pt 红）
+    'haldane-romans': {
+        'format': 'ages_phil',
+        'para_indent': 12,
+        'skip_pages': {0, 1, 2, 3, 4},
+        'stop_page': 906,
+        'pdf':  '/Users/yanpeifa/Documents/论文/haldane/haldane_romans_ages.pdf',
+        'out':  os.path.join(BASE, 'haldane_raw/romans/haldane_romans_structured.txt'),
+    },
     # 以弗所书 (2026-09-30 诊断，见 hodge_raw/ephesians/DIAGNOSIS.md)
     # 与 1cor/2cor/romans 同为 ages_phil 单列，两处**不能照抄**那三本：
     #   · skip_pages 是 {0,1} 不是 {0,1,2}——本书 p2 是「书名 + INTRODUCTION

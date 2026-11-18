@@ -22,6 +22,9 @@ OUT = EN / 'zh'
 META = RAW / 'zh_meta.json'
 CN = '〇一二三四五六七八九'
 ORIG_NAME = re.compile(r"（([A-Za-zÀ-ÿÆæŒœ][A-Za-zÀ-ÿÆæŒœ .,'’&-]*)）")
+ORDER = ['preface', 'introduction'] + [str(c) for c in range(1, 17)] + ['conclusion']
+NAME = {'preface': '序言', 'introduction': '导论', 'conclusion': '结语'}
+GK = re.compile(r'(?<![\w">])([\u0370-\u03ff\u1f00-\u1fff](?:[\u0370-\u03ff\u1f00-\u1fff’᾽ ,.…]*[\u0370-\u03ff\u1f00-\u1fff])?)')
 
 
 def cn(n):
@@ -43,47 +46,64 @@ def open_lead_em(p):
     return '<em>' + p
 
 
+def short(slug):
+    return NAME.get(slug) or f'第{cn(int(slug))}章'
+
+
+def title(slug):
+    # 英文页题照 AGES：第 1 章页题是 EXPOSITION（CHAPTER 1 在其下），中文同
+    return NAME.get(slug) or ('释义' if slug == '1' else f'第{cn(int(slug))}章')
+
+
 def clean(body):
     body = '\n\n'.join(open_lead_em(p) for p in body.split('\n\n'))
+    body = GK.sub(r'<span class="hd-gk">\1</span>', body)      # 希腊文蓝色（同英文页 AGES 版式）
     body = re.sub(r'(?<!\*)\*\*(?!\*)', '', body)
     body = ORIG_NAME.sub(r'<span class="hd-orig">（\1）</span>', body)
     return body.strip()
 
 
 def main():
-    done = sorted(int(p.stem) for p in ZH_RAW.glob('*.md') if p.stem.isdigit())
+    done = [s for s in ORDER if (ZH_RAW / f'{s}.md').exists()]
     if not done:
-        sys.exit('zh_chapters 里没有任何已译的章')
+        sys.exit('zh_chapters 里没有任何已译的页')
     meta = json.loads(META.read_text(encoding='utf-8')) if META.exists() else {}
     now = subprocess.run(['date', '+%Y-%m-%d %H:%M'], capture_output=True, text=True).stdout.strip()
     OUT.mkdir(parents=True, exist_ok=True)
-    for k, ch in enumerate(done):
+    for k, s in enumerate(done):
         fm = ['---', 'layout: haldane-chapter', 'book_id: romans', 'book_name: "霍尔丹《罗马书释义》"',
-              f'title: "罗马书 第{cn(ch)}章"', 'subtitle: "Robert Haldane"', f'date: {meta.get(str(ch), now)}',
-              f'chapter: {ch}']
+              f'title: "{title(s)}"', f'date: {meta.get(s, now)}']
+        if s.isdigit():
+            fm.append(f'chapter: {s}')
         if k > 0:
-            fm += [f'prev_url: "/haldane/romans/zh/{done[k - 1]}/"', f'prev_label: "第{cn(done[k - 1])}章"']
+            fm += [f'prev_url: "/haldane/romans/zh/{done[k - 1]}/"', f'prev_label: "{short(done[k - 1])}"']
         if k + 1 < len(done):
-            fm += [f'next_url: "/haldane/romans/zh/{done[k + 1]}/"', f'next_label: "第{cn(done[k + 1])}章"']
-        fm += [f'en_url: "/haldane/romans/{ch}/"', 'zh: true', '---']
-        body = clean((ZH_RAW / f'{ch}.md').read_text(encoding='utf-8'))
-        body = sect_names.annotate(body, (EN / f'{ch}.md').read_text(encoding='utf-8'), 'hd-orig')
-        (OUT / f'{ch}.md').write_text('\n'.join(fm) + '\n\n' + body + '\n', encoding='utf-8')
+            fm += [f'next_url: "/haldane/romans/zh/{done[k + 1]}/"', f'next_label: "{short(done[k + 1])}"']
+        fm += [f'en_url: "/haldane/romans/{s}/"', 'zh: true', '---']
+        body = clean((ZH_RAW / f'{s}.md').read_text(encoding='utf-8'))
+        body = sect_names.annotate(body, (EN / f'{s}.md').read_text(encoding='utf-8'), 'hd-orig')
+        (OUT / f'{s}.md').write_text('\n'.join(fm) + '\n\n' + body + '\n', encoding='utf-8')
+
+    def cell(s):
+        if s in done:
+            return f'  <li><a href="{{{{ site.baseurl }}}}/haldane/romans/zh/{s}/">{short(s)}</a></li>'
+        lab = s.title() if not s.isdigit() else f'Romans {s}'
+        return f'  <li><a class="hd-other" href="{{{{ site.baseurl }}}}/haldane/romans/{s}/">{lab}<small>英文</small></a></li>'
     idx = ['---', 'layout: haldane-book', 'book_id: romans', 'book_name: "霍尔丹《罗马书释义》"',
            'title: "霍尔丹《罗马书释义》"', 'author: "罗伯特·霍尔丹（Robert Haldane，1764–1842）"',
            'edition: "Exposition of the Epistle to the Romans · 1835–1839"', 'en_url: "/haldane/romans/"', 'zh: true', '---', '',
+           '<ul class="hd-chgrid hd-wide">', cell('preface'), cell('introduction'), '</ul>',
            '<h2 class="hd-group">逐章释义</h2>', '<ul class="hd-chgrid">']
-    idx += [f'  <li><a href="{{{{ site.baseurl }}}}/haldane/romans/zh/{c}/">罗马书 第{cn(c)}章</a></li>' if c in done
-            else f'  <li><a class="hd-other" href="{{{{ site.baseurl }}}}/haldane/romans/{c}/">Romans {c}<small>英文</small></a></li>'
-            for c in range(1, 17)]
-    idx += ['</ul>', '', f'<p class="hd-note-zh">中译已上线 {len(done)} / 16 章；未译的章暂只有英文。底本说明（含录入本缺的序言、导论、'
-            '书末专论与附录、七条脚注正文）见<a href="{{ site.baseurl }}/haldane/romans/">英文版书首页</a>。</p>', '']
+    idx += [cell(str(c)) for c in range(1, 17)]
+    idx += ['</ul>', '<ul class="hd-chgrid hd-wide">', cell('conclusion'), '</ul>', '',
+            f'<p class="hd-note-zh">中译已上线 {len(done)} / {len(ORDER)} 页；未译的暂只有英文。英文底本与版式据 AGES 数字图书馆版'
+            '（字色、小型大写、对齐照原样），底本说明见<a href="{{ site.baseurl }}/haldane/romans/">英文版书首页</a>。</p>', '']
     (OUT / 'index.html').write_text('\n'.join(idx), encoding='utf-8')
     for cmd in ('publish_haldane_en.py', 'build_commentaries_index.py'):
         r = subprocess.run([sys.executable, str(ROOT / 'scripts' / cmd)], cwd=ROOT, capture_output=True, text=True)
         if r.returncode:
             print(f'⚠️ {cmd} 失败：' + r.stderr[-300:], file=sys.stderr)
-    print(f'发布中文 {len(done)}/16 章 → {OUT.relative_to(ROOT)}')
+    print(f'发布中文 {len(done)}/{len(ORDER)} 页 → {OUT.relative_to(ROOT)}')
 
 
 if __name__ == '__main__':

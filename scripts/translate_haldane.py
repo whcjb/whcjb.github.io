@@ -37,6 +37,7 @@ CACHE = RAW / 'zh_cache'
 META = RAW / 'zh_meta.json'
 KEY_NS = 'HALDANE_ROMANS::'
 MAX_CHARS = 3200
+ORDER = ['preface', 'introduction'] + [str(c) for c in range(1, 17)] + ['conclusion']
 
 T.SRC, T.RAW, T.OUT_DIR, T.CACHE, T.META, T.KEY_NS = SRC, RAW, OUT_DIR, CACHE, META, KEY_NS
 T.BAD_LOG, T.ITALIC_LOG, T.ACCEPTED = RAW / 'zh_translate_issues.log', RAW / 'zh_italic_notes.log', RAW / 'zh_accepted.txt'
@@ -87,56 +88,100 @@ def cuv(ch, v):
     return _CUVD['45'][str(ch)][str(v)]
 
 
-RE_LEMMA = re.compile(r'^<b class="hd-ver">Vers?\. (\d+)(?:–(\d+))?\.</b>(?: <em>.*</em>)?$')
+RE_LEMMA = re.compile(r'^<b class="hd-ver">Vers?\. (\d+)(?:[–,] ?(\d+))?\.</b>(?: —)?(?: .*)?$')
+CN = '〇一二三四五六七八九'
+
+
+def cn(n):
+    if n < 10:
+        return CN[n]
+    t, u = divmod(n, 10)
+    return ('' if t == 1 else CN[t]) + '十' + (CN[u] if u else '')
+
+
+def head_zh(line):
+    """AGES 版式的居中标题（CHAPTER N / PART N. / ROMANS a:b-c）→ 中文，程序给，不送模型。"""
+    m = re.match(r'^<p class="(hd-h-\w+)">(.*)</p>$', line)
+    cls, txt = m.group(1), m.group(2)
+    if (mm := re.fullmatch(r'CHAPTER (\d+)', txt)):
+        z = f'第{cn(int(mm.group(1)))}章'
+    elif (mm := re.fullmatch(r'PART (\d+)\.?', txt)):
+        z = f'第{cn(int(mm.group(1)))}部分'
+    elif (mm := re.fullmatch(r'ROMANS (\d+:[\d-]+)\.?', txt)):
+        z = f'罗马书 {mm.group(1).replace("-", "–")}'
+    elif txt == 'EXPOSITION':
+        z = '释义'
+    else:
+        z = txt
+    return f'<p class="{cls}">{z}</p>'
 
 
 def blocks(ch):
-    """→ [(kind, text, gid)]。kind: text（送模型）/ keep（原样或程序填好）。同 gid 的块拼回时直接相连。"""
+    """→ [(kind, text, gid, kinds)]。kind: text（送模型）/ keep（原样或程序填好）。同 gid 的块拼回时直接相连。
+
+    2026-11-18 起英文页照 AGES 版式（见 publish_haldane_en.py）：送模型前剥掉只管排版的标签（小型大写 .hd-sc、
+    藏青分点 .hd-nv、希腊文 .hd-gk），红斜体 <em> 与黑斜体 <i> 都转星号让模型对位，各段的斜体种类按先后记在 kinds，
+    译完照次序还原（restore_kinds）——这样文字与旧版相同的段落，缓存键与旧版逐字节一致。"""
     t = (SRC / f'{ch}.md').read_text(encoding='utf-8').split('\n---\n', 1)[1].strip()
-    t = t.replace('<em class="hd-q">', '')                    # 英文发布补的段首开标签，剥掉保持缓存键不变
-    t = re.sub(r'<em>([^<>]*)</em>', r'*\1*', t)             # 斜体转星号，模型按星号对位
+    t = t.replace('<em class="hd-q">', '')
+    t = re.sub(r'<span class="hd-(?:sc|gk)">([^<]*)</span>', r'\1', t)
+    t = re.sub(r'<b class="hd-nv">([^<]*)</b>', r'\1', t)
     out = []
     for gid, b in enumerate(t.split('\n\n')):
         b = b.strip()
         if not b:
             continue
+        kinds = re.findall(r'<(em|i)>[^<>]*</\1>', b)
+        b = re.sub(r'<(em|i)>([^<>]*)</\1>', r'*\2*', b)
         lines = b.split('\n')
-        # 节首经文：`<b class="hd-ver">Ver. 1.</b> *…*` + `{: .hd-lemma}` → 和合本
-        m = RE_LEMMA.match(re.sub(r'\*([^*]*)\*', r'<em>\1</em>', lines[0]))
-        if m and len(lines) == 2 and lines[1].startswith('{:'):
+        if re.match(r'^<p class="hd-h-\w+">.*</p>$', b):
+            out.append(('keep', head_zh(b), gid, [])); continue
+        # 节首经文：`<b class="hd-ver">Ver. 1.</b> — *…*` + `{: .hd-lemma}` → 和合本
+        m = RE_LEMMA.match(lines[0])
+        if m and len(lines) == 2 and lines[1].startswith('{: .hd-lemma'):
             v1, v2 = int(m.group(1)), int(m.group(2) or m.group(1))
             lab = f'第 {v1} 节' if v1 == v2 else f'第 {v1}–{v2} 节'
             vs = [cuv(ch, v1)] + [f'{v} {cuv(ch, v)}' for v in range(v1 + 1, v2 + 1)]
-            out.append(('keep', f'<b class="hd-ver">{lab}</b> *{" ".join(vs)}*\n{lines[1]}', gid))
+            out.append(('keep', f'<b class="hd-ver">{lab}</b> — <em>{" ".join(vs)}</em>\n{lines[1]}', gid, []))
             continue
-        if b == 'Introduction\n{: .hd-intro-h}':
-            out.append(('keep', '章首概述\n{: .hd-intro-h}', gid))
-            continue
+        if b == 'THE END.\n{: .hd-end}':
+            out.append(('keep', '全书完\n{: .hd-end}', gid, [])); continue
+        ial = ''
+        if len(lines) >= 2 and lines[-1].startswith('{:'):
+            ial, b = '\n' + lines[-1], '\n'.join(lines[:-1])
         fn = re.match(r'^(\[\^f\d+\]:) (.*)$', b, re.S)
         if fn:
-            body = fn.group(2)
-            if 'hd-fnmiss' in body:
-                out.append(('keep', f'{fn.group(1)} {MISSING_ZH}', gid))
-            else:
-                out.append(('text', b, gid))
-            continue
+            out.append(('text', b, gid, kinds)); continue
         if not re.search(r'[A-Za-zΑ-ωἀ-ῼ]', re.sub(r'<[^>]+>', '', b)) or b.startswith('<div') or b.startswith('</div'):
-            out.append(('keep', b, gid))
-            continue
+            out.append(('keep', b + ial, gid, [])); continue
         if len(b) <= MAX_CHARS:
-            out.append(('text', b, gid))
-            continue
-        pieces = re.split(r'([.?!][”"’)]?)\s+(?=[“"‘A-Z(*])', b)
-        sents = [pieces[i] + (pieces[i + 1] if i + 1 < len(pieces) else '') for i in range(0, len(pieces), 2)]
-        cur = ''
-        for s in sents:
-            if cur and len(cur) + len(s) + 1 > MAX_CHARS:
-                out.append(('text', cur, gid)); cur = s
-            else:
-                cur = (cur + ' ' + s).strip()
-        if cur:
-            out.append(('text', cur, gid))
+            out.append(('text', b, gid, kinds))
+        else:
+            pieces = re.split(r'([.?!][”"’)]?)\s+(?=[“"‘A-Z(*])', b)
+            sents = [pieces[i] + (pieces[i + 1] if i + 1 < len(pieces) else '') for i in range(0, len(pieces), 2)]
+            cur, k0 = '', 0
+            for s in sents + [None]:
+                if s is None or (cur and len(cur) + len(s) + 1 > MAX_CHARS):
+                    n = len(re.findall(r'\*[^*\n]+\*', cur))
+                    out.append(('text', cur, gid, kinds[k0:k0 + n])); k0 += n
+                    cur = s or ''
+                else:
+                    cur = (cur + ' ' + s).strip()
+        if ial:
+            out.append(('keep', ial, gid, []))
     return out
+
+
+def restore_kinds(zh, kinds):
+    """译文里的 *…* 按英文原段斜体种类的先后还原：em → <em>（红，经文），i → <i>（黑，强调）。个数对不上就原样留星号。"""
+    ms = list(re.finditer(r'(?<!\*)\*([^*\n]+)\*(?!\*)', zh))
+    if not kinds or len(ms) != len(kinds):
+        return zh
+    out, last = [], 0
+    for m, k in zip(ms, kinds):
+        out.append(zh[last:m.start()]); out.append(f'<{k}>{m.group(1)}</{k}>'); last = m.end()
+    out.append(zh[last:])
+    return ''.join(out)
 
 
 def translate_one(text, resume, label):
@@ -178,7 +223,7 @@ def translate_one(text, resume, label):
 
 def run_section(ch, resume, dry, publish, limit=0):
     bl = blocks(ch)
-    todo = [(i, b) for i, (k, b, _) in enumerate(bl) if k == 'text']
+    todo = [(i, b) for i, (k, b, _, _) in enumerate(bl) if k == 'text']
     if limit:
         todo = todo[:limit]
     def payload(b):
@@ -194,7 +239,7 @@ def run_section(ch, resume, dry, publish, limit=0):
     for n, (i, b) in enumerate(todo, 1):
         pre, body = payload(b)
         masked, tags = T.mask(body)
-        done[i] = pre + T.unmask(translate_one(masked, resume, f'{ch}#{n}'), tags)
+        done[i] = restore_kinds(pre + T.unmask(translate_one(masked, resume, f'{ch}#{n}'), tags), bl[i][3])
         if n % 10 == 0:
             print(f'  [{ch}] {n}/{len(todo)} 段', flush=True)
     if limit:
@@ -202,7 +247,7 @@ def run_section(ch, resume, dry, publish, limit=0):
             print('-----', bl[i][1][:200], '\n=====', done[i][:500])
         return
     groups, order = {}, []
-    for i, (k, b, gid) in enumerate(bl):
+    for i, (k, b, gid, _) in enumerate(bl):
         if gid not in groups:
             groups[gid] = ''; order.append(gid)
         groups[gid] += done.get(i, b)
@@ -238,7 +283,8 @@ def autopublish(ch):
                  '_data/commentaries.yml', '_data/compare_sources.yml']
         paths = [p for p in paths if (ROOT / p).exists()]
         subprocess.run(['git', 'add', '--', *paths], cwd=ROOT, check=False, timeout=120)
-        c = subprocess.run(['git', 'commit', '-q', '-m', f'feat(haldane): 罗马书释义中译 · 第 {ch} 章（自动发布）\n\n'
+        name = {'preface': '序言', 'introduction': '导论', 'conclusion': '结语'}.get(str(ch), f'第 {ch} 章')
+        c = subprocess.run(['git', 'commit', '-q', '-m', f'feat(haldane): 罗马书释义中译 · {name}（自动发布）\n\n'
                             'Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>', '--', *paths],
                            cwd=ROOT, capture_output=True, text=True, timeout=120)
         if c.returncode == 0:
@@ -258,12 +304,12 @@ def main():
     ap.add_argument('--limit', type=int, default=0, help='试译：只译前 N 段，只打印不写出')
     a = ap.parse_args()
     tf.SYSTEM = SYSTEM
-    secs = [str(c) for c in range(1, 17)] if a.all else a.section
+    secs = ORDER if a.all else a.section
     if not secs:
         ap.error('--section 或 --all')
     for s in secs:
         try:
-            run_section(int(s), a.resume, a.dry_run, not a.no_publish, a.limit)
+            run_section(int(s) if s.isdigit() else s, a.resume, a.dry_run, not a.no_publish, a.limit)
         except T.SevereTranslation as e:
             print(f'⛔ [{s}] 有段落重试后仍不合格，本篇不写出、不发布：{e}', flush=True)
             sys.exit(3)

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""霍尔丹《罗马书释义》(Robert Haldane, Exposition of the Epistle to the Romans) 录入本 → units.json
+"""霍尔丹《罗马书释义》(Robert Haldane, Exposition of the Epistle to the Romans) 录入本 → units_studylight.json（2026-11-18 起正式底本改为 AGES，见 extract_haldane_ages.py；本文件只作分段与希腊文的证人）
 
 底本：StudyLight「hal」(Text Courtesy of BibleSupport.com，public domain)，经互联网档案馆快照取原始 HTML
 （scripts/fetch_haldane.sh → haldane_raw/romans/src/studylight/romans-<章>.html）。
@@ -114,8 +114,8 @@ def main():
         chapters.append({'ch': ch, 'entries': es})
         words = sum(len(re.sub(r'<[^>]+>', ' ', p).split()) for e in es for p in e['paras'] + [e['lemma']])
         print(f'第 {ch:2} 章：{len(es):3} 条，约 {words:6} 词')
-    (RAW / 'units.json').write_text(json.dumps({'chapters': chapters}, ensure_ascii=False, indent=1), encoding='utf-8')
-    print('→', (RAW / 'units.json').relative_to(ROOT))
+    (RAW / 'units_studylight.json').write_text(json.dumps({'chapters': chapters}, ensure_ascii=False, indent=1), encoding='utf-8')
+    print('→', (RAW / 'units_studylight.json').relative_to(ROOT))
 
 
 if __name__ == '__main__':

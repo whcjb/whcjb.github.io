@@ -7,8 +7,10 @@ layout: default
   ⚠️ 不复用别家 layout：每本书独立样式（用户既定规矩）。骨架取自 fairbairn-chapter（同为 StudyLight / BibleSupport 录入本）。
   配色灰紫 #9b6899 / 深端 #774e76：色板已挤，在卡片明度彩度区间内与全部既有色最小 ΔE 15.3（曼顿、费尔贝恩）；
   罗马书在历代解经是合列卡片（书卷独立色），作者色只在选择页与生平页出现。
-  本书版式要点：一章一页；每章首有章首概述（Introduction）`.hd-intro`；每条注释以「Ver. N.」起段 `.hd-ver`，
-  前面放 commentary-anchor；脚注全书连号 [^fN]，录入本缺正文的 7 条注明。
+  本书版式要点：一章一页；每条注释以「Ver. N.」起段 `.hd-ver`，前面放 commentary-anchor；脚注全书连号 [^fN]。
+  2026-11-18 起底本与版式改照 AGES（用户：「格式全部按照 ages，包括字体颜色，对齐等」），见文末「AGES 版式」一节：
+  页题蓝、PART 绿、经文范围黑粗，均居中；经文红斜体 #800000、强调黑斜体、分点藏青 #000080、希腊文蓝 #0000d4、
+  小型大写；Times 字体左对齐。另有卷首 PREFACE / INTRODUCTION、卷末 CONCLUSION 三页。
 {%- endcomment -%}
 
 <div class="container haldane-wrap{% if page.zh %} hd-zh{% endif %}" style="padding-top: 70px;">
@@ -22,7 +24,6 @@ layout: default
       </div>
 
       <h1 class="hd-title">{{ page.title }}</h1>
-      {% if page.subtitle %}<p class="hd-subtitle">{{ page.subtitle }}</p>{% endif %}
 
       <div class="hd-nav">
         {% if page.prev_url %}<a href="{{ site.baseurl }}{{ page.prev_url }}">&larr; {{ page.prev_label }}</a>
@@ -218,4 +219,34 @@ layout: default
 .haldane-wrap .hd-lemma em { color: #3d3540; }
 /* 录入本缺正文的脚注 */
 .haldane-wrap .hd-fnmiss { color: #8a8a99; font-style: italic; }
+/* ── AGES 版式（2026-11-18）：颜色、字体、对齐照 AGES Digital Library 版 HAL_ROMA.PDF ── */
+.haldane-wrap .hd-title { font-family: "Times New Roman", Times, serif; color: #0000d4; font-size: 34px;
+  letter-spacing: .02em; margin: 14px 0 18px; }
+.haldane-wrap .hd-content { font-family: "Times New Roman", Times, serif; color: #000; font-size: 18px; line-height: 1.7; }
+.haldane-wrap .hd-content p { text-align: left; margin: 0 0 14px; }
+.haldane-wrap .hd-content em { font-style: italic; color: #800000; }
+.haldane-wrap .hd-content i { font-style: italic; color: #000; }
+.haldane-wrap .hd-content .hd-nv { color: #000080; font-weight: bold; }
+.haldane-wrap .hd-content .hd-gk { color: #0000d4; font-family: "Gentium Plus", "GFS Didot", "Times New Roman", serif; }
+.haldane-wrap .hd-content .hd-sc { font-size: .76em; letter-spacing: .02em; }
+.haldane-wrap .hd-content .hd-h-expo { text-align: center; color: #0000d4; font-size: 34px; margin: 4px 0 6px; }
+.haldane-wrap .hd-content .hd-h-ch { text-align: center; color: #0000d4; font-size: 30px; margin: 22px 0 6px; }
+.haldane-wrap .hd-content .hd-h-part { text-align: center; color: #006411; font-size: 22px; margin: 20px 0 10px; }
+.haldane-wrap .hd-content .hd-h-range { text-align: center; color: #000; font-weight: bold; font-size: 16px;
+  letter-spacing: .02em; margin: 6px 0 18px; }
+.haldane-wrap .hd-content .hd-lemma { margin: 22px 0 12px !important; }
+.haldane-wrap .hd-content .hd-ver { font-weight: bold; font-variant: normal; letter-spacing: 0; color: #000; }
+.haldane-wrap .hd-content .hd-c { text-align: center; }
+.haldane-wrap .hd-content .hd-ind { margin-left: 2.4em; }
+.haldane-wrap .hd-content .hd-end { text-align: center; color: #006411; font-size: 20px; margin-top: 26px; }
+.haldane-wrap .hd-content a.footnote { color: #800000; font-size: 11px; }
+.haldane-wrap .hd-content sup { color: #800000; }
+.haldane-wrap .hd-content .footnotes { color: #000; font-family: "Times New Roman", Times, serif; }
+.haldane-wrap.hd-zh .hd-title { font-family: "Songti SC", STSong, "Times New Roman", serif; }
+.haldane-wrap.hd-zh .hd-content { font-family: "Songti SC", STSong, "Noto Serif CJK SC", "Times New Roman", serif; }
+@media (max-width: 767px) {
+  .haldane-wrap .hd-title, .haldane-wrap .hd-content .hd-h-expo { font-size: 26px; }
+  .haldane-wrap .hd-content .hd-h-ch { font-size: 24px; }
+  .haldane-wrap .hd-content { font-size: 17px; }
+}
 </style>

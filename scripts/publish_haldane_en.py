@@ -1,13 +1,17 @@
 #!/usr/bin/env python3
-"""霍尔丹《罗马书释义》英文版发布：haldane_raw/romans/units.json → haldane/romans/{1..16}.md + index.html
+"""霍尔丹《罗马书释义》英文版发布：haldane_raw/romans/units.json → haldane/romans/*.md + index.html
 
-链条：fetch_haldane.sh → extract_haldane.py → 本脚本 → build_commentaries_index.py。重跑产物逐字节不变
-（发布时刻记在 en_meta.json，首次写入后不改）。
+链条：extract_haldane_ages.py（AGES PDF → units.json）→ 本脚本 → build_commentaries_index.py。
+发布时刻记在 en_meta.json，首次写入后不改。
 
-- 一章一页；章首概述（Introduction）包在 .hd-intro 里；每条注释前放 commentary-anchor（id romans-章-节），
-  录入本没单独讲的经节，锚点挂到讲它的那一条（向前找最近的一条）——保证 433 节节节有锚点。
-- 正文写成 markdown 段落（内含 <em> 行内 HTML），脚注 [^fN] 才会被 kramdown 渲染；定义放该章末尾。
-- 录入本只有注号、没有脚注正文的 7 条（22 23 34 38 56 57 58）给一条说明性的定义，免得页面上露出字面 [^f22]。
+**版式照 AGES**（用户 2026-11-18：「格式全部按照 ages，包括字体颜色，对齐等」）：
+- 卷首 PREFACE / INTRODUCTION、卷末 CONCLUSION 各一页；正文一章一页。
+- 章页：CHAPTER N 蓝色大字居中（第 1 章页题是 EXPOSITION，CHAPTER 1 在其下，同 AGES）；PART N. 绿色居中；ROMANS a:b-c 黑粗居中
+  （AGES 在哪条前印，就在哪条前出）；章首概述不加标签。
+- 每条：「**Ver. N.** —」+ 经文（红斜体，AGES 原样的红 / 黑字色）；注释段落里经文短语红斜体 <em>、
+  强调黑斜体 <i>、分点藏青粗体 .hd-nv、希腊文蓝 .hd-gk、小型大写 .hd-sc；左对齐；AGES 居中 / 缩进段照录。
+- 每条注释前放 commentary-anchor（id romans-章-节）；没单独讲的经节挂到讲它的那一条（向前找最近的一条）。
+- 正文写成 markdown 段落（内含行内 HTML），脚注 [^fN] 由 kramdown 渲染，定义放该页末尾。
 """
 import json
 import re
@@ -19,123 +23,151 @@ ROOT = Path(__file__).resolve().parent.parent
 RAW = ROOT / 'haldane_raw' / 'romans'
 OUT = ROOT / 'haldane' / 'romans'
 META = RAW / 'en_meta.json'
+BASE = '/haldane/romans'
 NV = [32, 29, 31, 25, 21, 23, 25, 39, 33, 21, 36, 21, 14, 23, 33, 27]   # 罗马书各章节数
-MISSING_NOTE = ('<span class="hd-fnmiss">The text of this note is wanting in the transcription on which this edition '
-                'is based (the original edition prints it).</span>')
+ORDER = ['preface', 'introduction'] + [str(c) for c in range(1, 17)] + ['conclusion']
+LABEL = {'preface': 'Preface', 'introduction': 'Introduction', 'conclusion': 'Conclusion'}
 
 
 def now():
     return subprocess.run(['date', '+%Y-%m-%d %H:%M'], capture_output=True, text=True).stdout.strip()
 
 
-def md_para(t: str) -> str:
+def label(slug):
+    return LABEL.get(slug, f'Romans {slug}')
+
+
+def md_para(t: str, align: str = '') -> list:
     t = re.sub(r'^(\d+)\. ', r'\1\\. ', t)          # 段首「1. 」别被 kramdown 当有序列表
     t = re.sub(r'^([#>+\-]) ', r'\\\1 ', t)
-    # 录入本的 <i> 在节首经文段开、到下一段段首引句「… —」后才关，抽出来段首引句只剩一个孤立的 </em>。
-    # 补开标签带 class，translate_haldane.py 读入时剥掉，段落文本（缓存键）与补之前逐字节一致
-    i, j = t.find('</em>'), t.find('<em>')
-    if i >= 0 and (j < 0 or i < j):
-        t = '<em class="hd-q">' + t
-    return t
+    out = [t]
+    if align in ('center', 'indent'):
+        out.append('{: .hd-c}' if align == 'center' else '{: .hd-ind}')
+    elif align == 'center-end':
+        out.append('{: .hd-end}')
+    return out + ['']
 
 
-def vlabel(e):
-    if e['v1'] == e['v2']:
-        return f'Ver. {e["v1"]}.'
-    return f'Vers. {e["v1"]}–{e["v2"]}.'
+def head_html(h):
+    if h.startswith('CHAPTER'):
+        return f'<p class="hd-h-ch">{h}</p>'
+    if h.upper().startswith('PART'):
+        return f'<p class="hd-h-part">{h}</p>'
+    return f'<p class="hd-h-range">{h}</p>'
 
 
-def chapter_md(c, defs_all):
+def span(e):
+    m = re.fullmatch(r'verses?-(\d+)(?:-(\d+))?', e['key'])
+    return (int(m.group(1)), int(m.group(2) or m.group(1))) if m else None
+
+
+def chapter_md(c):
     ch = c['ch']
     out, covered, notes_here = [], set(), []
-    verse_entries = [e for e in c['entries'] if 'v1' in e]
-    # 每节锚点归到哪一条：该节有条目就是它，否则挂到它前面最近的一条（并讲）
+    ves = [e for e in c['entries'] if span(e)]
     owner = {}
     for v in range(1, NV[ch - 1] + 1):
-        cand = [e for e in verse_entries if e['v1'] <= v <= e['v2']] or \
-               [e for e in verse_entries if e['v1'] <= v][-1:] or verse_entries[:1]
+        cand = [e for e in ves if span(e)[0] <= v <= span(e)[1]] or [e for e in ves if span(e)[0] <= v][-1:] or ves[:1]
         owner.setdefault(id(cand[0]), []).append(v)
+    if ch == 1:                                            # AGES：EXPOSITION（页题）在上，CHAPTER 1 在下
+        out += ['<p class="hd-h-ch">CHAPTER 1</p>', '']
     for e in c['entries']:
         refs = re.findall(r'\[\^f(\d+)\]', ' '.join(e['paras'] + [e['lemma']]))
         notes_here += [r for r in refs if r not in notes_here]
-        if e['key'] == 'introduction':
-            out.append('<div class="hd-intro" markdown="1">')
-            out.append('')
-            out.append('Introduction')
-            out.append('{: .hd-intro-h}')
-            out.append('')
-            for p in e['paras']:
-                out += [md_para(p), '']
-            out += ['</div>', '']
-            continue
+        for h in e.get('heads', []):
+            if h.startswith('CHAPTER'):
+                continue                                   # 页题已是 CHAPTER N
+            out += [head_html(h), '']
         for v in owner.get(id(e), []):
             out.append(f'<div class="commentary-anchor" id="romans-{ch}-{v}"></div>')
             covered.add(v)
-        out.append('')
-        lem = re.sub(r'^<em>(?!.*</em>)', '', e['lemma'])     # 同上，经文段里没关的那个 <em>
-        lemma = f' <em>{lem}</em>' if lem else ''
-        out += [f'<b class="hd-ver">{vlabel(e)}</b>{lemma}', '{: .hd-lemma}', '']
-        for p in e['paras']:
-            out += [md_para(p), '']
+        if span(e):
+            out += ['', f'<b class="hd-ver">{e["ver"]}</b> — {e["lemma"]}', '{: .hd-lemma}', '']
+        mids = {i: hs for i, hs in e.get('mid_heads', [])}
+        for i, (p, al) in enumerate(zip(e['paras'], e['align'])):
+            for h in mids.get(i, []):
+                out += [head_html(h), '']
+            out += md_para(p, al)
+    return out, notes_here, covered
+
+
+def page_md(lines, notes_here, defs):
     for r in notes_here:
-        txt = defs_all.get(r)
-        out.append(f'[^f{r}]: {txt if txt else MISSING_NOTE}')
-    missing = set(range(1, NV[ch - 1] + 1)) - covered
-    return '\n'.join(out).rstrip() + '\n', missing
+        lines.append(f'[^f{r}]: {defs[r]}')
+    return '\n'.join(lines).rstrip() + '\n'
 
 
 def main():
     u = json.loads((RAW / 'units.json').read_text(encoding='utf-8'))
-    defs = {k: v for c in u['chapters'] for e in c['entries'] for k, v in e['notes'].items()}
+    defs = u['notes']
     meta = json.loads(META.read_text(encoding='utf-8')) if META.exists() else {}
     stamp = now()
     OUT.mkdir(parents=True, exist_ok=True)
-    bad = []
+    pages, bad = {}, []
+    for f in u['front'] + u['back']:
+        lines = []
+        for p, al in zip(f['paras'], f['align']):
+            lines += md_para(p, al)
+        refs = []
+        for p in f['paras']:
+            refs += [r for r in re.findall(r'\[\^f(\d+)\]', p) if r not in refs]
+        pages[f['key']] = page_md(lines, refs, defs)
     for c in u['chapters']:
-        ch = c['ch']
-        body, miss = chapter_md(c, defs)
+        lines, refs, covered = chapter_md(c)
+        miss = set(range(1, NV[c['ch'] - 1] + 1)) - covered
         if miss:
-            bad.append((ch, sorted(miss)))
-        meta.setdefault(str(ch), stamp)
-        fm = ['---', 'layout: haldane-chapter', 'book_id: romans', 'book_name: "Haldane on Romans"',
-              f'title: "Romans {ch}"', 'subtitle: "Robert Haldane"', f'date: {meta[str(ch)]}', f'chapter: {ch}']
-        if ch > 1:
-            fm += [f'prev_url: "/haldane/romans/{ch - 1}/"', f'prev_label: "Romans {ch - 1}"']
-        if ch < 16:
-            fm += [f'next_url: "/haldane/romans/{ch + 1}/"', f'next_label: "Romans {ch + 1}"']
-        if (OUT / 'zh' / f'{ch}.md').exists():
-            fm.append(f'zh_url: "/haldane/romans/zh/{ch}/"')
-        fm.append('---')
-        (OUT / f'{ch}.md').write_text('\n'.join(fm) + '\n\n' + body, encoding='utf-8')
+            bad.append((c['ch'], sorted(miss)))
+        pages[str(c['ch'])] = page_md(lines, refs, defs)
     if bad:
         sys.exit(f'有经节没有锚点：{bad}')
+    for i, slug in enumerate(ORDER):
+        meta.setdefault(slug, stamp)
+        title = 'EXPOSITION' if slug == '1' else f'CHAPTER {slug}' if slug.isdigit() else LABEL[slug].upper()
+        fm = ['---', 'layout: haldane-chapter', 'book_id: romans', 'book_name: "Haldane on Romans"',
+              f'title: "{title}"', f'date: {meta[slug]}']
+        if slug.isdigit():
+            fm.append(f'chapter: {slug}')
+        if i:
+            fm += [f'prev_url: "{BASE}/{ORDER[i - 1]}/"', f'prev_label: "{label(ORDER[i - 1])}"']
+        if i + 1 < len(ORDER):
+            fm += [f'next_url: "{BASE}/{ORDER[i + 1]}/"', f'next_label: "{label(ORDER[i + 1])}"']
+        if (OUT / 'zh' / f'{slug}.md').exists():
+            fm.append(f'zh_url: "{BASE}/zh/{slug}/"')
+        fm.append('---')
+        (OUT / f'{slug}.md').write_text('\n'.join(fm) + '\n\n' + pages[slug], encoding='utf-8')
     (OUT / 'index.html').write_text(index_html(u), encoding='utf-8')
     META.write_text(json.dumps(meta, ensure_ascii=False, indent=1, sort_keys=True) + '\n', encoding='utf-8')
-    refs = sum(len(re.findall(r'\[\^f\d+\]', (OUT / f'{c["ch"]}.md').read_text())) for c in u['chapters'])
-    print(f'写入 16 章 + 书首页 → {OUT.relative_to(ROOT)}；经节锚点 433/433；脚注 {len(defs)} 条定义')
+    n_e = sum(len(c['entries']) for c in u['chapters'])
+    print(f'写入 {len(ORDER)} 页 + 书首页 → {OUT.relative_to(ROOT)}；条目 {n_e}；经节锚点 433/433；脚注 {len(defs)} 条')
 
 
 def index_html(u):
+    fixes = u.get('ver_fixes', [])
     out = ['---', 'layout: haldane-book', 'book_id: romans', 'book_name: "Haldane on Romans"',
            'title: "Robert Haldane · Exposition of the Epistle to the Romans"', 'author: "Robert Haldane (1764–1842)"',
            'edition: "Exposition of the Epistle to the Romans, with Remarks on the Commentaries of Dr. Macknight, '
            'Professor Moses Stuart, and Professor Tholuck · first published 1835–1839"',
            *(['zh_url: "/haldane/romans/zh/"'] if (OUT / 'zh' / 'index.html').exists() else []), '---', '',
-           '<h2 class="hd-group">Exposition</h2>', '<ul class="hd-chgrid">']
-    out += [f'  <li><a href="{{{{ site.baseurl }}}}/haldane/romans/{c}/">Romans {c}</a></li>' for c in range(1, 17)]
-    out += ['</ul>', '',
+           '<ul class="hd-chgrid hd-wide">',
+           f'  <li><a href="{{{{ site.baseurl }}}}{BASE}/preface/">Preface</a></li>',
+           f'  <li><a href="{{{{ site.baseurl }}}}{BASE}/introduction/">Introduction</a></li>',
+           '</ul>', '<h2 class="hd-group">Exposition</h2>', '<ul class="hd-chgrid">']
+    out += [f'  <li><a href="{{{{ site.baseurl }}}}{BASE}/{c}/">Romans {c}</a></li>' for c in range(1, 17)]
+    out += ['</ul>', '<ul class="hd-chgrid hd-wide">',
+            f'  <li><a href="{{{{ site.baseurl }}}}{BASE}/conclusion/">Conclusion</a></li>', '</ul>', '',
             '<div class="hd-note">',
-            '<p><b>About this edition.</b> The text is the transcription distributed by BibleSupport.com (public domain), '
-            'taken from StudyLight.org through the Internet Archive. It was checked passage by passage against a scan of the '
-            'ninth edition (Edinburgh: William Oliphant, 1874; Internet Archive <code>expositionofthee00halduoft</code>): '
-            'for chapters 1–16 no passage of the commentary is missing.</p>',
-            '<p>The transcription contains the exposition of chapters 1–16 only. The following parts of the original edition '
-            'are not in it and are not yet given here: the Preface and Introduction (pp. 3–18 of the 1874 edition); the two '
-            'dissertations at the end, “The State of the Heathen World Destitute of the Gospel” (with “The Case of Cornelius”) '
-            'and “The Sanctification of the Sabbath” (pp. 653–702); the Conclusion (pp. 703–712); and the Appendix, with the '
-            'letter to the Rev. Edward Bickersteth and the remarks on Mr. Stuart, Dr. Macknight and Mr. Tholuck (pp. 713–730).</p>',
-            '<p>Seven footnotes (nos. 22, 23, 34, 38, 56, 57, 58) are referred to in the text but their wording is wanting in '
-            'the transcription; they are marked as such where they occur.</p>',
+            '<p><b>About this edition.</b> The text and its typography (colours, small capitals, alignment) follow the '
+            'AGES Digital Library edition (AGES Software, 1998; <code>HAL_ROMA.PDF</code>). Paragraph breaks that the AGES '
+            'typesetting lost in the later chapters are restored from the BibleSupport.com transcription, which descends '
+            'from the same electronic text. The modern foreword printed in the AGES edition is not reproduced.</p>',
+            '<p>Not in the AGES edition and not yet given here: the two dissertations added to the later editions, '
+            '“The State of the Heathen World Destitute of the Gospel” (with “The Case of Cornelius”) and “The Sanctification '
+            'of the Sabbath”, and the Appendix (letter to the Rev. Edward Bickersteth; remarks on Mr. Stuart, Dr. Macknight '
+            'and Mr. Tholuck), pp. 653–702 and 713–730 of the ninth edition (Edinburgh, 1874).</p>',
+            '<p>Editorial corrections: Greek words, which the AGES edition gives in its own transliteration code, are '
+            'given in Greek type; '
+            + ('; '.join(f'Romans {x}' for x in fixes) + '; ' if fixes else '')
+            + 'Romans 5:18 δικαιώματος (AGES omits the μ).</p>',
             '</div>', '']
     return '\n'.join(out)
 
