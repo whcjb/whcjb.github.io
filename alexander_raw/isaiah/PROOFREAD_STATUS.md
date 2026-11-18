@@ -528,3 +528,6 @@ Hook→I look、gradient→gradiens、had→lead、Itst→lest、multitude→mul
   · 生僻拉丁/德文/希腊乱码词（词典筛 664 → 去引文 239 条逐条判）：除上述外均为正常外文；26 章「felicit asaccedat」原书即印错，保留。
   · 单引号配对（29 条不配对行逐条看）：14 章 278、13 章 251 等原书即缺/多引号，保留；「' x」开引号后空格是原书排版，不改。
 > 漏检率：第 1 章 24 处/22 页。下一轮继续盲读另一早读章（第 2 章起），确认漏检是普遍还是集中在最早几章。
+- 第 70 轮（盲读复查）：第 2 章（卷一 22–38，16 页）首轮已读，重读**又查出 7 处 ≈ 0.4/页**：斜体跨括号 2（*come), and we will ascend*、*which have been made) for him…*）、斜体起点早一词 2（*or from before*、*but fissures*）、斜体多/少 2（*Æn.*、§ 152. 4. *c.*）、希伯来多加 maqqef 1（לחפר־פרות→לחפרפרות）。另核实第 69 轮 2 章「answering to *clefts*」改法与原书一致。
+- 第 70 轮全书同类 7 处（卷一 5 / 卷二 2）：**斜体跨过括号**（斜体段里有不配对的括号，后面还跟着两个以上斜体词）判据扫两卷 20 条候选，看图改 4 章 59 *when*)、5 章 69 *surely, certainly*)、9 章 177 *people*)、40 章 21 (*made* or *produced*)、3 章 50 *outstretched neck* (literally,…、49 章 172 *In vain* (or…、8 章 136 *man's pen* (or *stylus*…；其余 13 条（42 章 sprout/germinate、44 章 who (is or was)、58 章 double light or、60 章 captive or 等）原书括号内外斜体排法与文本一致，不改。
+> 漏检率：第 1 章 24 处/22 页（1.1/页），第 2 章 7 处/16 页（0.4/页）。第 1 章明显偏高；继续抽第 3 章复查。
