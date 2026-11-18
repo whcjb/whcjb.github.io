@@ -162,34 +162,34 @@ def main():
 
 
 def index_html(u):
+    """书首页：结构照贺智书首页（hd-btitle / hd-bsub / 宽卡片 / 章号方格 / 页尾 details 底本说明）。"""
     fixes = u.get('ver_fixes', [])
+    tile = lambda slug, small, big, wide=False: (f'  <a class="hd-tile{" hd-tile-wide" if wide else ""}" '
+                                                 f'href="{{{{ site.baseurl }}}}{BASE}/{slug}/"><span>{small}</span>{big}</a>')
     out = ['---', 'layout: haldane-book', 'book_id: romans', 'book_name: "Haldane on Romans"',
-           'title: "Robert Haldane · Exposition of the Epistle to the Romans"', 'author: "Robert Haldane (1764–1842)"',
-           'edition: "Exposition of the Epistle to the Romans, with Remarks on the Commentaries of Dr. Macknight, '
-           'Professor Moses Stuart, and Professor Tholuck · first published 1835–1839"',
+           'title: "Robert Haldane · Exposition of the Epistle to the Romans"',
+           'sub: "Robert Haldane · 1764–1842 · Edinburgh"',
            *(['zh_url: "/haldane/romans/zh/"'] if (OUT / 'zh' / 'index.html').exists() else []), '---', '',
-           '<ul class="hd-chgrid hd-wide">',
-           f'  <li><a href="{{{{ site.baseurl }}}}{BASE}/preface/">Preface</a></li>',
-           f'  <li><a href="{{{{ site.baseurl }}}}{BASE}/introduction/">Introduction</a></li>',
-           '</ul>', '<h2 class="hd-group">Exposition</h2>', '<ul class="hd-chgrid">']
-    out += [f'  <li><a href="{{{{ site.baseurl }}}}{BASE}/{c}/">Romans {c}</a></li>' for c in range(1, 17)]
-    out += ['</ul>', '<ul class="hd-chgrid hd-wide">',
-            f'  <li><a href="{{{{ site.baseurl }}}}{BASE}/conclusion/">Conclusion</a></li>', '</ul>', '',
-            '<div class="hd-note">',
-            '<p><b>About this edition.</b> The text and its typography (colours, small capitals, alignment) follow the '
-            'AGES Digital Library edition (AGES Software, 1998; <code>HAL_ROMA.PDF</code>). Paragraph breaks that the AGES '
-            'typesetting lost in the later chapters are restored from the BibleSupport.com transcription, which descends '
-            'from the same electronic text. The modern foreword printed in the AGES edition is not reproduced.</p>',
+           '<div class="hd-wide2">', tile('preface', 'Preface', '序言', True), tile('introduction', 'Introduction', '导论', True),
+           '</div>', '<div class="hd-tgrid">']
+    out += [tile(c, 'Chapter', c) for c in range(1, 17)]
+    out += ['</div>', '<div class="hd-wide2">', tile('conclusion', 'Conclusion', '结语', True), '</div>', '',
+            '<details class="hd-about"><summary>About this edition</summary>',
+            '<p><i>Exposition of the Epistle to the Romans, with Remarks on the Commentaries of Dr. Macknight, Professor '
+            'Moses Stuart, and Professor Tholuck</i>, first published 1835–1839.</p>',
+            '<p>The text and its typography (colours, small capitals, alignment) follow the AGES Digital Library edition '
+            '(AGES Software, 1998; HAL_ROMA.PDF). Paragraph breaks across pages are checked against the ninth edition '
+            '(Edinburgh, 1874). The modern foreword printed in the AGES edition is not reproduced.</p>',
             '<p>Not in the AGES edition and not yet given here: the two dissertations added to the later editions, '
             '“The State of the Heathen World Destitute of the Gospel” (with “The Case of Cornelius”) and “The Sanctification '
             'of the Sabbath”, and the Appendix (letter to the Rev. Edward Bickersteth; remarks on Mr. Stuart, Dr. Macknight '
-            'and Mr. Tholuck), pp. 653–702 and 713–730 of the ninth edition (Edinburgh, 1874).</p>',
+            'and Mr. Tholuck), pp. 653–702 and 713–730 of the ninth edition.</p>',
             '<p>Editorial corrections: Greek words, which the AGES edition gives in its own transliteration code, are '
             'given in Greek type; '
             + ('; '.join(f'Romans {x}' for x in fixes) + '; ' if fixes else '')
             + ''.join(f'Romans {x}; ' for x in u.get('ed_fixes', []))
             + 'Romans 5:18 δικαιώματος (AGES omits the μ).</p>',
-            '</div>', '']
+            '</details>', '']
     return '\n'.join(out)
 
 

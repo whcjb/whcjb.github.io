@@ -88,20 +88,27 @@ def main():
         body = sect_names.annotate(body, (EN / f'{s}.md').read_text(encoding='utf-8'), 'hd-orig')
         (OUT / f'{s}.md').write_text('\n'.join(fm) + '\n\n' + body + '\n', encoding='utf-8')
 
-    def cell(s):
+    small = {'preface': 'Preface', 'introduction': 'Introduction', 'conclusion': 'Conclusion'}
+
+    def tile(s, wide=False):
+        cls = 'hd-tile' + (' hd-tile-wide' if wide else '')
+        big = NAME.get(s) or s
+        lab = small.get(s, 'Chapter')
         if s in done:
-            return f'  <li><a href="{{{{ site.baseurl }}}}/haldane/romans/zh/{s}/">{short(s)}</a></li>'
-        lab = s.title() if not s.isdigit() else f'Romans {s}'
-        return f'  <li><a class="hd-other" href="{{{{ site.baseurl }}}}/haldane/romans/{s}/">{lab}<small>英文</small></a></li>'
+            return f'  <a class="{cls}" href="{{{{ site.baseurl }}}}/haldane/romans/zh/{s}/"><span>{lab}</span>{big}</a>'
+        return (f'  <a class="{cls} hd-tile-pending" title="尚未翻译，点开为英文" '
+                f'href="{{{{ site.baseurl }}}}/haldane/romans/{s}/"><span>{lab} · 英文</span>{big}</a>')
     idx = ['---', 'layout: haldane-book', 'book_id: romans', 'book_name: "霍尔丹《罗马书释义》"',
-           'title: "霍尔丹《罗马书释义》"', 'author: "罗伯特·霍尔丹（Robert Haldane，1764–1842）"',
-           'edition: "Exposition of the Epistle to the Romans · 1835–1839"', 'en_url: "/haldane/romans/"', 'zh: true', '---', '',
-           '<ul class="hd-chgrid hd-wide">', cell('preface'), cell('introduction'), '</ul>',
-           '<h2 class="hd-group">逐章释义</h2>', '<ul class="hd-chgrid">']
-    idx += [cell(str(c)) for c in range(1, 17)]
-    idx += ['</ul>', '<ul class="hd-chgrid hd-wide">', cell('conclusion'), '</ul>', '',
-            f'<p class="hd-note-zh">中译已上线 {len(done)} / {len(ORDER)} 页；未译的暂只有英文。英文底本与版式据 AGES 数字图书馆版'
-            '（字色、小型大写、对齐照原样），底本说明见<a href="{{ site.baseurl }}/haldane/romans/">英文版书首页</a>。</p>', '']
+           'title: "霍尔丹《罗马书释义》"', 'sub: "罗伯特·霍尔丹（Robert Haldane）· 1764–1842 · 爱丁堡"',
+           'en_url: "/haldane/romans/"', 'zh: true', '---', '',
+           '<div class="hd-wide2">', tile('preface', True), tile('introduction', True), '</div>', '<div class="hd-tgrid">']
+    idx += [tile(str(c)) for c in range(1, 17)]
+    idx += ['</div>', '<div class="hd-wide2">', tile('conclusion', True), '</div>', '',
+            '<details class="hd-about"><summary>底本说明</summary>',
+            f'<p>中译已上线 {len(done)} / {len(ORDER)} 页；虚线格尚未翻译，点开为英文。</p>',
+            '<p>英文底本与版式据 AGES 数字图书馆版（字色、小型大写、对齐照原样），跨页分段以 1874 年第九版核对；'
+            '详见<a href="{{ site.baseurl }}/haldane/romans/">英文版书首页</a>的 About this edition。</p>',
+            '</details>', '']
     (OUT / 'index.html').write_text('\n'.join(idx), encoding='utf-8')
     for cmd in ('publish_haldane_en.py', 'build_commentaries_index.py'):
         r = subprocess.run([sys.executable, str(ROOT / 'scripts' / cmd)], cwd=ROOT, capture_output=True, text=True)

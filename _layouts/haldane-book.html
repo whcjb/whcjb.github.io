@@ -13,16 +13,18 @@ layout: default
 
 <div class="container haldane-book{% if page.zh %} hd-zh{% endif %}" style="padding-top: 70px;">
   <div class="row">
-    <div class="col-lg-9 col-lg-offset-1 col-md-10 col-md-offset-1">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
 
-      {% if page.zh %}{% if page.en_url %}<p class="hd-booklang"><a href="{{ site.baseurl }}{{ page.en_url }}">English &rarr;</a></p>{% endif %}
-      {% elsif page.zh_url %}<p class="hd-booklang"><a href="{{ site.baseurl }}{{ page.zh_url }}">中文版 &rarr;</a></p>{% endif %}
-
-      <div class="hd-hero">
-        <h1>{{ page.book_name }}</h1>
-        <p class="hd-hero-author">{{ page.author }}</p>
-        <p class="hd-hero-meta">{{ page.edition }}</p>
+      {%- comment -%} 2026-11-18 首页改照贺智书首页的结构（用户：「首页为什么不能像贺智的首页那么美观」）：
+        返回作者页 + 语言切换一行；书名加深色下划线；一行斜体作者·年代·地点；卷首卷末宽卡片；章号 8 列方格；
+        底本说明收进页尾可展开的 details。配色仍用本书灰紫。 {%- endcomment -%}
+      <div class="hd-bbar">
+        <a href="{{ site.baseurl }}/commentaries/authors/haldane/">&larr; 罗伯特·霍尔丹</a>
+        {% if page.zh %}{% if page.en_url %}<a class="hd-blang" href="{{ site.baseurl }}{{ page.en_url }}">English &rarr;</a>{% endif %}
+        {% elsif page.zh_url %}<a class="hd-blang" href="{{ site.baseurl }}{{ page.zh_url }}">中文版 &rarr;</a>{% endif %}
       </div>
+      <h1 class="hd-btitle">{{ page.book_name }}</h1>
+      <div class="hd-bsub">{{ page.sub }}</div>
 
       {{ content }}
 
@@ -84,6 +86,36 @@ layout: default
 .haldane-book .hd-edtab td a { color: var(--hd-ink-dark); }
 .haldane-book .hd-edtab .hd-edgrp td { background: var(--hd-paper); color: var(--hd-ink-dark); font-family: "Songti SC", STSong, serif; padding-top: 10px; }
 @media (max-width: 767px) { .haldane-book .hd-edtab { display: block; overflow-x: auto; } }
+.haldane-book { font-family: Georgia, "Times New Roman", "Songti SC", serif; color: #2c2c2c; }
+body:has(.haldane-book) { background: #fbfaf9; }
+.haldane-book .hd-bbar { display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap;
+  margin: 18px 0 22px; }
+.haldane-book .hd-bbar a { color: var(--hd-ink-dark); text-decoration: none; font-size: 13.5px; }
+.haldane-book .hd-bbar a:hover { text-decoration: underline; }
+.haldane-book .hd-blang { border: 1px solid var(--hd-rule); border-radius: 3px; padding: 3px 11px; font-size: 12.5px !important;
+  background: #fff; }
+.haldane-book .hd-blang:hover { background: var(--hd-ink-dark); color: #fff !important; text-decoration: none !important; }
+.haldane-book .hd-btitle { font-size: 27px; color: var(--hd-ink-dark); font-weight: 600; letter-spacing: .03em;
+  border-bottom: 2px solid var(--hd-ink-dark); padding-bottom: 9px; margin: 0 0 8px; }
+.haldane-book .hd-bsub { font-style: italic; font-size: 13px; color: #8a8275; margin-bottom: 28px; }
+/* 卡片：卷首卷末宽卡（小号英文标签 + 中文）、章号方格（小号 Chapter + 大号数字），同贺智 */
+.haldane-book .hd-wide2 { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 18px; }
+.haldane-book .hd-tgrid { display: grid; grid-template-columns: repeat(auto-fill, minmax(78px, 1fr)); gap: 10px; margin-bottom: 18px; }
+.haldane-book .hd-tile { display: flex; flex-direction: column; align-items: center; justify-content: center; height: 68px;
+  border: 1px solid var(--hd-rule); border-radius: 4px; background: #fff; color: var(--hd-ink-dark) !important; font-size: 21px;
+  text-decoration: none !important; line-height: 1; transition: background .15s ease, border-color .15s ease, transform .15s ease; }
+.haldane-book .hd-tile span { font-size: 9.5px; letter-spacing: .1em; text-transform: uppercase; opacity: .6; margin-bottom: 4px; }
+.haldane-book .hd-tile:hover { background: var(--hd-ink-dark); border-color: var(--hd-ink-dark); color: #fff !important;
+  transform: translateY(-1px); }
+.haldane-book .hd-tile-wide { height: 58px; font-size: 16px; letter-spacing: .08em; background: var(--hd-paper); }
+.haldane-book .hd-tile-pending { border-style: dashed; color: #b0a8af !important; background: transparent; }
+.haldane-book .hd-about { margin: 22px 0 40px; font-size: 13px; color: #8a8a99; line-height: 1.75; }
+.haldane-book .hd-about summary { cursor: pointer; color: var(--hd-ink-dark); font-size: 13px; letter-spacing: .04em; }
+.haldane-book .hd-about p { margin: 10px 0 0; }
+@media (max-width: 640px) {
+  .haldane-book .hd-tgrid { grid-template-columns: repeat(auto-fill, minmax(64px, 1fr)); gap: 8px; }
+  .haldane-book .hd-tile { height: 58px; font-size: 18px; }
+}
 </style>
 <style>
 .haldane-book .hd-siblings { margin: -12px 0 18px; font-size: 13.5px; font-family: Georgia, serif; color: #8a8a99; }
@@ -93,4 +125,34 @@ layout: default
 /* 卷首卷末（Preface / Introduction / Conclusion）：宽格 */
 .haldane-book .hd-chgrid.hd-wide { grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); margin: 12px 0; }
 .haldane-book .hd-chgrid a.hd-other small { display: block; font-size: 11px; }
+.haldane-book { font-family: Georgia, "Times New Roman", "Songti SC", serif; color: #2c2c2c; }
+body:has(.haldane-book) { background: #fbfaf9; }
+.haldane-book .hd-bbar { display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap;
+  margin: 18px 0 22px; }
+.haldane-book .hd-bbar a { color: var(--hd-ink-dark); text-decoration: none; font-size: 13.5px; }
+.haldane-book .hd-bbar a:hover { text-decoration: underline; }
+.haldane-book .hd-blang { border: 1px solid var(--hd-rule); border-radius: 3px; padding: 3px 11px; font-size: 12.5px !important;
+  background: #fff; }
+.haldane-book .hd-blang:hover { background: var(--hd-ink-dark); color: #fff !important; text-decoration: none !important; }
+.haldane-book .hd-btitle { font-size: 27px; color: var(--hd-ink-dark); font-weight: 600; letter-spacing: .03em;
+  border-bottom: 2px solid var(--hd-ink-dark); padding-bottom: 9px; margin: 0 0 8px; }
+.haldane-book .hd-bsub { font-style: italic; font-size: 13px; color: #8a8275; margin-bottom: 28px; }
+/* 卡片：卷首卷末宽卡（小号英文标签 + 中文）、章号方格（小号 Chapter + 大号数字），同贺智 */
+.haldane-book .hd-wide2 { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 18px; }
+.haldane-book .hd-tgrid { display: grid; grid-template-columns: repeat(auto-fill, minmax(78px, 1fr)); gap: 10px; margin-bottom: 18px; }
+.haldane-book .hd-tile { display: flex; flex-direction: column; align-items: center; justify-content: center; height: 68px;
+  border: 1px solid var(--hd-rule); border-radius: 4px; background: #fff; color: var(--hd-ink-dark) !important; font-size: 21px;
+  text-decoration: none !important; line-height: 1; transition: background .15s ease, border-color .15s ease, transform .15s ease; }
+.haldane-book .hd-tile span { font-size: 9.5px; letter-spacing: .1em; text-transform: uppercase; opacity: .6; margin-bottom: 4px; }
+.haldane-book .hd-tile:hover { background: var(--hd-ink-dark); border-color: var(--hd-ink-dark); color: #fff !important;
+  transform: translateY(-1px); }
+.haldane-book .hd-tile-wide { height: 58px; font-size: 16px; letter-spacing: .08em; background: var(--hd-paper); }
+.haldane-book .hd-tile-pending { border-style: dashed; color: #b0a8af !important; background: transparent; }
+.haldane-book .hd-about { margin: 22px 0 40px; font-size: 13px; color: #8a8a99; line-height: 1.75; }
+.haldane-book .hd-about summary { cursor: pointer; color: var(--hd-ink-dark); font-size: 13px; letter-spacing: .04em; }
+.haldane-book .hd-about p { margin: 10px 0 0; }
+@media (max-width: 640px) {
+  .haldane-book .hd-tgrid { grid-template-columns: repeat(auto-fill, minmax(64px, 1fr)); gap: 8px; }
+  .haldane-book .hd-tile { height: 58px; font-size: 18px; }
+}
 </style>
