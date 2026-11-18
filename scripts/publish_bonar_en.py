@@ -197,6 +197,12 @@ def md_inline(t):
     return HEB.sub(lambda m: he(m.group(0)), t)
 
 
+def fix_where(unit):
+    if unit.startswith('note-'):
+        return '脚注 ' + unit[5:]
+    return {'preface': '序言', 'songs-of-degrees': '上行之诗'}.get(unit) or unit.replace('psalm-', '第 ') + ' 篇'
+
+
 def write_index(pages, fixes):
     src = (RAW / 'index_note.md').read_text(encoding='utf-8')
     src = re.sub(r'<!--.*?-->', '', src, flags=re.S).strip()
@@ -209,7 +215,7 @@ def write_index(pages, fixes):
             note.append(f'<p>{md_inline(" ".join(lines))}</p>')
     rows = [r for r in fixes if len(r) > 4 and r[4] == 'editor']
     tbl = ''.join(
-        f'<tr><td>{"脚注 " + r[0][5:] if r[0].startswith("note-") else r[0].replace("psalm-", "第 ") + " 篇"}</td>'
+        f'<tr><td>{fix_where(r[0])}</td>'
         f'<td>{md_inline(html.escape(r[1], quote=False))}</td><td>{md_inline(html.escape(r[2], quote=False))}</td>'
         f'<td>{html.escape(r[3], quote=False)}</td></tr>' for r in rows)
     lead = [p for p in pages if not p['slug'].isdigit()]

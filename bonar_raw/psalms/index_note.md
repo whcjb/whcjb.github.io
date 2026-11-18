@@ -7,6 +7,7 @@
 
 - 第 19 条脚注引奥古斯丁："et am potest dicere"，初版脱一字母，改作 "et jam potest dicere"（奥古斯丁《诗篇讲解》原句作 *et iam potest dicere*）。
 - 第 30 条脚注论诗 22:16 "他们扎了我的手、我的脚"：初版把 Keri、Ketibh 两个名目印反了。据该注下文所引 Jacob ben Haiim 的玛索拉注，"有些抄本"写作 כארו（Ketibh），读作 כארי（Keri），因此对调这两个名目；注里"前者／后者"的讲法不受影响。
+- 序言引德尔图良："Omnes pocne Psalmi"，初版排印错字（œ 误排作 oc），改作 "Omnes pœne Psalmi"（德尔图良《驳帕克西亚》11 原句作 *omnes paene psalmi*）。
 - 第 51 条脚注："objeets"改作 "objects"（排印错字）。
 
 所有编者改动逐条列在下表。
