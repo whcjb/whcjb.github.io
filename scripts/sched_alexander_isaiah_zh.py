@@ -39,6 +39,8 @@ CLI 上下文
     python3 scripts/sched_alexander_isaiah_zh.py --status   # 看还剩多少章、日志在哪
     python3 scripts/sched_alexander_isaiah_zh.py --stop-now # 停掉守护（不打断当前章）
     python3 scripts/sched_alexander_isaiah_zh.py --self-test # 空跑一夜，验排班/锁/收工
+    python3 scripts/sched_alexander_isaiah_zh.py --start 04:00 --stop 06:00
+        # 2026-11-19 起：校对改过英文的 1,286 段重译，每夜 04:00–06:00
 """
 import argparse
 import datetime as dt
@@ -65,11 +67,29 @@ def log(msg):
         f.write(f'{dt.datetime.now():%Y-%m-%d %H:%M:%S} {msg}\n')
 
 
+def stale_count(sec):
+    """这一篇有多少段不在缓存里。
+
+    缓存键取的是**段落英文原文**（`ALEX_ISA::` + 正文），所以英文校对改过的段
+    键就变了、缓存未命中——中文还是按旧英文译的。2026-11-19 校到第 82 轮，
+    全书 1,286 段是这样过时的；只看 zh 文件在不在会把它们全当成「已译完」。
+    """
+    import translate_alexander_isaiah as tai
+    todo = [u for k, u in tai.split_units(tai.body_of(sec)) if k == 'text']
+    return sum(1 for t in todo
+               if not (tai.CACHE / f'{tai.tf.md5key("ALEX_ISA::" + tai._split_prefix(t)[1])}.txt').exists())
+
+
 def pending():
-    """还没译的章，按章号顺序。每夜重数一遍，手工插译过的自动跳过。"""
+    """要（重）译的篇，前置件在前、章号顺序。每夜重数一遍。
+
+    两种都算：还没有 zh 文件的；有，但有段落英文改过、缓存未命中的。
+    """
+    import translate_alexander_isaiah as tai
     done = {p.stem for p in ZH_RAW.glob('*.md')}
-    return [p.stem for p in sorted(SRC.glob('[0-9]*.md'), key=lambda x: int(x.stem))
-            if p.stem not in done]
+    secs = [f for f in tai.FRONT if (SRC / f'{f}.md').exists()] + \
+        [p.stem for p in sorted(SRC.glob('[0-9]*.md'), key=lambda x: int(x.stem))]
+    return [s for s in secs if s not in done or stale_count(s) > 0]
 
 
 def hhmm(s):
@@ -88,17 +108,41 @@ def next_at(h, m, after=None):
 DRY = False
 
 
-def translate(sec):
-    """跑一章。返回 CLI 的退出码（42 = 撞会话额度）。"""
+def _descendants(pid):
+    out = []
+    for c in subprocess.run(['pgrep', '-P', str(pid)], capture_output=True, text=True).stdout.split():
+        out += [int(c)] + _descendants(int(c))
+    return out
+
+
+def translate(sec, deadline):
+    """跑一章，到 deadline 准点停（2026-11-19 用户定 04:00–06:00）。
+
+    返回退出码（42 = 撞会话额度；-15 = 到点被停）。缓存逐段落盘，停下只丢在途的
+    那一段；zh 文件不会写出半章（写出在整章译完之后），次夜 --resume 接着译。
+    """
     if DRY:
         log(f'[self-test] 假装译第 {sec} 章（不调 CLI）')
         time.sleep(2)
         return 0
     with LOGF.open('a', encoding='utf-8') as out:
-        return subprocess.run(
+        p = subprocess.Popen(
             [sys.executable, '-u', 'scripts/translate_alexander_isaiah.py',
              '--section', sec, '--resume'],
-            cwd=ROOT, stdout=out, stderr=subprocess.STDOUT).returncode
+            cwd=ROOT, stdout=out, stderr=subprocess.STDOUT, start_new_session=True)
+        while p.poll() is None:
+            if dt.datetime.now() >= deadline:
+                log(f'到点，停掉第 {sec} 章（pid={p.pid}，已译段落都在缓存里）')
+                tree = _descendants(p.pid) + [p.pid]
+                os.killpg(p.pid, signal.SIGTERM)
+                time.sleep(5)
+                for pid in tree:          # claude CLI 收到 SIGTERM 不一定马上退
+                    if fifo_lock.alive(pid):
+                        os.kill(pid, signal.SIGKILL)
+                p.wait()
+                return -15
+            time.sleep(10)
+        return p.returncode
 
 
 def run_night(stop_h, stop_m):
@@ -119,9 +163,12 @@ def run_night(stop_h, stop_m):
                 log(f'到 {stop_h:02d}:{stop_m:02d} 了，今夜收工，第 {sec} 章留到明夜。')
                 break
             t0 = time.time()
-            rc = translate(sec)
+            rc = translate(sec, deadline)
             dur = int(time.time() - t0)
             log(f'第 {sec} 章 rc={rc} 用时 {dur // 60}分{dur % 60}秒')
+            if rc == -15:
+                log(f'到 {stop_h:02d}:{stop_m:02d} 了，今夜收工，第 {sec} 章留到明夜接着译。')
+                break
             if rc == 42:
                 log('撞会话额度（退出码 42），今夜收工。')
                 break
@@ -164,7 +211,7 @@ def status():
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument('--start', type=hhmm, default=(23, 0), help='每夜开工时刻')
-    ap.add_argument('--stop', type=hhmm, default=(7, 0), help='此后不再开新章')
+    ap.add_argument('--stop', type=hhmm, default=(7, 0), help='到点准点停掉在跑的章')
     ap.add_argument('--status', action='store_true')
     ap.add_argument('--stop-now', action='store_true', help='停掉守护')
     ap.add_argument('--self-test', action='store_true',
