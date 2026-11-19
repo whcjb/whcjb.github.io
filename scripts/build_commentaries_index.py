@@ -202,6 +202,12 @@ AUTHORS = OrderedDict([
                    years='1561–1636', dir='jones',
                    work_cn='约翰二书、三书简释',
                    work_en='A Compendious Explication of the Second and Third Epistles of Saint Iohn')),
+    # 诺克斯：生年说法不一（约 1514），卒于 1572-11-24 爱丁堡。本站只收《苦难者的堡垒：诗篇第六篇讲解》（1554），
+    # 据 AGES 所收 1845 年苏格兰自由教会版《诺克斯实用著作选》——单篇专书，见 MONOGRAPHS。
+    ('knox', dict(name='约翰·诺克斯', short='诺克斯', en='John Knox',
+                  years='约1514–1572', dir='knox',
+                  work_cn='苦难者的堡垒：诗篇第六篇讲解',
+                  work_en='A Fort for the Afflicted, in an Exposition upon the Sixth Psalm')),
     ('alexander', dict(name='约瑟·亚历山大', short='亚历山大', en='Joseph Addison Alexander',
                        years='1809–1860', dir='alexander',
                        work_cn='诗篇、以赛亚书、马太福音、使徒行传注释',
@@ -335,6 +341,9 @@ AUTHOR_COLORS = {
     # 博纳尔砖红：LCh (48→60, 35→40, 30°)，两端与既有各色及加尔文酒红、马太亨利金、站点 Hux 蓝
     # 最小 ΔE 16.6（CIE76）；色板已挤，与霍尔丹 15.3、霍志恒 17.2 同档。只在诗篇选择页出现。
     'bonar': ('#a95c56', '#d2776f'),
+    # 诺克斯青蓝：亮端与既有各色及加尔文酒红、马太亨利金最小 ΔE 23.0（CIE76，亚当斯灰）；同批试的
+    # 石板灰蓝 14.2、赭黄 14.3、锈褐 15.0 都更近，弃用。只在诗篇选择页与生平页出现。
+    'knox': ('#0f4c5c', '#16697d'),
 }
 
 # 书卷卡片的入口注释家：历代解经版面每卷只显示 links 的第一条（commentaries/index.html
@@ -356,7 +365,7 @@ DUO_BOOKS = {}
 # 与 DUO_BOOKS 不同：那边卡片分色带、各带直接链到各家；这里整张卡片只链到选择页。
 # 诗篇：用户 2026-11-10 指定亚历山大与霍志恒合列，点进去再选；同日马太福音（原 DUO_BOOKS 三家色带）也改用此方案。
 # 2026-11-17 博纳尔上线，诗篇三家合列。
-PICK_BOOKS = {'psalms': ('alexander', 'spurgeon', 'vos', 'bonar', 'owen', 'manton', 'bridges'), 'matthew': ('spurgeon', 'dickson', 'alexander'),
+PICK_BOOKS = {'psalms': ('alexander', 'spurgeon', 'vos', 'bonar', 'owen', 'manton', 'bridges', 'knox'), 'matthew': ('spurgeon', 'dickson', 'alexander'),
               'romans': ('hodge', 'haldane'),   # 2026-11-10 霍尔丹上线，罗马书两家合列
               'isaiah': ('alexander', 'anon')}  # 2026-11-13 用户令以赛亚书加一本佚名注释，两家合列
 # 合列卡片用书卷自己的独立色，不用任何一家的作者色（用户 2026-11-10：「专门为诗篇挑选」；同日「颜色不能太相近」）。
@@ -387,7 +396,8 @@ description: 「历代解经」{cn}条目：{names}，选择进入。
 # 单篇论文（没有逐章页面）：has_content 认不出来，在这里登记 {作者: {书卷: 入口}}。
 # 不进对比抽屉（compare_sources 只收有章节的目录）。
 # 单篇专书：目录名不是书卷名，归到某卷名下；只讲一两篇，不进逐章对比抽屉（2026-11-17 用户令收欧文、曼顿、布里奇斯论单篇诗篇）
-MONOGRAPHS = {('owen', 'psalm130'): 'psalms', ('manton', 'psalm119'): 'psalms', ('bridges', 'psalm119'): 'psalms'}
+MONOGRAPHS = {('owen', 'psalm130'): 'psalms', ('manton', 'psalm119'): 'psalms', ('bridges', 'psalm119'): 'psalms',
+              ('knox', 'psalm6'): 'psalms'}
 ESSAY_ENTRIES = {'vos': {'psalms': '/vos/psalter/zh/'}}   # 入口一律指中文版（用户 2026-11-11）
 # 交界斜度：顶边比底边右移 2×DUO_SLANT 个百分点。原先 20 个百分点，三家时最左一带底边太窄放不下作者名，收到 8。
 DUO_SLANT = 4
@@ -418,6 +428,8 @@ BOOK_TITLES = {
                                 'One Hundred and Ninety Sermons on the Hundred and Nineteenth Psalm'),
     ('bridges', 'psalms'):     ('诗篇 119 篇讲解',
                                 'An Exposition of Psalm CXIX'),
+    ('knox', 'psalms'):        ('诗篇第 6 篇讲解',
+                                'A Fort for the Afflicted, in an Exposition upon the Sixth Psalm'),
     ('owen', 'psalms'):        ('诗篇 130 篇实践讲解',
                                 'A Practical Exposition upon Psalm CXXX'),
     ('bonar', 'psalms'):       ('诗篇中的基督与教会',
@@ -523,7 +535,7 @@ COMPARE_ACCENT = {
     'candlish': '#b07080', 'fairbairn': '#bc65ac', 'taylor': '#6f77e0',
     'hall': '#769019', 'barlow': '#2b9b8a', 'attersoll': '#8e8cbd', 'dickson': '#8b2499',
     'petter': '#38a622', 'foote': '#d14457', 'jones': '#9c9066', 'haldane': '#9b6899',
-    'bonar': '#d2776f',
+    'bonar': '#d2776f', 'knox': '#16697d',
 }
 COMPARE_LABEL = {
     'calvin': '加尔文注释', 'mhenry': '马太亨利注释', 'owen': '约翰欧文注释',
@@ -535,7 +547,7 @@ COMPARE_LABEL = {
     'candlish': '坎德利什讲解', 'fairbairn': '费尔贝恩注释', 'taylor': '泰勒注释',
     'hall': '霍尔注释', 'barlow': '巴洛讲解', 'attersoll': '阿特索尔注释', 'dickson': '迪克森简释',
     'petter': '佩特注释', 'foote': '福特讲义', 'jones': '琼斯简释', 'haldane': '霍尔丹释义',
-    'bonar': '博纳尔讲论',
+    'bonar': '博纳尔讲论', 'knox': '诺克斯讲解',
 }
 
 
@@ -558,7 +570,7 @@ PRIMARY_LANG = {'calvin': 'zh', 'mhenry': 'zh', 'bridges': 'zh', 'haldane': 'en'
                 'adams': 'en', 'rollock': 'en', 'jenkyn': 'en',
                 'candlish': 'en', 'fairbairn': 'en', 'taylor': 'en',
                 'hall': 'en', 'barlow': 'en', 'attersoll': 'en', 'dickson': 'en', 'petter': 'en',
-                'foote': 'en', 'jones': 'en', 'bonar': 'en'}
+                'foote': 'en', 'jones': 'en', 'bonar': 'en', 'knox': 'en'}
 
 
 def _lang_variants(aid, d: Path, name: str):

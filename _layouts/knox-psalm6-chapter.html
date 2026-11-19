@@ -1,0 +1,76 @@
+---
+layout: default
+---
+{%- comment -%}
+  诺克斯《苦难者的堡垒：诗篇第六篇讲解》正文页（Part 1 / Part 2）。由 scripts/publish_knox_psalm6_en.py 生成。
+  ⚠️ 不复用别家 layout（每本书独立样式）；配色取诺克斯作者色青蓝 #0f4c5c / #16697d，类名 kx- 前缀。
+  版式：信头与「论旨」小标题 `.kx-sec`；整段引经 `.kx-quote`；信末落款 `.kx-sign`；注号 `sup.kx-fn` + 页末 `.kx-notes`。
+  目前只有英文版，没有接经文引用弹层（弹层只认中文书卷名）。
+{%- endcomment -%}
+
+<div class="container knoxps-wrap" style="padding-top: 70px;">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+
+      <div class="kx-chrome">
+        <a href="{{ site.baseurl }}/knox/{{ page.book_id }}/">&larr; {{ page.book_name }}</a>
+      </div>
+
+      <h1 class="kx-title">{{ page.title }}</h1>
+      {% if page.subtitle %}<p class="kx-subtitle">{{ page.subtitle }}</p>{% endif %}
+
+      <div class="kx-nav">
+        {% if page.prev_url %}<a href="{{ site.baseurl }}{{ page.prev_url }}">&larr; {{ page.prev_label }}</a>{% else %}<span></span>{% endif %}
+        {% if page.next_url %}<a href="{{ site.baseurl }}{{ page.next_url }}">{{ page.next_label }} &rarr;</a>{% else %}<span></span>{% endif %}
+      </div>
+
+      <div class="kx-content">
+        {{ content }}
+      </div>
+
+      {% if page.date %}<div class="kx-stamp">Published {{ page.date | date: "%Y-%m-%d %H:%M" }}</div>{% endif %}
+
+      <div class="kx-nav kx-nav-foot">
+        {% if page.prev_url %}<a href="{{ site.baseurl }}{{ page.prev_url }}">&larr; {{ page.prev_label }}</a>{% else %}<span></span>{% endif %}
+        {% if page.next_url %}<a href="{{ site.baseurl }}{{ page.next_url }}">{{ page.next_label }} &rarr;</a>{% else %}<span></span>{% endif %}
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<style>
+.knoxps-wrap { --kx-ink: #16697d; --kx-ink-dark: #0f4c5c; --kx-rule: #cfe1e5; --kx-paper: #f8fbfb; --kx-body: #33302f; }
+.knoxps-wrap .kx-chrome, .knoxps-wrap .kx-nav { font-size: 13px; display: flex; justify-content: space-between;
+  align-items: center; font-family: Georgia, "Times New Roman", serif; }
+.knoxps-wrap .kx-chrome { margin: 18px 0 22px; }
+.knoxps-wrap .kx-chrome a, .knoxps-wrap .kx-nav a { color: var(--kx-ink-dark); text-decoration: none; }
+.knoxps-wrap .kx-chrome a:hover, .knoxps-wrap .kx-nav a:hover { color: var(--kx-ink); text-decoration: underline; }
+.knoxps-wrap .kx-title { font-family: Georgia, "Times New Roman", serif; font-size: 28px; font-weight: normal;
+  color: var(--kx-ink-dark); text-align: center; margin: 10px 0 4px; line-height: 1.3; }
+.knoxps-wrap .kx-subtitle { text-align: center; font-size: 14px; color: #8f8885; margin: 0 0 6px;
+  font-family: Georgia, "Times New Roman", serif; font-style: italic; }
+.knoxps-wrap .kx-nav { margin: 14px 0 26px; }
+.knoxps-wrap .kx-nav-foot { margin-top: 44px; padding-top: 16px; border-top: 1px solid var(--kx-rule); }
+.knoxps-wrap .kx-content { font-family: Georgia, "Times New Roman", serif; font-size: 17px; line-height: 1.85; color: var(--kx-body); }
+.knoxps-wrap .kx-content p { margin: 0 0 16px; text-align: justify; }
+.knoxps-wrap .kx-sec { font-family: Georgia, "Times New Roman", serif; font-size: 15px; letter-spacing: .06em; font-weight: normal;
+  color: var(--kx-ink-dark); text-align: center; margin: 34px 0 18px; }
+.knoxps-wrap .kx-content > .kx-sec:first-child { margin-top: 0; }
+.knoxps-wrap .kx-content p.kx-quote { margin: 0 0 16px 28px; padding-left: 12px; border-left: 3px solid var(--kx-rule);
+  text-align: left; color: #3d4f54; }
+.knoxps-wrap .kx-content p.kx-sign { margin: 0 0 2px 40%; text-align: left; font-style: italic; }
+.knoxps-wrap .kx-content p.kx-sign + p:not(.kx-sign) { margin-top: 18px; }
+.knoxps-wrap sup.kx-fn { font-size: 11px; line-height: 0; margin-left: 1px; }
+.knoxps-wrap sup.kx-fn a { color: var(--kx-ink-dark); text-decoration: none; padding: 0 2px; }
+.knoxps-wrap .kx-notes { margin-top: 36px; padding-top: 14px; border-top: 1px solid var(--kx-rule);
+  font-size: 14.5px; line-height: 1.75; color: #4b4644; }
+.knoxps-wrap .kx-notes p { margin: 0 0 10px; text-align: left; }
+.knoxps-wrap .kx-notes .kx-back { color: var(--kx-ink-dark); text-decoration: none; margin-right: 8px; font-size: 12.5px; }
+.knoxps-wrap .kx-stamp { text-align: right; color: #a9a29f; font-size: 12px; margin-top: 30px; font-family: Georgia, "Times New Roman", serif; }
+@media (max-width: 767px) {
+  .knoxps-wrap .kx-title { font-size: 23px; }
+  .knoxps-wrap .kx-content { font-size: 16px; }
+  .knoxps-wrap .kx-content p.kx-sign { margin-left: 20%; }
+}
+</style>

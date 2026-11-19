@@ -1,0 +1,51 @@
+---
+layout: default
+---
+{%- comment -%}
+  诺克斯《苦难者的堡垒：诗篇第六篇讲解》书卷首页。由 scripts/publish_knox_psalm6_en.py 生成。
+  ⚠️ 不复用别家 layout（每本书独立样式）；版式仿欧文《诗篇 130 篇》首页：居中书名、原书书名页、两部分大方块、文本说明。
+  配色取诺克斯作者色青蓝 #0f4c5c / #16697d。目前只有英文版。
+{%- endcomment -%}
+
+<div class="container knoxps-book" style="padding-top:80px; max-width:840px;">
+  <div class="kx-hero">
+    <h1>{{ page.hero | default: page.book_name }}</h1>
+    <div class="kx-tagline">{{ page.tagline }}</div>
+    <div class="kx-edition">{{ page.edition }}</div>
+  </div>
+
+  {{ content }}
+</div>
+
+<style>
+.knoxps-book .kx-hero { text-align: center; margin-bottom: 8px; }
+.knoxps-book .kx-hero h1 { font-family: Georgia, "Songti SC", serif; color: #0f4c5c; font-size: 30px; letter-spacing: .04em; }
+.knoxps-book .kx-tagline { color: #16697d; font-size: 14px; letter-spacing: .08em; margin-top: 6px; }
+.knoxps-book .kx-edition { color: #9a9a92; font-size: 12px; margin-top: 6px; }
+
+/* 原书书名页 */
+.knoxps-book .kx-titlepage { max-width: 560px; margin: 34px auto 30px; padding: 22px 26px; text-align: center;
+  font-family: Georgia, "Times New Roman", serif; background: #f8fbfb; border: 1px solid #cfe1e5; border-radius: 6px; }
+.knoxps-book .kx-tp-title { font-size: 19px; color: #0f4c5c; letter-spacing: .05em; line-height: 1.6; margin: 0 0 12px; }
+.knoxps-book .kx-tp-title small { font-size: 12px; letter-spacing: .12em; color: #5d7f87; }
+.knoxps-book .kx-tp-sub { font-size: 14px; color: #6b4a3a; line-height: 1.7; margin: 0 0 12px; }
+.knoxps-book .kx-tp-motto { font-size: 13.5px; color: #555; margin: 0; }
+
+.knoxps-book .kx-grid { display: flex; flex-wrap: wrap; gap: 10px 24px; justify-content: center; margin: 0 auto 8px; }
+.knoxps-book .kx-cell { display: flex; flex-direction: column; align-items: center; min-width: 150px; text-decoration: none; }
+.knoxps-book .kx-cell:hover { text-decoration: none; }
+.knoxps-book .kx-tile { display: flex; flex-direction: column; align-items: center; justify-content: center;
+  width: 76px; height: 76px; border: 1px solid #cfe1e5; border-radius: 10px; background: #fbfaf6; color: #16697d;
+  font-family: Georgia, serif; font-size: 24px; line-height: 1; box-shadow: 0 1px 4px rgba(22,105,125,.10); transition: all .15s; }
+.knoxps-book .kx-tile > span { font-size: 9.5px; letter-spacing: .08em; text-transform: uppercase; opacity: .55; margin-bottom: 4px; }
+.knoxps-book .kx-cell:hover .kx-tile { background: #16697d; color: #fff; }
+.knoxps-book .kx-cap { margin-top: 8px; font-size: 12px; line-height: 1.5; color: #5d7f87; text-align: center; }
+.knoxps-book .kx-cell:hover .kx-cap { color: #0f4c5c; }
+
+.knoxps-book .kx-note { text-align: center; color: #8a8a82; font-size: 13px; line-height: 1.8; max-width: 600px; margin: 40px auto 0; }
+.knoxps-book .kx-note p { margin: 0 0 10px; }
+@media (max-width: 600px) {
+  .knoxps-book .kx-titlepage { padding: 16px; }
+  .knoxps-book .kx-cell { min-width: 0; width: 140px; }
+}
+</style>
