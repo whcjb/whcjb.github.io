@@ -573,3 +573,8 @@ Hook→I look、gradient→gradiens、had→lead、Itst→lest、multitude→mul
 - 第 81 轮（随机抽章盲读复查，seed 20261118+80 抽到 61）：第 61 章（卷二 392–404，13 页）重读 1 处 ≈ 0.08/页 ✅：401 页 v. 8「the rabbins give עולה its usual sense of a burnt-offering … synonymous with עולה」两处同形读不通，原书 עוֹלָה（燔祭）/ עַוְלָה（不义）。
 - 第 81 轮全书同类 5 处（卷一 4 / 卷二 1）：**同一无点希伯来词一段内两次出现、中间夹 synonymous/instead of/read/for/as if written/point 等对比词**（第 79 轮按 derive/root/noun 语境扫过一遍，这次换对比词）：两卷 62 条候选，挑 10 条看图，补点符 5 处：7 章 Steudel 改读 שָׁנֹה (for שָׁנָה)、14 章 Ewald「would point the word」בְּכֹרַי 与 כֹּר / כַּר（末一字原书是 kaf，文本误作 בר，foreign_image 第 1943 行旧判读一并更正）、25 章 מְמֻחָיִם / מְמֻחִים、30 章 Gesenius 的 הֹבִאישׁ / Maurer、Knobel 的 הִבְאִישׁ、63 章 optative לוּא / as if written לוֹא。49 章 פצחו、1 章 חמץ、40 章 צרף 原书两处同形或已区分，不改。foreign_image.tsv 相关 8 条旧条目改为带点读数（锚点含被改词的同步更新），新增 3 条；41 章 `of Ins* sword` 一条因第 80 轮斜体改动失效，挪入 superseded。apply 0 失败、连跑两遍正文零改动。
 > 盲读复查累计十二章 224.5 页 120 处 ≈ 0.53/页；去掉 1、40 两章后十章约 171.5 页 50 处 ≈ 0.29/页。
+- 第 82 轮（随机抽章盲读复查，seed 20261118+81 抽到 25）：第 25 章（卷一 428–438，11 页）重读 1 处 ≈ 0.09/页 ✅：438 页「Some manuscripts read חומתיך in the feminine」原书 חֹמֹתַיִךְ——无 vav，阴性只靠点符看得出；早先一轮影像判读（foreign_image 第 4306 行）把正确的 חמתיך 改成了 plene 的 חומתיך，改错了。
+- 第 82 轮全书同类 2 处（卷一 1 / 卷二 1）：
+  · **影像判读擅加 vav/yod**（旧条目新读数只比旧读数多一个 ו/י）：表里 12 条，挑 4 条看图，57 章「plural of חלק a synonyme of חלוק (1 Sam. 17: 40)」原书第二词 חַלֻּק（无 vav，即撒上 17:40 的 חַלֻּקֵי），改；第一词点符印得不清，保留无点。53 章 חלינו / חליינו、9 章 איביו、10 章 בית 原书即如此。
+  · **无点希伯来词后紧跟要靠点符区分的语法说明**（as a participle / passive / preterite / in the feminine…）：两卷 30 条，其中涉及改读的 3 条看图，30 章「either read יֹשֵׁב as a participle」原书带点，补；44 章 מאדם、מעצד 原书即无点。
+> 盲读复查累计十三章 235.5 页 121 处 ≈ 0.51/页；去掉 1、40 两章后十一章约 182.5 页 51 处 ≈ 0.28/页。
