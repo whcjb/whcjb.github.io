@@ -52,6 +52,8 @@ exclude:
   - fairbairn_raw
   - taylor_raw
   - nichol1868_raw
+  - gouge_raw
+  - pierson_raw
   - attersoll_raw
   - hall_raw
   - barlow_raw
@@ -64,7 +66,6 @@ exclude:
   - cowper_raw
   - smith_raw
   - taylor_raw
-  - nichol1868_raw
   - hodge_raw
   - hutcheson_raw
   - leighton_raw

@@ -1,0 +1,43 @@
+---
+layout: default
+---
+{%- comment -%}
+  Gouge on Psalm 116 书卷首页。由 scripts/publish_tcp_psalm.py 生成（BOOKS['gouge-psalm116']）：卷首各页 + 正文方格（悬停看本页首条目录）+ 文本说明。
+  ⚠️ 不复用别家 layout；配色 #3d1d5a / #592b82。目前只有英文版。
+{%- endcomment -%}
+
+<div class="container gg-book" style="padding-top:80px; max-width:900px;">
+  <div class="gg-hero">
+    <h1>{{ page.hero | default: page.book_name }}</h1>
+    <div class="gg-tagline">{{ page.tagline }}</div>
+    <div class="gg-edition">{{ page.edition }}</div>
+  </div>
+  {{ content }}
+</div>
+
+<style>
+.gg-book .gg-hero { text-align: center; margin-bottom: 8px; }
+.gg-book .gg-hero h1 { font-family: Georgia, "Songti SC", serif; color: #3d1d5a; font-size: 30px; letter-spacing: .04em; }
+.gg-book .gg-tagline { color: #592b82; font-size: 14px; letter-spacing: .06em; margin-top: 6px; }
+.gg-book .gg-edition { color: #9a9a92; font-size: 12px; margin-top: 6px; }
+.gg-book .gg-sec-hd { margin: 30px 0 12px; font-size: 12px; font-weight: bold; letter-spacing: .14em;
+  color: #8f8a82; text-transform: uppercase; text-align: center; }
+.gg-book .gg-sec-hd-main { margin-top: 40px; }
+.gg-book .gg-fronts { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; }
+.gg-book .gg-fronts a { border: 1.5px dashed #592b82; border-radius: 8px; padding: 8px 16px; color: #592b82;
+  font-family: Georgia, serif; font-size: 14px; text-decoration: none; text-align: center; }
+.gg-book .gg-fronts a span { display: block; font-size: 11px; color: #9a948b; }
+.gg-book .gg-fronts a:hover { background: #592b82; color: #fff; }
+.gg-book .gg-fronts a:hover span { color: #eee; }
+.gg-book .gg-sub { margin: 26px 0 10px; font-family: Georgia, serif; font-size: 16px; color: #3d1d5a; text-align: center; }
+.gg-book .gg-sub span { display: block; font-size: 12px; color: #9a948b; margin-top: 2px; }
+.gg-book .gg-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 8px; }
+.gg-book .gg-grid a { display: block; border: 1px solid #e6dfec; border-radius: 6px; background: #f8f7fa; padding: 8px 8px 7px;
+  text-align: center; font-family: Georgia, serif; font-size: 16px; color: #592b82; text-decoration: none; line-height: 1.25; }
+.gg-book .gg-grid a small { display: block; font-size: 11px; color: #958f86; margin-top: 4px; line-height: 1.35; }
+.gg-book .gg-grid a:hover { background: #592b82; color: #fff; }
+.gg-book .gg-grid a:hover small { color: #eee; }
+.gg-book .gg-note { text-align: center; color: #8a8a82; font-size: 13px; line-height: 1.8; max-width: 640px; margin: 40px auto 0; }
+.gg-book .gg-note p { margin: 0 0 10px; }
+@media (max-width: 600px) { .gg-book .gg-grid { grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); } }
+</style>

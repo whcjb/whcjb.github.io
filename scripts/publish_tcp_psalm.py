@@ -629,6 +629,9 @@ def publish(key, c, fronts, units, backs, gaps, OUT, BASE, RAW):
           f'CC0 公共领域授权），拼法照录原书，只把长 s（ſ）印作 s。录入者读不出的地方以红色标出：缺字母 {gaps.get("letter", 0)} 个、'
           f'缺整词 {gaps.get("word", 0)} 处、缺一段以上 {gaps.get("span", 0)} 处，另有希腊文、希伯来文 {gaps.get("foreign", 0)} 处未录。'
           f'{c["omitted_zh"]}</p>')
+    if c.get('about_full'):                      # 非 TCP 底本（古治：1868 年 Nichol 本 OCR）整段自带说明
+        en = f'<p><b>About this text.</b> {c["about_en"]}</p>'
+        zh = f'<p class="{P}-note-zh"><b>文本说明。</b>{c["about_zh"]}</p>'
     L.append(f'<div class="{P}-note">\n{en}\n{zh}\n</div>')
     meta.setdefault('index', t0)
     meta_f.write_text(json.dumps(meta, ensure_ascii=False, indent=1, sort_keys=True) + '\n', encoding='utf-8')

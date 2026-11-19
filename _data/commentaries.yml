@@ -281,6 +281,15 @@ authors:
     work_en: "Dauids Blessed Man (Psalm 1); Dauids Repentance (Psalm 51); Moses his Prayer (Psalm 90)"
     no_bio: false
     books: 1
+  - id: gouge
+    name: "威廉·古治"
+    short: "古治"
+    en: "William Gouge"
+    years: "1575–1653"
+    work_cn: "圣徒的祭：诗篇 116 篇注释"
+    work_en: "The Saints' Sacrifice: A Commentary on Psalm CXVI"
+    no_bio: false
+    books: 1
   - id: alexander
     name: "约瑟·亚历山大"
     short: "亚历山大"
@@ -443,7 +452,7 @@ books:
     testament: ot
     chapters: 150
     pick: true
-    pick_n: 13
+    pick_n: 14
     pick_c0: "#2c2864"
     pick_c1: "#4a4382"
     links:
@@ -462,6 +471,7 @@ books:
       - {author: smith, path: "/smith/psalm51/", url_tpl: "/smith/psalm51/__CH__/", title_cn: "大卫的悔改（诗篇 51 篇）", title_en: "Dauids Repentance", c0: "#27707a", c1: "#3aa0af"}
       - {author: smith, path: "/smith/psalm90/", url_tpl: "/smith/psalm90/__CH__/", title_cn: "摩西的祷告（诗篇 90 篇）", title_en: "Moses his Prayer", c0: "#27707a", c1: "#3aa0af"}
       - {author: taylor, path: "/taylor/psalm32/", url_tpl: "/taylor/psalm32/__CH__/", title_cn: "大卫的学问（诗篇 32 篇注释）", title_en: "Dauids Learning, or The Way to True Happinesse", c0: "#4050b3", c1: "#6f77e0"}
+      - {author: gouge, path: "/gouge/psalm116/", url_tpl: "/gouge/psalm116/__CH__/", title_cn: "圣徒的祭：诗篇 116 篇注释", title_en: "The Saints' Sacrifice: A Commentarie on the CXVI. Psalme", c0: "#3d1d5a", c1: "#592b82"}
   - id: proverbs
     name: "箴言"
     en: "Proverbs"

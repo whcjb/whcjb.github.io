@@ -1,0 +1,68 @@
+---
+layout: gouge-psalm116-chapter
+book_id: psalm116
+book_name: "Gouge on Psalm 116"
+title: "The Epistle Dedicatory"
+subtitle: "献辞"
+date: 2026-11-19 18:56
+next_url: "/gouge/psalm116/to-blackfriars/"
+next_label: "To my Beloved Parishioners of Blackfriars"
+---
+
+[FOR MEMOIR OF DR GOUGE, SEE HIS COMMENTARY ON THE EPISTLE TO THE HEBREWS, VOL. I.—Ed.] <span class="gg-pb" id="p1" data-p="1"></span>TO THE EIGHT HONOURABLE QIK,—The last year, -when the heavy hand of the *'* righteous Lord lay upon this land and other parts of the Christian world, manifested by the three arrows of his anger, plague, famine, and sword, just cause was given to inquire after such means as might cure the wounds that were made by them, and move the Lord to withhold his hand from shooting abroad any more of them.
+
+<p class="gg-quote">ROBERT, LORD RICH,</p>
+
+Upon inquuy there v.'as found in God's word (the treasury wherein all the treasures of wisdom and knowledge are liidi) fit remedies for all those maladies.
+
+There we find, Num. *xvi.* 45, &c., that Moses and Aaron applied such a plaster for the plague as healed that disease; and that David (2 Sam. xxi. 1) took such a course for removing a famine as did the deed ; and that the Said Moses and Joshua (Exod. xvii. 8, &c.) in such a manner resisted an infesting enemy, as they became concjuerors.
+
+All these means have been set out in several treatises. Whether they were well used, and whether upon the right use of them the foresaid judgments have been removed or no, he that knoweth the grounds and reasons of all things that fall out best knoweth.
+
+But certain it is that the three mentioned arrows have either been withheld and put up into the Lord's quiver, or else shot out against the enemies of God'3 church.
+
+Our land is healed of the pestilence:
+
+Fat kine of plenty have devoured the lean kiue of famine.
+
+The professors of the reformed religion in France have peace and rest.
+
+Most seasonable succour is afforded to the oppressed churches in Germany. They that first took up the sword have perished by the sword.
+
+Thus ' the Lord hath turned our mourning into dancing, and put off our sackcloth, and girded us with gladness : to the end that our glory may sing praise to him, and not be silent.'
+
+What Christian heart is not affected herewith *1*
+
+All that know your honour know how you stand affected to God's church; You count it your honour any way to honour her.
+
+Witness your diligent frequenting her assemblies, and presenting yourself in her courts, your conscionable observance of all her ordinances, your good respect to her ministers, your faithful discharge of that trast which by the divine providence is committed to you for jresenting faithful ministers to her people. Many humble petitions are in this respect daily put up at the throne of grace on your behalf. Many sacrifices of praise are offered up to the divine Majesty for you. Ministers and people bless you, and bless the Lord for you. So as your
+
+Q2 <span class="gg-pb" id="p2" data-p="2"></span>administration of this service not only refresheth the souls of the saints, but is abundant also by many thanksgivings unto God. He therefore that hath said it, will assuredly perform it, ' Them that honour me, will I honour.'
+
+Neither is your entire affection so restrained to this flourishing part of the church -whereof you are in special manner a particular member, but it is extended to her in every place.
+
+Your endeavour hath not been wanting to the enlargement of her bounds.
+
+You every way sympathise with her.
+
+Her oppressions press heavy upon your soul.
+
+Her deliverances revive your spirit.
+
+In consideration hereof, the same hand that in the enemies' insultations over the oppressed churches presented to your honour-, 'The Church's Conquest,' wherein were set out most sovereign means prescribed by God himself, and to good purpose practised by those that were therein guided by the divine Spirit, for obtaining conquest and rest to the church; the same hand doth now present to the same patron, ' The Saint's Sacrifice,' wherein out of the fore-mentioned treasury of God's word divine directions are collected for rendering due praises to him who in due season delivereth his out of desperate distresses.
+
+Accept, my good Lord, this testimony of that high esteem which he hath of your Lordship, who in regard of that respect you bear and shew to God himself, to his ministers and saints, humbly and heartily supplicateth the divine Majesty for all needful blessings ever to rest on your honour's person, on your honourable consort, on your noble off'spring, on your whole family, and on all your affairs, and professeth to continue m God's court.
+
+Your Honour's Remembrancer,
+
+WILLIAM GOUGE.
+
+<div class="gg-notes" markdown="1">
+
+<p class="gg-notes-h">Notes</p>
+
+BARON OF LEEZ AND EARL OF WARWICK.
+
+' Thesaurus iste in quo sunt omnes thesauri sapientiae et scientiffi absconditi, est Scriptura.—*Jerome, Comment, in Mat.* xiii. 1, 2.
+
+</div>

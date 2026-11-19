@@ -38,8 +38,21 @@ def lex():
     return _LEX
 
 
+ARCHAIC = re.compile(r'^(.*?)(eth|est|edst|st)$', re.I)
+
+
 def is_word(t):
-    return lexmod.is_word(t, lex())
+    """判词典 + 古体动词词尾（useth、beginneth、goest：词根是真词即算）。"""
+    if lexmod.is_word(t, lex()):
+        return True
+    m = ARCHAIC.match(t)
+    if m and len(m.group(1)) >= 2:
+        st = m.group(1)
+        for c in (st, st + 'e', st[:-1] if len(st) > 3 and st[-1] == st[-2] else None,
+                  st[:-1] + 'y' if st.endswith('i') else None):
+            if c and lexmod.is_word(c, lex()):
+                return True
+    return False
 
 
 def _line(line):
@@ -190,7 +203,10 @@ GLYPH = [('li', 'h'), ('li', 'b'), ('U', 'll'), ('U', 'li'), ('Hf', 'lif'), ('hf
 CORPUS = None
 # 三个字母以内的高频误读，逐个看过影像才收（短词走规则太容易撞上别的真词）
 SHORT = {'aU': 'all', 'AU': 'All', 'wiU': 'will', 'heU': 'hell', 'Ufe': 'life', 'Hfe': 'life', 'hfe': 'life',
-         'hve': 'live', 'Hve': 'Live', 'sm': 'sin', 'tliy': 'thy', 'liis': 'his', 'liim': 'him', 'Ul': 'ill', 'wUl': 'will', 'vUl': 'will', 'wiU': 'will'}
+         'hve': 'live', 'Hve': 'Live', 'sm': 'sin', 'tliy': 'thy', 'liis': 'his', 'liim': 'him', 'Ul': 'ill', 'wUl': 'will', 'vUl': 'will', 'wiU': 'will',
+         'mth': 'with', 'mtli': 'with', 'vnih': 'with', 'hke': 'like', 'Hke': 'Like', 'tiU': 'till', 'tUl': 'till',
+         'AMien': 'When', 'AMiat': 'What', 'Eev': 'Rev', 'Dadd': 'David', 'Uve': 'live', 'kmd': 'kind',
+         'knovvn': 'known', 'thanksgidng': 'thanksgiving'}
 
 
 def corpus():
@@ -210,6 +226,8 @@ def glyph_fix(tok):
     """非词 → 按 GLYPH 做一到两处替换，真词候选唯一时返回，否则 None。"""
     if tok in SHORT:
         return SHORT[tok]
+    if re.fullmatch(r'I[xvicl]+', tok) and lexmod.ROMAN.match('l' + tok[1:]):   # Ixxxi → lxxxi（l 读成 I）
+        return 'l' + tok[1:]
     if is_word(tok) or len(tok) < 4:
         return None
     cands, seen = set(), {tok}
@@ -250,7 +268,8 @@ SYMBOL = [(re.compile(r"\^+\\'"), 'w'),                                # ^\'ill 
           (re.compile(r"(?<=[A-Za-z])\\'?-?(?=[a-z])"), 'v'),              # Da\'id、Sa\-iour、gi\'ing
           (re.compile(r"(?<![A-Za-z])[ji]\)(?=[a-z])"), 'p'),               # j)uttest
           (re.compile(r"(?<=[a-z])[ji]\)(?=[a-z])"), 'p'),                  # prosj)er
-          (re.compile(r"(?<=[a-z])l>(?=[a-z])"), 'b')]                      # troul>le
+          (re.compile(r"(?<=[a-z])l>(?=[a-z])"), 'b'),                     # troul>le
+          (re.compile(r"(?<![A-Za-z])\(j(?=[a-z]{3})"), 'g')]                # (jreat → great                      # troul>le
 
 
 def symbol_repair(text, ledger):
@@ -270,8 +289,32 @@ def symbol_repair(text, ledger):
     return re.sub(r"(?<![A-Za-z])[vV][a-z]+", vw, text)
 
 
+def rejoin(text, ledger):
+    """栏末断词丢了连字符：「evi dence」「occa sion」→ 拼起来是真词、且至少一段不是真词才拼（逐词扫，不用重叠正则）。"""
+    out, pos = [], 0
+    toks = list(re.finditer(r"[A-Za-z]+", text))
+    k = 0
+    while k < len(toks):
+        m = toks[k]
+        if k + 1 < len(toks):
+            m2 = toks[k + 1]
+            a, b, gap = m.group(), m2.group(), text[m.end():m2.start()]
+            if re.fullmatch(r"\s+", gap) and b[:1].islower() and len(a) >= 2 and len(b) >= 2 \
+                    and (not is_word(a) or not is_word(b)) and is_word(a + b) and len(a + b) >= 5:
+                out.append(text[pos:m.start()])
+                out.append(a + b)
+                ledger.append((a + gap + b, a + b))
+                pos = m2.end()
+                k += 2
+                continue
+        k += 1
+    out.append(text[pos:])
+    return "".join(out)
+
+
 def glyph_repair(text, ledger):
     text = symbol_repair(text, ledger)
+    text = rejoin(text, ledger)
     def sub(m):
         t = m.group()
         if is_word_h(t) or len(t) < 2:

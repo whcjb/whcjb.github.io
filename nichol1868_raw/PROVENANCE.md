@@ -8,3 +8,6 @@
 - 清理链见 `scripts/nichol1868_ocr.py`：第 ② 层 tesseract 按位置对证 → 第 ① 层符号形与字形规则（候选唯一、且在全书出现 ≥2 次才改）
   → 各书的看图判读表（如 `smith_raw/psalm1/fill_fixes.tsv`）。
 - 用法：史密斯诗 1 只取补 TCP 缺页的五段（`scripts/smith_psalm1_fill.py`）。
+- 古治诗 116（`scripts/publish_gouge_psalm116.py`，2026-11-19 首发）：影像第 297–442 页整本取用；TCP A01981 残存部分作第三证人（左右 3 词定位投票）。
+  首发时正文 104,696 词，正文残余非词约 1.25%（含专名、拉丁文），真词互换未决 206 处（`gouge_raw/psalm116/disagree_left.tsv`）；
+  斜体（经文框、小节标题）错得最多，待逐页看图校正，判读结果落 `gouge_raw/psalm116/fixes.tsv`。
