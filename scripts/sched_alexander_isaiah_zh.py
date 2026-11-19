@@ -153,7 +153,7 @@ def run_night(stop_h, stop_m):
         return False
     deadline = next_at(stop_h, stop_m)
     log(f'开工：还剩 {len(todo)} 章 {todo[:8]}{"…" if len(todo) > 8 else ""}；'
-        f'{deadline:%m-%d %H:%M} 之后不再开新章')
+        f'{deadline:%m-%d %H:%M} 准点停章')
     ticket = fifo_lock.take('alexander-isaiah-zh', os.getpid())
     try:
         fifo_lock.wait(ticket, verbose=False)
@@ -256,7 +256,7 @@ def main():
     PIDF.write_text(f'{os.getpid()}\n')
     log(f'daemon 启动 pid={os.getpid()} ppid={os.getppid()}（PPID=1 才算脱离会话）'
         f'；每夜 {a.start[0]:02d}:{a.start[1]:02d} 开工，'
-        f'{a.stop[0]:02d}:{a.stop[1]:02d} 后不再开新章')
+        f'{a.stop[0]:02d}:{a.stop[1]:02d} 准点停章')
     try:
         while True:
             target = next_at(*a.start)
