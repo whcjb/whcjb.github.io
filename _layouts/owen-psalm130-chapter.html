@@ -3,12 +3,13 @@ layout: default
 ---
 {%- comment -%}
   欧文《诗篇 130 篇实践讲解》章节页。由 scripts/publish_owen_psalm130_en.py 生成正文。
+  一页并了几章（按经节分组，第四节按欧文的论证步骤分五页）：原来的章是 `.op-sec` 小标题，页首 `.op-sects` 是本页小目录。
   ⚠️ 不复用别家 layout（欧文《希伯来书》是逐节注释，版式不同）；配色取欧文的作者色深绿 #14382f / #1f5a4b。
   版式：每章开头的提要 `.op-arg`（Goold 版各章前的内容提要）；「规则一」等小节标题 `.op-sub`；诗篇经文 `.op-verse`；
   小型大写 `.op-sc`；希伯来文 `.op-he`（dir=rtl）。目前只有英文版，没有接经文引用弹层（弹层只认中文书卷名）。
 {%- endcomment -%}
 
-<div class="container owenps-wrap{% if page.zh %} op-zh{% endif %}" style="padding-top: 70px;">
+<div class="container owenps-wrap{% if page.zh %} op-zh{% endif %}" data-cmp-body style="padding-top: 70px;">
   <div class="row">
     <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
 
@@ -91,6 +92,15 @@ layout: default
   padding-left: 12px; margin-bottom: 22px; }
 .owenps-wrap .op-sub { font-family: Georgia, "Times New Roman", serif; font-size: 19px; color: var(--op-ink-dark);
   margin: 30px 0 12px; font-weight: normal; }
+/* 并页后的章：小标题 + 页首本页目录 */
+.owenps-wrap .op-sects { display: flex; flex-wrap: wrap; gap: 6px 8px; margin: 0 0 30px; padding: 14px 16px;
+  background: var(--op-paper); border: 1px solid var(--op-rule); border-radius: 4px; }
+.owenps-wrap .op-sects a { font-size: 13.5px; line-height: 1.5; color: var(--op-ink-dark); text-decoration: none;
+  padding: 3px 10px; border: 1px solid var(--op-rule); border-radius: 3px; background: #fff; }
+.owenps-wrap .op-sects a:hover { border-color: var(--op-ink); color: var(--op-ink); }
+.owenps-wrap .op-sec { font-size: 21px; color: var(--op-ink-dark); font-weight: normal; line-height: 1.45;
+  margin: 46px 0 18px; padding-bottom: 8px; border-bottom: 1px solid var(--op-rule); scroll-margin-top: 70px; }
+.owenps-wrap .op-sects + .op-sec { margin-top: 0; }
 .owenps-wrap .op-verse { margin-left: 24px; text-align: left; font-style: italic; }
 .owenps-wrap .op-center { text-align: center !important; }
 .owenps-wrap .op-right { text-align: right !important; }
@@ -116,6 +126,7 @@ layout: default
 .owenps-wrap .op-stamp { text-align: right; color: #a9a29f; font-size: 12px; margin-top: 30px;
   font-family: Georgia, "Times New Roman", serif; }
 .owenps-wrap.op-zh .op-content,
+.owenps-wrap.op-zh .op-sec,
 .owenps-wrap.op-zh .op-title { font-family: Georgia, "Songti SC", STSong, "Noto Serif SC", serif; }
 .owenps-wrap.op-zh .op-content p { text-align: justify; }
 .owenps-wrap .op-orig { color: #9a918e; font-size: .88em; }

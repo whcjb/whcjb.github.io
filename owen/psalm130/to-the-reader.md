@@ -6,7 +6,7 @@ title: "To the Reader"
 date: 2026-11-17 13:27
 prev_url: "/owen/psalm130/prefatory-note/"
 prev_label: "Prefatory Note"
-next_url: "/owen/psalm130/1/"
+next_url: "/owen/psalm130/psalm/"
 next_label: "Psalm CXXX"
 zh_url: "/owen/psalm130/zh/to-the-reader/"
 ---

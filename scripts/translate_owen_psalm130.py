@@ -34,7 +34,7 @@ import translate_filibi as tf          # noqa: E402
 import translate_alexander_acts as T   # noqa: E402
 
 ROOT = Path(__file__).resolve().parent.parent
-SRC = ROOT / 'owen' / 'psalm130'
+SRC = ROOT / 'owen_raw' / 'psalm130' / 'en_chapters'   # 分章英文原文（已发布页按组并过，见 publish_owen_psalm130_en.py）
 RAW = ROOT / 'owen_raw' / 'psalm130'
 OUT_DIR = RAW / 'zh_chapters'
 CACHE = RAW / 'zh_cache'

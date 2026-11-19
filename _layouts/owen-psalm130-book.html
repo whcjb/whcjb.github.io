@@ -2,98 +2,67 @@
 layout: default
 ---
 {%- comment -%}
-  欧文《诗篇 130 篇实践讲解》书卷首页。配色与章节页同源（欧文深绿 #14382f / #1f5a4b）。
-  目录按欧文的经节分组（卷首 / 诗篇本文 / 第 1–2 节 … 第 7–8 节），每组下列各章。
+  欧文《诗篇 130 篇实践讲解》书卷首页。版式与欧文《希伯来书》首页（_includes/owen-hebrews-index.html）一致：
+  居中书名、大写小字分区标题、卷首虚线小方块、讲解纸底大方块；配色欧文深绿 #1f5a4b。
+  目录由 publish_owen_psalm130_en.py 的 toc_html() 生成：卷首两页 + 三行讲解（第 1–3 节 / 第四节五页 / 第 5–8 节），
+  方块下注页名或章数，悬停列出该页所含各章。
 {%- endcomment -%}
 
-<div class="container owenps-wrap owenps-book" style="padding-top: 70px;">
-  <div class="row">
-    <div class="col-lg-9 col-lg-offset-1 col-md-10 col-md-offset-1">
-
-      <div class="op-booklang">
-        {% if page.zh %}{% if page.en_url %}<a href="{{ site.baseurl }}{{ page.en_url }}">English edition &rarr;</a>{% endif %}
-        {% else %}{% if page.zh_url %}<a href="{{ site.baseurl }}{{ page.zh_url }}">中文版 &rarr;</a>{% endif %}{% endif %}
-      </div>
-      <div class="op-hero">
-        <h1>{{ page.book_name }}</h1>
-        <p class="op-hero-author">{{ page.author }}</p>
-        <p class="op-hero-meta">{{ page.edition }}</p>
-      </div>
-
-      {{ content }}
-
-    </div>
+<div class="container owenps-book" data-cmp-body style="padding-top:80px; max-width:840px;">
+  <div class="op-booklang">
+    {% if page.zh %}{% if page.en_url %}<a href="{{ site.baseurl }}{{ page.en_url }}">English edition &rarr;</a>{% endif %}
+    {% else %}{% if page.zh_url %}<a href="{{ site.baseurl }}{{ page.zh_url }}">中文版 &rarr;</a>{% endif %}{% endif %}
   </div>
+  <div class="op-hero">
+    <h1>{{ page.hero | default: page.book_name }}</h1>
+    <div class="op-tagline">{{ page.tagline }}</div>
+    <div class="op-edition">{{ page.edition }}</div>
+  </div>
+
+  {{ content }}
 </div>
 
 <style>
-.owenps-book {
-  --op-ink: #1f5a4b;
-  --op-ink-dark: #14382f;
-  --op-rule: #d3e0dc;
-  --op-paper: #f9fbfa;
-}
-.owenps-book .op-booklang { text-align: right; margin: 0 0 10px; font-size: 13px;
-  font-family: Georgia, "Times New Roman", serif; }
-.owenps-book .op-booklang a { color: var(--op-ink-dark); border: 1px solid var(--op-rule);
-  border-radius: 4px; padding: 4px 10px; text-decoration: none; }
-.owenps-book .op-booklang a:hover { background: var(--op-ink); color: #fff; }
-/* 书首：不用大色块横幅（用户 2026-10-22），书名 + 作者 + 版本加细线 */
-.owenps-book .op-hero {
-  margin: 4px 0 22px; padding: 0 0 12px; border-bottom: 2px solid var(--op-ink);
-  font-family: Georgia, "Times New Roman", "Songti SC", serif;
-}
-.owenps-book .op-hero h1 { font-family: Georgia, "Times New Roman", "Songti SC", STSong, serif; margin: 0 0 4px;
-  font-size: 26px; font-weight: normal; line-height: 1.3; color: var(--op-ink-dark); }
-.owenps-book .op-hero-author { margin: 0; font-size: 14.5px; color: #3e3e44; }
-.owenps-book .op-hero-meta { margin: 2px 0 0; font-size: 13px; color: #85858f; font-style: italic; }
+.owenps-book .op-booklang { text-align: right; font-size: 13px; }
+.owenps-book .op-booklang a { color: #1f5a4b; }
+.owenps-book .op-hero { text-align: center; margin-bottom: 8px; }
+.owenps-book .op-hero h1 { font-family: Georgia, "Songti SC", serif; color: #1f4a3f; font-size: 30px; letter-spacing: .04em; }
+.owenps-book .op-tagline { color: #1f5a4b; font-size: 14px; letter-spacing: .12em; margin-top: 6px; }
+.owenps-book .op-edition { color: #9a9a92; font-size: 12px; margin-top: 6px; }
 
-.owenps-book .op-group {
-  font-family: Georgia, "Times New Roman", serif; margin: 30px 0 12px;
-  font-size: 15px; color: var(--op-ink-dark); letter-spacing: .05em;
-  padding-bottom: 6px; border-bottom: 1px solid var(--op-rule);
-}
-.owenps-book .op-group small { color: #9aa4ad; letter-spacing: 0; font-size: 12px; }
+.owenps-book .op-sec-hd { margin: 30px 0 12px; font-size: 12px; font-weight: bold; letter-spacing: .14em;
+  color: #7a8f85; text-transform: uppercase; text-align: center; }
+.owenps-book .op-sec-hd-main { margin-top: 40px; margin-bottom: 4px; }
+.owenps-book .op-sub { margin: 16px 0 10px; font-size: 12.5px; color: #8a8a82; text-align: center; letter-spacing: .02em; }
+.owenps-book .op-grid { display: flex; flex-wrap: wrap; gap: 10px 4px; justify-content: center; margin: 0 auto 8px; max-width: 760px; }
 
-.owenps-book .op-toc {
-  list-style: none; padding: 0; margin: 0;
-  display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 8px;
-}
-.owenps-book .op-toc li { margin: 0; }
-.owenps-book .op-toc a {
-  display: block; padding: 10px 14px; border: 1px solid var(--op-rule);
-  border-radius: 4px; background: var(--op-paper); text-decoration: none;
-  font-family: Georgia, "Times New Roman", serif; font-size: 15px;
-  color: #2d3238; line-height: 1.45;
-}
-.owenps-book .op-toc a:hover {
-  border-color: var(--op-ink); background: #fff; color: var(--op-ink-dark);
-}
-.owenps-book .op-toc .op-no {
-  color: var(--op-ink); font-size: 12px; letter-spacing: .06em;
-  display: block; margin-bottom: 2px;
-}
-.owenps-book .op-toc .op-ref { color: #98a2aa; font-size: 12.5px; }
+.owenps-book .op-tile { display: flex; flex-direction: column; align-items: center; justify-content: center;
+  font-family: Georgia, serif; line-height: 1; text-decoration: none; transition: all .15s; }
+.owenps-book .op-tile > span { font-size: 9px; letter-spacing: .08em; text-transform: uppercase; opacity: .62; margin-bottom: 5px; }
+/* 卷首：虚线描边小方块（同希伯来书 Pref） */
+.owenps-book .op-tile-front { height: 52px; padding: 0 18px; border: 1.5px dashed #1f5a4b; border-radius: 8px;
+  background: transparent; color: #1f5a4b; font-size: 15px; letter-spacing: .06em; margin: 0 5px; }
+.owenps-book .op-tile-front:hover { background: #1f5a4b; color: #fff; text-decoration: none; }
+/* 讲解：纸底大方块（同希伯来书 Ch），下注页名 */
+.owenps-book .op-cell { display: flex; flex-direction: column; align-items: center; min-width: 110px; padding: 0 8px; text-decoration: none; }
+.owenps-book .op-cell:hover { text-decoration: none; }
+.owenps-book .op-tile-ch { width: 70px; height: 70px; border: 1px solid #cfe0d6; border-radius: 10px;
+  background: #fbfaf6; color: #1f5a4b; font-size: 22px; box-shadow: 0 1px 4px rgba(31,90,75,.10); }
+.owenps-book .op-tile-ch > span { font-size: 9.5px; opacity: .55; margin-bottom: 4px; }
+.owenps-book .op-cell:hover .op-tile-ch { background: #1f5a4b; color: #fff; }
+.owenps-book .op-cap { margin-top: 7px; font-size: 12px; line-height: 1.45; color: #5f7d72; text-align: center; white-space: nowrap; }
+.owenps-book .op-cell:hover .op-cap { color: #1f5a4b; }
+/* 中文版里尚未译完的页：退一档，仍可点（进英文页） */
+.owenps-book .op-tile-pending .op-tile-ch { border-color: #b6cfc3; color: #6e9285; background: #fdfcf9; box-shadow: none; }
+.owenps-book .op-tile-pending .op-cap { color: #a3b5ad; }
 
-.owenps-book .op-note {
-  font-family: Georgia, "Times New Roman", serif; font-size: 13.5px;
-  color: #6f7982; line-height: 1.8; margin: 34px 0 0;
-  padding-top: 16px; border-top: 1px solid var(--op-rule);
-}
-.owenps-book .op-toc.op-wide { grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); }
-.owenps-book .op-note p { margin: 0 0 12px; }
-.owenps-book .op-note ul { margin: 0 0 12px; padding-left: 20px; }
-.owenps-book .op-ed { font-family: Georgia, "Times New Roman", serif; font-size: 13px; margin: 8px 0 0; color: #5d5856; }
-.owenps-book .op-ed summary { cursor: pointer; color: var(--op-ink-dark); }
-.owenps-book .op-ed table { width: 100%; border-collapse: collapse; margin-top: 8px; }
-.owenps-book .op-ed th, .owenps-book .op-ed td { border-bottom: 1px solid var(--op-rule); padding: 5px 6px; text-align: left; vertical-align: top; }
-.owenps-book .op-toc a.op-other { color: #a09895; }
-.owenps-book .op-toc a.op-other small { display: block; font-size: 11px; color: #b9b1ae; }
-.owenps-book .op-he { unicode-bidi: isolate; font-family: "SBL Hebrew", "Times New Roman", serif; }
-@media (max-width: 767px) {
-  .owenps-book .op-hero h1 { font-size: 22px; }
-  .owenps-book .op-toc { grid-template-columns: repeat(auto-fill, minmax(96px, 1fr)); }
-  .owenps-book .op-toc.op-wide { grid-template-columns: 1fr; }
+.owenps-book .op-note { text-align: center; color: #8a8a82; font-size: 13px; line-height: 1.8;
+  max-width: 600px; margin: 40px auto 0; }
+.owenps-book .op-note p { margin: 0 0 10px; }
+@media (max-width: 600px) {
+  .owenps-book .op-cell { min-width: 0; width: 100px; padding: 0; }
+  .owenps-book .op-cap { font-size: 11.5px; white-space: normal; }
+  .owenps-book .op-tile-ch { width: 58px; height: 58px; font-size: 18px; }
+  .owenps-book .op-tile-front { height: 46px; font-size: 14px; padding: 0 14px; }
 }
 </style>
