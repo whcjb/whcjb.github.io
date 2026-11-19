@@ -224,11 +224,11 @@ AUTHORS = OrderedDict([
                   years='1568–1619', dir='cowper',
                   work_cn='锡安学子的圣字母表（诗篇 119 篇注释）',
                   work_en='A Holy Alphabet for Sion\'s Scholars')),
-    # 塞缪尔·史密斯：DNB 作约 1584 年生于达德利附近、约 1662 年卒；图书馆规范档作 1588–1665，故两头都写「约」。1615 年起任埃塞克斯郡普里特尔韦尔圣职。本站只收《大卫的悔改》（1614 第二版，EEBO-TCP A12516）——单篇专书，见 MONOGRAPHS。
+    # 塞缪尔·史密斯：DNB 作约 1584 年生于达德利附近、约 1662 年卒；图书馆规范档作 1588–1665，故两头都写「约」。1615 年起任埃塞克斯郡普里特尔韦尔圣职。本站收《大卫的悔改》（1614 第二版，EEBO-TCP A12516）与《摩西的祷告》（1656，A93404）两本单篇专书，见 MONOGRAPHS / MONO_TITLES。
     ('smith', dict(name='塞缪尔·史密斯', short='史密斯', en='Samuel Smith',
                   years='约1584–约1665', dir='smith',
-                  work_cn='大卫的悔改（诗篇 51 篇讲解）',
-                  work_en='Dauids Repentance: A Plaine and Familiar Exposition of the 51. Psalme')),
+                  work_cn='诗篇 51 篇、90 篇讲解',
+                  work_en='Dauids Repentance (Psalm 51); Moses his Prayer (Psalm 90)')),
     ('alexander', dict(name='约瑟·亚历山大', short='亚历山大', en='Joseph Addison Alexander',
                        years='1809–1860', dir='alexander',
                        work_cn='诗篇、以赛亚书、马太福音、使徒行传注释',
@@ -426,7 +426,11 @@ description: 「历代解经」{cn}条目：{names}，选择进入。
 # 不进对比抽屉（compare_sources 只收有章节的目录）。
 # 单篇专书：目录名不是书卷名，归到某卷名下；只讲一两篇，不进逐章对比抽屉（2026-11-17 用户令收欧文、曼顿、布里奇斯论单篇诗篇）
 MONOGRAPHS = {('owen', 'psalm130'): 'psalms', ('manton', 'psalm119'): 'psalms', ('bridges', 'psalm119'): 'psalms',
-              ('knox', 'psalm6'): 'psalms', ('hildersham', 'psalm51'): 'psalms', ('reynolds', 'psalm110'): 'psalms', ('cowper', 'psalm119'): 'psalms', ('smith', 'psalm51'): 'psalms'}
+              ('knox', 'psalm6'): 'psalms', ('hildersham', 'psalm51'): 'psalms', ('reynolds', 'psalm110'): 'psalms', ('cowper', 'psalm119'): 'psalms', ('smith', 'psalm51'): 'psalms', ('smith', 'psalm90'): 'psalms'}
+# 同一作者在同一卷书下有几本单篇专书时（史密斯：诗篇 51、90 篇），逐本出条目，书名按目录查此表；
+# 只有一本的照旧用 BOOK_TITLES[(作者, 书卷)]。
+MONO_TITLES = {('smith', 'psalm51'): ('大卫的悔改（诗篇 51 篇）', 'Dauids Repentance'),
+               ('smith', 'psalm90'): ('摩西的祷告（诗篇 90 篇）', 'Moses his Prayer')}
 ESSAY_ENTRIES = {'vos': {'psalms': '/vos/psalter/zh/'}}   # 入口一律指中文版（用户 2026-11-11）
 # 交界斜度：顶边比底边右移 2×DUO_SLANT 个百分点。原先 20 个百分点，三家时最左一带底边太窄放不下作者名，收到 8。
 DUO_SLANT = 4
@@ -931,7 +935,14 @@ def main():
         # 以前只链到卷一、标一句「（全二卷）」，等于把卷二藏起来了。
         expanded = []
         for _aid, _path, _n in entries:
-            if _aid != 'calvin':
+            monos = sorted((nm for (a, nm), b in MONOGRAPHS.items() if a == _aid and b == bid
+                            and has_content(ROOT / AUTHORS[_aid]['dir'] / nm)),
+                           key=lambda nm: int(re.search(r'(\d+)$', nm).group(1)))
+            if _aid != 'calvin' and len(monos) > 1:     # 一位作者同卷几本专书：逐本出条目
+                for nm in monos:
+                    t_cn, t_en = MONO_TITLES[(_aid, nm)]
+                    expanded.append((_aid, entry_path(_aid, nm), t_cn, t_en, None))
+            elif _aid != 'calvin':
                 expanded.append((_aid, _path, None, None, None))
             elif bid in VOLUMES:
                 unit = '篇' if bid == 'psalms' else '章'

@@ -30,6 +30,8 @@ TOK = re.compile(r'•+|〈◊〉|〈…〉|〈Greek〉|▪')
 FRONT_LABEL = {'title_page': ('title', 'Title Page', '书名页'), 'dedication': ('dedication', 'The Epistle Dedicatory', '献辞'),
                'to_the_reader': ('to-the-reader', 'To the Reader', '致读者'), 'errata': ('errata', 'Errata', '勘误表'),
                'Psalm_n51': ('the-psalm', 'The Contents: Psalm 51', '全篇经文'),
+               'Psalm': ('the-psalm', 'The XC Psalme', '全篇经文'),
+               'table_of_contents': ('doctrines', 'A Table of the Principal Doctrines', '要义一览'),
                'table_of_doctrines': ('doctrines', 'The Table of the Principal Doctrines', '要义一览'),
                'diagram': ('method', 'The Method of the Psalm', '全篇纲目'), 'prayer': ('prayers', 'Prayers', '祷文')}
 
@@ -86,6 +88,21 @@ BOOKS = {
         about_zh='史密斯任埃塞克斯郡罗克斯韦尔牧师，先在会众中讲这篇诗篇，后来照他自己说，是在久病不能讲道的空闲里整理出版；'
                  '1614 年这第二版由作者「增订」。本站从诗题到末节，原书每部分一页。',
         omitted_en='', omitted_zh=''),
+    'smith-psalm90': dict(
+        tcp='A93404', author='smith', book='psalm90', P='sx', c0='#27707a', c1='#3aa0af', psalm=90,
+        short='Smith on Psalm 90', hero='Psalm 90',
+        title_en='Moses his Prayer: or, An Exposition of the Nintieth Psalme',
+        tagline='Samuel Smith · Moses his Prayer',
+        edition='London: W. Wilson, 1656 · Wing S4189A', year='1656',
+        front=['title_page', 'dedication', 'to_the_reader', 'Psalm'], back=['table_of_contents'],
+        units=('divs', 'body/div/div'),
+        about_en='Smith published this exposition of Psalm 90 late in life (the title page calls him "author of Davids '
+                 'Repentance and the Great Assize, and yet living"). For the title and each verse he sets out the sum and '
+                 'scope, the doctrines, the reasons and the uses; each is one page here.',
+        about_zh='史密斯晚年出版这部诗篇 90 篇讲解（扉页称他为「《大卫的悔改》《大审判》的作者，至今健在」）。诗题与每节都先讲大意与要旨，'
+                 '再列教义、理由、应用；本站诗题与各节各一页。',
+        omitted_en='The table of principal doctrines is given after the exposition.',
+        omitted_zh='卷末「要义一览」附在讲解之后。'),
 }
 
 LAYOUT_CHAPTER = r'''---
@@ -325,6 +342,8 @@ def find(root, path):
 
 
 def verse_label(e, r):
+    if (e.get('type') or '').startswith('title'):      # 史密斯诗 90：title_of_prayer
+        return 'title'
     n = e.get('n')
     if n:
         return n.replace(',', '–')

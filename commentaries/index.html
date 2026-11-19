@@ -330,10 +330,13 @@ description: 加尔文与马太亨利之外的历代改革宗注释——欧文�
             几家合列、点进去再选（build_commentaries_index.py 的 PICK_BOOKS）：卡片用书卷自己的独立色
             （PICK_COLORS，不是哪一家的作者色），写几家的名字；整张卡片链到 /commentaries/<书>/ 选择页。
           {%- endcomment -%}
-          {%- assign pk_names = "" -%}
-          {%- for l in b.links limit: b.pick_n -%}
+          {%- comment -%} 同一作者同卷几本专书（史密斯：诗篇 51、90 篇）在 links 里相邻出现，名字只写一次 {%- endcomment -%}
+          {%- assign pk_names = "" -%}{%- assign pk_prev = "" -%}
+          {%- for l in b.links -%}
+            {%- if l.author == pk_prev -%}{%- continue -%}{%- endif -%}
+            {%- assign pk_prev = l.author -%}
             {%- assign au_ = author_map | where: "id", l.author | first -%}
-            {%- if forloop.first -%}{%- assign pk_names = au_.short -%}
+            {%- if pk_names == "" -%}{%- assign pk_names = au_.short -%}
             {%- else -%}{%- assign pk_names = pk_names | append: '<span class="cx-sep">/</span>' | append: au_.short -%}{%- endif -%}
           {%- endfor -%}
           <a href="{{ site.baseurl }}/commentaries/{{ b.id }}/"

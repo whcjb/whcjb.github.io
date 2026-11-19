@@ -1,0 +1,43 @@
+---
+layout: default
+---
+{%- comment -%}
+  Smith on Psalm 90 书卷首页。由 scripts/publish_tcp_psalm.py 生成（BOOKS['smith-psalm90']）：卷首各页 + 正文方格（悬停看本页首条目录）+ 文本说明。
+  ⚠️ 不复用别家 layout；配色 #27707a / #3aa0af。目前只有英文版。
+{%- endcomment -%}
+
+<div class="container sx-book" style="padding-top:80px; max-width:900px;">
+  <div class="sx-hero">
+    <h1>{{ page.hero | default: page.book_name }}</h1>
+    <div class="sx-tagline">{{ page.tagline }}</div>
+    <div class="sx-edition">{{ page.edition }}</div>
+  </div>
+  {{ content }}
+</div>
+
+<style>
+.sx-book .sx-hero { text-align: center; margin-bottom: 8px; }
+.sx-book .sx-hero h1 { font-family: Georgia, "Songti SC", serif; color: #27707a; font-size: 30px; letter-spacing: .04em; }
+.sx-book .sx-tagline { color: #3aa0af; font-size: 14px; letter-spacing: .06em; margin-top: 6px; }
+.sx-book .sx-edition { color: #9a9a92; font-size: 12px; margin-top: 6px; }
+.sx-book .sx-sec-hd { margin: 30px 0 12px; font-size: 12px; font-weight: bold; letter-spacing: .14em;
+  color: #8f8a82; text-transform: uppercase; text-align: center; }
+.sx-book .sx-sec-hd-main { margin-top: 40px; }
+.sx-book .sx-fronts { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; }
+.sx-book .sx-fronts a { border: 1.5px dashed #3aa0af; border-radius: 8px; padding: 8px 16px; color: #3aa0af;
+  font-family: Georgia, serif; font-size: 14px; text-decoration: none; text-align: center; }
+.sx-book .sx-fronts a span { display: block; font-size: 11px; color: #9a948b; }
+.sx-book .sx-fronts a:hover { background: #3aa0af; color: #fff; }
+.sx-book .sx-fronts a:hover span { color: #eee; }
+.sx-book .sx-sub { margin: 26px 0 10px; font-family: Georgia, serif; font-size: 16px; color: #27707a; text-align: center; }
+.sx-book .sx-sub span { display: block; font-size: 12px; color: #9a948b; margin-top: 2px; }
+.sx-book .sx-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 8px; }
+.sx-book .sx-grid a { display: block; border: 1px solid #e1f1f3; border-radius: 6px; background: #f7fbfc; padding: 8px 8px 7px;
+  text-align: center; font-family: Georgia, serif; font-size: 16px; color: #3aa0af; text-decoration: none; line-height: 1.25; }
+.sx-book .sx-grid a small { display: block; font-size: 11px; color: #958f86; margin-top: 4px; line-height: 1.35; }
+.sx-book .sx-grid a:hover { background: #3aa0af; color: #fff; }
+.sx-book .sx-grid a:hover small { color: #eee; }
+.sx-book .sx-note { text-align: center; color: #8a8a82; font-size: 13px; line-height: 1.8; max-width: 640px; margin: 40px auto 0; }
+.sx-book .sx-note p { margin: 0 0 10px; }
+@media (max-width: 600px) { .sx-book .sx-grid { grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); } }
+</style>

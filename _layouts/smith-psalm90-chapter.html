@@ -1,0 +1,83 @@
+---
+layout: default
+---
+{%- comment -%}
+  Smith on Psalm 90 正文页。由 scripts/publish_tcp_psalm.py 生成（BOOKS['smith-psalm90']），底本 EEBO-TCP A93404（CC0）。
+  ⚠️ 不复用别家 layout（每本书独立样式）；配色 #27707a / #3aa0af，类名 sx- 前缀。
+  - 本页所含目录条目 → `.sx-contents`；所讲经文 → `.sx-text`；页边旁注 → `.sx-margin`；印本页码 → `.sx-pb`（#pN）。
+  - 录入本读不出的字 → `.sx-gap`（标红）。目前只有英文版，不接经文弹层（模块只认中文书卷名）。
+{%- endcomment -%}
+
+<div class="container sx-wrap" style="padding-top: 70px;">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <div class="sx-chrome"><a href="{{ site.baseurl }}/smith/psalm90/">&larr; {{ page.book_name }}</a></div>
+      <h1 class="sx-title">{{ page.title }}</h1>
+      {% if page.subtitle %}<p class="sx-subtitle">{{ page.subtitle }}</p>{% endif %}
+      <div class="sx-nav">
+        {% if page.prev_url %}<a href="{{ site.baseurl }}{{ page.prev_url }}">&larr; {{ page.prev_label }}</a>{% else %}<span></span>{% endif %}
+        {% if page.next_url %}<a href="{{ site.baseurl }}{{ page.next_url }}">{{ page.next_label }} &rarr;</a>{% else %}<span></span>{% endif %}
+      </div>
+      <div class="sx-content">
+        {{ content }}
+      </div>
+      {% if page.date %}<div class="sx-stamp">Published {{ page.date | date: "%Y-%m-%d %H:%M" }}</div>{% endif %}
+      <div class="sx-nav sx-nav-foot">
+        {% if page.prev_url %}<a href="{{ site.baseurl }}{{ page.prev_url }}">&larr; {{ page.prev_label }}</a>{% else %}<span></span>{% endif %}
+        {% if page.next_url %}<a href="{{ site.baseurl }}{{ page.next_url }}">{{ page.next_label }} &rarr;</a>{% else %}<span></span>{% endif %}
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+.sx-wrap { --ink: #3aa0af; --ink-dark: #27707a; --rule: #e1f1f3; --paper: #f7fbfc; --body: #2d2b28; }
+.sx-wrap .sx-chrome, .sx-wrap .sx-nav { font-size: 13px; display: flex; justify-content: space-between; gap: 12px;
+  align-items: center; font-family: Georgia, "Times New Roman", serif; }
+.sx-wrap .sx-chrome { margin: 18px 0 22px; }
+.sx-wrap .sx-chrome a, .sx-wrap .sx-nav a { color: var(--ink-dark); text-decoration: none; }
+.sx-wrap .sx-chrome a:hover, .sx-wrap .sx-nav a:hover { text-decoration: underline; }
+.sx-wrap .sx-title { font-family: Georgia, "Times New Roman", serif; font-size: 28px; font-weight: normal;
+  color: var(--ink-dark); text-align: center; margin: 10px 0 4px; line-height: 1.3; }
+.sx-wrap .sx-subtitle { text-align: center; font-size: 14px; color: #8a857e; margin: 0 0 6px;
+  font-family: Georgia, "Times New Roman", serif; font-style: italic; }
+.sx-wrap .sx-nav { margin: 14px 0 26px; }
+.sx-wrap .sx-nav-foot { margin-top: 44px; padding-top: 16px; border-top: 1px solid var(--rule); }
+.sx-wrap .sx-content { font-family: Georgia, "Times New Roman", serif; font-size: 17px; line-height: 1.85; color: var(--body); }
+.sx-wrap .sx-content p { margin: 0 0 16px; text-align: justify; }
+.sx-wrap .sx-content h3, .sx-wrap .sx-content h4 { font-size: 18px; font-weight: normal; text-align: center;
+  color: var(--ink-dark); margin: 26px 0 18px; line-height: 1.5; }
+.sx-wrap .sx-contents { background: var(--paper); border: 1px solid var(--rule); border-radius: 4px;
+  padding: 12px 18px 6px; margin: 0 0 26px; font-size: 14.5px; line-height: 1.65; color: #4a4640; }
+.sx-wrap .sx-contents-h { font-size: 12px; letter-spacing: .1em; color: var(--ink-dark); margin-bottom: 6px; }
+.sx-wrap .sx-contents-h span { letter-spacing: 0; color: #a39d94; margin-left: 4px; }
+.sx-wrap .sx-contents ul { margin: 0 0 6px; padding-left: 18px; }
+.sx-wrap .sx-contents li { margin: 0 0 4px; }
+.sx-wrap .sx-contents li small { color: #a39d94; margin-left: 4px; }
+.sx-wrap .sx-text { border-left: 3px solid var(--ink); background: var(--paper); padding: 10px 16px; margin: 0 0 22px; }
+.sx-wrap .sx-text p { margin: 0 0 6px; text-align: left; font-style: italic; }
+.sx-wrap .sx-dropcap { float: left; font-size: 3em; line-height: .85; margin: 4px 7px 0 0; color: var(--ink-dark); }
+.sx-wrap .sx-quote { text-align: center !important; font-style: italic; }
+.sx-wrap .sx-closer { text-align: right !important; font-style: italic; }
+.sx-wrap .sx-trailer { text-align: center !important; letter-spacing: .1em; }
+.sx-wrap .sx-item { margin: 0 0 8px 24px !important; text-align: left !important; }
+.sx-wrap .sx-poem { margin: 0 0 16px 28px; }
+.sx-wrap .sx-poem p, .sx-wrap .sx-l { margin: 0 !important; text-align: left !important; }
+.sx-wrap .sx-table { border-collapse: collapse; margin: 0 auto 16px; font-size: 14px; }
+.sx-wrap .sx-table td { border: 1px solid var(--rule); padding: 3px 8px; vertical-align: top; }
+.sx-wrap .sx-margin { display: block; margin: 2px 0 8px; padding-left: 10px; border-left: 2px solid var(--rule);
+  font-size: 13px; line-height: 1.55; color: #857f76; font-style: normal; text-align: left; }
+@media (min-width: 1200px) {
+  .sx-wrap .sx-margin { float: right; clear: right; width: 150px; margin: 4px -182px 8px 16px; padding-left: 8px; }
+}
+.sx-wrap .sx-pb { scroll-margin-top: 80px; }
+.sx-wrap .sx-pb[data-p]::before { content: "p." attr(data-p); font-size: 10.5px; color: #b5afa6; font-style: normal;
+  margin: 0 4px; border: 1px solid var(--rule); border-radius: 3px; padding: 0 3px; vertical-align: 1px; }
+.sx-wrap .sx-gap { color: #c0392b; cursor: help; }
+.sx-wrap .sx-lost { font-size: 14px; color: #a0522d; border: 1px dashed #e0b8a0; border-radius: 4px; padding: 8px 12px; }
+.sx-wrap .sx-stamp { text-align: right; color: #aaa59d; font-size: 12px; margin-top: 30px; font-family: Georgia, serif; }
+@media (max-width: 767px) {
+  .sx-wrap .sx-title { font-size: 23px; }
+  .sx-wrap .sx-content { font-size: 16px; }
+}
+</style>

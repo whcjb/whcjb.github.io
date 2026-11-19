@@ -10,7 +10,7 @@ facts:
   - ["卒", "约 1662–1665 年（各家说法不一）"]
   - ["宗派", "清教徒；内战时站在长老会一边"]
   - ["职任", "埃塞克斯郡罗克斯韦尔牧师；普里特尔韦尔讲道人（1615 年起）"]
-  - ["代表作", "《大卫的悔改》（诗篇 51 篇）、《大卫的有福之人》（诗篇 1 篇）、《大审判》"]
+  - ["代表作", "《大卫的悔改》（诗篇 51 篇）、《大卫的有福之人》（诗篇 1 篇）、《摩西的祷告》（诗篇 90 篇）、《大审判》"]
 ---
 
 ## 生平
@@ -27,6 +27,7 @@ facts:
 <li><b>1614</b>《大卫的悔改》第二版，署罗克斯韦尔牧师</li>
 <li><b>1615</b>11 月 30 日任普里特尔韦尔圣职</li>
 <li><b>1640年代</b>内战时避居伦敦</li>
+<li><b>1656</b>《摩西的祷告》（诗篇 90 篇）出版</li>
 <li><b>约1662–1665</b>去世</li>
 </ul>
 
@@ -34,6 +35,8 @@ facts:
 
 《大卫的悔改：诗篇五十一篇浅白讲解》（*Dauids Repentance: or, A Plaine and Familiar Exposition of the 51. Psalme*）。照作者《致读者》的说法，这是他先在会众中讲过、后来在久病不能讲道的空闲里整理出版的。本站所据是 1614 年伦敦尼古拉斯·奥克斯（Nicholas Okes）印的第二版，扉页说是「由作者增订」。全书从诗题讲起，逐节讲到第 19 节，本站原书每部分一页；卷首的全篇经文和「要义一览」也一并收入。
 
-本站底本是 EEBO-TCP 的人工录入本。录入者读不出的字在正文里标红，尚未对照原书影像补出，详见书首页的文本说明。
+另收《摩西的祷告：诗篇九十篇讲解》（*Moses his Prayer. Or, An Exposition of the Nintieth Psalme*，伦敦 W. Wilson 1656）。这是他晚年的著作，扉页称他为「《大卫的悔改》《大审判》的作者，至今健在」。诗题与每节都先讲大意与要旨，再列教义、理由、应用，讲人生的短暂与人在神忿怒下的光景，本站诗题与各节各一页，卷首全篇经文与卷末「要义一览」一并收入。
 
-<p class="cb-src">资料来源：<i>Dictionary of National Biography</i> vol. 53, "Smith, Samuel (1584–1662?)"；Anthony Wood, <a href="https://words.fromoldbooks.org/Wood-AthenaeOxonienses/smith-samuel-1.html"><i>Athenae Oxonienses</i></a>；本书扉页与《致读者》（1614）。</p>
+两本的底本都是 EEBO-TCP 的人工录入本。录入者读不出的字在正文里标红，尚未对照原书影像补出，详见书首页的文本说明。
+
+<p class="cb-src">资料来源：<i>Dictionary of National Biography</i> vol. 53, "Smith, Samuel (1584–1662?)"；Anthony Wood, <a href="https://words.fromoldbooks.org/Wood-AthenaeOxonienses/smith-samuel-1.html"><i>Athenae Oxonienses</i></a>；《大卫的悔改》扉页与《致读者》（1614）；《摩西的祷告》扉页（1656）。</p>

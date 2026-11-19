@@ -62,7 +62,9 @@
         {%- endfor -%}
       </div>
       <div class="cxp-bios">生平：
-        {%- for l in book.links -%}{%- assign au = author_map | where: "id", l.author | first -%}{%- unless au.no_bio -%}
+        {%- assign bio_prev = "" -%}
+        {%- for l in book.links -%}{%- if l.author == bio_prev -%}{%- continue -%}{%- endif -%}{%- assign bio_prev = l.author -%}
+        {%- assign au = author_map | where: "id", l.author | first -%}{%- unless au.no_bio -%}
         <a href="{{ site.baseurl }}/commentaries/authors/{{ au.id }}/">{{ au.short }}</a>
         {%- endunless -%}{%- endfor -%}
       </div>
