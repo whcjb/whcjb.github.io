@@ -3,6 +3,7 @@
 
     python3 scripts/publish_calvin_sermons.py job
     python3 scripts/publish_calvin_sermons.py deuteronomy
+    python3 scripts/publish_calvin_sermons.py psalm119     # 底本 AGES（Old Paths 1996 现代拼法本），见 extract_calvin_ages_psalm119.py
 
 一篇讲章一页 `<篇次>.md`；卷首各一页；书首页 index.html 按章列篇次。
 date 沿用 en_meta.json 里的原值，新页才写当前真实时间（重跑不改时间）。
@@ -31,6 +32,12 @@ CFG = {
                     printed='Calvini Opera vol. XXIX–XXX (Brunsvigae, 1885–86), after the Geneva edition of 1604 (Gabriel Cartier)',
                     translator='Latin translation from the French by David Claudus',
                     preached=''),
+    # 诗篇 119 篇：1554 年法文版、1580 年 Stocker 英译；本站据 AGES 所收 Old Paths 1996 现代拼法重排本（用户 2026-11-19 选定）
+    'psalm119': dict(name='Psalm 119', cn='诗篇 119 篇', title_en='Two and Twenty Sermons upon the Hundredth and Nineteenth Psalm',
+                     title_cn='加尔文《诗篇 119 篇讲章》', year='1580', total=22,
+                     printed='London: Thomas Dawson for John Harrison and Thomas Man, 1580; modern-spelling edition, Old Paths Publications, 1996 (AGES Digital Library)',
+                     translator='Translated out of French by Thomas Stocker',
+                     preached=''),
 }
 FRONT_CN = {'title': '书名页', 'dedication': '献辞', 'to-the-reader': '致读者', 'to-the-reader-1': '致读者（一）',
             'to-the-reader-2': '致读者（二）', 'to-the-reader-3': '致读者（三）',
@@ -51,6 +58,8 @@ def gapify(md):
 
 
 def chap_label(name, s):
+    if s.get('letter'):                         # 诗篇 119 篇：按八节一个希伯来字母
+        return f'{name}:{s["verses"][0]}–{s["verses"][1]} ({s["letter"]})'
     return f'{name} {s["chapter"]}' + (f'–{s["chapter2"]}' if s.get('chapter2') else '')
 
 
@@ -131,7 +140,15 @@ def main():
             lines.append(f'  <li><a href="{{{{ site.baseurl }}}}{base}{f["slug"]}/">{f["title"]}'
                          f'<span class="cs-ref">{FRONT_CN.get(f["slug"], "")}</span></a></li>')
     lines.append('</ul>')
-    lines.append(f'<h2 class="cs-group">The Sermons <span>讲章 {c["total"]} 篇，按所讲章次排列</span></h2>')
+    if book == 'psalm119':
+        lines.append(f'<h2 class="cs-group">The Sermons <span>讲章 {c["total"]} 篇，每篇讲一个希伯来字母下的八节</span></h2>\n<ul class="cs-toc">')
+        for x in u['sermons']:
+            lines.append(f'  <li><a href="{{{{ site.baseurl }}}}{base}{x["num"]}/">Sermon {x["num"]} · {x["letter"]}'
+                         f'<span class="cs-ref">119:{x["verses"][0]}–{x["verses"][1]}</span></a></li>')
+        lines.append('</ul>')
+        by_ch = {}
+    else:
+        lines.append(f'<h2 class="cs-group">The Sermons <span>讲章 {c["total"]} 篇，按所讲章次排列</span></h2>')
     for ch in sorted(by_ch):
         items = sorted(by_ch[ch], key=lambda t: t[1])
         lines.append(f'<div class="cs-ch"><div class="cs-ch-h">{c["name"]} {ch}<span>第 {ch} 章</span></div><div class="cs-grid">')
@@ -163,6 +180,8 @@ def main():
 def about(book, c, u, merged):
     if book == '1samuel':
         return about_1sam(u)
+    if book == 'psalm119':
+        return about_ps119()
     g = u['gaps']
     gl = g.get('letter', 0)
     gw = g.get('word', 0)
@@ -194,6 +213,23 @@ def about(book, c, u, merged):
                '篇次与归章按书中实际次序。')
     en += 'The indexes at the end of the volume are not yet included.</p>'
     zh += '卷末索引暂未收录。</p>'
+    return f'<div class="cs-note">\n{en}\n{zh}\n</div>'
+
+
+def about_ps119():
+    en = ('<p><b>About this text.</b> Calvin preached these twenty-two sermons on Psalm 119 in Geneva, one on each '
+          'eight-verse stanza of the Hebrew alphabet; they were printed in French in 1554 and put into English by '
+          'Thomas Stocker (London, 1580). The text given here is the edition of Old Paths Publications (1996) as issued '
+          'in the AGES Digital Library: Stocker\'s translation complete and unabridged, but with the spelling modernised '
+          'and short explanations of obsolete words added by that edition in square brackets and italics. Names such '
+          'as Esay and Moyses, the verb endings in -eth, and the capitalisation and punctuation of 1580 are kept. '
+          'The marginal Scripture references of 1580 appear in parentheses in the text. The 1996 publisher\'s note and '
+          'foreword are not included.</p>')
+    zh = ('<p class="cs-note-zh"><b>文本说明。</b>这 22 篇讲章是加尔文在日内瓦讲诗篇 119 篇所留，按希伯来字母每八节讲一篇；'
+          '1554 年以法文出版，1580 年由 Thomas Stocker 译成英文（伦敦）。本站正文据 AGES 数字图书馆所收 Old Paths '
+          'Publications 1996 年版：Stocker 译文全本未删，但拼法改为现代拼法，古词后加了方括号斜体的释义（为该版所加）。'
+          'Esay、Moyses 等人名，-eth 动词词尾，以及 1580 年的大小写与标点照旧。1580 年版页边的经文出处排在正文括号里。'
+          '1996 年版的出版者说明和序言未收。</p>')
     return f'<div class="cs-note">\n{en}\n{zh}\n</div>'
 
 
