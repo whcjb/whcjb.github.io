@@ -1,0 +1,43 @@
+---
+layout: default
+---
+{%- comment -%}
+  Reynolds on Psalm 110 书卷首页。由 scripts/publish_tcp_psalm.py 生成（BOOKS['reynolds-psalm110']）：卷首各页 + 正文方格（悬停看本页首条目录）+ 文本说明。
+  ⚠️ 不复用别家 layout；配色 #23503a / #34794f。目前只有英文版。
+{%- endcomment -%}
+
+<div class="container ry-book" style="padding-top:80px; max-width:900px;">
+  <div class="ry-hero">
+    <h1>{{ page.hero | default: page.book_name }}</h1>
+    <div class="ry-tagline">{{ page.tagline }}</div>
+    <div class="ry-edition">{{ page.edition }}</div>
+  </div>
+  {{ content }}
+</div>
+
+<style>
+.ry-book .ry-hero { text-align: center; margin-bottom: 8px; }
+.ry-book .ry-hero h1 { font-family: Georgia, "Songti SC", serif; color: #23503a; font-size: 30px; letter-spacing: .04em; }
+.ry-book .ry-tagline { color: #34794f; font-size: 14px; letter-spacing: .06em; margin-top: 6px; }
+.ry-book .ry-edition { color: #9a9a92; font-size: 12px; margin-top: 6px; }
+.ry-book .ry-sec-hd { margin: 30px 0 12px; font-size: 12px; font-weight: bold; letter-spacing: .14em;
+  color: #8f8a82; text-transform: uppercase; text-align: center; }
+.ry-book .ry-sec-hd-main { margin-top: 40px; }
+.ry-book .ry-fronts { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; }
+.ry-book .ry-fronts a { border: 1.5px dashed #34794f; border-radius: 8px; padding: 8px 16px; color: #34794f;
+  font-family: Georgia, serif; font-size: 14px; text-decoration: none; text-align: center; }
+.ry-book .ry-fronts a span { display: block; font-size: 11px; color: #9a948b; }
+.ry-book .ry-fronts a:hover { background: #34794f; color: #fff; }
+.ry-book .ry-fronts a:hover span { color: #eee; }
+.ry-book .ry-sub { margin: 26px 0 10px; font-family: Georgia, serif; font-size: 16px; color: #23503a; text-align: center; }
+.ry-book .ry-sub span { display: block; font-size: 12px; color: #9a948b; margin-top: 2px; }
+.ry-book .ry-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 8px; }
+.ry-book .ry-grid a { display: block; border: 1px solid #e1ebe5; border-radius: 6px; background: #f7faf8; padding: 8px 8px 7px;
+  text-align: center; font-family: Georgia, serif; font-size: 16px; color: #34794f; text-decoration: none; line-height: 1.25; }
+.ry-book .ry-grid a small { display: block; font-size: 11px; color: #958f86; margin-top: 4px; line-height: 1.35; }
+.ry-book .ry-grid a:hover { background: #34794f; color: #fff; }
+.ry-book .ry-grid a:hover small { color: #eee; }
+.ry-book .ry-note { text-align: center; color: #8a8a82; font-size: 13px; line-height: 1.8; max-width: 640px; margin: 40px auto 0; }
+.ry-book .ry-note p { margin: 0 0 10px; }
+@media (max-width: 600px) { .ry-book .ry-grid { grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); } }
+</style>

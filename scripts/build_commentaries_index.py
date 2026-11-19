@@ -214,6 +214,11 @@ AUTHORS = OrderedDict([
                         years='1563–1632', dir='hildersham',
                         work_cn='诗篇 51 篇讲义 152 讲',
                         work_en='CLII Lectures upon Psalme LI')),
+    # 雷诺兹：1599 年 11 月生于南安普敦，1676-07-28 卒于诺里奇（主教任上）。本站只收《诗篇 110 篇释义》（1632，EEBO-TCP A10650）——单篇专书，见 MONOGRAPHS。
+    ('reynolds', dict(name='爱德华·雷诺兹', short='雷诺兹', en='Edward Reynolds',
+                  years='1599–1676', dir='reynolds',
+                  work_cn='诗篇 110 篇释义',
+                  work_en='An Explication of the Hundred and Tenth Psalm')),
     ('alexander', dict(name='约瑟·亚历山大', short='亚历山大', en='Joseph Addison Alexander',
                        years='1809–1860', dir='alexander',
                        work_cn='诗篇、以赛亚书、马太福音、使徒行传注释',
@@ -352,6 +357,8 @@ AUTHOR_COLORS = {
     'knox': ('#0f4c5c', '#16697d'),
     # 希尔德沙姆梅紫：HLS 网格里与既有各色及加尔文酒红、马太亨利金最小 ΔE 19.7（CIE76，费尔贝恩）；色板已挤，与先例同档。
     'hildersham': ('#5f2357', '#85327a'),
+    # 雷诺兹松绿：HLS 网格里与既有各色及加尔文酒红、马太亨利金最小 ΔE 19.6（CIE76，达文南特橄榄）；色板已挤，与先例同档。
+    'reynolds': ('#23503a', '#34794f'),
 }
 
 # 书卷卡片的入口注释家：历代解经版面每卷只显示 links 的第一条（commentaries/index.html
@@ -373,7 +380,7 @@ DUO_BOOKS = {}
 # 与 DUO_BOOKS 不同：那边卡片分色带、各带直接链到各家；这里整张卡片只链到选择页。
 # 诗篇：用户 2026-11-10 指定亚历山大与霍志恒合列，点进去再选；同日马太福音（原 DUO_BOOKS 三家色带）也改用此方案。
 # 2026-11-17 博纳尔上线，诗篇三家合列。
-PICK_BOOKS = {'psalms': ('alexander', 'spurgeon', 'vos', 'bonar', 'owen', 'manton', 'bridges', 'knox', 'hildersham'), 'matthew': ('spurgeon', 'dickson', 'alexander'),
+PICK_BOOKS = {'psalms': ('alexander', 'spurgeon', 'vos', 'bonar', 'owen', 'manton', 'bridges', 'knox', 'hildersham', 'reynolds'), 'matthew': ('spurgeon', 'dickson', 'alexander'),
               'romans': ('hodge', 'haldane'),   # 2026-11-10 霍尔丹上线，罗马书两家合列
               'isaiah': ('alexander', 'anon')}  # 2026-11-13 用户令以赛亚书加一本佚名注释，两家合列
 # 合列卡片用书卷自己的独立色，不用任何一家的作者色（用户 2026-11-10：「专门为诗篇挑选」；同日「颜色不能太相近」）。
@@ -405,7 +412,7 @@ description: 「历代解经」{cn}条目：{names}，选择进入。
 # 不进对比抽屉（compare_sources 只收有章节的目录）。
 # 单篇专书：目录名不是书卷名，归到某卷名下；只讲一两篇，不进逐章对比抽屉（2026-11-17 用户令收欧文、曼顿、布里奇斯论单篇诗篇）
 MONOGRAPHS = {('owen', 'psalm130'): 'psalms', ('manton', 'psalm119'): 'psalms', ('bridges', 'psalm119'): 'psalms',
-              ('knox', 'psalm6'): 'psalms', ('hildersham', 'psalm51'): 'psalms'}
+              ('knox', 'psalm6'): 'psalms', ('hildersham', 'psalm51'): 'psalms', ('reynolds', 'psalm110'): 'psalms'}
 ESSAY_ENTRIES = {'vos': {'psalms': '/vos/psalter/zh/'}}   # 入口一律指中文版（用户 2026-11-11）
 # 交界斜度：顶边比底边右移 2×DUO_SLANT 个百分点。原先 20 个百分点，三家时最左一带底边太窄放不下作者名，收到 8。
 DUO_SLANT = 4
@@ -438,6 +445,8 @@ BOOK_TITLES = {
                                 'An Exposition of Psalm CXIX'),
     ('hildersham', 'psalms'):  ('诗篇 51 篇讲义 152 讲',
                                 'CLII Lectures upon Psalme LI'),
+    ('reynolds', 'psalms'): ('诗篇 110 篇释义',
+                                'An Explication of the Hundreth and Tenth Psalme'),
     ('knox', 'psalms'):        ('诗篇第 6 篇讲解',
                                 'A Fort for the Afflicted, in an Exposition upon the Sixth Psalm'),
     ('owen', 'psalms'):        ('诗篇 130 篇实践讲解',
@@ -545,7 +554,7 @@ COMPARE_ACCENT = {
     'candlish': '#b07080', 'fairbairn': '#bc65ac', 'taylor': '#6f77e0',
     'hall': '#769019', 'barlow': '#2b9b8a', 'attersoll': '#8e8cbd', 'dickson': '#8b2499',
     'petter': '#38a622', 'foote': '#d14457', 'jones': '#9c9066', 'haldane': '#9b6899',
-    'bonar': '#d2776f', 'knox': '#16697d', 'hildersham': '#85327a',
+    'bonar': '#d2776f', 'knox': '#16697d', 'hildersham': '#85327a', 'reynolds': '#34794f',
 }
 COMPARE_LABEL = {
     'calvin': '加尔文注释', 'mhenry': '马太亨利注释', 'owen': '约翰欧文注释',
@@ -557,7 +566,7 @@ COMPARE_LABEL = {
     'candlish': '坎德利什讲解', 'fairbairn': '费尔贝恩注释', 'taylor': '泰勒注释',
     'hall': '霍尔注释', 'barlow': '巴洛讲解', 'attersoll': '阿特索尔注释', 'dickson': '迪克森简释',
     'petter': '佩特注释', 'foote': '福特讲义', 'jones': '琼斯简释', 'haldane': '霍尔丹释义',
-    'bonar': '博纳尔讲论', 'knox': '诺克斯讲解', 'hildersham': '希尔德沙姆讲义',
+    'bonar': '博纳尔讲论', 'knox': '诺克斯讲解', 'hildersham': '希尔德沙姆讲义', 'reynolds': '雷诺兹释义',
 }
 
 
@@ -580,7 +589,7 @@ PRIMARY_LANG = {'calvin': 'zh', 'mhenry': 'zh', 'bridges': 'zh', 'haldane': 'en'
                 'adams': 'en', 'rollock': 'en', 'jenkyn': 'en',
                 'candlish': 'en', 'fairbairn': 'en', 'taylor': 'en',
                 'hall': 'en', 'barlow': 'en', 'attersoll': 'en', 'dickson': 'en', 'petter': 'en',
-                'foote': 'en', 'jones': 'en', 'bonar': 'en', 'knox': 'en', 'hildersham': 'en'}
+                'foote': 'en', 'jones': 'en', 'bonar': 'en', 'knox': 'en', 'hildersham': 'en', 'reynolds': 'en'}
 
 
 def _lang_variants(aid, d: Path, name: str):
