@@ -566,3 +566,7 @@ Hook→I look、gradient→gradiens、had→lead、Itst→lest、multitude→mul
 - 附注：`scripts/isaiah_apply_image.py --apply` 重跑会在 17 章把插入型条目（old 为空或是 new 的子串）再插一遍（8 章 צר→צרצר、59 章 תהו67.—תהו）。已修：锚点后紧跟着已经是 new 就算已落；修后连跑两遍正文零改动。
 > 盲读复查累计十章 196.5 页 117 处 ≈ 0.6/页；去掉 1、40 两章后八章约 143.5 页 47 处 ≈ 0.33/页。
 - 清表：foreign_image.tsv 里 1573 条「找不到」（before+old 与 before+new 都不在发布页）挪到 `foreign_image_superseded.tsv` 留档（1080 条改正已在正文、只是锚点后来被改过；493 条该处后来被别的改正覆盖，其中原错文本仍在正文的 3 条逐条核过，均已改好）。现在 `isaiah_apply_image.py --apply` 报 0 条失败、退出 0、正文零改动。
+- 第 80 轮（随机抽章盲读复查，从未复查过的章里按 seed 20261118+79 抽到 41）：第 41 章（卷二 32–46，15 页）重读 2 处 ≈ 0.13/页 ✅：34 页 `dust or *chaff with* or *by means of his* sword` 斜体左右各错一词（原书 chaff *with* or *by means of* his sword）；44 页经文 `there was, none that told` 逗号是印面污点（平行两句无逗号），删。39 页 *gekrummtes*、37 页 Deut. 39: 10、35 页 ch. 41: 21–25 原书即如此，不改。
+- 第 80 轮全书同类 7 处（卷一 5 / 卷二 2）：**斜体多吞一个尾随虚词**（斜体段以 the/of/for/to/as/on 等收尾、后接正体词）：两卷 60 条候选，绝大多数是讨论介词短语本身（*swearing to*、*wait for*），挑 12 条看图，改 34 章 *as if* the、7 章 *even while it does last* the、22 章 *lower pool* of、28 章 *crown of elevation* for、6 章 *return* to、44 章 *…the water,* on、40 章 *before him,* as；9 章 *flesh of his* own、9 章 *as* men、40 章 *wages of*、66 章 *trembling to*、*angry with* 原书即斜体，不改。前置件 0。「there was, none」型游离逗号：两卷 0 新增。
+- 附带：`isaiah_fixes_lint.py` 报 manual_fixes.tsv 第 1231、1289 行两条旧规则会写双句点（正文已带句点），注释停用；lint 恢复全部通过。
+> 盲读复查累计十一章 211.5 页 119 处 ≈ 0.56/页；去掉 1、40 两章后九章约 158.5 页 49 处 ≈ 0.31/页。
