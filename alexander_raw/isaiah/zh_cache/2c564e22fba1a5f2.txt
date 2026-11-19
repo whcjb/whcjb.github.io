@@ -1,0 +1,23 @@
+ɪ Need to count asterisks. Original asterisks:
+1. *In that day* — 2
+2. *the Lord will take away* — 2
+3. *the bravery* — 2
+4. *of the ankle-bands* — 2
+5. *and the cauls* — 2
+6. *and the crescents* — 2
+7. *little suns* — 2
+8. *little moons* — 2
+9. *tasselled tresses,* — 2
+Total 18. "i. e." not italic here → 即.
+
+No HTML comments in this passage. Book title Latin: keep Latin with Chinese gloss. "Lugd. Bat." = Lugduni Batavorum → Leiden. Must not leave English words; Latin title is Latin, keep but Lugd. Bat. flagged... translate as 莱顿（Lugduni Batavorum）? Rule: Latin kept with gloss. The complaint was leaving Bat, Lugd. Safer: 莱顿，1745 年. German title Hartmann's: "Hebräerinn am Putztische und als Braut" — German, not English; keep with gloss. Names: Ewald, Schroeder, Alberti Schultens, Hartmann, Winer, Knobel, Henderson — first occurrence bracket.
+
+v. 17 → 第 17 节. "Jesai. 3: v. 16-24" inside Latin title; keep Latin title. Maybe "ad Jesai. 3: v. 16-24" keep as is within Latin. Hmm, "v." English? It's Latin abbreviation. Fine.
+
+"bravery (in the old English sense of finery)" — he's discussing the English word bravery. Render: *华美*（此处 *bravery* 取古英语「华饰」之义）. But adding *bravery* adds asterisks. Avoid: （取英文旧义，指华饰）. Good.
+
+Hebrew שביסים gloss（发网？) — he discusses meaning; give gloss maybe （通常译「发网」）. Simply שביסים（本节译作「发网」）. Fine. שמש（太阳）.
+
+"the noun from which the last verb in v. 16 is derived" — 第 16 节末一个动词即由此名词而来.
+
+Translate.第 17 节的预言虽已暗含一切妆饰尽遭剥夺之意，这里却又把要被除去之物逐一细列出来。这样细列有两重用处：对于身受其事的人，它使所警告的审判更加明白、更有分量；对于旁人，它又让人略见当时服饰奢靡到了何等地步。（正如埃瓦尔德〔Ewald〕说得好）我们不必设想这些物件曾一齐穿戴在身，也不必以为本段意在描绘一套完整的装束。它其实是把零散的各项逐一列举，在个人身上或配或不配，各不相同。凡是只凭名称罗列零散各项的地方，如今要一一认定其中某些物件都十分困难，这里也是如此。不过这一点不必太觉遗憾，因为罗列的主旨在于显出当时盛行的服饰奢靡，而这一效果并不全然取决于对每一项的确切解释。就细节而论，本段的意趣不在解经，而在考古。学者曾从这个角度另作专题、详加讨论，尤以施罗德（Schroeder）所著 *Commentarius philologico-criticus de vestitu mulierum Hebraearum, ad Jesai. 3: v. 16-24, cum praefatione Alberti Schultens*（《希伯来妇女服饰之语文批评注疏：以赛亚书 3:16-24，附阿尔贝特·舒尔滕斯〔Albert Schultens〕序》）为最，1745 年刊于莱顿。时代较晚而权威稍逊的，有哈特曼（Hartmann）的 *Hebräerinn am Putztische und als Braut*（《梳妆台前与作新妇的希伯来女子》）。此处不拟多作，只列出这些名称如今最通行的真义，遇有疑难之处，再附几种较重要的异说。——*当那日*（即方才所宣告之审判的指定时候）*主必除掉*（字面作「使之离去」，即从锡安的众女子身上）*华美的*（此处取该英文词的旧义，指华饰）*脚钏，*（第 16 节末一个动词即由此名词而来）*和发网，*（或作网结的帽子）*和月牙圈*（或作「小月亮」，即这种形状的金属饰物）。——施罗德把 שביסים（本节译作「发网」）解为 *小太阳*，与下文的 *小月亮* 相对，并认为这个词是 שמש（太阳）的指小形式，其中一个唇音换成了另一个唇音。维纳（Winer）、埃瓦尔德和克诺贝尔（Knobel）都采纳这一解释。按亨德森（Henderson）的说法，这个词是指 *缀穗的发辫，* 即编成辫子、垂至脚边的发绺。

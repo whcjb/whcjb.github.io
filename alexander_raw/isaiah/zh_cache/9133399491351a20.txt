@@ -1,0 +1,21 @@
+Count asterisks: *The mirrors and the tunics* (2), *and the turbans* (2), *and the veils.* (2), *(διαφανῆ λακωνικά*) (2), *turbans* (2), *ribands* (2), *veil* (2). Total 14.
+
+There's no HTML comment in the source; fine.
+
+Names: Kimchi, Schroeder (施罗德), Rosenmüller, Ewald, Henderson, Knobel — first occurrences need parentheses. Schroeder not in list but rule says all transliterated scholars. German "der feinen Zeuge" keep with gloss; "Ueberwürfe" keep with gloss. "Eng. Vs. hoods" — English version's word; discussing English word itself → *hoods*? That adds asterisks. Better: 英译本作"头巾"... but hoods is being discussed as English rendering. To avoid adding asterisks, translate as 英文钦定本作「兜帽」. Good.
+
+v. 19 → 第 19 节.
+
+Translation:
+
+*镜子与内衣*（细麻做的贴身衣），*和头巾*（东方通常的头饰，源自 צנף〔缠裹〕），*并蒙头的帕子。*
+
+Hmm, "veils" — 和合本 3:23 "蒙身的帕子". Use *和帕子。* Wait "and the veils" — *并帕子。* Put period inside.
+
+Next: 第一个词，七十士译本（*διαφανῆ λακωνικά*，透明的拉哥尼亚衣料）... must keep asterisk positions: "*(διαφανῆ λακωνικά*)" — open before paren, close before close paren. Do: （*διαφανῆ λακωνικά*〔透明的拉哥尼亚细衣〕）—but original open asterisk before paren. Keep count; position roughly. I'll write *（διαφανῆ λακωνικά*，即透明的拉哥尼亚细衣）.
+
+Ewald (der feinen Zeuge, 细薄衣料).
+
+Ribands → *丝带*. Veil → *帕子*.
+
+Knobel (Ueberwürfe, 外罩).*镜子与内衣*（细麻所制的贴身衣服），*和头巾*（东方通常的头饰，源自 צנף〔缠裹〕），*并帕子。*：头一个词，七十士译本*（διαφανῆ λακωνικά*，即透明的拉哥尼亚细衣）、金希（Kimchi）、施罗德（Schroeder）、罗森米勒（Rosenmüller）与埃瓦尔德（Ewald）（der feinen Zeuge，细薄的衣料）都解作她们所穿轻薄透明的衣裳；但多数释经者认为此词是指东方妇女随身携带的小金属镜。亨德森（Henderson）以为 צניפות 不是*头巾*（英文钦定本作「兜帽」），而是指用来束发或系住冠冕的*丝带*。他又解释说，此处所说的*帕子*是罩在其余一切衣服之外的大帕子，因而与第 19 节所提的小帕子有别。克诺贝尔（Knobel）也作同样的解释（Ueberwürfe，外罩）；但另有一些释经者所作的区分恰恰相反。

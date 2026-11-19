@@ -1,0 +1,20 @@
+<thinking_mode>
+Need to count asterisks. Original: *And I will give children to be their rulers, and childish things shall govern them.* (2), *sucklings.* (2), *puerilities* (2), *childishnesses* (2), *childish persons,* (2), *childish things* (2), *weaklings* (2), *ἐμπαῖκται,* (2), *effoeminati,* (2), *facinorosi.* (2). Total 20.
+
+No HTML comments in this passage. Abbreviations: Ew. = Ewald, Hg. = Hengstenberg, Hk. = Hendewerk, Kn. = Knobel, Gro. = Grotius, Low. = Lowth, J. H. Mich. = J. H. Michaelis, Lu. = Luther, Um. = Umbreit. Need translate with parenthetical original on first occurrence. Hendewerk and Knobel appear again later — second time no gloss. Lowth appears again later. Calvin no gloss. Cocceius gloss: 科克由斯（Cocceius）. Gesenius: 格塞尼乌斯（Gesenius). J. D. Michaelis: 约·大·米夏埃利斯（J. D. Michaelis）; J. H. Michaelis: 约·亨·米夏埃利斯（J. H. Michaelis）. Hitzig. Junius and Tremellius: 尤尼乌斯（Junius）与特雷梅利乌斯（Tremellius）.
+
+The abbreviated parenthesis: (Ew. Hg. Hk. Kn.) → （埃瓦尔德〔Ewald〕、亨斯滕伯格〔Hengstenberg〕...）. Hmm nested parentheses; use 埃瓦尔德 Ewald? Better: （埃瓦尔德［Ewald］、...）. Fine.
+
+Hebrew: שר（首领）; נערים（孩童）; תעלולים（孩子气／任性）; חלשיא（软弱者）. Greek ἐμπαῖκται（戏弄者）, Latin effoeminati（柔弱如妇人者）, facinorosi（作恶多端者）. Latin quote 'non ratione aetatis sed imprudentiae et ineptitudinis'（不是就年龄而言，而是就其轻率与无能而言）.
+
+The English words being discussed: *puerilities*, *childishnesses*, *childish persons*, *childish things* — these are rendering words; translate to Chinese within asterisks. *sucklings* → *吃奶的*. *weaklings* → *软弱者*. The Targum's English gloss — translate. Keep 20 asterisks.
+
+"v. 3" → 第 3 节.
+
+Draft:
+首领人物既被除去，自然的后果必是无能之辈继起——既无才干，又无阅历，也无操守；这一变局在此归于神报应的公义。*我必使孩童作他们的首领，孩子气的事必辖管他们。* 有人按狭义，将此应用于亚哈斯软弱邪恶的统治（埃瓦尔德［Ewald］、亨斯滕伯格［Hengstenberg］、亨德韦克［Hendewerk］、克诺贝尔［Knobel］）；也有人按广义，应用于以赛亚以后一连串软弱的君王（格劳秀斯［Grotius］、洛沃特［Lowth］）。但全然不必限定为君王，因为 שר（首领）泛指一切掌权者，在第 3 节也用于品级较低的官长。最可取的见解是：这些无能的掌权者被称为孩童或童子，不是就年龄说，而是就品性说，「non ratione aetatis sed imprudentiae et ineptitudinis」（不是因其年岁，乃是因其轻率与无能）（约·亨·米夏埃利斯［J. H. Michaelis］）。加尔文、科克由斯（Cocceius）、洛沃特、格塞尼乌斯（Gesenius）都把 תעלולים 当作 נערים（孩童）的单纯同义词；约·大·米夏埃利斯（J. D. Michaelis）则译作*吃奶的。* 希齐格（Hitzig）使它修饰动词，而不是作为主语与动词相配：「他们（这些孩童）必以专横的残暴辖管他们。」亨德韦克与克诺贝尔赋予这名词同样的意思，却保留通常的结构：「暴虐必辖管他们。」然而最可能的是，תעלולים 乃以抽象词代具体，用*幼稚*或*孩子气*指*孩子气的人，*或更带轻蔑地说，*孩子气的事*（路德、埃瓦尔德、温布赖特［Umbreit］）。他尔根作*软弱者*（חלשיא），七十士译本作*ἐμπαῖκται，*（戏弄人的）武加大译本作*effoeminati，*（柔弱如妇人的）尤尼乌斯（Junius）与特雷梅利乌斯（Tremellius）作*facinorosi。*（作恶多端的）
+
+Placement of glosses: put after the closing asterisk. For "*ἐμπαῖκται,*" comma inside. I'll write *ἐμπαῖκται*（戏弄人的），— but that moves comma outside; position of asterisks still corresponds. Fine. Use consistent brackets: first mention format in parentheses should be 名（原词）; inside a parenthetical list use 〔〕? Instruction says 〔希伯来文〕 reserved; use ［］. OK. Count asterisks: 2+2(吃奶)+2+2+2+2(幼稚,孩子气,人,事)=10... plus 软弱者 2, three foreign 6 => 20. Good.
+</thinking_mode>
+
+首领人物既被除去，自然的后果必是无能之辈继起——既无才干，又无阅历，也无操守；这一变局在此归于神报应的公义。*我必使孩童作他们的首领，孩子气的事必辖管他们。* 有人按狭义，将此应用于亚哈斯软弱邪恶的统治（埃瓦尔德［Ewald］、亨斯滕伯格［Hengstenberg］、亨德韦克［Hendewerk］、克诺贝尔［Knobel］）；也有人按广义，应用于以赛亚以后一连串软弱的君王（格劳秀斯［Grotius］、洛沃特［Lowth］）。但全然不必限定为君王，因为 שר（首领）泛指一切掌权者，在第 3 节也用于品级较低的官长。最可取的见解是：这些无能的掌权者被称为童子或孩童，不是就年龄说，而是就品性说，「non ratione aetatis sed imprudentiae et ineptitudinis」（不是因其年岁，乃是因其轻率与无能）（约·亨·米夏埃利斯［J. H. Michaelis］）。加尔文、科克由斯（Cocceius）、洛沃特、格塞尼乌斯（Gesenius）都把 תעלולים（孩子气）当作 נערים（孩童）的单纯同义词；约·大·米夏埃利斯（J. D. Michaelis）则译作*吃奶的。* 希齐格（Hitzig）使它修饰动词，而不是作为主语与动词相配：「他们（这些孩童）必以专横的残暴辖管他们。」亨德韦克与克诺贝尔赋予这名词同样的意思，却保留通常的结构：「暴虐必辖管他们。」然而最可能的是，תעלולים 乃以抽象词代具体，用*幼稚*或*孩子气*指*孩子气的人，*或更带轻蔑地说，*孩子气的事*（路德、埃瓦尔德、温布赖特［Umbreit］）。他尔根作*软弱者*（חלשיא），七十士译本作*ἐμπαῖκται，*（戏弄人的）武加大译本作*effoeminati，*（柔弱如妇人的）尤尼乌斯（Junius）与特雷梅利乌斯（Tremellius）作*facinorosi。*（作恶多端的）
