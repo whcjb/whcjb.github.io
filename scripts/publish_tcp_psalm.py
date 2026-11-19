@@ -29,7 +29,7 @@ TEI = tt.TEI
 TOK = re.compile(r'•+|〈◊〉|〈…〉|〈Greek〉|▪')
 FRONT_LABEL = {'title_page': ('title', 'Title Page', '书名页'), 'dedication': ('dedication', 'The Epistle Dedicatory', '献辞'),
                'to_the_reader': ('to-the-reader', 'To the Reader', '致读者'), 'errata': ('errata', 'Errata', '勘误表'),
-               'diagram': ('method', 'The Method of the Psalm', '全篇纲目'), 'prayer': ('prayer', 'Prayers', '祷文')}
+               'diagram': ('method', 'The Method of the Psalm', '全篇纲目'), 'prayer': ('prayers', 'Prayers', '祷文')}
 
 BOOKS = {
     'reynolds-psalm110': dict(
@@ -49,6 +49,26 @@ BOOKS = {
         about_zh='雷诺兹任林肯律师学院讲道人时讲诗篇 110 篇，1632 年出版。原书按经节分部；第 1–4 节讲得很长，本站按原书页码约三十页一切，'
                  '各页页首列出作者卷首目录里落在本页的条目。',
         omitted_en='The index of Scripture places is not included.', omitted_zh='卷末经文索引未收。'),
+    'cowper-psalm119': dict(
+        tcp='A19498', author='cowper', book='psalm119', P='cw', c0='#6b6128', c1='#a49746', psalm=119,
+        short='Cowper on Psalm 119', hero='Psalm 119',
+        title_en="A Holy Alphabet for Sion's Scholars",
+        tagline="William Cowper · A Holy Alphabet for Sion's Scholars",
+        edition='London: H. Lownes for John Budge, 1613 · STC 5926', year='1613',
+        front=['title_page', 'dedication'], back=[], body_back=['prayer'],
+        units=('divs', 'body/div/div'), acrostic=True,
+        notes={'v73-80': 'Verse 80 is not expounded in the original edition: the exposition of verse 79 ends on '
+                         'p. 197 and Caph begins on p. 198. 原书漏讲第 80 节：第 79 节讲到第 197 页结束，第 198 页即接 CAPH。'},
+        about_en='Cowper, minister at Perth and from 1612 Bishop of Galloway, published this verse-by-verse commentary '
+                 'on the whole of Psalm 119 in 1613 (its running title is The Anatomie of a Christian); each of the '
+                 'twenty-two letters of the Hebrew alphabet is '
+                 'one page here. Verse 80 is passed over in the original edition (verse 79 ends on p. 197, Caph begins on p. 198). '
+                 'The marginal summaries of the original are given beside the text.',
+        about_zh='考珀先任珀斯牧师，1612 年起任加洛韦主教；这部逐节注解全篇诗篇 119 篇的书 1613 年出版（书眉题作「基督徒剖析」）；本站按希伯来字母每八节一页，共 22 页。'
+                 '原书漏讲第 80 节（第 79 节讲到第 197 页，第 198 页即接下一字母）。原书页边的提要排在正文旁。',
+        omitted_en="The author's two prayers before his evening doctrine are given after the exposition; the table of "
+                   'principal points is not included.',
+        omitted_zh='作者晚间讲道前常用的两篇祷文附在讲解之后；卷末要点索引未收。'),
 }
 
 LAYOUT_CHAPTER = r'''---
@@ -127,6 +147,7 @@ layout: default
 .__P__-wrap .__P__-pb[data-p]::before { content: "p." attr(data-p); font-size: 10.5px; color: #b5afa6; font-style: normal;
   margin: 0 4px; border: 1px solid var(--rule); border-radius: 3px; padding: 0 3px; vertical-align: 1px; }
 .__P__-wrap .__P__-gap { color: #c0392b; cursor: help; }
+.__P__-wrap .__P__-lost { font-size: 14px; color: #a0522d; border: 1px dashed #e0b8a0; border-radius: 4px; padding: 8px 12px; }
 .__P__-wrap .__P__-stamp { text-align: right; color: #aaa59d; font-size: 12px; margin-top: 30px; font-family: Georgia, serif; }
 @media (max-width: 767px) {
   .__P__-wrap .__P__-title { font-size: 23px; }
@@ -220,6 +241,9 @@ def render(r, e, P, skip_head=False):
             tt.blocks(r, c, inner)
             txt = '\n\n'.join(x[-1] for x in inner if x[0] != 'pb' and isinstance(x[-1], str))
             out.append(('text', txt.strip()))
+            continue
+        if c.tag == TEI + 'div':                   # 子 div（逐节）自己递归，epigraph 才能走上面的经文框
+            out.extend(render(r, c, P))
             continue
         tt.block(r, c, out, 3)
     return out
@@ -318,12 +342,26 @@ def build(key):
             if ty in keep:
                 slug, en, zh = FRONT_LABEL[ty]
                 acc.append(dict(slug=slug, title=en, zh=zh, md=tt.to_md(P, render(r, d, P))))
+    for ty in c.get('body_back', []):           # 正文层里的附录（考珀的两篇祷文）并成一页，排在讲解之后
+        ds = [d for d in text.find(TEI + 'body').iter(TEI + 'div') if d.get('type') == ty]
+        if ds:
+            slug, en, zh = FRONT_LABEL[ty]
+            items = []
+            for d in ds:
+                items += render(r, d, P)
+            backs.insert(0, dict(slug=slug, title=en, zh=zh, md=tt.to_md(P, items)))
     units = []
     kind = c['units'][0]
     for d in find(text, c['units'][1]):
-        if d.tag != TEI + 'div':
+        if d.tag != TEI + 'div' or d.get('type') in c.get('body_back', []):
             continue
         v = verse_label(d, r)
+        if c.get('acrostic'):                      # 诗篇 119：字母名作页名，八节一页
+            i = len(units)
+            v = f'{8 * i + 1}–{8 * i + 8}'
+            name = tt.text_of(d.find(TEI + 'head')).replace('ſ', 's').rstrip('.').replace(' ', '').title()
+            units.append(dict(verse=v, part=None, items=render(r, d, P), pages=None, name=name))
+            continue
         items = render(r, d, P)
         if kind == 'pages':
             N = c['units'][2]
@@ -353,7 +391,13 @@ def build(key):
     # 页码范围：下一单元起页之前
     for i, u in enumerate(units):
         u['md'] = gapify(tt.to_md(P, u.pop('items')), P)
+        if not u['pages']:
+            ps = [int(x) for x in re.findall(r'data-p="(\d+)"', u['md'])]
+            u['pages'] = (ps[0], ps[-1]) if ps else None
         u['slug'] = f'v{u["verse"].replace("–", "-")}' + (f'-{u["part"]}' if u['part'] else '')
+        note = c.get('notes', {}).get(u['slug'])
+        if note:
+            u['md'] = f'<p class="{P}-lost">{note}</p>\n\n' + u['md']
     for i, u in enumerate(units):
         if u['pages'] and i + 1 < len(units) and units[i + 1]['pages']:
             u['pages'] = (u['pages'][0], units[i + 1]['pages'][0] - (0 if units[i + 1]['md'].lstrip().startswith(
@@ -377,6 +421,8 @@ def publish(key, c, fronts, units, backs, gaps, OUT, BASE, RAW):
     def label_of(k, x):
         if k == 'front':
             return x['title']
+        if x.get('name'):
+            return x['name']
         return f'Verse{"s" if "–" in x["verse"] else ""} {x["verse"]}' + (f' · Part {x["part"]}' if x['part'] else '')
 
     for i, (k, x) in enumerate(pages):
@@ -385,7 +431,8 @@ def publish(key, c, fronts, units, backs, gaps, OUT, BASE, RAW):
         if k == 'front':
             title, sub, body = x['title'], x['zh'], gapify(x['md'], P)
         else:
-            title = vref(x) + (f' · Part {x["part"]} of {x["nparts"]}' if x['part'] else '')
+            title = (f'{x["name"]} · ' if x.get('name') else '') + vref(x) + \
+                (f' · Part {x["part"]} of {x["nparts"]}' if x['part'] else '')
             sub = (f'pp. {x["pages"][0]}–{x["pages"][1]} of the {c["year"]} edition' if x['pages'] else '')
             body = ''
             if x['contents']:
@@ -413,6 +460,8 @@ def publish(key, c, fronts, units, backs, gaps, OUT, BASE, RAW):
         cap = (re.sub(r'^\d+\s+', '', plain(u['contents'][0][0]))[:60] if u['contents'] else '')
         pp = f'pp. {u["pages"][0]}–{u["pages"][1]}' if u['pages'] else ''
         tip = ' · '.join(plain(lab) for lab, _ in u['contents'][:6]).replace('"', '&quot;')
+        if u.get('name'):
+            cap = f'vv. {u["verse"]}'
         L.append(f'  <a href="{{{{ site.baseurl }}}}{BASE}{u["slug"]}/" title="{tip}">{label_of("unit", u)}'
                  f'<small>{cap}{"<br>" if cap and pp else ""}{pp}</small></a>')
     L.append('</div>')

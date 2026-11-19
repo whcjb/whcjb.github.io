@@ -1,0 +1,83 @@
+---
+layout: default
+---
+{%- comment -%}
+  Cowper on Psalm 119 正文页。由 scripts/publish_tcp_psalm.py 生成（BOOKS['cowper-psalm119']），底本 EEBO-TCP A19498（CC0）。
+  ⚠️ 不复用别家 layout（每本书独立样式）；配色 #6b6128 / #a49746，类名 cw- 前缀。
+  - 本页所含目录条目 → `.cw-contents`；所讲经文 → `.cw-text`；页边旁注 → `.cw-margin`；印本页码 → `.cw-pb`（#pN）。
+  - 录入本读不出的字 → `.cw-gap`（标红）。目前只有英文版，不接经文弹层（模块只认中文书卷名）。
+{%- endcomment -%}
+
+<div class="container cw-wrap" style="padding-top: 70px;">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <div class="cw-chrome"><a href="{{ site.baseurl }}/cowper/psalm119/">&larr; {{ page.book_name }}</a></div>
+      <h1 class="cw-title">{{ page.title }}</h1>
+      {% if page.subtitle %}<p class="cw-subtitle">{{ page.subtitle }}</p>{% endif %}
+      <div class="cw-nav">
+        {% if page.prev_url %}<a href="{{ site.baseurl }}{{ page.prev_url }}">&larr; {{ page.prev_label }}</a>{% else %}<span></span>{% endif %}
+        {% if page.next_url %}<a href="{{ site.baseurl }}{{ page.next_url }}">{{ page.next_label }} &rarr;</a>{% else %}<span></span>{% endif %}
+      </div>
+      <div class="cw-content">
+        {{ content }}
+      </div>
+      {% if page.date %}<div class="cw-stamp">Published {{ page.date | date: "%Y-%m-%d %H:%M" }}</div>{% endif %}
+      <div class="cw-nav cw-nav-foot">
+        {% if page.prev_url %}<a href="{{ site.baseurl }}{{ page.prev_url }}">&larr; {{ page.prev_label }}</a>{% else %}<span></span>{% endif %}
+        {% if page.next_url %}<a href="{{ site.baseurl }}{{ page.next_url }}">{{ page.next_label }} &rarr;</a>{% else %}<span></span>{% endif %}
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+.cw-wrap { --ink: #a49746; --ink-dark: #6b6128; --rule: #f1efe3; --paper: #fbfbf8; --body: #2d2b28; }
+.cw-wrap .cw-chrome, .cw-wrap .cw-nav { font-size: 13px; display: flex; justify-content: space-between; gap: 12px;
+  align-items: center; font-family: Georgia, "Times New Roman", serif; }
+.cw-wrap .cw-chrome { margin: 18px 0 22px; }
+.cw-wrap .cw-chrome a, .cw-wrap .cw-nav a { color: var(--ink-dark); text-decoration: none; }
+.cw-wrap .cw-chrome a:hover, .cw-wrap .cw-nav a:hover { text-decoration: underline; }
+.cw-wrap .cw-title { font-family: Georgia, "Times New Roman", serif; font-size: 28px; font-weight: normal;
+  color: var(--ink-dark); text-align: center; margin: 10px 0 4px; line-height: 1.3; }
+.cw-wrap .cw-subtitle { text-align: center; font-size: 14px; color: #8a857e; margin: 0 0 6px;
+  font-family: Georgia, "Times New Roman", serif; font-style: italic; }
+.cw-wrap .cw-nav { margin: 14px 0 26px; }
+.cw-wrap .cw-nav-foot { margin-top: 44px; padding-top: 16px; border-top: 1px solid var(--rule); }
+.cw-wrap .cw-content { font-family: Georgia, "Times New Roman", serif; font-size: 17px; line-height: 1.85; color: var(--body); }
+.cw-wrap .cw-content p { margin: 0 0 16px; text-align: justify; }
+.cw-wrap .cw-content h3, .cw-wrap .cw-content h4 { font-size: 18px; font-weight: normal; text-align: center;
+  color: var(--ink-dark); margin: 26px 0 18px; line-height: 1.5; }
+.cw-wrap .cw-contents { background: var(--paper); border: 1px solid var(--rule); border-radius: 4px;
+  padding: 12px 18px 6px; margin: 0 0 26px; font-size: 14.5px; line-height: 1.65; color: #4a4640; }
+.cw-wrap .cw-contents-h { font-size: 12px; letter-spacing: .1em; color: var(--ink-dark); margin-bottom: 6px; }
+.cw-wrap .cw-contents-h span { letter-spacing: 0; color: #a39d94; margin-left: 4px; }
+.cw-wrap .cw-contents ul { margin: 0 0 6px; padding-left: 18px; }
+.cw-wrap .cw-contents li { margin: 0 0 4px; }
+.cw-wrap .cw-contents li small { color: #a39d94; margin-left: 4px; }
+.cw-wrap .cw-text { border-left: 3px solid var(--ink); background: var(--paper); padding: 10px 16px; margin: 0 0 22px; }
+.cw-wrap .cw-text p { margin: 0 0 6px; text-align: left; font-style: italic; }
+.cw-wrap .cw-dropcap { float: left; font-size: 3em; line-height: .85; margin: 4px 7px 0 0; color: var(--ink-dark); }
+.cw-wrap .cw-quote { text-align: center !important; font-style: italic; }
+.cw-wrap .cw-closer { text-align: right !important; font-style: italic; }
+.cw-wrap .cw-trailer { text-align: center !important; letter-spacing: .1em; }
+.cw-wrap .cw-item { margin: 0 0 8px 24px !important; text-align: left !important; }
+.cw-wrap .cw-poem { margin: 0 0 16px 28px; }
+.cw-wrap .cw-poem p, .cw-wrap .cw-l { margin: 0 !important; text-align: left !important; }
+.cw-wrap .cw-table { border-collapse: collapse; margin: 0 auto 16px; font-size: 14px; }
+.cw-wrap .cw-table td { border: 1px solid var(--rule); padding: 3px 8px; vertical-align: top; }
+.cw-wrap .cw-margin { display: block; margin: 2px 0 8px; padding-left: 10px; border-left: 2px solid var(--rule);
+  font-size: 13px; line-height: 1.55; color: #857f76; font-style: normal; text-align: left; }
+@media (min-width: 1200px) {
+  .cw-wrap .cw-margin { float: right; clear: right; width: 150px; margin: 4px -182px 8px 16px; padding-left: 8px; }
+}
+.cw-wrap .cw-pb { scroll-margin-top: 80px; }
+.cw-wrap .cw-pb[data-p]::before { content: "p." attr(data-p); font-size: 10.5px; color: #b5afa6; font-style: normal;
+  margin: 0 4px; border: 1px solid var(--rule); border-radius: 3px; padding: 0 3px; vertical-align: 1px; }
+.cw-wrap .cw-gap { color: #c0392b; cursor: help; }
+.cw-wrap .cw-lost { font-size: 14px; color: #a0522d; border: 1px dashed #e0b8a0; border-radius: 4px; padding: 8px 12px; }
+.cw-wrap .cw-stamp { text-align: right; color: #aaa59d; font-size: 12px; margin-top: 30px; font-family: Georgia, serif; }
+@media (max-width: 767px) {
+  .cw-wrap .cw-title { font-size: 23px; }
+  .cw-wrap .cw-content { font-size: 16px; }
+}
+</style>

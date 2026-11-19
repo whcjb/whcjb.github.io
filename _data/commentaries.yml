@@ -263,6 +263,15 @@ authors:
     work_en: "An Explication of the Hundred and Tenth Psalm"
     no_bio: false
     books: 1
+  - id: cowper
+    name: "威廉·考珀"
+    short: "考珀"
+    en: "William Cowper"
+    years: "1568–1619"
+    work_cn: "锡安学子的圣字母表（诗篇 119 篇注释）"
+    work_en: "A Holy Alphabet for Sion's Scholars"
+    no_bio: false
+    books: 1
   - id: alexander
     name: "约瑟·亚历山大"
     short: "亚历山大"
@@ -425,7 +434,7 @@ books:
     testament: ot
     chapters: 150
     pick: true
-    pick_n: 10
+    pick_n: 11
     pick_c0: "#2c2864"
     pick_c1: "#4a4382"
     links:
@@ -439,6 +448,7 @@ books:
       - {author: knox, path: "/knox/psalm6/", url_tpl: "/knox/psalm6/__CH__/", title_cn: "诗篇第 6 篇讲解", title_en: "A Fort for the Afflicted, in an Exposition upon the Sixth Psalm", c0: "#0f4c5c", c1: "#16697d"}
       - {author: hildersham, path: "/hildersham/psalm51/", url_tpl: "/hildersham/psalm51/__CH__/", title_cn: "诗篇 51 篇讲义 152 讲", title_en: "CLII Lectures upon Psalme LI", c0: "#5f2357", c1: "#85327a"}
       - {author: reynolds, path: "/reynolds/psalm110/", url_tpl: "/reynolds/psalm110/__CH__/", title_cn: "诗篇 110 篇释义", title_en: "An Explication of the Hundreth and Tenth Psalme", c0: "#23503a", c1: "#34794f"}
+      - {author: cowper, path: "/cowper/psalm119/", url_tpl: "/cowper/psalm119/__CH__/", title_cn: "锡安学子的圣字母表", title_en: "A Holy Alphabet for Sion's Scholars", c0: "#6b6128", c1: "#a49746"}
   - id: proverbs
     name: "箴言"
     en: "Proverbs"

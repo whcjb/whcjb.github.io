@@ -56,15 +56,15 @@ class R:
         if reason == 'foreign':
             self.gaps['foreign'] = self.gaps.get('foreign', 0) + 1
             return GAP_FOREIGN
-        m = re.match(r'(\d+) letters?', ext)
+        m = re.match(r'(\d+)\+? letters?', ext)
         if m:
             self.gaps['letter'] = self.gaps.get('letter', 0) + int(m.group(1))
             return GAP_LETTER * int(m.group(1))
-        m = re.match(r'(\d+) words?', ext)
+        m = re.match(r'(\d+)\+? words?', ext)
         if m:
             self.gaps['word'] = self.gaps.get('word', 0) + int(m.group(1))
             return ' ' + ' '.join([GAP_WORD] * int(m.group(1))) + ' '
-        if re.match(r'\d+ (span|line|page|paragraph)s?', ext):
+        if re.match(r'\d+\+? (span|line|page|paragraph)s?', ext):
             self.gaps['span'] = self.gaps.get('span', 0) + 1
             return ' ' + GAP_SPAN + ' '
         raise ValueError(f'未知 gap: {e.attrib}')
