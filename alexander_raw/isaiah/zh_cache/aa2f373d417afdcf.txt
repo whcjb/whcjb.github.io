@@ -1,0 +1,29 @@
+汁 Translate. Count asterisks carefully.
+
+Original asterisks: let me list segments.
+1. *I will sing, if you please* 
+2. *of my friend*
+3. *my friend's song of his vineyard*
+4. *My friend had a vineyard in a hill of great fertility*
+5. *in a horn, a son of fatness,*
+6. *now will I sing,*
+7. *Sing* and *song* — two
+8. *(for my beloved,* — opens; closes? "*(for my beloved,* i. e. ..." yes closed.
+9. *(to my beloved)*
+10. *(of my beloved,*
+11. *of David)* — wait: "like לדוד a Psalm *of David)*" yes one pair.
+12. *his vineyard.*
+13. *song of my friend*
+14. *respecting*
+15. *uncle,*
+16. *friend,*
+17. *on the projection (Vorsprung) of a fat place;*
+18. *horn*
+19. *on* but *in,*
+No *i. e.* italics here (plain i. e.). OK.
+
+Schreckhorn → 施雷克峰（Schreckhorn）？Rule: no English words. These are German place names; translate as 施雷克角峰、韦特角峰. Better: 瑞士的施雷克峰与韦特峰. Maybe keep "horn" sense: 施雷克霍恩峰. Since point is that "horn" means peak, render "施雷克角（施雷克霍恩峰）". Simple: "瑞士的施雷克霍恩峰与韦特霍恩峰". Fine without Latin letters. Vorsprung is German, keep with gloss: (Vorsprung，突出部). It's foreign, rule allows Latin-type foreign as original. Keep.
+
+Names: Calvin no gloss; Grotius 格劳秀斯（Grotius）; Maurer 毛雷尔（Maurer）; Knobel; Luther no; Cocceius 科克策尤斯（Cocceius）; Umbreit; Clericus 克莱里库斯（Clericus）; Vitringa. Virgil 维吉尔 — well known; Latin quote keep with gloss.
+
+Translate quotations of sing: "*我要唱，请容我唱*"? "I will sing, if you please" → *我要唱，若你们许可*. ok.这比喻见于第 1-6 节，第 7 节则加以应用。比喻的引入方式，是要使那些行为正受其责备的人愿意倾听，也在某种程度上把它的用意隐藏起来，直到应用之时。先知提出要唱一首歌，即要讲述一段有韵律、带比喻的叙事。这首歌关乎他的一位朋友，其实是他朋友自己论到其葡萄园的歌。末一分句描写葡萄园的位置，即它向阳的地势与肥沃的土壤。*我要唱，若你们许可*（或作：容我唱，我求你们），*论我的朋友*（即关于他），*我朋友论他葡萄园的歌*（即关于葡萄园）。*我的朋友有一葡萄园在极肥沃的山冈上*（字面作 *在一角上，一肥油之子，* 这是东方的惯用语，把人间亲属的称谓用于各种关系。）——通行英译本作 *如今我要唱，* 似乎把 נא（求你）当作时间副词；其实它是一个恳求的小品词，用以缓和表达意愿时的语气，使这番话带上温和、谦恭的口吻。——*唱* 与 *歌* 二词，正如在我们的语言中一样，是就诗而言，并不意味着真有音乐上的演奏。——加尔文的译法 *（为我所爱的，* 即奉他的名、代表他本人、为他的缘故）与这小品词的用法不合。格劳秀斯（Grotius）作 *（向我所爱的）*，也不恰当，因为这里并非对那位朋友说话，这也不是一首颂歌。毛雷尔（Maurer）作 *（我所爱者的，* 即属于他的，如 לדוד（属大卫的）一语，作「大卫的 *诗」*），但这种形式只用于题铭。ל 在此词之前的意思，无疑与它在 *他葡萄园* 之前的意思相同。克诺贝尔（Knobel）认为 *我朋友的歌* 也是指一首 *关于* 他的歌，因为直到第 3 节，这位朋友才被引入来说话。但正因如此，这首歌先被称为关于他的歌，随后才被称为他自己的歌。——有人把同源的两个词 ידידי（我所亲爱的）与 דודי（我所爱的）归于不同的主体；但二者既都被说成拥有那葡萄园，其为同一人就很明显了。——武加大译本与路德把 דוד 取其常义 *叔伯，* 科克策尤斯（Cocceius）则把它用于圣灵，这完全是武断之说。此词似乎是与 ידיד 并用，以变换表达同一个意思，即 *朋友，* 这两个不常见的词是诗意的用法，并非神秘的用法。在先知自己加以解释之前，必须把他理解为是在讲一位属人的朋友。——温布赖特（Umbreit）使 קרן（角）支配下一个短语，作 *在一肥地的突出部（Vorsprung，突出处）上；* 但这样一来，后一短语就太不确定了。——克莱里库斯（Clericus）以为此处暗指盛油的角，维特林加（Vitringa）以为暗指圣地的弯曲形状；但多数释经者都认为，此处的 *角* 正如在其他许多语言中一样，是指山的尖峰（例如瑞士的施雷克霍恩峰与韦特霍恩峰），或如在阿拉伯文中，指一座孤立的山冈。——这介词的本义不是 *在……上，* 而是 *在……里，* 意即葡萄园只占了山冈的一部分，且不在山顶，而在向阳的坡上，那正是种葡萄最好的地方。（Apertos Bacchus amat colles〔酒神喜爱开阔的山冈〕。维吉尔，《农事诗》2:112。）
