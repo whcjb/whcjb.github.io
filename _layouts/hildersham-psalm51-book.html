@@ -1,0 +1,46 @@
+---
+layout: default
+---
+{%- comment -%}
+  希尔德沙姆《诗篇 51 篇讲义 152 讲》书卷首页。由 scripts/publish_hildersham_psalm51_en.py 生成目录：
+  卷首三页 + 按所讲经节分组的 152 讲方格（格下注讲道日期，悬停看本讲提要首条）。
+  ⚠️ 不复用别家 layout；配色梅紫 #5f2357 / #85327a。目前只有英文版。
+{%- endcomment -%}
+
+<div class="container hilder-book" style="padding-top:80px; max-width:900px;">
+  <div class="hd-hero">
+    <h1>{{ page.hero | default: page.book_name }}</h1>
+    <div class="hd-tagline">{{ page.tagline }}</div>
+    <div class="hd-edition">{{ page.edition }}</div>
+  </div>
+
+  {{ content }}
+</div>
+
+<style>
+.hilder-book .hd-hero { text-align: center; margin-bottom: 8px; }
+.hilder-book .hd-hero h1 { font-family: Georgia, "Songti SC", serif; color: #5f2357; font-size: 30px; letter-spacing: .04em; }
+.hilder-book .hd-tagline { color: #85327a; font-size: 14px; letter-spacing: .08em; margin-top: 6px; }
+.hilder-book .hd-edition { color: #9a9a92; font-size: 12px; margin-top: 6px; }
+.hilder-book .hd-sec-hd { margin: 30px 0 12px; font-size: 12px; font-weight: bold; letter-spacing: .14em;
+  color: #94808f; text-transform: uppercase; text-align: center; }
+.hilder-book .hd-sec-hd-main { margin-top: 40px; }
+.hilder-book .hd-fronts { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; }
+.hilder-book .hd-fronts a { border: 1.5px dashed #85327a; border-radius: 8px; padding: 8px 16px; color: #85327a;
+  font-family: Georgia, serif; font-size: 14px; text-decoration: none; text-align: center; }
+.hilder-book .hd-fronts a span { display: block; font-size: 11px; color: #a08898; }
+.hilder-book .hd-fronts a:hover { background: #85327a; color: #fff; }
+.hilder-book .hd-fronts a:hover span { color: #f2e4ee; }
+.hilder-book .hd-sub { margin: 26px 0 10px; font-family: Georgia, serif; font-size: 16px; color: #5f2357; text-align: center; }
+.hilder-book .hd-sub span { display: block; font-family: inherit; font-size: 12px; color: #9a8c95; margin-top: 2px; }
+.hilder-book .hd-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(92px, 1fr)); gap: 8px; }
+.hilder-book .hd-grid a { display: block; border: 1px solid #ecdfe9; border-radius: 6px; background: #fbf7fa; padding: 7px 4px 6px;
+  text-align: center; font-family: Georgia, serif; font-size: 18px; color: #85327a; text-decoration: none; line-height: 1.2; }
+.hilder-book .hd-grid a small { display: block; font-size: 10.5px; color: #9a8c95; margin-top: 3px; white-space: nowrap;
+  overflow: hidden; text-overflow: ellipsis; }
+.hilder-book .hd-grid a:hover { background: #85327a; color: #fff; }
+.hilder-book .hd-grid a:hover small { color: #f2e4ee; }
+.hilder-book .hd-note { text-align: center; color: #8a8a82; font-size: 13px; line-height: 1.8; max-width: 640px; margin: 40px auto 0; }
+.hilder-book .hd-note p { margin: 0 0 10px; }
+@media (max-width: 600px) { .hilder-book .hd-grid { grid-template-columns: repeat(auto-fill, minmax(76px, 1fr)); } }
+</style>

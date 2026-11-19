@@ -58,6 +58,7 @@ exclude:
   - petter_raw
   - jones_raw
   - knox_raw
+  - hildersham_raw
   - hodge_raw
   - hutcheson_raw
   - leighton_raw

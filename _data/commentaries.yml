@@ -245,6 +245,15 @@ authors:
     work_en: "A Fort for the Afflicted, in an Exposition upon the Sixth Psalm"
     no_bio: false
     books: 1
+  - id: hildersham
+    name: "亚瑟·希尔德沙姆"
+    short: "希尔德沙姆"
+    en: "Arthur Hildersham"
+    years: "1563–1632"
+    work_cn: "诗篇 51 篇讲义 152 讲"
+    work_en: "CLII Lectures upon Psalme LI"
+    no_bio: false
+    books: 1
   - id: alexander
     name: "约瑟·亚历山大"
     short: "亚历山大"
@@ -407,7 +416,7 @@ books:
     testament: ot
     chapters: 150
     pick: true
-    pick_n: 8
+    pick_n: 9
     pick_c0: "#2c2864"
     pick_c1: "#4a4382"
     links:
@@ -419,6 +428,7 @@ books:
       - {author: manton, path: "/manton/psalm119/", url_tpl: "/manton/psalm119/__CH__/", title_cn: "诗篇 119 篇讲章", title_en: "One Hundred and Ninety Sermons on the Hundred and Nineteenth Psalm", c0: "#4a2540", c1: "#5b2f4a"}
       - {author: bridges, path: "/bridges/psalm119/", url_tpl: "/bridges/psalm119/__CH__/", title_cn: "诗篇 119 篇讲解", title_en: "An Exposition of Psalm CXIX", c0: "#5B3A29", c1: "#96613F"}
       - {author: knox, path: "/knox/psalm6/", url_tpl: "/knox/psalm6/__CH__/", title_cn: "诗篇第 6 篇讲解", title_en: "A Fort for the Afflicted, in an Exposition upon the Sixth Psalm", c0: "#0f4c5c", c1: "#16697d"}
+      - {author: hildersham, path: "/hildersham/psalm51/", url_tpl: "/hildersham/psalm51/__CH__/", title_cn: "诗篇 51 篇讲义 152 讲", title_en: "CLII Lectures upon Psalme LI", c0: "#5f2357", c1: "#85327a"}
   - id: proverbs
     name: "箴言"
     en: "Proverbs"

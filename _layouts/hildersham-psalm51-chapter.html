@@ -1,0 +1,90 @@
+---
+layout: default
+---
+{%- comment -%}
+  希尔德沙姆《诗篇 51 篇讲义 152 讲》(1635) 讲次页。由 scripts/publish_hildersham_psalm51_en.py 生成。
+  ⚠️ 不复用别家 layout（每本书独立样式）；配色梅紫 #5f2357 / #85327a（与「历代解经」既有各色最小 ΔE 19.7），类名 hd- 前缀。
+  底本 EEBO-TCP A03343（CC0），见 hildersham_raw/psalm51/。
+  - 作者自编本讲提要 → `.hd-contents`；讲首所讲经文 → `.hd-text`；页边旁注 → `.hd-margin`；1635 印本页码 → `.hd-pb`（#pN）。
+  - 录入本读不出的字 → `.hd-gap`（标红）。目前只有英文版，不接经文弹层（模块只认中文书卷名）。
+{%- endcomment -%}
+
+<div class="container hilder-wrap" style="padding-top: 70px;">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+
+      <div class="hd-chrome">
+        <a href="{{ site.baseurl }}/hildersham/{{ page.book_id }}/">&larr; {{ page.book_name }}</a>
+      </div>
+
+      <h1 class="hd-title">{{ page.title }}</h1>
+      {% if page.subtitle %}<p class="hd-subtitle">{{ page.subtitle }}</p>{% endif %}
+
+      <div class="hd-nav">
+        {% if page.prev_url %}<a href="{{ site.baseurl }}{{ page.prev_url }}">&larr; {{ page.prev_label }}</a>{% else %}<span></span>{% endif %}
+        {% if page.next_url %}<a href="{{ site.baseurl }}{{ page.next_url }}">{{ page.next_label }} &rarr;</a>{% else %}<span></span>{% endif %}
+      </div>
+
+      <div class="hd-content">
+        {{ content }}
+      </div>
+
+      {% if page.date %}<div class="hd-stamp">Published {{ page.date | date: "%Y-%m-%d %H:%M" }}</div>{% endif %}
+
+      <div class="hd-nav hd-nav-foot">
+        {% if page.prev_url %}<a href="{{ site.baseurl }}{{ page.prev_url }}">&larr; {{ page.prev_label }}</a>{% else %}<span></span>{% endif %}
+        {% if page.next_url %}<a href="{{ site.baseurl }}{{ page.next_url }}">{{ page.next_label }} &rarr;</a>{% else %}<span></span>{% endif %}
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<style>
+.hilder-wrap { --hd-ink: #85327a; --hd-ink-dark: #5f2357; --hd-rule: #ecdfe9; --hd-paper: #fbf7fa; --hd-body: #2e2a2d; }
+.hilder-wrap .hd-chrome, .hilder-wrap .hd-nav { font-size: 13px; display: flex; justify-content: space-between; gap: 12px;
+  align-items: center; font-family: Georgia, "Times New Roman", serif; }
+.hilder-wrap .hd-chrome { margin: 18px 0 22px; }
+.hilder-wrap .hd-chrome a, .hilder-wrap .hd-nav a { color: var(--hd-ink-dark); text-decoration: none; }
+.hilder-wrap .hd-chrome a:hover, .hilder-wrap .hd-nav a:hover { text-decoration: underline; }
+.hilder-wrap .hd-title { font-family: Georgia, "Times New Roman", serif; font-size: 28px; font-weight: normal;
+  color: var(--hd-ink-dark); text-align: center; margin: 10px 0 4px; line-height: 1.3; }
+.hilder-wrap .hd-subtitle { text-align: center; font-size: 14px; color: #8a7f87; margin: 0 0 6px;
+  font-family: Georgia, "Times New Roman", serif; font-style: italic; }
+.hilder-wrap .hd-nav { margin: 14px 0 26px; }
+.hilder-wrap .hd-nav-foot { margin-top: 44px; padding-top: 16px; border-top: 1px solid var(--hd-rule); }
+.hilder-wrap .hd-content { font-family: Georgia, "Times New Roman", serif; font-size: 17px; line-height: 1.85; color: var(--hd-body); }
+.hilder-wrap .hd-content p { margin: 0 0 16px; text-align: justify; }
+.hilder-wrap .hd-content h3, .hilder-wrap .hd-content h4 { font-size: 18px; font-weight: normal; text-align: center;
+  color: var(--hd-ink-dark); margin: 10px 0 18px; }
+/* 作者自编本讲提要 */
+.hilder-wrap .hd-contents { background: var(--hd-paper); border: 1px solid var(--hd-rule); border-radius: 4px;
+  padding: 12px 18px 6px; margin: 0 0 26px; font-size: 14.5px; line-height: 1.65; color: #4d4249; }
+.hilder-wrap .hd-contents-h { font-size: 12px; letter-spacing: .1em; color: var(--hd-ink-dark); margin-bottom: 6px; }
+.hilder-wrap .hd-contents-h span { letter-spacing: 0; color: #a3949e; margin-left: 4px; }
+.hilder-wrap .hd-contents ul { margin: 0 0 6px; padding-left: 18px; }
+.hilder-wrap .hd-contents li { margin: 0 0 5px; }
+/* 讲首所讲经文 */
+.hilder-wrap .hd-text { border-left: 3px solid var(--hd-ink); background: var(--hd-paper); padding: 10px 16px; margin: 0 0 22px; }
+.hilder-wrap .hd-text p { margin: 0 0 6px; text-align: left; font-style: italic; }
+.hilder-wrap .hd-dropcap { float: left; font-size: 3em; line-height: .85; margin: 4px 7px 0 0; color: var(--hd-ink-dark); }
+.hilder-wrap .hd-quote { text-align: center !important; font-style: italic; }
+.hilder-wrap .hd-trailer { text-align: center !important; letter-spacing: .1em; }
+/* 页边旁注 */
+.hilder-wrap .hd-margin { display: block; margin: 2px 0 8px; padding-left: 10px; border-left: 2px solid var(--hd-rule);
+  font-size: 13px; line-height: 1.55; color: #84757f; font-style: normal; text-align: left; }
+@media (min-width: 1200px) {
+  .hilder-wrap .hd-margin { float: right; clear: right; width: 150px; margin: 4px -182px 8px 16px; padding-left: 8px; }
+}
+/* 1635 印本页码 */
+.hilder-wrap .hd-pb { scroll-margin-top: 80px; }
+.hilder-wrap .hd-pb[data-p]::before { content: "p." attr(data-p); font-size: 10.5px; color: #b5a8b1; font-style: normal;
+  margin: 0 4px; border: 1px solid var(--hd-rule); border-radius: 3px; padding: 0 3px; vertical-align: 1px; }
+/* 录入本读不出的字 */
+.hilder-wrap .hd-gap { color: #c0392b; cursor: help; }
+.hilder-wrap .hd-stamp { text-align: right; color: #aaa0a6; font-size: 12px; margin-top: 30px; font-family: Georgia, serif; }
+@media (max-width: 767px) {
+  .hilder-wrap .hd-title { font-size: 23px; }
+  .hilder-wrap .hd-content { font-size: 16px; }
+}
+</style>
