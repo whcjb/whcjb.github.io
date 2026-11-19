@@ -1,0 +1,43 @@
+---
+layout: default
+---
+{%- comment -%}
+  Pierson on Psalm 84 书卷首页。由 scripts/publish_tcp_psalm.py 生成（BOOKS['pierson-psalm84']）：卷首各页 + 正文方格（悬停看本页首条目录）+ 文本说明。
+  ⚠️ 不复用别家 layout；配色 #1f3a7a / #354aa0。目前只有英文版。
+{%- endcomment -%}
+
+<div class="container p84-book" style="padding-top:80px; max-width:900px;">
+  <div class="p84-hero">
+    <h1>{{ page.hero | default: page.book_name }}</h1>
+    <div class="p84-tagline">{{ page.tagline }}</div>
+    <div class="p84-edition">{{ page.edition }}</div>
+  </div>
+  {{ content }}
+</div>
+
+<style>
+.p84-book .p84-hero { text-align: center; margin-bottom: 8px; }
+.p84-book .p84-hero h1 { font-family: Georgia, "Songti SC", serif; color: #1f3a7a; font-size: 30px; letter-spacing: .04em; }
+.p84-book .p84-tagline { color: #354aa0; font-size: 14px; letter-spacing: .06em; margin-top: 6px; }
+.p84-book .p84-edition { color: #9a9a92; font-size: 12px; margin-top: 6px; }
+.p84-book .p84-sec-hd { margin: 30px 0 12px; font-size: 12px; font-weight: bold; letter-spacing: .14em;
+  color: #8f8a82; text-transform: uppercase; text-align: center; }
+.p84-book .p84-sec-hd-main { margin-top: 40px; }
+.p84-book .p84-fronts { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; }
+.p84-book .p84-fronts a { border: 1.5px dashed #354aa0; border-radius: 8px; padding: 8px 16px; color: #354aa0;
+  font-family: Georgia, serif; font-size: 14px; text-decoration: none; text-align: center; }
+.p84-book .p84-fronts a span { display: block; font-size: 11px; color: #9a948b; }
+.p84-book .p84-fronts a:hover { background: #354aa0; color: #fff; }
+.p84-book .p84-fronts a:hover span { color: #eee; }
+.p84-book .p84-sub { margin: 26px 0 10px; font-family: Georgia, serif; font-size: 16px; color: #1f3a7a; text-align: center; }
+.p84-book .p84-sub span { display: block; font-size: 12px; color: #9a948b; margin-top: 2px; }
+.p84-book .p84-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 8px; }
+.p84-book .p84-grid a { display: block; border: 1px solid #e1e4f1; border-radius: 6px; background: #f7f8fb; padding: 8px 8px 7px;
+  text-align: center; font-family: Georgia, serif; font-size: 16px; color: #354aa0; text-decoration: none; line-height: 1.25; }
+.p84-book .p84-grid a small { display: block; font-size: 11px; color: #958f86; margin-top: 4px; line-height: 1.35; }
+.p84-book .p84-grid a:hover { background: #354aa0; color: #fff; }
+.p84-book .p84-grid a:hover small { color: #eee; }
+.p84-book .p84-note { text-align: center; color: #8a8a82; font-size: 13px; line-height: 1.8; max-width: 640px; margin: 40px auto 0; }
+.p84-book .p84-note p { margin: 0 0 10px; }
+@media (max-width: 600px) { .p84-book .p84-grid { grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); } }
+</style>

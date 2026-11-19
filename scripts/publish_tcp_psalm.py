@@ -31,6 +31,7 @@ FRONT_LABEL = {'title_page': ('title', 'Title Page', '书名页'), 'dedication':
                'to_the_reader': ('to-the-reader', 'To the Reader', '致读者'), 'errata': ('errata', 'Errata', '勘误表'),
                'Psalm_n51': ('the-psalm', 'The Contents: Psalm 51', '全篇经文'),
                'Psalm': ('the-psalm', 'The XC Psalme', '全篇经文'),
+               'encomium': ('encomium', 'An Encomium of the Author', '作者赞辞'),
                'table_of_contents': ('doctrines', 'A Table of the Principal Doctrines', '要义一览'),
                'table_of_doctrines': ('doctrines', 'The Table of the Principal Doctrines', '要义一览'),
                'diagram': ('method', 'The Method of the Psalm', '全篇纲目'), 'prayer': ('prayers', 'Prayers', '祷文')}
@@ -139,6 +140,22 @@ BOOKS = {
                  '（第 1、3 节讲得长，按原书页码分页），晨祷、晚祷附后。录入所据那一册有六处共缺 34 页：五处据 1868 年爱丁堡 Nichol 重印本补入，'
                  '在页面上加框标出——该本据后来的增订版、拼法已现代化，由 OCR 识读并对照影像核过；第六处是晨祷中间两页，后来的版次把祷文改写了，无从补入。',
         omitted_en='', omitted_zh=''),
+    'pierson-psalm27': dict(
+        tcp='A54870', author='pierson', book='psalm27', P='p27', c0='#1f3a7a', c1='#354aa0', psalm=27,
+        short='Pierson on Psalm 27', hero='Psalm 27',
+        title_en="David's Triumph over Distresse: An Exposition of the XXVII Psalm",
+        tagline="Thomas Pierson · Davids Triumph over Distresse",
+        edition='In Excellent Encouragements against Afflictions, London: John Legatt for Philemon Stephens, 1647 · Wing P2216',
+        year='1647', front=['encomium', 'title_page', 'dedication'], back=[],
+        units=('divs', 'body/div/div'),
+        about_en='Pierson\'s expositions of Psalms 27, 84, 85 and 87 were published after his death by Christopher Harvey '
+                 'as Excellent Encouragements against Afflictions (1647), each with its own title page and pagination. '
+                 'The keyed transcription has only the first, on Psalm 27, with the sermon on Psalm 40:1–2 that follows it; '
+                 'the other three are given on their own pages from the 1868 Edinburgh reprint. Each verse is one page here.',
+        about_zh='皮尔森讲诗篇 27、84、85、87 篇的四篇讲解，在他身后由哈维编成《苦难中的大鼓励》（1647）出版，四篇各有扉页、各自编页。'
+                 '录入本只有第一篇诗篇 27 篇，连同其后一篇讲诗篇 40:1–2 的讲章；其余三篇另据 1868 年爱丁堡重印本各成一书。本站每节一页。',
+        omitted_en='The publisher\'s postscript belongs to the exposition of Psalm 84 and is given there.',
+        omitted_zh='出版者附言属于诗篇 84 篇那一篇，收在那里。'),
 }
 
 LAYOUT_CHAPTER = r'''---
@@ -323,6 +340,7 @@ def render(r, e, P, skip_head=False):
 
 
 FILLS = {}
+CUR_PSALM = [0]
 
 
 def pp_str(f):
@@ -409,6 +427,9 @@ def find(root, path):
 
 
 def verse_label(e, r):
+    m = re.fullmatch(r'Ps\.(\d+):([\d-]+)', e.get('n') or '')     # 皮尔森：n="Ps.27:3"；他篇（Ps.40:1-2）记作 ps40:1–2
+    if m:
+        return m.group(2).replace('-', '–') if m.group(1) == str(CUR_PSALM[0]) else f'ps{m.group(1)}:{m.group(2).replace("-", "–")}'
     if (e.get('type') or '').startswith('title'):      # 史密斯诗 90：title_of_prayer
         return 'title'
     n = e.get('n')
@@ -431,6 +452,7 @@ def build(key):
                 setattr(el, a, v.replace('*', '&#42;'))
     r = tt.R(P, c['year'])
     text = root.find(f'.//{TEI}text')
+    CUR_PSALM[0] = c['psalm']
     FILLS.clear()
     if c.get('fills'):
         FILLS.update(json.loads((RAW / c['fills']).read_text(encoding='utf-8')))
@@ -542,7 +564,11 @@ def build(key):
         if not u['pages']:
             ps = [int(x) for x in re.findall(r'data-p="(\d+)"', u['md'])]
             u['pages'] = (ps[0], ps[-1]) if ps else None
-        u['slug'] = 'introduction' if u['verse'] == 'intro' else 'the-title' if u['verse'] == 'title' else \
+        if u['verse'].startswith('ps'):              # 附在本篇之后讲别篇的讲章
+            ps_, vv_ = u['verse'][2:].split(':')
+            u['name'] = f'Appendix: Psalm {ps_}:{vv_}'
+        u['slug'] = f'appendix-psalm{u["verse"][2:].split(":")[0]}' if u['verse'].startswith('ps') else \
+            'introduction' if u['verse'] == 'intro' else 'the-title' if u['verse'] == 'title' else \
             f'v{u["verse"].replace("–", "-")}' + (f'-{u["part"]}' if u['part'] else '')
         note = c.get('notes', {}).get(u['slug'])
         if note:
@@ -562,9 +588,12 @@ def publish(key, c, fronts, units, backs, gaps, OUT, BASE, RAW):
     meta = json.loads(meta_f.read_text(encoding='utf-8')) if meta_f.exists() else {}
     t0 = now()
     OUT.mkdir(parents=True, exist_ok=True)
+    meta_f.parent.mkdir(parents=True, exist_ok=True)
     pages = [('front', f) for f in fronts] + [('unit', u) for u in units] + [('front', f) for f in backs]
 
     def vref(u):
+        if u['verse'].startswith('ps'):
+            return 'Psalm ' + u['verse'][2:]
         if u['verse'] == 'intro':
             return f'Psalm {c["psalm"]}'
         if u['verse'] == 'title':

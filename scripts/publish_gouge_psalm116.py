@@ -99,9 +99,27 @@ def clean(text, wit, tcp, left_log):
     return t
 
 
+def balance(t):
+    """斜体哨兵配平：没开就关的关标记、到末尾没关的开标记，一律删。"""
+    out, op = [], None
+    for ch in t:
+        if ch == n.IT_ON:
+            if op is not None:
+                continue
+            op = len(out)
+        elif ch == n.IT_OFF:
+            if op is None:
+                continue
+            op = None
+        out.append(ch)
+    if op is not None:
+        del out[op]
+    return ''.join(out)
+
+
 def heb(m):
     """(T13rT,)、(pn)、(p2{)：合订本在英文后括注希伯来原词，拉丁引擎读成乱码；判据：括号内不是真词／经节号／罗马数字。"""
-    inner = m.group(1).strip(' ,;')
+    inner = m.group(1).replace(n.IT_ON, '').replace(n.IT_OFF, '').strip(' ,;')
     if not inner or re.fullmatch(r'[\divxlcIVXLC.,:;&\s-]+', inner) or re.fullmatch(r'[A-Za-z]+', inner) and n.is_word(inner):
         return m.group(0)
     toks = re.findall(r'[A-Za-z]+', inner)
@@ -111,12 +129,20 @@ def heb(m):
 
 
 def md(t):
-    t = re.sub(n.IT_ON + r'(\s*)', r'\1*', t)
-    t = re.sub(r'(\s*)' + n.IT_OFF, r'*\1', t)
-    t = re.sub(r'\*\s*\*', ' ', t)
+    """哨兵层面处理斜体（分得清开／关）：合并相邻斜体段、删 OCR 文本里原有的 *（脚注号或噪点），最后才转 markdown。"""
+    t = t.replace('*', '')
+    t = re.sub(r'\s*■\s*', ' ', t)                                    # 污点：先删，免得斜体开头留空白
+    t = re.sub(r'\\yi\[', 'will', t)                                  # 诗 85 斜体乱码（影像核：will）
+    t = re.sub(r'(?<=[A-Za-z\]\[])\\+(?=\s|' + n.IT_OFF + r'|$)', '', t)   # 词尾孤立反斜杠（vrA\）会转义后面的星号
+    t = re.sub(r'\(([^()]{1,12})\)', heb, t)                            # 括号里的希伯来文乱码 → 〈Hebrew〉（在斜体转换之前）
+    t = balance(t)
+    t = re.sub(n.IT_OFF + r'(\s*)' + n.IT_ON, r'\1', t)
+    t = re.sub(n.IT_ON + r'(\s*)' + n.IT_OFF, r'\1', t)               # 空斜体段
+    t = re.sub(n.IT_ON + r'(\s*)', r'\1' + n.IT_ON, t)                 # 开标记后的空白挪到外面
+    t = re.sub(r'(\s*)' + n.IT_OFF, n.IT_OFF + r'\1', t)               # 关标记前的空白挪到外面
+    t = t.replace(n.IT_ON, '*').replace(n.IT_OFF, '*')
     t = re.sub(r'\s*■\s*', ' ', t)
     t = re.sub(r'(?<=[A-Za-z.,;:\'’])[\^}]+(?=[\s,.;:\'’)*]|$)', '', t)     # 脚注号残渣：third^ branch、deliverances}
-    t = re.sub(r'\(([^()]{1,10})\)', heb, t)                                 # 括号里的希伯来文读成乱码 → 〈Hebrew〉
     t = re.sub(r'(?m)^(\d+)\. ', r'\1\\. ', t)          # 行首序号别被 kramdown 当列表
     t = t.replace('|', '')
     return re.sub(r' {2,}', ' ', t).strip()

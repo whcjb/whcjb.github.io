@@ -234,6 +234,11 @@ AUTHORS = OrderedDict([
                   years='1575–1653', dir='gouge',
                   work_cn='圣徒的祭：诗篇 116 篇注释',
                   work_en='The Saints\' Sacrifice: A Commentary on Psalm CXVI')),
+    # 皮尔森：约 1570 年生于柴郡韦弗汉姆，1633 年卒于赫里福德郡布兰普顿-布赖恩（1612 年起任该地教区长）。诗 27 据 TCP A54870，诗 84、85、87 据 1868 年 Nichol 本 OCR——四本单篇专书，见 MONOGRAPHS / MONO_TITLES。
+    ('pierson', dict(name='托马斯·皮尔森', short='皮尔森', en='Thomas Pierson',
+                  years='约1570–1633', dir='pierson',
+                  work_cn='苦难中的大鼓励：诗篇 27、84、85、87 篇讲解',
+                  work_en='Excellent Encouragements against Afflictions')),
     ('alexander', dict(name='约瑟·亚历山大', short='亚历山大', en='Joseph Addison Alexander',
                        years='1809–1860', dir='alexander',
                        work_cn='诗篇、以赛亚书、马太福音、使徒行传注释',
@@ -380,6 +385,8 @@ AUTHOR_COLORS = {
     'smith': ('#27707a', '#3aa0af'),
     # 古治紫：HLS 网格里与既有各色及加尔文酒红、马太亨利金最小 ΔE 17.9（CIE76，达拉谟紫）；色板已挤，与先例同档。
     'gouge': ('#3d1d5a', '#592b82'),
+    # 皮尔森宝蓝：HLS 网格里与既有各色及加尔文酒红、马太亨利金最小 ΔE 17.7（CIE76，达拉谟紫）；色板已挤，与先例同档。
+    'pierson': ('#1f3a7a', '#354aa0'),
 }
 
 # 书卷卡片的入口注释家：历代解经版面每卷只显示 links 的第一条（commentaries/index.html
@@ -401,7 +408,7 @@ DUO_BOOKS = {}
 # 与 DUO_BOOKS 不同：那边卡片分色带、各带直接链到各家；这里整张卡片只链到选择页。
 # 诗篇：用户 2026-11-10 指定亚历山大与霍志恒合列，点进去再选；同日马太福音（原 DUO_BOOKS 三家色带）也改用此方案。
 # 2026-11-17 博纳尔上线，诗篇三家合列。
-PICK_BOOKS = {'psalms': ('alexander', 'spurgeon', 'vos', 'bonar', 'owen', 'manton', 'bridges', 'knox', 'hildersham', 'reynolds', 'cowper', 'smith', 'taylor', 'gouge'), 'matthew': ('spurgeon', 'dickson', 'alexander'),
+PICK_BOOKS = {'psalms': ('alexander', 'spurgeon', 'vos', 'bonar', 'owen', 'manton', 'bridges', 'knox', 'hildersham', 'reynolds', 'cowper', 'smith', 'taylor', 'gouge', 'pierson'), 'matthew': ('spurgeon', 'dickson', 'alexander'),
               'romans': ('hodge', 'haldane'),   # 2026-11-10 霍尔丹上线，罗马书两家合列
               'isaiah': ('alexander', 'anon')}  # 2026-11-13 用户令以赛亚书加一本佚名注释，两家合列
 # 合列卡片用书卷自己的独立色，不用任何一家的作者色（用户 2026-11-10：「专门为诗篇挑选」；同日「颜色不能太相近」）。
@@ -433,10 +440,14 @@ description: 「历代解经」{cn}条目：{names}，选择进入。
 # 不进对比抽屉（compare_sources 只收有章节的目录）。
 # 单篇专书：目录名不是书卷名，归到某卷名下；只讲一两篇，不进逐章对比抽屉（2026-11-17 用户令收欧文、曼顿、布里奇斯论单篇诗篇）
 MONOGRAPHS = {('owen', 'psalm130'): 'psalms', ('manton', 'psalm119'): 'psalms', ('bridges', 'psalm119'): 'psalms',
-              ('knox', 'psalm6'): 'psalms', ('hildersham', 'psalm51'): 'psalms', ('reynolds', 'psalm110'): 'psalms', ('cowper', 'psalm119'): 'psalms', ('smith', 'psalm51'): 'psalms', ('smith', 'psalm90'): 'psalms', ('taylor', 'psalm32'): 'psalms', ('smith', 'psalm1'): 'psalms', ('gouge', 'psalm116'): 'psalms'}
+              ('knox', 'psalm6'): 'psalms', ('hildersham', 'psalm51'): 'psalms', ('reynolds', 'psalm110'): 'psalms', ('cowper', 'psalm119'): 'psalms', ('smith', 'psalm51'): 'psalms', ('smith', 'psalm90'): 'psalms', ('taylor', 'psalm32'): 'psalms', ('smith', 'psalm1'): 'psalms', ('gouge', 'psalm116'): 'psalms', ('pierson', 'psalm27'): 'psalms', ('pierson', 'psalm84'): 'psalms', ('pierson', 'psalm85'): 'psalms', ('pierson', 'psalm87'): 'psalms'}
 # 同一作者在同一卷书下有几本单篇专书时（史密斯：诗篇 51、90 篇），逐本出条目，书名按目录查此表；
 # 只有一本的照旧用 BOOK_TITLES[(作者, 书卷)]。
-MONO_TITLES = {('smith', 'psalm1'): ('大卫的有福之人（诗篇 1 篇）', 'Dauids Blessed Man'),
+MONO_TITLES = {('pierson', 'psalm27'): ('大卫在患难中的得胜（诗篇 27 篇）', "Davids Triumph over Distresse"),
+               ('pierson', 'psalm84'): ('大卫心中的渴慕（诗篇 84 篇）', "David's Heart's Desire"),
+               ('pierson', 'psalm85'): ('教会在苦难中的操练（诗篇 85 篇）', "The Church's Exercise under Affliction"),
+               ('pierson', 'psalm87'): ('教会的大宪章（诗篇 87 篇）', 'The Great Charter of the Church'),
+               ('smith', 'psalm1'): ('大卫的有福之人（诗篇 1 篇）', 'Dauids Blessed Man'),
                ('smith', 'psalm51'): ('大卫的悔改（诗篇 51 篇）', 'Dauids Repentance'),
                ('smith', 'psalm90'): ('摩西的祷告（诗篇 90 篇）', 'Moses his Prayer')}
 ESSAY_ENTRIES = {'vos': {'psalms': '/vos/psalter/zh/'}}   # 入口一律指中文版（用户 2026-11-11）
@@ -481,6 +492,8 @@ BOOK_TITLES = {
                                 'Dauids Learning, or The Way to True Happinesse'),
     ('gouge', 'psalms'): ('圣徒的祭：诗篇 116 篇注释',
                                 'The Saints\' Sacrifice: A Commentarie on the CXVI. Psalme'),
+    ('pierson', 'psalms'): ('大卫在患难中的得胜（诗篇 27 篇）',
+                                'Davids Triumph over Distresse'),
     ('knox', 'psalms'):        ('诗篇第 6 篇讲解',
                                 'A Fort for the Afflicted, in an Exposition upon the Sixth Psalm'),
     ('owen', 'psalms'):        ('诗篇 130 篇实践讲解',
@@ -588,7 +601,7 @@ COMPARE_ACCENT = {
     'candlish': '#b07080', 'fairbairn': '#bc65ac', 'taylor': '#6f77e0',
     'hall': '#769019', 'barlow': '#2b9b8a', 'attersoll': '#8e8cbd', 'dickson': '#8b2499',
     'petter': '#38a622', 'foote': '#d14457', 'jones': '#9c9066', 'haldane': '#9b6899',
-    'bonar': '#d2776f', 'knox': '#16697d', 'hildersham': '#85327a', 'reynolds': '#34794f', 'cowper': '#a49746', 'smith': '#3aa0af', 'gouge': '#592b82',
+    'bonar': '#d2776f', 'knox': '#16697d', 'hildersham': '#85327a', 'reynolds': '#34794f', 'cowper': '#a49746', 'smith': '#3aa0af', 'gouge': '#592b82', 'pierson': '#354aa0',
 }
 COMPARE_LABEL = {
     'calvin': '加尔文注释', 'mhenry': '马太亨利注释', 'owen': '约翰欧文注释',
@@ -600,7 +613,7 @@ COMPARE_LABEL = {
     'candlish': '坎德利什讲解', 'fairbairn': '费尔贝恩注释', 'taylor': '泰勒注释',
     'hall': '霍尔注释', 'barlow': '巴洛讲解', 'attersoll': '阿特索尔注释', 'dickson': '迪克森简释',
     'petter': '佩特注释', 'foote': '福特讲义', 'jones': '琼斯简释', 'haldane': '霍尔丹释义',
-    'bonar': '博纳尔讲论', 'knox': '诺克斯讲解', 'hildersham': '希尔德沙姆讲义', 'reynolds': '雷诺兹释义', 'cowper': '考珀注释', 'smith': '史密斯讲解', 'gouge': '古治注释',
+    'bonar': '博纳尔讲论', 'knox': '诺克斯讲解', 'hildersham': '希尔德沙姆讲义', 'reynolds': '雷诺兹释义', 'cowper': '考珀注释', 'smith': '史密斯讲解', 'gouge': '古治注释', 'pierson': '皮尔森讲解',
 }
 
 
@@ -623,7 +636,7 @@ PRIMARY_LANG = {'calvin': 'zh', 'mhenry': 'zh', 'bridges': 'zh', 'haldane': 'en'
                 'adams': 'en', 'rollock': 'en', 'jenkyn': 'en',
                 'candlish': 'en', 'fairbairn': 'en', 'taylor': 'en',
                 'hall': 'en', 'barlow': 'en', 'attersoll': 'en', 'dickson': 'en', 'petter': 'en',
-                'foote': 'en', 'jones': 'en', 'bonar': 'en', 'knox': 'en', 'hildersham': 'en', 'reynolds': 'en', 'cowper': 'en', 'smith': 'en', 'gouge': 'en'}
+                'foote': 'en', 'jones': 'en', 'bonar': 'en', 'knox': 'en', 'hildersham': 'en', 'reynolds': 'en', 'cowper': 'en', 'smith': 'en', 'gouge': 'en', 'pierson': 'en'}
 
 
 def _lang_variants(aid, d: Path, name: str):

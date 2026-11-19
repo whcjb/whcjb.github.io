@@ -1,0 +1,86 @@
+---
+layout: default
+---
+{%- comment -%}
+  Pierson on Psalm 27 正文页。由 scripts/publish_tcp_psalm.py 生成（BOOKS['pierson-psalm27']），底本 EEBO-TCP A54870（CC0）。
+  ⚠️ 不复用别家 layout（每本书独立样式）；配色 #1f3a7a / #354aa0，类名 p27- 前缀。
+  - 本页所含目录条目 → `.p27-contents`；所讲经文 → `.p27-text`；页边旁注 → `.p27-margin`；印本页码 → `.p27-pb`（#pN）。
+  - 录入本读不出的字 → `.p27-gap`（标红）。目前只有英文版，不接经文弹层（模块只认中文书卷名）。
+{%- endcomment -%}
+
+<div class="container p27-wrap" style="padding-top: 70px;">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <div class="p27-chrome"><a href="{{ site.baseurl }}/pierson/psalm27/">&larr; {{ page.book_name }}</a></div>
+      <h1 class="p27-title">{{ page.title }}</h1>
+      {% if page.subtitle %}<p class="p27-subtitle">{{ page.subtitle }}</p>{% endif %}
+      <div class="p27-nav">
+        {% if page.prev_url %}<a href="{{ site.baseurl }}{{ page.prev_url }}">&larr; {{ page.prev_label }}</a>{% else %}<span></span>{% endif %}
+        {% if page.next_url %}<a href="{{ site.baseurl }}{{ page.next_url }}">{{ page.next_label }} &rarr;</a>{% else %}<span></span>{% endif %}
+      </div>
+      <div class="p27-content">
+        {{ content }}
+      </div>
+      {% if page.date %}<div class="p27-stamp">Published {{ page.date | date: "%Y-%m-%d %H:%M" }}</div>{% endif %}
+      <div class="p27-nav p27-nav-foot">
+        {% if page.prev_url %}<a href="{{ site.baseurl }}{{ page.prev_url }}">&larr; {{ page.prev_label }}</a>{% else %}<span></span>{% endif %}
+        {% if page.next_url %}<a href="{{ site.baseurl }}{{ page.next_url }}">{{ page.next_label }} &rarr;</a>{% else %}<span></span>{% endif %}
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+.p27-wrap { --ink: #354aa0; --ink-dark: #1f3a7a; --rule: #e1e4f1; --paper: #f7f8fb; --body: #2d2b28; }
+.p27-wrap .p27-chrome, .p27-wrap .p27-nav { font-size: 13px; display: flex; justify-content: space-between; gap: 12px;
+  align-items: center; font-family: Georgia, "Times New Roman", serif; }
+.p27-wrap .p27-chrome { margin: 18px 0 22px; }
+.p27-wrap .p27-chrome a, .p27-wrap .p27-nav a { color: var(--ink-dark); text-decoration: none; }
+.p27-wrap .p27-chrome a:hover, .p27-wrap .p27-nav a:hover { text-decoration: underline; }
+.p27-wrap .p27-title { font-family: Georgia, "Times New Roman", serif; font-size: 28px; font-weight: normal;
+  color: var(--ink-dark); text-align: center; margin: 10px 0 4px; line-height: 1.3; }
+.p27-wrap .p27-subtitle { text-align: center; font-size: 14px; color: #8a857e; margin: 0 0 6px;
+  font-family: Georgia, "Times New Roman", serif; font-style: italic; }
+.p27-wrap .p27-nav { margin: 14px 0 26px; }
+.p27-wrap .p27-nav-foot { margin-top: 44px; padding-top: 16px; border-top: 1px solid var(--rule); }
+.p27-wrap .p27-content { font-family: Georgia, "Times New Roman", serif; font-size: 17px; line-height: 1.85; color: var(--body); }
+.p27-wrap .p27-content p { margin: 0 0 16px; text-align: justify; }
+.p27-wrap .p27-content h3, .p27-wrap .p27-content h4 { font-size: 18px; font-weight: normal; text-align: center;
+  color: var(--ink-dark); margin: 26px 0 18px; line-height: 1.5; }
+.p27-wrap .p27-contents { background: var(--paper); border: 1px solid var(--rule); border-radius: 4px;
+  padding: 12px 18px 6px; margin: 0 0 26px; font-size: 14.5px; line-height: 1.65; color: #4a4640; }
+.p27-wrap .p27-contents-h { font-size: 12px; letter-spacing: .1em; color: var(--ink-dark); margin-bottom: 6px; }
+.p27-wrap .p27-contents-h span { letter-spacing: 0; color: #a39d94; margin-left: 4px; }
+.p27-wrap .p27-contents ul { margin: 0 0 6px; padding-left: 18px; }
+.p27-wrap .p27-contents li { margin: 0 0 4px; }
+.p27-wrap .p27-contents li small { color: #a39d94; margin-left: 4px; }
+.p27-wrap .p27-text { border-left: 3px solid var(--ink); background: var(--paper); padding: 10px 16px; margin: 0 0 22px; }
+.p27-wrap .p27-text p { margin: 0 0 6px; text-align: left; font-style: italic; }
+.p27-wrap .p27-dropcap { float: left; font-size: 3em; line-height: .85; margin: 4px 7px 0 0; color: var(--ink-dark); }
+.p27-wrap .p27-quote { text-align: center !important; font-style: italic; }
+.p27-wrap .p27-closer { text-align: right !important; font-style: italic; }
+.p27-wrap .p27-trailer { text-align: center !important; letter-spacing: .1em; }
+.p27-wrap .p27-item { margin: 0 0 8px 24px !important; text-align: left !important; }
+.p27-wrap .p27-poem { margin: 0 0 16px 28px; }
+.p27-wrap .p27-poem p, .p27-wrap .p27-l { margin: 0 !important; text-align: left !important; }
+.p27-wrap .p27-table { border-collapse: collapse; margin: 0 auto 16px; font-size: 14px; }
+.p27-wrap .p27-table td { border: 1px solid var(--rule); padding: 3px 8px; vertical-align: top; }
+.p27-wrap .p27-margin { display: block; margin: 2px 0 8px; padding-left: 10px; border-left: 2px solid var(--rule);
+  font-size: 13px; line-height: 1.55; color: #857f76; font-style: normal; text-align: left; }
+@media (min-width: 1200px) {
+  .p27-wrap .p27-margin { float: right; clear: right; width: 150px; margin: 4px -182px 8px 16px; padding-left: 8px; }
+}
+.p27-wrap .p27-pb { scroll-margin-top: 80px; }
+.p27-wrap .p27-pb[data-p]::before { content: "p." attr(data-p); font-size: 10.5px; color: #b5afa6; font-style: normal;
+  margin: 0 4px; border: 1px solid var(--rule); border-radius: 3px; padding: 0 3px; vertical-align: 1px; }
+.p27-wrap .p27-gap { color: #c0392b; cursor: help; }
+.p27-wrap .p27-fill { border: 1px dashed var(--ink); border-radius: 6px; padding: 10px 16px 2px; margin: 0 0 18px;
+  background: #fffdf7; }
+.p27-wrap .p27-fill-h { font-size: 13px; line-height: 1.6; color: #8a6d3b; text-align: left !important; margin-bottom: 12px !important; }
+.p27-wrap .p27-lost { font-size: 14px; color: #a0522d; border: 1px dashed #e0b8a0; border-radius: 4px; padding: 8px 12px; }
+.p27-wrap .p27-stamp { text-align: right; color: #aaa59d; font-size: 12px; margin-top: 30px; font-family: Georgia, serif; }
+@media (max-width: 767px) {
+  .p27-wrap .p27-title { font-size: 23px; }
+  .p27-wrap .p27-content { font-size: 16px; }
+}
+</style>

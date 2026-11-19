@@ -206,7 +206,7 @@ SHORT = {'aU': 'all', 'AU': 'All', 'wiU': 'will', 'heU': 'hell', 'Ufe': 'life', 
          'hve': 'live', 'Hve': 'Live', 'sm': 'sin', 'tliy': 'thy', 'liis': 'his', 'liim': 'him', 'Ul': 'ill', 'wUl': 'will', 'vUl': 'will', 'wiU': 'will',
          'mth': 'with', 'mtli': 'with', 'vnih': 'with', 'hke': 'like', 'Hke': 'Like', 'tiU': 'till', 'tUl': 'till',
          'AMien': 'When', 'AMiat': 'What', 'Eev': 'Rev', 'Dadd': 'David', 'Uve': 'live', 'kmd': 'kind',
-         'knovvn': 'known', 'thanksgidng': 'thanksgiving'}
+         'knovvn': 'known', 'thanksgidng': 'thanksgiving', 'mih': 'with', 'vrA': 'will'}
 
 
 def corpus():
