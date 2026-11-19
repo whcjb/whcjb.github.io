@@ -272,6 +272,15 @@ authors:
     work_en: "A Holy Alphabet for Sion's Scholars"
     no_bio: false
     books: 1
+  - id: smith
+    name: "塞缪尔·史密斯"
+    short: "史密斯"
+    en: "Samuel Smith"
+    years: "约1584–约1665"
+    work_cn: "大卫的悔改（诗篇 51 篇讲解）"
+    work_en: "Dauids Repentance: A Plaine and Familiar Exposition of the 51. Psalme"
+    no_bio: false
+    books: 1
   - id: alexander
     name: "约瑟·亚历山大"
     short: "亚历山大"
@@ -434,7 +443,7 @@ books:
     testament: ot
     chapters: 150
     pick: true
-    pick_n: 11
+    pick_n: 12
     pick_c0: "#2c2864"
     pick_c1: "#4a4382"
     links:
@@ -449,6 +458,7 @@ books:
       - {author: hildersham, path: "/hildersham/psalm51/", url_tpl: "/hildersham/psalm51/__CH__/", title_cn: "诗篇 51 篇讲义 152 讲", title_en: "CLII Lectures upon Psalme LI", c0: "#5f2357", c1: "#85327a"}
       - {author: reynolds, path: "/reynolds/psalm110/", url_tpl: "/reynolds/psalm110/__CH__/", title_cn: "诗篇 110 篇释义", title_en: "An Explication of the Hundreth and Tenth Psalme", c0: "#23503a", c1: "#34794f"}
       - {author: cowper, path: "/cowper/psalm119/", url_tpl: "/cowper/psalm119/__CH__/", title_cn: "锡安学子的圣字母表", title_en: "A Holy Alphabet for Sion's Scholars", c0: "#6b6128", c1: "#a49746"}
+      - {author: smith, path: "/smith/psalm51/", url_tpl: "/smith/psalm51/__CH__/", title_cn: "大卫的悔改", title_en: "Dauids Repentance", c0: "#27707a", c1: "#3aa0af"}
   - id: proverbs
     name: "箴言"
     en: "Proverbs"

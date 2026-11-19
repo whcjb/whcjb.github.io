@@ -1,0 +1,43 @@
+---
+layout: default
+---
+{%- comment -%}
+  Smith on Psalm 51 书卷首页。由 scripts/publish_tcp_psalm.py 生成（BOOKS['smith-psalm51']）：卷首各页 + 正文方格（悬停看本页首条目录）+ 文本说明。
+  ⚠️ 不复用别家 layout；配色 #27707a / #3aa0af。目前只有英文版。
+{%- endcomment -%}
+
+<div class="container sm-book" style="padding-top:80px; max-width:900px;">
+  <div class="sm-hero">
+    <h1>{{ page.hero | default: page.book_name }}</h1>
+    <div class="sm-tagline">{{ page.tagline }}</div>
+    <div class="sm-edition">{{ page.edition }}</div>
+  </div>
+  {{ content }}
+</div>
+
+<style>
+.sm-book .sm-hero { text-align: center; margin-bottom: 8px; }
+.sm-book .sm-hero h1 { font-family: Georgia, "Songti SC", serif; color: #27707a; font-size: 30px; letter-spacing: .04em; }
+.sm-book .sm-tagline { color: #3aa0af; font-size: 14px; letter-spacing: .06em; margin-top: 6px; }
+.sm-book .sm-edition { color: #9a9a92; font-size: 12px; margin-top: 6px; }
+.sm-book .sm-sec-hd { margin: 30px 0 12px; font-size: 12px; font-weight: bold; letter-spacing: .14em;
+  color: #8f8a82; text-transform: uppercase; text-align: center; }
+.sm-book .sm-sec-hd-main { margin-top: 40px; }
+.sm-book .sm-fronts { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; }
+.sm-book .sm-fronts a { border: 1.5px dashed #3aa0af; border-radius: 8px; padding: 8px 16px; color: #3aa0af;
+  font-family: Georgia, serif; font-size: 14px; text-decoration: none; text-align: center; }
+.sm-book .sm-fronts a span { display: block; font-size: 11px; color: #9a948b; }
+.sm-book .sm-fronts a:hover { background: #3aa0af; color: #fff; }
+.sm-book .sm-fronts a:hover span { color: #eee; }
+.sm-book .sm-sub { margin: 26px 0 10px; font-family: Georgia, serif; font-size: 16px; color: #27707a; text-align: center; }
+.sm-book .sm-sub span { display: block; font-size: 12px; color: #9a948b; margin-top: 2px; }
+.sm-book .sm-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 8px; }
+.sm-book .sm-grid a { display: block; border: 1px solid #e1f1f3; border-radius: 6px; background: #f7fbfc; padding: 8px 8px 7px;
+  text-align: center; font-family: Georgia, serif; font-size: 16px; color: #3aa0af; text-decoration: none; line-height: 1.25; }
+.sm-book .sm-grid a small { display: block; font-size: 11px; color: #958f86; margin-top: 4px; line-height: 1.35; }
+.sm-book .sm-grid a:hover { background: #3aa0af; color: #fff; }
+.sm-book .sm-grid a:hover small { color: #eee; }
+.sm-book .sm-note { text-align: center; color: #8a8a82; font-size: 13px; line-height: 1.8; max-width: 640px; margin: 40px auto 0; }
+.sm-book .sm-note p { margin: 0 0 10px; }
+@media (max-width: 600px) { .sm-book .sm-grid { grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); } }
+</style>

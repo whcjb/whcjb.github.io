@@ -29,6 +29,8 @@ TEI = tt.TEI
 TOK = re.compile(r'•+|〈◊〉|〈…〉|〈Greek〉|▪')
 FRONT_LABEL = {'title_page': ('title', 'Title Page', '书名页'), 'dedication': ('dedication', 'The Epistle Dedicatory', '献辞'),
                'to_the_reader': ('to-the-reader', 'To the Reader', '致读者'), 'errata': ('errata', 'Errata', '勘误表'),
+               'Psalm_n51': ('the-psalm', 'The Contents: Psalm 51', '全篇经文'),
+               'table_of_doctrines': ('doctrines', 'The Table of the Principal Doctrines', '要义一览'),
                'diagram': ('method', 'The Method of the Psalm', '全篇纲目'), 'prayer': ('prayers', 'Prayers', '祷文')}
 
 BOOKS = {
@@ -69,6 +71,21 @@ BOOKS = {
         omitted_en="The author's two prayers before his evening doctrine are given after the exposition; the table of "
                    'principal points is not included.',
         omitted_zh='作者晚间讲道前常用的两篇祷文附在讲解之后；卷末要点索引未收。'),
+    'smith-psalm51': dict(
+        tcp='A12516', author='smith', book='psalm51', P='sm', c0='#27707a', c1='#3aa0af', psalm=51,
+        short='Smith on Psalm 51', hero='Psalm 51',
+        title_en="David's Repentance: A Plain and Familiar Exposition of the 51. Psalm",
+        tagline="Samuel Smith · Dauids Repentance",
+        edition='Second edition, amplified · London: Nicholas Okes, 1614 · STC 22841.7', year='1614',
+        front=['title_page', 'dedication', 'to_the_reader', 'Psalm_n51', 'table_of_doctrines'], back=[],
+        units=('divs', 'body/div/div'), verse_from_head=True,
+        about_en='Smith, minister of Roxwell in Essex, first preached this exposition of Psalm 51 to his congregation and '
+                 'published it, as he says, in the spare hours of a long sickness; this second edition of 1614 was '
+                 '"profitably amplified by the Authour". Each part of the book, from the title of the psalm to the last '
+                 'verse, is one page here.',
+        about_zh='史密斯任埃塞克斯郡罗克斯韦尔牧师，先在会众中讲这篇诗篇，后来照他自己说，是在久病不能讲道的空闲里整理出版；'
+                 '1614 年这第二版由作者「增订」。本站从诗题到末节，原书每部分一页。',
+        omitted_en='', omitted_zh=''),
 }
 
 LAYOUT_CHAPTER = r'''---
@@ -356,6 +373,14 @@ def build(key):
         if d.tag != TEI + 'div' or d.get('type') in c.get('body_back', []):
             continue
         v = verse_label(d, r)
+        if c.get('verse_from_head'):               # 「VERSE. 12.13.」→ 12–13；诗题（THE TEXT. To him that excelleth）→ title
+            h = d.find(TEI + 'head')
+            ht = tt.text_of(h) if h is not None else ''
+            if h is None:
+                ht = re.sub(r'\s+', ' ', ''.join(d.itertext()))[:120]
+            m = re.search(r'VERS[E]?\W*\s*(\d+(?:[.,:]\d+)*)', ht.replace('ſ', 's'))
+            ns = [int(x) for x in re.findall(r'\d+', m.group(1))] if m else []
+            v = 'title' if not ns else (f'{ns[0]}–{ns[-1]}' if len(ns) > 1 else str(ns[0]))
         if c.get('acrostic'):                      # 诗篇 119：字母名作页名，八节一页
             i = len(units)
             v = f'{8 * i + 1}–{8 * i + 8}'
@@ -394,7 +419,8 @@ def build(key):
         if not u['pages']:
             ps = [int(x) for x in re.findall(r'data-p="(\d+)"', u['md'])]
             u['pages'] = (ps[0], ps[-1]) if ps else None
-        u['slug'] = f'v{u["verse"].replace("–", "-")}' + (f'-{u["part"]}' if u['part'] else '')
+        u['slug'] = 'the-title' if u['verse'] == 'title' else \
+            f'v{u["verse"].replace("–", "-")}' + (f'-{u["part"]}' if u['part'] else '')
         note = c.get('notes', {}).get(u['slug'])
         if note:
             u['md'] = f'<p class="{P}-lost">{note}</p>\n\n' + u['md']
@@ -416,6 +442,8 @@ def publish(key, c, fronts, units, backs, gaps, OUT, BASE, RAW):
     pages = [('front', f) for f in fronts] + [('unit', u) for u in units] + [('front', f) for f in backs]
 
     def vref(u):
+        if u['verse'] == 'title':
+            return f'Psalm {c["psalm"]}, the title'
         return f'Psalm {c["psalm"]}:{u["verse"]}' if u['verse'] else f'Psalm {c["psalm"]}'
 
     def label_of(k, x):
@@ -423,6 +451,8 @@ def publish(key, c, fronts, units, backs, gaps, OUT, BASE, RAW):
             return x['title']
         if x.get('name'):
             return x['name']
+        if x['verse'] == 'title':
+            return 'The Title'
         return f'Verse{"s" if "–" in x["verse"] else ""} {x["verse"]}' + (f' · Part {x["part"]}' if x['part'] else '')
 
     for i, (k, x) in enumerate(pages):
