@@ -227,8 +227,8 @@ AUTHORS = OrderedDict([
     # 塞缪尔·史密斯：DNB 作约 1584 年生于达德利附近、约 1662 年卒；图书馆规范档作 1588–1665，故两头都写「约」。1615 年起任埃塞克斯郡普里特尔韦尔圣职。本站收《大卫的悔改》（1614 第二版，EEBO-TCP A12516）与《摩西的祷告》（1656，A93404）两本单篇专书，见 MONOGRAPHS / MONO_TITLES。
     ('smith', dict(name='塞缪尔·史密斯', short='史密斯', en='Samuel Smith',
                   years='约1584–约1665', dir='smith',
-                  work_cn='诗篇 51 篇、90 篇讲解',
-                  work_en='Dauids Repentance (Psalm 51); Moses his Prayer (Psalm 90)')),
+                  work_cn='诗篇 1 篇、51 篇、90 篇讲解',
+                  work_en='Dauids Blessed Man (Psalm 1); Dauids Repentance (Psalm 51); Moses his Prayer (Psalm 90)')),
     ('alexander', dict(name='约瑟·亚历山大', short='亚历山大', en='Joseph Addison Alexander',
                        years='1809–1860', dir='alexander',
                        work_cn='诗篇、以赛亚书、马太福音、使徒行传注释',
@@ -426,10 +426,11 @@ description: 「历代解经」{cn}条目：{names}，选择进入。
 # 不进对比抽屉（compare_sources 只收有章节的目录）。
 # 单篇专书：目录名不是书卷名，归到某卷名下；只讲一两篇，不进逐章对比抽屉（2026-11-17 用户令收欧文、曼顿、布里奇斯论单篇诗篇）
 MONOGRAPHS = {('owen', 'psalm130'): 'psalms', ('manton', 'psalm119'): 'psalms', ('bridges', 'psalm119'): 'psalms',
-              ('knox', 'psalm6'): 'psalms', ('hildersham', 'psalm51'): 'psalms', ('reynolds', 'psalm110'): 'psalms', ('cowper', 'psalm119'): 'psalms', ('smith', 'psalm51'): 'psalms', ('smith', 'psalm90'): 'psalms', ('taylor', 'psalm32'): 'psalms'}
+              ('knox', 'psalm6'): 'psalms', ('hildersham', 'psalm51'): 'psalms', ('reynolds', 'psalm110'): 'psalms', ('cowper', 'psalm119'): 'psalms', ('smith', 'psalm51'): 'psalms', ('smith', 'psalm90'): 'psalms', ('taylor', 'psalm32'): 'psalms', ('smith', 'psalm1'): 'psalms'}
 # 同一作者在同一卷书下有几本单篇专书时（史密斯：诗篇 51、90 篇），逐本出条目，书名按目录查此表；
 # 只有一本的照旧用 BOOK_TITLES[(作者, 书卷)]。
-MONO_TITLES = {('smith', 'psalm51'): ('大卫的悔改（诗篇 51 篇）', 'Dauids Repentance'),
+MONO_TITLES = {('smith', 'psalm1'): ('大卫的有福之人（诗篇 1 篇）', 'Dauids Blessed Man'),
+               ('smith', 'psalm51'): ('大卫的悔改（诗篇 51 篇）', 'Dauids Repentance'),
                ('smith', 'psalm90'): ('摩西的祷告（诗篇 90 篇）', 'Moses his Prayer')}
 ESSAY_ENTRIES = {'vos': {'psalms': '/vos/psalter/zh/'}}   # 入口一律指中文版（用户 2026-11-11）
 # 交界斜度：顶边比底边右移 2×DUO_SLANT 个百分点。原先 20 个百分点，三家时最左一带底边太窄放不下作者名，收到 8。

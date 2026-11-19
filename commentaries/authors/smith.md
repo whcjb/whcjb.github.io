@@ -24,7 +24,7 @@ facts:
 <ul class="cb-timeline">
 <li><b>约1584</b>生于达德利附近</li>
 <li><b>1603</b>入牛津圣玛丽学堂</li>
-<li><b>1614</b>《大卫的悔改》第二版，署罗克斯韦尔牧师</li>
+<li><b>1614</b>《大卫的悔改》第二版，署罗克斯韦尔牧师；《大卫的有福之人》初版</li>
 <li><b>1615</b>11 月 30 日任普里特尔韦尔圣职</li>
 <li><b>1640年代</b>内战时避居伦敦</li>
 <li><b>1656</b>《摩西的祷告》（诗篇 90 篇）出版</li>
@@ -37,6 +37,8 @@ facts:
 
 另收《摩西的祷告：诗篇九十篇讲解》（*Moses his Prayer. Or, An Exposition of the Nintieth Psalme*，伦敦 W. Wilson 1656）。这是他晚年的著作，扉页称他为「《大卫的悔改》《大审判》的作者，至今健在」。诗题与每节都先讲大意与要旨，再列教义、理由、应用，讲人生的短暂与人在神忿怒下的光景，本站诗题与各节各一页，卷首全篇经文与卷末「要义一览」一并收入。
 
-两本的底本都是 EEBO-TCP 的人工录入本。录入者读不出的字在正文里标红，尚未对照原书影像补出，详见书首页的文本说明。
+另收《大卫的有福之人：诗篇第一篇简释》（*Dauids Blessed Man: or, A Short Exposition upon the First Psalme*），讲「引人到真幸福」之道，1614 年初版，本站据 1616 年第二版（伦敦，尼古拉斯·奥克斯印、西蒙·沃特森发行）。开头先有一篇论诗篇全书的总论，再逐节讲到第 6 节，书末附晨祷、晚祷各一篇。录入所据的那一册有六处共缺 34 页，其中五处据 1868 年爱丁堡 Nichol 重印本补入（该本据后来的增订版、拼法已现代化，由 OCR 识读并对照影像核过），页面上加框标出；第六处在晨祷中间，后来的版次把祷文改写了，无从补入。
 
-<p class="cb-src">资料来源：<i>Dictionary of National Biography</i> vol. 53, "Smith, Samuel (1584–1662?)"；Anthony Wood, <a href="https://words.fromoldbooks.org/Wood-AthenaeOxonienses/smith-samuel-1.html"><i>Athenae Oxonienses</i></a>；《大卫的悔改》扉页与《致读者》（1614）；《摩西的祷告》扉页（1656）。</p>
+三本的底本都是 EEBO-TCP 的人工录入本。录入者读不出的字在正文里标红，尚未对照原书影像补出，详见书首页的文本说明。
+
+<p class="cb-src">资料来源：<i>Dictionary of National Biography</i> vol. 53, "Smith, Samuel (1584–1662?)"；Anthony Wood, <a href="https://words.fromoldbooks.org/Wood-AthenaeOxonienses/smith-samuel-1.html"><i>Athenae Oxonienses</i></a>；《大卫的悔改》扉页与《致读者》（1614）；《摩西的祷告》扉页（1656）；《大卫的有福之人》扉页（1616）。</p>

@@ -120,6 +120,25 @@ BOOKS = {
                  '按原书页码约三十页分一页。',
         omitted_en='The folding table of the method of the whole psalm and the alphabetical table of chief matters are '
                    'not included.', omitted_zh='卷首的全篇纲目折页表与卷末主题索引未收。'),
+    'smith-psalm1': dict(
+        tcp='B00721', author='smith', book='psalm1', P='so', c0='#27707a', c1='#3aa0af', psalm=1,
+        short='Smith on Psalm 1', hero='Psalm 1',
+        title_en="Dauids Blessed Man: or, A Short Exposition upon the First Psalme",
+        tagline="Samuel Smith · Dauids Blessed Man",
+        edition='Second edition · London: Nicholas Okes for Simon Waterson, 1616 · STC 22839.3', year='1616',
+        front=['title_page', 'dedication', 'table_of_contents'], back=[], body_back=['prayer'],
+        units=('pages', 'body/div/div', 30), verse_seq=['intro', '1', '2', '3', '4', '5', '6'], fills='fills.json',
+        about_en='Smith\'s exposition of the first Psalm, "directing a man to true happinesse", was first published in '
+                 '1614 and went through many editions; this is the second edition of 1616. The opening discourse on the '
+                 'Book of Psalms and each verse are one page here (verses 1 and 3, being long, are divided by the printed '
+                 'pages), and the morning and evening prayers follow. The copy that was transcribed lacks 34 pages in six '
+                 'places; five of these are supplied, in framed blocks, from the 1868 Edinburgh reprint (James Nichol), which '
+                 'follows a later enlarged edition in modern spelling, read by OCR and checked against its page images. '
+                 'The sixth, two pages of the morning prayer, cannot be supplied, because the later edition rewrote the prayer.',
+        about_zh='史密斯讲诗篇第一篇「引人到真幸福」的这部书 1614 年初版，此后多次重印，这是 1616 年的第二版。本站开头论诗篇一卷书的总论与各节各一页'
+                 '（第 1、3 节讲得长，按原书页码分页），晨祷、晚祷附后。录入所据那一册有六处共缺 34 页：五处据 1868 年爱丁堡 Nichol 重印本补入，'
+                 '在页面上加框标出——该本据后来的增订版、拼法已现代化，由 OCR 识读并对照影像核过；第六处是晨祷中间两页，后来的版次把祷文改写了，无从补入。',
+        omitted_en='', omitted_zh=''),
 }
 
 LAYOUT_CHAPTER = r'''---
@@ -198,6 +217,9 @@ layout: default
 .__P__-wrap .__P__-pb[data-p]::before { content: "p." attr(data-p); font-size: 10.5px; color: #b5afa6; font-style: normal;
   margin: 0 4px; border: 1px solid var(--rule); border-radius: 3px; padding: 0 3px; vertical-align: 1px; }
 .__P__-wrap .__P__-gap { color: #c0392b; cursor: help; }
+.__P__-wrap .__P__-fill { border: 1px dashed var(--ink); border-radius: 6px; padding: 10px 16px 2px; margin: 0 0 18px;
+  background: #fffdf7; }
+.__P__-wrap .__P__-fill-h { font-size: 13px; line-height: 1.6; color: #8a6d3b; text-align: left !important; margin-bottom: 12px !important; }
 .__P__-wrap .__P__-lost { font-size: 14px; color: #a0522d; border: 1px dashed #e0b8a0; border-radius: 4px; padding: 8px 12px; }
 .__P__-wrap .__P__-stamp { text-align: right; color: #aaa59d; font-size: 12px; margin-top: 30px; font-family: Georgia, serif; }
 @media (max-width: 767px) {
@@ -300,9 +322,35 @@ def render(r, e, P, skip_head=False):
     return out
 
 
+FILLS = {}
+
+
+def pp_str(f):
+    pp = [x for x in f.get('nichol_pp') or [] if x]
+    return (', p. ' if len(pp) == 1 else ', pp. ') + '–'.join(str(x) for x in (pp[0], pp[-1]) if True)[:20] \
+        if pp and len(pp) > 1 else (f', p. {pp[0]}' if pp else '')
+
+
+def fill_block(k, P):
+    f = FILLS.get(str(k))
+    if not f:
+        return None
+    if f.get('skip'):
+        return f'\n\n<p class="{P}-lost">[{f["skip"]}]</p>\n\n'
+    head = (f'Pages wanting in the copy transcribed ({f["extent"]}) are supplied here from the reprint of a later, enlarged '
+            f'edition (Edinburgh: James Nichol, 1868{pp_str(f)}), read by OCR and '
+            f'checked against the page images; its spelling is modernised. 录入所据那一册此处缺 {f["extent"].split()[0]} 页，'
+            f'据 1868 年爱丁堡 Nichol 重印本（据后来的增订版，拼法已现代化）补入，OCR 识读并对照影像核过。')
+    if f.get('note'):
+        head += ' ' + f['note']
+    body = '\n\n'.join(f['paras'])
+    return (f'\n\n<div class="{P}-fill" markdown="1">\n\n<p class="{P}-fill-h">{head}</p>\n\n{body}\n\n</div>\n\n')
+
+
 def gapify(md, P):
-    md = re.sub(r'\s*〈MISSING:\d+〉\s*', f'\n\n<p class="{P}-lost">[A page or more is wanting here in the copy from which '
-                f'the keyed text was made. 原书此处缺页：录入所据的那一册缺页。]</p>\n\n', md)
+    md = re.sub(r'\s*〈MISSING:(\d+)〉\s*', lambda m: fill_block(m.group(1), P) or '\n\n<p class="__LOST__"></p>\n\n', md)
+    md = re.sub(r'<p class="__LOST__"></p>', f'<p class="{P}-lost">[A page or more is wanting here in the copy from which '
+                f'the keyed text was made. 原书此处缺页：录入所据的那一册缺页。]</p>', md)
     return TOK.sub(lambda m: f'<span class="{P}-gap" title="TCP: illegible in source（底本此处读不出）">{m.group(0)}</span>', md)
 
 
@@ -383,6 +431,9 @@ def build(key):
                 setattr(el, a, v.replace('*', '&#42;'))
     r = tt.R(P, c['year'])
     text = root.find(f'.//{TEI}text')
+    FILLS.clear()
+    if c.get('fills'):
+        FILLS.update(json.loads((RAW / c['fills']).read_text(encoding='utf-8')))
     fronts, backs, toc = [], [], []
     for sect, keep, acc in (('front', c['front'], fronts), ('back', c['back'], backs)):
         e = text.find(TEI + sect)
@@ -397,14 +448,6 @@ def build(key):
             if ty in keep:
                 slug, en, zh = FRONT_LABEL[ty]
                 acc.append(dict(slug=slug, title=en, zh=zh, md=tt.to_md(P, render(r, d, P))))
-    for ty in c.get('body_back', []):           # 正文层里的附录（考珀的两篇祷文）并成一页，排在讲解之后
-        ds = [d for d in text.find(TEI + 'body').iter(TEI + 'div') if d.get('type') == ty]
-        if ds:
-            slug, en, zh = FRONT_LABEL[ty]
-            items = []
-            for d in ds:
-                items += render(r, d, P)
-            backs.insert(0, dict(slug=slug, title=en, zh=zh, md=tt.to_md(P, items)))
     units = []
     kind = c['units'][0]
     # 分页那一层 div 的父节点里、夹在子 div 前后的直属内容：前面的（引言、论旨）够长就单成一页 Introduction，
@@ -424,7 +467,7 @@ def build(key):
         if sum(len(''.join(k.itertext())) for k in pre) > 300:
             holder = ET.Element(TEI + 'div')
             holder.extend(pre)
-            units.append(dict(verse='intro', part=None, items=render(r, holder, P), pages=None, name='Introduction'))
+            units.append(dict(verse='intro', part=None, items=render(r, holder, P), pages=None, name='Introduction', pre=True))
         if post:
             holder = ET.Element(TEI + 'div')
             holder.extend(post)
@@ -433,6 +476,9 @@ def build(key):
         if d.tag != TEI + 'div' or d.get('type') in c.get('body_back', []) + c.get('skip_types', []):
             continue
         v = verse_label(d, r)
+        if c.get('verse_seq'):                      # 史密斯诗 1：各 part 无节号，按次序指定
+            v = c['verse_seq'][sum(1 for d2 in find(text, c['units'][1])[:find(text, c['units'][1]).index(d)]
+                                   if d2.tag == TEI + 'div' and d2.get('type') not in c.get('body_back', []))]
         if c.get('verse_from_head'):               # 「VERSE. 12.13.」→ 12–13；诗题（THE TEXT. To him that excelleth）→ title
             h = d.find(TEI + 'head')
             ht = tt.text_of(h) if h is not None else ''
@@ -474,8 +520,22 @@ def build(key):
                 units.append(dict(verse=v, part=j + 1, nparts=len(chunks), items=its, pages=(a, b)))
         else:
             units.append(dict(verse=v, part=None, items=items, pages=None))
+    if len(units) > 1 and units[0].get('pre') and units[1]['verse'] == 'intro':   # 第一部分本身就是引言：开头标题段并进去
+        units[1]['items'] = units[0]['items'] + units[1]['items']
+        units.pop(0)
+    for u in units:
+        if u['verse'] == 'intro' and not u.get('name'):
+            u['name'] = 'Introduction'
     if tails:
         units[-1]['items'] += tails
+    for ty in c.get('body_back', []):           # 正文层里的附录（考珀的两篇祷文）并成一页，排在讲解之后
+        ds = [d for d in text.find(TEI + 'body').iter(TEI + 'div') if d.get('type') == ty]
+        if ds:
+            slug, en, zh = FRONT_LABEL[ty]
+            items = []
+            for d in ds:
+                items += render(r, d, P)
+            backs.insert(0, dict(slug=slug, title=en, zh=zh, md=tt.to_md(P, items)))
     # 页码范围：下一单元起页之前
     for i, u in enumerate(units):
         u['md'] = gapify(tt.to_md(P, u.pop('items')), P)
