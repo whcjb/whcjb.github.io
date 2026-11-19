@@ -1,0 +1,47 @@
+<thinking_mode>
+Count asterisks in original:
+1. *And they* — 2
+2. *shall enter ... in his arising* — 2
+3. *to terrify the earth.* — 2
+4. *earth* — 2
+5. *dust* — 2
+6. *ground.* — 2
+7. *arise* — 2
+8. *erhebt* — 2
+9. *bebt* — 2
+Total 18.
+
+No HTML comments in this passage. Gesenius first occurrence: "Gesen. Thes. s. v." — abbreviation. Translate: 参格塞尼乌斯（Gesenius）《希伯来语词库》该词条. Then later "by Gesenius" — second time, no annotation. Calvin no annotation.
+
+Latin "ad terram terrendam" keep with gloss. German keep with gloss; *erhebt* and *bebt* inside parentheses. "wenn er sich *erhebt* und die Erde *bebt*"（当他*兴起*、大地便*震动*）. German isn't English, fine to keep.
+
+The *earth* word discussion: "The first word rendered *earth*" — in Chinese, translated text uses 地. Here author discusses the English rendering; in Chinese I can say "译作*地*的头一个词". Rule 9b says keep English only when discussing the English word itself. Here it's about the Hebrew word rendering; Chinese "*地*" works. Similarly *dust* → *尘土*, *ground* → *地面*.
+
+Note "the caves of the rocks and into the holes of the earth" — first earth (עפר) is "holes of the earth"; "to terrify the earth" is הארץ. So "first word rendered earth" refers to the one in "holes of the earth". In Chinese: 地的洞穴 / 使地战兢. Then explain.
+
+"see Gesen. Thes. s. v." → 参格塞尼乌斯（Gesenius）《词库》该词条. Rule 5: cf.→参; "see" → 见. Fine.
+
+Draft:
+
+本节与第 10 节的分别只在两处：一是把警告或劝勉换成了直接的预言，二是添上了神显出可畏之威的用意。*他们*（指拜偶像的人，或泛指世人）*必进入岩石的洞穴和地的窟窿，躲避耶和华的惊吓和他威严的荣光，在他兴起之时*（即当他兴起的时候）*，使地大大战兢。*
+
+Wait, need asterisk positions: "*shall enter ... in his arising*" then "(i. e. when he arises)" then "*to terrify the earth.*" Original first: "*And they*" — fine.
+
+Text: *他们*（……）*必进入岩石的洞穴、进入地的窟窿，从耶和华的惊吓和他威严的荣光面前，在他的兴起中*（即在他兴起的时候）*使大地惊恐。* Hmm "earth" twice: holes of the earth, terrify the earth. Use 地 for first, 大地 for second? The note says "first word rendered earth" — implying both rendered earth in English. Use 地 in both: "使地惊恐". Ok.
+
+Literal: "from before the terror of Jehovah" → 从耶和华的惊吓面前. Okay-ish: "躲避耶和华的惊吓" is better Chinese but literal. Use "离开耶和华可畏的面" — no. "从耶和华的惊吓和他威严的荣光面前" acceptable.
+
+Note: 头一个译作*地*的词，与第 10 节译作*尘土*的是同一个词；不过即便在那里，它所指的也是坚实的地表，而非我们称为尘土的那些松散微粒。最确切的译法或许是*地面。*
+
+Keep asterisk with period inside for *ground.*: "*地面。*" fine.
+
+—经上说神*兴起*，是指他着手做某事，尤其是在一段看似静默无为的时期之后。—末一个动词作及物用法，虽不常见，此处却为上下文所必需，而且或许正是它原本、本当的意义（见格塞尼乌斯（Gesenius）《希伯来语词库》该词条）。—לערץ הארץ 中的双关语，加尔文曾加以仿效，不在他的译文里，而在他的注释里（ad terram terrendam〔使地惊恐〕），格塞尼乌斯也仿效过（wenn er sich *erhebt* und die Erde *bebt*〔他一*兴起*，大地便*震动*〕）.
+
+Nested parens: use 括注 with 〔〕? Rule says parentheses for gloss; nested inside parentheses — use （ad terram terrendam，意即「使地惊恐」）. Also add gloss for לערץ הארץ: לערץ הארץ（使地惊恐）. Then Latin gloss: ad terram terrendam（使地受惊）. German: wenn er sich *erhebt* und die Erde *bebt*（当他*兴起*，大地便*震动*）— but whole in parentheses: （wenn er sich *erhebt* und die Erde *bebt*，意为：当他*兴起*，大地便*震动*） — that adds extra asterisks! Must not. So gloss without asterisks: 意为他一兴起，大地便震动. Good.
+
+Gesen. Thes. — Thesaurus; "《希伯来文词库》（Thes.）"? Rule says no English left; Latin abbreviation fine but just say 《词库》. Format: 见格塞尼乌斯（Gesenius）《词库》该条 — the parenthetical inside parentheses fine.
+
+Paronomasia: 谐音双关.
+</thinking_mode>
+
+本节与第 10 节的不同只有两处：一是以直接的预言代替了警告或劝勉，二是添上了神显出可畏之威的用意。*他们*（指拜偶像的人，或泛指世人）*必进入岩石的洞穴，进入地的窟窿，从耶和华的惊吓和他威严的荣光面前，在他的兴起中*（即在他兴起的时候）*使地惊恐。*头一个译作*地*的词，就是第 10 节译作*尘土*的那个词；不过即便在那里，它所指的也是坚实的地表，而非我们称为尘土的那些松散微粒。最确切的译法或许是*地面。*——经上说神*兴起*，是指他着手做某事，尤其是在一段看似静默无为的时期之后。——末一个动词作及物用，虽不多见，此处却为上下文所必需，而且或许正是它原本、本当的意义（见格塞尼乌斯（Gesenius）《词库》该词条）。——לערץ הארץ（使地惊恐）中的谐音双关，加尔文曾加以仿效，不在他的译文里，而在他的注释里（ad terram terrendam，意为使地受惊）；格塞尼乌斯也曾仿效（wenn er sich *erhebt* und die Erde *bebt*，意为他一兴起，大地便震动）。
