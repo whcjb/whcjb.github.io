@@ -73,6 +73,14 @@ def main():
                 b = r['before'].replace('\\t', '\t').replace('\\n', '\n')
                 old, new = (r[k].replace('\\t', '\t').replace('\\n', '\n') for k in ('old', 'new'))
                 n = text.count(b + old)
+                # 插入型（old 为空或是 new 的子串）：落完后 b+old 照样命中，
+                # 只数 b+old 会每跑一遍再插一遍（8 章 צר→צרצר）。锚点后紧跟着
+                # 已经是 new（后来人工改过的，容许隔几个字符，如 `p. 67.—תהו`）就算已落
+                if n == 1 and old in new:
+                    q = text.index(b + old) + len(b)
+                    if new in text[q:q + len(new) + 12]:
+                        stat['已落'] += 1
+                        continue
                 if n == 1:
                     todo.append((text.index(b + old) + len(b), old, new))
                 elif n == 0 and b + new in text:
