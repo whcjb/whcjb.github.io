@@ -1,0 +1,43 @@
+中文 translation. Need to count asterisks carefully. No HTML comments in this passage actually. Abbreviations: Cler. = Clericus 克莱利库斯 (Le Clerc); Low. = Lowth 洛沃特; Ges. = Gesenius; Bs. = Barnes 巴恩斯; Hn. = Henderson 亨德森; Um. = Umbreit; Kn. = Knobel; Calv. = 加尔文; Cocc. = Cocceius 科克策尤斯; Vitr. = Vitringa; J. D. Mich. = J. D. Michaelis 米迦利斯; E. V. = English Version 英译本(钦定本); Hg. = Hengstenberg; De W.; Hk. = Hendewerk; Ew. = Ewald; Ros. = Rosenmüller; Lu. = Luther 路德; Lee 李; Kocher 科赫尔; Maurer; Hitzig.
+
+The abbreviations should be translated to Chinese names, with first-occurrence parenthetical original. First occurrence: use full names in parens e.g. 克莱利库斯（Clericus）. Note: "Cler. Low. Ges." — I'll write 克莱利库斯（Clericus）、洛沃特（Lowth）... Is putting the English in parens okay? Yes, rule 8a requires it.
+
+Count asterisks in original:
+1. *And Jehovah will create* — 2
+2. *over the whole extent* — 2
+3. *place* — 2
+4. *space* — 2
+5. *of Mount Zion* — 2
+6. *and over her assemblies, a cloud by day and smoke* — 2
+7. *and the brightness of a flaming fire by night; for over all the glory* — 2
+8. *a covering* — 2
+9. *dwelling-place;* — 2
+10. *place* — 2
+11. *whole place* 2
+12. *every place* 2
+13. *vapour* 2
+14. *her assemblies* 2
+15. *her places of assembly* 2
+16. *which* 2
+17. *that* (so *that*) 2
+18. *over* 2
+19. *above,* 2
+20. *σκεπασϑήσεται* 2
+21. *it is* or *shall be covered,* — 4
+22. *is* or *shall be* — 4
+"yea" not starred. Total fine.
+
+Rule 9a: "Jehovah" in italics here is his translation: *耶和华必创造*. "Mount Zion" — 锡安山.
+
+"(i. e. a cloud of smoke)" not italic i.e.→即.
+v. 4 → 第 4 节. ch. 1: 5. 3: 1 → 第1章5节、第3章1节 → "参上文 1:5；3:1". vide supra → 见上文.
+"Heb. Lex. s. v. חפה" → 《希伯来文词典》חפה 条.
+The quote "over all, glory shall be a defence" — not italic, translate.
+"yea (Low.)" — translate "是的" ; "*which* (Hn.)" — translating italic which: *这* ? *which* → *那* perhaps "*它*"... Use *此*? Render as *就是*? "which" as relative: *这*. "so *that*" → 「以致*使*」... original: so *that* with only that italic. Render: 以*致*. Hmm, put 以致 with italics on 致: 以*致*. OK.
+"*over*" → *在……之上*; "*above,*" → *超过，*.
+"*it is* or *shall be covered,*" → *是*或*将被遮蔽，*. "*is* or *shall be* understood" → 省略的动词*是*或*将是*.
+Kocher: 科赫尔（Kocher）. Lee: 李（Lee）. Michaelis: 米迦利斯（J. D. Michaelis）. E. V. → 英文钦定本. Calv. → 加尔文 no parens. Lu. → 路德. Sept. → 七十士译本. Ros. → 罗森米勒（Rosenmüller）. Hitzig, Hengstenberg full names later—already introduced? Hengstenberg first appears as Hg. in Calv. list. Hitzig first appears in "Sept. Vitr. Cler. Hitzig." Maurer first later. Kn. first in first list; Knobel parenthetical later "(Knobel)" → 克诺贝尔.
+
+Hebrew glosses: מכון（处所）, כל מכון（全处），עשן（烟），מקראיה（她的聚会），מקראה, כי（因为），כבוד（荣耀），חפה（遮蔽），חפף（遮盖）, יתיר מן (more than) → יתיר מן（多于）. ו（连词“和”）.
+
+Write.教会不仅要因神的审判得洁净，更要因祂显明的同在得荣耀，并在这荣耀的光景中蒙祂护卫而得安稳。神的同在在此以火云这一古老的象征来表示。这同在应许给整个教会，也应许给教会的各个会众；这与旧约的时代有别，那时只有一个不可分割的会众，也只有一个独一的聚会之所。*耶和华必创造*（暗示施展全能的大能，造出一个新的结果）*在锡安山全境之上*（字面作*处所*或*地方*）*在锡安山*（取其最广、最属灵的意义，这从下文可见）*，并在她的众会之上，日间造云与烟*（即烟云）*，夜间造火焰的光；因为在一切荣耀之上*（即先前所应许的荣耀之上，必有）*遮盖*（或庇护）。——近代译本多以此节为一个始于第 4 节之句的结句，作「主既洗净……耶和华就必创造……」（克莱利库斯〔Clericus〕、洛沃特〔Lowth〕、格塞尼乌斯〔Gesenius〕、巴恩斯〔Barnes〕、亨德森〔Henderson〕、温布赖特〔Umbreit〕、克诺贝尔〔Knobel〕）。这样理解虽合乎语法，大意也不变，但第 4 节开头没有 ו（连词「和」），此处却有，似乎表明第 4 节本身才是一个始于第 3 节之句的结句，而新的一句从此处开始（加尔文、科克策尤斯〔Cocceius〕、维特林加〔Vitringa〕、米迦利斯〔J. D. Michaelis〕、英文钦定本、亨斯滕伯格〔Hengstenberg〕、德维特〔De Wette〕、亨德韦克〔Hendewerk〕、埃瓦尔德〔Ewald〕）。用现在时（格塞尼乌斯、德维特、埃瓦尔德、温布赖特）不如用将来时（亨斯滕伯格、亨德韦克……）切合上下文。较早的作者把 מכון（处所）解作*居所；*近代的词典编者则解为泛指的*处所*。כל מכון 译作*全处*或*每处*皆可，意思不变（见上文 1:5；3:1）。本节所描述的两种景象，是火在不同时候所呈现的样子：日间是烟，夜间是焰。所以既无须把 עשן（烟）解作*雾气*（克诺贝尔），也无须违背马所拉重音符号，把它与下文连读（七十士译本、维特林加、克莱利库斯、希齐格〔Hitzig〕、亨斯滕伯格）。——无论把 מקראיה 解作*她的众会*（洛沃特、亨斯滕伯格、埃瓦尔德、温布赖特、克诺贝尔），还是解作*她的聚会之所*（路德、米迦利斯、格塞尼乌斯、亨德森），这应许的意思都一样；但前一解最合惯用法。——洛沃特根据八份抄本删去 מכון 前的 כל，又根据一份抄本和七十士译本在 מקראה 前补上 כל。四十余份抄本和近五十个版本都读作 מקראיה，几乎所有释经者也都解作复数。——末句中 כי（因为）取其通常的意义，并不作「是的」（洛沃特）、*这*（亨德森）或以*致*（克诺贝尔）解。——克莱利库斯、米迦利斯和李（Lee，《希伯来文词典》חפה 条）以 כבוד（荣耀）为末句的主语，作「在一切之上，荣耀必作护卫」，这与马所拉标点全然不合。科赫尔（Kocher）不读*在……之上*，而读作*超乎，*即超过以往一切的荣耀；迦勒底译本作 יתיר מן（多于），正是这种解法。有人把此句看作陈述一个普遍的事实，即「凡荣美之物，其上必有护卫」，也就是说，人向来护卫自己所珍视的东西（维特林加、罗森米勒〔Rosenmüller〕、亨斯滕伯格、埃瓦尔德）；但绝大多数作者都把它理解为预言或应许。——七十士译本（*σκεπασϑήσεται*〔必被遮蔽〕）、格塞尼乌斯、毛雷尔（Maurer）、克诺贝尔把 חפה 解作被动动词，即*它被*或*必被遮蔽，*。但这种解法生硬，而且 חפה 的普阿尔式别处不见，所以不如照埃瓦尔德、温布赖特、亨斯滕伯格以及较早作者的解法，把它看作出自 חפף（遮盖）的名词，与省略的动词*是*或*必有*相配；或照希齐格与亨德韦克的看法，与下一节首句中同一个动词相配，作「因为在一切荣耀之上，必有遮盖与庇护」。照后一种解法，意思不受影响；但这样改动经文的分段，非有必要，便不能成立。
