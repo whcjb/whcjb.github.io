@@ -1,0 +1,43 @@
+---
+layout: default
+---
+{%- comment -%}
+  Taylor on Psalm 32 书卷首页。由 scripts/publish_tcp_psalm.py 生成（BOOKS['taylor-psalm32']）：卷首各页 + 正文方格（悬停看本页首条目录）+ 文本说明。
+  ⚠️ 不复用别家 layout；配色 #4050b3 / #6f77e0。目前只有英文版。
+{%- endcomment -%}
+
+<div class="container tq-book" style="padding-top:80px; max-width:900px;">
+  <div class="tq-hero">
+    <h1>{{ page.hero | default: page.book_name }}</h1>
+    <div class="tq-tagline">{{ page.tagline }}</div>
+    <div class="tq-edition">{{ page.edition }}</div>
+  </div>
+  {{ content }}
+</div>
+
+<style>
+.tq-book .tq-hero { text-align: center; margin-bottom: 8px; }
+.tq-book .tq-hero h1 { font-family: Georgia, "Songti SC", serif; color: #4050b3; font-size: 30px; letter-spacing: .04em; }
+.tq-book .tq-tagline { color: #6f77e0; font-size: 14px; letter-spacing: .06em; margin-top: 6px; }
+.tq-book .tq-edition { color: #9a9a92; font-size: 12px; margin-top: 6px; }
+.tq-book .tq-sec-hd { margin: 30px 0 12px; font-size: 12px; font-weight: bold; letter-spacing: .14em;
+  color: #8f8a82; text-transform: uppercase; text-align: center; }
+.tq-book .tq-sec-hd-main { margin-top: 40px; }
+.tq-book .tq-fronts { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; }
+.tq-book .tq-fronts a { border: 1.5px dashed #6f77e0; border-radius: 8px; padding: 8px 16px; color: #6f77e0;
+  font-family: Georgia, serif; font-size: 14px; text-decoration: none; text-align: center; }
+.tq-book .tq-fronts a span { display: block; font-size: 11px; color: #9a948b; }
+.tq-book .tq-fronts a:hover { background: #6f77e0; color: #fff; }
+.tq-book .tq-fronts a:hover span { color: #eee; }
+.tq-book .tq-sub { margin: 26px 0 10px; font-family: Georgia, serif; font-size: 16px; color: #4050b3; text-align: center; }
+.tq-book .tq-sub span { display: block; font-size: 12px; color: #9a948b; margin-top: 2px; }
+.tq-book .tq-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 8px; }
+.tq-book .tq-grid a { display: block; border: 1px solid #e9ebfa; border-radius: 6px; background: #f9fafe; padding: 8px 8px 7px;
+  text-align: center; font-family: Georgia, serif; font-size: 16px; color: #6f77e0; text-decoration: none; line-height: 1.25; }
+.tq-book .tq-grid a small { display: block; font-size: 11px; color: #958f86; margin-top: 4px; line-height: 1.35; }
+.tq-book .tq-grid a:hover { background: #6f77e0; color: #fff; }
+.tq-book .tq-grid a:hover small { color: #eee; }
+.tq-book .tq-note { text-align: center; color: #8a8a82; font-size: 13px; line-height: 1.8; max-width: 640px; margin: 40px auto 0; }
+.tq-book .tq-note p { margin: 0 0 10px; }
+@media (max-width: 600px) { .tq-book .tq-grid { grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); } }
+</style>

@@ -110,6 +110,10 @@ class R:
                         out.append(' ' + self.inline(it, italic))
             elif t == 'lb':
                 out.append(' ')
+            elif t == 'table':               # 行内小括号表（旁注里「1. Probationis. 2 Praestationis.」之类）：各行以 / 连成一行
+                rows = [' '.join(self.inline(cell, italic) for cell in row if tag(cell) == 'cell')
+                        for row in c if tag(row) == 'row']
+                out.append(' ' + ' / '.join(x.strip() for x in rows if x.strip()) + ' ')
             elif t in ('desc', 'figure', 'milestone', 'figDesc'):
                 pass
             else:

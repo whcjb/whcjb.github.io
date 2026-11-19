@@ -1,0 +1,83 @@
+---
+layout: default
+---
+{%- comment -%}
+  Taylor on Psalm 32 正文页。由 scripts/publish_tcp_psalm.py 生成（BOOKS['taylor-psalm32']），底本 EEBO-TCP A13538（CC0）。
+  ⚠️ 不复用别家 layout（每本书独立样式）；配色 #4050b3 / #6f77e0，类名 tq- 前缀。
+  - 本页所含目录条目 → `.tq-contents`；所讲经文 → `.tq-text`；页边旁注 → `.tq-margin`；印本页码 → `.tq-pb`（#pN）。
+  - 录入本读不出的字 → `.tq-gap`（标红）。目前只有英文版，不接经文弹层（模块只认中文书卷名）。
+{%- endcomment -%}
+
+<div class="container tq-wrap" style="padding-top: 70px;">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <div class="tq-chrome"><a href="{{ site.baseurl }}/taylor/psalm32/">&larr; {{ page.book_name }}</a></div>
+      <h1 class="tq-title">{{ page.title }}</h1>
+      {% if page.subtitle %}<p class="tq-subtitle">{{ page.subtitle }}</p>{% endif %}
+      <div class="tq-nav">
+        {% if page.prev_url %}<a href="{{ site.baseurl }}{{ page.prev_url }}">&larr; {{ page.prev_label }}</a>{% else %}<span></span>{% endif %}
+        {% if page.next_url %}<a href="{{ site.baseurl }}{{ page.next_url }}">{{ page.next_label }} &rarr;</a>{% else %}<span></span>{% endif %}
+      </div>
+      <div class="tq-content">
+        {{ content }}
+      </div>
+      {% if page.date %}<div class="tq-stamp">Published {{ page.date | date: "%Y-%m-%d %H:%M" }}</div>{% endif %}
+      <div class="tq-nav tq-nav-foot">
+        {% if page.prev_url %}<a href="{{ site.baseurl }}{{ page.prev_url }}">&larr; {{ page.prev_label }}</a>{% else %}<span></span>{% endif %}
+        {% if page.next_url %}<a href="{{ site.baseurl }}{{ page.next_url }}">{{ page.next_label }} &rarr;</a>{% else %}<span></span>{% endif %}
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+.tq-wrap { --ink: #6f77e0; --ink-dark: #4050b3; --rule: #e9ebfa; --paper: #f9fafe; --body: #2d2b28; }
+.tq-wrap .tq-chrome, .tq-wrap .tq-nav { font-size: 13px; display: flex; justify-content: space-between; gap: 12px;
+  align-items: center; font-family: Georgia, "Times New Roman", serif; }
+.tq-wrap .tq-chrome { margin: 18px 0 22px; }
+.tq-wrap .tq-chrome a, .tq-wrap .tq-nav a { color: var(--ink-dark); text-decoration: none; }
+.tq-wrap .tq-chrome a:hover, .tq-wrap .tq-nav a:hover { text-decoration: underline; }
+.tq-wrap .tq-title { font-family: Georgia, "Times New Roman", serif; font-size: 28px; font-weight: normal;
+  color: var(--ink-dark); text-align: center; margin: 10px 0 4px; line-height: 1.3; }
+.tq-wrap .tq-subtitle { text-align: center; font-size: 14px; color: #8a857e; margin: 0 0 6px;
+  font-family: Georgia, "Times New Roman", serif; font-style: italic; }
+.tq-wrap .tq-nav { margin: 14px 0 26px; }
+.tq-wrap .tq-nav-foot { margin-top: 44px; padding-top: 16px; border-top: 1px solid var(--rule); }
+.tq-wrap .tq-content { font-family: Georgia, "Times New Roman", serif; font-size: 17px; line-height: 1.85; color: var(--body); }
+.tq-wrap .tq-content p { margin: 0 0 16px; text-align: justify; }
+.tq-wrap .tq-content h3, .tq-wrap .tq-content h4 { font-size: 18px; font-weight: normal; text-align: center;
+  color: var(--ink-dark); margin: 26px 0 18px; line-height: 1.5; }
+.tq-wrap .tq-contents { background: var(--paper); border: 1px solid var(--rule); border-radius: 4px;
+  padding: 12px 18px 6px; margin: 0 0 26px; font-size: 14.5px; line-height: 1.65; color: #4a4640; }
+.tq-wrap .tq-contents-h { font-size: 12px; letter-spacing: .1em; color: var(--ink-dark); margin-bottom: 6px; }
+.tq-wrap .tq-contents-h span { letter-spacing: 0; color: #a39d94; margin-left: 4px; }
+.tq-wrap .tq-contents ul { margin: 0 0 6px; padding-left: 18px; }
+.tq-wrap .tq-contents li { margin: 0 0 4px; }
+.tq-wrap .tq-contents li small { color: #a39d94; margin-left: 4px; }
+.tq-wrap .tq-text { border-left: 3px solid var(--ink); background: var(--paper); padding: 10px 16px; margin: 0 0 22px; }
+.tq-wrap .tq-text p { margin: 0 0 6px; text-align: left; font-style: italic; }
+.tq-wrap .tq-dropcap { float: left; font-size: 3em; line-height: .85; margin: 4px 7px 0 0; color: var(--ink-dark); }
+.tq-wrap .tq-quote { text-align: center !important; font-style: italic; }
+.tq-wrap .tq-closer { text-align: right !important; font-style: italic; }
+.tq-wrap .tq-trailer { text-align: center !important; letter-spacing: .1em; }
+.tq-wrap .tq-item { margin: 0 0 8px 24px !important; text-align: left !important; }
+.tq-wrap .tq-poem { margin: 0 0 16px 28px; }
+.tq-wrap .tq-poem p, .tq-wrap .tq-l { margin: 0 !important; text-align: left !important; }
+.tq-wrap .tq-table { border-collapse: collapse; margin: 0 auto 16px; font-size: 14px; }
+.tq-wrap .tq-table td { border: 1px solid var(--rule); padding: 3px 8px; vertical-align: top; }
+.tq-wrap .tq-margin { display: block; margin: 2px 0 8px; padding-left: 10px; border-left: 2px solid var(--rule);
+  font-size: 13px; line-height: 1.55; color: #857f76; font-style: normal; text-align: left; }
+@media (min-width: 1200px) {
+  .tq-wrap .tq-margin { float: right; clear: right; width: 150px; margin: 4px -182px 8px 16px; padding-left: 8px; }
+}
+.tq-wrap .tq-pb { scroll-margin-top: 80px; }
+.tq-wrap .tq-pb[data-p]::before { content: "p." attr(data-p); font-size: 10.5px; color: #b5afa6; font-style: normal;
+  margin: 0 4px; border: 1px solid var(--rule); border-radius: 3px; padding: 0 3px; vertical-align: 1px; }
+.tq-wrap .tq-gap { color: #c0392b; cursor: help; }
+.tq-wrap .tq-lost { font-size: 14px; color: #a0522d; border: 1px dashed #e0b8a0; border-radius: 4px; padding: 8px 12px; }
+.tq-wrap .tq-stamp { text-align: right; color: #aaa59d; font-size: 12px; margin-top: 30px; font-family: Georgia, serif; }
+@media (max-width: 767px) {
+  .tq-wrap .tq-title { font-size: 23px; }
+  .tq-wrap .tq-content { font-size: 16px; }
+}
+</style>

@@ -169,10 +169,10 @@ authors:
     short: "泰勒"
     en: "Thomas Taylor"
     years: "1576–1633"
-    work_cn: "提多书注释"
-    work_en: "A Commentarie vpon the Epistle of S. Paul written to Titus"
+    work_cn: "提多书注释、诗篇 32 篇注释"
+    work_en: ""
     no_bio: false
-    books: 1
+    books: 2
   - id: hall
     name: "托马斯·霍尔"
     short: "霍尔"
@@ -443,7 +443,7 @@ books:
     testament: ot
     chapters: 150
     pick: true
-    pick_n: 12
+    pick_n: 13
     pick_c0: "#2c2864"
     pick_c1: "#4a4382"
     links:
@@ -460,6 +460,7 @@ books:
       - {author: cowper, path: "/cowper/psalm119/", url_tpl: "/cowper/psalm119/__CH__/", title_cn: "锡安学子的圣字母表", title_en: "A Holy Alphabet for Sion's Scholars", c0: "#6b6128", c1: "#a49746"}
       - {author: smith, path: "/smith/psalm51/", url_tpl: "/smith/psalm51/__CH__/", title_cn: "大卫的悔改（诗篇 51 篇）", title_en: "Dauids Repentance", c0: "#27707a", c1: "#3aa0af"}
       - {author: smith, path: "/smith/psalm90/", url_tpl: "/smith/psalm90/__CH__/", title_cn: "摩西的祷告（诗篇 90 篇）", title_en: "Moses his Prayer", c0: "#27707a", c1: "#3aa0af"}
+      - {author: taylor, path: "/taylor/psalm32/", url_tpl: "/taylor/psalm32/__CH__/", title_cn: "大卫的学问（诗篇 32 篇注释）", title_en: "Dauids Learning, or The Way to True Happinesse", c0: "#4050b3", c1: "#6f77e0"}
   - id: proverbs
     name: "箴言"
     en: "Proverbs"

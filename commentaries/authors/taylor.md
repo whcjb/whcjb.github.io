@@ -10,7 +10,7 @@ facts:
   - ["卒", "1632/33 年 1 月或 2 月，艾尔沃思（Isleworth）；葬于伦敦奥尔德曼伯里圣马利亚堂"]
   - ["求学", "剑桥基督学院（Christ's College），1594/95 年文学学士，1598 年文学硕士，1628 年神学博士；1630 年牛津大学承认其神学博士学位"]
   - ["职任", "基督学院院士（1599–1604）、温特沃斯希伯来文讲师（1601–1604）；约 1612 年住沃特福德（Watford）；后居雷丁（Reading）；伦敦奥尔德曼伯里圣马利亚堂（St. Mary Aldermanbury）牧师（1625 年起）"]
-  - ["代表作", "《提多书注释》（1612）、《撒种的比喻》（1621）、《基督显明》（1635）、《摩西与亚伦》（1653）"]
+  - ["代表作", "《提多书注释》（1612）、《大卫的学问》（1617，诗篇 32 篇）、《撒种的比喻》（1621）、《基督显明》（1635）、《摩西与亚伦》（1653）"]
 ---
 
 ## 生平
@@ -60,4 +60,6 @@ facts:
 
 本站底本是 EEBO-TCP 的人工录入本，录入本里读不出的字已经对照两份 1612 年藏本的影像逐处判读，详见书首页的文本说明。
 
-<p class="cb-src">资料来源：Charlotte Fell Smith, "Taylor, Thomas (1576–1633)," <a href="https://en.wikisource.org/wiki/Dictionary_of_National_Biography,_1885-1900/Taylor,_Thomas_(1576-1633)"><i>Dictionary of National Biography</i> vol. 55 (1898)</a>，及 1904 年《勘误》第 272 页的更正（求学经历）；本书献辞与《致读者》（1612）。</p>
+另收《大卫的学问，或通往真幸福之路：诗篇三十二篇注释》（*Dauids Learning, or The Way to True Happinesse: in a Commentarie vpon the 32. Psalme*，伦敦 1617）。扉页说是「讲道之后出版」，署名 T.T.，「剑桥基督学院前院士」，献给沃灵福德子爵诺利斯勋爵（Viscount Wallingford, Lord Knollys）。正文书眉题作《通往幸福的大道》（*The High-way to Happines*），从诗题与全篇论旨讲起，逐节讲到第 11 节，讲罪得赦免之福、隐瞒罪的痛苦与认罪的益处。本站每节一页，第 2 节、第 5–6 节、第 7 节讲得长，按原书页码约三十页分一页。这本的底本也是 EEBO-TCP 录入本，读不出的字目前在正文标红，尚未判读；卷首的全篇纲目折页表暂未收。
+
+<p class="cb-src">资料来源：Charlotte Fell Smith, "Taylor, Thomas (1576–1633)," <a href="https://en.wikisource.org/wiki/Dictionary_of_National_Biography,_1885-1900/Taylor,_Thomas_(1576-1633)"><i>Dictionary of National Biography</i> vol. 55 (1898)</a>，及 1904 年《勘误》第 272 页的更正（求学经历）；《提多书注释》献辞与《致读者》（1612）；《大卫的学问》扉页（1617）。</p>

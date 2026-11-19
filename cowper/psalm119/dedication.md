@@ -7,8 +7,8 @@ subtitle: "献辞"
 date: 2026-11-19 17:05
 prev_url: "/cowper/psalm119/title/"
 prev_label: "Title Page"
-next_url: "/cowper/psalm119/v1-8/"
-next_label: "Aleph"
+next_url: "/cowper/psalm119/introduction/"
+next_label: "Introduction"
 ---
 
 ### <span class="cw-pb" data-facs="2"></span><span class="cw-pb" data-facs="2"></span>TO THE RIGHT HONOVRABLE, *DAVID,* LORD OF SCONE, *ONE OF HIS MAIEsties* most Honorable Priuy Councell in this Kingdome.

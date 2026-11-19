@@ -103,6 +103,23 @@ BOOKS = {
                  '再列教义、理由、应用；本站诗题与各节各一页。',
         omitted_en='The table of principal doctrines is given after the exposition.',
         omitted_zh='卷末「要义一览」附在讲解之后。'),
+    'taylor-psalm32': dict(
+        tcp='A13538', author='taylor', book='psalm32', P='tq', c0='#4050b3', c1='#6f77e0', psalm=32,
+        short='Taylor on Psalm 32', hero='Psalm 32',
+        title_en="Dauids Learning, or The Way to True Happinesse: A Commentarie upon the 32. Psalme",
+        tagline='Thomas Taylor · Dauids Learning',
+        edition='London: William Stansby for Henrie Fetherstone, 1617 · STC 23827', year='1617',
+        front=['title_page', 'dedication', 'to_the_reader'], back=['errata'],
+        units=('pages', 'body/div/div', 30), verse_from_head=True, skip_types=['diagram'],
+        verse_override={'5': '5–6'},
+        about_en='Taylor, "late fellow of Christs Colledge in Cambridge" as the title page calls him, preached this '
+                 'commentary on Psalm 32 and published it in 1617. '
+                 'Each verse is one page here; the long expositions of verses 2, 5–6 and 7 are divided by the printed '
+                 'pages into parts of about thirty pages.',
+        about_zh='泰勒（剑桥基督学院前院士）讲诗篇 32 篇，1617 年出版。本站每节一页；第 2 节、第 5–6 节、第 7 节讲得长，'
+                 '按原书页码约三十页分一页。',
+        omitted_en='The folding table of the method of the whole psalm and the alphabetical table of chief matters are '
+                   'not included.', omitted_zh='卷首的全篇纲目折页表与卷末主题索引未收。'),
 }
 
 LAYOUT_CHAPTER = r'''---
@@ -276,7 +293,7 @@ def render(r, e, P, skip_head=False):
             txt = '\n\n'.join(x[-1] for x in inner if x[0] != 'pb' and isinstance(x[-1], str))
             out.append(('text', txt.strip()))
             continue
-        if c.tag == TEI + 'div':                   # 子 div（逐节）自己递归，epigraph 才能走上面的经文框
+        if c.tag in (TEI + 'div', TEI + 'argument'):   # 子 div（逐节）、论旨块自己递归，epigraph 才能走上面的经文框
             out.extend(render(r, c, P))
             continue
         tt.block(r, c, out, 3)
@@ -284,6 +301,8 @@ def render(r, e, P, skip_head=False):
 
 
 def gapify(md, P):
+    md = re.sub(r'\s*〈MISSING:\d+〉\s*', f'\n\n<p class="{P}-lost">[A page or more is wanting here in the copy from which '
+                f'the keyed text was made. 原书此处缺页：录入所据的那一册缺页。]</p>\n\n', md)
     return TOK.sub(lambda m: f'<span class="{P}-gap" title="TCP: illegible in source（底本此处读不出）">{m.group(0)}</span>', md)
 
 
@@ -388,8 +407,30 @@ def build(key):
             backs.insert(0, dict(slug=slug, title=en, zh=zh, md=tt.to_md(P, items)))
     units = []
     kind = c['units'][0]
+    # 分页那一层 div 的父节点里、夹在子 div 前后的直属内容：前面的（引言、论旨）够长就单成一页 Introduction，
+    # 后面的（FINIS 之类）接到最后一页末尾。曾漏收考珀卷首引言与泰勒「THE ARGVMENT」（2026-11-19 补）。
+    ppath = c['units'][1].rsplit('/', 1)[0]
+    parents = [text.find(TEI + 'body')] if ppath == 'body' else find(text, ppath)
+    tails = []
+    for par in parents:
+        if par.get('type') in c.get('body_back', []):
+            continue
+        kids = list(par)
+        idx = [i for i, k in enumerate(kids) if k.tag == TEI + 'div' and k.get('type') not in c.get('body_back', [])]
+        if not idx:
+            continue
+        pre = [k for k in kids[:idx[0]] if not (k.tag == TEI + 'div')]
+        post = [k for k in kids[idx[-1] + 1:] if k.tag != TEI + 'div']
+        if sum(len(''.join(k.itertext())) for k in pre) > 300:
+            holder = ET.Element(TEI + 'div')
+            holder.extend(pre)
+            units.append(dict(verse='intro', part=None, items=render(r, holder, P), pages=None, name='Introduction'))
+        if post:
+            holder = ET.Element(TEI + 'div')
+            holder.extend(post)
+            tails += render(r, holder, P)
     for d in find(text, c['units'][1]):
-        if d.tag != TEI + 'div' or d.get('type') in c.get('body_back', []):
+        if d.tag != TEI + 'div' or d.get('type') in c.get('body_back', []) + c.get('skip_types', []):
             continue
         v = verse_label(d, r)
         if c.get('verse_from_head'):               # 「VERSE. 12.13.」→ 12–13；诗题（THE TEXT. To him that excelleth）→ title
@@ -400,8 +441,9 @@ def build(key):
             m = re.search(r'VERS[E]?\W*\s*(\d+(?:[.,:]\d+)*)', ht.replace('ſ', 's'))
             ns = [int(x) for x in re.findall(r'\d+', m.group(1))] if m else []
             v = 'title' if not ns else (f'{ns[0]}–{ns[-1]}' if len(ns) > 1 else str(ns[0]))
+            v = c.get('verse_override', {}).get(v, v)
         if c.get('acrostic'):                      # 诗篇 119：字母名作页名，八节一页
-            i = len(units)
+            i = sum(1 for u in units if u['verse'] != 'intro')
             v = f'{8 * i + 1}–{8 * i + 8}'
             name = tt.text_of(d.find(TEI + 'head')).replace('ſ', 's').rstrip('.').replace(' ', '').title()
             units.append(dict(verse=v, part=None, items=render(r, d, P), pages=None, name=name))
@@ -432,13 +474,15 @@ def build(key):
                 units.append(dict(verse=v, part=j + 1, nparts=len(chunks), items=its, pages=(a, b)))
         else:
             units.append(dict(verse=v, part=None, items=items, pages=None))
+    if tails:
+        units[-1]['items'] += tails
     # 页码范围：下一单元起页之前
     for i, u in enumerate(units):
         u['md'] = gapify(tt.to_md(P, u.pop('items')), P)
         if not u['pages']:
             ps = [int(x) for x in re.findall(r'data-p="(\d+)"', u['md'])]
             u['pages'] = (ps[0], ps[-1]) if ps else None
-        u['slug'] = 'the-title' if u['verse'] == 'title' else \
+        u['slug'] = 'introduction' if u['verse'] == 'intro' else 'the-title' if u['verse'] == 'title' else \
             f'v{u["verse"].replace("–", "-")}' + (f'-{u["part"]}' if u['part'] else '')
         note = c.get('notes', {}).get(u['slug'])
         if note:
@@ -461,6 +505,8 @@ def publish(key, c, fronts, units, backs, gaps, OUT, BASE, RAW):
     pages = [('front', f) for f in fronts] + [('unit', u) for u in units] + [('front', f) for f in backs]
 
     def vref(u):
+        if u['verse'] == 'intro':
+            return f'Psalm {c["psalm"]}'
         if u['verse'] == 'title':
             return f'Psalm {c["psalm"]}, the title'
         return f'Psalm {c["psalm"]}:{u["verse"]}' if u['verse'] else f'Psalm {c["psalm"]}'
@@ -510,7 +556,7 @@ def publish(key, c, fronts, units, backs, gaps, OUT, BASE, RAW):
         pp = f'pp. {u["pages"][0]}–{u["pages"][1]}' if u['pages'] else ''
         tip = ' · '.join(plain(lab) for lab, _ in u['contents'][:6]).replace('"', '&quot;')
         if u.get('name'):
-            cap = f'vv. {u["verse"]}'
+            cap = '' if u['verse'] == 'intro' else f'vv. {u["verse"]}'
         L.append(f'  <a href="{{{{ site.baseurl }}}}{BASE}{u["slug"]}/" title="{tip}">{label_of("unit", u)}'
                  f'<small>{cap}{"<br>" if cap and pp else ""}{pp}</small></a>')
     L.append('</div>')

@@ -152,8 +152,8 @@ AUTHORS = OrderedDict([
     # 《提多书注释》1612 剑桥初版（STC 23825），本站据此版；1619 年再版。
     ('taylor', dict(name='托马斯·泰勒', short='泰勒', en='Thomas Taylor',
                     years='1576–1633', dir='taylor',
-                    work_cn='提多书注释',
-                    work_en='A Commentarie vpon the Epistle of S. Paul written to Titus')),
+                    work_cn='提多书注释、诗篇 32 篇注释',
+                    work_en='')),
     # 霍尔：生卒取 DNB vol.24（Hall, Thomas (1610–1665)，Alexander Gordon 撰）：1610 年 7 月 22 日前后生于伍斯特，
     # 1665 年 4 月 13 日卒，葬金斯诺顿。《提摩太后书第三、四章注释》1658 伦敦对开本（Wing H436），本站据此版。
     ('hall', dict(name='托马斯·霍尔', short='霍尔', en='Thomas Hall',
@@ -394,7 +394,7 @@ DUO_BOOKS = {}
 # 与 DUO_BOOKS 不同：那边卡片分色带、各带直接链到各家；这里整张卡片只链到选择页。
 # 诗篇：用户 2026-11-10 指定亚历山大与霍志恒合列，点进去再选；同日马太福音（原 DUO_BOOKS 三家色带）也改用此方案。
 # 2026-11-17 博纳尔上线，诗篇三家合列。
-PICK_BOOKS = {'psalms': ('alexander', 'spurgeon', 'vos', 'bonar', 'owen', 'manton', 'bridges', 'knox', 'hildersham', 'reynolds', 'cowper', 'smith'), 'matthew': ('spurgeon', 'dickson', 'alexander'),
+PICK_BOOKS = {'psalms': ('alexander', 'spurgeon', 'vos', 'bonar', 'owen', 'manton', 'bridges', 'knox', 'hildersham', 'reynolds', 'cowper', 'smith', 'taylor'), 'matthew': ('spurgeon', 'dickson', 'alexander'),
               'romans': ('hodge', 'haldane'),   # 2026-11-10 霍尔丹上线，罗马书两家合列
               'isaiah': ('alexander', 'anon')}  # 2026-11-13 用户令以赛亚书加一本佚名注释，两家合列
 # 合列卡片用书卷自己的独立色，不用任何一家的作者色（用户 2026-11-10：「专门为诗篇挑选」；同日「颜色不能太相近」）。
@@ -426,7 +426,7 @@ description: 「历代解经」{cn}条目：{names}，选择进入。
 # 不进对比抽屉（compare_sources 只收有章节的目录）。
 # 单篇专书：目录名不是书卷名，归到某卷名下；只讲一两篇，不进逐章对比抽屉（2026-11-17 用户令收欧文、曼顿、布里奇斯论单篇诗篇）
 MONOGRAPHS = {('owen', 'psalm130'): 'psalms', ('manton', 'psalm119'): 'psalms', ('bridges', 'psalm119'): 'psalms',
-              ('knox', 'psalm6'): 'psalms', ('hildersham', 'psalm51'): 'psalms', ('reynolds', 'psalm110'): 'psalms', ('cowper', 'psalm119'): 'psalms', ('smith', 'psalm51'): 'psalms', ('smith', 'psalm90'): 'psalms'}
+              ('knox', 'psalm6'): 'psalms', ('hildersham', 'psalm51'): 'psalms', ('reynolds', 'psalm110'): 'psalms', ('cowper', 'psalm119'): 'psalms', ('smith', 'psalm51'): 'psalms', ('smith', 'psalm90'): 'psalms', ('taylor', 'psalm32'): 'psalms'}
 # 同一作者在同一卷书下有几本单篇专书时（史密斯：诗篇 51、90 篇），逐本出条目，书名按目录查此表；
 # 只有一本的照旧用 BOOK_TITLES[(作者, 书卷)]。
 MONO_TITLES = {('smith', 'psalm51'): ('大卫的悔改（诗篇 51 篇）', 'Dauids Repentance'),
@@ -469,6 +469,8 @@ BOOK_TITLES = {
                                 'A Holy Alphabet for Sion\'s Scholars'),
     ('smith', 'psalms'): ('大卫的悔改',
                                 'Dauids Repentance'),
+    ('taylor', 'psalms'): ('大卫的学问（诗篇 32 篇注释）',
+                                'Dauids Learning, or The Way to True Happinesse'),
     ('knox', 'psalms'):        ('诗篇第 6 篇讲解',
                                 'A Fort for the Afflicted, in an Exposition upon the Sixth Psalm'),
     ('owen', 'psalms'):        ('诗篇 130 篇实践讲解',
