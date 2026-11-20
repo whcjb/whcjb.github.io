@@ -214,6 +214,8 @@ def md(t):
     t = re.sub(r'^VY\. (?=\*|[A-Z])', 'V. ', t)
     t = re.sub(r'\bmerey\b', 'mercy', t)
     t = re.sub(r'\bhaying\b', 'having', t)
+    t = re.sub(r'\bca(y)ill', 'cavill', t)
+    t = re.sub(r'\bmerit is\b', 'meritis', t)
     t = re.sub(r'(?<=\w)\+(?=\s)', '', t)                                        # 脚注号读成 +：restless+
     t = re.sub(r'\bp[oc]+enitent', 'pœnitent', t)                                           # 段首罗马序号 II 读成 IL
     t = re.sub(r'(?<=[a-z])® (?=[a-z])', ' ', t)                                      # 脚注号读成 ®
