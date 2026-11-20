@@ -207,7 +207,8 @@ def md(t):
     t = re.sub(r'\b([ivxlc]+)\.(?=\d)', r'\1. ', t)                          # Rom. v.12 → v. 12
     t = re.sub(r'\b(' + BOOKS + r')(\.?) ([ivxlc]+), (?=\d)', r'\1\2 \3. ', t)   # 1 Cor. iii, 16 → iii. 16；Acts xxi, 13
     t = re.sub(r'(\*Use\* \d),', r'\1.', t)
-    t = re.sub(r'^\*I\*\. (?=[A-Z])', '1\\. ', t)                                # 段首序号 1 读成斜体 I
+    t = re.sub(r'^\*I\*\. (?=[A-Z])', '1\\. ', t)
+    t = re.sub(r'^\*(I{1,3}|IV|V|VI{1,3}|IX|X)\*\. (?=[A-Z])', r'\1. ', t)          # 段首罗马序号误成斜体：*IV*. The                                # 段首序号 1 读成斜体 I
     t = re.sub(r'^IL\. (?=\*|[A-Z])', 'II. ', t)
     t = re.sub(r'^VY\. (?=\*|[A-Z])', 'V. ', t)
     t = re.sub(r'\bmerey\b', 'mercy', t)                                           # 段首罗马序号 II 读成 IL
@@ -222,6 +223,7 @@ def md(t):
     t = re.sub(r'\bObit, (?=Theod)', 'Obit. ', t)
     t = re.sub(r'\bsees\. (?=\d)', 'secs. ', t)
     t = re.sub(r'\b([Ss]ec), (?=\d)', r'\1. ', t)                                     # See sec, 2.
+    t = re.sub(r'(?<=the ‘Guide to go to God,’ )see\. (?=\d)', 'sec. ', t)
     t = re.sub(r'\baffect us\b', 'affectus', t)
     t = re.sub(r'\btune\b(?= me\b)', 'tunc', t)
     t = re.sub(r'\bSeriptur', 'Scriptur', t)
