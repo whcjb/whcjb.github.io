@@ -74,7 +74,11 @@ def _join(lines):
             continue
         tail = buf.rstrip(IT_OFF)
         if tail.endswith('-') and t.lstrip(IT_ON)[:1].islower():
-            buf = tail[:-1] + buf[len(tail):] + t          # 行尾断词：去连字符直接拼
+            ma, mb = re.search(r'([A-Za-z]+)-$', tail), re.match(r'[a-z]+', t.lstrip(IT_ON))
+            if ma and mb and dehyphen(re.match(r'(.+)-(.+)', ma.group(1) + '-' + mb.group(0))).count('-'):
+                buf = tail + buf[len(tail):] + t           # 复合词：连字符留着
+            else:
+                buf = tail[:-1] + buf[len(tail):] + t      # 行尾断词：去连字符直接拼
         else:
             buf += ' ' + t
     return re.sub(IT_OFF + r'(\s*)' + IT_ON, r'\1', buf)
@@ -206,7 +210,61 @@ SHORT = {'aU': 'all', 'AU': 'All', 'wiU': 'will', 'heU': 'hell', 'Ufe': 'life', 
          'hve': 'live', 'Hve': 'Live', 'sm': 'sin', 'tliy': 'thy', 'liis': 'his', 'liim': 'him', 'Ul': 'ill', 'wUl': 'will', 'vUl': 'will', 'wiU': 'will',
          'mth': 'with', 'mtli': 'with', 'vnih': 'with', 'hke': 'like', 'Hke': 'Like', 'tiU': 'till', 'tUl': 'till',
          'AMien': 'When', 'AMiat': 'What', 'Eev': 'Rev', 'Dadd': 'David', 'Uve': 'live', 'kmd': 'kind',
-         'knovvn': 'known', 'thanksgidng': 'thanksgiving', 'mih': 'with', 'vrA': 'will'}
+         'knovvn': 'known', 'thanksgidng': 'thanksgiving', 'mih': 'with', 'vrA': 'will',
+         'Rey': 'Rev', 'Ley': 'Lev', 'Ses': 'Sec'}
+# tesseract 在这套铅字上的系统误读（合流后才露出来）：v → y、c → e
+GLYPH += [('y', 'v'), ('Y', 'V')]
+
+
+def roman_fix(tok):
+    """读坏的罗马数字（经文出处）：y→v、e→c、I/L→l，归一后是合法罗马数字才认（Ixy→lxv、exliv→cxliv、xliy→xliv）。"""
+    if len(tok) < 2 or not re.fullmatch(r'[IlLivxcye]+', tok) or not re.search(r'[ye]|^[IL]', tok):
+        return None
+    u = tok.replace('y', 'v').replace('e', 'c')
+    u = re.sub(r'^[IL]', 'l', u) if u[1:] == u[1:].lower() else u
+    if u.lower() != u:
+        return None
+    return u if lexmod.ROMAN.fullmatch(u) else None
+
+
+def split_fix(tok):
+    """两词粘连（othersthat、froma、shallI）：拆开后两边都是真词、且这个二元组在清教徒语料里出现过 ≥2 次，取唯一最优。"""
+    if len(tok) < 5 or not tok.isalpha():
+        return None
+    d = bigrams()['bi']
+    best = []
+    for i in range(1, len(tok)):
+        a, b = tok[:i], tok[i:]
+        if not ((len(a) >= 2 or a in ('a', 'I', 'A', 'O')) and (len(b) >= 2 or b in ('a', 'I'))):
+            continue
+        if not (is_word(a) and is_word(b)):
+            continue
+        c = d.get(f'{a.lower()} {b.lower()}', 0)
+        if c >= 2:
+            best.append((c, a, b))
+    best.sort(reverse=True)
+    if not best or (len(best) > 1 and best[1][0] * 3 > best[0][0]):
+        return None
+    return best[0][1] + ' ' + best[0][2]
+
+
+CLOSED = set('''a an the and or but nor if as at by for from in into of on to unto upon with without within when what which who whom whose
+where while that this these those than then thou thee thy thine he him his she her it its we us our ye you your they them their
+i me my is are was were be been am hath have had doth do did shall should will would may might can could must not no so'''.split())
+
+
+def dehyphen(m):
+    """行尾断词拼回。拼成的是真词就拼；拼成非词而两半都是真词时：带连字符的写法在本书或清教徒语料里出现过（self-love、
+    burnt-offerings）就留连字符；没出现过、且有一半是虚词，是 tesseract 在行尾凭空读出的「-」（when-\nthou），拆成两个词。"""
+    a, b = m.group(1), m.group(2)
+    if is_word_h(a + b) or not (is_word(a) and is_word(b)):
+        return a + b
+    h = (a + '-' + b).lower()
+    if bigrams()['uni'].get(h, 0) or corpus()[h]:
+        return a + '-' + b
+    if a.lower() in CLOSED or b.lower() in CLOSED:
+        return a + ' ' + b
+    return a + '-' + b
 
 
 def corpus():
@@ -312,14 +370,40 @@ def rejoin(text, ledger):
     return "".join(out)
 
 
+def hyphen_fix(t):
+    """行中的 a-b：两半都是罗马数字 → 拼（cxxx-vii）；带连字符的写法在语料里没见过、且有一半是虚词 → 拆成两词
+    （he-was、out-of：tesseract 把字间污点读成「-」）；某一半是非词 → 那一半走字形规则（loying-kindness）。"""
+    if t.count('-') != 1:
+        return None
+    a, b = t.split('-')
+    if not a or not b:
+        return None
+    if lexmod.ROMAN.fullmatch(a + b) and ROMAN_TOK.match(a) and ROMAN_TOK.match(b):
+        return a + b
+    if bigrams()['uni'].get(t.lower(), 0) or corpus()[t.lower()] >= 2:
+        return None
+    if is_word(a) and is_word(b) and ({a.lower(), b.lower()} & (CLOSED - {'a', 'by'})):
+        return a + ' ' + b
+    fa = a if is_word(a) else glyph_fix(a)
+    fb = b if is_word(b) else glyph_fix(b)
+    if fa and fb and (fa, fb) != (a, b):
+        return fa + '-' + fb
+    return None
+
+
 def glyph_repair(text, ledger):
     text = symbol_repair(text, ledger)
     text = rejoin(text, ledger)
     def sub(m):
         t = m.group()
+        if '-' in t:
+            f = hyphen_fix(t)
+            if f:
+                ledger.append((t, f))
+                return f
         if is_word_h(t) or len(t) < 2:
             return t
-        f = glyph_fix(t)
+        f = glyph_fix(t) or roman_fix(t) or split_fix(t)
         if f:
             ledger.append((t, f))
             return f
@@ -377,3 +461,272 @@ def load(path=None):
     WORK.mkdir(parents=True, exist_ok=True)
     cache.write_text(json.dumps(pages, ensure_ascii=False), encoding='utf-8')
     return pages
+
+
+# ── 合流：字取 tesseract，斜体／分段取 ABBYY（old-book-ocr §3.2d） ──
+# 这套扫描上 tesseract 明显更准（原始非词率：皮尔森 1.09% vs ABBYY 3.02%，古治 3.14% vs 5.39%；ABBYY 把
+# Return 读成 Eduni、O 读成 0、this 读成 tills）。但 tesseract 有自己的系统错：罗马数字常丢一个 i（Dan. iii → ii）、
+# v → y（vow → yow）、c → e（crieth → erieth）。所以按块整体对齐后逐词定夺：
+#   · 一边真词一边非词 → 取真词；罗马数字 → 取 ABBYY；
+#   · 两边都是真词而读法不同 → judge 回调（古治有 TCP 投票）→ 二元词频（非 OCR 来源的清教徒英文语料）→ 默认 tesseract；
+#   · ABBYY 有而 tesseract 没有的词（tesseract 吞词）→ 是真词就补回；tesseract 多出的词 → 在段内、是真词才留。
+# 段的边界、斜体范围一律跟 ABBYY 走：ABBYY 的词映射到 tesseract 的词，斜体词连成段再包哨兵。
+ROMAN_TOK = re.compile(r'^[ivxlcIVXLC]+$')
+BIGRAM = None
+FUNC = {'a', 'i', 'o', 'an', 'as', 'at', 'be', 'by', 'do', 'he', 'if', 'in', 'is', 'it', 'me', 'my', 'no', 'of', 'on',
+        'or', 'so', 'to', 'up', 'us', 'we', 'ye'}
+
+
+def bigrams():
+    """Owen、Manton、Matthew Henry 英文版（AGES／CCEL 排版本，非 OCR）的词频与二元词频，缓存 WORK/bigrams.json。"""
+    global BIGRAM
+    if BIGRAM is not None:
+        return BIGRAM
+    cache = WORK / 'bigrams.json'
+    if cache.exists():
+        d = json.loads(cache.read_text(encoding='utf-8'))
+    else:
+        import collections
+        uni, bi = collections.Counter(), collections.Counter()
+        for top in ('owen', 'manton', 'mhenry'):
+            for f in (ROOT / top).rglob('*.md'):
+                if '/zh/' in str(f):
+                    continue
+                for para in re.split(r'\n\s*\n', f.read_text(encoding='utf-8', errors='ignore')):
+                    ws = [w.lower() for w in WORD.findall(re.sub(r'<[^>]+>', ' ', para))]
+                    uni.update(ws)
+                    bi.update(f'{x} {y}' for x, y in zip(ws, ws[1:]))
+        d = dict(uni={k: v for k, v in uni.items() if v >= 2}, bi={k: v for k, v in bi.items() if v >= 2})
+        cache.write_text(json.dumps(d), encoding='utf-8')
+    BIGRAM = d
+    return d
+
+
+def lm_pick(a, t, left, right):
+    """两个真词二选一：比 (左词, 候选)、(候选, 右词) 的二元词频；分不出来返回 None。"""
+    d = bigrams()
+    def score(w):
+        w = w.lower()
+        s = d['bi'].get(f'{left.lower()} {w}', 0) + d['bi'].get(f'{w} {right.lower()}', 0)
+        return s
+    sa, st = score(a), score(t)
+    if sa == st:
+        ua, ut = d['uni'].get(a.lower(), 0), d['uni'].get(t.lower(), 0)
+        if max(ua, ut) >= 20 and min(ua, ut) * 50 < max(ua, ut):     # 一边是罕用词（tins/tills 对 this）
+            return a if ua > ut else t
+        return None
+    if max(sa, st) >= 3 and min(sa, st) * 3 <= max(sa, st):
+        return a if sa > st else t
+    return None
+
+
+def _okword(w):
+    return (len(w) >= 2 or w.lower() in FUNC) and is_word_h(w)
+
+
+def merge_block(pars, witness, judge=None, ledger=None):
+    """pars：ABBYY 一个正文块的各段（带斜体哨兵）；witness：同块 tesseract 全文 → 合流后的各段文本（带斜体哨兵）。
+    对不上的段（与 tesseract 等同的词不到四成）照 ABBYY 原样返回，由下游 repair 处理。"""
+    ledger = ledger if ledger is not None else []
+    W = re.sub(r"([A-Za-z]+)-[ \t]*\n[ \t]*([a-z][a-z]*)", dehyphen, witness)   # 行尾断词拼回（空行保留，切段用）
+    T = list(WORD.finditer(W))
+    TW = [m.group() if is_word(m.group()) else (roman_fix(m.group()) or m.group()) for m in T]   # exvi → cxvi
+    A = []                                                        # (段号, 词, 是否斜体, 段内 start, end)
+    for pi, text in enumerate(pars):
+        it = False
+        plain = []
+        for ch in text:
+            if ch == IT_ON:
+                it = True
+                plain.append(' ')
+            elif ch == IT_OFF:
+                it = False
+                plain.append(' ')
+            else:
+                plain.append(ch)
+        plain = ''.join(plain)
+        flags = []
+        st = False
+        for ch in text:
+            if ch == IT_ON:
+                st = True
+            elif ch == IT_OFF:
+                st = False
+            flags.append(st)
+        ms = list(WORD.finditer(plain))
+        for k, m in enumerate(ms):
+            nxt = ms[k + 1].start() if k + 1 < len(ms) else m.end()
+            A.append((pi, m.group(), flags[m.start()], m.start(), m.end(), re.sub(r'\s+', ' ', plain[m.end():nxt]) or ' '))
+    if not A or not T:
+        return list(pars)
+    sm = difflib.SequenceMatcher(None, [norm(x[1]) for x in A], [norm(x) for x in TW], autojunk=False)
+    ops = sm.get_opcodes()
+    # 每个 ABBYY 词 → 输出词表里的 (词, 斜体, 来源 T 下标或 None)
+    seq = {pi: [] for pi in range(len(pars))}                     # 段号 → [(word, italic, tidx, pre, post)]
+    eq = {pi: 0 for pi in range(len(pars))}
+    tot = {pi: 0 for pi in range(len(pars))}
+    for x in A:
+        tot[x[0]] += 1
+
+    def ctx(i, d):
+        k = i + d
+        return A[k][1] if 0 <= k < len(A) else ''
+
+    for oi, (tag, i1, i2, j1, j2) in enumerate(ops):
+        if tag == 'equal':
+            for k in range(i2 - i1):
+                pi = A[i1 + k][0]
+                eq[pi] += 1
+                seq[pi].append((TW[j1 + k], A[i1 + k][2], j1 + k, None, i1 + k))
+        elif tag == 'replace':
+            if i2 - i1 == j2 - j1:
+                for k in range(i2 - i1):
+                    a, t = A[i1 + k][1], TW[j1 + k]
+                    pi = A[i1 + k][0]
+                    if ROMAN_TOK.match(a) and ROMAN_TOK.match(t):
+                        # 罗马数字：TCP 等证人先判；判不了取 ABBYY（tesseract 常丢一个 i，抽样 ABBYY 对的多）
+                        w = judge(a, t, [x[1] for x in A[max(0, i1 + k - 3):i1 + k]], [x[1] for x in A[i1 + k + 1:i1 + k + 4]]) \
+                            if judge else None
+                        w = w or a
+                    elif _okword(t) and not _okword(a):
+                        w = t
+                    elif _okword(a) and not _okword(t):
+                        w = a
+                    elif _okword(a) and _okword(t):
+                        w = None
+                        if judge:
+                            w = judge(a, t, [x[1] for x in A[max(0, i1 + k - 3):i1 + k]], [x[1] for x in A[i1 + k + 1:i1 + k + 4]])
+                        if w is None:
+                            w = lm_pick(a, t, ctx(i1 + k, -1), ctx(i1 + k, 1)) or t
+                        if w != t:
+                            ledger.append(('keepA', a, t))
+                    else:
+                        w = t
+                    seq[pi].append((w, A[i1 + k][2], j1 + k, None, i1 + k))
+            else:
+                ta = [TW[j] for j in range(j1, j2)]
+                aa = [A[i][1] for i in range(i1, i2)]
+                pis = [A[i][0] for i in range(i1, i2)]
+                usea = all(_okword(x) for x in aa) and not all(_okword(x) for x in ta)
+                if not usea and len(aa) > len(ta) and all(_okword(x) for x in aa) \
+                        and norm(''.join(aa)) == norm(''.join(ta)):
+                    # 只差空格／连字符（tesseract 把字间污点读成「-」：he-was、a-man）：带连字符的写法没在语料里见过就取 ABBYY
+                    usea = not any('-' in x and (bigrams()['uni'].get(x.lower(), 0) or corpus()[x.lower()]) for x in ta)
+                if usea or len(set(pis)) > 1:                     # 跨段的不等长替换：保守，取 ABBYY
+                    for i in range(i1, i2):
+                        seq[A[i][0]].append((A[i][1], A[i][2], None, A[i][5], i))
+                else:
+                    itf = sum(A[i][2] for i in range(i1, i2)) * 2 >= (i2 - i1)
+                    for j in range(j1, j2):
+                        seq[pis[0]].append((TW[j], itf, j, None, None))
+        elif tag == 'delete':                                     # tesseract 吞词：真词补回
+            for i in range(i1, i2):
+                a = A[i][1]
+                if _okword(a) or len(a) >= 4:
+                    seq[A[i][0]].append((a, A[i][2], None, A[i][5], i))
+                    ledger.append(('fillA', a, ''))
+        elif tag == 'insert':                                     # tesseract 多出的词：两侧同段、全是真词才留
+            if 0 < i1 < len(A) and A[i1 - 1][0] == A[i1][0] and j2 - j1 <= 4 \
+                    and all(_okword(T[j].group()) and (len(T[j].group()) >= 2 or T[j].group() in 'OAI')
+                            for j in range(j1, j2)):
+                pi = A[i1][0]
+                itf = A[i1 - 1][2] and A[i1][2]
+                for j in range(j1, j2):
+                    seq[pi].append((TW[j], itf, j, None, None))
+                    ledger.append(('insT', TW[j], ''))
+    out = []
+    for pi, text in enumerate(pars):
+        items = seq[pi]
+        if not items or tot[pi] == 0 or eq[pi] < 0.4 * tot[pi]:
+            out.append(text)
+            continue
+        out.append(_build(items, W, T, text, [x[5] for x in A], bool(NUMSTART.match(text.replace(IT_ON, ''))),
+                          pi + 1 < len(pars) and bool(NUMSTART.match(pars[pi + 1].replace(IT_ON, '')))))
+    return out
+
+
+def _split_gap(gap, num):
+    """两段之间的 tesseract 间隙 → (上段段尾, 下段段首)。有空行就在空行处切；否则下段段首只认开引号／括号，
+    ABBYY 的下段以序号起头时（num）再认「12.」这样的序号——不然经文出处末尾的节号会被分给下一段。"""
+    m = re.search(r'\n[ \t]*\n', gap)
+    if m:
+        tail, lead = gap[:m.start()], gap[m.end():]
+    else:
+        m = re.search(r'(' + (r'(?:\d+\.\s*)?' if num else '') + r'[‘“\'"(\[]*)\s*$', gap)
+        tail, lead = gap[:m.start(1)], m.group(1)
+    tail = re.sub(r'\s+', ' ', tail).strip()
+    lead = re.sub(r'\s+', ' ', lead).strip()
+    if re.search(r'[A-Za-z]', tail) or len(tail) > 12:
+        tail = ''
+    if not re.fullmatch(r'(?:\d+\.)?\s*[‘“\'"(\[]*', lead):
+        lead = ''
+    return tail, lead
+
+
+NUMSTART = re.compile(r'^\W*[\dLlI]{1,3}[.,]\s')
+
+
+def _build(items, W, T, abbyy, asep_all, num, nxtnum):
+    """词表 → 段落文本。词间分隔取 tesseract（两个相邻词都来自 tesseract 时），否则补一个空格；
+    段首、段尾的标点（序号、引号、末尾的节号与句点）从 tesseract 的段间间隙里切（_split_gap）。"""
+    parts = []
+    plainA = abbyy.replace(IT_ON, '').replace(IT_OFF, '')
+    if items[0][2] is not None:
+        j = items[0][2]
+        _, lead = _split_gap(W[T[j - 1].end() if j > 0 else 0:T[j].start()], num)
+        lead = lead + (' ' if re.search(r'\.$', lead) else '')
+    else:
+        m = re.match(r'^[^A-Za-z]*', plainA)
+        lead = m.group(0).strip() + (' ' if m.group(0).strip() else '')
+    parts.append((lead, False))
+    for k, (w, it, j, asep, ai) in enumerate(items):
+        parts.append((w, it))
+        if k + 1 < len(items):
+            nj, nai = items[k + 1][2], items[k + 1][4]
+            if j is not None and nj is not None and nj == j + 1:
+                sep = W[T[j].end():T[nj].start()]
+                # 经文出处的节号 tesseract 丢了（Luke i. but），ABBYY 同位置有（Luke i. 6 ; but）：取 ABBYY 的分隔
+                # （只认罗马数字之后：ABBYY 会把这套字体的问号读成 1，church? → church 1）
+                if ai is not None and nai == ai + 1 and ROMAN_TOK.match(w) and re.fullmatch(r'\.?\s*', sep) \
+                        and re.fullmatch(r'\.\s*\d+[\s\d,;:&–-]*', asep_all[ai]):
+                    sep = asep_all[ai]
+            elif j is not None and nj is not None and nj > j + 1:
+                sep = W[T[j].end():T[j + 1].start()]
+            elif asep is not None:                                # 取自 ABBYY 的词：分隔也取 ABBYY 的（数字、标点）
+                sep = asep
+            else:
+                sep = ' '
+            sep = re.sub(r'\s+', ' ', sep) or ' '
+            parts.append((sep, 'sep'))
+    j = items[-1][2]
+    if j is not None:
+        tail, _ = _split_gap(W[T[j].end():T[j + 1].start() if j + 1 < len(T) else len(W)], nxtnum)
+    else:
+        m = re.search(r'[^A-Za-z]*$', plainA)
+        tail = m.group(0).strip() if m else ''
+    # 斜体：相邻斜体词连成一段，中间的分隔符算在段内
+    s = parts[0][0]
+    body = parts[1:]
+    out = []
+    k = 0
+    while k < len(body):
+        w, it = body[k]
+        if it == 'sep':
+            out.append(w)
+            k += 1
+            continue
+        if it:
+            run = [w]
+            k2 = k + 1
+            while k2 + 1 < len(body) and body[k2][1] == 'sep' and body[k2 + 1][1] is True:
+                run += [body[k2][0], body[k2 + 1][0]]
+                k2 += 2
+            out.append(IT_ON + ''.join(run) + IT_OFF)
+            k = k2
+        else:
+            out.append(w)
+            k += 1
+    t = s + ''.join(out) + tail
+    t = re.sub(r'([‘“])\s+', r'\1', t)                         # 开引号后的空白
+    t = re.sub(r'(?<=[,.;:])!(?=\s|$)', '', t)                  # 脚注号读成 !：psalm,!
+    return t

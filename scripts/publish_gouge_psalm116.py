@@ -66,37 +66,30 @@ def tcp_vote(left, right, words, idx):
     return None
 
 
-def clean(text, wit, tcp, left_log):
+def judge_tcp(tcp, left_log):
+    """合流时两条流都是真词而读法不同：TCP 在同一位置（左右各 3 词定位）与哪一边一致就取哪一边；定不了返回 None
+    （交给二元词频），并记入 disagree_left.tsv。"""
+    words, idx = tcp
+
+    def judge(a, t, left, right):
+        if not words or len(left) < 3 or len(right) < 3:
+            left_log.append((a, t, ' '.join(left + ['[' + a + ']'] + right)))
+            return None
+        v = tcp_vote([sk(x) for x in left], [sk(x) for x in right], words, idx)
+        if v is not None and v == sk(t) and v != sk(a):
+            return t
+        if v is not None and v == sk(a) and v != sk(t):
+            return a
+        left_log.append((a, t, ' '.join(left + ['[' + a + ']'] + right)))
+        return None
+    return judge
+
+
+def clean(text, wit):
+    """合流之后：ABBYY 原样留下的段（对不上 tesseract）再走第 ② 层；然后字形规则。"""
     led = []
     t, _ = n.repair(text, wit, led)
-    t = n.glyph_repair(t, led)
-    # ③ 真词互换：TCP 投票
-    words, idx = tcp
-    plain = t.replace(n.IT_ON, ' ').replace(n.IT_OFF, ' ')
-    toks = list(n.WORD.finditer(plain))
-    reps = {}
-    for a, b, _ in n.disagree(t, wit):
-        for k, m in enumerate(toks):
-            if m.group() != a or k < 3 or k + 3 >= len(toks):
-                continue
-            left = [sk(x.group()) for x in toks[k - 3:k]]
-            right = [sk(x.group()) for x in toks[k + 1:k + 4]]
-            v = tcp_vote(left, right, words, idx)
-            if v is not None and v == sk(b) and v != sk(a):
-                reps[k] = b if not a[:1].isupper() else b[:1].upper() + b[1:]
-            elif v is None or v != sk(a):
-                left_log.append((a, b, ' '.join(x.group() for x in toks[max(0, k - 5):k + 6])))
-            break
-    if reps:
-        out, last = [], 0
-        for k in sorted(reps):
-            m = toks[k]
-            out.append(t[last:m.start()])
-            out.append(reps[k])
-            last = m.end()
-        out.append(t[last:])
-        t = ''.join(out)
-    return t
+    return n.glyph_repair(t, led)
 
 
 def balance(t):
@@ -128,6 +121,51 @@ def heb(m):
     return f'(<span class="{P}-gap" title="Hebrew in the 1868 edition, not read by OCR（原书此处是希伯来文，OCR 读不出）">〈Hebrew〉</span>)'
 
 
+def dash_space(m):
+    a, b = m.group(1), m.group(2)
+    if n.is_word_h(a + b):
+        return a + b
+    if n.is_word(a) and n.is_word(b):
+        return a + ' ' + b
+    return a + b
+
+
+ABBR = set('''sec ser serm cap lib ver hom art lect tract par part chap treat gen exod lev num deut josh judg sam kings chron
+ezra neh esth job ps prov eccl eccles cant isa jer lam ezek dan hos joel amos obad mic nah hab zeph hag zech mal mat matt
+mark luke john acts rom cor gal eph phil col thess tim tit heb james pet jude rev p pp ep epist cont q'''.split())
+
+
+def fn_ref(m):
+    w = m.group(1)
+    core = re.sub(r'[^A-Za-z]', '', w).lower()
+    if core in ABBR:
+        return m.group(0)
+    if not re.search(r'[.,;:?!’*]$', w) and core not in ('and', 'performing', 'he'):
+        return m.group(0)
+    return w
+
+
+BOOKS = ('Gen|Exod|Lev|Num|Deut|Josh|Judg|Sam|Kings|Chron|Neh|Esth|Job|Ps|Prov|Eccles|Cant|Isa|Jer|Lam|Ezek|Dan|Hos|Joel|'
+         'Amos|Mic|Micah|Hab|Zeph|Hag|Zech|Mal|Mat|Mark|Luke|John|Acts|Rom|Cor|Gal|Eph|Phil|Col|Thess|Tim|Tit|Heb|James|'
+         'Pet|Jude|Rev')
+ABBR_BOOKS = ('Pet|Cor|Gen|Exod|Lev|Num|Deut|Sam|Chron|Ps|Prov|Isa|Jer|Ezek|Dan|Hos|Zech|Mal|Mat|Rom|Gal|Eph|Phil|Col|'
+              'Thess|Tim|Tit|Heb|Rev|Neh|Esth|Eccles|Cant|Lam|Hab|Zeph|Hag|Judg|Josh')
+# ABBYY 把带 w／v 的宽字母常用词误判成斜体（看图核过 *will*、*own*、*with* 多处）；古治讨论词本身时的斜体是真的
+FALSE_IT = 'with|will|wilt|own|evil|wise|type|types|view|in|by|be|so|make|down|yet|thy|they|is|we|all|his|and|over|us|a|write|power|eye'
+GLOSS = re.compile(r'(?:particle|word|words|signifieth|signify|plural|singular|term|phrase|translated|noun|verb|pronoun|'
+                   r'preposition|adverb|conjunction|copulative|note|notes|emphasis|expressed)\W{0,4}(?:\w+\W{1,3}){0,2}$', re.I)
+
+
+def false_italic(m):
+    pre = m.string[max(0, m.start() - 40):m.start()]
+    return m.group(0) if GLOSS.search(pre) else m.group(1)
+
+
+def roman_l(m):
+    u = m.group(0).replace('l', 'i')
+    return u if n.lexmod.ROMAN.fullmatch(u) and (m.group(0) == 'vill' or not n.is_word(m.group(0))) else m.group(0)
+
+
 def md(t):
     """哨兵层面处理斜体（分得清开／关）：合并相邻斜体段、删 OCR 文本里原有的 *（脚注号或噪点），最后才转 markdown。"""
     t = t.replace('*', '')
@@ -145,6 +183,51 @@ def md(t):
     t = re.sub(r'(?<=[A-Za-z.,;:\'’])[\^}]+(?=[\s,.;:\'’)*]|$)', '', t)     # 脚注号残渣：third^ branch、deliverances}
     t = re.sub(r'(?m)^(\d+)\. ', r'\1\\. ', t)          # 行首序号别被 kramdown 当列表
     t = t.replace('|', '')
+    t = re.sub(r'\b([A-Za-z]+)- +([a-z]+)\b', dash_space, t)          # 断词连字符后多了空格：occa- sion
+    t = re.sub(r'(?:(?<=[\s>])|^)[A-Za-z]2(?=\s|<|$)', '', t)                     # 书帖签名（Q2、R2）混进正文
+    t = re.sub(r'\b([ivxlc]+)1(?=\.\s*\d)', r'\1', t)                    # 经文出处：xi1. 35 → xi. 35（这个 1 是多出来的）
+    t = re.sub(r'\b([ivxlc]+)\.\.\s*(?=\d)', r'\1. ', t)                # xxv..8
+    t = re.sub(r'(\d),(?=[A-Za-z‘])', r'\1, ', t)                        # 42,and
+    # 粘在句末的脚注号：love.2 By、them*.2 As、God.1（段尾）、and1 also；前一个词是缩写（sec.5.、经卷名）不动
+    t = re.sub(r'\b([A-Za-z][a-z]+[.,;:?!’]?\*?[.,;:?!’]?)[1-9](?=[\s_<]|\.\s|$)', fn_ref, t)
+    t = re.sub(r'(?<=[.?!’*])_(?=\s|$)', '', t)
+    t = re.sub(r'(?<=[a-z])\.\.(?=\s[A-Z])', '.', t)                       # 删了脚注号后的 rest.. We
+    t = re.sub(r'&(?:e|o|¢|\*[ec]\*|\*Sec\*)?\.', '&c.', t)                 # &c. 读成 &e.／&o.／&.／&*Sec*.
+    t = re.sub(r'&(\*?)(?:e¢|[ec¢o]?)(\*?)(?=[.,:;—])',                       # 带斜体标记的：&*c.—Cyp、&e,
+               lambda m: '&c' + ('*' if len(m.group(1) + m.group(2)) == 1 else ''), t)
+    t = re.sub(r'\*?\b(?:Alls|Alts|Atis|Aiis|A\)is)\*?\.', '*Ans*.', t)               # Ans. 读成 Alls.／Alts.
+    t = re.sub(r'\bL(?=[xvi]+\b)', 'l', t)                                  # 经文出处罗马数字首字母 l 读成 L：Ps. Lxxxix.
+    t = re.sub(r'(?<=\d)(?:-|[-—] )(?=\d)', '–', t)                          # 起讫节号：17-19、28- 35 → 17–19
+    t = re.sub(r'(?<=[.?!’)]) (?=\*(?:Quest|Ans|Object|Obj|Answ)\*\.)', '\n\n', t)   # 问答原书各自起段
+    t = re.sub(r'(?<![*\w])\*([ivxlc]+)\*(?=\.)', r'\1', t)                   # 经文出处里假斜体的罗马数字：Num. *xv*. 30
+    t = re.sub(r'\b(' + BOOKS + r'), (?=[ivxlc]+\.)', r'\1. ', t)            # 经卷名后的点读成逗号：Num, xvi.
+    t = re.sub(r'\b([ivxlc]+)\.(?=\d)', r'\1. ', t)                          # Rom. v.12 → v. 12
+    t = re.sub(r'\b(' + BOOKS + r')\. ([ivxlc]+), (?=\d)', r'\1. \2. ', t)       # 1 Cor. iii, 16 → iii. 16
+    t = re.sub(r'\b(Ps|Psal)\. e(?=[xlvi]*\.)', r'\1. c', t)                 # Ps. ex. → cx.
+    t = re.sub(r' _ ', ' ', t)                                                  # 页面污点读成 _
+    t = re.sub(r'\b([Hh])orn\.(?=,?\s*\d)', r'\1om.', t)                       # 讲道集 hom. 读成 horn.
+    t = re.sub(r'(?<=[A-Za-z])\\"(?=[a-z])', 'v', t)                              # Da\"id
+    t = re.sub(r'\b(?!(?:What|what|alas|Alas|O|Oh|Lo|Ah|how|How|Behold)!)([A-Za-z]{2,})! (?=[a-z])', r'\1 ', t)   # 脚注号读成 !：some! refer
+    t = re.sub(r'\bLey\.(?= [ivxlc]+\.)', 'Lev.', t)
+    t = re.sub(r'(?<=[a-z]) \*[Ii]\*(?=[’\'\s]|$)', '?', t)                   # 问号读成斜体 I：with God *I* It
+    t = re.sub(r'\b[ivxc]*[iv]l[il]*(?=\.)', roman_l, t)                        # 罗马数字里 i 读成 l：vill. → viii.
+    t = re.sub(r'\b(?:wy|y)\.(?= \d)', 'v.', t)                                 # 罗马数字 v. 读成 wy.／y.（抽查全是 v.）
+    t = re.sub(r'\bLe(?=x[xvi]*\.)', 'lx', t)                                  # Lexxvii. → lxxxvii.
+    t = re.sub(r'^Use (?=\d)', '*Use* ', t)
+    t = re.sub(r'\*Us\*\??(?= \d)', '*Use*', t)
+    t = re.sub(r'\bDa(?:y|)id\b', 'David', t)
+    t = re.sub(r'(?<= )-(?=[a-z])', '', t)                                      # 词前孤立短横：where -he will
+    t = re.sub(r'\bTam\b', 'I am', t)                                          # I am 粘成 Tam
+    t = re.sub(r'\bZaccheus\b', 'Zacchæus', t)                                  # æ 连字读成 e
+    t = re.sub(r'(?<=[a-z])\. \.(?=\s|$)', '.', t)
+    t = re.sub(r'\bb(?=x[xvi]*\.)', 'l', t)                                    # 罗马数字 l 读成 b：bxxiii.
+    t = re.sub(r'\bI(?=[xvi]+\.)', 'l', t)                                     # Isa. Iv. 7 → lv.（核过 Isa. 55:7、60:3、Ps. 51:6）
+    t = re.sub(r'\bXXX(?=[xvi]+\.)', 'xxx', t)
+    t = re.sub(r'([ivxlc]+\. \d+),(?=\d)', r'\1, ', t)                          # 68,74 → 68, 74
+    t = re.sub(r'\bPs\. 1\. (?=\d)', 'Ps. l. ', t)                              # 诗 50 篇：l 读成 1（诗 1 篇写作 Ps. i.）
+    t = re.sub(r'\b(' + ABBR_BOOKS + r') (?=[ivxlc]+\. ?\d)', r'\1. ', t)          # 缩写经卷名后缺点：1 Pet ii. 5
+    t = re.sub(r'(?<![*\w])\*(' + FALSE_IT + r')\*(?![*\w])', false_italic, t)
+    t = re.sub(r'(?<![\d.,:;] )(?<![\d])\b0(?= (?:my|Lord|God|thou|ye|that|how|the|what|Israel|Jerusalem|man|LORD)\b)', 'O', t)   # 呼格 O 读成 0
     return re.sub(r' {2,}', ' ', t).strip()
 
 
@@ -159,19 +242,20 @@ def assemble(lo, hi, tcp, left_log):
             if n.kind(b) != 'text':
                 continue
             wit = n.tess(i, bi, b)
+            merged = n.merge_block([p['text'] for p in b['pars']], wit, judge=judge_tcp(tcp, left_log))
             for j, p in enumerate(b['pars']):
-                t = clean(p['text'], wit, tcp, left_log)
+                t = clean(merged[j], wit)
                 t = re.sub('^Ver\\. ' + n.IT_ON + r'li\. ', 'Ver. 14. ' + n.IT_ON, t)   # p.91 节号读进了斜体（影像核：14）
                 plain = t.replace(n.IT_ON, '').replace(n.IT_OFF, '').strip()
                 if not plain:
                     continue
-                if p['fs'] and p['fs'] < 6.5:
+                if p['fs'] and p['fs'] < 6.5 and not sec_match(t):          # 小节标题偶尔被判成小字号
                     out.append(dict(kind='note', text=t, page=pp))
                     continue
                 if p['fs'] >= 9:                                  # 卷首大字（书名等）
                     out.append(dict(kind='big', text=t, page=pp))
                     continue
-                new = 'startIndent' in p['attrs'] or re.match(r'(Sec|Ver)[.,]', plain)
+                new = 'startIndent' in p['attrs'] or (re.match(r'Ver[.,]?\s*[\dIl]', plain) or sec_match(t))
                 anchor = f'<span class="{P}-pb" id="p{pp}" data-p="{pp}"></span>' if (first_on_page and pp) else ''
                 first_on_page = False if anchor or not first_on_page else first_on_page
                 prev = next((x for x in reversed(out) if x['kind'] == 'body'), None)
@@ -189,8 +273,16 @@ def assemble(lo, hi, tcp, left_log):
 BOUNDS = [(9, '1', '1–2'), (19, '3', '3'), (23, '4', '4'), (29, '5', '5'), (38, '6', '6'), (44, '7', '7'), (51, '8', '8'),
           (57, '9', '9'), (68, '10', '10–11'), (78, '12', '12–13'), (91, '14', '14'), (100, '15', '15'), (105, '16', '16'),
           (114, '17', '17'), (122, '18', '18'), (124, '19', '19')]
-SEC = re.compile(r'^(Sec[.,]\s*[\dIlSGO.]+\.?\s*)' + n.IT_ON + r'(.*?)' + n.IT_OFF + r'\s*(.*)$', re.S)
-VER = re.compile(r'^(?:<span[^>]*></span>)?(Ver[.,]\s*[\dILl]+[.,]?\s*)' + n.IT_ON + r'(.*?)' + n.IT_OFF + r'\s*(.*)$', re.S)
+# 小节标题：tesseract 常把 Sec. 读成 See.／Sect.，号可能读坏（III ← 111）或丢掉；标题一律以「Of」起头，Of 有时不在斜体里
+SEC = re.compile(r'^(S[eo][ec]t?[.,]?\s*[\dIlSGO]*[.,]?\s*)(Of\s+)?' + n.IT_ON + r'(.*?)' + n.IT_OFF + r'\s*(.*)$', re.S)
+
+
+def sec_match(t):
+    m = SEC.match(t)
+    if not m or not (m.group(2) or re.match(r'\s*Of\b', m.group(3))):
+        return None
+    return m
+VER = re.compile(r'^(?:<span[^>]*></span>)?(Ver[.,]?\s*[\dILl]+[.,]?\s*)' + n.IT_ON + r'(.*?)' + n.IT_OFF + r'\s*(.*)$', re.S)
 
 
 def render(stream):
@@ -208,43 +300,115 @@ def render(stream):
         m0 = re.match(r'^(<span class="[^"]+-pb"[^>]*></span>)', t)
         if m0:
             anchor, t = m0.group(1), t[m0.end():]
-        m = SEC.match(t)
+        m = sec_match(t)
+        if m and re.fullmatch(r'[.,;:]\s*', m.group(4)):         # 斜体后只剩句末标点：并进标题，别单成一段
+            t = t[:m.start(4)].rstrip()
+            m = sec_match(t)
         if m:
-            num = re.sub(r'\D', '', m.group(1).replace('l', '1').replace('I', '1').replace('S', '5')
-                         .replace('G', '6').replace('O', '0')) or '?'
-            body.append(f'#### {anchor}<span class="{P}-sec">Sec. {num}.</span> {md(n.IT_ON + m.group(2) + n.IT_OFF)}')
-            if m.group(3).strip():
-                body.append(md(m.group(3)))
+            num = re.sub(r'\D', '', re.sub(r'^S[eo][ec]t?[.,]?', '', m.group(1)).replace('l', '1').replace('I', '1')
+                         .replace('S', '5').replace('G', '6').replace('O', '0')) or '?'
+            body.append(f'#### {anchor}<span class="{P}-sec">Sec. {num}.</span> '
+                        f'{md(n.IT_ON + (m.group(2) or "") + m.group(3) + n.IT_OFF)}')
+            if m.group(4).strip():
+                body.append(md(m.group(4)))
             continue
         m = VER.match(t)
         if m:
+            tail = m.group(3) if re.fullmatch(r'[.,;:!?]\s*', m.group(3)) else ''
             body.append(f'<div class="{P}-text" markdown="1">\n\n{anchor}**{md(m.group(1)).strip()}** '
-                        f'{md(n.IT_ON + m.group(2) + n.IT_OFF)}\n\n</div>')
-            if m.group(3).strip():
+                        f'{md(n.IT_ON + m.group(2) + n.IT_OFF)}{tail.strip()}\n\n</div>')
+            if m.group(3).strip() and not tail:
                 body.append(md(m.group(3)))
             continue
         body.append(anchor + md(t))
-    out = '\n\n'.join(body)
+    # 段落被按行切开（栏底、跨栏）：上段无句末标点、下段小写起头 → 接上（old-book-ocr §3.1，两条件都要）
+    merged = []
+    for b in body:
+        if merged and not merged[-1].startswith(('<', '#', '**')) and not b.startswith(('<', '#', '**', '*Use*')) \
+                and (re.search(r'[A-Za-z,]$', merged[-1]) and re.match(r'[a-z]', b)
+                     or merged[-1].endswith(',') and re.match(r'[‘a-z]', b)):
+            merged[-1] += ' ' + b
+        else:
+            merged.append(b)
+    out = '\n\n'.join(merged)
     if notes:
         out += f'\n\n<div class="{P}-notes" markdown="1">\n\n<p class="{P}-notes-h">Notes</p>\n\n' + \
                '\n\n'.join(notes) + '\n\n</div>'
     return out
 
 
-def apply_fixes(text):
-    f = RAW / 'fixes.tsv'
+def renumber(U):
+    """小节号是连续的（1–128）：读坏的号（? 或与前后不接），前一个是 k−1、后一个是 k+1 时改成 k。"""
+    rx = re.compile(r'(gg-sec">Sec\. )([^.<]*)(\.</span>)')
+    seq = [(ui, m) for ui, u in enumerate(U) for m in rx.finditer(u['md'])]
+    nums = [int(m.group(2)) if m.group(2).isdigit() else None for _, m in seq]
+    fix = {}
+    for k in range(len(nums)):
+        prev = nums[k - 1] if k else 0
+        nxt = nums[k + 1] if k + 1 < len(nums) else None
+        if nums[k] != (prev or 0) + 1 and prev is not None and nxt == prev + 2:
+            fix[k] = prev + 1
+            nums[k] = prev + 1
+    for k in sorted(fix, reverse=True):
+        ui, m = seq[k]
+        md_ = U[ui]['md']
+        U[ui]['md'] = md_[:m.start(2)] + str(fix[k]) + md_[m.end(2):]
+        print(f'  小节号 {m.group(2)!r} → {fix[k]}')
+    missing = sorted(set(range(1, 129)) - set(nums))
+    if missing:
+        print('⚠️ 缺小节号：', missing)
+
+
+GAP = {'@H': ('Hebrew', '希伯来文'), '@G': ('Greek', '希腊文')}
+
+
+def gap(kind):
+    en, zh = GAP[kind]
+    return (f'<span class="{P}-gap" title="{en} in the 1868 edition, not read by OCR（原书此处是{zh}，OCR 读不出）">'
+            f'〈{en}〉</span>')
+
+
+def apply_fixes(text, f=None):
+    """看图判读表：每行「原串<TAB>改成」，原串须在本页唯一；改成里的 @H／@G 展开成希伯来文／希腊文缺口；\\n 是换行。"""
+    f = f or RAW / 'fixes.tsv'
     if not f.exists():
         return text
+    notes = []
     for line in f.read_text(encoding='utf-8').splitlines():
         if not line or line.startswith('#'):
             continue
-        old, new = line.split('\t')
+        old, new = (x.replace('\\n', '\n') for x in line.split('\t'))
+        key = (str(f), old)
+        FIXHITS.setdefault(key, 0)
         c = text.count(old)
-        if c != 1:
-            print(f'⚠️ 判读表条目命中 {c} 次：{old!r}')
+        if c > 1:
+            FIXHITS[key] += 100                                     # 不唯一：报警
             continue
-        text = text.replace(old, new)
+        if c == 1:
+            if new.startswith('@NOTE '):                            # 混进正文的栏底脚注：摘出，挪到页末 Notes
+                note, _, keep = new[6:].partition(' @@ ')              # 「@NOTE 注文 @@ 原处留下的文字」
+                text = text.replace(old, keep or ('\n\n' if old.startswith('\n\n') and old.endswith('\n\n') else ''))
+                notes.append(note)
+            else:
+                text = text.replace(old, re.sub(r'@[HG]', lambda m: gap(m.group()), new))
+            FIXHITS[key] += 1
+    if notes:
+        block = '\n\n'.join(notes)
+        if f'<p class="{P}-notes-h">Notes</p>' in text:
+            text = re.sub(r'\n*</div>\s*$', '\n\n' + block + '\n\n</div>', text.rstrip(), count=1)
+        else:
+            text = text.rstrip() + f'\n\n<div class="{P}-notes" markdown="1">\n\n<p class="{P}-notes-h">Notes</p>\n\n' \
+                   + block + '\n\n</div>'
     return text
+
+
+def fix_report():
+    for (f, old), c in FIXHITS.items():
+        if c != 1:
+            print(f'⚠️ 判读表条目命中 {c if c < 100 else "多"} 次：{Path(f).parent.name} {old!r}')
+
+
+FIXHITS = {}
 
 
 def main():
@@ -257,7 +421,7 @@ def main():
     units, cur, verse, todo = [], [], 'intro', list(BOUNDS)
     for x in stream:
         plain = re.sub(r'<[^>]+>', '', x['text']).replace(n.IT_ON, '').replace(n.IT_OFF, '').strip()
-        m = re.match(r'Ver[.,]\s*(\S+?)[.,\s]', plain) if x['kind'] == 'body' else None
+        m = re.match(r'Ver[.,]?\s*(\S+?)[.,\s]', plain) if x['kind'] == 'body' else None
         if m and todo and x['page'] == todo[0][0] and m.group(1).strip('.') == todo[0][1]:
             if cur:
                 units.append((verse, cur))
@@ -274,6 +438,8 @@ def main():
         U.append(dict(verse=verse, part=None, pages=(min(pg), max(pg)) if pg else None, contents=[],
                       md=apply_fixes(render(xs)), slug='introduction' if verse == 'intro' else f'v{verse.replace("–", "-")}',
                       name='Introduction' if verse == 'intro' else None))
+    fix_report()
+    renumber(U)
     vs = [u['verse'] for u in U]
     print('经节页：', vs)
     (RAW / 'disagree_left.tsv').write_text('\n'.join('\t'.join(x) for x in left_log) + '\n', encoding='utf-8')

@@ -87,7 +87,7 @@ def main():
             label = str(a) if not b or b == a else f'{a}–{b}'
             pg = [x['page'] for x in xs if x['page']]
             U.append(dict(verse=label, part=None, pages=(min(pg), max(pg)) if pg else None, contents=[],
-                          md=g.apply_fixes(g.render(xs)) if False else g.render(xs), slug=f'v{label.replace("–", "-")}',
+                          md=g.apply_fixes(g.render(xs), RAW / f'psalm{ps}' / 'fixes.tsv'), slug=f'v{label.replace("–", "-")}',
                           name=None))
         fronts, backs = [], []
         for key, acc in (('front', fronts), ('back', backs)):
@@ -97,7 +97,9 @@ def main():
                 if start:
                     k = next(i for i, x in enumerate(st) if x['kind'] == 'big' and start in x['text'].upper())
                     st = st[k:]
-                acc.append(dict(slug=slug, title=en, zh=zh, md=g.render(st)))
+                acc.append(dict(slug=slug, title=en, zh=zh, md=g.apply_fixes(g.render(st), RAW / f'psalm{ps}' / 'fixes.tsv')))
+        g.fix_report()
+        g.FIXHITS.clear()
         tot = bad = 0
         for u in U:
             bb, cc = n.nonwords(re.sub(r'<[^>]+>', ' ', u['md']))
