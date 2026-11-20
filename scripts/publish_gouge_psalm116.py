@@ -198,6 +198,7 @@ def md(t):
                lambda m: '&c' + ('*' if len(m.group(1) + m.group(2)) == 1 else ''), t)
     t = re.sub(r'\b(' + BOOKS + r')\. ([ivxlc]+): (?=\d)', r'\1. \2. ', t)       # Mal. iii: 14
     t = re.sub(r'\*A US\*\.', '*Ans*.', t)
+    t = re.sub(r'\*Am\*\. ?1,', '*Ans*. 1.', t)
     t = re.sub(r'\*?\b(?:Alls|Alts|Alt|Atis|Aiis|A\)is|A lis|yins|Aus)\*?\.', '*Ans*.', t)               # Ans. 读成 Alls.／Alts.
     t = re.sub(r'\bL(?=[xvi]+\b)', 'l', t)                                  # 经文出处罗马数字首字母 l 读成 L：Ps. Lxxxix.
     t = re.sub(r'(?<=\d)(?:-|[-—] )(?=\d)', '–', t)                          # 起讫节号：17-19、28- 35 → 17–19
