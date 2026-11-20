@@ -382,6 +382,8 @@ def render(stream):
             if m.group(4).strip():
                 body.append(md(m.group(4)))
             continue
+        # 经文行首词漏了斜体（`Ver. 13. I will <it>take …`）：把它挪进斜体区
+        t = re.sub(r'^((?:<span[^>]*></span>)?Ver[.,]?\s*\d+[.,]?\s*)((?:\w+\s+){1,3})' + re.escape(n.IT_ON), lambda m: m.group(1) + n.IT_ON + m.group(2), t)
         m = VER.match(t)
         if m:
             tail = m.group(3) if re.fullmatch(r'[.,;:!?]\s*', m.group(3)) else ''
