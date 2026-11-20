@@ -9,22 +9,24 @@ next_url: "/cowper/psalm119/dedication/"
 next_label: "The Epistle Dedicatory"
 ---
 
-<span class="cw-pb" data-facs="1"></span><span class="cw-pb" data-facs="1"></span>A HOLY ALPHABET *FOR* SION'S SCHOLARS;
+{% include titlepage-css.html %}
 
-FVLL OF SPIRITVAL *INSTRVCTIONS, AND HEAVENly* Consolations, to direct and encourage *them in their Progresse towards the New* IERVSALEM:
-
-Deliuered, by way of Commentary vpon the *whole* 119. *Psalme.*
-
-By WILLIAM COVVPER, Minister of Gods *Word, and B. of Galloway.*
-
-PROV. 1. 5.
-
-A wise man shall heare and increase in knowledge: and a man of vnderstanding, shall attaine vnto wise counsels.
-
-Amb in Psal. 119. NVN.
-
-*Intelligimus ideo per literas Heb <span class="cw-gap" title="TCP: illegible in source（底本此处读不出）">•</span>rum Psalnium <span class="cw-gap" title="TCP: illegible in source（底本此处读不出）">•</span>unc esse digestum, vt home noster tanquam pa<span class="cw-gap" title="TCP: illegible in source（底本此处读不出）">•</span>vulus & ab insantia per literarum element a for<span class="cw-gap" title="TCP: illegible in source（底本此处读不出）">•</span>atus. <span class="cw-gap" title="TCP: illegible in source（底本此处读不出）">〈◊〉</span> at as puer<span class="cw-gap" title="TCP: illegible in source（底本此处读不出）">•</span>'is assueu<span class="cw-gap" title="TCP: illegible in source（底本此处读不出）">•</span>: v<span class="cw-gap" title="TCP: illegible in source（底本此处读不出）">•</span>q, ad maturitatem virtutis ex<span class="cw-gap" title="TCP: illegible in source（底本此处读不出）">•</span>scat.*
-
-LONDON.
-
-Printed by *H. Lownes,* for *Iohn Budge;* and are to be solde at his Shop at the great South-<span class="cw-gap" title="TCP: illegible in source（底本此处读不出）">•</span>oore of *Paules,* and Britannes Bursse. 1613.
+<div class="tpg">
+<div class="tpg-l z0 sp">A HOLY</div>
+<div class="tpg-l z1 sp">ALPHABET</div>
+<div class="tpg-l z2 it sp">FOR</div>
+<div class="tpg-l z2">S<span class="sc">ion’s</span> S<span class="sc">cholars</span>;</div>
+<div class="tpg-l z2 gap1">FVLL OF SPIRITVAL</div>
+<div class="tpg-l z4"><i>INSTRVCTIONS, AND HEAVEN-</i><br>ly Consolations, to direct and encourage<br><i>them in their Progresse towards the<br>New</i> I<span class="sc">ervsalem</span>:</div>
+<div class="tpg-l z3">Deliuered, by way of Commentary vpon the<br><i>whole</i> 119. <i>Psalme.</i></div>
+<hr class="tpg-rule">
+<div class="tpg-l z4">By W<span class="sc">illiam</span> C<span class="sc">owper</span>, Minister of Gods<br><i>Word, and B. of Galloway.</i></div>
+<hr class="tpg-rule">
+<div class="tpg-l z5">P<span class="sc">rov</span>. 1. 5.<br>A wise man shall heare, and increase in knowledge: and a man of vn-<br>derstanding, shall attaine vnto wise counsels.</div>
+<hr class="tpg-rule">
+<div class="tpg-l z5">Amb in Psal. 119. N<span class="sc">vn</span>.</div>
+<div class="tpg-l z6 it">Intelligimus ideo per literas Hebræorum Psalmum hunc esse digestum, vt ho-<br>mo noster tanquam paruulus &amp; ab infantia per literarum elementa forma-<br>tus, quibus ætas puerilis assueuit, vsq; ad maturitatem virtutis excrescat.</div>
+<hr class="tpg-rule">
+<div class="tpg-l z4 sp">L<span class="sc">ondon</span>,</div>
+<div class="tpg-l z4">Printed by <i>H. Lownes</i>, for <i>Iohn Budge</i>; and are to be<br>solde at his Shop at the great South-doore of <i>Paules</i>,<br>and Britannes Bursse. 1613.</div>
+</div>

@@ -47,3 +47,6 @@
     （`Ver. 13. I will *take…*`，Ver. 13/16/18 三处）挪进斜体；改正表原串也可用 `@H/@G` 指已有缺字块；`@NOTE` 注文里的 `@H` 展开。
   - 撤销 `Zaccheus→Zacchæus`（原书作 Zaccheus）。p.136 剑桥一句被抽进注区，移回正文。
   - 希腊文能看清的照录（`ἐπίζευξις`、`ἀναδίπλωσις` 等修辞格名，`βλασφημεῖν, τὴν φήμην βλάπτειν` 等），看不清的仍记缺字。
+- 2026-11-20 扉页手排（old-book-ocr §5.6）：古治分册扉页（影像第 298 叶）、皮尔森四篇合用分册扉页（影像第 120 叶）照原图排，
+  `gouge_raw/psalm116/manual_pages/title.html`、`pierson_raw/psalms/psalm8{4,5,7}/manual_pages/title.html`；
+  publish_tcp_psalm.publish() 见 manual_pages/title.html 即在卷首补「书名页」。两页上的手写勾记不排。

@@ -11,22 +11,28 @@ next_url: "/pierson/psalm27/dedication/"
 next_label: "The Epistle Dedicatory"
 ---
 
-<span class="p27-pb" data-facs="1"></span>EXCELLENT Encouragements AGAINST AFFLICTIONS; *OR,* Expositions of four select Psalmes: the XXVII, LXXXIV, LXXXV, and LXXXVII.
+{% include titlepage-css.html %}
 
-Containing,
-
-<p class="p27-item" markdown="1">1 *Davids triumph over distresse.*</p>
-
-<p class="p27-item" markdown="1">2 *Davids hearts desire.*</p>
-
-<p class="p27-item" markdown="1">3 *The Churches exercise under afstiction.*</p>
-
-<p class="p27-item" markdown="1">4 *The great Charter of the Church.*</p>
-
-By the learned and laborious, faithfull and prudent Minister of Gods Word, M*r*. THOMAS PIERSON, late Pastour of *Brompton-Brian* in the County of *Hereford.*
-
-<p class="p27-quote" markdown="1">*ROM. 15.4.*</p>
-
-<p class="p27-quote" markdown="1">Whatsoever things were written aforetime were written for our learning, that we through patience and comfort of the Scriptures might have hope.</p>
-
-LONDON, Printed by *John Legatt,* for *Philemon Stephens;* at the gilded Lion in *Pauls* Church-yard. MDCXLVII.
+<div class="tpg">
+<div class="tpg-l z3 sp">EXCELLENT</div>
+<div class="tpg-l z0">Encouragements</div>
+<div class="tpg-l z4 sp2">AGAINST</div>
+<div class="tpg-l z1 sp">AFFLICTIONS;</div>
+<div class="tpg-l z5 it">OR,</div>
+<div class="tpg-l z3">Expositions of four select Psalmes:</div>
+<div class="tpg-l z4">the <span class="sp">XXVII, LXXXIV, LXXXV,</span><br>and <span class="sp">LXXXVII.</span></div>
+<div class="tpg-brace">
+<div class="tpg-brace-lab">Contain-<br>ing,</div>
+<div class="tpg-brace-sym">{</div>
+<div class="tpg-brace-r">1 <i>Davids triumph over distresse.</i><br>2 <i>Davids hearts desire.</i><br>3 <i>The Churches exercise under afstiction.</i><br>4 <i>The great Charter of the Church.</i></div>
+</div>
+<hr class="tpg-rule">
+<div class="tpg-l z3">By the learned and laborious, faithfull and prudent</div>
+<div class="tpg-l z4">Minister of Gods Word, M<sup>r</sup>. T<span class="sc">homas</span> P<span class="sc">ierson</span>,<br>late Pastour of <i>Brompton-Brian</i> in the County of<br><i>Hereford.</i></div>
+<hr class="tpg-rule">
+<div class="tpg-l z4 sp">R<span class="sc">om</span>. 15. 4.</div>
+<div class="tpg-l z5 it">Whatsoever things were written aforetime were written for<br>our learning, that we through patience and comfort of the<br>Scriptures might have hope.</div>
+<hr class="tpg-rule">
+<div class="tpg-l z4 sp">L<span class="sc">ondon</span>,</div>
+<div class="tpg-l z5">Printed by <i>John Legatt</i>, for <i>Philemon Stephens</i>; at the<br>gilded Lion in <i>Pauls</i> Church-yard.<br>MDCXLVII.</div>
+</div>

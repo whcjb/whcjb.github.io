@@ -115,6 +115,9 @@ def main():
             fm += [f'next_url: {ystr(base + slug_of(nk, nx) + "/")}', f'next_label: {ystr(label_of(nk, nx))}']
         fm.append('---')
         body = gapify(x['md'])
+        hand = RAW / 'manual_pages' / f'{slug}.html'                # 扉页照原书影像手排（old-book-ocr §5.6）
+        if kind == 'front' and hand.exists():
+            body = '{% include titlepage-css.html %}\n\n' + hand.read_text(encoding='utf-8').strip()
         if kind == 'sermon' and x.get('absorbs'):
             ab = '、'.join(f'第 {a} 篇' for a in x['absorbs'])
             body = (f'<p class="cs-merge">This page also carries what survives of Sermon '

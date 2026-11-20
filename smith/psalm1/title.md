@@ -9,10 +9,20 @@ next_url: "/smith/psalm1/dedication/"
 next_label: "The Epistle Dedicatory"
 ---
 
-<span class="so-pb" data-facs="1"></span><span class="so-pb" data-facs="1"></span>*DAVIDS* BLESSED MAN: *OR,* A SHORT EXPOSITION VPON THE FIRST Psalme, directing a Man to *true Happinesse.* Wherein the Estate and Condition of all Mankinde is laid downe, both *for this life, and that which is to come.* The second Edition profitably amplified by the Author SAMVEL SMITH, Preacher of the Word of God at *Pritwell* in *Essex.*
+{% include titlepage-css.html %}
 
-<p class="so-quote" markdown="1">*1. TIM. 4.8.*</p>
-
-<p class="so-quote" markdown="1">Godlinesse hath the promise of the life present, and the life that is to come.</p>
-
-*LONDON,* Printed by NICHOLAS OKES, and are to bee sold by SIMON WATERSON, at his Shop in *Pauls* Church-yard, at the Signe of the Crowne. 1616.
+<div class="tpg plain">
+<div class="tpg-l z1 it sp">DAVIDS</div>
+<div class="tpg-l z0 sp">BLESSED</div>
+<div class="tpg-l z1 sp">MAN:</div>
+<div class="tpg-l z4 it gap1">OR,</div>
+<div class="tpg-l z3 sp">A SHORT EXPOSITI-<br>ON VPON THE FIRST</div>
+<div class="tpg-l z3">Psalme, directing a Man to<br><i>true Happinesse.</i></div>
+<div class="tpg-l z3 gap1">Wherein the Estate and Condition<br>of all Mankinde is laid downe, both<br><i>for this life, and that which is<br>to come.</i></div>
+<div class="tpg-l z3 gap1">The second Edition profitably amplified<br>by the Author<br>S<span class="sc">amvel</span> S<span class="sc">mith</span>, Preacher of the<br>Word of God at <i>Pritwell</i> in <i>Essex.</i></div>
+<div class="tpg-l z4 gap1">1. T<span class="sc">im</span>. 4. 8.</div>
+<div class="tpg-l z5 it">Godlinesse hath the promise of the life present, and the<br>life that is to come.</div>
+<hr class="tpg-rule">
+<div class="tpg-l z4 it sp">LONDON,</div>
+<div class="tpg-l z4">Printed by N<span class="sc">icholas</span> O<span class="sc">kes</span>, and are to<br>bee sold by S<span class="sc">imon</span> W<span class="sc">aterson</span>, at his<br>Shop in <i>Pauls</i> Church-yard, at the<br>Signe of the Crowne. <i>1616.</i></div>
+</div>

@@ -65,6 +65,9 @@ def main():
         meta.setdefault(slug, t0)
         if k == 'front':
             title, sub, body = x['title'], FRONT_CN.get(slug, ''), x['md']
+            hand = RAW / 'manual_pages' / f'{slug}.html'           # 扉页照原书影像手排（old-book-ocr §5.6）
+            if hand.exists():
+                body = '{% include titlepage-css.html %}\n\n' + hand.read_text(encoding='utf-8').strip()
         else:
             v = x['verses']
             title = f'Lecture {x["num"]} · {VREF.get(v, "Psalm 51:" + v)}'

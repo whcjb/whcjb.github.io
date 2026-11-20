@@ -5,6 +5,8 @@ book_name: "Gouge on Psalm 116"
 title: "The Epistle Dedicatory"
 subtitle: "献辞"
 date: 2026-11-19 18:56
+prev_url: "/gouge/psalm116/title/"
+prev_label: "Title Page"
 next_url: "/gouge/psalm116/to-blackfriars/"
 next_label: "To my Beloved Parishioners of Blackfriars"
 ---

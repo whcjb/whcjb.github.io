@@ -9,14 +9,21 @@ next_url: "/smith/psalm51/dedication/"
 next_label: "The Epistle Dedicatory"
 ---
 
-<span class="sm-pb" data-facs="1"></span><span class="sm-pb" data-facs="1"></span>*Dauids Repentance:* OR, A Plaine and Familiar Exposition of the 51. Psalme, first Preached, and now published for the benefite of *Gods Church.*
+{% include titlepage-css.html %}
 
-Wherein euery faithfull Christian may see before his eyes the patterne of vnfeigned Repentance, whereby we may take heed *of the falling into sinne againe.*
-
-The second Edition profitably amplified by the Authour SAMVEL SMITH, Minister of *Roxwell* in *Essex.*
-
-<p class="sm-quote" markdown="1">LVKE 13.5.</p>
-
-<p class="sm-quote" markdown="1">*Except yee repent yee shall all perish.*</p>
-
-*LONDON,* Printed by NICHOLAS OKES. 1614.
+<div class="tpg">
+<div class="tpg-l z1 it">Dauids Repentance:</div>
+<div class="tpg-l z2">OR,</div>
+<div class="tpg-l z1">A Plaine and Familiar</div>
+<div class="tpg-l z2">Exposition of the 51. Psalme,</div>
+<div class="tpg-l z3">first Preached, and now publi-<br>shed for the benefite of<br><i>Gods Church.</i></div>
+<div class="tpg-l z2">Wherein euery faithfull Christian</div>
+<div class="tpg-l z3">may see before his eyes the pat-<br>terne of vnfeigned Repentance,<br>whereby we may take heed<br><i>of the falling into<br>sinne againe.</i></div>
+<div class="tpg-l z3">The second Edition profitably ampli-<br>fied by the Authour</div>
+<div class="tpg-l z3">S<span class="sc">amvel</span> S<span class="sc">mith</span>, Minister of<br><i>Roxwell</i> in <i>Essex.</i></div>
+<div class="tpg-l z4 sp">L<span class="sc">vke</span> 13. 5.</div>
+<div class="tpg-l z4 it">Except yee repent yee shall all perish.</div>
+<hr class="tpg-rule">
+<div class="tpg-l z3 it sp">LONDON,</div>
+<div class="tpg-l z3">Printed by N<span class="sc">icholas</span> O<span class="sc">kes</span>.<br><span class="sp">1614.</span></div>
+</div>

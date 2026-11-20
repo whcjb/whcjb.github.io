@@ -589,6 +589,16 @@ def publish(key, c, fronts, units, backs, gaps, OUT, BASE, RAW):
     t0 = now()
     OUT.mkdir(parents=True, exist_ok=True)
     meta_f.parent.mkdir(parents=True, exist_ok=True)
+    # 扉页照原书影像手排（old-book-ocr §5.6）：RAW/manual_pages/<slug>.html 存在即替代该页正文；
+    # 有手排扉页而卷首没有书名页（OCR 底本只抽了正文）时补一页在最前。
+    manual = RAW / 'manual_pages'
+    if (manual / 'title.html').exists() and not any(f['slug'] == 'title' for f in fronts):
+        fronts = [dict(slug='title', title='Title Page', zh='书名页', md='')] + list(fronts)
+    for f in fronts + list(backs):
+        h = manual / f'{f["slug"]}.html'
+        if h.exists():
+            f['md'] = '{% include titlepage-css.html %}\n\n' + h.read_text(encoding='utf-8').strip()
+            f['manual'] = True
     pages = [('front', f) for f in fronts] + [('unit', u) for u in units] + [('front', f) for f in backs]
 
     def vref(u):
@@ -613,7 +623,7 @@ def publish(key, c, fronts, units, backs, gaps, OUT, BASE, RAW):
         slug = x['slug']
         meta.setdefault(slug, t0)
         if k == 'front':
-            title, sub, body = x['title'], x['zh'], gapify(x['md'], P)
+            title, sub, body = x['title'], x['zh'], (x['md'] if x.get('manual') else gapify(x['md'], P))
         else:
             title = (f'{x["name"]} · ' if x.get('name') else '') + vref(x) + \
                 (f' · Part {x["part"]} of {x["nparts"]}' if x['part'] else '')

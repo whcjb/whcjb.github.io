@@ -5,6 +5,8 @@ book_name: "Pierson on Psalm 85"
 title: "The Epistle Dedicatory (Christopher Harvey)"
 subtitle: "献辞"
 date: 2026-11-19 19:16
+prev_url: "/pierson/psalm85/title/"
+prev_label: "Title Page"
 next_url: "/pierson/psalm85/v1/"
 next_label: "Verse 1"
 ---

@@ -207,6 +207,9 @@ def main():
           f'<p class="kx-tp-sub"><em>{esc(" ".join(tl[4:8]))}</em></p>\n'
           f'<p class="kx-tp-motto">{esc(tl[8])}</p>')
     assert len(tl) == 9 and tl[8].startswith('The patient'), tl
+    hand = ROOT / 'knox_raw' / 'psalm6' / 'manual_pages' / 'title.html'    # 照 1845 年版第 106 页影像手排（old-book-ocr §5.6）
+    if hand.exists():
+        tp = '{% include titlepage-css.html %}\n' + hand.read_text(encoding='utf-8').strip()
     meta.setdefault('index', t0)
     META.write_text(json.dumps(meta, ensure_ascii=False, indent=1, sort_keys=True) + '\n', encoding='utf-8')
     idx = f'''---
