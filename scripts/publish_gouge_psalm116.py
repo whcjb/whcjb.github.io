@@ -202,6 +202,7 @@ def md(t):
     t = re.sub(r'\bL(?=[xvi]+\b)', 'l', t)                                  # 经文出处罗马数字首字母 l 读成 L：Ps. Lxxxix.
     t = re.sub(r'(?<=\d)(?:-|[-—] )(?=\d)', '–', t)                          # 起讫节号：17-19、28- 35 → 17–19
     t = re.sub(r'(?<![*\w])\*([ivxlc]+)\*(?=\.)', r'\1', t)                   # 经文出处里假斜体的罗马数字：Num. *xv*. 30
+    t = re.sub(r'(?<![*\w])\*(' + BOOKS + r')\*(?=\. [ivxlc]+\.)', r'\1', t)          # 经卷名假斜体：*Mal*. i. 1
     t = re.sub(r'\b(' + BOOKS + r'), (?=[ivxlcIL][ivxlc]*\.)', r'\1. ', t)            # 经卷名后的点读成逗号：Num, xvi.
     t = re.sub(r'\b([ivxlc]+)\.(?=\d)', r'\1. ', t)                          # Rom. v.12 → v. 12
     t = re.sub(r'\b(' + BOOKS + r')(\.?) ([ivxlc]+), (?=\d)', r'\1\2 \3. ', t)   # 1 Cor. iii, 16 → iii. 16；Acts xxi, 13
@@ -223,8 +224,18 @@ def md(t):
     t = re.sub(r'\*Us\*\??(?= \d)', '*Use*', t)
     t = re.sub(r'\bDa(?:y|)id\b', 'David', t)
     t = re.sub(r'(?<= )-(?=[a-z])', '', t)                                      # 词前孤立短横：where -he will
+    t = re.sub(r'(?<=[a-z]) - (?=[a-z])', ' ', t)                                  # 词间孤立短横（污点）：debtors - unto
+    t = re.sub(r'\b(again|mo|fir|thi|wa)\.(st|s)\b', r'\1\2', t)                    # 词中多一个句点：again.st、fir.st
+    t = re.sub(r'\bas\.are\b', 'as are', t)
+    t = re.sub(r'(?<=[a-z]{4})@(?= )', 'd', t)                                       # d 读成 @：measure@
+    t = re.sub(r'’/—', '’—', t)
+    t = re.sub(r'(?<=[a-z])~(?=\s|$)', '', t)
+    t = re.sub(r'(?<=[a-z]) [~’] (?=[a-z])', ' ', t)                               # 字间污点：saving ~ knowledge、the ’ holy
+    t = re.sub(r'(?<=[a-z])\.(?=[A-Z][a-z])', '. ', t)                             # 句点后缺空格
     t = re.sub(r'\bTam\b', 'I am', t)                                          # I am 粘成 Tam
     t = re.sub(r'\bTwill\b', 'I will', t)
+    t = re.sub(r'(?<=‘)IT(?= [a-z])', 'I', t)                                       # ‘IT will → ‘I will
+    t = re.sub(r'(?<=[a-z]{3} )wp(?= (?:the|to|his|her|their|my|thy|our|your|a)\b)', 'up', t)   # up 读成 wp
     t = re.sub(r'\b([Tt])(?:ills|ins)\b(?= (?:serves|is|was|we|he|they|world|life|doth|must|psalm|verse|point|is))', r'\1his', t)
     t = re.sub(r'\bZaccheus\b', 'Zacchæus', t)                                  # æ 连字读成 e
     t = re.sub(r'\bIcing', 'king', t)                                            # k 读成 Ic
@@ -246,6 +257,7 @@ def md(t):
                lambda m: m.group(1) + ('. ' if m.group(1) not in ('Kings', 'John', 'Luke', 'Acts') else ' ') + 'i. ', t)   # Rom. 1. 29 → i. 29
     t = re.sub(r'\bPs\. hai\.', 'Ps. lxiii.', t)
     t = re.sub(r'\bloying', 'loving', t)
+    t = re.sub(r'\b([Mm])oy(est|eth|ed|ing)\b', r'\1ov\2', t)                   # tesseract v→y：moyest
     t = re.sub(r'\b(' + ABBR_BOOKS + r') (?=[ivxlc]+\. ?\d)', r'\1. ', t)          # 缩写经卷名后缺点：1 Pet ii. 5
     t = re.sub(r'(?<![*\w])\*(' + FALSE_IT + r')\*(?![*\w])', false_italic, t)
     t = re.sub(r'(?<![\d.,:;] )(?<![\d])\b0(?= (?:my|Lord|God|thou|ye|that|how|the|what|Israel|Jerusalem|man|LORD)\b)', 'O', t)   # 呼格 O 读成 0
@@ -315,6 +327,8 @@ def render(stream):
             notes.append(md(t))
             continue
         if x['kind'] == 'big':
+            if len(re.sub(r'\W', '', t)) <= 2:                    # 书帖签名（页底单字母）被判成大字号
+                continue
             body.append(f'<p class="{P}-quote">{md(t)}</p>')
             continue
         anchor = ''
@@ -352,7 +366,7 @@ def render(stream):
         else:
             merged.append(b)
     merged = [re.sub(r'(?<=\d),$', '.', b) if not b.startswith(('<', '#')) else b for b in merged]   # 段末节号后的逗号是句号
-    merged = [re.sub(r'(?<=[.?’]) [:;]$', '', b) for b in merged]                                  # 段末句号后的孤立冒号（污点）
+    merged = [re.sub(r'(?<=[.?’]) (?:[:;,]|“7)$', '', b) for b in merged]                                  # 段末句号后的孤立冒号（污点）
     out = '\n\n'.join(merged)
     if notes:
         out += f'\n\n<div class="{P}-notes" markdown="1">\n\n<p class="{P}-notes-h">Notes</p>\n\n' + \
