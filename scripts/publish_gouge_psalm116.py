@@ -210,6 +210,7 @@ def md(t):
     t = re.sub(r'^\*I\*\. (?=[A-Z])', '1\\. ', t)
     t = re.sub(r'^\*(I{1,3}|IV|V|VI{1,3}|IX|X)\*\. (?=[A-Z])', r'\1. ', t)          # 段首罗马序号误成斜体：*IV*. The                                # 段首序号 1 读成斜体 I
     t = re.sub(r'^IL\. (?=\*|[A-Z])', 'II. ', t)
+    t = re.sub(r'^Ill\. (?=\*|[A-Z])', 'III. ', t)
     t = re.sub(r'^VY\. (?=\*|[A-Z])', 'V. ', t)
     t = re.sub(r'\bmerey\b', 'mercy', t)
     t = re.sub(r'\bhaying\b', 'having', t)
@@ -251,7 +252,8 @@ def md(t):
     t = re.sub(r'(?<=[a-z]) - (?=[a-z])', ' ', t)                                  # 词间孤立短横（污点）：debtors - unto
     t = re.sub(r'\b(again|mo|fir|thi|wa)\.(st|s)\b', r'\1\2', t)                    # 词中多一个句点：again.st、fir.st
     t = re.sub(r'\bas\.are\b', 'as are', t)
-    t = re.sub(r'(?<=[a-z]{4})@(?= )', 'd', t)                                       # d 读成 @：measure@
+    t = re.sub(r'(?<=[a-z]{4})@(?= )', 'd', t)
+    t = re.sub(r'(?<=[a-z;,]) [°?] (?=[a-z])', ' ', t)                               # 字间脚注号残渣：disquietness ° of                                       # d 读成 @：measure@
     t = re.sub(r'’/—', '’—', t)
     t = re.sub(r'(?<=[a-z])~(?=\s|$)', '', t)
     t = re.sub(r'(?<=[a-z]) [~’}] (?=[a-zA-Z])', ' ', t)                              # 字间污点：saving ~ knowledge、the ’ holy、inward } disposition
