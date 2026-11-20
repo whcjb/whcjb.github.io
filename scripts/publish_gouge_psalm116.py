@@ -296,7 +296,8 @@ def md(t):
     t = re.sub(r'\b(' + ABBR_BOOKS + r') (?=[ivxlc]+\. ?\d)', r'\1. ', t)          # 缩写经卷名后缺点：1 Pet ii. 5
     t = re.sub(r'(?<![*\w])\*(' + FALSE_IT + r')\*(?![*\w])', false_italic, t)
     t = re.sub(r'(?<![\d.,:;] )(?<![\d])\b0(?= (?:my|Lord|God|thou|ye|that|how|the|what|Israel|Jerusalem|man|LORD)\b)', 'O', t)   # 呼格 O 读成 0
-    t = re.sub(r"(?<=[A-Za-z])'(?=[a-z])", '’', t)                                # 词内直撇号 God's → God’s
+    t = re.sub(r"(?<=[A-Za-z])'(?=[a-z])", '’', t)
+    t = re.sub(r'\bC(?:ae|e|z|ee|ze)sar\b', 'Cæsar', t)                              # 原书一律 Cæsar                                # 词内直撇号 God's → God’s
     return re.sub(r' {2,}', ' ', t).strip()
 
 
