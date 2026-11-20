@@ -272,7 +272,6 @@ def md(t):
     t = re.sub(r'(?<=‘)IT(?= [a-z])', 'I', t)                                       # ‘IT will → ‘I will
     t = re.sub(r'(?<=[a-z]{3} )wp(?= (?:the|to|his|her|their|my|thy|our|your|a)\b)', 'up', t)   # up 读成 wp
     t = re.sub(r'\b([Tt])(?:ills|ins)\b(?= (?:serves|is|was|we|he|they|world|life|doth|must|psalm|verse|point|is))', r'\1his', t)
-    t = re.sub(r'\bZaccheus\b', 'Zacchæus', t)                                  # æ 连字读成 e
     t = re.sub(r'\bIcing', 'king', t)                                            # k 读成 Ic
     t = re.sub(r"(?:' )?«(?=[A-Z])", '‘', t)                                     # 开引号读成 «
     t = re.sub(r'(?<=[a-z] )«(?=[a-z])', '', t)                                  # 字间污点读成 «
