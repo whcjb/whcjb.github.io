@@ -5,7 +5,7 @@
 
 为什么不用 TCP：EEBO-TCP A01981 是一份错配的录入本——正文前半录的是 J. Gough 的剧本《The Strange Discovery》(1640)，
 古治这本只录了后半（前 80 余页即第 1–39 小节缺失，此外 8 处各缺 2–4 页，书末也缺）。拼起来会有十来处 1632／1868 两种拼法来回切换，
-所以整本用 1868 年 Nichol 本（IA davidsblessedman00smit，影像第 297–442 页；用户 2026-11-19 认可），TCP 覆盖的那六成拿来当第三证人。
+所以整本用 1868 年 Nichol 本（IA davidsblessedman00smit，影像第 297–443 页；用户 2026-11-19 认可），TCP 覆盖的那六成拿来当第三证人。
 
 清理（nichol1868_ocr.py + 本脚本）：
   ① ABBYY 段落 → ② tesseract 按位置对证 → ①' 符号形／字形规则 →
@@ -29,7 +29,7 @@ ROOT = Path(__file__).resolve().parent.parent
 RAW = ROOT / 'gouge_raw' / 'psalm116'
 TEI = '{http://www.tei-c.org/ns/1.0}'
 P = 'gg'
-BODY = (304, 442)
+BODY = (304, 443)
 FRONT = [('dedication', 'The Epistle Dedicatory', '献辞', 299, 301),
          ('to-blackfriars', 'To my Beloved Parishioners of Blackfriars', '致黑衣修士区堂众', 302, 303)]
 CFG = dict(tcp='—', author='gouge', book='psalm116', P=P, c0='#3d1d5a', c1='#592b82', psalm=116,
@@ -479,7 +479,7 @@ def apply_fixes(text, f=None):
             if new.startswith('@NOTE '):                            # 混进正文的栏底脚注：摘出，挪到页末 Notes
                 note, _, keep = new[6:].partition(' @@ ')              # 「@NOTE 注文 @@ 原处留下的文字」
                 text = text.replace(old, keep or ('\n\n' if old.startswith('\n\n') and old.endswith('\n\n') else ''))
-                notes.append(note)
+                notes.append(re.sub(r'@[HG]', lambda m: gap(m.group()), note))
             else:
                 text = text.replace(old, re.sub(r'@[HG]', lambda m: gap(m.group()), new))
             FIXHITS[key] += 1
