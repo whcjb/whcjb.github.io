@@ -256,7 +256,7 @@ def md(t):
     t = re.sub(r'\b(again|mo|fir|thi|wa)\.(st|s)\b', r'\1\2', t)                    # 词中多一个句点：again.st、fir.st
     t = re.sub(r'\bas\.are\b', 'as are', t)
     t = re.sub(r'(?<=[a-z]{4})@(?= )', 'd', t)
-    t = re.sub(r'(?<=[a-z;,]) [°?] (?=[a-z])', ' ', t)                               # 字间脚注号残渣：disquietness ° of                                       # d 读成 @：measure@
+    t = re.sub(r'(?<=[a-z;,]) ° (?=[a-z])', ' ', t)                               # 字间脚注号残渣：disquietness ° of                                       # d 读成 @：measure@
     t = re.sub(r'’/—', '’—', t)
     t = re.sub(r'(?<=[a-z])~(?=\s|$)', '', t)
     t = re.sub(r'(?<=[a-z]) [~’}] (?=[a-zA-Z])', ' ', t)                              # 字间污点：saving ~ knowledge、the ’ holy、inward } disposition
@@ -412,7 +412,7 @@ def render(stream):
         split += re.split(r'(?<=[.)*]) +[2-9] +(?=See |Sec\.|Lege |Of |[A-Z][a-z]+ [a-z])', b)
     notes = split
     joined = []
-    for b in [x for x in notes if x.strip()]:                                              # 跨页的脚注：上条无句末标点、下条小写起头 → 接上
+    for b in [x for x in notes if x.strip() and not re.fullmatch(r'\s*[A-Z]\s*', x)]:   # 书帖签名（X、U 2）                                              # 跨页的脚注：上条无句末标点、下条小写起头 → 接上
         if joined and re.search(r'[A-Za-z,;]$', joined[-1]) and re.match(r'[a-z]', b):
             joined[-1] += ' ' + b
         else:
