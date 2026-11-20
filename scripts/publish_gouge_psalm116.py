@@ -214,6 +214,10 @@ def md(t):
     t = re.sub(r'(?<=[.?!’]) ”(?=\s|$)', '', t)                                      # 句末多出的孤立闭引号
     t = re.sub(r'(?<=[a-z])~(?=[a-z])', ' ', t)                                       # 字间 ~：inclining~his
     t = re.sub(r'\b[ZL]nar\.', 'Enar.', t)
+    t = re.sub(r'\*Avug\.', '*Aug.', t)
+    t = re.sub(r'\bsees\. (?=\d)', 'secs. ', t)
+    t = re.sub(r'\b([Ss]ec), (?=\d)', r'\1. ', t)                                     # See sec, 2.
+    t = re.sub(r'\baffect us\b', 'affectus', t)
     t = re.sub(r'\btune\b(?= me\b)', 'tunc', t)
     t = re.sub(r'\bSeriptur', 'Scriptur', t)
     t = re.sub(r'(?<=[a-z ,])lib, (?=[ivxlc]+\.)', 'lib. ', t)                      # lib, viii. → lib. viii.
@@ -246,7 +250,7 @@ def md(t):
     t = re.sub(r'\bTam\b', 'I am', t)                                          # I am 粘成 Tam
     # 拉丁引文里的 æ 连字、c 读成 e：que → quæ、hune → hunc（只收不会与英文撞车的独立词）
     for a, b in (('que', 'quæ'), ('hune', 'hunc'), ('Hine', 'Hinc'), ('hee', 'hæc'), ('Heec', 'Hæc'), ('heec', 'hæc'),
-                 ('Hee', 'Hæc'), ('heee', 'hæc'), ('justitiz', 'justitiæ'), ('justitie', 'justitiæ'), ('mew', 'meæ'), ('miserie', 'miseriæ'), ('haec', 'hæc'), ('erederem', 'crederem'), ('pie', 'piæ'), ('quse', 'quæ'), ('queedam', 'quædam'), ('Hierosolyme', 'Hierosolymæ')):
+                 ('Hee', 'Hæc'), ('heee', 'hæc'), ('justitiz', 'justitiæ'), ('justitie', 'justitiæ'), ('mew', 'meæ'), ('miserie', 'miseriæ'), ('haec', 'hæc'), ('erederem', 'crederem'), ('hunce', 'hunc'), ('sie', 'sic'), ('pie', 'piæ'), ('quse', 'quæ'), ('queedam', 'quædam'), ('Hierosolyme', 'Hierosolymæ')):
         t = re.sub(r'\b' + a + r'\b', b, t)
     t = re.sub(r'\bTwill\b', 'I will', t)
     t = re.sub(r'(?<=‘)IT(?= [a-z])', 'I', t)                                       # ‘IT will → ‘I will
