@@ -211,7 +211,10 @@ def md(t):
     t = re.sub(r'^\*(I{1,3}|IV|V|VI{1,3}|IX|X)\*\. (?=[A-Z])', r'\1. ', t)          # 段首罗马序号误成斜体：*IV*. The                                # 段首序号 1 读成斜体 I
     t = re.sub(r'^IL\. (?=\*|[A-Z])', 'II. ', t)
     t = re.sub(r'^VY\. (?=\*|[A-Z])', 'V. ', t)
-    t = re.sub(r'\bmerey\b', 'mercy', t)                                           # 段首罗马序号 II 读成 IL
+    t = re.sub(r'\bmerey\b', 'mercy', t)
+    t = re.sub(r'\bhaying\b', 'having', t)
+    t = re.sub(r'(?<=\w)\+(?=\s)', '', t)                                        # 脚注号读成 +：restless+
+    t = re.sub(r'\bp[oc]+enitent', 'pœnitent', t)                                           # 段首罗马序号 II 读成 IL
     t = re.sub(r'(?<=[a-z])® (?=[a-z])', ' ', t)                                      # 脚注号读成 ®
     t = re.sub(r'(?<=[A-Za-z]) ?([;:])[1-9](?= [a-z])', r'\1', t)                    # 粘在分号后的脚注号：God ;1 if
     t = re.sub(r'(?<=[.?!’]) ”(?=\s|$)', '', t)                                      # 句末多出的孤立闭引号
