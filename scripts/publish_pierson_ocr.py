@@ -72,6 +72,17 @@ def split(stream, last):
     return out
 
 
+def detach(stream, marker, heading):
+    """诗 84 附言首段是花体大写首字母、无首行缩进，被当成上一段的续行并进第 10 节；从 marker 处切开，挪到附言大标题之后。"""
+    for x in stream:
+        j = x['text'].find(marker)
+        if j > 0:
+            x['text'], tail = x['text'][:j].rstrip(), x['text'][j:]
+            k = next(m for m, y in enumerate(stream) if y['kind'] == 'big' and heading in y['text'].upper())
+            stream.insert(k + 1, dict(kind='body', text=tail, page=x['page']))
+            return
+
+
 def main():
     tcp = ([], {})
     for ps, c in PSALMS.items():
@@ -79,6 +90,7 @@ def main():
         log = []
         stream = g.assemble(c['pages'][0], c['pages'][1], tcp, log)
         if c.get('stop'):                  # 诗 84 末页：附言大字标题处截断
+            detach(stream, 'CHRISTIAN READERS', c['stop'])
             k = next(i for i, x in enumerate(stream) if x['kind'] == 'big' and c['stop'] in x['text'].upper())
             stream = stream[:k]
         units = split(stream, c['last'])
@@ -95,6 +107,7 @@ def main():
                 slug, en, zh, a, b, start = c[key]
                 st = g.assemble(a, b, tcp, log)
                 if start:
+                    detach(st, 'CHRISTIAN READERS', start)
                     k = next(i for i, x in enumerate(st) if x['kind'] == 'big' and start in x['text'].upper())
                     st = st[k:]
                 acc.append(dict(slug=slug, title=en, zh=zh, md=g.apply_fixes(g.render(st), RAW / f'psalm{ps}' / 'fixes.tsv')))

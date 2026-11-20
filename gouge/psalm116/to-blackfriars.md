@@ -27,7 +27,7 @@ But the summer being then spent, and that vacation time gone, which is the only 
 
 Cambridge also was much infected with the sickness the same year, and sundry other great and populous towns in the country.
 
-Corn also then rose to a very high rate, and so continued till harvest1631,
+Corn also then rose to a very high rate, and so continued till harvest1631.
 
 These judgments so followimg one upon another, like wave upon wave, turned the course of my meditations from the gratulatory Psalm to such scriptures as afforded fit remedies for removing the foresaid judgments, and occasioned the treatises of ‘God’s Three Arrows.’
 

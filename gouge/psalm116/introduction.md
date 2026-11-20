@@ -51,7 +51,7 @@ Those general truths are these:—
 
 9\. He is careful to perform what he vowed in his distress, ver. 14, 18.
 
-10\. He humbly acknowledgeth his weakness, ver. 10,
+10\. He humbly acknowledgeth his weakness, ver. 10.
 
 11\. He is ready to do what he may know to be acceptable unto God, ver. 12.
 
@@ -87,7 +87,7 @@ In the particular exemplification he expresseth these four points:—
 
 1\. The danger wherein he was, ver. 3.
 
-2\. The means which he used for deliverance, ver. 4,
+2\. The means which he used for deliverance, ver. 4.
 
 3\. The cause whereby God was moved to help him, ver. 5.
 

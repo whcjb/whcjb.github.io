@@ -169,6 +169,7 @@ def roman_l(m):
 def md(t):
     """哨兵层面处理斜体（分得清开／关）：合并相邻斜体段、删 OCR 文本里原有的 *（脚注号或噪点），最后才转 markdown。"""
     t = t.replace('*', '')
+    t = re.sub(r'[ \u00a0]{2,}', ' ', t)                                         # 先并空格，免得后面的规则因双空格落空
     t = re.sub(r'\s*■\s*', ' ', t)                                    # 污点：先删，免得斜体开头留空白
     t = re.sub(r'\\yi\[', 'will', t)                                  # 诗 85 斜体乱码（影像核：will）
     t = re.sub(r'(?<=[A-Za-z\]\[])\\+(?=\s|' + n.IT_OFF + r'|$)', '', t)   # 词尾孤立反斜杠（vrA\）会转义后面的星号
@@ -195,14 +196,15 @@ def md(t):
     t = re.sub(r'&(?:e|o|¢|\*[ec]\*|\*Sec\*)?\.', '&c.', t)                 # &c. 读成 &e.／&o.／&.／&*Sec*.
     t = re.sub(r'&(\*?)(?:e¢|[ec¢o]?)(\*?)(?=[.,:;—])',                       # 带斜体标记的：&*c.—Cyp、&e,
                lambda m: '&c' + ('*' if len(m.group(1) + m.group(2)) == 1 else ''), t)
-    t = re.sub(r'\*?\b(?:Alls|Alts|Atis|Aiis|A\)is)\*?\.', '*Ans*.', t)               # Ans. 读成 Alls.／Alts.
+    t = re.sub(r'\*?\b(?:Alls|Alts|Atis|Aiis|A\)is|A lis)\*?\.', '*Ans*.', t)               # Ans. 读成 Alls.／Alts.
     t = re.sub(r'\bL(?=[xvi]+\b)', 'l', t)                                  # 经文出处罗马数字首字母 l 读成 L：Ps. Lxxxix.
     t = re.sub(r'(?<=\d)(?:-|[-—] )(?=\d)', '–', t)                          # 起讫节号：17-19、28- 35 → 17–19
-    t = re.sub(r'(?<=[.?!’)]) (?=\*(?:Quest|Ans|Object|Obj|Answ)\*\.)', '\n\n', t)   # 问答原书各自起段
     t = re.sub(r'(?<![*\w])\*([ivxlc]+)\*(?=\.)', r'\1', t)                   # 经文出处里假斜体的罗马数字：Num. *xv*. 30
-    t = re.sub(r'\b(' + BOOKS + r'), (?=[ivxlc]+\.)', r'\1. ', t)            # 经卷名后的点读成逗号：Num, xvi.
+    t = re.sub(r'\b(' + BOOKS + r'), (?=[ivxlcIL][ivxlc]*\.)', r'\1. ', t)            # 经卷名后的点读成逗号：Num, xvi.
     t = re.sub(r'\b([ivxlc]+)\.(?=\d)', r'\1. ', t)                          # Rom. v.12 → v. 12
-    t = re.sub(r'\b(' + BOOKS + r')\. ([ivxlc]+), (?=\d)', r'\1. \2. ', t)       # 1 Cor. iii, 16 → iii. 16
+    t = re.sub(r'\b(' + BOOKS + r')(\.?) ([ivxlc]+), (?=\d)', r'\1\2 \3. ', t)   # 1 Cor. iii, 16 → iii. 16；Acts xxi, 13
+    t = re.sub(r'(\*Use\* \d),', r'\1.', t)
+    t = re.sub(r'(?<=[a-z])\.(?=the\b)', ' ', t)                                  # notwithstanding.the
     t = re.sub(r'\b(Ps|Psal)\. e(?=[xlvi]*\.)', r'\1. c', t)                 # Ps. ex. → cx.
     t = re.sub(r' _ ', ' ', t)                                                  # 页面污点读成 _
     t = re.sub(r'\b([Hh])orn\.(?=,?\s*\d)', r'\1om.', t)                       # 讲道集 hom. 读成 horn.
@@ -219,10 +221,13 @@ def md(t):
     t = re.sub(r'(?<= )-(?=[a-z])', '', t)                                      # 词前孤立短横：where -he will
     t = re.sub(r'\bTam\b', 'I am', t)                                          # I am 粘成 Tam
     t = re.sub(r'\bZaccheus\b', 'Zacchæus', t)                                  # æ 连字读成 e
+    t = re.sub(r'\bIcing', 'king', t)                                            # k 读成 Ic
     t = re.sub(r'(?<=[a-z])\. \.(?=\s|$)', '.', t)
     t = re.sub(r'\bb(?=x[xvi]*\.)', 'l', t)                                    # 罗马数字 l 读成 b：bxxiii.
     t = re.sub(r'\bI(?=[xvi]+\.)', 'l', t)                                     # Isa. Iv. 7 → lv.（核过 Isa. 55:7、60:3、Ps. 51:6）
     t = re.sub(r'\bXXX(?=[xvi]+\.)', 'xxx', t)
+    t = re.sub(r'\b(' + BOOKS + r')[.,] in\. (?=\d)', r'\1. iii. ', t)          # Mal. in. 14 → iii.
+    t = re.sub(r'\b(' + BOOKS + r')[.,] X(?=[xvi]*\. \d)', r'\1. lx', t)          # Ps. Xx. 6 → lxx.（l 丢了、x 大写）
     t = re.sub(r'([ivxlc]+\. \d+),(?=\d)', r'\1, ', t)                          # 68,74 → 68, 74
     t = re.sub(r'\bPs\. 1\. (?=\d)', 'Ps. l. ', t)                              # 诗 50 篇：l 读成 1（诗 1 篇写作 Ps. i.）
     t = re.sub(r'\b(' + ABBR_BOOKS + r') (?=[ivxlc]+\. ?\d)', r'\1. ', t)          # 缩写经卷名后缺点：1 Pet ii. 5
@@ -330,6 +335,7 @@ def render(stream):
             merged[-1] += ' ' + b
         else:
             merged.append(b)
+    merged = [re.sub(r'(?<=\d),$', '.', b) if not b.startswith(('<', '#')) else b for b in merged]   # 段末节号后的逗号是句号
     out = '\n\n'.join(merged)
     if notes:
         out += f'\n\n<div class="{P}-notes" markdown="1">\n\n<p class="{P}-notes-h">Notes</p>\n\n' + \
