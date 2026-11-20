@@ -467,7 +467,7 @@ def apply_fixes(text, f=None):
         return text
     notes = []
     for line in f.read_text(encoding='utf-8').splitlines():
-        if not line or line.startswith('#'):
+        if not line or (line.startswith('#') and '\t' not in line):   # 注释行；原串可以是 `#### 小节标题`
             continue
         old, new = (x.replace('\\n', '\n') for x in line.split('\t'))
         key = (str(f), old)
