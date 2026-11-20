@@ -7,6 +7,7 @@ subtitle: "Verses 2–10 · the closing letter"
 date: 2026-11-19 16:16
 prev_url: "/knox/psalm6/part-1/"
 prev_label: "Part 1"
+zh_url: "/knox/psalm6/zh/part-2/"
 ---
 
 <p><em>Have mercy upon me, O Lord, for I am weak; O Lord, heal me, for all my bones are vexed. —</em> Now proceedeth David in his prayer, adding certain causes why he should be heard, and obtain his petitions. But first, we will speak of his prayers, as they be in order through this whole psalm.</p>

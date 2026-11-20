@@ -5,6 +5,8 @@ book_name: "诺克斯《诗篇第六篇讲解》"
 title: "苦难者的堡垒 · 第一部分"
 subtitle: "致亲爱的母亲 · 本篇论旨 · 第 1 节"
 date: 2026-11-20 16:44
+next_url: "/knox/psalm6/zh/part-2/"
+next_label: "第二部分"
 en_url: "/knox/psalm6/part-1/"
 zh: true
 ---
