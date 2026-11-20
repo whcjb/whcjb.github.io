@@ -66,7 +66,7 @@ def main():
         (OUT / f'{slug}.md').write_text('\n'.join(fm) + '\n\n' + body + '\n', encoding='utf-8')
         add_zh_url(EN / f'{slug}.md', f'{BASE}/zh/{slug}/')
 
-    title = (RAW / 'manual_pages' / 'title.html').read_text(encoding='utf-8').strip()
+    title = (RAW / 'manual_pages' / 'title_zh.html').read_text(encoding='utf-8').strip()   # 英文扉页 title.html 的中译，版式同
     caps = {'part-1': '致母亲书 · 论旨 · 第 1 节<br>1554 年 1 月 6 日',
             'part-2': '第 2–10 节 · 结尾书信<br>1554 年 2 月，迪耶普'}
     cells = []
@@ -92,8 +92,6 @@ zh: true
 <div class="kx-titlepage">
 {{% include titlepage-css.html %}}
 {title}
-<p class="tpg-note">《苦难者的堡垒：诗篇第六篇讲解》——大卫的十字架、哀诉与祷告。凡在基督旌旗下受撒但攻击、觉得罪担沉重压身的人，
-都当读此书，必得极大的安慰。<br>「受大苦的人忍耐等候，从来不至羞愧。」</p>
 </div>
 
 <div class="kx-grid">
