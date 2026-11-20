@@ -208,13 +208,18 @@ def md(t):
     t = re.sub(r'\b(' + BOOKS + r')(\.?) ([ivxlc]+), (?=\d)', r'\1\2 \3. ', t)   # 1 Cor. iii, 16 → iii. 16；Acts xxi, 13
     t = re.sub(r'(\*Use\* \d),', r'\1.', t)
     t = re.sub(r'^\*I\*\. (?=[A-Z])', '1\\. ', t)                                # 段首序号 1 读成斜体 I
-    t = re.sub(r'^IL\. (?=\*|[A-Z])', 'II. ', t)                                           # 段首罗马序号 II 读成 IL
+    t = re.sub(r'^IL\. (?=\*|[A-Z])', 'II. ', t)
+    t = re.sub(r'^VY\. (?=\*|[A-Z])', 'V. ', t)
+    t = re.sub(r'\bmerey\b', 'mercy', t)                                           # 段首罗马序号 II 读成 IL
     t = re.sub(r'(?<=[a-z])® (?=[a-z])', ' ', t)                                      # 脚注号读成 ®
     t = re.sub(r'(?<=[A-Za-z]) ?([;:])[1-9](?= [a-z])', r'\1', t)                    # 粘在分号后的脚注号：God ;1 if
     t = re.sub(r'(?<=[.?!’]) ”(?=\s|$)', '', t)                                      # 句末多出的孤立闭引号
     t = re.sub(r'(?<=[a-z])~(?=[a-z])', ' ', t)                                       # 字间 ~：inclining~his
     t = re.sub(r'\b[ZL]nar\.', 'Enar.', t)
     t = re.sub(r'\*Avug\.', '*Aug.', t)
+    t = re.sub(r'\bin Oral\. (?=de )', 'in Orat. ', t)
+    t = re.sub(r'\b(lib|cap|ver|sec|treat|part|serm|hom)\.?, (?=[ivxlc\d]+\b)', r'\1. ', t)   # treat, ii. → treat. ii.
+    t = re.sub(r'\bObit, (?=Theod)', 'Obit. ', t)
     t = re.sub(r'\bsees\. (?=\d)', 'secs. ', t)
     t = re.sub(r'\b([Ss]ec), (?=\d)', r'\1. ', t)                                     # See sec, 2.
     t = re.sub(r'\baffect us\b', 'affectus', t)
@@ -246,11 +251,12 @@ def md(t):
     t = re.sub(r'(?<=[a-z])~(?=\s|$)', '', t)
     t = re.sub(r'(?<=[a-z]) [~’}] (?=[a-zA-Z])', ' ', t)                              # 字间污点：saving ~ knowledge、the ’ holy、inward } disposition
     t = re.sub(r'(?<=[a-z]) : (?=[A-Z][a-z]+ [a-z])', ' ', t) if False else t
-    t = re.sub(r'(?<=[a-z])\.(?=[A-Z][a-z])', '. ', t)                             # 句点后缺空格
+    t = re.sub(r'(?<=[a-z])\.(?=[A-Z][a-z])', '. ', t)
+    t = re.sub(r'(?<=[a-z]{3})\. (?=when\b|where\b|which\b)', ' ', t) if False else t                             # 句点后缺空格
     t = re.sub(r'\bTam\b', 'I am', t)                                          # I am 粘成 Tam
     # 拉丁引文里的 æ 连字、c 读成 e：que → quæ、hune → hunc（只收不会与英文撞车的独立词）
     for a, b in (('que', 'quæ'), ('hune', 'hunc'), ('Hine', 'Hinc'), ('hee', 'hæc'), ('Heec', 'Hæc'), ('heec', 'hæc'),
-                 ('Hee', 'Hæc'), ('heee', 'hæc'), ('justitiz', 'justitiæ'), ('justitie', 'justitiæ'), ('mew', 'meæ'), ('miserie', 'miseriæ'), ('haec', 'hæc'), ('erederem', 'crederem'), ('hunce', 'hunc'), ('sie', 'sic'), ('pie', 'piæ'), ('quse', 'quæ'), ('queedam', 'quædam'), ('Hierosolyme', 'Hierosolymæ')):
+                 ('Hee', 'Hæc'), ('heee', 'hæc'), ('justitiz', 'justitiæ'), ('justitie', 'justitiæ'), ('mew', 'meæ'), ('miserie', 'miseriæ'), ('haec', 'hæc'), ('erederem', 'crederem'), ('hunce', 'hunc'), ('sie', 'sic'), ('egrotum', 'ægrotum'), ('pie', 'piæ'), ('quse', 'quæ'), ('queedam', 'quædam'), ('Hierosolyme', 'Hierosolymæ')):
         t = re.sub(r'\b' + a + r'\b', b, t)
     t = re.sub(r'\bTwill\b', 'I will', t)
     t = re.sub(r'(?<=‘)IT(?= [a-z])', 'I', t)                                       # ‘IT will → ‘I will
