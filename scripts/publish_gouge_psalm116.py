@@ -467,6 +467,7 @@ def apply_fixes(text, f=None):
         old, new = (x.replace('\\n', '\n') for x in line.split('\t'))
         key = (str(f), old)
         FIXHITS.setdefault(key, 0)
+        old = re.sub(r'@[HG]', lambda m: gap(m.group()), old)       # 原串里的 @H/@G 指已有的缺字块
         c = text.count(old)
         if c > 1:
             FIXHITS[key] += 100                                     # 不唯一：报警
