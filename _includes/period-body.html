@@ -1,0 +1,34 @@
+<style>
+/* 正文照原书排（scripts/period_layout.py）：段首缩进、段间不空行、旁注小号正体、经文无框、首字两行下沉。
+   类名按后缀匹配（*-text / *-margin / *-dropcap），各书共用。 */
+.pd { font-family: "EB Garamond", Garamond, Georgia, "Times New Roman", serif; font-size: 18px; line-height: 1.6; color: #1f1d1a; }
+.pd p { margin: 0 !important; text-indent: 1.3em; text-align: justify; hyphens: auto; -webkit-hyphens: auto; }
+.pd p:first-of-type, .pd .pd-noind, .pd [class$="-text"] + p { text-indent: 0; }
+.pd [class$="-text"] { border: 0 !important; background: none !important; padding: 0 !important; margin: 14px 0 8px !important; }
+.pd [class$="-text"] { padding-left: 1.8em !important; text-indent: -1.8em; text-align: left; }
+.pd [class$="-text"] p { display: inline; font-style: italic; text-indent: 0; }
+.pd [class$="-text"] p:first-child { font-style: normal; margin-right: .4em !important; }
+.pd [class$="-text"] p:first-child em, .pd [class$="-text"] p:first-child i { font-style: normal; }
+.pd [class$="-text"] p:first-child::after { content: " "; }
+.pd [class$="-text"]::after { content: ""; display: block; clear: both; }
+.pd [class$="-dropcap"] { float: left; font-size: 3.35em; line-height: .8; margin: 4px 5px 0 0; color: inherit !important; font-family: inherit !important; }
+.pd img.pd-init { float: left; width: 5.2em; margin: 4px 8px 0 0; }
+.pd [class$="-margin"] { font-family: inherit; font-style: normal; color: #4a4640; font-size: 13.5px; line-height: 1.3;
+  border-left: 0 !important; text-indent: 0; }
+.pd [class$="-margin"] em, .pd [class$="-margin"] i { font-style: italic; }
+.pd [class$="-pb"][data-p]::before { font-family: Georgia, serif; }
+.pd-hp { display: block; width: 100%; max-width: 560px; margin: 4px auto 16px; }
+.pd-head { text-align: center; margin: 0 0 6px; line-height: 1.15; }
+.pd-head .a { font-size: 34px; letter-spacing: .03em; } .pd-head .b { font-size: 22px; letter-spacing: .18em; }
+.pd-head .c { font-size: 15px; letter-spacing: .1em; } .pd-head .d { font-size: 26px; }
+.pd-head .sc { font-variant: small-caps; }
+.pd-head hr { border: 0; border-top: 1px solid #2d2b28; margin: 10px 0 0; }
+@media (min-width: 1200px) {
+  .pd [class$="-margin"] { float: right; clear: right; width: 128px; margin: 3px -158px 6px 14px !important; padding: 0 !important; }
+}
+@media (max-width: 767px) {
+  .pd { font-size: 16.5px; }
+  .pd [class$="-margin"] { display: block; margin: 4px 0 6px; font-size: 13px; color: #7a746b; }
+  .pd-head .a { font-size: 25px; } .pd-head .d { font-size: 20px; }
+}
+</style>

@@ -24,6 +24,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import tcp_tei as tt                    # noqa: E402
 import dedication_layout                # noqa: E402
+import period_layout                    # noqa: E402
 
 ROOT = Path(__file__).resolve().parent.parent
 TEI = tt.TEI
@@ -142,7 +143,7 @@ BOOKS = {
                  '在页面上加框标出——该本据后来的增订版、拼法已现代化，由 OCR 识读并对照影像核过；第六处是晨祷中间两页，后来的版次把祷文改写了，无从补入。',
         omitted_en='', omitted_zh=''),
     'pierson-psalm27': dict(
-        tcp='A54870', author='pierson', book='psalm27', P='p27', c0='#1f3a7a', c1='#354aa0', psalm=27,
+        tcp='A54870', author='pierson', book='psalm27', P='p27', c0='#1f3a7a', c1='#354aa0', psalm=27, period=True,
         short='Pierson on Psalm 27', hero='Psalm 27',
         title_en="David's Triumph over Distresse: An Exposition of the XXVII Psalm",
         tagline="Thomas Pierson · Davids Triumph over Distresse",
@@ -638,6 +639,8 @@ def publish(key, c, fronts, units, backs, gaps, OUT, BASE, RAW):
                         '\n'.join(f'<li>{em(lab)}<small>p. {pg}</small></li>' for lab, pg in x['contents']) +
                         '\n</ul>\n</div>\n\n')
             body += x['md']
+            if c.get('period'):                                  # 正文照原书版式（period_layout.py）
+                body = period_layout.apply(body, RAW, P, slug)
         fm = ['---', f'layout: {c["author"]}-{c["book"]}-chapter', f'book_id: {c["book"]}', f'book_name: {ystr(c["short"])}',
               f'title: {ystr(title)}', f'subtitle: {ystr(sub)}', f'date: {meta[slug]}']
         if i > 0:

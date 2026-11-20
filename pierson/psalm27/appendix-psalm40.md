@@ -9,6 +9,10 @@ prev_url: "/pierson/psalm27/v14/"
 prev_label: "Verse 14"
 ---
 
+{% include period-body.html %}
+
+<div class="pd" markdown="1">
+
 <div class="p27-text" markdown="1">
 
 <span class="p27-pb" id="p143" data-p="143" data-facs="76" title="Page 143 of the 1647 edition begins here (原书第 143 页起)"></span>Psal. *40.1, 2.*
@@ -62,3 +66,5 @@ Fourthly, that we be upright hearted towards God, for the Lord makes himself str
 <span class="p27-margin" markdown="1">The Use for admonition.</span> Secondly, this repitition of the duty, shewing the importance of it, must stirre up our diligence, in the constant and conscionable use of such means, as God hath ordained for the a taining of this vertue. Which way and means is plainly prescribed, in the use of admonition, where this duty is handled, in the beginning of the verse.
 
 <p class="p27-closer" markdown="1"><span class="p27-gap" title="TCP: illegible in source（底本此处读不出）">〈Greek〉</span>.</p>
+
+</div>
