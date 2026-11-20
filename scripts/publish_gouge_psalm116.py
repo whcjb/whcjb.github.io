@@ -210,7 +210,7 @@ def md(t):
     t = re.sub(r'^\*I\*\. (?=[A-Z])', '1\\. ', t)
     t = re.sub(r'^\*(I{1,3}|IV|V|VI{1,3}|IX|X)\*\. (?=[A-Z])', r'\1. ', t)          # 段首罗马序号误成斜体：*IV*. The                                # 段首序号 1 读成斜体 I
     t = re.sub(r'^IL\. (?=\*|[A-Z])', 'II. ', t)
-    t = re.sub(r'^Ill\. (?=\*|[A-Z])', 'III. ', t)
+    t = re.sub(r'^(?:Ill|in|IIT|IIl)\. (?=\*|[A-Z])', 'III. ', t)
     t = re.sub(r'^VY\. (?=\*|[A-Z])', 'V. ', t)
     t = re.sub(r'\bmerey\b', 'mercy', t)
     t = re.sub(r'\bhaying\b', 'having', t)
