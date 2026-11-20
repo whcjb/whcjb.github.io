@@ -660,18 +660,18 @@ def _split_gap(gap, num):
     if m:
         tail, lead = gap[:m.start()], gap[m.end():]
     else:
-        m = re.search(r'(' + (r'(?:\d+\.\s*)?' if num else '') + r'[‘“\'"(\[]*)\s*$', gap)
+        m = re.search(r'(' + (r'(?:\(?\d+\.\)?\s*)?' if num else '') + r'[‘“\'"(\[]*)\s*$', gap)
         tail, lead = gap[:m.start(1)], m.group(1)
     tail = re.sub(r'\s+', ' ', tail).strip()
     lead = re.sub(r'\s+', ' ', lead).strip()
     if re.search(r'[A-Za-z]', tail) or len(tail) > 12:
         tail = ''
-    if not re.fullmatch(r'(?:\d+\.)?\s*[‘“\'"(\[]*', lead):
+    if not re.fullmatch(r'(?:\(?\d+\.\)?)?\s*[‘“\'"(\[]*', lead):
         lead = ''
     return tail, lead
 
 
-NUMSTART = re.compile(r'^\W*[\dLlI]{1,3}[.,]\s')
+NUMSTART = re.compile(r'^\W*[\dLlI]{1,3}[.,]\)?\s')
 
 
 def _build(items, W, T, abbyy, asep_all, num, nxtnum):
@@ -682,7 +682,7 @@ def _build(items, W, T, abbyy, asep_all, num, nxtnum):
     if items[0][2] is not None:
         j = items[0][2]
         _, lead = _split_gap(W[T[j - 1].end() if j > 0 else 0:T[j].start()], num)
-        lead = lead + (' ' if re.search(r'\.$', lead) else '')
+        lead = lead + (' ' if re.search(r'\.\)?$', lead) else '')
     else:
         m = re.match(r'^[^A-Za-z]*', plainA)
         lead = m.group(0).strip() + (' ' if m.group(0).strip() else '')

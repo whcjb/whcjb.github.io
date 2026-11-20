@@ -208,7 +208,7 @@ def md(t):
     t = re.sub(r'\b(' + BOOKS + r')(\.?) ([ivxlc]+), (?=\d)', r'\1\2 \3. ', t)   # 1 Cor. iii, 16 → iii. 16；Acts xxi, 13
     t = re.sub(r'(\*Use\* \d),', r'\1.', t)
     t = re.sub(r'^\*I\*\. (?=[A-Z])', '1\\. ', t)                                # 段首序号 1 读成斜体 I
-    t = re.sub(r'^IL\. (?=\*)', 'II. ', t)                                           # 段首罗马序号 II 读成 IL
+    t = re.sub(r'^IL\. (?=\*|[A-Z])', 'II. ', t)                                           # 段首罗马序号 II 读成 IL
     t = re.sub(r'(?<=[a-z])® (?=[a-z])', ' ', t)                                      # 脚注号读成 ®
     t = re.sub(r'(?<=[A-Za-z]) ?([;:])[1-9](?= [a-z])', r'\1', t)                    # 粘在分号后的脚注号：God ;1 if
     t = re.sub(r'(?<=[.?!’]) ”(?=\s|$)', '', t)                                      # 句末多出的孤立闭引号
@@ -240,7 +240,8 @@ def md(t):
     t = re.sub(r'(?<=[a-z]{4})@(?= )', 'd', t)                                       # d 读成 @：measure@
     t = re.sub(r'’/—', '’—', t)
     t = re.sub(r'(?<=[a-z])~(?=\s|$)', '', t)
-    t = re.sub(r'(?<=[a-z]) [~’] (?=[a-z])', ' ', t)                               # 字间污点：saving ~ knowledge、the ’ holy
+    t = re.sub(r'(?<=[a-z]) [~’}] (?=[a-zA-Z])', ' ', t)                              # 字间污点：saving ~ knowledge、the ’ holy、inward } disposition
+    t = re.sub(r'(?<=[a-z]) : (?=[A-Z][a-z]+ [a-z])', ' ', t) if False else t
     t = re.sub(r'(?<=[a-z])\.(?=[A-Z][a-z])', '. ', t)                             # 句点后缺空格
     t = re.sub(r'\bTam\b', 'I am', t)                                          # I am 粘成 Tam
     # 拉丁引文里的 æ 连字、c 读成 e：que → quæ、hune → hunc（只收不会与英文撞车的独立词）
@@ -256,7 +257,8 @@ def md(t):
     t = re.sub(r"(?:' )?«(?=[A-Z])", '‘', t)                                     # 开引号读成 «
     t = re.sub(r'(?<=[a-z] )«(?=[a-z])', '', t)                                  # 字间污点读成 «
     t = re.sub(r'(?<=[a-z])\. \.(?=\s|$)', '.', t)
-    t = re.sub(r'(?<=\d)\.,$', '.', t)                                          # 段末 20.,
+    t = re.sub(r'(?<=\d)\.,$', '.', t)
+    t = re.sub(r'(?<=\d\.) \?$', '', t)                                             # 段末节号后孤立问号                                          # 段末 20.,
     t = re.sub(r'\b(xx|xxi|xxii|xxiii|iii|ii|vi|vii|viii|ix|xi|xii|xiii)(?=,(?: where| and|\s*$))', r'\1.', t)   # 2 Kings xxii, → xxii.
     t = re.sub(r'(?<=[a-z])"(?=[a-z])', '', t)                                   # off"ered
     t = re.sub(r'\bb(?=x[xvi]*\.)', 'l', t)                                    # 罗马数字 l 读成 b：bxxiii.
@@ -384,6 +386,11 @@ def render(stream):
     merged = [re.sub(r'^\. (?=[A-Z])', '', b) for b in merged]                                      # 段首孤立句点（标题后的污点）
     merged = [re.sub(r'(?<=[.?’]) (?:[:;,]|“7)$', '', b) for b in merged]                                  # 段末句号后的孤立冒号（污点）
     out = '\n\n'.join(merged)
+    # 同一行里排着几条短注（‘… sec. 20. 2 See … 3 Lege …’）：按脚注号拆开
+    split = []
+    for b in notes:
+        split += re.split(r'(?<=[.)*]) +[2-9] +(?=See |Sec\.|Lege |Of |[A-Z][a-z]+ [a-z])', b)
+    notes = split
     joined = []
     for b in [x for x in notes if x.strip()]:                                              # 跨页的脚注：上条无句末标点、下条小写起头 → 接上
         if joined and re.search(r'[A-Za-z,;]$', joined[-1]) and re.match(r'[a-z]', b):
