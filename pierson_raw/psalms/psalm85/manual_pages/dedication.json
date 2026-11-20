@@ -1,0 +1,8 @@
+{
+ "head_re": "<p class=\"p85-quote\">TO THE RIGHT WORSHIPFUL.*?</p>",
+ "head": "<div class=\"tpg-l z5 sp\" style=\"margin-top:30px !important\">TO THE RIGHT WORSHIPFUL,</div>\n<div class=\"tpg-l z5 sp\" style=\"margin-top:10px !important\">MY TRULY NOBLE AND THRICE MOST HONOURED PATRON,</div>\n<div class=\"tpg-l z1 sp\" style=\"margin:14px 0 !important\">SIR ROBERT WHITNEY, K<span class=\"sc\">t</span>.</div>\n<hr class=\"tpg-rule short\" style=\"width:110px;margin:24px auto !important\">",
+ "cap_at": "IT is not unknown unto him",
+ "tail_from": "Your Worship’s most obliged orator,",
+ "tail_to": "CHRISTOPHER HARVEY.",
+ "tail": "<div class=\"c\">Your Worship’s most obliged orator, in<br>the strictest bonds of all observant<br>duty unfeignedly devoted,</div>\n<div class=\"r\" style=\"margin-top:8px;letter-spacing:.06em\">CHRISTOPHER HARVEY.</div>"
+}

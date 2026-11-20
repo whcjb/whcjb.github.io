@@ -37,10 +37,32 @@
 .tpg-frame .tpg-l { margin: 0 0 .8cqw !important; white-space: nowrap; }
 .tpg-frame .tpg-l.wrap { white-space: normal; }
 .tpg-frame .tpg-rule { border-top-color: #1f1d1a; }
+/* 献辞照原书排（scripts/dedication_layout.py） */
+.ded-hp { display: block; width: 100%; max-width: 560px; margin: 0 auto 14px; }
+.ded-head { text-align: center; margin: 0 0 18px; line-height: 1.25; font-family: "EB Garamond", Garamond, Georgia, serif; color: #1f1d1a; }
+.ded-head .tpg-l { margin: 0 0 3px !important; }
+.ded-head .z0 { font-size: 34px; } .ded-head .z1 { font-size: 28px; } .ded-head .z2 { font-size: 22px; }
+.ded-head .z3 { font-size: 18px; } .ded-head .z4 { font-size: 15.5px; } .ded-head .z5 { font-size: 13.5px; } .ded-head .z6 { font-size: 11px; }
+.ded-head .sp { letter-spacing: .12em; } .ded-head .sp2 { letter-spacing: .3em; }
+.ded-head .it, .ded-head i { font-style: italic; } .ded-head .sc, .ded-tail .sc { font-variant: small-caps; }
+p.ded-salute-left { text-align: left !important; font-style: normal; letter-spacing: .06em; }
+p.ded-salute-left-it { text-align: left !important; font-style: italic; }
+p.ded-salute-center { text-align: center !important; font-style: normal; letter-spacing: .06em; }
+span.ded-cap { float: left; font-size: 3.1em; line-height: .82; margin: 5px 6px 0 0; font-family: "Times New Roman", Georgia, serif; }
+.ded-head.modern { font-family: "Times New Roman", Georgia, serif; }
+img.ded-init { float: left; width: 4.6em; margin: 4px 10px 2px 0; }
+.ded-it p, .ded-it { font-style: italic; }
+.ded-it em, .ded-it i { font-style: normal; }
+.ded-tail { margin: 22px 0 10px auto; width: max-content; max-width: 100%; text-align: left; line-height: 1.5; }
+.ded-tail .r { text-align: right; } .ded-tail .c { text-align: center; } .ded-tail .i1 { padding-left: 2em; } .ded-tail .i2 { padding-left: 4em; }
+.ded-tail .it, .ded-tail i { font-style: italic; }
+.ded-tail .left { margin-left: 0; }
 @media (max-width: 600px) {
   .tpg { padding: 18px 12px 16px; }
   .tpg .z0 { font-size: 32px; } .tpg .z1 { font-size: 25px; } .tpg .z2 { font-size: 19px; }
   .tpg .z3 { font-size: 16px; } .tpg .z4 { font-size: 14px; } .tpg .z5 { font-size: 12px; }
   .tpg-brace-sym { font-size: 60px; } .tpg-brace-r { font-size: 13.5px; }
+  .ded-head .z0 { font-size: 26px; } .ded-head .z1 { font-size: 22px; } .ded-head .z2 { font-size: 18px; }
+  img.ded-init { width: 3.8em; }
 }
 </style>

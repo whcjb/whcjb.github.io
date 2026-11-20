@@ -1,0 +1,8 @@
+{
+ "headpiece": "/img/pierson/psalm27-ded-head.png",
+ "head": "<div class=\"tpg-l z3 sp2\">TO</div>\n<div class=\"tpg-l z1 sp\">THE TRVLY NOBLE</div>\n<div class=\"tpg-l z2\">S<sup>ir</sup> R<span class=\"sc\">obert</span> H<span class=\"sc\">arley</span>, Knight</div>\n<div class=\"tpg-l z3\">of the Honourable Order of the</div>\n<div class=\"tpg-l z4\"><i>Bath</i>, the comforts of grace here, and<br>a crown of glory hereafter.</div>",
+ "salute": "left",
+ "initial": "/img/pierson/psalm27-ded-A.png",
+ "italic": true,
+ "tail": "<div class=\"i2\">Your Worships in all observant duty</div>\n<div class=\"i2\">&emsp;unfeignedly devoted</div>\n<div class=\"c\" style=\"margin-top:6px\">C<span class=\"sc\">hristopher</span> H<span class=\"sc\">arvey</span>.</div>"
+}

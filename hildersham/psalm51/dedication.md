@@ -11,6 +11,14 @@ next_url: "/hildersham/psalm51/1/"
 next_label: "Lecture 1"
 ---
 
-<span class="hd-pb" data-facs="2"></span><span class="hd-pb" data-facs="2"></span>TO THE RIGHT HONOVRABLE AND RELIGIOVS LADY, *KATHARINE* COVNTESSE OF *CHESTERFIELD:*
+{% include titlepage-css.html %}
 
-<span class="hd-gap" title="TCP: illegible in source（底本此处读不出）">•</span>AMUEL HILDERSAM presenteth this Book in testimony of his humble and thankfull acknowledgement of her noble favour and respect shewed to the Author both living and dying.
+<img class="ded-hp" src="{{ site.baseurl }}/img/hildersham/psalm51-ded-head.png" alt="">
+<div class="ded-head">
+<div class="tpg-l z2 sp">TO THE</div>
+<div class="tpg-l z1">RIGHT HONOVRABLE</div>
+<div class="tpg-l z2 sp">AND RELIGIOVS LADY,</div>
+<div class="tpg-l z2"><i>KATHARINE</i> COVNTESSE</div>
+<div class="tpg-l z2">OF <i>CHESTERFIELD:</i></div>
+<div class="tpg-l z3" style="margin-top:12px !important">S<span class="sc">amuel</span> H<span class="sc">ildersam</span> presenteth this<br>Book in testimony of his humble and thank-<br>full acknowledgement of her noble favour<br>and respect shewed to the Author<br>both living and dying.</div>
+</div>

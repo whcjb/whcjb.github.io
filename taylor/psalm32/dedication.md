@@ -11,11 +11,23 @@ next_url: "/taylor/psalm32/to-the-reader/"
 next_label: "To the Reader"
 ---
 
-### <span class="tq-pb" data-facs="2"></span><span class="tq-pb" data-facs="2"></span>*TO THE RIGHT HONORABLE VICOVNT WALLINGFORD, Lord KNOLLYS, Baron of GREYS, Master of the WARDS and LIVERIES, Knight of the noble Order of the GARTER,* and one of *HIS MAIESTIES* most *Honorable Priuie Councell, Grace, Mercy, and Peace, here, and euerlasting.*
+{% include titlepage-css.html %}
 
-<p class="tq-salute" markdown="1">RIGHT HONORABLE,</p>
+<span class="tq-pb" data-facs="2"></span><span class="tq-pb" data-facs="2"></span>
 
-<span class="tq-dropcap">G</span>Reat is the affinitie of soule and body, neerely coupled and wedded by God, like Husband & Wife, for better and worse till death depart them. Like *Hippocrates* his twinnes, they weepe and laugh, stand and fall, liue and <span class="tq-pb" data-facs="3"></span> dye, and euery way sympathize together. Both haue their seuerall life and nutriment, both haue their seuerall sicknesse and diseases, which tend to the issues of death. Among all other vncleane issues, both of them haue their *leprosie,* one the better knowne by the other. In neither any substance, <span class="tq-margin" markdown="1">Elephas, or elephantiosis.</span> but in both an accident corrupting the whole substance.
+<img class="ded-hp" src="{{ site.baseurl }}/img/taylor/psalm32-ded-head.png" alt="">
+<div class="ded-head">
+<div class="tpg-l z0">TO THE RIGHT</div>
+<div class="tpg-l z1 sp">HONORABLE VI-<br>COVNT WALLINGFORD,</div>
+<div class="tpg-l z3">Lord K<span class="sc">nollys</span>, Baron of G<span class="sc">reys</span>,<br>Master of the W<span class="sc">ards</span> and L<span class="sc">iveries</span>,</div>
+<div class="tpg-l z4">Knight of the noble Order of the G<span class="sc">arter</span>,<br><i>and one of</i> H<span class="sc">is</span> M<span class="sc">aiesties</span> <i>most</i><br>Honorable Priuie Councell, Grace,<br>Mercy, and Peace, here, and<br>euerlasting.</div>
+</div><!--ded-head-end-->
+
+<div class="ded-it" markdown="1">
+
+<p class="tq-salute ded-salute-left" markdown="1">RIGHT HONORABLE,</p>
+
+<img class="ded-init" src="{{ site.baseurl }}/img/taylor/psalm32-ded-G.png" alt="G">Reat is the affinitie of soule and body, neerely coupled and wedded by God, like Husband & Wife, for better and worse till death depart them. Like *Hippocrates* his twinnes, they weepe and laugh, stand and fall, liue and <span class="tq-pb" data-facs="3"></span> dye, and euery way sympathize together. Both haue their seuerall life and nutriment, both haue their seuerall sicknesse and diseases, which tend to the issues of death. Among all other vncleane issues, both of them haue their *leprosie,* one the better knowne by the other. In neither any substance, <span class="tq-margin" markdown="1">Elephas, or elephantiosis.</span> but in both an accident corrupting the whole substance.
 
 Bodily leprosie is from the corrupt and poysoned humors in the body: Spirituall is from the corruption and poyson of the soule. The former quickly spreadeth ouer the whole bodie: The latter ouer the whole man. The former infecteth onely some men: The latter hath poysoned all. The former corrupteth the breath, by which others are infected: The latter poysoneth and infecteth many others, not onely by breathing out corrupt speeches, but also by corrupt example. The former was to be discerned by the law of leprosie, *Leuit. 13.* The latter, namely, *the knowledge of sinne is by the law* morall, *Rom. 3.* The former is hard to cure, and the most earry it to their death *naturall,* as *Gehezi,* <span class="tq-margin" markdown="1">2. *King.* 15.</span> *Azariah:* The latter is an harder cure, and therefore the most carrie the running sores of sinne incurably vnto death *eternall.*
 
@@ -31,4 +43,12 @@ These Meditations I haue presumed to dedicate to your *Lordship:* first, For the
 
 Thus humbly crauing pardon for my boldnesse, I beseech God to strengthen your *Lordships* heart and hands to withstand by all your Greatnesse, this Gangrene, and long to continue you vnder His Maiestie by your faithfull Counsell a muniment to the decayed estate of our Church, an ornament of the Common-wealth, a prop of Religion, a pillar of Iustice, a father of Wards and Orphanes, and a comforter of comfortlesse Widdowes, the Noble Leiftenant of our Country, and high Steward of our Corporation. And the same God preserue you vnblamable in your spirit, soule, and body, vntill the day of his appearing.
 
-<p class="tq-closer" markdown="1">Your Honours humbly at commandement, T. T.</p>
+</div>
+
+<div class="ded-tail">
+<div class="i2">Your Honours humbly at</div>
+<div class="i2">&emsp;&emsp;commandement,</div>
+<div class="r">T. T.</div>
+</div>
+
+

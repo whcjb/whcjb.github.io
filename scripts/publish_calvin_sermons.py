@@ -9,6 +9,9 @@
 date 沿用 en_meta.json 里的原值，新页才写当前真实时间（重跑不改时间）。
 缺字记号（•／〈◊〉／〈…〉／▪）包成 .cs-gap 标红；申命记缺页处 .cs-lost 一段说明。
 """
+import sys as _sys
+_sys.path.insert(0, str(__import__('pathlib').Path(__file__).resolve().parent))
+import dedication_layout  # noqa: E402
 import json
 import re
 import subprocess
@@ -116,6 +119,8 @@ def main():
         fm.append('---')
         body = gapify(x['md'])
         hand = RAW / 'manual_pages' / f'{slug}.html'                # 扉页照原书影像手排（old-book-ocr §5.6）
+        if kind == 'front' and slug == 'dedication':
+            body = dedication_layout.apply(body, RAW, 'cs')       # 献辞照原书排（manual_pages/dedication.json）
         if kind == 'front' and hand.exists():
             body = '{% include titlepage-css.html %}\n\n' + hand.read_text(encoding='utf-8').strip()
         if kind == 'sermon' and x.get('absorbs'):

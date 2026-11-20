@@ -1,0 +1,9 @@
+{
+ "headpiece": "/img/smith/psalm1-ded-head.png",
+ "head": "<div class=\"tpg-l z0\"><img src=\"{{ site.baseurl }}/img/smith/psalm1-ded-fleuron.png\" alt=\"\" style=\"height:.8em;vertical-align:-.05em;margin-right:.15em\">TO THE</div>\n<div class=\"tpg-l z1 sp\">HONORABLE<br>SIR ROBERT</div>\n<div class=\"tpg-l z3 sp\"><i>RICH</i>, KNIGHT OF<br>THE BATH, AND SON</div>\n<div class=\"tpg-l z4\">and Heire to the Right Honorable<br>R<span class=\"sc\">obert</span> Lord R<span class=\"sc\">ich</span>: and to the Ho-<br>norable and vertuous Lady, the Lady<br>F<span class=\"sc\">rancis</span> R<span class=\"sc\">ich</span> his wife, <i>S. S.</i><br>wisheth all true comfort in this<br><i>life, and Eternall happinesse<br>in the Life to come.</i></div>\n<div class=\"tpg-l z4\">[*<sub>*</sub>*]</div>",
+ "salute": "left",
+ "initial": "/img/smith/psalm1-ded-I.png",
+ "italic": true,
+ "tail_from": "Thus, in all dutiful humility, I rest,",
+ "tail": "<div>Thus, in all dutiful humility, I rest,</div>\n<div class=\"i1\">Your Honour's remembrancer</div>\n<div class=\"i2\">To the Throne of Grace,</div>\n<div class=\"r\" style=\"margin-top:4px\">S<span class=\"sc\">amuel</span> S<span class=\"sc\">mith</span>.</div>"
+}

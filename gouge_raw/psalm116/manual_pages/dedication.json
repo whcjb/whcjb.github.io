@@ -1,0 +1,8 @@
+{
+ "head_re": "<p class=\"gg-quote\">TO THE RIGHT HONOURABLE.*?</p>",
+ "head": "<div class=\"tpg-l z5 sp\" style=\"margin-top:30px !important\">TO THE RIGHT HONOURABLE</div>\n<div class=\"tpg-l z1 sp2\" style=\"margin:14px 0 !important\">ROBERT, LORD RICH,</div>\n<div class=\"tpg-l z6 sp\">BARON OF LEEZ AND EARL OF WARWICK.</div>\n<hr class=\"tpg-rule short\" style=\"width:110px;margin:24px auto !important\">",
+ "cap_at": "SIR,—The last year",
+ "tail_from": "Your Honour’s Remembrancer,",
+ "tail_to": "WILLIAM GOUGE.",
+ "tail": "<div class=\"i2\">Your Honour’s Remembrancer,</div>\n<div class=\"r\" style=\"margin-top:10px;letter-spacing:.06em\">WILLIAM GOUGE.</div>"
+}

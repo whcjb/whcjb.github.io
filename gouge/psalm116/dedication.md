@@ -11,11 +11,24 @@ next_url: "/gouge/psalm116/to-blackfriars/"
 next_label: "To my Beloved Parishioners of Blackfriars"
 ---
 
+{% include titlepage-css.html %}
+
 [FOR MEMOIR OF DR GOUGE, SEE HIS COMMENTARY ON THE EPISTLE TO THE HEBREWS, VOL. I.—Ed.]
 
-<span class="gg-pb" id="p1" data-p="1"></span><p class="gg-quote">TO THE RIGHT HONOURABLE<br>ROBERT, LORD RICH,<br>BARON OF LEEZ AND EARL OF WARWICK.</p>
+<span class="gg-pb" id="p1" data-p="1"></span>
 
-SIR,—The last year, when the heavy hand of the righteous Lord lay upon this land and other parts of the Christian world, manifested by the three arrows of his anger, plague, famine, and sword, just cause was given to inquire after such means as might cure the wounds that were made by them, and move the Lord to withhold his hand from shooting abroad any more of them.
+
+
+<div class="ded-head">
+<div class="tpg-l z5 sp" style="margin-top:30px !important">TO THE RIGHT HONOURABLE</div>
+<div class="tpg-l z1 sp2" style="margin:14px 0 !important">ROBERT, LORD RICH,</div>
+<div class="tpg-l z6 sp">BARON OF LEEZ AND EARL OF WARWICK.</div>
+<hr class="tpg-rule short" style="width:110px;margin:24px auto !important">
+</div><!--ded-head-end-->
+
+
+
+<span class="ded-cap">S</span>IR,—The last year, when the heavy hand of the righteous Lord lay upon this land and other parts of the Christian world, manifested by the three arrows of his anger, plague, famine, and sword, just cause was given to inquire after such means as might cure the wounds that were made by them, and move the Lord to withhold his hand from shooting abroad any more of them.
 
 Upon inquiry there was found in God’s word (the treasury wherein all the treasures of wisdom and knowledge are hid) fit remedies for all those maladies.
 
@@ -57,9 +70,10 @@ In consideration hereof, the same hand that in the enemies’ insultations over 
 
 Accept, my good Lord, this testimony of that high esteem which he hath of your Lordship, who in regard of that respect you bear and shew to God himself, to his ministers and saints, humbly and heartily supplicateth the divine Majesty for all needful blessings ever to rest on your honour’s person, on your honourable consort, on your noble offspring, on your whole family, and on all your affairs, and professeth to continue in God’s court.
 
-Your Honour’s Remembrancer,
-
-WILLIAM GOUGE.
+<div class="ded-tail">
+<div class="i2">Your Honour’s Remembrancer,</div>
+<div class="r" style="margin-top:10px;letter-spacing:.06em">WILLIAM GOUGE.</div>
+</div>
 
 <div class="gg-notes" markdown="1">
 

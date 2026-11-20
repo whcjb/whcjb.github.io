@@ -1,0 +1,7 @@
+{
+ "headpiece": "/img/reynolds/psalm110-ded-head.png",
+ "head": "<div class=\"tpg-l z2 sp\">TO THE RIGHT HONO-</div>\n<div class=\"tpg-l z3\">RABLE T<span class=\"sc\">homas</span>, LORD C<span class=\"sc\">oventry</span>,<br>Baron of <i>Ailsborough</i>, and Lord Keeper<br><span class=\"z4\">of the great Seale of England, &amp;c.</span></div>",
+ "salute": "left-it",
+ "initial": "/img/reynolds/psalm110-ded-I.png",
+ "tail": "<div class=\"r it\" style=\"font-size:.85em\">Your Lordships most<br>humbly devoted,</div>\n<div class=\"r\" style=\"margin-top:8px\">Ed. Reynolds.</div>"
+}

@@ -1,0 +1,6 @@
+{
+ "headpiece": "/img/smith/psalm51-ded-head.png",
+ "head": "<div class=\"tpg-l z0\"><img src=\"{{ site.baseurl }}/img/smith/psalm51-ded-fleuron.png\" alt=\"\" style=\"height:.75em;vertical-align:-.02em;margin-right:.15em\">TO THE</div>\n<div class=\"tpg-l z1 sp\">RIGHT WOR-<br>SHIPFVLL, SIR<br>RICHARD WES-<br>TON, KNIGHT, ONE</div>\n<div class=\"tpg-l z3\">of his Maiesties Iustices of<br>Peace in the County of <i>Essex</i>,<br>S<span class=\"sc\">ir</span> E<span class=\"sc\">dward</span> P<span class=\"sc\">yn-<br>chon</span> Knight, Grace,<br><i>Mercy and Peace</i><br>from I<span class=\"sc\">esvs</span><br>C<span class=\"sc\">hrist</span>.</div>",
+ "initial": "/img/smith/psalm51-ded-W.png",
+ "tail": "<div class=\"it\" style=\"padding-left:9em\">Your Worships much<br>bound, and in all Chri-<br>stian duties to be com-<br>manded,</div>\n<div class=\"r\" style=\"margin-top:28px\">S<span class=\"sc\">amvel</span> S<span class=\"sc\">mith</span>.</div>"
+}

@@ -1,0 +1,8 @@
+{
+ "headpiece": "/img/cowper/psalm119-ded-head.png",
+ "head": "<div class=\"tpg-l z1\">TO THE RIGHT HO-</div>\n<div class=\"tpg-l z3 sp\">NOVRABLE, <i>DAVID</i>, LORD OF</div>\n<div class=\"tpg-l z4\">S<span class=\"sc\">cone</span>, <i class=\"sp\">ONE OF HIS MAIE-</i><br>sties most Honorable Priuy Coun-<br>cell in this Kingdome.</div>\n<hr class=\"tpg-rule\">",
+ "initial": "/img/cowper/psalm119-ded-M.png",
+ "italic": true,
+ "tail_from": "Which mercie the Lord more and more",
+ "tail": "<div class=\"c it\" style=\"margin:0 auto 34px\">Which mercie the Lord more and more<br>confirme towards you for Christs<br>sake. Amen.</div>\n<div class=\"i2\">Your L. in Christ Iesus,</div>\n<div class=\"r it\" style=\"margin-top:14px\">William Cowper,</div>\n<div class=\"r\" style=\"margin-top:14px\">B. of Galloway.</div>"
+}

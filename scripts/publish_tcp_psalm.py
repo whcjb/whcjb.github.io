@@ -23,6 +23,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import tcp_tei as tt                    # noqa: E402
+import dedication_layout                # noqa: E402
 
 ROOT = Path(__file__).resolve().parent.parent
 TEI = tt.TEI
@@ -624,6 +625,8 @@ def publish(key, c, fronts, units, backs, gaps, OUT, BASE, RAW):
         meta.setdefault(slug, t0)
         if k == 'front':
             title, sub, body = x['title'], x['zh'], (x['md'] if x.get('manual') else gapify(x['md'], P))
+            if slug == 'dedication':                                # 献辞照原书排（manual_pages/dedication.json）
+                body = dedication_layout.apply(body, RAW, P)
         else:
             title = (f'{x["name"]} · ' if x.get('name') else '') + vref(x) + \
                 (f' · Part {x["part"]} of {x["nparts"]}' if x['part'] else '')

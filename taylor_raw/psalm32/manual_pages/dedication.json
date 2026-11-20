@@ -1,0 +1,8 @@
+{
+ "headpiece": "/img/taylor/psalm32-ded-head.png",
+ "head": "<div class=\"tpg-l z0\">TO THE RIGHT</div>\n<div class=\"tpg-l z1 sp\">HONORABLE VI-<br>COVNT WALLINGFORD,</div>\n<div class=\"tpg-l z3\">Lord K<span class=\"sc\">nollys</span>, Baron of G<span class=\"sc\">reys</span>,<br>Master of the W<span class=\"sc\">ards</span> and L<span class=\"sc\">iveries</span>,</div>\n<div class=\"tpg-l z4\">Knight of the noble Order of the G<span class=\"sc\">arter</span>,<br><i>and one of</i> H<span class=\"sc\">is</span> M<span class=\"sc\">aiesties</span> <i>most</i><br>Honorable Priuie Councell, Grace,<br>Mercy, and Peace, here, and<br>euerlasting.</div>",
+ "salute": "left",
+ "initial": "/img/taylor/psalm32-ded-G.png",
+ "italic": true,
+ "tail": "<div class=\"i2\">Your Honours humbly at</div>\n<div class=\"i2\">&emsp;&emsp;commandement,</div>\n<div class=\"r\">T. T.</div>"
+}
