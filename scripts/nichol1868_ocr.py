@@ -437,9 +437,13 @@ def printed_page(idx):
     """印本页码；本页页眉读不出时按前后页推（前页 +1 / 后页 −1），卷首不编页的返回 None。"""
     v = _printed(idx)
     if v is None:
-        a, b = _printed(idx - 1), _printed(idx + 1)
-        v = a + 1 if a is not None else (b - 1 if b is not None else None)
-    return v
+        for d in (1, 2, 3):                      # 前后各看三页；前后都读得出、且推得一致才用
+            a, b = _printed(idx - d), _printed(idx + d)
+            ca, cb = (a + d if a is not None else None), (b - d if b is not None else None)
+            if ca is not None or cb is not None:
+                v = ca if cb is None or ca == cb or ca is not None and d == 1 else cb
+                break
+    return v if v and v > 0 else None
 
 
 def _printed(idx):

@@ -15,13 +15,13 @@ next_label: "To my Beloved Parishioners of Blackfriars"
 
 SIR,—The last year, when the heavy hand of the righteous Lord lay upon this land and other parts of the Christian world, manifested by the three arrows of his anger, plague, famine, and sword, just cause was given to inquire after such means as might cure the wounds that were made by them, and move the Lord to withhold his hand from shooting abroad any more of them.
 
-Upon inquiry there was found in God’s word (the treasury wherein all the treasures of wisdom and knowledge are hid!) fit remedies for all those maladies.
+Upon inquiry there was found in God’s word (the treasury wherein all the treasures of wisdom and knowledge are hid) fit remedies for all those maladies.
 
 There we find, Num. xvi. 45, &c., that Moses and Aaron applied such a plaster for the plague as healed that disease ; and that David (2 Sam. xxi. 1) took such a course for removing a famine as did the deed ; and that the said Moses and Joshua (Exod. xvii. 8, &c.) in such a manner resisted an infesting enemy, as they became conquerors.
 
 All these means have been set out in several treatises. Whether they were well used, and whether upon the right use of them the foresaid judgments have been removed or no, he that knoweth the grounds and reasons of all things that fall out best knoweth.
 
-But certain it is that the three mentioned arrows have either been withheld and put up into the Lord’s quiver; or else shot out against the enemies of God church.
+But certain it is that the three mentioned arrows have either been withheld and put up into the Lord’s quiver; or else shot out against the enemies of God’s church.
 
 Our land is healed of the pestilence:
 
@@ -37,7 +37,7 @@ What Christian heart is not affected herewith?
 
 All that know your honour know how you stand affected to God’s church: You count it your honour any way to honour her.
 
-Witness your diligent frequenting her assemblies, and presenting yourself in her courts, your conscionable observance of all her ordinances, your good respect to her ministers, your faithful discharge of that trust which by the divine providence is committed to you for presenting faithful ministers to her people. Many humble petitions are in this respect daily put up at the throne of grace on your behalf. Many sacrifices of praise are offered up to the divine Majesty for you. Ministers and people bless you, and bless the Lord for you. So aS your
+Witness your diligent frequenting her assemblies, and presenting yourself in her courts, your conscionable observance of all her ordinances, your good respect to her ministers, your faithful discharge of that trust which by the divine providence is committed to you for presenting faithful ministers to her people. Many humble petitions are in this respect daily put up at the throne of grace on your behalf. Many sacrifices of praise are offered up to the divine Majesty for you. Ministers and people bless you, and bless the Lord for you. So as your
 
 <span class="gg-pb" id="p2" data-p="2"></span>administration of this service not only refresheth the souls of the saints, but is abundant also by many thanksgivings unto God. He therefore that hath said it, will assuredly perform it, ‘Them that honour me, will I honour.’
 
@@ -51,7 +51,7 @@ Her oppressions press heavy upon your soul.
 
 Her deliverances revive your spirit.
 
-In consideration hereof, the same hand that in the enemies’ insultations over the oppressed churches presented to your honour, ‘The Church’s Conquest,’ wherein were set out most sovereign means prescribed by God himself, and to good purpose practised by those that were therein guided by the divine Spirit, for obtaining conquest and rest to the church ; the same hand doth now present to the same patron, ‘The Saint’s Sacrifice,’ wherein out of the fore-mentioned treasury of God’s word divine directions are collected for rendering due praises. to him who in due season delivereth his out of desperate distresses.
+In consideration hereof, the same hand that in the enemies’ insultations over the oppressed churches presented to your honour, ‘The Church’s Conquest,’ wherein were set out most sovereign means prescribed by God himself, and to good purpose practised by those that were therein guided by the divine Spirit, for obtaining conquest and rest to the church ; the same hand doth now present to the same patron, ‘The Saint’s Sacrifice,’ wherein out of the fore-mentioned treasury of God’s word divine directions are collected for rendering due praises to him who in due season delivereth his out of desperate distresses.
 
 Accept, my good Lord, this testimony of that high esteem which he hath of your Lordship, who in regard of that respect you bear and shew to God himself, to his ministers and saints, humbly and heartily supplicateth the divine Majesty for all needful blessings ever to rest on your honour’s person, on your honourable consort, on your noble offspring, on your whole family, and on all your affairs, and professeth to continue in God’s court.
 
@@ -63,6 +63,6 @@ WILLIAM GOUGE.
 
 <p class="gg-notes-h">Notes</p>
 
-Thesaurus iste in quo sunt omnes thesauri sapientie et scientiz absconditi, est Scriptura.—*Jerome, Comment. in Mat*. xiii. 1, 2.
+Thesaurus iste in quo sunt omnes thesauri sapientiæ et scientiæ absconditi, est Scriptura.—*Jerome, Comment. in Mat*. xiii. 1, 2.
 
 </div>

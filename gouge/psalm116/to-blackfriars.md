@@ -23,32 +23,32 @@ Yours I am; and I desire to shew myself yours every way that I can.
 
 Concerning this present treatise, ‘The Saint’s Sacrifice,’ I began to draw my meditations thereunto upon that extraordinary and admirable, if not miraculous, removal of the plague which happened in the first year of our now sovereign lord King Charles. In the beginning, therefore, of this treatise, sec. 3, you may observe a particular application of the general doctrine of praising God, to that special instance of God’s singular mercy in so speedy and so full a deliverance of us from so infectious and far-spreading sickness.
 
-But the summer being then spent, and that vacation time gone, which is the only time that I can get free from such encumbrances as afford leisure little enough, if not too little for my public ministry, in the years following rumours of the church’s desolations through the might and malice, insolency and’° cruelty of her enemies in Germany, France, and other places, were brought to our ears, as the doleful news of the loss of Job’s cattle, servants, and children, one upon the neck of another. And in the year 1630 the plague so began again to increase as another great plague was feared. It hovered over the city all the summer and autumn of that year: there died thereof in London and in the parishes adjoining, 1317; and that year burials increased more than ordinary, 1783, besides the five that died in Whitefriars of the plague, and were reckoned in no parish.
+But the summer being then spent, and that vacation time gone, which is the only time that I can get free from such encumbrances as afford leisure little enough, if not too little for my public ministry, in the years following rumours of the church’s desolations through the might and malice, insolency and cruelty of her enemies in Germany, France, and other places, were brought to our ears, as the doleful news of the loss of Job’s cattle, servants, and children, one upon the neck of another. And in the year 1630 the plague so began again to increase as another great plague was feared. It hovered over the city all the summer and autumn of that year: there died thereof in London and in the parishes adjoining, 1317; and that year burials increased more than ordinary, 1783, besides the five that died in Whitefriars of the plague, and were reckoned in no parish.
 
-Cambridge also was much infected with the sickness the same year, and sundry other great and populous towns in the country.
+<span class="gg-pb" id="p4" data-p="4"></span>Cambridge also was much infected with the sickness the same year, and sundry other great and populous towns in the country.
 
-Corn also then rose to a very high rate, and so continued till harvest1631.
+Corn also then rose to a very high rate, and so continued till harvest 1631.
 
-These judgments so followimg one upon another, like wave upon wave, turned the course of my meditations from the gratulatory Psalm to such scriptures as afforded fit remedies for removing the foresaid judgments, and occasioned the treatises of ‘God’s Three Arrows.’
+These judgments so following one upon another, like wave upon wave, turned the course of my meditations from the gratulatory Psalm to such scriptures as afforded fit remedies for removing the foresaid judgments, and occasioned the treatises of ‘God’s Three Arrows.’
 
 But that God who delighteth in mercy, and to whom judgment is a strange work, hath so removed all the foresaid judgments, that there is now as just occasion for publishing ‘The Saint’s Sacrifice,’ as there was before of setting out ‘God’s Three Arrows.’
 
-While the judgments lay heavy on us and others, instant and earnest prayer was made for the removal thereof. Now that our prayers are heard, should we not return what he requires that hath granted our desires?! If thou be ungrateful, having what thou wilt, well mayest thou be what thou wilt not.
+While the judgments lay heavy on us and others, instant and earnest prayer was made for the removal thereof. Now that our prayers are heard, should we not return what he requires that hath granted our desires? If thou be ungrateful, having what thou wilt, well mayest thou be what thou wilt not.
 
-To stir up mine own soul and the souls of others to endeavour with our uttermost power to render to him who hath been so gracious to us that which is most due, all possible praise ; and to stir us up to con-
+To stir up mine own soul and the souls of others to endeavour with our uttermost power to render to him who hath been so gracious to us that which is most due, all possible praise ; and to stir us up to continue our humble and hearty devotions to the high, mighty, wise, and merciful Lord for continuing his favour to his churches, and for establishing perpetual peace and rest to them, this ‘Saint’s Sacrifice’ is here published. Whereunto I was in a private and a particular respect the rather moved, by reason of a more than ordinary recovery which the Lord was pleased to vouchsafe to his poor and unworthy servant in August 1630, who hath in regard of the dangerous disease and unexpected recovery cause to say, ‘The sorrows of death compassed me, but it was the Lord’s pleasure to deliver me.’
 
-Si ingratus es in eo quod esse vis, iure cogeris esse quod non vis—*Aug. de lib. Arbitr*., lib. iii. cap. 6. tinue our humble and hearty devotions to the high, mighty, wise, and merciful Lord for continuing his favour to his churches, and for establishing perpetual peace and rest to them, this ‘Saint’s Sacrifice’ is here published. Whereunto I was in a private and a particular respect the rather moved, by reason of a more than ordinary recovery which the Lord was pleased to vouchsafe to his poor and unworthy servant in August 1630, who hath in regard of the dangerous disease and unexpected recovery cause to say, ‘The sorrows of death compassed me, but it was the Lord’s pleasure to deliver me.’
-
-my parishoners and other people of God, let us meditate ourselves alone, and confer one with another, about the gracious and wondrous works of the Lord in these our days, and whet one another’s spirits, and incite our souls to praise the Lord, that it may never repent him of any kindness that he hath shewed, or yet further intendeth to us. Praise the Lord, O ye his saints. Let this sacrifice of saints be daily offered up by you in particular, together with
+O my parishoners and other people of God, let us meditate ourselves alone, and confer one with another, about the gracious and wondrous works of the Lord in these our days, and whet one another’s spirits, and incite our souls to praise the Lord, that it may never repent him of any kindness that he hath shewed, or yet further intendeth to us. Praise the Lord, O ye his saints. Let this sacrifice of saints be daily offered up by you in particular, together with
 
 The builder up of your souls,
 
 WILLIAM GOUGE.
 
+BLACKFRIARS, LONDON, *14th Feb.* 1631.
+
 <div class="gg-notes" markdown="1">
 
 <p class="gg-notes-h">Notes</p>
 
-Blackfhiars, London, *\ith Feb.* 1631.
+Si ingratus es in eo quod esse vis, iure cogeris esse quod non vis.—*Aug. de lib. Arbitr*., lib. iii. cap. 6.
 
 </div>

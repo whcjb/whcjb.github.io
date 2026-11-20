@@ -113,7 +113,7 @@ def balance(t):
 def heb(m):
     """(T13rT,)、(pn)、(p2{)：合订本在英文后括注希伯来原词，拉丁引擎读成乱码；判据：括号内不是真词／经节号／罗马数字。"""
     inner = m.group(1).replace(n.IT_ON, '').replace(n.IT_OFF, '').strip(' ,;')
-    if not inner or re.fullmatch(r'[\divxlcIVXLC.,:;&\s-]+', inner) or re.fullmatch(r'[A-Za-z]+', inner) and n.is_word(inner):
+    if not inner or re.fullmatch(r'(?:s[eo][ec]t?\.?|ver\.?|chap\.?)?\s*[\divxlcIVXLC.,:;&\s-]+', inner) or re.fullmatch(r'[A-Za-z]+', inner) and n.is_word(inner):
         return m.group(0)
     toks = re.findall(r'[A-Za-z]+', inner)
     if toks and all(n.is_word(x) for x in toks) and not re.search(r'[\d{}\[\]^]', inner):
@@ -207,6 +207,16 @@ def md(t):
     t = re.sub(r'\b([ivxlc]+)\.(?=\d)', r'\1. ', t)                          # Rom. v.12 → v. 12
     t = re.sub(r'\b(' + BOOKS + r')(\.?) ([ivxlc]+), (?=\d)', r'\1\2 \3. ', t)   # 1 Cor. iii, 16 → iii. 16；Acts xxi, 13
     t = re.sub(r'(\*Use\* \d),', r'\1.', t)
+    t = re.sub(r'^\*I\*\. (?=[A-Z])', '1\\. ', t)                                # 段首序号 1 读成斜体 I
+    t = re.sub(r'^IL\. (?=\*)', 'II. ', t)                                           # 段首罗马序号 II 读成 IL
+    t = re.sub(r'(?<=[a-z])® (?=[a-z])', ' ', t)                                      # 脚注号读成 ®
+    t = re.sub(r'(?<=[A-Za-z]) ?([;:])[1-9](?= [a-z])', r'\1', t)                    # 粘在分号后的脚注号：God ;1 if
+    t = re.sub(r'(?<=[.?!’]) ”(?=\s|$)', '', t)                                      # 句末多出的孤立闭引号
+    t = re.sub(r'(?<=[a-z])~(?=[a-z])', ' ', t)                                       # 字间 ~：inclining~his
+    t = re.sub(r'\b[ZL]nar\.', 'Enar.', t)
+    t = re.sub(r'\btune\b(?= me\b)', 'tunc', t)
+    t = re.sub(r'\bSeriptur', 'Scriptur', t)
+    t = re.sub(r'(?<=[a-z ,])lib, (?=[ivxlc]+\.)', 'lib. ', t)                      # lib, viii. → lib. viii.
     t = re.sub(r'(\*(?:Object|Obj|Quest|Ans)\*),(?= \d)', r'\1.', t)
     t = re.sub(r'(?<=[,’] )&c,(?=\s|$)', '&c.', t)
     t = re.sub(r'(?<=[a-z]{3})\.(?=(?:the|is|and|of|to|in|that|way|was)\b)', ' ', t)   # notwithstanding.the、anger.is
@@ -233,6 +243,10 @@ def md(t):
     t = re.sub(r'(?<=[a-z]) [~’] (?=[a-z])', ' ', t)                               # 字间污点：saving ~ knowledge、the ’ holy
     t = re.sub(r'(?<=[a-z])\.(?=[A-Z][a-z])', '. ', t)                             # 句点后缺空格
     t = re.sub(r'\bTam\b', 'I am', t)                                          # I am 粘成 Tam
+    # 拉丁引文里的 æ 连字、c 读成 e：que → quæ、hune → hunc（只收不会与英文撞车的独立词）
+    for a, b in (('que', 'quæ'), ('hune', 'hunc'), ('Hine', 'Hinc'), ('hee', 'hæc'), ('Heec', 'Hæc'), ('heec', 'hæc'),
+                 ('Hee', 'Hæc'), ('heee', 'hæc'), ('justitiz', 'justitiæ'), ('justitie', 'justitiæ'), ('mew', 'meæ'), ('miserie', 'miseriæ'), ('haec', 'hæc'), ('erederem', 'crederem'), ('pie', 'piæ'), ('quse', 'quæ'), ('queedam', 'quædam'), ('Hierosolyme', 'Hierosolymæ')):
+        t = re.sub(r'\b' + a + r'\b', b, t)
     t = re.sub(r'\bTwill\b', 'I will', t)
     t = re.sub(r'(?<=‘)IT(?= [a-z])', 'I', t)                                       # ‘IT will → ‘I will
     t = re.sub(r'(?<=[a-z]{3} )wp(?= (?:the|to|his|her|their|my|thy|our|your|a)\b)', 'up', t)   # up 读成 wp
@@ -359,6 +373,7 @@ def render(stream):
     # 段落被按行切开（栏底、跨栏）：上段无句末标点、下段小写起头 → 接上（old-book-ocr §3.1，两条件都要）
     merged = []
     for b in body:
+        b = re.sub(r'^\. (?=[A-Z])', '', b)
         if merged and not merged[-1].startswith(('<', '#', '**')) and not b.startswith(('<', '#', '**', '*Use*')) \
                 and (re.search(r'[A-Za-z,]$', merged[-1]) and re.match(r'[a-z]', b)
                      or merged[-1].endswith(',') and re.match(r'[‘a-z]', b)):
@@ -366,8 +381,16 @@ def render(stream):
         else:
             merged.append(b)
     merged = [re.sub(r'(?<=\d),$', '.', b) if not b.startswith(('<', '#')) else b for b in merged]   # 段末节号后的逗号是句号
+    merged = [re.sub(r'^\. (?=[A-Z])', '', b) for b in merged]                                      # 段首孤立句点（标题后的污点）
     merged = [re.sub(r'(?<=[.?’]) (?:[:;,]|“7)$', '', b) for b in merged]                                  # 段末句号后的孤立冒号（污点）
     out = '\n\n'.join(merged)
+    joined = []
+    for b in [x for x in notes if x.strip()]:                                              # 跨页的脚注：上条无句末标点、下条小写起头 → 接上
+        if joined and re.search(r'[A-Za-z,;]$', joined[-1]) and re.match(r'[a-z]', b):
+            joined[-1] += ' ' + b
+        else:
+            joined.append(b)
+    notes = joined
     if notes:
         out += f'\n\n<div class="{P}-notes" markdown="1">\n\n<p class="{P}-notes-h">Notes</p>\n\n' + \
                '\n\n'.join(notes) + '\n\n</div>'
