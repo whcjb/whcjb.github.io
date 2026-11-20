@@ -266,7 +266,7 @@ def md(t):
     t = re.sub(r'\bTam\b', 'I am', t)                                          # I am 粘成 Tam
     # 拉丁引文里的 æ 连字、c 读成 e：que → quæ、hune → hunc（只收不会与英文撞车的独立词）
     for a, b in (('que', 'quæ'), ('hune', 'hunc'), ('Hine', 'Hinc'), ('hee', 'hæc'), ('Heec', 'Hæc'), ('heec', 'hæc'),
-                 ('Hee', 'Hæc'), ('heee', 'hæc'), ('justitiz', 'justitiæ'), ('justitie', 'justitiæ'), ('mew', 'meæ'), ('miserie', 'miseriæ'), ('haec', 'hæc'), ('erederem', 'crederem'), ('hunce', 'hunc'), ('sie', 'sic'), ('egrotum', 'ægrotum'), ('pie', 'piæ'), ('quse', 'quæ'), ('queedam', 'quædam'), ('Hierosolyme', 'Hierosolymæ')):
+                 ('Hee', 'Hæc'), ('heee', 'hæc'), ('justitiz', 'justitiæ'), ('justitie', 'justitiæ'), ('mew', 'meæ'), ('miserie', 'miseriæ'), ('haec', 'hæc'), ('erederem', 'crederem'), ('hunce', 'hunc'), ('sie', 'sic'), ('egrotum', 'ægrotum'), ('quse', 'quæ'), ('queedam', 'quædam'), ('Hierosolyme', 'Hierosolymæ')):
         t = re.sub(r'\b' + a + r'\b', b, t)
     t = re.sub(r'\bTwill\b', 'I will', t)
     t = re.sub(r'(?<=‘)IT(?= [a-z])', 'I', t)                                       # ‘IT will → ‘I will
