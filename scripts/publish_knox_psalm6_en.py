@@ -193,6 +193,8 @@ def main():
             fm += [f'prev_url: "{base}{PARTS[i - 1][0]}/"', f'prev_label: "{PARTS[i - 1][1]}"']
         if i + 1 < len(PARTS):
             fm += [f'next_url: "{base}{PARTS[i + 1][0]}/"', f'next_label: "{PARTS[i + 1][1]}"']
+        if (OUT / 'zh' / f'{slug}.md').exists():                 # 中译见 publish_knox_psalm6_zh.py
+            fm.append(f'zh_url: "{base}zh/{slug}/"')
         fm.append('---')
         body = render(parts[slug])
         if used[slug]:
@@ -222,7 +224,7 @@ tagline: "John Knox · A Fort for the Afflicted, in an Exposition upon the Sixth
 edition: "Written 1554 · text of Select Practical Writings of John Knox (Free Church of Scotland, Edinburgh 1845)"
 title: "Knox on Psalm 6"
 date: {meta['index']}
----
+{'zh_url: "' + base + 'zh/"' + chr(10) if (OUT / 'zh' / 'index.html').exists() else ''}---
 
 <div class="kx-titlepage">
 {tp}

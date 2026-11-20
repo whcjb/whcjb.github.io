@@ -4,10 +4,14 @@ layout: default
 {%- comment -%}
   诺克斯《苦难者的堡垒：诗篇第六篇讲解》书卷首页。由 scripts/publish_knox_psalm6_en.py 生成。
   ⚠️ 不复用别家 layout（每本书独立样式）；版式仿欧文《诗篇 130 篇》首页：居中书名、原书书名页、两部分大方块、文本说明。
-  配色取诺克斯作者色青蓝 #0f4c5c / #16697d。目前只有英文版。
+  配色取诺克斯作者色青蓝 #0f4c5c / #16697d。`zh: true` 为中文首页（publish_knox_psalm6_zh.py），右上角互链中英文版。
 {%- endcomment -%}
 
 <div class="container knoxps-book" style="padding-top:80px; max-width:840px;">
+  <div class="kx-booklang">
+    {% if page.zh %}{% if page.en_url %}<a href="{{ site.baseurl }}{{ page.en_url }}">English edition &rarr;</a>{% endif %}
+    {% else %}{% if page.zh_url %}<a href="{{ site.baseurl }}{{ page.zh_url }}">中文版 &rarr;</a>{% endif %}{% endif %}
+  </div>
   <div class="kx-hero">
     <h1>{{ page.hero | default: page.book_name }}</h1>
     <div class="kx-tagline">{{ page.tagline }}</div>
@@ -18,6 +22,9 @@ layout: default
 </div>
 
 <style>
+.knoxps-book .kx-booklang { text-align: right; font-size: 13px; }
+.knoxps-book .kx-booklang a { color: #16697d; }
+.knoxps-book .kx-en-only { opacity: .6; }
 .knoxps-book .kx-hero { text-align: center; margin-bottom: 8px; }
 .knoxps-book .kx-hero h1 { font-family: Georgia, "Songti SC", serif; color: #0f4c5c; font-size: 30px; letter-spacing: .04em; }
 .knoxps-book .kx-tagline { color: #16697d; font-size: 14px; letter-spacing: .08em; margin-top: 6px; }
