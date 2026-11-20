@@ -220,8 +220,26 @@ sources:
     - {key: calvin-en, author: calvin, lang: en, label: "加尔文注释（英文版）", label_en: "John Calvin", url_tpl: "/calvin/psalms-1-en/__CH__/", accent: "#800000", ch_from: 1, ch_to: 78}
     - {key: calvin, author: calvin, lang: zh, label: "加尔文注释", url_tpl: "/calvin/psalms-2/__CH__/", accent: "#800000", ch_from: 79, ch_to: 150}
     - {key: calvin-en, author: calvin, lang: en, label: "加尔文注释（英文版）", label_en: "John Calvin", url_tpl: "/calvin/psalms-2-en/__CH__/", accent: "#800000", ch_from: 79, ch_to: 150}
+    - {key: owen-en, author: owen, lang: en, label: "约翰欧文注释（英文版）", label_en: "John Owen", url_tpl: "/owen/psalm130/", accent: "#1f5a4b", ch_from: 130, ch_to: 130}
+    - {key: owen, author: owen, lang: zh, label: "约翰欧文注释", url_tpl: "/owen/psalm130/zh/", accent: "#1f5a4b", ch_from: 130, ch_to: 130}
     - {key: mhenry, author: mhenry, lang: zh, label: "马太亨利注释", url_tpl: "/mhenry/psalms/__CH__/", accent: "#C9922A", ch_from: 1, ch_to: 150}
+    - {key: bridges-en, author: bridges, lang: en, label: "毕列志注释（英文版）", label_en: "Charles Bridges", url_tpl: "/bridges/psalm119/", accent: "#96613F", ch_from: 119, ch_to: 119}
+    - {key: manton-en, author: manton, lang: en, label: "曼顿注释（英文版）", label_en: "Thomas Manton", url_tpl: "/manton/psalm119/", accent: "#5b2f4a", ch_from: 119, ch_to: 119}
     - {key: spurgeon-en, author: spurgeon, lang: en, label: "司布真注释（英文版）", label_en: "Charles Haddon Spurgeon", url_tpl: "/spurgeon/psalms/__CH__/", accent: "#4a3b22", ch_from: 1, ch_to: 150}
+    - {key: taylor-en, author: taylor, lang: en, label: "泰勒注释（英文版）", label_en: "Thomas Taylor", url_tpl: "/taylor/psalm32/", accent: "#6f77e0", ch_from: 32, ch_to: 32}
+    - {key: knox-en, author: knox, lang: en, label: "诺克斯讲解（英文版）", label_en: "John Knox", url_tpl: "/knox/psalm6/", accent: "#16697d", ch_from: 6, ch_to: 6}
+    - {key: knox, author: knox, lang: zh, label: "诺克斯讲解", url_tpl: "/knox/psalm6/zh/", accent: "#16697d", ch_from: 6, ch_to: 6}
+    - {key: hildersham-en, author: hildersham, lang: en, label: "希尔德沙姆讲义（英文版）", label_en: "Arthur Hildersham", url_tpl: "/hildersham/psalm51/", accent: "#85327a", ch_from: 51, ch_to: 51}
+    - {key: reynolds-en, author: reynolds, lang: en, label: "雷诺兹释义（英文版）", label_en: "Edward Reynolds", url_tpl: "/reynolds/psalm110/", accent: "#34794f", ch_from: 110, ch_to: 110}
+    - {key: cowper-en, author: cowper, lang: en, label: "考珀注释（英文版）", label_en: "William Cowper", url_tpl: "/cowper/psalm119/", accent: "#a49746", ch_from: 119, ch_to: 119}
+    - {key: smith-en, author: smith, lang: en, label: "史密斯讲解（英文版）", label_en: "Samuel Smith", url_tpl: "/smith/psalm1/", accent: "#3aa0af", ch_from: 1, ch_to: 1}
+    - {key: smith-en, author: smith, lang: en, label: "史密斯讲解（英文版）", label_en: "Samuel Smith", url_tpl: "/smith/psalm51/", accent: "#3aa0af", ch_from: 51, ch_to: 51}
+    - {key: smith-en, author: smith, lang: en, label: "史密斯讲解（英文版）", label_en: "Samuel Smith", url_tpl: "/smith/psalm90/", accent: "#3aa0af", ch_from: 90, ch_to: 90}
+    - {key: gouge-en, author: gouge, lang: en, label: "古治注释（英文版）", label_en: "William Gouge", url_tpl: "/gouge/psalm116/", accent: "#592b82", ch_from: 116, ch_to: 116}
+    - {key: pierson-en, author: pierson, lang: en, label: "皮尔森讲解（英文版）", label_en: "Thomas Pierson", url_tpl: "/pierson/psalm27/", accent: "#354aa0", ch_from: 27, ch_to: 27}
+    - {key: pierson-en, author: pierson, lang: en, label: "皮尔森讲解（英文版）", label_en: "Thomas Pierson", url_tpl: "/pierson/psalm84/", accent: "#354aa0", ch_from: 84, ch_to: 84}
+    - {key: pierson-en, author: pierson, lang: en, label: "皮尔森讲解（英文版）", label_en: "Thomas Pierson", url_tpl: "/pierson/psalm85/", accent: "#354aa0", ch_from: 85, ch_to: 85}
+    - {key: pierson-en, author: pierson, lang: en, label: "皮尔森讲解（英文版）", label_en: "Thomas Pierson", url_tpl: "/pierson/psalm87/", accent: "#354aa0", ch_from: 87, ch_to: 87}
     - {key: alexander-en, author: alexander, lang: en, label: "亚历山大注释（英文版）", label_en: "Joseph Addison Alexander", url_tpl: "/alexander/psalms/__CH__/", accent: "#7d2f2f", ch_from: 1, ch_to: 150}
     - {key: alexander, author: alexander, lang: zh, label: "亚历山大注释", url_tpl: "/alexander/psalms/zh/__CH__/", accent: "#7d2f2f", ch_from: 1, ch_to: 150}
     - {key: bonar-en, author: bonar, lang: en, label: "博纳尔讲论（英文版）", label_en: "Andrew A. Bonar", url_tpl: "/bonar/psalms/__CH__/", accent: "#d2776f", ch_from: 1, ch_to: 150}

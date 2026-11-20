@@ -7,6 +7,7 @@ subtitle: "To his beloved mother · the Argument · verse 1"
 date: 2026-11-19 16:16
 next_url: "/knox/psalm6/part-2/"
 next_label: "Part 2"
+zh_url: "/knox/psalm6/zh/part-1/"
 ---
 
 <h3 class="kx-sec">TO HIS BELOVED MOTHER, J. K., SENDETH GREETING IN THE LORD.</h3>
