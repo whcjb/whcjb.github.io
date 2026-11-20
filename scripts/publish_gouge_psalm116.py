@@ -147,7 +147,7 @@ def fn_ref(m):
 
 BOOKS = ('Gen|Exod|Lev|Num|Deut|Josh|Judg|Sam|Kings|Chron|Neh|Esth|Job|Ps|Prov|Eccles|Cant|Isa|Jer|Lam|Ezek|Dan|Hos|Joel|'
          'Amos|Mic|Micah|Hab|Zeph|Hag|Zech|Mal|Mat|Mark|Luke|John|Acts|Rom|Cor|Gal|Eph|Phil|Col|Thess|Tim|Tit|Heb|James|'
-         'Pet|Jude|Rev')
+         'Pet|Jude|Rev|Jonah|Joshua|Judges|Ruth|Ezra|Esther|Hosea|Nahum|Obadiah|Daniel|Exek|Ezek|Titus|Philem')
 ABBR_BOOKS = ('Pet|Cor|Gen|Exod|Lev|Num|Deut|Sam|Chron|Ps|Prov|Isa|Jer|Ezek|Dan|Hos|Zech|Mal|Mat|Rom|Gal|Eph|Phil|Col|'
               'Thess|Tim|Tit|Heb|Rev|Neh|Esth|Eccles|Cant|Lam|Hab|Zeph|Hag|Judg|Josh')
 # ABBYY 把带 w／v 的宽字母常用词误判成斜体（看图核过 *will*、*own*、*with* 多处）；古治讨论词本身时的斜体是真的
@@ -196,7 +196,9 @@ def md(t):
     t = re.sub(r'&(?:e|o|¢|\*[ec]\*|\*Sec\*)?\.', '&c.', t)                 # &c. 读成 &e.／&o.／&.／&*Sec*.
     t = re.sub(r'&(\*?)(?:e¢|[ec¢o]?)(\*?)(?=[.,:;—])',                       # 带斜体标记的：&*c.—Cyp、&e,
                lambda m: '&c' + ('*' if len(m.group(1) + m.group(2)) == 1 else ''), t)
-    t = re.sub(r'\*?\b(?:Alls|Alts|Atis|Aiis|A\)is|A lis)\*?\.', '*Ans*.', t)               # Ans. 读成 Alls.／Alts.
+    t = re.sub(r'\b(' + BOOKS + r')\. ([ivxlc]+): (?=\d)', r'\1. \2. ', t)       # Mal. iii: 14
+    t = re.sub(r'\*A US\*\.', '*Ans*.', t)
+    t = re.sub(r'\*?\b(?:Alls|Alts|Alt|Atis|Aiis|A\)is|A lis|yins|Aus)\*?\.', '*Ans*.', t)               # Ans. 读成 Alls.／Alts.
     t = re.sub(r'\bL(?=[xvi]+\b)', 'l', t)                                  # 经文出处罗马数字首字母 l 读成 L：Ps. Lxxxix.
     t = re.sub(r'(?<=\d)(?:-|[-—] )(?=\d)', '–', t)                          # 起讫节号：17-19、28- 35 → 17–19
     t = re.sub(r'(?<![*\w])\*([ivxlc]+)\*(?=\.)', r'\1', t)                   # 经文出处里假斜体的罗马数字：Num. *xv*. 30
@@ -204,32 +206,46 @@ def md(t):
     t = re.sub(r'\b([ivxlc]+)\.(?=\d)', r'\1. ', t)                          # Rom. v.12 → v. 12
     t = re.sub(r'\b(' + BOOKS + r')(\.?) ([ivxlc]+), (?=\d)', r'\1\2 \3. ', t)   # 1 Cor. iii, 16 → iii. 16；Acts xxi, 13
     t = re.sub(r'(\*Use\* \d),', r'\1.', t)
-    t = re.sub(r'(?<=[a-z])\.(?=the\b)', ' ', t)                                  # notwithstanding.the
+    t = re.sub(r'(\*(?:Object|Obj|Quest|Ans)\*),(?= \d)', r'\1.', t)
+    t = re.sub(r'(?<=[,’] )&c,(?=\s|$)', '&c.', t)
+    t = re.sub(r'(?<=[a-z]{3})\.(?=(?:the|is|and|of|to|in|that|way|was)\b)', ' ', t)   # notwithstanding.the、anger.is
     t = re.sub(r'\b(Ps|Psal)\. e(?=[xlvi]*\.)', r'\1. c', t)                 # Ps. ex. → cx.
-    t = re.sub(r' _ ', ' ', t)                                                  # 页面污点读成 _
+    t = re.sub(r' _ ?', ' ', t)                                                 # 页面污点读成 _（and _plentifully）
     t = re.sub(r'\b([Hh])orn\.(?=,?\s*\d)', r'\1om.', t)                       # 讲道集 hom. 读成 horn.
     t = re.sub(r'(?<=[A-Za-z])\\"(?=[a-z])', 'v', t)                              # Da\"id
     t = re.sub(r'\b(?!(?:What|what|alas|Alas|O|Oh|Lo|Ah|how|How|Behold)!)([A-Za-z]{2,})! (?=[a-z])', r'\1 ', t)   # 脚注号读成 !：some! refer
     t = re.sub(r'\bLey\.(?= [ivxlc]+\.)', 'Lev.', t)
     t = re.sub(r'(?<=[a-z]) \*[Ii]\*(?=[’\'\s]|$)', '?', t)                   # 问号读成斜体 I：with God *I* It
     t = re.sub(r'\b[ivxc]*[iv]l[il]*(?=\.)', roman_l, t)                        # 罗马数字里 i 读成 l：vill. → viii.
-    t = re.sub(r'\b(?:wy|y)\.(?= \d)', 'v.', t)                                 # 罗马数字 v. 读成 wy.／y.（抽查全是 v.）
+    t = re.sub(r'\b(?:wy|yv|y)\.(?= \d)', 'v.', t)                                 # 罗马数字 v. 读成 wy.／y.（抽查全是 v.）
     t = re.sub(r'\bLe(?=x[xvi]*\.)', 'lx', t)                                  # Lexxvii. → lxxxvii.
     t = re.sub(r'^Use (?=\d)', '*Use* ', t)
     t = re.sub(r'\*Us\*\??(?= \d)', '*Use*', t)
     t = re.sub(r'\bDa(?:y|)id\b', 'David', t)
     t = re.sub(r'(?<= )-(?=[a-z])', '', t)                                      # 词前孤立短横：where -he will
     t = re.sub(r'\bTam\b', 'I am', t)                                          # I am 粘成 Tam
+    t = re.sub(r'\bTwill\b', 'I will', t)
+    t = re.sub(r'\b([Tt])(?:ills|ins)\b(?= (?:serves|is|was|we|he|they|world|life|doth|must|psalm|verse|point|is))', r'\1his', t)
     t = re.sub(r'\bZaccheus\b', 'Zacchæus', t)                                  # æ 连字读成 e
     t = re.sub(r'\bIcing', 'king', t)                                            # k 读成 Ic
+    t = re.sub(r"(?:' )?«(?=[A-Z])", '‘', t)                                     # 开引号读成 «
+    t = re.sub(r'(?<=[a-z] )«(?=[a-z])', '', t)                                  # 字间污点读成 «
     t = re.sub(r'(?<=[a-z])\. \.(?=\s|$)', '.', t)
+    t = re.sub(r'(?<=\d)\.,$', '.', t)                                          # 段末 20.,
+    t = re.sub(r'\b(xx|xxi|xxii|xxiii|iii|ii|vi|vii|viii|ix|xi|xii|xiii)(?=,(?: where| and|\s*$))', r'\1.', t)   # 2 Kings xxii, → xxii.
+    t = re.sub(r'(?<=[a-z])"(?=[a-z])', '', t)                                   # off"ered
     t = re.sub(r'\bb(?=x[xvi]*\.)', 'l', t)                                    # 罗马数字 l 读成 b：bxxiii.
+    t = re.sub(r'\b([Ilxvc][xvic]*)L([xv])(?=[.,])', lambda m: m.group(1).replace('I', 'l') + 'i' + m.group(2), t)   # IxxxLx → lxxxix
     t = re.sub(r'\bI(?=[xvi]+\.)', 'l', t)                                     # Isa. Iv. 7 → lv.（核过 Isa. 55:7、60:3、Ps. 51:6）
     t = re.sub(r'\bXXX(?=[xvi]+\.)', 'xxx', t)
     t = re.sub(r'\b(' + BOOKS + r')[.,] in\. (?=\d)', r'\1. iii. ', t)          # Mal. in. 14 → iii.
     t = re.sub(r'\b(' + BOOKS + r')[.,] X(?=[xvi]*\. \d)', r'\1. lx', t)          # Ps. Xx. 6 → lxx.（l 丢了、x 大写）
     t = re.sub(r'([ivxlc]+\. \d+),(?=\d)', r'\1, ', t)                          # 68,74 → 68, 74
     t = re.sub(r'\bPs\. 1\. (?=\d)', 'Ps. l. ', t)                              # 诗 50 篇：l 读成 1（诗 1 篇写作 Ps. i.）
+    t = re.sub(r'\b(Kings|Sam|Chron|Cor|Pet|Thes|Tim|John|Rom|Gal|Eph|Phil|Col|Heb|Gen|Exod|Isa|Jer|Mat|Luke|Acts|Rev)\.? 1\. (?=\d)',
+               lambda m: m.group(1) + ('. ' if m.group(1) not in ('Kings', 'John', 'Luke', 'Acts') else ' ') + 'i. ', t)   # Rom. 1. 29 → i. 29
+    t = re.sub(r'\bPs\. hai\.', 'Ps. lxiii.', t)
+    t = re.sub(r'\bloying', 'loving', t)
     t = re.sub(r'\b(' + ABBR_BOOKS + r') (?=[ivxlc]+\. ?\d)', r'\1. ', t)          # 缩写经卷名后缺点：1 Pet ii. 5
     t = re.sub(r'(?<![*\w])\*(' + FALSE_IT + r')\*(?![*\w])', false_italic, t)
     t = re.sub(r'(?<![\d.,:;] )(?<![\d])\b0(?= (?:my|Lord|God|thou|ye|that|how|the|what|Israel|Jerusalem|man|LORD)\b)', 'O', t)   # 呼格 O 读成 0
@@ -287,7 +303,7 @@ def sec_match(t):
     if not m or not (m.group(2) or re.match(r'\s*Of\b', m.group(3))):
         return None
     return m
-VER = re.compile(r'^(?:<span[^>]*></span>)?(Ver[.,]?\s*[\dILl]+[.,]?\s*)' + n.IT_ON + r'(.*?)' + n.IT_OFF + r'\s*(.*)$', re.S)
+VER = re.compile(r'^(?:<span[^>]*></span>)?(Ver[.,]?\s*[\dILl]+(?:,\s*\d+)*[.,]?\s*)' + n.IT_ON + r'(.*?)' + n.IT_OFF + r'\s*(.*)$', re.S)
 
 
 def render(stream):
@@ -336,6 +352,7 @@ def render(stream):
         else:
             merged.append(b)
     merged = [re.sub(r'(?<=\d),$', '.', b) if not b.startswith(('<', '#')) else b for b in merged]   # 段末节号后的逗号是句号
+    merged = [re.sub(r'(?<=[.?’]) [:;]$', '', b) for b in merged]                                  # 段末句号后的孤立冒号（污点）
     out = '\n\n'.join(merged)
     if notes:
         out += f'\n\n<div class="{P}-notes" markdown="1">\n\n<p class="{P}-notes-h">Notes</p>\n\n' + \

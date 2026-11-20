@@ -588,6 +588,10 @@ def merge_block(pars, witness, judge=None, ledger=None):
                         w = judge(a, t, [x[1] for x in A[max(0, i1 + k - 3):i1 + k]], [x[1] for x in A[i1 + k + 1:i1 + k + 4]]) \
                             if judge else None
                         w = w or a
+                        # ABBYY 的数字前紧贴污点符号（vi 读成 \i、^i）：它丢了一个字母，tesseract 的更长读法是对的
+                        prev = A[i1 + k - 1][5] if i1 + k > 0 else ''
+                        if w == a and len(t) > len(a) and t.endswith(a) and re.search(r'[\\^`~|]\s*$', prev):
+                            w = t
                     elif _okword(t) and not _okword(a):
                         w = t
                     elif _okword(a) and not _okword(t):
