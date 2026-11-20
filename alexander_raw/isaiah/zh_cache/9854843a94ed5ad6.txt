@@ -1,0 +1,21 @@
+拉丁 accusatives: (Ephraimum Manassen, Manassen Ephraimum) — keep Latin with gloss.
+
+Count asterisks. Original italic segments:
+1 *They devour each the flesh of his own arm*
+2 *Manasseh*
+3 *Ephraim, and Ephraim Manasseh*
+4 *together they*
+5 *against Judah. For all this his wrath is not turned back and still his hand*
+6 *stretched out.*
+7 *with,*
+8 *against,*
+9 *devour*
+10 *are* or ... wait "*are* or *shall be.*" -> two segments: 10 *are*, 11 *shall be.*
+12 *alike* 13 *equally;* 14 *at once, together,*
+So 14 pairs = 28 asterisks. No HTML comments in original, fine.
+
+The *are*/*shall be* — they're English words being discussed? They're his supplied verbs; translate: *是* 或 *将是*. "devour" translate *吞吃*. *alike*/*equally* translate as 同样/一样. Fine.
+
+Names first occurrence with parentheses: Jarchi (拉希 — Jarchi is Rashi; render 雅尔希（Jarchi）), Gesenius, Hitzig, Umbreit, Ewald, DeWette, Knobel, Vitringa, Augusti, Eichhorn, Grotius 格劳秀斯（Grotius）, Junius 尤尼乌斯（Junius）. Gideon 基甸, Jephtha 耶弗他, Jeroboam the Second 耶罗波安二世, Pekahiah 比加辖, Pekah 比加. Thes. tom. 2. p. 589 → 《宝库》第 2 卷第 589 页. Hebr. Proph. II. p. 219 → 《希伯来先知》第二卷第 219 页. Judges 8:1-3 → 士师记 8:1-3. v. 19 → 第 19 节.
+
+Write.第 19 节中的比喻如何应用，先知如今亲自点明了；他所描绘的并非虚构的景象。吞吃自己骨肉的，正是以色列，那蒙拣选的族类。*他们各吃自己膀臂上的肉*——*玛拿西*（吞吃）*以法莲，以法莲*（吞吃）*玛拿西*——而*他们一同*（是）*攻击犹大。虽然如此，他的怒气还未转消，他的手仍*（是）*伸出不缩。*此处特意举出这几个支派，原因有二：其一，无论在国度分裂之前或之后，犹大与约瑟都是以色列族中最重要的两支；其二，以法莲与玛拿西两个支派彼此的亲缘，比与其余任何支派都更近，因此二者的相仇，最能显明先知所说那种盛行于民中的彼此怨恨。他尔根（雅尔希［Jarchi］从之）把 את 解作介词*与*，仅表示这两个支派联合起来攻击犹大，丝毫不提他们彼此相仇，这就大大削弱了首句的力量。若照此解，两个名字的重复便全无意义了。格塞尼乌斯（Gesenius）、希齐格（Hitzig）和温布赖特（Umbreit）也把 את 解作介词，却取*攻击*之义；这个意思 את 很少有，在本处也绝非显而易见。埃瓦尔德（Ewald）、德维特（De Wette）和克诺贝尔（Knobel）正确地坚持七十士译本所给的旧解，即把 את 看作宾格或受格的标记，并在两个专名之间重复动词*吞吃*。维特林加（Vitringa）走得更远，把所有名字都当作受格（Ephraimum Manassen, Manassen Ephraimum［以法莲吞玛拿西，玛拿西吞以法莲］），这样一来句中的动词就没有主语，而那个宾格小品词也完全被忽略了。下一分句中，各家补出的动词不一——「他们必围困」（七十士译本），「他们必联合」（他尔根），「他们发动攻击」（奥古斯提［Augusti］）——但最简单的办法是补出表存在的动词*是*或*将是。*希齐格否认此处说玛拿西与以法莲曾联手攻击犹大。但 יחדו 很少甚至从不作*同样*或*一样*解；格塞尼乌斯所引的例子（《宝库》第 2 卷第 589 页）都可归入其通常的本义*同时、一同，*意指时间、地点与行动上的合一。艾希霍恩（Eichhorn）主张以此分句打断文意、与上下文不合为由，把它当作注释混入的文字而删去（《希伯来先知》第二卷第 219 页）；这一主张虽不比前面已提到的同类提议更无理，却也荒谬得可以了。不仅如格塞尼乌斯所言极是，内战常常引发外战、又让位于外战；而且这一分句实在是延续了前面的描述，并大大加强其力量，因为它暗示：这两个同宗支派之间的彼此仇恨，唯有他们对共同的亲族——犹大支派——的共同憎恨才能超过。——格劳秀斯（Grotius）和尤尼乌斯（Junius）要把本节归于西拿基立入侵之时；然而那时十支派的国已不复存在，而尤尼乌斯所断言或揣测的，被征服的以色列人被迫在亚述军中服役以攻击犹大，似乎也毫无根据。本节所暗指的并非某一单独的时期，而是一连串绵延长久的事件。以法莲与玛拿西之间的内斗虽未有详细记载，却可从种种附带的叙述中推知。关于两族由来已久的相争，我们在基甸（士师记 8:1-3）与耶弗他（士师记 12:1-6）的事迹中可见其例；至于后来的时代，维特林加指出，继耶罗波安二世登以色列王位的诸王之中，唯有比加辖一人似乎是不经背叛流血而得国的。所谓玛拿西与以法莲都攻击犹大，既可指他们一贯的敌意，也可指某几次具体的进攻。在十支派的国中，每当一派刚占上风，似乎就立即着手于他们所热衷的事——侵扰或征服犹大；比加便是如此，他踏着比加辖的血登上王位，几乎随即就入侵了犹大。——末句的重复暗示：即便这些极端的灾祸，后面还要跟着更坏的；这些不过是灾难的起头，末期还没有到。
