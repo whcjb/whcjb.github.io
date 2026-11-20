@@ -297,6 +297,8 @@ def md(t):
     t = re.sub(r'(?<![*\w])\*(' + FALSE_IT + r')\*(?![*\w])', false_italic, t)
     t = re.sub(r'(?<![\d.,:;] )(?<![\d])\b0(?= (?:my|Lord|God|thou|ye|that|how|the|what|Israel|Jerusalem|man|LORD)\b)', 'O', t)   # 呼格 O 读成 0
     t = re.sub(r"(?<=[A-Za-z])'(?=[a-z])", '’', t)
+    t = re.sub(r'(?<=[.?!,])— \*(?=[A-Z])', '—*', t)
+    t = re.sub(r'(?<=[a-z])— (?=[a-z])', '—', t)                                 # 破折号后多空格：things— as                           # 出处破折号后多一个空格：.— *Hier.
     t = re.sub(r'\bC(?:ae|e|z|ee|ze)sar\b', 'Cæsar', t)                              # 原书一律 Cæsar                                # 词内直撇号 God's → God’s
     return re.sub(r' {2,}', ' ', t).strip()
 
@@ -471,6 +473,8 @@ def apply_fixes(text, f=None):
         key = (str(f), old)
         FIXHITS.setdefault(key, 0)
         old = re.sub(r'@[HG]', lambda m: gap(m.group()), old)       # 原串里的 @H/@G 指已有的缺字块
+        old = re.sub(r'(?<=[.?!,])— \*(?=[A-Z])', '—*', old)       # 与 md() 里破折号规则同口径
+        old = re.sub(r'(?<=[a-z])— (?=[a-z])', '—', old)
         c = text.count(old)
         if c > 1:
             FIXHITS[key] += 100                                     # 不唯一：报警
@@ -483,6 +487,8 @@ def apply_fixes(text, f=None):
             else:
                 text = text.replace(old, re.sub(r'@[HG]', lambda m: gap(m.group()), new))
             FIXHITS[key] += 1
+    # 跨页断词：页底连字符被吃掉、前后两半没拼上（`hon<pb>our`）→ 拼成整词，页锚挪到词后（old-book-ocr §3.2f）
+    text = re.sub(r'([A-Za-z]*[a-z])(<span class="' + P + r'-pb"[^>]*></span>)([a-z]+)', r'\1\3\2', text)
     if notes:
         block = '\n\n'.join(notes)
         if f'<p class="{P}-notes-h">Notes</p>' in text:

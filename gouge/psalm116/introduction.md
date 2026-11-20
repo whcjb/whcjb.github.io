@@ -179,7 +179,7 @@ See ‘The Whole Armour of God’ for directions about solemn thanksgiving, trea
 
 Ut hic psalmista, sic publicè pro bonis sibi collatis gratias Deo agit.—*Aug. Confess*., lib. i. cap. 20.
 
-Spiritus sanctus sanctis datur, ut copulentur Deo in laudibus gloriæ ipsius; non quod Deus laude alicujus indigeat, sed quod laus Dei laudatoribus prosit.— *Jerome Comment*. lib. i. in Eph. i.
+Spiritus sanctus sanctis datur, ut copulentur Deo in laudibus gloriæ ipsius; non quod Deus laude alicujus indigeat, sed quod laus Dei laudatoribus prosit.—*Jerome Comment*. lib. i. in Eph. i.
 
 Quid est sacratius laudis sacrificium, quam in actione gratiarum ?—*Aug. contr. adversar. Leg*. lib. i. cap. 18.
 
