@@ -1,0 +1,5 @@
+者 Robinson — 鲁滨孙（Robinson）, Edward Robinson, Biblical Researches in Palestine. Translate. No asterisks in source. vs. 28-32 → 第 28-32 节. vol. 2. pp. → 第 2 卷第 104-151 页.
+
+Robinson's Palestine — title of book; "《巴勒斯坦》". Should I keep English? Rule: no English words. Give 鲁滨孙（Robinson）《巴勒斯坦》。
+
+Output: 关于第 28-32 节所涉地理细节，最好的说明，这里可概括地参看鲁滨孙（Robinson）《巴勒斯坦》第 9 节（第 2 卷，第 104-151 页）。§ symbol keep? "§ 9" → 第 9 节 might clash with verse; use "§ 9". Keep § is fine (not English word).关于第 28-32 节所涉地理细节，最好的说明见于鲁滨孙（Robinson）《巴勒斯坦》§ 9（第 2 卷，第 104-151 页），此处概括地指出，以备参看。
