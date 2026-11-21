@@ -1,0 +1,22 @@
+<thinking_mode>
+Count asterisks in original:
+1. *In that day ... earth.* — 2
+2. *one of three* — 2
+3. *Blessing* — 2
+4. *as a blessing* — 2
+5. *for a blessing* — 2
+6. *land,* — 2
+Total 12. No HTML comments here actually. "i. e." not italic → 即.
+
+Names first occurrence: Gesenius, Nordheimer (诺德海默), Cocceius (科克切乌斯), Luther (路德 no gloss), Knobel, Ewald.
+
+Translate verse: "到那日，以色列必与埃及、亚述，为三分之一，在地上成为祝福。" Literal: "到那日，以色列对于埃及和亚述必成为第三，是地中间的祝福。"
+
+Hebrew glosses: שלישיה（第三／三分之一）, ישראל（以色列）, עדה（会众）.
+
+"as stated by Gesenius himself" — second occurrence, no gloss. "Gesenius § 96" fine.
+
+"etc." → ……. Write.
+</thinking_mode>
+
+*到那日，以色列对于埃及和亚述必成为第三，是地中间的祝福。*意思显然是说，以色列必成为*三者之一*，即成为三方联合中的一方。因此，不能说 שלישיה（第三）之所以与 ישראל（以色列）相合，是因为后者在此被视为阴性名词，指的不是国土而是民族。格塞尼乌斯（Gesenius）提出的这一解释，与惯用法正相抵触：按惯用法，国土作阴性，民族作阳性，这一点格塞尼乌斯本人在注释下一节时也说过。也不必假定此处暗指 עדה（会众）或其他省略的名词。「分数词既然一概是抽象名词，表示分数时便专用序数词的阴性形式。」（诺德海默〔Nordheimer〕§ 627。参格塞尼乌斯 § 96。）所以这个词的意思是三分之一，即三等分中的一份。不过，此处要表达的意思，并不像科克切乌斯（Cocceius）所以为的那样，仅仅是大小或势力上的对等，而是也包含亲密的联合，与上一节相同。*祝福*一词在此取其广义，同时表示祝福的源头、祝福的媒介，以及蒙福的对象。路德在它前面补一个介词，后面补一个关系词（藉着那在地中间的祝福）。克诺贝尔（Knobel）只补出表存在的动词（祝福必在地中间……）。最简单的结构是把它看作 ישראל（以色列）或 שלישיה（第三）的同位语，「地中间的祝福」，这就等于说*作为祝福*，或（如埃瓦尔德〔Ewald〕所译）*成为祝福*，在地中间。至于把此词限定为*地土*（*land*）之义，无论理解为以色列地，还是理解为此时合而为一的三国之地，不但武断，即无必要而强行假定，而且大大削弱了这些措辞的力量。
