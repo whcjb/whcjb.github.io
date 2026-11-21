@@ -1,0 +1,29 @@
+得 (Isaiah 13:2). Need to count asterisks carefully.
+
+Asterisks in original:
+1. *Upon a bare hill* — 2
+2. *set up a signal, raise the voice,* — 2
+3. *to them* — 2
+4. *and let them enter the gates of the* — 2
+5. *nobles.* — 2
+6. *caliginosum,* — 2
+7. *lofty.* — 2
+8. *bare* — 2
+9. *bald.* — 2
+10. *(ὄρους πεδινοῦ)* — 2
+11. *(that they may enter),* — 2
+12. *tyrants,* — 2
+13. *(ἀνοίξατε οἱ ἄρχοντες)* — 2
+Total 26.
+
+No i.e. in asterisks — "(i. e. one with...)" plain → 即. HTML comments: none in this passage. Fine.
+
+Names: Forerius (福雷里乌斯 Forerius), Jerome 耶柔米 no parentheses, Grotius 格劳秀斯（Grotius）, Kimchi 金希（Kimchi）, Luther, Calvin, Augusti 奥古斯提（Augusti）, Barnes 巴恩斯（Barnes）, Lee 李（Lee）, Gesenius, Vitringa, Cocceius 科克切乌斯（Cocceius）, Knobel, Cyril 区利罗（Cyril）— Cyril of Alexandria; 中文通行"区利罗". Since prior error was leaving Cyril untranslated, translate as 区利罗（Cyril）? Rule 8b: famous names don't need parentheses; but 区利罗 may not be instantly known; adding parenthesis gives an English word... rule 8a permits parenthetical original. But user complained "漏译的英文词 Cyril" — means it was left untranslated. I'll write 亚历山大的区利罗? Original just says Cyril. I'll write （区利罗）. Hmm, parenthesis in original "(Cyril)". Safe: "（区利罗）" without English. But reader recognition... 区利罗 is standard Chinese patristic name. Fine.
+
+Henderson 亨德森（Henderson）, Clericus 克莱里库斯（Clericus）, Schmidius 施密德（Schmidius）, Koppe 科佩（Koppe）, Döderlein 德德莱因（Döderlein）, J. D. Michaelis 米夏埃利斯（J. D. Michaelis）, Lowth 洛沃特（Lowth）.
+
+Latin/German quotes keep with Chinese gloss. The Vulgate (ingrediantur portas duces) — not italic, keep. Hebrew words keep with glosses: נשפה（光秃之处）, קול（声音）, ויבאו（他们要进入）, להם（向他们）.
+
+Italic Chinese: *caliginosum,* keep Latin with gloss: *caliginosum,*（幽暗的）. *lofty.* — discussing English word? It's a rendering sense; translate: *高耸*之意. Rule says no English unless discussing word itself; here it's a sense, translate to Chinese. *bare* 或 *bald.* → *光秃* 或 *光秃无发*. Keep asterisks.
+
+Draft.耶和华攻击巴比伦，要藉玛代人与波斯人之手，这事在此预先说出。所用的既不是预言本来的形式，也不是常用来代替预言的描述形式，而是耶和华吩咐他臣仆的命令：叫他们召集来犯之敌，先在高处竖立旗号，等敌军渐近，再招手呼喊。*要在光秃的山上*（即山顶空旷、没有树木遮掩的山）*竖立旗号，扬声*（高声呼喊）*向他们*（玛代人与波斯人），*叫他们进入*（巴比伦）*贵胄的门。*——福雷里乌斯（Forerius）把 נשפה（光秃之处）当作一座山的专名，以为这山把迦勒底与波斯、玛代隔开。武加大译本作 *caliginosum,*（幽暗的），耶柔米用以指巴比伦人灵性上的黑暗，格劳秀斯（Grotius）则用以指此城地处沼泽、雾气弥漫。他尔根把这话意译为一座自恃稳固、高枕无忧的城。金希（Kimchi）、路德、加尔文和多数早期基督教作者，以及后来的奥古斯提（Augusti）、巴恩斯（Barnes）和李（Lee），都取 *高耸* 之意。但最近的辞典编纂者和注释家似乎一致认为，真正的意思是 *光秃* 或 *秃顶。* 七十士译本的译法 *（ὄρους πεδινοῦ）*（平地的山），格塞尼乌斯（Gesenius）解释为顶部平坦的山；较早的作者却理解为四面环绕平原的山，是对巴比伦的比喻性描写。然而这并不是描写那城，而是暗指通常在高旷显眼之处竖立旗号的做法。既然说法并无特指（只说"一座山"），就不必像维特林加（Vitringa）那样，以为这里特别暗指玛代与巴比伦之间的扎格罗斯山脉。——耶柔米和科克切乌斯（Cocceius）以为这里是向天使说话；克诺贝尔（Knobel）等人以为是向被掳的犹太人说话；最好还是把这话理解为泛指，是向那些本分该做所吩咐之事的人说的。耶和华在此既被描绘为一位统帅，这命令自然应当理解为是下给他的传令官或其他军官的。他们受命的不是展开旌旗以示得胜（区利罗），而是竖立旗号以召集军队。不必像维特林加和亨德森（Henderson）那样，以为 קול（声音）是指号角之声。多数作者把 ויבאו（他们要进入）解作虚拟语气 *（好叫他们进入），* 这不但没有必要，而且远不如那显而易见的解法有力——即认为命令在此一路延续下去。这些贵胄不是玛代和波斯的贵胄（克莱里库斯〔Clericus〕以为兵士被召到他们门前，应募从军），而是巴比伦的贵胄。格塞尼乌斯和后来的德国学者给这个词加上 *暴君，* 这一特定意思，从约伯记 21:28 的类比来看，全无根据，除非我们假定平行的词语必定总是同义。末句另有几种解法：七十士译本作 *（ἀνοίξατε οἱ ἄρχοντες）*（首领们啊，要开门）；武加大译本作（ingrediantur portas duces）（让首领们进入城门）；施密德（Schmidius）作（ut veniant portae principum）（使王侯之门得以临到）；科佩（Koppe）作（voluntarii portas aperite）（志愿者们，要开门）；德德莱因（Döderlein）作（ut veniant enses evaginati voluntariorum）（使志愿者出鞘的刀剑得以临到）；米夏埃利斯（J. D. Michaelis）作（dass meine Freywillige sich vor meiner Pforte versammlen）（使我的志愿者聚集在我门前）……这些解法都牵涉到改动经文，或句法生硬。洛沃特（Lowth）删去 להם（向他们），以为它无用，反倒削弱了句子。恰恰相反，它不提来犯者的名字，突兀地直指他们，仿佛他们早已人所共知，句子反倒因此更加有力。

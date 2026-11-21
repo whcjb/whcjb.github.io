@@ -1,0 +1,20 @@
+栗 Alexander 13:15. Need to count asterisks. Original asterisks:
+1. *for every one found* (2)
+2. *shall be stabbed* (2)
+3. *and every one joined* (2)
+4. *shall fall by the sword.* (2)
+5. *found alone* (2)
+6. *joined* (2)
+7. *remains* (2)
+8. *flees,* (2)
+9. *found* (2)
+10. *caught,* (2)
+11. *found* (2)
+12. *joined* (2)
+Also "i. e." not italic here — "i. e." → 即. Total 24.
+
+Names first occurrence with parentheses: Junius (朱尼厄斯 Junius), Kimchi, Hitzig, Gesenius, Lowth, Umbreit, J. D. Michaelis (米夏埃利斯), Henderson, Knobel, Ewald. Kimchi second time no.
+
+Translate. "stabbed (or thrust through)" → *必被刺*（或刺透）. Parentheses inside: *(there)* is outside italics: *凡被找到的*（在那里）*必被刺*. Keep structure.
+
+Hebrew glosses: נספה (被除灭/被加入), ספה (消灭), נמצא（被找到的）, ידקר（被刺）, יפול בחרב（倒在刀下）.外邦人逃离巴比伦并非无故，*因为凡被找到的*（在那里）*必被刺*（或作刺透），*凡被联合的*（或作投靠巴比伦人的）*必倒在刀下。*释经家都同意，此处所描写的是一场普遍的屠杀，只是对各分句的确切含义与彼此关联看法不一。有人以为这里有层递之意。朱尼厄斯（Junius）便解释说，本节的意思是：不但强壮的人，连衰弱的人（נספה［被耗尽的］，出自 ספה［消灭］）也必被杀；金希（Kimchi）也提到同样的解释。希齐格（Hitzig）认为其意是：人人都必灭亡，连那投靠的（即倒向敌人的）也不例外；敌人必不留活口。另有人以为这里有对照，却非层递。格塞尼乌斯（Gesenius）在其词典的早期版本中解释说，本节意思是：在街上被找到的，与退入屋内的，同样必灭亡。洛沃特（Lowth）把对照放在*独自被找到的*与和别人*联合的*之间。温布赖特（Umbreit）认为不但 נמצא（被找到的）与 נספה（被联合的）彼此对照，ידקר（必被刺）与 יפול בחרב（必倒在刀下）也彼此对照：前一分句指最初以枪矛进攻，后一分句指近身以刀剑短兵相接。米夏埃利斯（J. D. Michaelis）改动元音点，使对比落在*留下的*与*逃跑的*之间；亨德森（Henderson）则从通行经文中取出同样的意思，明言其根据是 נספה 必须表示与 נמצא 相反的意思。然而，即便是完全平行体理论最坚定的拥护者，也必须承认平行体常是同义的，并非一律是对照的。本节既无必要使名词与动词意思相反，也同样无必要使两个分词意思相反。况且，除温布赖特（或许还有克诺贝尔〔Knobel〕）之外，众人似乎都同意被刺透与倒在刀下是同一回事；既然如此，两个分句极有可能指的是同一类人。按这个最自然、最简单的设想，我们可以像埃瓦尔德（Ewald）与格塞尼乌斯那样，以 נמצא 与 נספה 分别指*被找到的*人与*被捉住的*人；也可以保留金希书中所见的旧解，把本节与上一节直接相连，把两个分句都应用在巴比伦城中的外邦人身上：其中凡仍在那里被*找到的*、仍与被围困者*联合的*，都必被处死，无一幸免。
