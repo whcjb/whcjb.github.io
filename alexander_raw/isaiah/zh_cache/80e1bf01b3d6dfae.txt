@@ -1,0 +1,11 @@
+使用。
+
+Count asterisks: *thou shalt only be brought down to hell* (2), *to the depths of the pit.* (2), *only* (2), *but* (2), *yes* (2), *no* (2), *sides* (2), *sides* (2), *hinder parts* (2), *remote parts* (2), *extremities,* (2), *pit,* (2), *profundum,* (2), *τὰ ϑεμέλια* (2). Total 28.
+
+Names: Winer → 维纳（Winer）; Lowth 洛沃特（Lowth）; J. D. Michaelis 米夏埃利斯（J. D. Michaelis）; Ewald 埃瓦尔德（Ewald）; Knobel 克诺贝尔（Knobel）; Clericus 克莱里库斯（Clericus）; Barnes 巴恩斯（Barnes）. s. v. → 见该词条. Vide supra ad v. 9 → 参见上文第 9 节.
+
+*but*, *yes*, *no* are English words under discussion; keep with gloss. *sides*, *hinder parts*, *remote parts*, *extremities* — discussing English words? It's about meaning of Hebrew; I could translate them. But "does not mean *sides* in the ordinary sense" — translating is fine: *旁侧*. Keep markers. *only* — sense of אך; translate as *只*. But *but/yes/no* renderings: they're English renderings of other tongues... Lowth English, Michaelis German, Ewald German. Safer to translate: *但*（洛沃特）、*是的*、*不*. Rule 9b says can keep if discussing the English word itself; translating is acceptable too. I'll translate.
+
+Hebrew: אך（只）, שאול（阴间）, בור（坑）. Vulgate profundum keep with gloss: *profundum*（深处）; Septuagint *τὰ ϑεμέλια*（根基）. "hell" → 阴间. etc. → …… per rule &c.
+
+Draft.你非但不得升到天上，*反倒只被推下阴间*——（不是到北方的极处，而是）*到坑中极深之处。* אך（只）在此取其本义 *只*（见维纳［Winer］该词条），但为迁就别种语言的惯用语，各家译法不一：或作 *但*（洛沃特［Lowth］），或作 *是的*（米夏埃利斯［J. D. Michaelis］），或作 *不*（埃瓦尔德［Ewald］）……有些释经者说，此处把 שאול（阴间）与坟墓混为一谈；另一些则说，בור（坑）必定带有 שאול（阴间）的意思——同一个平行体，竟推出相反的结论。克诺贝尔（Knobel）对此看得正确。他指出，阴间这一观念本身原不过是坟墓的观念，所以二者彼此交融，并没有人试图精确分辨哪些专属于这一个、哪些专属于那一个。（参见上文第 9 节。）若把末一分句严格解作坟墓，下文说王的尸身不得埋葬，便与此相抵。然而这里的意象无疑是从坟墓借来的。——克莱里库斯（Clericus）与巴恩斯（Barnes）把 *旁侧* 理解为东方墓穴或地下墓窟中横向开凿的墓室。但照其可能的字源，这个希伯来词并不是寻常所说的 *旁侧*，而是 *后部*，引申为 *偏远之处* 或 *尽头，* 他尔根在此处和第 13 节都是这样解释的。至于具体指什么，可以是极高、极远，也可以是极深，要看上下文而定。此处既提到 *坑，* 就必须取末一义，所以武加大译本译作 *profundum,*（深处），七十士译本译得较为宽松，作 *τὰ ϑεμέλια*（根基）。
