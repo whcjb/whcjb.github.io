@@ -1,0 +1,43 @@
+的 count asterisks in original. Let me list italic spans:
+
+1. *Send ye the lamb* 
+2. *to the ruler of the land*
+3. *from Sela*
+4. *to the wilderness, to the mountain of the daughter of Zion.*
+5. *I will send.*
+6. *ruler of the earth,*
+7. *the lamb, the ruler of the land*
+8. *send oh ye rulers of the land.*
+9. *lamb of the ruler*
+10. *to*
+11. *for*
+12. *ruler of the land*
+13. *Sela,*
+14. *rock,*
+15. *Petra,*
+16. *Πέτρα*
+17. *Arabia Petraea*
+18. *stony,*
+19. *Wady Musa,*
+20. *from Petra to the wilderness,*
+21. *from the wilderness,*
+22. *Sela of the wilderness,*
+23. *through*
+24. *along the wilderness,*
+25. *from Petra to the wilderness*
+26. *to Mount Zion*
+27. *lamb, the ruler of the land, sent forth from the rock of the wilderness!*
+28. *ruler of the land*
+29. *the Messiah*
+30. *anointed*
+31. *of Israel,*
+
+That's 31 spans = 62 asterisks. Note "i. e." not italic here, so → 即. Rule 9b: no English words left; Arabia Petraea is Latin – keep as Latin with gloss. Wady Musa — Arabic transliteration; render as 穆萨谷（Wady Musa）? It's a placename; must keep asterisks. *Wady Musa,* → *穆萨谷（Wady Musa），* — includes Latin letters; is it English? It's transliterated Arabic; acceptable with gloss. Better: *瓦迪穆萨*（Wady Musa）. Put parenthetical outside asterisks.
+
+"*to* or *for* the *ruler of the land*" — Chinese: （*致*或*为*这*地的掌权者*）. Fine.
+
+*through* or *along the wilderness* → *穿过*或*沿着旷野*.
+
+Names: Hitzig, Maurer, Knobel, Lowth, J. D. Michaelis (米夏埃利斯 J. D. Michaelis), Forerius (福雷里乌斯), Malvenda (马尔文达), Calvin (no), Barnes, Jerome (no), Clericus (克莱里库斯), Strabo 斯特拉波, Diodorus 狄奥多罗斯, Josephus 约瑟夫 (common; maybe gloss anyway? 约瑟夫 is well known; I'll gloss lightly? Rule 8b exempts well-known; I'll gloss Strabo, Diodorus). Trajan 图拉真, Hadrian 哈德良 — well-known. Burckhardt 布尔克哈特, Seetzen 塞岑, Irby and Mangles 厄比与曼格尔斯, Robinson 鲁滨逊, Grotius 格劳秀斯, Ewald, Vitringa, Luther, Gesenius. Nebuchadnezzar 尼布甲尼撒. Sela 西拉 (和合本 2 Kings 14:7 "西拉"). Petra 彼特拉 — gloss. Ruth 路得.
+
+Draft.在走投无路之际，摩押人彼此相劝，要重新归顺大卫家；从前大卫曾征服他们，使他们进贡（撒母耳记下 8:2）。国度分裂以后，他们继续臣属十个支派，直到亚哈死时为止，每年（或许是每逢新王登基）进贡十万只羊羔和十万只公绵羊的毛（列王纪下 3:4, 5）。十个支派的国度灭亡以后，他们只能向犹大效忠，而犹大其实一向就有权得这效忠。*你们要把羊羔*（即惯常的贡物）*送给这地的掌权者*（你们合法的君主），*从西拉*（或彼特拉 Petra）*往旷野，送到锡安女子的山。*希齐格（Hitzig）和毛雷尔（Maurer）认为这是以东人的话，他们以为摩押人曾投奔以东人避难。彼特拉固然是以东的城（列王纪下 14:7），但这些小国之间的势力时常消长，此时它可能已归摩押管辖；或者提到它，只是把它当作边境城镇，为要标明地理方位。较早的作者把这些话看作先知本人的话；但克诺贝尔（Knobel）反驳说，先知和以东人都必然知道，这里所劝的做法终归徒然。所以最好把这些话理解为摩押人自己在惊慌失措中彼此相劝的话。这种理解与上下文都相合，这也是它可取之处。这样，本节实际上是接续上一章的描写。七十士译本和别西大译本把这动词译成第一人称单数，作*我要送。*别西大译本又把 כר（羊羔）读作 בר（儿子）。洛沃特（Lowth）和米夏埃利斯（J. D. Michaelis）赞同这个读法，他们把本节理解为：即使这地掌权者（即摩押王）的儿子亲往耶路撒冷求和，也求不到和平。另有人以为，这里提到王子逃亡，是为预言的图景再添一笔。但这样偏离通行经文，完全没有必要。福雷里乌斯（Forerius）和马尔文达（Malvenda）以为 כר 指攻城槌，或把它当作比喻，指兵卒或军力。加尔文认为它指献给耶和华这位*全地的掌权者*的祭牲羊羔，表示悔改和降服。其他大多数作者理解为摩押向以色列诸王进贡的羊羔；巴恩斯（Barnes）则把这个意思与前一个意思合在一起，认为犹太人向进贡之国索取羊羔，为要供应坛上的祭牲。耶柔米把 משל（掌权者）与 כר 看作同位语，把本节理解为祷告或预言，说神要差遣基督，就是*那羊羔，这地*（或全地）*的掌权者*。另有人把 משל 看作呼格，作集合名词用，等于 משלים（众掌权者）：*你们这地的众掌权者啊，要送去。*大多数近代作者把它看作属格（*掌权者的羊羔*），即应归给他、属于他的；或看作与格（*致*或*为*这*地的掌权者*）——在表达或暗含行动方向的动词之后，这是常见的结构。克莱里库斯（Clericus）认为这地的掌权者是尼布甲尼撒，即征服犹大的那位。*西拉，*本义是*磐石，*如今一般公认在此是城名，即*彼特拉，*以东古都；它之所以得此名，是因四围有无法通行的岩石环绕，而城的大部分又是在岩石本身中凿成的。斯特拉波（Strabo）、狄奥多罗斯（Diodorus）和约瑟夫都描述它是商贸兴盛之地。一般以为古代地理中 *Arabia Petraea*（佩特拉阿拉伯）之名，就是由希腊文的 *Πέτρα*（彼特拉）而来。若是这样，把这名称解释为*多石的，*认为它描写了整片地区的土壤，就必定不对了。彼特拉曾被图拉真攻克，又由哈德良重建，他的钱币上至今还留有这城的名字。后来那里设过主教座，但在十字军时代以前就已无人居住。此后它完全湮没无闻，直到 1812 年布尔克哈特（Burckhardt）证实了塞岑（Seetzen）的推测：彼特拉的旧址当在死海东南一两天路程、名叫*瓦迪穆萨（Wady Musa）*的山谷中寻找。后来厄比（Irby）和曼格尔斯（Mangles）曾到那里考察，此后屡有人造访并著文描述。尤可参看鲁滨逊（Robinson）《巴勒斯坦》第二卷第 573-580 页。格劳秀斯（Grotius）认为提到彼特拉是作为极端的一点，*从彼特拉往旷野，*即遍及摩押全境。埃瓦尔德（Ewald）认为提到它，是因为那里最便于购买所需的羊羔。维特林加（Vitringa）以为摩押人在彼特拉四围的旷野中牧放羊群。路德译作*从旷野，*与原文的形式完全不合。有些古代作者解作*旷野的西拉，*忽略了表示地点或方向的 ה。格塞尼乌斯（Gesenius）和其他近代作者解作*穿过*或*沿着旷野，*也同样偏离原文的形式；原文只能解作*从彼特拉往旷野*（再从那里）*到锡安山*（即耶路撒冷）。耶柔米把全节解释为预言基督由摩押女子路得而出，就是那*羊羔，这地的掌权者，从旷野的磐石被差遣出来！*他尔根把*这地的掌权者*意译为*以色列的弥赛亚*（或*受膏者*）*，*这或许不过是指君王而已。
