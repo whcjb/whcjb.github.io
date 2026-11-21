@@ -1,0 +1,31 @@
+命以赛亚书 17:8. Need to count asterisks carefully.
+
+Original asterisks:
+1. *And he shall not turn* — 2
+2. (or *look*) — 2
+3. *to the altars ... and the groves* — 2
+4. (or *images of Ashtoreth*) — 2
+5. *and the pillars* — 2
+6. (or *images*) — 2
+7. *of the sun.* — 2
+8. *(what their fingers have made)* — 2
+9. *groves,* — 2
+10. i. e. — not italicized here ("i. e. such as") — plain → 即
+11. *Ashtoreth,* — 2
+12. *Baal the Sun* — 2
+13. (or *Solar*) — 2
+14. *loca aprica,* — 2
+15. *statuas subdiales.* — 2
+16. *household gods* — 2 (order: after Vitringa, before groves). Let me order: ... (what their fingers have made) then *household gods*, then *groves,*.
+
+Total 32 asterisks. No HTML comments in text. Götzenhainer — German, keep with gloss? Rule: non-English allowed (German as foreign? rule says Hebrew Greek Latin keep). German word is the object being cited; keep as Götzenhainer（偶像树林）. Previous issue was leaving "tzenhainer" — OCR fragment. I'll keep full German word in parentheses with Chinese. Safer: "（Götzenhainer，偶像的树林）". Hmm "不得把任何英文词原样留在" — German isn't English. Okay.
+
+Names to annotate first occurrence: Kimchi 金希（Kimchi）, Clericus 克莱里库斯（Clericus）, Lowth 洛沃特（Lowth）, Calvin 加尔文 no, Vitringa 维特林加（Vitringa）, Selden 塞尔登（Selden）, Spencer 斯潘塞（Spencer）, Gesenius 格塞尼乌斯（Gesenius）, Movers 莫弗斯（Movers）, Ewald 埃瓦尔德（Ewald）, Montanus 蒙塔努斯（Montanus）, Junius 尤尼乌斯（Junius）. Kimchi second mention no annotation.
+
+Translate scripture: *他也不转向*（或作*仰望*）*祭坛，就是他自己手所做的；他自己指头所造的，他也不看重，无论是树林*（或作*亚斯他录的像*）*，是柱像*（或作*偶像*）*日头的。* Hmm "the pillars of the sun" split: *和日头的柱像* — but the parenthesis "or images" attaches to pillars, then *of the sun* after. Chinese order: *和柱像*（或作*偶像*）*——日头的。* Better: render "pillars of the sun" as "太阳的……柱像" ... I could phrase: *并树林*（或作*亚斯他录像*）*与太阳的柱像*（或作*偶像*）*。* That moves the "of the sun" asterisk pair — still 2 per segment count, but position changes: I'd have segments: "并树林", "亚斯他录像", "与太阳的柱像", "偶像", "。" — the last one a lonely period in asterisks, awkward. Alternative: *与柱像*（或作*偶像*）*，即日头的。* Hmm adds 即. Try "*与日头的*" can't split. Try: *和那些柱子*（或作*偶像*）*——献给日头的。* Hmm. Maybe: *与柱像*（或作*偶像*）*之属乎日头者。* Classical. Let's do: *以及日头的* ... Chinese allows "柱像（或作偶像）日头的"? Use: *和柱像*（或作*偶像*）*——太阳的。* Acceptable-ish. I'll choose "*和那属日头的*"... no. Go with "*和太阳的*"... can't. Final: *和柱像*（或作*像*）*，日头的（柱像）。* adds parentheses supplement not in original. Go with dash version.
+
+Lowth's quote: "所有古译本和大多数现代译本都误解了它". Clericus Latin: aras erectas operi manuum（为手工所立的祭坛）.
+
+1 Kings 14:23 → 列王纪上 14:23；历代志下 34:4.
+
+Write.*他也不转向*（或作*仰望*）*祭坛，就是他自己手所做的；他自己指头所造的，他也不看重，无论是树林*（或作*亚斯他录像*）*，是柱像*（或作*偶像*）*——日头的。*前一节正面所宣告的，本节从反面说出，并特别点明那些僭夺了神之地位的对象。金希（Kimchi）有一个肤浅的意见：连神的祭坛也是人手所做的，所以这短语必定指偶像。克莱里库斯（Clericus）采纳此说（aras erectas operi manuum，为手工所立的祭坛），洛沃特（Lowth）也采纳了。洛沃特说「所有古译本和大多数现代译本都误解了这里」，接着又主张 מעשה（作品）不是 המזבחות（那些祭坛）的同位语，而是受它支配的属格。但后一词带有定冠词，排除了这种结构。真正的解释是加尔文提出、后来多数释经者所采纳的，即偶像的祭坛之所以称为人手所做的，是因为它们全凭人自己的权柄建立；耶路撒冷的祭坛则在最高的意义上是神自己的作品。维特林加（Vitringa）随意地把下一分句*（他们指头所造的）*解为既不与上文同义、也不与下文同义，而是指拜偶像者的*家神*。古代作者一律把 אשרים 解作*树林*，即用于偶像崇拜的那种树林。然而塞尔登（Selden）、斯潘塞（Spencer）、格塞尼乌斯（Gesenius）等人已经证明，这个意义在某些地方无法成立，例如经上说 אשרה 立在坛上、立在树下，或从殿中被搬出来（列王纪上 14:23；历代志下 34:4）。因此现代作者把它理解为福运或幸福的女神（源自 אשר，亨通），又称*亚斯他录，*即腓尼基的维纳斯，与巴力一同广受敬拜。但按莫弗斯（Movers）的意见，这个希伯来词指一根直立的柱子。埃瓦尔德（Ewald）坚持古时的解释（Götzenhainer，偶像的树林）。חמנים 是 חמה 的派生词；חמה 本义是日头的热气，在诗歌中则用来指日头本身。这个显而易见的词源，加上近代发现的、题献给 בעל חמן（*巴力日头*，或作*属日的巴力*）的布匿石柱，使人得出结论：这里的词指巴力的像，巴力被当作日头的代表来敬拜。蒙塔努斯（Montanus）根据同一词源得出 *loca aprica,*（向阳之地）的意义，尤尼乌斯（Junius）则得出 *statuas subdiales.*（露天的雕像）的意义。把这个词解作众日或日像，早在金希就已如此。
