@@ -1,0 +1,7 @@
+<thinking>Count asterisks in source: *The new wine ... sigh.* = 2; *sweet* = 2. Total 4. No HTML comments in source. Keep 4.
+
+Names first occurrence: Gesenius 格塞尼乌斯（Gesenius）, Hitzig 希齐格（Hitzig）, Henderson 亨德森（Henderson）, Knobel 克诺贝尔（Knobel）, Rosenmüller 罗森米勒（Rosenmüller）, Barnes 巴恩斯（Barnes）, Hendewerk 亨德韦克（Hendewerk）. Gesenius second time no gloss. Joel → 约珥书 1:10-12.
+
+תירוש (新酒). "sweet or new wine" — *sweet* italic: 甜酒 or 新酒. Translate: 不必背离其常用之义，即*甜*酒或新酒. Keep italic on 甜.
+
+This is Isaiah 24:7. Literal: "The new wine mourneth" → 新酒悲哀；葡萄树衰残；心中欢乐的都叹息。</thinking>*新酒悲哀；葡萄树衰残；凡心中欢乐的都叹息。*格塞尼乌斯（Gesenius）、希齐格（Hitzig）与亨德森（Henderson）都把 תירוש（新酒）理解为尚在树上的葡萄汁；克诺贝尔（Knobel）则以提喻法解作葡萄本身。但整段描写既然都是比喻，就无须背离此词通常的意思，即*甜*酒或新酒。罗森米勒（Rosenmüller）与巴恩斯（Barnes）以为，这里说酒悲哀，是因为无人饮它；亨德韦克（Hendewerk）则以为，是因为饮它的是外邦人而不是本地人。这是把一个自然而优美的比喻，变成一个冷涩的巧思。格塞尼乌斯告诉我们，这一节也是抄自约珥书（约珥书 1:10-12），据他说，在那里上下文的衔接要自然得多。
