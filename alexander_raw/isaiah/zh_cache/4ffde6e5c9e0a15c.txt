@@ -1,0 +1,11 @@
+<thinking>Count asterisks in original: *Does ... border*? → 2. *principal wheat, appointed* → 2, *sealed barley.* → 2. Total 6. No HTML comments.
+
+German doggerel: keep original with Chinese gloss. "Waizen in Reihen und Gerste hinein" — that's German; rule says Hebrew/Greek/Latin keep original; German is English? It's not English; keep and gloss. But "不得把任何英文词原样留" — German isn't English, fine. Gloss: 小麦成行，大麦也栽进。
+
+Ewald → 埃瓦尔德（Ewald）, Gesenius → 格塞尼乌斯（Gesenius） first occurrence. Hebrew words: שורה（行列）, נסמן（指定的）, שם（放置）, גבלתו（他的地界）, שורה ושערה.
+
+Translate:
+*他把地面耙平了，岂不就撒播小茴香，散种大茴香，按行列种小麦，在（所）定（之处）种大麦，在他的地边种粗麦吗*？
+Original: "set wheat in rows, and barley (in the place) marked out, and spelt in his border". Keep parentheses: 大麦于标定的（地方）. Fine.
+
+Second: *上等的小麦，指定的*或*封定的大麦。* — wait original: "*principal wheat, appointed* or *sealed barley.*" Arrange: *上等的小麦、指定的*或*封定的大麦。* Good.*他把地面耙平了，岂不就撒播小茴香，散种大茴香，按行列种小麦，在标定的（地方）种大麦，在他的地边种粗麦吗*？意思是说，他依次照料这一切农事，顾及时令与地段，也顾及所要出产的各样庄稼。שורה（行列）与 נסמן（指定的）二词，有人解作形容谷物的修饰语，即*上等的小麦、指定的*或*封定的大麦。*埃瓦尔德（Ewald）以之为描写土地的词，即小麦种在最好的地里，大麦种在粗瘠的地里。但最有用法与类比支持的解释，是格塞尼乌斯（Gesenius）的说法：他把 נסמן 取作「指定的、标明的」之义，把 שורה 取作「一行、一列」之义。这与动词 שם（安放）十分相合，因为此词所指的不是随手乱撒，而是仔细栽种；据说东方种小麦至今仍用此法，格塞尼乌斯等人认为这正是古时巴勒斯坦地土异常肥沃的原因之一。גבלתו（他的地界）中的词尾大概是指农夫，那名词则指田地的边缘，其余的谷物就撒种或栽种在田里。把这词尾归于 נסמן，或归于前面那几个名词，都十分牵强。格塞尼乌斯为了保留 שורה ושערה（行列……大麦）之间所谓的谐音双关，把这一分句译成了打油诗的样子（Waizen in Reihen und Gerste hinein〔小麦成行，大麦栽进〕）。

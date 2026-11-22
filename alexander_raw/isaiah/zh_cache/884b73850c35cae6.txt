@@ -1,0 +1,29 @@
+I'll count asterisks in source. Let me enumerate:
+1. *And for a spirit ... gate.* → 2
+2. *on the judgment-seat,* → 2 (total 4)
+3. *in judgment,* → 2 (6)
+4. i. e. — not starred here. Plain "i. e." → 即.
+5. *thou sittest on the throne judging right;* → 2 (8)
+6. *from* → 2 (10)
+7. *gate* → 2 (12)
+8. *Spirit* → 2 (14)
+
+So 14. Previous was 32, too many. No HTML comments in source despite mention; none to preserve.
+
+Names: Calvin (加尔文 no gloss), Clericus (克勒里库斯 (Clericus)), Symmachus (叙马库斯 (Symmachus)), J. D. Michaelis (米夏埃利斯 (J. D. Michaelis)), Augusti (奥古斯提 (Augusti)), Gesenius (格塞尼乌斯 (Gesenius)). Error mentions "Good" and "Hebrew" — not in this text; ignore. Latin: super tribunal, juris dicundi causa, revertentibus de bello ad portam — keep with gloss.
+
+Ps. 9:5 → 诗篇 9:5 (actually 9:4 English but keep). 1 Sam. 20:24 → 撒母耳记上 20:24；30:24 → 撒母耳记上 30:24. 2 Sam. 11:23 → 撒母耳记下 11:23；2 Kings 18:8 → 列王纪下 18:8.
+
+Hebrew על המשפט (在审判上), ישב על (坐在……上).
+
+Translation of the verse: "也作了坐在审判之位者的公平之灵，并作了使战争转到城门者的力量。" Literal: "and for a spirit of judgment to him that sitteth in judgment, and for strength to them that turn the battle to the gate." → *又作坐着审判的人公平的灵，作那使战争转到城门的人的力量。* "sitteth in judgment" — keep "坐着审判".
+
+"in judgment, i. e. for the purpose of judging" → *在审判中，*即为了审判之故.
+
+"Even Gesenius adverts..." The war meant is wholly defensive — hmm, actually "therefore wholly defensive"? Translate as given.
+
+Note the inconsistency: "the war meant is therefore wholly defensive" — translate faithfully.
+
+<br>
+
+*又作坐着审判之人的公平之灵，作那些使战争转到城门之人的力量。*这是通行英文钦定本的译法，与最近、最好的几位作者所译相合。על המשפט（在审判上）可以照加尔文的解释，指*在审判座上，*（super tribunal，在审判台上）；也可以照克勒里库斯（Clericus，juris dicundi causa，为施行审判之故）及其他多数作者的解释，指*在审判中，*即为了审判之故。前一种意思可引诗篇 9:5 为证：*你坐在宝座上，按公义审判；*后一种意思可引撒母耳记上 20:24；30:24 为证，那里的 ישב על（坐在……上）表明人坐下所为的目的，或所关涉的事。本节末了几个字，叙马库斯（Symmachus）、他尔根和武加大译本（revertentibus de bello ad portam，从战场回到城门的人）用于从战场平安归家的人；别西大译本、克勒里库斯和奥古斯提（Augusti）用于将战争*从*城门击退的人；但后来的作者都用于把战争逼回到敌人自己的城门、仿佛把战火引入他本国境内的人。米夏埃利斯（J. D. Michaelis）给*城门*一词加上边界或疆界的特定意思，这全无必要，因为在这类上下文中，通常提到的是城邑，即或不提城门。（例如参撒母耳记下 11:23；列王纪下 18:8。）所以这里所说的战争完全是防御性的。民政治理的两大要素，在此都描写为出于耶和华。连格塞尼乌斯（Gesenius）也注意到，本节的*灵*并非仅仅一种感化，而是神自己。
