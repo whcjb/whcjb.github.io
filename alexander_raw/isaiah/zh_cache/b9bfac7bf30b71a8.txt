@@ -1,0 +1,13 @@
+<thinking_mode>
+Count asterisks: *Therefore I said* (2), *Look away ... weeping* (2), *weep bitterly* (2), *try not ... people.* (2), *The daughter of my people* (2). Total 10. No HTML comments in text.
+
+Names: Junius → 尤尼乌斯（Junius）; Clericus → 克莱利库斯（Clericus）; Gesenius → 格塞尼乌斯（Gesenius）. First occurrences parenthesized. Junius appears twice; second just 尤尼乌斯.
+
+Hebrew תאיצו keep, with gloss: (你们催逼/强求). It's "do not hasten/press" — תָּאִיצוּ "urge". Gloss （催逼）.
+
+Ch. 16:11. 21:3 → 以赛亚书 16:11；21:3 — within same book, "第 16 章 11 节"? Rule: format 书卷名 章:节. Use 以赛亚书 16:11；21:3. v. 1 → 第 1 节.
+
+Translation:
+*所以我说*（或作：我说），*你们转眼不要看我；让我痛哭*（或作：*悲苦地哭*）；*不要设法为我民之女的毁灭安慰我。*
+
+"Look away from me" — 和合本 "你们转眼不看我". Keep literal: "你们转眼离开我". "let me be bitter in weeping" → "让我在哭泣中悲苦". "weep bitterly" → "痛哭". "try not to comfort me" → "不要设法安慰我". "desolation" → 荒凉/毁灭.*所以我说*（或作：我说），*你们转眼离开我吧；让我在哭泣中悲苦*（或作：*让我痛哭*）；*不要设法为我民之女的荒凉安慰我。*这不是耶路撒冷回答第 1 节那个问题的话（尤尼乌斯〔Junius〕），而是先知自己的话：他对自己所预见、所预言的苦难表示同情，与以赛亚书 16:11；21:3 相同。תאיצו（催逼）一词似乎含有把安慰硬加给不愿接受之人的意思。*我民之女*既不是指附属于耶路撒冷的诸城（尤尼乌斯），也不是指百姓所建造的耶路撒冷本身（克莱利库斯〔Clericus〕），也不是以阴性集合名词表达的百姓众子（格塞尼乌斯〔Gesenius〕），而是指百姓本身：诗意地被描绘为一个女子，又带着疼爱称她为女儿。
