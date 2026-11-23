@@ -1,0 +1,21 @@
+<thinking_mode>
+No HTML comments in the source text. Count asterisks: 
+1. *Jehovah, ... trouble.* — 2
+2. *their arm,* — 2
+3. *our arm.* — 2
+4. *Arm* — 2
+5. *As to the mornings* — 2
+6. *early* — 2
+7. *quickly,* — 2
+8. *every morning* — 2
+Total 16.
+
+Names: Lowth 洛沃特, Vitringa 维特林加, DeDieu 德迪约（De Dieu）, Cocceius 科克策尤斯（Cocceius）, Barnes 巴恩斯, Kimchi 金希（Kimchi）, Henderson 亨德森, Piscator 皮斯卡托（Piscator）, Calvin 加尔文 no gloss.
+
+ch. 9:19 → 以赛亚书 9:19 (or "第 9 章 19 节"). Format rule: "书卷名 章:节" → 以赛亚书 9:19. Hebrew בכל בקר ובקר with gloss (每一个早晨). "etc. etc." → ……
+i. e. → 即 (non-italic).
+
+Translation of verse: *耶和华啊，求你施恩与我们；我们等候你；求你每早晨作他们的膀臂，在急难的时候也作我们的拯救。* Literal "be their arm in the mornings" → "在诸早晨作他们的膀臂". "As to the mornings" → *至于诸早晨*... hmm, he discusses the expression "in the mornings" as "as to the mornings" (לַבְּקָרִים). Translate *就诸早晨而言*. Keep it.
+</thinking_mode>
+
+*耶和华啊，求你恩待我们；我们等候你；求你在诸早晨作他们的膀臂，在急难的时候也作我们的拯救。*洛沃特（Lowth）从几种古译本，不读*他们的膀臂，*而读*我们的膀臂。*通行经文的读法，各家解释不一：或以为是在场者为不在场者祷告（维特林加 Vitringa），或以为是犹太教会为基督教会祷告（德迪约 De Dieu），或以为是改革宗教会为其捍卫者祷告（科克策尤斯 Cocceius），……真相似乎正如巴恩斯（Barnes）说得好的那样：以赛亚在此插入他自己的情怀，亲自祷告神作这国民的力量，随即形式一转，献上百姓的祷告。*膀臂*是希伯来文中表示力量或扶持的常见比喻（见以赛亚书 9:19）。*就诸早晨而言*是一个不定的说法，有人理解为*及早*或*迅速，*有人理解为*每早晨*（金希 Kimchi：בכל בקר ובקר〔每一个早晨〕），或指仇敌每日的攻击（亨德森 Henderson），或指每日清晨的献祭（皮斯卡托 Piscator）。加尔文这样解释全句：你从前在早晨（即古时）作他们的膀臂（即我们列祖的膀臂），在急难的时候也作我们的拯救。但这与其说是希伯来文的结构，不如说是拉丁文的结构。
