@@ -18,6 +18,13 @@
     末行若是出处（「Olney Hymns, iii. 48.」「Task, Book iv.」）另起一段右对齐；
   - 以「N. 」起头的段是经文段，可能连排几节（「4. … 5. … 6. …」），按节号拆出 <span class="bg-vnum">；
   - 一章一页，序言一页；书末索引（INDEX）不收。
+版式照原书（用户 2026-11-23：「排版按照原文 pdf 整理，但是首行不要缩进」）：
+  - 经文段斜体连排，节号正体带句点（「4. One generation…」），续行悬挂缩进，不加底色框（.ec-verse）；
+  - 引诗整首居中、正体；四行一节的短行赞美诗偶数行缩进；出处斜体靠诗的右缘（.ec-poem / .ec-src）；
+  - 录入本里的全大写词（段首「THESE」、「Royal PREACHER」）原书是小型大写，转 .ec-sc；罗马数字不转；
+  - 章题用罗马数字（Chapter I.）；
+  - 段首不缩进（原书缩进），段间靠段距分隔。
+  原书的行内斜体（*words*、*the Preacher*）录入本没有保留，无从恢复。
 """
 import html
 import re
@@ -87,9 +94,7 @@ def paras(src):
             continue
         if len(segs) >= 2 and all(len(s) < 90 for s in segs):  # 诗行
             src_line = segs.pop() if POEM_SRC.search(segs[-1]) else None
-            out.append(('poem', segs))
-            if src_line:
-                out.append(('cite', [src_line]))
+            out.append(('poem', (segs, src_line)))
             continue
         out += [('p', s) for s in segs]
     return out
@@ -102,8 +107,26 @@ def verse_html(t):
     for k in range(1, len(parts), 2):
         n, body = parts[k], parts[k + 1].strip()
         first = first or n
-        out.append(f'<span class="bg-vnum" id="v{n}">{n}</span>{body}')
+        out.append(f'<span class="ec-vn" id="v{n}">{n}.</span> {body}')
     return first, ' '.join(out), int(parts[-2])
+
+
+ROMAN = ['', 'I', 'II', 'III', 'IV', 'V', 'VI', 'VII', 'VIII', 'IX', 'X', 'XI', 'XII']
+CAPS = re.compile(r"\b(?![IVXLC]+\b)([A-Z])([A-Z][A-Z’']*)\b(?![a-z’])")
+
+
+def sc(t):
+    """全大写词 → 小型大写（首字母保持大写，其余小写交给 font-variant）。"""
+    return CAPS.sub(lambda m: f'<span class="ec-sc">{m.group(1)}{m.group(2).lower()}</span>', t)
+
+
+def poem_html(lines, src_line):
+    esc = [sc(html.escape(FN.sub('', x), quote=False)) for x in lines]
+    alt = len(esc) % 4 == 0 and all(len(x) < 45 for x in lines)    # 四行一节的赞美诗：偶数行缩进
+    rows = [f'<span class="ec-in">{x}</span>' if alt and i % 2 else x for i, x in enumerate(esc)]
+    if src_line:
+        rows.append(f'<span class="ec-src">{html.escape(src_line, quote=False)}</span>')
+    return '<p class="ec-poem">' + '<br>'.join(rows) + '</p>'
 
 
 def main():
@@ -114,10 +137,10 @@ def main():
         assert src.count(a) == 1, a
         src = src.replace(a, b)
     for kind, t in paras(src):
-        if kind in ('sign', 'poem', 'cite'):
-            cls = {'sign': 'bg-center', 'poem': 'bg-poem', 'cite': 'bg-cite'}[kind]
-            lines = [html.escape(FN.sub('', x), quote=False) for x in t]
-            cur['out'].append(f'<p class="{cls}">' + '<br>'.join(lines) + '</p>'); continue
+        if kind == 'poem':
+            cur['out'].append(poem_html(*t)); continue
+        if kind == 'sign':
+            cur['out'].append('<p class="bg-center">' + '<br>'.join(html.escape(x, quote=False) for x in t) + '</p>'); continue
         if t == 'PREFACE':
             cur = dict(slug='preface', label='Preface', sub='', out=[]); pages.append(cur); continue
         if t == 'EXPOSITION OF ECCLESIASTES':
@@ -125,14 +148,14 @@ def main():
         m = re.fullmatch(r'CHAPTER (\d+)', t)
         if m:
             n = int(m.group(1))
-            cur = dict(slug=str(n), label=f'Chapter {n}', n=n, out=[], last=0); pages.append(cur); continue
+            cur = dict(slug=str(n), label=f'Chapter {ROMAN[n]}', n=n, out=[], last=0); pages.append(cur); continue
         t, k = FN.subn('', t)
         removed += k
-        t = html.escape(t, quote=False)
+        t = sc(html.escape(t, quote=False))
         if cur.get('n') and re.match(r'^\d{1,2}\. ', t):
             _, body, last = verse_html(t)
             cur['last'] = max(cur['last'], last)
-            cur['out'].append(f'<p class="bg-verse">{body}</p>')
+            cur['out'].append(f'<p class="ec-verse">{body}</p>')
         else:
             cur['out'].append(f'<p>{t}</p>')
     for p in pages:
