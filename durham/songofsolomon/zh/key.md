@@ -6,6 +6,8 @@ title: "雅歌之钥（总论）"
 date: 2026-11-23 18:09
 prev_section: preface
 prev_label: "书名页与序"
+next_section: conclusions
+next_label: "结论"
 en_url: "/durham/songofsolomon/key/"
 zh: true
 ---

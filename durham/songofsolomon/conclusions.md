@@ -3,6 +3,7 @@ layout: durham-chapter
 book_id: songofsolomon
 book_name: "Clavis Cantici"
 title: "Conclusions"
+zh_url: "/durham/songofsolomon/zh/conclusions/"
 date: 2026-11-23 16:22
 prev_section: key
 prev_label: "A Key of the Song"
