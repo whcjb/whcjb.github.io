@@ -53,6 +53,7 @@ def main():
     ap.add_argument('--date')
     ap.add_argument('--chap-label', default='Revelation', help='章页标题前缀：「<label> N」')
     ap.add_argument('--preface-label', default='To the Reader')
+    ap.add_argument('--after-grid', nargs='*', default=[], help='这些卷首页的入口排到章号格子下面（如 conclusions）')
     ap.add_argument('--preface-label-zh', help='书卷目录卷首入口的中文名（不给则 layout 用默认「导论」）')
     ap.add_argument('--no-zh', action='store_true', help='尚无中译：不写 zh_url，免得章页「中文版 →」死链')
     a = ap.parse_args()
@@ -103,7 +104,8 @@ def main():
         f'chapters: {len(chs)}\n'
         'has_preface: true\n'
         + (f'preface_en: "{a.preface_label}"\npreface_zh: "{a.preface_label_zh}"\n' if a.preface_label_zh else '')
-        + (''.join(['front_extra:\n'] + [f'  - {{key: {k}, en: "{en}", zh: "{zh}"}}\n' for k, en, zh, _ in extra]) if extra else '')
+        + (''.join(['front_extra:\n'] + [f'  - {{key: {k}, en: "{en}", zh: "{zh}"' + (', after: true' if k in a.after_grid else '') + '}\n'
+                                       for k, en, zh, _ in extra]) if extra else '')
         +
         '---\n', encoding='utf-8')
     print(f'  → {out_dir}/ 共 {len(keys)} 个页面 + index.html')
