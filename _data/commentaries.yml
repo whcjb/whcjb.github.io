@@ -37,7 +37,7 @@ authors:
     work_cn: "箴言书注释"
     work_en: "An Exposition of the Book of Proverbs"
     no_bio: false
-    books: 2
+    books: 3
   - id: hodge
     name: "查尔斯·贺智"
     short: "贺智"
@@ -499,6 +499,7 @@ books:
     testament: ot
     chapters: 12
     links:
+      - {author: bridges, path: "/bridges/ecclesiastes/", url_tpl: "/bridges/ecclesiastes/__CH__/", title_cn: "传道书释义", title_en: "An Exposition of the Book of Ecclesiastes", c0: "#5B3A29", c1: "#96613F"}
   - id: songofsolomon
     name: "雅歌"
     en: "Song of Solomon"

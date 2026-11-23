@@ -480,6 +480,8 @@ BOOK_TITLES = {
                                 'One Hundred and Ninety Sermons on the Hundred and Nineteenth Psalm'),
     ('bridges', 'psalms'):     ('诗篇 119 篇讲解',
                                 'An Exposition of Psalm CXIX'),
+    ('bridges', 'ecclesiastes'): ('传道书释义',
+                                'An Exposition of the Book of Ecclesiastes'),
     ('hildersham', 'psalms'):  ('诗篇 51 篇讲义 152 讲',
                                 'CLII Lectures upon Psalme LI'),
     ('reynolds', 'psalms'): ('诗篇 110 篇释义',
@@ -639,6 +641,10 @@ PRIMARY_LANG = {'calvin': 'zh', 'mhenry': 'zh', 'bridges': 'zh', 'haldane': 'en'
                 'foote': 'en', 'jones': 'en', 'bonar': 'en', 'knox': 'en', 'hildersham': 'en', 'reynolds': 'en', 'cowper': 'en', 'smith': 'en', 'gouge': 'en', 'pierson': 'en'}
 
 
+# 某卷主目录的语种与该作者的 PRIMARY_LANG 不同时在此注明（毕列志箴言是中译，传道书只有英文）
+BOOK_LANG = {('bridges', 'ecclesiastes'): 'en'}
+
+
 def _lang_variants(aid, d: Path, name: str):
     """一个书卷目录 → [(lang, url_tpl, (lo, hi) | None)]
 
@@ -654,7 +660,7 @@ def _lang_variants(aid, d: Path, name: str):
     dirn = AUTHORS[aid]['dir']
     if name.endswith('-en'):
         return [('en', f'/{dirn}/{name}/__CH__/', _chapter_range(d))]
-    out = [(PRIMARY_LANG.get(aid, 'zh'), f'/{dirn}/{name}/__CH__/',
+    out = [(BOOK_LANG.get((aid, name), PRIMARY_LANG.get(aid, 'zh')), f'/{dirn}/{name}/__CH__/',
             _chapter_range(d))]
     if out[0][0] != 'zh':
         # 书卷级（贺智）判据必须是「zh/ 里**真的有章节**」，不能只看目录在不在：
