@@ -224,6 +224,8 @@ def main():
              [f'date: {m.group(1) if m else stamp}']
         if 'n' in p:
             fm.append(f'chapter: {p["n"]}')
+        if (OUT / 'zh' / f'{p["slug"]}.md').exists():          # 已有中译：英文页放「中文版 →」
+            fm.append(f'zh_url: "{BASE}/zh/{p["slug"]}/"')
         if i:
             fm += [f'prev_url: "{BASE}/{pages[i-1]["slug"]}/"', f'prev_label: "{pages[i-1]["label"]}"']
         if i + 1 < len(pages):
@@ -240,7 +242,7 @@ book_name: "An Exposition of the Book of Ecclesiastes"
 author: "Charles Bridges (1794–1869)"
 edition: "New York: Robert Carter & Brothers, 1860"
 title: "{BOOK}"
----
+{'zh_url: "' + BASE + '/zh/"' + chr(10) if (OUT / 'zh' / 'index.html').exists() else ''}---
 <ul class="bg-toc">
 {toc}
 </ul>
