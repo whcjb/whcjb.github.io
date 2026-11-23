@@ -9,8 +9,13 @@
   - 两份录入都删掉了原书脚注，正文里只剩孤立的角标数字（「mastered it.2」「name4」），共 73 处，这里一并去掉。
     角标判据：紧贴在字母或收尾标点后的 1–2 位数，后面不接数字、冒号、连字号——经文出处「12:24」「Ps. 51」都不会命中。
   - 原书没有斜体保留下来（录入本里经文段也是平排），照录。
+  - 校勘证人：archive.org 上 1860 年版的两份独立扫描（expositionofbook00bridrich、expositionofbook00brid_0）
+    的 OCR。录入本与两份 OCR 逐词对齐，**两份 OCR 一致而录入本不同**的地方逐条看过，见 FIXES。
+    原书经文出处用罗马数字章号（vi. 23），录入本改成了阿拉伯数字（6:23），「bloud」改成了「blood」，这类照录入本不动。
 处理：
   - 段：<p> 与 <br> 都是分段（录入本用 <br> 分隔同一 <p> 里的几段）；
+    例外是诗行——同一 <p> 里各段都短于 90 字的是一首诗（或落款），各行以 <br> 相接成一段，
+    末行若是出处（「Olney Hymns, iii. 48.」「Task, Book iv.」）另起一段右对齐；
   - 以「N. 」起头的段是经文段，可能连排几节（「4. … 5. … 6. …」），按节号拆出 <span class="bg-vnum">；
   - 一章一页，序言一页；书末索引（INDEX）不收。
 """
@@ -24,12 +29,13 @@ SRC = ROOT / 'bridges_raw' / 'ecclesiastes' / 'src' / 'preceptaustin.html'
 OUT = ROOT / 'bridges' / 'ecclesiastes'
 BASE = '/bridges/ecclesiastes'
 BOOK = 'Bridges on Ecclesiastes'
-# 逗号后只认「字母/引号 + 逗号 + 数字」（「love,3」）；冒号不认——「22:30」的 30 会被误删
-# 录入本的硬伤，每条必须原样命中一次：
-#   - 漏掉的节号（Monergism 版同样漏），按 KJV 分节补回；
-#   - 拼写扫描（全书词对 /usr/share/dict/words，低频未登录词逐个看上下文）查出的录入错字。
-#     只收「不可能是原书写法」的：古拼法（phrenzy、recompence、secresies、merchandize）、
-#     拉丁词、estuations（aestuation 本有其词）、「a stern chubbishness」（拿不准原字）一概不动。
+# 每条必须原样命中一次。三类：
+#   - 录入本漏掉的节号（Monergism 版同样漏），按 KJV 分节补回；
+#   - 录入错（两份扫描 OCR 一致、与录入本不同，原书是对的）；
+#   - 原书排印错（两份 OCR 与录入本一致，原书就这么印：instrinsically、ecclesiastial、unchangable、
+#     buisness、secrect、widsom、mumutual、excercise、iminent），拼写扫描查出，径改。
+#   古拼法（phrenzy、recompence、secresies、merchandize）、拉丁词、estuations（aestuation 本有其词）、
+#   「a stern chubbishness」（两份 OCR 同）一概不动。
 FIXES = [('what is man the better? For who knoweth', 'what is man the better? 12. For who knoweth'),   # 6:12
          ('The thing that hath, been,', 'The thing that hath been,'),                               # 1:9
          ('Is there anthing whereof', 'Is there anything whereof'),                                 # 1:10
@@ -44,7 +50,24 @@ FIXES = [('what is man the better? For who knoweth', 'what is man the better? 12
          ('an unchangable, covenant-keeping', 'an unchangeable, covenant-keeping'),
          ('‘vcnom must there be', '‘venom must there be'),
          ('Natural widsom', 'Natural wisdom'),
-         ('(lb. 8:22)', '(Ib. 8:22)')]
+         ('(lb. 8:22)', '(Ib. 8:22)'),
+         # —— 以下为录入错，括号里是两份扫描 OCR 的读法 ——
+         ('never be broken dawn', 'never be broken down'),
+         ('lest if should make', 'lest it should make'),
+         ('but be that is slow to anger', 'but he that is slow to anger'),               # Prov. 15:18
+         ('ringing in his cars', 'ringing in his ears'),
+         ('Hasten thy coining', 'Hasten thy coming'),
+         ('Romove sorrow', 'Remove sorrow'),
+         ('little power for goof', 'little power for good'),
+         ('Wharever God can be found', 'Wherever God can be found'),
+         ('God will call thee judgment', 'God will call thee to judgment'),
+         ('pleasure vast which of money', 'pleasure vast sums of money'),
+         ('devil’s work; make religion', 'devil’s work; makes religion'),
+         ('touches our I foundation', 'touches our foundation'),                         # 录入本多出的孤立「I」
+         ('the greatest I good', 'the greatest good'),
+         ('Who can I forbear', 'Who can forbear')]
+POEM_SRC = re.compile(r'Hymns|Task, Book|Lyra Germanica')
+# 逗号后只认「字母/引号 + 逗号 + 数字」（「love,3」）；冒号不认——「22:30」的 30 会被误删
 FN = re.compile(r"(?:(?<=[A-Za-z.;!?’”'\"\)—])|(?<=[A-Za-z’”],))\d{1,2}(?![\d:–\-])(?=[\s,.;—)’”]|$)")
 
 
@@ -60,7 +83,13 @@ def paras(src):
         if not segs:
             continue
         if re.match(r'^Hinton Martell Rectory', segs[0]):       # 序言落款三行
-            out.append(('sign', '<br>'.join(segs)))
+            out.append(('sign', segs))
+            continue
+        if len(segs) >= 2 and all(len(s) < 90 for s in segs):  # 诗行
+            src_line = segs.pop() if POEM_SRC.search(segs[-1]) else None
+            out.append(('poem', segs))
+            if src_line:
+                out.append(('cite', [src_line]))
             continue
         out += [('p', s) for s in segs]
     return out
@@ -85,6 +114,10 @@ def main():
         assert src.count(a) == 1, a
         src = src.replace(a, b)
     for kind, t in paras(src):
+        if kind in ('sign', 'poem', 'cite'):
+            cls = {'sign': 'bg-center', 'poem': 'bg-poem', 'cite': 'bg-cite'}[kind]
+            lines = [html.escape(FN.sub('', x), quote=False) for x in t]
+            cur['out'].append(f'<p class="{cls}">' + '<br>'.join(lines) + '</p>'); continue
         if t == 'PREFACE':
             cur = dict(slug='preface', label='Preface', sub='', out=[]); pages.append(cur); continue
         if t == 'EXPOSITION OF ECCLESIASTES':
@@ -93,8 +126,6 @@ def main():
         if m:
             n = int(m.group(1))
             cur = dict(slug=str(n), label=f'Chapter {n}', n=n, out=[], last=0); pages.append(cur); continue
-        if kind == 'sign':
-            cur['out'].append(f'<p class="bg-center">{t}</p>'); continue
         t, k = FN.subn('', t)
         removed += k
         t = html.escape(t, quote=False)
