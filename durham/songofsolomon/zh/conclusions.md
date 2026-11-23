@@ -6,6 +6,8 @@ title: "结论"
 date: 2026-11-23 18:23
 prev_section: key
 prev_label: "雅歌之钥（总论）"
+next_section: 1
+next_label: "雅歌第 1 章"
 en_url: "/durham/songofsolomon/conclusions/"
 zh: true
 ---
