@@ -97,7 +97,7 @@ sources:
     - {key: mhenry, author: mhenry, lang: zh, label: "马太亨利注释", url_tpl: "/mhenry/daniel/__CH__/", accent: "#C9922A", ch_from: 1, ch_to: 12}
   ecclesiastes:
     - {key: mhenry, author: mhenry, lang: zh, label: "马太亨利注释", url_tpl: "/mhenry/ecclesiastes/__CH__/", accent: "#C9922A", ch_from: 1, ch_to: 12}
-    - {key: bridges, author: bridges, lang: zh, label: "毕列志注释", url_tpl: "/bridges/ecclesiastes/zh/__CH__/", accent: "#96613F", ch_from: 6, ch_to: 6}
+    - {key: bridges, author: bridges, lang: zh, label: "毕列志注释", url_tpl: "/bridges/ecclesiastes/zh/__CH__/", accent: "#96613F", ch_from: 1, ch_to: 6}
   ephesians:
     - {key: calvin, author: calvin, lang: zh, label: "加尔文注释", url_tpl: "/calvin/ephesians/__CH__/", accent: "#800000", ch_from: 1, ch_to: 6}
     - {key: calvin-en, author: calvin, lang: en, label: "加尔文注释（英文版）", label_en: "John Calvin", url_tpl: "/calvin/ephesians-en/__CH__/", accent: "#800000", ch_from: 1, ch_to: 6}
