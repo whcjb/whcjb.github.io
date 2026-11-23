@@ -506,7 +506,7 @@ books:
     testament: ot
     chapters: 8
     links:
-      - {author: durham, path: "/durham/songofsolomon/", url_tpl: "/durham/songofsolomon/__CH__/", title_cn: "雅歌之钥", title_en: "Clavis Cantici, or An Exposition of the Song of Solomon", c0: "#4a3566", c1: "#674c8e"}
+      - {author: durham, path: "/durham/songofsolomon/zh/", url_tpl: "/durham/songofsolomon/zh/__CH__/", title_cn: "雅歌之钥", title_en: "Clavis Cantici, or An Exposition of the Song of Solomon", c0: "#4a3566", c1: "#674c8e"}
   - id: isaiah
     name: "以赛亚书"
     en: "Isaiah"

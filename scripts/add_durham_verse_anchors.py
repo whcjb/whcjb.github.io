@@ -32,7 +32,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 
 ANCHOR_RE = re.compile(r'^<div class="commentary-anchor" id="[^"]+"></div>\n', re.M)
-LECT_RE = re.compile(r'^## (?:LECTURE(?:\s+[IVXL]+)?|Verses?\s+[\d–\-]+)\s*\((\d{1,2}):(\d{1,3})(?:[–\-](\d{1,3}))?\)\s*$')
+LECT_RE = re.compile(r'^## (?:LECTURE(?:\s+[IVXL]+)?|Verses?\s+[\d–\-]+|第\s*[\d–\-]+\s*节)\s*[（(](\d{1,2}):(\d{1,3})(?:[–\-](\d{1,3}))?[)）]\s*$')
 
 
 def process(path: Path, write: bool, BOOK: str):

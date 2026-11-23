@@ -3,6 +3,7 @@ layout: durham-chapter
 book_id: songofsolomon
 book_name: "Clavis Cantici"
 title: "Title Page & Prefaces"
+zh_url: "/durham/songofsolomon/zh/preface/"
 date: 2026-11-23 16:22
 next_section: key
 next_label: "A Key of the Song"
