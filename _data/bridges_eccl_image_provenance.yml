@@ -1,0 +1,88 @@
+# 毕列志《传道书释义》各章头图来源（Unsplash）。
+# 由 scripts/fetch_bridges_headers.py 下载；每章一张，与 nt-bg-*/calvin 图池不共用。
+# 来源维基共享资源（Commons 特色图片），署名与许可证见各条 author / license / page。
+images:
+  bridges-eccl-bg-01.jpg:
+    id: File:Araucárias ao fundo Parque Nacional da Serra da Bocaina - denoise.jpg
+    author: "Heris Luiz Cordeiro Rocha"
+    alt: "Sunrise with Paraná Araucarias ( Araucaria angustifolia ) as seen at the Serra da Bocaina"
+    license: "CC BY-SA 3.0"
+    page: "https://commons.wikimedia.org/wiki/File:Arauc%C3%A1rias_ao_fundo_Parque_Nacional_da_Serra_da_Bocaina_-_denoise.jpg"
+  bridges-eccl-bg-02.jpg:
+    id: File:Baumsilhouetten am Uetliberg mit Novembernebel und Sonnenstrahlen.jpg
+    author: "Kuhnmi"
+    alt: "The low November sun fights its way through the trees and fog with its last strength befor"
+    license: "CC BY-SA 4.0"
+    page: "https://commons.wikimedia.org/wiki/File:Baumsilhouetten_am_Uetliberg_mit_Novembernebel_und_Sonnenstrahlen.jpg"
+  bridges-eccl-bg-03.jpg:
+    id: File:Li Phi falls at dusk with colorful sky and clouds in Don Khon Laos.jpg
+    author: "Basile Morin"
+    alt: "Li Phi falls ( Khone Phapeng ) at dusk with colorful sky and clouds, in Don Khon , Si Phan"
+    license: "CC BY-SA 4.0"
+    page: "https://commons.wikimedia.org/wiki/File:Li_Phi_falls_at_dusk_with_colorful_sky_and_clouds_in_Don_Khon_Laos.jpg"
+  bridges-eccl-bg-04.jpg:
+    id: File:Leaning trees over the grassy hillock of Nodong-ri tombs clouds and blue sky in Gyeongju South Korea.jpg
+    author: "Basile Morin"
+    alt: "Leaning trees over the grassy hillock of Nodong-ri tombs, stringy clouds and blue sky, in"
+    license: "CC BY-SA 4.0"
+    page: "https://commons.wikimedia.org/wiki/File:Leaning_trees_over_the_grassy_hillock_of_Nodong-ri_tombs_clouds_and_blue_sky_in_Gyeongju_South_Korea.jpg"
+  bridges-eccl-bg-05.jpg:
+    id: File:Marshfield Pond October 2021 003.jpg
+    author: "King of Hearts"
+    alt: "Marshfield Pond, Groton State Forest , Vermont ."
+    license: "CC BY-SA 4.0"
+    page: "https://commons.wikimedia.org/wiki/File:Marshfield_Pond_October_2021_003.jpg"
+  bridges-eccl-bg-06.jpg:
+    id: File:Dülmen, Umland -- 2014 -- 7056.jpg
+    author: "Dietmar Rabich"
+    alt: "Morning mist in Welte, Dülmen , North Rhine-Westphalia , Germany"
+    license: "CC BY-SA 4.0"
+    page: "https://commons.wikimedia.org/wiki/File:D%C3%BClmen,_Umland_--_2014_--_7056.jpg"
+  bridges-eccl-bg-07.jpg:
+    id: File:2019 - Parc national des Pyrenees - Vallée de Gavarnie.jpg
+    author: "Moahim"
+    alt: "The Pyrénées National Park, view on the Gavarnie valley, Hautes-Pyrénées, France."
+    license: "CC BY-SA 4.0"
+    page: "https://commons.wikimedia.org/wiki/File:2019_-_Parc_national_des_Pyrenees_-_Vall%C3%A9e_de_Gavarnie.jpg"
+  bridges-eccl-bg-08.jpg:
+    id: File:Wandelen over de Planken Wambuis vanuit Mossel 069 A.jpg
+    author: "Agnes Monkelbaan"
+    alt: "Walking the Planken Wambuis from Mossel. Morning mist hangs over the Planken Wambuis."
+    license: "CC BY-SA 4.0"
+    page: "https://commons.wikimedia.org/wiki/File:Wandelen_over_de_Planken_Wambuis_vanuit_Mossel_069_A.jpg"
+  bridges-eccl-bg-09.jpg:
+    id: File:Dune de sable au parc Culturel De l'Ahaggar crop.jpg
+    author: "Original: Hamza-siaDerivative work including rotation, conve"
+    alt: "Sand Dune at the Cultural Park of Ahaggar, southern Algeria."
+    license: "CC BY-SA 3.0"
+    page: "https://commons.wikimedia.org/wiki/File:Dune_de_sable_au_parc_Culturel_De_l%27Ahaggar_crop.jpg"
+  bridges-eccl-bg-10.jpg:
+    id: File:Glen Coe Rainbow.jpg
+    author: "Colin"
+    alt: "Looking up Glen Coe with a rainbow. The Aonach Eagach ridge is in clouds."
+    license: "CC BY-SA 4.0"
+    page: "https://commons.wikimedia.org/wiki/File:Glen_Coe_Rainbow.jpg"
+  bridges-eccl-bg-11.jpg:
+    id: File:Dülmen, Börnste, Waldweg -- 2015 -- 4649.jpg
+    author: "Dietmar Rabich"
+    alt: "Autumn in the Börnste hamlet, Kirchspiel, Dülmen , North Rhine-Westphalia , Germany"
+    license: "CC BY-SA 4.0"
+    page: "https://commons.wikimedia.org/wiki/File:D%C3%BClmen,_B%C3%B6rnste,_Waldweg_--_2015_--_4649.jpg"
+  bridges-eccl-bg-12.jpg:
+    id: File:Landscape during Laugavegur hiking trail 2-CA reduced.jpg
+    author: "Chmee2/Valtameri"
+    alt: "Landscape as seen from Laugavegur hiking trail, Iceland. Grashagakvisl River in the front."
+    license: "CC BY 3.0"
+    page: "https://commons.wikimedia.org/wiki/File:Landscape_during_Laugavegur_hiking_trail_2-CA_reduced.jpg"
+  bridges-eccl-bg-13.jpg:
+    id: File:Guaratiba morning.jpg
+    author: "Jonathan Wilkins and edited by Poco a poco"
+    alt: "Early morning on whaling coast, Bahia"
+    license: "CC BY-SA 3.0"
+    page: "https://commons.wikimedia.org/wiki/File:Guaratiba_morning.jpg"
+  bridges-eccl-bg-14.jpg:
+    id: File:Sninský kameň (v zime) 001.jpg
+    author: "Milan Bališin"
+    alt: "Sninský kameň, Vihorlatské vrchy in the winter, frost on trees"
+    license: "CC BY-SA 4.0"
+    page: "https://commons.wikimedia.org/wiki/File:Sninsk%C3%BD_kame%C5%88_(v_zime)_001.jpg"

@@ -5,6 +5,8 @@ layout: default
 {% comment %}必须用 page['header-img']：Liquid 里 page.header-img 的连字符
    会被当成减号，取不到值而静默回落到 default。{% endcomment %}
 {% assign bg = page["header-img"] | default: "bridges-bg-01.jpg" %}
+{%- comment -%}book_url / hero 可选：传道书中文页目录在 /bridges/ecclesiastes/zh/、标题「传道书第 N 章」；箴言不写，照旧。{%- endcomment -%}
+{% capture book_url %}{% if page.book_url %}{{ page.book_url }}{% else %}/bridges/{{ page.book_id }}/{% endif %}{% endcapture %}
 
 <!-- 整屏背景图：固定不动，全部内容悬浮其上（与索引页同一风格） -->
 <div class="bridges-bg" style="background-image:url('{{ site.baseurl }}/img/{{ bg }}')"></div>
@@ -16,7 +18,7 @@ layout: default
       <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
 
         <div class="bridges-chrome bridges-chrome--float bridges-nav">
-          <a href="{{ site.baseurl }}/bridges/{{ page.book_id }}/">&larr; {{ page.book_name }}目录</a>
+          <a href="{{ site.baseurl }}{{ book_url }}">&larr; {{ page.book_name }}目录</a>
           <span class="bridges-nav-lr">
             {% if page.prev_url %}<a href="{{ site.baseurl }}{{ page.prev_url }}">&larr; {{ page.prev_label }}</a>{% endif %}
             {% if page.next_url %}<a href="{{ site.baseurl }}{{ page.next_url }}">{{ page.next_label }} &rarr;</a>{% endif %}
@@ -24,7 +26,7 @@ layout: default
         </div>
 
         <header class="bridges-hero">
-          <h1>{% if page.chapter %}箴言第 {{ page.chapter }} 章{% elsif page.section == 'preface' %}前言{% else %}总结{% endif %}</h1>
+          <h1>{% if page.hero %}{{ page.hero }}{% elsif page.chapter %}箴言第 {{ page.chapter }} 章{% elsif page.section == 'preface' %}前言{% else %}总结{% endif %}</h1>
         </header>
 
         <div class="bridges-glass-page">
@@ -41,7 +43,7 @@ layout: default
 
         <div class="bridges-chrome bridges-chrome--float bridges-nav" style="margin-top:22px">
           {% if page.prev_url %}<a href="{{ site.baseurl }}{{ page.prev_url }}">&larr; {{ page.prev_label }}</a>{% else %}<span></span>{% endif %}
-          <a href="{{ site.baseurl }}/bridges/{{ page.book_id }}/">目录</a>
+          <a href="{{ site.baseurl }}{{ book_url }}">目录</a>
           {% if page.next_url %}<a href="{{ site.baseurl }}{{ page.next_url }}">{{ page.next_label }} &rarr;</a>{% else %}<span></span>{% endif %}
         </div>
 
@@ -259,6 +261,13 @@ body:has(.bridges-stage) footer{display:none}
   float:left; font-size:2.9em; line-height:.92; font-weight:600;
   margin:2px 6px 0 0; color:#6B4E2E;
 }
+/* 传道书：引诗（整首居中，四行一节偶数行缩进，叠句更深，出处靠右）与序言落款 */
+.bridges-content p.ec-poem{display:table; margin:6px auto 18px; text-align:left;
+  font-family:"Kaiti SC",STKaiti,"LXGW WenKai","FangSong",serif; line-height:1.8}
+.bridges-content .ec-in{padding-left:1.6em}
+.bridges-content .ec-in2{padding-left:4.5em}
+.bridges-content .ec-src{display:block; text-align:right; font-size:.9em; color:#6B5A44; margin-top:2px}
+.bridges-content p.bg-center{text-align:right; color:#6B5A44}
 .bridges-content a{color:#8A6A3B}
 .bridges-content a:hover{color:#6B4E2E}
 .bridges-chrome{font-size:13px}

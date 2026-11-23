@@ -15,6 +15,9 @@ layout: default
     <div class="row">
       <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
 
+        {% if page.en_url %}
+        <div class="bridges-booklang"><a href="{{ site.baseurl }}{{ page.en_url }}">English edition &rarr;</a></div>
+        {% endif %}
         <header class="bridges-hero">
           <h1>{{ page.book_name }}</h1>
           <p class="bridges-hero-author">{{ page.author }}　著</p>
@@ -27,7 +30,7 @@ layout: default
             {% assign chs = site.pages | where: "book_id", page.book_id | where: "layout", "bridges-chapter" %}
             <div class="bridges-pills">
               {% for extra in chs %}{% if extra.section == 'preface' %}
-              <a href="{{ site.baseurl }}{{ extra.url }}" class="bridges-pill bridges-pill--wide">前言</a>
+              <a href="{{ site.baseurl }}{{ extra.url }}" class="bridges-pill bridges-pill--wide">{{ page.preface_label | default: "前言" }}</a>
               {% endif %}{% endfor %}
               {% for i in (1..page.chapters) %}
                 {% assign hit = chs | where: "chapter", i | first %}
@@ -54,6 +57,11 @@ layout: default
 </div>
 
 <style>
+/* 中文目录右上角的英文版入口（传道书；箴言无英文版，不写 en_url 就不显示） */
+.bridges-booklang{text-align:right; margin:-30px 0 16px; font-size:13px}
+.bridges-booklang a{color:rgba(255,255,255,.92) !important; text-shadow:0 1px 10px rgba(30,20,10,.6);
+  border:1px solid rgba(255,255,255,.45); border-radius:6px; padding:4px 10px; text-decoration:none !important}
+.bridges-booklang a:hover{background:rgba(255,255,255,.18)}
 /* 本站校订说明：章节按钮下方的小字块 */
 .bridges-revision{
   margin-top:26px; padding-top:18px;
