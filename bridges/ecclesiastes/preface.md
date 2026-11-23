@@ -4,6 +4,7 @@ book_id: ecclesiastes
 book_name: "Bridges on Ecclesiastes"
 title: "Preface"
 date: 2026-11-23 10:03
+zh_url: "/bridges/ecclesiastes/zh/preface/"
 next_url: "/bridges/ecclesiastes/1/"
 next_label: "Chapter I"
 ---
