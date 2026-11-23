@@ -42,7 +42,7 @@ BOOK = 'Bridges on Ecclesiastes'
 #     这里按 KJV 分节补回节号与锚点，但渲染成「[12.]」标明是编者所补（EDITORIAL_VERSES）；
 #   - 录入错（两份扫描 OCR 一致、与录入本不同，原书是对的）；
 #   - 原书排印错（两份 OCR 与录入本一致，原书就这么印：instrinsically、ecclesiastial、unchangable、
-#     buisness、secrect、widsom、mumutual、excercise、iminent），拼写扫描查出，径改。
+#     buisness、secrect、widsom、mumutual、excercise、iminent；fourth→forth 是逐页对照时看出的），径改。
 #   古拼法（phrenzy、recompence、secresies、merchandize）、拉丁词、estuations（aestuation 本有其词）、
 #   「a stern chubbishness」（两份 OCR 同）一概不动。
 FIXES = [('what is man the better? For who knoweth', 'what is man the better? 12. For who knoweth'),   # 6:12
@@ -86,7 +86,23 @@ FIXES = [('what is man the better? For who knoweth', 'what is man the better? 12
          ('thy choice for me not mine', 'thy choice for me; not mine'),
          ('opened “as a morning', 'opened as “a morning'),
          ('results are grief and sorrow.', 'results are grief and sorrow?'),
-         ('as good music, the flowers', 'as good music; the flowers')]
+         ('as good music, the flowers', 'as good music; the flowers'),
+         # —— 抽查第 11 章逐页对照扫描本后，按同类全书扫出的（2026-11-23）——
+         ('pours fourth a', 'pours forth a'),                                  # 原书排印错（真词误植，拼写扫描查不出）
+         ('self-will’ no indulgence', 'self-will, no indulgence'),            # 逗号错录成 ’（全书扫「’ + 空格 + 小写」对 OCR）
+         ('He adds,‘A man', 'He adds, ‘A man'),                               # 标点与引号间缺空格（全书扫）
+         ('hedge of thorns”or', 'hedge of thorns” or'),
+         ('in the end.’Learn', 'in the end.’ Learn'),
+         # 破折号与逗号：三方按词对齐，录入本多出 / 缺少而两份 OCR 一致的
+         ('discouragements.—Though', 'discouragements. Though'),
+         ('oblivion than remembrance, shows', 'oblivion than remembrance; shows'),
+         ('recollection of and gratitude for,', 'recollection of, and gratitude for,'),
+         ('Wherefore, I praised', 'Wherefore I praised'),                     # 4:2
+         ('“held, his peace”', '“held his peace”'),
+         ('What, mischief it', 'What mischief it'),
+         ('for constant, remembrance', 'for constant remembrance')]
+# 经文段里的边注异读（marg.、M. R.、Heb.）原书排正体，夹在斜体经文中；KJV 本身的括号（saith the Preacher）仍斜体
+MARGINAL = re.compile(r'\([^()]*(?:marg\.|M\. R\.|Heb\.)[^()]*\)')
 EDITORIAL_VERSES = {(6, 12)}
 POEM_SRC = re.compile(r'Hymns|Task, Book|Lyra Germanica')
 # 逗号后只认「字母/引号 + 逗号 + 数字」（「love,3」）；冒号不认——「22:30」的 30 会被误删
@@ -123,6 +139,7 @@ def verse_html(t, ch=0):
         n, body = parts[k], parts[k + 1].strip()
         first = first or n
         num = f'[{n}.]' if (ch, int(n)) in EDITORIAL_VERSES else f'{n}.'
+        body = MARGINAL.sub(lambda m: f'<span class="ec-rom">{m.group(0)}</span>', body)
         out.append(f'<span class="ec-vn" id="v{n}">{num}</span> {body}')
     return first, ' '.join(out), int(parts[-2])
 
