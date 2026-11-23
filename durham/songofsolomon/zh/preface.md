@@ -4,6 +4,8 @@ book_id: songofsolomon
 book_name: "达拉谟《雅歌之钥》"
 title: "书名页与序"
 date: 2026-11-23 17:51
+next_section: key
+next_label: "雅歌之钥（总论）"
 en_url: "/durham/songofsolomon/preface/"
 zh: true
 ---

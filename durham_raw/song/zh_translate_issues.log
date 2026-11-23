@@ -1,2 +1,6 @@
 [preface#9·first] 漏译的英文词 EEBO-TCP
   RAW: '<译文>\n⟦1⟧书名页与出版许可据 EEBO-TCP 录入本（1668 年爱丁堡初版）；未见初版原图，版式非照原书排。⟦2⟧\n</译文>'
+[key#7·first] 漏译的英文词 ant、end；残留标签 <|ant_end|>；疑似截断（原文 278 字符，译文汉字 1）
+  RAW: '拒Ft<|ant_end|>'
+[key#47·first] 疑似截断（原文 428 字符，译文汉字 1）
+  RAW: '纳'
