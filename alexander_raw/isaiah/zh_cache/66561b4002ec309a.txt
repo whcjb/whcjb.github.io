@@ -1,0 +1,12 @@
+<thinking>Count asterisks in source: *And the heart* (2), *mind* (2), *of the rash* (2), *understand to know* (2), *understand knowledge* (2), *and the tongue ... clear things* (2), *i. e.*? No — "(i. e. shall speak...)" not italic. Total 12. Good.
+
+The message says "上一版 12 → 24"; the previous apparently doubled. We need exactly 12. No HTML comments in source. Interesting: no comments present; fine.
+
+"ch. 28: 11" → 第 28 章 11 节? Format rule: 以赛亚书 28:11. Since it's within Isaiah, "28:11" — use "以赛亚书 28:11" maybe; "ch." → 第28章第11节. I'll use 28:11 with 见. Let's write "（28:11）".
+
+Translation:
+*并且鲁莽人*（轻率或妄为之人）*的心*（或作*意念*）*必明白知识*... order of italic segments must correspond. Source order: *And the heart* (or *mind*) *of the rash* (heedless or reckless) *shall understand to know* (or *understand knowledge*), *and the tongue of stammerers shall hasten to speak clear things* (i. e. ...).
+
+Chinese: *并且那心*（或作*意念*）*属鲁莽人的*（即轻率或妄为之人）*必明白去知道*（或作*明白知识*），*结巴人的舌头也必急速说出清楚的话*（即必说得流利明白）。 Hmm "the heart of the rash" split; keep literal: *并且……的心* awkward. Option: *并且心*（或作*意念*）*，属于鲁莽人的*... Better: *而且心*（或作*意念*）*——鲁莽人的*（轻率或妄为之人）——? Simpler: *并且那心*（或作*意念*）*属鲁莽者*（轻率或妄为之人）*的，必明白而知道*（或作*明白知识*）... Alexander parses the Hebrew order. I'll go: *并且心*（或作*意念*）*，鲁莽人*（轻率、不顾一切之人）*的，必明白而知道*（或作*明白知识*），*结巴人的舌头必急速说出清楚的话*（即必说得流利而明白）。 Hmm, "of the rash" italic includes "的". Fine.
+
+Rule 5: i. e. non-italic → 即.</thinking>*并且心*（或作*意念*）*，鲁莽人的*（即轻率或不顾一切之人），*必明白而知道*（或作*明白知识*），*结巴人的舌头必急速说出清楚的话*（即必说得流利而明白）。有些释经者以为，末了这个比喻是指那些讥诮宗教的人，因为别处说到他们咿咿哑哑，嘲弄先知的劝诫（28:11）。但更自然的理解似乎是：这里所提身体上的缺陷，乃是表明另一类属于心智与属灵的缺陷，即对属灵之事的忽略与无知。人的心思将开始转向宗教的真理，并在这真理上得以脱离无知与谬误。
