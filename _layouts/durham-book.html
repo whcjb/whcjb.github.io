@@ -27,8 +27,11 @@ layout: default
           没译到的章不给链接，免得点进 404。
         {%- endcomment -%}
         {%- assign zh_idx = site.pages | where_exp: "p", "p.path contains 'durham/' " -%}
+        {%- comment -%} 没有中文目录页（如雅歌之钥尚未翻译）就不给「中文版 →」，免得死链 {%- endcomment -%}
+        {%- assign zh_index_path = 'durham/' | append: page.book_id | append: '/zh/index.html' -%}
+        {%- assign all_paths = site.pages | map: "path" | join: "," -%}
         {% if page.zh %}<a class="durham-lang" href="{{ site.baseurl }}/durham/{{ page.book_id }}/">English &rarr;</a>
-        {% else %}<a class="durham-lang" href="{{ site.baseurl }}/durham/{{ page.book_id }}/zh/">中文版 &rarr;</a>{% endif %}
+        {% elsif all_paths contains zh_index_path %}<a class="durham-lang" href="{{ site.baseurl }}/durham/{{ page.book_id }}/zh/">中文版 &rarr;</a>{% endif %}
       </div>
 
       <h1 class="durham-title">{{ page.book_name }}</h1>

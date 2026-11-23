@@ -518,6 +518,8 @@ BOOK_TITLES = {
                                 'The Treasury of David'),
     ('durham', 'revelation'):  ('启示录注释',
                                 'A Commentary upon the Book of the Revelation'),
+    ('durham', 'songofsolomon'): ('雅歌之钥',
+                                  'Clavis Cantici, or An Exposition of the Song of Solomon'),
     ('vos', 'psalms'):         ('诗篇的末世论',
                                 'Eschatology of the Psalter'),
     ('alexander', 'psalms'):   ('诗篇注释',

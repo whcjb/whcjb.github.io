@@ -1,0 +1,300 @@
+# id	fill	source   (ctx=上下文自明 ia=1669 伦敦本 OCR 证人 img=看过 IA 原图)
+0	שיר השירים	ctx: 书名 Song of Songs 的希伯来文；未见图
+1	an	ctx
+2	un	ctx
+3	f	ctx
+4	κατὰ τὸ ῥητόν	img leaf15
+5	s	ctx: 同书 p6 作者写 'as where its said'
+6	e	ctx
+7	e	ctx
+8	e	ctx
+9	n	ctx
+10	t	ia
+11	vail	ia
+12	s	ctx
+13	e	ia
+14	r	ctx
+15	r	ctx
+16	e	ctx
+17	s	ctx
+18	h	ctx
+19		img leaf44: 段末无字，为杂点
+20	s	ctx
+21	r	ctx
+22	f	ctx
+23	w	ctx
+24	f	ctx
+25	n	ctx
+26	r	ctx
+27	s	ctx
+28	at	ctx: regulat
+29	u	ctx
+30	f	ctx
+31	h a	ctx
+32	s	ctx
+33	2	ctx: Joh 14:27
+34	r	ctx
+35	n	ctx
+36	αὐτὸς ἔφα	img leaf66
+37	r	ctx
+38	r	ctx
+39	f	ctx
+40	r	ctx
+41	s	ctx
+42	r	ctx
+43	c	ctx
+44	i	ctx
+45	s	ctx
+46	f	ctx
+47	a	ctx
+48	i	ctx
+49	l	ctx
+50	f	ia
+51	r	ctx
+52	f	ctx
+53	f	ctx
+54	r	ctx
+55	f	ctx
+56	s	ctx
+57	f	ctx
+58	u	ia
+59	2	ia: Exod 30:23
+60	r	ia
+61	o	ctx
+62	n	ctx
+63	e	ctx
+64	f	ctx
+65	n	ia
+66	r	ia
+67	f	ctx
+68	f	ia
+69	f	ia
+70	a	ctx
+71	e	ia
+72	c	ctx
+73	t	ctx
+74	m	ctx
+75	s	ctx
+76	s	ia
+77	a	ia
+78	i	ctx
+79	f	ctx
+80	 	img leaf149
+81	c	ia
+82	h	ia
+83	s	ctx
+84	r	ia
+85	s	img leaf158: lasinesse
+86	r	ia
+87	:	img leaf168
+88	ood	ia
+89	s	ia
+90	s	ia
+91	f	ia
+92	r	ia
+93	r	ia
+94	f	ia
+95	f	ia
+96	a	ia
+97	f	ctx
+98	f	ia
+99	u	ctx
+100	c	ia
+101	s	ia
+102	f	ia
+103	f	ia
+104	s	ia: sists
+105	e	ia
+106	s	ia
+107	a	ia
+108	f	ia
+109	im	ia
+110	1	ia
+111	c	ia
+112	n	ia
+113	a	ctx
+114	not	img leaf207
+115	e	ia
+116	f	ia
+117	the	ia
+118	f	ia
+119	pure	img leaf211
+120	Law	ia
+121	for	ia
+122	might	img leaf216
+123	f	ia
+124	f	ia
+125	a	ia
+126	neck	ia
+127	ea	ia
+128	c	ia
+129	a	ia
+130	o	ctx
+131	f	ctx
+132	f	ia
+133	f	ia
+134	s	ia
+135	is	ia
+136	er	ia
+137	i	ia
+138	t	ia
+139	d	ia
+140	h	ctx
+141	t	ctx
+142	h	ctx
+143	i	ia
+144	are a	ia
+145	t	ctx
+146	spoken	ia
+147	f	ia
+148		img leaf224: 'from his heart-purpose'，无此词
+149	he	ia
+150	n	ia
+151	ssin	ia
+152	h	ia
+153	f	ia
+154	f	ia
+155	f	ia
+156	f	ia
+157	as	ia
+158	ba	ia: Lebanon
+159	at	ctx
+160	f	ia
+161	s	ctx
+162	.	ia
+163	T	ia
+164	s	ia
+165	t	ia
+166	f	ia
+167	r	ia
+168	r	ia
+169	e	ia
+170	s	ia
+171	fied	ia
+172		img leaf255: 'satisfied, and fully feasted'，无此词
+173	rr	ia
+174	Christ's	ia
+175	to	ia
+176	f	ia
+177	of mens	ia
+178	save	ia
+179	which	ia
+180	s	ia
+181	,	ctx
+182	ss	ia
+183	f	ia
+184	e	ia
+185	a	ia
+186	w	ia
+187	s	ia
+188	t	ia
+189	r	ia
+190	an	ia
+191	!	img leaf304
+192	r	ia
+193	ff	img leaf316: waffe
+194	e	ctx
+195	s	ia
+196	f	ia
+197	l	ia
+198	s	ia
+199	f	ctx
+200	m	ia: aimed
+201	t	ctx
+202	 	ia
+203	t	ia
+204		ctx: 字前杂点
+205		ia
+206	v	ia
+207	 	ctx
+208	f	ia
+209	satisfaction	ia
+210	l	ia
+211	s	ia
+212	f	ia
+213	f	ia
+214	a	ia
+215	t	ia
+216	t	ctx
+217	t	ctx
+218	e	ia
+219	f	ia
+220	f	ia
+221	f	ia
+222	in	ia
+223	ar	ia
+224	ace	ia
+225	f	ia
+226	-	ctx
+227	sizes	ia
+228	s	ia
+229	ov	ia
+230	f	ia
+231	c	ia
+232	hu	ia
+233	v	ia
+234	n	ia
+235	d	ctx: Nadib
+236	2	ia: Exod 12:11
+237	-	ia
+238	h	ia
+239	23	ia: Lev 23:40
+240	f	ia
+241	a	ia
+242	at	ia
+243	i	ia
+244	r	ia
+245	.	ia
+246	al	ia
+247	c	ia
+248	him	ia
+249	2	img leaf428
+250	as	ia
+251	s	ia
+252	s	ia
+253	f	ia
+254	ffi	ia
+255	e	ia
+256	f	ia
+257	v	ia
+258	A	ia
+259	uncalled	ia
+260	f	ctx
+261	s	ctx
+262	f	ctx
+263	s	ia
+264	his	ia
+265	f	ctx
+266	f	ia
+267	r	ia
+268	s	ia
+269	h	ia
+270	s	ia
+271	f	ia
+272	t;	ia
+273	s	ia
+274	c	ia
+275	a	ia
+276	r	ia
+277	s	ia
+278	t	ia
+279	f	ctx
+280	e	ia
+281	useless	ia
+282		img leaf476: 1 Thes. 3. 8.
+283	na	ctx: commissionat
+284	m	ctx
+285	a	ctx
+286	due	ia
+287	c	ia
+288	s	ia
+289	6	ia
+290	b	ia
+291	2	ia
+292	2	ia
+293	s	ia
+294	r	ctx
+295	2	ia
+296	e	ia
+297	e	ia
+298	f	ia

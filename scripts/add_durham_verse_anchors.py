@@ -16,8 +16,12 @@
 
 幂等：先剥旧锚点再重铺，可反复跑。
 
+《雅歌之钥》（songofsolomon）没有讲次，按原书经节分段，提取阶段落成
+`## Verses 5–6 (1:5–6)`，括号里同样是 `章:节–节`，共用同一条判据。
+
 用法:
     python3 scripts/add_durham_verse_anchors.py
+    python3 scripts/add_durham_verse_anchors.py --book songofsolomon
     python3 scripts/add_durham_verse_anchors.py --check
 """
 import argparse
@@ -26,13 +30,12 @@ import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
-BOOK = 'revelation'
 
 ANCHOR_RE = re.compile(r'^<div class="commentary-anchor" id="[^"]+"></div>\n', re.M)
-LECT_RE = re.compile(r'^## LECTURE(?:\s+[IVXL]+)?\s*\((\d{1,2}):(\d{1,3})(?:[–\-](\d{1,3}))?\)\s*$')
+LECT_RE = re.compile(r'^## (?:LECTURE(?:\s+[IVXL]+)?|Verses?\s+[\d–\-]+)\s*\((\d{1,2}):(\d{1,3})(?:[–\-](\d{1,3}))?\)\s*$')
 
 
-def process(path: Path, write: bool):
+def process(path: Path, write: bool, BOOK: str):
     text = ANCHOR_RE.sub('', path.read_text(encoding='utf-8'))
     out, seen, n = [], {}, 0
     for line in text.split('\n'):
@@ -60,7 +63,9 @@ def process(path: Path, write: bool):
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument('--check', action='store_true')
+    ap.add_argument('--book', default='revelation')
     a = ap.parse_args()
+    BOOK = a.book
     d = ROOT / 'durham' / BOOK
     total = 0
     for sub, label in (('', 'en'), ('zh', 'zh')):
@@ -70,7 +75,7 @@ def main():
         files = sorted(dd.glob('[0-9]*.md'), key=lambda p: int(p.stem))
         if not files:
             continue
-        n = sum(process(f, not a.check) for f in files)
+        n = sum(process(f, not a.check, BOOK) for f in files)
         total += n
         print(f'{BOOK}/{label:2s}  {len(files):2d} 章  {n:4d} 锚点')
     print(f'合计 {total} 锚点' + ('（--check，未写入）' if a.check else ''))

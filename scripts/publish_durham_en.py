@@ -18,6 +18,9 @@
 
 用法:
     python3 scripts/publish_durham_en.py --name "Durham on Revelation"
+    python3 scripts/publish_durham_en.py --book songofsolomon \
+        --src durham_raw/song/durham_song.md \
+        --name "Clavis Cantici" --chap-label "Song of Solomon" --preface-label "Introduction"
 """
 import argparse
 import re
@@ -48,6 +51,9 @@ def main():
     ap.add_argument('--src')
     ap.add_argument('--out-dir')
     ap.add_argument('--date')
+    ap.add_argument('--chap-label', default='Revelation', help='章页标题前缀：「<label> N」')
+    ap.add_argument('--preface-label', default='To the Reader')
+    ap.add_argument('--no-zh', action='store_true', help='尚无中译：不写 zh_url，免得章页「中文版 →」死链')
     a = ap.parse_args()
 
     src = Path(a.src) if a.src else ROOT / 'durham_raw' / a.book / f'durham_{a.book}.md'
@@ -56,20 +62,22 @@ def main():
 
     preface, chapters = split_chapters(src.read_text(encoding='utf-8'))
     chs = sorted(chapters)
-    n_lect = sum(len(re.findall(r'^## LECTURE', chapters[c], re.M)) for c in chs)
-    print(f'{a.book}: preface + {len(chs)} 章 / {n_lect} 讲')
+    n_lect = sum(len(re.findall(r'^## (?:LECTURE|Verses? )', chapters[c], re.M)) for c in chs)
+    print(f'{a.book}: preface + {len(chs)} 章 / {n_lect} 段')
     if chs != list(range(1, len(chs) + 1)):
         print(f'  ⚠ 章号不连续: {chs}', file=sys.stderr)
 
     keys = ['preface'] + [str(c) for c in chs]
-    labels = {'preface': "To the Reader", **{str(c): f'Revelation {c}' for c in chs}}
+    labels = {'preface': a.preface_label, **{str(c): f'{a.chap_label} {c}' for c in chs}}
     bodies = {'preface': preface, **{str(c): chapters[c] for c in chs}}
 
     out_dir.mkdir(parents=True, exist_ok=True)
     for idx, key in enumerate(keys):
         fm = ['---', 'layout: durham-chapter', f'book_id: {a.book}',
               f'book_name: "{a.name}"', f'title: "{labels[key]}"',
-              f'zh_url: "/durham/{a.book}/zh/{key}/"', f'date: {stamp}']
+              f'date: {stamp}']
+        if not a.no_zh:
+            fm.insert(-1, f'zh_url: "/durham/{a.book}/zh/{key}/"')
         if idx > 0:
             p = keys[idx - 1]
             fm += [f'prev_section: {p}', f'prev_label: "{labels[p]}"']
