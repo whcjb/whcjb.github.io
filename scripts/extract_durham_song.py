@@ -18,7 +18,9 @@ TCP 录入员看不清的地方留了 `<gap>`，共 299 处（240 处单字母�
 输出
 ----
 `durham_raw/song/durham_song.md`，结构：
-    # TO THE CHRISTIAN READER     （序，他人所作）
+    <div durham-titlepage>        （书名页 + 枢密院许可，TCP front）
+    # TO THE CHRISTIAN READER · JOHN OWEN   （1669 伦敦版欧文序，见 owen_preface()）
+    # TO THE CHRISTIAN READER     （初版原有的序，他人所作）
     # CLAVIS CANTICI              （作者总论 + 结论）
     # CHAP. N                     （1–8 章）
     ### BRIDE.                    （原书说话人标记，有才出）
@@ -164,13 +166,74 @@ def render_div(div, out, ch=None):
         render_block(div, out, ch)
 
 
+def title_page_html(body) -> str:
+    """书名页 + 枢密院出版许可（TCP front）。
+
+    初版（1668 爱丁堡）的原图拿不到（EEBO 影像要授权），版式只能照录入本的
+    分段居中排，**不是照原图排**，页上注明。整块不留空行，免得 kramdown 拆块。
+    """
+    tp = next(d for d in body.iter(f'{NS}div') if d.get('type') == 'title_page')
+    lic = next(d for d in body.iter(f'{NS}div') if d.get('type') == 'license')
+    ps = [clean(inline(p)) for p in tp.findall(f'{NS}p')]
+    md_em = lambda s: re.sub(r'\*([^*]+)\*', r'<em>\1</em>', s)
+    epis = []
+    for b, q in zip(tp.findall(f'{NS}bibl'), tp.findall(f'{NS}q')):
+        epis.append(f'<p class="dtp-epi"><span>{clean(inline(b))}</span> {clean(inline(q))}</p>')
+    lic_date = clean(inline(lic.find(f'{NS}head')))
+    lic_p = md_em(clean(inline(lic.find(f'{NS}p'))))
+    lic_sig = clean(inline(lic.find(f'.//{NS}signed')))
+    title = re.sub(r'^Clavis Cantici:\s*OR, AN\s*', '', ps[0])
+    return '\n'.join([
+        '<div class="durham-titlepage" style="text-align:center;border:1px solid #d7cfe2;padding:28px 18px;margin:0 0 30px;background:#fff;">',
+        '<p style="font-size:30px;letter-spacing:.06em;margin:0;">Clavis Cantici:</p>',
+        f'<p style="font-size:15px;letter-spacing:.12em;margin:6px 0 0;">OR, AN<br>{title.replace("OF THE ", "OF THE<br>")}</p>',
+        '<hr style="width:40%;margin:16px auto;border-color:#d7cfe2;">',
+        f'<p style="margin:0;">{md_em(ps[1])}</p>',
+        '<hr style="width:40%;margin:16px auto;border-color:#d7cfe2;">',
+        *[e.replace('class="dtp-epi"', 'style="font-style:italic;font-size:13.5px;margin:6px 8%;"') for e in epis],
+        '<hr style="width:40%;margin:16px auto;border-color:#d7cfe2;">',
+        f'<p style="font-size:13.5px;margin:0;">{md_em(ps[2])}</p>',
+        '<div style="font-size:12.5px;color:#666;border-top:1px dashed #d7cfe2;margin:22px auto 0;padding-top:12px;max-width:440px;">',
+        f'<p style="margin:0 0 4px;">{lic_date}</p><p style="margin:0;">{lic_p}</p><p style="margin:4px 0 0;text-align:right;">{lic_sig}</p>',
+        '</div>',
+        '<p style="font-size:11.5px;color:#999;margin:18px 0 0;">书名页与出版许可据 EEBO-TCP 录入本（1668 年爱丁堡初版）；未见初版原图，版式非照原书排。</p>',
+        '</div>',
+    ])
+
+
+def owen_preface():
+    """欧文序：1669 年伦敦版新加，初版（TCP 底本）没有。
+
+    底稿 owen_preface_base.txt 是 puritansermons.com 的现代拼写录入本，
+    措辞逐页对过 IA 1669 伦敦本原图（leaf 2–5），改正见 owen_preface_fixes.tsv。
+    """
+    text = (RAW / 'owen_preface_base.txt').read_text(encoding='utf-8')
+    for line in (RAW / 'owen_preface_fixes.tsv').read_text(encoding='utf-8').splitlines():
+        if line.startswith('#') or not line.strip():
+            continue
+        old, new, _ = line.split('\t', 2)
+        old, new = old.replace('\\n', '\n'), new.replace('\\n', '\n')
+        if text.count(old) != 1:
+            raise SystemExit(f'欧文序改正条目「{old}」在底稿中命中 {text.count(old)} 次（应为 1）')
+        text = text.replace(old, new)
+    paras = [p.strip() for p in text.split('\n\n') if p.strip()]
+    *body_ps, close, sig = paras
+    return ['# TO THE CHRISTIAN READER · JOHN OWEN',
+            '*Prefixed by John Owen to the London edition of 1669; not in the Edinburgh first edition of 1668. '
+            'Text from a modern-spelling transcription, collated for wording against the 1669 printing.*',
+            *body_ps,
+            f'<p style="text-align:right">{close}<br>{sig}</p>']
+
+
 def main():
     xml = prepare((RAW / 'A37032.xml').read_text(encoding='utf-8'))
     root = ET.fromstring(xml)
     body = root.find(f'.//{NS}text')
     front = {d.get('type'): d for d in body.iter(f'{NS}div') if d.get('type') in ('to_the_reader', 'text')}
 
-    out = ['# TO THE CHRISTIAN READER']
+    out = [title_page_html(body)]
+    out += owen_preface()
+    out.append('# TO THE CHRISTIAN READER')
     render_block(front['to_the_reader'], out)
 
     # 作者总论：`text` div 里章之前的部分（含 conclusions）

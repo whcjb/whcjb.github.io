@@ -1,0 +1,6 @@
+# 欧文序改正表。底稿 owen_preface_base.txt = puritansermons.com 现代拼写录入本；
+# 措辞逐页对 IA 1669 伦敦本原图（leaf 2–5）核过。透印严重，拼写无法逐字恢复，沿用底稿现代拼写。
+# 列：old<TAB>new<TAB>依据；old/new 里 \n 表示换行；每条 old 须在底稿中唯一
+proeludium	præludium	leaf3 原图 Præludium
+transactors between God	transactions between God	leaf4 原图 Transactions，底稿误
+\n\nMay 20, 1669.		leaf5 原图署名下无日期（底稿据他本添入），删
