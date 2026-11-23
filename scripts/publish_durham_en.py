@@ -53,6 +53,7 @@ def main():
     ap.add_argument('--date')
     ap.add_argument('--chap-label', default='Revelation', help='章页标题前缀：「<label> N」')
     ap.add_argument('--preface-label', default='To the Reader')
+    ap.add_argument('--preface-label-zh', help='书卷目录卷首入口的中文名（不给则 layout 用默认「导论」）')
     ap.add_argument('--no-zh', action='store_true', help='尚无中译：不写 zh_url，免得章页「中文版 →」死链')
     a = ap.parse_args()
 
@@ -62,14 +63,20 @@ def main():
 
     preface, chapters = split_chapters(src.read_text(encoding='utf-8'))
     chs = sorted(chapters)
+    # 卷首可再拆页：`<!-- SECTION key | English | 中文 -->` 哨兵起一页（雅歌之钥用）
+    segs = re.split(r'^<!-- SECTION (\w+) \| (.+?) \| (.+?) -->$', preface, flags=re.M)
+    preface = segs[0]
+    extra = [(k, en, zh, body) for k, en, zh, body in zip(segs[1::4], segs[2::4], segs[3::4], segs[4::4])]
     n_lect = sum(len(re.findall(r'^## (?:LECTURE|Verses? )', chapters[c], re.M)) for c in chs)
     print(f'{a.book}: preface + {len(chs)} 章 / {n_lect} 段')
     if chs != list(range(1, len(chs) + 1)):
         print(f'  ⚠ 章号不连续: {chs}', file=sys.stderr)
 
-    keys = ['preface'] + [str(c) for c in chs]
-    labels = {'preface': a.preface_label, **{str(c): f'{a.chap_label} {c}' for c in chs}}
-    bodies = {'preface': preface, **{str(c): chapters[c] for c in chs}}
+    keys = ['preface'] + [k for k, *_ in extra] + [str(c) for c in chs]
+    labels = {'preface': a.preface_label, **{k: en for k, en, _, _ in extra},
+              **{str(c): f'{a.chap_label} {c}' for c in chs}}
+    bodies = {'preface': preface, **{k: b for k, _, _, b in extra},
+              **{str(c): chapters[c] for c in chs}}
 
     out_dir.mkdir(parents=True, exist_ok=True)
     for idx, key in enumerate(keys):
@@ -95,6 +102,9 @@ def main():
         f'book_name: "{a.name}"\n'
         f'chapters: {len(chs)}\n'
         'has_preface: true\n'
+        + (f'preface_en: "{a.preface_label}"\npreface_zh: "{a.preface_label_zh}"\n' if a.preface_label_zh else '')
+        + (''.join(['front_extra:\n'] + [f'  - {{key: {k}, en: "{en}", zh: "{zh}"}}\n' for k, en, zh, _ in extra]) if extra else '')
+        +
         '---\n', encoding='utf-8')
     print(f'  → {out_dir}/ 共 {len(keys)} 个页面 + index.html')
 

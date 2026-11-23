@@ -158,6 +158,7 @@ def render_div(div, out, ch=None):
         out.append(f'## {verse_label(div.get("n"))} ({ch}:{div.get("n").replace("-", "–")})')
         render_block(div, out, ch)
     elif typ == 'conclusions':
+        out.append('<!-- SECTION conclusions | Conclusions | 结论 -->')
         out.append(f'## {htxt}')
         render_block(div, out, ch)
     else:
@@ -237,6 +238,8 @@ def main():
     render_block(front['to_the_reader'], out)
 
     # 作者总论：`text` div 里章之前的部分（含 conclusions）
+    # 卷首太长（约 1.9 万词），按 SECTION 哨兵拆页，publish_durham_en.py 认它
+    out.append('<!-- SECTION key | A Key of the Song | 雅歌之钥（总论） -->')
     out.append('# CLAVIS CANTICI: A KEY OF THE SONG')
     out.append('*Useful for opening up thereof.*')
     text_div = front['text']

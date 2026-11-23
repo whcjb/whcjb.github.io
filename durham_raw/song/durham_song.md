@@ -41,6 +41,8 @@ This Posthume work then, of the precious Author Mr. *Durham,* is commendable to 
 
 I shall not trouble thee any further, save that I cordially wish the Lord may be pleased so to blesse thy perusal of this present Treatise, as it may tend not only to the present, but also to the everlasting welbeing of thy soul. And so I bid thee farewell.
 
+<!-- SECTION key | A Key of the Song | 雅歌之钥（总论） -->
+
 # CLAVIS CANTICI: A KEY OF THE SONG
 
 *Useful for opening up thereof.*
@@ -190,6 +192,8 @@ First, The scope is not so much to speak to all collectively, as Distributively 
 5. The putting of these exercises in a Song, as it were to be learned and sung by particular Believers (as a little compend, both of what concerns their Faith and Manners) was certainly for helping their Memories, and furthering their Consolation; which would be much impaired, if in singing of it, particular Believers might not suck their own consolation in particular from Christs <!-- PAGE 20 --> words unto them: And what can hinder, but a Believer may say, *I am his, and he is mine,* and that these and other places applicable to them, may not be so applyed, seing their comfort and edification is the scope of this Song?
 
 5. The last Branch of the Proposition is, That this Song holdeth forth the same love, and care in Christ to his Church, and the same exercises and duties of Believers, under figurative terms, which are plainly, and properly holden forth in other Scriptures, which are not figurative, such as are in the Gospel, in the *Psalms,* &c. There are no new, strange, or uncouth cases here; but Believers ordinary cases, there is no uncouth way of Christs here, but what he useth to his Church: It's often the folly and vanity of men's minds, that when expressions of Scripture look somewhat strange like, they suppose still some uncouth, and strange thing to be there, and therefore loaths that which is plain. It's true, the cases mentioned here, are most spiritual, having Love often drawn in it's most bright & lively collours, yet, for substance, the exercises are the same, which in other plain Scriptures are otherwayes expressed; for, it must expresse the same cases, or, we must say, it expresseth something different from them, not incident ordinarily to Believers, and not mentioned any where in Scripture, which to affirm, were both dangerous and absurd: Beside, Christ being still the same in his way with Believers, and they having still the same spirit, and being still under the same covenant, *&c.* we can conceive no other thing here, but what he hath expressed concerning himself and them, other-where in Scripture. And certainly, the scope of this Song, is rather in a sweet way, to compact together the ordinary cases of Believers, and their consolations, for their edification, than to pitch on strange things, or make new cases, which would not be so profitable unto them, and would wrong, and enervat the great intent of this Song.
+
+<!-- SECTION conclusions | Conclusions | 结论 -->
 
 ## We proceed now, and shall draw some Conclusions from these Propositions.
 

@@ -59,10 +59,25 @@ layout: default
       {%- if zh_pages contains kp %}{% assign pre_zh = true %}{% endif -%}
       {% if page.zh != true or pre_zh %}
       <a class="durham-tile durham-tile-wide" href="{{ site.baseurl }}/durham/{{ page.book_id }}/{{ zh_seg }}preface/">
-        <span>{% if page.zh %}导论{% else %}Introduction{% endif %}</span>{% if page.zh %}Introduction{% else %}导论{% endif %}
+        {%- assign pre_en = page.preface_en | default: 'Introduction' -%}
+        {%- assign pre_zh = page.preface_zh | default: '导论' -%}
+        <span>{% if page.zh %}{{ pre_zh }}{% else %}{{ pre_en }}{% endif %}</span>{% if page.zh %}{{ pre_en }}{% else %}{{ pre_zh }}{% endif %}
       </a>
       {% endif %}
       {% endif %}
+
+      {%- comment -%}
+        卷首拆成多页时（雅歌之钥：序 / 总论 / 结论）的其余入口，由
+        publish_durham_en.py 按正文里的 SECTION 哨兵写进 front_extra。
+      {%- endcomment -%}
+      {% for fx in page.front_extra %}
+      {%- assign kx = 'durham/' | append: page.book_id | append: '/zh/' | append: fx.key | append: '.md' -%}
+      {% if page.zh != true or zh_pages contains kx %}
+      <a class="durham-tile durham-tile-wide" href="{{ site.baseurl }}/durham/{{ page.book_id }}/{{ zh_seg }}{{ fx.key }}/">
+        <span>{% if page.zh %}{{ fx.zh }}{% else %}{{ fx.en }}{% endif %}</span>{% if page.zh %}{{ fx.en }}{% else %}{{ fx.zh }}{% endif %}
+      </a>
+      {% endif %}
+      {% endfor %}
 
       <div class="durham-grid">
         {% for n in (1..page.chapters) %}
