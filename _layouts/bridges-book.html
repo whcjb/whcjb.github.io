@@ -25,16 +25,17 @@ layout: default
 
         <div class="bridges-glass">
           <div class="bridges-idx">
+            {% if page.epigraph %}<div class="bridges-epigraph">{{ page.epigraph }}</div>{% endif %}
             {{ content }}
 
             {% assign chs = site.pages | where: "book_id", page.book_id | where: "layout", "bridges-chapter" %}
-            <div class="bridges-pills">
+            <div class="bridges-pills{% if page.pill_cols %} bridges-pills--grid{% endif %}"{% if page.pill_cols %} style="--cols:{{ page.pill_cols }}"{% endif %}>
               {% for extra in chs %}{% if extra.section == 'preface' %}
-              <a href="{{ site.baseurl }}{{ extra.url }}" class="bridges-pill bridges-pill--wide">{{ page.preface_label | default: "前言" }}</a>
+              <a href="{{ site.baseurl }}{{ extra.url }}" class="bridges-pill bridges-pill--wide">{% if page.pill_cols %}<span class="bp-k">Preface</span>{% endif %}{{ page.preface_label | default: "前言" }}</a>
               {% endif %}{% endfor %}
               {% for i in (1..page.chapters) %}
                 {% assign hit = chs | where: "chapter", i | first %}
-                {% if hit %}<a href="{{ site.baseurl }}{{ hit.url }}" class="bridges-pill">{{ i }}</a>{% endif %}
+                {% if hit %}<a href="{{ site.baseurl }}{{ hit.url }}" class="bridges-pill">{% if page.pill_cols %}<span class="bp-k">Chapter</span>{% endif %}{{ i }}</a>{% endif %}
               {% endfor %}
               {% for extra in chs %}{% if extra.section == 'summary' %}
               <a href="{{ site.baseurl }}{{ extra.url }}" class="bridges-pill bridges-pill--wide">总结</a>
@@ -57,6 +58,41 @@ layout: default
 </div>
 
 <style>
+/* 可选：题词（传道书 12:13）与整齐的章节网格（pill_cols 列，序言独占一行）。箴言不写这两个字段，照旧。 */
+.bridges-epigraph{
+  text-align:center; margin:2px 0 16px; padding-bottom:14px;
+  border-bottom:1px solid rgba(107,78,46,.18);
+  font-family:"Kaiti SC",STKaiti,"LXGW WenKai","FangSong",serif;
+  font-size:18px; line-height:1.7; color:#5d4326; letter-spacing:.06em;
+}
+.bridges-epigraph cite{display:block; margin-top:4px; font-style:normal; font-size:13px; letter-spacing:.1em; color:#8A6A3B}
+.bridges-pills.bridges-pills--grid{display:grid; grid-template-columns:repeat(var(--cols),1fr); gap:10px; margin-top:18px}
+/* 卡片照贺智罗马书目录（hodge-tile）：小号字距拉开的 CHAPTER 标签 + 大号衬线数字，细边、小圆角；配色换毕列志棕金 */
+.bridges-pills.bridges-pills--grid .bridges-pill{
+  display:flex; flex-direction:column; align-items:center; justify-content:center;
+  min-width:0; height:66px; padding:0; line-height:1;
+  border:1px solid rgba(107,78,46,.26); border-radius:5px;
+  background:rgba(255,255,255,.6); color:#5d4326 !important;
+  font-family:Georgia,"Times New Roman",serif; font-size:21px;
+  transition:background .15s ease, border-color .15s ease, transform .15s ease;
+}
+.bridges-pills.bridges-pills--grid .bp-k{
+  font-size:9.5px; letter-spacing:.14em; text-transform:uppercase;
+  color:#8A6A3B; opacity:.8; margin-bottom:6px;
+}
+.bridges-pills.bridges-pills--grid .bridges-pill:hover{
+  background:#6B4E2E; border-color:#6B4E2E; color:#FBF8F1 !important; transform:translateY(-1px);
+}
+.bridges-pills.bridges-pills--grid .bridges-pill:hover .bp-k{color:#EBD9AE}
+.bridges-pills.bridges-pills--grid .bridges-pill--wide{
+  grid-column:1/-1; height:58px; border-style:solid; background:rgba(245,240,228,.72);
+  font-family:"Source Han Serif SC","Noto Serif CJK SC","Songti SC",STSong,serif;
+  font-size:16px; letter-spacing:.3em;
+}
+@media(max-width:600px){
+  .bridges-pills.bridges-pills--grid{grid-template-columns:repeat(4,1fr); gap:8px}
+  .bridges-pills.bridges-pills--grid .bridges-pill{height:58px; font-size:18px}
+}
 /* 中文目录右上角的英文版入口（传道书；箴言无英文版，不写 en_url 就不显示） */
 .bridges-booklang{text-align:right; margin:-30px 0 16px; font-size:13px}
 .bridges-booklang a{color:rgba(255,255,255,.92) !important; text-shadow:0 1px 10px rgba(30,20,10,.6);

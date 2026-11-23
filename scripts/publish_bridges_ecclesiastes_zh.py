@@ -128,18 +128,15 @@ preface_label: 序言
 header-img: bridges-eccl-bg-01.jpg
 title: "{BOOK_ZH}"
 en_url: "{BASE}/"
+epigraph: '敬畏神，谨守他的诫命，这是人所当尽的本分。<cite>—— 传道书 12:13</cite>'
+pill_cols: 6
 source_note: |
-  英文原著 <em>An Exposition of the Book of Ecclesiastes</em>, by Charles Bridges,
-  Robert Carter &amp; Brothers, New York, 1860。<br>
-  本站据 Precept Austin 刊布的公有领域录入本译出；英文底本曾以 archive.org 所藏两份 1860 年扫描本校过。
-  录入本未收作者脚注，中译亦缺。传道书经文照录和合本；解经中引用的经文，能对上和合本的照和合本措辞。<br>
-  各页背景图取自维基共享资源（Wikimedia Commons）的特色图片，作者与授权（CC BY-SA 等）逐张记录在本站来源表中。
+  英文原著 <em>An Exposition of the Book of Ecclesiastes</em>（New York: Robert Carter &amp; Brothers, 1860）。<br>
+  据 Precept Austin 公有领域录入本译出，并以 archive.org 所藏 1860 年扫描本校勘；录入本未收原书脚注。经文照录和合本。<br>
+  背景图：维基共享资源（Wikimedia Commons）特色图片，CC BY-SA 等授权。
 ---
 
-<p>本书逐段讲解传道书，共 12 章，每单元先列经文，再释经义，转到属灵应用与劝勉——
-「日光之下」的一切虚空，唯有敬畏神、谨守他的诫命，才是人当尽的本分。</p>
-
-<p>作者的序言落款「1859 年 12 月 10 日，多塞特郡欣顿马特尔牧师住宅」。本站所据为 1860 年纽约 Robert Carter &amp; Brothers 版。</p>
+<p>毕列志逐段讲解传道书：每单元先列经文，再释经义，然后转到属灵的应用与劝勉。全书序言一篇、正文十二章。</p>
 ''', encoding='utf-8')
     for cmd in (['scripts/publish_bridges_ecclesiastes_en.py'], ['scripts/build_commentaries_index.py']):
         r = subprocess.run([sys.executable, *cmd], cwd=ROOT, capture_output=True, text=True)
