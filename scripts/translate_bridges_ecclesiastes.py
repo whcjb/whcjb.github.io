@@ -113,6 +113,7 @@ def check_disk():
         raise DiskLow(f'磁盘剩余 {free / 2**20:.0f} MB < {MIN_FREE / 2**20:.0f} MB')
 
 
+QUOTES = str.maketrans({'「': '“', '」': '”', '『': '‘', '』': '’'})
 RE_OPEN = re.compile(r'<p( class="(?:ec-verse|ec-poem|bg-center)")?>')
 RE_SC = re.compile(r'<span class="ec-sc">(.*?)</span>')
 RE_VN = re.compile(r'<span class="ec-vn" id="v(\d+)">([^<]*)</span>')
@@ -255,6 +256,8 @@ def run_section(slug, resume, dry, publish, limit=0, deadline=0):
             ctx = (('【前】' + prev + '\n') if prev else '') + (('【后】' + nxt) if nxt else '')
         # 模型偶尔在一段里自行分段（空行）；正文是 <p> 内的 HTML，空行会让 kramdown 截断 <p>，拼页面时去掉段内换行
         done[i] = re.sub(r'\s*\n\s*', '', T.unmask(translate_one(masked, resume, f'{slug}#{c}', ctx), tags))
+        # 引号体例全书一律照原书分工：经文用 “”，人言引语用 ‘’。各段分送模型，约一成段落漂成「」『』，拼页面时统一
+        done[i] = done[i].translate(QUOTES)
         if c % 10 == 0:
             print(f'  [{slug}] {c}/{len(todo)} 段', flush=True)
     if limit:
