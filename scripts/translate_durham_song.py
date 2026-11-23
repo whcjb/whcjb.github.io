@@ -19,6 +19,7 @@ translate_alexander_acts；短段附前后段英文；CLI 调用走 translate_fi
 用法：python3 -u scripts/translate_durham_song.py --dry-run --all
       python3 -u scripts/translate_durham_song.py --section preface --resume      # 单路；自动发布
       python3 -u scripts/translate_durham_song.py --section 1 --limit 3           # 试译前 3 段，只打印不写出
+      python3 -u scripts/translate_durham_song.py --all --resume --max-minutes 9  # 分段前台跑：到点 exit 10，再跑一次续
 """
 import argparse
 import json
@@ -27,6 +28,7 @@ import re
 import shutil
 import subprocess
 import sys
+import time
 from pathlib import Path
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
@@ -120,6 +122,13 @@ RE_KEEP = re.compile(r'^(?:<div class="commentary-anchor"[^>]*></div>|<!-- PAGE 
 
 class DiskLow(RuntimeError):
     pass
+
+
+class Paused(Exception):
+    """--max-minutes 到点：在两段之间停下，已译段都在缓存里，--resume 续。"""
+
+
+DEADLINE = None
 
 
 def check_disk():
@@ -282,11 +291,17 @@ def run_section(slug, resume, dry, publish, limit=0):
     hit = sum((CACHE / f'{k}.txt').exists() for k in keys)
     chars = sum(len(bl[i][1]) for i in todo)
     print(f'[{slug}] 需翻译 {len(todo)} 段，已缓存 {hit}，待调用 {len(keys) - hit}，约 {chars:,} 字符', flush=True)
+    dst = OUT_DIR / f'{slug}.md'
+    if resume and not dry and not limit and dst.exists() and hit == len(keys):
+        print(f'  [{slug}] 已写出且缓存齐，跳过', flush=True)
+        return
     if dry:
         return len(keys) - hit, sum(len(bl[i][1]) for i in todo
                                     if not (CACHE / f'{tf.md5key(KEY_NS + T.mask(bl[i][1])[0])}.txt').exists())
     done = {}
     for c, i in enumerate(todo, 1):
+        if DEADLINE and time.time() > DEADLINE:
+            raise Paused(f'{slug} 译到第 {c - 1}/{len(todo)} 段')
         b = bl[i][1]
         ctx = ''
         if len(plain(b)) < SHORT_CTX:
@@ -358,7 +373,11 @@ def main():
     ap.add_argument('--dry-run', action='store_true')
     ap.add_argument('--no-publish', action='store_true')
     ap.add_argument('--limit', type=int, default=0, help='试译：只译前 N 段，只打印不写出')
+    ap.add_argument('--max-minutes', type=float, default=0, help='到点在两段之间停（exit 10），分段前台跑用')
     a = ap.parse_args()
+    global DEADLINE
+    if a.max_minutes:
+        DEADLINE = time.time() + a.max_minutes * 60
     tf.SYSTEM = SYSTEM
     secs = ORDER if a.all else a.section
     if not secs:
@@ -369,6 +388,9 @@ def main():
             r = run_section(s, a.resume, a.dry_run, not a.no_publish, a.limit)
             if a.dry_run and r:
                 tot_calls += r[0]; tot_chars += r[1]
+        except Paused as e:
+            print(f'⏸ 到点暂停：{e}；--resume 续', flush=True)
+            sys.exit(10)
         except DiskLow as e:
             print(f'⛔ 磁盘空间不足，中止：{e}', flush=True)
             sys.exit(43)
