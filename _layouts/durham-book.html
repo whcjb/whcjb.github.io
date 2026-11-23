@@ -62,7 +62,7 @@ layout: default
       <a class="durham-tile durham-tile-wide" href="{{ site.baseurl }}/durham/{{ page.book_id }}/{{ zh_seg }}preface/">
         {%- assign pre_en = page.preface_en | default: 'Introduction' -%}
         {%- assign pre_zh_label = page.preface_zh | default: '导论' -%}
-        <span>{% if page.zh %}{{ pre_zh_label }}{% else %}{{ pre_en }}{% endif %}</span>{% if page.zh %}{{ pre_en }}{% else %}{{ pre_zh_label }}{% endif %}
+        <span>{{ pre_en }}</span>{{ pre_zh_label }}
       </a>
       {% endif %}
       {% endif %}
@@ -75,7 +75,7 @@ layout: default
       {%- assign kx = 'durham/' | append: page.book_id | append: '/zh/' | append: fx.key | append: '.md' -%}
       {% if fx.after != true %}{% if page.zh != true or zh_pages contains kx %}
       <a class="durham-tile durham-tile-wide" href="{{ site.baseurl }}/durham/{{ page.book_id }}/{{ zh_seg }}{{ fx.key }}/">
-        <span>{% if page.zh %}{{ fx.zh }}{% else %}{{ fx.en }}{% endif %}</span>{% if page.zh %}{{ fx.en }}{% else %}{{ fx.zh }}{% endif %}
+        <span>{{ fx.en }}</span>{{ fx.zh }}
       </a>
       {% endif %}{% endif %}
       {% endfor %}
@@ -109,7 +109,7 @@ layout: default
       {%- assign kx = 'durham/' | append: page.book_id | append: '/zh/' | append: fx.key | append: '.md' -%}
       {% if fx.after %}{% if page.zh != true or zh_pages contains kx %}
       <a class="durham-tile durham-tile-wide" href="{{ site.baseurl }}/durham/{{ page.book_id }}/{{ zh_seg }}{{ fx.key }}/">
-        <span>{% if page.zh %}{{ fx.zh }}{% else %}{{ fx.en }}{% endif %}</span>{% if page.zh %}{{ fx.en }}{% else %}{{ fx.zh }}{% endif %}
+        <span>{{ fx.en }}</span>{{ fx.zh }}
       </a>
       {% endif %}{% endif %}
       {% endfor %}

@@ -93,8 +93,10 @@ def main():
             n = keys[idx + 1]
             fm += [f'next_section: {n}', f'next_label: "{labels[n]}"']
         fm.append('---')
+        # 段首「2. …」是原书分条序号：kramdown 会排成 <ol> 并从 1 重新编号，转义成 `2\.`
+        body = re.sub(r'^((?:<!-- PAGE \d+ --> )?\d+)\. ', r'\1\\. ', bodies[key].strip('\n'), flags=re.M)
         (out_dir / f'{key}.md').write_text(
-            '\n'.join(fm) + '\n\n' + bodies[key].strip('\n') + '\n', encoding='utf-8')
+            '\n'.join(fm) + '\n\n' + body + '\n', encoding='utf-8')
 
     (out_dir / 'index.html').write_text(
         '---\n'

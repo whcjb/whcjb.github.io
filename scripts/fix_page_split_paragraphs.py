@@ -75,7 +75,7 @@ def find_splits(lines):
         # 仍排除续段本身是标题/居中块/脚注定义/列表项的情形——那些是真的新段。
         looks_cont = nxt[0].islower() or nxt[0] in '（(’”'
         mid_sentence = bool(re.search(r'[A-Za-z0-9一-鿿,，、;；:：]$', s))
-        nxt_is_new_block = bool(re.match(r'^(#|\*\*|\[\^|[-*+]\s|\d+\.\s)', nxt))
+        nxt_is_new_block = bool(re.match(r'^(#|\*\*|\[\^|[-*+]\s|\d+\\?\.\s)', nxt))  # `2\. ` 是转义过的分条序号
         if (looks_cont or mid_sentence) and not nxt_is_new_block:
             out.append((i, k))
     return out

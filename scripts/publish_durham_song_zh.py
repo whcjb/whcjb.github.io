@@ -37,6 +37,8 @@ def main():
     ZH.mkdir(parents=True, exist_ok=True)
     for k, s in enumerate(done):
         body = (RAW / 'zh_chapters' / f'{s}.md').read_text(encoding='utf-8')
+        # 段首「2. …」是原书分条序号：kramdown 会排成 <ol> 并从 1 重新编号，转义成 `2\.`
+        body = re.sub(r'^((?:<!-- PAGE \d+ --> )?\d+)\. ', r'\1\\. ', body, flags=re.M)
         fm = ['---', 'layout: durham-chapter', f'book_id: {BOOK}', 'book_name: "达拉谟《雅歌之钥》"',
               f'title: "{LABEL[s]}"', f'date: {meta[s]}']
         i = ORDER.index(s)
