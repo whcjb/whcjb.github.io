@@ -22,6 +22,7 @@
   - 经文段斜体连排，节号正体带句点（「4. One generation…」），续行悬挂缩进，不加底色框（.ec-verse）；
   - 引诗整首居中、正体；四行一节的短行赞美诗偶数行缩进；出处斜体靠诗的右缘（.ec-poem / .ec-src）；
   - 录入本里的全大写词（段首「THESE」、「Royal PREACHER」）原书是小型大写，转 .ec-sc；罗马数字不转；
+    每章第一个解经词原书都是小型大写，录入本第 7、8、10 章没保留，按规则补；
   - 章题用罗马数字（Chapter I.）；
   - 段首不缩进（原书缩进），段间靠段距分隔。
   原书的行内斜体（*words*、*the Preacher*）录入本没有保留，无从恢复。
@@ -37,7 +38,8 @@ OUT = ROOT / 'bridges' / 'ecclesiastes'
 BASE = '/bridges/ecclesiastes'
 BOOK = 'Bridges on Ecclesiastes'
 # 每条必须原样命中一次。三类：
-#   - 录入本漏掉的节号（Monergism 版同样漏），按 KJV 分节补回；
+#   - 节号：原书 6:11 经文段一直排到 6:12 末尾、不印「12.」（对照 1860 年扫描本 p. 168），录入本照原书；
+#     这里按 KJV 分节补回节号与锚点，但渲染成「[12.]」标明是编者所补（EDITORIAL_VERSES）；
 #   - 录入错（两份扫描 OCR 一致、与录入本不同，原书是对的）；
 #   - 原书排印错（两份 OCR 与录入本一致，原书就这么印：instrinsically、ecclesiastial、unchangable、
 #     buisness、secrect、widsom、mumutual、excercise、iminent），拼写扫描查出，径改。
@@ -72,7 +74,20 @@ FIXES = [('what is man the better? For who knoweth', 'what is man the better? 12
          ('devil’s work; make religion', 'devil’s work; makes religion'),
          ('touches our I foundation', 'touches our foundation'),                         # 录入本多出的孤立「I」
          ('the greatest I good', 'the greatest good'),
-         ('Who can I forbear', 'Who can forbear')]
+         ('Who can I forbear', 'Who can forbear'),
+         # —— 抽查第 6 章逐页对照扫描本后，按同类全书扫出的（2026-11-23）——
+         ('(Job 3:19. Chap. 3:20.)', '(Job 3:19. Ecclesiastes 3:20.)'),     # 全书唯一一处没展开的 Chap.
+         ('one flesh pleasing indulgence', 'one flesh-pleasing indulgence'),
+         ('his words—’Here by then', 'his words—‘Hereby then'),            # 原书行尾断「Here- by」；开引号打反
+         ('the proverb—’A place', 'the proverb—‘A place'),                  # 开引号打反（全书扫「空格/破折号 + ’ + 字母」）
+         ('the matter—’After Solomon', 'the matter—‘After Solomon'),
+         # 标点：两份 OCR 都有、录入本没有的 ; ? 与开引号（三方按词对齐比较词间标点）
+         ('Save me from the foolish exchange’', 'Save me from ‘the foolish exchange’'),
+         ('thy choice for me not mine', 'thy choice for me; not mine'),
+         ('opened “as a morning', 'opened as “a morning'),
+         ('results are grief and sorrow.', 'results are grief and sorrow?'),
+         ('as good music, the flowers', 'as good music; the flowers')]
+EDITORIAL_VERSES = {(6, 12)}
 POEM_SRC = re.compile(r'Hymns|Task, Book|Lyra Germanica')
 # 逗号后只认「字母/引号 + 逗号 + 数字」（「love,3」）；冒号不认——「22:30」的 30 会被误删
 FN = re.compile(r"(?:(?<=[A-Za-z.;!?’”'\"\)—])|(?<=[A-Za-z’”],))\d{1,2}(?![\d:–\-])(?=[\s,.;—)’”]|$)")
@@ -100,14 +115,15 @@ def paras(src):
     return out
 
 
-def verse_html(t):
+def verse_html(t, ch=0):
     """「4. text 5. text」→ 每节一个节号。节号只在句末标点或段首之后认，免得把正文数字当节号。"""
     parts = re.split(r'(?:^|(?<=[.;:?!’”)—]) )(\d{1,2})\. ', t)
     out, first = [], None
     for k in range(1, len(parts), 2):
         n, body = parts[k], parts[k + 1].strip()
         first = first or n
-        out.append(f'<span class="ec-vn" id="v{n}">{n}.</span> {body}')
+        num = f'[{n}.]' if (ch, int(n)) in EDITORIAL_VERSES else f'{n}.'
+        out.append(f'<span class="ec-vn" id="v{n}">{num}</span> {body}')
     return first, ' '.join(out), int(parts[-2])
 
 
@@ -153,10 +169,15 @@ def main():
         removed += k
         t = sc(html.escape(t, quote=False))
         if cur.get('n') and re.match(r'^\d{1,2}\. ', t):
-            _, body, last = verse_html(t)
+            _, body, last = verse_html(t, cur['n'])
             cur['last'] = max(cur['last'], last)
             cur['out'].append(f'<p class="ec-verse">{body}</p>')
         else:
+            # 原书每章（含序言）第一个解经词是小型大写；录入本只在部分章保留了全大写，这里统一补
+            if not cur.get('sc_done'):
+                cur['sc_done'] = True
+                if 'ec-sc' not in t[:60]:
+                    t = re.sub(r'^([‘“]?)([A-Za-z]+)', r'\1<span class="ec-sc">\2</span>', t, count=1)
             cur['out'].append(f'<p>{t}</p>')
     for p in pages:
         if 'n' in p:
