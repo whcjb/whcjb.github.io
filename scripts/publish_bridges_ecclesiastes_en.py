@@ -100,7 +100,20 @@ FIXES = [('what is man the better? For who knoweth', 'what is man the better? 12
          ('Wherefore, I praised', 'Wherefore I praised'),                     # 4:2
          ('“held, his peace”', '“held his peace”'),
          ('What, mischief it', 'What mischief it'),
-         ('for constant, remembrance', 'for constant remembrance')]
+         ('for constant, remembrance', 'for constant remembrance'),
+         # —— 抽查第 9 章逐页对照扫描本后，按同类全书扫出的（2026-11-23）——
+         # 经文出处：录入本把原书罗马数字章号转阿拉伯数字时转错（l=50 当成 1 等）。全书 897 条出处
+         # 按上文定位到两份 OCR 的对应出处、罗马数字转换后比章节号，不一致的逐条按经文内容核定
+         ('resting-place.” (Jer. 1:6.)', 'resting-place.” (Jer. 50:6.)'),      # 原书 l. 6
+         ('(Prov. 10:21; Isa. 1:4.)', '(Prov. 10:21; Isa. 50:4.)'),           # 原书 l. 4（the tongue of the learned）
+         ('(Comp. 2 Cor. 4:10.)', '(Comp. 2 Cor. 6:10.)'),                   # as having nothing
+         ('(Gen. 2:18. Comp. Ps. 48:6.)', '(Gen. 2:18. Comp. Ps. 68:6.)'),   # setteth the solitary in families
+         ('“labourer.” (John 6:21.)', '“labourer.” (John 6:27.)'),           # 原书 vi. 27（p. 282 页图）
+         # 漏掉的收尾引号：两份 OCR 该处有引号的，裁原书页图逐条看，多数是脚注角标（本站已删），以下 4 处原书确有 ’
+         ('to make an experiment. But', 'to make an experiment.’ But'),
+         ('school of the breast.', 'school of the breast.’'),
+         ('rich mine of satisfaction. But', 'rich mine of satisfaction.’ But'),
+         ('present duties. Every moment', 'present duties.’ Every moment')]
 # 经文段里的边注异读（marg.、M. R.、Heb.）原书排正体，夹在斜体经文中；KJV 本身的括号（saith the Preacher）仍斜体
 MARGINAL = re.compile(r'\([^()]*(?:marg\.|M\. R\.|Heb\.)[^()]*\)')
 EDITORIAL_VERSES = {(6, 12)}
@@ -156,7 +169,10 @@ def sc(t):
 def poem_html(lines, src_line):
     esc = [sc(html.escape(FN.sub('', x), quote=False)) for x in lines]
     alt = len(esc) % 4 == 0 and all(len(x) < 45 for x in lines)    # 四行一节的赞美诗：偶数行缩进
-    rows = [f'<span class="ec-in">{x}</span>' if alt and i % 2 else x for i, x in enumerate(esc)]
+    refrain = len(esc) == 5 and lines[4].startswith('Make haste, O man')   # Bonar「Make haste」：四行 + 叠句（p. 274）
+    rows = [f'<span class="ec-in">{x}</span>' if (alt or refrain) and i % 2 else x for i, x in enumerate(esc)]
+    if refrain:
+        rows[4] = f'<span class="ec-in2">{esc[4]}</span>'
     if src_line:
         rows.append(f'<span class="ec-src">{html.escape(src_line, quote=False)}</span>')
     return '<p class="ec-poem">' + '<br>'.join(rows) + '</p>'
