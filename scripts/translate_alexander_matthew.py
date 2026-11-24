@@ -25,6 +25,7 @@ import os
 import re
 import subprocess
 import sys
+import time
 import unicodedata
 from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
@@ -573,6 +574,13 @@ def annotate_terms(zh: str, en: str):
     return zh, missing
 
 
+class Paused(Exception):
+    pass
+
+
+DEADLINE = 0.0   # --max-minutes：到点在两段之间停（exit 10），前台分段跑用；已译段都在缓存里
+
+
 def run_section(slug: str, resume: bool, dry: bool, jobs: int, publish: bool) -> None:
     units = units_of(slug)
     todo = [b for k, b in units if k == 'text']
@@ -586,8 +594,13 @@ def run_section(slug: str, resume: bool, dry: bool, jobs: int, publish: bool) ->
 
     def work(j):
         i = idx[j]
+        if DEADLINE and time.time() > DEADLINE:
+            raise Paused(f'{slug} 译到第 {j}/{len(idx)} 段')
         masked, tags = mask(units[i][1])
-        return i, unmask(translate_one(masked, resume, f'{slug}#{j + 1}'), tags)
+        zh = unmask(translate_one(masked, resume, f'{slug}#{j + 1}'), tags).strip()
+        # 一段英文只对一段中文：模型偶尔把段内「1. … 2. …」拆成几段（达拉谟、贺智都遇到过），并回一段
+        zh = re.sub(r'(?<=[A-Za-z0-9])\s*\n\s*(?=[A-Za-z0-9])', ' ', zh)
+        return i, re.sub(r'\s*\n\s*', '', zh)
 
     done = {}
     with ThreadPoolExecutor(max_workers=jobs) as ex:
@@ -655,9 +668,13 @@ def main():
     ap.add_argument('--all', action='store_true')
     ap.add_argument('--resume', action='store_true')
     ap.add_argument('--dry-run', action='store_true')
+    ap.add_argument('--max-minutes', type=float, default=0, help='到点在两段之间停（exit 10），再跑一次 --resume 续')
     ap.add_argument('--jobs', type=int, default=1)   # 只准 1 路，多路须用户特别指示
     ap.add_argument('--no-publish', action='store_true')
     a = ap.parse_args()
+    global DEADLINE
+    if a.max_minutes:
+        DEADLINE = time.time() + a.max_minutes * 60
     tf.SYSTEM = SYSTEM
     slugs = all_slugs() if a.all else a.section
     if not slugs:
@@ -677,9 +694,13 @@ def main():
                 continue
         try:
             run_section(s, a.resume, a.dry_run, a.jobs, not a.no_publish)
+        except Paused as e:
+            print(f'⏸ 到点暂停：{e}；--resume 续', flush=True)
+            sys.exit(10)
         except SevereTranslation as e:
-            severe.append(str(e))
-            print(f'⛔ [{s}] 有段落重试后仍不合格，本篇不写出、不发布：{e}', flush=True)
+            # 铁律：出问题先停，不接着跑下一篇
+            print(f'⛔ [{s}] 有段落重试后仍不合格，本篇不写出、不发布，批次停止：{e}', flush=True)
+            sys.exit(3)
         except RuntimeError as e:
             if 'session limit' in str(e).lower() or 'limit' in str(e).lower():
                 print(f'⛔ 额度用尽，中止：{e}', flush=True)
