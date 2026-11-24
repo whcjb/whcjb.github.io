@@ -6,7 +6,7 @@ layout: default
   ⚠️ 不复用别家 layout（马太福音的 spurgeon-chapter 是另一套版式）；结构照 owen-psalm130-chapter，
   配色用司布真的作者色 #3a3018 / #4a3b22（与 _data/commentaries.yml 的 c0/c1 一致）。
   版式：卷首说明 TITLE / SUBJECT / DIVISION `.td-head`；各分块标题 `.td-sec`（Exposition / Explanatory Notes … /
-  Hints to the Village Preacher / Other Works）；段首节号 `.td-v`。只有英文版（中文另有麦种传道会正式译本）。
+  Hints to the Village Preacher / Other Works）；段首节号 `.td-v`。中文版 spurgeon/psalms/zh/ 由 publish_spurgeon_psalms_zh.py 生成（page.zh），挂经文引用弹层。
 {%- endcomment -%}
 
 <div class="container spurgeonps-wrap{% if page.zh %} td-zh{% endif %}" style="padding-top: 70px;">

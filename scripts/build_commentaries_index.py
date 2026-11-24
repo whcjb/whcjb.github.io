@@ -648,6 +648,11 @@ COMPARE_LABEL = {
 }
 
 
+def _chapter_set(d: Path):
+    """目录里 <N>.md / <N>/ 的章号集合。"""
+    return {int(m.group(1)) for p in d.iterdir() if (m := re.fullmatch(r'(\d{1,3})(?:\.md)?', p.name))} if d.is_dir() else set()
+
+
 def _chapter_range(d: Path):
     """目录里 <N>.md / <N>/ 的章号区间。取不到返回 None。"""
     ns = []
@@ -757,6 +762,12 @@ def build_compare_sources() -> str:
                     e['label_en'] = AUTHORS[aid]['en']
                 if rng:
                     e['ch_from'], e['ch_to'] = rng
+                    # 已译章不连续（司布真诗篇逐篇推进：1、2、3、23）时另给清单，抽屉只在这些章出现，
+                    # 不然区间内未译的章点过去 404
+                    if tpl.endswith('/__CH__/'):
+                        got = _chapter_set(ROOT / tpl.split('__CH__')[0].strip('/'))
+                        if got and len(got) != rng[1] - rng[0] + 1:
+                            e['chs'] = sorted(got)
                 out[book].append(e)
     lines = ['# 由 scripts/build_commentaries_index.py 生成，勿手改。',
              '# 对比注释的可选源：书卷 → 各注释家的章节 URL 模板（__CH__ 为章号占位）。',
@@ -776,6 +787,8 @@ def build_compare_sources() -> str:
         for e in keep:
             rng = (f", ch_from: {e['ch_from']}, ch_to: {e['ch_to']}"
                    if 'ch_from' in e else '')
+            if 'chs' in e:
+                rng += ', chs: [' + ', '.join(map(str, e['chs'])) + ']'
             lines.append(f'    - {{key: {e["key"]}, author: {e["author"]}, '
                          f'lang: {e["lang"]}, '
                          f'label: {yaml_escape(e["label"])}, '

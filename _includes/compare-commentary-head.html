@@ -85,6 +85,7 @@
   {%- if cc_ch and s.ch_from and s.ch_to -%}
     {%- assign _n = cc_ch | times: 1 -%}
     {%- if _n < s.ch_from or _n > s.ch_to -%}{%- assign ok = false -%}{%- endif -%}
+    {%- if s.chs and s.chs contains _n -%}{%- elsif s.chs -%}{%- assign ok = false -%}{%- endif -%}
   {%- endif -%}
   {%- if ok -%}
     {%- if s.author != cc_author and s.lang == cc_lang -%}
