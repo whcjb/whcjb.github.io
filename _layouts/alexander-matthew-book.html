@@ -29,7 +29,7 @@ layout: default
       <div class="am-sub">Joseph Addison Alexander · 1809–1860 · New York: Charles Scribner, 1861</div>
 
       <div class="am-extra">
-        <a href="{{ site.baseurl }}/alexander/matthew/preface/"><span class="am-extra-cn">序</span><span class="am-extra-en">Preface</span></a>
+        <a href="{{ site.baseurl }}/alexander/matthew/{% if page.zh %}zh/{% endif %}preface/"><span class="am-extra-cn">序</span><span class="am-extra-en">Preface</span></a>
       </div>
 
       {%- assign zh_paths = site.pages | where_exp: "p", "p.path contains 'alexander/matthew/zh/'" | map: "path" | join: "," -%}
@@ -55,7 +55,7 @@ layout: default
         <em>正文中的斜体是他所讲解的经文字词与他自己的译法</em>。</p>
         <p>据书前的序（署名 S. D. A.，1860 年 12 月），全书<strong>逐节详注只到第 16 章</strong>；
         第 17–28 章只有每章一段纲要，是他病后复笔、赶在去世前一周又一天写完的；原拟的总导论也没有写成。
-        与马可福音平行的经文，他多把马可福音注释里的讲解整段移来，按马太的经文改动。{% if page.zh %}中译逐章推进中，深色格子已有中译，浅色虚线格暂只有英文；底本与编者改动说明见<a href="{{ site.baseurl }}/alexander/matthew/">英文版首页</a>。{% else %}已有中译的章见<a href="{{ site.baseurl }}/alexander/matthew/zh/">中文版</a>。{% endif %}</p>
+        与马可福音平行的经文，他多把马可福音注释里的讲解整段移来，按马太的经文改动。{% if page.zh %}全书（含序与第 17–28 章纲要）均已译出；底本与编者改动说明见<a href="{{ site.baseurl }}/alexander/matthew/">英文版首页</a>。{% else %}中译见<a href="{{ site.baseurl }}/alexander/matthew/zh/">中文版</a>。{% endif %}</p>
       </div>
 
       {{ content }}
