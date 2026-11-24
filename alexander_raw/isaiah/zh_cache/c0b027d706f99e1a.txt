@@ -1,0 +1,34 @@
+上一版斜体数量 34→88，可见其他地方多出了星号。须仔细数原文星号。
+
+Count asterisks in source:
+1. *To hew ... and has strengthened* → 2
+2. *for himself ... the rain shall increase* → 2 (4)
+3. *mittit ad Libanum homines,* → 2 (6)
+4. *haec fuerunt necessario supplenda;* → 2 (8)
+5. *constructiones ... concinnarunt.* → 2 (10)
+6. *he has to cut* → 2 (12)
+7. *robur.* → 2 (14)
+8. *cypress* → 2 (16)
+9. *strengthened,* → 2 (18)
+10. *making strong* → 2 (20)
+11. *making great* → 2 (22)
+12. *and layeth in good store of the trees of the forest.* → 2 (24)
+13. *and what he deemeth firm among the trees of the forest.* → 2 (26)
+14. *he has planted and the rain has nourished,* → 2 (28)
+15. *he plants and the rain nourishes;* → 2 (30)
+16. *he has planted and the rain will nourish,* → 2 (32)
+17. *in medias res,* → 2 (34)
+
+34 total. No HTML comments here. Note "i. e." inside parentheses not italic: "(i. e. raised it)" → "（即使之长大）". Also "(it, i. e. make it grow)" → "（它，即使它生长）".
+
+Names: Clericus (克莱利库斯/勒克莱尔 — Jean Le Clerc), Ewald, Gesenius, Lowth, Henderson, Umbreit — first mentions parenthesized. "Better" "Chinese" "Fine" were errors from earlier — ignore. Hebrew retained with gloss: יכרת（他砍伐）, תרזה（某种树）, אמץ（使坚固）, כרת（砍伐）, אמיץ, יגדל（使长大）, יאמץ.
+
+Latin with Chinese gloss inside italics? Keep latin within asterisks, gloss after in parens outside. "*he has to cut* etc." — English discussed; keep as discussed word? It's an English phrase illustrating English idiom; rule 9b exception: discussing English. Keep *he has to cut*（他得砍）……. Hmm, it says "just as we might say in English" — the English itself is the object. Keep it, gloss. Count stays same. Similarly *cypress* — "the common version cypress may be retained" — discussing English word; translate as *柏树* fine since Chinese translation context. I'll render *柏树*. *robur*: Latin keep, gloss.
+
+Ps. 80:16 → 诗篇 80:16. Jer. 10:3 → 耶利米书 10:3.
+
+Draft:
+
+*要为自己砍伐香柏树；（如今）他取了柏树和橡树——在林中树木里为自己使之坚固*… careful: the italics sections: "*To hew him down cedars; and (now) he has taken a cypress and an oak—and has strengthened* (i. e. raised it) *for himself among the trees of the forest—he has planted a pine, and the rain shall increase* (it, i. e. make it grow)."
+
+→ *为他砍伐香柏树；（如今）他取了柏树和橡树——又使之坚固*（即养大它）*为自己在林中的树木间——他栽了一棵松树，雨水必使之增长*（它，即使它生长）。 Ordering in Chinese is awkward; "又为自己在林中树木间使之坚固" but parenthetical splits. Accept: *——又在林中树木间为自己使之坚固*... but the paren comes after "strengthened". Do: *又使之坚固*（即栽培成材）*于林中树木之间，为了自己——他栽了一棵松树，雨水必使*（它，即使它生长）*增长*? Position of parenthesis shifts; okay-ish. Simpler: *……又使*（即培植）*于林中树木之间为自己坚固——他栽了一棵松树，雨水必使之增长*（它，即使它长大）. Hmm. I'll go: *——又坚固了*（即培植起来）*为自己在林中树木之间的——他栽了松树，雨水必使之长大*（指它，即使它生长）. Keep reasonably literal.*为他砍伐香柏树；（如今）他取了柏树和橡树——又坚固了*（即使之长成）*在林中树木之间为自己的——他栽了一棵松树，雨水必使之增长*（它，即使它生长）。为了更清楚地显明把神性归于物质偶像何等荒谬，先知在这里不但追溯到偶像出于人手、出于低贱的材料，更追溯到供给木料的树木本身是如何生长起来的。各项细节是倒叙的。他先从伐树说起，随即自行打断，以便追溯得更远，直到树木的栽培。要义在于：人非但不是他所敬拜之木的受造者，反倒在某种意义上是它的创造者，因为这木头的存在实在或可能有赖于人的作为。方才所说句法中途打断的设想，似乎比语法省略的设想更为自然。诚然，很少有释经者会走得像克莱利库斯（Clericus）那么远：他在句首添入 *mittit ad Libanum homines,*（他差人往黎巴嫩去），又以他特有的从容补上一句：*haec fuerunt necessario supplenda;*（这些话是必须补出的）；可是就在紧接着的下一句里，他论到七十士译本和武加大译本，却说：*constructiones quam non inveniebant de suo concinnarunt.*（他们找不到的句法结构，就自行拼凑出来）。埃瓦尔德（Ewald）在他的大语法书（第 622 页）中把此处列为不定式表示必要或义务的例证之一，正如我们在英语口语里会说 *he has to cut*（他得去砍）……。但他在解释这段经文时，却与格塞尼乌斯（Gesenius）等人一致，把它看作等同于限定动词，另外还提出它可能是 יכרת（他砍伐）的拼写错误。——近代学者似乎都同意 תרזה 是一种橡树，因其坚硬而得名，犹如拉丁文的 *robur.*（硬木、橡木）。不过为避免同义重复与卖弄学问，不妨保留通行译本的 *柏树* 一词，因为它所给出的意思是恰当的，而植物学上的精确在此并无解经上的分量：无论提到的是哪一种树，这节经文的意思都是一样的。——多数学者在这里以及诗篇 80:16 中把 אמץ 解作「拣选、指定」，以为这意思很容易从「坚固、限定、固定」引申出来。埃瓦尔德甚至援引耶利米书 10:3 为据，把 כרת（砍伐）也解作「拣选」。这纯属武断；而且 אמיץ 在其余凡出现之处都可以译作 *坚固了，*若非必要，就不能在此处自相矛盾地舍弃这个意思；而这种必要并不存在，因为 *使坚固* 这一严格的意义不但切合上下文，还与 יגדל 所表达的 *使长大* 恰相对应——两者在此都是「使之生长」的意思。如此理解，这个词有助于更有力、更清楚地带出本节的主旨，即：拜偶像的人不但挑选合用的树木，还为此栽种培植它们。不必设想这是在描写一种常见或屡见的习俗。毋宁说，这是把制造偶像之事推到极处的一幅理想图景。若是如此，整段描写中的施动者就是那自欺的敬拜者；这又提供了一条理由，使人相信前两节并未分别提到铁匠和木匠。这也消除了让木匠自己培植木料的表面不协调之处；而同一件事若说是拜偶像的人所为，就与整段描写完全吻合了。——动词 יאמץ 的宾语可以是前面提到的那些树，也可以更笼统地指一般的树木。洛沃特（Lowth）武断地把这一分句译作 *又从林中树木里储备了充足的木料。* 克莱利库斯更加大胆、更加离谱，把它解作他从林中取木料来充实自己的作坊。亨德森（Henderson）的译法 *以及他在林中树木里认为坚实的* 虽不那么荒谬，却仍站不住脚，因为缺乏用法上的依据。温布赖特（Umbreit）提出，末一分句意在暗示：这人连做神像的材料，终究也要仰赖天上的雨水；这说法并不完全自然。毋宁说，加上这一分句，是为了补足这幅图画，描绘出拜偶像的人当作超乎人、属乎神来崇拜的东西，原是自然而生、自然而长的。在这一节以及前面几节里，大多数译本时态混乱，大大损害了先知语言的力量与美感。——那牵强而不合语法的译法 *他栽了，雨水滋养了，* 或那含糊而闪避的译法 *他栽种，雨水滋养；* 究竟有何可取？而精确的译法 *他栽了，雨水必滋养，* 不但同样清楚、连贯、恰当，而且远为生动传神，因为它一下子把我们带入 *in medias res,*（事情的当中），把所描写的工作显明为一部分已成过去、一部分尚在将来。同时它也暗示了敬拜者坚忍的耐心：他先尽了自己的本分，然后等候自然的力量来尽它们的本分——而这一切，竟是为了造出一个偶像！
