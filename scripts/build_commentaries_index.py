@@ -221,6 +221,12 @@ AUTHORS = OrderedDict([
                    years='1602–1673', dir='caryl',
                    work_cn='约伯记讲解',
                    work_en='An Exposition with Practical Observations upon the Book of Job')),
+    # 格林希尔：1591 年生于牛津（DNB），1671-09-27 卒于斯特普尼。威斯敏斯特会议成员（独立派）。
+    # 《以西结书释义》五卷 1645–1662（各卷扉页），本站据 EEBO-TCP 五卷全录本，见 scripts/extract_greenhill.py。
+    ('greenhill', dict(name='威廉·格林希尔', short='格林希尔', en='William Greenhill',
+                       years='1591–1671', dir='greenhill',
+                       work_cn='以西结书释义',
+                       work_en='An Exposition of the Prophet Ezekiel, with Useful Observations thereupon')),
     # 雷诺兹：1599 年 11 月生于南安普敦，1676-07-28 卒于诺里奇（主教任上）。本站只收《诗篇 110 篇释义》（1632，EEBO-TCP A10650）——单篇专书，见 MONOGRAPHS。
     ('reynolds', dict(name='爱德华·雷诺兹', short='雷诺兹', en='Edward Reynolds',
                   years='1599–1676', dir='reynolds',
@@ -389,6 +395,9 @@ AUTHOR_COLORS = {
     # 卡里尔灰玫（「尘土和炉灰」，伯 42:6）：LCh (50, 20, 39°)，与既有各色及加尔文酒红、马太亨利金、Hux 蓝最小 ΔE 15.8（CIE76）。
     # 色板已挤，ΔE 30 以上的空位只剩高彩艳粉，不合本书，取此色。
     'caryl': ('#6e4a41', '#986d62'),
+    # 格林希尔琥珀铜（以西结书 1:4「光耀的精金」）：HLS 网格里与既有各色及加尔文酒红、马太亨利金、Hux 蓝、缺字红最小 ΔE 16.1
+    # （CIE76，#786000）；色板已挤，柔和一档最好只有 14.0，取中彩度同档最远者。
+    'greenhill': ('#6e4513', '#935d1a'),
     # 雷诺兹松绿：HLS 网格里与既有各色及加尔文酒红、马太亨利金最小 ΔE 19.6（CIE76，达文南特橄榄）；色板已挤，与先例同档。
     'reynolds': ('#23503a', '#34794f'),
     # 考珀芥黄：HLS 网格里与既有各色及加尔文酒红、马太亨利金最小 ΔE 20.2（CIE76，琼斯橄榄褐）；色板已挤，与先例同档。
@@ -511,6 +520,8 @@ BOOK_TITLES = {
                                 'CLII Lectures upon Psalme LI'),
     ('caryl', 'job'):          ('约伯记讲解',
                                 'An Exposition with Practical Observations upon the Book of Job'),
+    ('greenhill', 'ezekiel'):  ('以西结书释义',
+                                'An Exposition of the Prophet Ezekiel, with Useful Observations thereupon'),
     ('reynolds', 'psalms'): ('诗篇 110 篇释义',
                                 'An Explication of the Hundreth and Tenth Psalme'),
     ('cowper', 'psalms'): ('锡安学子的圣字母表',
@@ -632,7 +643,7 @@ COMPARE_ACCENT = {
     'candlish': '#b07080', 'fairbairn': '#bc65ac', 'taylor': '#6f77e0',
     'hall': '#769019', 'barlow': '#2b9b8a', 'attersoll': '#8e8cbd', 'dickson': '#8b2499',
     'petter': '#38a622', 'foote': '#d14457', 'jones': '#9c9066', 'haldane': '#9b6899',
-    'bonar': '#d2776f', 'knox': '#16697d', 'hildersham': '#85327a', 'reynolds': '#34794f', 'cowper': '#a49746', 'smith': '#3aa0af', 'gouge': '#592b82', 'pierson': '#354aa0', 'caryl': '#986d62',
+    'bonar': '#d2776f', 'knox': '#16697d', 'hildersham': '#85327a', 'reynolds': '#34794f', 'cowper': '#a49746', 'smith': '#3aa0af', 'gouge': '#592b82', 'pierson': '#354aa0', 'caryl': '#986d62', 'greenhill': '#935d1a',
 }
 COMPARE_LABEL = {
     'calvin': '加尔文注释', 'mhenry': '马太亨利注释', 'owen': '约翰欧文注释',
@@ -644,7 +655,7 @@ COMPARE_LABEL = {
     'candlish': '坎德利什讲解', 'fairbairn': '费尔贝恩注释', 'taylor': '泰勒注释',
     'hall': '霍尔注释', 'barlow': '巴洛讲解', 'attersoll': '阿特索尔注释', 'dickson': '迪克森简释',
     'petter': '佩特注释', 'foote': '福特讲义', 'jones': '琼斯简释', 'haldane': '霍尔丹释义',
-    'bonar': '博纳尔讲论', 'knox': '诺克斯讲解', 'hildersham': '希尔德沙姆讲义', 'reynolds': '雷诺兹释义', 'cowper': '考珀注释', 'smith': '史密斯讲解', 'gouge': '古治注释', 'pierson': '皮尔森讲解', 'caryl': '卡里尔讲解',
+    'bonar': '博纳尔讲论', 'knox': '诺克斯讲解', 'hildersham': '希尔德沙姆讲义', 'reynolds': '雷诺兹释义', 'cowper': '考珀注释', 'smith': '史密斯讲解', 'gouge': '古治注释', 'pierson': '皮尔森讲解', 'caryl': '卡里尔讲解', 'greenhill': '格林希尔释义',
 }
 
 
@@ -672,7 +683,7 @@ PRIMARY_LANG = {'calvin': 'zh', 'mhenry': 'zh', 'bridges': 'zh', 'haldane': 'en'
                 'adams': 'en', 'rollock': 'en', 'jenkyn': 'en',
                 'candlish': 'en', 'fairbairn': 'en', 'taylor': 'en',
                 'hall': 'en', 'barlow': 'en', 'attersoll': 'en', 'dickson': 'en', 'petter': 'en',
-                'foote': 'en', 'jones': 'en', 'bonar': 'en', 'knox': 'en', 'hildersham': 'en', 'reynolds': 'en', 'cowper': 'en', 'smith': 'en', 'gouge': 'en', 'pierson': 'en', 'caryl': 'en'}
+                'foote': 'en', 'jones': 'en', 'bonar': 'en', 'knox': 'en', 'hildersham': 'en', 'reynolds': 'en', 'cowper': 'en', 'smith': 'en', 'gouge': 'en', 'pierson': 'en', 'caryl': 'en', 'greenhill': 'en'}
 
 
 # 某卷主目录的语种与该作者的 PRIMARY_LANG 不同时在此注明（毕列志箴言是中译，传道书只有英文）

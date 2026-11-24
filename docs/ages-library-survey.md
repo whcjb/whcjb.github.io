@@ -160,3 +160,50 @@ AGES（AGES Software，Master Christian Library）总共 400+ 种书，加尔文
 3. **不下整本也能认书名**：`curl -r -3000` 取 PDF 尾部 3KB，里面有 `/Title` `/Author` `/Subject` 的 Info 字典。头部 `-r 0-6000` 只能拿到书签（章节名），认不出书名。
 4. **最省事的路子是先抓官方目录**：`alkitab-10/AGES.PDF`（约 400KB）就是全库带书名的索引，18 页，`pdfplumber` 直接出文本。早抓它可以省掉大半探测。
 5. AGES 文件码是「三字母作者 + 四字母书名缩写」，但有例外（`WHI_HWST` 是 White 不是 Whiston，`BNG` 是 Bangs 不是 Bengel），**不要凭码猜书名**，以官方目录为准。
+
+---
+
+## 补充（2026-11-18）
+
+- **完整逐本书目**另见 `docs/SABDA_AGES_书目.md`：alkitab-7 至 11 共 1,135 个 PDF，按文件名去重 772 本，按作者排列，附下载路径。
+- **更正**：上文「二、镜像结构」说加尔文专盘（The Comprehensive John Calvin Collection）无镜像——其实有：**`alkitab-7/` 就是加尔文专盘**，`alkitab-7/LIBRARY/CALVIN/` 下 96 个 PDF（`CAL_*` 注释等），另有 `alkitab-7/CALVIN.PDF`、`alkitab-7/MOVIE/MOVIE.PDF`（The Life of John Calvin）。
+- 司布真《大卫的宝库》（Treasury of David）不在任何一张盘里；`alkitab-9/LIBRARY/SPU_S&T1–7` 是月刊《剑与镘》（The Sword and the Trowel）合集，不是它。
+
+
+---
+
+## 补充（2026-11-24）：格林希尔《以西结书释义》——AGES 没有，EEBO-TCP 有全本人工录入
+
+**AGES 查无此书。** 把 `media.sabda.org/alkitab-1` 至 `alkitab-13` 递归爬了一遍（共 4,448 个文件），没有 `GRE_*` 文件码，也没有任何 Greenhill 的书；以西结书注释只有加尔文的 `alkitab-7/LIBRARY/CALVIN/CAL_EZEK.PDF`。
+
+顺带把之前没调研过的几张盘看了一下，**都和本站无关**：
+
+| 盘 | 内容 |
+|---|---|
+| `alkitab-1` | 神学教育信息化讲义（Blackboard 教程、网课论文、链接页） |
+| `alkitab-2` | 释经学／宗教学 PDF 129 本 ＋ Religion-Online.org 书 193 本（多为现代自由派） |
+| `alkitab-3`、`alkitab-4` | 海波斯、马克斯韦尔等领导力讲座（wma／rm 音频 ＋ 讲义） |
+| `alkitab-5` | 列不出目录 |
+| `alkitab-6` | 另一套光盘软件（Online Bible 等），`wh2-ref` 里有克拉克注释的 PDF |
+| `alkitab-12` | 只有 `ccel/` 的几个索引页，没有正文 |
+| `alkitab-13` | 有声圣经 mp3（以斯帖记—启示录） |
+
+**人工录入本在 EEBO-TCP**：五卷 1645–1662 年初版全部做了双人录入，**CC0 公有领域**，GitHub `textcreationpartnership/<ID>` 可以直接取 XML，已经存到 `greenhill_raw/ezekiel/src/`：
+
+| TCP 编号 | 章 | 初版 | Wing | 词数 | illegible 缺口 | foreign 缺口 |
+|---|---|---|---|---|---|---|
+| `A85666` | 1–5 | 1645 | G1851 | 21.3 万 | 205 | 204 |
+| `A85667` | 6–13 | 1649 | — | 22.2 万 | 636 | 349 |
+| `A42015` | 14–19 | 1651 | G1855 | 24.0 万 | 266 | 612 |
+| `A85668` | 20–29 | 1658 | — | 22.8 万 | 367 | 389 |
+| `A42016` | 30–48 | 1662 | — | 26.5 万 | 425 | 179 |
+
+合计约 117 万词，48 章齐全。
+
+说明：
+- `<gap reason="foreign">` 是 TCP 不录的**希腊文和希伯来文**，要用页面影像或 1864 年 Nichol 版补。
+- `<gap reason="illegible">` 是底片看不清的字，**绝大多数只缺 1–2 个字母**，约每 600 词一处，可以从上下文或 Nichol 版补回。
+- 正文里另有 `•`／`〈◊〉` 缺字符号约 2,100 处，也算在要补的范围里。
+- 拼写是 17 世纪原貌（长 s `ſ`、u/v 互用等），发布前要规范化。
+- 各卷 `<div type>` 不统一：`part`／`textual_commentary`／`observations`／`exposition` 混用，切章节时要按卷分别处理。
+- 现代排印本：1839 年 Holdsworth 版、1864 年 Nichol 版（James Sherman 编），HathiTrust 上只有页面影像，没有人工录入本；Banner of Truth 1994 年重印本有版权。

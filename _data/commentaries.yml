@@ -263,6 +263,15 @@ authors:
     work_en: "An Exposition with Practical Observations upon the Book of Job"
     no_bio: false
     books: 1
+  - id: greenhill
+    name: "威廉·格林希尔"
+    short: "格林希尔"
+    en: "William Greenhill"
+    years: "1591–1671"
+    work_cn: "以西结书释义"
+    work_en: "An Exposition of the Prophet Ezekiel, with Useful Observations thereupon"
+    no_bio: false
+    books: 1
   - id: reynolds
     name: "爱德华·雷诺兹"
     short: "雷诺兹"
@@ -551,6 +560,7 @@ books:
     testament: ot
     chapters: 48
     links:
+      - {author: greenhill, path: "/greenhill/ezekiel/", url_tpl: "/greenhill/ezekiel/__CH__/", title_cn: "以西结书释义", title_en: "An Exposition of the Prophet Ezekiel, with Useful Observations thereupon", c0: "#6e4513", c1: "#935d1a"}
   - id: daniel
     name: "但以理书"
     en: "Daniel"
