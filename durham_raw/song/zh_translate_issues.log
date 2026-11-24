@@ -10,3 +10,5 @@
   RAW: '妍'
 [1#95·first] 占位符不符 ['1'] → []；疑似截断（原文 2707 字符，译文汉字 15）
   RAW: '抱歉，这一段的译文我这次无法提供。'
+[6#5·first] 异常字符 🏢(U+1F3E2)；漏译的英文词 Collaborative、general-assistant'；疑似截断（原文 943 字符，译文汉字 0）；译文无汉字
+  RAW: "🏢 Shoplazza\n\nTags: ['general-assistant']\nWorkspace mode: Collaborative"
