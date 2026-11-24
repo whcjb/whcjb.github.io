@@ -23,6 +23,7 @@ from pathlib import Path
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import translate_filibi as tf                     # noqa: E402
+from translate_alexander_acts import restore_greek  # noqa: E402
 from normalize_zh_quotes import normalize_text    # noqa: E402
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -106,6 +107,12 @@ def translate_section(book: str, sec: str, resume: bool, publish: bool):
     out = list(lines)
     for i, zh in zip(idxs, zh_lines):
         zh = re.sub(r'<<<[^>]*>>>', '', zh).strip()
+        # 一行英文只对一行中文：模型偶尔把段内「1. … 2. … 3. …」拆成几段，
+        # 打乱逐行对齐（林后 8 章，2026-11-24；达拉谟启示录同类 62 片）。并回一行。
+        zh = re.sub(r'(?<=[A-Za-z0-9])\s*\n\s*(?=[A-Za-z0-9])', ' ', zh)
+        zh = re.sub(r'\s*\n\s*', '', zh)
+        # 希腊词里混进形近拉丁/阿拉伯字母（`χρίσas` `ἐνδυσάمενοι`）：按原文唯一对得上的词抄回
+        zh = restore_greek(zh, lines[i])
         # 脚注定义的 `[^fN]:` 是 kramdown 的结构标记，不是标点——模型会顺手把
         # 半角冒号译成全角 `：`，定义就此失效，正文里的引用变成孤儿
         # （以弗所书 ch4 的 f12、林前 ch5 的一处都是这样，audit 第 8 项

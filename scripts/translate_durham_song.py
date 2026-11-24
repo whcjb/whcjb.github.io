@@ -195,6 +195,9 @@ def blocks(slug):
     for k, line in enumerate(t.split('\n')):
         if k:
             out.append(('keep', '\n'))
+        # 英文页段首分条序号转义成了 `2\.`（防 kramdown 排成 <ol>）：送译前还原，缓存键与转义前一致；
+        # 发布时 publish_durham_song_zh 再转义回去
+        line = re.sub(r'^((?:<!-- PAGE \d+ --> )?\d+)\\\. ', r'\1. ', line)
         s = line.strip()
         m = re.match(r'^# CHAP\. (\d+)$', s)
         if m:

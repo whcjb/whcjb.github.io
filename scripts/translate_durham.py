@@ -34,6 +34,7 @@ from pathlib import Path
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import translate_filibi as tf                     # noqa: E402
+from translate_alexander_acts import restore_greek  # noqa: E402
 from normalize_zh_quotes import normalize_text    # noqa: E402
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -154,12 +155,13 @@ def translate_section(sec: str, resume: bool, publish: bool):
 
     zh_pieces = tf.cached_translate(pieces, resume)
     merged = {}
-    for i, zh in zip(owner, zh_pieces):
+    for i, en, zh in zip(owner, pieces, zh_pieces):
         zh = re.sub(r'<<<[^>]*>>>', '', zh).strip()
         # 一段英文只对一段中文：模型偶尔把「1. … 2. … 3. …」拆成几段（缓存里 62 片），
         # 并回一行——原书就是一段，对照抽屉也按段对齐。两侧都是西文字母数字才留空格。
         zh = re.sub(r'(?<=[A-Za-z0-9])\s*\n\s*(?=[A-Za-z0-9])', ' ', zh)
         zh = re.sub(r'\s*\n\s*', '', zh)
+        zh = restore_greek(zh, en)   # 希腊词混进形近字母：按原文唯一对得上的词抄回
         merged[i] = (merged[i] + ' ' + zh).strip() if i in merged else zh
     out = list(lines)
     for i, zh in merged.items():
