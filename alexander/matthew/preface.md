@@ -5,6 +5,7 @@ book_name: "Alexander on Matthew"
 title: "Preface"
 subtitle: "Joseph Addison Alexander"
 date: 2026-11-04 10:05
+zh_url: "/alexander/matthew/zh/preface/"
 next_section: "1"
 next_label: "Matthew 1"
 ---
