@@ -322,7 +322,9 @@ def main():
 
 def write_gap_sites(order, nctx=8):
     """缺字组清单（照 petter_witness.py gaps）：gid / slug / 原串 / 前后文 / 原书页码。"""
-    sites, prev_tail, pnum = [], [], None
+    od = {x['slug']: x['vol'] for x in json.loads((RAW / 'order.json').read_text())['sections']}
+    od |= {x['slug']: x['vol'] for x in json.loads((RAW / 'order.json').read_text())['front']}
+    sites, prev_tail, pnum, facs, main_total, po_base = [], [], None, None, 0, 0
     for slug in order:
         md = gc.read_src(slug)
         margins = [(m.start(), m.end()) for m in re.finditer(r'<span class="gh-margin"[^>]*>.*?</span>', md, re.S)]
@@ -330,18 +332,30 @@ def write_gap_sites(order, nctx=8):
         for a, b in margins:
             blank = blank[:a] + ' ' * (b - a) + blank[b:]
         pns = [(m.start(), m.group(1)) for m in re.finditer(r'<span class="gh-pb"[^>]*data-p="([^"]+)"', md)]
+        fcs = [(m.start(), int(m.group(1))) for m in re.finditer(r'<span class="gh-pb"[^>]*data-facs="(\d+)"', md)]
+        if slug.endswith('-title') or slug == f'vol{od[slug]}-title':
+            pnum, facs, po_base = None, None, 0      # 新一卷：页码、帧号、页序从头算
         for a, b, s, isnote in gc.gap_groups(md):
             pn = next((x for p, x in reversed(pns) if p < a), pnum)
+            fc = next((x for p, x in reversed(fcs) if p < a), facs)
+            po = po_base + sum(1 for p, _ in pns if p < a)   # 本卷第几个带页码的页：原书有两次分页、页码重号时也单调
             if isnote:
                 na, nb = next((x, y) for x, y in margins if x <= a < y)
                 left, right = gc.flat_words(md[na:a]), gc.flat_words(md[b:nb])
             else:
                 left, right = prev_tail + gc.flat_words(blank[:a]), gc.flat_words(blank[b:])
             sites.append({'gid': len(sites), 'slug': slug, 'stream': 'note' if isnote else 'main', 'tcp': s,
-                          'left': left[-nctx:], 'right': right[:nctx], 'page': pn})
+                          'left': left[-nctx:], 'right': right[:nctx], 'page': pn, 'po': po, 'facs': fc, 'vol': od[slug],
+                          'i': main_total + len(gc.flat_words(blank[:a])),
+                          **({'mleft': (prev_tail + gc.flat_words(blank[:na]))[-nctx:],
+                              'mright': gc.flat_words(blank[nb:])[:nctx]} if isnote else {})})
         if pns:
             pnum = pns[-1][1]
+        po_base += len(pns)
+        if fcs:
+            facs = fcs[-1][1]
         prev_tail = gc.flat_words(blank)[-nctx:]
+        main_total += len(gc.flat_words(blank))
     (RAW / 'gap_sites.json').write_text(json.dumps(sites, ensure_ascii=False, indent=0), encoding='utf-8')
     print(f'缺字组 {len(sites)}', file=sys.stderr)
 

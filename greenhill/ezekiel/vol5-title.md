@@ -23,5 +23,5 @@ By *WILLIAM GREENHIL.*
 
 <p class="gh-quote" markdown="1">Cujus aures veritati sunt clausae & ab amico verum audire nequeat, hujus salus desperanda est. Cicer. de Amiciti.</p>
 
-*LONDON,* Printed for *<span class="gh-gap" title="TCP: illegible in source">•</span>homas Parkhurst,* at the three Crowns in *Cheapside* overagainst the great Conduit. 1662.
+*LONDON,* Printed for *Thomas Parkhurst,* at the three Crowns in *Cheapside* overagainst the great Conduit. 1662.
 

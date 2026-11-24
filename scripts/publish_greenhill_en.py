@@ -7,7 +7,7 @@
 威廉·格林希尔《以西结书释义》五卷（1645–1662）。共用 tcp_publish.Book：一段经文一页（页名 `<章>-<首节>`，
 分段见 extract_greenhill.py），每章一页目录 `<章>.md`。卷首：五卷各自的书名页与献辞／致读者书，第一卷的
 「致真理的爱慕者」「全书引言」，以及第一章前的总论（prolegomena）。
-缺字尚未对照原书影像判读：gap_review.tsv / gap_approved.tsv 还没有，正文缺字全部标红。
+缺字按 gap_review.tsv（看图读出）回填；推断（P:）待用户同意后进 gap_approved.tsv。
 """
 import argparse
 import json
@@ -45,8 +45,9 @@ def about_en(f):
         '<i>Observ. 1</i> …) are shown as small tags. The errata lists, the tables of matters and of Scripture places, '
         'and the booksellers’ advertisements are not included.</p>',
         f'<p><b>Illegible places.</b> The transcription is incomplete at {f["n"]} places: letters or words the keyers could not '
-        'read from the film images, and the Greek and Hebrew, which they did not transcribe. None of these has yet been '
-        'checked against the page images; they are shown <span class="gh-gap">in red</span>.</p>']
+        'read from the film images, and the Greek and Hebrew, which they did not transcribe. These are being checked against '
+        'the EEBO film images of the same editions (Internet Archive). '
+        f'{f["w"]} have been read from the page images so far; the rest remain marked <span class="gh-gap">in red</span>.</p>']
 
 
 def about_zh(f):
@@ -57,9 +58,9 @@ def about_zh(f):
         '保留原书拼写与斜体，长 ſ 作 s；印本页码保留为页内锚点，各卷页码自 1 起。'
         '每页一段经文：录入本标了分段的照原书分段，第四卷（第 20–29 章）录入本没有分段，按书中所引经文的节号切分。'
         '原书页边的纲目标记（Note 1、Observ. 1 等）在正文中以小标签显示。各卷勘误表、主题索引、经文索引与书商广告未收。</p>',
-        f'<p class="gh-note-zh">录入本不完整之处共 {f["n"]} 处，包括录入者读不出的字母和词，以及没有录入的希腊文、希伯来文；'
-        '这些都还没有对照原书影像补出，'
-        '正文中<span class="gh-gap">标红</span>留在明面。</p>']
+        f'<p class="gh-note-zh">录入本不完整之处共 {f["n"]} 处，包括录入者读不出的字母和词，以及没有录入的希腊文、希伯来文。'
+        '正在逐处对照同版的 EEBO 胶片影像（Internet Archive）补出：'
+        f'已看图读出 {f["w"]} 处，其余仍<span class="gh-gap">标红</span>留在明面。判读记录见 <code>greenhill_raw/ezekiel/gap_review.tsv</code>。</p>']
 
 
 BOOK = tcp_publish.Book(
