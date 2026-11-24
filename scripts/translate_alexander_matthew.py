@@ -429,7 +429,25 @@ def fix_italics(zh: str, en: str, label: str) -> str:
     return zh
 
 
-def translate_one(text: str, resume: bool, label: str = '') -> str:
+# 短段附前后段英文（佩特那条修法）。本书回放不支持：5#57 带上下文 3 次坏 2 次（只吐「方」、`tags kept…`），
+# 不带 4 次全好；4#31 带与不带都好。故关掉（0），第一遍坏输出照旧由结构闸拦下重译，原始输出记进 BAD_LOG。
+SHORT_CTX = 0
+
+
+def ctx_block(ctx: str) -> str:
+    if not ctx:
+        return ''
+    return ("【上下文】下面是这段前后的原文，只帮助理解这段在说什么，**不要翻译、不要输出、不要评论**：\n"
+            f"<上下文>\n{ctx}\n</上下文>\n\n【要翻译的这段】\n")
+
+
+def leak_diff(text: str, out: str) -> str:
+    """附了上下文后，译文里不该出现上下文标记。"""
+    # 只认附加的标记；「上下文」本身是译文常用词（缓存 266 段里 41 段正当用到），不能当判据
+    return '上下文泄漏' if re.search(r'【前】|【后】|【上下文】|【要翻译|</?上下文>', out) else ''
+
+
+def translate_one(text: str, resume: bool, label: str = '', ctx: str = '') -> str:
     key = tf.md5key(KEY_NS + text)
     f = CACHE / f'{key}.txt'
     if resume and f.exists() and f.stat().st_size > 0:
@@ -440,19 +458,21 @@ def translate_one(text: str, resume: bool, label: str = '') -> str:
 
     base = ("把下面这段亚历山大《马太福音释义》的十九世纪英文译成简体中文。"
             "整段通读后再译，保证上下文连贯；逐一保留 `*` 斜体标记与 ⟦N⟧ 占位符；把译文完整放在 <译文> 与 </译文> 之间，标签外的文字一律丢弃。\n\n")
-    out = fix_italics(restore_greek(tidy(take_tagged(tf.call_claude(base + text, timeout=900, label=label))), text),
-                      text, label)
-    diff = structural_diff(text, out)
+    raw = tf.call_claude(base + ctx_block(ctx) + text, timeout=900, label=label)
+    out = fix_italics(restore_greek(tidy(take_tagged(raw)), text), text, label)
+    diff = '；'.join(x for x in (structural_diff(text, out), leak_diff(text, out)) if x)
     if diff:
         print(f'    [retry-struct] {label}: {diff[:90]}', flush=True)
+        with BAD_LOG.open('a', encoding='utf-8') as fh:   # 第一遍原始输出备查：分清模型吐废话还是系统性问题
+            fh.write(f'[{label}·first] {diff[:120]}\n  RAW: {raw[:400]!r}\n')
         fix = (f"上一版译文有结构问题：{diff}。\n重译下面这段。**必须逐一保留**"
                " ⟦N⟧ 占位符（个数与先后都要对上）；希腊文逐字照抄；"
                "**不得把任何英文词原样留在中文句子里**。把译文完整放在 <译文> 与 </译文> 之间，标签外的文字一律丢弃。\n\n")
         # 重试两次，取第一个合格的；都不合格就取「只剩斜体问题」的那一版
         for n in (1, 2):
-            out2 = fix_italics(restore_greek(tidy(take_tagged(tf.call_claude(fix + text, timeout=900, label=f'{label}·retry{n}'))), text),
+            out2 = fix_italics(restore_greek(tidy(take_tagged(tf.call_claude(fix + ctx_block(ctx) + text, timeout=900, label=f'{label}·retry{n}'))), text),
                                text, f'{label}·retry{n}')
-            if not structural_diff(text, out2):
+            if not structural_diff(text, out2) and not leak_diff(text, out2):
                 out = out2
                 break
             if not is_severe(structural_diff(text, out2)) or is_severe(diff):
@@ -574,6 +594,10 @@ def annotate_terms(zh: str, en: str):
     return zh, missing
 
 
+def plain(b: str) -> str:
+    return re.sub(r'\s+', ' ', re.sub(r'<[^>]+>', ' ', b)).strip()
+
+
 class Paused(Exception):
     pass
 
@@ -597,7 +621,12 @@ def run_section(slug: str, resume: bool, dry: bool, jobs: int, publish: bool) ->
         if DEADLINE and time.time() > DEADLINE:
             raise Paused(f'{slug} 译到第 {j}/{len(idx)} 段')
         masked, tags = mask(units[i][1])
-        zh = unmask(translate_one(masked, resume, f'{slug}#{j + 1}'), tags).strip()
+        ctx = ''
+        if len(plain(units[i][1])) < SHORT_CTX:
+            prev = plain(units[idx[j - 1]][1])[-600:] if j > 0 else ''
+            nxt = plain(units[idx[j + 1]][1])[:600] if j + 1 < len(idx) else ''
+            ctx = (('【前】' + prev + '\n') if prev else '') + (('【后】' + nxt) if nxt else '')
+        zh = unmask(translate_one(masked, resume, f'{slug}#{j + 1}', ctx), tags).strip()
         # 一段英文只对一段中文：模型偶尔把段内「1. … 2. …」拆成几段（达拉谟、贺智都遇到过），并回一段
         zh = re.sub(r'(?<=[A-Za-z0-9])\s*\n\s*(?=[A-Za-z0-9])', ' ', zh)
         return i, re.sub(r'\s*\n\s*', '', zh)
