@@ -1,0 +1,23 @@
+<thinking_mode>
+Count asterisks in original.
+
+Segment: `*The (one) sitting on*` (2) `(or *over*)` (2) `*the circle ... grasshoppers*` (2) `(or *locusts*)` (2) `*the one spreading like a veil*` (2) `(or *awning*)` (2) `*the heavens, ... dwell in.*` (2) → 14.
+`*he that sitteth*` (2) →16. `*(it is he that sitteth),*` (2) →18. `*(have ye not considered the one sitting* etc.?)` (2) →20. `*locust,*` (2) →22. `*bestiolae*` (2) →24. `*minuta animantia*` (2) →26. `*(a dwelling-tent)*` (2) →28. `*(das Wohnzelt).*` (2) →30.
+
+No HTML comments in this text. Names: Solomon Ben Melek → 所罗门·本·麦勒（Solomon Ben Melek). Gill → 吉尔（Gill). Knobel, Hendewerk, Grotius → 格劳秀斯（Grotius), Lowth, Henderson, Ewald. Calvin no gloss. E. P. — Earlier Prophecies, p. 559 → 《早期预言》第 559 页.
+
+Hebrew: גלגל הסובב הארץ（环绕大地的天轮）. חגב（蚱蜢）. דק（细布）. Latin bestiolae（小虫）, minuta animantia（微小的活物）. German das Wohnzelt — keep, gloss（居住的帐幕）.
+
+Num. 13:33 → 民数记 13:33. ch. 42:5 → 第 42:5? "以赛亚书 42:5；44:24；约伯记 9:8；诗篇 104:2". Use 第 42 章 5 节? Format "书卷名 章:节": 以赛亚书 42:5.
+
+"English Version" → 英王钦定本.
+
+Draft:
+*那坐在*（或作*在……之上*）*地的圆圈上的，其上的居民（就）如蚱蜢*（或作*蝗虫*）；*那铺张诸天如幔子*（或作*遮篷*）*的，他又展开它们如供居住的帐幕。*
+
+Careful: "the one spreading like a veil the heavens" — 那如幔子铺张的 ... order. "*那铺张如幔子*（或作*遮篷*）*诸天的，他又展开它们如可居住的帐幕。*" Better keep order: "*那如幔子*（或作*遮篷*）*铺张诸天的*" — but original order: spreading like a veil (awning) the heavens. Chinese: "*那铺张如幔子*（或作*遮篷*）*诸天的*" awkward. Use "*那铺张诸天，如幔子*（或作*遮篷*）*，*"? The final segment begins "*the heavens, and he stretches...*". I can reorder content slightly: "*那如幔子*（或作*遮篷*）*铺张诸天的，他又展开它们，如供人居住的帐幕。*" Fine; counts same.
+
+Relative construction "he that sitteth" → 关系从句译法 *那坐在……的*. Then English Version "*（乃是那坐在……的）*". "*（你们岂没有留意那坐在……的* 等等？）" — "etc." → "……" per rule. "*（你们岂没有留意那坐在……的*……？）".
+</thinking_mode>
+
+*那坐在*（或作*在……之上*）*地的圆圈上的，其上的居民（就）如蚱蜢*（或作*蝗虫*）；*那如幔子*（或作*遮篷*）*铺张诸天的，他又展开它们，如供人居住的帐幕。* 关系从句的译法 *那坐在……的*，实质上并无不妥，但最好尽可能保留原文的形式，如上所译。这样，这几个词可以理解为省去了表存在的动词，如英王钦定本那样 *（乃是那坐在……的）*；也可以与上一节末了的动词连读 *（你们岂没有留意那坐在……的*……？）。——地的圆圈，可以指大地本身，也可以指笼罩并环绕大地的诸天。（所罗门·本·麦勒〔Solomon Ben Melek〕：גלגל הסובב הארץ〔环绕大地的天轮〕。）吉尔（Gill）援引这一说法，证明先知已知道大地的真实形状；克诺贝尔（Knobel）则援引它，证明先知对诸天持有错误的观念——两者同样有理。这类推论的荒谬，参《早期预言》第 559 页。与此相当的，还可举出亨德韦克（Hendewerk）的一句评语：此处描写神与人类的比例，恰如人类与昆虫的比例！同样的比喻见于民数记 13:33。חגב（蚱蜢）现今一般解作某种 *蝗虫*，这自然不影响比喻的要点，其根本的意思是 *bestiolae*（小虫）（加尔文），或 *minuta animantia*（微小的活物）（格劳秀斯〔Grotius〕）。——דק（细布）本指精细的布，洛沃特（Lowth）以为此处是指东方房屋露天庭院上方张开的遮篷。末了几个词究竟是指供他自己居住，还是供人居住，向来有争议。但这几个词其实不属于直接的描写，而属于比喻的一部分，即如一顶为居住而支搭的帐幕；这一意思在亨德森（Henderson）的译文 *（供居住的帐幕）* 和埃瓦尔德（Ewald）的译文 *（das Wohnzelt〔居住的帐幕〕）。* 中都表达得很清楚。——本节可参以赛亚书 42:5；44:24；约伯记 9:8；诗篇 104:2。
