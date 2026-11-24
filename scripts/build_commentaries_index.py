@@ -422,7 +422,8 @@ DUO_BOOKS = {}
 # 2026-11-17 博纳尔上线，诗篇三家合列。
 PICK_BOOKS = {'psalms': ('alexander', 'spurgeon', 'vos', 'bonar', 'owen', 'manton', 'bridges', 'knox', 'hildersham', 'reynolds', 'cowper', 'smith', 'taylor', 'gouge', 'pierson'), 'matthew': ('spurgeon', 'dickson', 'alexander'),
               'romans': ('hodge', 'haldane'),   # 2026-11-10 霍尔丹上线，罗马书两家合列
-              'isaiah': ('alexander', 'anon')}  # 2026-11-13 用户令以赛亚书加一本佚名注释，两家合列
+              'isaiah': ('alexander', 'anon'),  # 2026-11-13 用户令以赛亚书加一本佚名注释，两家合列
+              'job': ('hutcheson', 'caryl')}    # 2026-11-24 卡里尔上线，约伯记两家合列
 # 合列卡片用书卷自己的独立色，不用任何一家的作者色（用户 2026-11-10：「专门为诗篇挑选」；同日「颜色不能太相近」）。
 # 全站作者色已占满色板，与全部颜色都 ≥25 的只剩一族艳粉，挑不出两种；改按**同区可见**比：
 # 诗篇与旧约区卡片（亚历山大、毕列志、赫奇森）、马太福音与新约区全部卡片、各自选择页上的作者卡片，
@@ -437,7 +438,10 @@ PICK_BOOKS = {'psalms': ('alexander', 'spurgeon', 'vos', 'bonar', 'owen', 'manto
 PICK_COLORS = {'psalms': ('#2c2864', '#4a4382'), 'matthew': ('#764000', '#9b5b15'),
                'romans': ('#591c70', '#7b3695'),
                # 以赛亚灰绿 LCh (48→60, 25→30, 145°)：与全部既有色（含三张合列卡片色）最小 ΔE 17.2，网格里最远的一档
-               'isaiah': ('#567b59', '#6d9c71')}
+               'isaiah': ('#567b59', '#6d9c71'),
+               # 约伯记深绯 LCh (31→43, 49, 0°)：与旧约区各卡片、各合列色、加尔文酒红、马太亨利金、Hux 蓝、缺字红、历代解经墨绿、
+               # 卡里尔灰玫最小 ΔE 23.4；绿一档 18.3 与赫奇森绿同族，弃用。
+               'job': ('#8a1a4b', '#ac3d67')}
 
 PICK_PAGE = '''---
 layout: default

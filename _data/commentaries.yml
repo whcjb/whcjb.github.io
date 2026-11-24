@@ -462,6 +462,10 @@ books:
     en: "Job"
     testament: ot
     chapters: 42
+    pick: true
+    pick_n: 2
+    pick_c0: "#8a1a4b"
+    pick_c1: "#ac3d67"
     links:
       - {author: hutcheson, path: "/hutcheson/job/", url_tpl: "/hutcheson/job/__CH__/", title_cn: "约伯记释义", title_en: "An Exposition of the Book of Job", c0: "#24753a", c1: "#2f8f46"}
       - {author: caryl, path: "/caryl/job/", url_tpl: "/caryl/job/__CH__/", title_cn: "约伯记讲解", title_en: "An Exposition with Practical Observations upon the Book of Job", c0: "#6e4a41", c1: "#986d62"}
