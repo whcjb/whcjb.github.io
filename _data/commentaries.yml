@@ -254,6 +254,15 @@ authors:
     work_en: "CLII Lectures upon Psalme LI"
     no_bio: false
     books: 1
+  - id: caryl
+    name: "约瑟·卡里尔"
+    short: "卡里尔"
+    en: "Joseph Caryl"
+    years: "1602–1673"
+    work_cn: "约伯记讲解"
+    work_en: "An Exposition with Practical Observations upon the Book of Job"
+    no_bio: false
+    books: 1
   - id: reynolds
     name: "爱德华·雷诺兹"
     short: "雷诺兹"
@@ -455,6 +464,7 @@ books:
     chapters: 42
     links:
       - {author: hutcheson, path: "/hutcheson/job/", url_tpl: "/hutcheson/job/__CH__/", title_cn: "约伯记释义", title_en: "An Exposition of the Book of Job", c0: "#24753a", c1: "#2f8f46"}
+      - {author: caryl, path: "/caryl/job/", url_tpl: "/caryl/job/__CH__/", title_cn: "约伯记讲解", title_en: "An Exposition with Practical Observations upon the Book of Job", c0: "#6e4a41", c1: "#986d62"}
   - id: psalms
     name: "诗篇"
     en: "Psalms"

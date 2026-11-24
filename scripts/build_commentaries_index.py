@@ -214,6 +214,13 @@ AUTHORS = OrderedDict([
                         years='1563–1632', dir='hildersham',
                         work_cn='诗篇 51 篇讲义 152 讲',
                         work_en='CLII Lectures upon Psalme LI')),
+    # 卡里尔：1602 年 11 月生于伦敦（DNB、Wikipedia），1673 年 2 月卒于伦敦（旧历 1672/3）。卒日 DNB 作 3 月 10 日，
+    # 但同年单张讽刺挽诗（EEBO-TCP A43792）记其葬礼在 1672/3 年 2 月 25 日，3 月之说不能成立，故只写到年。
+    # 《约伯记讲解》12 部 1643–1666（各部扉页），本站据 EEBO-TCP 所录 8 部，见 caryl_raw/job/PROVENANCE.md。
+    ('caryl', dict(name='约瑟·卡里尔', short='卡里尔', en='Joseph Caryl',
+                   years='1602–1673', dir='caryl',
+                   work_cn='约伯记讲解',
+                   work_en='An Exposition with Practical Observations upon the Book of Job')),
     # 雷诺兹：1599 年 11 月生于南安普敦，1676-07-28 卒于诺里奇（主教任上）。本站只收《诗篇 110 篇释义》（1632，EEBO-TCP A10650）——单篇专书，见 MONOGRAPHS。
     ('reynolds', dict(name='爱德华·雷诺兹', short='雷诺兹', en='Edward Reynolds',
                   years='1599–1676', dir='reynolds',
@@ -272,7 +279,7 @@ AUTHORS = OrderedDict([
 ])
 
 # 没有生平页的作者：commentaries/index.html「本页收录」与 commentary-pick.html 的生平链接都跳过
-NO_BIO = {'anon'}
+NO_BIO = {'anon', 'calvin'}   # 加尔文没有 commentaries/authors/ 生平页
 # 只有占位页、还没有正文的作者：不进对比抽屉（点过去只有「第 N 章」）
 NO_COMPARE = {'anon'}
 
@@ -285,6 +292,8 @@ NO_COMPARE = {'anon'}
 #   贺智靛蓝 vs 欧文绿 ΔE 39.7，vs 毕列志棕 59.4，vs 加尔文蓝 33.2。
 # 每项是 (深, 浅) 两端，页面按 135° 渐变，与首页资源卡片一致。
 AUTHOR_COLORS = {
+    # 加尔文酒红：全站加尔文主色（COMPARE_ACCENT 同值），各家选色时都已避开；只用在诗篇选择页（PICK_EXTRA）
+    'calvin':  ('#5a0000', '#800000'),
     'owen':    ('#14382f', '#1f5a4b'),
     'bridges': ('#5B3A29', '#96613F'),
     'hodge':   ('#152840', '#2b5080'),
@@ -377,6 +386,9 @@ AUTHOR_COLORS = {
     'knox': ('#0f4c5c', '#16697d'),
     # 希尔德沙姆梅紫：HLS 网格里与既有各色及加尔文酒红、马太亨利金最小 ΔE 19.7（CIE76，费尔贝恩）；色板已挤，与先例同档。
     'hildersham': ('#5f2357', '#85327a'),
+    # 卡里尔灰玫（「尘土和炉灰」，伯 42:6）：LCh (50, 20, 39°)，与既有各色及加尔文酒红、马太亨利金、Hux 蓝最小 ΔE 15.8（CIE76）。
+    # 色板已挤，ΔE 30 以上的空位只剩高彩艳粉，不合本书，取此色。
+    'caryl': ('#6e4a41', '#986d62'),
     # 雷诺兹松绿：HLS 网格里与既有各色及加尔文酒红、马太亨利金最小 ΔE 19.6（CIE76，达文南特橄榄）；色板已挤，与先例同档。
     'reynolds': ('#23503a', '#34794f'),
     # 考珀芥黄：HLS 网格里与既有各色及加尔文酒红、马太亨利金最小 ΔE 20.2（CIE76，琼斯橄榄褐）；色板已挤，与先例同档。
@@ -438,7 +450,9 @@ description: 「历代解经」{cn}条目：{names}，选择进入。
 
 # 单篇论文（没有逐章页面）：has_content 认不出来，在这里登记 {作者: {书卷: 入口}}。
 # 不进对比抽屉（compare_sources 只收有章节的目录）。
-# 单篇专书：目录名不是书卷名，归到某卷名下；只讲一两篇，不进逐章对比抽屉（2026-11-17 用户令收欧文、曼顿、布里奇斯论单篇诗篇）
+# 单篇专书：目录名不是书卷名，归到某卷名下（2026-11-17 用户令收欧文、曼顿、布里奇斯论单篇诗篇）。
+# 对比抽屉只在它讲的那一篇出现（目录名末尾的数字），点开是该书目录页——整本书讲一篇，没有逐章对应
+# （2026-11-19 用户问「第 130 篇为什么没有约翰欧文」后接入）。
 MONOGRAPHS = {('owen', 'psalm130'): 'psalms', ('manton', 'psalm119'): 'psalms', ('bridges', 'psalm119'): 'psalms',
               ('knox', 'psalm6'): 'psalms', ('hildersham', 'psalm51'): 'psalms', ('reynolds', 'psalm110'): 'psalms', ('cowper', 'psalm119'): 'psalms', ('smith', 'psalm51'): 'psalms', ('smith', 'psalm90'): 'psalms', ('taylor', 'psalm32'): 'psalms', ('smith', 'psalm1'): 'psalms', ('gouge', 'psalm116'): 'psalms', ('pierson', 'psalm27'): 'psalms', ('pierson', 'psalm84'): 'psalms', ('pierson', 'psalm85'): 'psalms', ('pierson', 'psalm87'): 'psalms'}
 # 同一作者在同一卷书下有几本单篇专书时（史密斯：诗篇 51、90 篇），逐本出条目，书名按目录查此表；
@@ -450,6 +464,13 @@ MONO_TITLES = {('pierson', 'psalm27'): ('大卫在患难中的得胜（诗篇 27
                ('smith', 'psalm1'): ('大卫的有福之人（诗篇 1 篇）', 'Dauids Blessed Man'),
                ('smith', 'psalm51'): ('大卫的悔改（诗篇 51 篇）', 'Dauids Repentance'),
                ('smith', 'psalm90'): ('摩西的祷告（诗篇 90 篇）', 'Moses his Prayer')}
+# 专书主目录的语种与该作者别的书不同时在此注明（布里奇斯箴言主目录是中译，诗篇 119 只有英文）
+MONOGRAPH_LANG = {('bridges', 'psalm119'): 'en'}
+# 选择页上补列被 EXCLUDED_AUTHORS 排除的作者的专书（加尔文整体不进历代解经，单列一本）：
+# {书卷: [(作者, 入口, 中文书名, 英文书名)]}，排在该卷选择页卡片末尾。
+# 2026-11-20 用户令诗篇选择页加加尔文《诗篇 119 篇讲章》，链到该书首页。
+PICK_EXTRA = {'psalms': [('calvin', '/calvin/psalm119-sermons/', '诗篇 119 篇讲章',
+                          'Two and Twenty Sermons upon the Hundredth and Nineteenth Psalm')]}
 ESSAY_ENTRIES = {'vos': {'psalms': '/vos/psalter/zh/'}}   # 入口一律指中文版（用户 2026-11-11）
 # 交界斜度：顶边比底边右移 2×DUO_SLANT 个百分点。原先 20 个百分点，三家时最左一带底边太窄放不下作者名，收到 8。
 DUO_SLANT = 4
@@ -484,6 +505,8 @@ BOOK_TITLES = {
                                 'An Exposition of the Book of Ecclesiastes'),
     ('hildersham', 'psalms'):  ('诗篇 51 篇讲义 152 讲',
                                 'CLII Lectures upon Psalme LI'),
+    ('caryl', 'job'):          ('约伯记讲解',
+                                'An Exposition with Practical Observations upon the Book of Job'),
     ('reynolds', 'psalms'): ('诗篇 110 篇释义',
                                 'An Explication of the Hundreth and Tenth Psalme'),
     ('cowper', 'psalms'): ('锡安学子的圣字母表',
@@ -605,7 +628,7 @@ COMPARE_ACCENT = {
     'candlish': '#b07080', 'fairbairn': '#bc65ac', 'taylor': '#6f77e0',
     'hall': '#769019', 'barlow': '#2b9b8a', 'attersoll': '#8e8cbd', 'dickson': '#8b2499',
     'petter': '#38a622', 'foote': '#d14457', 'jones': '#9c9066', 'haldane': '#9b6899',
-    'bonar': '#d2776f', 'knox': '#16697d', 'hildersham': '#85327a', 'reynolds': '#34794f', 'cowper': '#a49746', 'smith': '#3aa0af', 'gouge': '#592b82', 'pierson': '#354aa0',
+    'bonar': '#d2776f', 'knox': '#16697d', 'hildersham': '#85327a', 'reynolds': '#34794f', 'cowper': '#a49746', 'smith': '#3aa0af', 'gouge': '#592b82', 'pierson': '#354aa0', 'caryl': '#986d62',
 }
 COMPARE_LABEL = {
     'calvin': '加尔文注释', 'mhenry': '马太亨利注释', 'owen': '约翰欧文注释',
@@ -617,7 +640,7 @@ COMPARE_LABEL = {
     'candlish': '坎德利什讲解', 'fairbairn': '费尔贝恩注释', 'taylor': '泰勒注释',
     'hall': '霍尔注释', 'barlow': '巴洛讲解', 'attersoll': '阿特索尔注释', 'dickson': '迪克森简释',
     'petter': '佩特注释', 'foote': '福特讲义', 'jones': '琼斯简释', 'haldane': '霍尔丹释义',
-    'bonar': '博纳尔讲论', 'knox': '诺克斯讲解', 'hildersham': '希尔德沙姆讲义', 'reynolds': '雷诺兹释义', 'cowper': '考珀注释', 'smith': '史密斯讲解', 'gouge': '古治注释', 'pierson': '皮尔森讲解',
+    'bonar': '博纳尔讲论', 'knox': '诺克斯讲解', 'hildersham': '希尔德沙姆讲义', 'reynolds': '雷诺兹释义', 'cowper': '考珀注释', 'smith': '史密斯讲解', 'gouge': '古治注释', 'pierson': '皮尔森讲解', 'caryl': '卡里尔讲解',
 }
 
 
@@ -640,7 +663,7 @@ PRIMARY_LANG = {'calvin': 'zh', 'mhenry': 'zh', 'bridges': 'zh', 'haldane': 'en'
                 'adams': 'en', 'rollock': 'en', 'jenkyn': 'en',
                 'candlish': 'en', 'fairbairn': 'en', 'taylor': 'en',
                 'hall': 'en', 'barlow': 'en', 'attersoll': 'en', 'dickson': 'en', 'petter': 'en',
-                'foote': 'en', 'jones': 'en', 'bonar': 'en', 'knox': 'en', 'hildersham': 'en', 'reynolds': 'en', 'cowper': 'en', 'smith': 'en', 'gouge': 'en', 'pierson': 'en'}
+                'foote': 'en', 'jones': 'en', 'bonar': 'en', 'knox': 'en', 'hildersham': 'en', 'reynolds': 'en', 'cowper': 'en', 'smith': 'en', 'gouge': 'en', 'pierson': 'en', 'caryl': 'en'}
 
 
 # 某卷主目录的语种与该作者的 PRIMARY_LANG 不同时在此注明（毕列志箴言是中译，传道书只有英文）
@@ -702,6 +725,18 @@ def build_compare_sources() -> str:
                 continue
             name = d.name
             if (aid, name) in MONOGRAPHS:
+                ch = int(re.search(r'(\d+)$', name).group(1))
+                variants = [(MONOGRAPH_LANG.get((aid, name), PRIMARY_LANG.get(aid, 'zh')), f'/{meta["dir"]}/{name}/')]
+                if variants[0][0] != 'zh' and (d / 'zh' / 'index.html').exists():
+                    variants.append(('zh', f'/{meta["dir"]}/{name}/zh/'))
+                for lang, tpl in variants:
+                    e = {'key': aid + ('-en' if lang == 'en' else ''), 'author': aid, 'lang': lang,
+                         'label': COMPARE_LABEL.get(aid, aid) + ('（英文版）' if lang == 'en' else ''),
+                         'url_tpl': tpl, 'accent': COMPARE_ACCENT.get(aid, '#555')}
+                    if lang == 'en':
+                        e['label_en'] = AUTHORS[aid]['en']
+                    e['ch_from'] = e['ch_to'] = ch
+                    out[MONOGRAPHS[(aid, name)]].append(e)
                 continue
             core = name[:-3] if name.endswith('-en') else name
             if core.startswith('harmony'):
@@ -839,6 +874,9 @@ def _load_chapters():
 CHAPTERS = _load_chapters()
 
 
+AUTHOR_OF = {meta['dir']: aid for aid, meta in AUTHORS.items()}
+
+
 def has_content(d: Path) -> bool:
     """目录里得有实际章节，光有 index.html 的空壳不算。
 
@@ -849,6 +887,8 @@ def has_content(d: Path) -> bool:
     """
     if not d.is_dir():
         return False
+    if (AUTHOR_OF.get(d.parent.name), d.name) in MONOGRAPHS:   # 单篇专书按段并页，页名不是数字（欧文诗 130：psalm.md、v4-1.md…）
+        return any(d.glob('*.md'))
     if any(p.stem.isdigit() or p.stem == 'preface' for p in d.glob('*.md')):
         return True
     return any(p.is_dir() and (p.name.isdigit() or p.name == 'preface')
@@ -989,6 +1029,8 @@ def main():
                 expanded.append((_aid, _path, HARMONY_MAP[bid][1], HARMONY_MAP[bid][2], None))
             else:
                 expanded.append((_aid, _path, None, None, None))
+        for _aid, _path, _cn, _en in (PICK_EXTRA.get(bid, []) if pick else []):
+            expanded.append((_aid, _path, _cn, _en, None))
         entries = expanded
         # 不再 `if not entries: continue`——66 卷全部输出，没有条目的在版面上
         # 画成虚线框。少输出的话页面就得自己再拼一份书卷全表，两处容易不同步。
@@ -1059,7 +1101,7 @@ def main():
     # 合列书卷的选择页入口
     for bid, aids in PICK_BOOKS.items():
         cn = next(c for b, c, _, _ in BOOKS if b == bid)
-        names = '、'.join(AUTHORS[a]['name'] for a in aids)
+        names = '、'.join(AUTHORS[a]['name'] for a in aids + tuple(e[0] for e in PICK_EXTRA.get(bid, [])))
         pp = ROOT / 'commentaries' / bid / 'index.html'
         pp.parent.mkdir(parents=True, exist_ok=True)
         pp.write_text(PICK_PAGE.format(cn=cn, names=names, bid=bid), encoding='utf-8')

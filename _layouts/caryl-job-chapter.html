@@ -1,0 +1,249 @@
+---
+layout: default
+---
+{%- comment -%}
+  约瑟·卡里尔《约伯记释义》(1643–1666，12 部) 的章节页（中英共用，靠 page.zh 切换）。
+
+  ⚠️ 不复用别家 layout：每本书独立样式（用户既定规矩）。骨架取自 dickson-chapter。
+  按 2026-10-16 起的新书规矩：章顶不放「跳到某节」下拉，副标题作者写英文原名。
+
+  配色灰玫 #986d62（「尘土和炉灰」，伯 42:6）：LCh (50, 20, 39°)，与「历代解经」已登记各色最小 ΔE 15.8（CIE76）。
+  色板已挤，饱和度高的空位只剩艳粉，不合本书；取此色。深端 #6e4a41。
+
+  本书版式要点（底本 EEBO-TCP 8 部，见 caryl_raw/job/PROVENANCE.md）：
+  - 一段（≈一讲或连续几讲）一页：段首经文 → `.cy-text`，首行出处 → `.cy-vlabel`。
+  - 段内逐节的小经文框 → `.cy-vhead`，其前挂该节 commentary-anchor。
+  - 印本页码 → `.cy-pb`，id `#pN`（各部各自编页）。
+  - 待定的缺字 → `.cy-gap`（标红）。
+{%- endcomment -%}
+
+<div class="container caryl-wrap{% if page.zh %} cy-zh{% endif %}" style="padding-top: 70px;">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1" id="cmpCol">
+
+      <div class="cy-chrome">
+        <a href="{{ site.baseurl }}/caryl/{{ page.book_id }}/{% unless page.zh %}en/{% endunless %}">&larr; {{ page.book_name }}</a>
+        {% if page.zh %}{%- comment -%} 中文章节页不放英文入口：英文版只从书卷首页进（用户 2026-11-11 定，历代解经全部书卷通行）。{%- endcomment -%}
+        {% else %}{% if page.zh_url %}<a class="cy-lang" href="{{ site.baseurl }}{{ page.zh_url }}">中文版 &rarr;</a>{% endif %}{% endif %}
+      </div>
+
+      <h1 class="cy-title">{{ page.title }}</h1>
+      {% if page.subtitle %}<p class="cy-subtitle">{{ page.subtitle }}</p>{% endif %}
+
+      <div class="cy-nav">
+        {% if page.prev_url %}<a href="{{ site.baseurl }}{{ page.prev_url }}">&larr; {{ page.prev_label }}</a>
+        {% else %}<span></span>{% endif %}
+        {% if page.next_url %}<a href="{{ site.baseurl }}{{ page.next_url }}">{{ page.next_label }} &rarr;</a>
+        {% else %}<span></span>{% endif %}
+      </div>
+
+      {%- comment -%}
+        对比注释抽屉：只给正文章节页（有 page.chapter）。self 把本书自己排除，中英两版 key 不同。
+      {%- endcomment -%}
+      {% if page.chapter %}
+      {% assign cc_self = "caryl-en" %}{% if page.zh %}{% assign cc_self = "caryl" %}{% endif %}
+      {% include compare-commentary-head.html self=cc_self content_class="cy-content" self_label="卡里尔" %}
+      {% endif %}
+      <div class="cy-content">
+        {{ content }}
+      </div>
+      {% if page.chapter %}{% include compare-commentary-foot.html %}{% endif %}
+
+      {% if page.date %}
+      <div class="cy-stamp">{% if page.zh %}译于{% else %}Published{% endif %} {{ page.date | date: "%Y-%m-%d %H:%M" }}</div>
+      {% endif %}
+
+      <div class="cy-nav cy-nav-foot">
+        {% if page.prev_url %}<a href="{{ site.baseurl }}{{ page.prev_url }}">&larr; {{ page.prev_label }}</a>
+        {% else %}<span></span>{% endif %}
+        {% if page.next_url %}<a href="{{ site.baseurl }}{{ page.next_url }}">{{ page.next_label }} &rarr;</a>
+        {% else %}<span></span>{% endif %}
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<script>
+// 段前经文框：标进 scripture-popup 的 skip 列表（框里本身就是经文，不再 linkify）
+(function () {
+  document.querySelectorAll('.cy-content .cy-text').forEach(function (box) {
+    box.classList.add('verse-anchor');
+  });
+})();
+</script>
+
+{%- comment -%}
+  经文引用弹层：只给中文页（模块认的是中文书卷名）。accent/vnum 必须写字面量
+  （Jekyll 3 的 include 参数不接受变量）——与下方 CSS 的 --cy-ink 两处同值，改色要一起改。
+{%- endcomment -%}
+{% if page.zh %}
+{% include scripture-popup.html container_selector=".cy-content" accent="#986d62" vnum="#6e4a41" slide="down" %}
+{% endif %}
+
+<style>
+.caryl-wrap {
+  --cy-ink: #986d62;
+  --cy-ink-dark: #6e4a41;
+  --cy-ink-light: #c9aca4;
+  --cy-rule: #efe3df;
+  --cy-paper: #faf6f4;
+  --cy-body: #2b2321;
+}
+.caryl-wrap .cy-chrome,
+.caryl-wrap .cy-nav {
+  font-size: 13px; display: flex; justify-content: space-between; gap: 12px;
+  align-items: center; font-family: Georgia, "Times New Roman", serif;
+}
+.caryl-wrap .cy-chrome { margin: 18px 0 22px; }
+.caryl-wrap .cy-chrome a,
+.caryl-wrap .cy-nav a { color: var(--cy-ink); text-decoration: none; }
+.caryl-wrap .cy-chrome a:hover,
+.caryl-wrap .cy-nav a:hover { color: var(--cy-ink-dark); text-decoration: underline; }
+.caryl-wrap .cy-lang { border: 1px solid var(--cy-rule); border-radius: 4px; padding: 4px 10px; }
+.caryl-wrap .cy-lang:hover { background: var(--cy-ink); color: #fff !important; text-decoration: none; }
+.caryl-wrap .cy-title {
+  font-family: Georgia, "Times New Roman", serif; font-size: 30px; font-weight: normal;
+  color: var(--cy-ink-dark); text-align: center; margin: 10px 0 4px; line-height: 1.3;
+}
+.caryl-wrap .cy-subtitle {
+  text-align: center; font-size: 14px; color: #85798a; margin: 0 0 18px;
+  font-family: Georgia, "Times New Roman", serif; font-style: italic;
+}
+.caryl-wrap .cy-nav { margin: 14px 0 26px; }
+.caryl-wrap .cy-nav-foot { margin-top: 44px; padding-top: 16px; border-top: 1px solid var(--cy-rule); }
+
+/* 正文 */
+.caryl-wrap .cy-content {
+  font-family: Georgia, "Times New Roman", "Songti SC", STSong, serif;
+  font-size: 17px; line-height: 1.85; color: var(--cy-body);
+}
+.caryl-wrap .cy-content p { margin: 0 0 16px; text-align: justify; }
+.caryl-wrap .cy-content h2 {
+  font-family: Georgia, "Times New Roman", serif; font-size: 19px; font-weight: normal;
+  text-align: center; color: var(--cy-ink-dark); margin: 10px 0 18px; line-height: 1.5; letter-spacing: .03em;
+}
+.caryl-wrap .cy-content a { color: var(--cy-ink); }
+
+/* 章目录页（/caryl/<书>/<章>/）：本章各段 */
+.caryl-wrap .cy-secrule { border: 0; border-top: 1px solid var(--cy-rule); margin: 22px 0 18px; }
+.caryl-wrap .cy-sec { scroll-margin-top: 70px; }
+.caryl-wrap .cy-chtoc { list-style: none; padding: 0; margin: 10px 0; display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 8px; }
+.caryl-wrap .cy-chtoc a { display: block; padding: 9px 13px; border: 1px solid var(--cy-rule);
+  border-radius: 4px; background: var(--cy-paper); text-decoration: none; color: #2b2321; line-height: 1.45; }
+.caryl-wrap .cy-chtoc a:hover { border-color: var(--cy-ink); color: var(--cy-ink-dark); }
+.caryl-wrap .cy-chtoc small { display: block; color: #85798a; font-size: 12.5px; }
+
+/* 段前排出的经文：一节一行 */
+.caryl-wrap .cy-text {
+  background: var(--cy-paper); border-left: 3px solid var(--cy-ink);
+  padding: 12px 18px; margin: 6px 0 20px; color: #3e3331;
+}
+.caryl-wrap .cy-text p { margin: 0; text-align: left; }
+.caryl-wrap .cy-text p + p { margin-top: 8px; }
+.caryl-wrap .cy-text .cy-vlabel { font-size: 13px; letter-spacing: .04em; color: var(--cy-ink-dark); margin: 0 0 4px; font-style: italic; }
+/* 未录入各部的占位章页 */
+.caryl-wrap .cy-pending { text-align: center !important; color: #85797a; font-style: italic; margin: 40px 0 16px !important; }
+
+/* 段内逐节的小经文框（「Verse 2. Can a man be profitable unto God?」） */
+.caryl-wrap .cy-vhead { margin: 30px 0 14px !important; padding: 8px 14px; border-left: 3px solid var(--cy-ink-light);
+  background: var(--cy-paper); font-style: italic; color: #4a3d3a; text-align: left !important; }
+.caryl-wrap .cy-vhead em { font-style: normal; }
+.caryl-wrap .commentary-anchor {
+  display: block; height: 0; line-height: 0; margin: 0; padding: 0;
+  overflow: hidden; visibility: hidden; scroll-margin-top: 80px;
+}
+
+/* 中文页：音译专名后的原名对照，小一号灰字 */
+.caryl-wrap.cy-zh .cy-orig { font-size: .82em; color: #85798a; margin: 0 1px;
+  font-family: Georgia, "Times New Roman", serif; white-space: nowrap; }
+
+/* 页边旁注 */
+.caryl-wrap .cy-margin {
+  display: block; margin: 2px 0 8px; padding-left: 10px; border-left: 2px solid var(--cy-rule);
+  font-size: 13px; line-height: 1.55; color: #7b6f7f; font-style: normal; text-align: left;
+}
+@media (min-width: 1200px) {
+  .caryl-wrap .cy-margin {
+    float: right; clear: right; width: 150px; margin: 4px -182px 8px 16px;
+    padding-left: 8px; text-indent: 0;
+  }
+}
+
+/* 印本页码：空锚点，行内显示「p. N」小灰字 */
+.caryl-wrap .cy-pb { scroll-margin-top: 80px; cursor: help; }
+.caryl-wrap .cy-pb[data-p]::before {
+  content: "p." attr(data-p); font-size: 10.5px; color: #b3a5b5; font-style: normal;
+  font-family: Georgia, serif; letter-spacing: .02em; margin: 0 4px;
+  border: 1px solid #efe3df; border-radius: 3px; padding: 0 3px; vertical-align: 1px;
+}
+
+/* 花饰首字 */
+.caryl-wrap .cy-dropcap {
+  float: left; font-family: Georgia, "Times New Roman", serif; font-size: 3.1em;
+  line-height: .84; margin: 4px 7px 0 0; color: var(--cy-ink-dark);
+}
+
+/* 原书分条（1. 2. …） */
+.caryl-wrap .cy-item { padding-left: 1.4em; margin: 0 0 8px !important; }
+/* 扉页题辞 */
+.caryl-wrap .cy-quote { text-align: center !important; font-style: italic; }
+
+/* 底本里读不出的字 */
+.caryl-wrap .cy-gap { color: #c0392b; background: #fdecea; border-radius: 2px; padding: 0 2px; cursor: help; }
+/* 编者推补：方括号 + 另色，与原文区分 */
+.caryl-wrap .cy-conj { color: #8a5a00; background: #fff6e0; border-radius: 2px; padding: 0 1px; cursor: help; font-style: normal; }
+
+/* 书名页、献辞落款 */
+.caryl-wrap .cy-closer { text-align: right !important; font-style: italic; color: #564a58; }
+.caryl-wrap .cy-tp p { text-align: center !important; font-size: 16px; letter-spacing: .03em; }
+
+/* 小标题：逐语解说的引语、分论点（录入本 section / subsection） */
+.caryl-wrap .cy-content h3 { font-family: Georgia, "Times New Roman", serif; font-size: 17.5px; font-weight: 600;
+  color: var(--cy-ink-dark); margin: 30px 0 10px; line-height: 1.5; text-align: left; }
+.caryl-wrap .cy-content h4 { font-family: Georgia, "Times New Roman", serif; font-size: 16px; font-weight: 600;
+  font-style: italic; color: var(--cy-ink-dark); margin: 22px 0 8px; line-height: 1.5; }
+.caryl-wrap .cy-content h5 { font-size: 15px; font-weight: 600; color: #564a58; margin: 18px 0 6px; }
+.caryl-wrap .cy-listhead { font-weight: 600; margin: 14px 0 6px !important; }
+/* 引诗：逐行 */
+.caryl-wrap .cy-poem { margin: 6px 0 18px; padding-left: 2.2em; font-style: italic; }
+.caryl-wrap .cy-poem p { margin: 0 !important; text-align: left !important; }
+/* 引文里嵌的另一篇（录入本 floatingText） */
+.caryl-wrap .cy-float { border: 1px solid var(--cy-rule); border-radius: 4px; padding: 12px 18px; margin: 8px 0 20px; background: #fff; }
+/* 表（卷首目录、卷末索引） */
+.caryl-wrap .cy-table { width: 100%; border-collapse: collapse; font-size: 14.5px; line-height: 1.6; margin: 8px 0 22px; }
+.caryl-wrap .cy-table caption { caption-side: top; text-align: left; font-weight: 600; color: var(--cy-ink-dark); padding: 6px 0; }
+.caryl-wrap .cy-table td, .caryl-wrap .cy-table th { border-bottom: 1px solid var(--cy-rule); padding: 5px 6px; vertical-align: top; text-align: left; }
+.caryl-wrap .cy-table th { background: var(--cy-paper); color: var(--cy-ink-dark); font-weight: normal; font-style: italic; }
+.caryl-wrap .cy-table td:last-child { white-space: nowrap; }
+@media (max-width: 767px) { .caryl-wrap .cy-table { display: block; overflow-x: auto; } }
+
+/* 录入本缺页补录（备用） */
+.caryl-wrap .cy-supplied { border-left: 3px dashed var(--cy-ink-light); padding-left: 14px; margin: 0 0 18px; }
+.caryl-wrap .cy-supplied-note { font-size: 12.5px; color: #7b6f7f; font-style: italic; margin: 0 0 10px !important; }
+
+/* 每章提要（录入本 argument），章题下、首节经文框前 */
+.caryl-wrap .cy-argument { font-style: italic; color: #564a58; border-left: 3px solid var(--cy-rule);
+  padding-left: 12px; margin: 0 0 16px !important; }
+
+.caryl-wrap .cy-salute { font-style: italic; text-align: left !important; margin: 0 0 10px !important; }
+
+.caryl-wrap .cy-stamp {
+  margin-top: 32px; font-size: 12px; color: #9aa8a5; text-align: right;
+  font-family: Georgia, "Times New Roman", serif; letter-spacing: .03em;
+}
+.caryl-wrap :target { background: #faf6f4; transition: background .4s; }
+
+/* 中文页 */
+.caryl-wrap.cy-zh .cy-content {
+  font-family: "Songti SC", STSong, "Noto Serif CJK SC", "Source Han Serif SC", Georgia, serif;
+}
+.caryl-wrap.cy-zh .cy-title { font-family: "Songti SC", STSong, Georgia, serif; }
+.caryl-wrap.cy-zh .cy-text { font-family: "Kaiti SC", STKaiti, KaiTi, "Songti SC", serif; }
+
+@media (max-width: 767px) {
+  .caryl-wrap .cy-title { font-size: 24px; }
+  .caryl-wrap .cy-content { font-size: 16px; line-height: 1.8; }
+}
+</style>

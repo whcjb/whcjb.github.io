@@ -154,6 +154,9 @@ sources:
     - {key: calvin, author: calvin, lang: zh, label: "加尔文注释", url_tpl: "/calvin/jeremiah-2/__CH__/", accent: "#800000", ch_from: 24, ch_to: 52}
     - {key: calvin-en, author: calvin, lang: en, label: "加尔文注释（英文版）", label_en: "John Calvin", url_tpl: "/calvin/jeremiah-2-en/__CH__/", accent: "#800000", ch_from: 24, ch_to: 52}
     - {key: mhenry, author: mhenry, lang: zh, label: "马太亨利注释", url_tpl: "/mhenry/jeremiah/__CH__/", accent: "#C9922A", ch_from: 1, ch_to: 52}
+  job:
+    - {key: hutcheson-en, author: hutcheson, lang: en, label: "赫奇森注释（英文版）", label_en: "George Hutcheson", url_tpl: "/hutcheson/job/__CH__/", accent: "#2f8f46", ch_from: 1, ch_to: 42}
+    - {key: caryl-en, author: caryl, lang: en, label: "卡里尔讲解（英文版）", label_en: "Joseph Caryl", url_tpl: "/caryl/job/__CH__/", accent: "#986d62", ch_from: 1, ch_to: 42}
   joel:
     - {key: calvin, author: calvin, lang: zh, label: "加尔文注释", url_tpl: "/calvin/joel/__CH__/", accent: "#800000", ch_from: 1, ch_to: 3}
     - {key: mhenry, author: mhenry, lang: zh, label: "马太亨利注释", url_tpl: "/mhenry/joel/__CH__/", accent: "#C9922A", ch_from: 1, ch_to: 3}
