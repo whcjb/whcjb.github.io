@@ -286,7 +286,7 @@ def plain(b):
     return re.sub(r'\s+', ' ', T.RE_ANY.sub(' ', b)).strip()
 
 
-def run_section(slug, resume, dry, publish, limit=0):
+def run_section(slug, resume, dry, publish, limit=0, rebuild=False):
     bl = blocks(slug)
     idx = [i for i, (k, _) in enumerate(bl) if k == 'text']
     todo = idx[:limit] if limit else idx
@@ -295,7 +295,7 @@ def run_section(slug, resume, dry, publish, limit=0):
     chars = sum(len(bl[i][1]) for i in todo)
     print(f'[{slug}] 需翻译 {len(todo)} 段，已缓存 {hit}，待调用 {len(keys) - hit}，约 {chars:,} 字符', flush=True)
     dst = OUT_DIR / f'{slug}.md'
-    if resume and not dry and not limit and dst.exists() and hit == len(keys):
+    if resume and not dry and not limit and not rebuild and dst.exists() and hit == len(keys):
         print(f'  [{slug}] 已写出且缓存齐，跳过', flush=True)
         return
     if dry:
@@ -314,6 +314,10 @@ def run_section(slug, resume, dry, publish, limit=0):
             ctx = (('【前】' + prev + '\n') if prev else '') + (('【后】' + nxt) if nxt else '')
         masked, tags = T.mask(b)
         done[i] = T.unmask(translate_one(masked, resume, f'{slug}#{c}', ctx), tags)
+        # 一段英文只对一段中文：模型常把段内「1. … 2. … 3. …」拆成几段（1–8 章约 140 处），
+        # 并回原书分段。两侧都是西文字母数字才留空格。
+        done[i] = re.sub(r'(?<=[A-Za-z0-9])\s*\n\s*(?=[A-Za-z0-9])', ' ', done[i].strip())
+        done[i] = re.sub(r'\s*\n\s*', '', done[i])
         if c % 10 == 0:
             print(f'  [{slug}] {c}/{len(todo)} 段', flush=True)
     if limit:
@@ -375,6 +379,7 @@ def main():
     ap.add_argument('--resume', action='store_true')
     ap.add_argument('--dry-run', action='store_true')
     ap.add_argument('--no-publish', action='store_true')
+    ap.add_argument('--rebuild', action='store_true', help='已写出且缓存齐的页也从缓存重出（改了拼页逻辑时用；零调用、不改 zh_meta 时刻）')
     ap.add_argument('--limit', type=int, default=0, help='试译：只译前 N 段，只打印不写出')
     ap.add_argument('--max-minutes', type=float, default=0, help='到点在两段之间停（exit 10），分段前台跑用')
     a = ap.parse_args()
@@ -388,7 +393,7 @@ def main():
     tot_calls = tot_chars = 0
     for s in secs:
         try:
-            r = run_section(s, a.resume, a.dry_run, not a.no_publish, a.limit)
+            r = run_section(s, a.resume, a.dry_run, not a.no_publish, a.limit, a.rebuild)
             if a.dry_run and r:
                 tot_calls += r[0]; tot_chars += r[1]
         except Paused as e:
