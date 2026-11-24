@@ -126,13 +126,19 @@ def slice_long(text: str, limit: int = SLICE_MAX_WORDS):
     return parts
 
 
+_NUM_ESC = re.compile(r'^((?:<!-- PAGE \d+ --> )?\d+)\\\. ')
+_NUM_RAW = re.compile(r'^((?:<!-- PAGE \d+ --> )?\d+)\. ')
+
+
 def translate_section(sec: str, resume: bool, publish: bool):
     src = ROOT / 'durham' / BOOK / f'{sec}.md'
     if not src.exists():
         print(f'  {src} 不存在，跳过', flush=True)
         return
     fm, body = split_page(src.read_text(encoding='utf-8'))
-    lines = body.split('\n')
+    # 英文页段首分条序号已转义成 `2\.`（免得 kramdown 排成 <ol>）。送译前去掉转义——
+    # 缓存键是原文 md5，转义前已译的 721 段照旧命中；译文段首序号再转义回去。
+    lines = [_NUM_ESC.sub(r'\1. ', l) for l in body.split('\n')]
     idxs = [i for i, l in enumerate(lines) if translatable(l)]
     print(f'{BOOK}/{sec}: {len(idxs)} 个可译单元', flush=True)
 
@@ -150,10 +156,15 @@ def translate_section(sec: str, resume: bool, publish: bool):
     merged = {}
     for i, zh in zip(owner, zh_pieces):
         zh = re.sub(r'<<<[^>]*>>>', '', zh).strip()
+        # 一段英文只对一段中文：模型偶尔把「1. … 2. … 3. …」拆成几段（缓存里 62 片），
+        # 并回一行——原书就是一段，对照抽屉也按段对齐。两侧都是西文字母数字才留空格。
+        zh = re.sub(r'(?<=[A-Za-z0-9])\s*\n\s*(?=[A-Za-z0-9])', ' ', zh)
+        zh = re.sub(r'\s*\n\s*', '', zh)
         merged[i] = (merged[i] + ' ' + zh).strip() if i in merged else zh
     out = list(lines)
     for i, zh in merged.items():
         out[i] = zh
+    out = [_NUM_RAW.sub(r'\1\\. ', l) for l in out]
 
     def fv(k, default=''):
         m = re.search(rf'^{k}:\s*(.+)$', fm, re.M)

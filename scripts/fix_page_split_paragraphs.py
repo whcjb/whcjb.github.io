@@ -38,6 +38,9 @@ TAG = re.compile('<[^>]+>')
 END_PUNCT = re.compile(r'[.!?»”"’。！？；」』】）]\s*$')
 # 句中引语：逗号/顿号/分号/冒号 紧接右引号收尾
 MID_QUOTE = re.compile(r'[,，、;；:：]\s*[»”"’]\s*$')
+# 经文/章节出处缩写：其后的「N.」是出处，不是分条序号
+_REF_ABBR = {'vers', 'ver', 'verse', 'verses', 'chap', 'chapter', 'cap', 'ch', 'psal', 'ps',
+             'psalm', 'see', 'comp', 'cf', 'sect', 'part', 'lib', 'book', 'page', 'pag', 'p', 'v'}
 
 
 def find_splits(lines):
@@ -51,7 +54,18 @@ def find_splits(lines):
         # `“The name of God,” or “of Christ,”` 这种**句中**引语以 `”` 收尾，
         # 被 END_PUNCT 当成结句放过（1corinthians/6.md 那处跨页断句就这么漏的，
         # 2026-09-03；这已是本 Gate 的第三个洞，前两个见上面注释）。
-        if (END_PUNCT.search(s) and not MID_QUOTE.search(s)) or s.endswith(']'):
+        # 段尾是光秃的分条序号（`…or object. 3.` / `For, 1.`）：序号后的那句被分页截走了，
+        # 不是句末。达拉谟启示录 6 处靠中译「第三，」才露出来（2026-11-24）。
+        # 前面须是一个真词收句/收分句（object. / them. / For,），引证缩写（vers. / Chap. /
+        # Psal.）后的数字是经文出处、不算；`Chap. 19. 2.` 这种章号后再跟序号的单列。
+        # 罗马数字（`Ps. xxxv. 4.`）、书卷缩写（`Isa.`，首字母大写的短词）也都是出处。
+        m = re.search(r'\b([A-Za-z]{2,})[.,;:]\s\d{1,2}\.$', s)
+        w = m.group(1) if m else ''
+        bare_num = bool(m and w.lower() not in _REF_ABBR
+                        and not re.fullmatch(r'[ivxlcdm]+', w, re.I)
+                        and (w.islower() or w in ('For', 'Answer'))) or \
+            bool(re.search(r'\b(?:Chap|Chapter)\.?\s\d+\.\s\d{1,2}\.$', s))
+        if ((END_PUNCT.search(s) and not MID_QUOTE.search(s)) or s.endswith(']')) and not bare_num:
             continue
         k, page = i + 1, False
         while k < len(lines):
@@ -74,8 +88,17 @@ def find_splits(lines):
         # 那它必然是被截断的，不管续段首字大小写。
         # 仍排除续段本身是标题/居中块/脚注定义/列表项的情形——那些是真的新段。
         looks_cont = nxt[0].islower() or nxt[0] in '（(’”'
-        mid_sentence = bool(re.search(r'[A-Za-z0-9一-鿿,，、;；:：]$', s))
+        raw_nxt = lines[k].strip()
+        # 断词连字符：`un-` + `Churching`。只认紧贴字母、续段是正文的；`It follows,-` / `proceed -`
+        # 这种破折号后面跟的是经文标题，不算。
+        hyphen = bool(re.search(r'[A-Za-z]-$', s)) and not re.search(r'[,\s]-$', s) and raw_nxt[:1].isalpha()
+        mid_sentence = bool(re.search(r'[A-Za-z0-9一-鿿,，、;；:：]$', s)) or bare_num or hyphen
         nxt_is_new_block = bool(re.match(r'^(#|\*\*|\[\^|[-*+]\s|\d+\\?\.\s)', nxt))  # `2\. ` 是转义过的分条序号
+        # 续段是分条序号，但上一段停在字母、逗号、连字符上（`Hence Observe,` / `of whom
+        # they were verse` → `4\. …`）：那是句中插进来的序号，仍是同一句。冒号收尾的
+        # 「如下：」+ 列表不算，照旧当新段。
+        if nxt_is_new_block and re.match(r'^\d+\\\.\s', raw_nxt) and re.search(r'[a-z],?$', s):
+            nxt_is_new_block = False
         if (looks_cont or mid_sentence) and not nxt_is_new_block:
             out.append((i, k))
     return out
@@ -88,7 +111,8 @@ def fix_file(path, dry):
         return spans
     for i, k in sorted(spans, reverse=True):        # 从后往前改, 行号不失效
         mid = [x.strip() for x in lines[i + 1:k] if x.strip()]   # 中间的 PAGE 标记
-        lines[i] = lines[i].rstrip() + ' ' + ' '.join(mid) + ' ' + lines[k].lstrip()
+        sep = '' if lines[i].rstrip().endswith('-') else ' '   # `un-` + `Churching` 接回不留空格
+        lines[i] = lines[i].rstrip() + sep + ' '.join(mid) + sep + lines[k].lstrip()
         del lines[i + 1:k + 1]
     os.chmod(path, 0o644)
     open(path, 'w', encoding='utf-8').write('\n'.join(lines))
