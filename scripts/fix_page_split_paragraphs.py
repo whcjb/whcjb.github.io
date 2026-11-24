@@ -59,13 +59,19 @@ def find_splits(lines):
         # 前面须是一个真词收句/收分句（object. / them. / For,），引证缩写（vers. / Chap. /
         # Psal.）后的数字是经文出处、不算；`Chap. 19. 2.` 这种章号后再跟序号的单列。
         # 罗马数字（`Ps. xxxv. 4.`）、书卷缩写（`Isa.`，首字母大写的短词）也都是出处。
-        m = re.search(r'\b([A-Za-z]{2,})[.,;:]\s\d{1,2}\.$', s)
+        # 序号前也可以隔一个右引号（贺智林后 3 章 `…in Christ.’ 3.`）；`and 2.` / `or 2.` 前面没有标点。
+        # 隔着右引号时前面的词可以大写（出处缩写后不会跟引号）。
+        m = re.search(r'\b([A-Za-z]{2,})[.,;:]([’”\'")]?)\s\d{1,2}\.$', s)
         w = m.group(1) if m else ''
         bare_num = bool(m and w.lower() not in _REF_ABBR
                         and not re.fullmatch(r'[ivxlcdm]+', w, re.I)
-                        and (w.islower() or w in ('For', 'Answer'))) or \
-            bool(re.search(r'\b(?:Chap|Chapter)\.?\s\d+\.\s\d{1,2}\.$', s))
-        if ((END_PUNCT.search(s) and not MID_QUOTE.search(s)) or s.endswith(']')) and not bare_num:
+                        and (w.islower() or w in ('For', 'Answer') or m.group(2))) or \
+            bool(re.search(r'\b(?:Chap|Chapter)\.?\s\d+\.\s\d{1,2}\.$', s)) or \
+            bool(re.search(r'(?<![\d,] )\b(?:and|or)\s\d{1,2}\.$', s))   # `ch. 7 and 8.` 是出处，不算
+        # 段尾是出处缩写（`as presented in v.` + 次页 `1, then …`）：节号被分页截走了。
+        # 只在续段以数字起头时才算（见下）。
+        ref_end = bool(re.search(r'\b(?:v|vs|vv|ver|vers|ch|chap|cf|comp)\.$', s, re.I))
+        if ((END_PUNCT.search(s) and not MID_QUOTE.search(s)) or s.endswith(']')) and not (bare_num or ref_end):
             continue
         k, page = i + 1, False
         while k < len(lines):
@@ -93,6 +99,9 @@ def find_splits(lines):
         # 这种破折号后面跟的是经文标题，不算。
         hyphen = bool(re.search(r'[A-Za-z]-$', s)) and not re.search(r'[,\s]-$', s) and raw_nxt[:1].isalpha()
         mid_sentence = bool(re.search(r'[A-Za-z0-9一-鿿,，、;；:：]$', s)) or bare_num or hyphen
+        if ref_end and not bare_num and not re.match(r'\d', nxt):
+            continue
+        mid_sentence = mid_sentence or ref_end
         nxt_is_new_block = bool(re.match(r'^(#|\*\*|\[\^|[-*+]\s|\d+\\?\.\s)', nxt))  # `2\. ` 是转义过的分条序号
         # 续段是分条序号，但上一段停在字母、逗号、连字符上（`Hence Observe,` / `of whom
         # they were verse` → `4\. …`）：那是句中插进来的序号，仍是同一句。冒号收尾的
