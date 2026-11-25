@@ -29,6 +29,8 @@ WORD = re.compile(r"[A-Za-zſ'’]+")
 
 def plain(md):
     md = re.sub(r'\A---.*?---\n', '', md, flags=re.S)
+    md = re.sub(r'<span class="gh-dropcap">([^<]*)</span>', r'\1', md)      # 花饰首字与本词相连
+    md = re.sub(r'\{: [^}]*\}', ' ', md)                                     # 标题版式行
     md = re.sub(r'<[^>]+>', ' ', md)
     return md.replace('*', '').split()
 

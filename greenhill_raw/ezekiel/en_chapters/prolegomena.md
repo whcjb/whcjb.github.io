@@ -1,6 +1,8 @@
 ## <span class="gh-pb" id="p3" data-p="3" data-facs="11" title="Page 3 of the 1645 edition begins here (原书第 3 页起)"></span>The Antiquity, Scope and Occasion of Writing, Nature, Benefit and Parts of this Prophecie handled in the Title.
+{: .gh-h-c .gh-h-it}
 
-## The Book of the Prophet *Ezekiel.*
+## The Book of the Prophet <span class="gh-up">Ezekiel.</span>
+{: .gh-h-c .gh-h-it}
 
 <span class="gh-dropcap">F</span>Ew of the other sacred Books have this Title in the originall prefixed. The word *Sephar,* <span class="gh-margin" markdown="1">〈Greek〉</span> a book, signifieth any writing; be it great or small, short or long, it hath this name in the Hebrew language. *Jer.* 3.8. a Bill of divorce is mentioned; the word in the originall is *Sephar,* a book of Divorce. It was the use of the *Jewes* to call any Writing, though it had but a few lines in it, *Sephar,* a book. And so a Catalogue that had not many names in it, is called a book, *Mat.* 1.1. The book (or, the catalogue) of the generation of Jesus Christ.
 
@@ -138,6 +140,14 @@ In this Prophet you have,
 
 <p class="gh-item" markdown="1">1. The Preface; wherein is contained Gods appearing to *Ezekiel,* his calling of him and strengthning of him in his office; And these are laid downe in the three first Chapters.</p>
 
-<p class="gh-item" markdown="1">2. You have the Prophecy it selfe; wherein you have these foure things. 1. The destruction of the *Iewes* by the Babylonish captivitie, with the causes thereof, *viz.* their sinnes. This is laid downe in the next 21. Chapters. 2. Threatning of judgement and destruction to severall Nations that had insulted over the people of God, being carried away captive, and the hand of God being upon them: these were the *Ammonites,* the *Moabites,* the *Edomites,* the *Philistines,* the *Assyrians,* and *Babylonians:* And this he doth from the 25. to the 33. Chapter. 3. Sharpe reproving of the *Iewes* for their iniquitie, for their hard-heartednesse, for their not improving the hand of <span class="gh-pb" id="p22" data-p="22" data-facs="21" title="Page 22 of the 1645 edition begins here (原书第 22 页起)"></span> God upon them; & exhorting them to repentance, he tels them of freedome, some mercy and deliverance; and after that againe of affliction and trouble that shall befall them: And this he doth from the 33. to the 39. Chapter. 4. A typicall Prophecy concerning Christ and spirituall freedome through him; laid downe in the vision of the new Temple, and of the new *Ierusalem,* from the 39. Chapter to the end; wherein there will be many glorious things made knowne in due time.</p>
+<p class="gh-item" markdown="1">2. You have the Prophecy it selfe; wherein you have these foure things.</p>
+
+<p class="gh-item gh-lv2" markdown="1">1. The destruction of the *Iewes* by the Babylonish captivitie, with the causes thereof, *viz.* their sinnes. This is laid downe in the next 21. Chapters.</p>
+
+<p class="gh-item gh-lv2" markdown="1">2. Threatning of judgement and destruction to severall Nations that had insulted over the people of God, being carried away captive, and the hand of God being upon them: these were the *Ammonites,* the *Moabites,* the *Edomites,* the *Philistines,* the *Assyrians,* and *Babylonians:* And this he doth from the 25. to the 33. Chapter.</p>
+
+<p class="gh-item gh-lv2" markdown="1">3. Sharpe reproving of the *Iewes* for their iniquitie, for their hard-heartednesse, for their not improving the hand of <span class="gh-pb" id="p22" data-p="22" data-facs="21" title="Page 22 of the 1645 edition begins here (原书第 22 页起)"></span> God upon them; & exhorting them to repentance, he tels them of freedome, some mercy and deliverance; and after that againe of affliction and trouble that shall befall them: And this he doth from the 33. to the 39. Chapter.</p>
+
+<p class="gh-item gh-lv2" markdown="1">4. A typicall Prophecy concerning Christ and spirituall freedome through him; laid downe in the vision of the new Temple, and of the new *Ierusalem,* from the 39. Chapter to the end; wherein there will be many glorious things made knowne in due time.</p>
 
 Thus you have the generall division of the Prophecy.

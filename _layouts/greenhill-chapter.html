@@ -214,6 +214,37 @@ layout: default
   .greenhill-wrap .gh-tp-motto p { text-align: left !important; }
 }
 
+/* ── 正文版式照原书（old-book-ocr §3.3a）── */
+/* 段落首行缩进；段首有花饰首字、分条、经文框、旁注的不缩 */
+.greenhill-wrap .gh-content > p { text-indent: 1.4em; }
+.greenhill-wrap .gh-content > p:has(> .gh-dropcap:first-child),
+.greenhill-wrap .gh-content > p:has(> .gh-pb:first-child + .gh-dropcap) { text-indent: 0; }
+.greenhill-wrap .gh-dropcap { font-size: 3.3em; line-height: .8; margin: 5px 6px 0 0; color: #1f1f1f; }
+/* 段前经文：原书整段斜体、每节悬挂缩进，不加底色框 */
+.greenhill-wrap .gh-text { background: none; border-left: 0; padding: 0 0 0 1.6em; margin: 4px 0 22px; color: #2b2219; font-style: italic; }
+.greenhill-wrap .gh-text p { text-indent: -1.6em; }
+.greenhill-wrap .gh-text em { font-style: normal; }
+/* 标题：VERS. 60, 61. 段首居中大字、加宽字距；所引经文行居中斜体；Vers. N 起头的齐左悬挂 */
+.greenhill-wrap .gh-content h3.gh-h-vers, .greenhill-wrap .gh-content h4.gh-h-vers {
+  text-align: center; font-size: 24px; font-weight: normal; letter-spacing: .12em; color: #1f1f1f; margin: 34px 0 18px; }
+.greenhill-wrap .gh-content .gh-h-c { text-align: center; font-weight: normal; color: #1f1f1f; font-size: 17px; margin: 24px 0 10px; }
+.greenhill-wrap .gh-content .gh-h-lv { text-align: left; font-weight: normal; color: #1f1f1f; font-size: 17px;
+  padding-left: 1.6em; text-indent: -1.6em; margin: 24px 0 10px; }
+.greenhill-wrap .gh-content .gh-h-it { font-style: italic; }
+.greenhill-wrap .gh-content .gh-h-it em, .greenhill-wrap .gh-content .gh-up { font-style: normal; }
+.greenhill-wrap .gh-content h3:not([class]) em, .greenhill-wrap .gh-content .gh-h-c:not(.gh-h-it) em { font-style: italic; }
+/* 原书分条：悬挂缩进，子条再缩一级 */
+.greenhill-wrap .gh-item { padding-left: 0; text-indent: 1.4em; margin: 0 0 4px !important; text-align: left !important; }
+.greenhill-wrap .gh-item.gh-lv2 { padding-left: 3.4em; text-indent: -1.2em; }
+.greenhill-wrap .gh-item.gh-lv3 { padding-left: 5em; text-indent: -1.2em; }
+@media (max-width: 600px) {
+  .greenhill-wrap .gh-content h3.gh-h-vers, .greenhill-wrap .gh-content h4.gh-h-vers { font-size: 19px; letter-spacing: .06em; }
+  .greenhill-wrap .gh-text { padding-left: 1.1em; }
+  .greenhill-wrap .gh-text p { text-indent: -1.1em; }
+  .greenhill-wrap .gh-item.gh-lv2 { padding-left: 2.4em; }
+  .greenhill-wrap .gh-item.gh-lv3 { padding-left: 3.6em; }
+}
+
 /* 底本里读不出的字 */
 .greenhill-wrap .gh-gap { color: #c0392b; background: #fdecea; border-radius: 2px; padding: 0 2px; cursor: help; }
 /* 编者推补：方括号 + 另色，与原文区分 */

@@ -1,4 +1,5 @@
-### <span class="gh-pb" data-facs="3"></span><span class="gh-pb" data-facs="3"></span>TO THE EXCELLENT PRINCESSE, And most hopefull Lady, THE PRINCESSE *ELIZABETH* HER HIGHNESSE.
+### <span class="gh-pb" data-facs="3"></span><span class="gh-pb" data-facs="3"></span>TO THE EXCELLENT PRINCESSE, And most hopefull Lady, THE PRINCESSE <span class="gh-up">ELIZABETH</span> HER HIGHNESSE.
+{: .gh-h-c .gh-h-it}
 
 <p class="gh-salute" markdown="1">May it please your Highnesse;</p>
 

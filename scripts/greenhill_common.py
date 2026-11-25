@@ -58,7 +58,7 @@ def gap_groups(md):
 
 def flat_words(md):
     """去标签的词序列（上下文用）。"""
-    return re.sub(r'<[^>]+>', ' ', md).replace('*', '').split()
+    return re.sub(r'<[^>]+>|\{: [^}]*\}', ' ', md).replace('*', '').split()      # 标题版式行 {: .x} 不算词
 
 
 def _tsv(name):
@@ -161,4 +161,13 @@ def load(slug):
     md = apply(md, c['gid'].get(slug, []), c['dec'], c['sites'])[0]
     for a, b in tcp_fixes():
         md = md.replace(a, b)
-    return md
+    return dropcaps(md)
+
+
+RE_DROP = re.compile(r'^((?:<span class="gh-pb"[^>]*></span>)*)([A-Z])(?=[A-Z][a-zſ])', re.M)
+
+
+def dropcaps(md):
+    """原书花饰首字：录入本没标 decorInit 的，照排印惯例「首字放大、次字大写」认（WEe、THe）。
+    只认正文段首（不在标题、分条、经文框里）。"""
+    return RE_DROP.sub(lambda m: f'{m.group(1)}<span class="gh-dropcap">{m.group(2)}</span>', md)

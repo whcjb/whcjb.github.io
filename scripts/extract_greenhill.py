@@ -63,6 +63,8 @@ RE_VQ = re.compile(r'^\W*(?:Ver[ſs]?e?\.?\s*)?(\d{1,2})\b')
 
 
 class GR(tt.R):
+    nest_lists = True                                # 嵌套分条各起一行（old-book-ocr §3.3a）
+
     def note(self, c):
         if c.get('place') == 'mark':                 # 页边纲目标记（Note 1 / Obs. / Use …）
             t = tt.norm(self, self.inline(c))
@@ -136,14 +138,56 @@ def epigraph_box(r, ep):
     return '\n\n'.join(out)
 
 
+RE_HVLIST = re.compile(r'^\W*VER[SſE]*\.?[\s\d.,&and-]*$', re.I)
+RE_HVERS = re.compile(r'^\W*Ver[ſs]?e?\.?\s*\d')
+
+
+def head_md(r, e, depth, before_text=False):
+    """标题版式照原书（old-book-ocr §3.3a）。录入本 <hi> 只标「与本行不同的字体」，本行底子是正是斜要推：
+    无 <hi>，或 <hi> 之外还有两个以上词 → 底子斜体（所引经文），<hi> 部分转正体；否则底子正体（Observ. 1.）。
+    段首经文前那一行（VERS. 60, 61.）居中大字；Vers. N 起头的引语行齐左悬挂；其余居中。"""
+    txt = r.text(e)
+    if not txt:
+        return None
+    his = [x for x in e.iter() if tt.tag(x) == 'hi']
+    rest = tt.text_of(e)
+    for h in his:
+        rest = rest.replace(tt.text_of(h), ' ', 1)
+    base_it = not his or len(re.findall(r'[A-Za-zſ]{2,}', rest)) >= 2
+    plain = tt.text_of(e).replace('ſ', 's').strip()
+    if before_text or RE_HVLIST.match(plain):          # 只有节号的一行（VERS. 60, 61, 62.）
+        cls, base_it = 'gh-h-vers', False
+    elif RE_HVERS.match(plain):
+        cls = 'gh-h-lv'
+    else:
+        cls = 'gh-h-c'
+    if base_it:
+        parts = re.split(r'(<span class="gh-margin".*?</span>)', txt, flags=re.S)   # 旁注里的斜体不动
+        txt = ''.join(x if x.startswith('<span class="gh-margin"') else
+                      re.sub(r'(?<![\\*])\*([^*\n]+?)\*(?!\*)', r'<span class="gh-up">\1</span>', x) for x in parts)
+        cls += ' gh-h-it'
+    return '#' * depth + ' ' + txt + '\n{: .' + cls.replace(' ', ' .') + '}'
+
+
 def render(r, e, paras, depth=3):
     """块级：在 tt.block 之上加 epigraph；div 递归（深一层标题多一个 #）。"""
     k = tt.tag(e)
     if k == 'epigraph':
         paras.append(('text', epigraph_box(r, e)))
     elif k == 'div':
-        for c in e:
-            render(r, c, paras, min(depth + 1, 5) if tt.tag(c) != 'head' else depth)
+        kids = list(e)
+        for i, c in enumerate(kids):
+            if tt.tag(c) == 'head':
+                nxt = next((x for x in kids[i + 1:] if tt.tag(x) != 'pb'), None)
+                h = head_md(r, c, depth, nxt is not None and tt.tag(nxt) == 'epigraph')
+                if h:
+                    paras.append(('head', h))
+                continue
+            render(r, c, paras, min(depth + 1, 5))
+    elif k == 'head':
+        h = head_md(r, e, depth)
+        if h:
+            paras.append(('head', h))
     else:
         tt.block(r, e, paras, depth)
 
@@ -154,7 +198,7 @@ def words(paras):
         v = p[-1]
         if isinstance(v, list):
             v = ' '.join(x if isinstance(x, str) else '' for x in v)
-        n += len(re.sub(r'<[^>]+>', ' ', v).split())
+        n += len(re.sub(r'<[^>]+>|\n\{: [^}]*\}', ' ', v).split())       # 标题版式行不计词
     return n
 
 

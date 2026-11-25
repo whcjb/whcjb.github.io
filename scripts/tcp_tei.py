@@ -200,7 +200,7 @@ def blocks(r, e, out, depth=3):
         block(r, c, out, depth)
 
 
-def block(r, e, out, depth=3):
+def block(r, e, out, depth=3, lvl=1):
     P = r.P
     t = tag(e)
     if t == 'head':
@@ -233,12 +233,25 @@ def block(r, e, out, depth=3):
                 if txt:
                     out.append(('cls', f'{P}-listhead', txt))
             elif k == 'item':
+                sub = [x for x in it if tag(x) == 'list'] if getattr(r, 'nest_lists', False) else []
+                if sub:                      # 嵌套分条：本条一行，子条各起一行（版式照原书，opt-in）
+                    head = ET.Element(it.tag)
+                    head.text = it.text
+                    for x in it:
+                        if tag(x) != 'list':
+                            head.append(x)
+                    txt = r.text(head)
+                    if txt:
+                        out.append(('cls', f'{P}-item' + (f' {P}-lv{lvl}' if lvl > 1 else ''), txt))
+                    for x in sub:
+                        block(r, x, out, depth, lvl + 1)
+                    continue
                 txt = r.text(it)
                 if lab:
                     txt = f'**{lab}** {txt}'.strip()
                     lab = ''
                 if txt:
-                    out.append(('cls', f'{P}-item', txt))
+                    out.append(('cls', f'{P}-item' + (f' {P}-lv{lvl}' if lvl > 1 else ''), txt))
             else:
                 raise ValueError(f'list 下未处理 <{k}>')
         if lab:
