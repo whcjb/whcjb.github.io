@@ -11,6 +11,7 @@
 | 1 | 2026-11-25 | 第 9 部 31:7–8（印本 pp. 356–379） | Packer 纸本 300 ppi | 24 | 约 290（落表 234 条，一条常含数处） | ≈ 12 | 0 |
 | 2 | 2026-11-25 | 第 9 部 31:9–12（印本 pp. 380–423） | Packer 纸本 300 ppi | 44 | 约 478（落表 370 条） | ≈ 11 | 0 |
 | 3 | 2026-11-26 | 第 6 部 21:30–31（印本 pp. 805–821） | Packer 纸本 | 17 | 约 175（落表 137 条） | ≈ 10 | 0 |
+| 4 | 2026-11-27 | 第 4 部 11:4–6（印本 pp. 19–54） | Packer 纸本 | 36 | 约 310（落表 251 条） | ≈ 8.6 | 0 |
 
 ## 第 1 轮发现的错误类别与全书清理
 
@@ -118,3 +119,25 @@
 切栏修正后第 6 部 21-19、21-23、21-27、21-32 几段证人／上下文层少推定了 8 处（Enomlidge、Vho、morms…），按上一版读法落人工表。
 
 原书误植／拼法照录（本段）：punishmeut、destructiou、voluptuons、aud、therns、be hath、flatteri's、withthe、ofit。
+
+## 第 4 轮发现的错误类别与全书清理（第 4 部 11:4–6，36 页）
+
+文字类（`caryl_ocr_sweep.py` 新规则）：
+
+| 类别 | 本段 | 全书命中 |
+|---|---|---|
+| 代词 I：粘连 Iam/Ihave/Iwill…、撇号噪点 I'have/l'am、l 读成 I（「l will」「yea l judge」） | ~10 | 316 |
+| 长 s 读成 f：fo/fay/fome/fuch → so/say/some/such | ~3 | 103 |
+| of 读成 ot（后接限定词） | 2 | 34 |
+| 书卷数字与卷名粘连：1Cor. → 1 Cor.（图上原书有空格） | 2 | ~45 |
+| 页边阴影读成的「«」「»」 | ~6 | 53 |
+| 页顶页眉残片：锚点后「Vers. 〔节号被划进旁注〕」、对开本「An 〔页码〕 Exposition upon the Book of」 | 2 | 4 |
+| 正文小词被划进旁注（「God [is] invincible」）：人工表跨不了标签，在清理脚本里按看图结果逐条放回（MARGIN_BODY） | 1 | 1 |
+
+试过但没落的：按二元组频率把旁注里的单个小词全书放回正文（打分能挑出 16 处，但图上没逐条核，未上）；
+段首「(」噪点（页边阴影）——与原书真开括号形态一样，只能逐条改。
+
+清理规则误伤修了一处：拆词合并把「a wry thought」并成 awry（冠词／代词后不再合并）。
+
+原书误植照录（本段）：trne、doctriue、ns（Let ns）、uuderstandings、thiugs、douhle、whics、beeause、succestfull、spoak、fulfulling、aud、revealed us（漏 to）；
+本页 p.25 页眉误印 Vers. 16、页码 131。

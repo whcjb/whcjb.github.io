@@ -19,7 +19,9 @@
   ——第 2 轮（第 9 部 31:9–12，44 页）补：Tis 撇号读丢（ofx「ofit→of it」第 3 轮撤回：原书连排）、fin→sin、fh-→sh-、bis/bim→his/him、
           代词后 hill→will、mould not→would not、(I Cor.→(1 Cor.、(Ter.→(Jer.、(Hof.→(Hos.、(faith the text→(saith
   ——第 3 轮（第 6 部 21:30–31）补：mw（斜体 w 读成 m：主语后 mas/mere/mill/mould、the mise/mord、mbo/Nho/H'ho→who）、
-          shall（sall/spall/spalt/sual）、(Per.→(Jer.、(Plal.→(Psal.、(Isa-→(Isa.、句首 Te→Ye、junk（整段乱码：书末花饰、横线、单成一段的签名）、段首「- 」「+ 」噪点（会被排成列表）
+          shall（sall/spall/spalt/sual）、(Per.→(Jer.、(Plal.→(Psal.、(Isa-→(Isa.、句首 Te→Ye、junk
+  ——第 4 轮（第 4 部 11:4–6）补：pronI（l will→I will、Iam→I am、I'have→I have）、fs（fo/fay/fome/fuch→so/say/some/such）、
+          ot→of、1Cor.→1 Cor.、«» 噪点、页顶页眉残片（Vers.〔节号旁注〕）（整段乱码：书末花饰、横线、单成一段的签名）、段首「- 」「+ 」噪点（会被排成列表）
   head    漏进正文的页眉（「Chap. 31. An Exposition upon the Booke of JOB. Vers. 7.」）删掉
 """
 import argparse
@@ -108,6 +110,21 @@ def rules():
     R.append(('te', re.compile(r'(?<=[.;:?!(] )Te (?=(?:have|are|shall|will|know|say|heard|should|may|did|do|see|be|were|that|cannot|must)\b)'), lambda m: 'Ye '))
     # shem → shew（「shem thes hom」）
     R.append(('mw', re.compile(r'\bshem\b'), lambda m: 'shew'))
+    # —— 第 4 轮（第 4 部 11:4–6）：页边阴影读成的「«」「»」（本书英文正文不用书名号式引号）；页边阴影读成的段首「(」只逐条改
+    R.append(('guil', re.compile(r'(?<=\w)[«»](?=\w)'), lambda m: ''))                     # 词中：a«b → ab
+    R.append(('guil', re.compile(r' ?[«»] ?'), lambda m: ' '))                               # 其余：并成一个空格（行首行尾的空格由 sweep_md 收拾）
+    # —— 第 4 轮（第 4 部 11:4–6 实读 36 页）补的几类
+    # 代词 I 读成 l（「l will」「l have」）；粘连「Iam/Ihave/Iwill…」；撇号噪点「I'have」「l'am」
+    R.append(('pronI', re.compile(r"\b[Il]['’](am|have|was|had)\b"), lambda m: 'I ' + m.group(1)))
+    R.append(('pronI', re.compile(r'\bI(am|have|had|will|was|shall|would|know)\b'), lambda m: 'I ' + m.group(1)))
+    R.append(('pronI', re.compile(r'(?<=[a-z,;:)] )l(?= (?:am|have|had|was|will|would|shall|should|can|could|do|did|know|say|said|bear|grant|passe|cannot|thought|see|must|may)\b)'),
+              lambda m: 'I'))
+    # 长 s 读成 f：fo/fay/fome/fuch（本书无此词；fee、fin 另有规则或是真词，不碰）
+    R.append(('fs', re.compile(r'\b(fo|fay|fome|fuch|Fo|Fay|Fome|Fuch)\b'), lambda m: 's' + m.group(1)[1:] if m.group(1)[0] == 'f' else 'S' + m.group(1)[1:]))
+    # of 读成 ot（后接限定词时）
+    R.append(('of', re.compile(r'(?<=[a-z] )ot(?= (?:the|his|their|God|it|a|an|this|that|our|my|thy|your|her|them|him|all)\b)'), lambda m: 'of'))
+    # 书卷数字后补空格：1Cor. → 1 Cor.
+    R.append(('isa', re.compile(r'\b([12])(Cor|Joh|Tim|Sam|Pet|King|Kings|Thes|Thess|Chron)\.'), lambda m: m.group(1) + ' ' + m.group(2) + '.'))
     # 漏进正文的页眉
     R.append(('head', re.compile(r'\bCha[pn][.,-]?\s?\d{1,2}\.?\s+An Ex\w*\s+u\w*\s+\w+\s+Boo?[sk]\w*\s+\S{1,3}\s?\S{0,3}\s+V\w{2,5}[.,]?\s?\d{0,2}\.?'),
               lambda m: ''))
@@ -128,6 +145,8 @@ def split_fix(m):
     if b in ('full', 'ful') and re.search(r'\b(?:a|an|the|his|her|my|thy|our|your|their)\s$', m.string[:m.start()], re.I) \
             and m.string[m.end():m.end() + 3] == ' of':
         return None                          # 「a mind full of Anguish」是名词＋形容词，不是 mindfull（「art mind ful of him」照合）
+    if a.lower() in ('a', 'an', 'the', 'i', 'o') and b not in SUFFIX:
+        return None                          # 冠词、代词＋后词：「a wry thought」不并成 awry
     if b in SUFFIX or not UNI.get(a.lower(), 0) or not UNI.get(b, 0):
         return a + b
     return None
@@ -157,6 +176,9 @@ def sweep_text(pt, log, where):
 
 
 RE_PB = re.compile(r'<span class="cy-pb"[^>]*></span>')
+MARGIN_BODY = [
+    ('p4/11-4', 'God', 'is', 'invincible'),          # p.38 影像
+]
 
 
 def sig_letters(t):
@@ -265,6 +287,20 @@ def drop_junk(md, log, where):
 def sweep_md(md, log, where):
     """只改标签之间的纯文本片段（不跨标签），旁注 span 整个跳过。"""
     md = drop_junk(md, log, where)
+    # 看图确认、被划进旁注的正文小词（人工表跨不了标签，在这里放回）：(段, 前词, 旁注词, 后词)
+    for w0, a, w, b in MARGIN_BODY:
+        if w0 == where:
+            rx = re.compile(rf'(\b{a}) <span class="cy-margin">{w}</span> ({b}\b)')
+            if rx.search(md):
+                log.append(('mword', where, f'{a} [{w}] {b}', f'{a} {w} {b}'))
+                md = rx.sub(rf'\1 {w} \2', md, 1)
+    # 页顶漏进正文的页眉残片：页码锚点后「Vers. / verss.」紧跟一个只有数字的旁注（页眉节号被划进旁注）、
+    # 或「An 〔页码〕 Exposition upon the Book of」（真正的逐节小标题节号都在行内，不受影响）
+    def unhead(m):
+        log.append(('head', where, re.sub(r'<[^>]+>', ' ', m.group(2)).strip(), ''))
+        return m.group(1)
+    md = re.sub(r'(<span class="cy-pb"[^>]*></span>)((?:[VvU]er[sfſ]+e?\.?\s*<span class="cy-margin">\s*\d{1,2}\.?\s*</span>'
+                r'|An\s*<span class="cy-margin">\s*\d{2,4}\s*</span>\s*Exposition upon the Book of)\s*)', unhead, md)
     # 段首噪点「- 」「+ 」「• 」：markdown 会排成项目列表（第 6 部 21-30「- First, Some wicked men…」）
     def unlist(m):
         log.append(('list', where, m.group(2) + ' ', ''))
