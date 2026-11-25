@@ -1,0 +1,24 @@
+Count asterisks in original. Let me list:
+1. *For thy husband ... called.* → 2
+2. *Husband* 2 → 4
+3. *Redeemer* → 6
+4. *Lord of Hosts* → 8
+5. *God of the whole earth,* → 10
+6. *Goel* → 12
+7. *he is called,* → 14
+8. *his name is* → 16
+9. *he is,* → 18
+10. *the God of the whole earth shall he be called,* → 20
+11. *thy lords* → 22
+12. *rulers;* → 24
+13. *pluralis majestaticus,* → 26
+Total 26. No HTML comments. "i. e." non-italic → 即. Isaiah 54:5. Note "Compare" → 参. Rom. 14:11 → 罗马书 14:11. ch. 45:23 → 第 45 章 23 节, or 以赛亚书 45:23? Use "参第 45:23" — better "参 45:23"? Use "以赛亚书 45:23". Names: Aben Ezra, Kimchi, Gesenius, Maurer first occurrence → bracket. English Version → 英王钦定本. Goel keep italic with Hebrew transliteration — it's a term; keep *Goel*（至亲救赎者）. pluralis majestaticus is Latin, keep with gloss.
+
+*Lord of Hosts* → 万军之耶和华? He wrote Lord of Hosts; translate 万军之主? Within first clause "Jehovah of Hosts" → 万军之耶和华. Then *Lord of Hosts* → 万军之主. Fine.
+
+Draft.
+
+*因为你的丈夫（是）造你的，万军之耶和华（是）他的名；你的救赎主（是）以色列的圣者，他必称为全地之神。* 
+The future form: "shall he be called" in first. Good.
+
+ל״ה keep.
