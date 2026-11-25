@@ -157,6 +157,8 @@ def head_md(r, e, depth, before_text=False):
     plain = tt.text_of(e).replace('ſ', 's').strip()
     if before_text or RE_HVLIST.match(plain):          # 只有节号的一行（VERS. 60, 61, 62.）
         cls, base_it = 'gh-h-vers', False
+    elif re.match(r'CHAP(?:TER)?\.? +[IVXLC\d]+\.?$', plain, re.I):   # 章标题原书正体大字（CHAP. XXXII.）
+        cls, base_it = 'gh-h-c', False
     elif RE_HVERS.match(plain):
         cls = 'gh-h-lv'
     else:
