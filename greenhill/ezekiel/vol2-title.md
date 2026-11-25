@@ -11,15 +11,24 @@ next_url: "/greenhill/ezekiel/vol2-dedication/"
 next_label: "Vol. II · The Epistle Dedicatory"
 ---
 
-<span class="gh-pb" data-facs="1"></span>AN EXPOSITION CONTINUED UPON the sixt, seventh, eighth, ninth, tenth, eleventh, twelfth, and thirteenth CHAPTERS of the Prophet EZEKIEL, WITH USEFUL OBSERVATIONS THEREUPON.
-
-Delivered in severall LECTURES in *London, By* WILLIAM GREENHILL.
-
-<p class="gh-quote" markdown="1">PROV. 4.7, 8.</p>
-
-<p class="gh-quote" markdown="1">Wisdome is the principall thing, therefore get Wisdome: and with all thy getting, get understanding.</p>
-
-<p class="gh-quote" markdown="1">Exalt her, and shee shall promote thee: shee shall bring thee to honour when thou doest imbrace her.</p>
-
-*LONDON;* Printed by *M.S.* for *Hanna Allen,* at the Crowne in *Popes-head-Alley.* 1649.
-
+<span class="gh-pb" data-facs="1"></span>
+<div class="gh-tp">
+<div class="gh-tp-l s2 ls">AN</div>
+<div class="gh-tp-l s0">EXPOSITION</div>
+<div class="gh-tp-l s3 ls">CONTINUED UPON</div>
+<div class="gh-tp-l s3">the sixt, seventh, eighth, ninth, tenth, eleventh, twelfth, and thirteenth</div>
+<div class="gh-tp-l s2"><span class="ls">CHAPTERS</span> of the Prophet</div>
+<div class="gh-tp-l s00">EZEKIEL,</div>
+<div class="gh-tp-l s3 ls">WITH</div>
+<div class="gh-tp-l s1">USEFUL OBSERVATIONS</div>
+<div class="gh-tp-l s3 ls">THEREUPON.</div>
+<hr class="gh-tp-rule">
+<div class="gh-tp-l s3">Delivered in severall <span class="ls">LECTURES</span> in <i>London, By</i><br><span class="ls">WILLIAM GREENHILL.</span></div>
+<hr class="gh-tp-rule">
+<div class="gh-tp-l s4"><span class="ls">PROV.</span> 4. 7, 8.</div>
+<div class="gh-tp-motto c"><p><i>Wisdome is the principall thing, therefore get Wisdome: and with all thy getting, get understanding.<br>Exalt her, and shee shall promote thee: shee shall bring thee to honour when thou doest imbrace her.</i></p></div>
+<hr class="gh-tp-rule">
+<div class="gh-tp-l s4 it ls">LONDON;</div>
+<div class="gh-tp-l s4">Printed by <i>M.S.</i> for <i>Hanna Allen,</i> at the Crowne in <i>Popes-head-Alley.</i> 1649.</div>
+<p class="gh-tp-note">此页<b>不是照原图排</b>：第二卷（1649）网上无影像。文字照录入本（TCP A85667），分行、字号参照同一书商同年所印第一卷第二版书名页。</p>
+</div>

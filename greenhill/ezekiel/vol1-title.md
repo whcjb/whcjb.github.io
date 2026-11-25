@@ -9,17 +9,26 @@ next_url: "/greenhill/ezekiel/vol1-dedication/"
 next_label: "Vol. I · The Epistle Dedicatory"
 ---
 
-<span class="gh-pb" data-facs="1"></span><span class="gh-pb" data-facs="1"></span>AN EXPOSITION Of the five first CHAPTERS OF THE PROPHET EZEKIEL, WITH USEFUL OBSERVATIONS THEREUPON.
-
-Delivered in severall LECTURES in *London,* By WILLIAM GREENHILL.
-
-<p class="gh-quote" markdown="1">Matth. 13.11.</p>
-
-<p class="gh-quote" markdown="1">To you it is given to know the mysteries of the Kingdome.</p>
-
-<p class="gh-quote" markdown="1"><span class="gh-gap" title="TCP: illegible in source">〈Greek〉</span>, Nyssen.</p>
-
-<p class="gh-quote" markdown="1">Ama Scripturas sanctas, & amabit te sapientia, Jerom.</p>
-
-*LONDON,* Printed by *Matthew Simmons* for *Benjamin Allen,* and are to be sold at his Shop, at the sign of the Crown in *Popes-head-Alley,* 1645.
-
+<span class="gh-pb" data-facs="1"></span>
+<div class="gh-tp">
+<div class="gh-tp-l s2 ls">AN</div>
+<div class="gh-tp-l s0">EXPOSITION</div>
+<div class="gh-tp-l s2">Of the five first</div>
+<div class="gh-tp-l s1 ls">CHAPTERS</div>
+<div class="gh-tp-l s2 ls">O<span style="font-variant:small-caps">f the</span> P<span style="font-variant:small-caps">rophet</span></div>
+<div class="gh-tp-l s00">EZEKIEL,</div>
+<div class="gh-tp-l s3 ls">WITH</div>
+<div class="gh-tp-l s1">USEFUL OBSERVATIONS</div>
+<div class="gh-tp-l s3 ls">THEREUPON.</div>
+<hr class="gh-tp-rule">
+<div class="gh-tp-l s3">Delivered in severall <span class="ls">LECTURES</span> in <i>London,</i><br><i>By</i> <span class="ls">WILLIAM GREENHILL.</span></div>
+<hr class="gh-tp-rule">
+<div class="gh-tp-l s4">Matth. 13. 11.</div>
+<div class="gh-tp-motto c"><p><i>To you it is given to know the mysteries of the Kingdome.</i></p></div>
+<div class="gh-tp-motto c"><p><span class="gh-gap" title="TCP: illegible in source（1645 初版无影像可核；1649 第二版此处有一行希腊文题辞，见下注）"><span class="gh-gap" title="TCP: illegible in source">〈Greek〉</span></span>, Nyssen.</p></div>
+<div class="gh-tp-motto c"><p><i>Ama Scripturas sanctas, &amp; amabit te sapientia,</i> Jerom.</p></div>
+<hr class="gh-tp-rule">
+<div class="gh-tp-l s4 it ls">LONDON,</div>
+<div class="gh-tp-l s4">Printed by <i>Matthew Simmons</i> for <i>Benjamin Allen,</i> and are to be sold at his Shop, at the sign of the Crown in <i>Popes-head-Alley,</i> 1645.</div>
+<p class="gh-tp-note">此页<b>不是照原图排</b>：1645 年初版网上无影像。文字照录入本（TCP A85666）；分行、字号参照 1649 年第二版书名页（Internet Archive 胶片；第二版另有「The second Edition, corrected and amended.」一行，出版者为 Hanna Allen，均不录）。尼撒的格列高利一句希腊文，第二版影像上的字也看不全，仍标红。</p>
+</div>
