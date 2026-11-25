@@ -183,7 +183,7 @@ Thus you have the generall division of the Prophecy.
 
 [^9]: Acts 20 22. <span class="gh-conj" title="Editorial conjecture: illegible in the source; supplied from the stated evidence (编者推补；非原书原文)">[δεδεμένος τῷ πνεύματι]</span>.
 
-[^10]: Obvirtutis auspicium imponunt u<span class="gh-gap" title="TCP: illegible in source">•</span> vocabula, *Jeron.*
+[^10]: *Obvirtutis auspicium imponunt u<span class="gh-gap" title="TCP: illegible in source">•</span> vocabula,* Jeron.
 
 [^11]: <span class="gh-conj" title="Editorial conjecture: illegible in the source; supplied from the stated evidence (编者推补；非原书原文)">[Προφήτης]</span>.
 
@@ -191,7 +191,7 @@ Thus you have the generall division of the Prophecy.
 
 [^13]: <span class="gh-conj" title="Editorial conjecture: illegible in the source; supplied from the stated evidence (编者推补；非原书原文)">[נוב]</span>
 
-[^14]: Trausiit prophetia ab Israele, *Shind.*
+[^14]: *Trausiit prophetia ab Israele,* Shind.
 
 [^15]: <span class="gh-conj" title="Editorial conjecture: illegible in the source; supplied from the stated evidence (编者推补；非原书原文)">[ראה]</span>
 
@@ -211,7 +211,7 @@ Thus you have the generall division of the Prophecy.
 
 [^23]: Maldonat.
 
-[^24]: Ante aetatem sacerdotalem.
+[^24]: *Ante aetatem sacerdotalem.*
 
 [^25]: A Lapid.
 
@@ -219,9 +219,9 @@ Thus you have the generall division of the Prophecy.
 
 [^27]: Gallicis tumultibus.
 
-[^28]: Vexatio dat intellectum.
+[^28]: *Vexatio dat intellectum.*
 
-[^29]: Tenebrae sunt latibulum D<span class="gh-gap" title="TCP: illegible in source">•</span>i.
+[^29]: *Tenebrae sunt latibulum D<span class="gh-gap" title="TCP: illegible in source">•</span>i.*
 
 [^30]: Prov. 14.34.
 

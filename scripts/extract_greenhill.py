@@ -62,6 +62,20 @@ FRONT_SKIP = {'errata', 'publishers_advertisement'}
 RE_VQ = re.compile(r'^\W*(?:Ver[ſs]?e?\.?\s*)?(\d{1,2})\b')
 
 
+EN_STOP = set('the and of to is that which they he it was are be by for with his their this were from not as an or but have hath shall'.split())
+
+
+def latin_note(t):
+    """旁注正文（去掉 <hi> 部分）是不是成句的外文：至少 3 个三字母以上的词，且英文虚词不到 15%（或不足 2 个）。
+    只有标签（Obser. 1.）、出处（Antiq. l. 1.）、缺字记号的旁注不算，照录入本。"""
+    base = re.sub('\x01.*?\x02', ' ', t, flags=re.S)
+    ws = re.findall(r"[A-Za-zſ]+", re.sub(r'<[^>]+>', ' ', base))
+    if sum(1 for w in ws if len(w) >= 3) < 3:
+        return False
+    n = sum(1 for w in ws if w.lower() in EN_STOP)
+    return not (n >= 2 and n >= 0.15 * len(ws))
+
+
 class GR(tt.R):
     nest_lists = True                                # 嵌套分条各起一行（old-book-ocr §3.3a）
 
@@ -69,6 +83,10 @@ class GR(tt.R):
         if c.get('place') == 'mark':                 # 页边纲目标记（Note 1 / Obs. / Use …）
             t = tt.norm(self, self.inline(c))
             return f'<span class="{self.P}-mark">{t}</span>' if t else ''
+        if self.edition != '1658' and latin_note(self.inline(c)):
+            # 拉丁文旁注原书底子是斜体，录入本只给正体部分（出处人名、英文连接词）标 <hi>，整条正斜互换；
+            # 英文旁注原书排正体、<hi> 是真斜体，不动。第四卷旁注一律排正体、录入本照实标。
+            return f'<span class="{self.P}-margin" markdown="1">{tt.norm(self, chr(1) + self.inline(c, True) + chr(2))}</span>'
         return super().note(c)
 
     def gap(self, e):

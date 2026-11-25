@@ -32,15 +32,15 @@ In this Prophesie you see the faithfulnes of the Lord making good his truths not
 
 [^1]: Helvicus.
 
-[^2]: Galatinus, l. 4. c. 4. cited by *Amama. Lyra* in locum.
+[^2]: *Galatinus, l. 4. c. 4. cited by* Amama. Lyra *in locum.*
 
-[^3]: *Vatabl.* in loc. *Martinij* lexicon in verbo Silo. Manasseh, Ben. Israel, *q.* 65. in Genesim.
+[^3]: Vatabl. *in loc.* Martinij *lexicon in verbo Silo. Manasseh, Ben. Israel,* q. *65. in Genesim.*
 
 [^4]: *Iulian* the Apostat said, this prophesie belonged not unto Christ, because the kingdom faild in *Zedekiah.*
 
-[^5]: In captivate babylonica semper capita & principes suos habuit ex semine. *Davidis* in *Gen. q. 65.*
+[^5]: *In captivate babylonica semper capita & principes suos habuit ex semine.* Davidis *in* Gen. q. 65.
 
-[^6]: Suarez, *Tom.* 1. *Disput.* 1. *contra* Judaeos. Pareus *in* Gen. Rivet, *ibid.*
+[^6]: *Suarez,* Tom. *1.* Disput. *1.* contra *Judaeos. Pareus* in *Gen. Rivet,* ibid.
 
 [^7]: Joseph *Antiq.* l. 11. c. ult.
 
@@ -48,13 +48,13 @@ In this Prophesie you see the faithfulnes of the Lord making good his truths not
 
 [^9]: Acts & monuments of the Church.
 
-[^10]: Materna stirps non venit in censum sceptri.
+[^10]: *Materna stirps non venit in censum sceptri.*
 
 [^11]: Rivet *in* Gen.
 
-[^12]: Suarez, *Tom.* 1. Disp. 1. *contra* Judaeos, *Sect.* 1. *p.* 6.
+[^12]: *Suarez,* Tom. *1. Disp. 1.* contra *Judaeos,* Sect. *1.* p. *6.*
 
 [^13]: *Suarez* ubi ante.
 
-[^14]: Manasseh Ben Israel. Tom. 1. Disp. 1
+[^14]: *Manasseh Ben Israel. Tom. 1. Disp. 1*
 

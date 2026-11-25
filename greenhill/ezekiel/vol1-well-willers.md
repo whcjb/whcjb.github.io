@@ -20,11 +20,11 @@ next_label: "Vol. I · The Introduction to the Work"
 
 [^1]: *Prov.* 2.4.
 
-[^2]: Ego vereor ne per nimiam negligentiam & stoliditatem cordis non solum velata sint nobis divina volumina, sed etiam signata *Origen.* In Verbo Dei abundat quod perfectus comedat, & quod parvulus sugat, *Falg.*
+[^2]: *Ego vereor ne per nimiam negligentiam & stoliditatem cordis non solum velata sint nobis divina volumina, sed etiam signata* Origen. *In Verbo Dei abundat quod perfectus comedat, & quod parvulus sugat,* Falg.
 
-[^3]: Sine Deo, impossibile est discere Deum, *Iren.*
+[^3]: *Sine Deo, impossibile est discere Deum,* Iren.
 
-[^4]: *Respons. ad censu.* Theol. Paris. in praef.
+[^4]: Respons. ad censu. *Theol. Paris. in praef.*
 
 [^5]: *Dan.* 2.
 
