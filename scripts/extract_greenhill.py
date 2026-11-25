@@ -230,16 +230,26 @@ def units_from_divs(r, cdiv, ch, lead):
 
 
 def units_from_quotes(r, cdiv, ch, lead):
-    """第四卷：在以新节号起头的 <q> 处切。"""
-    units, maxv = [], 0
+    """第四卷：在以新节号起头的 <q> 处切。原书一段经文常连引数节（Vers. 25 … 26 … 27 …），
+    中间无正文的连续节号引语同属一段，只在第一节处切，后面几节并进同一单元。"""
+    units, maxv, run = [], 0, False
     for x in cdiv:
         k = tt.tag(x)
-        if k == 'q':
+        if k == 'pb':
+            pass
+        elif k == 'q':
             m = RE_VQ.match(tt.text_of(x).replace('ſ', 's'))
             if m and maxv < int(m.group(1)) <= NV[ch]:
                 v = int(m.group(1))
-                units.append([v, v, []])
-                maxv = v
+                if run and units:
+                    units[-1][1] = v
+                else:
+                    units.append([v, v, []])
+                maxv, run = v, True
+            else:
+                run = False
+        else:
+            run = False
         if not units:
             render(r, x, lead, 2 if k == 'head' else 3)
         else:
