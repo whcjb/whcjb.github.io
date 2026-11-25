@@ -20,7 +20,7 @@ next_label: "Vol. I · To All Well-willers of Truth"
 
 <div class="gh-poem" markdown="1">
 
-<p class="gh-l" markdown="1"><span class="gh-gap" title="TCP: illegible in source">〈Greek〉</span>.</p>
+<p class="gh-l" markdown="1"><span class="gh-conj" title="Editorial conjecture: illegible in the source; supplied from the stated evidence (编者推补；非原书原文)">[Χαίρετε ἐν κυρίῳ πάντοτε, πάλιν ἐρῶ χαίρετε]</span>.</p>
 <p class="gh-l" markdown="1">Deus meus & omnia.</p>
 <p class="gh-l" markdown="1">La mia Grandezza dal Eccelso.</p>
 
@@ -30,7 +30,7 @@ next_label: "Vol. I · To All Well-willers of Truth"
 
 <p class="gh-closer" markdown="1">Your Highnesse most humble servant, *VVILLIAM GREENHILL.*</p>
 
-[^1]: <span class="gh-gap" title="TCP: illegible in source">〈Greek〉</span> 2 *Chro.* 34.3.
+[^1]: <span class="gh-conj" title="Editorial conjecture: illegible in the source; supplied from the stated evidence (编者推补；非原书原文)">[והוא עדנו נער החל לדרוש לאלהי דויד]</span> 2 *Chro.* 34.3.
 
 [^2]: <span class="gh-gap" title="TCP: illegible in source">•</span> *King.* 22.2
 

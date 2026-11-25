@@ -22,5 +22,5 @@ Some would have Expositors only give the literall sense without observation or a
 
 [^1]: Helvicus.
 
-[^2]: <span class="gh-gap" title="TCP: illegible in source">〈Greek〉</span>.
+[^2]: <span class="gh-conj" title="Editorial conjecture: illegible in the source; supplied from the stated evidence (编者推补；非原书原文)">[ἐπέλυε. διερμήνευε. διήνοιγε. ἐξετίθετο]</span>.
 

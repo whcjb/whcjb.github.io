@@ -105,6 +105,10 @@ class Book:
                 raise ValueError('旁注 span 未闭合')
             txt = re.sub(r'\s+', ' ', body[m.end():k]).strip()
             out.append(body[pos:m.start()].rstrip(' '))
+            # 只剩一个读不出的〈Greek〉（外加标点）的旁注不出脚注：页底一条红块没有信息（用户 2026-11-25）
+            bare = re.sub(rf'<span class="{self.P}-gap"[^>]*>〈Greek〉</span>', '', txt)
+            if not re.sub(r'[\s.,;:]', '', bare) and '〈Greek〉' in txt:
+                txt = ''
             if txt:
                 notes.append(txt)
                 out.append(f'[^{len(notes)}]')
