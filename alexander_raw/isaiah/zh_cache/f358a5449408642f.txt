@@ -1,0 +1,25 @@
+The user says 18 asterisks. Let me count in the source.
+
+1. *From distress ... them?* → 2
+2. *from.* → 2 (4)
+3. *without,* → 2 (6)
+4. *indictâ causâ citraque judicium.* → 2 (8)
+5. *us,* → 2 (10)
+6. *plaga ipsis adhaeret,* → 2 (12)
+7. *impuri sunt.* → 2 (14)
+8. *the land of the living* → 2 (16)
+"i. e." not italic in source. That's 16. Hmm, user says 18. Maybe they count differently; I must match source. "as all agree"... no. 16 it is. But wait, the rule says I mustn't add. Keep 16. Actually, perhaps the user's count of 18 is wrong; I'll faithfully match source.
+
+No comments in the source. Names: first occurrences need parentheses: Hengstenberg, Jerome (no—well-known), J. H. Michaelis (米夏埃利斯), Gesenius, Rückert (吕克特), Umbreit, Luzzatto (卢扎托), Henderson, Zwingle (茨温利—well-known? Zwingli, 慈运理, fairly known; add anyway? rule 8b lists Luther etc.; Zwingli 慈运理 known; I'll leave without or add—safer add), Luther, Calvin, Vitringa, Kimchi, Clericus (克莱里库斯), Rosenmüller, Storr (施托尔), Ewald, Hofmann (霍夫曼), Paulus (保卢斯), Aben Ezra, Abarbenel (阿巴伯内尔), Cocceius (科齐乌斯), Hendewerk, Houbigant (乌比冈), Lowth.
+
+Hebrew glosses: פשע（过犯）, עצר（拘禁）, משפט（审判）, לקח（取去）, מן（从）, דור（世代）, את־דורו, את, ישוחח（思想/述说）, נגזר（剪除）, עמי（我的百姓）, נגע למו, מו, נגע（击打/灾）, למות（至于死）.
+
+Translate the italic verse: *从困苦和审判中他被取去；在他的世代中，谁会想到他从活人之地被剪除，是因我百姓的过犯，（作）他们的咒诅？* Hmm "a curse for them"—actually "a stroke for them". He writes curse. Translate 咒诅. Actually later discusses "a stroke for them" — keep consistent with his rendering "curse".
+
+Latin: indictâ causâ citraque judicium（未经申辩、亦不经审判）. Actually "indicta causa" means without the case being pleaded. plaga ipsis adhaeret（灾病附在他们身上）, impuri sunt（他们是不洁的）.
+
+English Version → 英文钦定本 (英王钦定本). Septuagint → 七十士译本. Ethiopic → 埃塞俄比亚语. Grammar → 《语法》.
+
+Bible refs: Gen. 5:24 → 创世记 5:24; 2 Kings 2:9,10 → 列王纪下 2:9, 10; Ps. 88:6 → 诗篇 88:6; Lam. 3:54 → 耶利米哀歌 3:54; 1 Sam. 5:10 → 撒母耳记上 5:10; Zech. 8:21 → 撒迦利亚书 8:21; Ex. 11:1 → 出埃及记 11:1. v. 10 → 第 10 节.
+
+Write it.*他从困苦和审判中被取去；在他的世代中，谁会想到他从活人之地被剪除，是因我百姓的过犯，（作）他们的咒诅？*此节每一分句都曾在释经者中引起争论。第一个问题是：句首的介词所表的是缘由或原因（正如末句 פשע（过犯）之前的同一介词，众人都公认是此义），还是应按其通常的意思解作*从*。这又牵连到另一个问题，即「被取去」是指被救出，还是被接上去，还是被带去处死，还是被取离人世。此外，עצר（拘禁）究竟指监禁，还是泛指欺压与困苦；משפט（审判）究竟指审讯的程序、判决，还是刑罚，也都有争议。这些不同的解释彼此组合，便生出对全句的几种不同理解。于是英文钦定本正文作「他从监禁和审判中被取去」；同一译本的旁注作「他因困苦和审判被夺去」；亨斯滕伯格（Hengstenberg）等人作「他因一场暴虐的审判被带去（处死）」。较早的著者大多以此语描写他的升高：他脱离困苦和审判，得了释放，或被接到天上。耶柔米和米夏埃利斯（J. H. Michaelis）即如此解。格塞尼乌斯（Gesenius）、吕克特（Rückert）和温布赖特（Umbreit）也解作他借死脱离了苦难。亨斯滕伯格反驳这一解释说：论弥赛亚升高的记述始于第 10 节，而中间这一节仍是讲他受死的情形；况且此处 לקח（取去）指横死，已由平行的说法「他从活人之地被剪除」所确定。他本还可以补充一点：即便在创世记 5:24 和列王纪下 2:9, 10，这个词也是用来指一种异乎寻常、不循自然常规的离世。卢扎托（Luzzatto）和亨德森（Henderson）把 מן（从）解作表缺无的*没有*，认为此句是说他未经拘押、未有凭据就被除掉。茨温利（Zwingle）似已先作此解，他把这话意译为*indictâ causâ citraque judicium*（未经申辩、不经审判）。——下一分句的解释，取决于 דור（世代）究竟指寿命、居所、后裔还是同时代的人，以及动词是指思想还是述说。路德、加尔文和维特林加（Vitringa）解作：谁能述说他此后寿命的长久？金希（Kimchi）和亨斯滕伯格解作：谁能述说他的后裔，即属灵的子孙？对此有人反驳说：这个动词在其宾语之前须有连接的介词；基督并不被称为他百姓的父，而是被称为他们的兄弟；而且 דור 唯在复数时才有此义。克莱里库斯（Clericus）以为意思是：谁能配得地描述他一生的行程？但 דור 的这一意义没有用例的支持。罗森米勒（Rosenmüller）、格塞尼乌斯等人随从施托尔（Storr），把 את־דורו（他的世代）作独立主格：至于他的世代（即他同时代的人），谁思想过、谁顾念过？亨斯滕伯格反驳这一结构说：את 极少（甚或从不）标明动词的主语；况且这样一来，ישוחח（思想、述说）便没有宾语了。埃瓦尔德（Ewald）把同一解释稍加修改，以 את 为介词，并使疑问一直贯穿全句：在他的世代中（即在他同时代的人中），谁想到他从活人之地被剪除……？以上两条反驳都对这一修改无效。霍夫曼（Hofmann）把此句解作「谁顾念他的居所，即他在何处？」，荒诞不经，不值一驳。——据一些著者说，נגזר（被剪除）在诗篇 88:6 和耶利米哀歌 3:54 是用来指自然而安静的死亡；但亨斯滕伯格坚持说，即便在那里，也含有横死之意。——保卢斯（Paulus）从单数形式 עמי（我的百姓）推断，此处耶和华又开始说话；但亨斯滕伯格解释说它等于*我们*，而多人说话时用单数形式的类似用法，在撒母耳记上 5:10、撒迦利亚书 8:21 都有例证。——末了的 נגע למו 有几种解释。亚本·以斯拉（Aben Ezra）和阿巴伯内尔（Abarbenel），以及随从他们的罗森米勒和格塞尼乌斯，把这话用于此处所描写的受苦者，解作「他被击打」，并从复数词尾的使用推断本章的主题是集合性的。另有人采纳同样的词义与所指，却否认这一推论，理由是 מו 虽本是复数词尾，却不时用作单数，正如同一形式在埃塞俄比亚语中也是如此。埃瓦尔德在他的《语法》中也持这一理由。亨斯滕伯格承认这代词在此是复数，但认为是指百姓，并补出一个关系词：因我百姓的过犯，他们是当受击打的，按字面是「对他们有击打或刑罚」，即应得或已定的。埃瓦尔德不假定有省略，译作「为他们的击打」，即在他们的位置上、为他们的益处受击打。科齐乌斯（Cocceius）赋予这话同样的意义，用法却截然不同，把它当作对百姓的描写：*plaga ipsis adhaeret*（灾病附在他们身上），即*impuri sunt*（他们是不洁的）（参出埃及记 11:1 中 נגע（灾）的用法）。——按亨德韦克（Hendewerk）的说法，*活人之地*是指圣地，此节是描写巴比伦的被掳：「这百姓因神的审判被掳去，然而谁能述说它将来的增长？它从本地被剪除；因父辈的过犯，儿女受了击打。」发明这种解释的人，竟讥讽弥赛亚的解释荒诞无据，原也不足为怪。七十士译本似乎暗含 למות（至于死）这一读法，乌比冈（Houbigant）和洛沃特（Lowth）采纳了它；但它全无校勘上的依据，本身也毫无可取之处。
