@@ -39,7 +39,7 @@ RE_SEC2 = re.compile(r'^\W{0,3}(?P<pre>(?:[A-Za-z0-9]{1,4}\W{1,3}){1,2}?)(\d{1,2
 RE_SEC3 = re.compile(r'^\W{0,2}VERS?\W{1,3}(\d{1,2}(?:\s*[.,]\s*\d{1,2})*)\W*$')
 RE_CHAPLINE = re.compile(r'^\W{0,3}C[A-Z]{1,3}P\W{0,3}\s*([XVIL]{2,7})\W*$')   # 对开本每章起头单独一行「CHAP. XXVIII.」
 RE_JOBISH = re.compile(r'^\W*(?:[IJT1l]?\s?[O0]\s?[BRE8]|10[B28]|1?0[23]|D?B|1?10\s?B)\W*$', re.I)   # 第 6 轮复查：B／DB／110 B
-RE_VH = re.compile(r'^\(?V(?:er|cr|e)[sf]\w{0,2}[.,]?\s*(\d{1,2}|[IlO1][\dIlO]?)\s*[.,]\s*(.*)$')
+RE_VH = re.compile(r'^\(?V(?:er|cr|e)[sf](?:e|ion|s)?[.,]?\s*(\d{1,2}|[IlO1][\dIlO]?)\s*[.,]\s*(.*)$')   # 「Verse28.」：\w{0,2} 会吞掉章号首位，第 8 轮复查
 FIX_DIG = str.maketrans({'I': '1', 'l': '1', 'O': '0', 'o': '0'})
 
 
@@ -74,6 +74,11 @@ def verse_nums(s):
     return ns
 
 
+# 装订／扫描事故（看图核过）：一对叶互换、其间两页漏扫
+LEAF_SWAP = {4: [('0172', '0173')], 9: [('0307', '0308'), ('0309', '0310')]}
+PAGE_SET = {4: {'0171': 163, '0173': 165, '0172': 166, '0174': 168},
+            9: {'0306': 301, '0308': 303, '0307': 304, '0310': 305, '0309': 306, '0311': 308}}
+PAGE_GAP = {4: {'0173': 164, '0174': 167}, 9: {'0308': 302, '0311': 307}}
 COLS_NUMBERED = {82}   # 对开本按栏编号：一叶两栏两个号（第 331、332 栏）
 CHAPS = {4: (11, 14), 6: (18, 21), 8: (27, 29), 82: (27, 29), 9: (30, 31)}
 
@@ -150,7 +155,11 @@ class Builder:
         if start is None:
             raise SystemExit('找不到第一个段首出处行')
         body_leaves = leaves[start:]
+        for a, b in LEAF_SWAP.get(self.part, ()):     # 扫描时两叶调换（看图核过）：按原书页序排回
+            ia, ib = body_leaves.index(a), body_leaves.index(b)
+            body_leaves[ia], body_leaves[ib] = body_leaves[ib], body_leaves[ia]
         pno = self.page_numbers(body_leaves)
+        pno.update(PAGE_SET.get(self.part, {}))
         sections, front = [], []
         cur = None
         para = []                 # 当前段落的行
@@ -188,6 +197,11 @@ class Builder:
         for lf in body_leaves:
             pg = self.pages[lf]
             n = pno.get(lf)
+            if lf in PAGE_GAP.get(self.part, {}) and cur is not None:   # 漏扫的页：插一行说明，不让上下文悄悄接上
+                g = PAGE_GAP[self.part][lf]
+                flush_para()
+                out.append(('raw', f'<p><span class="{P}-gap">[Page {g} is missing from the scanned copy. 此页扫描件缺。]</span></p>'))
+                prev = None
             if n and self.part in COLS_NUMBERED:
                 pb = (f'<span class="{P}-pb" id="p{n}" data-p="{n}–{n + 1}" data-leaf="{int(lf)}" '
                       f'title="Columns {n}–{n + 1} of the 1676–77 folio begin here (对开本第 {n}–{n + 1} 栏起)"></span>')
@@ -313,7 +327,8 @@ class Builder:
                 elif mode == 'vh':
                     last_vh = re.sub(r'<[^>]+>', '', epi_lines[-1]).strip()
                     hy = (bool(re.search(r'[¬-]$', last_vh)) or
-                          (not re.search(r'[.:;?!]\W*$', last_vh) and overlap(plain, vh_vocab) >= 0.5 and len(epi_lines) <= 2)) and \
+                          (not re.search(r'[.:;?!]\W*$', last_vh) and len(epi_lines) <= 2 and
+                           (overlap(plain, vh_vocab) >= 0.5 or (len(plain.split()) <= 3 and re.search(r'[.?!]\W*$', plain))))) and \
                         bool(re.match(r'\W*[a-z]', plain))   # 第 5 轮：「…the Prince? and / where are the dwelling places」上行没收尾也收   # 上一行以断词号收尾、这一行小写起头（半个词）：经文没完（「…let other¬ / bow downe upon her.」）；
                                                                # 「&c¬ / As if he had said…」那个 ¬ 是噪点，下一行是讲解，挡掉
                     if hy or (overlap(plain, vh_vocab) >= 0.6 and not (prev and prev['end'] < x1 - 80)):

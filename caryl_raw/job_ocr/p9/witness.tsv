@@ -5732,18 +5732,6 @@
 31-1	confirm	ror	nor	nor
 31-1	confirm	himseife	himselfe	himsels
 31-1	confirm	abour	about	about
-31-1	solo	outuard	outward	
-31-1	noalign	parley		
-31-1	confirm	thonght	thought	thought
-31-1	noalign	init		
-31-1	confirm	outuard	outward	outward
-31-1	witness	dotne	down	down
-31-1	witness	thouph	though	though
-31-1	agree	unconsented		unconsented
-31-1	agree	unpremeditated		unpremeditated
-31-1	confirm	thougbts	thoughts	thoughts
-31-1	confirm	thoughes	thoughts	thoughts
-31-1	confirm	chat	that	that
 31-1	noalign	innecence		
 31-1	noalign	theu		
 31-1	solo	knom	know	
@@ -5751,9 +5739,9 @@
 31-1	solo	mhich	which	
 31-1	noalign	covets		
 31-1	solo	mhich	which	
-31-1	solo	xot	not	
-31-1	solo	thinhe	thinke	
-31-1	solo	epon	upon	
+31-1	confirm	xot	not	not
+31-1	confirm	thinhe	thinke	think
+31-1	confirm	epon	upon	upon
 31-1	confirm	mith	with	with
 31-1	confirm	cyes	eyes	eyes
 31-1	confirm	wby	why	why
@@ -5769,12 +5757,34 @@
 31-1	confirm	michednesse	wickednesse	wickedness
 31-1	confirm	perbaps	perhaps	perhaps
 31-1	realword	ching	thing	thing
-31-1	noalign	thinde		
-31-1	noalign	ghadly		
-31-1	solo	laave	leave	
-31-1	noalign	thoughte		
-31-1	solo	Godiy	Godly	
-31-1	solo	xill	will	
+31-1	confirm	outuard	outward	outward
+31-1	agree	parley		parley
+31-1	confirm	thonght	thought	thought
+31-1	noalign	init		
+31-1	confirm	outuard	outward	outward
+31-1	witness	dotne	down	down
+31-1	witness	thouph	though	though
+31-1	agree	unconsented		unconsented
+31-1	agree	unpremeditated		unpremeditated
+31-1	confirm	thougbts	thoughts	thoughts
+31-1	confirm	thoughes	thoughts	thoughts
+31-1	confirm	chat	that	that
+31-1	solo	Psalue	Psalme	
+31-1	confirm	tuine	thine	twine
+31-1	confirm	erdanger	endanger	endanger
+31-1	agree	myriads		myriads
+31-1	noalign	insenciblenes		insen
+31-1	agree	startled		startled
+31-1	witness	swarme	swarm	swarm
+31-1	confirm	uisely	wisely	wisely
+31-1	noalign	serioussy		serioully
+31-1	witness	shoutd	should	should
+31-1	witness	thinde	think	think
+31-1	witness	ghadly	gladly	gladly
+31-1	confirm	laave	leave	leave
+31-1	witness	thoughte	thoughts	thoughts
+31-1	confirm	Godiy	Godly	godly
+31-1	confirm	xill	will	will
 31-1	confirm	Lastiy	Lastly	lastly
 31-1	noalign	Obfirve		obserye
 31-1	noalign	Iuu		
@@ -5798,20 +5808,10 @@
 31-1	split	Ihave	I have	have
 31-1	confirm	xith	with	with
 31-1	confirm	wby	why	why
-31-1	solo	Psalue	Psalme	
-31-1	confirm	tuine	thine	twine
-31-1	confirm	erdanger	endanger	endanger
-31-1	agree	myriads		myriads
-31-1	noalign	insenciblenes		insen
-31-1	agree	startled		startled
-31-1	witness	swarme	swarm	swarm
-31-1	confirm	uisely	wisely	wisely
-31-1	noalign	serioussy		serioully
-31-1	witness	shoutd	should	should
 31-1	solo	purting	putting	
 31-1	noalign	conRtant		
 31-1	noalign	consext		
-31-1	solo	mhat	what	
+31-1	confirm	mhat	what	what
 31-1	witness	œbat	what	what
 31-1	witness	hone	hope	hope
 31-1	witness	mroughi	wrought	wrought

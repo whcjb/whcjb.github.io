@@ -171,6 +171,9 @@ def rules():
     R.append(('mw', re.compile(r'\b(for|of|in|no|their|his|our|my|killing|prevent their) mant\b'), lambda m: m.group(1) + ' want'))
     R.append(('fs', re.compile(r'\b((?:on|of) (?:my|his|their|our|your|the|that|this|other|every|one)) fide\b'), lambda m: m.group(1) + ' side'))
     R.append(('pronI', re.compile(r'(?<=[a-z] )l (?=(?:perceive|spake|come|found|known|knew|see|saw|thinke|think|said|sayd|will|would|shall|should|am|have|had|was|must|may|can|could|doe|did|answer|conceive|know|speake|beleeve|hope|pray)\b)'), lambda m: 'I '))
+    # —— 第 8 轮（第 4 部 13:26–28 实读 20 页）：段首花体／大写 T 后多出空格「T hat」「T hou」「T he」；unde standing
+    R.append(('split', re.compile(r'\bT (hat|hou|he|his|hus|here|hey|hen|ho)\b'), lambda m: 'T' + m.group(1)))
+    R.append(('split', re.compile(r'\bunde standing\b'), lambda m: 'understanding'))
     # 漏进正文的页眉
     R.append(('head', re.compile(r'\bCha[pn][.,-]?\s?\d{1,2}\.?\s+An Ex\w*\s+u\w*\s+\w+\s+Boo?[sk]\w*\s+\S{1,3}\s?\S{0,3}\s+V\w{2,5}[.,]?\s?\d{0,2}\.?'),
               lambda m: ''))

@@ -118,21 +118,24 @@ def layout(W, H, lines, fits=None, width=None, detect_head=True):
     # 拟合出的栏界有几十 px 的偏差（第 4 部第 11 叶右界低估约 40px）：用两侧没粘旁注的整行实测行首、行尾再校一次
     # 校正量取残差最密的一簇（±12px），而不是 ±60px 内的中位数：第 6 部第 746 叶起一批偶数叶版心窄约 90px（扫描缩放不同），
     # 用固定栏宽推出的右界在真行尾外 90px，±60 窗口一条也收不到，整页满行都判成短行、每行自成一段，旁注词落进正文。
-    def cluster(rs, lo, hi):
+    def cluster(rs, lo, hi, tol=12, need=5):
         rs = [r for r in rs if lo <= r <= hi]
         best, bc = 0, 0
         for r in rs:
-            c = sum(1 for q in rs if abs(q - r) <= 12)
+            c = sum(1 for q in rs if abs(q - r) <= tol)
             if c > bc:
                 best, bc = r, c
-        return statistics.median([q for q in rs if abs(q - best) <= 12]) if bc >= 5 else 0   # 第 806 叶只有 5 行没粘旁注
+        return statistics.median([q for q in rs if abs(q - best) <= tol]) if bc >= need else 0   # 第 6 部第 806 叶只有 5 行没粘旁注
+    def cluster2(rs, lo, hi):
+        # 再退一步：第 4 部第 545 叶只有 4 行没粘旁注、行尾参差 ±13px
+        return cluster(rs, lo, hi) or cluster(rs, lo, hi, tol=15, need=4)
     r0 = [l['words'][0]['x'] - fx0(l['y']) for l in wide]
     r1 = [l['words'][-1]['x'] + l['words'][-1]['w'] - fx1(l['y']) for l in wide]
     d0 = [r for r in r0 if abs(r) <= 60]
     d1 = [r for r in r1 if abs(r) <= 60]
     # ±60 内收得到点就照旧取中位数（其余各部的页不动）；收不到才找最密簇
-    s0 = statistics.median(d0) if len(d0) >= 5 else cluster(r0, -60, 150)
-    s1 = statistics.median(d1) if len(d1) >= 5 else cluster(r1, -150, 60)
+    s0 = statistics.median(d0) if len(d0) >= 5 else cluster2(r0, -60, 150)
+    s1 = statistics.median(d1) if len(d1) >= 5 else cluster2(r1, -150, 60)
     gx0, gx1 = fx0, fx1
     fx0 = lambda y: gx0(y) + s0          # noqa: E731
     fx1 = lambda y: gx1(y) + s1          # noqa: E731

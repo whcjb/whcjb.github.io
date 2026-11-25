@@ -35,6 +35,18 @@ def assign_pages(P, step=1):
         pn = P[lf].get('pageno')
         if pn and re.fullmatch(r'\d{1,4}', pn):
             read[i] = int(pn)
+    # 先剔离群：读数换算成「页码 − 叶序×step」的偏移
+    # （第 4 部 5 读成 3：「320–324」「334–337」「357–361」一串连着读错，彼此「页码差 = 叶序差」，原判据挡不住）
+    import statistics as _st
+    ks0 = sorted(read)
+    off = {i: read[i] - int(leaves[i]) * step for i in ks0}   # 按真实叶号算（非正文叶被跳过，序号会错开）
+    # 合法的偏移漂移（缺叶、多叶）全书只有几页；读错一位数的偏移动辄上百。拿全部中位数作闸，差 > 30 的剔掉
+    if len(ks0) >= 20:
+        med = _st.median(off.values())
+        tol = 20 if step == 1 else 1           # 对开本偏移全卷恒为 11（看图核过：202=393、203=395、283=555）；栏号读偏 2 的也剔
+        for i in ks0:
+            if abs(off[i] - med) > tol:
+                del read[i]
     # 可信：与前后各一个读数的「页码差 = 叶序差」至少一侧成立
     ks = sorted(read)
     good = {}
