@@ -1,0 +1,38 @@
+<thinking_mode>
+Count asterisks in original.
+
+1. *Thus saith ... his people* — 2
+2. (or *avenge*) — 2
+3. *his people*— wait. Let me parse: "*Thus saith thy Lord, Jehovah, and thy God—he will defend* (or *avenge*) *his people*—*Behold, ... the cup of reeling* (or *intoxication*), *the bowl ... fury; thou shalt not add* (*continue* or *repeat*) *to drink it any more* (or *again*)."
+
+Segments:
+- *Thus saith thy Lord, Jehovah, and thy God—he will defend* : 2
+- *avenge* : 2 (4)
+- *his people* : 2 (6)
+- *Behold, I have taken from thy hand the cup of reeling* : 2 (8)
+- *intoxication* : 2 (10)
+- *the bowl of the cup of my fury; thou shalt not add* : 2 (12)
+- *continue* : 2 (14)
+- *repeat* : 2 (16)
+- *to drink it any more* : 2 (18)
+- *again* : 2 (20)
+- *(who pleads the cause of his people);* : 2 (22)
+
+Total 22. No HTML comments here actually. Good.
+
+Note "thy Lord, Jehovah" within italics — whole thing italic. Translate: *你的主耶和华、你的神如此说——他必为他的百姓辩护* (或*伸冤*) *他的百姓*... Hmm, word order: "he will defend his people" split. Chinese: *他必护卫* （或*伸冤于*）*他的百姓*. Fine.
+
+Knobel first mention: 克诺贝尔（Knobel）. Zion → 锡安. Chapter refs: ch. 1:17 → 以赛亚书 1:17, 34:8, 41:11, 49:25. "See ch." → 见第1章... Use 以赛亚书 format: 参见以赛亚书 1:17；34:8；41:11；49:25。
+
+Hebrew יריב עמו (他为他百姓辩屈).
+
+Draft:
+
+*你的主耶和华、你的神如此说——他必护卫*（或作*伸冤*）*他的百姓*——*看哪，我已将那使人东倒西歪的杯*（或作*使人沉醉的杯*）……wait must keep "intoxication" as single italic: （或作*沉醉*）. 
+
+*看哪，我已从你手中取了那令人踉跄的杯*（或作*沉醉*），*就是我忿怒之杯的爵；你必不再*（或作*继续*、*重复*）*喝它*（或作*再喝*）。Hmm "thou shalt not add to drink it any more (or again)". Hebrew idiom "add to drink" = drink again. Translate: *你必不得加*（*继续*或*重复*）*再喝它，直到永远*? "any more" alternative "again". So: *你不得再加*（*继续*或*重复*）*喝它，不再*（或作*重新*）. Hmm awkward. Better: *你必不再添*（*继续*或*重复*）*喝它，永不*（或作*不再*）. Let me do: *你必不再添*（即*继续*或*重复*）*饮它，直到永久*（或作*再次*）。Hmm "any more"=永不再; "again"=再次. Phrase: *你必不得添*（*继续*或*重复*）*喝它不止一次*... Simplest: *你必不添*（*继续*或*重复*）*喝它，再也不*（或作*不再重来*）. I'll use *必不再添*... ok go: "*你不可添*（*继续*或*重复*）*去喝它，永不再喝*（或作*不再*）". Fine-ish. Let me use "*再也不喝*（或作*不再重喝*）" – keep "again" as 重喝. Hmm. Final: *你不得再添*（*继续*或*重复*）*饮它，直到永远*（或作*不再重饮*）. Actually "any more"→"从此以后". I'll go: *你必不添*（*续*或*重*）*饮这杯，从此以后*（或作*不再*）。 Fine.
+
+Rest translation.
+</thinking_mode>
+
+*你的主，耶和华，你的神如此说——他必护卫*（或作*伸冤*）*他的百姓*——*看哪，我已从你手中取了那令人东倒西歪的杯*（或作*沉醉之杯*），*就是我忿怒之杯的爵；你必不添*（*继续*或*重复*）*饮这杯，从此以后*（或作*不再*）。连克诺贝尔（Knobel）也不得不承认，作者所指的与其说是耶路撒冷这个地方，不如说是耶路撒冷的百姓，而且即便是百姓，也只是作为全民族的代表；这一让步，大大印证了前文对这几篇预言中「锡安」一词所作的解释。——通常把 יריב עמו（他为他的百姓辩屈）解作关系子句*（为他的百姓辩屈的那位）；*然而更简明、同时也更合乎这语言之特性的看法，是把它视为一个简短而完整的插入命题。别处也常把同样的品格归于耶和华。（见以赛亚书 1:17；34:8；41:11；49:25。）——这杯既是神忿怒的杯，不是人忿怒的杯，那么当它的目的达成之时，也就由神亲自把它从受苦者的唇边撤去。
