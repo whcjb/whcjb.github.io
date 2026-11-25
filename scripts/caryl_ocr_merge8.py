@@ -27,7 +27,8 @@ ROOT = Path(__file__).resolve().parent.parent
 BASE = ROOT / 'caryl_raw' / 'job_ocr'
 
 
-def assign_pages(P):
+def assign_pages(P, step=1):
+    """step：每叶推进几个号（对开本每栏编号，一叶两栏 → 2）。"""
     leaves = sorted(k for k, v in P.items() if v['kind'] == 'text')
     read = {}
     for i, lf in enumerate(leaves):
@@ -40,7 +41,7 @@ def assign_pages(P):
     for j, i in enumerate(ks):
         ok = False
         for k in (ks[j - 1] if j else None, ks[j + 1] if j + 1 < len(ks) else None):
-            if k is not None and read[k] - read[i] == k - i:
+            if k is not None and read[k] - read[i] == (k - i) * step:
                 ok = True
         if ok:
             good[i] = read[i]
@@ -52,12 +53,15 @@ def assign_pages(P):
             continue
         lo = max((k for k in gk if k < i), default=None)
         hi = min((k for k in gk if k > i), default=None)
-        if lo is not None and hi is not None and good[hi] - good[lo] == hi - lo:
-            out[lf] = good[lo] + (i - lo)
+        if lo is not None and hi is not None and good[hi] - good[lo] == (hi - lo) * step:
+            out[lf] = good[lo] + (i - lo) * step
+        elif lo is not None and hi is not None and min(i - lo, hi - i) <= 3:
+            # 两侧可信读数对不上（对开本一侧只读到右栏号）：用近的一侧推
+            out[lf] = good[hi] - (hi - i) * step if hi - i <= i - lo else good[lo] + (i - lo) * step
         elif lo is not None and hi is None and i - lo <= 3:
-            out[lf] = good[lo] + (i - lo)
+            out[lf] = good[lo] + (i - lo) * step
         elif hi is not None and lo is None and hi - i <= 3:
-            out[lf] = good[hi] - (hi - i)
+            out[lf] = good[hi] - (hi - i) * step
     return out
 
 

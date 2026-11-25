@@ -57,6 +57,11 @@ VOLS = {
     # 第 8 部的第二底本：胶片自第 160 叶起大段发暗透印，363/628 叶非词率 ≥ 15%（第 210 叶四种预处理都在 56–62%），
     # Packer 纸本（300 ppi）也全识别，按原书页码逐页择优（old-book-ocr §3.2d）
     81: ('joseph-caryl-exposition-on-job-vol-viii', 'Joseph Caryl-Exposition On Job-Vol VIII_jp2.zip', 1.0),
+    # 第 8 部最终底本（2026-11-25 用户定）：1676–77 对开合订本第二卷胶片，第 27–29 章在叶 153–326。
+    # 四开本两份择优后坏页仍 ≥ 15%；对开本这一段 28、29 章各测一叶 5.1%、4.5%，全段均匀。双栏，见 caryl_ocr_assemble 的双栏模式。
+    # Digital Puritan 那份 PDF（Google 扫描，黑白二值）同页 9.8–19.3%，不用。
+    82: (BIM.replace('an-exposition-', 'an-exposition-with-prac') + '_caryll-joseph_1676_2',
+         BIM.replace('an-exposition-', 'an-exposition-with-prac') + '_caryll-joseph_1676_2_jp2.zip', 0.6),
     9: ('joseph-caryl-exposition-on-job-vol-ix', 'Joseph Caryl-Exposition On Job-Vol IX_jp2.zip', 1.0),
 }
 
@@ -128,9 +133,9 @@ def parse_range(s, n):
     return list(range(int(a), min(n - 1, int(b or a)) + 1))
 
 
-def cmd_fetch(part, rng):
+def cmd_fetch(part, rng, workers=8):
     ls = parse_range(rng, nleaves(part))
-    with ProcessPoolExecutor(8) as ex:       # jp2 解码吃 CPU，线程用不满 8 核（实测 82%），改进程
+    with ProcessPoolExecutor(workers) as ex:   # jp2 解码吃 CPU，线程用不满 8 核（实测 82%），改进程；单叶大的（对开本 ~10MB）并发太高会被 IA 限流，用 --workers 3
         res = list(ex.map(_one, [part] * len(ls), ls))
     n = sum(r for r in res if isinstance(r, int))
     bad = [r for r in res if not isinstance(r, int)]
@@ -174,9 +179,10 @@ def main():
     ap.add_argument('part', type=int, choices=sorted(VOLS))
     ap.add_argument('range', nargs='?')
     ap.add_argument('--shards', type=int, default=8)
+    ap.add_argument('--workers', type=int, default=8)
     a = ap.parse_args()
     if a.cmd == 'fetch':
-        cmd_fetch(a.part, a.range)
+        cmd_fetch(a.part, a.range, a.workers)
     elif a.cmd == 'ocr':
         cmd_ocr(a.part, a.range, a.shards)
     else:

@@ -11,6 +11,8 @@
 - 段首出处行：`JOB Chap. 11. Verf. 1,2,3.`；第 6 部有的不印 Chap.（`JOB. 19 Vers. 20,21, 22.`），这时行首须像 JOB。
   节号须递增，乱序的按前后推（mono）；与下一段重叠的末节截掉。
   另两种写法：`OB. 19.7,8,9.`（没有 Vers，RE_SEC2）、`VERS. 11, 12, 13, 14,`（只有节号，章取页眉，RE_SEC3）。
+  对开本（第 8 部底本）：每章起头单独一行 `CHAP. XXVIII.`（RE_CHAPLINE），其后印整章经文，按全章比对定经文框；
+  分段用 `VERS. 25,26,27.`（可只有一个节号）。
   兜底：页眉章号进到下一章（连续两页）、本页与下一页都没有段首行，就在新章第一页开段（第 6 部 19:1–3 的段首行读坏了）。；首字 JOB 是花体，常读丢或读成 `OB`/`TOB`/`10B`/`02`/`102`，
   所以行首放宽到任意 0–4 个字母数字，另加两道闸：行短于 60 字符、章号等于本页页眉章号或其后一章（新章起头那页的页眉还是上一章；正文里的交叉引用在整行中间）。
 - 经文框：出处行之后，与钦定本该段经文（出处所列各节 ±1）词重合 ≥ 0.6 的连续行。缩进判不了——经文行悬挂缩进、
@@ -34,7 +36,8 @@ KJV = ROOT / 'foote_raw' / 'luke' / 'src' / 'kjv' / '19-JOBeng-kjv2006.usfm'
 P = 'cy'
 RE_SEC = re.compile(r'^\W{0,3}(?P<pre>(?:(?!C\w{0,2}a?p)[A-Za-z0-9]{1,4}\W{1,3}){0,2})\s*(?P<chap>C[A-Za-z]{0,2}a?p[A-Za-z]*[.,]?\s*)?(\d{1,2})\W+\s*V\w{0,4}[.,]?\s*(.*)$', re.I)
 RE_SEC2 = re.compile(r'^\W{0,3}(?P<pre>(?:[A-Za-z0-9]{1,4}\W{1,3}){1,2}?)(\d{1,2})\s*[.,:]\s*(\d{1,2}(?:\s*[.,]\s*\d{1,2})+)\W*$')
-RE_SEC3 = re.compile(r'^\W{0,2}VERS?\W{1,3}(\d{1,2}(?:\s*[.,]\s*\d{1,2})+)\W*$')
+RE_SEC3 = re.compile(r'^\W{0,2}VERS?\W{1,3}(\d{1,2}(?:\s*[.,]\s*\d{1,2})*)\W*$')
+RE_CHAPLINE = re.compile(r'^\W{0,3}C[A-Z]{1,3}P\W{0,3}\s*([XVIL]{2,7})\W*$')   # 对开本每章起头单独一行「CHAP. XXVIII.」
 RE_JOBISH = re.compile(r'^\W*(?:[IJT1l]?\s?[O0]\s?[BRE8]|10[B28]|1?0[23])\W*$', re.I)
 RE_VH = re.compile(r'^\(?V(?:er|cr|e)[sf]\w{0,2}[.,]?\s*(\d{1,2}|[IlO1][\dIlO]?)\s*[.,]\s*(.*)$')
 FIX_DIG = str.maketrans({'I': '1', 'l': '1', 'O': '0', 'o': '0'})
@@ -71,7 +74,8 @@ def verse_nums(s):
     return ns
 
 
-CHAPS = {4: (11, 14), 6: (18, 21), 8: (27, 29), 9: (30, 31)}
+COLS_NUMBERED = {82}   # 对开本按栏编号：一叶两栏两个号（第 331、332 栏）
+CHAPS = {4: (11, 14), 6: (18, 21), 8: (27, 29), 82: (27, 29), 9: (30, 31)}
 
 
 class Builder:
@@ -93,7 +97,7 @@ class Builder:
         原用全部一个偏移（众数），局部缺叶多叶处会整段错一页（第 4 部印本第 181 页标成 182）。"""
         import caryl_ocr_merge8 as m8
         sub = {lf: self.pages[lf] for lf in leaves}
-        return m8.assign_pages(sub)
+        return m8.assign_pages(sub, step=2 if self.part in COLS_NUMBERED else 1)
 
     def page_numbers_mode(self, leaves):
         diffs = collections.Counter()
@@ -109,7 +113,10 @@ class Builder:
     def chapter_of(self, lf):
         h = self.pages[lf].get('head') or ''
         m = re.search(r'C[A-Za-z]{0,2}ap[A-Za-z]*[.,]?\s*(\d{1,2})', h)
-        return int(m.group(1)) if m else None
+        if m:
+            return int(m.group(1))
+        m = re.search(r'C[A-Za-z]{0,2}A?P[A-Za-z]*[.,]?\s*([XVIL]{2,7})\b', h, re.I)   # 对开本页眉：CHAP. XXIX.
+        return roman(m.group(1).upper()) if m else None
 
     def next_chapter(self, leaves, lf):
         i = leaves.index(lf)
@@ -127,8 +134,19 @@ class Builder:
 
     def build(self):
         leaves = sorted(k for k, v in self.pages.items() if v['kind'] == 'text')
+        def is_head(lf, t):
+            if len(t) >= 60:
+                return False
+            m = RE_SEC.match(t)
+            if m:
+                return self.chs[0] <= int(m.group(3)) <= self.chs[1]
+            mc = RE_CHAPLINE.match(t)
+            if mc:
+                return self.chs[0] <= roman(mc.group(1)) <= self.chs[1]
+            return bool(RE_SEC3.match(t)) and self.chapter_of(lf) is not None and \
+                self.chs[0] <= self.chapter_of(lf) <= self.chs[1]
         start = next((i for i, lf in enumerate(leaves)
-                      if any(RE_SEC.match(b['t']) for b in self.pages[lf]['body'])), None)
+                      if any(is_head(lf, b['t']) for b in self.pages[lf]['body'])), None)
         if start is None:
             raise SystemExit('找不到第一个段首出处行')
         body_leaves = leaves[start:]
@@ -169,8 +187,12 @@ class Builder:
         for lf in body_leaves:
             pg = self.pages[lf]
             n = pno.get(lf)
-            pb = (f'<span class="{P}-pb" id="p{n}" data-p="{n}" data-leaf="{int(lf)}" '
-                  f'title="Page {n} of the printed part begins here (原书第 {n} 页起)"></span>') if n else \
+            if n and self.part in COLS_NUMBERED:
+                pb = (f'<span class="{P}-pb" id="p{n}" data-p="{n}–{n + 1}" data-leaf="{int(lf)}" '
+                      f'title="Columns {n}–{n + 1} of the 1676–77 folio begin here (对开本第 {n}–{n + 1} 栏起)"></span>')
+            else:
+                pb = (f'<span class="{P}-pb" id="p{n}" data-p="{n}" data-leaf="{int(lf)}" '
+                      f'title="Page {n} of the printed part begins here (原书第 {n} 页起)"></span>') if n else \
                  f'<span class="{P}-pb" data-leaf="{int(lf)}"></span>'
             pending_pb.append(pb)
             x1 = pg['x1']
@@ -184,6 +206,8 @@ class Builder:
                     pending_pb = []
                 plain = re.sub(r'<[^>]+>', '', t)
                 m = RE_SEC.match(plain) if len(plain) < 60 else None
+                if m and re.fullmatch(r'[a-z]{2,}\W*', (m.group('pre') or '').strip()):
+                    m = None                    # 「at Chap. 27. vers. 11…」：行首是英文小写词，是正文里的交叉引用
                 if m and not m.group('chap') and not RE_JOBISH.match(m.group('pre') or ''):
                     m = None                    # 没有 Chap. 的（第 6 部「JOB. 19 Vers. 20」）行首必须像 JOB，挡掉「Verf. 19.」
                 hc0 = self.chapter_of(lf)
@@ -193,15 +217,27 @@ class Builder:
                         self.chs[0] <= int(m.group(3)) <= self.chs[1]:
                     m = None                    # 章号与本页页眉不合：正文里的交叉引用
                 hit = None
+                whole = False
+                mc = RE_CHAPLINE.match(plain)
                 if m:
                     hit = (int(m.group(3)), m.group(4))
+                elif mc and self.chs[0] <= roman(mc.group(1)) <= self.chs[1]:
+                    if cur and cur['ch'] == roman(mc.group(1)):
+                        prev = b                       # 与当前章相同：页眉残片落进正文（第 212 叶「CRAP. XXVIII.」夹在句中），删
+                        continue
+                    hit = (roman(mc.group(1)), '1')    # 新章起头：其后印整章经文
+                    whole = True
                 else:
                     m2 = RE_SEC2.match(plain) if len(plain) < 40 else None
                     m3 = RE_SEC3.match(plain) if len(plain) < 40 else None
                     if m2 and RE_JOBISH.match(m2.group('pre')) and self.chapter_of(lf) in (None, int(m2.group(2)), int(m2.group(2)) - 1):
                         hit = (int(m2.group(2)), m2.group(3))          # 「OB. 19.7,8,9.」：没有 Vers 字样
-                    elif m3 and self.chapter_of(lf):
-                        hit = (self.chapter_of(lf), m3.group(1))       # 「VERS. 11, 12, 13, 14,」：只有节号，章取页眉
+                    elif m3 and (self.chapter_of(lf) or cur):
+                        hc3 = self.chapter_of(lf)
+                        if not hc3 or not (self.chs[0] <= hc3 <= self.chs[1]):
+                            hc3 = cur['ch'] if cur else None           # 页眉章号读坏（对开本「CHAP. XXV.I.」）：取当前段的章
+                        if hc3:
+                            hit = (hc3, m3.group(1))                   # 「VERS. 11, 12, 13, 14,」：只有节号，章取页眉
                 # 兜底：页眉章号进到下一章、却还没见到该章段首 → 在这一页开新段（该章首段的段首行读坏了）
                 hch = self.chapter_of(lf)
                 if (not hit and cur and hch == cur['ch'] + 1 and not cur.get('synthetic_next') and b is pg['body'][0]
@@ -234,7 +270,7 @@ class Builder:
                         prev = b
                         continue
                     mode, epi_lines = 'epi', [t]
-                    epi_vocab = self.vocab(ch, vs)
+                    epi_vocab = self.vocab(ch, list(range(1, 43)) if whole else vs)
                     prev = b
                     continue
                 if cur is None:
@@ -293,6 +329,12 @@ def group_margin(ms):
         else:
             out.append([m['y'], m['t'], m['side'], m['y']])
     return [(y, t) for y, t, _, _ in out]
+
+
+def roman(r):
+    v = {'I': 1, 'V': 5, 'X': 10, 'L': 50}
+    n = [v.get(c, 0) for c in r]
+    return sum(-a if i + 1 < len(n) and n[i + 1] > a else a for i, a in enumerate(n))
 
 
 def mono(vs):

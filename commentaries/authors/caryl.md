@@ -35,6 +35,6 @@ facts:
 
 《约伯记讲解》（*An Exposition with Practical Observations upon the Book of Job*，伦敦 1643–1666，四开 12 部）。卡里尔逐节讲解，先疏通字义、比较各家译法，再从经文引出「观察」（Observations），逐条讲明、应用。全书篇幅极大，单是本站所收 8 部按扉页所记就有 284 讲。
 
-本站底本是 EEBO-TCP 的人工录入本，只录了 12 部中的 8 部（1–10、15–17、22–26、32–42 章）。第 4、6、9 部（11–14、18–21、30–31 章）没有录入本，本站据原书扫描影像机器识别，再与另一印本逐词对照校勘，未经逐字人工校对，存疑处加虚下划线；第 8 部（27–29 章）待补。录入者读不出的字在正文里标红，详见书首页的文本说明。
+本站底本是 EEBO-TCP 的人工录入本，只录了 12 部中的 8 部（1–10、15–17、22–26、32–42 章）。第 4、6、8、9 部（11–14、18–21、27–29、30–31 章）没有录入本，本站据原书扫描影像机器识别，再与另一印本逐词对照校勘，未经逐字人工校对，存疑处加虚下划线；其中第 8 部的四开本扫描太差，改据 1676–77 年对开合订本胶片，识别质量明显偏低。录入者读不出的字在正文里标红，详见书首页的文本说明。
 
 <p class="cb-src">资料来源：<a href="https://en.wikisource.org/wiki/Dictionary_of_National_Biography,_1885-1900/Caryl,_Joseph">Dictionary of National Biography: Caryl, Joseph</a>；<a href="https://en.wikipedia.org/wiki/Joseph_Caryl">Wikipedia: Joseph Caryl</a>；EEBO-TCP A43792（1673 年讽刺挽诗，记葬礼日期）；本书各部扉页。</p>

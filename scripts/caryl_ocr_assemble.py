@@ -23,6 +23,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 BASE = ROOT / 'caryl_raw' / 'job_ocr'
+TWO_COL = {82}          # 第 8 部底本：1676–77 对开本，双栏
 RE_HEAD = re.compile(r'Chap|Expo|Vers|Verf|Book|Bok|JOB|IOB', re.I)
 
 
@@ -100,7 +101,7 @@ def text(ws):
     return ' '.join(w['t'] for w in ws).strip()
 
 
-def layout(W, H, lines, fits=None, width=None):
+def layout(W, H, lines, fits=None, width=None, detect_head=True):
     wide = [l for l in lines if l['w'] >= W * 0.4]
     if len(wide) < 5:
         return dict(kind='other', lines=[text(l['words']) for l in lines])
@@ -154,7 +155,11 @@ def layout(W, H, lines, fits=None, width=None):
         if re.fullmatch(r'[\dIl|]{1,4}\.?', b['t']):
             pageno = b['t']
             continue
-        if RE_HEAD.search(b['t']) and len(b['t']) < 90:
+        # 页眉须含 Chap／Exposition；只含 Job、Book、Vers 的行可能是正文（「…then Job saith here」）或段首出处行
+        # （第 9 部第 383 叶「IOB 31. Verf. 9, 10, 11, 12.」曾被当页眉吞掉，连同它之前的行）。
+        # 页眉断出来的单独一截「Vers.1.」只在本页第一行、且很短时才认。
+        if detect_head and (re.search(r'Chap|Expo', b['t'], re.I) and len(b['t']) < 90 or
+                            k == 0 and len(b['t']) <= 12 and re.match(r'V\w{2,4}', b['t'])):
             head = b['t']
             body = body[k + 1:]
             # 页眉右端的「Vers. 3.」有时断成下一行（第 4 部第 24 叶等）
@@ -184,13 +189,79 @@ def layout(W, H, lines, fits=None, width=None):
     return dict(kind='text', x0=x0, x1=x1, head=head, pageno=pageno, catch=catch, body=body, margin=margin)
 
 
+def split_columns(lines, W, H):
+    """对开本双栏：宽行（≥ 页宽 25%）的行首聚成左右两团，取两团之间最大的间隙作分界；页顶横跨两栏的页眉单独取出。
+    → (页顶行, 左栏行, 右栏行)；分不出两团 → None。"""
+    # 页顶：页高 10% 以内、像页眉（CHAP./Exposition）或纯数字（页码）的行；按固定比例切会把正文首行也切进来
+    top = [l for l in lines if l['y'] < H * 0.1 and (RE_HEAD.search(text(l['words'])) or
+                                                      re.fullmatch(r'\d{1,4}', text(l['words']).strip()))]
+    rest = [l for l in lines if l not in top]
+    xs = sorted(l['words'][0]['x'] for l in rest if l['w'] >= W * 0.25)
+    if len(xs) < 10:
+        return None
+    gaps = [(xs[i + 1] - xs[i], i) for i in range(len(xs) - 1) if W * 0.25 < xs[i + 1] < W * 0.75]
+    if not gaps:
+        return None
+    g, i = max(gaps)
+    if g < W * 0.15:
+        return None
+    cut = (xs[i] + xs[i + 1]) / 2
+    left = [l for l in rest if l['words'][0]['x'] < cut]       # 按行首归栏：左栏行宽，按中心点会越过分界
+    right = [l for l in rest if l['words'][0]['x'] >= cut]
+    return top, left, right
+
+
+def layout2(W, H, lines, fitsL, fitsR, width):
+    """双栏一页：两栏各自 layout，再先左后右拼；页顶行里认页眉、页码。"""
+    top, left, right = split_columns(lines, W, H)
+    L = layout(W / 2, H, left, fits=fitsL, width=width, detect_head=False)   # 栏宽约半页；页眉整页已取
+    R = layout(W / 2, H, right, fits=fitsR, width=width, detect_head=False)
+    if L['kind'] != 'text' or R['kind'] != 'text':
+        return layout(W, H, lines)
+    toptext = ' '.join(text(l['words']) for l in top)
+    head = toptext if RE_HEAD.search(toptext) else (L['head'] or R['head'])
+    nums = [int(x) for x in re.findall(r'(?:^|\s)(\d{1,4})(?=\s|$)', toptext)]
+    big = [x for x in nums if x >= 100]          # 栏间行号（10、20、30…）也落在页顶，栏号是三位数
+    pageno = str(min(big)) if big else (L['pageno'] or R['pageno'])   # 两栏各有号（331、332），取左栏的小号
+    if pageno and pageno.isdigit() and int(pageno) % 2 == 0:
+        pageno = str(int(pageno) - 1)            # 左栏号恒为奇数；读到偶数 = 只读到右栏号（左栏号在暗边上没读出）
+    # 对开本两栏之间的栏缝印行号（每 10 行一个：20、30…），落进旁注，去掉
+    margin = [m for m in L['margin'] + R['margin'] if not re.fullmatch(r'[\dIlO]{1,3}', m['t'].strip())]
+    return dict(kind='text', x0=L['x0'], x1=R['x1'], head=head, pageno=pageno, catch=R['catch'],
+                body=L['body'] + R['body'], margin=margin, cols=2)
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument('part', type=int)
     ap.add_argument('--show', type=int)
     a = ap.parse_args()
     d = BASE / f'p{a.part}'
-    loaded = {p.stem: load(p) for p in sorted((d / 'alto').glob('*.xml'))}
+    loaded = {}
+    for p in sorted((d / 'alto').glob('*.xml')):
+        try:
+            loaded[p.stem] = load(p)
+        except ET.ParseError:            # kraken 还在写的半截文件
+            print(f'跳过未写完的 {p.name}', file=sys.stderr)
+    if a.part in TWO_COL:
+        cols = {k: split_columns(v[2], v[0], v[1]) for k, v in loaded.items()}
+        fitsL = {k: edge_fits(c[1], loaded[k][0] / 2) if c else None for k, c in cols.items()}
+        fitsR = {k: edge_fits(c[2], loaded[k][0] / 2) if c else None for k, c in cols.items()}
+        width = part_width({**{k + 'L': f for k, f in fitsL.items()}, **{k + 'R': f for k, f in fitsR.items()}})
+        print(f'第 {a.part} 部（双栏）栏宽 {width:.0f}px', file=sys.stderr)
+        pages = {k: (layout2(*loaded[k], fitsL[k], fitsR[k], width) if cols[k] else layout(*loaded[k]))
+                 for k in loaded}
+        if a.show is not None:
+            L = pages[f'{a.show:04d}']
+            print(json.dumps({k: v for k, v in L.items() if k != 'body'}, ensure_ascii=False, indent=1)[:1500])
+            for b in L.get('body', []):
+                print(('¶ ' if b['indent'] else '  ') + b['t'])
+            return
+        (d / 'pages.json').write_text(json.dumps(pages, ensure_ascii=False) + '\n', encoding='utf-8')
+        k2 = [v for v in pages.values() if v['kind'] == 'text']
+        print(f'第 {a.part} 部：{len(pages)} 叶，正文页 {len(k2)}（双栏 {sum(1 for v in k2 if v.get("cols") == 2)}），'
+              f'有页眉 {sum(1 for v in k2 if v["head"])}，有页码 {sum(1 for v in k2 if v["pageno"])}', file=sys.stderr)
+        return
     fits = {k: edge_fits(v[2], v[0]) for k, v in loaded.items()}
     width = part_width(fits)
     print(f'第 {a.part} 部全部栏宽 {width:.0f}px（按 {sum(1 for f in fits.values() if f)} 页拟合）', file=sys.stderr)

@@ -28,15 +28,18 @@ OCR_INFO = {
             witness='1670 年同一印次的 EEBO 缩微胶片', year='1670'),
     6: dict(base='J. I. Packer 藏本（IA 扫描，600 ppi）', edition='London: M. Simmons, sold by Joseph Cranford',
             witness='1653 年印本的 EEBO 缩微胶片', year=''),
-    8: dict(base='1670 年印本的 EEBO 缩微胶片与 J. I. Packer 藏本（300 ppi），逐页取读得好的一份', edition='London, 1670',
-            witness='两份互为对照', year='1670'),
+    8: dict(base='1676–77 年对开合订本第二卷的 EEBO 缩微胶片（四开本 1670 胶片大段发暗、Packer 本只有 300 ppi，'
+                 '两份逐页择优后仍差，2026-11-25 改用对开本）', edition='London: Samuel Simmons, 1676–77 (folio, vol. 2)',
+            witness='四开本两份（1670 胶片与 Packer 藏本）逐页择优的合成本', year='1676–77 folio', dir='p82'),
     9: dict(base='J. I. Packer 藏本（IA 扫描，300 ppi）', edition='London: M. Simmons for Elisha Wallis',
             witness='1676–77 年对开合订本第二卷的 EEBO 缩微胶片', year=''),
 }
 
 
-# 已上线的 OCR 部（2026-11-25 用户定：先上 4、6、9，第 8 部段首切分与底本质量修好再上）
-OCR_READY = (4, 6, 9)
+# 已上线的 OCR 部（2026-11-25 用户定：先上 4、6、9；第 8 部改用对开本底本后，实测错误率约 3.5%，
+# 是其余三部的 2–4 倍，用户定照样上线、页首加重提示）
+OCR_READY = (4, 6, 8, 9)
+OCR_PART = {}
 
 
 class tc:
@@ -49,8 +52,9 @@ class tc:
     def order(cls):
         o = json.loads((cls.RAW / 'order.json').read_text(encoding='utf-8'))
         for part in OCR_READY:
-            f = OCR_DIR / f'p{part}' / 'order.json'
-            if not f.exists() or not (OCR_DIR / f'p{part}' / 'fixed').is_dir():
+            pd = OCR_DIR / OCR_INFO[part].get('dir', f'p{part}')
+            f = pd / 'order.json'
+            if not f.exists() or not (pd / 'fixed').is_dir():
                 continue
             secs = [dict(x, src='ocr') for x in json.loads(f.read_text(encoding='utf-8'))['sections']]
             # 出处行只引头几节的段延到下一段之前、章末段延到章末（同 extract_caryl.py）
@@ -60,7 +64,9 @@ class tc:
                 x['v2'] = max(x['v2'], (nx['v1'] - 1) if nx else NV_ALL[x['ch']])
                 if nx and x['v2'] >= nx['v1']:
                     x['v2'] = nx['v1'] - 1
-                cls.OCR_SRC[x['slug']] = OCR_DIR / f'p{part}' / 'fixed' / f'{x["slug"]}.md'
+                x['part'] = part
+                cls.OCR_SRC[x['slug']] = pd / 'fixed' / f'{x["slug"]}.md'
+                OCR_PART[x['slug']] = part
             o['sections'] += secs
         return o
 
@@ -69,6 +75,13 @@ class tc:
         if slug in cls.OCR_SRC:
             md = cls.OCR_SRC[slug].read_text(encoding='utf-8').strip()
             md = md.replace('|', '')         # OCR 噪点竖线会被 kramdown 当表格（old-book-ocr §4.4：删，不转义）
+            if OCR_PART.get(slug) == 8:
+                note = ('This section is machine-read (OCR) from a microfilm of the 1676–77 folio edition (the quarto part '
+                        'survives only in poor scans). The reading is markedly worse than elsewhere in this work, especially '
+                        'in italic quotations: expect several misread words in every paragraph. It has not been proofread. '
+                        '<b>本段据 1676–77 年对开合订本的缩微胶片机器识别（四开单行本的扫描更差）。识别质量明显低于本书其他各部，'
+                        '斜体引文尤甚，几乎每段都有错字；未经人工校对。</b>页码为对开本栏号。存疑处加虚下划线。')
+                return f'<p class="cy-ocrnote cy-ocrnote-warn">{note}</p>\n\n' + md
             return ('<p class="cy-ocrnote">This section is machine-read (OCR) from page images and corrected against a '
                     'second copy; it has not been proofread word by word. Doubtful words are underlined. '
                     '本段据扫描影像机器识别，经另一印本校勘，未逐字人工校对；存疑处加虚下划线。</p>\n\n' + md)
@@ -91,7 +104,10 @@ def ocr_en(parts):
     return (f'{names} {"was" if len(parts) == 1 else "were"} never transcribed by EEBO-TCP; their text here is machine-read (OCR, kraken with the CATMuS-Print '
             'model) from page images of the printed parts, then corrected word by word against a second copy wherever the two '
             'could be aligned. It has not been proofread by eye: words neither copy could settle are underlined with dots, and '
-            'some misreadings that happen to form real words remain. Italics are not reproduced in these parts. ')
+            'some misreadings that happen to form real words remain. Italics are not reproduced in these parts. '
+            + ('Part 8 is read from a microfilm of the 1676–77 folio, since the scans of the quarto are worse still; '
+               'its text is markedly less accurate than the other parts (about one word in thirty misread in a sampled page), '
+               'and its page references are the column numbers of the folio. ' if 8 in parts else ''))
 
 
 def ocr_zh(parts):
@@ -100,7 +116,9 @@ def ocr_zh(parts):
     names = '、'.join(f'第{CN[p]}部（{a}–{b} 章）' for p, _, (a, b), _ in PARTS if p in parts)
     srcs = '；'.join(f'第{CN[p]}部底本为{OCR_INFO[p]["base"]}，对照本为{OCR_INFO[p]["witness"]}' for p in parts)
     return (f'{names}EEBO-TCP 未录入，本站据原书扫描影像机器识别（kraken 引擎、CATMuS-Print 模型），再逐词与另一印本对照校勘'
-            f'（{srcs}）。这几部未经逐字人工校对：两份都判不了的词加虚下划线，碰巧读成别的真词的错字仍可能留存；斜体未能还原。')
+            f'（{srcs}）。这几部未经逐字人工校对：两份都判不了的词加虚下划线，碰巧读成别的真词的错字仍可能留存；斜体未能还原。'
+            + ('第八部的四开本扫描更差，改据 1676–77 年对开合订本胶片识别，文字出自合订本、页码为对开本栏号；'
+               '识别质量明显低于其他各部（抽查一页约每三十词错一词）。' if 8 in parts else ''))
 
 
 def chs_label(a, b):
@@ -222,7 +240,7 @@ def main():
     b = Caryl(tc=tc, NV=NV, slug='caryl', book='job', P='cy', layout='caryl-job-chapter',
               author='Joseph Caryl', years='1602–1673', name='An Exposition upon the Book of Job', ref='Job',
               edition='An Exposition with Practical Observations upon the Book of Job · London, 1643–1666 · '
-                      'Parts 1–3, 5, 7, 10–12 (EEBO-TCP); Parts 4, 6, 9 (OCR)',
+                      'Parts 1–3, 5, 7, 10–12 (EEBO-TCP); Parts 4, 6, 8, 9 (OCR; part 8 from the 1676–77 folio)',
               front=[], back=[])
     b.publish(a.apply)
     if a.apply:
