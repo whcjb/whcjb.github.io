@@ -161,7 +161,36 @@ def load(slug):
     md = apply(md, c['gid'].get(slug, []), c['dec'], c['sites'])[0]
     for a, b in tcp_fixes():
         md = md.replace(a, b)
+    md = RE_INV.sub(lambda m: invert_italic(m.group(0)), md)
+    keys = italic_inverts()
+    if keys:
+        md = '\n'.join(invert_italic(ln) if any(k in ln for k in keys) else ln for ln in md.split('\n'))
     return dropcaps(md)
+
+
+def italic_inverts():
+    f = RAW / 'italic_invert.tsv'
+    return [ln for ln in f.read_text(encoding='utf-8').splitlines() if ln and not ln.startswith('#')] if f.exists() else []
+
+
+# 录入本对「底子是斜体」的段落只给正体部分标 <hi>，于是整段斜体正好标反（看胶片核过 18-30、33-12、34-17、35-1、36-8）。
+# 这类段落都以「The Hebrew is,」起头、其后是所引经文的直译。
+RE_INV = re.compile(r'^\*The Hebrew is,\*.*$', re.M)
+
+
+def invert_italic(line):
+    held = []
+    t = re.sub(r'<[^>]+>', lambda m: held.append(m.group(0)) or f'\x01{len(held) - 1}\x01', line)
+    parts = t.split('*')                       # 偶数段原为正体，奇数段原为斜体
+    out = []
+    for i, x in enumerate(parts):
+        if i % 2 == 0 and x.strip():
+            lead, core, tail = re.match(r'^((?:\s|\x01\d+\x01)*)(.*?)(\s*)$', x, re.S).groups()   # 段首页码标记留在斜体外
+            out.append(f'{lead}*{core}*{tail}')
+        else:
+            out.append(x)
+    t = ''.join(out)
+    return re.sub('\x01(\\d+)\x01', lambda m: held[int(m.group(1))], t)
 
 
 RE_DROP = re.compile(r'^((?:<span class="gh-pb"[^>]*></span>)*)([A-Z])(?=[A-Z][a-zſ])', re.M)

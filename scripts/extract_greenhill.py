@@ -139,7 +139,7 @@ def epigraph_box(r, ep):
 
 
 RE_HVLIST = re.compile(r'^\W*VER[SſE]*\.?[\s\d.,&and-]*$', re.I)
-RE_HVERS = re.compile(r'^\W*Ver[ſs]?e?[.,]?\s*\d')
+RE_HVERS = re.compile(r'^\W*Ver[ſs]?[ei]?[.,]?\s*\d')
 
 
 def head_md(r, e, depth, before_text=False):

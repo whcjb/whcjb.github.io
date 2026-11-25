@@ -1,0 +1,6 @@
+# 录入本整段斜体标反的段落（底子斜体只给正体部分标 <hi>），看胶片核过。每行一个段内唯一子串，命中的整行正斜互换。
+# 「*The Hebrew is,*」起头的段落另由 greenhill_common.RE_INV 统一处理。
+Men might wonder God should deale so with his people
+*He spake of* cleansing them from all their filthinesse
+Ye have magnified against me, *saith the Hebrew;*
+Baglome Tecelech, in involucris hyachinthi
