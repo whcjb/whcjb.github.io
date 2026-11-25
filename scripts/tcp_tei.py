@@ -101,7 +101,8 @@ class R:
                        'dateline', 'item', 'closer', 'label', 'l', 'salute', 'cell', 'unclear'):   # unclear：录入者给出读法、存疑，照录
                 if t in ('item', 'p', 'l', 'label') and out and not out[-1].endswith(' '):
                     out.append(' ')
-                out.append(self.inline(c, italic))
+                x = self.inline(c, italic)
+                out.append(x.strip() if t in ('expan', 'am', 'ex') else x)   # 缩写展开在词内，标签间的排版换行不是空格（Ʋſ<expan>…que</expan> → Usque）
             elif t == 'list':
                 for it in c:
                     if tag(it) == 'pb':
