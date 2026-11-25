@@ -13,6 +13,7 @@
 | 3 | 2026-11-26 | 第 6 部 21:30–31（印本 pp. 805–821） | Packer 纸本 | 17 | 约 175（落表 137 条） | ≈ 10 | 0 |
 | 4 | 2026-11-27 | 第 4 部 11:4–6（印本 pp. 19–54） | Packer 纸本 | 36 | 约 310（落表 251 条） | ≈ 8.6 | 0 |
 | 5 | 2026-11-28 | 第 6 部 21:27–29（印本 pp. 783–805） | Packer 纸本 | 23 | 约 250（落表 199 条） | ≈ 11 | 0 |
+| 6 | 2026-11-29 | 第 4 部 11:15–16（印本 pp. 116–136） | Packer 纸本 | 21 | 约 180（落表 145 条） | ≈ 8.6 | 0 |
 
 ## 第 1 轮发现的错误类别与全书清理
 
@@ -162,3 +163,22 @@
 
 原书误植照录（本段）：saith or him、gives he reason、a m an、pass e、kaown、adventnre、Aud、wrongfuly、aginst、divices、indeeed、disconrses、wickednsse、euquired。
 p.800「may give a ▇ resolution」原书墨渍，读不出，未补。
+
+## 第 6 轮发现的错误类别与全书清理（第 4 部 11:15–16，21 页）
+
+文字类（`caryl_ocr_sweep.py` 新规则）：
+
+| 类别 | 本段 | 全书命中 |
+|---|---|---|
+| 斜体 Y 读成 T：Tea → Yea、Tou → You | 3 | Tea 26、Tou 9 |
+| 句首 l → I | 1 | 3（另 pronI 旧规则） |
+| Ged → God | 2 | 43 |
+| osten → often（长 s 读成 f 的另一形） | 2 | 83 |
+| chap./vers. I0. → 10. | 2 | 2 |
+| 旁注插在正文词中间（「ret [旁注] neweth」）：并词、旁注后挪（MARGIN_SPLIT，看图逐条） | 1 | 1 |
+
+版式：p.117 原书大括号表（First/Second/Third — an Honourable/a Setled/a Comfortable — estate）OCR 拆成碎行，按文意排成一句。
+「ofit」并非处处连排：p.132「or as much / of it」原书分行，OCR 拼成 ofit，逐条改回。
+
+原书误植照录（本段）：Secondy、fillthinesse、Pnblican、onec、Will yea、melled、soild、graee、nnsetlednes、destraction、delivrance。
+p.128「cannot ▇ remain」墨渍，按文意补 but。

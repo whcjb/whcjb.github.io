@@ -23,7 +23,8 @@
   ——第 4 轮（第 4 部 11:4–6）补：pronI（l will→I will、Iam→I am、I'have→I have）、fs（fo/fay/fome/fuch→so/say/some/such）、
           ot→of、1Cor.→1 Cor.、«» 噪点、页顶页眉残片（Vers.〔节号旁注〕）
   ——第 5 轮（第 6 部 21:27–29）补：wh（W'hat/u'hat/n'hen→What/when）、jf（femes/facob/ferusalem→Jewes/Jacob/Jerusalem）、
-          sob→Job、句中 Te→Ye、(Job. N.N)→(Joh. N.N)（按 KJV 引文比对）（整段乱码：书末花饰、横线、单成一段的签名）、段首「- 」「+ 」噪点（会被排成列表）
+          sob→Job、句中 Te→Ye、(Job. N.N)→(Joh. N.N)（按 KJV 引文比对）
+  ——第 6 轮（第 4 部 11:15–16）补：Tou→You、Tea→Yea、句首 l→I、Ged/Gcd→God、osten→often、chap. I0.→10.、旁注插在词中（MARGIN_SPLIT）（整段乱码：书末花饰、横线、单成一段的签名）、段首「- 」「+ 」噪点（会被排成列表）
   head    漏进正文的页眉（「Chap. 31. An Exposition upon the Booke of JOB. Vers. 7.」）删掉
 """
 import argparse
@@ -137,6 +138,13 @@ def rules():
               lambda m: 'J' + {'femes': 'ewes'}.get(m.group(1), m.group(1)[1:])))
     # 句中 Te → Ye（逗号、分号后）
     R.append(('te', re.compile(r'(?<=[,;:] )Te (?=(?:have|are|shall|will|know|say|heard|should|may|did|do|see|be|were|cannot|must)\b)'), lambda m: 'Ye '))
+    # —— 第 6 轮（第 4 部 11:15–16 实读 21 页）补的几类
+    R.append(('te', re.compile(r'(?<=[.;:,?!(] )Tou (?=(?:shall|shalt|have|are|may|must|will|see|know|say|seeme|need)\b)'), lambda m: 'You '))
+    R.append(('te', re.compile(r'(?:(?<=[.;:,?!(] )|(?<=\n)|^)Tea\b'), lambda m: 'Yea'))
+    R.append(('pronI', re.compile(r'(?<=[.;:?!] )l (?=[a-z])'), lambda m: 'I '))
+    R.append(('god', re.compile(r'\b(Ged|Gcd)\b'), lambda m: 'God'))
+    R.append(('fs', re.compile(r'\bosten\b'), lambda m: 'often'))
+    R.append(('isa', re.compile(r'\b((?:chap|Chap|vers|ver|Isa|Psal)\.?\s?)I[Oo0]\.'), lambda m: m.group(1) + '10.'))
     # 漏进正文的页眉
     R.append(('head', re.compile(r'\bCha[pn][.,-]?\s?\d{1,2}\.?\s+An Ex\w*\s+u\w*\s+\w+\s+Boo?[sk]\w*\s+\S{1,3}\s?\S{0,3}\s+V\w{2,5}[.,]?\s?\d{0,2}\.?'),
               lambda m: ''))
@@ -217,6 +225,9 @@ def job_or_john(m):
     sj = len(follow & KJV_JOB.get((ch, v), set()))
     sn = len(follow & KJV_JHN.get((ch, v), set()))
     return 'Joh' if sn >= 3 and sn >= 2 * sj + 2 else None
+MARGIN_SPLIT = [
+    ('p4/11-15', 'ret', 'neweth', 'reneweth'),       # p.135 影像
+]
 MARGIN_BODY = [
     ('p4/11-4', 'God', 'is', 'invincible'),          # p.38 影像
     ('p6/21-27', 'God', 'or', '(as'),
@@ -332,6 +343,14 @@ def drop_junk(md, log, where):
 def sweep_md(md, log, where):
     """只改标签之间的纯文本片段（不跨标签），旁注 span 整个跳过。"""
     md = drop_junk(md, log, where)
+    # 看图确认、旁注插在一个正文词中间（「ret [旁注] neweth」）：并成一词、旁注挪到词后
+    for w0, a, b, whole in MARGIN_SPLIT:
+        if w0 == where:
+            ocr = r'(?:<span class="cy-ocr"[^>]*>)?'
+            rx = re.compile(rf'{ocr}\b{re.escape(a)}(?:</span>)? (<span class="cy-margin">[^<]*</span>)\s*{ocr}{re.escape(b)}\b(?:</span>)?')
+            if rx.search(md):
+                log.append(('mword', where, f'{a} [..] {b}', whole))
+                md = rx.sub(lambda m: f'{whole} {m.group(1)}', md, 1)
     # 看图确认、被划进旁注的正文小词（人工表跨不了标签，在这里放回）：(段, 前词, 旁注词, 后词)
     for w0, a, w, b in MARGIN_BODY:
         if w0 == where:
