@@ -118,6 +118,10 @@ def epigraph_box(r, ep):
                         flush()
                         lines.append(r.text(x) if kx == 'p' else r.pb(x))
                         loose.text = x.tail
+                    elif kx == 'bibl':                   # 出处行录在 <q> 里面（VERS. 19, 20.），照样排成出处行
+                        flush()
+                        lines.append(f'<span class="{P}-ref">{r.text(x)}</span>')
+                        loose.text = x.tail
                     else:
                         loose.append(x)
                 flush()
