@@ -45,6 +45,12 @@ def build():
 
 
 def p_rows():
+    """默认取判读表 P: 条；环境变量 GH_GIDS=文件（每行一个 gid）则改取这批（如第二卷〈Greek〉）。"""
+    import os
+    if os.environ.get('GH_GIDS'):
+        gs = [int(x) for x in Path(os.environ['GH_GIDS']).read_text().split()]
+        sites = {s['gid']: s for s in json.loads((rc.RAW / 'gap_sites.json').read_text(encoding='utf-8'))}
+        return [(g, sites[g]['tcp'], '') for g in gs]
     out = []
     for line in (rc.RAW / 'gap_review.tsv').read_text(encoding='utf-8').splitlines():
         f = line.split('\t')
@@ -67,8 +73,11 @@ def match():
     locs = {}
     for gid, guess, note in p_rows():
         s = sites[gid]
-        L = [fold(w) for w in s['left'] if not TOK.search(w) and fold(w)]
-        R = [fold(w) for w in s['right'] if not TOK.search(w) and fold(w)]
+        lw, rw = s['left'], s['right']
+        if s['stream'] == 'note' and (s.get('mleft') or s.get('mright')):   # 旁注：用所挂正文定位（重排本旁注多已改脚注或删）
+            lw, rw = s.get('mleft') or [], s.get('mright') or []
+        L = [fold(w) for w in lw if not TOK.search(w) and fold(w)]
+        R = [fold(w) for w in rw if not TOK.search(w) and fold(w)]
         best = None
         for n in (3, 2):
             votes = collections.Counter()
@@ -109,7 +118,8 @@ def match():
             k = min(k, len(ws) - 1)
             r['n'] = ws[k]['n']
             r['read'] = ' '.join(w['t'] for w in ws[r['i']:r['j']]) if 'i' in r and r['cov'] >= 0.4 else ''
-    (W / 'locs.json').write_text(json.dumps(list(locs.values()), ensure_ascii=False, indent=0), encoding='utf-8')
+    import os
+    (W / os.environ.get('GH_LOCS', 'locs.json')).write_text(json.dumps(list(locs.values()), ensure_ascii=False, indent=0), encoding='utf-8')
     c = collections.Counter('定位' if r.get('cov', 0) >= 0.4 else '估位' if 'n' in r else '无' for r in locs.values())
     print(dict(c), file=sys.stderr)
 
@@ -132,7 +142,7 @@ def crop(r, ws):
     pg = [w for w in ws if w['n'] == n]
     pw = pg[0]['pw'] if pg else im.width
     sc = im.width / pw
-    if r.get('cov', 0) >= 0.4 and r['stream'] == 'main':
+    if r.get('cov', 0) >= 0.4:
         a = ws[min(r['i'], len(ws) - 1)]
         b = ws[max(r['i'], r['j'] - 1)] if r['j'] > r['i'] else a
         h = max(a['h'], 30)
@@ -147,10 +157,18 @@ def crop(r, ws):
         dr = ImageDraw.Draw(c)
         x0 = a['x'] - X0 - 8
         x1 = (b['x'] + b['w'] if abs(b['y'] - a['y']) < h else a['x'] + max(a['w'], h)) - X0 + 8
+        if x1 < x0:
+            x0, x1 = x1, x0
         if r['j'] == r['i']:          # 重排本此处无字：在左邻词末尾画竖线
             p = ws[r['i'] - 1]
             x0 = x1 = p['x'] + p['w'] - X0 + 6
         dr.rectangle([x0 * sc, (a['y'] - Y0 - 8) * sc, x1 * sc, (a['y'] + h - Y0 + 8) * sc], outline=(230, 120, 0), width=4)
+        if r['stream'] == 'note':                # 旁注：重排本多改成本页脚注，连页底一并贴上
+            foot = im.crop((int(X0 * sc), int(im.height * 0.80), int(X1 * sc), im.height))
+            from PIL import Image as _I
+            both = _I.new('RGB', (c.width, c.height + foot.height + 6), (40, 40, 40))
+            both.paste(c, (0, 0)); both.paste(foot.resize((c.width, foot.height)), (0, c.height + 6))
+            c = both
     else:
         c = im
     return c
@@ -164,12 +182,14 @@ def sheets(per_h=2050, width=1150):
     import numpy as np
     from PIL import Image, ImageDraw, ImageFont
     ws = json.loads((W / 'words.json').read_text())
-    locs = sorted(json.loads((W / 'locs.json').read_text(encoding='utf-8')), key=lambda r: r['gid'])
+    import os
+    locs = sorted(json.loads((W / os.environ.get('GH_LOCS', 'locs.json')).read_text(encoding='utf-8')), key=lambda r: r['gid'])
+    pre = os.environ.get('GH_SHEET', 'p')
     sites = {s['gid']: s for s in json.loads((rc.RAW / 'gap_sites.json').read_text(encoding='utf-8'))}
     font = ImageFont.truetype('/System/Library/Fonts/Supplemental/Arial Unicode.ttf', 22)
     sh = W / 'sheets'
     sh.mkdir(exist_ok=True)
-    for f in sh.glob('*.jpg'):
+    for f in sh.glob(f'{pre}_*.jpg'):
         f.unlink()
     from concurrent.futures import ThreadPoolExecutor
     with ThreadPoolExecutor(6) as ex:
@@ -179,11 +199,11 @@ def sheets(per_h=2050, width=1150):
     def flush():
         nonlocal rows, k
         if rows:
-            Image.fromarray(np.vstack(rows)).save(sh / f'p_{k:03d}.jpg', quality=85)
+            Image.fromarray(np.vstack(rows)).save(sh / f'{pre}_{k:03d}.jpg', quality=85)
             rows, k = [], k + 1
     for kind in ('loc', 'page'):
         for r in locs:
-            located = r.get('cov', 0) >= 0.4 and r['stream'] == 'main'
+            located = r.get('cov', 0) >= 0.4
             if (kind == 'loc') != located or 'n' not in r:
                 continue
             s = sites[r['gid']]
