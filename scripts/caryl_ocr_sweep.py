@@ -21,7 +21,9 @@
   ——第 3 轮（第 6 部 21:30–31）补：mw（斜体 w 读成 m：主语后 mas/mere/mill/mould、the mise/mord、mbo/Nho/H'ho→who）、
           shall（sall/spall/spalt/sual）、(Per.→(Jer.、(Plal.→(Psal.、(Isa-→(Isa.、句首 Te→Ye、junk
   ——第 4 轮（第 4 部 11:4–6）补：pronI（l will→I will、Iam→I am、I'have→I have）、fs（fo/fay/fome/fuch→so/say/some/such）、
-          ot→of、1Cor.→1 Cor.、«» 噪点、页顶页眉残片（Vers.〔节号旁注〕）（整段乱码：书末花饰、横线、单成一段的签名）、段首「- 」「+ 」噪点（会被排成列表）
+          ot→of、1Cor.→1 Cor.、«» 噪点、页顶页眉残片（Vers.〔节号旁注〕）
+  ——第 5 轮（第 6 部 21:27–29）补：wh（W'hat/u'hat/n'hen→What/when）、jf（femes/facob/ferusalem→Jewes/Jacob/Jerusalem）、
+          sob→Job、句中 Te→Ye、(Job. N.N)→(Joh. N.N)（按 KJV 引文比对）（整段乱码：书末花饰、横线、单成一段的签名）、段首「- 」「+ 」噪点（会被排成列表）
   head    漏进正文的页眉（「Chap. 31. An Exposition upon the Booke of JOB. Vers. 7.」）删掉
 """
 import argparse
@@ -45,7 +47,7 @@ DETS = r'(?:the|a|good|his|my|their|our|your|her|its|narrow|right|wrong|same|thy
 def rules():
     R = []
     # job
-    R.append(('job', re.compile(r'\b(?:Tob|fob|Fob|Sob|Jub|Iob|Jeb|Ieb|lob|Iub)(\'?s?)\b'), lambda m: 'Job' + m.group(1)))
+    R.append(('job', re.compile(r'\b(?:Tob|fob|Fob|Sob|sob|Jub|Iob|Jeb|Ieb|lob|Iub)([\'’]?s?)\b'), lambda m: 'Job' + m.group(1)))   # sob：第 5 轮
     R.append(('job', re.compile(r'(?<!\ba )(?<!\bthe )(?<!\bhis )\bjob(\'?s?)\b'), lambda m: 'Job' + m.group(1)))
     # way
     R.append(('way', re.compile(rf'(?<!nay to )(?<!yea to )\b({DETS}) (?:may|nay|var|mav)\b(?! be\b)'), lambda m: m.group(1) + ' way'))   # 「yea to their yea, and nay to their nay」不碰
@@ -125,6 +127,16 @@ def rules():
     R.append(('of', re.compile(r'(?<=[a-z] )ot(?= (?:the|his|their|God|it|a|an|this|that|our|my|thy|your|her|them|him|all)\b)'), lambda m: 'of'))
     # 书卷数字后补空格：1Cor. → 1 Cor.
     R.append(('isa', re.compile(r'\b([12])(Cor|Joh|Tim|Sam|Pet|King|Kings|Thes|Thess|Chron)\.'), lambda m: m.group(1) + ' ' + m.group(2) + '.'))
+    # —— 第 5 轮（第 6 部 21:27–29 实读 23 页）补的几类
+    # 斜体 W 读成 W'／u'／n'／N'／Iv'（W'hat、u'hat、n'hen、Iv'here）
+    R.append(('wh', re.compile(r"\b([uUwWnNI]v?)['’](hat|here|hen|ho|hich|hom|hose|hy)\b"),
+              lambda m: ('W' if m.group(1)[0] in 'WNIU' and not re.search(r'[a-z,;]\s$', m.string[max(0, m.start() - 2):m.start()]) else 'w')
+              + m.group(2)))
+    # 斜体 J 读成 f：femes/feremy/ferusalem/facob/foseph → J…；sob → Job（「sob」在本书不是词）
+    R.append(('jf', re.compile(r'\b(femes|feremy|feremiah|feremie|ferusalem|facob|foseph|fosephs|fews|fewes)\b'),
+              lambda m: 'J' + {'femes': 'ewes'}.get(m.group(1), m.group(1)[1:])))
+    # 句中 Te → Ye（逗号、分号后）
+    R.append(('te', re.compile(r'(?<=[,;:] )Te (?=(?:have|are|shall|will|know|say|heard|should|may|did|do|see|be|were|cannot|must)\b)'), lambda m: 'Ye '))
     # 漏进正文的页眉
     R.append(('head', re.compile(r'\bCha[pn][.,-]?\s?\d{1,2}\.?\s+An Ex\w*\s+u\w*\s+\w+\s+Boo?[sk]\w*\s+\S{1,3}\s?\S{0,3}\s+V\w{2,5}[.,]?\s?\d{0,2}\.?'),
               lambda m: ''))
@@ -176,8 +188,41 @@ def sweep_text(pt, log, where):
 
 
 RE_PB = re.compile(r'<span class="cy-pb"[^>]*></span>')
+KJV_DIR = ROOT / 'foote_raw' / 'luke' / 'src' / 'kjv'
+
+
+def kjv_book(fn):
+    vs, ch = {}, 0
+    for ln in (KJV_DIR / fn).read_text(encoding='utf-8').splitlines():
+        m = re.match(r'\\c (\d+)', ln)
+        if m:
+            ch = int(m.group(1))
+        m = re.match(r'\\v (\d+) (.*)', ln)
+        if m:
+            t = re.sub(r'\\\+?w ([^|]*)\|[^\\]*\\\+?w\*', r'\1', m.group(2))
+            vs[(ch, int(m.group(1)))] = set(w.lower() for w in re.findall(r'[A-Za-z]{3,}', re.sub(r'\\\+?\w+\*?', '', t)))
+    return vs
+
+
+KJV_JOB, KJV_JHN = kjv_book('19-JOBeng-kjv2006.usfm'), kjv_book('73-JHNeng-kjv2006.usfm')
+
+
+def job_or_john(m):
+    """「(Job. 14. 19.) Because I live…」：斜体 Joh 读成 Job。拿紧跟的引文去比 KJV 约伯记与约翰福音那一节，
+    约翰那边重合明显更多才改（约伯记真引文、或两边都对不上的，不动）。"""
+    ch, v = int(m.group(2)), int(m.group(3))
+    follow = set(w.lower() for w in re.findall(r'[A-Za-z]{3,}', m.string[m.end():m.end() + 120])[:12])
+    if len(follow) < 4:
+        return None
+    sj = len(follow & KJV_JOB.get((ch, v), set()))
+    sn = len(follow & KJV_JHN.get((ch, v), set()))
+    return 'Joh' if sn >= 3 and sn >= 2 * sj + 2 else None
 MARGIN_BODY = [
     ('p4/11-4', 'God', 'is', 'invincible'),          # p.38 影像
+    ('p6/21-27', 'God', 'or', '(as'),
+    ('p6/21-27', 'draw', 'it', 'out.'),              # p.787 影像
+    ('p6/21-27', 'if', 'all', 'that'),               # p.795 影像
+    ('p6/21-27', 'Benefactors,', 'or', 'Gratious'),  # p.795 影像              # p.785 影像
 ]
 
 
@@ -290,10 +335,10 @@ def sweep_md(md, log, where):
     # 看图确认、被划进旁注的正文小词（人工表跨不了标签，在这里放回）：(段, 前词, 旁注词, 后词)
     for w0, a, w, b in MARGIN_BODY:
         if w0 == where:
-            rx = re.compile(rf'(\b{a}) <span class="cy-margin">{w}</span> ({b}\b)')
+            rx = re.compile(rf'(\b{re.escape(a)}) <span class="cy-margin">{re.escape(w)}</span> ({re.escape(b)})')
             if rx.search(md):
                 log.append(('mword', where, f'{a} [{w}] {b}', f'{a} {w} {b}'))
-                md = rx.sub(rf'\1 {w} \2', md, 1)
+                md = rx.sub(lambda m: f'{m.group(1)} {w} {m.group(2)}', md, 1)
     # 页顶漏进正文的页眉残片：页码锚点后「Vers. / verss.」紧跟一个只有数字的旁注（页眉节号被划进旁注）、
     # 或「An 〔页码〕 Exposition upon the Book of」（真正的逐节小标题节号都在行内，不受影响）
     def unhead(m):
@@ -311,6 +356,13 @@ def sweep_md(md, log, where):
         if new == md:
             break
         md = new
+    def jhn(m):
+        r = job_or_john(m)
+        if r:
+            log.append(('joh', where, m.group(0), m.group(0).replace(m.group(1), r, 1)))
+            return m.group(0).replace(m.group(1), r, 1)
+        return m.group(0)
+    md = re.sub(r'\((Job|Tob|fob|Iob)\.\s?(\d{1,2})\.\s?(\d{1,2})', jhn, md)
     out, last = [], 0
     for m in re.finditer(r'<span class="cy-margin">.*?</span>|<[^>]+>|\{:[^}]*\}', md, re.S):
         out.append(sweep_text(md[last:m.start()], log, where))

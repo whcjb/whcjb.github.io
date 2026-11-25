@@ -12,6 +12,7 @@
 | 2 | 2026-11-25 | 第 9 部 31:9–12（印本 pp. 380–423） | Packer 纸本 300 ppi | 44 | 约 478（落表 370 条） | ≈ 11 | 0 |
 | 3 | 2026-11-26 | 第 6 部 21:30–31（印本 pp. 805–821） | Packer 纸本 | 17 | 约 175（落表 137 条） | ≈ 10 | 0 |
 | 4 | 2026-11-27 | 第 4 部 11:4–6（印本 pp. 19–54） | Packer 纸本 | 36 | 约 310（落表 251 条） | ≈ 8.6 | 0 |
+| 5 | 2026-11-28 | 第 6 部 21:27–29（印本 pp. 783–805） | Packer 纸本 | 23 | 约 250（落表 199 条） | ≈ 11 | 0 |
 
 ## 第 1 轮发现的错误类别与全书清理
 
@@ -141,3 +142,23 @@
 
 原书误植照录（本段）：trne、doctriue、ns（Let ns）、uuderstandings、thiugs、douhle、whics、beeause、succestfull、spoak、fulfulling、aud、revealed us（漏 to）；
 本页 p.25 页眉误印 Vers. 16、页码 131。
+
+## 第 5 轮发现的错误类别与全书清理（第 6 部 21:27–29，23 页）
+
+版面类：
+- 拼接层：p.799 旁注栏紧贴正文，46 条旁注里大半被划进正文（正文行尾挂着拉丁词）。真行尾只有 5 行没粘旁注，凑不够最密簇的 6 点；门槛降到 5。全书只改了这一叶。
+- 切段层：逐节小标题以「…the Prince? and」收尾、下一行小写续行时落成正文。上行没收尾、重合 ≥ 0.5、小标题不超过两行时并入。全书并回 24 处（多在对开本与第 4 部）。
+
+文字类（`caryl_ocr_sweep.py` 新规则）：
+
+| 类别 | 本段 | 全书命中 |
+|---|---|---|
+| 斜体 W 读成 W'／u'／n'／N'／Iv'（W'hat、n'hen、Iv'here） | ~6 | 77 |
+| 斜体 J 读成 f：femes/facob/ferusalem/feremie/foseph | ~4 | 28 |
+| sob → Job（并入 job 规则，排在 saith 之前） | ~4 | 116 |
+| 句中 Te → Ye | 2 | 28（含旧规则） |
+| (Job. N.N) 实为约翰福音：拿后文与 KJV 约伯记、约翰福音同节比，约翰明显更合才改 | 1 | 5 |
+| 被划进旁注的正文小词（God [or] (as、draw [it] out、if [all] that…），看图逐条放回 | 4 | 4 |
+
+原书误植照录（本段）：saith or him、gives he reason、a m an、pass e、kaown、adventnre、Aud、wrongfuly、aginst、divices、indeeed、disconrses、wickednsse、euquired。
+p.800「may give a ▇ resolution」原书墨渍，读不出，未补。

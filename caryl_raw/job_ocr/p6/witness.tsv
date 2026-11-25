@@ -11879,61 +11879,39 @@
 21-27	noalign	ween		tween
 21-27	noalign	yeu		yu
 21-27	solo	morld	world	
-21-27	noalign	wve		hl
-21-27	conflict	sut		ut
+21-27	noalign	wve		
+21-27	solo	sut	cut	
 21-27	agree	Anologically		anologically
 21-27	confirm	tuat	that	that
-21-27	noalign	tuunt		
 21-27	agree	Pilgrimes		pilgrimes
 21-27	agree-fix	ftrangers	strangers	strangers
 21-27	conflict	inthis		this
 21-27	confirm	nho	who	who
 21-27	confirm	mho	who	who
-21-27	noalign	trinseunt		
-21-27	agree	minum		minum
+21-27	realword	mould	would	would
 21-27	agree	felicitie		selicitie
-21-27	noalign	praurs		
-21-27	noalign	stion		
-21-27	noalign	Viatores		
 21-27	noalign	femes		jewer
 21-27	agree-fix	srom	from	srom
-21-27	noalign	Egypte		
-21-27	noalign	ligem		
-21-27	solo	mhom	whom	
-21-27	noalign	velationem		
-21-27	noalign	steriorum		
-21-27	noalign	Perunt		
-21-27	noalign	prod		
-21-27	noalign	Eijs		
-21-27	noalign	dmellers		
-21-27	noalign	matas		
+21-27	confirm	mhom	whom	whom
+21-27	realword	mill	will	will
+21-27	confirm	dmellers	dwellers	dwellers
 21-27	confirm	mhom	whom	whom
 21-27	confirm	xhom	whom	whom
 21-27	witness	specialy	especially	especially
 21-27	solo	knomn	known	
-21-27	conflict	tohens		and
-21-27	conflict	issent		tokens
+21-27	confirm	tohens	tokens	tokens
 21-27	confirm	mrought	wrought	wrought
 21-27	noalign	nil		
-21-27	noalign	hetræus		
 21-27	noalign	allo		
 21-27	witness	Pourthly	Fourthly	sourthly
-21-27	noalign	vangire		
-21-27	noalign	iransient		
-21-27	solo	neme	name	
 21-27	agree	facob		sacob
 21-27	confirm	Hebrens	Hebrews	hebrewes
 21-27	confirm	Hebrem	Hebrew	hebrew
-21-27	noalign	centendit		
-21-27	solo	dtus	deus	
-21-27	noalign	sitoi		
-21-27	noalign	vocamus		
 21-27	agree-fix	Fisthly	Fifthly	sisthly
 21-27	solo	asbed	asked	
-21-27	conflict	goby		by
+21-27	noalign	goby		
 21-27	split	meaningis	meaning is	meaning
 21-27	witness	countrys	countryes	countryes
-21-27	noalign	viatores		
 21-27	noalign	Dencring		
 21-27	solo	erdinary	ordinary	
 21-27	witness	Rnow	Knows	knows
@@ -11989,10 +11967,10 @@
 21-27	noalign	struction		stru
 21-27	witness	œith	with	with
 21-27	noalign	vilpdoe		
-21-27	solo	pradent	prudent	
-21-27	solo	igrorant	ignorant	
+21-27	confirm	pradent	prudent	prudent
+21-27	confirm	igrorant	ignorant	ipnorant
 21-27	noalign	trurbmhichmean		
-21-27	noalign	attainedite		
+21-27	conflict	attainedite		attained
 21-27	noalign	menare		
 21-27	agree-fix	thefe	these	these
 21-27	realword	mise	wise	wise

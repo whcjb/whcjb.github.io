@@ -125,7 +125,7 @@ def layout(W, H, lines, fits=None, width=None, detect_head=True):
             c = sum(1 for q in rs if abs(q - r) <= 12)
             if c > bc:
                 best, bc = r, c
-        return statistics.median([q for q in rs if abs(q - best) <= 12]) if bc >= 6 else 0
+        return statistics.median([q for q in rs if abs(q - best) <= 12]) if bc >= 5 else 0   # 第 806 叶只有 5 行没粘旁注
     r0 = [l['words'][0]['x'] - fx0(l['y']) for l in wide]
     r1 = [l['words'][-1]['x'] + l['words'][-1]['w'] - fx1(l['y']) for l in wide]
     d0 = [r for r in r0 if abs(r) <= 60]

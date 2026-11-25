@@ -309,8 +309,10 @@ class Builder:
                     close_epi()
                     dropcap = b
                 elif mode == 'vh':
-                    hy = bool(re.search(r'[¬-]$', re.sub(r'<[^>]+>', '', epi_lines[-1]).strip())) and \
-                        bool(re.match(r'\W*[a-z]', plain))   # 上一行以断词号收尾、这一行小写起头（半个词）：经文没完（「…let other¬ / bow downe upon her.」）；
+                    last_vh = re.sub(r'<[^>]+>', '', epi_lines[-1]).strip()
+                    hy = (bool(re.search(r'[¬-]$', last_vh)) or
+                          (not re.search(r'[.:;?!]\W*$', last_vh) and overlap(plain, vh_vocab) >= 0.5 and len(epi_lines) <= 2)) and \
+                        bool(re.match(r'\W*[a-z]', plain))   # 第 5 轮：「…the Prince? and / where are the dwelling places」上行没收尾也收   # 上一行以断词号收尾、这一行小写起头（半个词）：经文没完（「…let other¬ / bow downe upon her.」）；
                                                                # 「&c¬ / As if he had said…」那个 ¬ 是噪点，下一行是讲解，挡掉
                     if hy or (overlap(plain, vh_vocab) >= 0.6 and not (prev and prev['end'] < x1 - 80)):
                         epi_lines.append(t)
