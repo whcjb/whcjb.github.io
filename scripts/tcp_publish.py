@@ -174,6 +174,9 @@ class Book:
         sites = {s['gid']: s for s in json.loads((self.RAW / 'gap_sites.json').read_text(encoding='utf-8'))}
         review = {int(r[0]): r for r in self.tc._tsv('gap_review.tsv')}
         appr = [(int(r[0]), r[1]) for r in self.tc._tsv('gap_approved.tsv')]
+        # conj_note_col：「依据」栏改取推补表自身的某列（推补依据不在判读表里时，如对第二证人补出）
+        col = getattr(self, 'conj_note_col', None)
+        anote = {int(r[0]): r[col] for r in self.tc._tsv('gap_approved.tsv') if col is not None and len(r) > col}
         out = []
 
         def loc(s):
@@ -181,13 +184,15 @@ class Book:
                     + (f' · p.{s["page"]}' if s.get('page') else '') + '</a>')
         if appr:
             out.append(f'<h3 class="{P}-conjhead">编者推补逐条说明（{len(appr)} 处）</h3>')
-            out.append(f'<p class="{P}-note-zh">以下各处录入本标为读不出，对照{self.witness_zh}也只能认出一部分字形。'
-                       '编者按看得见的字形，参照本句上下文补出，经本站同意后发布。正文中以 '
-                       f'<span class="{P}-conj">[方括号]</span> 另色标出，<b>不是原书确定的文字</b>；每条看图所见写在「依据」一栏。</p>')
+            out.append(f'<p class="{P}-note-zh">' + (getattr(self, 'conj_intro_zh', None) or
+                       f'以下各处录入本标为读不出，对照{self.witness_zh}也只能认出一部分字形。'
+                       '编者按看得见的字形，参照本句上下文补出，经本站同意后发布。') + '正文中以 '
+                       f'<span class="{P}-conj">[方括号]</span> 另色标出，<b>不是原书确定的文字</b>；每条依据写在「依据」一栏。</p>')
             out.append(f'<table class="{P}-conjtab"><tr><th>位置</th><th>录入本原样（前后文）</th><th>现作</th><th>依据</th></tr>')
             for g, v in appr:
                 s = sites[g]
-                note = review.get(g, ['', '', '', ''])[3] if len(review.get(g, [])) > 3 else ''
+                note = anote[g] if g in anote else \
+                    (review.get(g, ['', '', '', ''])[3] if len(review.get(g, [])) > 3 else '')
                 out.append(f'<tr><td>{loc(s)}</td><td>{self._ctx(s)}</td>'
                            f'<td>[{html.escape(v.replace("*", ""))}]</td><td>{html.escape(note)}</td></tr>')
             out.append('</table>')

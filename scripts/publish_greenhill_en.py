@@ -70,7 +70,11 @@ BOOK = tcp_publish.Book(
             'London, 5 vols., 1645–1662',
     front=front(), back=[], back_label='',
     about_en=about_en, about_zh=about_zh,
-    witness_zh='原版影像')
+    witness_zh='原版影像',
+    conj_note_col=4,
+    conj_intro_zh='以下各处录入本标为读不出，原版胶片影像上也被墨团、透印盖住。编者对照 1863 年爱丁堡 Nichol 重排本'
+                  '（Sherman 编，另一实物排印，见 Internet Archive anexpositionofth00greeuoft）补出：重排本与编者推断同词的，'
+                  '照原书拼法写；不同的，照重排本写（章节号换回原书体例）。重排本已改现代拼法，只能证词，不能证原书拼法。')
 
 
 def main():
