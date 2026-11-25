@@ -12,6 +12,7 @@
 | 6 | 22-17 | 4 | 234–243 | 10 | 2 | 0.20 | 见下 |
 | 7 | 21-14 | 4 | 161–180 | 20 | 6 | 0.30 | 见下 |
 | 8 | 28-1 | 4 | 484–494 | 11 | 3 | 0.27 | 见下 |
+| 9 | 48-21 | 5 | 596–611 | 16 | 7 | 0.44 | 见下 |
 
 **收敛**：第 2–6 轮连续 5 章每页均 < 1 处（0.50 / 0.18 / 0.13 / 0.45 / 0.20），§4.5 收尾验收通过（2026-11-25）。
 
@@ -90,3 +91,17 @@ vol4-dedication 旁注 `Eze. 26.27` 胶片未定位，未动。
 照录不计：`carres`（p.492）、`thou forgets`（p.488）、`as the Lords made him`（p.488）、`haber pro sapiente habent`（p.494 旁注）、`into Sea,`（p.490）——胶片即如此。
 
 全书同类清理：专名被拆成多段（`X yy zz` 合起来是书中已见词）全书扫，仅本条；`scipsum` 类 sc/se 混淆全书仅本条。
+
+## 第 9 轮：48-21（2026-11-25，收敛后追加抽查）
+
+本章 7 处：录入错 5——`furthest. Town` 衍句点（p.597）、`four fides`→sides（p.599）、`pointed out into us`→unto（p.603）、
+`far if`→for（p.610）、经文 `which it in the midst`→is（p.611）；版式 1——小标题 `Verse, 28.` `Verse, 29.`（节号前有逗号）没认成悬挂的 Vers. 行；
+结构 1——卷末颂词 `To God onely be Glory through Jesus Christ.` 与 `FINIS.` 不在本页。
+撤回 1 条：第 2 轮全书清理时把 p.605 `full uf comeliness` 改成 of，本轮看图原书即印 uf，按照录政策撤回。
+照录不计：`thingr`（p.599）、`fivemiles`（p.600）、`Jerulalem`（p.601）、`Cfiurch`（p.604）、`grrater`/`larter`（p.609）、`ftom`（p.610）、`threof`（p.610）。
+
+全书同类清理：
+- 小标题 `RE_HVERS` 允许 `Verse,` 后带逗号，全书 2 处（均本章）。
+- 卷末 trailer/closer：抽取程序把总 div 内的 FINIS／颂词挂到「当时的最后一页」——其时各章还没出，落在了卷首页上
+  （第四卷 FINIS 落在 vol4-dedication 末，第五卷颂词落在 vol5-to-the-reader 末）；body 层（总 div 之外）的 FINIS 则整个丢了（第一、五卷）。
+  改为各章出完后挂本卷正文最后一页：第一卷 5-14、第四卷 29-21、第五卷 48-21 各得其 FINIS（第五卷连颂词）。第二、三卷录入本正文末无 trailer。

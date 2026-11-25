@@ -18,8 +18,6 @@ next_label: "Vol. V · Title Page"
 
 <p class="gh-closer" markdown="1">Your servant in this Expository work of the Lord. *WILLIAM GREENHILL.* *The 30th. of the 5th. month. 1658.*</p>
 
-<p class="gh-closer" markdown="1">FINIS.</p>
-
 [^1]: Jer. 32.31
 
 [^2]: Eze. 24.13

@@ -24,8 +24,6 @@ Reader, if thou hast found any *benefit* by the four <span class="gh-pb" data-fa
 
 <p class="gh-closer" markdown="1">He that affactoinately desireth the spiritual, and eternall good of souls. *W. G.* The 1th. of the 3d. Month. 1662.</p>
 
-<p class="gh-closer" markdown="1">To God onely be Glory through Jesus Christ.</p>
-
 [^1]: Hos. 1.10
 
 [^2]: Exod. 4.22.

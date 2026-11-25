@@ -139,7 +139,7 @@ def epigraph_box(r, ep):
 
 
 RE_HVLIST = re.compile(r'^\W*VER[SſE]*\.?[\s\d.,&and-]*$', re.I)
-RE_HVERS = re.compile(r'^\W*Ver[ſs]?e?\.?\s*\d')
+RE_HVERS = re.compile(r'^\W*Ver[ſs]?e?[.,]?\s*\d')
 
 
 def head_md(r, e, depth, before_text=False):
@@ -312,14 +312,14 @@ def main():
         if len(top) != 1:
             raise ValueError(f'{tcp}: body 下 div 数 {len(top)}')
         lead = []                                    # 卷首总题（An Exposition upon more Chapters…）与页码，并进本卷第一段
-        cdivs = []
+        cdivs, tail = [], []
         for c in top[0]:
             if tt.tag(c) == 'div':
                 cdivs.append(c)
             elif not cdivs and tt.tag(c) in ('head', 'pb'):
                 render(r, c, lead, 2)
-            elif tt.tag(c) in ('trailer', 'closer'):   # 卷末 FINIS／颂词：挂到本卷最后一页
-                files[order[-1]] += '\n\n' + tt.to_md(P, [('cls', f'{P}-closer', r.text(c))])
+            elif tt.tag(c) in ('trailer', 'closer'):   # 卷末 FINIS／颂词：等各章出完，挂到本卷正文最后一页
+                tail.append(c)
             else:
                 raise ValueError(f'{tcp}: 章与章之间多出 <{tt.tag(c)}>')
         if [int(c.get('n')) for c in cdivs] != list(chs):
@@ -353,6 +353,9 @@ def main():
                 slug = f'{ch}-{v1}'
                 put(slug, paras)
                 sections.append(dict(slug=slug, ch=ch, v1=v1, v2=end, words=words(paras), vol=vi))
+        tail += [c for c in body if tt.tag(c) in ('trailer', 'closer')]      # body 层（总 div 之外）的 FINIS
+        for c in tail:
+            files[order[-1]] += '\n\n' + tt.to_md(P, [('cls', f'{P}-closer', r.text(c))])
         gaps.update(r.gaps)
 
     bad += tt.check(files)

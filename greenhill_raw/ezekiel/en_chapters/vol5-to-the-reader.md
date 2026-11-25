@@ -10,5 +10,3 @@ Keep off therefore from false Worship, and mixtures of men; you are not to come 
 Reader, if thou hast found any *benefit* by the four <span class="gh-pb" data-facs="6"></span> former *parts* uppon *Ezekiel,* or shalt *gain* any by this, give God all the *Glory,* who hath *led* me through the *difficulties* and *depths* of this Prophet, and vouchsafe him an *interest* in thy prayers, who hath *spent* his *strength* for thee, and be at some *pains* to read what he hath taken *much,* and *long paines* to *write.* The faithful God, who makes good his promises, put *his spirit* into *thee,* and cause thee to walk in *his Statutes,* to keep *his Judgements,* and do them. So prayeth.
 
 <p class="gh-closer" markdown="1">He that affactoinately desireth the spiritual, and eternall good of souls. *W. G.* The 1th. of the 3d. Month. 1662.</p>
-
-<p class="gh-closer" markdown="1">To God onely be Glory through Jesus Christ.</p>
