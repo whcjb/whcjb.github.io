@@ -98,8 +98,9 @@ class GR(tt.R):
 
 def prep(root):
     for g in root.iter(TEI + 'g'):
-        if g.get('ref') == 'char:V':                 # Ʋ：大写 U 的旧字形
-            g.text = 'U'
+        if g.get('ref') == 'char:V':                 # Ʋ：原书 U/V 同形的大写 V 字模。后接元音读 V（Vatablus、Vulg.），后接辅音读 U（Unto、Upon）
+            nxt = (g.tail or '')[:1].lower()
+            g.text = 'V' if nxt and nxt in 'aeiouy' else 'U'
     for lab in root.iter(TEI + 'label'):
         if lab.get('type') == 'milestone':
             lab.tag = TEI + 'note'

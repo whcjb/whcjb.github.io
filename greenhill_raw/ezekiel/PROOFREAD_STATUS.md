@@ -18,6 +18,7 @@
 | 12 | 16-20 | 3 | 214–223 | 10 | 3 | 0.30 | 见下 |
 | 13 | 18-19 | 3 | 528–541 | 14 | 3 | 0.21 | 见下 |
 | 14 | 19-10 | 3 | 604–621 | 18 | 3 | 0.17 | 见下 |
+| 15 | 27-8 | 4 | 455–466 | 12 | 7 | 0.58 | 见下 |
 
 **收敛**：第 2–6 轮连续 5 章每页均 < 1 处（0.50 / 0.18 / 0.13 / 0.45 / 0.20），§4.5 收尾验收通过（2026-11-25）。
 
@@ -161,3 +162,15 @@ p.214–230 逐页对胶片，文字、斜体、版式 0 错。照录不计：`C
   看图核过：p.537 August.、p.606–613 本章 6 条、第五卷 p.89 Cum armis、p.94 Potens potenter、第四卷 p.489 Fitzherbert（不翻）。
   第一、二卷无同版胶片，按同一规律处理，未逐条看图。
 - tcp_fixes `*Bab: Salum.*` 随旁注翻转改为 `Bab: Salum.`。
+
+## 第 15 轮：27-8（2026-11-25）
+
+本章 7 处：
+- 程序错 3：录入本 `Ʋ`（char:V，原书 U/V 同形的大写字模）一律转成 U，`Vilalpandus`（p.455）、`Vatablus`（p.458）、`Viri brachiales`（p.461）成了 Uilalpandus／Uatablus／Uiri；
+- 录入错 4：`he wing`→hewing（p.456）、经文 `Lud; and of Phut`→`Lud, and`（p.458）、旁注 `Lydes intel`→`Lydos inter`（p.459）、旁注 `Lib. 5. c. 2.`→c. 3（p.464）。
+照录不计：`Ocea`（p.463）、`Zida`（p.462）、`eorum que`（p.459 旁注，原书分写）、`togegether`（p.465）。
+
+全书同类清理：
+- `Ʋ`：后接元音读 V、后接辅音读 U（Unto、Upon 不变）。全书 36 处改回：Vatablus 14、Viri 3、Vulg./Vulgar 4、Vilalpandus 2、Vid.、Vers.、Venice、Villages、Violation、Vindication、Vorstegan 等。
+- 拆词（两段合起来是书中已见词）全书扫，另得 `in vested`（37-15）、`for saken`（22-30）、`so journ`（2-6）3 条；
+  前两条未在胶片定位，2-6 在第一卷无胶片，均未改，记待查。
