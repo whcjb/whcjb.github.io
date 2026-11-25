@@ -50,7 +50,7 @@ Reader, if thou hast found any *benefit* by the four <span class="gh-pb" data-fa
 
 [^13]: Lam 4.10.
 
-[^14]: Ezek. 23.3<span class="gh-gap" title="TCP: illegible in source">•</span>.
+[^14]: Ezek. 23.34.
 
 [^15]: Lam. 1.19.
 
@@ -118,13 +118,13 @@ Reader, if thou hast found any *benefit* by the four <span class="gh-pb" data-fa
 
 [^47]: *De cerona militis.*
 
-[^48]: *Mor. same quam Idol<span class="gh-gap" title="TCP: illegible in source">•</span>thritist esci August. de <span class="gh-gap" title="TCP: illegible in source">•</span>ono conjug<span class="gh-gap" title="TCP: illegible in source">•</span>l.* c. 16.
+[^48]: *Mor. same quam Idolethritist esci August. de <span class="gh-gap" title="TCP: illegible in source">•</span>ono conjug<span class="gh-gap" title="TCP: illegible in source">•</span>l.* c. 16.
 
 [^49]: Ezek. 8.6.
 
 [^50]: Ezek. 9.3.11.23.
 
-[^51]: *Hos. 4.15. Ier 23.16.* Per ministeristerium verbale, *saith. Boderianus* λογικὴν λατρείαν id est κατὰ λόγον Leigh in critica. sacr. service of the word id. in Rom. *12.1.* if <span class="gh-gap" title="TCP: illegible in source">〈Greek〉</span> be the milke of the word <span class="gh-gap" title="TCP: illegible in source">〈Greek〉</span> it the service of the Word.
+[^51]: *Hos. 4.15. Ier 23.16.* Per ministeristerium verbale, *saith. Boderianus* λογικὴν λατρείαν id est κατὰ λόγον Leigh in critica. sacr. service of the word id. in Rom. *12.1.* if λογικὸν γάλα be the milke of the word λογικὴ λατρεία it the service of the Word.
 
-[^52]: *Vt caelum terrae m sceri contingu, merito tat<span class="gh-gap" title="TCP: illegible in source">•</span>m plu<span class="gh-gap" title="TCP: illegible in source">••</span>s esse nobis debet sincerus Dei cultas & sacro sancta ejus veritas, in quo nobis reposita est <span class="gh-conj" title="Editorial conjecture: illegible in the source; supplied from the stated evidence (编者推补；非原书原文)">[aeterna salus]</span>, quam centum mundi. *Calv. Epist. Com. in Tot. Col. 2 <span class="gh-gap" title="TCP: illegible in source">••</span>.
+[^52]: *Vt caelum terrae m sceri contingu, merito tat<span class="gh-gap" title="TCP: illegible in source">•</span>m plu<span class="gh-gap" title="TCP: illegible in source">••</span>s esse nobis debet sincerus Dei cultas & sacro sancta ejus veritas, in quo nobis reposita est <span class="gh-conj" title="Editorial conjecture: illegible in the source; supplied from the stated evidence (编者推补；非原书原文)">[aeterna salus]</span>, quam centum mundi. *Calv. Epist. Com. in Tot. Col. 2 98.
 

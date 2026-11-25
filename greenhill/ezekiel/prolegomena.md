@@ -25,7 +25,7 @@ The *Jewes* had many *Megillaths,* many such volumes or rolls, especially five, 
 
 There was the *Megillath* of the *Canticles,* which they read at <span class="gh-pb" id="p4" data-p="4" data-facs="12" title="Page 4 of the 1645 edition begins here (原书第 4 页起)"></span> the Feast of the Passeover, because it contained much of the love of God to the Church, and in the Passeover they apprehended much of Gods love towards them.
 
-2\. Then they had the *Megillath* of *Ruth,* which was read a<span class="gh-gap" title="TCP: illegible in source">•</span> the Feast of Pentecost, because it contained the Genealogie and originall of *David* their King, who was so beloved and dear unto them.
+2\. Then they had the *Megillath* of *Ruth,* which was read <span class="gh-conj" title="Editorial conjecture: illegible in the source; supplied from the stated evidence (编者推补；非原书原文)">[at]</span> the Feast of Pentecost, because it contained the Genealogie and originall of *David* their King, who was so beloved and dear unto them.
 
 3\. They had the *Megillath* of *Ecclesiastes,* and that they read at the Feast of Tabernacles, in memory of Gods protection of them forty yeers in the Wilderness, because that volume did contain in it many acts of Gods providence which watcheth over his people continually.
 

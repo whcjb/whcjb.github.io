@@ -43,7 +43,7 @@ def reprint_counts():
     grk = [g for g, s in sites.items() if 'Greek' in s['tcp']]
     gleft = collections.Counter(sites[g]['vol'] for g in grk if g not in appr and g not in read)
     return dict(same=k['重排本同'], alt=k['重排本改'], ctx=k['正文旁证'], film=k['胶片清楚'] + k['胶片残字'],
-                ed2=k['第二版影像'], rgk=k['重排本补字'], gleft=sum(gleft.values()), gleft2=gleft[2],
+                ed2=k['第二版影像'], rgk=k['重排本补字'], frag=k['残字合重排本'], gleft=sum(gleft.values()), gleft2=gleft[2],
                 gone=sum(1 for r in chk if r[3] == '缺' and r[0] not in appr),
                 clash=sum(1 for r in chk if r[3] == '异' and r[0] not in appr),
                 checked=len(chk))
@@ -82,6 +82,10 @@ def about_en(f):
         f'{r["ed2"]} places were read from the film of the second edition (1649) at the same place. Volume II has no legible film, and '
         f'there and wherever the film is unreadable {r["rgk"]} places were supplied from the 1863 reprint, page by page; these too are '
         'in brackets. A marginal note that consisted only of an unreadable Greek word is not shown as a footnote.</p>',
+        f'<p><b>Volumes I–II, partly legible words.</b> Where the keyers left part of an English or Latin word with one or two letters '
+        f'illegible, and the 1863 reprint has at the same place a word that matches the surviving letters exactly (and that word occurs '
+        f'elsewhere in the book), the missing letters are supplied from the reprint: {r["frag"]} places, in brackets. '
+        'The original spelling of the surviving letters is kept.</p>',
         f'<p>(3) <b>Still open.</b> The remaining places stay <span class="gh-gap">in red</span>. They include {r["gone"]} '
         'where the reprint omits the Latin, Greek or marginal note altogether (every one checked on the reprint’s page images), '
         f'{r["clash"]} where the film and the reprint disagree, and {r["gleft"]} Greek or Hebrew words ({r["gleft2"]} of them in '
@@ -114,6 +118,9 @@ def about_zh(f):
         f'第一卷没有 1645 初版的影像，{r["ed2"]} 处据 1649 年第二版胶片同处读出；'
         f'第二卷没有可读的原版影像，连同各卷胶片读不出的地方，{r["rgk"]} 处据 1863 重排本逐页翻到同处补出。这两类也加方括号。'
         '旁注里只有一个读不出的希腊词、别无他字的，不出脚注。</p>',
+        f'<p class="gh-note-zh"><b>第一、二卷的残字。</b>录入本把一个英文或拉丁词录了一部分、缺一两个字母的，'
+        f'如果 1863 重排本同处的词与录下的字母逐字相合（且这个词本书别处也出现过），就按重排本补上所缺字母，共 {r["frag"]} 处，'
+        '同样加方括号；录下的字母照原书拼法不动。</p>',
         f'<p class="gh-note-zh">③<b>仍读不出的</b>照旧<span class="gh-gap">标红</span>留在明面，其中有：重排本把拉丁文、希腊文或旁注整句删去、'
         f'无可对照的 {r["gone"]} 处（都已逐页看图核实）；胶片残字与重排本对不上、尚待定夺的 {r["clash"]} 处；'
         f'以及胶片和重排本都给不出的希腊文、希伯来文 {r["gleft"]} 处（第二卷占 {r["gleft2"]} 处）——Sherman 重排时大多删了原文、只留英译，'
