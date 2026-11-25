@@ -493,7 +493,8 @@ def main():
     if a.apply:
         for f, md in outs.items():
             f.write_text(md, encoding='utf-8')
-        (BASE / 'sweep.tsv').write_text(''.join('\t'.join(x) + '\n' for x in log), encoding='utf-8')
+        if log:                              # 零改动的重跑不要把上一次的清理日志冲掉
+            (BASE / 'sweep.tsv').write_text(''.join('\t'.join(x) + '\n' for x in log), encoding='utf-8')
 
 
 if __name__ == '__main__':
