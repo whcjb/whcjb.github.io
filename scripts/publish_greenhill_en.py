@@ -38,7 +38,7 @@ def reprint_counts():
     appr = {r[0]: r[2] for r in tc._tsv('gap_approved.tsv')}
     chk = tc._tsv('reprint_check.tsv')
     k = collections.Counter(appr.values())
-    return dict(same=k['重排本同'], alt=k['重排本改'], ctx=k['正文旁证'],
+    return dict(same=k['重排本同'], alt=k['重排本改'], ctx=k['正文旁证'], film=k['胶片清楚'] + k['胶片残字'],
                 gone=sum(1 for r in chk if r[3] == '缺' and r[0] not in appr),
                 clash=sum(1 for r in chk if r[3] == '异' and r[0] not in appr),
                 checked=len(chk))
@@ -69,6 +69,8 @@ def about_en(f):
         f'{r["same"]} where the reprint has the same word as the conjecture (the original spelling is kept); '
         f'{r["alt"]} where the reprint differs and is followed (chapter and verse numbers restored to the original style); '
         f'{r["ctx"]} where the reprint drops the passage but its English rendering or verse range confirms the conjecture. '
+        f'At {r["film"]} places a second look at the film settled the reading where the reprint had altered it; '
+        'there the film is followed, including an evident misprint of the original (fifteen <i>thousand</i> miles), which is kept. '
         'The reprint modernises spelling, so it confirms the word, not the original spelling.</p>',
         f'<p>(3) <b>Still open.</b> The remaining places stay <span class="gh-gap">in red</span>. They include {r["gone"]} '
         'where the reprint omits the Latin, Greek or marginal note altogether (every one checked on the reprint’s page images), '
@@ -93,6 +95,8 @@ def about_zh(f):
         f'据此补出 {f["c"]} 处，正文以<span class="gh-conj">[方括号]</span>另色标出：'
         f'重排本与推断同词的 {r["same"]} 处，照原书拼法写；重排本与推断不同的 {r["alt"]} 处，照重排本写（章节号换回原书写法）；'
         f'重排本删去原文、但正文所留英译或节号区间与推断相合的 {r["ctx"]} 处，照推断写。'
+        f'另有 {r["film"]} 处复看胶片可以定字、而重排本改过的，照胶片写，原书误植也照录（如 fifteen <i>thousand</i> miles）。'
+        '各处以原版影像为准：影像清楚，照影像；影像被盖住，才看重排本。'
         '重排本已改现代拼法，只能证明是哪个词，不能证明原书怎么拼。逐条依据见下表，核对记录见 '
         '<code>greenhill_raw/ezekiel/reprint_check.tsv</code>。</p>',
         f'<p class="gh-note-zh">③<b>仍读不出的</b>照旧<span class="gh-gap">标红</span>留在明面，其中有：重排本把拉丁文、希腊文或旁注整句删去、'
