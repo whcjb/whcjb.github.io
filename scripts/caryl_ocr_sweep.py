@@ -110,6 +110,7 @@ def rules():
     # 书卷：(Per. → (Jer.、(Plal. → (Psal.、(Isa- → (Isa.
     R.append(('isa', re.compile(r'\(Per\b'), lambda m: '(Jer'))
     R.append(('isa', re.compile(r'\(Plal\.'), lambda m: '(Psal.'))
+    R.append(('isa', re.compile(r'\(sal\.(?=\s?\d)'), lambda m: '(Psal.'))      # 第 7 轮
     R.append(('isa', re.compile(r'\(Isa-'), lambda m: '(Isa.'))
     # 句首 Te → Ye（斜体 Y 读成 T）
     R.append(('te', re.compile(r'(?<=[.;:?!(] )Te (?=(?:have|are|shall|will|know|say|heard|should|may|did|do|see|be|were|that|cannot|must)\b)'), lambda m: 'Ye '))
@@ -161,6 +162,15 @@ def rules():
     R.append(('pronI', re.compile(r'(?<![-\w])I([a-z]{3,})\b'),
               lambda m: 'I ' + m.group(1) if not UNI.get('i' + m.group(1), 0) and UNI.get(m.group(1), 0) >= 20 else m.group(0)))
     R.append(('of', re.compile(r'\banto\b'), lambda m: 'unto'))
+    # —— 第 7 轮（第 9 部 31:19–21 实读 22 页）补：斜体 th／w 读坏
+    R.append(('th', re.compile(r'\b(ihe|ibe|tbe|rhe)\b'), lambda m: 'the'))
+    R.append(('th', re.compile(r'\b(ibat|tbat)\b'), lambda m: 'that'))
+    R.append(('th', re.compile(r'\brhen\b'), lambda m: 'when'))
+    R.append(('mw', re.compile(r'\b(my|thy|his|her|their|our|your|mine|thine|own|owne|one) (omne|onne|oune|omn)\b'), lambda m: m.group(1) + ' owne'))
+    R.append(('mw', re.compile(r'\b(I|he|she|they|we|ye|who) sam\b'), lambda m: m.group(1) + ' saw'))
+    R.append(('mw', re.compile(r'\b(for|of|in|no|their|his|our|my|killing|prevent their) mant\b'), lambda m: m.group(1) + ' want'))
+    R.append(('fs', re.compile(r'\b((?:on|of) (?:my|his|their|our|your|the|that|this|other|every|one)) fide\b'), lambda m: m.group(1) + ' side'))
+    R.append(('pronI', re.compile(r'(?<=[a-z] )l (?=(?:perceive|spake|come|found|known|knew|see|saw|thinke|think|said|sayd|will|would|shall|should|am|have|had|was|must|may|can|could|doe|did|answer|conceive|know|speake|beleeve|hope|pray)\b)'), lambda m: 'I '))
     # 漏进正文的页眉
     R.append(('head', re.compile(r'\bCha[pn][.,-]?\s?\d{1,2}\.?\s+An Ex\w*\s+u\w*\s+\w+\s+Boo?[sk]\w*\s+\S{1,3}\s?\S{0,3}\s+V\w{2,5}[.,]?\s?\d{0,2}\.?'),
               lambda m: ''))
