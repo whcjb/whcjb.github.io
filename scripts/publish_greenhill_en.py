@@ -38,7 +38,12 @@ def reprint_counts():
     appr = {r[0]: r[2] for r in tc._tsv('gap_approved.tsv')}
     chk = tc._tsv('reprint_check.tsv')
     k = collections.Counter(appr.values())
+    sites = {str(s['gid']): s for s in json.loads((tc.RAW / 'gap_sites.json').read_text(encoding='utf-8'))}
+    read = {r[0] for r in tc._tsv('gap_review.tsv') if len(r) > 1 and r[1] not in ('', '?') and not r[1].startswith('P:')}
+    grk = [g for g, s in sites.items() if 'Greek' in s['tcp']]
+    gleft = collections.Counter(sites[g]['vol'] for g in grk if g not in appr and g not in read)
     return dict(same=k['重排本同'], alt=k['重排本改'], ctx=k['正文旁证'], film=k['胶片清楚'] + k['胶片残字'],
+                ed2=k['第二版影像'], rgk=k['重排本补字'], gleft=sum(gleft.values()), gleft2=gleft[2],
                 gone=sum(1 for r in chk if r[3] == '缺' and r[0] not in appr),
                 clash=sum(1 for r in chk if r[3] == '异' and r[0] not in appr),
                 checked=len(chk))
@@ -58,24 +63,30 @@ def about_en(f):
         '<i>Observ. 1</i> …) are shown as small tags. The errata lists, the tables of matters and of Scripture places, '
         'and the booksellers’ advertisements are not included.</p>',
         f'<p><b>Illegible places.</b> The transcription is incomplete at {f["n"]} places: letters or words the keyers could not '
-        'read from the film images, and the Greek and Hebrew, which they did not transcribe. They have been filled in two steps.</p>',
+        'read from the film images, and the Greek and Hebrew, which they did not transcribe. They have been filled as follows.</p>',
         '<p>(1) <b>Read from the film.</b> Each place was checked against the EEBO film images of the same editions (Internet Archive): '
         f'{f["w"]} could be read there and are printed as plain text.</p>',
         f'<p>(2) <b>Checked against a second copy.</b> At {r["checked"]} places the film itself is blotted or show-through covers the '
         'letters, and only a conjecture was possible. The film, and the TCP keyers who worked from it, are one and the same copy, so '
         'each conjecture was checked against a copy printed from a different original: the Edinburgh reprint of 1863 '
         '(J. Nichol, ed. James Sherman; Internet Archive <i>anexpositionofth00greeuoft</i>). '
-        f'{f["c"]} places are filled from that check and shown in <span class="gh-conj">[brackets]</span>: '
+        f'{r["same"] + r["alt"] + r["ctx"]} places are filled from that check and shown in <span class="gh-conj">[brackets]</span>: '
         f'{r["same"]} where the reprint has the same word as the conjecture (the original spelling is kept); '
         f'{r["alt"]} where the reprint differs and is followed (chapter and verse numbers restored to the original style); '
         f'{r["ctx"]} where the reprint drops the passage but its English rendering or verse range confirms the conjecture. '
         f'At {r["film"]} places a second look at the film settled the reading where the reprint had altered it; '
         'there the film is followed, including an evident misprint of the original (fifteen <i>thousand</i> miles), which is kept. '
         'The reprint modernises spelling, so it confirms the word, not the original spelling.</p>',
+        f'<p><b>Greek and Hebrew.</b> The keyers left the Greek and Hebrew blank. In Volumes III–V they were read from the film. '
+        'Volume I has no film of the 1645 first edition, so '
+        f'{r["ed2"]} places were read from the film of the second edition (1649) at the same place. Volume II has no legible film, and '
+        f'there and wherever the film is unreadable {r["rgk"]} places were supplied from the 1863 reprint, page by page; these too are '
+        'in brackets. A marginal note that consisted only of an unreadable Greek word is not shown as a footnote.</p>',
         f'<p>(3) <b>Still open.</b> The remaining places stay <span class="gh-gap">in red</span>. They include {r["gone"]} '
         'where the reprint omits the Latin, Greek or marginal note altogether (every one checked on the reprint’s page images), '
-        f'{r["clash"]} where the film and the reprint disagree, and the places in Volumes I–II, for which no film of the same '
-        'edition is available.</p>']
+        f'{r["clash"]} where the film and the reprint disagree, and {r["gleft"]} Greek or Hebrew words ({r["gleft2"]} of them in '
+        'Volume II) that neither the film nor the reprint supplies: Sherman generally dropped the Greek and Hebrew and kept only '
+        'the English rendering. Only another copy of the first editions of Volumes I–II could settle them.</p>']
 
 def about_zh(f):
     r = reprint_counts()
@@ -86,22 +97,27 @@ def about_zh(f):
         '保留原书拼写与斜体，长 ſ 作 s；印本页码保留为页内锚点，各卷页码自 1 起。'
         '每页一段经文：录入本标了分段的照原书分段，第四卷（第 20–29 章）录入本没有分段，按书中所引经文的节号切分。'
         '原书页边的纲目标记（Note 1、Observ. 1 等）在正文中以小标签显示。各卷勘误表、主题索引、经文索引与书商广告未收。</p>',
-        f'<p class="gh-note-zh">录入本不完整之处共 {f["n"]} 处，包括录入者读不出的字母和词，以及没有录入的希腊文、希伯来文。分两步补：</p>',
+        f'<p class="gh-note-zh">录入本不完整之处共 {f["n"]} 处，包括录入者读不出的字母和词，以及没有录入的希腊文、希伯来文。补法如下（推补共 {f["c"]} 处，逐条见文末表）：</p>',
         '<p class="gh-note-zh">①<b>看胶片读出。</b>逐处对照同版的 EEBO 胶片影像（Internet Archive），'
         f'看得清的 {f["w"]} 处直接补成正文，不加标记。</p>',
         f'<p class="gh-note-zh">②<b>对照另一实物。</b>其中 {r["checked"]} 处胶片本身就被墨团、透印盖住，只能推断。'
         'TCP 录入本也是照这同一份胶片录的，两者算不得两个证据；所以这些推断逐条对照了另一本实物排出的书——'
         '1863 年爱丁堡 Nichol 重排本（James Sherman 编，Internet Archive <i>anexpositionofth00greeuoft</i>），逐页看图。'
-        f'据此补出 {f["c"]} 处，正文以<span class="gh-conj">[方括号]</span>另色标出：'
+        f'据此补出 {r["same"] + r["alt"] + r["ctx"]} 处，正文以<span class="gh-conj">[方括号]</span>另色标出：'
         f'重排本与推断同词的 {r["same"]} 处，照原书拼法写；重排本与推断不同的 {r["alt"]} 处，照重排本写（章节号换回原书写法）；'
         f'重排本删去原文、但正文所留英译或节号区间与推断相合的 {r["ctx"]} 处，照推断写。'
         f'另有 {r["film"]} 处复看胶片可以定字、而重排本改过的，照胶片写，原书误植也照录（如 fifteen <i>thousand</i> miles）。'
         '各处以原版影像为准：影像清楚，照影像；影像被盖住，才看重排本。'
         '重排本已改现代拼法，只能证明是哪个词，不能证明原书怎么拼。逐条依据见下表，核对记录见 '
         '<code>greenhill_raw/ezekiel/reprint_check.tsv</code>。</p>',
+        '<p class="gh-note-zh"><b>希腊文、希伯来文。</b>录入本一概没录。第三至五卷照胶片读出；'
+        f'第一卷没有 1645 初版的影像，{r["ed2"]} 处据 1649 年第二版胶片同处读出；'
+        f'第二卷没有可读的原版影像，连同各卷胶片读不出的地方，{r["rgk"]} 处据 1863 重排本逐页翻到同处补出。这两类也加方括号。'
+        '旁注里只有一个读不出的希腊词、别无他字的，不出脚注。</p>',
         f'<p class="gh-note-zh">③<b>仍读不出的</b>照旧<span class="gh-gap">标红</span>留在明面，其中有：重排本把拉丁文、希腊文或旁注整句删去、'
         f'无可对照的 {r["gone"]} 处（都已逐页看图核实）；胶片残字与重排本对不上、尚待定夺的 {r["clash"]} 处；'
-        '以及第一、二卷——网上没有这两卷同版的胶片。判读记录见 <code>greenhill_raw/ezekiel/gap_review.tsv</code>。</p>']
+        f'以及胶片和重排本都给不出的希腊文、希伯来文 {r["gleft"]} 处（第二卷占 {r["gleft2"]} 处）——Sherman 重排时大多删了原文、只留英译，'
+        '要补齐只能等找到第一、二卷初版的另一份影像。判读记录见 <code>greenhill_raw/ezekiel/gap_review.tsv</code>。</p>']
 
 BOOK = tcp_publish.Book(
     tc=tc, NV=NV, slug='greenhill', book='ezekiel', P='gh', layout='greenhill-chapter',
@@ -115,7 +131,8 @@ BOOK = tcp_publish.Book(
     conj_note_col=4,
     conj_intro_zh='以下各处录入本标为读不出，原版胶片影像上也被墨团、透印盖住。编者对照 1863 年爱丁堡 Nichol 重排本'
                   '（Sherman 编，另一实物排印，见 Internet Archive anexpositionofth00greeuoft）补出：重排本与编者推断同词的，'
-                  '照原书拼法写；不同的，照重排本写（章节号换回原书体例）。重排本已改现代拼法，只能证词，不能证原书拼法。')
+                  '照原书拼法写；不同的，照重排本写（章节号换回原书体例）。重排本已改现代拼法，只能证词，不能证原书拼法。'
+                  '希腊文、希伯来文据 1649 年第二版胶片或重排本补出的，也列在表中，依据栏注明出处页。')
 
 
 def main():
