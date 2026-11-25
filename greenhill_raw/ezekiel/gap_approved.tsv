@@ -1,5 +1,6 @@
 # 推补（用户 2026-11-25 定：「看哪个版本清楚就按照哪个版本」）。gid / 现作 / 类别 / 原书所见 / 说明。
 # 类别：重排本同=原书影像墨损，Nichol 1863 重排本清楚且与推断同词，按推断落（保留原书拼法）；
+#       正文旁证=重排本删去此处原文，但正文所留英译/节号区间与推断合，按推断落；
 #       重排本改=推断与重排本不同，按重排本落（章节号换回原书阿拉伯数字体例）。逐条对照见 reprint_check.tsv。正文以推补字体加方括号标出。
 1268	is	重排本同	i•	胶片：图 i? 字形不清；1863 重排本作 is
 1284	first	重排本同	•st	胶片：图作 ſſt? 字形不清；as first seriously；1863 重排本作 first（重排本 as, first,）
@@ -154,3 +155,7 @@
 2398	rejected	重排本同	re•ected	胶片：图 re ected，j 墨淡；1863 重排本作 rejected
 3138	31	重排本同	〈◊〉	胶片：印 ,•1,；序列 29,31,33；1863 重排本作 31,
 2436	reprobis.	重排本同	reprob•e.	胶片：页边 reprob s.，TCP 作 reprob•e.，缺字墨淡；1863 重排本作 reprobate（n578 正文英译：saith Maldonate, If thou shalt by thy word sever the elect from the reprobate——同一出处的英译，证词义不证词形）
+2992	12,	正文旁证	12▪	胶片：墨团；重排本合为 Isa. i. 10—17，区间含 12；原书前后 10, 11, ▪, 13
+1846	ἐγένετο εἰς ἄμπελον ἀσθενοῦσαν καὶ μικρὰν τῷ μεγέθει	正文旁证	〈Greek〉.	胶片：希腊文页边（希伯来文 שפלת קומה 另行，可能另是一组）；中段墨淡；重排本删希腊文，正文英译 he became a weak vine, and little in greatness 与推断合
+1867	אילי ἡγούμενοι	正文旁证	〈Greek〉	胶片：页边希伯来文 + 希腊文两行；希腊文词尾不清；重排本删旁注，正文 Septuagint, the leaders 与 ἡγούμενοι 合
+2611	Hyeronimus.	正文旁证	Hyer•nimus.	胶片：页边，下半被裁；重排本删旁注，正文 Jerom saith 同指哲罗姆
