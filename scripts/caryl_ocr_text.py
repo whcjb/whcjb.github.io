@@ -289,7 +289,9 @@ class Builder:
                         prev = b
                         continue
                 if mode == 'epi':
-                    if overlap(plain, epi_vocab) >= 0.6 or (len(toks(plain)) <= 3 and overlap(plain, epi_vocab) > 0):
+                    # 经文上一行以断词号收尾：下一行（半个词起头）一律归经文框——否则「ters that passe away」这类残句漏到讲解段首
+                    cont = bool(re.search(r'[¬-]$', re.sub(r'<[^>]+>', '', epi_lines[-1]).strip()))
+                    if cont or overlap(plain, epi_vocab) >= 0.6 or (len(toks(plain)) <= 3 and overlap(plain, epi_vocab) > 0):
                         epi_lines.append(t)
                         prev = b
                         continue

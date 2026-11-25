@@ -17,7 +17,9 @@ IA 那层是 tesseract 产的，长 ſ 读成 f，比较时 f/ſ/s 一律折成 
   conflict 对照词在词表里但与底本差太远 → 不改，标存疑
   solo     对不上位置，但第 ① 层候选只改一处且本书常见（≥ 50 次）→ 改
   noalign  对不上位置 → 不改，标存疑（发布页 .cy-ocr 灰色虚下划线）
-真词（词表里有的）一律不动——真词误读（mike/make）要靠两份对照本表决，这一层不做。
+真词（词表里有的）：只在 realword 一种情形下改——对照词是只差一处形近字的另一个真词（trow/know、hin/him），
+且前后两组搭配在 TCP 卡里尔语料里都出现过、支持对照词 ≥ 20 倍。
+「Ishall」类：对照词 = 底本去掉首字母 I/a 后的词 → 拆开（原先会被 witness 一支改成 Shall，丢了 I）。
 """
 import argparse
 import collections
@@ -30,6 +32,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import caryl_ocr_fix as fx  # noqa: E402
+import caryl_ocr_ctx as CTX  # noqa: E402
 
 ROOT = Path(__file__).resolve().parent.parent
 BASE = ROOT / 'caryl_raw' / 'job_ocr'
@@ -160,7 +163,23 @@ def judge(md, W, log, slug):
                             align[c0 + k] = wbest
         for i in range(c0, c1):
             s, e, t = toks[i]
-            if len(t) <= 2 or fx.freq(t) or fx.LEX.get(t.lower()):
+            if len(t) >= 2 and (fx.freq(t) or fx.LEX.get(t.lower())):
+                # 真词误读（trow/know、hin/him）：对照词是只差一处形近字的另一个真词，且前后搭配支持它 ≥ 20 倍才改
+                wn = align.get(i)
+                u = unfold(wn) if wn and wn != norm(t) else None
+                vow = lambda x: re.sub(r'[aeiouy]', '', x.lower())          # noqa: E731
+                if u and u.lower() != t.lower() and 0 < i < len(toks) - 1 and \
+                        CTX.UNI.get(t.lower(), 0) < 200 and vow(u) != vow(t) and \
+                        u.lower() in {v.lower() for v in fx.step({t.lower()})}:
+                    # 常见真词（then、me、he…）不动；只差元音的是拼法变体（receave/receive，对照本可能是别的版次），不动
+                    a, b = toks[i - 1][2].lower(), toks[i + 1][2].lower()
+                    if CTX.BI.get((a, u.lower()), 0) and CTX.BI.get((u.lower(), b), 0) and \
+                            CTX.p_bi(a, u.lower()) * CTX.p_bi(u.lower(), b) >= 20 * CTX.p_bi(a, t.lower()) * CTX.p_bi(t.lower(), b):
+                        new = u.capitalize() if t[0].isupper() else u
+                        log.append((slug, 'realword', t, new, wn))
+                        edits[(s, e)] = new
+                continue
+            if len(t) <= 2:
                 continue
             c = fx.best_fix(t)
             wn = align.get(i)
@@ -180,6 +199,8 @@ def judge(md, W, log, slug):
                     kind, new = 'agree', None
             elif c and (norm(c) == wn or (len(t) > 3 and edit(norm(c), wn) <= 1 and edit(t, c) <= 2)):
                 kind, new = 'confirm', c          # 对照本自己也有错（foolish↔soolith），差一个字母仍算印证
+            elif len(norm(t)) == len(wn) + 1 and norm(t).endswith(wn) and t[0] in 'IAa' and fx.freq(t[1:].lower()) >= 20:
+                kind, new = 'split', t[0] + ' ' + t[1:]   # 「Ishall」：对照本只给 shall，首字母 I 不能丢
             elif split_by(t, wn):
                 kind, new = 'split', split_by(t, wn)
             else:
