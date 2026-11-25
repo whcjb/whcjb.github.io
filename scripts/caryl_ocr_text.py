@@ -34,11 +34,11 @@ ROOT = Path(__file__).resolve().parent.parent
 BASE = ROOT / 'caryl_raw' / 'job_ocr'
 KJV = ROOT / 'foote_raw' / 'luke' / 'src' / 'kjv' / '19-JOBeng-kjv2006.usfm'
 P = 'cy'
-RE_SEC = re.compile(r'^\W{0,3}(?P<pre>(?:(?!C\w{0,2}a?p)[A-Za-z0-9]{1,4}\W{1,3}){0,2})\s*(?P<chap>C[A-Za-z]{0,2}a?p[A-Za-z]*[.,]?\s*)?(\d{1,2})\W+\s*V\w{0,4}[.,]?\s*(.*)$', re.I)
+RE_SEC = re.compile(r'^\W{0,3}(?:JOB(?=\d))?(?P<pre>(?:(?!C\w{0,2}a?p)[A-Za-z0-9]{1,4}\W{1,3}){0,2})\s*(?P<chap>C[A-Za-z]{0,2}a?p[A-Za-z]*[.,]?\s*)?(\d{1,2})\W+\s*V\w{0,4}[.,]?\s*(.*)$', re.I)
 RE_SEC2 = re.compile(r'^\W{0,3}(?P<pre>(?:[A-Za-z0-9]{1,4}\W{1,3}){1,2}?)(\d{1,2})\s*[.,:]\s*(\d{1,2}(?:\s*[.,]\s*\d{1,2})+)\W*$')
 RE_SEC3 = re.compile(r'^\W{0,2}VERS?\W{1,3}(\d{1,2}(?:\s*[.,]\s*\d{1,2})*)\W*$')
 RE_CHAPLINE = re.compile(r'^\W{0,3}C[A-Z]{1,3}P\W{0,3}\s*([XVIL]{2,7})\W*$')   # 对开本每章起头单独一行「CHAP. XXVIII.」
-RE_JOBISH = re.compile(r'^\W*(?:[IJT1l]?\s?[O0]\s?[BRE8]|10[B28]|1?0[23])\W*$', re.I)
+RE_JOBISH = re.compile(r'^\W*(?:[IJT1l]?\s?[O0]\s?[BRE8]|10[B28]|1?0[23]|D?B|1?10\s?B)\W*$', re.I)   # 第 6 轮复查：B／DB／110 B
 RE_VH = re.compile(r'^\(?V(?:er|cr|e)[sf]\w{0,2}[.,]?\s*(\d{1,2}|[IlO1][\dIlO]?)\s*[.,]\s*(.*)$')
 FIX_DIG = str.maketrans({'I': '1', 'l': '1', 'O': '0', 'o': '0'})
 
@@ -209,7 +209,7 @@ class Builder:
                 m = RE_SEC.match(plain) if len(plain) < 60 else None
                 if m and re.fullmatch(r'[a-z]{2,}\W*', (m.group('pre') or '').strip()):
                     m = None                    # 「at Chap. 27. vers. 11…」：行首是英文小写词，是正文里的交叉引用
-                if m and not m.group('chap') and not RE_JOBISH.match(m.group('pre') or ''):
+                if m and not m.group('chap') and not RE_JOBISH.match(m.group('pre') or '') and not re.match(r'\W{0,3}JOB\d', plain):
                     m = None                    # 没有 Chap. 的（第 6 部「JOB. 19 Vers. 20」）行首必须像 JOB，挡掉「Verf. 19.」
                 hc0 = self.chapter_of(lf)
                 if hc0 is not None and not (self.chs[0] <= hc0 <= self.chs[1]):
@@ -262,6 +262,8 @@ class Builder:
                         ch = hch
                     if not vs:
                         vs = [1]
+                    if cur and cur['ch'] == ch and vs[0] <= max(cur['vs']) < vs[-1] and len(vs) < vs[-1] - vs[0] + 1:   # 只管节号不连续的读坏
+                        vs = list(range(max(cur['vs']) + 1, vs[-1] + 1))   # 「Verf. 27, 30.」接在 26–28 段后：节号读坏，从上一段末节接着算
                     close_section()
                     cur = dict(part=self.part, ch=ch, vs=vs, ref=plain, leaf=lf)
                     if synthetic:                      # 段首行读坏了：这一行是正文，照常进段落

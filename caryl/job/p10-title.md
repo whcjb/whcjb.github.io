@@ -5,8 +5,8 @@ book_name: "An Exposition upon the Book of Job"
 title: "Title Page (Part 10)"
 subtitle: "第十部 · 书名页"
 date: 2026-11-24 10:56
-prev_url: "/caryl/job/31-34/"
-prev_label: "31:34–40"
+prev_url: "/caryl/job/31-38/"
+prev_label: "31:38–40"
 next_url: "/caryl/job/p10-reader/"
 next_label: "Part 10: To the Christian Reader"
 ---

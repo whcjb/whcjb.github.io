@@ -182,3 +182,20 @@ p.800「may give a ▇ resolution」原书墨渍，读不出，未补。
 
 原书误植照录（本段）：Secondy、fillthinesse、Pnblican、onec、Will yea、melled、soild、graee、nnsetlednes、destraction、delivrance。
 p.128「cannot ▇ remain」墨渍，按文意补 but。
+
+## 2026-11-29 全书同类错误复查
+
+逐类在全书现有文本里数残留，发现清理规则有三处够不着：
+1. **存疑标记切断匹配**：清理按标签切段，被 cy-ocr 包着的词把句子切开（「punispment</span> ef the」「(<span>Plal</span>. 139」），
+   跨标记的规则全部失效。改为段内透过存疑标记匹配，改动碰到的标记一并去掉。全书多清出数百处（split +130、of +38、pronI +60 等）。
+2. **规则写窄**：Te/Tou 只认部分后接词（「(Exod.19.6.) Te shall」漏）→ 后接小写词即改；W'h 只认 what/when 等几个词 → 泛化（wherefore、whether、while；I'hope／I'hid 拆成 I＋词）；
+   代词 I 粘后词（Irejoyced、Igave）、anto → unto。
+3. **页内段落劈开**：段尾以字母收尾、下段小写起头、上段不短于 50 字符时并段（不收「Observe,」后的论点句）。全书 76 处。
+
+另查出 5 处段首出处行漏认（JOB 读成 B／DB／110 B，或「JOB19」粘连），5 段讲解被并进上一段：
+第 6 部 19:29；第 9 部 30:16–17、31:29–30、31:35–37、31:38–40。切段层补认后各成一段，站上多 5 页（共 366 页）。
+「B 31. Verf. 27, 30.」节号读坏，规则：节号不连续且落进上一段范围时，从上一段末节接着算（连续的重叠如 19:15–19 不动）。
+重切后证人层在这几段少推定的词按上一版读法补表。
+
+复查后残留（不再成类）：W'h 混读坏 7 处（u'hois、'heremithall、n'hercfore 等，词身另有错字）、Tea/Tou 3 处（「Tou saith」等不是 You）、
+mith／mhich 等 3 处、页内劈段 76 处（上段是小标题、经文框或旁注行，规则不碰）。

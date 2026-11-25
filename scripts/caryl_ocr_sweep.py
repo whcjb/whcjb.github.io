@@ -29,6 +29,7 @@
 """
 import argparse
 import collections
+import difflib
 import re
 import sys
 from pathlib import Path
@@ -61,9 +62,10 @@ def rules():
     R.append(('saith', re.compile(rf'\b({NAMES}) faith\b'), lambda m: m.group(1) + ' saith'))
     R.append(('saith', re.compile(rf'([,;(] ?)faith (?={NAMES}\b)'), lambda m: m.group(1) + 'saith '))
     # of / or
-    R.append(('of', re.compile(r'(?<=[a-z] )ef(?= [a-z])'), lambda m: 'of'))
+    R.append(('of', re.compile(r'(?<=[a-z] )ef(?= [A-Za-z])'), lambda m: 'of'))   # 「wickednes ef Nabal」
     R.append(('of', re.compile(r'(?<=[a-z] )er(?= [a-z])'), lambda m: 'or'))
     # 'Tis
+    R.append(('tis', re.compile(r'(?<=[.;:?!])["“”]\s?Tis\b'), lambda m: " 'Tis"))   # 「heaven." Tis」：句末后补回空格
     R.append(('tis', re.compile(r'["“”]\s?Tis\b'), lambda m: "'Tis"))
     # 书卷缩写
     R.append(('isa', re.compile(r'\bI/a\.'), lambda m: 'Isa.'))
@@ -130,6 +132,15 @@ def rules():
     R.append(('isa', re.compile(r'\b([12])(Cor|Joh|Tim|Sam|Pet|King|Kings|Thes|Thess|Chron)\.'), lambda m: m.group(1) + ' ' + m.group(2) + '.'))
     # —— 第 5 轮（第 6 部 21:27–29 实读 23 页）补的几类
     # 斜体 W 读成 W'／u'／n'／N'／Iv'（W'hat、u'hat、n'hen、Iv'here）
+    def wh_any(m):
+        lead, rest = m.group(1), m.group(2)
+        if lead[0] == 'I' and len(lead) == 1 and rest in ('ope', 'id', 'old', 'ear', 'ave', 'ad', 'eard', 'ate'):
+            return 'I h' + rest                                        # I'hope／I'hid／I'hold：I ＋ 词
+        if len(rest) >= 2 and UNI.get('wh' + rest, 0) >= 3:
+            up = lead[0] in 'WNIU' and not re.search(r'[a-z,;]\s$', m.string[max(0, m.start() - 2):m.start()])
+            return ('W' if up else 'w') + 'h' + rest
+        return m.group(0)
+    R.append(('wh', re.compile(r"\b([uUwWnNI]v?)['’]h([a-z]+)\b"), wh_any))      # 第 6 轮复查：wherefore、wheremithall、wheat
     R.append(('wh', re.compile(r"\b([uUwWnNI]v?)['’](hat|here|hen|ho|hich|hom|hose|hy)\b"),
               lambda m: ('W' if m.group(1)[0] in 'WNIU' and not re.search(r'[a-z,;]\s$', m.string[max(0, m.start() - 2):m.start()]) else 'w')
               + m.group(2)))
@@ -139,12 +150,17 @@ def rules():
     # 句中 Te → Ye（逗号、分号后）
     R.append(('te', re.compile(r'(?<=[,;:] )Te (?=(?:have|are|shall|will|know|say|heard|should|may|did|do|see|be|were|cannot|must)\b)'), lambda m: 'Ye '))
     # —— 第 6 轮（第 4 部 11:15–16 实读 21 页）补的几类
-    R.append(('te', re.compile(r'(?<=[.;:,?!(] )Tou (?=(?:shall|shalt|have|are|may|must|will|see|know|say|seeme|need)\b)'), lambda m: 'You '))
+    R.append(('te', re.compile(r'\bTou (?=[a-z])(?!saith)'), lambda m: 'You '))
+    R.append(('te', re.compile(r'\bTe (?=[a-z])'), lambda m: 'Ye '))   # 第 6 轮复查：「(Exod.19.6.) Te shall」「thus:⏎⏎Te ought」
     R.append(('te', re.compile(r'(?:(?<=[.;:,?!(] )|(?<=\n)|^)Tea\b'), lambda m: 'Yea'))
     R.append(('pronI', re.compile(r'(?<=[.;:?!] )l (?=[a-z])'), lambda m: 'I '))
     R.append(('god', re.compile(r'\b(Ged|Gcd)\b'), lambda m: 'God'))
     R.append(('fs', re.compile(r'\bosten\b'), lambda m: 'often'))
     R.append(('isa', re.compile(r'\b((?:chap|Chap|vers|ver|Isa|Psal)\.?\s?)I[Oo0]\.'), lambda m: m.group(1) + '10.'))
+    # 复查补：代词 I 与后面的词粘连（Irejoyced、Igave）：I＋词 不是词、后半截是常见词才拆；anto → unto
+    R.append(('pronI', re.compile(r'(?<![-\w])I([a-z]{3,})\b'),
+              lambda m: 'I ' + m.group(1) if not UNI.get('i' + m.group(1), 0) and UNI.get(m.group(1), 0) >= 20 else m.group(0)))
+    R.append(('of', re.compile(r'\banto\b'), lambda m: 'unto'))
     # 漏进正文的页眉
     R.append(('head', re.compile(r'\bCha[pn][.,-]?\s?\d{1,2}\.?\s+An Ex\w*\s+u\w*\s+\w+\s+Boo?[sk]\w*\s+\S{1,3}\s?\S{0,3}\s+V\w{2,5}[.,]?\s?\d{0,2}\.?'),
               lambda m: ''))
@@ -382,13 +398,64 @@ def sweep_md(md, log, where):
             return m.group(0).replace(m.group(1), r, 1)
         return m.group(0)
     md = re.sub(r'\((Job|Tob|fob|Iob)\.\s?(\d{1,2})\.\s?(\d{1,2})', jhn, md)
+    def pjoin(m):
+        log.append(('pjoin', where, m.group(1)[-20:] + '⏎⏎', m.group(2)[:15]))
+        return m.group(1) + ' ' + m.group(2)
+    # 上段须以字母或断词号收尾（不收「Observe,」「;」：下段是论点句，只是首字母读成了小写）、且不短于 50 字符
+    for _ in range(10):                      # 连着劈成三四段的，一遍并不完
+        new = re.sub(r'(?m)^((?!<(?!span class="cy-ocr")|[{#])(?=.{50,}).*[a-z-])\n\n((?:<span class="cy-ocr"[^>]*>)?[a-z][^\n]*)$', pjoin, md)
+        if new == md:
+            break
+        md = new
     out, last = [], 0
-    for m in re.finditer(r'<span class="cy-margin">.*?</span>|<[^>]+>|\{:[^}]*\}', md, re.S):
-        out.append(sweep_text(md[last:m.start()], log, where))
+    # 段界：旁注、页码锚点、缺页说明、其余标签；存疑标记 cy-ocr 不算段界（第 6 轮：「punispment</span> ef the」「(<span>Plal</span>. 139」
+    # 以前被标记切开，规则够不着）——段内透过存疑标记匹配，改动碰到的标记连同标记一起去掉（与人工表同一口径）
+    for m in re.finditer(r'<span class="cy-margin">.*?</span>|<span class="cy-pb"[^>]*></span>|<span class="cy-gap">.*?</span>'
+                         r'|<(?!span class="cy-ocr")(?!/span>)[^>]+>|\{:[^}]*\}', md, re.S):
+        out.append(sweep_seg(md[last:m.start()], log, where))
         out.append(m.group(0))
         last = m.end()
-    out.append(sweep_text(md[last:], log, where))
+    out.append(sweep_seg(md[last:], log, where))
     return re.sub(r' {2,}', ' ', ''.join(out))
+
+
+RE_OCR_SPAN = re.compile(r'<span class="cy-ocr"[^>]*>([^<]*)</span>')
+
+
+def sweep_seg(seg, log, where):
+    if '<span class="cy-ocr"' not in seg:
+        return sweep_text(seg, log, where)
+    plain = RE_OCR_SPAN.sub(lambda m: m.group(1), seg)
+    lg = []
+    new = sweep_text(plain, lg, where)
+    if new == plain:
+        return seg
+    log.extend(lg)
+    # 存疑标记在纯文本里的位置
+    spans, off, pos = [], 0, 0
+    for m in RE_OCR_SPAN.finditer(seg):
+        a = m.start() - off
+        spans.append((a, a + len(m.group(1)), m.group(0)[:m.start(1) - m.start()]))
+        off += len(m.group(0)) - len(m.group(1))
+    sm = difflib.SequenceMatcher(None, plain, new, autojunk=False)
+    ops = sm.get_opcodes()
+    changed = [(i1, i2) for op, i1, i2, j1, j2 in ops if op != 'equal']
+    keep = [sp for sp in spans if not any(i1 <= sp[1] and sp[0] <= i2 for i1, i2 in changed)]
+    # 留下的标记都落在未改动的区段里：按位置映射到新文本后重新包上
+    res, k = [], 0
+    pmap = {}
+    for op, i1, i2, j1, j2 in ops:
+        if op == 'equal':
+            for t in range(i2 - i1 + 1):
+                pmap[i1 + t] = j1 + t
+    marks = []
+    for a, b, opener in keep:
+        if a in pmap and b in pmap:
+            marks.append((pmap[a], pmap[b], opener))
+    for a, b, opener in sorted(marks):
+        res.append(new[k:a]); res.append(opener + new[a:b] + '</span>'); k = b
+    res.append(new[k:])
+    return ''.join(res)
 
 
 def main():
