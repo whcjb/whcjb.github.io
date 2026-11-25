@@ -72,6 +72,18 @@ layout: default
   });
 })();
 </script>
+<script>
+// 脚注：底部每条前插编号回跳（与 calvin-en 同）
+(function () {
+  document.querySelectorAll('.gh-content .footnotes ol li[id]').forEach(function (li) {
+    var label = li.id.replace(/^fn:/, '');
+    var a = document.createElement('a');
+    a.href = '#fnref:' + label; a.className = 'fn-backref-num'; a.textContent = label; a.title = '返回引用位置';
+    li.insertBefore(a, li.firstChild);
+  });
+})();
+</script>
+
 
 {%- comment -%}
   经文引用弹层：只给中文页（模块认的是中文书卷名）。accent/vnum 必须写字面量
@@ -244,6 +256,18 @@ layout: default
   .greenhill-wrap .gh-item.gh-lv2 { padding-left: 2.4em; }
   .greenhill-wrap .gh-item.gh-lv3 { padding-left: 3.6em; }
 }
+
+/* 页边旁注 → 页底脚注（与加尔文注释 calvin-en 同式） */
+.greenhill-wrap .gh-content sup[id^="fnref:"] { scroll-margin-top: 80px; }
+.greenhill-wrap .gh-content sup[id^="fnref:"] a { text-decoration: none; color: #0085a1; font-size: .8em; padding: 0 1px; }
+.greenhill-wrap .gh-content .footnotes { margin-top: 40px; padding-top: 16px; border-top: 1px solid #ddd; font-size: 14px; color: #555; }
+.greenhill-wrap .gh-content .footnotes ol { list-style: none; padding-left: 0; margin: 0; }
+.greenhill-wrap .gh-content .footnotes li { display: flex; gap: .5em; margin-bottom: 8px; line-height: 1.7; scroll-margin-top: 80px; }
+.greenhill-wrap .fn-backref-num { flex-shrink: 0; min-width: 1.8em; text-align: right; color: #0085a1; font-weight: bold;
+  font-size: .9em; text-decoration: none; padding-top: .05em; }
+.greenhill-wrap .fn-backref-num:hover { text-decoration: underline; }
+.greenhill-wrap .gh-content .footnotes li > p { margin: 0 !important; flex: 1; text-indent: 0 !important; text-align: left !important; }
+.greenhill-wrap .gh-content .footnotes .reversefootnote { margin-left: .3em; color: #aaa; text-decoration: none; font-size: .85em; }
 
 /* 底本里读不出的字 */
 .greenhill-wrap .gh-gap { color: #c0392b; background: #fdecea; border-radius: 2px; padding: 0 2px; cursor: help; }

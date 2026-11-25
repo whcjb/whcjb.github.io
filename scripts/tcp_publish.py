@@ -82,6 +82,37 @@ class Book:
                                 if m.group(1) else '', body)
         body = self.tc.TOK.sub(lambda m: f'<span class="{P}-gap" title="TCP: illegible in source">{m.group(0)}</span>',
                                body)
+        if getattr(self, 'margin_footnotes', False):
+            body = self.margins_to_footnotes(body)
+        return body
+
+    def margins_to_footnotes(self, body):
+        """页边旁注 → 页底脚注（kramdown [^n]），与加尔文注释一致。注号落在旁注原位，按本页次序编号。"""
+        open_tag = re.compile(rf'<span class="{self.P}-margin"[^>]*>')
+        notes, out, pos = [], [], 0
+        while True:
+            m = open_tag.search(body, pos)
+            if not m:
+                break
+            depth, k = 1, m.end()
+            for t in re.finditer(r'<span\b[^>]*>|</span>', body[m.end():]):
+                depth += 1 if t.group(0).startswith('<span') else -1
+                if depth == 0:
+                    k = m.end() + t.start()
+                    end = m.end() + t.end()
+                    break
+            else:
+                raise ValueError('旁注 span 未闭合')
+            txt = re.sub(r'\s+', ' ', body[m.end():k]).strip()
+            out.append(body[pos:m.start()].rstrip(' '))
+            if txt:
+                notes.append(txt)
+                out.append(f'[^{len(notes)}]')
+            pos = end
+        out.append(body[pos:])
+        body = ''.join(out)
+        if notes:
+            body = body.rstrip('\n') + '\n\n' + '\n\n'.join(f'[^{i}]: {t}' for i, t in enumerate(notes, 1)) + '\n'
         return body
 
     @staticmethod

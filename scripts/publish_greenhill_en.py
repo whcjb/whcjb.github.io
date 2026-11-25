@@ -111,6 +111,7 @@ BOOK = tcp_publish.Book(
     front=front(), back=[], back_label='',
     about_en=about_en, about_zh=about_zh,
     witness_zh='原版影像',
+    margin_footnotes=True,                         # 页边旁注排成页底脚注（与加尔文注释一致）
     conj_note_col=4,
     conj_intro_zh='以下各处录入本标为读不出，原版胶片影像上也被墨团、透印盖住。编者对照 1863 年爱丁堡 Nichol 重排本'
                   '（Sherman 编，另一实物排印，见 Internet Archive anexpositionofth00greeuoft）补出：重排本与编者推断同词的，'
