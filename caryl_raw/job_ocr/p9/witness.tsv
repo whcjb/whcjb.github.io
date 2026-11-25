@@ -10,6 +10,7 @@
 30-1	agree	fob		sob
 30-1	witness	secs	sees	sees
 30-1	solo	doube	doubt	
+30-1	confirm	igainst	against	against
 30-1	noalign	urishing		
 30-1	agree	ftrain		strain
 30-1	noalign	paradisicall		isical
@@ -62,7 +63,7 @@
 30-1	noalign	derations		
 30-1	confirm	mournirg	mourning	monrning
 30-1	confirm	mithout	without	without
-30-1	noalign	gregatimn		
+30-1	witness	congregatimn	congregation	congregation
 30-1	confirm	cempanion	companion	companion
 30-1	solo	stin	stir	
 30-1	confirm	mith	with	with
@@ -185,7 +186,6 @@
 30-1	confirm	Zopbar	Zophar	zophar
 30-1	witness	surelv	surely	surely
 30-1	noalign	jobhad		
-30-1	solo	thers	there	
 30-1	realword	mould	would	would
 30-1	noalign	Mallomes		mallowes
 30-1	witness	basbes	bushes	bushes
@@ -298,9 +298,7 @@
 30-1	confirm	xhich	which	which
 30-1	realword	mere	were	were
 30-1	witness	fighe	sight	sight
-30-1	noalign	slated		
 30-1	confirm	mhilst	whilst	whilst
-30-1	noalign	zing		
 30-1	confirm	manifeld	manifold	manisold
 30-1	agree	deriders		deriders
 30-1	agree-fix	fhew	shew	shew
@@ -385,12 +383,9 @@
 30-1	agree	hauking		hauking
 30-1	conflict	curre		cur
 30-1	witness	unfitnesse	unfitness	unsitness
-30-1	noalign	dained		
 30-1	witness	nith	with	with
 30-1	realword	mould	would	would
 30-1	confirm	degs	dogs	dogs
-30-1	noalign	neral		
-30-1	noalign	fol		
 30-1	confirm	mherein	wherein	wherein
 30-1	confirm	lob	Job	job
 30-1	noalign	contemptibly		
@@ -482,7 +477,6 @@
 30-11	witness	brozen	broken	broken
 30-11	confirm	pouer	power	power
 30-11	confirm	powen	power	power
-30-11	noalign	dience		
 30-11	realword	ot	of	os
 30-11	confirm	onIy	only	only
 30-11	confirm	breabe	breake	break
@@ -591,9 +585,9 @@
 30-11	witness	etis	tis	tis
 30-11	noalign	riphteous		rightcous
 30-11	confirm	Judget	Judges	judges
-30-11	solo	righs	right	
-30-11	solo	cyes	eyes	
-30-11	solo	mhen	when	
+30-11	conflict	righs		r
+30-11	confirm	cyes	eyes	eyes
+30-11	confirm	mhen	when	when
 30-11	noalign	juages		xdzes
 30-11	confirm	chat	that	that
 30-11	confirm	serled	setled	setled
@@ -711,7 +705,7 @@
 30-11	witness	unbridl	unbridled	unbridled
 30-11	agree	fob		sob
 30-11	witness	breskes	breaks	breaks
-30-11	solo	uho	who	
+30-11	confirm	uho	who	who
 30-11	confirm	uhich	which	which
 30-11	realword	mill	will	will
 30-11	noalign	forus		
@@ -763,7 +757,6 @@
 30-11	witness	Bathsteba	Bathsheba	bathsheba
 30-11	witness	fobs	sob	sob
 30-11	split	torise	to rise	to
-30-11	witness	buse	abuse	abuse
 30-11	witness	thet	thee	thee
 30-11	confirm	mrath	wrath	wrath
 30-11	agree	mates		mates
@@ -790,10 +783,8 @@
 30-11	confirm	selse	selfe	sels
 30-11	confirm	nilt	wilt	wilt
 30-11	witness	incampe	incamp	incamp
-30-11	conflict	destru		de
 30-11	confirm	trauslater	translater	translater
-30-11	solo	mayes	wayes	
-30-11	noalign	venge		
+30-11	confirm	mayes	wayes	ways
 30-11	confirm	utmest	utmost	utmost
 30-11	noalign	toafflict		
 30-11	confirm	amay	away	away
@@ -879,7 +870,6 @@
 30-13	confirm	Aischiefe	Mischiefe	mischies
 30-13	confirm	licrle	little	little
 30-13	confirm	thesc	these	these
-30-13	noalign	ceive		
 30-13	agree	fob		sob
 30-13	noalign	wiched		withed
 30-13	confirm	mabe	make	make
@@ -914,13 +904,13 @@
 30-13	confirm	auaken	awaken	awaken
 30-13	confirm	nho	who	who
 30-13	noalign	perusalems		
-30-13	solo	suord	sword	
+30-13	confirm	suord	sword	sword
 30-13	confirm	uill	will	will
 30-13	solo	touards	towards	
 30-13	confirm	uould	would	would
 30-13	confirm	mhich	which	which
 30-13	confirm	littie	little	little
-30-13	split	inhis	in his	in
+30-13	noalign	inhis		
 30-13	confirm	formard	forward	sorward
 30-13	confirm	ealling	calling	calling
 30-13	confirm	backmard	backward	backward
@@ -971,12 +961,9 @@
 30-13	witness	nont	none	none
 30-13	confirm	gosd	good	good
 30-13	split	Ihave	I have	have
-30-13	conflict	Cala		calamity
-30-13	noalign	mity		
+30-13	realword	mas	was	was
 30-13	witness	thue	thus	thus
 30-13	confirm	destiture	destitute	destitute
-30-13	conflict	experien		experienced
-30-13	noalign	ced		
 30-13	witness	sserted	deserted	deserted
 30-13	agree-fix	Pfal	Psal	psal
 30-13	confirm	mith	with	with
@@ -987,7 +974,6 @@
 30-13	agree	Expofitions		expositions
 30-13	noalign	rusht		
 30-13	witness	fobs	sob	sob
-30-13	conflict	treame		extream
 30-13	witness	auxilaries	auxiliaries	auxiliaries
 30-13	solo	domne	downe	
 30-13	solo	lers	lets	
@@ -1133,7 +1119,6 @@
 30-13	confirm	deselation	desolation	desolatios
 30-13	confirm	Gsvernour	Governour	governour
 30-13	confirm	effence	offence	ossence
-30-13	conflict	accu		accusation
 30-13	confirm	Josb	Josh	sosh
 30-13	realword	bave	have	have
 30-13	confirm	frec	free	sree
@@ -1166,8 +1151,8 @@
 30-13	noalign	rray		
 30-13	solo	tbe	the	
 30-13	noalign	svuen		
-30-13	confirm	secth	seeth	sceth
-30-13	agree-fix	seeble	feeble	seeble
+30-13	solo	secth	seeth	
+30-13	solo	seeble	feeble	
 30-13	noalign	Abshalom		
 30-13	solo	camo	came	
 30-13	solo	mhen	when	
@@ -1176,7 +1161,7 @@
 30-13	realword	Wich	With	with
 30-13	witness	soleene	spleen	spleen
 30-13	noalign	fibs		
-30-13	noalign	willers		
+30-13	agree	willers		willers
 30-13	noalign	toit		
 30-13	solo	aext	next	
 30-15	noalign	melfare		
@@ -1187,12 +1172,10 @@
 30-15	solo	mith	with	
 30-15	solo	Verf	Vers	
 30-15	solo	xind	wind	
-30-15	noalign	trou		
 30-15	solo	mabe	make	
 30-15	noalign	miseral		
 30-15	noalign	temporas		
 30-15	noalign	possesst		
-30-15	conflict	discom		proper
 30-15	noalign	ansmolie		
 30-15	noalign	Genders		
 30-15	noalign	frighting		
@@ -1241,7 +1224,7 @@
 30-15	confirm	uhat	what	what
 30-15	witness	struzk	struck	struck
 30-15	confirm	mith	with	with
-30-15	noalign	Josbua		oshu
+30-15	solo	Josbua	Joshua	
 30-15	confirm	kuow	know	know
 30-15	solo	vour	hour	
 30-15	confirm	uith	with	with
@@ -1312,7 +1295,6 @@
 30-15	confirm	peculiat	peculiar	peculiar
 30-15	conflict	bya		by
 30-15	confirm	uas	was	was
-30-15	solo	ving	wing	
 30-15	confirm	uas	was	was
 30-15	agree	emanation		emanation
 30-15	noalign	Cas		
@@ -1394,7 +1376,6 @@
 30-15	confirm	vill	will	will
 30-15	agree	sormal		sormal
 30-15	witness	uhes	when	when
-30-15	witness	unskill	unskilful	unskilsul
 30-15	noalign	Emperickes		empericks
 30-15	noalign	unsbilfull		nskzlsul
 30-15	realword	mord	word	word
@@ -1589,7 +1570,7 @@
 30-15	confirm	shemed	shewed	shewed
 30-15	confirm	begiuning	beginning	beginning
 30-15	confirm	befere	before	besore
-30-15	solo	prayet	prayer	
+30-15	confirm	prayet	prayer	prayer
 30-15	witness	Nhole	Whole	whole
 30-15	solo	Secondiy	Secondly	
 30-15	conflict	onsy		ly
@@ -1729,7 +1710,7 @@
 30-15	confirm	uill	will	will
 30-15	noalign	uarrant		
 30-15	agree	fob		sob
-30-15	noalign	nighte		
+30-15	noalign	nighte		niglt
 30-15	noalign	siuens		sincws
 30-15	witness	fobi	sob	sob
 30-15	witness	Pob	Sob	sob
@@ -1787,7 +1768,7 @@
 30-15	witness	jognted	joynted	joynted
 30-15	noalign	painsull		paintul
 30-15	witness	Pfal	Ful	sul
-30-15	confirm	boues	bones	bones
+30-15	solo	boues	bones	
 30-15	noalign	Afy		
 30-15	noalign	libe		uh
 30-15	confirm	hept	kept	kept
@@ -1895,7 +1876,6 @@
 30-18	noalign	remedilessness		remedilesness
 30-18	realword	aud	and	and
 30-18	noalign	bootes		boots
-30-18	noalign	flicteth		
 30-18	solo	pouer	power	
 30-18	agree-fix	diseafe	disease	disease
 30-18	confirm	littie	little	little
@@ -1917,8 +1897,6 @@
 30-18	confirm	brouen	broken	broken
 30-18	confirm	mhat	what	what
 30-18	conflict	asit		it
-30-18	conflict	ulce		ulcerous
-30-18	noalign	rous		
 30-18	witness	vras	was	was
 30-18	confirm	uith	with	with
 30-18	agree	purulent		purulent
@@ -2231,9 +2209,9 @@
 30-18	conflict	Iery		cryed
 30-18	confirm	tuou	thou	thou
 30-18	witness	sot	not	not
-30-18	noalign	intothe		
-30-18	noalign	ambecome		
-30-18	solo	libe	like	
+30-18	split	intothe	into the	into
+30-18	conflict	ambecome		become
+30-18	confirm	libe	like	like
 30-18	witness	loares	soars	soars
 30-18	split	temptationis	temptation is	temptation
 30-18	witness	temptions	temptations	temptations
@@ -2429,7 +2407,6 @@
 30-2	witness	spall	shall	shall
 30-2	confirm	mhose	whose	whose
 30-2	confirm	camt	came	came
-30-2	noalign	nifie		
 30-2	noalign	urisning		
 30-2	agree	decrepit		decrepit
 30-2	witness	uir	nor	nor
@@ -2457,7 +2434,6 @@
 30-2	witness	ana	and	and
 30-2	confirm	necessery	necessary	necessary
 30-2	confirm	maus	mans	mans
-30-2	noalign	pany		
 30-2	agree	varlets		varlets
 30-2	realword	mere	were	were
 30-2	noalign	deboyshery		debauchery
@@ -2531,7 +2507,6 @@
 30-2	confirm	xho	who	who
 30-2	witness	grester	greater	greater
 30-2	confirm	laith	faith	saith
-30-2	noalign	struction		
 30-2	noalign	feolisp		soolssb
 30-2	confirm	admonirion	admonition	admonition
 30-2	confirm	couasel	counsel	counsel
@@ -2547,6 +2522,7 @@
 30-2	confirm	justiy	justly	justly
 30-2	noalign	tobs		
 30-2	confirm	eld	old	old
+30-2	confirm	onIy	only	only
 30-2	agree-fix	rable	table	rable
 30-2	noalign	uselesnesse		uselessness
 30-2	noalign	beggarlinesse		baggerliness
@@ -2554,7 +2530,6 @@
 30-2	confirm	himselse	himselfe	himsels
 30-2	witness	perishi	perish	perish
 30-2	confirm	xant	want	want
-30-2	noalign	veniencies		
 30-2	noalign	dred		
 30-2	confirm	aluayes	alwayes	alwayes
 30-2	noalign	amine		
@@ -2698,7 +2673,6 @@
 30-21	witness	thon	thou	thou
 30-21	confirm	fignt	fight	sight
 30-21	conflict	Coppie		copy
-30-21	noalign	riage		
 30-21	agree	dandledst		dandledst
 30-21	confirm	nom	now	now
 30-21	agree	frownest		srownest
@@ -2869,7 +2843,6 @@
 30-21	agree	weatherbeaten		weatherbeaten
 30-21	agree	lee		lee
 30-21	noalign	expoled		
-30-21	noalign	rai		
 30-21	solo	duft	dust	
 30-21	solo	kneu	knew	
 30-21	solo	temptitions	temptations	
@@ -2958,19 +2931,17 @@
 30-21	realword	aud	and	and
 30-21	confirm	suall	shall	shall
 30-21	witness	partictular	particular	particular
-30-21	noalign	significati		hensive
 30-21	confirm	xisdome	wisdome	wisdom
 30-21	confirm	misdeme	wisdome	wisdom
 30-21	confirm	mits	wits	wits
 30-21	confirm	lihe	like	likg
 30-21	confirm	drunben	drunken	drunken
 30-21	solo	mits	wits	
-30-21	confirm	xisdome	wisdome	wisdom
+30-21	solo	xisdome	wisdome	
 30-21	confirm	swallomed	swallowed	swallowed
-30-21	confirm	suallowed	swallowed	swallowed
+30-21	solo	suallowed	swallowed	
 30-21	realword	uits	wits	wits
 30-21	witness	sœallowed	swallowed	swallowed
-30-21	noalign	dition		
 30-21	confirm	uisdome	wisdome	wisdom
 30-21	noalign	wildome		
 30-21	conflict	Tuou		t
@@ -3054,7 +3025,7 @@
 30-21	witness	onsy	only	only
 30-21	realword	mere	were	were
 30-21	conflict	siemes		shews
-30-21	solo	uas	was	
+30-21	confirm	uas	was	was
 30-21	noalign	itt		zts
 30-21	witness	peris	perish	perish
 30-21	confirm	mhen	when	when
@@ -3066,7 +3037,7 @@
 30-21	confirm	milt	wilt	wilt
 30-21	realword	tuo	two	two
 30-21	conflict	spurily		shortly
-30-21	solo	milt	wilt	
+30-21	confirm	milt	wilt	wilt
 30-21	confirm	lihe	like	like
 30-21	confirm	vhich	which	which
 30-21	solo	litt	lift	
@@ -3256,7 +3227,7 @@
 30-21	solo	Hombeit	Howbeit	
 30-21	realword	mill	will	will
 30-21	realword	ont	out	out
-30-21	split	Ianswer	I answer	answer
+30-21	noalign	Ianswer		
 30-21	confirm	pouer	power	power
 30-21	confirm	Tesus	Jesus	jesus
 30-21	confirm	ferth	forth	sorth
@@ -3435,7 +3406,7 @@
 30-21	noalign	fob		
 30-21	solo	Hombeit	Howbeit	
 30-21	solo	fortb	forth	
-30-21	solo	uill	will	
+30-21	confirm	uill	will	will
 30-21	confirm	grearly	greatly	greatly
 30-21	confirm	deach	death	death
 30-21	witness	wiht	will	will
@@ -3636,7 +3607,6 @@
 30-25	noalign	brew		
 30-25	noalign	wai		
 30-25	noalign	bard		bgrd
-30-25	solo	ton	ten	
 30-25	noalign	trar		
 30-25	noalign	slates		
 30-25	confirm	wetpe	weepe	weep
@@ -3674,7 +3644,6 @@
 30-25	noalign	init		
 30-25	noalign	xeepe		
 30-25	confirm	seule	soule	soul
-30-25	realword	wy	my	my
 30-25	conflict	inthis		this
 30-25	solo	soid	said	
 30-25	confirm	rendrirg	rendring	rendring
@@ -3756,6 +3725,7 @@
 30-25	noalign	reconhiliation		recon
 30-25	confirm	peeple	people	people
 30-25	witness	symphathy	sympathy	sympathy
+30-25	conflict	handreliefe		hand
 30-25	witness	cternall	external	external
 30-25	confirm	mithout	without	without
 30-25	witness	onty	only	only
@@ -4067,7 +4037,7 @@
 30-25	confirm	uho	who	who
 30-25	witness	ofrenest	oftenest	ostenest
 30-25	confirm	chough	though	though
-30-25	noalign	mhs		
+30-25	witness	mhs	who	who
 30-25	witness	marned	warned	warned
 30-25	witness	pretared	prepared	prepared
 30-25	noalign	upin		
@@ -4088,6 +4058,7 @@
 30-28	witness	PHese	Hese	hese
 30-28	witness	meut	went	went
 30-28	confirm	blache	blacke	black
+30-28	conflict	blackeGarments		black
 30-28	agree	Kedarens		kedarens
 30-28	confirm	wbich	which	whych
 30-28	confirm	Dauid	David	david
@@ -4109,17 +4080,16 @@
 30-28	noalign	ynesse		
 30-28	witness	drynesse	driness	driness
 30-28	noalign	blaet		
-30-28	confirm	malke	walke	walk
-30-28	confirm	mithin	within	within
-30-28	confirm	outmard	outward	outward
-30-28	realword	mas	was	was
-30-28	confirm	mhen	when	when
+30-28	solo	malke	walke	
+30-28	solo	mithin	within	
+30-28	solo	outmard	outward	
+30-28	solo	mhen	when	
 30-28	solo	cleud	cloud	
-30-28	split	Sunve	Sun ve	sun
-30-28	witness	nhere	where	where
-30-28	confirm	meepe	weepe	weep
-30-28	witness	sorrens	sorrows	sorrows
-30-28	confirm	alene	alone	alone
+30-28	solo	Sunve	Sunne	
+30-28	noalign	nhere		
+30-28	noalign	meepe		
+30-28	noalign	sorrens		
+30-28	solo	alene	alone	
 30-28	confirm	mhich	which	which
 30-28	confirm	tbemselves	themselves	themselves
 30-28	confirm	sorrones	sorrowes	sorrows
@@ -4161,7 +4131,6 @@
 30-28	witness	sech	such	such
 30-28	solo	malked	walked	
 30-28	conflict	darknisse		dark
-30-28	agree	pounded		pounded
 30-28	confirm	scorcued	scorched	scorched
 30-28	confirm	blache	blacke	black
 30-28	confirm	mith	with	with
@@ -4194,7 +4163,7 @@
 30-28	noalign	morbes		
 30-28	noalign	tobe		
 30-28	confirm	sonle	soule	soul
-30-28	solo	morld	world	
+30-28	confirm	morld	world	world
 30-28	confirm	folloued	followed	sollowed
 30-28	confirm	uith	with	with
 30-28	noalign	roth		
@@ -4276,13 +4245,11 @@
 30-28	confirm	mith	with	with
 30-28	agree-fix	Jefus	Jesus	jesus
 30-28	confirm	Berth	Birth	birth
-30-28	noalign	bly		
 30-28	agree	grumble		grumble
 30-28	witness	clorthed	cloathed	cloathed
 30-28	confirm	felfe	selfe	sels
 30-28	witness	Tub	Sob	sob
 30-28	noalign	fob		soba
-30-28	solo	tants	tents	
 30-28	agree-fix	forrow	sorrow	sorrow
 30-28	witness	cuill	twill	twill
 30-28	agree-fix	forrow	sorrow	sorrow
@@ -4335,7 +4302,7 @@
 30-28	confirm	brotber	brother	brother
 30-28	witness	naster	waste	waste
 30-28	noalign	heis		
-30-28	noalign	athfull		
+30-28	conflict	athfull		sul
 30-28	confirm	wastfull	wast full	wastsul
 30-28	witness	wastfullnes	wastfulness	wastsulness
 30-28	conflict	coarte		coat
@@ -4360,7 +4327,7 @@
 30-28	noalign	Sth		
 30-28	confirm	Omle	Owle	owl
 30-28	noalign	etymologicall		mological
-30-28	noalign	schriching		
+30-28	noalign	schriching		scritching
 30-28	agree-fix	Firft	First	sirst
 30-28	conflict	desa		desarts
 30-28	witness	Ihat	That	that
@@ -4413,7 +4380,7 @@
 30-28	confirm	dolefuil	dolefull	dolesul
 30-28	noalign	ditties		dittics
 30-28	confirm	lementing	lamenting	lamenting
-30-28	witness	pellican	pelican	pelican
+30-28	noalign	pellican		
 30-28	witness	omles	owls	owls
 30-28	witness	termble	terrible	terrible
 30-28	confirm	uas	was	was
@@ -4477,7 +4444,7 @@
 30-28	confirm	malketh	walketh	walketh
 30-28	confirm	xith	with	with
 30-28	realword	mise	wise	wise
-30-28	confirm	cempanion	companion	companzon
+30-28	noalign	cempanion		
 30-28	witness	isdome	wisdom	wisdom
 30-28	confirm	uith	with	with
 30-28	noalign	lomon		
@@ -4625,7 +4592,7 @@
 30-28	confirm	uith	with	with
 30-28	confirm	meepe	weepe	weep
 30-28	witness	jollitie	jollity	jollity
-30-28	solo	npon	upon	
+30-28	confirm	npon	upon	upon
 30-28	confirm	dowre	downe	down
 30-28	confirm	Babylen	Babylon	babylon
 30-28	noalign	Willones		
@@ -4663,7 +4630,7 @@
 30-28	conflict	winedrinkers		wine
 30-28	solo	vill	will	
 30-28	confirm	thoe	thee	the
-30-28	solo	defolate	desolate	
+30-28	agree-fix	defolate	desolate	desolate
 30-28	confirm	voycs	voyce	voyce
 30-28	witness	miestones	milstones	milstones
 30-28	confirm	Babyloz	Babylon	babylon
@@ -4706,7 +4673,7 @@
 30-28	confirm	nane	nine	none
 30-28	agree-fix	ftudy	study	study
 30-28	noalign	præfixing		
-30-28	solo	morld	world	
+30-28	confirm	morld	world	world
 30-28	noalign	scheames		scheems
 30-28	confirm	auay	away	away
 30-28	noalign	othi		thirtich
@@ -4737,7 +4704,6 @@
 30-4	witness	malloms	mallows	mallows
 30-4	confirm	nesd	need	need
 30-4	noalign	malloms		pallows
-30-4	noalign	ticular		
 30-4	witness	mallous	mallows	mallows
 30-4	noalign	buhes		busbes
 30-4	realword	mas	was	was
@@ -4887,7 +4853,7 @@
 30-4	confirm	Bedy	Body	body
 30-4	witness	bodves	bodyes	bodyes
 30-4	noalign	excommunicate		
-30-4	solo	drivtn	driven	
+30-4	confirm	drivtn	driven	driven
 30-4	confirm	bady	body	body
 30-4	witness	Ecclesiasticall	Ecclesiastical	ecclesiastical
 30-4	realword	ot	of	os
@@ -4964,7 +4930,7 @@
 30-4	noalign	thiife		
 30-4	agree-fix	Verf	Vers	vers
 30-4	realword	duell	dwell	dwell
-30-4	noalign	sth		
+30-4	conflict	sth		sisth
 30-4	confirm	olifts	clifts	clists
 30-4	confirm	whieh	which	which
 30-4	noalign	housing		
@@ -4989,7 +4955,6 @@
 30-4	confirm	Matb	Math	mat
 30-4	confirm	nill	hill	will
 30-4	split	Ibuild	I build	build
-30-4	conflict	gravation		tion
 30-4	realword	mant	want	want
 30-4	noalign	afstiction		asslittion
 30-4	witness	housing	houling	houling
@@ -5204,7 +5169,6 @@
 30-8	confirm	sheued	shewed	shewed
 30-8	noalign	hirbarously		barbarously
 30-8	confirm	tegether	together	rogether
-30-8	noalign	slater		
 30-8	noalign	deriders		deri
 30-8	witness	braten	beaten	beaten
 30-8	noalign	fobs		
@@ -5219,7 +5183,6 @@
 30-8	agree	bewrayed		bewrayed
 30-8	confirm	nom	now	now
 30-8	confirm	uho	who	who
-30-8	noalign	Instru		
 30-8	solo	Musitian	Musician	
 30-8	witness	playin	playing	playing
 30-8	confirm	Musitian	Musician	musician
@@ -5298,13 +5261,10 @@
 30-8	agree	gladded		gladded
 30-8	confirm	wirked	winked	wicked
 30-8	noalign	mischiese		mischics
-30-8	solo	rence	hence	
 30-8	noalign	Tobi		
 30-8	conflict	intheir		their
 30-8	witness	perion	person	person
 30-8	realword	mord	word	word
-30-8	conflict	Contemp		con
-30-8	noalign	tuous		temptuous
 30-8	confirm	speakirgs	speakings	speakings
 30-8	noalign	despisiogs		despilings
 30-8	solo	cousidered	considered	
@@ -5341,7 +5301,6 @@
 30-8	witness	disdainfull	disdainful	disdainsul
 30-8	confirm	Firtt	First	sirst
 30-8	agree-fix	Verf	Vers	vers
-30-8	noalign	Abominati		abomi
 30-8	noalign	cense		
 30-8	noalign	abhorrent		abbwrrent
 30-8	confirm	wis	was	was
@@ -5396,8 +5355,6 @@
 30-8	noalign	upto		
 30-8	agree-fix	Jefus	Jesus	jesus
 30-8	agree-fix	fhame	shame	shame
-30-8	noalign	Contemp		
-30-8	noalign	tuously		
 30-8	witness	setd	seed	seed
 30-8	conflict	fortbin		sorth
 30-8	confirm	fase	face	sace
@@ -5408,7 +5365,6 @@
 30-8	agree-fix	themfelves	themselves	themselves
 30-8	confirm	Cbap	Chap	chap
 30-8	confirm	uith	with	with
-30-8	witness	taphor	metaphor	metaphor
 30-8	confirm	likeuise	likewise	likewise
 30-8	witness	fuce	face	sace
 30-8	confirm	himselse	himselfe	himsels
@@ -5424,15 +5380,12 @@
 30-8	realword	mill	will	will
 30-8	witness	aod	and	and
 30-8	agree	detested		detested
-30-8	solo	dee	doe	
 30-8	conflict	hathiit		hath
 30-8	witness	grievousty	grievously	grievously
-30-8	noalign	shte		
+30-8	witness	shte	she	she
 30-8	noalign	ifit		
 30-8	confirm	nill	hill	will
 30-8	noalign	touse		
-30-8	conflict	refe		reserence
-30-8	solo	rence	hence	
 30-8	solo	thrce	three	
 30-8	witness	brcause	because	because
 30-8	witness	Tab	Sob	sob
@@ -5448,9 +5401,9 @@
 30-8	witness	Cæsar	Cesar	cesar
 30-8	confirm	strihe	strike	strike
 30-8	agree	reputations		reputations
-30-8	noalign	shamefail		
-30-8	noalign	speming		
-30-8	solo	sball	shall	
+30-8	split	shamefail	shame fail	shame
+30-8	conflict	speming		ng
+30-8	confirm	sball	shall	shall
 30-8	noalign	gloryBut		
 30-8	noalign	mponthe		
 31-1	confirm	mith	with	with
@@ -5612,6 +5565,7 @@
 31-1	witness	Uacleanenes	Uncleanness	uncleanness
 31-1	confirm	beathens	heathens	heathens
 31-1	confirm	uith	with	with
+31-1	realword	duell	dwell	dwell
 31-1	noalign	senciblenes		libleness
 31-1	confirm	corruprion	corruption	corruption
 31-1	confirm	yer	yet	yet
@@ -5627,8 +5581,6 @@
 31-1	confirm	perferme	performe	persorm
 31-1	confirm	heepe	keepe	keep
 31-1	conflict	incur		incursions
-31-1	noalign	tans		
-31-1	witness	pocrite	hypocrite	hypocrite
 31-1	confirm	mignt	might	might
 31-1	confirm	fincere	sincere	sincerg
 31-1	witness	imn	sin	sin
@@ -5636,7 +5588,6 @@
 31-1	confirm	nho	who	who
 31-1	witness	lanfud	lawful	lawsul
 31-1	witness	Fourtilly	Fourthly	sourthly
-31-1	conflict	ton		wanton
 31-1	confirm	usnally	usually	usually
 31-1	noalign	enfl		enslames
 31-1	noalign	ofthe		
@@ -5663,7 +5614,7 @@
 31-1	agree	exampl		exampl
 31-1	confirm	Encch	Enoch	enoch
 31-1	confirm	mez	men	men
-31-1	solo	mives	wives	
+31-1	confirm	mives	wives	wives
 31-1	witness	xhm	whom	whom
 31-1	confirm	tlieir	their	their
 31-1	witness	casion	occasion	occasion
@@ -5757,7 +5708,6 @@
 31-1	confirm	shouid	should	should
 31-1	witness	mpon	upon	upon
 31-1	agree	Bethulah		bethulah
-31-1	noalign	neral		
 31-1	solo	libe	like	
 31-1	witness	sackcloatb	sackcloth	sackcloth
 31-1	confirm	yeuth	youth	youth
@@ -5862,7 +5812,6 @@
 31-1	confirm	wby	why	why
 31-1	solo	Psalue	Psalme	
 31-1	confirm	tuine	thine	twine
-31-1	noalign	tude		
 31-1	confirm	erdanger	endanger	endanger
 31-1	agree	myriads		myriads
 31-1	noalign	insenciblenes		insen
@@ -5928,10 +5877,10 @@
 31-13	confirm	causef	causes	cause
 31-13	agree	distinguifhly		distinguishly
 31-13	solo	trne	true	
-31-13	noalign	fty		
+31-13	agree	trufty		trusty
 31-13	confirm	faithfall	faithfull	saithsul
 31-13	witness	srmple	simple	simple
-31-13	noalign	trajudical		extrajudictal
+31-13	noalign	extrajudical		extrajudictal
 31-13	confirm	Ifrael	Israel	srael
 31-13	agree-fix	Ifrael	Israel	israel
 31-13	confirm	uith	with	with
@@ -5948,10 +5897,6 @@
 31-13	witness	Egrptian	Egyptian	egyptian
 31-13	noalign	Isratlites		sraclites
 31-13	confirm	himselse	himselfe	himsels
-31-13	witness	gistrate	magistrate	magistrate
-31-13	solo	peale	peace	
-31-13	agree	conde		conde
-31-13	noalign	scention		scension
 31-13	solo	betueen	between	
 31-13	noalign	subiedts		
 31-13	noalign	subiects		
@@ -5975,11 +5920,9 @@
 31-13	confirm	kuouing	knowing	kyowing
 31-13	confirm	wbich	which	which
 31-13	confirm	knoming	knowing	knowing
-31-13	conflict	Syri		syriack
-31-13	noalign	ack		
 31-13	confirm	shail	shall	shall
 31-13	confirm	faichfull	faithfull	saithsul
-31-13	noalign	Chumilis		
+31-13	noalign	Chumilis		humilis
 31-13	confirm	uho	who	who
 31-13	witness	expertences	experiences	experiences
 31-13	witness	guod	good	good
@@ -5992,7 +5935,7 @@
 31-13	witness	Jab	Sob	sob
 31-13	confirm	oune	owne	own
 31-13	agree-fix	Juftice	Justice	justice
-31-13	confirm	pover	power	power
+31-13	solo	pover	power	
 31-13	agree-fix	fhews	shews	shews
 31-13	noalign	stobs		
 31-13	witness	gentlenes	gentleness	gentleness
@@ -6000,14 +5943,14 @@
 31-13	confirm	uas	was	was
 31-13	noalign	meexe		
 31-13	confirm	vorld	world	world
-31-13	noalign	caufing		
+31-13	agree	caufing		causing
 31-13	noalign	Idoe		
-31-13	solo	mhen	when	
-31-13	solo	whin	when	
-31-13	solo	uhat	what	
-31-13	solo	sball	shall	
-31-13	noalign	Iansner		
-31-13	noalign	auakened		
+31-13	confirm	mhen	when	when
+31-13	confirm	whin	when	when
+31-13	confirm	uhat	what	what
+31-13	confirm	sball	shall	shall
+31-13	conflict	Iansner		j
+31-13	confirm	auakened	awakened	awakened
 31-13	noalign	cryof		
 31-13	solo	Iehoshaphat	Jehoshaphat	
 31-13	confirm	suall	shall	shall
@@ -6061,8 +6004,8 @@
 31-13	witness	suver	soever	soever
 31-13	agree-fix	vifit	visit	visit
 31-13	witness	tub	sob	sob
-31-13	conflict	vill		i
-31-13	conflict	ilt		exalt
+31-13	confirm	vill	will	will
+31-13	noalign	ilt		
 31-13	solo	tbe	the	
 31-13	confirm	nill	hill	will
 31-13	confirm	nill	hill	will
@@ -6189,7 +6132,7 @@
 31-13	confirm	mhen	when	when
 31-13	confirm	xhat	what	what
 31-13	confirm	suall	shall	shall
-31-13	conflict	ansmer		i
+31-13	confirm	ansmer	answer	answer
 31-13	agree	catechizeth		catechizeth
 31-13	confirm	oune	owne	own
 31-13	confirm	uith	with	with
@@ -6213,8 +6156,6 @@
 31-13	witness	wout	womb	womb
 31-13	witness	faspion	fashion	sashion
 31-13	realword	tuo	two	two
-31-13	conflict	propor		proportionable
-31-13	noalign	tionable		
 31-13	witness	faspion	fashion	sashion
 31-13	confirm	momb	womb	womb
 31-13	witness	limmiting	limiting	limiting
@@ -6279,6 +6220,7 @@
 31-13	witness	fiest	first	sirst
 31-13	confirm	humiliarion	humiliation	humiliation
 31-13	confirm	tbree	three	three
+31-13	realword	bave	have	have
 31-13	noalign	mechen		mecken
 31-13	realword	mould	would	would
 31-13	confirm	bebold	behold	behold
@@ -6336,7 +6278,7 @@
 31-16	confirm	translotes	translates	translates
 31-16	confirm	mished	wished	wished
 31-16	confirm	uith	with	with
-31-16	noalign	utterl		
+31-16	conflict	utterl		ut
 31-16	confirm	mith	with	with
 31-16	confirm	defire	desire	delire
 31-16	witness	lence	sence	sence
@@ -6366,10 +6308,9 @@
 31-16	realword	fitst	first	sirst
 31-16	witness	secondsy	secondly	secondly
 31-16	confirm	manton	wanton	wanton
-31-16	noalign	upply		asupply
+31-16	noalign	upply		
 31-16	noalign	clamors		
 31-16	confirm	uhose	whose	whose
-31-16	witness	artifici	artificial	artisicial
 31-16	witness	mitb	with	with
 31-16	confirm	disire	desire	desure
 31-16	witness	acte	acts	acts
@@ -6515,7 +6456,7 @@
 31-16	witness	nil	will	will
 31-16	realword	ue	we	we
 31-16	witness	vil	will	will
-31-16	witness	piven	given	given
+31-16	noalign	piven		
 31-16	agree-fix	hereaster	hereafter	hereaster
 31-16	witness	denialls	denials	denials
 31-16	confirm	shemeth	sheweth	shewth
@@ -6756,7 +6697,7 @@
 31-16	confirm	wben	when	when
 31-16	confirm	groune	growne	grown
 31-16	confirm	tamiliarity	familiarity	samiliarity
-31-16	noalign	wih		
+31-16	witness	wih	with	with
 31-16	agree-fix	Verf	Vers	vers
 31-16	solo	brougbt	brought	
 31-16	witness	xitb	with	with
@@ -6768,14 +6709,12 @@
 31-16	noalign	evenfrem		
 31-16	solo	mombe	wombe	
 31-16	noalign	conjoyne		
-31-16	noalign	trou		
 31-16	solo	yeuth	youth	
 31-16	noalign	connaturallnesse		connaturalness
 31-16	noalign	tobs		
 31-16	confirm	unuillingly	unwillingly	unwillingly
 31-16	solo	hound	bound	
 31-16	confirm	doune	downe	down
-31-16	witness	oppositi	opposition	opposition
 31-16	confirm	mercisull	mercifull	mercisul
 31-16	witness	nothin	nothing	nothing
 31-16	confirm	uas	was	was
@@ -6809,10 +6748,10 @@
 31-16	confirm	youtb	youth	youth
 31-16	confirm	mith	with	with
 31-16	noalign	Caike		
-31-16	witness	fluenced	influenced	insluenced
 31-16	confirm	Customt	Custome	custom
 31-16	witness	holyness	holiness	holiness
 31-16	witness	pauth	youth	youth
+31-16	realword	ot	of	os
 31-16	confirm	uho	who	who
 31-16	noalign	compession		compashon
 31-16	confirm	vith	with	with
@@ -6837,9 +6776,9 @@
 31-16	witness	earlyest	earliest	earliest
 31-16	confirm	mith	with	with
 31-16	confirm	mith	with	wigh
-31-16	witness	Obierve	Observe	observe
+31-16	noalign	Obierve		
 31-16	confirm	gracieus	gracious	gracious
-31-16	noalign	fatberly		
+31-16	confirm	fatberly	fatherly	asatherly
 31-16	agree-fix	respest	respect	respest
 31-16	conflict	resd		p
 31-16	witness	jatherlesse	fatherless	satherless
@@ -6870,7 +6809,7 @@
 31-16	witness	bast	hast	hast
 31-16	confirm	meake	weake	weak
 31-16	witness	handi	hands	hands
-31-16	solo	fecble	feeble	
+31-16	confirm	fecble	feeble	seeble
 31-16	confirm	mombe	wombe	womb
 31-16	confirm	mhile	while	while
 31-16	realword	mould	would	would
@@ -7005,7 +6944,7 @@
 31-19	confirm	bestox	bestow	bestow
 31-19	witness	charit	charity	charity
 31-19	noalign	tous		
-31-19	solo	eximple	example	
+31-19	confirm	eximple	example	example
 31-19	conflict	dee		do
 31-19	conflict	perisb		peri
 31-19	confirm	cleathing	cloathing	cloathing
@@ -7119,7 +7058,7 @@
 31-19	split	Ihave	I have	have
 31-19	confirm	xhen	when	when
 31-19	confirm	distinctiy	distinctly	distinctly
-31-19	confirm	mhere	where	where
+31-19	solo	mhere	where	
 31-19	realword	wich	with	with
 31-19	noalign	Ezck		ezch
 31-19	witness	Tous	Thus	thus
@@ -7146,14 +7085,13 @@
 31-19	confirm	moutb	mouth	mouth
 31-19	witness	rigorus	rigorous	rigorous
 31-19	noalign	protests		
+31-19	realword	bave	have	have
 31-19	witness	thers	others	others
 31-19	noalign	fpel		
 31-19	realword	bis	his	his
-31-19	noalign	niall		
 31-19	noalign	pells		
 31-19	confirm	himselse	himselfe	himsels
 31-19	confirm	gati	gate	gate
-31-19	witness	tine	latine	latine
 31-19	confirm	nhen	rhen	when
 31-19	witness	oun	own	own
 31-19	confirm	feene	seene	seen
@@ -7169,8 +7107,8 @@
 31-19	confirm	tbe	the	the
 31-19	confirm	remidilesse	remedilesse	remediless
 31-19	split	Ihave	I have	have
-31-19	witness	onty	only	only
-31-19	witness	ferborne	forborn	sorborn
+31-19	noalign	onty		
+31-19	noalign	ferborne		
 31-19	confirm	abborr	abhorr	abhorr
 31-19	witness	uhe	the	the
 31-19	confirm	fatherlisse	fatherlesse	satherless
@@ -7204,7 +7142,6 @@
 31-19	noalign	supercedes		supersedes
 31-19	confirm	pouers	powers	powers
 31-19	solo	doc	doe	
-31-19	realword	ue	we	we
 31-19	agree-fix	fhould	should	should
 31-19	noalign	bute		
 31-19	conflict	tboron		through
@@ -7369,7 +7306,7 @@
 31-2	witness	shast	shall	shall
 31-2	confirm	uatch	watch	watch
 31-2	confirm	uill	will	will
-31-2	solo	uill	will	
+31-2	confirm	uill	will	will
 31-2	confirm	inheritanct	inheritance	inheritance
 31-2	confirm	knon	know	know
 31-2	confirm	levers	lovers	lovers
@@ -7385,7 +7322,6 @@
 31-2	conflict	punisi		pu
 31-2	witness	merkers	workers	workers
 31-2	solo	wiched	wicked	
-31-2	noalign	nally		ionally
 31-2	agree	undestroyed		undestroyed
 31-2	confirm	suall	shall	shall
 31-2	noalign	Judeh		xdah
@@ -7410,7 +7346,6 @@
 31-2	confirm	worbers	workers	wozkers
 31-2	witness	punisoment	punishment	punishment
 31-2	noalign	struction		destruttion
-31-2	noalign	dred		
 31-2	noalign	lei		
 31-2	confirm	sbouldest	shouldest	shouldest
 31-2	confirm	loobed	looked	locked
@@ -7431,7 +7366,6 @@
 31-2	confirm	worhe	worke	work
 31-2	confirm	worbe	worke	work
 31-2	confirm	morke	worke	work
-31-2	conflict	occasi		occasions
 31-2	noalign	punishiments		nishments
 31-2	agree-fix	ftrange	strange	strange
 31-2	solo	Israelires	Israelites	
@@ -7658,7 +7592,7 @@
 31-2	confirm	mayes	wayes	wayes
 31-2	witness	almares	alwayes	alwayes
 31-2	confirm	righi	right	right
-31-2	confirm	wbo	who	who
+31-2	solo	wbo	who	
 31-2	confirm	himselse	himselfe	himsels
 31-2	witness	prevarling	prevailingly	prevailingly
 31-2	conflict	fuff		susserings
@@ -7728,12 +7662,7 @@
 31-22	conflict	allowus		us
 31-22	confirm	taith	faith	saith
 31-22	agree	Omnipotents		omnipotents
-31-22	conflict	Gram		grammatical
-31-22	noalign	maticall		
-31-22	conflict	Geni		genitive
-31-22	solo	tive	five	
 31-22	noalign	fficient		cskcient
-31-22	conflict	oppres		oppressors
 31-22	confirm	secondiy	secondly	secondly
 31-22	noalign	deftruction		struction
 31-22	agree	fob		sob
@@ -7771,7 +7700,7 @@
 31-22	witness	Apost	Apostle	apostle
 31-22	witness	Hebi	Heb	heb
 31-22	confirm	rulirg	ruling	ruling
-31-22	confirm	mith	with	with
+31-22	noalign	himmith		
 31-22	confirm	mith	with	with
 31-22	conflict	Destruct		destruction
 31-22	confirm	effice	office	ossice
@@ -8083,7 +8012,7 @@
 31-22	noalign	neche		
 31-22	confirm	premotion	promotion	promotion
 31-22	confirm	Eest	East	east
-31-22	solo	mest	most	
+31-22	witness	mest	west	west
 31-22	solo	Suth	Such	
 31-22	noalign	Juage		
 31-22	noalign	makrs		
@@ -8132,7 +8061,7 @@
 31-22	noalign	tous		
 31-22	confirm	oune	owne	own
 31-22	conflict	mre		we
-31-22	noalign	withus		
+31-22	split	withus	with us	with
 31-22	realword	ro	to	to
 31-22	confirm	likeuise	likewise	likewise
 31-22	noalign	Destructien		destruts
@@ -8273,7 +8202,6 @@
 31-24	realword	bave	have	have
 31-24	agree	recumbence		recumbence
 31-24	witness	presperitie	prosperity	prosperity
-31-24	noalign	taine		
 31-24	noalign	recumbence		recum
 31-24	conflict	Colloquie		collo
 31-24	witness	tnan	man	man
@@ -8359,7 +8287,7 @@
 31-24	witness	foolispness	foolishness	soolishness
 31-24	conflict	FoolesBable		sool
 31-24	agree-fix	fword	sword	sword
-31-24	solo	mith	with	
+31-24	confirm	mith	with	with
 31-24	witness	Ecck	Eccl	eccl
 31-24	witness	foolisti	foolish	soolish
 31-24	noalign	mif		
@@ -8463,7 +8391,7 @@
 31-24	realword	yon	you	you
 31-24	confirm	mherein	wherein	wherein
 31-24	agree	bufinesses		businesses
-31-24	split	blessingupon	blessing upon	blessing
+31-24	conflict	blessingupon		blessed
 31-24	confirm	uhich	which	which
 31-24	witness	vea	yea	yea
 31-24	realword	haue	have	have
@@ -8573,7 +8501,7 @@
 31-24	confirm	pomer	power	power
 31-24	witness	Scorpierse	Scorpions	scorpions
 31-24	confirm	suall	shall	shall
-31-24	noalign	rou		
+31-24	witness	rou	you	you
 31-24	noalign	Casars		sars
 31-24	agree	Pompeys		pompeys
 31-24	confirm	Notmitbstanding	Notwithstanding	notwithstanding
@@ -8697,7 +8625,7 @@
 31-24	confirm	Sorron	Sorrow	sorrow
 31-24	confirm	mithout	without	without
 31-24	noalign	Irejoyced		rejopced
-31-24	solo	nealth	health	
+31-24	confirm	nealth	health	wealth
 31-24	witness	Naled	Naked	naked
 31-24	conflict	mothermomb		mothers
 31-24	witness	worlaly	worldly	worldly
@@ -8737,7 +8665,7 @@
 31-24	witness	desres	desires	desires
 31-24	solo	mhatsoever	whatsoever	
 31-24	witness	beyona	beyond	beyond
-31-24	solo	kcepe	keepe	
+31-24	confirm	kcepe	keepe	keep
 31-24	witness	highting	heightning	heightning
 31-24	realword	ot	of	os
 31-24	witness	Thouph	Though	though
@@ -8771,7 +8699,7 @@
 31-24	noalign	bours		
 31-24	witness	exceedes	exceeds	exceeds
 31-24	confirm	uhen	when	when
-31-24	noalign	Creple		
+31-24	witness	Creple	Cripple	cripple
 31-24	split	Iby	I by	by
 31-24	realword	omn	own	own
 31-24	agree	fathering		sathering
@@ -8850,7 +8778,7 @@
 31-24	witness	essing	blessing	blessing
 31-24	agree-fix	gist	gift	gist
 31-24	noalign	Corolaryes		corollaries
-31-24	confirm	lamfull	lawfull	lawsul
+31-24	solo	lamfull	lawfull	
 31-24	witness	worlaly	worldly	worldly
 31-24	noalign	toget		
 31-24	noalign	getter		
@@ -8876,8 +8804,8 @@
 31-24	agree	bargaining		bargaining
 31-24	witness	auray	away	away
 31-24	agree	getters		getters
-31-24	witness	goud	good	good
-31-24	solo	uhat	what	
+31-24	noalign	goud		
+31-24	confirm	uhat	what	what
 31-24	realword	tuo	two	two
 31-24	confirm	safcIy	safely	sasely
 31-24	realword	band	hand	hand
@@ -8924,7 +8852,6 @@
 31-26	agree-fix	insluences	influences	insluences
 31-26	confirm	ratber	rather	rather
 31-26	realword	bave	have	have
-31-26	conflict	stellations		constellations
 31-26	witness	worldsy	worldly	worldly
 31-26	witness	consteslation	constellation	constellation
 31-26	witness	udge	judg	judg
@@ -9036,7 +8963,6 @@
 31-26	realword	mere	were	were
 31-26	noalign	Ibeheld		bcheld
 31-26	witness	sixed	shined	shined
-31-26	noalign	fieth		
 31-26	confirm	trarslate	translate	translate
 31-26	noalign	Ibeheld		bebeld
 31-26	witness	wten	when	when
@@ -9074,7 +9000,7 @@
 31-26	confirm	trauslates	translates	translates
 31-26	noalign	Adoone		
 31-26	witness	malzing	walking	walking
-31-26	noalign	eus		
+31-26	confirm	precieus	precious	precious
 31-26	witness	nex	new	new
 31-26	confirm	mhich	which	which
 31-26	witness	Mnone	Moon	moon
@@ -9115,12 +9041,9 @@
 31-26	realword	ns	us	us
 31-26	noalign	toit		
 31-26	solo	knouing	knowing	
-31-26	noalign	tues		
 31-26	noalign	ceedingly		
-31-26	noalign	Augu		
-31-26	noalign	stine		
 31-26	agree	Platonicks		platonicks
-31-26	noalign	Lactantius		lettantius
+31-26	noalign	Lactantius		
 31-26	witness	dol	idol	idol
 31-26	witness	thius	thus	thus
 31-26	confirm	mhen	when	when
@@ -9233,7 +9156,7 @@
 31-26	agree-fix	Obferve	Observe	observe
 31-26	witness	fiest	first	sirst
 31-26	confirm	mabe	make	make
-31-26	noalign	mranes		
+31-26	witness	mranes	means	means
 31-26	confirm	Ithe	It he	the
 31-26	confirm	jealeus	jealous	jealous
 31-26	solo	thers	there	
@@ -9259,9 +9182,8 @@
 31-26	confirm	pouer	power	power
 31-26	confirm	Antiquiry	Antiquity	antiquity
 31-26	agree	Osiris		osiris
-31-26	noalign	Ifis		
-31-26	witness	Ihat	That	that
-31-26	realword	ard	and	and
+31-26	confirm	Ifis	If is	sis
+31-26	noalign	Ihat		
 31-26	conflict	Egyprian		no
 31-26	noalign	Obelisbes		obeliks
 31-26	noalign	mottoes		
@@ -9305,7 +9227,6 @@
 31-26	witness	Conrgregation	Congregation	congregation
 31-26	confirm	tuen	then	than
 31-26	confirm	Prephets	Prophets	prophets
-31-26	agree	displea		displea
 31-26	confirm	yeur	your	your
 31-26	confirm	mayes	wayes	ways
 31-26	confirm	blache	blacke	black
@@ -9382,8 +9303,8 @@
 31-26	noalign	esty		
 31-26	confirm	amay	away	away
 31-26	realword	mas	was	was
-31-26	noalign	morshi		
-31-26	noalign	ppeth		
+31-26	conflict	morshi		wor
+31-26	conflict	ppeth		shipped
 31-26	realword	bis	his	his
 31-26	realword	ot	of	os
 31-26	agree	Syrophanes		syrophanes
@@ -9405,7 +9326,7 @@
 31-26	confirm	envites	invites	invites
 31-26	confirm	uine	wine	wine
 31-26	split	whenit	when it	when
-31-26	witness	cresture	creature	creature
+31-26	noalign	cresture		
 31-26	noalign	prourcation		provecation
 31-26	confirm	mell	well	well
 31-26	confirm	Deur	Deut	dent
@@ -9453,9 +9374,9 @@
 31-26	agree	inthe		inthe
 31-26	split	worshipit	worship it	worship
 31-26	agree-fix	theresore	therefore	theresore
-31-26	noalign	desclaimed		
+31-26	conflict	desclaimed		claimed
 31-26	noalign	yth		
-31-26	noalign	rejorced		
+31-26	witness	rejorced	rejoyce	rejoyce
 31-26	confirm	wealih	wealth	wealth
 31-26	witness	bien	been	been
 31-26	noalign	mhin		
@@ -9463,9 +9384,8 @@
 31-26	witness	widned	widened	widened
 31-26	agree	greatned		greatned
 31-26	confirm	Snn	Sun	sun
-31-26	conflict	ceaveit		it
+31-26	conflict	receaveit		receive
 31-26	solo	beart	heart	
-31-26	witness	larged	enlarged	enlarged
 31-26	confirm	mhen	when	when
 31-26	confirm	beart	heart	heart
 31-26	confirm	hatb	hath	hath
@@ -9523,14 +9443,14 @@
 31-26	noalign	feeth		secth
 31-26	agree-fix	fecret	secret	secret
 31-26	agree	Infecting		insecting
-31-26	noalign	saben		
+31-26	confirm	forsaben	forsaken	sorsaken
 31-26	realword	ue	we	we
 31-26	noalign	punisped		puni
 31-26	conflict	gue		go
 31-26	noalign	unpunisped		wnpunished
 31-26	conflict	Rnotp		know
 31-26	confirm	mhat	what	what
-31-26	solo	mhich	which	
+31-26	confirm	mhich	which	which
 31-26	confirm	himselse	himselfe	himsels
 31-26	confirm	remard	reward	reward
 31-26	witness	thet	thee	thee
@@ -9565,7 +9485,6 @@
 31-26	confirm	bissed	kissed	kyssed
 31-26	confirm	urapped	wrapped	wrapped
 31-26	agree	amus		amus
-31-26	noalign	bleme		
 31-26	noalign	tofoseph		soseph
 31-26	confirm	pomred	powred	poured
 31-26	confirm	bissed	kissed	kissed
@@ -9574,7 +9493,6 @@
 31-26	agree-fix	fhew	shew	shew
 31-26	conflict	bisse		k
 31-26	confirm	vith	with	with
-31-26	agree	shippers		shippers
 31-26	confirm	ansuered	answered	answered
 31-26	witness	Tet	Ter	ter
 31-26	confirm	hnees	knees	knees
@@ -9587,17 +9505,14 @@
 31-26	conflict	morbe		work
 31-26	confirm	Crafismen	Craftsmen	crastsmen
 31-26	witness	Bethet	Bethel	bethel
-31-26	noalign	sture		
 31-26	noalign	Minutius		minutix
 31-26	noalign	Fœlix		salix
 31-26	noalign	Cæcilius		cecilizs
 31-26	witness	vou	you	you
-31-26	witness	devoti	devotion	devotion
 31-26	realword	ot	of	os
 31-26	witness	Sud	Sun	sun
 31-26	confirm	themtelves	themselves	themselves
 31-26	confirm	vencration	veneration	veneration
-31-26	witness	mong	among	among
 31-26	noalign	Agigentines		agrigentines
 31-26	conflict	Sici		s
 31-26	confirm	morne	worne	worn
@@ -9647,9 +9562,7 @@
 31-26	solo	Verf	Vers	
 31-26	confirm	punisbed	punished	punished
 31-26	confirm	Parapurase	Paraphrase	paraphrase
-31-26	noalign	gar		
 31-26	conflict	greatesainiquitie		greatest
-31-26	noalign	tuagint		
 31-26	noalign	nalnesse		
 31-26	confirm	ludge	Judge	judg
 31-26	solo	motter	matter	
@@ -9666,6 +9579,7 @@
 31-26	witness	Idlatry	Idolatry	idolatry
 31-26	confirm	griat	great	great
 31-26	confirm	anotber	another	another
+31-26	realword	bim	him	him
 31-26	conflict	Hebrewis		hebrew
 31-26	confirm	Seripture	Scripture	scripture
 31-26	confirm	suall	shall	shall
@@ -9772,7 +9686,7 @@
 31-26	confirm	heginning	beginning	beginning
 31-26	realword	mere	were	were
 31-26	noalign	quitie		
-31-26	confirm	purished	punished	punished
+31-26	solo	purished	punished	
 31-26	noalign	connectz		conneqts
 31-26	agree	couples		couples
 31-26	confirm	acknouledge	acknowledge	acknowledg
@@ -9804,7 +9718,7 @@
 31-26	conflict	appeareupon		appear
 31-26	witness	Por	For	sor
 31-26	witness	punist	punish	punish
-31-26	witness	drire	drive	drive
+31-26	noalign	drire		
 31-26	noalign	orthodoxnesse		orthodoxness
 31-26	confirm	suord	sword	sword
 31-26	confirm	ouned	owned	owned
@@ -9824,7 +9738,7 @@
 31-26	confirm	heatts	hearts	hearts
 31-26	confirm	uith	with	with
 31-26	split	Iutterly	I utterly	utterly
-31-26	noalign	diske		jislike
+31-26	noalign	disI		
 31-26	noalign	toleration		roleration
 31-26	solo	doc	doe	
 31-26	noalign	toleration		roseration
@@ -9844,7 +9758,7 @@
 31-26	confirm	vith	with	with
 31-26	witness	suppoleth	supposeth	supposeth
 31-26	witness	punisoed	punished	punished
-31-26	noalign	Ffff		
+31-26	noalign	Ffff		strate
 31-26	witness	dolatry	idolatry	idolatry
 31-26	agree-fix	defire	desire	desire
 31-26	confirm	ldolatry	idolatry	idolatry
@@ -9888,7 +9802,7 @@
 31-26	witness	punisbable	punishable	punishable
 31-26	solo	agairst	against	
 31-26	noalign	Thertfere		
-31-26	witness	punisp	punish	punish
+31-26	noalign	punisp		
 31-26	solo	whatsotver	whatsoever	
 31-26	witness	gairst	against	against
 31-26	confirm	tne	the	the
@@ -9984,13 +9898,12 @@
 31-26	noalign	tobe		
 31-26	confirm	Fisthiy	Fifthly	sisthly
 31-26	noalign	acknouledge		acknowled
-31-26	conflict	uorld		id
+31-26	solo	uorld	world	
 31-26	noalign	Tobn		sobn
 31-26	conflict	Sethou		thou
 31-26	conflict	doc		do
 31-26	confirm	fellom	fellow	sellow
 31-26	confirm	sheued	shewed	shewed
-31-26	noalign	nying		
 31-26	noalign	worfhip		worstup
 31-26	confirm	vill	will	will
 31-26	confirm	himselse	himselfe	himsels
@@ -10114,9 +10027,9 @@
 31-26	witness	Rejyce	Rejoyce	rejoyce
 31-26	confirm	Iaw	law	law
 31-26	confirm	proose	proofe	proos
-31-26	noalign	hathbeen		
-31-26	noalign	ela		
-31-26	solo	shilt	shalt	
+31-26	conflict	hathbeen		been
+31-26	conflict	ela		vid
+31-26	confirm	shilt	shalt	shalt
 31-26	solo	eremy	enemy	
 31-26	noalign	Theu		
 31-26	solo	shilt	shalt	
@@ -10161,8 +10074,6 @@
 31-26	confirm	frecly	freely	sreely
 31-26	confirm	uhen	when	when
 31-26	witness	Cæsar	Cesar	cesar
-31-26	noalign	Pom		
-31-26	solo	pey	pay	
 31-26	confirm	Fourthiy	Fourthly	sourthly
 31-26	agree-fix	Fisthly	Fifthly	sisthly
 31-26	noalign	stepps		eps
@@ -10298,8 +10209,8 @@
 31-26	noalign	faccb		saceb
 31-26	witness	Balylonians	Babylonians	babylonians
 31-26	realword	cis	tis	tis
-31-26	noalign	verie		
-31-26	noalign	stondest		
+31-26	witness	verie	verse	verse
+31-26	witness	stondest	stoodest	stoodest
 31-26	agree	forreiners		sorreiners
 31-26	agree	ferusalem		serusalem
 31-26	noalign	nuo		
@@ -10417,8 +10328,6 @@
 31-26	noalign	Asif		
 31-26	confirm	mhen	when	when
 31-26	noalign	ceave		
-31-26	solo	vill	will	
-31-26	conflict	encrea		increases
 31-26	confirm	himselse	himselfe	himsels
 31-26	witness	shreud	shrewd	shrewd
 31-26	confirm	mhen	when	when
@@ -10488,21 +10397,20 @@
 31-26	noalign	perfor		
 31-26	confirm	patienoe	patience	patience
 31-26	noalign	submifsion		submiskon
-31-26	noalign	enmities		enmitics
+31-26	noalign	enmities		
 31-26	noalign	Isuffered		
 31-26	noalign	meuih		
 31-26	noalign	xishing		
-31-26	realword	bis	his	his
-31-26	noalign	himselse		himscls
+31-26	solo	himselse	himselfe	
 31-26	confirm	watter	matter	matter
 31-26	confirm	mhen	when	when
 31-26	confirm	saffered	suffered	sussercd
 31-26	noalign	soffired		
-31-26	noalign	palaue		
-31-26	noalign	Hebrewis		
-31-26	solo	Neithor	Neither	
-31-26	noalign	straint		
-31-26	solo	Abrabam	Abraham	
+31-26	witness	palaue	palate	palate
+31-26	conflict	Hebrewis		hebrew
+31-26	confirm	Neithor	Neither	neither
+31-26	realword	mill	will	will
+31-26	noalign	Abrabam		abra
 31-26	solo	Sarab	Sarah	
 31-26	noalign	imelech		
 31-26	solo	beart	heart	
@@ -10525,20 +10433,20 @@
 31-26	confirm	tbe	the	the
 31-26	witness	Hebrewr	Hebrew	hebrew
 31-26	noalign	giut		
-31-26	confirm	urath	wrath	wrath
+31-26	solo	urath	wrath	
 31-26	solo	apon	upon	
-31-26	confirm	mhereof	whereof	whereos
-31-26	witness	yearis	tears	tears
-31-26	conflict	seche		seek
+31-26	solo	mhereof	whereof	
+31-26	noalign	yearis		
+31-26	noalign	seche		
 31-26	confirm	mith	with	with
 31-26	confirm	fastirg	fasting	sasting
 31-26	split	Igave	I gave	gave
 31-26	confirm	mighi	might	might
 31-26	witness	accomplistment	accomplishment	accomplishment
 31-26	noalign	fob		
-31-26	solo	seule	soule	
-31-26	solo	pomer	power	
-31-26	solo	lob	Job	
+31-26	confirm	seule	soule	soul
+31-26	confirm	pomer	power	power
+31-26	witness	lob	sob	sob
 31-26	noalign	casiest		
 31-26	noalign	Nither		
 31-26	noalign	corraptiens		
@@ -10546,7 +10454,7 @@
 31-26	solo	botb	both	
 31-26	solo	Meses	Moses	
 31-26	solo	spabe	spake	
-31-26	agree-fix	Pfal	Psal	psal
+31-26	solo	Pfal	Psal	
 31-26	agree-fix	Firft	First	sirst
 31-26	noalign	uheu		
 31-26	solo	dee	doe	
@@ -10559,15 +10467,15 @@
 31-26	confirm	mhich	which	which
 31-26	solo	membert	members	
 31-26	solo	corsideration	consideration	
-31-26	noalign	stopus		
-31-26	noalign	addressing		
-31-26	solo	neight	height	
-31-26	noalign	encumbrance		
+31-26	agree	stopus		stopus
+31-26	noalign	addressing		areaddressing
+31-26	confirm	neight	height	weight
+31-26	conflict	encumbrance		cumbrance
 31-26	solo	mhich	which	
 31-26	solo	tasily	easily	
-31-26	noalign	indwelling		
-31-26	noalign	ihat		
-31-26	solo	uith	with	
+31-26	agree	indwelling		indwelling
+31-26	noalign	ihat		chat
+31-26	confirm	uith	with	with
 31-26	agree	dangling		dangling
 31-26	solo	worid	world	
 31-26	noalign	compliances		compt
@@ -10739,7 +10647,7 @@
 31-26	agree	fpecch		specch
 31-26	solo	flouing	flowing	
 31-26	agree-fix	lise	life	lise
-31-26	witness	nerds	words	words
+31-26	noalign	nerds		
 31-26	agree-fix	mufick	musick	musick
 31-26	confirm	vords	words	words
 31-26	witness	lring	lying	lying
@@ -10757,7 +10665,7 @@
 31-26	agree	init		init
 31-26	confirm	mhole	whole	whole
 31-26	confirm	settetb	setteth	setteth
-31-26	solo	mhole	whole	
+31-26	confirm	mhole	whole	whole
 31-26	confirm	mhole	whole	whole
 31-26	confirm	caurse	course	course
 31-26	noalign	LII		
@@ -10788,7 +10696,7 @@
 31-26	confirm	mith	with	with
 31-26	confirm	mith	with	with
 31-26	witness	oppoled	opposed	opposed
-31-26	solo	uith	with	
+31-26	confirm	uith	with	with
 31-26	noalign	unseasoned		unscasoned
 31-26	confirm	Fourthiy	Fourthly	sourthly
 31-26	confirm	uncharitabie	uncharitable	uncharitable
@@ -10861,7 +10769,6 @@
 31-26	witness	Ifrail	Israel	israel
 31-26	confirm	mritten	written	written
 31-26	confirm	boobe	booke	book
-31-26	witness	plicitly	explicitly	explicitly
 31-26	witness	implieitly	implicitly	implicitly
 31-26	witness	vifh	wish	wish
 31-26	noalign	himielfe		
@@ -10915,6 +10822,7 @@
 31-26	witness	wis	wish	wish
 31-26	conflict	finfall		sinsul
 31-26	confirm	doirg	doing	doing
+31-26	confirm	cyther	eyther	either
 31-26	confirm	entmies	enemies	enemies
 31-26	confirm	Blisse	Blesse	bless
 31-26	confirm	uishing	wishing	wishing
@@ -10933,10 +10841,10 @@
 31-26	confirm	elway	alway	alway
 31-26	noalign	IfIbe		
 31-26	confirm	tben	then	then
-31-26	solo	domne	downe	
-31-26	conflict	tbee		him
+31-26	confirm	domne	downe	down
+31-26	confirm	tbee	thee	thee
 31-26	confirm	thert	there	there
-31-26	confirm	donne	downe	down
+31-26	solo	donne	downe	
 31-26	noalign	himand		
 31-26	witness	fifiy	fifty	sisty
 31-26	conflict	chile		children
@@ -11244,7 +11152,7 @@
 31-31	confirm	egairst	against	against
 31-31	noalign	tul		
 31-31	noalign	besiedged		belicged
-31-31	confirm	Tosephus	Josephus	sosephus
+31-31	noalign	Tosephus		
 31-31	witness	dendly	deadly	deadly
 31-31	agree	feuds		seuds
 31-31	confirm	tbere	there	there
@@ -11252,8 +11160,6 @@
 31-31	confirm	urath	wrath	wrath
 31-31	witness	sœeet	sweet	sweet
 31-31	noalign	pleasethus		plcaseth
-31-31	conflict	prin		principle
-31-31	noalign	ciple		
 31-31	witness	revengesu	revengeful	revengesul
 31-31	confirm	uhat	what	what
 31-31	witness	Lasti	Lastly	lastly
@@ -11273,7 +11179,7 @@
 31-31	noalign	Mirdecai		mordecar
 31-31	confirm	toncht	toucht	toucht
 31-31	noalign	mouthfull		
-31-31	conflict	lewes		sew
+31-31	solo	lewes	Jewes	
 31-31	noalign	ives		
 31-31	noalign	tobe		
 31-31	confirm	hoIy	holy	holy
@@ -11285,7 +11191,7 @@
 31-31	solo	hatb	hath	
 31-31	confirm	swallouing	swallowing	swallowing
 31-31	confirm	seeirg	seeing	seeing
-31-31	solo	vill	will	
+31-31	confirm	vill	will	will
 31-31	confirm	smallomed	swallowed	swallywed
 31-31	confirm	nhen	rhen	when
 31-31	confirm	agairst	against	against
@@ -11318,7 +11224,7 @@
 31-31	witness	thon	thou	thou
 31-31	confirm	thec	thee	thee
 31-31	realword	mord	word	word
-31-31	witness	poessibly	possibly	possibly
+31-31	noalign	poessibly		
 31-31	confirm	mayist	mayest	mayest
 31-31	agree	undutifully		undutisully
 31-31	witness	misa	wish	wish
@@ -11366,7 +11272,6 @@
 31-31	witness	folke	folk	solk
 31-31	noalign	fiesol		
 31-31	realword	tuo	two	two
-31-31	witness	terpretation	interpretation	interpretation
 31-31	noalign	giveu		giucn
 31-31	witness	tarryed	tarried	tarried
 31-31	confirm	caten	eaten	eaten
@@ -11428,7 +11333,6 @@
 31-31	witness	vitn	view	view
 31-31	witness	Pob	Tob	tob
 31-31	confirm	epened	opened	opened
-31-31	agree	veller		veller
 31-31	confirm	vay	way	way
 31-31	confirm	oune	owne	own
 31-31	solo	sabject	subject	
@@ -11537,8 +11441,7 @@
 31-33	confirm	cevered	covered	covered
 31-33	solo	trausgressions	transgressions	
 31-33	realword	che	the	the
-31-33	noalign	rived		
-31-33	noalign	weP		
+31-33	conflict	weP		which
 31-33	noalign	anact		
 31-33	conflict	excusingit		excusing
 31-33	solo	Jebs	Jobs	
@@ -11605,8 +11508,6 @@
 31-33	witness	Enosp	Enosh	enosh
 31-33	confirm	sorrousull	sorrowfull	sorrowsul
 31-33	solo	vet	ver	
-31-33	solo	bur	but	
-31-33	noalign	dened		
 31-33	confirm	uith	with	with
 31-33	confirm	tronblesome	troublesome	troublesom
 31-33	confirm	issnes	issues	issues
@@ -11618,7 +11519,7 @@
 31-33	conflict	ofthis		this
 31-33	agree-fix	aster	after	aster
 31-33	confirm	uot	not	not
-31-33	confirm	xho	who	who
+31-33	solo	xho	who	
 31-33	agree	infecting		insecting
 31-33	confirm	bideing	hideing	hiding
 31-33	witness	iviquitie	iniquity	iniquity
@@ -11774,7 +11675,7 @@
 31-33	confirm	uiddow	widdow	widdow
 31-33	noalign	rous		
 31-33	solo	mahe	make	
-31-33	witness	Vriab	Uriah	uriah
+31-33	noalign	Vriab		
 31-33	confirm	auotber	another	another
 31-33	realword	ot	of	os
 31-33	confirm	tlie	the	the
@@ -11847,7 +11748,7 @@
 31-33	conflict	ungod		ungodliness
 31-33	noalign	lynes		
 31-33	witness	Pirst	First	sirst
-31-33	noalign	pouet		
+31-33	witness	pouet	power	power
 31-33	conflict	tibents		likeness
 31-33	agree-fix	sinsul	sinful	sinsul
 31-33	witness	flest	flesh	slesh
@@ -11879,7 +11780,7 @@
 31-33	confirm	semewhat	somewhat	somewhat
 31-33	split	coverthe	cover the	cover
 31-33	confirm	imagire	imagine	imagine
-31-33	witness	fadle	saddle	saddle
+31-33	noalign	fadle		
 31-33	noalign	Rrrr		
 31-33	confirm	cyther	eyther	either
 31-33	confirm	mith	with	with
@@ -11960,8 +11861,8 @@
 31-33	confirm	pesple	people	people
 31-33	confirm	tbat	that	that
 31-33	witness	gids	gods	gods
-31-33	noalign	mec		
-31-33	noalign	nhat		
+31-33	conflict	mec		we
+31-33	witness	nhat	what	what
 31-33	confirm	Aaren	Aaron	aaroz
 31-33	realword	mas	was	was
 31-33	realword	mill	will	will
@@ -12020,7 +11921,7 @@
 31-33	confirm	haaven	heaven	heaven
 31-33	realword	ue	we	we
 31-33	witness	ansœer	answer	answer
-31-33	confirm	Prirce	Prince	prince
+31-33	solo	Prirce	Prince	
 31-33	confirm	ovne	owne	own
 31-33	witness	posiibly	possibly	possibly
 31-33	agree	boggles		boggles
@@ -12074,7 +11975,6 @@
 31-33	confirm	vour	hour	your
 31-33	conflict	tarre		sar
 31-33	confirm	corsistent	consistent	consistent
-31-33	noalign	berty		
 31-33	witness	erther	either	either
 31-33	confirm	pouer	power	power
 31-33	noalign	ffi		
@@ -12088,7 +11988,6 @@
 31-33	noalign	vfull		
 31-33	confirm	betueen	between	between
 31-33	solo	resuse	refuse	
-31-33	conflict	deter		determine
 31-33	conflict	IEp		ep
 31-33	confirm	mith	with	with
 31-33	noalign	tothe		
@@ -12221,7 +12120,7 @@
 31-33	confirm	chemselves	themselves	themselves
 31-33	witness	fficult	difficult	dissicult
 31-33	confirm	breike	breake	break
-31-33	noalign	gua		
+31-33	confirm	begua	begun	begun
 31-33	witness	peristi	perish	perish
 31-33	conflict	follom		ens
 31-33	realword	ue	we	we
@@ -12286,7 +12185,6 @@
 31-33	noalign	haast		badst
 31-33	confirm	moman	woman	woman
 31-33	noalign	panion		oem
-31-33	conflict	transgres		trans
 31-33	witness	Admonion	Admonition	admonition
 31-33	noalign	temeted		
 31-33	conflict	toutter		utter
@@ -12326,8 +12224,8 @@
 31-33	confirm	ebtaine	obtaine	obtain
 31-33	confirm	wortby	worthy	worthy
 31-33	witness	unluckie	unlucky	unlucky
-31-33	confirm	mhat	what	what
-31-33	solo	mho	who	
+31-33	solo	mhat	what	
+31-33	confirm	mho	who	who
 31-33	confirm	worhe	worke	work
 31-33	confirm	nom	now	now
 31-33	confirm	metion	motion	motion
@@ -12396,7 +12294,7 @@
 31-33	conflict	indwelling		dwelling
 31-33	noalign	insnares		insnarcs
 31-33	confirm	uith	with	with
-31-33	conflict	Maichivel		a
+31-33	noalign	Maichivel		
 31-33	noalign	Goliab		gcliaiz
 31-33	confirm	nhole	whole	whole
 31-33	confirm	carth	earth	earth
@@ -12438,11 +12336,10 @@
 31-33	agree-fix	aster	after	aster
 31-33	witness	hearte	hearts	hearts
 31-33	confirm	worhe	worke	work
-31-33	noalign	knouts		
+31-33	witness	knouts	knows	knows
 31-33	witness	freshi	fresh	sresh
 31-33	witness	perswvades	perswades	perswades
 31-33	confirm	befriend	be friend	besricnd
-31-33	noalign	ceale		
 31-33	witness	bligation	obligation	obligation
 31-33	witness	sios	sins	sins
 31-33	noalign	masterly		
@@ -12507,7 +12404,6 @@
 31-33	noalign	confe		
 31-33	solo	consession	confession	
 31-33	solo	Secondiy	Secondly	
-31-33	realword	thar	that	that
 31-33	noalign	confe		consesshon
 31-33	confirm	saitb	saith	saith
 31-33	realword	bave	have	have
@@ -12519,8 +12415,8 @@
 31-33	confirm	mhen	when	when
 31-33	conflict	mec		me
 31-33	agree	chastisest		chastisest
-31-33	noalign	thouart		
-31-33	solo	Ifrael	Israel	
+31-33	split	thouart	thou art	thou
+31-33	conflict	Ifrael		that
 31-33	solo	Dar	Dan	
 31-33	witness	fudab	judah	judah
 31-33	confirm	wbich	which	which
@@ -12545,7 +12441,7 @@
 31-33	noalign	makeit		
 31-33	noalign	Halesse		
 31-33	solo	uill	will	
-31-33	solo	ackrowledged	acknowledged	
+31-33	confirm	ackrowledged	acknowledged	acknowledged
 31-33	noalign	byus		
 31-33	solo	rakes	takes	
 31-33	conflict	IfI		s
@@ -12677,8 +12573,8 @@
 31-33	agree	fighing		sighing
 31-33	confirm	strengih	strength	strength
 31-33	confirm	coxsumed	consumed	consumed
-31-33	solo	xine	wine	
-31-33	noalign	haunts		
+31-33	confirm	xine	wine	mine
+31-33	agree	haunts		haunts
 31-33	conflict	hibones		bones
 31-33	confirm	vill	will	will
 31-33	noalign	speciat		spetial
@@ -12715,7 +12611,7 @@
 31-33	confirm	aluayes	alwayes	alwayes
 31-33	confirm	Jobn	John	sohn
 31-33	agree-fix	finners	sinners	sinners
-31-33	witness	sppeare	appear	appear
+31-33	noalign	sppeare		
 31-33	confirm	ubich	which	which
 31-33	conflict	ues		we
 31-33	witness	clole	close	close
@@ -12738,10 +12634,8 @@
 31-34	realword	mas	was	was
 31-34	conflict	Ifeare		sear
 31-34	confirm	multitade	multitude	multitude
-31-34	noalign	vailing		
 31-34	confirm	muliitude	multitude	multitude
 31-34	conflict	Ifeare		sear
-31-34	noalign	tude		
 31-34	witness	taxen	taken	taken
 31-34	agree-fix	asraid	afraid	asraid
 31-34	noalign	Majistie		
@@ -12767,8 +12661,6 @@
 31-34	confirm	ierrifie	terrifie	rerrisie
 31-34	confirm	Breughtons	Broughtons	broughton
 31-34	witness	Concreete	Concrete	concrete
-31-34	conflict	contemp		contemptible
-31-34	solo	tible	table	
 31-34	witness	objedt	object	object
 31-34	conflict	meanenesse		meanness
 31-34	solo	ufually	usually	
@@ -12799,8 +12691,6 @@
 31-34	witness	stillnes	stilness	stilness
 31-34	witness	sprech	speech	speech
 31-34	noalign	Tosbua		
-31-34	noalign	ele		
-31-34	noalign	gancy		
 31-34	witness	Posb	Josh	josh
 31-34	solo	staud	stand	
 31-34	noalign	Sunue		sn
@@ -12852,7 +12742,6 @@
 31-34	noalign	havmade		
 31-34	noalign	eppresse		oppresi
 31-34	noalign	multitade		multirxde
-31-34	witness	terpreters	interpreters	interpreters
 31-34	realword	bis	his	his
 31-34	conflict	selfedenyall		sels
 31-34	witness	prmer	power	power
@@ -12867,7 +12756,7 @@
 31-34	confirm	Tacob	Jacob	sacob
 31-34	confirm	saich	saith	saith
 31-34	confirm	Tue	The	the
-31-34	confirm	beed	heed	heed
+31-34	solo	beed	heed	
 31-34	confirm	Tacob	Jacob	jacob
 31-34	conflict	doc		do
 31-34	confirm	nhen	rhen	when
@@ -12993,8 +12882,8 @@
 31-34	noalign	Jemes		
 31-34	confirm	tahe	take	take
 31-34	witness	Nore	Note	note
-31-34	solo	godiy	godly	
-31-34	noalign	juast		
+31-34	confirm	godiy	godly	godly
+31-34	witness	juast	just	just
 31-34	confirm	morld	world	world
 31-34	confirm	agairst	against	against
 31-34	agree-fix	fhould	should	should
@@ -13029,7 +12918,6 @@
 31-34	confirm	tbose	those	those
 31-34	confirm	eften	often	osten
 31-34	noalign	obstractien		obstruttion
-31-34	noalign	strate		
 31-34	realword	hindred	kindred	kindred
 31-34	noalign	allyes		allies
 31-34	split	punishit	punish it	punish
@@ -13083,7 +12971,7 @@
 31-34	confirm	privete	private	private
 31-34	confirm	Theugh	Though	though
 31-34	confirm	humanc	humane	humane
-31-34	agree-fix	confiderations	considerations	considerations
+31-34	conflict	confiderations		conscience
 31-34	conflict	uiy		my
 31-34	noalign	Tgoe		
 31-34	noalign	inteI		
@@ -13159,6 +13047,7 @@
 31-34	noalign	speabe		peak
 31-34	witness	rvers	rovers	rovers
 31-34	witness	ibis	this	this
+31-34	realword	bave	have	have
 31-34	realword	mould	would	would
 31-34	confirm	innecency	innocency	innocency
 31-34	noalign	mispri		misprisions
@@ -13195,7 +13084,7 @@
 31-34	witness	olind	blind	blind
 31-34	noalign	canto		
 31-34	solo	cyes	eyes	
-31-34	noalign	xnowing		
+31-34	witness	xnowing	knowing	knowing
 31-34	solo	thercfore	therefore	
 31-34	confirm	knoveth	knoweth	knoweth
 31-34	witness	allo	also	also
@@ -13212,7 +13101,6 @@
 31-34	confirm	cantention	contention	contention
 31-34	confirm	uho	who	who
 31-34	confirm	outuard	outward	outward
-31-34	witness	versary	adversary	adversary
 31-34	confirm	himselse	himselfe	himsels
 31-34	witness	Adverlary	Adversary	adversary
 31-34	witness	Exid	Exod	exod
@@ -13276,7 +13164,7 @@
 31-34	confirm	abie	able	able
 31-34	confirm	breabe	breake	break
 31-34	confirm	baches	backes	backs
-31-34	noalign	ersigne		
+31-34	witness	ersigne	ensign	ensign
 31-34	confirm	eonfident	confident	consident
 31-34	witness	disparrage	disparage	disparage
 31-34	confirm	vill	will	will
@@ -13300,7 +13188,7 @@
 31-34	confirm	Crounes	Crownes	crowns
 31-34	confirm	Thougb	Though	though
 31-34	confirm	uith	with	with
-31-34	noalign	fub		
+31-34	witness	fub	sob	sob
 31-34	split	sarre	sar re	sar
 31-34	confirm	theretore	therefore	theresore
 31-34	confirm	uhen	when	when
@@ -13328,8 +13216,8 @@
 31-34	confirm	asbamed	ashamed	ashamed
 31-34	noalign	hno		
 31-34	confirm	asbamed	ashamed	ashamed
-31-34	confirm	laith	faith	saith
-31-34	noalign	thali		
+31-34	solo	laith	faith	
+31-34	witness	thali	shall	shall
 31-34	confirm	mith	with	with
 31-34	realword	bim	him	him
 31-34	solo	tome	come	
@@ -13388,9 +13276,9 @@
 31-34	confirm	moke	make	make
 31-34	solo	lare	late	
 31-34	confirm	refufirg	refusing	resusing
-31-34	noalign	boste		
-31-34	noalign	mritien		
-31-34	noalign	egairst		
+31-34	conflict	boste		book
+31-34	witness	mritien	written	written
+31-34	confirm	egairst	against	against
 31-34	conflict	ibengb		though
 31-34	noalign	esiry		
 31-34	confirm	Iife	life	lise
@@ -13543,8 +13431,8 @@
 31-34	noalign	manto		
 31-34	confirm	Iand	land	land
 31-34	confirm	cither	either	either
-31-34	solo	latcer	latter	
-31-34	noalign	toth		
+31-34	confirm	latcer	latter	latter
+31-34	witness	toth	both	both
 31-34	witness	apainst	against	against
 31-34	conflict	mec		me
 31-34	confirm	mrested	wrested	wrested
@@ -13580,7 +13468,7 @@
 31-34	solo	pecple	people	
 31-34	confirm	mhole	whole	whole
 31-34	confirm	rejoyeing	rejoycing	rejoycing
-31-34	confirm	worhes	workes	works
+31-34	solo	worhes	workes	
 31-34	solo	tbe	the	
 31-34	realword	aud	and	and
 31-34	noalign	jeslousie		jealousic
@@ -13714,7 +13602,6 @@
 31-34	confirm	tasbe	taske	task
 31-34	confirm	knom	know	know
 31-34	realword	mise	wise	wise
-31-34	realword	mill	will	will
 31-34	agree	monition		monition
 31-34	noalign	mili		
 31-34	split	thatis	that is	that
@@ -13860,7 +13747,7 @@
 31-34	witness	detainirs	detaining	detaining
 31-34	split	anight	a night	night
 31-34	noalign	unpayd		
-31-34	solo	tbereof	thereof	
+31-34	confirm	tbereof	thereof	thereos
 31-34	noalign	mitbeut		
 31-34	confirm	omners	owners	owners
 31-34	witness	ibeir	their	their
@@ -13948,11 +13835,11 @@
 31-34	confirm	haced	hated	hated
 31-34	confirm	greund	ground	ground
 31-34	witness	basel	basely	basely
-31-34	agree-fix	themfelves	themselves	themselves
-31-34	witness	necessarves	necessaries	necessaries
+31-34	solo	themfelves	themselves	
+31-34	noalign	necessarves		
 31-34	solo	uhich	which	
 31-34	noalign	dif		
-31-34	noalign	soreiug		
+31-34	conflict	soreiug		sorcing
 31-34	confirm	thereef	thereof	thereos
 31-34	witness	tating	eating	eating
 31-34	conflict	fruitthereef		sruits
@@ -14003,7 +13890,7 @@
 31-34	conflict	merbes		works
 31-34	conflict	seche		seek
 31-34	confirm	bonour	honour	honour
-31-34	confirm	haryest	harvest	harvest
+31-34	solo	haryest	harvest	
 31-34	witness	puniso	punish	punish
 31-34	confirm	tbings	things	things
 31-34	witness	chanpe	change	change
@@ -14065,12 +13952,12 @@
 31-34	witness	cebuxe	rebuke	rebuke
 31-34	witness	Teu	Tou	tou
 31-34	witness	loske	look	look
-31-34	witness	yrour	your	your
+31-34	noalign	yrour		
 31-34	confirm	uith	with	with
 31-34	confirm	vaint	vaine	vain
 31-34	confirm	yeu	you	you
-31-34	solo	mhile	while	
-31-34	solo	mayes	wayes	
+31-34	confirm	mhile	while	while
+31-34	confirm	mayes	wayes	ways
 31-34	realword	mill	will	will
 31-34	agree	fickly		sickly
 31-34	confirm	suould	should	should
@@ -14234,6 +14121,7 @@
 31-5	conflict	tben		thou
 31-5	confirm	geest	goest	goest
 31-5	confirm	bouse	house	house
+31-5	realword	ot	of	os
 31-5	confirm	hodily	bodily	bodily
 31-5	witness	xel	well	well
 31-5	confirm	mith	with	with
@@ -14414,12 +14302,11 @@
 31-5	noalign	Hponthese		
 31-5	conflict	selferigbteousnesse		sels
 31-5	noalign	hnom		baow
-31-5	noalign	taine		
 31-5	noalign	tven		cven
 31-5	witness	FirTt	First	sirst
 31-5	agree-fix	fincere	sincere	sincere
 31-5	noalign	odly		
-31-5	confirm	xayes	wayes	ways
+31-5	solo	xayes	wayes	
 31-5	noalign	Apost		
 31-5	solo	mhether	whether	
 31-5	realword	che	the	the
@@ -14524,7 +14411,7 @@
 31-5	realword	bis	his	his
 31-5	confirm	tbat	that	that
 31-5	agree	squarely		squarely
-31-5	witness	honestie	honesty	honesty
+31-5	noalign	honestie		
 31-5	witness	accordding	according	according
 31-5	noalign	protesteth		protelteth
 31-5	witness	fiends	friends	sriends
@@ -14637,7 +14524,7 @@
 31-7	confirm	wandor	wander	wander
 31-7	realword	bave	have	have
 31-7	realword	hom	how	how
-31-7	noalign	ofthofe		
+31-7	conflict	ofthofe		those
 31-7	confirm	easlest	easiest	casiest
 31-7	conflict	clogge		clog
 31-7	noalign	defirous		sirous
@@ -14671,7 +14558,7 @@
 31-7	confirm	bur	but	but
 31-7	noalign	Jemes		sews
 31-7	confirm	malketh	walketh	walketh
-31-7	solo	aster	after	
+31-7	agree-fix	aster	after	aster
 31-7	split	Ihid	I hid	hid
 31-7	confirm	mroth	wroth	wroth
 31-7	realword	ment	went	went
@@ -14701,7 +14588,6 @@
 31-7	agree-fix	gist	gift	gist
 31-7	witness	uinkt	winkt	winkt
 31-7	agree	misleads		misleads
-31-7	noalign	vetous		
 31-7	confirm	Josb	Josh	sosh
 31-7	confirm	goedly	goodly	geodly
 31-7	confirm	Babylonisb	Babylonish	babylonish
@@ -14737,14 +14623,12 @@
 31-7	confirm	cemmitted	committed	committed
 31-7	confirm	abeminations	abominations	abominations
 31-7	split	awhoring	a whoring	whoring
-31-7	noalign	phet		
 31-7	confirm	exccuted	executed	executed
 31-7	confirm	peluted	poluted	polluted
 31-7	realword	mere	were	were
 31-7	realword	aud	and	and
 31-7	conflict	mherthy		whereby
 31-7	witness	shoula	should	should
-31-7	conflict	puni		punished
 31-7	confirm	mith	with	with
 31-7	confirm	mhich	which	which
 31-7	confirm	eytber	eyther	either
@@ -14795,7 +14679,7 @@
 31-7	confirm	Aoses	Moses	moses
 31-7	confirm	toohe	tooke	took
 31-7	confirm	mives	wives	wives
-31-7	noalign	erquirie		
+31-7	witness	erquirie	enquiry	enquiry
 31-7	confirm	mhich	which	which
 31-7	witness	tven	even	even
 31-7	noalign	mecke		meck
@@ -14807,7 +14691,7 @@
 31-7	confirm	Botb	Both	both
 31-7	witness	heurt	heart	heart
 31-7	witness	looted	looked	looked
-31-7	solo	malked	walked	
+31-7	confirm	malked	walked	walked
 31-7	noalign	tomy		
 31-7	confirm	thorougb	thorough	thorough
 31-7	conflict	fob		ob
@@ -14825,7 +14709,7 @@
 31-7	conflict	glu		g
 31-7	confirm	translite	translate	translate
 31-7	noalign	hindly		
-31-7	solo	bomed	bowed	
+31-7	confirm	bomed	bowed	bowed
 31-7	witness	cleautth	cleaveth	cleaveth
 31-7	confirm	carth	earth	earth
 31-7	realword	mould	would	would
@@ -14869,7 +14753,7 @@
 31-7	agree	pitchy		pitchy
 31-7	confirm	elose	close	close
 31-7	agree	pitchy		pitchy
-31-7	confirm	auy	any	any
+31-7	solo	auy	any	
 31-7	agree-fix	srom	from	srom
 31-7	witness	Irestere	Restore	restore
 31-7	confirm	fola	sola	sold
@@ -14889,7 +14773,7 @@
 31-7	noalign	Ihave		
 31-7	noalign	sinfulIy		
 31-7	solo	teen	seen	
-31-7	noalign	inj		
+31-7	noalign	inj		sortably
 31-7	confirm	carth	earth	earth
 31-7	confirm	mhatsoever	whatsoever	whatsoever
 31-7	confirm	alse	also	also
@@ -14903,7 +14787,6 @@
 31-7	agree	fob		sob
 31-7	confirm	milling	willing	willing
 31-7	confirm	mhat	what	what
-31-7	noalign	lently		
 31-7	confirm	taben	taken	taken
 31-7	confirm	amay	away	away
 31-7	confirm	milling	willing	willing
@@ -14969,7 +14852,7 @@
 31-7	noalign	treacherousty		treacheronsiy
 31-7	confirm	mith	with	with
 31-7	noalign	yen		
-31-7	witness	sroyled	spoiled	spoiled
+31-7	noalign	sroyled		
 31-7	noalign	spall		
 31-7	solo	thte	thee	
 31-7	witness	ana	and	and
@@ -15004,6 +14887,7 @@
 31-7	conflict	vathere		there
 31-7	witness	neeping	weeping	weeping
 31-7	confirm	meeping	weeping	weeping
+31-7	realword	aud	and	and
 31-7	witness	meanez	means	means
 31-7	conflict	sorrouing		sorrow
 31-7	noalign	actins		aqting
@@ -15101,7 +14985,6 @@
 31-9	noalign	Citadell		citadel
 31-9	conflict	Aty		y
 31-9	witness	iaith	saith	saith
-31-9	solo	har	her	
 31-9	confirm	folloned	followed	sollowed
 31-9	confirm	mife	wife	wise
 31-9	conflict	unmar		unmarried
@@ -15111,7 +14994,6 @@
 31-9	confirm	mith	with	with
 31-9	confirm	wby	why	why
 31-9	witness	upons	upon	upon
-31-9	agree	decei		decei
 31-9	confirm	ebserve	observe	observe
 31-9	confirm	grtat	great	great
 31-9	noalign	diceiver		
@@ -15256,7 +15138,7 @@
 31-9	confirm	uhere	where	where
 31-9	confirm	terrlble	terrible	terrible
 31-9	confirm	oune	owne	own
-31-9	noalign	pells		
+31-9	agree	compells		compells
 31-9	confirm	mith	with	with
 31-9	agree-fix	Fisthly	Fifthly	sisthly
 31-9	confirm	beautisull	beautifull	beautisul
@@ -15329,7 +15211,7 @@
 31-9	solo	Tobs	Jobs	
 31-9	noalign	xitt		
 31-9	noalign	natch		
-31-9	confirm	maite	waite	wait
+31-9	solo	maite	waite	
 31-9	confirm	mith	with	with
 31-9	confirm	mith	with	with
 31-9	confirm	tiil	till	till
@@ -15426,9 +15308,6 @@
 31-9	witness	adulterv	adultery	adultery
 31-9	witness	contames	contains	contains
 31-9	conflict	imagmnable		imagin
-31-9	agree	adul		adul
-31-9	agree	terous		terous
-31-9	noalign	rous		tcrous
 31-9	confirm	mives	wives	wives
 31-9	confirm	otbers	others	others
 31-9	confirm	cther	other	others
@@ -15511,7 +15390,6 @@
 31-9	witness	luffers	suffers	sussers
 31-9	confirm	mhich	which	which
 31-9	confirm	uhere	where	where
-31-9	noalign	voke		
 31-9	noalign	sminge		swinge
 31-9	witness	Tastly	Lastly	lastly
 31-9	agree-fix	Confider	Consider	consider
@@ -15544,8 +15422,6 @@
 31-9	witness	aye	dye	dye
 31-9	witness	thas	that	that
 31-9	confirm	Hely	Holy	holy
-31-9	noalign	trary		
-31-9	witness	nourable	honourable	honourable
 31-9	confirm	moman	woman	woman
 31-9	agree-fix	fhould	should	should
 31-9	confirm	hearets	hearers	hearers
@@ -15555,6 +15431,7 @@
 31-9	noalign	fouleness		soulncss
 31-9	confirm	ovne	owne	own
 31-9	noalign	heineus		hcinous
+31-9	witness	transtate	translate	translate
 31-9	noalign	inthe		
 31-9	conflict	Asoes		moses
 31-9	noalign	michednesse		
@@ -15658,6 +15535,7 @@
 31-9	witness	tricke	trick	trick
 31-9	confirm	abominatien	abomination	abomination
 31-9	realword	ir	it	it
+31-9	conflict	Scriptureconsequences		scripture
 31-9	realword	ro	to	to
 31-9	agree-fix	Tet	Yet	tet
 31-9	noalign	betrreen		berween
@@ -15707,7 +15585,6 @@
 31-9	noalign	pacification		paci
 31-9	witness	iue	the	the
 31-9	witness	punisbid	punished	punished
-31-9	noalign	nal		
 31-9	conflict	Jel		sob
 31-9	confirm	savd	sand	said
 31-9	witness	udged	judged	judged
@@ -15720,6 +15597,7 @@
 31-9	noalign	riots		
 31-9	split	stopto	stop to	stop
 31-9	agree	verge		verge
+31-9	noalign	Germanes		germais
 31-9	confirm	cruelcy	cruelty	cruelty
 31-9	witness	pœnal	penal	penal
 31-9	witness	Cannanites	Canaanites	canaanites
@@ -15783,7 +15661,7 @@
 31-9	agree-fix	defires	desires	desires
 31-9	noalign	vours		
 31-9	witness	ingenuitie	ingenuity	ingenuity
-31-9	noalign	reamely		
+31-9	conflict	reamely		men
 31-9	confirm	renem	renew	renew
 31-9	confirm	mithin	within	within
 31-9	noalign	ofthy		
@@ -15875,7 +15753,6 @@
 31-9	realword	mill	will	will
 31-9	confirm	certainIy	certainly	certainly
 31-9	confirm	punishi	punisht	punish
-31-9	noalign	vier		
 31-9	confirm	lustt	lusts	lusts
 31-9	confirm	mhich	which	which
 31-9	confirm	morld	world	world
@@ -15906,7 +15783,7 @@
 31-9	noalign	Rilled		
 31-9	witness	poner	power	power
 31-9	confirm	unte	unto	unto
-31-9	witness	avoyds	avoids	avoids
+31-9	noalign	avoyds		
 31-9	realword	tabe	take	take
 31-9	witness	besomes	bosoms	bosoms
 31-9	confirm	apon	upon	upon

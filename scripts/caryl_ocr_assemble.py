@@ -142,6 +142,16 @@ def layout(W, H, lines, fits=None, width=None, detect_head=True):
         # 起点越过右界／终点不到左界 = 旁注。原用「接近右界 15px」，行尾的 a、is 这类窄词起点离右界不到 15px，被划进旁注
         # （第 4 部印本第 181 页一页丢了 4 个）
         bw = [w for w in ws if w['x'] < lx1 - 2 and w['x'] + w['w'] > lx0 + 2]
+        # 单字母词（a、A、I、O）贴着栏界、离相邻正文词不远的，是正文行首／行尾的词，不是旁注
+        # （抽读第 9 部 31:7–8 一段 25 页，约 15 处 a/I/O 被划进旁注：「hold [a] banner」「[O] how fast」）
+        for k, w in enumerate(ws):
+            if w in bw or w['t'] not in ('a', 'A', 'I', 'O'):
+                continue
+            nb = [ws[j] for j in (k - 1, k + 1) if 0 <= j < len(ws) and ws[j] in bw]
+            if nb and min(abs(w['x'] - (n['x'] + n['w'])) if n['x'] < w['x'] else abs(n['x'] - (w['x'] + w['w']))
+                          for n in nb) < 70:
+                bw.append(w)
+        bw.sort(key=lambda w: w['x'])
         mw = [w for w in l['words'] if w not in bw]
         if mw:
             margin.append(dict(y=l['y'], side='L' if mw[0]['x'] < x0 else 'R', t=text(mw)))
@@ -181,6 +191,8 @@ def layout(W, H, lines, fits=None, width=None, detect_head=True):
             body = body[:-1]
     while body and len(re.sub(r'\W', '', body[-1]['t'])) <= 4 and re.search(r'\d|^[A-Z][a-z]?\s?[a-z]?\s?\d?$', body[-1]['t']):
         body = body[:-1]                    # 接字后面还有书帖签名（「A a 3」在接字「Is」之前一行）
+    # 只有一个字符的「旁注」是页边杂点（u、(、—、?）：单字母词 a/A/I/O 已在上面收回正文，剩下的删掉
+    margin = [m for m in margin if len(m['t'].strip()) > 1]
     if body:                                # 正文首行之上的「旁注」是页眉断出来的残片（「4. 181」）
         margin = [m for m in margin if m['y'] >= body[0]['y'] - 10]
     for b in body:

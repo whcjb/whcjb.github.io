@@ -1,0 +1,237 @@
+# 卡里尔缺部 OCR 人工对图改正表（scripts/caryl_ocr_manual.py 落盘，排在 caryl_ocr_ctx.py 之后）
+# 列：部目录 / 段 / 原串（纯文本，段内唯一）/ 改成 / 依据（看图所见）
+# 原书误植照录，不改（例：p6 印本 p.83「Champer」原书即如此）
+p9	31-7	OB 31. Vers. 7, 8.	JOB 31. Vers. 7, 8.	印本 p.356 影像：段首出处行 JOB
+p9	31-7	(fuiy step hath turned	If my step hath turned	p.356
+p9	31-7	cleaved te my hands	cleaved to my hands	p.356
+p9	31-7	pro ceeds in purging	proceeds in purging	p.356
+p9	31-7	suspition of in'ustice	suspition of injustice	p.356
+p9	31-7	he sayd, IF	he sayd, If I	p.356（I 被划进旁注）
+p9	31-7	or is my foot hath hasted	or if my foot hath hasted	p.356
+p9	31-7	turned out of the nay, and	turned out of the way, and	p.356
+p9	31-7	my step have turned out of the may.	my step have turned out of the way.	p.356
+p9	31-7	and there in an outward	and there is an outward	p.356
+p9	31-7	busines. Tob doth not	busines. Job doth not	p.356
+p9	31-7	not that sob walked	not that Job walked	p.356
+p9	31-7	out of the man, wee	out of the way, wee	p.356
+p9	31-7	what ?ob affirmes	what Job affirmes	p.357
+p9	31-7	that, bis step	that, his step	p.357
+p9	31-7	Out of thi way.	Out of the way.	p.357
+p9	31-7	yet this may may be taken	yet this way may be taken	p.357
+p9	31-7	I have noi invaded	I have not invaded	p.357
+p9	31-7	By removing Land. markes	By removing Land-markes	p.357
+p9	31-7	at the Sth verse	at the 8th verse	p.357
+p9	31-7	Then let me some, and let another eat, yea let my effespring	Then let me sowe, and let another eat, yea let my off-spring	p.357
+p9	31-7	but l conceave	but I conceave	p.357
+p9	31-7	take the word may so narrowly	take the word way so narrowly	p.357
+p9	31-7	narrow way. If my step hath turned out of the may.	narrow way. If my step hath turned out of the way.	p.357
+p9	31-7	We are not lest at large	We are not left at large	p.357
+p9	31-7	way of sinners (P/al. 1. 1.)	way of sinners (Psal. 1. 1.)	p.358
+p9	31-7	way, faith David (Plalir9. 1.)	way, saith David (Psal 119. 1.)	p.358
+p9	31-7	I mill run the may of thy Commandements, when thou shelt enlarge	I will run the way of thy Commandements, when thou shalt enlarge	p.358
+p9	31-7	A high may shall be there, and a may, and it shall be called the nay of holinesse	A high way shall be there, and a way, and it shall be called the way of holinesse	p.358
+p9	31-7	(1Cer. 12.31.)	(1 Cor. 12.31.)	p.358
+p9	31-7	sew I you a more	shew I you a more	p.358
+p9	31-7	"Tis the shortest way	'Tis the shortest way	p.358
+p9	31-7	the promises hold banner	the promises hold a banner	p.358（a 被划进旁注）
+p9	31-7	hath such Guard at home	hath such a Guard at home	p.358（a 被划进旁注）
+p9	31-7	they are end lesse.	they are endlesse.	p.359
+p9	31-7	holynes is cleane way	holynes is a cleane way	p.359（a 被划进旁注）
+p9	31-7	he that walles	he that walkes	p.359
+p9	31-7	the clearer shall we be	the cleaner shall we be	p.359
+p9	31-7	metaphor of mandrings	metaphor of wandrings	p.359
+p9	31-7	good man goeth sometimes	A good man goeth sometimes	p.359（A 被划进旁注）
+p9	31-7	not to goe out of the may;	not to goe out of the way;	p.359
+p9	31-7	Psal. 11910. )	Psal. 119. 10. )	p.359
+p9	31-7	out of the var, aud by	out of the way, and by	p.359
+p9	31-7	goe out óf the way	goe out of the way	p.359
+p9	31-7	how few ofthofe who	how few of those who	p.359
+p9	31-7	were a dogge upon	were a clogge upon	p.360（上下文推定改错：原书 clogge）
+p9	31-7	( Per. 6. 16.)	( Jer. 6. 16.)	p.360
+p9	31-7	where is the good may,	where is the good way,	p.360
+p9	31-7	obstinate and will fully resolve	obstinate and willfully resolve	p.360
+p9	31-7	they sayd me will not	they sayd we will not	p.360
+p9	31-7	of men u:terly refuse	of men utterly refuse	p.360（原书 t 字头残损）
+p9	31-7	or out of the may, which	or out of the way, which	p.360
+p9	31-7	may be lest undone	may be left undone	p.360
+p9	31-7	False mayee, er wrong ways, are indued no ways.	False wayes, or wrong wayes, are indeed no wayes.	p.360
+p9	31-7	Tob speakes as if	Job speakes as if	p.361
+p9	31-7	If my step hath turned out of the may,	If my step hath turned out of the way,	p.361
+p9	31-7	uh tsoever is pleasing	whatsoever is pleasing	p.361
+p9	31-7	covenant with his eyes, as to wanton	a covenant with his eyes, as to wanton	p.361（a 被划进旁注）
+p9	31-7	his eyes saW sinfull	his eyes saw sinfull	p.361
+p9	31-7	covetousnesse, mas I wroth	covetousnesse, was I wroth	p.361
+p9	31-7	way of his heart; And À à a	way of his heart; And	p.361（页底书帖签名 A a a 漏进正文）
+p9	31-7	after mine eyes, faith job.	after mine eyes, saith Job.	p.362
+p9	31-7	have a fayre though	have a fayre though a	p.362（a 被划进旁注）
+p9	31-7	And therefore fob did wisely	And therefore Job did wisely	p.362
+p9	31-7	by any unlawfusl object	by any unlawfull object	p.362
+p9	31-7	Fiest, The tye doth often mistead the hrart.	First, The eye doth often mislead the heart.	p.362
+p9	31-7	draw it to an oc asion of sinning	draw it to an occasion of sinning	p.362
+p9	31-7	sin is persected, unlesse	sin is perfected, unlesse	p.362
+p9	31-7	will, and fixeit upon	will, and fixe it upon	p.363
+p9	31-7	pictured, hood winkt	pictured, hood-winkt	p.363
+p9	31-7	Wheu I saw among	When I saw among	p.363
+p9	31-7	and a medge of gold ef fifty	and a wedge of gold of fifty	p.363
+p9	31-7	The Apostle Tohn (IEp: 2. 16.)	The Apostle John (1 Ep: 2. 16.)	p.363
+p9	31-7	wantonnes or uncleanness)	wantonnes or uncleannes)	p.363
+p9	31-7	Covetousnesse is jof ly called	Covetousnesse is justly called	p.363
+p9	31-7	( Eccl. 5. 11..) w'ben goods	( Eccl. 5. 11.) When goods	p.363
+p9	31-7	And it fhall be unto you for a fringe, that yee may locke upon it	And it shall be unto you for a fringe, that yee may looke upon it	p.364
+p9	31-7	that yee seche not after	that yee seeke not after	p.364
+p9	31-7	after which yee use to goe whoring	after which yee use to goe awhoring	p.364
+p9	31-7	Matth. 23.56.)	Matth. 23.5,6.)	p.364
+p9	31-7	evills which then have committed	evills which they have committed	p.364
+p9	31-7	with Idols, hich was	with Idols, which was	p.364
+p9	31-7	I listed up mine hand	I lifted up mine hand	p.364
+p9	31-7	that I mould scatter	that I would scatter	p.364
+p9	31-7	judgements mherthy they should̀ not live	judgements whereby they should not live	p.364
+p9	31-7	Thus their whoring eyes which were	Thus their whoring eyes ( which were	p.364
+p9	31-7	statutes which vere not good	statutes which were not good	p.364
+p9	31-7	I withhold not my heart from any joy; that is	I withheld not my heart from any joy; that is	p.365
+p9	31-7	seemes direct ly opposite	seemes directly opposite	p.365
+p9	31-7	his eye. S. lomon doth not	his eye. Solomon doth not	p.365
+p9	31-7	Behold all mas vanitie and vexation of spirit, and there vas no profit	Behold all was vanitie and vexation of spirit, and there was no profit	p.365
+p9	31-7	God will bring thes into Judgement	God will bring thee into Judgement	p.365
+p9	31-7	let thine beast follow	let thine heart follow	p.365
+p9	31-7	proceed evill though is, murders	proceed evill thoughts, murders	p.366
+p9	31-7	the out ward and the inward man	the outward and the inward man	p.366
+p9	31-7	shewes in the qti chapter	shewes in the 7th chapter	p.366
+p9	31-7	revenge and urathfullnesse	revenge and wrathfullnesse	p.366
+p9	31-7	so that though sin he originally	so that though sin be originally	p.366
+p9	31-7	the eye could not m stead it	the eye could not mislead it	p.366（原书字头残损作 m slead）
+p9	31-7	that the tree mas good for food	that the tree was good for food	p.366
+p9	31-7	to make one mise; she took of the fruit	to make one wise; shee tooke of the fruit	p.366
+p9	31-7	tree overcame ber, shee	tree overcame her, shee	p.367
+p9	31-7	shalt dy, orthou shalt	shalt dy, or thou shalt	p.367
+p9	31-7	abated with at lest an implicit	abated with at least an implicit	p.367
+p9	31-7	lest ye die Thus the Devill	lest ye die. Thus the Devill	p.367
+p9	31-7	every vaine fight of the eye	every vaine sight of the eye	p.367
+p9	31-7	The natural mant heart walketh	The naturall mans heart walketh	p.367
+p9	31-7	As the fervant should follow	As the servant should follow	p.367
+p9	31-7	cleane, and God ward.	cleane, and God-ward.	p.367
+p9	31-7	appeare to us ipit, and we should be led by it to honour hip, ard	appeare to us in it, and we should be led by it to honour him, and	p.367
+p9	31-7	men that they vere faire	men that they were faire	p.368
+p9	31-7	the holy momen also	the holy women also	p.368
+p9	31-7	(1Ep: 3.4,5) calls	(1 Ep: 3. 4, 5.) calls	p.368
+p9	31-7	the Apostle by job,	the Apostle by Job,	p.368
+p9	31-7	Both ibe ye and ibe heart	Both the eye and the heart	p.368
+p9	31-7	Wec must looke to our eyes	Wee must looke to our eyes	p.369
+p9	31-7	or wan-dering vainely	or wandering vainely	p.369
+p9	31-7	makes yet a surther protestation	makes yet a further protestation	p.369
+p9	31-7	And if any blot hath cleaved tomy hands	And if any blot hath cleaved to my hands	p.369
+p9	31-7	( as fob here did)	( as Job here did)	p.369
+p9	31-7	If any blot hathcleaved to my hands	If any blot hath cleaved to my hands	p.369
+p9	31-7	We take it strict y and	We take it strictly and	p.369
+p9	31-7	let me be oppressed, let me some and another eate	let me be oppressed, let me sowe and another eate	p.369
+p9	31-7	Tis sayd of those captive	'Tis sayd of those captive	p.369
+p9	31-7	soule-blemish or mo-rall blot	soule-blemish or morall blot	p.369
+p9	31-7	&c. (Dan. I. 4.)	&c. (Dan. 1. 4.)	p.369
+p9	31-7	they might be un10 mee	they might be unto mee	p.370
+p9	31-7	so cleaveth tothe loines	so cleaveth to the loines	p.370
+p9	31-7	sutes sully with the speciall sin that Sob protects against	sutes fully with the speciall sin that Job protests against	p.370
+p9	31-7	the eyes of the receiver	the eyes of the receaver	p.370
+p9	31-7	Bribe taking hands	Bribe-taking hands	p.370
+p9	31-7	to take bribes is blot	to take bribes is a blot	p.370（a 被划进旁注）
+p9	31-7	he suakleth his hands	he shaketh his hands	p.370
+p9	31-7	Our foule ù bowed do	Our soule is bowed do	p.370
+p9	31-7	From the which righteous job also	From the which righteous Job also	p.371
+p9	31-7	a soule blot, that which	a soule-blot, that which	p.371
+p9	31-7	for unrighteous. nesse, or	for unrighteousnesse, or	p.371
+p9	31-7	there is Commutative Justice	there is Communative Justice	p.371（原书误植 Communative，照录；OCR 给成了正确拼法）
+p9	31-7	Magistrates Justice,“ Tis his blot	Magistrates Justice; 'Tis his blot	p.371
+p9	31-7	a guilt, but à 	a guilt, but a s	p.371
+p9	31-7	to be a Deceiver?	to be a Deceaver?	p.372
+p9	31-7	as to be corrupter of Justice	as to be a corrupter of Justice	p.372（a 被划进旁注）
+p9	31-7	double-minded. Un ust gaine	double-minded. Unjust gaine	p.372
+p9	31-7	I mill, saith the Apostle	I will, saith the Apostle	p.372
+p9	31-7	hide mine eyes fremyou; rea when ye make many prayers, I mil not heare: your handi are	hide mine eyes from you; yea when ye make many prayers, I will not heare: your hands are	p.372
+p9	31-7	carry it silently though it cryeth	carry it silently ( though it cryeth	p.372
+p9	31-7	Whereas Job faith, If any blot	Whereas Job saith, If any blot	p.372
+p9	31-7	(Jer. 8. 5.) Then hold fast deceit	(Jer. 8. 5.) They hold fast deceit	p.372
+p9	31-7	how fast doe men hold that	O how fast doe men hold that	p.372（O 被划进旁注）
+p9	31-7	Wec say of theeves	Wee say of theeves	p.372
+p9	31-7	Restore him foure-sola.	I restore him foure-fold.	p.372（I 被划进行首旁注）
+p9	31-7	"Tis best not to doe any wrong	'Tis best not to doe any wrong	p.373
+p9	31-7	The guine of unrighteousnesse	The gaine of unrighteousnesse	p.373
+p9	31-7	get a blot upon his band in medling	get a blot upon his hand in medling	p.373
+p9	31-7	I hill mast my hands in innocencie	I will wash my hands in innocencie	p.373
+p9	31-7	His step did not turne out of the may,	His step did not turne out of the way,	p.373
+p9	31-7	Then let mee some, and let another eate, yea let my effspring	Then let mee sowe, and let another eate, yea let my off-spring	p.373
+p9	31-7	If Ihave sinfulIy gotten other mens goods, seen let mee not quietly er comfortably inj'y my omne.	If I have sinfully gotten other mens goods, then let mee not quietly or comfortably injoy my owne.	p.373
+p9	31-7	to restore beçause	to restore because 	p.373
+p9	31-7	sowing is all know, tis the	sowing is all know,'tis the	p.374
+p9	31-7	sutable to our seed time.	sutable to our seed-time.	p.374
+p9	31-7	take the profit ofit, If any blot hath cleaved tomy hands	take the profit of it, If any blot hath cleaved to my hands	p.374
+p9	31-7	first, strict ly for the receiving of food inte the body	first, strictly for the receiving of food into the body	p.374
+p9	31-7	and comfort it Secondly, eating	and comfort it. Secondly, eating	p.374
+p9	31-7	And let my offi spring be rooted out.	And let my off-spring be rooted out.	p.374
+p9	31-7	The word off. spring may	The word off-spring may	p.374
+p9	31-7	let what have done eyther	let what I have done eyther	p.374
+p9	31-7	Let my off. spring be rooted out. And thus	Let my off-spring be rooted out. And thus	p.375
+p9	31-7	but Iam willing, that	but I am willing, that	p.375
+p9	31-7	children or posterity should	children or posteritie should	p.375
+p9	31-7	and his effe spring shall not	and his off-spring shall not	p.375
+p9	31-7	a vaine thing forfob to Imprecate	a vaine thing for Job to Imprecate	p.375
+p9	31-7	so that his off spring being rooted	so that his off-spring being rooted	p.375
+p9	31-7	suppose that Jub had no	suppose that Job had no	p.375
+p9	31-7	Let my offespring be rooted out; that is	Let my off-spring be rooted out; that is	p.375
+p9	31-7	Let others eate what I'have sowne	Let others eate what I have sowne	p.375
+p9	31-7	Let my effespring be roo-ted out	Let my off-spring be rooted out	p.375
+p9	31-7	no off. spring upon the earth his imprecation	no off-spring upon the earth: his imprecation	p.375
+p9	31-7	Imprecations, orto wish evill	Imprecations, or to wish evill	p.375
+p9	31-7	who are morę deare	who are more deare	p.375
+p9	31-7	upon those words of sob (Chap.16. 18.)	upon those words of Job (Chap.16. 18.)	p.376
+p9	31-7	Let mee some, and let another eate.	Let mee sowe, and let another eate.	p.376
+p9	31-7	It is afore Judgement upon us, when others injoy the fruit efour labours	It is a sore Judgement upon us, when others injoy the fruit of our labours	p.376
+p9	31-7	( Lam. S. 2.)	( Lam. 5. 2.)	p.376
+p9	31-7	Aliens. Tis a sad affliction	Aliens. 'Tis a sad affliction	p.376
+p9	31-7	in our houses; to some, and others	in our houses; to sowe, and others	p.376
+p9	31-7	the milke ef the flocke	the milke of the flocke	p.376
+p9	31-7	Therefore to some and not to reape	Therefore to sowe and not to reape	p.376
+p9	31-7	surely I mill more give	surely I will no more give	p.377
+p9	31-7	(I/a.65 21.22.)	(Isa. 65. 21, 22.)	p.377
+p9	31-7	brought us, have mee sowne	brought us, have wee sowne	p.377
+p9	31-7	O sce for whom bave nee sowne	O see for whom have wee sowne	p.377
+p9	31-7	in may of retaliation	in way of retaliation	p.377
+p9	31-7	who have unjust ly eaten	who have unjustly eaten	p.377
+p9	31-7	(I/a.33.1.) woe	(Isa.33.1.) woe	p.377
+p9	31-7	and thou wast net spoyled, and dealest treacherously, and they dealt net treacherousty with thee	and thou wast not spoyled, and dealest treacherously, and they dealt not treacherously with thee	p.377
+p9	31-7	make an end to deale treacherousty	make an end to deale treacherously	p.377
+p9	31-7	get downe morsel more	get downe a morsel more	p.377（a 被划进旁注）
+p9	31-7	the people spall spoyle thee	the people shall spoyle thee	p.377
+p9	31-7	Hou notable is that	How notable is that	p.377
+p9	31-7	and wast, and fhall be	and wast, and shall be	p.377
+p9	31-7	Fer they have sued the blood	For they have shed the blood	p.377
+p9	31-7	hast given tbemblnod ro drinte	hast given them blood to drinke	p.377
+p9	31-7	To this voy ce Tobn heard	To this voyce John heard	p.377
+p9	31-7	even so Lord Gad Almighty, True and rightous are	even so Lord God Almighty, True and righteous are	p.378
+p9	31-7	have shed blood un ustly, see	have shed blood unjustly, see	p.378
+p9	31-7	Reward ber even a she rewarded you	Reward her even as shee rewarded you	p.378
+p9	31-7	and therefore faith God, Babylon	and therefore saith God, Babylon	p.378
+p9	31-7	Shee shall have the lame in kinde	Shee shall have the same in kinde	p.378
+p9	31-7	many sinners ie as a glasse wherein they may see thfilthy face and deformed portraiture of their fin.	many sinners is as a glasse wherein they may see the filthy face and deformed portraiture of their sin.	p.378
+p9	31-7	The lesse of Children is the greatest outward lesse.	The losse of Children is the greatest outward losse.	p.378
+p9	31-7	When job would wist upon	When Job would wish upon	p.378
+p9	31-7	I will st ay thy son	I will slay thy son	p.378
+p9	31-7	male children to be staine	male children to be slaine	p.378
+p9	31-7	spoken by feremie the Prophet, saying, In Rama vathere a voyce	spoken by Jeremie the Prophet, saying, In Rama was there a voyce	p.378
+p9	31-7	the only means of its removall	the only meanes of its removall	p.378
+p9	31-7	or the over-actins	or the over-acting	p.378
+p9	31-7	nce against Pharoah if	nce against Pharoah if	p.378
+p9	31-7	ofit; yet that which	of it; yet that which	p.379
+p9	31-7	(where there is due working	(where there is a due working	p.379（a 被划进旁注）
+p9	31-7	so great, that tie sorrow	so great, that the sorrow	p.379
+p9	31-7	the repenting Jemer shall be affi cted and afflicted with at last	the repenting Jewes shall be affected and afflicted with at last	p.379
+p9	31-7	that sorrow l say )	that sorrow I say )	p.379
+p9	31-7	this is reeds no other	this is needs no other	p.379
+p9	31-7	Isa. 56.4, 5.) tothe Eunuchs that keep hiSabbaths	Isa. 56.4, 5.) to the Eunuchs that keep his Sabbaths	p.379
+p9	31-7	and within bis walls	and within his walls	p.379
+p9	31-7	ornament of our ualls. Hous naked	ornament of our walls. How naked	p.379
+p9	31-7	where Cas Sob speakes) A mans off spring are uholy rocted out	where ( as Job speakes) A mans off spring are wholy rooted out	p.379（原书 off spring 无连字符，照录）
+p9	31-7	Chan-31. An Exposition upon ihe Boske O]O R. Vertg.	 	p.380（下一页页眉漏进本段末尾）
+p9	31-7	As if fob had sayd, I amo willing not only to loose what I'have sowen, er to have my Corne violently	As if Job had sayd, I am willing not only to loose what I have sowen, or to have my Corne violently	p.375
+p9	31-7	Let mee some and let another eate, if I have unjust y eaten	Let mee sowe and let another eate, if I have unjustly eaten	p.377
+p9	31-7	and mould not be comforted	and would not be comforted	p.378
+p9	31-7	greatest enquiry about a wife	greatest enquirie about a wife	p.368
+p9	31-7	fall leven times a day	fall seven times a day	p.361

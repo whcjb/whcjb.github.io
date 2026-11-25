@@ -351,18 +351,40 @@ def mono(vs):
     return out
 
 
+RE_TAILMARG = re.compile(r'((?:\s*<span class="cy-margin">[^<]*</span>)+)$')
+
+
+def _lex():
+    import caryl_ocr_fix as fx
+    return fx.LEX
+
+
 def join_lines(lines):
+    """行末断词号 ¬ 拼合；行末连字符 - 拼合时，去掉连字符的形式是词表里的词（wandering、morall）就去掉，
+    否则保留（复合词 man-servant）。行末断词后若挂着旁注（「Pro¬ ［旁注］ phet」），先拼词、旁注挪到词后。"""
     s = ''
     for ln in lines:
         ln = ln.strip()
         if not s:
             s = ln
-        elif s.endswith('¬'):
-            s = s[:-1] + ln
-        elif re.search(r'[A-Za-z]-$', s):
-            s = s + ln
+            continue
+        marg = ''
+        m = RE_TAILMARG.search(s)
+        if m and re.search(r'[¬-]$', s[:m.start()].rstrip()):
+            marg, s = m.group(1), s[:m.start()].rstrip()
+        if s.endswith('¬') or re.search(r'[A-Za-z]-$', s):
+            hy = s.endswith('-')
+            s = s[:-1]
+            left = re.search(r'([A-Za-z]+)$', s)
+            right = re.match(r'(?:<[^>]+>)*([A-Za-z]+)', ln)
+            keep_hy = False
+            if hy and left and right:
+                whole = (left.group(1) + right.group(1)).lower()
+                keep_hy = not _lex().get(whole, 0)
+            first, rest = re.match(r'((?:<[^>]+>)*\S*)(.*)$', ln).groups()
+            s = s + ('-' if keep_hy else '') + first + marg + rest
         else:
-            s = s + ' ' + ln
+            s = s + marg + ' ' + ln
     return s
 
 
