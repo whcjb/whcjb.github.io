@@ -1,0 +1,32 @@
+# 已对影像实读过的叶（每页图只读一次）。列：部目录、叶号（img/NNNN.jpg）、段、印本页、读的日期、结果落在哪。
+# 抽样（scripts/caryl_ocr_sample.py）跳过这里的叶；影像保留在 */img/（本地，gitignore），不再重读，错处已落 manual_fixes.tsv。
+p4	187	12-1		2026-11-25	manual_fixes.tsv
+p4	383	13-5		2026-11-25	manual_fixes.tsv
+p6	92	18-11		2026-11-25	manual_fixes.tsv
+p6	776	21-23		2026-11-25	manual_fixes.tsv
+p82	171	27-7	cols 331–332	2026-11-25	manual_fixes.tsv
+p9	572	31-26		2026-11-25	manual_fixes.tsv
+p9	359	31-7		2026-11-25	manual_fixes.tsv（第 1 轮）
+p9	360	31-7		2026-11-25	manual_fixes.tsv（第 1 轮）
+p9	361	31-7		2026-11-25	manual_fixes.tsv（第 1 轮）
+p9	362	31-7		2026-11-25	manual_fixes.tsv（第 1 轮）
+p9	363	31-7		2026-11-25	manual_fixes.tsv（第 1 轮）
+p9	364	31-7		2026-11-25	manual_fixes.tsv（第 1 轮）
+p9	365	31-7		2026-11-25	manual_fixes.tsv（第 1 轮）
+p9	366	31-7		2026-11-25	manual_fixes.tsv（第 1 轮）
+p9	367	31-7		2026-11-25	manual_fixes.tsv（第 1 轮）
+p9	368	31-7		2026-11-25	manual_fixes.tsv（第 1 轮）
+p9	369	31-7		2026-11-25	manual_fixes.tsv（第 1 轮）
+p9	370	31-7		2026-11-25	manual_fixes.tsv（第 1 轮）
+p9	371	31-7		2026-11-25	manual_fixes.tsv（第 1 轮）
+p9	372	31-7		2026-11-25	manual_fixes.tsv（第 1 轮）
+p9	373	31-7		2026-11-25	manual_fixes.tsv（第 1 轮）
+p9	374	31-7		2026-11-25	manual_fixes.tsv（第 1 轮）
+p9	375	31-7		2026-11-25	manual_fixes.tsv（第 1 轮）
+p9	376	31-7		2026-11-25	manual_fixes.tsv（第 1 轮）
+p9	377	31-7		2026-11-25	manual_fixes.tsv（第 1 轮）
+p9	378	31-7		2026-11-25	manual_fixes.tsv（第 1 轮）
+p9	379	31-7		2026-11-25	manual_fixes.tsv（第 1 轮）
+p9	380	31-7		2026-11-25	manual_fixes.tsv（第 1 轮）
+p9	381	31-7		2026-11-25	manual_fixes.tsv（第 1 轮）
+p9	382	31-7		2026-11-25	manual_fixes.tsv（第 1 轮）
