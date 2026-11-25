@@ -16,8 +16,10 @@
   of      独立的 ef → of；er → or（两边都是英文词）
   tis     'Tis 开引号读错：「"Tis」「“ Tis」「“Tis」→「'Tis」
   isa     书卷缩写读坏：I/a. → Isa.，P/al. → Psal.，Plal. → Psal.
-  ——第 2 轮（第 9 部 31:9–12，44 页）补：ofx（ofit→of it）、Tis 撇号读丢、fin→sin、fh-→sh-、bis/bim→his/him、
+  ——第 2 轮（第 9 部 31:9–12，44 页）补：Tis 撇号读丢（ofx「ofit→of it」第 3 轮撤回：原书连排）、fin→sin、fh-→sh-、bis/bim→his/him、
           代词后 hill→will、mould not→would not、(I Cor.→(1 Cor.、(Ter.→(Jer.、(Hof.→(Hos.、(faith the text→(saith
+  ——第 3 轮（第 6 部 21:30–31）补：mw（斜体 w 读成 m：主语后 mas/mere/mill/mould、the mise/mord、mbo/Nho/H'ho→who）、
+          shall（sall/spall/spalt/sual）、(Per.→(Jer.、(Plal.→(Psal.、(Isa-→(Isa.、句首 Te→Ye、junk（整段乱码：书末花饰、横线、单成一段的签名）、段首「- 」「+ 」噪点（会被排成列表）
   head    漏进正文的页眉（「Chap. 31. An Exposition upon the Booke of JOB. Vers. 7.」）删掉
 """
 import argparse
@@ -44,7 +46,7 @@ def rules():
     R.append(('job', re.compile(r'\b(?:Tob|fob|Fob|Sob|Jub|Iob|Jeb|Ieb|lob|Iub)(\'?s?)\b'), lambda m: 'Job' + m.group(1)))
     R.append(('job', re.compile(r'(?<!\ba )(?<!\bthe )(?<!\bhis )\bjob(\'?s?)\b'), lambda m: 'Job' + m.group(1)))
     # way
-    R.append(('way', re.compile(rf'\b({DETS}) (?:may|nay|var|mav)\b(?! be\b)'), lambda m: m.group(1) + ' way'))
+    R.append(('way', re.compile(rf'(?<!nay to )(?<!yea to )\b({DETS}) (?:may|nay|var|mav)\b(?! be\b)'), lambda m: m.group(1) + ' way'))   # 「yea to their yea, and nay to their nay」不碰
     R.append(('way', re.compile(r'\b(out of (?:the|that|his|their|my) )(?:may|nay|man|var)\b'), lambda m: m.group(1) + 'way'))
     # modal
     R.append(('modal', re.compile(r'\b(I|we|wee|he|hee|they|ye|yee|you|thou|she|it|who|which) (mill|mil|mould|mas|vas|vere|mere)\b'),
@@ -62,8 +64,7 @@ def rules():
     R.append(('isa', re.compile(r'\bI/a\.'), lambda m: 'Isa.'))
     R.append(('isa', re.compile(r'\bP[/l]al\.'), lambda m: 'Psal.'))
     # —— 第 2 轮（2026-11-25，第 9 部 31:9–12 实读 44 页）补的几类
-    # of 与后词粘连：ofit、ofthe、ofthis…（书里没有这些词）
-    R.append(('ofx', re.compile(r'\bof(it|the|this|that|a|an|his|her|their|them|him|God|my|our|your)\b'), lambda m: 'of ' + m.group(1)))
+    # of 与后词粘连（ofit、ofthe）：第 3 轮看图证实原书本就连排（p.813「repayment ofit」），照录，不再拆（第 2 轮的 ofx 规则撤回）
     # 'Tis 撇号读丢：句中独立的 Tis / tis（排在上面 tis 规则之后，引号形的已归一）
     R.append(('tis', re.compile(r'(?<![’\'‘"“\w])Tis\b'), lambda m: "'Tis"))
     R.append(('tis', re.compile(r"(?<=\s)['’‘] (?=tis\b)"), lambda m: '’'))
@@ -84,6 +85,29 @@ def rules():
     R.append(('isa', re.compile(r'\(Hof\.'), lambda m: '(Hos.'))
     # (faith the text / the Evangelist / one … → (saith
     R.append(('saith', re.compile(r'\(faith (?=the |one )'), lambda m: '(saith '))
+    # —— 第 3 轮（2026-11-26，第 6 部 21:30–31 实读 17 页）补的几类
+    # m 读成 w 的前半（斜体 w 读成 m）：mas/mere/mill/mould 在主语之后（名词主语也算：age mas、God mill），
+    # mise/mord 在冠词、物主代词之后；「same mould」「the mould of」名词不碰
+    SUBJ = r'(?:[A-Z][a-z]+|I|we|wee|he|hee|she|they|ye|yee|you|thou|it|who|which|that|there|this|age|man|men|God|Lord|all|none|one)'
+    R.append(('mw', re.compile(rf'(?<!\w)(?!(?:Every|Each|Any|No|A|The)\b)({SUBJ}) mas\b'), lambda m: m.group(1) + ' was'))   # 「Every mas」是 man
+    R.append(('mw', re.compile(rf'\b({SUBJ}) mere\b(?! (?:man|men|nothing|words?|shew|creatures?|trifles?|forms?|formality)\b)'), lambda m: m.group(1) + ' were'))
+    R.append(('mw', re.compile(rf'\b({SUBJ}) mill\b(?! (?:of|in|and)\b)'), lambda m: m.group(1) + ' will'))
+    R.append(('mw', re.compile(rf'\b({SUBJ}) mould\b(?= (?:\w+ly )?[a-z]+(?:e|en|ed|eak|ome|ing)?\b)(?! (?:of|and|in)\b)'), lambda m: m.group(1) + ' would'))
+    R.append(('mw', re.compile(r'\b(the|his|my|thy|our|your|their|her|a|no|any|this|that|by-) ?mord\b'),
+              lambda m: m.group(1) + ('' if m.group(1).endswith('-') else ' ') + 'word'))
+    R.append(('mw', re.compile(r'\b(the|a|no) mise\b'), lambda m: m.group(1) + ' wise'))     # 「my mise」是 my wife，不碰
+    R.append(('mw', re.compile(r'\bmbo\b|\bMbo\b|\bNho\b|\bvvho\b|\b[HhnNw][\'’]ho\b'),
+              lambda m: 'Who' if m.group(0)[0].isupper() and m.group(0)[0] not in 'Mm' else ('Who' if m.group(0) == 'Mbo' else 'who')))
+    # 长 s 读坏的 shall：sall / spall / spalt / sual
+    R.append(('shall', re.compile(r'\b(sall|spall|spalt|sual)\b'), lambda m: 'shall'))
+    # 书卷：(Per. → (Jer.、(Plal. → (Psal.、(Isa- → (Isa.
+    R.append(('isa', re.compile(r'\(Per\b'), lambda m: '(Jer'))
+    R.append(('isa', re.compile(r'\(Plal\.'), lambda m: '(Psal.'))
+    R.append(('isa', re.compile(r'\(Isa-'), lambda m: '(Isa.'))
+    # 句首 Te → Ye（斜体 Y 读成 T）
+    R.append(('te', re.compile(r'(?<=[.;:?!(] )Te (?=(?:have|are|shall|will|know|say|heard|should|may|did|do|see|be|were|that|cannot|must)\b)'), lambda m: 'Ye '))
+    # shem → shew（「shem thes hom」）
+    R.append(('mw', re.compile(r'\bshem\b'), lambda m: 'shew'))
     # 漏进正文的页眉
     R.append(('head', re.compile(r'\bCha[pn][.,-]?\s?\d{1,2}\.?\s+An Ex\w*\s+u\w*\s+\w+\s+Boo?[sk]\w*\s+\S{1,3}\s?\S{0,3}\s+V\w{2,5}[.,]?\s?\d{0,2}\.?'),
               lambda m: ''))
@@ -135,6 +159,13 @@ def sweep_text(pt, log, where):
 RE_PB = re.compile(r'<span class="cy-pb"[^>]*></span>')
 
 
+def sig_letters(t):
+    """签名串 → 字母：剥掉尾巴上的页序数字（Ffff3、LII12 的 2），其余 1／I 读法折成 l（Lllll 读成 LI11I）。"""
+    t = re.sub(r'\s?[2-9]$', '', t.strip())
+    t = re.sub(r'(?<=[A-Za-z])[1Il]|(?<=[1Il ])1', 'l', t)
+    return re.sub(r'[^A-Za-z]', '', t)
+
+
 def is_sig(letters):
     """书帖签名（Ddd、Nnnn、Ccce、KKXK、SES、H h'hh）：2–5 个字母、大写起头、同一字母占六成以上、不是词。"""
     if len(letters) >= 3 and len(set(letters.lower())) == 1 and len(letters) <= 5:
@@ -163,7 +194,7 @@ def fix_pagebreaks(md, log, where):
         glued = False
         # 末尾往回剥最多 4 个短 token（纯字母／数字，或 cy-ocr 包着的），找像签名的最短后缀
         toks, cut, bb = [], [], body
-        while len(toks) < 4:
+        while len(toks) < 6:
             mt = re.search(r'(\s?)(<span class="cy-ocr"[^>]*>([^<]{1,6})</span>|[A-Za-z’\'\d]{1,6})$', bb)
             if not mt:
                 break
@@ -175,7 +206,7 @@ def fix_pagebreaks(md, log, where):
         for i in range(len(toks)):
             t0 = toks[i]
             pre = re.match(r'([a-z]+)([A-Z].*)$', t0)                       # 「afB bb」：签名粘在半个词后面
-            letters = re.sub(r'[^A-Za-z]', '', (pre.group(2) if pre else t0) + ''.join(toks[i + 1:]))
+            letters = sig_letters(' '.join([pre.group(2) if pre else t0] + toks[i + 1:]))
             if is_sig(letters) and (i > 0 or pre or cut[0] == 0 or body[cut[0]].isspace() or not body[cut[0] - 1].isalpha()):
                 start = cut[i]
                 keep = ''
@@ -198,8 +229,47 @@ def fix_pagebreaks(md, log, where):
     return ''.join(out)
 
 
+def is_junk(t):
+    """整段乱码（书末花饰、横线、页底签名单成一段）：一个真词也没有，且同一字符连写 5 个以上、像书帖签名、
+    大写占七成以上（≥ 5 个字母）、或字母数字混杂而没有小写词。「Ohierve」「Ianswer」「vocamus」这类真内容挡在外面。"""
+    ws = re.findall(r'[A-Za-z]+', t)
+    if any(len(w) >= 3 and UNI.get(w.lower(), 0) for w in ws):
+        return False
+    L = re.sub(r'[^A-Za-zΑ-ωἀ-ῼ]', '', t)
+    if not L:
+        return False
+    if re.search(r'(.)\1{4,}', t) or is_sig(sig_letters(t)):
+        return True
+    if len(L) >= 5 and sum(c.isupper() for c in L) / len(L) >= 0.7:
+        return True
+    if re.search(r'\d', t) and not re.search(r'\b[a-z]{3,}\b', t) and len(L) >= 2:
+        return True
+    return bool(re.search(r'\*\s', t)) and len(t) < 12
+
+
+def drop_junk(md, log, where):
+    out = []
+    for para in md.split('\n\n'):
+        if para.strip() and 'cy-margin' not in para and not re.search(r'<(?!/?span)[a-z]', para) and '{:' not in para:
+            t = re.sub(r'<[^>]+>', '', para).strip()
+            if t and len(t) <= 60 and is_junk(t):
+                log.append(('junk', where, t, ''))
+                keep = ''.join(RE_PB.findall(para))
+                if keep:
+                    out.append(keep)
+                continue
+        out.append(para)
+    return '\n\n'.join(out)
+
+
 def sweep_md(md, log, where):
     """只改标签之间的纯文本片段（不跨标签），旁注 span 整个跳过。"""
+    md = drop_junk(md, log, where)
+    # 段首噪点「- 」「+ 」「• 」：markdown 会排成项目列表（第 6 部 21-30「- First, Some wicked men…」）
+    def unlist(m):
+        log.append(('list', where, m.group(2) + ' ', ''))
+        return m.group(1)
+    md = re.sub(r'((?:^|\n\n)(?:<span class="cy-pb"[^>]*></span>)?)([-–+•]) (?=[A-Za-z(])', unlist, md)
     for _ in range(3):                       # 长签名（「H h h h h」）一遍只剥得掉后几截：迭代到不动点
         new = fix_pagebreaks(md, log, where)
         if new == md:

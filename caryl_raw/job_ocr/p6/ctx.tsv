@@ -1268,6 +1268,7 @@
 21-19	ye [fillit] for	fill it	flag
 21-19	required [ofthat] if	of that	flag
 21-19	he [dothit] tis	doth it	flag
+21-19	to [keepclose] to	keep close	flag
 21-19	and [sois] a	so is	flag
 21-19	the [reasonis] because	reason is	flag
 21-19	man [onthis] side	on this	flag
@@ -1277,6 +1278,7 @@
 21-19	shall [mabe] you	make	flag
 21-19	understand [dectrine] what	doctrine	flag
 21-19	griefe [tous] as	to us	flag
+21-19	he [sbal] drinke	shal	flag
 21-19	the [wrathof] god	wrath of	flag
 21-19	his [indignetior] rev	indignation	flag
 21-19	their [oun] persons	own	flag
@@ -1285,7 +1287,6 @@
 21-19	and [sussicient] unto	sufficient	flag
 21-19	their [inwardthoughts] are	inward thoughts	flag
 21-19	affaires [efe] he	ere	flag
-21-19	of [fob] and	rob	flag
 21-19	may [inftract] him	instruct	flag
 21-19	be [aded] from	acted	flag
 21-19	in [knouledge] iob	knowledge	flag
@@ -1293,7 +1294,7 @@
 21-19	any [sbould] testifie	should	flag
 21-19	in [manto] be	man to	flag
 21-19	this [openIy] for	openly	flag
-21-19	that [milletb] nor	willeth	flag
+21-19	hast [thon] made	thou	flag
 21-19	then [Godor] that	God or	flag
 21-19	about [toteach] god	to teach	flag
 21-19	o [nely] in	holy	flag
@@ -1310,6 +1311,7 @@
 21-19	give [teason] too	reason	flag
 21-19	the [quintesserce] of	quintessence	flag
 21-19	v [Bestill] and	Be still	flag
+21-19	of [ansuering] their	answering	flag
 21-19	that [uponthose] termes	upon those	flag
 21-19	we [renderit] and	render it	flag
 21-19	but [mheu] me	when	flag
@@ -1324,9 +1326,11 @@
 21-19	cut [eff] in	off	5.4
 21-19	generation [ef] them	of	4.4
 21-19	which [mas] shed	was	2.5
-21-19	as [eff] the	off	3.7
 21-19	him [aud] he	and	5.2
+21-19	by [tuo] different	two	2.4
+21-19	there [mere] any	were	4.1
 21-19	which [mas] done	was	4.0
+21-19	understand [ot] give	or	3.2
 21-19	or [ln] which	in	4.6
 21-19	drink [ef] the	of	4.6
 21-19	sword [aud] they	and	3.9
@@ -1338,20 +1342,20 @@
 21-19	their [omn] name	own	4.6
 21-19	cut [oft] in	off	3.9
 21-19	and [fet] out	set	2.5
-21-19	lord [thar] he	that	5.6
 21-19	things [er] that	or	3.2
 21-19	will [fay] surely	say	3.8
 21-19	into [tuo] sorts	two	3.5
+21-19	make [ir] or	it	4.6
 21-19	but [hom] little	how	4.2
 21-19	drop [ef] water	of	3.4
 21-19	if [ue] cannot	he	5.6
 21-19	be [mise] as	wise	4.3
 21-19	wayes [ot] god	of	6.4
 21-19	our [mill] be	will	4.9
+21-23	N the	IN the	dropcap
 21-23	dyeth [inthe] bitternesse	in the	flag
 21-23	of [theplace] makes	the place	flag
 21-23	evil [menare] mingled	men are	flag
-21-23	god [ufeth] as	useth	flag
 21-23	know [sove] or	save	flag
 21-23	perfection [ofevery] thing	of every	flag
 21-23	given [inthe] next	in the	flag
@@ -1371,10 +1375,8 @@
 21-23	it [isthe] portion	is the	flag
 21-23	sweet [tous] god	to us	flag
 21-23	every [mhit] job	whit	flag
-21-23	the [righteons] often	righteous	flag
 21-23	moment [thoy] goe	they	2.7
 21-23	well [es] the	as	5.3
-21-23	death [ne] then	he	3.5
 21-23	of [bis] soul	his	5.8
 21-23	strength [ef] his	of	5.9
 21-23	when [Tob] saith	Job	4.3
@@ -1397,11 +1399,11 @@
 21-27	i [kuow] your	know	flag
 21-27	known [tous] we	to us	flag
 21-27	beleeve [himsels] into	himself	flag
-21-27	the [vira] thing	vine	flag
 21-27	man [ofthe] greatest	of the	flag
 21-27	known [tous] so	to us	flag
 21-27	say [heis] my	he is	flag
 21-27	answer [init] and	in it	flag
+21-27	the [Suone] the	Shore	flag
 21-27	revealed [tous] tis	to us	flag
 21-27	the [Jemes] about	Jewes	flag
 21-27	begin [todoe] and	to doe	flag
@@ -1410,6 +1412,7 @@
 21-27	hypocriticall [Jemes] jer	Jewes	flag
 21-27	did [toit] for	to it	flag
 21-27	said [rhere] are	there	flag
+21-27	that [yeu] could	you	flag
 21-27	are [sut] out	cut	flag
 21-27	strangers [inthis] world	in this	flag
 21-27	be [meen] you	mean	flag
@@ -1428,7 +1431,6 @@
 21-27	thine [omn] soul	own	3.6
 21-27	what [mas] in	was	4.8
 21-27	which [Tob] meant	Iob	2.5
-21-27	to [bim] by	him	5.7
 21-27	to [fay] things	say	3.5
 21-27	said [Te] have	To	6.0
 21-27	which [mas] in	was	5.0
@@ -1438,6 +1440,7 @@
 21-27	the [mord] of	word	6.5
 21-27	will [rot] the	not	2.9
 21-27	houses [ef] many	of	3.2
+21-27	they [mill] tell	will	5.3
 21-27	asked [ef] them	of	3.0
 21-27	men [ef] ordinary	of	3.1
 21-27	and [de] you	do	3.4
@@ -1452,10 +1455,10 @@
 21-30	that [Ithe] lord	It he	flag
 21-30	from [destructiou] when	destruction	flag
 21-30	this [pofition] that	position	flag
+21-30	slaughter [isit] not	is it	flag
 21-30	glory [ofhis] justice	of his	flag
 21-30	reserved [toor] in	to or	flag
 21-30	vers [Rho] shall	Who	flag
-21-30	in [gar] renders	gen	flag
 21-30	their [michednesse] nor	wickednesse	flag
 21-30	difficulty [init] so	in it	flag
 21-30	flee [tothe] land	to the	flag
@@ -1489,15 +1492,13 @@
 21-32	words [Tet] he	Yet	flag
 21-32	brought [tothe] grave	to the	flag
 21-32	i [besecch] thee	beseech	flag
-21-32	he [tatus] in	titus	flag
 21-32	in [oppesition] to	opposition	flag
 21-32	how [tohave] their	to have	flag
-21-32	a [ret] watch	net	flag
 21-32	upon [ahe] same	ano	flag
+21-32	shall [lee] the	loe	flag
 21-32	a [fhock] of	shock	flag
 21-32	of [eart] h	cant	flag
 21-32	of [Tosiab] chron	Josiah	flag
-21-32	the [Iime] swelling	Lime	flag
 21-32	often [partakert] of	partakers	flag
 21-32	now [ifit] be	if it	flag
 21-32	had [flartered] the	flattered	flag
@@ -1505,12 +1506,13 @@
 21-32	served [afier] whom	after	flag
 21-32	of [Godmaking] whom	God making	flag
 21-32	matter [offaith] and	of faith	flag
-21-32	we [translite] it	translate	flag
+21-32	dust [grometh] into	groweth	flag
 21-32	philosopher [oftheir] own	of their	flag
-21-32	dead [manas] body	man as	flag
 21-32	him [asif] the	as if	flag
+21-32	with [marrom] we	marrow	flag
 21-32	st [Tohn] having	John	flag
 21-32	comfort [tohim] and	to him	flag
+21-32	them [astogether] thus	as together	flag
 21-32	their [michednesse] and	wickednesse	flag
 21-32	unto [bim] and	him	5.9
 21-32	their [omn] hearts	own	4.9
@@ -1519,9 +1521,10 @@
 21-32	speak [lo] much	to	4.3
 21-32	they [rot] and	not	4.4
 21-32	it [wes] anciently	was	4.3
-21-32	it [rot] presse	not	3.9
+21-32	they [mere] gathered	were	4.3
 21-32	to [tast] so	cast	2.3
 21-32	shall [dram] all	draw	3.4
+21-32	living [aud] the	and	3.8
 21-32	yet [sew] take	few	1.7
 21-32	but [sor] us	for	5.6
 21-32	soon [ba] blasted	be	2.1

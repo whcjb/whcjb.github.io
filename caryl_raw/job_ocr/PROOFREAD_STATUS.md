@@ -10,6 +10,7 @@
 |---|---|---|---|---|---|---|---|
 | 1 | 2026-11-25 | 第 9 部 31:7–8（印本 pp. 356–379） | Packer 纸本 300 ppi | 24 | 约 290（落表 234 条，一条常含数处） | ≈ 12 | 0 |
 | 2 | 2026-11-25 | 第 9 部 31:9–12（印本 pp. 380–423） | Packer 纸本 300 ppi | 44 | 约 478（落表 370 条） | ≈ 11 | 0 |
+| 3 | 2026-11-26 | 第 6 部 21:30–31（印本 pp. 805–821） | Packer 纸本 | 17 | 约 175（落表 137 条） | ≈ 10 | 0 |
 
 ## 第 1 轮发现的错误类别与全书清理
 
@@ -90,3 +91,30 @@
 原书拼法 deceave／deceaves／deceavers 照录（OCR 给成了 deceive）。
 
 未成类、只能逐条改的：斜体段里的形近字（wise→wife、mill→will、mas→was、ie→is）、旁注拉丁文与希伯来／希腊文（逐条照影像补，共 20 余条旁注）、括号与标点。
+
+## 第 3 轮发现的错误类别与全书清理（第 6 部 21:30–31，17 页）
+
+版面类（拼接层 `caryl_ocr_assemble.py`）：
+
+| 类别 | 处理 | 全书 |
+|---|---|---|
+| 第 6 部第 732 叶以后一批页（多为偶数叶）版心窄约 90px，按全部固定栏宽推出的右界落在真行尾外，±60px 的实测校正一条也收不到；整页满行被判成短行，每行自成一段，旁注词混进正文 | ±60 内收不到点时，改取行首／行尾残差最密的一簇做校正 | 第 6 部 29 页病页 → 0；其他各部只变了对开本 2 叶（拉丁旁注归位） |
+
+文字类（`caryl_ocr_sweep.py` 新规则）：
+
+| 类别 | 本段 | 全书命中 |
+|---|---|---|
+| 斜体 w 读成 m：主语后 mas/mere/mill/mould → was/were/will/would；the mord → word；the/a/no mise → wise；mbo/Nho/H'ho → who（「Every mas」是 man、「my mise」是 wife，都挡掉） | ~8 | 106 |
+| 长 s 读坏的 shall：sall/spall/spalt/sual | 4 | 55 |
+| 句首斜体 Y 读成 T：Te have/are/shall… → Ye | 2 | 23 |
+| 书卷缩写：(Per.→(Jer.、(Isa-→(Isa. | 2 | 11（另 (Plal. 已有规则） |
+| 整段乱码（书末花饰、横线、单成一段的签名，如「AMENENE MMA」「========T===」） | — | 35 |
+| 段首噪点「- 」：markdown 排成项目列表 | 1 | 2（页面 `<ul>` 4 → 0） |
+| 书帖签名里 l 读成 1/I（「LI11I 2」=Lllll 2）、长签名超过 4 截（「M m m m m」） | 2 | 签名判据补全 |
+
+撤回：第 2 轮的 ofx 规则（ofit→of it）。p.813 影像证实原书「repayment ofit」「withthe」本就连排，照录；前两轮人工表里单纯把 ofit 拆开的条目一并改回照录。
+清理规则误伤修了一处：way 规则把「yea to their yea, and nay to their nay」的 nay 改成了 way，已挡住。
+
+切栏修正后第 6 部 21-19、21-23、21-27、21-32 几段证人／上下文层少推定了 8 处（Enomlidge、Vho、morms…），按上一版读法落人工表。
+
+原书误植／拼法照录（本段）：punishmeut、destructiou、voluptuons、aud、therns、be hath、flatteri's、withthe、ofit。

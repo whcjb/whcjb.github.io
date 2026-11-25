@@ -6488,15 +6488,10 @@
 28-12	confirm	thereot	thereof	thereos
 28-12	agree-fix	mith	with	mith
 28-12	witness	cars	tares	tares
-28-12	conflict	abconcerning		ui
-28-12	conflict	intelponanligencers		intelligencers
 28-12	noalign	pestrustton		destraction
 28-12	witness	anb	and	and
-28-12	conflict	concriDestruction		destruction
-28-12	noalign	perdiperditis		
 28-12	agree-fix	cither	either	cither
 28-12	conflict	ofthem		them
-28-12	conflict	mortuhade		have
 28-12	confirm	ansuer	answer	answer
 28-12	agree-fix	ufual	usual	usual
 28-12	witness	struction	destruction	destruction
@@ -6509,12 +6504,10 @@
 28-12	agree-fix	faid	said	said
 28-12	conflict	vfi		os
 28-12	witness	hauel	have	have
-28-12	noalign	perdamned		dimned
 28-12	confirm	Thirdiy	Thirdly	thirdly
 28-12	noalign	soeftrucion		
 28-12	confirm	arc	are	are
 28-12	conflict	demb		death
-28-12	noalign	Aqinas		
 28-12	confirm	thrce	three	three
 28-12	realword	bid	hid	hid
 28-12	confirm	frou	from	srom
@@ -6534,12 +6527,7 @@
 28-12	witness	Eame	Same	same
 28-12	confirm	significs	signifies	signisies
 28-12	noalign	pie		
-28-12	noalign	Audivinus		
-28-12	noalign	fananeju		
 28-12	conflict	cheisty		chiesly
-28-12	noalign	tantun		
-28-12	noalign	potuimus		
-28-12	noalign	nosar		
 28-12	witness	rumor	rumour	rumour
 28-12	confirm	vhich	which	which
 28-12	agree-fix	Pfal	Psal	psal
@@ -6595,13 +6583,11 @@
 28-12	noalign	hnotocth		enometh
 28-12	witness	tix	the	the
 28-12	noalign	tpercet		thertos
-28-12	noalign	apientia		
-28-12	noalign	cus		
 28-12	confirm	yca	yea	yea
 28-12	witness	tnoming	knowing	knowing
-28-12	noalign	Rnowsciplum		
+28-12	noalign	Rnowledge		bnowledge
 28-12	confirm	visdom	wisdom	wisdom
-28-12	noalign	towerb		
+28-12	noalign	towerb		enoreth
 28-12	agree-fix	misdom	wisdom	misdom
 28-12	confirm	mhere	where	where
 28-12	witness	bixself	himself	himsels
@@ -6609,10 +6595,6 @@
 28-12	confirm	hiuself	himself	bimsels
 28-12	noalign	Tte		
 28-12	conflict	andersiending		mise
-28-12	noalign	Distingue		
-28-12	noalign	pientiam		
-28-12	witness	verned	governed	governed
-28-12	noalign	finu		
 28-12	witness	ana	and	and
 28-12	confirm	scarched	searched	searched
 28-12	noalign	subjoins		subjoyps
@@ -6631,16 +6613,12 @@
 28-12	conflict	Desten		heaven
 28-12	agree-fix	faid	said	said
 28-12	witness	necde	needs	needs
-28-12	noalign	Explicatis		
 28-12	realword	ot	of	os
 28-12	noalign	loobet		loobeth
-28-12	noalign	pirtie		
-28-12	noalign	infinitate		
 28-12	noalign	ende		
 28-12	noalign	Earto		
 28-12	witness	sot	not	not
 28-12	confirm	tor	for	sor
-28-12	noalign	himu		
 28-12	noalign	wisdorr		
 28-12	confirm	comprehansion	comprehension	comprebension
 28-12	noalign	tnoneth		krometh
@@ -6674,13 +6652,8 @@
 28-12	confirm	loohetb	looketh	looketh
 28-12	noalign	manloching		
 28-12	agree	fenfe		sense
-28-12	conflict	metaRe		metaphorically
-28-12	noalign	phorically		
 28-12	conflict	whosclooking		whose
-28-12	noalign	intellexe		
-28-12	noalign	aificat		
 28-12	witness	fey	say	say
-28-12	noalign	consarare		
 28-12	confirm	carcful	careful	caresul
 28-12	confirm	cach	each	eich
 28-12	witness	psed	used	used
@@ -6695,7 +6668,7 @@
 28-12	conflict	Deatar		heaven
 28-12	confirm	vith	with	with
 28-12	witness	curiositie	curiosity	curiosity
-28-12	confirm	ingel	angel	angel
+28-12	solo	ingel	angel	
 28-12	witness	Aaistress	Mistress	mistress
 28-12	split	aunto	a unto	unto
 28-12	realword	bim	him	him
@@ -6719,7 +6692,7 @@
 28-12	noalign	Fireh		iirch
 28-12	split	Lordis	Lord is	lord
 28-12	confirm	suall	shall	shall
-28-12	noalign	Wbat		nbat
+28-12	solo	Wbat	What	
 28-12	agree	inthe		inthe
 28-12	noalign	cogniz		
 28-12	conflict	Hse		he
@@ -6738,7 +6711,7 @@
 28-12	witness	Eord	Lord	lord
 28-12	realword	sce	see	see
 28-12	conflict	Thithought		thought
-28-12	confirm	Tbe	The	the
+28-12	solo	Tbe	The	
 28-12	confirm	secing	seeing	seeing
 28-12	confirm	tbe	the	the
 28-12	witness	avhole	whole	whole
@@ -6772,7 +6745,7 @@
 28-12	witness	Cod	God	god
 28-12	agree-fix	praife	praise	praise
 28-12	noalign	Asif		
-28-12	solo	cye	eye	
+28-12	confirm	cye	eye	eye
 28-12	split	whichis	which is	which
 28-12	witness	represses	represseth	represseth
 28-12	agree	tumultuatings		tumultuatings
@@ -6784,7 +6757,7 @@
 28-12	confirm	secth	seeth	seeth
 28-12	confirm	righely	rightly	rightly
 28-12	confirm	wiched	wicked	micked
-28-12	solo	secth	seeth	
+28-12	confirm	secth	seeth	seeth
 28-12	confirm	secth	seeth	seeth
 28-12	confirm	secth	seeth	seeth
 28-12	split	Ihave	I have	have
