@@ -9,6 +9,7 @@
 | 轮 | 日期 | 抽中 | 底本 | 页数 | 本段错处 | 每页 | 连续达标 |
 |---|---|---|---|---|---|---|---|
 | 1 | 2026-11-25 | 第 9 部 31:7–8（印本 pp. 356–379） | Packer 纸本 300 ppi | 24 | 约 290（落表 234 条，一条常含数处） | ≈ 12 | 0 |
+| 2 | 2026-11-25 | 第 9 部 31:9–12（印本 pp. 380–423） | Packer 纸本 300 ppi | 44 | 约 478（落表 370 条） | ≈ 11 | 0 |
 
 ## 第 1 轮发现的错误类别与全书清理
 
@@ -51,3 +52,41 @@
 | 9 | 572 | 31-26 | 12 | |
 
 对开本第 8 部这一叶两栏约 60 处错，即每栏约 30 处，远高于四开本各部，页首加重提示的判断不变。
+
+## 第 2 轮发现的错误类别与全书清理（第 9 部 31:9–12，44 页）
+
+结构类（切段层 `caryl_ocr_text.py` 改判据，全书重切）：
+
+| 类别 | 本段 | 处理 | 全书 |
+|---|---|---|---|
+| 段首经文框截断：第一行后就关框，其余经文落进讲解（「…or if」） | 1 | 上行无句末标点时收悬挂缩进的小写续行；不缩进的新一节重合 ≥ 0.4 即收 | 20 余段经文框补全 |
+| 出处行读坏：OB／IOB／10B／02／JOR／JOE／108 → JOB；Verf → Vers | 1 | 出处行归一 | 全部段首 |
+| 段首花体字母下半截读成第二行行首碎字（「I and imprecation」「proLsperitie」「Zfury」） | 1 | 讲解首段第二行：比首行靠左的单字母剥掉；粘在词前的按词表剥（对开本不碰） | 59 |
+| 逐节小标题以断词号收尾、续行落成正文（「let other¬ / bow downe upon her.」） | 1 | 续行小写起头就并进小标题 | 20 余处 |
+
+文字类（`caryl_ocr_sweep.py` 新规则）：
+
+| 类别 | 本段 | 全书命中 |
+|---|---|---|
+| 'Tis 撇号读丢（句中独立的 Tis／tis；「wait tis」是 till 不碰） | ~6 | 620（含旧规则） |
+| 长 s 读成 f：fhall→shall、fin/finne/finfull→sin… | ~8 | fh 233、fin 122 |
+| of 与后词粘连：ofit、ofthe、ofa… | ~8 | 193 |
+| bis/bim → his/him（「a five-fold bis」不碰） | ~5 | 133 |
+| 书卷：(I Cor.→(1 Cor.、(Ter.→(Jer.、(Hof.→(Hos. | ~4 | 96 |
+| 代词后 hill → will、mould not → would not | ~3 | 34 |
+| (faith the text → (saith | 1 | 4 |
+| 页底书帖签名漏进正文（D dd、E e e、Ggg→SES、H h h、afB bb） | 5 | 102 |
+| 页缝把一句话劈成两段（签名或空行横在句中） | 4 | 74 |
+
+清理规则自身的误伤也在这一轮修了：拆词合并把「a mind full of Anguish」并成 mindfull（冠词后、接 of 时不并）；
+「and resol ved」被前一对匹配吃掉（拆词改为迭代到不动点）。
+
+人工表（`caryl_ocr_manual.py`）补两条：原串、改成里可写 `\n`（并回劈开的段落）；「改成的串已在」只在原串已不在或原串包含于改成串时才判已落盘
+（「base and H h h」→「base and 」那种前缀情形、或改成的串碰巧和段首经文框里一句相同，都曾被误判成已落盘）。
+
+切段层改动后证人／上下文层少推定了 11 处（ihall、vauey、juast…），按上一版链条的读法落了人工表。
+
+原书误植照录（本段）：bleed（shedding bleed）、concupisciple、glace（glace of thine eye）、fanlt、watied、uot、notorius、Cannanites、aud、mnsicallnesse、wardrope；
+原书拼法 deceave／deceaves／deceavers 照录（OCR 给成了 deceive）。
+
+未成类、只能逐条改的：斜体段里的形近字（wise→wife、mill→will、mas→was、ie→is）、旁注拉丁文与希伯来／希腊文（逐条照影像补，共 20 余条旁注）、括号与标点。

@@ -157,6 +157,7 @@ class Builder:
         out = []                  # 当前段的块：('p', text) / ('text', md) / ('vhead', text) / ('raw', html)
         mode = None               # None / 'epi' / 'vh'
         epi_vocab, epi_lines, vh_vocab = set(), [], set()
+        dropcap = None            # 经文框之后讲解首段的第一行（段首花体字母那一行）；下一行行首常带着花体字母下半截读出的碎字
         pending_pb = []
 
         def flush_para():
@@ -168,7 +169,7 @@ class Builder:
         def close_epi():
             nonlocal mode, epi_lines
             if mode == 'epi':
-                lab, lines = epi_lines[0], epi_lines[1:]
+                lab, lines = norm_label(epi_lines[0]), epi_lines[1:]
                 md = f'{lab}\n{{: .{P}-vlabel}}' + ''.join('\n\n' + join_lines(x) for x in group_verses(lines))
                 out.append(('text', md))
             elif mode == 'vh':
@@ -291,17 +292,37 @@ class Builder:
                 if mode == 'epi':
                     # 经文上一行以断词号收尾：下一行（半个词起头）一律归经文框——否则「ters that passe away」这类残句漏到讲解段首
                     cont = bool(re.search(r'[¬-]$', re.sub(r'<[^>]+>', '', epi_lines[-1]).strip()))
+                    # 上一行没有句末标点（「…or if」「…a companion to」）＝经文没完，斜体读得再烂也照收：
+                    #   悬挂缩进、小写起头的续行，短行或重合 ≥ 0.3（「owles.」「maste.」「mhat inheritance…」）；
+                    #   不缩进的新一节，重合 ≥ 0.5（「Heare diligent ly my speech」0.57）。
+                    # 讲解首段也缩进，但起头是段首花体大写（「N the former…」「OB proceeds…」），小写条件挡得住
+                    #   另：不缩进的行（新一节）重合 ≥ 0.4 即收——讲解首段一律缩进（花体字母），轮不到这条（「May shin is blache…」0.44）
+                    ov = overlap(plain, epi_vocab)
+                    if not b['indent']:
+                        cont = cont or ov >= 0.4
+                    elif not re.search(r'[.:;?!]\W*$', re.sub(r'<[^>]+>', '', epi_lines[-1]).strip()):
+                        cont = cont or (bool(re.match(r'\W*(?:[a-z]|I\s+[a-z])', plain)) and (bool(b.get('short')) or ov >= 0.3))
                     if cont or overlap(plain, epi_vocab) >= 0.6 or (len(toks(plain)) <= 3 and overlap(plain, epi_vocab) > 0):
                         epi_lines.append(t)
                         prev = b
                         continue
                     close_epi()
+                    dropcap = b
                 elif mode == 'vh':
-                    if overlap(plain, vh_vocab) >= 0.6 and not (prev and prev['end'] < x1 - 80):
+                    hy = bool(re.search(r'[¬-]$', re.sub(r'<[^>]+>', '', epi_lines[-1]).strip())) and \
+                        bool(re.match(r'\W*[a-z]', plain))   # 上一行以断词号收尾、这一行小写起头（半个词）：经文没完（「…let other¬ / bow downe upon her.」）；
+                                                               # 「&c¬ / As if he had said…」那个 ¬ 是噪点，下一行是讲解，挡掉
+                    if hy or (overlap(plain, vh_vocab) >= 0.6 and not (prev and prev['end'] < x1 - 80)):
                         epi_lines.append(t)
                         prev = b
                         continue
                     close_epi()
+                if dropcap is not None and prev is dropcap and self.part not in COLS_NUMBERED:   # 对开本版式另是一套，不碰
+                    dropcap = None
+                    t = strip_bleed(t, prev['x'], b['x'], bool(re.search(r'[¬-]$', re.sub(r'<[^>]+>', '', prev['t']).strip())))
+                    if not re.sub(r'<[^>]+>', '', t).strip():
+                        prev = b
+                        continue
                 new_para = False
                 if prev is not None and para and not re.search(r'[¬-]$', re.sub(r'<[^>]+>$', '', para[-1])):
                     if prev.get('short'):
@@ -319,6 +340,47 @@ class Builder:
                 para[-1] += ''.join(f' <span class="{P}-margin">{n[1]}</span>' for n in notes)
         close_section()
         return front, sections, pno
+
+
+RE_LAB_JOB = re.compile(r'^(\W{0,2})(?:[IJT1lo]?\s?[O0o]\s?\.?\s?[BRE8]|10[B28]|1?0[23]|108)(?=[\s.,«]|$)')
+
+
+def norm_label(t):
+    """段首出处行：花体 J 读丢、整词读坏（OB、IOB、10B、02、JOR、JOE、108、O.E）→ JOB；长 s 的 Verf → Vers。
+    页码锚点等标签留在前面不动。对开本的「VERS. 7,8.」「CHAP. XXVII.」不碰。"""
+    m = re.match(r'((?:<[^>]+>)*)(.*)$', t, re.S)
+    tags, x = m.group(1), m.group(2)
+    if RE_LAB_JOB.match(x):
+        x = RE_LAB_JOB.sub(lambda k: k.group(1) + 'JOB', x, 1)
+        x = re.sub(r'^(\W{0,2}JOB)\s*[«»]\s*', r'\1 ', x)
+        x = re.sub(r'^(\W{0,2}JOB),?\s*«?\s*(Chap)', r'\1, \2', x) if re.match(r'^\W{0,2}JOB,', x) else x
+    x = re.sub(r'\b[Vv]er[fſ]\b', 'Vers', x)
+    return tags + x
+
+
+BLEED_REST = {'and', 'are', 'may', 'most', 'shall'}
+
+
+def strip_bleed(t, x_first, x_this, hy=False):
+    """段首花体字母占两行，第二行行首常读出它下半截的一个碎字：
+    单独一个字母（「I and imprecation」「A -peech」「J verses」「T cessantnesse」），这一行比首行靠左（下探到花体字母那一格）才剥；
+    粘在下一个词前头的（「Zsad」「Fand」「Imost」「IConclusion」「Lsperitie」），整词不是词、或剥掉后是 and/are/may/most/shall 才剥
+    （「Land daring」← and；「Then」「Bildad」不动）；剥下的残余须是词、或上一行以断词号收尾（「pro¬ / Lsperitie」）——
+    挡「Almigbtp」→「lmigbtp」。只用在讲解首段的第二行。"""
+    m = re.match(r'((?:<[^>]+>)*)(.*)$', t, re.S)
+    tags, x = m.group(1), m.group(2)
+    lex = _lex()
+    k = re.match(r"([IAJTYLEFWMZ1|]|VV)(?:\s+|$)(?=\S|$)", x)
+    if k and x_this < x_first - 25:
+        return tags + x[k.end():]
+    k = re.match(r"([IAJTYLEFWZ]|VV)([A-Za-z][a-z]+)\b", x)
+    if k:
+        rest = k.group(2)
+        whole = (k.group(1) + rest).lower()
+        if (rest[0].isupper() and lex.get(rest.lower(), 0)) or \
+                (rest[0].islower() and (lex.get(rest.lower(), 0) or hy) and (not lex.get(whole, 0) or rest in BLEED_REST)):
+            return tags + x[len(k.group(1)):]
+    return t
 
 
 def group_margin(ms):

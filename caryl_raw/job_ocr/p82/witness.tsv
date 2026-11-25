@@ -153,8 +153,8 @@
 27-1	witness	saip	said	said
 27-1	confirm	libeth	liketh	liveth
 27-1	noalign	iubo		nhe
-27-1	noalign	amap		
-27-1	noalign	jutg		
+27-1	witness	amap	away	away
+27-1	witness	jutgment	judgment	judgment
 27-1	witness	almightp	almighty	almighty
 27-1	noalign	uije		nho
 27-1	conflict	berto		vexed
@@ -337,7 +337,7 @@
 27-1	witness	acouted	accounted	accounted
 27-1	confirm	tliem	them	them
 27-1	witness	thelt	their	their
-27-1	witness	wasti	wash	wash
+27-1	noalign	wasti		
 27-1	agree	reputes		reputes
 27-1	conflict	unolcan		uncleane
 27-1	conflict	dtcemed		esteemed
@@ -431,7 +431,7 @@
 27-1	agree-fix	ufed	used	used
 27-1	agree-fix	mith	with	mith
 27-1	agree	choller		choller
-27-1	confirm	Grecce	Greece	gretce
+27-1	noalign	Grecce		
 27-1	confirm	tbe	the	the
 27-1	confirm	brabe	brake	brake
 27-1	confirm	secteth	setteth	setketh
@@ -515,7 +515,7 @@
 27-1	noalign	hime		nim
 27-1	noalign	ubile		
 27-1	noalign	beathis		
-27-1	conflict	anothe		and
+27-1	noalign	anothe		
 27-1	conflict	nostrus		nostrills
 27-1	noalign	Qop		
 27-1	confirm	sball	shall	shall
@@ -617,6 +617,7 @@
 27-1	conflict	totrouble		trouble
 27-1	noalign	norwithstanding		mitbstanding
 27-1	noalign	tre		
+27-1	realword	lt	it	it
 27-1	agree-fix	lise	life	lise
 27-1	confirm	cortinue	continue	conrinue
 27-1	witness	casc	case	case
@@ -2164,9 +2165,10 @@
 27-18	confirm	tahe	take	tale
 27-18	witness	bolb	hold	hold
 27-18	realword	bim	him	him
-27-18	noalign	ipatere		maters
-27-18	conflict	ccaleth		stealeth
-27-18	conflict	atoap		away
+27-18	noalign	ipatere		
+27-18	noalign	atempect		
+27-18	noalign	ccaleth		
+27-18	noalign	atoap		
 27-18	confirm	nigut	night	nigbt
 27-18	noalign	Lerros		terrouri
 27-18	confirm	tahe	take	tabe
@@ -2181,7 +2183,7 @@
 27-18	confirm	vaters	waters	waters
 27-18	confirm	extrcamest	extreamest	extreamest
 27-18	noalign	disturbanc		distur
-27-18	noalign	itis		
+27-18	conflict	itis		is
 27-18	agree-fix	faid	said	said
 27-18	conflict	farab		jacob
 27-18	witness	agieat	great	great
@@ -2227,7 +2229,7 @@
 27-18	noalign	tobe		
 27-18	witness	talce	take	take
 27-18	conflict	totake		take
-27-18	confirm	cither	either	either
+27-18	solo	cither	either	
 27-18	noalign	himor		
 27-18	conflict	toobey		obey
 27-18	witness	punistiment	punishment	punishment
@@ -2253,7 +2255,7 @@
 27-18	confirm	Deuid	David	david
 27-18	confirm	Chran	Chron	chron
 27-18	noalign	Godbahybrolco		
-27-18	noalign	Apbnmi		
+27-18	conflict	Apbnmi		upon
 27-18	witness	hanid	hand	hand
 27-18	confirm	brtaking	breaking	breaking
 27-18	conflict	fortief		sorth
@@ -4674,9 +4676,8 @@
 28-1	conflict	dooo		slood
 28-1	noalign	hieaheth		briabeth
 28-1	confirm	tbe	the	the
-28-1	noalign	inbabi		inbabitant
-28-1	solo	tant	tent	
-28-1	noalign	cuen		
+28-1	agree-fix	inbabitant	inhabitant	inbabitant
+28-1	witness	cuen	even	even
 28-1	confirm	maters	waters	waters
 28-1	confirm	font	fort	soot
 28-1	witness	thep	they	they
@@ -4792,7 +4793,7 @@
 28-1	realword	sce	see	see
 28-1	noalign	ofthe		
 28-1	split	fromit	from it	srom
-28-1	noalign	œarth		tarth
+28-1	noalign	œarth		
 28-1	witness	baeab	bread	bread
 28-1	witness	unper	under	under
 28-1	noalign	turnen		turnid
@@ -6560,7 +6561,7 @@
 28-12	witness	Coo	God	god
 28-12	conflict	unbertaubetb		understandeth
 28-12	conflict	inap		may
-28-12	conflict	therz		thereos
+28-12	conflict	therzet		thereos
 28-12	noalign	tuotreth		kuomutb
 28-12	witness	placz	place	place
 28-12	confirm	thercof	thereof	thereos
@@ -6640,10 +6641,10 @@
 28-12	witness	sot	not	not
 28-12	confirm	tor	for	sor
 28-12	noalign	himu		
-28-12	confirm	wisdorr	wisdom	wisdom
-28-12	noalign	comprehansion		
-28-12	noalign	tnoneth		
-28-12	noalign	qplace		
+28-12	noalign	wisdorr		
+28-12	confirm	comprehansion	comprehension	comprebension
+28-12	noalign	tnoneth		krometh
+28-12	witness	qplace	place	place
 28-12	confirm	setb	seth	seeth
 28-12	confirm	euds	ends	end
 28-12	noalign	Eærth		tarth
@@ -7258,7 +7259,7 @@
 28-25	noalign	anb		
 28-25	noalign	peclare		
 28-25	witness	anp	and	and
-28-25	noalign	pareo		
+28-25	noalign	epareo		
 28-25	witness	pea	rea	rea
 28-25	noalign	scarcheuit		
 28-25	agree-fix	aster	after	aster

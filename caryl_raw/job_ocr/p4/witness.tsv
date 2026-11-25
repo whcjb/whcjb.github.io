@@ -175,8 +175,6 @@
 11-1	noalign	babler		
 11-13	witness	mictednes	wickednes	wickednes
 11-13	witness	Nthe	The	the
-11-13	noalign	opiA		opi
-11-13	agree	nion		nion
 11-13	noalign	mhereof		bres
 11-13	conflict	shait		ts
 11-13	witness	iniquit	iniquity	iniquity
@@ -188,7 +186,7 @@
 11-13	noalign	zoth		
 11-13	noalign	jresolved		sresolved
 11-13	witness	noWI	now	now
-11-13	noalign	teave		
+11-13	witness	teave	leave	leave
 11-13	noalign	justifyings		juitisyings
 11-13	noalign	overmeenings		overweenings
 11-13	solo	seck	seek	
@@ -678,7 +676,7 @@
 11-17	agree-fix	fafety	safety	sasety
 11-17	agree	moveables		moveables
 11-17	agree	herdsmen		herdsmen
-11-17	conflict	ging		nee
+11-17	agree	ging		ging
 11-17	witness	emercy	mercy	mercy
 11-17	confirm	fhalt	shalt	thalt
 11-17	agree	hoes		hoes
@@ -1728,7 +1726,6 @@
 12-11	solo	mords	words	
 12-11	confirm	domn	down	down
 12-11	noalign	shuteth		sbuteth
-12-11	witness	forI	for	sor
 12-11	confirm	sormer	former	sormec
 12-11	witness	toat	that	that
 12-11	agree	Volumne		volumne
@@ -1768,7 +1765,7 @@
 12-11	agree	salshood		salshood
 12-11	agree	voy		voy
 12-11	noalign	lence		
-12-11	confirm	mell	well	well
+12-11	solo	mell	well	
 12-11	confirm	mhat	what	what
 12-11	confirm	mhen	when	when
 12-11	agree-fix	thoughss	thoughts	thoughss
@@ -2247,7 +2244,7 @@
 12-15	witness	Secondsy	Secondly	secondly
 12-15	agree-fix	fuch	such	such
 12-15	solo	Dauid	David	
-12-15	noalign	shallbe		
+12-15	conflict	shallbe		shalt
 12-15	agree	moysten		moysten
 12-15	noalign	seminal		scstiinal
 12-15	agree	ofthe		osthe
@@ -2258,7 +2255,7 @@
 12-15	confirm	carth	earth	earth
 12-15	agree	stifeled		stiseled
 12-15	agree	choacked		choacked
-12-15	split	upperwaters	upper waters	upper
+12-15	noalign	upperwaters		
 12-15	noalign	Toclear		todear
 12-15	conflict	ofthat		that
 12-15	solo	snom	snow	
@@ -2510,7 +2507,6 @@
 12-15	confirm	crastiness	craftiness	crastinels
 12-17	noalign	loosetb		
 12-17	confirm	mith	with	with
-12-17	noalign	poJ		
 12-17	witness	degre	degrees	degrees
 12-17	agree-fix	wondersul	wonderful	wondersul
 12-17	confirm	deccivers	deceivers	deceivers
@@ -2693,7 +2689,7 @@
 12-17	noalign	totne		roche
 12-17	realword	ot	of	os
 12-17	noalign	thougnt		choughe
-12-17	noalign	Ihated		
+12-17	conflict	Ihated		i
 12-17	confirm	whick	which	which
 12-17	solo	knon	know	
 12-17	agree	manor		manor
@@ -3871,7 +3867,7 @@
 12-24	agree	loathsomly		loathsomly
 12-24	agree-fix	tbe	the	tbe
 12-24	agree	Fistly		sistly
-12-24	conflict	dishearted		hearted
+12-24	noalign	dishearted		
 12-24	witness	furiousty	furiously	suriously
 12-24	confirm	anet	an et	net
 12-24	conflict	purpofes		purpo
@@ -3896,7 +3892,6 @@
 12-5	noalign	mithhis		
 12-5	conflict	provohe		pro
 12-5	confirm	mhose	whose	whose
-12-5	conflict	enA		en
 12-5	witness	conceitedness	conceitednesse	conceitednesse
 12-5	conflict	contemptuousness		usness
 12-5	conflict	IIth		th
@@ -4035,8 +4030,7 @@
 12-5	agree	Zophars		zophars
 12-5	witness	chost	ghost	ghost
 12-5	noalign	provole		
-12-5	noalign	abua		
-12-5	noalign	dantly		
+12-5	solo	abuadantly	abundantly	
 12-5	solo	tbe	the	
 12-5	solo	cyes	eyes	
 12-5	noalign	miched		
@@ -5619,7 +5613,6 @@
 13-20	witness	Hon	How	how
 13-20	noalign	enom		kuow
 13-20	agree	transgre		transgre
-13-20	conflict	beI		be
 13-20	solo	hnow	know	
 13-20	agree	indent		indent
 13-20	conflict	setf		jess
@@ -5921,7 +5914,7 @@
 13-24	confirm	manifefrations	manifestations	manisestations
 13-24	agree	seeings		seeings
 13-24	confirm	tuese	these	these
-13-24	solo	chere	there	
+13-24	confirm	chere	there	there
 13-24	noalign	Godrin		
 13-24	noalign	forhis		
 13-24	witness	orld	world	world
@@ -5956,7 +5949,7 @@
 13-24	realword	mill	will	will
 13-24	noalign	mercr		mercll
 13-24	realword	mill	will	will
-13-24	noalign	wliom		
+13-24	confirm	wliom	whom	whom
 13-24	agree	Fifrly		sisrly
 13-24	noalign	dalliance		dallianc
 13-24	agree-fix	vifion	vision	vision
@@ -6143,7 +6136,7 @@
 13-26	noalign	mritest		
 13-26	solo	mritten	written	
 13-26	noalign	bboud		
-13-26	noalign	fob		
+13-26	conflict	fob		writest
 13-26	confirm	mith	with	with
 13-26	confirm	agairst	against	against
 13-26	conflict	Tbintends		intends
@@ -6231,7 +6224,7 @@
 13-26	confirm	mritest	writest	writest
 13-26	confirm	Lerd	Lord	lord
 13-26	noalign	Oye		
-13-26	confirm	sheus	shews	shews
+13-26	solo	sheus	shews	
 13-26	noalign	mabest		makgit
 13-26	noalign	sinherit		
 13-26	agree	stroy		stroy
@@ -7772,7 +7765,7 @@
 14-15	agree	carlessenesse		carlessenesse
 14-15	witness	carcfulnesse	carefulnesse	caresulnesse
 14-15	noalign	Nnnn		
-14-15	conflict	watc		watcheth
+14-15	noalign	watc		
 14-15	solo	nof	not	
 14-15	agree	haltings		haltings
 14-15	agree	haltings		haltings
@@ -7890,7 +7883,7 @@
 14-18	noalign	orn		
 14-18	noalign	togrow		
 14-18	noalign	oun		
-14-18	noalign	groueth		
+14-18	confirm	groueth	groweth	growetb
 14-18	noalign	Obierve		
 14-18	conflict	boib		bath
 14-18	solo	offliction	affliction	
@@ -7909,7 +7902,7 @@
 14-18	noalign	haild		
 14-18	noalign	letur		
 14-18	solo	earthIy	earthly	
-14-18	witness	ihall	hall	hall
+14-18	noalign	ihall		
 14-18	agree	Propheet		propheet
 14-18	noalign	gaadest		addest
 14-18	witness	wny	way	way
@@ -8523,7 +8516,6 @@
 14-7	solo	mhere	where	
 14-7	noalign	dorn		
 14-7	solo	awabe	awake	
-14-7	noalign	asserI		
 14-7	noalign	Ioth		
 14-7	solo	domn	down	
 14-7	solo	amay	away	

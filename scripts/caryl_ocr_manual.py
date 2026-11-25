@@ -5,7 +5,7 @@
     /usr/bin/python3 scripts/caryl_ocr_manual.py --apply    # 落到各部 fixed/（排在 caryl_ocr_ctx.py 之后、caryl_ocr_sweep.py 之前）
 
 表：caryl_raw/job_ocr/manual_fixes.tsv，列 = 部目录（p4/p6/p82/p9）、段（31-7）、原串、改成、依据（看图所见，如「p.212 影像」）。
-`#` 起头且无制表符的是注释行（「#### 小节标题」这类原串不会被吞，old-book-ocr §4.5）。
+原串、改成里的 `\\n` 代表换行（用来并回被页缝劈开的段落）。`#` 起头且无制表符的是注释行（「#### 小节标题」这类原串不会被吞，old-book-ocr §4.5）。
 匹配在去掉标签的纯文本上做（与抽读时打印的文字一致），原串在该段须唯一；改正区若跨页码锚点、旁注、经文框等标签就拒绝
 （缩短原串再落）；只与存疑标记 cy-ocr 重叠的，连标记一并去掉（人工看图确认过了）。
 幂等：原串已找不到、改成的已在 → 视为已落盘。
@@ -39,9 +39,10 @@ def plain_map(md):
 def apply_one(md, old, new):
     """→ (新 md, 状态)。状态：ok / done / missing / multi / blocked"""
     pt, idx = plain_map(md)
-    if new and new in pt:
-        return md, 'done'                   # 改成的串已在（上游已修好，或此前已落盘）：原串是改成串的一部分时不这样判就会叠字（A A good man）
     n = pt.count(old)
+    if new and new in pt and (n == 0 or old in new):
+        return md, 'done'                   # 改成的串已在（上游已修好，或此前已落盘）：原串是改成串的一部分时不这样判就会叠字（A A good man）；
+                                            # 反过来改成串是原串的前缀（删页底签名「base and H h h」→「base and 」）时原串还在，要照改
     if n == 0:
         return md, ('done' if new and new in pt else 'missing')
     if n > 1:
@@ -73,6 +74,7 @@ def load_table():
         f = ln.split('\t')
         if len(f) < 4:
             raise SystemExit(f'改正表行不足 4 列：{ln!r}')
+        f[2], f[3] = f[2].replace('\\n', '\n'), f[3].replace('\\n', '\n')   # 「\n」写法：跨段的改正（页底签名、接字把一句话劈成两段）
         rows.append(f[:5] + [''] * (5 - len(f[:5])))
     return rows
 

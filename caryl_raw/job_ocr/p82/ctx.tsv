@@ -32,12 +32,14 @@
 27-1	isa [Wby] sayest	Why	flag
 27-1	my [wayis] hid	way is	flag
 27-1	do [meright] he	me right	flag
+27-1	not [wasti] it	waste	flag
 27-1	his [Thone] or	Th one	flag
 27-1	there [Buthe] doth	But he	flag
 27-1	yet [wehave] a	we have	flag
 27-1	my [oun] conscience	own	flag
 27-1	who [batb] taken	hath	flag
 27-1	powerful [sohe] is	so he	flag
+27-1	of [Grecce] was	Greece	flag
 27-1	he [secketh] only	seeketh	flag
 27-1	of [thebody] such	the body	flag
 27-1	as [inthe] pains	in the	flag
@@ -79,7 +81,6 @@
 27-1	testimony [te] or	to	3.2
 27-1	up [che] innocency	the	3.3
 27-1	innocency [os] his	of	4.3
-27-1	not [wash] it	wish	3.5
 27-1	judgments [ot] the	of	5.2
 27-1	counsels [ef] the	of	5.5
 27-1	here [Tob] was	Job	4.4
@@ -92,7 +93,6 @@
 27-1	as [Tob] speaks	Job	4.1
 27-1	the [fame] signification	same	3.5
 27-1	word [ef] god	of	6.3
-27-1	takes [lt] upon	it	3.7
 27-1	which [Tob] had	Job	4.8
 27-1	mercy [fo] the	to	4.3
 27-1	be [dear] to	clear	2.3
@@ -795,6 +795,7 @@
 28-12	and [thercof] i	thereof	flag
 28-12	understanding [Secing] it	Seeing	flag
 28-12	the [Earto] not	Ear to	flag
+28-12	the [wisdorr] of	wisdom	flag
 28-12	ends [ofthe] earth	of the	flag
 28-12	and [sectlo] under	settle	flag
 28-12	and [seethme] god	seeth me	flag
