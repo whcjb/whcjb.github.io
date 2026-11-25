@@ -30,18 +30,36 @@ TCP 编目把第 12 部年份记作 1653，扉页印的是 1666，以扉页为�
 
 **AGES 无此书**（2026-11-24 查 docs/SABDA_AGES_书目.md 与 media.sabda.org 镜像 COMMENT／PURITAN／LIBRARY3 目录）。
 
-## 缺的 4 部（无任何录入本）
+## 缺的 4 部：OCR（2026-11-24/25）
 
-| 部 | 章 |
-|---|---|
-| 4 | 11–14 |
-| 6 | 18–21 |
-| 8 | 27–29 |
-| 9 | 30–31 |
+| 部 | 章 | 状态 |
+|---|---|---|
+| 4 | 11–14 | 已上线（OCR） |
+| 6 | 18–21 | 已上线（OCR） |
+| 8 | 27–29 | 未上线：胶片大段发暗，与纸本逐页择优后仍非词率 5.5%，第 28 章段首多处没切出；占位页 |
+| 9 | 30–31 | 已上线（OCR） |
 
-TCP 未录，1676–77 对开合订本也不在 TCP。只有影像：archive.org（如 `ExpositionOnJob3234`）、Regent College
-Houston-Packer 藏本（ebooks.regent-college.edu/Caryl-Exposition-Job-Vol-N/）、Google Books（Digital Puritan 列有链接）。
-待选底本走 old-book-ocr。站上这 13 章各出一页占位说明（对比抽屉按章号区间 1–42 列本书，不出占位就 404）。
+TCP 未录，1676–77 对开合订本也不在 TCP；AGES、Logos 等均无录入本（2026-11-24 查过，只有 1836 年节本与现代节本）。
+处理链与各步实测都写在脚本文首，次序：
+
+1. `caryl_ocr.py`：取图（curl，系统 Python 的 SSL 连 IA 会卡死）→ 背景展平 → kraken + CATMuS-Print Large。
+   底本／对照本按「同一章附近一页 kraken 识别后对 TCP 卡里尔词表的非词率」挑：第 4 部 Packer 纸本 1670（3.7%，对照 1670 胶片），
+   第 6 部 Packer 纸本（3.4%，对照 1653 胶片），第 9 部 Packer 纸本 300 ppi（6.6%，对照 1676 对开本第二卷胶片 5.7%），
+   第 8 部 1670 胶片 + Packer 纸本两份逐页择优（`caryl_ocr_merge8.py`）。
+   引擎在第 3 部（有 TCP 对照）实测：tesseract 对上率 0.41–0.88，kraken 0.92–0.94。
+2. `caryl_ocr_assemble.py`：逐页版面。版心左右缘是斜的（透视变形）、旁注与正文同高的行被 kraken 连成一行，
+   栏界改为行首／行尾 RANSAC 拟合 + 全部固定栏宽 + 整行实测校正；页眉、页码、接字、书帖签名剔除。
+3. `caryl_ocr_text.py`：切段（段首出处行的各种读坏写法、无段首时按页眉换章兜底）、钦定本比对定经文框、逐节标题挂锚点、逐页定页码。
+4. 纠错四层：① `caryl_ocr_fix.py` 字形混淆 + 词表（只出候选）；② `caryl_ocr_witness.py` 对照本按位置印证（confirm/witness/agree/split/solo）；
+   ③ `caryl_ocr_ctx.py` 短词上下文（TCP 卡里尔二元搭配，只改罕见词／非词：ef→of、mas→was…）；判不了的非词发布页加虚下划线（`.cy-ocr`）。
+   第一层单用抽 40 处准确率约 85%，所以不单独落盘，须经对照本印证或满足 solo 条件。
+
+**验收（old-book-ocr §4.5，每页图只读一次）**：第 4 部印本 p.181 修正前 8 处错、修正后约 3 处；第 6 部 p.83 4 处；
+第 9 部 p.569 修正前约 16 处（主要是斜体虚词 If→Is、of→ef，因此加了第 ③ 层）。**未达「每页 < 1 处」的收尾标准**；
+用户 2026-11-25 定：先上线 4、6、9 部，页首注明机器识别、未逐字校对，后续再抽章校。
+
+已知问题：斜体未还原；原书误植会被顺手「改正」（p.83 Champer → Chapter）；段首花体首字母读丢（`DB hath` = JOB hath）；
+真词误读（trow/know、hin/him）残留；第 6 部 19:1 段首行读坏，按页眉换章兜底开段；Packer 第 VIII 册叶 598–599 的 jp2 损坏。
 
 ## 结构（`scripts/extract_caryl.py`）
 

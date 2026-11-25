@@ -15,6 +15,7 @@ layout: default
   - 段内逐节的小经文框 → `.cy-vhead`，其前挂该节 commentary-anchor。
   - 印本页码 → `.cy-pb`，id `#pN`（各部各自编页）。
   - 待定的缺字 → `.cy-gap`（标红）。
+  - OCR 各部：段首 `.cy-ocrnote` 来源说明；存疑词 `.cy-ocr` 灰色虚下划线。
 {%- endcomment -%}
 
 <div class="container caryl-wrap{% if page.zh %} cy-zh{% endif %}" style="padding-top: 70px;">
@@ -143,6 +144,11 @@ layout: default
 .caryl-wrap .cy-text p { margin: 0; text-align: left; }
 .caryl-wrap .cy-text p + p { margin-top: 8px; }
 .caryl-wrap .cy-text .cy-vlabel { font-size: 13px; letter-spacing: .04em; color: var(--cy-ink-dark); margin: 0 0 4px; font-style: italic; }
+/* OCR 各部（第 4、6、8、9 部）：段首来源说明；两份扫描都判不了的词，灰色虚下划线（不标红：其中大半是词表外的当时真词） */
+.caryl-wrap .cy-ocrnote { font-size: 12.5px; line-height: 1.6; color: #85797a; background: var(--cy-paper);
+  border-left: 3px solid var(--cy-ink-light); padding: 8px 12px; margin: 0 0 20px !important; text-align: left !important; }
+.caryl-wrap .cy-ocr { text-decoration: underline dotted #a99; text-underline-offset: 3px; cursor: help; }
+
 /* 未录入各部的占位章页 */
 .caryl-wrap .cy-pending { text-align: center !important; color: #85797a; font-style: italic; margin: 40px 0 16px !important; }
 

@@ -5,8 +5,8 @@ book_name: "An Exposition upon the Book of Job"
 title: "Title Page (Part 7)"
 subtitle: "第七部 · 书名页"
 date: 2026-11-24 10:56
-prev_url: "/caryl/job/17-13/"
-prev_label: "17:13–16"
+prev_url: "/caryl/job/21-32/"
+prev_label: "21:32–34"
 next_url: "/caryl/job/p7-reader/"
 next_label: "Part 7: To the Christian Reader"
 ---

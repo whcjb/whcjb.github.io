@@ -6,7 +6,8 @@
 约瑟·卡里尔《约伯记释义》。一段（≈一讲或连续几讲）一页 `<章>-<首节>`，每章一页目录 `<章>.md`；
 各部卷首（书名页、出版许可、致读者、勘误；第 1 部另有全书引论）`p<部>-<类>`，排在该部各段之前。
 共用骨架 tcp_publish.Book，这里改三处：页序按部交错、锚点已在段内的不重挂、书首页按 12 部列章格子。
-EEBO-TCP 只录了 8 部；另 4 部的章格子标灰，注明待据影像补录。
+EEBO-TCP 只录了 8 部；另 4 部（11–14、18–21、27–29、30–31 章）据扫描影像 OCR（caryl_raw/job_ocr/，见 caryl_ocr*.py），
+段落取 job_ocr/p<部>/fixed/（两层纠错后），每段页首注明来源；还没出 fixed/ 的部，各章出占位页。
 date 沿用 en_meta.json 原值，新页才写当前真实时间。
 """
 import argparse
@@ -20,17 +21,57 @@ import tcp_publish  # noqa: E402
 from extract_caryl import NV as NV_ALL, PARTS  # noqa: E402
 
 
+OCR_DIR = Path(__file__).resolve().parent.parent / 'caryl_raw' / 'job_ocr'
+# OCR 各部：底本、对照本、扉页所见（年份读不清的不写）
+OCR_INFO = {
+    4: dict(base='J. I. Packer 藏本（IA 扫描，600 ppi）', edition='London: for Thomas Sawbridge, 1670',
+            witness='1670 年同一印次的 EEBO 缩微胶片', year='1670'),
+    6: dict(base='J. I. Packer 藏本（IA 扫描，600 ppi）', edition='London: M. Simmons, sold by Joseph Cranford',
+            witness='1653 年印本的 EEBO 缩微胶片', year=''),
+    8: dict(base='1670 年印本的 EEBO 缩微胶片与 J. I. Packer 藏本（300 ppi），逐页取读得好的一份', edition='London, 1670',
+            witness='两份互为对照', year='1670'),
+    9: dict(base='J. I. Packer 藏本（IA 扫描，300 ppi）', edition='London: M. Simmons for Elisha Wallis',
+            witness='1676–77 年对开合订本第二卷的 EEBO 缩微胶片', year=''),
+}
+
+
+# 已上线的 OCR 部（2026-11-25 用户定：先上 4、6、9，第 8 部段首切分与底本质量修好再上）
+OCR_READY = (4, 6, 9)
+
+
 class tc:
     ROOT = Path(__file__).resolve().parent.parent
     RAW = ROOT / 'caryl_raw' / 'job'
     TOK = re.compile(r'•+|〈◊〉|〈…〉|〈Greek〉|▪')
+    OCR_SRC = {}
 
     @classmethod
     def order(cls):
-        return json.loads((cls.RAW / 'order.json').read_text(encoding='utf-8'))
+        o = json.loads((cls.RAW / 'order.json').read_text(encoding='utf-8'))
+        for part in OCR_READY:
+            f = OCR_DIR / f'p{part}' / 'order.json'
+            if not f.exists() or not (OCR_DIR / f'p{part}' / 'fixed').is_dir():
+                continue
+            secs = [dict(x, src='ocr') for x in json.loads(f.read_text(encoding='utf-8'))['sections']]
+            # 出处行只引头几节的段延到下一段之前、章末段延到章末（同 extract_caryl.py）
+            secs.sort(key=lambda x: (x['ch'], x['v1']))
+            for i, x in enumerate(secs):
+                nx = secs[i + 1] if i + 1 < len(secs) and secs[i + 1]['ch'] == x['ch'] else None
+                x['v2'] = max(x['v2'], (nx['v1'] - 1) if nx else NV_ALL[x['ch']])
+                if nx and x['v2'] >= nx['v1']:
+                    x['v2'] = nx['v1'] - 1
+                cls.OCR_SRC[x['slug']] = OCR_DIR / f'p{part}' / 'fixed' / f'{x["slug"]}.md'
+            o['sections'] += secs
+        return o
 
     @classmethod
     def load(cls, slug):
+        if slug in cls.OCR_SRC:
+            md = cls.OCR_SRC[slug].read_text(encoding='utf-8').strip()
+            md = md.replace('|', '')         # OCR 噪点竖线会被 kramdown 当表格（old-book-ocr §4.4：删，不转义）
+            return ('<p class="cy-ocrnote">This section is machine-read (OCR) from page images and corrected against a '
+                    'second copy; it has not been proofread word by word. Doubtful words are underlined. '
+                    '本段据扫描影像机器识别，经另一印本校勘，未逐字人工校对；存疑处加虚下划线。</p>\n\n' + md)
         return (cls.RAW / 'en_chapters' / f'{slug}.md').read_text(encoding='utf-8').strip()
 
 
@@ -43,6 +84,25 @@ LECTURES = {1: 21, 2: 35, 3: 32, 5: 23, 7: 37, 10: 49, 11: 35, 12: 52}
 CN = ['', '一', '二', '三', '四', '五', '六', '七', '八', '九', '十', '十一', '十二']
 
 
+def ocr_en(parts):
+    if not parts:
+        return ''
+    names = ', '.join(f'Part {p} (chapters {a}–{b})' for p, _, (a, b), _ in PARTS if p in parts)
+    return (f'{names} {"was" if len(parts) == 1 else "were"} never transcribed by EEBO-TCP; their text here is machine-read (OCR, kraken with the CATMuS-Print '
+            'model) from page images of the printed parts, then corrected word by word against a second copy wherever the two '
+            'could be aligned. It has not been proofread by eye: words neither copy could settle are underlined with dots, and '
+            'some misreadings that happen to form real words remain. Italics are not reproduced in these parts. ')
+
+
+def ocr_zh(parts):
+    if not parts:
+        return ''
+    names = '、'.join(f'第{CN[p]}部（{a}–{b} 章）' for p, _, (a, b), _ in PARTS if p in parts)
+    srcs = '；'.join(f'第{CN[p]}部底本为{OCR_INFO[p]["base"]}，对照本为{OCR_INFO[p]["witness"]}' for p in parts)
+    return (f'{names}EEBO-TCP 未录入，本站据原书扫描影像机器识别（kraken 引擎、CATMuS-Print 模型），再逐词与另一印本对照校勘'
+            f'（{srcs}）。这几部未经逐字人工校对：两份都判不了的词加虚下划线，碰巧读成别的真词的错字仍可能留存；斜体未能还原。')
+
+
 def chs_label(a, b):
     return f'{a}–{b}'
 
@@ -52,8 +112,6 @@ class Caryl(tcp_publish.Book):
         fronts = sorted(ORD['front'], key=lambda f: (f['part'], FRONT_RANK[f['slug'].split('-', 1)[1]]))
         pages = []
         for part, tcp, chs, year in PARTS:
-            if not tcp:
-                continue
             for f in fronts:
                 if f['part'] == part:
                     pages.append(dict(slug=f['slug'], title=f'{f["title"]} (Part {part})', short=f'Part {part}: {f["title"]}',
@@ -75,8 +133,18 @@ class Caryl(tcp_publish.Book):
         ch = pg['ch']
         prior = self.__dict__.setdefault('_anchored', set())     # 前面各段已挂过的 (章, 节)
         # 两段都标的节（1:5、1:11、2:5–6 …）只在前一段挂锚点，id 不重复
+        seen = set()
+
+        def keep(m):                         # 前面各段已挂过的、本页已出现过的（OCR 段同一节的逐节标题读出两次）都去掉
+            v = int(m.group(1))
+            if (ch, v) in prior or v in seen:
+                return ''
+            seen.add(v)
+            return m.group(0)
+        body = re.sub(rf'<div class="commentary-anchor" id="{self.book}-{ch}-(\d+)"></div>\n*', keep, body)
+        # OCR 段的逐节锚点节号是读出来的，可能读错：超出本章节数的去掉
         body = re.sub(rf'<div class="commentary-anchor" id="{self.book}-{ch}-(\d+)"></div>\n*',
-                      lambda m: '' if (ch, int(m.group(1))) in prior else m.group(0), body)
+                      lambda m: m.group(0) if 1 <= int(m.group(1)) <= NV_ALL[ch] else '', body)
         have = {int(v) for v in re.findall(rf'id="{self.book}-{ch}-(\d+)"', body)}
         vs = [v for v in range(pg['v1'], pg['v2'] + 1) if v not in have and (ch, v) not in prior]
         prior |= {(ch, v) for v in have | set(vs)}
@@ -101,6 +169,11 @@ class Caryl(tcp_publish.Book):
             for c in range(a, b + 1):
                 if tcp:
                     cells.append(f'<li><a href="{u}/{self.slug}/{self.book}/{c}/">Chapter {c}<small>Part {part} · {year}</small></a></li>')
+                elif c in self.NV:
+                    y = OCR_INFO[part]['year']
+                    cells.append(f'<li><a class="{P}-ocrcell" href="{u}/{self.slug}/{self.book}/{c}/" '
+                                 f'title="据扫描影像 OCR，未逐字人工校对">Chapter {c}<small>Part {part} · OCR'
+                                 + (f' · {y}' if y else '') + '</small></a></li>')
                 else:
                     cells.append(f'<li><span class="{P}-none" title="EEBO-TCP 未录此部，待据原书影像补录">Chapter {c}'
                                  f'<small>Part {part} · 待补录</small></span></li>')
@@ -117,7 +190,8 @@ class Caryl(tcp_publish.Book):
         g = ORD['gaps']
         nlec = sum(LECTURES[p] for p, t, _, _ in PARTS if t)
         have = [p for p in PARTS if p[1]]
-        lack = [p for p in PARTS if not p[1]]
+        ocr_parts = sorted({x['part'] for x in ORD['sections'] if x.get('src') == 'ocr'})
+        lack = [p for p in PARTS if not p[1] and p[0] not in ocr_parts]
         lack_en = ', '.join(f'Part {p} (chapters {a}–{b})' for p, _, (a, b), _ in lack)
         lack_zh = '、'.join(f'第{CN[p]}部（{a}–{b} 章）' for p, _, (a, b), _ in lack)
         tcps = ', '.join(t for _, t, _, _ in have)
@@ -130,13 +204,13 @@ reissue of 1656. Spelling is that of the original; only the long s is printed as
 exposition as Caryl divided it, headed by the verses he quotes; the page numbers of the printed part are shown in the text.
 Places the transcribers could not read are shown in red ({g.get("letter", 0):,} letters, {g.get("word", 0)} words,
 {g.get("span", 0)} longer passages, and {g.get("foreign", 0):,} Greek or Hebrew words left untranscribed).
-{lack_en} were never transcribed by EEBO-TCP and will be added from page images. The subject and Scripture indexes at the
+{ocr_en(ocr_parts)}{(lack_en + (' was' if len(lack) == 1 else ' were') + ' never transcribed by EEBO-TCP and will be added from page images. ') if lack else ''}The subject and Scripture indexes at the
 end of each part are not included.</p>''')
         out.append(f'''<p class="{P}-note-zh"><b>文本说明。</b>卡里尔在伦敦桥边圣马格努斯堂逐节讲约伯记，边讲边分 12 部（四开本）出版，
 1643 年出第一部，1666 年出完；1676–77 年合为对开两卷。本站所收 8 部，按各部扉页所记共 {nlec} 讲。本站正文据 EEBO-TCP 人工录入本（{tcps}，CC0 公共领域授权），
 共 {len(have)} 部，各据扉页所印之版；第二部是 1656 年再版。拼法照录原书，只把长 s（ſ）印作 s。一页是卡里尔所分的一段，段首是他所引经文，
 正文中标出原书页码。录入者读不出的地方以红色标出：缺字母 {g.get("letter", 0):,} 个、缺整词 {g.get("word", 0)} 处、缺一段以上 {g.get("span", 0)} 处，
-另有希腊文、希伯来文 {g.get("foreign", 0):,} 处未录。{lack_zh}EEBO-TCP 未录入，待据原书影像补录。各部卷末的主题索引与经文索引未收。</p>''')
+另有希腊文、希伯来文 {g.get("foreign", 0):,} 处未录。{ocr_zh(ocr_parts)}{(lack_zh + 'EEBO-TCP 未录入，待据原书影像补录。') if lack else ''}各部卷末的主题索引与经文索引未收。</p>''')
         out.append('</div>')
         return '\n'.join(out) + '\n'
 
@@ -148,7 +222,7 @@ def main():
     b = Caryl(tc=tc, NV=NV, slug='caryl', book='job', P='cy', layout='caryl-job-chapter',
               author='Joseph Caryl', years='1602–1673', name='An Exposition upon the Book of Job', ref='Job',
               edition='An Exposition with Practical Observations upon the Book of Job · London, 1643–1666 · '
-                      'Parts 1–3, 5, 7, 10–12 (EEBO-TCP)',
+                      'Parts 1–3, 5, 7, 10–12 (EEBO-TCP); Parts 4, 6, 9 (OCR)',
               front=[], back=[])
     b.publish(a.apply)
     if a.apply:
@@ -164,6 +238,8 @@ def placeholders(b):
         if tcp:
             continue
         for ch in range(lo, hi + 1):
+            if ch in b.NV:              # 已有 OCR 内容的章，章目录页由 publish 写好了，不覆盖
+                continue
             slug = str(ch)
             m.setdefault(slug, stamp)
             fm = ['---', f'layout: {b.layout}', f'book_id: {b.book}', f'book_name: "{b.name}"', f'title: "Job {ch}"',
