@@ -191,7 +191,7 @@ def invert_italic(line):
     return re.sub('\x01(\\d+)\x01', lambda m: held[int(m.group(1))], t)
 
 
-RE_DROP = re.compile(r'^((?:<span class="jb-pb"[^>]*></span>)*)([A-Z])(?=[A-Z][a-zſ]|[A-Z] [a-zſ])', re.M)   # WEe / THe；两字母首词全大写（IN these、WE are）
+RE_DROP = re.compile(r'^ ?((?:<span class="jb-pb"[^>]*></span>|<span class="jb-margin"[^>]*>[^<]*(?:<span[^>]*>[^<]*</span>[^<]*)*</span> ?)*)([A-Z])(?=[A-Z][a-zſ]|[A-Z]+ [a-zſ])', re.M)   # WEe / THe；首词全大写（IN these、THE word、GOD hath——原书首字放大、余字小型大写）
 
 
 def dropcaps(md):
