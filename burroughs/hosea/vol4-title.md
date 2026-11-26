@@ -31,5 +31,5 @@ Being the Seventh Book published by
 
 <p class="jb-item" markdown="1">Will. Adderly.</p>
 
-*LONDON:* <span class="jb-gap" title="TCP: illegible in source">••</span>inted by *Peter Cole,* at the sign of the *Printing-Press* in Cornhil, near the Royal Exchange. 1651.
+*LONDON:* Printed by *Peter Cole,* at the sign of the *Printing-Press* in Cornhil, near the Royal Exchange. 1651.
 

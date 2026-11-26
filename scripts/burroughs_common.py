@@ -72,8 +72,12 @@ def _tsv(name):
 def decisions():
     """gid → (读法, 类别)。类别：w=看图读出 c=推补（用户同意）。? 与未判的不落。"""
     d = {}
+    seen = set()
     for f in _tsv('gap_review.tsv'):
         g, v = int(f[0]), f[1]
+        if g in seen:
+            raise ValueError(f'gap_review.tsv 第 {g} 组重复，后一条会静默覆盖前一条')
+        seen.add(g)
         if v in ('?', '') or v.startswith('P:'):
             continue
         d[g] = ('' if v == '∅' else v, 'w')
