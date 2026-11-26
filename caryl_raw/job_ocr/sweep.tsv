@@ -1,3 +1,4 @@
+fs	p4/11-1	fignif	signif
 job	p4/11-1	Tob	Job
 accent	p4/11-1	préface	preface
 accent	p4/11-1	friénd	friend
@@ -27,6 +28,7 @@ isa	p4/11-1	2Cor.	2 Cor.
 job	p4/11-1	Tob	Job
 pua	p4/11-13		q;
 job	p4/11-13	Tob	Job
+num	p4/11-13	zoth	20th
 mw	p4/11-13	Ay 	My 
 isa	p4/11-13	1Sam.	1 Sam.
 accent	p4/11-13	becaüse	because
@@ -54,6 +56,7 @@ fs	p4/11-13	fo	so
 th	p4/11-13	ihe	the
 split	p4/11-13	iniquit y	iniquity
 fh	p4/11-13	fh	sh
+mw	p4/11-13	before ve bid	before we bid
 fh	p4/11-13	fh	sh
 mword	p4/11-15	ret [..] neweth	reneweth
 accent	p4/11-15	façe	face
@@ -69,7 +72,10 @@ fs	p4/11-15	fo	so
 fh	p4/11-15	fh	sh
 fh	p4/11-15	fh	sh
 junk	p4/11-17	b1O	
+fs	p4/11-17	fignif	signif
+fs	p4/11-17	fignif	signif
 fh	p4/11-17	fh	sh
+obs	p4/11-17	Oblerve	Observe
 accent	p4/11-17	dówn	down
 fh	p4/11-17	fh	sh
 guil	p4/11-17	 «	 
@@ -82,6 +88,7 @@ fh	p4/11-17	fh	sh
 guil	p4/11-17	» 	 
 accent	p4/11-17	yét	yet
 job	p4/11-17	Tob	Job
+num	p4/11-17	zoth	20th
 accent	p4/11-17	rightéous	righteous
 split	p4/11-17	prosperit y	prosperity
 fs	p4/11-17	fome	some
@@ -191,6 +198,7 @@ pronI	p4/12-1	Ihave	I have
 pronI	p4/12-1	Iam	I am
 pronI	p4/12-1	Iam	I am
 pronI	p4/12-1	Iam	I am
+pronI	p4/12-1	(l 	(I 
 god	p4/12-1	Ged	God
 accent	p4/12-1	proceẽds	proceeds
 isa	p4/12-1	(I 	(1 
@@ -226,6 +234,7 @@ fh	p4/12-11	fh	sh
 modal	p4/12-11	which vas	which was
 guil	p4/12-11	«	
 accent	p4/12-11	Expérience	Experience
+mw	p4/12-11	that ve should	that we should
 split	p4/12-11	F ather	Father
 guil	p4/12-11	» 	 
 job	p4/12-11	Tob	Job
@@ -250,6 +259,7 @@ modal	p4/12-11	which mould	which would
 accent	p4/12-11	theré	there
 pua	p4/12-15		q;
 pua	p4/12-15		q;
+fs	p4/12-15	fignif	signif
 fs	p4/12-15	osten	often
 split	p4/12-15	wit hholden	withholden
 fh	p4/12-15	fh	sh
@@ -266,6 +276,7 @@ fs	p4/12-15	osten	often
 pronI	p4/12-15	l	I
 split	p4/12-15	pri vate	private
 saith	p4/12-15	( faith 	( saith 
+mw	p4/12-15	ha ve been	have been
 mw	p4/12-15	They mere	They were
 accent	p4/12-15	à	a
 accent	p4/12-15	goõd	good
@@ -278,6 +289,7 @@ fh	p4/12-15	fh	sh
 pua	p4/12-17		q;
 pua	p4/12-17		q;
 pua	p4/12-17		q;
+fs	p4/12-17	fignif	signif
 fs	p4/12-17	themfelves	themselves
 guil	p4/12-17	 «	 
 split	p4/12-17	unde standing	understanding
@@ -296,6 +308,7 @@ split	p4/12-17	Second ly	Secondly
 job	p4/12-17	Tob	Job
 accent	p4/12-17	had̂	had
 accent	p4/12-17	thosè	those
+mw	p4/12-17	so ve may	so we may
 bis	p4/12-17	bis	his
 guil	p4/12-17	» 	 
 th	p4/12-17	rhe	the
@@ -307,6 +320,7 @@ accent	p4/12-17	beãst	beast
 split	p4/12-17	Counse llours	Counsellours
 bis	p4/12-17	bis	his
 space	p4/12-17	Lam.2.16.)	Lam.2.16.) 
+fs	p4/12-19	fignif	signif
 te	p4/12-19	Te 	Ye 
 te	p4/12-19	Te 	Ye 
 pronI	p4/12-19	I'have	I have
@@ -322,6 +336,7 @@ accent	p4/12-19	likéwise	likewise
 tis	p4/12-19	“Tis	'Tis
 tis	p4/12-19	“Tis	'Tis
 accent	p4/12-19	d́ay	day
+wh	p4/12-19	M’here	Where
 fh	p4/12-19	fh	sh
 fh	p4/12-19	fh	sh
 fh	p4/12-19	fh	sh
@@ -329,6 +344,7 @@ job	p4/12-19	Tob	Job
 fs	p4/12-19	osten	often
 tis	p4/12-19	“Tis	'Tis
 isa	p4/12-19	Plal.	Psal.
+fs	p4/12-22	fignif	signif
 pbjoin	p4/12-22	ad them, and there t⏎⏎	w
 split	p4/12-22	per sonal	personal
 fs	p4/12-22	osten	often
@@ -339,6 +355,7 @@ accent	p4/12-22	thẽse	these
 of	p4/12-22	ot	of
 isa	p4/12-22	1Cor.	1 Cor.
 fs	p4/12-22	himfelf	himself
+mw	p4/12-22	which ve translate	which we translate
 split	p4/12-22	supernatur al	supernatural
 tis	p4/12-22	"Tis	'Tis
 fin	p4/12-22	finner	sinner
@@ -358,6 +375,7 @@ split	p4/12-22	E gypt	Egypt
 job	p4/12-22	Tob	Job
 accent	p4/12-22	spakę	spake
 pua	p4/12-24		q;
+fs	p4/12-24	fignif	signif
 sig	p4/12-24	XX	
 pbjoin	p4/12-24	the hand of God, the⏎⏎	t
 catch	p4/12-24	the [pb] the	the
@@ -370,9 +388,11 @@ accent	p4/12-24	tó	to
 way	p4/12-24	a may	a way
 tis	p4/12-24	"Tis	'Tis
 tis	p4/12-24	"Tis	'Tis
+mw	p4/12-24	when ve perceive	when we perceive
 split	p4/12-24	Wilder ness	Wilderness
 god	p4/12-24	Ged	God
 saith	p4/12-24	(faith 	(saith 
+mw	p4/12-24	when ve have	when we have
 pronI	p4/12-24	l	I
 accent	p4/12-24	makęth	maketh
 tis	p4/12-24	"Tis	 'Tis
@@ -417,25 +437,32 @@ accent	p4/12-7	Thé	The
 fh	p4/12-7	fh	sh
 fs	p4/12-7	fo	so
 accent	p4/12-7	tõ	to
+mw	p4/12-7	But ve may	But we may
 fin	p4/12-7	fin	sin
 fh	p4/12-7	fh	sh
 mw	p4/12-7	Elies mill	Elies will
 accent	p4/12-7	theïr	their
+mw	p4/12-7	When ve see	When we see
 split	p4/12-7	devour ing	devouring
 shall	p4/12-7	spalt	shall
 accent	p4/12-7	teãch	teach
+mw	p4/12-7	if ve do	if we do
 modal	p4/12-7	he vas	he was
 job	p4/12-7	Tob	Job
 mw	p4/12-7	N'ho	Who
 bis	p4/12-7	bis	his
 wh	p4/12-7	W'ho	Who
+wh	p4/12-7	IVho	Who
+mw	p4/12-7	once ve admit	once we admit
 tis	p4/12-7	Tis	'Tis
 accent	p4/12-7	hõld	hold
 te	p4/12-7	Te 	Ye 
 fs	p4/12-7	it hall	it shall
+split	p4/12-7	out ward	outward
 mw	p4/12-7	the mord	the word
 split	p4/12-7	breat h	breath
 pua	p4/13-1		q;
+fs	p4/13-1	fignif	signif
 pronI	p4/13-1	Iam	I am
 wh	p4/13-1	W'hat	What
 split	p4/13-1	secret ly	secretly
@@ -467,6 +494,7 @@ accent	p4/13-1	à	a
 split	p4/13-1	iniquit y	iniquity
 tis	p4/13-1	“Tis	'Tis
 te	p4/13-1	Te 	Ye 
+wh	p4/13-1	M'hy	Why
 saith	p4/13-1	(faith 	(saith 
 split	p4/13-1	obser vable	observable
 job	p4/13-1	Iob	Job
@@ -479,6 +507,8 @@ accent	p4/13-1	thoügh	though
 modal	p4/13-1	you mould	you would
 pua	p4/13-14		q;
 latin	p4/13-14	mibi	mihi
+fs	p4/13-14	fignif	signif
+fs	p4/13-14	fignif	signif
 sig	p4/13-14	M mm	
 modal	p4/13-14	I hill	I will
 wh	p4/13-14	n'herefore	wherefore
@@ -515,12 +545,14 @@ accent	p4/13-14	trũst	trust
 th	p4/13-14	in tle	in the
 modal	p4/13-14	I mill	I will
 accent	p4/13-14	takę	take
+mw	p4/13-14	Ay 	My 
 fh	p4/13-14	fh	sh
 job	p4/13-14	Tob	Job
 god	p4/13-14	Ged	God
 fs	p4/13-14	himfelf	himself
 modal	p4/13-14	I mill	I will
 tis	p4/13-14	"Tis	'Tis
+mw	p4/13-14	therefore ve should	therefore we should
 bis	p4/13-14	bim	him
 accent	p4/13-14	makę	make
 modal	p4/13-14	I mill	I will
@@ -531,6 +563,7 @@ pronI	p4/13-14	l	I
 mw	p4/13-14	mine omn	mine owne
 accent	p4/13-14	waïes	waies
 fs	p4/13-14	himfelf	himself
+mw	p4/13-14	my oun	my own
 modal	p4/13-14	I mould	I would
 modal	p4/13-14	I mill	I will
 pronI	p4/13-14	l	I
@@ -544,6 +577,7 @@ accent	p4/13-14	betwéen	between
 accent	p4/13-14	Faïth	Faith
 tis	p4/13-14	Tis	'Tis
 fh	p4/13-14	fh	sh
+mw	p4/13-14	Ay 	My 
 fs	p4/13-14	fay	say
 tis	p4/13-14	"Tis	'Tis
 accent	p4/13-14	à	a
@@ -568,10 +602,12 @@ junk	p4/13-17	PPP
 pua	p4/13-17		q;
 pua	p4/13-17		q;
 pua	p4/13-17		q;
+fs	p4/13-17	fignif	signif
 joh	p4/13-17	(Job. 4.42	(Joh. 4.42
 pronI	p4/13-17	l	I
 split	p4/13-17	diligent ly	diligently
 split	p4/13-17	diligent ly	diligently
+mw	p4/13-17	Ay 	My 
 fs	p4/13-17	osten	often
 split	p4/13-17	declarati on	declaration
 pronI	p4/13-17	l 	I 
@@ -592,6 +628,8 @@ accent	p4/13-17	mistakę	mistake
 isa	p4/13-17	1Cor.	1 Cor.
 te	p4/13-17	Tou 	You 
 mw	p4/13-17	for me have	for we have
+mw	p4/13-17	what ve have	what we have
+mw	p4/13-17	that ve shall	that we shall
 pronI	p4/13-17	Ihave	I have
 fs	p4/13-17	fay	say
 saith	p4/13-17	(faith 	(saith 
@@ -606,6 +644,7 @@ te	p4/13-17	Te 	Ye
 saith	p4/13-17	(faith 	(saith 
 tis	p4/13-17	“Tis	'Tis
 wh	p4/13-17	I'hold	I hold
+mw	p4/13-17	untill ve have	untill we have
 latin	p4/13-20	mibi	mihi
 modal	p4/13-20	I mill	I will
 pronI	p4/13-20	l'am	I am
@@ -662,6 +701,8 @@ pronI	p4/13-24	l'have	I have
 accent	p4/13-24	wondérful	wonderful
 accent	p4/13-24	bût	but
 accent	p4/13-24	fâce	face
+mw	p4/13-24	Ay 	My 
+mw	p4/13-24	them ve have	them we have
 accent	p4/13-24	Gõd	God
 wh	p4/13-24	u'herefore	wherefore
 modal	p4/13-24	I mill	I will
@@ -700,6 +741,7 @@ bis	p4/13-5	bim	him
 modal	p4/13-5	ye mould	ye would
 mw	p4/13-5	Who mould	Who would
 accent	p4/13-5	havẽ	have
+mw	p4/13-5	which ve translate	which we translate
 job	p4/13-5	fobs	Jobs
 modal	p4/13-5	you mould	you would
 te	p4/13-5	Te 	Ye 
@@ -735,6 +777,7 @@ pua	p4/13-9		q;
 pua	p4/13-9		q;
 pua	p4/13-9		q;
 pua	p4/13-9		q;
+fs	p4/13-9	fignif	signif
 sig	p4/13-9	Dd’d	
 pbjoin	p4/13-9	r inheritance on the⏎⏎	o
 sig	p4/13-9	H hh	
@@ -747,6 +790,7 @@ split	p4/13-9	memor y	memory
 fin	p4/13-9	fin	sin
 bis	p4/13-9	bim	him
 accent	p4/13-9	makȩ	make
+mw	p4/13-9	When ve feel	When we feel
 split	p4/13-9	aut hority	authority
 split	p4/13-9	T hey	They
 accent	p4/13-9	Toó	Too
@@ -875,6 +919,7 @@ accent	p4/14-13	à	a
 split	p4/14-13	out ward	outward
 tis	p4/14-13	' 	’
 head	p4/14-13	An Exposition upon the Bookof JeR. Vers. 13. 	
+mw	p4/14-13	Ay 	My 
 saith	p4/14-13	, faith 	, saith 
 accent	p4/14-13	oũt	out
 job	p4/14-13	Tob	Job
@@ -892,6 +937,7 @@ fh	p4/14-13	fh	sh
 accent	p4/14-13	makę	make
 job	p4/14-13	Sob	Job
 te	p4/14-13	Te 	Ye 
+pronI	p4/14-13	(l 	(I 
 fh	p4/14-13	fh	sh
 fh	p4/14-13	fh	sh
 job	p4/14-13	Tob	Job
@@ -903,6 +949,7 @@ junk	p4/14-15	Nnnn 2
 sig	p4/14-15	Nnnn	
 pbjoin	p4/14-15	ions of that course,⏎⏎	a
 pjoin	p4/14-15	gh the grave be vo-t⏎⏎	the land of for
+mw	p4/14-15	Ay 	My 
 job	p4/14-15	Tob	Job
 guil	p4/14-15	 «	 
 pronI	p4/14-15	l’am	I am
@@ -919,17 +966,19 @@ fh	p4/14-15	fh	sh
 job	p4/14-15	Tob	Job
 job	p4/14-15	Tob	Job
 job	p4/14-15	Tob	Job
+mw	p4/14-15	Ay 	My 
 job	p4/14-15	Tob	Job
 tis	p4/14-15	"Tis	'Tis
 accent	p4/14-15	placé	place
 job	p4/14-15	Tob	Job
 job	p4/14-15	fob	Job
+mw	p4/14-15	Ay 	My 
 job	p4/14-15	Tob	Job
 job	p4/14-15	fob	Job
 split	p4/14-15	clear ly	clearly
 junk	p4/14-18	He PPpp 2	
 sig	p4/14-18	PPP	
-pbjoin	p4/14-18	aud washest away the⏎⏎	t
+pbjoin	p4/14-18	and washest away the⏎⏎	t
 catch	p4/14-18	thou [pb] thou	thou
 job	p4/14-18	Tob	Job
 saith	p4/14-18	(faith 	(saith 
@@ -943,7 +992,6 @@ isa	p4/14-18	1Cor.	1 Cor.
 fh	p4/14-18	fh	sh
 accent	p4/14-18	makę	make
 fh	p4/14-18	fh	sh
-bis	p4/14-18	bim	him
 accent	p4/14-18	havę	have
 tis	p4/14-18	“Tis	 'Tis
 pronI	p4/14-18	l	I
@@ -959,12 +1007,14 @@ sig	p4/14-3	Dddd
 pbjoin	p4/14-3	of the Mettal is the⏎⏎	d
 sig	p4/14-3	Dddd 2	
 pronI	p4/14-3	Iflee	I flee
+mw	p4/14-3	what ve are	what we are
 pronI	p4/14-3	Iam	I am
 wh	p4/14-3	I'ho	Who
 job	p4/14-3	Tob	Job
 tis	p4/14-3	"Tis	'Tis
 head	p4/14-3	An Exposition upon the Book of Jon. Vers.4. 	
 way	p4/14-3	the may	the way
+mw	p4/14-3	and ve esteemed	and we esteemed
 tis	p4/14-3	“Tis	'Tis
 tis	p4/14-3	Tis	'Tis
 tis	p4/14-3	“Tis	 'Tis
@@ -978,6 +1028,7 @@ job	p4/14-3	fobs	Jobs
 accent	p4/14-3	gràce	grace
 accent	p4/14-3	à	a
 space	p4/14-3	mas.	mas. 
+mw	p4/14-3	that ve are	that we are
 modal	p4/14-3	I mill	I will
 fs	p4/14-3	osten	often
 pronI	p4/14-3	Isee	I see
@@ -1027,6 +1078,7 @@ pronI	p4/14-5	Itrouble	I trouble
 saith	p4/14-5	( faith 	( saith 
 mw	p4/14-5	his omn	his owne
 space	p4/14-5	Exod. 12.40.)	Exod. 12.40.) 
+mw	p4/14-5	Ay 	My 
 accent	p4/14-5	arẽ	are
 job	p4/14-5	fob	Job
 tis	p4/14-5	"Tis	'Tis
@@ -1077,8 +1129,11 @@ job	p4/14-7	Tob	Job
 tis	p4/14-7	"Tis	'Tis
 isa	p4/14-7	(Per	(Jer
 pua	p6/18-1	;	q;
+fs	p6/18-1	fignif	signif
 pjoin	p6/18-1	m, and woe to the Iy⏎⏎	wicked; yet he 
+mw	p6/18-1	are ve counted	are we counted
 job	p6/18-1	sob	Job
+num	p6/18-1	zoth	20th
 job	p6/18-1	sob	Job
 job	p6/18-1	job	Job
 job	p6/18-1	fob	Job
@@ -1092,12 +1147,16 @@ head	p6/18-1	Chap. 18. An Exposition upon the Book of JOE.
 	
 job	p6/18-1	fob	Job
 job	p6/18-1	fob	Job
+mw	p6/18-1	what ve shall	what we shall
 te	p6/18-1	Tou 	You 
 accent	p6/18-1	tõok	took
 job	p6/18-1	sob	Job
 job	p6/18-1	Jub	Job
+mw	p6/18-1	and ve mill	and we mill
 job	p6/18-1	fob	Job
 job	p6/18-1	Jub	Job
+mw	p6/18-1	Therefore ve ought	Therefore we ought
+mw	p6/18-1	that ve have	that we have
 wh	p6/18-1	N'herefore	Wherefore
 wh	p6/18-1	w'herefore	wherefore
 job	p6/18-1	Tob	Job
@@ -1106,6 +1165,7 @@ wh	p6/18-1	w'herefore	wherefore
 isa	p6/18-1	vers. I0.	vers. 10.
 job	p6/18-1	Jub	Job
 of	p6/18-1	ef	of
+mw	p6/18-1	because ve are	because we are
 job	p6/18-1	sob	Job
 fh	p6/18-1	fh	sh
 job	p6/18-1	fob	Job
@@ -1123,6 +1183,9 @@ fh	p6/18-1	fh	sh
 job	p6/18-1	Tob	Job
 accent	p6/18-1	forsakèn	forsaken
 pua	p6/18-11		q;
+fs	p6/18-11	fignif	signif
+fs	p6/18-11	fignif	signif
+fs	p6/18-11	fignif	signif
 pbjoin	p6/18-11	 made for him P 2
 
 a⏎⏎	h
@@ -1153,6 +1216,7 @@ accent	p6/18-11	à	a
 accent	p6/18-11	à	a
 accent	p6/18-11	confidencę	confidence
 fs	p6/18-11	fay	say
+mw	p6/18-11	conceive ve are	conceive we are
 accent	p6/18-11	à	a
 fh	p6/18-11	fh	sh
 split	p6/18-11	short ly	shortly
@@ -1221,6 +1285,8 @@ isa	p6/18-17	(Per	(Jer
 god	p6/18-17	Ged	God
 fh	p6/18-17	fh	sh
 job	p6/18-17	sob	Job
+mw	p6/18-17	Seeing ve are	Seeing we are
+fs	p6/18-5	fignif	signif
 head	p6/18-5	Vers.  8.	
 te	p6/18-5	Tea	Yea
 te	p6/18-5	Tea	Yea
@@ -1288,6 +1354,8 @@ latin	p6/19-1	mibi	mihi
 latin	p6/19-1	mibi	mihi
 latin	p6/19-1	mibi	mihi
 latin	p6/19-1	mibi	mihi
+fs	p6/19-1	fignif	signif
+fs	p6/19-1	fignif	signif
 job	p6/19-1	fob	Job
 job	p6/19-1	fob	Job
 job	p6/19-1	fob’s	Job’s
@@ -1332,6 +1400,7 @@ tis	p6/19-1	as’tis	as ’tis
 tis	p6/19-1	Tis	'Tis
 fh	p6/19-1	fh	sh
 te	p6/19-1	Te 	Ye 
+mw	p6/19-1	which ve render	which we render
 fs	p6/19-1	osten	often
 te	p6/19-1	Te 	Ye 
 te	p6/19-1	Te 	Ye 
@@ -1343,6 +1412,7 @@ te	p6/19-1	Te 	Ye
 te	p6/19-1	Te 	Ye 
 job	p6/19-1	Tob	Job
 fin	p6/19-1	fin	sin
+mw	p6/19-1	when ve have	when we have
 job	p6/19-1	Tob	Job
 modal	p6/19-1	I mas	I was
 tis	p6/19-1	“Tis	'Tis
@@ -1355,6 +1425,8 @@ tis	p6/19-1	"Tis	 'Tis
 tis	p6/19-1	“Tis	'Tis
 bis	p6/19-1	bim	him
 tis	p6/19-1	therefore’tis	therefore ’tis
+fs	p6/19-10	fignif	signif
+fs	p6/19-10	fignif	signif
 list	p6/19-10	- 	
 way	p6/19-10	their may	their way
 pronI	p6/19-10	Iam	I am
@@ -1377,6 +1449,7 @@ pronI	p6/19-10	Iam	I am
 accent	p6/19-10	Job́	Job
 job	p6/19-10	Tob	Job
 job	p6/19-10	Tob	Job
+mw	p6/19-10	conceive ve are	conceive we are
 job	p6/19-10	fob	Job
 pronI	p6/19-10	I'have	I have
 tis	p6/19-10	"Tis	'Tis
@@ -1398,6 +1471,7 @@ bis	p6/19-10	bim	him
 modal	p6/19-10	I mill	I will
 wh	p6/19-10	n'het	whet
 accent	p6/19-10	maké	make
+mw	p6/19-10	then ve were	then we were
 job	p6/19-10	Tob	Job
 job	p6/19-10	Tob	Job
 isa	p6/19-10	(I 	(1 
@@ -1413,17 +1487,20 @@ job	p6/19-10	sob	Job
 job	p6/19-10	Tob	Job
 job	p6/19-10	job	Job
 fs	p6/19-10	himfelfe	himselfe
+num	p6/19-13	zoth	20th
 split	p6/19-13	distinct ly	distinctly
 num	p6/19-13	1oth	10th
 job	p6/19-13	sob	Job
 job	p6/19-13	sob's	Job's
 accent	p6/19-13	oné	one
+mw	p6/19-13	Ay 	My 
 accent	p6/19-13	thât	that
 tis	p6/19-13	so tis	so ’tis
 fin	p6/19-13	fin	sin
 tis	p6/19-13	when’tis	when ’tis
 job	p6/19-13	sob’s	Job’s
 guil	p6/19-13	» 	 
+mw	p6/19-13	Ay 	My 
 tis	p6/19-13	so’tis	so ’tis
 fs	p6/19-13	fo	so
 tis	p6/19-13	and’tis	and ’tis
@@ -1437,6 +1514,7 @@ te	p6/19-13	Te 	Ye
 te	p6/19-13	Te 	Ye 
 accent	p6/19-13	Firê	Fire
 tis	p6/19-13	so’tis	so ’tis
+mw	p6/19-13	those ve love	those we love
 saith	p6/19-13	( faith 	( saith 
 tis	p6/19-13	Tis	'Tis
 pronI	p6/19-13	Iam	I am
@@ -1447,7 +1525,10 @@ mw	p6/19-13	his onne	his owne
 tis	p6/19-13	Tis	'Tis
 fin	p6/19-13	finfull	sinfull
 tis	p6/19-13	“Tis	 'Tis
+mw	p6/19-13	if ve feared	if we feared
 pua	p6/19-15	;	q;
+fs	p6/19-15	fignif	signif
+fs	p6/19-15	fignif	signif
 pronI	p6/19-15	Iam	I am
 te	p6/19-15	Tea	Yea
 pronI	p6/19-15	Ientreated	I entreated
@@ -1459,6 +1540,8 @@ job	p6/19-15	fob	Job
 job	p6/19-15	tob	Job
 job	p6/19-15	Tob	Job
 job	p6/19-15	fob's	Job's
+mw	p6/19-15	Ay 	My 
+mw	p6/19-15	Ay 	My 
 accent	p6/19-15	givés	gives
 tis	p6/19-15	"Tis	'Tis
 job	p6/19-15	Tob	Job
@@ -1473,6 +1556,7 @@ job	p6/19-15	job	Job
 tis	p6/19-15	"Tis	'Tis
 isa	p6/19-15	(I 	(1 
 pronI	p6/19-15	Iowe	I owe
+mw	p6/19-15	Christ ve are	Christ we are
 job	p6/19-15	sob	Job
 mw	p6/19-15	my omne	my owne
 job	p6/19-15	Tob's	Job's
@@ -1511,6 +1595,7 @@ tis	p6/19-15	Tis	'Tis
 fs	p6/19-15	fo	so
 accent	p6/19-20	for̃	for
 mw	p6/19-20	Ay 	My 
+mw	p6/19-20	Ay 	My 
 job	p6/19-20	job	Job
 split	p6/19-20	unjust ly	unjustly
 job	p6/19-20	Tob's	Job's
@@ -1522,6 +1607,7 @@ accent	p6/19-20	called̀	called
 mw	p6/19-20	Ay 	My 
 job	p6/19-20	Tob's	Job's
 modal	p6/19-20	yee hill	yee will
+mw	p6/19-20	O ve men	O ye men
 job	p6/19-20	Tob	Job
 split	p6/19-20	strict ly	strictly
 job	p6/19-20	Tob	Job
@@ -1529,14 +1615,17 @@ split	p6/19-20	earnest ly	earnestly
 tis	p6/19-20	"Tis	'Tis
 split	p6/19-20	remem brance	remembrance
 tis	p6/19-20	and’tis	and ’tis
+mw	p6/19-20	as ve are	as we are
 fs	p6/19-20	osten	often
 accent	p6/19-20	Thât	That
 space	p6/19-20	Pet. 3.8.)	Pet. 3.8.) 
+mw	p6/19-20	l ve of	l we of
 way	p6/19-20	the nay	the way
 space	p6/19-20	way.	way. 
 job	p6/19-20	fob	Job
 job	p6/19-20	job	Job
 jf	p6/19-20	ferusalem	Jerusalem
+mw	p6/19-20	that ve cannot	that we cannot
 job	p6/19-20	sob	Job
 job	p6/19-20	Tob's	Job's
 te	p6/19-20	Tou 	You 
@@ -1546,6 +1635,7 @@ job	p6/19-20	sob	Job
 accent	p6/19-20	hé	he
 th	p6/19-20	in tle	in the
 accent	p6/19-20	yoür	your
+mw	p6/19-20	your oun	your own
 bis	p6/19-20	bim	him
 modal	p6/19-20	I mas	I was
 of	p6/19-20	er	or
@@ -1554,6 +1644,7 @@ fs	p6/19-20	fles	flesh
 wh	p6/19-20	m'hy	why
 fs	p6/19-20	fles	flesh
 pronI	p6/19-20	Iam	I am
+wh	p6/19-20	IVho	Who
 job	p6/19-20	Tob's	Job's
 sig	p6/19-23	XX	
 joh	p6/19-23	(Job. 14. 19	(Joh. 14. 19
@@ -1573,6 +1664,8 @@ job	p6/19-23	job	Job
 tis	p6/19-23	"Tis	'Tis
 accent	p6/19-23	Job́	Job
 tis	p6/19-23	till’tis	till ’tis
+mw	p6/19-23	when ve are	when we are
+mw	p6/19-23	foundation ve are	foundation we are
 job	p6/19-23	Tob	Job
 te	p6/19-23	Te 	Ye 
 of	p6/19-23	ef	of
@@ -1608,7 +1701,9 @@ pronI	p6/19-23	I'am	I am
 pronI	p6/19-23	I'have	I have
 pronI	p6/19-23	Iam	I am
 accent	p6/19-23	strength́	strength
+wh	p6/19-23	NVho	Who
 tis	p6/19-23	, tis	, ’tis
+mw	p6/19-23	Ay 	My 
 isa	p6/19-23	1Tim.	1 Tim.
 mw	p6/19-23	w'ho	who
 pronI	p6/19-23	I'have	I have
@@ -1634,6 +1729,7 @@ fh	p6/19-23	fh	sh
 fh	p6/19-23	fh	sh
 pronI	p6/19-23	Iam	I am
 num	p6/19-23	1oth	10th
+num	p6/19-23	zoth	20th
 accent	p6/19-23	ó	o
 saith	p6/19-23	(faith 	(saith 
 job	p6/19-23	fob	Job
@@ -1643,7 +1739,9 @@ fs	p6/19-23	himfelfe	himselfe
 fh	p6/19-23	fh	sh
 isa	p6/19-23	(I 	(1 
 wh	p6/19-23	w'hy	why
+mw	p6/19-23	though ve may	though we may
 th	p6/19-23	rhe	the
+mw	p6/19-23	cases ve ought	cases we ought
 split	p6/19-23	Jud gement	Judgement
 fh	p6/19-23	fh	sh
 bis	p6/19-23	bis	his
@@ -1651,6 +1749,8 @@ isa	p6/19-23	1Cor.	1 Cor.
 accent	p6/19-23	thé	the
 th	p6/19-23	ibe	the
 saith	p6/19-23	(faith 	(saith 
+wh	p6/19-23	IVhen	When
+num	p6/19-23	zoth	20th
 job	p6/19-23	Tob's	Job's
 job	p6/19-23	Jeb's	Job's
 job	p6/19-23	sob's	Job's
@@ -1660,6 +1760,9 @@ fh	p6/19-23	fh	sh
 fh	p6/19-23	fh	sh
 shall	p6/19-23	spall	shall
 latin	p6/19-26	mibi	mihi
+fs	p6/19-26	fignif	signif
+fs	p6/19-26	fignif	signif
+fs	p6/19-26	fignif	signif
 sig	p6/19-26	A a a	
 pbjoin	p6/19-26	owne by the power of⏎⏎	e
 sig	p6/19-26	afB bb	af
@@ -1675,6 +1778,7 @@ joh	p6/19-26	(Job. 3. 2	(Joh. 3. 2
 job	p6/19-26	fob's	Job's
 pronI	p6/19-26	Ishall	I shall
 fs	p6/19-26	himfelfe	himselfe
+num	p6/19-26	zoth	20th
 job	p6/19-26	Tob	Job
 wh	p6/19-26	n'hen	when
 fs	p6/19-26	I hall	I shall
@@ -1697,6 +1801,7 @@ pronI	p6/19-26	I'am	I am
 wh	p6/19-26	w'hen	when
 fh	p6/19-26	fh	sh
 pronI	p6/19-26	Ishall	I shall
+mw	p6/19-26	Ay 	My 
 job	p6/19-26	Jub	Job
 shall	p6/19-26	sall	shall
 fs	p6/19-26	osten	often
@@ -1756,6 +1861,7 @@ job	p6/19-26	job	Job
 fh	p6/19-26	fh	sh
 fs	p6/19-26	fles	flesh
 space	p6/19-26	body.	body. 
+num	p6/19-26	zoth	20th
 split	p6/19-26	translat ion	translation
 split	p6/19-26	acco rding	according
 space	p6/19-26	Psal. 26. 2. )	Psal. 26. 2. ) 
@@ -1793,9 +1899,11 @@ te	p6/19-28	Tou 	You
 fin	p6/19-28	finfull	sinfull
 tabe	p6/19-28	tabe	take
 mw	p6/19-28	why me doe	why we doe
+mw	p6/19-28	end ve doe	end we doe
 tis	p6/19-28	"Tis	'Tis
 wh	p6/19-28	w'hat	what
 accent	p6/19-28	ì	i
+mw	p6/19-28	should ve say	should we say
 modal	p6/19-28	which vere	which were
 space	p6/19-28	Jer. 50.7. )	Jer. 50.7. ) 
 job	p6/19-28	Tob	Job
@@ -1822,6 +1930,7 @@ pbjoin	p6/19-29	 ignorant that there⏎⏎	s
 split	p6/19-29	dest royed	destroyed
 shall	p6/19-29	spall	shall
 accent	p6/19-29	thè	the
+mw	p6/19-29	So ve render	So we render
 isa	p6/19-29	(I 	(1 
 job	p6/19-29	Tob	Job
 way	p6/19-29	the may	the way
@@ -1880,6 +1989,7 @@ head	p6/19-4	Chap. 19. An Exposition upon the Book of JOB. Vers5.
 split	p6/19-4	present ly	presently
 of	p6/19-4	ef	of
 th	p6/19-4	ibe	the
+split	p6/19-4	out ward	outward
 fin	p6/19-4	finfull	sinfull
 mw	p6/19-4	his onne	his owne
 mw	p6/19-4	which nas	which was
@@ -1905,6 +2015,8 @@ tis	p6/19-4	Tis	'Tis
 isa	p6/19-4	(Isa-	(Isa.
 junk	p6/19-7	CIEI—C	
 junk	p6/19-7	εειἐνιέτεεεεεειειεεεεεεεειυινtεεε	
+fs	p6/19-7	fignif	signif
+fs	p6/19-7	fignif	signif
 pjoin	p6/19-7	不了">Ihave</span> B b⏎⏎	<span class="cy
 way	p6/19-7	my may	my way
 pronI	p6/19-7	Iam	I am
@@ -1922,6 +2034,7 @@ job	p6/19-7	fob	Job
 pronI	p6/19-7	Ihave	I have
 th	p6/19-7	rhen	when
 space	p6/19-7	Psal.22.2.)	Psal.22.2.) 
+wh	p6/19-7	IVherefore	Wherefore
 head	p6/19-7	An Exposition upon the Book o JOB. Vers, 	
 job	p6/19-7	fob	Job
 modal	p6/19-7	I mill	I will
@@ -1951,6 +2064,7 @@ mw	p6/19-7	w'ho	who
 fh	p6/19-7	fh	sh
 bis	p6/19-7	bis	his
 job	p6/19-7	fob	Job
+mw	p6/19-7	Ay 	My 
 job	p6/19-7	job	Job
 isa	p6/19-7	(I 	(1 
 fh	p6/19-7	fh	sh
@@ -1963,6 +2077,7 @@ job	p6/19-7	job	Job
 mw	p6/19-7	the mise	the wise
 job	p6/19-7	Tob	Job
 fh	p6/19-7	fh	sh
+mw	p6/19-7	Ay 	My 
 tis	p6/19-7	“Tis	'Tis
 junk	p6/20-1	NnR	
 sig	p6/20-1	M m m	
@@ -1980,6 +2095,8 @@ te	p6/20-1	Tou 	You
 pronI	p6/20-1	Iam	I am
 mw	p6/20-1	Ay 	My 
 num	p6/20-1	Cor. S. 1	Cor. 5. 1
+mw	p6/20-1	lo ve wherewith	love wherewith
+mw	p6/20-1	till ve have	till we have
 guil	p6/20-1	 »	 
 accent	p6/20-1	makęs	makes
 accent	p6/20-1	seeth̀	seeth
@@ -1991,12 +2108,15 @@ of	p6/20-1	ot	of
 mw	p6/20-1	man mas	man was
 of	p6/20-1	ef	of
 god	p6/20-1	Ged	God
+mw	p6/20-1	That ve should	That we should
 mw	p6/20-1	man mas	man was
 th	p6/20-1	ihe	the
 job	p6/20-1	Tob	Job
 accent	p6/20-1	à	a
 tis	p6/20-1	, tis	, ’tis
 tis	p6/20-1	then’tis	then ’tis
+fs	p6/20-10	fignif	signif
+fs	p6/20-10	fignif	signif
 catch	p6/20-10	it [pb] it	it
 job	p6/20-10	Iob	Job
 accent	p6/20-10	à	a
@@ -2035,6 +2155,7 @@ split	p6/20-12	distinct ly	distinctly
 split	p6/20-12	second ly	secondly
 fin	p6/20-12	finnes	sinnes
 fin	p6/20-12	fin	sin
+mw	p6/20-12	as ve said	as we said
 shall	p6/20-12	spall	shall
 job	p6/20-12	sob	Job
 fin	p6/20-12	fin	sin
@@ -2090,6 +2211,7 @@ th	p6/20-18	as tle	as the
 fh	p6/20-18	fh	sh
 split	p6/20-18	unjust ly	unjustly
 tis	p6/20-18	“Tis	'Tis
+mw	p6/20-18	that ve may	that we may
 fh	p6/20-18	fh	sh
 fs	p6/20-18	osten	often
 split	p6/20-18	strict ly	strictly
@@ -2105,6 +2227,7 @@ split	p6/20-18	violent ly	violently
 split	p6/20-18	bet ween	between
 pua	p6/20-20		q;
 latin	p6/20-20	mibi	mihi
+fs	p6/20-20	fignif	signif
 sig	p6/20-20	B bab b	
 pbjoin	p6/20-20	 then the former; as⏎⏎	h
 pjoin	p6/20-20	shall raine upon him⏎⏎	while he is eat
@@ -2182,6 +2305,7 @@ guil	p6/20-24	 «
 te	p6/20-24	Tea	Yea
 accent	p6/20-24	sid́e	side
 way	p6/20-24	the may	the way
+mw	p6/20-24	whether ve expound	whether we expound
 split	p6/20-24	sec ret	secret
 fh	p6/20-24	fh	sh
 shall	p6/20-24	spall	shall
@@ -2198,6 +2322,7 @@ split	p6/20-24	afflict ed	afflicted
 job	p6/20-24	Jeb	Job
 junk	p6/20-27	GB882	
 junk	p6/20-27	RRNACNEISA GENIRRTATTR NSTTTATTTS	
+fs	p6/20-27	fignif	signif
 sig	p6/20-27	h h h 2	
 catch	p6/20-27	whole [pb] whole	whole
 pjoin	p6/20-27	into captivity, they⏎⏎	be made bond- m
@@ -2331,6 +2456,7 @@ tis	p6/21-1	“Tis	'Tis
 fin	p6/21-1	finfull	sinfull
 fh	p6/21-1	fh	sh
 pua	p6/21-11		q;
+fs	p6/21-11	fignif	signif
 list	p6/21-11	- 	
 sig	p6/21-11	Rrrr	
 pbjoin	p6/21-11	s, worldly men spend⏎⏎	s
@@ -2348,6 +2474,7 @@ accent	p6/21-11	th́e	the
 job	p6/21-11	Jeb	Job
 te	p6/21-11	Te 	Ye 
 pronI	p6/21-11	Ieat	I eat
+mw	p6/21-11	when ve rejoyce	when we rejoyce
 of	p6/21-11	ef	of
 tis	p6/21-11	“Tis	'Tis
 fin	p6/21-11	finfull	sinfull
@@ -2392,6 +2519,7 @@ job	p6/21-14	tob	Job
 of	p6/21-14	ef	of
 te	p6/21-14	Te 	Ye 
 te	p6/21-14	Te 	Ye 
+mw	p6/21-14	so ve may	so we may
 fh	p6/21-14	fh	sh
 wh	p6/21-14	I'hat	What
 saith	p6/21-14	they faith	they saith
@@ -2413,9 +2541,13 @@ fh	p6/21-14	fh	sh
 te	p6/21-14	Te 	Ye 
 th	p6/21-14	ihe	the
 accent	p6/21-14	çan	can
+mw	p6/21-14	that ve have	that we have
+split	p6/21-14	out ward	outward
 pua	p6/21-16	;	q;
 sig	p6/21-16	XXXX	
 pbjoin	p6/21-16	 of good men too, it⏎⏎	i
+mw	p6/21-16	that ve pray	that we pray
+mw	p6/21-16	that ve pray	that we pray
 split	p6/21-16	wick ed	wicked
 split	p6/21-16	Broug hton	Broughton
 job	p6/21-16	fobs	Jobs
@@ -2470,6 +2602,7 @@ th	p6/21-19	ihe	the
 accent	p6/21-19	treasurè	treasure
 tis	p6/21-19	"Tis	'Tis
 tis	p6/21-19	“Tis	'Tis
+mw	p6/21-19	his oun	his own
 split	p6/21-19	chi ldren	children
 job	p6/21-19	job	Job
 wh	p6/21-19	W'hat	what
@@ -2502,6 +2635,7 @@ accent	p6/21-19	abundantlý	abundantly
 tis	p6/21-19	“Tis	'Tis
 bis	p6/21-19	bim	him
 tis	p6/21-19	generall’tis	generall ’tis
+wh	p6/21-19	IVhen	When
 bis	p6/21-19	bim	him
 tis	p6/21-19	doe’tis	doe ’tis
 split	p6/21-19	di rect	direct
@@ -2534,6 +2668,7 @@ split	p6/21-19	present ly	presently
 way	p6/21-19	my may	my way
 split	p6/21-19	quiet ly	quietly
 isa	p6/21-19	(I 	(1 
+mw	p6/21-19	Ay 	My 
 tis	p6/21-19	“Tis	'Tis
 shall	p6/21-19	spall	shall
 pronI	p6/21-19	Iam	I am
@@ -2574,7 +2709,9 @@ fin	p6/21-23	fin	sin
 tis	p6/21-23	“Tis	'Tis
 jf	p6/21-23	femes	Jewes
 jf	p6/21-23	femes	Jewes
+wh	p6/21-23	IVhen	When
 th	p6/21-23	ihe	the
+fs	p6/21-27	fignif	signif
 mword	p6/21-27	God [or] (as	God or (as
 mword	p6/21-27	draw [it] out.	draw it out.
 mword	p6/21-27	if [all] that	if all that
@@ -2625,6 +2762,7 @@ space	p6/21-30	don.	don.
 pua	p6/21-32		q;
 pua	p6/21-32		q;
 pua	p6/21-32		q;
+fs	p6/21-32	fignif	signif
 sig	p6/21-32	Nnan n 2	
 pbjoin	p6/21-32	 lee">loe</span> the⏎⏎	f
 accent	p6/21-32	brouģht	brought
@@ -2714,6 +2852,7 @@ accent	p6/21-4	thę	the
 pronI	p6/21-4	Iam	I am
 job	p6/21-4	Tob	Job
 split	p6/21-4	aboundant ly	aboundantly
+fs	p6/21-7	fignif	signif
 sig	p6/21-7	PPPP2	
 pbjoin	p6/21-7	e: bonorum.
 
@@ -2734,6 +2873,7 @@ split	p6/21-7	wit nesses	witnesses
 fh	p6/21-7	fh	sh
 job	p6/21-7	sob	Job
 space	p6/21-7	promise.	promise. 
+th	p6/21-7	thoy 	thy 
 tis	p6/21-7	but’tis	but ’tis
 job	p6/21-7	job	Job
 shall	p6/21-7	spall	shall
@@ -2757,6 +2897,7 @@ split	p82/27-1	Con tention	Contention
 tis	p82/27-1	Tis	'Tis
 tis	p82/27-1	Tis	'Tis
 tis	p82/27-1	, tis	, ’tis
+mw	p82/27-1	their oun	their own
 bis	p82/27-1	bis	his
 th	p82/27-1	ibe	the
 tis	p82/27-1	because tis	because ’tis
@@ -2771,6 +2912,8 @@ job	p82/27-1	Tob	Job
 modal	p82/27-1	they mill	they will
 tis	p82/27-1	and tis	and ’tis
 isa	p82/27-1	(Ter.	(Jer.
+mw	p82/27-1	though ve do	though we do
+mw	p82/27-1	ha ve gone	have gone
 pronI	p82/27-1	I'have	I have
 fs	p82/27-1	osten	often
 fs	p82/27-1	fo	so
@@ -2783,6 +2926,7 @@ fs	p82/27-1	fo	so
 job	p82/27-1	Tob	Job
 job	p82/27-1	job	Job
 fin	p82/27-1	fin	sin
+mw	p82/27-1	again ve are	again we are
 th	p82/27-1	ibat	that
 job	p82/27-1	job	Job
 saith	p82/27-1	, faith 	, saith 
@@ -2800,6 +2944,7 @@ job	p82/27-1	Tob's	Job's
 modal	p82/27-1	I mill	I will
 pronI	p82/27-1	Iam	I am
 accent	p82/27-1	hé	he
+mw	p82/27-1	Ay 	My 
 fh	p82/27-1	fh	sh
 wh	p82/27-1	u'hile	while
 accent	p82/27-1	Observè	Observe
@@ -2808,13 +2953,16 @@ tabe	p82/27-1	tabe	take
 fs	p82/27-1	osten	often
 job	p82/27-1	Tob	Job
 accent	p82/27-1	liké	like
+mw	p82/27-11	Ay 	My 
 job	p82/27-11	Tob	Job
 tis	p82/27-11	Tis	'Tis
 mw	p82/27-11	mbo	who
 god	p82/27-11	Ged	God
 pronI	p82/27-11	l 	I 
 fs	p82/27-11	osten	often
+th	p82/27-11	thoy 	thy 
 accent	p82/27-11	péople	people
+mw	p82/27-11	Before ve adventure	Before we adventure
 job	p82/27-11	sob	Job
 th	p82/27-11	ihe	the
 split	p82/27-11	kno wn	known
@@ -2822,10 +2970,14 @@ pronI	p82/27-11	l	I
 te	p82/27-11	Te 	Ye 
 th	p82/27-11	ibe	the
 mw	p82/27-11	For me are	For we are
+mw	p82/27-11	What ve byoy	What we byoy
+mw	p82/27-11	and ve must	and we must
+mw	p82/27-11	speak ve in	speak we in
 tis	p82/27-11	know tis	know ’tis
 mw	p82/27-11	mbo	who
 fs	p82/27-11	fay	say
 accent	p82/27-11	thing̨s	things
+wh	p82/27-11	IVhy	Why
 modal	p82/27-11	it vas	it was
 split	p82/27-11	Zo phar	Zophar
 job	p82/27-11	Tob	Job
@@ -2836,6 +2988,7 @@ space	p82/27-11	do.	do.
 saith	p82/27-11	Job faith	Job saith
 fs	p82/27-11	fo	so
 th	p82/27-11	ibat	that
+obs	p82/27-11	Obierve	Observe
 pua	p82/27-14		q;
 bis	p82/27-14	bis	his
 bis	p82/27-14	bis	his
@@ -2843,16 +2996,20 @@ bis	p82/27-14	bim	him
 of	p82/27-14	ot	of
 bis	p82/27-14	bis	his
 pronI	p82/27-14	l 	I 
+split	p82/27-14	out ward	outward
 of	p82/27-14	ef	of
 th	p82/27-14	ibe	the
+mw	p82/27-14	Here ve sce	Here we sce
 bis	p82/27-14	bis	his
 shall	p82/27-14	spall	shall
+th	p82/27-14	thoy 	they 
 saith	p82/27-14	he faith	he saith
 fh	p82/27-14	fh	sh
 mw	p82/27-14	a mord	a word
 mw	p82/27-14	prevent their mant	prevent their want
 accent	p82/27-14	à	a
 th	p82/27-14	ihe	the
+wh	p82/27-14	IVomen	Women
 of	p82/27-14	ot	of
 job	p82/27-14	job	Job
 job	p82/27-14	job's	Job's
@@ -2878,6 +3035,8 @@ th	p82/27-14	ibat	that
 tis	p82/27-14	when tis	when ’tis
 modal	p82/27-14	mould	would
 accent	p82/27-14	judg̨ment	judgment
+th	p82/27-14	thoy 	they 
+th	p82/27-14	thoy 	they 
 of	p82/27-14	ef	of
 saith	p82/27-14	he faith	he saith
 of	p82/27-14	ef	of
@@ -2889,6 +3048,7 @@ of	p82/27-14	ef	of
 tis	p82/27-14	so tis	so ’tis
 accent	p82/27-14	gõods	goods
 accent	p82/27-14	àre	are
+wh	p82/27-14	IVell	Well
 fh	p82/27-14	fh	sh
 space	p82/27-14	to.	to. 
 tis	p82/27-14	Thus tis	Thus ’tis
@@ -2915,6 +3075,7 @@ job	p82/27-18	Tob's	Job's
 fs	p82/27-18	osten	often
 tis	p82/27-18	when tis	when ’tis
 fs	p82/27-18	osten	often
+mw	p82/27-18	And ve lay	And we lay
 fh	p82/27-18	fh	sh
 tis	p82/27-18	, tis	, ’tis
 tis	p82/27-18	thus tis	thus ’tis
@@ -2991,12 +3152,15 @@ te	p82/27-21	Te 	Ye
 accent	p82/27-21	Ó	O
 accent	p82/27-21	ã	a
 fs	p82/27-21	himfelf	himself
+fs	p82/27-5	fignif	signif
 modal	p82/27-5	it vere	it were
 split	p82/27-5	indig nation	indignation
 job	p82/27-5	job	Job
 accent	p82/27-5	Justificãtion	Justification
 job	p82/27-5	sob'	Job'
 job	p82/27-5	Tob	Job
+mw	p82/27-5	as ve sce	as we sce
+mw	p82/27-5	shall ve justifie	shall we justifie
 job	p82/27-5	Tob's	Job's
 pronI	p82/27-5	Iwill	I will
 split	p82/27-5	out ward	outward
@@ -3004,6 +3168,7 @@ tis	p82/27-5	Tis	'Tis
 tis	p82/27-5	as tis	as ’tis
 accent	p82/27-5	à	a
 accent	p82/27-5	à	a
+mw	p82/27-5	and ve say	and we say
 fs	p82/27-5	osten	often
 modal	p82/27-5	I mas	I was
 split	p82/27-5	bet ween	between
@@ -3028,6 +3193,7 @@ tis	p82/27-5	Tis	'Tis
 fh	p82/27-5	fh	sh
 pronI	p82/27-5	l	I
 pronI	p82/27-5	Ilive	I live
+mw	p82/27-5	Ay 	My 
 pjoin	p82/27-7	r the Interpretation⏎⏎	thereof trouble
 of	p82/27-7	ot	of
 split	p82/27-7	impreca tion	imprecation
@@ -3050,6 +3216,7 @@ of	p82/27-7	ot	of
 te	p82/27-7	Tou 	You 
 te	p82/27-7	Te 	Ye 
 job	p82/27-7	Tob	Job
+mw	p82/27-7	Ay 	My 
 fs	p82/27-7	fay	say
 accent	p82/27-7	Caûse	Cause
 job	p82/27-7	Tob	Job
@@ -3084,12 +3251,15 @@ accent	p82/27-9	receiṽe	receive
 accent	p82/27-9	à	a
 of	p82/27-9	ef	of
 tis	p82/27-9	Tis	'Tis
+mw	p82/27-9	can ve want	can we want
 accent	p82/27-9	thereforé	therefore
 tis	p82/27-9	Tis	'Tis
 god	p82/27-9	Ged	God
 split	p82/27-9	bet ween	between
 accent	p82/27-9	assuré	assure
 accent	p82/27-9	from̃	from
+mw	p82/27-9	Ay 	My 
+mw	p82/27-9	if ve delight	if we delight
 tis	p82/27-9	yet tis	yet ’tis
 isa	p82/27-9	(I 	(1 
 accent	p82/27-9	éver	ever
@@ -3097,6 +3267,7 @@ isa	p82/27-9	(I 	(1
 fs	p82/27-9	osten	often
 fs	p82/27-9	osten	often
 accent	p82/27-9	üs	us
+mw	p82/27-9	therefore ve had	therefore we had
 tis	p82/27-9	Thus tis	Thus ’tis
 tis	p82/27-9	thus tis	thus ’tis
 pronI	p82/27-9	l	I
@@ -3113,6 +3284,7 @@ te	p82/28-1	Tou 	You
 job	p82/28-1	Tob	Job
 accent	p82/28-1	thé	the
 saith	p82/28-1	(faith 	(saith 
+split	p82/28-1	out ward	outward
 accent	p82/28-1	thę	the
 split	p82/28-1	perswasi on	perswasion
 bis	p82/28-1	bis	his
@@ -3159,6 +3331,7 @@ isa	p82/28-1	(I 	(1
 saith	p82/28-1	David faith	David saith
 pronI	p82/28-1	I'have	I have
 job	p82/28-1	Tob	Job
+mw	p82/28-1	Verse ve have	Verse we have
 saith	p82/28-1	David faith	David saith
 fs	p82/28-1	fo	so
 split	p82/28-1	per secuted	persecuted
@@ -3194,9 +3367,12 @@ accent	p82/28-1	thereforé	therefore
 accent	p82/28-1	Gold̃	Gold
 space	p82/28-1	wisdom.	wisdom. 
 pronI	p82/28-1	Ihave	I have
+mw	p82/28-1	though ve have	though we have
+mw	p82/28-1	yet ve have	yet we have
 job	p82/28-1	Tob	Job
 tis	p82/28-1	Tis	'Tis
 of	p82/28-1	ot	of
+th	p82/28-1	thoy 	they 
 pua	p82/28-12		q;
 pua	p82/28-12		q;
 pua	p82/28-12		q;
@@ -3220,6 +3396,7 @@ modal	p82/28-12	I hill	I will
 accent	p82/28-12	à	a
 accent	p82/28-12	thing̨s	things
 space	p82/28-12	Psal.27.13.)	Psal.27.13.) 
+mw	p82/28-12	which ve render	which we render
 job	p82/28-12	job	Job
 job	p82/28-12	tob	Job
 pronI	p82/28-12	Iam	I am
@@ -3234,6 +3411,7 @@ accent	p82/28-12	untõ	unto
 accent	p82/28-12	aré	are
 wh	p82/28-12	W'hat	What
 accent	p82/28-12	à	a
+mw	p82/28-12	What ve esteem	What we esteem
 shall	p82/28-12	sual	shall
 space	p82/28-12	it.	it. 
 tis	p82/28-12	And tis	And ’tis
@@ -3246,11 +3424,14 @@ job	p82/28-12	job	Job
 tis	p82/28-12	; tis	; ’tis
 accent	p82/28-12	comés	comes
 space	p82/28-12	Exod. 28.17.)	Exod. 28.17.) 
+mw	p82/28-12	us ve may	us we may
 accent	p82/28-12	st́	st
 job	p82/28-12	Tob's	Job's
 fin	p82/28-12	fin	sin
 bis	p82/28-12	bim	him
 fs	p82/28-12	himfelf	himself
+wh	p82/28-12	IVisdom	Wisdom
+mw	p82/28-12	and ve do	and we do
 fs	p82/28-12	osten	often
 th	p82/28-12	ihe	the
 of	p82/28-12	ef	of
@@ -3270,6 +3451,7 @@ accent	p82/28-12	à	a
 accent	p82/28-12	safé	safe
 accent	p82/28-12	Whencé	Whence
 fs	p82/28-12	himfelf	himself
+mw	p82/28-12	Thus ve hate	Thus we hate
 modal	p82/28-12	it vere	it were
 tis	p82/28-12	, tis	, ’tis
 tis	p82/28-12	Here tis	Here ’tis
@@ -3277,6 +3459,7 @@ tis	p82/28-12	and tis	and ’tis
 isa	p82/28-12	1Sam.	1 Sam.
 th	p82/28-12	ibe	the
 accent	p82/28-12	à	a
+mw	p82/28-12	And ve find	And we find
 split	p82/28-12	stat e	state
 modal	p82/28-12	they vere	they were
 fs	p82/28-12	fay	say
@@ -3300,17 +3483,21 @@ accent	p82/28-12	piëce	piece
 accent	p82/28-12	öf	of
 accent	p82/28-12	à	a
 accent	p82/28-12	à	a
+mw	p82/28-12	When ve say	When we say
 job	p82/28-12	Tob'	Job'
 modal	p82/28-12	he vere	he were
 tis	p82/28-12	, tis	, ’tis
+mw	p82/28-12	that ve know	that we know
 way	p82/28-12	the may	the way
 fs	p82/28-12	himfelf	himself
 space	p82/28-12	kows.	kows. 
 saith	p82/28-12	Job faith	Job saith
 accent	p82/28-12	ín	in
+th	p82/28-12	Tte	The
 fs	p82/28-12	Fo	So
 job	p82/28-12	Jeb	Job
 of	p82/28-12	ef	of
+mw	p82/28-12	as ve say	as we say
 split	p82/28-12	pre cisely	precisely
 pronI	p82/28-12	Iam	I am
 pronI	p82/28-12	Iwill	I will
@@ -3321,6 +3508,7 @@ accent	p82/28-12	upón	upon
 accent	p82/28-12	Thę	The
 accent	p82/28-12	quité	quite
 accent	p82/28-12	makès	makes
+mw	p82/28-12	Did ve but	Did we but
 pronI	p82/28-12	Iam	I am
 pronI	p82/28-12	Ihave	I have
 pronI	p82/28-12	Ihave	I have
@@ -3328,6 +3516,7 @@ tis	p82/28-12	and tis	and ’tis
 accent	p82/28-12	ôf	of
 pua	p82/28-25		q;
 pua	p82/28-25		q;
+fs	p82/28-25	fignif	signif
 pjoin	p82/28-25	er both these readin⏎⏎	first, He prepa
 job	p82/28-25	job	Job
 tis	p82/28-25	when tis	when ’tis
@@ -3369,9 +3558,12 @@ isa	p82/28-25	1Cor.	1 Cor.
 tis	p82/28-25		 
 of	p82/28-25	ot	of
 tis	p82/28-25	or’tis	or ’tis
+mw	p82/28-25	which ve call	which we call
 fs	p82/28-25	himfelf	himself
+mw	p82/28-25	what ve see	what we see
 tis	p82/28-25	so tis	so ’tis
 fs	p82/28-25	fo	so
+split	p82/28-25	out ward	outward
 accent	p82/28-25	ã	a
 space	p82/28-25	tt.	tt. 
 tis	p82/28-25	Tis	'Tis
@@ -3399,6 +3591,7 @@ job	p82/28-25	fob	Job
 pronI	p82/28-25	Iwent	I went
 accent	p82/28-25	Gõd	God
 tis	p82/28-25	; tis	; ’tis
+mw	p82/28-25	Though ve sce	Though we sce
 saith	p82/28-25	he faith	he saith
 split	p82/28-25	Sab bath	Sabbath
 bis	p82/28-25	bis	his
@@ -3447,6 +3640,8 @@ tis	p82/28-28	but tis	but ’tis
 fin	p82/28-28	fin	sin
 isa	p82/28-28	1Cor.	1 Cor.
 accent	p82/28-28	à	a
+mw	p82/28-28	yet ve read	yet we read
+mw	p82/28-28	O ve of	O ye of
 job	p82/28-28	Tob	Job
 modal	p82/28-28	they vere	they were
 tis	p82/28-28	Tis	'Tis
@@ -3458,6 +3653,7 @@ accent	p82/28-28	Thęse	These
 accent	p82/28-28	likẽ	like
 tabe	p82/28-28	tabe	take
 space	p82/28-28	sia.	sia. 
+mw	p82/28-28	more ve love	more we love
 split	p82/28-28	wis dom	wisdom
 fs	p82/28-28	fay	say
 saith	p82/28-28	( faith 	( saith 
@@ -3468,6 +3664,7 @@ fs	p82/28-28	fo	so
 fs	p82/28-28	osten	often
 pronI	p82/28-28	l 	I 
 accent	p82/28-28	thèm	them
+mw	p82/28-28	while ve keep	while we keep
 fs	p82/28-28	fo	so
 isa	p82/28-28	1Cor.	1 Cor.
 god	p82/28-28	Ged	God
@@ -3477,6 +3674,7 @@ tis	p82/28-28	Tis	'Tis
 tis	p82/28-28	Tis	'Tis
 fs	p82/28-28	osten	often
 accent	p82/28-28	àll	all
+mw	p82/28-28	which ve are	which we are
 fh	p82/28-28	fh	sh
 god	p82/28-28	Ged	God
 accent	p82/28-28	péople	people
@@ -3492,6 +3690,7 @@ accent	p82/28-28	à	a
 accent	p82/28-28	rightȩousness	righteousness
 accent	p82/28-28	àre	are
 accent	p82/28-28	prové	prove
+mw	p82/28-28	that ve our	that we our
 modal	p82/28-28	it vere	it were
 isa	p82/28-28	Plal.	Psal.
 tis	p82/28-28	Tis	'Tis
@@ -3523,6 +3722,7 @@ isa	p82/28-28	(I 	(1
 fs	p82/28-28	osten	often
 th	p82/28-28	ibe	the
 accent	p82/28-28	Sòme	Some
+mw	p82/28-28	that ve can	that we can
 split	p82/28-28	la wful	lawful
 tis	p82/28-28	Tis	'Tis
 tis	p82/28-28	Tis	'Tis
@@ -3530,8 +3730,10 @@ tis	p82/28-28	but tis	but ’tis
 tis	p82/28-28	But tis	But ’tis
 isa	p82/28-28	1Cor.	1 Cor.
 th	p82/28-28	ihe	the
+mw	p82/28-28	As ve are	As we are
 tis	p82/28-28	Tis	'Tis
 accent	p82/28-28	thè	the
+mw	p82/28-28	so ve must	so we must
 tis	p82/28-28	, tis	, ’tis
 tis	p82/28-28	; tis	; ’tis
 mw	p82/28-28	God mas	God was
@@ -3553,6 +3755,8 @@ tis	p82/28-28	, tis	, ’tis
 tis	p82/28-28	, tis	, ’tis
 te	p82/28-28	Te 	Ye 
 accent	p82/28-28	tonģue	tongue
+mw	p82/28-28	can ve depart	can we depart
+mw	p82/28-28	as ve escape	as we escape
 of	p82/28-28	ef	of
 tis	p82/28-28	But tis	But ’tis
 mw	p82/28-28	a mise	a wise
@@ -3562,6 +3766,7 @@ fs	p82/28-28	osten	often
 accent	p82/28-28	Thé	The
 accent	p82/28-28	whõ	who
 accent	p82/28-28	riģht	right
+wh	p82/28-28	IVhat	What
 te	p82/28-28	Te 	Ye 
 head	p82/29-1	An  1124  Exposition upon the Book of	
 pjoin	p82/29-1	s former fulness ano⏎⏎	abounding state
@@ -3576,6 +3781,8 @@ accent	p82/29-1	añd	and
 accent	p82/29-1	concèive	conceive
 accent	p82/29-1	à	a
 job	p82/29-1	tob	Job
+mw	p82/29-1	Ay 	My 
+mw	p82/29-1	Ay 	My 
 bis	p82/29-1	bis	his
 job	p82/29-1	Tob's	Job's
 job	p82/29-1	fob's	Job's
@@ -3600,6 +3807,8 @@ th	p82/29-1	ihe	the
 accent	p82/29-1	opiniòn	opinion
 accent	p82/29-1	Dàvid	David
 tis	p82/29-1	as'tis	as 'tis
+mw	p82/29-1	Ay 	My 
+mw	p82/29-1	that ve may	that we may
 job	p82/29-1	job	Job
 tis	p82/29-1	but tis	but ’tis
 fh	p82/29-1	fh	sh
@@ -3611,6 +3820,7 @@ pronI	p82/29-1	Ianswer	I answer
 isa	p82/29-1	(Hof.	(Hos.
 fs	p82/29-1	fome	some
 accent	p82/29-1	Citiẽs	Cities
+mw	p82/29-1	if ve would	if we would
 saith	p82/29-1	(faith 	(saith 
 of	p82/29-1	er	or
 tis	p82/29-1	but tis	but ’tis
@@ -3637,6 +3847,8 @@ fin	p82/29-1	fin	sin
 tis	p82/29-1	so tis	so ’tis
 accent	p82/29-1	eyę	eye
 accent	p82/29-1	aré	are
+mw	p82/29-1	as ve say	as we say
+fs	p82/29-12	fignif	signif
 job	p82/29-12	Tob	Job
 bis	p82/29-12	bim	him
 bis	p82/29-12	bim	him
@@ -3649,6 +3861,7 @@ modal	p82/29-12	they vere	they were
 tis	p82/29-12	Tis	'Tis
 tis	p82/29-12	and tis	and ’tis
 fs	p82/29-12	himfelf	himself
+mw	p82/29-12	Here ve have	Here we have
 saith	p82/29-12	(faith 	(saith 
 tis	p82/29-12	so tis	so ’tis
 bis	p82/29-12	bim	him
@@ -3730,10 +3943,12 @@ tis	p82/29-15	Tis	'Tis
 accent	p82/29-15	aliké	alike
 accent	p82/29-15	àre	are
 pua	p82/29-18		q;
+fs	p82/29-18	fignif	signif
 pjoin	p82/29-18	mp dayes as tle sand⏎⏎	py rot mas spre
 pjoin	p82/29-18	t words, I shall dye⏎⏎	an mp nett.] Wh
 pjoin	p82/29-18	nigbt upon my branch⏎⏎	pp glory mas fr
 th	p82/29-18	as tle	as the
+mw	p82/29-18	Ay 	My 
 tis	p82/29-18	so tis	so ’tis
 accent	p82/29-18	dyé	dye
 tis	p82/29-18	Tis	'Tis
@@ -3752,6 +3967,8 @@ job	p82/29-18	job	Job
 pronI	p82/29-18	Irest	I rest
 accent	p82/29-18	encreãse	encrease
 accent	p82/29-18	David̃	David
+wh	p82/29-18	IVine	Wine
+split	p82/29-18	out ward	outward
 split	p82/29-18	short ly	shortly
 job	p82/29-18	sob	Job
 tis	p82/29-18	Tis	'Tis
@@ -3809,6 +4026,7 @@ tis	p82/29-21	Tis	'Tis
 fin	p82/29-21	fin	sin
 guil	p82/29-21	» 	 
 accent	p82/29-21	timé	time
+mw	p82/29-21	perceive ve should	perceive we should
 tis	p82/29-21	Tis	'Tis
 te	p82/29-21	Te 	Ye 
 tis	p82/29-21	Tis	'Tis
@@ -3822,15 +4040,18 @@ pronI	p82/29-21	Iam	I am
 pronI	p82/29-21	Iam	I am
 th	p82/29-21	ibe	the
 accent	p82/29-21	fróm	from
+wh	p82/29-21	IVho	Who
 modal	p82/29-21	which vere	which were
 saith	p82/29-21	he faith	he saith
 saith	p82/29-21	( faith 	( saith 
 isa	p82/29-21	(I 	(1 
 fs	p82/29-21	fo	so
+mw	p82/29-21	may ve swear	may we swear
 accent	p82/29-21	liké	like
 fs	p82/29-21	himfelf	himself
 job	p82/29-21	Tob	Job
 modal	p82/29-21	they vere	they were
+mw	p82/29-21	As ve call	As we call
 accent	p82/29-21	à	a
 tis	p82/29-21	; tis	; ’tis
 tis	p82/29-21	Tis	'Tis
@@ -3840,11 +4061,13 @@ isa	p82/29-21	(I 	(1
 th	p82/29-21	ibe	the
 accent	p82/29-21	Apostlę	Apostle
 accent	p82/29-21	Wildernéss	Wilderness
+th	p82/29-21	thoy 	they 
 job	p82/29-21	Tob's	Job's
 tis	p82/29-21	Tis	'Tis
 tis	p82/29-21	, tis	, ’tis
 tis	p82/29-21	And tis	And ’tis
 accent	p82/29-21	widé	wide
+mw	p82/29-21	that ve should	that we should
 accent	p82/29-21	Gõd	God
 pua	p82/29-24		q;
 latin	p82/29-24	mibi	mihi
@@ -3877,6 +4100,7 @@ tis	p82/29-24	Tis	'Tis
 of	p82/29-24	ot	of
 fs	p82/29-24	osten	often
 tabe	p82/29-24	tabe	take
+th	p82/29-24	thoy 	they 
 job	p82/29-24	Tob	Job
 tis	p82/29-24	so tis	so ’tis
 job	p82/29-24	Tob	Job
@@ -3911,6 +4135,8 @@ pronI	p82/29-24	Iam	I am
 pronI	p82/29-24	Iwent	I went
 tis	p82/29-24	confes'tis	confes 'tis
 th	p82/29-24	as tle	as the
+mw	p82/29-24	Ay 	My 
+mw	p82/29-24	Ay 	My 
 job	p82/29-24	job	Job
 modal	p82/29-24	who vere	who were
 modal	p82/29-24	they vere	they were
@@ -3933,6 +4159,7 @@ tis	p82/29-24	as tis	as ’tis
 split	p82/29-24	conversati on	conversation
 job	p82/29-24	Tob	Job
 job	p82/29-24	job's	Job's
+fs	p82/29-4	fignif	signif
 pjoin	p82/29-4	> upon mp Tabernacle⏎⏎	<span class="cy
 job	p82/29-4	Tob's	Job's
 of	p82/29-4	ef	of
@@ -3973,6 +4200,7 @@ isa	p82/29-4	2Tim.	2 Tim.
 te	p82/29-4	Te 	Ye 
 th	p82/29-4	ihe	the
 space	p82/29-4	us.	us. 
+mw	p82/29-4	could ve ask	could we ask
 job	p82/29-4	job	Job
 tis	p82/29-4	Thus tis	Thus ’tis
 tis	p82/29-4	so tis	so ’tis
@@ -3998,11 +4226,14 @@ tis	p82/29-7	for tis	for ’tis
 accent	p82/29-7	dyed̀	dyed
 accent	p82/29-7	judgé	judge
 space	p82/29-7	peace.	peace. 
+wh	p82/29-7	M'hen	When
+mw	p82/29-7	when ve can	when we can
 job	p82/29-7	job	Job
 modal	p82/29-7	which vere	which were
 tis	p82/29-7	As tis	As ’tis
 fs	p82/29-7	osten	often
 accent	p82/29-7	beforè	before
+mw	p82/29-7	which ve translate	which we translate
 split	p82/29-7	Sure ly	Surely
 tis	p82/29-7	Tis	'Tis
 tis	p82/29-7	Tis	'Tis
@@ -4040,6 +4271,8 @@ tis	p82/29-7	Tis	'Tis
 tis	p82/29-7	yet tis	yet ’tis
 accent	p82/29-7	Petèr	Peter
 space	p82/29-7	honoured.	honoured. 
+mw	p82/29-7	therefore ve should	therefore we should
+mw	p82/29-7	more ve honour	more we honour
 junk	p82/29-9	Bb,	
 isa	p82/29-9	1Chron.	1 Chron.
 tis	p82/29-9	Tis	'Tis
@@ -4048,6 +4281,7 @@ pronI	p82/29-9	Iunto	I unto
 accent	p82/29-9	à	a
 accent	p82/29-9	othęrs	others
 accent	p82/29-9	beçause	because
+th	p82/29-9	thoy 	they 
 tis	p82/29-9	, tis	, ’tis
 accent	p82/29-9	à	a
 wh	p82/29-9	u'hich	which
@@ -4066,6 +4300,7 @@ split	p82/29-9	praiset h	praiseth
 pronI	p82/29-9	l'had	I had
 pronI	p82/29-9	Iwas	I was
 th	p82/29-9	ibat	that
+mw	p82/29-9	If ve consider	If we consider
 tis	p82/29-9	but tis	but ’tis
 accent	p82/29-9	Lord̃	Lord
 tis	p82/29-9	that tis	that ’tis
@@ -4074,9 +4309,12 @@ bis	p82/29-9	bis	his
 isa	p82/29-9	(I 	(1 
 pronI	p82/29-9	Iexhort	I exhort
 accent	p82/29-9	réjoyce	rejoyce
+mw	p82/29-9	that ve may	that we may
 tis	p82/29-9	Tis	'Tis
 tis	p82/29-9	and tis	and ’tis
 tis	p82/29-9	and tis	and ’tis
+mw	p82/29-9	If ve consider	If we consider
+fs	p9/30-1	fignif	signif
 fs	p9/30-1	I hall	I shall
 job	p9/30-1	fob	Job
 job	p9/30-1	sob	Job
@@ -4089,6 +4327,7 @@ tis	p9/30-1	Tis	'Tis
 of	p9/30-1	ot	of
 tis	p9/30-1	confesse’tis	confesse ’tis
 tis	p9/30-1	that’tis	that ’tis
+num	p9/30-1	zoth	20th
 num	p9/30-1	1oth	10th
 job	p9/30-1	fob	Job
 of	p9/30-1	ot	of
@@ -4108,10 +4347,12 @@ tis	p9/30-1	“Tis	'Tis
 isa	p9/30-1	1Cor.	1 Cor.
 job	p9/30-1	fob	Job
 job	p9/30-1	Sob	Job
+num	p9/30-1	zoth	20th
 fh	p9/30-1	fh	sh
 mw	p9/30-1	that mere	that were
 job	p9/30-1	sob	Job
 tis	p9/30-1	“Tis	'Tis
+mw	p9/30-1	else ve may	else we may
 job	p9/30-1	Sob	Job
 modal	p9/30-1	you vere	you were
 modal	p9/30-1	he mas	he was
@@ -4130,6 +4371,7 @@ job	p9/30-1	Iob	Job
 modal	p9/30-1	I mould	I would
 tis	p9/30-1	“Tis	'Tis
 fs	p9/30-1	osten	often
+mw	p9/30-1	are ve fallen	are we fallen
 split	p9/30-1	out ward	outward
 accent	p9/30-11	thís	this
 split	p9/30-11	dis mayed	dismayed
@@ -4174,6 +4416,7 @@ split	p9/30-11	hard ly	hardly
 job	p9/30-11	Tob	Job
 of	p9/30-11	ef	of
 num	p9/30-11	Exod. S. 1	Exod. 5. 1
+mw	p9/30-11	so ve can	so we can
 way	p9/30-11	their may	their way
 te	p9/30-11	Tea	Yea
 job	p9/30-11	fob	Job
@@ -4194,6 +4437,7 @@ modal	p9/30-13	I mas	I was
 fh	p9/30-13	fh	sh
 pronI	p9/30-13	I'have	I have
 accent	p9/30-13	wh̃o	who
+mw	p9/30-13	their oun	their own
 job	p9/30-13	fob	Job
 of	p9/30-13	ef	of
 guil	p9/30-13	» 	 
@@ -4215,7 +4459,9 @@ way	p9/30-13	good may	good way
 way	p9/30-13	good may	good way
 fs	p9/30-13	osten	often
 mw	p9/30-13	thine omn	thine owne
+th	p9/30-13	, be shall	, he shall
 bis	p9/30-13	bis	his
+mw	p9/30-13	as ve doe	as we doe
 accent	p9/30-13	thè	the
 job	p9/30-13	tob	Job
 split	p9/30-13	distinct ly	distinctly
@@ -4241,6 +4487,7 @@ pronI	p9/30-15	Iam	I am
 job	p9/30-15	Tob	Job
 job	p9/30-15	job	Job
 fh	p9/30-15	fh	sh
+split	p9/30-15	out ward	outward
 space	p9/30-15	day.	day. 
 tis	p9/30-15	Tis	'Tis
 tis	p9/30-15	Tis	'Tis
@@ -4292,7 +4539,9 @@ bis	p9/30-16	bis	his
 tis	p9/30-16	Tis	'Tis
 tis	p9/30-16	Tis	'Tis
 junk	p9/30-18	CC	
+fs	p9/30-18	fignif	signif
 pjoin	p9/30-18	 doe his. I stand up⏎⏎	and thou regard
+num	p9/30-18	zoth	20th
 accent	p9/30-18	risé	rise
 job	p9/30-18	job	Job
 split	p9/30-18	Is rael	Israel
@@ -4342,12 +4591,14 @@ job	p9/30-18	tob	Job
 tis	p9/30-18	“Tis	'Tis
 mw	p9/30-18	Ay 	My 
 accent	p9/30-18	nôte	note
+mw	p9/30-18	so ve may	so we may
 mw	p9/30-18	Priest mas	Priest was
 mw	p9/30-18	Satan mas	Satan was
 accent	p9/30-18	and̀	and
 job	p9/30-18	Iob	Job
 god	p9/30-18	Ged	God
 pua	p9/30-2		q;
+fs	p9/30-2	fignif	signif
 mw	p9/30-2	age mas	age was
 te	p9/30-2	Tea	Yea
 job	p9/30-2	sob	Job
@@ -4365,12 +4616,14 @@ mw	p9/30-2	age mas	age was
 saith	p9/30-2	( faith 	( saith 
 of	p9/30-2	ef	of
 tis	p9/30-2	saith’tis	saith ’tis
+split	p9/30-2	out ward	outward
 fs	p9/30-2	osten	often
 accent	p9/30-2	thȩy	they
 job	p9/30-2	Tob	Job
 fh	p9/30-2	fh	sh
 wh	p9/30-2	w'hen	when
 pronI	p9/30-2	Iam	I am
+mw	p9/30-2	soever ve have	soever we have
 fs	p9/30-2	fome	some
 accent	p9/30-2	óf	of
 modal	p9/30-2	they mere	they were
@@ -4439,8 +4692,11 @@ mw	p9/30-21	Enoch mas	Enoch was
 isa	p9/30-21	1Cor.	1 Cor.
 pronI	p9/30-21	Ishew	I shew
 fs	p9/30-21	himfelfe	himselfe
+mw	p9/30-21	doe ve not	doe we not
+mw	p9/30-21	and ve shall	and we shall
 split	p9/30-21	present ly	presently
 modal	p9/30-21	God hill	God will
+mw	p9/30-21	when ve must	when we must
 split	p9/30-21	short ly	shortly
 wh	p9/30-21	n'hat	what
 th	p9/30-21	ihe	the
@@ -4458,10 +4714,12 @@ tis	p9/30-21	“Tis	'Tis
 isa	p9/30-21	P/al.	Psal.
 fh	p9/30-21	fh	sh
 th	p9/30-21	rhen	when
+th	p9/30-21	, be shall	, he shall
 tis	p9/30-21	"Tis	'Tis
 jf	p9/30-21	feremie	Jeremie
 accent	p9/30-21	spiritüall	spirituall
 accent	p9/30-21	seemẽs	seemes
+pronI	p9/30-21	(l 	(I 
 job	p9/30-21	fob	Job
 modal	p9/30-21	he mill	he will
 job	p9/30-21	fob	Job
@@ -4470,11 +4728,13 @@ pronI	p9/30-21	l	I
 split	p9/30-21	earnest ly	earnestly
 tis	p9/30-21	“Tis	'Tis
 modal	p9/30-21	he mas	he was
+fs	p9/30-25	fignif	signif
 sig	p9/30-25	KK	
 pbjoin	p9/30-25	e, (Psal. 62. 9.) ac⏎⏎	a
 pjoin	p9/30-25	n the text, I looked⏎⏎	for good.
 pjoin	p9/30-25	st, Ay bowels boyled⏎⏎	and rested not.
 num	p9/30-25	2oth	20th
+mw	p9/30-25	Ay 	My 
 job	p9/30-25	sob	Job
 fh	p9/30-25	fh	sh
 tis	p9/30-25	, tis	, ’tis
@@ -4503,10 +4763,12 @@ space	p9/30-25	Psal. 121. 1.)	Psal. 121. 1.)
 th	p9/30-25	rhen	when
 of	p9/30-25	ef	of
 of	p9/30-25	ef	of
+mw	p9/30-25	what ve desire	what we desire
 saith	p9/30-25	( faith 	( saith 
 pronI	p9/30-25	l	I
 bis	p9/30-25	bim	him
 tis	p9/30-25	then’tis	then ’tis
+mw	p9/30-25	which ve looke	which we looke
 job	p9/30-25	fob	Job
 job	p9/30-25	Tob	Job
 job	p9/30-25	Tob	Job
@@ -4517,13 +4779,16 @@ job	p9/30-25	Jeb	Job
 job	p9/30-25	job	Job
 th	p9/30-25	ibe	the
 job	p9/30-25	fob	Job
+mw	p9/30-25	Ay 	My 
 pronI	p9/30-25	l	I
 job	p9/30-25	Jeb	Job
 of	p9/30-25	ef	of
 fin	p9/30-25	fin	sin
 th	p9/30-25	ibe	the
 tis	p9/30-25	that’tis	that ’tis
+mw	p9/30-25	Ay 	My 
 pronI	p9/30-25	Ihave	I have
+mw	p9/30-25	whom ve thought	whom we thought
 of	p9/30-25	ef	of
 fh	p9/30-25	fh	sh
 th	p9/30-25	rhen	when
@@ -4572,14 +4837,17 @@ of	p9/30-28	ef	of
 fh	p9/30-28	fh	sh
 fs	p9/30-28	fome	some
 fs	p9/30-28	fay	say
+mw	p9/30-28	Ay 	My 
 job	p9/30-28	sob	Job
 pronI	p9/30-28	Iam	I am
 job	p9/30-28	sob	Job
 fin	p9/30-28	fin	sin
 mw	p9/30-28	Ay 	My 
 mw	p9/30-28	Ay 	My 
+mw	p9/30-28	Ay 	My 
 job	p9/30-28	sob	Job
 job	p9/30-28	sob	Job
+mw	p9/30-28	Ay 	My 
 split	p9/30-28	out ward	outward
 job	p9/30-28	sob	Job
 accent	p9/30-28	às	as
@@ -4589,6 +4857,7 @@ fh	p9/30-28	fh	sh
 tis	p9/30-28	whom’tis	whom ’tis
 tis	p9/30-28	when’tis	when ’tis
 num	p9/30-28	Chap. S. 1	Chap. 5. 1
+mw	p9/30-28	whom ve pray	whom we pray
 split	p9/30-28	immediate ly	immediately
 of	p9/30-28	ef	of
 fs	p9/30-28	fay	say
@@ -4599,8 +4868,10 @@ mw	p9/30-4	They mere	They were
 th	p9/30-4	ihe	the
 modal	p9/30-4	I mill	I will
 tis	p9/30-4	so’tis	so ’tis
+num	p9/30-4	zoth	20th
 tis	p9/30-4	Tis	'Tis
 jf	p9/30-4	feremie	Jeremie
+mw	p9/30-4	that ve may	that we may
 mw	p9/30-4	They mere	They were
 mw	p9/30-4	They mere	They were
 mw	p9/30-4	mbo	who
@@ -4723,6 +4994,7 @@ of	p9/31-13	ef	of
 tis	p9/31-13	Tis	'Tis
 bis	p9/31-13	bim	him
 accent	p9/31-13	j̃obs	jobs
+mw	p9/31-13	as ve say	as we say
 job	p9/31-13	Jeb	Job
 tis	p9/31-13	"Tis	'Tis
 th	p9/31-13	rhen	when
@@ -4744,6 +5016,7 @@ modal	p9/31-13	I hill	I will
 te	p9/31-13	Tou 	You 
 job	p9/31-13	Tob	Job
 job	p9/31-13	Tob	Job
+mw	p9/31-13	and ve care	and we care
 job	p9/31-13	Jub	Job
 job	p9/31-13	fob	Job
 modal	p9/31-13	he mas	he was
@@ -4753,6 +5026,7 @@ job	p9/31-13	Tob	Job
 job	p9/31-13	job	Job
 bis	p9/31-13	bis	his
 bis	p9/31-13	bim	him
+split	p9/31-13	out ward	outward
 job	p9/31-13	Iob	Job
 isa	p9/31-13	(I 	(1 
 isa	p9/31-13	(I 	(1 
@@ -4787,6 +5061,7 @@ fs	p9/31-16	fo	so
 tis	p9/31-16	"Tis	 'Tis
 fs	p9/31-16	fay	say
 wh	p9/31-16	w'hen	when
+mw	p9/31-16	what ve can	what we can
 tis	p9/31-16	“Tis	'Tis
 tis	p9/31-16	Tis	'Tis
 isa	p9/31-16	(Per	(Jer
@@ -4809,11 +5084,13 @@ tis	p9/31-16	when'tis	when 'tis
 job	p9/31-16	Iob	Job
 job	p9/31-16	job	Job
 fh	p9/31-16	fh	sh
+mw	p9/31-16	give ve giving	give we giving
 split	p9/31-16	day ly	dayly
 fh	p9/31-16	fh	sh
 fh	p9/31-16	fh	sh
 accent	p9/31-16	enough̀	enough
 tis	p9/31-16	when’tis	when ’tis
+mw	p9/31-16	as ve say	as we say
 job	p9/31-16	Jub	Job
 tis	p9/31-16	“Tis	 'Tis
 job	p9/31-16	fob	Job
@@ -4824,6 +5101,7 @@ mw	p9/31-16	he nas	he was
 tis	p9/31-16	Tis	'Tis
 bis	p9/31-16	bis	his
 job	p9/31-16	Tob	Job
+obs	p9/31-16	Obierve	Observe
 split	p9/31-16	constant ly	constantly
 job	p9/31-16	job	Job
 way	p9/31-16	the may	the way
@@ -4879,6 +5157,7 @@ job	p9/31-2	job	Job
 tis	p9/31-2	“Tis	'Tis
 fh	p9/31-2	fh	sh
 fs	p9/31-2	osten	often
+num	p9/31-2	zoth	20th
 job	p9/31-2	fobs	Jobs
 job	p9/31-2	fob	Job
 modal	p9/31-2	I mill	I will
@@ -4899,6 +5178,7 @@ tis	p9/31-2	Tis	'Tis
 fh	p9/31-2	fh	sh
 modal	p9/31-2	he hill	he will
 accent	p9/31-2	th́e	the
+split	p9/31-2	out ward	outward
 fs	p9/31-2	fay	say
 accent	p9/31-2	and̀	and
 pronI	p9/31-2	Idoe	I doe
@@ -4912,6 +5192,7 @@ tis	p9/31-22	“Tis	'Tis
 job	p9/31-22	tob	Job
 tis	p9/31-22	which’tis	which ’tis
 te	p9/31-22	Te 	Ye 
+mw	p9/31-22	which ve abuse	which we abuse
 job	p9/31-22	Iob	Job
 tis	p9/31-22	"Tis	'Tis
 tis	p9/31-22	“Tis	'Tis
@@ -4933,6 +5214,7 @@ job	p9/31-22	Jub	Job
 of	p9/31-22	ef	of
 te	p9/31-22	Te 	Ye 
 pronI	p9/31-22	Ieven	I even
+mw	p9/31-22	that ve may	that we may
 tis	p9/31-22	Tis	'Tis
 tis	p9/31-22	Tis	'Tis
 fh	p9/31-22	fh	sh
@@ -4961,6 +5243,8 @@ num	p9/31-22	I9th	19th
 job	p9/31-22	Tob	Job
 of	p9/31-22	ef	of
 fs	p9/31-22	fo	so
+mw	p9/31-22	Doe ve provoke	Doe we provoke
+mw	p9/31-22	as ve are	as we are
 job	p9/31-22	sob	Job
 job	p9/31-22	job	Job
 job	p9/31-22	job	Job
@@ -5000,6 +5284,7 @@ fin	p9/31-24	fins	sins
 th	p9/31-24	rhen	when
 pronI	p9/31-24	I'have	I have
 isa	p9/31-24	(I 	(1 
+num	p9/31-24	zoth	20th
 job	p9/31-24	Tob	Job
 job	p9/31-24	Jeb	Job
 job	p9/31-24	fob	Job
@@ -5097,6 +5382,7 @@ pronI	p9/31-26	Ibeheld	I beheld
 th	p9/31-26	rhen	when
 pronI	p9/31-26	Ibeheld	I beheld
 tis	p9/31-26	yet’tis	yet ’tis
+mw	p9/31-26	ver ve doe	ver we doe
 tis	p9/31-26	, tis	, ’tis
 job	p9/31-26	sob	Job
 tis	p9/31-26	“Tis	'Tis
@@ -5121,13 +5407,17 @@ tis	p9/31-26	"Tis	'Tis
 job	p9/31-26	tob	Job
 tis	p9/31-26	when tis	when ’tis
 job	p9/31-26	sob	Job
+mw	p9/31-26	when ve doe	when we doe
 job	p9/31-26	Tob	Job
 job	p9/31-26	Tob	Job
 tis	p9/31-26	and’tis	and ’tis
 of	p9/31-26	ef	of
+split	p9/31-26	out wardly	outwardly
 of	p9/31-26	ef	of
 tis	p9/31-26	“Tis	'Tis
+num	p9/31-26	zoth	20th
 fin	p9/31-26	fins	sins
+mw	p9/31-26	whom ve have	whom we have
 split	p9/31-26	body ly	bodyly
 pronI	p9/31-26	I'have	I have
 accent	p9/31-26	mouth́	mouth
@@ -5138,6 +5428,7 @@ job	p9/31-26	job	Job
 num	p9/31-26	2oth	20th
 th	p9/31-26	ihe	the
 job	p9/31-26	fob	Job
+num	p9/31-26	zoth	20th
 split	p9/31-26	abu sed	abused
 te	p9/31-26	Tea	Yea
 tis	p9/31-26	sol’tis	sol ’tis
@@ -5160,6 +5451,7 @@ split	p9/31-26	resolved ly	resolvedly
 of	p9/31-26	ef	of
 mw	p9/31-26	Lord mill	Lord will
 god	p9/31-26	Ged	God
+mw	p9/31-26	whether ve doe	whether we doe
 accent	p9/31-26	thât	that
 job	p9/31-26	Sob	Job
 god	p9/31-26	Ged	God
@@ -5167,9 +5459,11 @@ accent	p9/31-26	deñied	denied
 accent	p9/31-26	add́s	adds
 accent	p9/31-26	à	a
 job	p9/31-26	tob	Job
+mw	p9/31-26	when ve speake	when we speake
 junk	p9/31-29	H h h h	
 junk	p9/31-29	KKKK	
 pua	p9/31-29		q;
+fs	p9/31-29	fignif	signif
 sig	p9/31-29	H h h h 2	
 pbjoin	p9/31-29	 down fall, you will⏎⏎	w
 sig	p9/31-29	M m m m 2	
@@ -5190,6 +5484,7 @@ of	p9/31-29	ef	of
 te	p9/31-29	Te 	Ye 
 job	p9/31-29	job	Job
 fh	p9/31-29	fh	sh
+wh	p9/31-29	M’hence	Whence
 of	p9/31-29	er	or
 job	p9/31-29	lob	Job
 of	p9/31-29	ef	of
@@ -5253,6 +5548,7 @@ fs	p9/31-29	osten	often
 tis	p9/31-29	and’tis	and ’tis
 split	p9/31-29	Apost le	Apostle
 mw	p9/31-29	their omne	their owne
+mw	p9/31-29	Thus ve ses	Thus we ses
 job	p9/31-29	fobs	Jobs
 tis	p9/31-29	as'tis	as 'tis
 tis	p9/31-29	“Tis	'Tis
@@ -5279,12 +5575,14 @@ isa	p9/31-29	(I 	(1
 th	p9/31-29	ibe	the
 split	p9/31-29	Strict ly	Strictly
 tis	p9/31-29	“Tis	 'Tis
+mw	p9/31-29	because ve are	because we are
 tis	p9/31-29	Tis	'Tis
 modal	p9/31-29	they vere	they were
 bis	p9/31-29	bis	his
 tis	p9/31-29	or’tis	or ’tis
 split	p9/31-29	Last ly	Lastly
 job	p9/31-29	Iob	Job
+fs	p9/31-31	fignif	signif
 sig	p9/31-31	wiexNn n n 2	wiex
 pjoin	p9/31-31	men of my Tabernacle⏎⏎	said not.
 pjoin	p9/31-31	 death; without that⏎⏎	mee cannot be s
@@ -5311,6 +5609,7 @@ fs	p9/31-31	osten	often
 mw	p9/31-31	mine omne	mine owne
 accent	p9/31-31	stocḱ	stock
 job	p9/31-31	fob	Job
+mw	p9/31-31	shall ve receive	shall we receive
 of	p9/31-31	ef	of
 of	p9/31-31	ef	of
 bis	p9/31-31	bis	his
@@ -5326,6 +5625,7 @@ space	p9/31-31	servants.	servants.
 job	p9/31-31	Jub	Job
 job	p9/31-31	jobs	Jobs
 modal	p9/31-31	who vas	who was
+mw	p9/31-31	that ve might	that we might
 of	p9/31-31	ef	of
 tis	p9/31-31	“Tis	'Tis
 th	p9/31-31	ibat	that
@@ -5383,6 +5683,7 @@ pronI	p9/31-33	I'have	I have
 pronI	p9/31-33	l'am	I am
 job	p9/31-33	fob	Job
 space	p9/31-33	Gen.4. 13.)	Gen.4. 13.) 
+mw	p9/31-33	Ay 	My 
 space	p9/31-33	Job.13.23.)	Job.13.23.) 
 job	p9/31-33	fob	Job
 pronI	p9/31-33	l'have	I have
@@ -5421,6 +5722,7 @@ fh	p9/31-33	fh	sh
 fh	p9/31-33	fh	sh
 mw	p9/31-33	Ay 	My 
 fs	p9/31-33	I hall	I shall
+mw	p9/31-33	but ve did	but we did
 modal	p9/31-33	he vas	he was
 job	p9/31-33	Tob	Job
 mw	p9/31-33	thy omne	thy owne
@@ -5431,6 +5733,7 @@ tis	p9/31-33	yet’tis	yet ’tis
 tis	p9/31-33	“Tis	'Tis
 split	p9/31-33	transgre ssions	transgressions
 pronI	p9/31-33	l	I
+mw	p9/31-33	yea ve doe	yea we doe
 split	p9/31-33	com panion	companion
 pronI	p9/31-33	Iam	I am
 pronI	p9/31-33	l	I
@@ -5445,6 +5748,7 @@ te	p9/31-33	Tea	Yea
 mw	p9/31-33	their omne	their owne
 split	p9/31-33	afflict ed	afflicted
 pronI	p9/31-33	l	I
+mw	p9/31-33	wherein ve knew	wherein we knew
 bis	p9/31-33	bis	his
 pronI	p9/31-33	l	I
 split	p9/31-33	transgre ssions	transgressions
@@ -5465,6 +5769,7 @@ job	p9/31-33	Jub	Job
 of	p9/31-33	ef	of
 tis	p9/31-33	"Tis	'Tis
 wh	p9/31-33	w'hen	when
+mw	p9/31-33	Ay 	My 
 pronI	p9/31-33	l	I
 split	p9/31-33	affect ed	affected
 job	p9/31-33	Tob	Job
@@ -5570,6 +5875,7 @@ mw	p9/31-35	Almighty mould	Almighty would
 th	p9/31-35	ibe	the
 split	p9/31-35	earnest ly	earnestly
 job	p9/31-35	Tob	Job
+mw	p9/31-35	when ve doe	when we doe
 pronI	p9/31-35	l'am	I am
 accent	p9/31-35	à	a
 pronI	p9/31-35	l	I
@@ -5625,6 +5931,7 @@ job	p9/31-38	Sob	Job
 split	p9/31-38	cunning ly	cunningly
 job	p9/31-38	jobs	Jobs
 pronI	p9/31-38	I'have	I have
+mw	p9/31-38	Ay 	My 
 job	p9/31-38	job	Job
 fh	p9/31-38	fh	sh
 way	p9/31-38	the may	the way
@@ -5693,6 +6000,7 @@ job	p9/31-5	Jeb	Job
 job	p9/31-5	sob	Job
 tis	p9/31-5	“ Tis	'Tis
 mw	p9/31-5	Nho	Who
+mw	p9/31-5	soever ve doe	soever we doe
 fs	p9/31-5	osten	often
 tis	p9/31-5	Because tis	Because ’tis
 space	p9/31-5	oath.	oath. 

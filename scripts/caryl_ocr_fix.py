@@ -112,8 +112,9 @@ def best_fix(w):
                     return w[:k] + ' ' + w[k:]
     return None
 
+# 旁注与缺页说明（cy-gap，我们写的英文说明）不进纠错
 
-RE_PROTECT = re.compile(r'<span class="cy-margin">.*?</span>|<[^>]+>|\{:[^}]*\}|^.*\n\{: \.cy-vlabel\}', re.S | re.M)
+RE_PROTECT = re.compile(r'<span class="cy-(?:margin|gap)">.*?</span>|<[^>]+>|\{:[^}]*\}|^.*\n\{: \.cy-vlabel\}', re.S | re.M)
 
 
 def fix_text(md, log, slug):

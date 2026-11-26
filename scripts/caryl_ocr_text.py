@@ -373,6 +373,11 @@ class Builder:
                     para[-1] += f' <span class="{P}-margin">{notes.pop(0)[1]}</span>'
             if notes and para:
                 para[-1] += ''.join(f' <span class="{P}-margin">{n[1]}</span>' for n in notes)
+        # 扫描件在本部结束前就断了（末叶后的页没扫）：半句收尾时插一行说明
+        if para and not re.search(r'[.?!]\W*$', re.sub(r'<[^>]+>', '', ' '.join(para)).strip()):
+            flush_para()
+            out.append(('raw', f'<p><span class="{P}-gap">[The scanned copy ends here; the remaining pages of this part are missing. '
+                               f'扫描件到此为止，以下各页缺。]</span></p>'))
         close_section()
         return front, sections, pno
 

@@ -28,6 +28,8 @@
   ——第 9 轮（第 9 部 30:16–17）补：accent（英文词里的组合附加符 thé/oùr/quiçkly）、pua（私用区 U+E8BF → q;）、小写 tob→Job、
           himfelf(e)→himself(e)、and’tis→and ’tis、Ay/Afy bones→My、主语后 nas→was、tabe→take、空旁注
   ——第 10 轮（第 4 部 12:5–6）补：序数词 IIth/Sth/2oth→11th/5th/20th、经卷章号 S→5、代词后 hall→shall、介词后 tle→the、uhen→when、the seet→feet、旁注 mibi→mihi
+  ——第 14 轮（第 4 部 14:18–22）补：ve→we、M'h/NV/IV→Wh/W、fignif→signif、zoth→20th、out ward→outward、Obierve→Observe、
+          物主词后 orn/oun→own、(l conceive→(I、, be shall→, he shall、Tte→The、thoy→they/thy（按后接词）、Ay soul/brethren→My
   head    漏进正文的页眉（「Chap. 31. An Exposition upon the Booke of JOB. Vers. 7.」）删掉
 """
 import argparse
@@ -222,6 +224,34 @@ def rules():
     R.append(('tis', re.compile(r"(?<=[a-z]\.)(?='Tis\b)"), lambda m: ' '))             # 句点后缺空格：turns.'Tis
     R.append(('fs', re.compile(r'\bfles\b'), lambda m: 'flesh'))
     R.append(('mw', re.compile(r'\b(for|why|For|Why) me (are|doe|have|shall)\b'), lambda m: f'{m.group(1)} we {m.group(2)}'))   # 斜体 w 读成 m：for me have → for we have
+    # —— 第 14 轮（第 4 部 14:18–22 实读 22 页）
+    R.append(('mw', re.compile(r'\bAy (?=[A-Za-z])'), lambda m: 'My '))   # 全书 Ay 后接词都是 My（看过全部 30 余处）
+    def ve_we(m):   # 斜体 w 读成 v：that ve have、need ve hope；「lo ve」「ha ve」是词被拆开（并回），「O ve men」是 ye，「the ve y」不碰
+        prev, nxt = m.group(1), m.group(2)
+        if UNI.get(prev.lower() + 've', 0) > max(2, UNI.get(prev.lower(), 0)):
+            return prev + 've ' + nxt
+        if prev == 'O':
+            return 'O ye ' + nxt
+        if len(nxt) < 2 or prev.lower() in ('the', 'a', 'perfect', 'receive') or UNI.get(prev.lower(), 0) < 100:   # 前词是残片（Ih ve、shal ve）不碰
+            return m.group(0)
+        return prev + ' we ' + nxt
+    R.append(('mw', re.compile(r'\b([A-Za-z]+) ve ([a-z]+)\b'), ve_we))
+    R.append(('wh', re.compile(r"\bM['’]h([a-z]+)\b"),
+              lambda m: 'Wh' + m.group(1) if UNI.get('wh' + m.group(1), 0) >= 3 else m.group(0)))   # M'hen → When
+    R.append(('wh', re.compile(r'\b(?:NV|IV)([a-z]+)\b'),
+              lambda m: 'W' + m.group(1) if UNI.get('w' + m.group(1), 0) >= 3 else m.group(0)))     # NVe／IVhen → We／When
+    R.append(('num', re.compile(r'\bzoth\b'), lambda m: '20th'))
+    R.append(('split', re.compile(r'\bout ward(ly|s)?\b'), lambda m: 'outward' + (m.group(1) or '')))
+    R.append(('obs', re.compile(r'\bOb[il]erve\b'), lambda m: 'Observe'))
+    R.append(('mw', re.compile(r'\b(its|his|their|my|thy|our|your|her) (?:orn|oun)\b'), lambda m: m.group(1) + ' own'))
+    R.append(('pronI', re.compile(r'\(l (?=(?:conceive|conceave|say|think|grant|meane|mean)\b)'), lambda m: '(I '))
+    R.append(('th', re.compile(r', be shall\b'), lambda m: ', he shall'))
+    R.append(('th', re.compile(r'\bTte\b'), lambda m: 'The'))
+    # thoy：后接动词是 they，后接名词／own 是 thy；别的不碰
+    R.append(('th', re.compile(r'\bthoy (?=(?:do|did|doe|shall|will|are|were|have|had|haue|make|slew|staid|vaited|waited|silence|may|must|can|would|should|say|said|know|knew|see|saw|came|went|could|laugh|be|cannot)\b)'),
+              lambda m: 'they '))
+    R.append(('th', re.compile(r'\bthoy (?=(?:own|owne|servants?|Sheild|Shield|soul|soule|God|word|people|name|hand|heart|house|son|sonne|wayes)\b)'),
+              lambda m: 'thy '))
     # 漏进正文的页眉
     R.append(('head', re.compile(r'\bCha[pn][.,-]?\s?\d{1,2}\.?\s+An Ex\w*\s+u\w*\s+\w+\s+Boo?[sk]\w*\s+\S{1,3}\s?\S{0,3}\s+V\w{2,5}[.,]?\s?\d{0,2}\.?'),
               lambda m: ''))
@@ -440,6 +470,11 @@ def sweep_md(md, log, where):
         log.append(('latin', where, 'mibi', 'mihi'))
         return 'mihi'
     md = re.sub(r'\bmibi\b', mihi, md)
+    # 第 14 轮：长 s 读成 f 的 fignif-（signifies／significat），旁注拉丁文里也多，全文改
+    def fignif(m):
+        log.append(('fs', where, 'fignif', 'signif'))
+        return 'signif'
+    md = re.sub(r'\bfignif', fignif, md)
     # 人工表把整条乱码旁注改空后留下的空旁注
     def empty_margin(m):
         log.append(('junk', where, '[空旁注]', ''))

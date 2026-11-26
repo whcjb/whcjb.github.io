@@ -21,6 +21,7 @@
 | 11 | 2026-11-26 | 第 6 部 21:4–6（印本 pp. 627–646） | Packer 纸本 | 20 | 约 245（落表约 180 条；正文约 208） | ≈ 12.2（正文 10.4） | 0 |
 | 12 | 2026-11-26 | 第 4 部 14:1–2（印本 pp. 544–561） | Packer 纸本 | 18 | 约 270（落表约 160 条；正文约 226） | ≈ 14.9（正文 12.6） | 0 |
 | 13 | 2026-11-26 | 第 6 部 20:15–17（印本 pp. 510–524） | Packer 纸本 | 15 | 约 180（落表 111 条；正文约 130） | ≈ 11.8（正文 8.7） | 0 |
+| 14 | 2026-11-26 | 第 4 部 14:18–22（印本 pp. 650–671） | Packer 纸本 | 22 | 约 150（落表 120 条；正文约 120） | ≈ 6.8（正文 5.5） | 0 |
 
 ## 第 1 轮发现的错误类别与全书清理
 
@@ -344,3 +345,31 @@ p.205 下半页是下一段 12:7 的开头，同一张图一并核了（落表 8
 | the mood → the wood（斜体 w 读成 m） | 1 | 3 |
 
 原书照录：remporals、senecdochcially、convayance、sometim estaketh、fowler。
+
+## 第 14 轮发现的问题与全书处理（第 4 部 14:18–22，22 页）
+
+本段错处约 150（落表 120 条）：正文约 120（每页约 5.5，十四轮来最低），旁注 18 条（希伯来／拉丁旁注照影像补，7 条整条重录）。
+本段是第 4 部最后一段：扫描件止于印本 p.671（叶 677），14:22 讲解半句断在「comprehends all sorts」。
+
+结构类：
+- **扫描件在本部结束前就断了**，页面半句收尾而没有任何说明。`caryl_ocr_text.py`：全部最后一段以非句末标点收尾时，插一行
+  「[The scanned copy ends here…] 扫描件到此为止，以下各页缺。」全书 3 处：第 4 部 14:18、第 9 部 31:38、对开本 29:24。
+- **缺页说明被纠错层当正文**：证人层把说明里的英文词（pages、scans）套上存疑标记。`caryl_ocr_fix.RE_PROTECT` 加 `cy-gap`，与旁注一样不进纠错。
+- 旁注首字漏进正文（「grow germi-out」「themselves, Va-and」「lives in A」）：人工表逐条删、旁注补回首字。
+- 引语逐行带“的段落被劈成两段（p.651「change come. / Let me be removed」）：人工表并回。
+
+文字类（`caryl_ocr_sweep.py` 新规则）：
+
+| 类别 | 本段 | 全书命中 |
+|---|---|---|
+| 斜体 w 读成 v：that ve have、need ve hope → we；「lo ve」「ha ve」是词被拆开，并回；「O ve」→ O ye；前词是残片（Ih ve、shal ve）不碰 | 1 | 约 150 |
+| 句首斜体 M 读成 A：Ay ＋任何词 → My（第 9 轮只认 bones/heart 等，全书看过余下 30 余处都是 My） | 1 | 约 50 |
+| 长 s 读成 f：fignif- → signif-（旁注拉丁 fignificat 一并，全文改） | 2 | 48 |
+| 斜体 W 读坏：M'hen／NVe／IVho → When／We／Who（去掉后是本书常见词才改） | 2 | 16 |
+| 序数词 zoth → 20th | 1 | 16 |
+| out ward(ly) → outward(ly) | 1 | 31 |
+| thoy：后接动词 → they，后接名词／own → thy（其余不碰） | 1 | 9 |
+| 物主词后 orn／oun → own；Obierve／Oblerve → Observe；(l conceive → (I；, be shall → , he shall；Tte → The | 各 1–2 | 共约 15 |
+
+撤回／不改：本段影像里 `wean the stones`（小标题）、`Propheet`、`Athiest`、`he wasketh`、`because that with waxeth`（=which）原书如此，照录；`Asick`、`betterto` 原书连排照录。
+另记：重跑第 8 部（p82）切段层与 TCP 抽取（extract_caryl.py）时，现行脚本的输出与已提交版本有零星出入（经文框界、virum que→virumque），与本轮无关，未夹带。
