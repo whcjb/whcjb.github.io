@@ -272,6 +272,15 @@ authors:
     work_en: "An Exposition of the Prophet Ezekiel, with Useful Observations thereupon"
     no_bio: false
     books: 1
+  - id: burroughs
+    name: "耶利米·巴罗夫"
+    short: "巴罗夫"
+    en: "Jeremiah Burroughs"
+    years: "1599–1646"
+    work_cn: "何西阿书讲解"
+    work_en: "An Exposition of the Prophesie of Hosea"
+    no_bio: false
+    books: 1
   - id: reynolds
     name: "爱德华·雷诺兹"
     short: "雷诺兹"
@@ -573,6 +582,7 @@ books:
     testament: ot
     chapters: 14
     links:
+      - {author: burroughs, path: "/burroughs/hosea/", url_tpl: "/burroughs/hosea/__CH__/", title_cn: "何西阿书讲解", title_en: "An Exposition of the Prophesie of Hosea", c0: "#3d5046", c1: "#546c60"}
   - id: joel
     name: "约珥书"
     en: "Joel"

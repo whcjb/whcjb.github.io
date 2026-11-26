@@ -1,0 +1,28 @@
+---
+layout: burroughs-chapter
+book_id: hosea
+book_name: "Burroughs on Hosea"
+title: "Vol. IV · To the Reader"
+subtitle: "Chapters 11–13 · 1651 · EEBO-TCP A30575"
+date: 2026-11-26 11:07
+prev_url: "/burroughs/hosea/vol4-title/"
+prev_label: "Vol. IV · Title Page"
+next_url: "/burroughs/hosea/1-1/"
+next_label: "Lecture 1 · 1:1–2"
+---
+
+### <span class="jb-pb" data-facs="2"></span><span class="jb-pb" data-facs="2"></span>To the READER.
+{: .jb-h-c .jb-h-it}
+
+GOD who alone is *perfect* in Himself, hath reteined this Prerogative to Himself, That His *Work* should be *perfect* (as *Moses* speaks) And as another Holy One hath it, *doth al his pleasure. Paul,* though in what-ever he was to commit to writing (in matters sacred) had infalibility of assistance, yet perfected not all be intended: *These things we will do, if God permit,* said he to the *Hebrews:* But we no where find extant any evidence,[^1] that he accomplished what he there intended; Namely, A full Methodical Discourse upon those *first Principles,* and *Foundations of Religion,* which that speech had reference unto. It is no wonder then, that if *such* a kind of *Imperfection* accompanied the *Works* of so great a *Master-builder,* if it attend those who build on this Foundation, and are not priviledged (as yet he was) *from building Hay and stubble.*
+
+This sort of *Incompleatness* hath befallen the *Works* of this worthy Author, in respect to the finishing of this Prophesie, which he intended, and had performed; wherein yet to the Church of God, there shal be no loss, there being no thoughts nor Notions suggested to any man, which though for the present they die with him. But the same Spirit that is the inspirer of <span class="jb-pb" data-facs="3"></span> all, doth bring to light in some one or other servant of God, in his own time.
+
+What a Treasury of Thoughts seemed to be lost, and to die with the Savior of the World, which he had not, could not then utter; which yet the Spirit that fil'd him *without measure,* distributed amongst the *Apostles* that came after him, according *to the measure of the gift of Christ* in each. There is no beam of Divine Light hath shone into any mans heart that shal finaly, and for ever be put *under a Bushel;* but in the end shall be set up, *to give light to the whol House.*
+
+The *purpose* of this Preface is, To *consign* the *Pasport* thorough the World, of these last Notes of the Author upon this Prophesie; Namely, The Eleventh, Twelfth, and Thirteenth Chapters; and to assure the Reader, That they are the *best* and most *genuine* that can be expected, being collected out of those under his hand, al along; and the best Copies of those that took them from his mouth: And to subjoyn this hearty prayr, for a blessing from Heaven on these, & the rest of these our Brothers Labors that are published, that *his Works may follow him,* and *he receive* (at latter day) *a full reward,* even *according to the fruit of his doings.*
+
+<p class="jb-closer" markdown="1">Thomas Goodwyn, William Greenhil, Sydrach Simpson, William Bridge, John Yates, Will. Adderly.</p>
+
+[^1]: Heb.
+

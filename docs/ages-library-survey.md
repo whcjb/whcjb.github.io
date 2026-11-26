@@ -207,3 +207,9 @@ AGES（AGES Software，Master Christian Library）总共 400+ 种书，加尔文
 - 拼写是 17 世纪原貌（长 s `ſ`、u/v 互用等），发布前要规范化。
 - 各卷 `<div type>` 不统一：`part`／`textual_commentary`／`observations`／`exposition` 混用，切章节时要按卷分别处理。
 - 现代排印本：1839 年 Holdsworth 版、1864 年 Nichol 版（James Sherman 编），HathiTrust 上只有页面影像，没有人工录入本；Banner of Truth 1994 年重印本有版权。
+
+## 补充（2026-11-26）：巴罗夫《何西阿书讲解》——AGES 没有，EEBO-TCP 有四卷人工录入
+
+AGES 主盘只收了巴罗夫的《知足的珍贵》（`BUR_RJCC`，见上文第七节），没有何西阿书。人工录入本在 EEBO-TCP，四卷（第 1–13 章）全有，CC0，
+已存 `burroughs_raw/hosea/src/`：A30572（1–3 章，1652 第二版）、A77979（4–7 章，1650）、A30574（8–10 章，1650）、A30575（11–13 章，1651）。
+巴罗夫讲到 13:11 去世，13:12 以后不在这四卷里。中文译本未见（2026-11-26 网上查过）。

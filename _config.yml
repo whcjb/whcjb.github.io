@@ -63,6 +63,7 @@ exclude:
   - knox_raw
   - hildersham_raw
   - greenhill_raw
+  - burroughs_raw
   - caryl_raw
   - reynolds_raw
   - cowper_raw

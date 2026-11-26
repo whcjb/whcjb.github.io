@@ -135,6 +135,7 @@ sources:
   hosea:
     - {key: calvin, author: calvin, lang: zh, label: "加尔文注释", url_tpl: "/calvin/hosea/__CH__/", accent: "#800000", ch_from: 1, ch_to: 14}
     - {key: mhenry, author: mhenry, lang: zh, label: "马太亨利注释", url_tpl: "/mhenry/hosea/__CH__/", accent: "#C9922A", ch_from: 1, ch_to: 14}
+    - {key: burroughs-en, author: burroughs, lang: en, label: "巴罗夫讲解（英文版）", label_en: "Jeremiah Burroughs", url_tpl: "/burroughs/hosea/__CH__/", accent: "#546c60", ch_from: 1, ch_to: 13}
   isaiah:
     - {key: calvin, author: calvin, lang: zh, label: "加尔文注释", url_tpl: "/calvin/isaiah-1/__CH__/", accent: "#800000", ch_from: 1, ch_to: 37}
     - {key: calvin-en, author: calvin, lang: en, label: "加尔文注释（英文版）", label_en: "John Calvin", url_tpl: "/calvin/isaiah-1-en/__CH__/", accent: "#800000", ch_from: 1, ch_to: 37}

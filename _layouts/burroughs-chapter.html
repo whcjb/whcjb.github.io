@@ -1,0 +1,341 @@
+---
+layout: default
+---
+{%- comment -%}
+  耶利米·巴罗夫《何西阿书讲解》(1650–1652，四卷) 的章节页（中英共用，靠 page.zh 切换）。
+
+  ⚠️ 不复用别家 layout：每本书独立样式（用户既定规矩）。骨架取自 dickson-chapter。
+  按 2026-10-16 起的新书规矩：章顶不放「跳到某节」下拉，副标题作者写英文原名。
+
+  配色灰绿：卡片色 #546c60，限白底对比度 5.2–6、彩度 ≤40，与「历代解经」已登记各色（含深端）及加尔文酒红、
+  马太亨利金、站点 Hux 蓝、缺字红相比最小 ΔE 14.7（CIE76）；色板已挤，同档里取最远的一个。深端 #3d5046。
+
+  本书版式要点（底本 EEBO-TCP 四卷，见 scripts/extract_burroughs.py）：
+  - 第 1–3 章一讲一页，第 4–13 章一段经文一页：段首经文 → `.jb-text`（`.jb-ref` 一行出处 + 经文），其后每节一个 commentary-anchor。
+  - 原书页边纲目标记（Note 1 / Observ. 1 …）→ `.jb-mark` 小标签。
+  - 印本页码 → `.jb-pb`，id `#pN`。
+  - 编者推补 → `.jb-conj`（方括号另色）；待定的缺字 → `.jb-gap`（标红）。
+{%- endcomment -%}
+
+<div class="container burroughs-wrap{% if page.zh %} jb-zh{% endif %}" style="padding-top: 70px;">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1" id="cmpCol">
+
+      <div class="jb-chrome">
+        <a href="{{ site.baseurl }}/burroughs/{{ page.book_id }}/{% unless page.zh %}en/{% endunless %}">&larr; {{ page.book_name }}</a>
+        {% if page.zh %}{%- comment -%} 中文章节页不放英文入口：英文版只从书卷首页进（用户 2026-11-11 定，历代解经全部书卷通行）。{%- endcomment -%}
+        {% else %}{% if page.zh_url %}<a class="jb-lang" href="{{ site.baseurl }}{{ page.zh_url }}">中文版 &rarr;</a>{% endif %}{% endif %}
+      </div>
+
+      <h1 class="jb-title">{{ page.title }}</h1>
+      {% if page.subtitle %}<p class="jb-subtitle">{{ page.subtitle }}</p>{% endif %}
+
+      <div class="jb-nav">
+        {% if page.prev_url %}<a href="{{ site.baseurl }}{{ page.prev_url }}">&larr; {{ page.prev_label }}</a>
+        {% else %}<span></span>{% endif %}
+        {% if page.next_url %}<a href="{{ site.baseurl }}{{ page.next_url }}">{{ page.next_label }} &rarr;</a>
+        {% else %}<span></span>{% endif %}
+      </div>
+
+      {%- comment -%}
+        对比注释抽屉：只给正文章节页（有 page.chapter）。self 把本书自己排除，中英两版 key 不同。
+      {%- endcomment -%}
+      {% if page.chapter %}
+      {% assign cc_self = "burroughs-en" %}{% if page.zh %}{% assign cc_self = "burroughs" %}{% endif %}
+      {% include compare-commentary-head.html self=cc_self content_class="jb-content" self_label="巴罗夫" %}
+      {% endif %}
+      <div class="jb-content">
+        {{ content }}
+      </div>
+      {% if page.chapter %}{% include compare-commentary-foot.html %}{% endif %}
+
+      {% if page.date %}
+      <div class="jb-stamp">{% if page.zh %}译于{% else %}Published{% endif %} {{ page.date | date: "%Y-%m-%d %H:%M" }}</div>
+      {% endif %}
+
+      <div class="jb-nav jb-nav-foot">
+        {% if page.prev_url %}<a href="{{ site.baseurl }}{{ page.prev_url }}">&larr; {{ page.prev_label }}</a>
+        {% else %}<span></span>{% endif %}
+        {% if page.next_url %}<a href="{{ site.baseurl }}{{ page.next_url }}">{{ page.next_label }} &rarr;</a>
+        {% else %}<span></span>{% endif %}
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<script>
+// 段前经文框：标进 scripture-popup 的 skip 列表（框里本身就是经文，不再 linkify）
+(function () {
+  document.querySelectorAll('.jb-content .jb-text').forEach(function (box) {
+    box.classList.add('verse-anchor');
+  });
+})();
+</script>
+<script>
+// 脚注：底部每条前插编号回跳（与 calvin-en 同）
+(function () {
+  document.querySelectorAll('.jb-content .footnotes ol li[id]').forEach(function (li) {
+    var label = li.id.replace(/^fn:/, '');
+    var a = document.createElement('a');
+    a.href = '#fnref:' + label; a.className = 'fn-backref-num'; a.textContent = label; a.title = '返回引用位置';
+    li.insertBefore(a, li.firstChild);
+  });
+})();
+</script>
+
+
+{%- comment -%}
+  经文引用弹层：只给中文页（模块认的是中文书卷名）。accent/vnum 必须写字面量
+  （Jekyll 3 的 include 参数不接受变量）——与下方 CSS 的 --jb-ink 两处同值，改色要一起改。
+{%- endcomment -%}
+{% if page.zh %}
+{% include scripture-popup.html container_selector=".jb-content" accent="#546c60" vnum="#3d5046" slide="down" %}
+{% endif %}
+
+<style>
+.burroughs-wrap {
+  --jb-ink: #546c60;
+  --jb-ink-dark: #3d5046;
+  --jb-ink-light: #a9bab0;
+  --jb-rule: #e1e8e4;
+  --jb-paper: #f5f8f6;
+  --jb-body: #2a2118;
+}
+.burroughs-wrap .jb-chrome,
+.burroughs-wrap .jb-nav {
+  font-size: 13px; display: flex; justify-content: space-between; gap: 12px;
+  align-items: center; font-family: Georgia, "Times New Roman", serif;
+}
+.burroughs-wrap .jb-chrome { margin: 18px 0 22px; }
+.burroughs-wrap .jb-chrome a,
+.burroughs-wrap .jb-nav a { color: var(--jb-ink); text-decoration: none; }
+.burroughs-wrap .jb-chrome a:hover,
+.burroughs-wrap .jb-nav a:hover { color: var(--jb-ink-dark); text-decoration: underline; }
+.burroughs-wrap .jb-lang { border: 1px solid var(--jb-rule); border-radius: 4px; padding: 4px 10px; }
+.burroughs-wrap .jb-lang:hover { background: var(--jb-ink); color: #fff !important; text-decoration: none; }
+.burroughs-wrap .jb-title {
+  font-family: Georgia, "Times New Roman", serif; font-size: 30px; font-weight: normal;
+  color: var(--jb-ink-dark); text-align: center; margin: 10px 0 4px; line-height: 1.3;
+}
+.burroughs-wrap .jb-subtitle {
+  text-align: center; font-size: 14px; color: #857868; margin: 0 0 18px;
+  font-family: Georgia, "Times New Roman", serif; font-style: italic;
+}
+.burroughs-wrap .jb-nav { margin: 14px 0 26px; }
+.burroughs-wrap .jb-nav-foot { margin-top: 44px; padding-top: 16px; border-top: 1px solid var(--jb-rule); }
+
+/* 正文 */
+.burroughs-wrap .jb-content {
+  font-family: Georgia, "Times New Roman", "Songti SC", STSong, serif;
+  font-size: 17px; line-height: 1.85; color: var(--jb-body);
+}
+.burroughs-wrap .jb-content p { margin: 0 0 16px; text-align: justify; }
+.burroughs-wrap .jb-content h2 {
+  font-family: Georgia, "Times New Roman", serif; font-size: 19px; font-weight: normal;
+  text-align: center; color: var(--jb-ink-dark); margin: 10px 0 18px; line-height: 1.5; letter-spacing: .03em;
+}
+.burroughs-wrap .jb-content a { color: var(--jb-ink); }
+
+/* 章目录页（/burroughs/<书>/<章>/）：本章各段 */
+.burroughs-wrap .jb-secrule { border: 0; border-top: 1px solid var(--jb-rule); margin: 22px 0 18px; }
+.burroughs-wrap .jb-sec { scroll-margin-top: 70px; }
+.burroughs-wrap .jb-chtoc { list-style: none; padding: 0; margin: 10px 0; display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 8px; }
+.burroughs-wrap .jb-chtoc a { display: block; padding: 9px 13px; border: 1px solid var(--jb-rule);
+  border-radius: 4px; background: var(--jb-paper); text-decoration: none; color: #2a2118; line-height: 1.45; }
+.burroughs-wrap .jb-chtoc a:hover { border-color: var(--jb-ink); color: var(--jb-ink-dark); }
+.burroughs-wrap .jb-chtoc small { display: block; color: #857868; font-size: 12.5px; }
+.burroughs-wrap .jb-chtoc a.jb-other { border-style: dashed; color: #998b7a; }
+
+/* 段前排出的经文：一节一行 */
+.burroughs-wrap .jb-text {
+  background: var(--jb-paper); border-left: 3px solid var(--jb-ink);
+  padding: 12px 18px; margin: 6px 0 20px; color: #3d3226;
+}
+.burroughs-wrap .jb-text p { margin: 0; text-align: left; }
+.burroughs-wrap .jb-text p + p { margin-top: 8px; }
+.burroughs-wrap .jb-text .jb-vlabel { font-size: 13px; letter-spacing: .04em; color: var(--jb-ink-dark); margin: 0 0 4px; font-style: italic; }
+.burroughs-wrap .commentary-anchor {
+  display: block; height: 0; line-height: 0; margin: 0; padding: 0;
+  overflow: hidden; visibility: hidden; scroll-margin-top: 80px;
+}
+
+/* 中文页：音译专名后的原名对照，小一号灰字 */
+.burroughs-wrap.jb-zh .jb-orig { font-size: .82em; color: #857868; margin: 0 1px;
+  font-family: Georgia, "Times New Roman", serif; white-space: nowrap; }
+
+/* 页边旁注 */
+.burroughs-wrap .jb-margin {
+  display: block; margin: 2px 0 8px; padding-left: 10px; border-left: 2px solid var(--jb-rule);
+  font-size: 13px; line-height: 1.55; color: #7a6e60; font-style: normal; text-align: left;
+}
+@media (min-width: 1200px) {
+  .burroughs-wrap .jb-margin {
+    float: right; clear: right; width: 150px; margin: 4px -182px 8px 16px;
+    padding-left: 8px; text-indent: 0;
+  }
+}
+
+/* 印本页码（各卷自起）：空锚点，行内显示「p. N」小灰字 */
+.burroughs-wrap .jb-pb { scroll-margin-top: 80px; cursor: help; }
+.burroughs-wrap .jb-pb[data-p]::before {
+  content: "p." attr(data-p); font-size: 10.5px; color: #b8aa98; font-style: normal;
+  font-family: Georgia, serif; letter-spacing: .02em; margin: 0 4px;
+  border: 1px solid #e1e8e4; border-radius: 3px; padding: 0 3px; vertical-align: 1px;
+}
+
+/* 花饰首字 */
+.burroughs-wrap .jb-dropcap {
+  float: left; font-family: Georgia, "Times New Roman", serif; font-size: 3.1em;
+  line-height: .84; margin: 4px 7px 0 0; color: var(--jb-ink-dark);
+}
+
+/* 原书分条（1. 2. …） */
+.burroughs-wrap .jb-item { padding-left: 1.4em; margin: 0 0 8px !important; }
+/* 逐句引出的经文（录入本 <q>）：讲解的小标题 */
+.burroughs-wrap .jb-quote { text-align: left !important; font-weight: 600; color: var(--jb-ink-dark);
+  margin: 26px 0 10px !important; padding-left: 10px; border-left: 3px solid var(--jb-ink-light); }
+/* 扉页手排样式（burroughs_raw/hosea/manual_pages/，有才用） */
+.burroughs-wrap .jb-tp { max-width: 540px; margin: 10px auto 30px; padding: 24px 28px 20px;
+  border: 1px solid #2a2a2a; outline: 1px solid #2a2a2a; outline-offset: 4px;
+  text-align: center; font-family: Georgia, "Times New Roman", serif; color: #1f1f1f; line-height: 1.2; }
+.burroughs-wrap .jb-tp-l { margin: 0 0 6px; text-align: center !important; text-indent: 0 !important; }
+.burroughs-wrap .jb-tp .s00 { font-size: 58px; letter-spacing: .16em; line-height: 1.05; }
+.burroughs-wrap .jb-tp .s0 { font-size: 46px; font-weight: bold; letter-spacing: .01em; line-height: 1.05; }
+.burroughs-wrap .jb-tp .s1 { font-size: 26px; }
+.burroughs-wrap .jb-tp .s2 { font-size: 20px; }
+.burroughs-wrap .jb-tp .s3 { font-size: 17px; }
+.burroughs-wrap .jb-tp .s4 { font-size: 15px; }
+.burroughs-wrap .jb-tp .s5 { font-size: 13px; line-height: 1.4; }
+.burroughs-wrap .jb-tp .it { font-style: italic; }
+.burroughs-wrap .jb-tp .ls { letter-spacing: .22em; }
+.burroughs-wrap .jb-tp sup { font-size: .45em; vertical-align: .95em; }
+.burroughs-wrap .jb-tp-rule { border: 0; border-top: 1px solid #2a2a2a; margin: 10px 0; }
+.burroughs-wrap .jb-tp-motto { font-size: 12.5px; line-height: 1.45; margin: 2px 0; }
+.burroughs-wrap .jb-tp-motto p { margin: 0 0 3px !important; text-align: justify !important; text-indent: 1.4em !important; }
+.burroughs-wrap .jb-tp-motto.c p { text-align: center !important; text-indent: 0 !important; }
+.burroughs-wrap .jb-tp-note { font-size: 12px; color: #8a8a8a; margin: 14px 0 0 !important; text-align: center !important;
+  text-indent: 0 !important; font-family: "Songti SC", STSong, serif; }
+@media (max-width: 600px) {
+  .burroughs-wrap .jb-tp { padding: 16px 10px 14px; }
+  .burroughs-wrap .jb-tp .s00 { font-size: 34px; letter-spacing: .1em; }
+  .burroughs-wrap .jb-tp .s0 { font-size: 28px; }
+  .burroughs-wrap .jb-tp .s1 { font-size: 20px; }
+  .burroughs-wrap .jb-tp .s2 { font-size: 17px; }
+  .burroughs-wrap .jb-tp-motto p { text-align: left !important; }
+}
+
+/* ── 正文版式照原书（old-book-ocr §3.3a）── */
+/* 段落首行缩进；段首有花饰首字、分条、经文框、旁注的不缩 */
+.burroughs-wrap .jb-content > p { text-indent: 1.4em; }
+.burroughs-wrap .jb-content > p:has(> .jb-dropcap:first-child),
+.burroughs-wrap .jb-content > p:has(> .jb-pb:first-child + .jb-dropcap) { text-indent: 0; }
+.burroughs-wrap .jb-dropcap { font-size: 3.3em; line-height: .8; margin: 5px 6px 0 0; color: #1f1f1f; }
+/* 段前经文：原书整段斜体、每节悬挂缩进，不加底色框 */
+.burroughs-wrap .jb-text { background: none; border-left: 0; padding: 0 0 0 1.6em; margin: 4px 0 22px; color: #2b2219; font-style: italic; }
+.burroughs-wrap .jb-text p { text-indent: -1.6em; }
+.burroughs-wrap .jb-text em { font-style: normal; }
+/* 标题：VERS. 60, 61. 段首居中大字、加宽字距；所引经文行居中斜体；Vers. N 起头的齐左悬挂 */
+.burroughs-wrap .jb-content h3.jb-h-vers, .burroughs-wrap .jb-content h4.jb-h-vers {
+  text-align: center; font-size: 24px; font-weight: normal; letter-spacing: .12em; color: #1f1f1f; margin: 34px 0 18px; }
+.burroughs-wrap .jb-content .jb-h-c { text-align: center; font-weight: normal; color: #1f1f1f; font-size: 17px; margin: 24px 0 10px; }
+.burroughs-wrap .jb-content .jb-h-lv { text-align: left; font-weight: normal; color: #1f1f1f; font-size: 17px;
+  padding-left: 1.6em; text-indent: -1.6em; margin: 24px 0 10px; }
+.burroughs-wrap .jb-content .jb-h-it { font-style: italic; }
+.burroughs-wrap .jb-content .jb-h-it em, .burroughs-wrap .jb-content .jb-up { font-style: normal; }
+.burroughs-wrap .jb-content h3:not([class]) em, .burroughs-wrap .jb-content .jb-h-c:not(.jb-h-it) em { font-style: italic; }
+/* 原书分条：悬挂缩进，子条再缩一级 */
+.burroughs-wrap .jb-item { padding-left: 0; text-indent: 1.4em; margin: 0 0 4px !important; text-align: left !important; }
+.burroughs-wrap .jb-item.jb-lv2 { padding-left: 3.4em; text-indent: -1.2em; }
+.burroughs-wrap .jb-item.jb-lv3 { padding-left: 5em; text-indent: -1.2em; }
+@media (max-width: 600px) {
+  .burroughs-wrap .jb-content h3.jb-h-vers, .burroughs-wrap .jb-content h4.jb-h-vers { font-size: 19px; letter-spacing: .06em; }
+  .burroughs-wrap .jb-text { padding-left: 1.1em; }
+  .burroughs-wrap .jb-text p { text-indent: -1.1em; }
+  .burroughs-wrap .jb-item.jb-lv2 { padding-left: 2.4em; }
+  .burroughs-wrap .jb-item.jb-lv3 { padding-left: 3.6em; }
+}
+
+/* 页边旁注 → 页底脚注（与加尔文注释 calvin-en 同式） */
+.burroughs-wrap .jb-content sup[id^="fnref:"] { scroll-margin-top: 80px; }
+.burroughs-wrap .jb-content sup[id^="fnref:"] a { text-decoration: none; color: #0085a1; font-size: .8em; padding: 0 1px; }
+.burroughs-wrap .jb-content .footnotes { margin-top: 40px; padding-top: 16px; border-top: 1px solid #ddd; font-size: 14px; color: #555; }
+.burroughs-wrap .jb-content .footnotes ol { list-style: none; padding-left: 0; margin: 0; }
+.burroughs-wrap .jb-content .footnotes li { display: flex; gap: .5em; margin-bottom: 8px; line-height: 1.7; scroll-margin-top: 80px; }
+.burroughs-wrap .fn-backref-num { flex-shrink: 0; min-width: 1.8em; text-align: right; color: #0085a1; font-weight: bold;
+  font-size: .9em; text-decoration: none; padding-top: .05em; }
+.burroughs-wrap .fn-backref-num:hover { text-decoration: underline; }
+.burroughs-wrap .jb-content .footnotes li > p { margin: 0 !important; flex: 1; text-indent: 0 !important; text-align: left !important; }
+.burroughs-wrap .jb-content .footnotes .reversefootnote { margin-left: .3em; color: #aaa; text-decoration: none; font-size: .85em; }
+
+/* 底本里读不出的字 */
+.burroughs-wrap .jb-gap { color: #c0392b; background: #fdecea; border-radius: 2px; padding: 0 2px; cursor: help; }
+/* 编者推补：方括号 + 另色，与原文区分 */
+.burroughs-wrap .jb-conj { color: #8a5a00; background: #fff6e0; border-radius: 2px; padding: 0 1px; cursor: help; font-style: normal; font-family: "Helvetica Neue", Arial, "PingFang SC", sans-serif; font-size: .92em; text-decoration: underline dotted #c08a2a; text-underline-offset: 2px; }
+
+/* 书名页、献辞落款 */
+.burroughs-wrap .jb-closer { text-align: right !important; font-style: italic; color: #584b3d; }
+
+/* 小标题：逐语解说的引语、分论点（录入本 section / subsection） */
+.burroughs-wrap .jb-content h3 { font-family: Georgia, "Times New Roman", serif; font-size: 17.5px; font-weight: 600;
+  color: var(--jb-ink-dark); margin: 30px 0 10px; line-height: 1.5; text-align: left; }
+.burroughs-wrap .jb-content h4 { font-family: Georgia, "Times New Roman", serif; font-size: 16px; font-weight: 600;
+  font-style: italic; color: var(--jb-ink-dark); margin: 22px 0 8px; line-height: 1.5; }
+.burroughs-wrap .jb-content h5 { font-size: 15px; font-weight: 600; color: #584b3d; margin: 18px 0 6px; }
+.burroughs-wrap .jb-listhead { font-weight: 600; margin: 14px 0 6px !important; }
+/* 引诗：逐行 */
+.burroughs-wrap .jb-poem { margin: 6px 0 18px; padding-left: 2.2em; font-style: italic; }
+.burroughs-wrap .jb-poem p { margin: 0 !important; text-align: left !important; }
+/* 引文里嵌的另一篇（录入本 floatingText） */
+.burroughs-wrap .jb-float { border: 1px solid var(--jb-rule); border-radius: 4px; padding: 12px 18px; margin: 8px 0 20px; background: #fff; }
+/* 表（卷首目录、卷末索引） */
+.burroughs-wrap .jb-table { width: 100%; border-collapse: collapse; font-size: 14.5px; line-height: 1.6; margin: 8px 0 22px; }
+.burroughs-wrap .jb-table caption { caption-side: top; text-align: left; font-weight: 600; color: var(--jb-ink-dark); padding: 6px 0; }
+.burroughs-wrap .jb-table td, .burroughs-wrap .jb-table th { border-bottom: 1px solid var(--jb-rule); padding: 5px 6px; vertical-align: top; text-align: left; }
+.burroughs-wrap .jb-table th { background: var(--jb-paper); color: var(--jb-ink-dark); font-weight: normal; font-style: italic; }
+.burroughs-wrap .jb-table td:last-child { white-space: nowrap; }
+@media (max-width: 767px) { .burroughs-wrap .jb-table { display: block; overflow-x: auto; } }
+
+/* 讲题经文框：出处一行 + 经文；经文里的讲道日期（原书页边）浮在框右 */
+.burroughs-wrap .jb-text .jb-ref { display: block; font-variant: small-caps; letter-spacing: .04em;
+  font-size: 14px; color: var(--jb-ink-dark); margin-bottom: 2px; }
+.burroughs-wrap .jb-text .jb-margin { float: right; clear: none; width: auto; margin: 0 0 4px 14px !important;
+  padding: 1px 8px; border: 1px solid var(--jb-rule); border-left: 1px solid var(--jb-rule); border-radius: 3px;
+  font-size: 12px; font-style: italic; color: #7a6e60; background: #fff; white-space: nowrap; }
+
+/* 原书页边纲目标记（Observ. 1 / Use 2 / Quest. / Answ.）：行首小标签 */
+.burroughs-wrap .jb-mark { display: inline-block; font-family: Georgia, "Times New Roman", serif; font-size: 11.5px;
+  font-style: normal; line-height: 1.5; color: var(--jb-ink-dark); background: var(--jb-paper);
+  border: 1px solid var(--jb-rule); border-radius: 3px; padding: 0 5px; margin-right: 6px; vertical-align: 2px;
+  white-space: nowrap; }
+
+/* 卷首字母索引 */
+.burroughs-wrap .jb-ixterm { font-weight: 600; color: var(--jb-ink-dark); margin: 12px 0 2px !important; text-align: left !important; }
+.burroughs-wrap .jb-ixsub { padding-left: 1.4em; margin: 0 0 2px !important; font-size: 15.5px; line-height: 1.6; text-align: left !important; }
+.burroughs-wrap .jb-ixsub a, .burroughs-wrap .jb-ixterm a { color: var(--jb-ink); text-decoration: none; border-bottom: 1px dotted var(--jb-ink-light); }
+
+/* 录入本止于 p.884 */
+.burroughs-wrap .jb-endnote { margin-top: 28px !important; padding: 10px 14px; border: 1px dashed var(--jb-ink-light);
+  border-radius: 4px; font-size: 14px; color: #584b3d; background: var(--jb-paper); }
+
+.burroughs-wrap .jb-salute { font-style: italic; text-align: left !important; margin: 0 0 10px !important; }
+
+.burroughs-wrap .jb-stamp {
+  margin-top: 32px; font-size: 12px; color: #9aa8a5; text-align: right;
+  font-family: Georgia, "Times New Roman", serif; letter-spacing: .03em;
+}
+.burroughs-wrap :target { background: #f5f8f6; transition: background .4s; }
+
+/* 中文页 */
+.burroughs-wrap.jb-zh .jb-content {
+  font-family: "Songti SC", STSong, "Noto Serif CJK SC", "Source Han Serif SC", Georgia, serif;
+}
+.burroughs-wrap.jb-zh .jb-title { font-family: "Songti SC", STSong, Georgia, serif; }
+.burroughs-wrap.jb-zh .jb-text { font-family: "Kaiti SC", STKaiti, KaiTi, "Songti SC", serif; }
+
+@media (max-width: 767px) {
+  .burroughs-wrap .jb-title { font-size: 24px; }
+  .burroughs-wrap .jb-content { font-size: 16px; line-height: 1.8; }
+}
+</style>

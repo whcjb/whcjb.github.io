@@ -1,0 +1,93 @@
+---
+layout: default
+---
+{%- comment -%}
+  耶利米·巴罗夫《何西阿书讲解》(1650–1652，四卷) 的书卷首页（中英共用，靠 page.zh 切换）。
+
+  ⚠️ 不复用别家 layout：每本书独立样式（用户既定规矩）。骨架取自 dickson-book。
+  按 2026-10-16 起的新书规矩：章顶不放「跳到某节」下拉，副标题作者写英文原名。
+
+  配色灰绿（见 burroughs-chapter.html）：文字 #546c60，深端 #3d5046。
+
+  底本 EEBO-TCP 四卷（A30572 A77979 A30574 A30575），见 scripts/extract_burroughs.py。
+{%- endcomment -%}
+
+<div class="container burroughs-book" style="padding-top: 70px;">
+  <div class="row">
+    <div class="col-lg-9 col-lg-offset-1 col-md-10 col-md-offset-1">
+
+      <div class="jb-booklang">
+        {% if page.zh %}{% if page.en_url %}<a href="{{ site.baseurl }}{{ page.en_url }}">English edition &rarr;</a>{% endif %}
+        {% else %}{% if page.zh_url %}<a href="{{ site.baseurl }}{{ page.zh_url }}">中文版 &rarr;</a>{% endif %}{% endif %}
+      </div>
+      <div class="jb-hero">
+        <h1>{{ page.book_name }}</h1>
+        <p class="jb-hero-author">{{ page.author }}</p>
+        <p class="jb-hero-meta">{{ page.edition }}</p>
+        {% if page.author2 %}<p class="jb-hero-author jb-hero-author2"><a href="{{ site.baseurl }}{{ page.author2_url }}">{{ page.author2 }}</a></p>
+        <p class="jb-hero-meta">{{ page.edition2 }}</p>{% endif %}
+      </div>
+
+      {{ content }}
+
+    </div>
+  </div>
+</div>
+
+<style>
+.burroughs-book { --jb-ink: #546c60; --jb-ink-dark: #3d5046; --jb-rule: #e1e8e4; --jb-paper: #f5f8f6; }
+.burroughs-book .jb-booklang { text-align: right; margin: 0 0 10px; font-size: 13px; font-family: Georgia, serif; }
+.burroughs-book .jb-booklang a { color: var(--jb-ink); border: 1px solid var(--jb-rule);
+  border-radius: 4px; padding: 4px 10px; text-decoration: none; }
+.burroughs-book .jb-booklang a:hover { background: var(--jb-ink); color: #fff; }
+/* 书首：不用大色块横幅（用户 2026-10-22），书名 + 作者 + 版本一行起，下接细线 */
+.burroughs-book .jb-hero {
+  margin: 4px 0 22px; padding: 0 0 12px; border-bottom: 2px solid var(--jb-ink);
+  font-family: Georgia, "Times New Roman", "Songti SC", serif;
+}
+.burroughs-book .jb-hero h1 { font-family: Georgia, "Times New Roman", "Songti SC", serif; margin: 0 0 4px; font-size: 26px; font-weight: normal; line-height: 1.3; color: var(--jb-ink-dark); }
+.burroughs-book .jb-hero-author { margin: 0; font-size: 14.5px; color: #3d3226; }
+.burroughs-book .jb-hero-meta { margin: 2px 0 0; font-size: 13px; color: #857868; font-style: italic; }
+.burroughs-book .jb-group {
+  font-family: Georgia, "Times New Roman", "Songti SC", serif; margin: 30px 0 12px;
+  font-size: 15px; color: var(--jb-ink-dark); letter-spacing: .05em;
+  padding-bottom: 6px; border-bottom: 1px solid var(--jb-rule);
+}
+.burroughs-book .jb-toc { list-style: none; padding: 0; margin: 0; display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 8px; }
+.burroughs-book .jb-toc li { margin: 0; }
+.burroughs-book .jb-toc a { display: block; padding: 9px 13px; border: 1px solid var(--jb-rule);
+  border-radius: 4px; background: var(--jb-paper); text-decoration: none;
+  font-family: Georgia, "Times New Roman", "Songti SC", serif; font-size: 15px; color: #2a2118; line-height: 1.45; }
+.burroughs-book .jb-toc a:hover { border-color: var(--jb-ink); background: #fff; color: var(--jb-ink-dark); }
+.burroughs-book .jb-toc small { display: block; color: #857868; font-size: 12.5px; }
+.burroughs-book .jb-chgrid { list-style: none; padding: 0; margin: 0; display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(92px, 1fr)); gap: 8px; }
+.burroughs-book .jb-chgrid a { display: block; text-align: center; padding: 10px 6px; border: 1px solid var(--jb-rule);
+  border-radius: 4px; background: var(--jb-paper); text-decoration: none; color: #2a2118;
+  font-family: Georgia, "Times New Roman", "Songti SC", serif; font-size: 15px; }
+.burroughs-book .jb-chgrid a:hover { border-color: var(--jb-ink); background: #fff; color: var(--jb-ink-dark); }
+.burroughs-book .jb-note { font-family: Georgia, "Times New Roman", "Songti SC", serif; font-size: 13.5px;
+  color: #6f6252; line-height: 1.8; margin: 34px 0 0; padding-top: 16px; border-top: 1px solid var(--jb-rule); }
+.burroughs-book .jb-note p { margin: 0 0 12px; }
+.burroughs-book .jb-note-zh { font-family: "Songti SC", STSong, serif; }
+.burroughs-book .jb-conj { color: #8a5a00; background: #fff6e0; border-radius: 2px; padding: 0 1px; font-style: normal; font-family: "Helvetica Neue", Arial, "PingFang SC", sans-serif; font-size: .92em; text-decoration: underline dotted #c08a2a; text-underline-offset: 2px; }
+.burroughs-book .jb-gap { color: #c0392b; background: #fdecea; border-radius: 2px; padding: 0 2px; }
+.burroughs-book .jb-conjhead { font-family: "Songti SC", STSong, Georgia, serif; font-size: 16px; color: var(--jb-ink-dark); margin: 26px 0 10px; }
+.burroughs-book .jb-conjtab { width: 100%; border-collapse: collapse; font-size: 13px; line-height: 1.6; margin: 10px 0 20px; }
+.burroughs-book .jb-conjtab th, .burroughs-book .jb-conjtab td { border-bottom: 1px solid var(--jb-rule); padding: 6px 6px; vertical-align: top; text-align: left; }
+.burroughs-book .jb-conjtab th { background: var(--jb-paper); color: var(--jb-ink-dark); white-space: nowrap; }
+.burroughs-book .jb-chgrid small { display: block; font-size: 11.5px; color: #998b7a; font-style: italic; }
+.burroughs-book .jb-chgrid .jb-other { border-style: dashed; }
+.burroughs-book .jb-chgrid .jb-none { display: block; text-align: center; padding: 10px 6px; border: 1px dashed var(--jb-rule);
+  border-radius: 4px; color: #bdb1a2; font-family: Georgia, "Times New Roman", "Songti SC", serif; font-size: 15px; }
+.burroughs-book .jb-companion { margin: 10px 0 0; font-size: 13.5px; color: #6f6252; }
+.burroughs-book .jb-hero-author2 { margin-top: 8px; }
+.burroughs-book .jb-hero-author2 a { color: inherit; text-decoration: none; border-bottom: 1px dotted #9aa; }
+.burroughs-book .jb-hero-author2 a:hover { color: var(--jb-ink-dark); }
+@media (max-width: 767px) {
+  .burroughs-book .jb-hero h1 { font-size: 22px; }
+  .burroughs-book .jb-toc { grid-template-columns: 1fr; }
+  .burroughs-book .jb-conjtab { display: block; overflow-x: auto; }
+}
+</style>
