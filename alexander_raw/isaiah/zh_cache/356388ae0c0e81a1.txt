@@ -1,0 +1,21 @@
+<thinking_mode>
+The user says previous had leftover English words: Abraham, Asterisks, Better, Cocceius, Deut. This text has Cocceius, Deut. Need to translate Cocceius as 科克乌斯（Cocceius） — that's a scholar name, parenthetical allowed per rule 8a (the original word in parentheses is allowed). "Father of the Faithful" = Abraham → 信心之父. Fine.
+
+Asterisks: exactly 2 here, opening and closing the verse. Keep that.
+
+No HTML comments in this passage. OK.
+
+Isaiah 58:14. Alexander's rendering: "Then shalt thou be happy in Jehovah" — 那时你必在耶和华里快乐（和合本：以耶和华为乐）. "and I will make thee ride upon the heights of the earth" 我必使你乘驾于地的高处. "and I will make thee eat the heritage of Jacob thy father" 我必使你吃你祖雅各的产业. "for Jehovah's mouth hath spoken it" 因为这是耶和华亲口说的 → 因为耶和华的口已经说了.
+
+Names: Jerome → 耶柔米 no parenthesis. Kimchi 金希（Kimchi）, Vitringa 维特林加（Vitringa）, Knobel 克诺贝尔（Knobel）, Cocceius 科克由斯（Cocceius）. Kimchi second time no parenthesis.
+
+Hebrew: התענג（以……为乐/享乐）, הרכבתיך（我必使你乘驾）, במות（高处）.
+
+References: Psalm 37:4 → 诗篇 37:4；Job 22:26; 27:10 → 约伯记 22:26；27:10. Deut. 32:13 → 申命记 32:13. ch. 1:2 → 第 1:2 → "见 1:2" — within Isaiah: 参见以赛亚书 1:2? He says "See ch. 1: 2." → 见第 1 章第 2 节. Format rule: 书卷名 章:节; but "ch." means this book. I'll write 见以赛亚书 1:2.
+
+"Palestine the highest of all lands" — 巴勒斯坦，万地之中最高者.
+
+Write.
+</thinking_mode>
+
+*那时你必在耶和华里快乐；我必使你乘驾于地的高处，我必使你吃你祖雅各的产业；因为耶和华的口已经说了。*动词 התענג（以……为乐）在别处与神名连用，既表一种本分，也表一种特权。（参诗篇 37:4 与约伯记 22:26；27:10。）——הרכבתיך（我必使你乘驾）既不是「我必将你高举于……之上」（耶柔米），也不是「我必使你坐」（科克由斯〔Cocceius〕），而是「我必使你乘驾」。整个短语所描写的，并非仅仅回归巴勒斯坦这片万地之中最高之地（金希〔Kimchi〕），也并非仅仅被安置在敌人够不着之处、从而免受其害（维特林加〔Vitringa〕），乃是征服与得胜的占有，正如申命记 32:13；后来所有使用这一说法的作者，都是从那里取来的。克诺贝尔（Knobel）以为此语中的 במות（高处）是指建在山岗上的堡垒，这种推测并无充分根据。——吃那产业，就是享用它、靠它得以维生。金希说得对：此处称之为雅各的产业，是要与以实玛利和以扫的产业相区别，虽然他们同样是那信心之父的后裔。——末句加上，是为确保此事必定成就，因为它所倚靠的不是人的权柄，而是神的权柄。见以赛亚书 1:2。
