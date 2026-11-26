@@ -336,6 +336,13 @@ def rules():
     R.append(('mw', re.compile(r'\bhour (?=(?:hand|hands|selves|heart|hearts)\b)'), lambda m: 'your '))   # 斜体 y 读成 h
     R.append(('th', re.compile(r'\b(he|I|it|God|she|they|we|ye|you) bad (?=(?:not|been|said|done)\b)'), lambda m: m.group(1) + ' had '))   # 「so bad not to have」不碰
     R.append(('th', re.compile(r'\bIe (?=(?:is|hath|was|notes|renders|breaks|hurrieth)\b)'), lambda m: 'It '))   # Ie are／walk／shall see 多是 We，不立规则
+    # —— 第 22 轮（第 4 部 14:3–4 实读 17 页）
+    MODALS = r'(?:should|shall|have|are|must|may|will|would|cannot|can|do|did|were|knew|say)'
+    R.append(('mw', re.compile(rf'(?<=[,;:] )me (?={MODALS}\b)'), lambda m: 'we '))          # 斜体 w 读成 m：分句首的 me 作主语（全书 25 处看过，无例外）
+    R.append(('mw', re.compile(rf'\b([Ii]f|[Ww]hen) me (?={MODALS}\b)'), lambda m: m.group(1) + ' we '))
+    R.append(('mw', re.compile(r'(?<=[A-Za-z] )vas(?= [a-z])'), lambda m: 'was'))            # 前词是英文词（Latin「Αguονε vas in conspectu」前面是希腊字母，不碰）
+    R.append(('fs', re.compile(r'\bflest\b'), lambda m: 'flesh'))
+    R.append(('job', re.compile(r'\bPob\b'), lambda m: 'Job'))
     # 漏进正文的页眉
     R.append(('head', re.compile(r'\bCha[pn][.,-]?\s?\d{1,2}\.?\s+An Ex\w*\s+u\w*\s+\w+\s+Boo?[sk]\w*\s+\S{1,3}\s?\S{0,3}\s+V\w{2,5}[.,]?\s?\d{0,2}\.?'),
               lambda m: ''))
@@ -589,6 +596,15 @@ def sweep_md(md, log, where):
         return m.group(1)
     md = re.sub(r'(<span class="cy-pb"[^>]*></span>)((?:[VvU]er[sfſ]+e?\.?\s*<span class="cy-margin">\s*\d{1,2}\.?\s*</span>'
                 r'|An\s*<span class="cy-margin">\s*\d{2,4}\s*</span>\s*Exposition upon the Book of)\s*)', unhead, md)
+    # 第 22 轮：页码锚点后只剩页眉左角「Chap.14.」单成一段（p4 14-3 p.571／577）：删掉；下一段小写起头是同一句被劈开，并回
+    def chaphead(m):
+        log.append(('head', where, 'Chap.' + m.group(3) + ' ⏎⏎', ''))
+        if m.group(4) is None:                       # 段尾
+            return (m.group(1) or '') + m.group(2)
+        if m.group(4).islower():
+            return (' ' if m.group(1) else '') + m.group(2)
+        return '\n\n' + m.group(2)
+    md = re.sub(r'(\n\n)?(<span class="cy-pb"[^>]*></span>)Chap[.,]?\s?(\d{1,2})\.{0,2}(?:\n\n+(?=(.))|\s*$)', chaphead, md)
     # 段首噪点「- 」「+ 」「• 」：markdown 会排成项目列表（第 6 部 21-30「- First, Some wicked men…」）
     def unlist(m):
         log.append(('list', where, m.group(2) + ' ', ''))
