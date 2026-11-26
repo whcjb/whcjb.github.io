@@ -307,6 +307,14 @@ def rules():
     R.append(('of', re.compile(r'(?:(?<=[,;] )|(?<=nothing ))lut\b'), lambda m: 'but'))
     R.append(('of', re.compile(r'\bagairst\b'), lambda m: 'against'))
     R.append(('hy', re.compile(r'(?<=[a-z])¬(?=[.;:?!])'), lambda m: ''))   # 行中句末的断词号：him¬. → him.
+    # —— 第 18 轮（第 6 部 19:13–14 实读 22 页）
+    R.append(('num', re.compile(r'\b(\d{1,2}) th(?= (?:[Vv]erse|[Cc]hapter|ver\.|Chap))'), lambda m: m.group(1) + 'th'))
+    R.append(('num', re.compile(r'\b(\d{1,2})thi\b'), lambda m: m.group(1) + 'th'))
+    R.append(('isa', re.compile(r'\((\s?)Per\.(?=\s?\d)'), lambda m: '(' + m.group(1) + 'Jer.'))
+    R.append(('accent', re.compile(r'Æeg'), lambda m: 'Æg'))
+    R.append(('obs', re.compile(r'\bCbserv'), lambda m: 'Observ'))
+    R.append(('fs', re.compile(r'\bspould\b'), lambda m: 'should'))
+    R.append(('split', re.compile(r'\bsucha\b'), lambda m: 'such a'))
     # 漏进正文的页眉
     R.append(('head', re.compile(r'\bCha[pn][.,-]?\s?\d{1,2}\.?\s+An Ex\w*\s+u\w*\s+\w+\s+Boo?[sk]\w*\s+\S{1,3}\s?\S{0,3}\s+V\w{2,5}[.,]?\s?\d{0,2}\.?'),
               lambda m: ''))
