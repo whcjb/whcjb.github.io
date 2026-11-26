@@ -168,7 +168,14 @@ def load(slug):
     keys = italic_inverts()
     if keys:
         md = '\n'.join(invert_italic(ln) if any(k in ln for k in keys) else ln for ln in md.split('\n'))
+    md = RE_ORDINAL.sub(r'\1,\2 *\3*', md)
     return dropcaps(md)
+
+
+# 段首「First, 〔旁注〕 论点」原书序数词正体、论点斜体，录入本有几处反标成序数词斜体、论点正体
+# （2026-11-26 看图：p.396 First/Secondly、p.67 Secondly、p.11 Fourthly、p.209 Sixtly）：整段只有这一句、句内无斜体时翻正
+RE_ORDINAL = re.compile(r'^\*(First|Secondly|Thirdly|Fourthly|Fifthly|Fiftly|Sixtly|Sixthly|Seventhly|Lastly),\*'
+                        r'( <span class="jb-margin"[^>]*>[^<]*</span>) ([A-Z][^*\n]*)$', re.M)
 
 
 def italic_inverts():
@@ -191,7 +198,7 @@ def invert_italic(line):
     return re.sub('\x01(\\d+)\x01', lambda m: held[int(m.group(1))], t)
 
 
-RE_DROP = re.compile(r'^ ?((?:<span class="jb-pb"[^>]*></span>|<span class="jb-margin"[^>]*>[^<]*(?:<span[^>]*>[^<]*</span>[^<]*)*</span> ?)*)([A-Z])(?=[A-Z][a-zſ]|[A-Z]+ [a-zſ])', re.M)   # WEe / THe；首词全大写（IN these、THE word、GOD hath——原书首字放大、余字小型大写）
+RE_DROP = re.compile(r'^ ?((?:<span class="jb-pb"[^>]*></span>|<span class="jb-margin"[^>]*>[^<]*(?:<span[^>]*>[^<]*</span>[^<]*)*</span> ?)*)([A-Z])(?=[A-Z][a-zſ]|[A-Z]+ [a-zſ]|[A-Z]+ [A-Z][a-zſ])', re.M)   # WEe / THe；首词全大写（IN these、THE word、GOD hath、WHAT King——原书首字放大、余字小型大写；JESUS CHRIST 这类连串全大写不认）
 
 
 def dropcaps(md):

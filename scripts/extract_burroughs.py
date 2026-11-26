@@ -97,8 +97,8 @@ def latin_note(t):
     return sum(1 for w in ws if re.search(LATIN_END, w)) * 3 >= len(ws) * 2
 
 
-# 纲目标签（Obs. 2、Use.、Expos. 1. …）斜体底子页上也排正体，不翻
-RE_LABEL = re.compile(r'^(?:\d+\.?\s*)?(?:Obs|Obser|Observ|Use|Us|Uses|Expos|Exp|Quest|Qu|Answ|Ans|Reas|Object|Obj|Applic|Applicat|Doct|Doctr|Motive|Motives|Means|Note|Simile|simile|Caution|Signes?|Reason)\.?,?\s*\d*\.?\s*$')
+# 纲目标签（Obs. 2、Use.、Expos. 1. …）与只有一个人名的旁注（Jareb.、Hierom.——p.392/393 看图）斜体底子页上也排正体，不翻
+RE_LABEL = re.compile(r'^[A-Z][a-zſ]+\.?$|^(?:\d+\.?\s*)?(?:Obs|Obser|Observ|Use|Us|Uses|Expos|Exp|Quest|Qu|Answ|Ans|Reas|Object|Obj|Applic|Applicat|Doct|Doctr|Motive|Motives|Means|Note|Simile|simile|Caution|Signes?|Reason)\.?,?\s*\d*\.?\s*$')
 LATIN_MARK = set('et est non quod qui quae quam sed cum nec neque vel enim sunt esse sic sicut ut ad nisi hoc id ab ex pro '
                  'per ejus eius sua suam eum eos quia atque quasi tamen ergo autem etiam inquit'.split())
 LATIN_END = r'(us|um|am|is|ae|orum|arum|ibus|ur|unt|ent|it|at|em|ere|ari|iri|tio|tas)$'
@@ -181,6 +181,25 @@ def prep(root):
                 setattr(el, a, v.replace('*', '&#42;'))
 
 
+# 经文框原书「经文斜体、专名正体」，站上整框斜体、框内 *…* 转正体。第 2、3 卷录入本经文框里的专名多半没标 <hi>
+# （2026-11-26 看图 p.392 Assyria/Jareb、p.402 Samaria），按专名表补标；已在 *…* 里的、出处行、标签内的不动。
+EPI_NAMES = ('Israel|Ephraim|Samaria|Judah|Egypt|Assyria|Jacob|Gilead|Bethel|Beth-el|Gibeah|Ramah|Baal|Baalim|Jareb|'
+             'Beth-aven|Bethaven|Lebanon|Admah|Zeboim|Gilgal|Jezreel|Mizpah|Tabor|Shittim|Adam|Moses|Aven|Shalman|'
+             'Betharbel|Beth-arbel|Edom|Achor|Hosea|Jeroboam|Uzziah|Jotham|Ahaz|Hezekiah|Joash|Gomer|Diblaim|'
+             'Lo-ruhamah|Loruhamah|Lo-ammi|Loammi|Ammi|Ruhamah|Ishi|Sodom|Gomorrah|Memphis|Tyrus|Mesopotamia|Syria|Aram|'
+             'David|Abraham|Isaac|Gibeon|Zion|Jerusalem|Assur|Ashur|Canaan|Egyptians|Assyrians')
+RE_EPI_NAME = re.compile(r'(?<![\w*-])(' + EPI_NAMES + r")(?=[\s.,;:!?)'’]|$)")
+
+
+def mark_names(line):
+    if line.startswith(f'<span class="{P}-ref">'):
+        return line
+    held = []
+    t = re.sub(r'<[^>]+>|\*[^*]+\*', lambda m: held.append(m.group(0)) or f'\x01{len(held) - 1}\x02', line)
+    t = RE_EPI_NAME.sub(r'*\1*', t)
+    return re.sub(r'\x01(\d+)\x02', lambda m: held[int(m.group(1))], t)
+
+
 def epigraph_box(r, ep):
     """段首经文：<bibl> 出处一行，<q> 每段一行（<q><p>… 或 <q><bibl>节号</bibl>经文</q>）。"""
     lines = []
@@ -222,6 +241,7 @@ def epigraph_box(r, ep):
             lines.append(r.note(c))
         else:
             raise ValueError(f'epigraph 下未处理 <{k}>')
+    lines = [mark_names(x) for x in lines]
     out = []
     for x in lines:                                  # 页码锚点挂进下一行
         if not x:
