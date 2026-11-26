@@ -28,9 +28,9 @@ prev_label: "13:11"
 
 <p class="jb-closer" markdown="1">FINIS.</p>
 
-[^1]: Solve senescentem maturè sanus Equum, ne peccet ad extremum videndus & ilia ducat. *Horat. Jer.* 57. <span class="jb-gap" title="TCP: illegible in source">〈◊〉</span>
+[^1]: *Solve senescentem maturè sanus Equum, ne peccet ad extremum videndus & ilia ducat.* Horat. Jer. *57. <span class="jb-gap" title="TCP: illegible in source">〈◊〉</span>*
 
-[^2]: —Esse praeterea alios, qui priùs multas adire gentes &c. quae priusquam assequantur aut sibi satisfaciāt & in his quicquem tentandum esse putent, vel senio, vel nimiis & intempestivis studiis conficiantur, vel serò nimis incipientes, nihil ad justum finem perducant—ut Ecclesiae carendum sit non tam praecellentium quàm mediocrium ingeniorum fructibus, &c.
+[^2]: *—Esse praeterea alios, qui priùs multas adire gentes &c. quae priusquam assequantur aut sibi satisfaciāt & in his quicquem tentandum esse putent, vel senio, vel nimiis & intempestivis studiis conficiantur, vel serò nimis incipientes, nihil ad justum finem perducant—ut Ecclesiae carendum sit non tam praecellentium quàm mediocrium ingeniorum fructibus, &c.*
 
 [^3]: The Original was with the *Superoisor* in *Colchester* when besieg'd and much of the Town burnt.
 

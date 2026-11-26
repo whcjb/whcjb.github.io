@@ -60,18 +60,46 @@ FRONT_SKIP = {'imprimatur', 'publishers_advertisement', 'table_of_contents', 'fr
 RE_VQ = re.compile(r'^\W*(?:Ver[ſs]?e?\.?\s*)?(\d{1,2})\b')
 
 
-EN_STOP = set('the and of to is that which they he it was are be by for with his their this were from not as an or but have hath shall'.split())
+
+
+_LEX = None
+
+
+def en_lexicon():
+    """本书正文（不含旁注）里出现 ≥ 20 次的词：判旁注是不是外文用。"""
+    global _LEX
+    if _LEX is None:
+        c = collections.Counter()
+        for tcp, _, _ in VOLS:
+            root = ET.parse(RAW / 'src' / f'{tcp}.xml').getroot()
+            for n in list(root.iter(TEI + 'note')):
+                n.clear()
+            txt = ' '.join(root.itertext()).replace('ſ', 's')
+            c.update(w.lower() for w in re.findall(r'[A-Za-z]+', txt))
+        _LEX = {w for w, k in c.items() if k >= 20}
+    return _LEX
 
 
 def latin_note(t):
-    """旁注正文（去掉 <hi> 部分）是不是成句的外文：至少 3 个三字母以上的词，且英文虚词不到 15%（或不足 2 个）。
-    只有标签（Obser. 1.）、出处（Antiq. l. 1.）、缺字记号的旁注不算，照录入本。"""
+    """旁注底子（去掉 <hi> 部分）是不是成句的外文：只看三字母以上的小写词（专名、缩写出处不算），
+    至少 2 个，其中本书正文常用英文词不到三分之一。
+    格林希尔的判据（英文虚词 < 15%）在这本书上把英文短旁注（Use to Ministers.）也判成外文，不用。"""
     base = re.sub('\x01.*?\x02', ' ', t, flags=re.S)
-    ws = re.findall(r"[A-Za-zſ]+", re.sub(r'<[^>]+>', ' ', base))
-    if sum(1 for w in ws if len(w) >= 3) < 3:
+    base = re.sub(r'<[^>]+>|[\x03-\x04]', '', base).replace('ſ', 's')          # \x04 = 行末断词拼合点
+    ws = re.findall(r"(?<![A-Za-z•])[a-z]{3,}(?![A-Za-z•])", base)               # 带缺字记号的残词不算
+    lex = en_lexicon()
+    if not (len(ws) >= 2 and sum(1 for w in ws if w in lex) * 3 < len(ws)):
         return False
-    n = sum(1 for w in ws if w.lower() in EN_STOP)
-    return not (n >= 2 and n >= 0.15 * len(ws))
+    # 还要有拉丁的正面证据：虚词，或多数词带拉丁词尾（挡住 Fair Skins foul Souls oftimes 这类生僻英文）
+    toks = re.findall(r"(?<![A-Za-z•])[A-Za-z]+(?![A-Za-z•])", base)
+    if any(w.lower() in LATIN_MARK for w in toks):
+        return True
+    return sum(1 for w in ws if re.search(LATIN_END, w)) * 3 >= len(ws) * 2
+
+
+LATIN_MARK = set('et est non quod qui quae quam sed cum nec neque vel enim sunt esse sic sicut ut ad nisi hoc id ab ex pro '
+                 'per ejus eius sua suam eum eos quia atque quasi tamen ergo autem etiam inquit'.split())
+LATIN_END = r'(us|um|am|is|ae|orum|arum|ibus|ur|unt|ent|it|at|em|ere|ari|iri|tio|tas)$'
 
 
 class GR(tt.R):
@@ -81,7 +109,10 @@ class GR(tt.R):
         if c.get('place') == 'mark':                 # 页边纲目标记（Note 1 / Obs. / Use …）
             t = tt.norm(self, self.inline(c))
             return f'<span class="{self.P}-mark">{t}</span>' if t else ''
-        # 拉丁旁注底子正斜未经影像核对，照录入本（格林希尔那条正斜互换规则不套用）
+        if latin_note(self.inline(c)):
+            # 拉丁文旁注原书底子是斜体，录入本只给正体部分（英文连接词、出处人名）标 <hi>，整条正斜互换
+            # （2026-11-26 抽 10:12 对杜克藏本影像核实：Hierom 注、Arias Mont. 注、Paratus sum 注、Ipsa gratiarum actio 注）
+            return f'<span class="{self.P}-margin" markdown="1">{tt.norm(self, chr(1) + self.inline(c, True) + chr(2))}</span>'
         return super().note(c)
 
     def gap(self, e):
