@@ -315,6 +315,10 @@ def rules():
     R.append(('obs', re.compile(r'\bCbserv'), lambda m: 'Observ'))
     R.append(('fs', re.compile(r'\bspould\b'), lambda m: 'should'))
     R.append(('split', re.compile(r'\bsucha\b'), lambda m: 'such a'))
+    # —— 第 19 轮（第 4 部 12:17–18 实读 20 页）
+    R.append(('kr', re.compile(r'(?<![-\w])Rings\b'), lambda m: 'Kings'))     # 本书大写 Rings 全是 Kings（K 读成 R；1 Rings 17、the Rings gate）
+    R.append(('mw', re.compile(r'(?<!prudent )(?<!\bin )\bvise\b(?! ?tatione)'), lambda m: 'wise'))   # 「a prudent vise」（wife）、拉丁 vise tatione 不碰
+    R.append(('th', re.compile(r'\bsucb\b'), lambda m: 'such'))
     # 漏进正文的页眉
     R.append(('head', re.compile(r'\bCha[pn][.,-]?\s?\d{1,2}\.?\s+An Ex\w*\s+u\w*\s+\w+\s+Boo?[sk]\w*\s+\S{1,3}\s?\S{0,3}\s+V\w{2,5}[.,]?\s?\d{0,2}\.?'),
               lambda m: ''))

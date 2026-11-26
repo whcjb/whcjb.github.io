@@ -91,6 +91,7 @@ job	p4/11-17	Tob	Job
 num	p4/11-17	zoth	20th
 accent	p4/11-17	rightéous	righteous
 split	p4/11-17	prosperit y	prosperity
+kr	p4/11-17	Rings	Kings
 fs	p4/11-17	fome	some
 fh	p4/11-17	fh	sh
 fh	p4/11-17	fh	sh
@@ -243,7 +244,9 @@ job	p4/12-11	Tob	Job
 of	p4/12-11	ot	of
 pronI	p4/12-11	l	I
 split	p4/12-11	harde ned	hardened
+mw	p4/12-11	vise	wise
 guil	p4/12-11	» 	 
+mw	p4/12-11	vise	wise
 saith	p4/12-11	(faith 	(saith 
 tis	p4/12-11	Tis	'Tis
 tis	p4/12-11	"Tis	'Tis
@@ -295,32 +298,25 @@ fh	p4/12-15	fh	sh
 fh	p4/12-15	fh	sh
 pua	p4/12-17		q;
 pua	p4/12-17		q;
-pua	p4/12-17		q;
 fs	p4/12-17	fignif	signif
+junk	p4/12-17	[空旁注]	
+junk	p4/12-17	[空旁注]	
+junk	p4/12-17	[空旁注]	
+junk	p4/12-17	[空旁注]	
 fs	p4/12-17	themfelves	themselves
-guil	p4/12-17	 «	 
 split	p4/12-17	unde standing	understanding
 fh	p4/12-17	fh	sh
-mw	p4/12-17	the mise	the wise
 accent	p4/12-17	pûnishment	punishment
-accent	p4/12-17	goõd	good
 of	p4/12-17	ot	of
 fh	p4/12-17	fh	sh
 fs	p4/12-17	fad	sad
 fh	p4/12-17	fh	sh
 fs	p4/12-17	fay	say
-accent	p4/12-17	àre	are
-fs	p4/12-17	fo	so
-pronI	p4/12-17	Ihated	I hated
 split	p4/12-17	Second ly	Secondly
 job	p4/12-17	Tob	Job
-accent	p4/12-17	had̂	had
 accent	p4/12-17	thosè	those
 mw	p4/12-17	so ve may	so we may
 fs	p4/12-17	fouldiers	souldiers
-bis	p4/12-17	bis	his
-guil	p4/12-17	» 	 
-th	p4/12-17	rhe	the
 split	p4/12-17	wil ling	willing
 wh	p4/12-17	W'here	Where
 split	p4/12-17	cur ious	curious
@@ -379,6 +375,7 @@ split	p4/12-22	Achit ophel	Achitophel
 fs	p4/12-22	osten	often
 fs	p4/12-22	fingular	singular
 fh	p4/12-22	fh	sh
+kr	p4/12-22	Rings	Kings
 modal	p4/12-22	I mill	I will
 of	p4/12-22	ot	of
 accent	p4/12-22	thẽ	the
@@ -837,6 +834,7 @@ jf	p4/13-9	facob	Jacob
 jf	p4/13-9	facob	Jacob
 accent	p4/13-9	nõt	not
 fs	p4/13-9	himfelf	himself
+kr	p4/13-9	Rings	Kings
 modal	p4/13-9	I mill	I will
 modal	p4/13-9	God hill	God will
 wh	p4/13-9	I'hear	I hear
@@ -858,6 +856,7 @@ mw	p4/13-9	Ay 	My
 pronI	p4/13-9	Iam	I am
 te	p4/13-9	Tou 	You 
 fh	p4/13-9	fh	sh
+mw	p4/13-9	vise	wise
 accent	p4/13-9	kñoweth	knoweth
 split	p4/13-9	judg ment	judgment
 split	p4/13-9	mind ful	mindful
@@ -1246,6 +1245,7 @@ num	p6/18-11	IIth	11th
 split	p6/18-11	distinct ly	distinctly
 mw	p6/18-11	thy omn	thy owne
 fh	p6/18-11	fh	sh
+kr	p6/18-11	Rings	Kings
 fs	p6/18-11	Pfal	Psal
 modal	p6/18-11	they hill	they will
 way	p6/18-11	a may	a way
@@ -1334,6 +1334,7 @@ modal	p6/18-17	I mill	I will
 fh	p6/18-17	fh	sh
 te	p6/18-17	Tea	Yea
 accent	p6/18-17	péople	people
+kr	p6/18-17	Rings	Kings
 shall	p6/18-17	sual	shall
 isa	p6/18-17	(Per	(Jer
 god	p6/18-17	Ged	God
@@ -1537,6 +1538,7 @@ tis	p6/19-10	so’tis	so ’tis
 job	p6/19-10	job	Job
 modal	p6/19-10	I mill	I will
 tis	p6/19-10	Tis	'Tis
+kr	p6/19-10	Rings	Kings
 way	p6/19-10	a may	a way
 fh	p6/19-10	fh	sh
 way	p6/19-10	their nay	their way
@@ -2431,6 +2433,7 @@ tis	p6/20-27	when’tis	when ’tis
 mw	p6/20-27	I sam	I saw
 accent	p6/20-27	shall̂	shall
 th	p6/20-27	ibe	the
+mw	p6/20-27	vise	wise
 saith	p6/20-27	(faith 	(saith 
 of	p6/20-27	ef	of
 job	p6/20-27	sob	Job
@@ -2530,6 +2533,7 @@ tis	p6/21-1	“Tis	'Tis
 te	p6/21-1	Te 	Ye 
 te	p6/21-1	Te 	Ye 
 accent	p6/21-1	à	a
+mw	p6/21-1	vise	wise
 job	p6/21-1	job	Job
 job	p6/21-1	Jub	Job
 tis	p6/21-1	and’tis	and ’tis
@@ -3052,6 +3056,7 @@ tis	p82/27-1	so’tis	so ’tis
 tis	p82/27-1	for tis	for ’tis
 bis	p82/27-1	bim	him
 accent	p82/27-1	and̀	and
+kr	p82/27-1	Rings	Kings
 of	p82/27-1	ef	of
 split	p82/27-1	out ward	outward
 accent	p82/27-1	bręath	breath
@@ -3818,6 +3823,7 @@ fs	p82/28-28	osten	often
 pronI	p82/28-28	l 	I 
 accent	p82/28-28	thèm	them
 mw	p82/28-28	while ve keep	while we keep
+mw	p82/28-28	vise	wise
 saith	p82/28-28	(faith 	(saith 
 tis	p82/28-28	Tis	'Tis
 tis	p82/28-28	Tis	'Tis
@@ -3926,6 +3932,7 @@ accent	p82/28-28	Thé	The
 accent	p82/28-28	whõ	who
 accent	p82/28-28	riģht	right
 wh	p82/28-28	IVhat	What
+mw	p82/28-28	vise	wise
 te	p82/28-28	Te 	Ye 
 head	p82/29-1	An  1124  Exposition upon the Book of	
 pjoin	p82/29-1	s former fulness ano⏎⏎	abounding state
@@ -4288,6 +4295,7 @@ tis	p82/29-24	and tis	and ’tis
 accent	p82/29-24	à	a
 accent	p82/29-24	beforé	before
 space	p82/29-24	singing.	singing. 
+mw	p82/29-24	vise	wise
 tis	p82/29-24	Tis	'Tis
 of	p82/29-24	ot	of
 fs	p82/29-24	osten	often
@@ -4305,6 +4313,8 @@ fs	p82/29-24	osten	often
 accent	p82/29-24	mũch	much
 accent	p82/29-24	madé	made
 accent	p82/29-24	à	a
+mw	p82/29-24	vise	wise
+mw	p82/29-24	vise	wise
 of	p82/29-24	ef	of
 tis	p82/29-24	Tis	'Tis
 accent	p82/29-24	somé	some
@@ -4341,6 +4351,7 @@ tis	p82/29-24	Tis	'Tis
 fs	p82/29-24	osten	often
 accent	p82/29-24	nõt	not
 tabe	p82/29-24	tabe	take
+mw	p82/29-24	vise	wise
 accent	p82/29-24	oñ	on
 accent	p82/29-24	à	a
 tis	p82/29-24	Tis	'Tis
@@ -4381,6 +4392,7 @@ te	p82/29-4	Te 	Ye
 accent	p82/29-4	beforé	before
 th	p82/29-4	witb	with
 uis	p82/29-4	ù	is
+mw	p82/29-4	vise	wise
 tis	p82/29-4	Tis	'Tis
 tis	p82/29-4	but tis	but ’tis
 mw	p82/29-4	Almighty mas	Almighty was
@@ -5069,6 +5081,8 @@ job	p9/30-28	sob	Job
 of	p9/30-28	ef	of
 fh	p9/30-28	fh	sh
 fs	p9/30-28	fome	some
+mw	p9/30-28	vise	wise
+mw	p9/30-28	vise	wise
 fs	p9/30-28	fay	say
 mw	p9/30-28	Ay 	My 
 job	p9/30-28	sob	Job
@@ -5583,6 +5597,7 @@ tis	p9/31-24	because tis	because ’tis
 of	p9/31-24	ef	of
 saith	p9/31-24	(faith 	(saith 
 wh	p9/31-24	W’hich	which
+mw	p9/31-24	vise	wise
 split	p9/31-24	struct ure	structure
 modal	p9/31-24	hee mould	hee would
 pronI	p9/31-24	Iam	I am
@@ -5703,6 +5718,7 @@ fin	p9/31-26	fin	sin
 mw	p9/31-26	Mbo	Who
 job	p9/31-26	fob	Job
 of	p9/31-26	ef	of
+th	p9/31-26	sucb	such
 job	p9/31-26	job	Job
 isa	p9/31-26	Plal.	Psal.
 isa	p9/31-26	(Per	(Jer
@@ -6211,6 +6227,7 @@ fs	p9/31-38	fide	side
 of	p9/31-38	ef	of
 modal	p9/31-38	I mill	I will
 te	p9/31-38	Te 	Ye 
+mw	p9/31-38	vise	wise
 th	p9/31-38	ihe	the
 of	p9/31-38	ef	of
 god	p9/31-38	Ged	God
