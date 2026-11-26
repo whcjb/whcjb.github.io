@@ -85,6 +85,12 @@ def column_bounds(fits, width):
     ym = 2000
     if k0 >= 8 and k1 >= 8 and abs((a1 * ym + b1) - (a0 * ym + b0) - width) <= 30:
         return (lambda y: a0 * y + b0), (lambda y: a1 * y + b1)
+    # 第 12 轮：第 4 部叶 215–358、556、604–620 一批页版心比全部栏宽宽约 85px（扫描缩放不同），两侧拟合都很好（内点 20–37），
+    # 却按固定栏宽砍掉一侧，行首／行尾的小词成串划进旁注（「upon <旁注>them.</旁注>」）。两侧都 ≥ 15 内点、两缘平行、
+    # 宽度在全部栏宽 ±12% 内（旁注外缘拟合出来的宽度要多出 300px 以上，进不来）时，信两侧各自的拟合。
+    wd = (a1 * ym + b1) - (a0 * ym + b0)
+    if k0 >= 15 and k1 >= 15 and abs(a0 - a1) < 0.01 and abs(wd - width) <= width * 0.12:
+        return (lambda y: a0 * y + b0), (lambda y: a1 * y + b1)
     if k0 >= k1:
         return (lambda y: a0 * y + b0), (lambda y: a0 * y + b0 + width)
     return (lambda y: a1 * y + b1 - width), (lambda y: a1 * y + b1)

@@ -636,7 +636,7 @@
 18-11	confirm	glorierh	glorieth	glorieth
 18-11	witness	pluce	place	place
 18-11	witness	orsip	worship	worship
-18-11	solo	chat	that	
+18-11	confirm	chat	that	that
 18-11	witness	himseffe	himselfe	himselse
 18-11	confirm	thelr	their	their
 18-11	agree	frequented		srequented
@@ -647,7 +647,7 @@
 18-11	agree	foab		soab
 18-11	solo	Lerd	Lord	
 18-11	solo	mhom	whom	
-18-11	solo	knem	knew	
+18-11	confirm	knem	knew	knew
 18-11	split	Textis	Text is	text
 18-11	realword	serce	sence	sence
 18-11	conflict	ofa		os
@@ -859,18 +859,18 @@
 18-11	confirm	hept	kept	kept
 18-11	confirm	worldiy	worldly	worldly
 18-11	witness	mide	wide	wide
-18-11	solo	duelling	dwelling	
+18-11	confirm	duelling	dwelling	dwelling
 18-11	witness	spall	shall	shall
 18-11	noalign	extremitie		extreamirie
 18-11	agree	init		init
-18-11	noalign	sall		sball
-18-11	witness	wluch	which	which
-18-11	agree-fix	confumed	consumed	consumed
-18-11	noalign	sulphurious		ulpharious
+18-11	noalign	sall		
+18-11	noalign	wluch		
+18-11	solo	confumed	consumed	
+18-11	noalign	sulphurious		
 18-11	noalign	init		
-18-11	noalign	habitationIt		bhbitation
-18-11	agree-fix	srequent	frequent	srequent
-18-11	confirm	Dent	Deut	denut
+18-11	noalign	habitationIt		
+18-11	solo	srequent	frequent	
+18-11	solo	Dent	Deut	
 18-11	solo	mhole	whole	
 18-11	solo	thertof	thereof	
 18-11	noalign	grometh		
@@ -12267,7 +12267,7 @@
 21-30	noalign	Jemes		sewee
 21-30	agree-fix	sbalt	shalt	sbalt
 21-30	confirm	sbalt	shalt	salt
-21-30	witness	rebuge	rebukes	rebukes
+21-30	witness	rebuge	rebuke	rebuke
 21-30	realword	aud	and	and
 21-30	confirm	apon	upon	upon
 21-30	witness	Iho	Ibo	ibo
@@ -13167,7 +13167,7 @@
 21-7	confirm	miched	wicked	wicked
 21-7	noalign	affirmirg		ashrming
 21-7	confirm	uhich	which	which
-21-7	noalign	firmitie		
+21-7	noalign	firmitie		insirmicics
 21-7	solo	aneient	ancient	
 21-7	confirm	uas	was	was
 21-7	witness	Aaw	Saw	saw

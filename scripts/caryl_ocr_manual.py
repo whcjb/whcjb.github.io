@@ -5,6 +5,7 @@
     /usr/bin/python3 scripts/caryl_ocr_manual.py --apply    # 落到各部 fixed/（排在 caryl_ocr_ctx.py 之后、caryl_ocr_sweep.py 之前）
 
 表：caryl_raw/job_ocr/manual_fixes.tsv，列 = 部目录（p4/p6/p82/p9）、段（31-7）、原串、改成、依据（看图所见，如「p.212 影像」）。
+改成写作 `@正文` 时：原串是一整条旁注的文字，拆掉旁注标签放回正文（切栏失败的页）。
 原串、改成里的 `\\n` 代表换行（用来并回被页缝劈开的段落）。`#` 起头且无制表符的是注释行（「#### 小节标题」这类原串不会被吞，old-book-ocr §4.5）。
 匹配在去掉标签的纯文本上做（与抽读时打印的文字一致），原串在该段须唯一；改正区若跨页码锚点、旁注、经文框等标签就拒绝
 （缩短原串再落）；只与存疑标记 cy-ocr 重叠的，连标记一并去掉（人工看图确认过了）。
@@ -38,6 +39,12 @@ def plain_map(md):
 
 def apply_one(md, old, new):
     """→ (新 md, 状态)。状态：ok / done / missing / multi / blocked"""
+    if new == '@正文':                          # 切栏失败、被划进旁注的正文行末词：拆掉旁注标签放回正文（第 12 轮，p4 印本 p.550）
+        tag = f'<span class="cy-margin">{old}</span>'
+        n = md.count(tag)
+        if n == 1:
+            return md.replace(tag, old), 'ok'
+        return md, ('multi' if n > 1 else 'done' if old in plain_map(md)[0] else 'missing')
     pt, idx = plain_map(md)
     n = pt.count(old)
     if new and new in pt and (n == 0 or old in new):

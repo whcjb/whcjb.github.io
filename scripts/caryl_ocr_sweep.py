@@ -219,6 +219,11 @@ def rules():
     # 漏进正文的页眉
     R.append(('head', re.compile(r'\bCha[pn][.,-]?\s?\d{1,2}\.?\s+An Ex\w*\s+u\w*\s+\w+\s+Boo?[sk]\w*\s+\S{1,3}\s?\S{0,3}\s+V\w{2,5}[.,]?\s?\d{0,2}\.?'),
               lambda m: ''))
+    # 第 12 轮：页眉漏进正文的其余写法——不带「Chap. N」、不带「Vers. N」、Book/Bookof/Bock/Booke、书名读成 JOn/JeR/JOE/IOB，
+    # 尾巴可带节号与页码（「…Book of IOB. Vers. 26. 164.」）；页眉插在一个词中间（「Ethi‹页眉›opian」）时把词并回
+    R.append(('head', re.compile(r'(?:\b(?:Job\s+)?Cha[pn][.,-]?\s?\d{1,2}\.?\s+)?\bA[na] Ex\w*\s+u\w*\s+\w+\s+B[oc][oc]?[ckh]e?(?:of)?\s?(?:of?\s+)?[JIT1][OoeE][BRnNEbB]?[.,]?'
+                                 r'(?:\s+V\w{2,5}[.,]?\s?\d{0,2}\.?)?(?:\s+\d{1,4}\.)?\s?'),
+              lambda m: ''))
     return R
 
 

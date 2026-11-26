@@ -6,6 +6,8 @@ fin	p4/11-1	fin	sin
 wh	p4/11-1	W'hat	What
 isa	p4/11-1	1Cor.	1 Cor.
 accent	p4/11-1	à	a
+head	p4/11-1	Chap. 11. An Exposition upon the Bock of IOB.
+	
 accent	p4/11-1	speakęth	speaketh
 pronI	p4/11-1	I'have	I have
 accent	p4/11-1	makę	make
@@ -206,13 +208,13 @@ accent	p4/12-1	becaûse	because
 pua	p4/12-11		q;
 split	p4/12-11	voy ce	voyce
 split	p4/12-11	voy ce	voyce
-fs	p4/12-11	fay	say
 split	p4/12-11	confir mation	confirmation
 of	p4/12-11	ot	of
+accent	p4/12-11	à	a
 split	p4/12-11	be ing	being
 split	p4/12-11	try ed	tryed
-split	p4/12-11	unde standing	understanding
 pronI	p4/12-11	Iheard	I heard
+split	p4/12-11	unde standing	understanding
 bis	p4/12-11	bis	his
 isa	p4/12-11	(I 	(1 
 pronI	p4/12-11	l	I
@@ -416,9 +418,9 @@ fin	p4/12-7	fin	sin
 fh	p4/12-7	fh	sh
 mw	p4/12-7	Elies mill	Elies will
 accent	p4/12-7	theïr	their
+split	p4/12-7	devour ing	devouring
 shall	p4/12-7	spalt	shall
 accent	p4/12-7	teãch	teach
-split	p4/12-7	devour ing	devouring
 modal	p4/12-7	he vas	he was
 job	p4/12-7	Tob	Job
 mw	p4/12-7	N'ho	Who
@@ -453,8 +455,8 @@ accent	p4/13-1	and̀	and
 god	p4/13-1	Ged	God
 pronI	p4/13-1	Isee	I see
 tis	p4/13-1	“Tis	 'Tis
-fs	p4/13-1	osten	often
 tis	p4/13-1	"Tis	'Tis
+fs	p4/13-1	osten	often
 accent	p4/13-1	Gõd	God
 te	p4/13-1	Te 	Ye 
 te	p4/13-1	Te 	Ye 
@@ -805,16 +807,14 @@ pbjoin	p4/14-1	nd of these daies is⏎⏎	u
 sig	p4/14-1	Aaaaz	
 sig	p4/14-1	Bbbb 2	
 pbjoin	p4/14-1	 of special trouble,⏎⏎	i
-sig	p4/14-1	Bbbb 3	
-pjoin	p4/14-1	les we may say as he⏎⏎	are without. Se
-pjoin	p4/14-1	in all our afflictio⏎⏎	<span class="cy
+pbjoin	p4/14-1	Till the Almond tree⏎⏎	s
 accent	p4/14-1	seçond	second
 job	p4/14-1	Tob	Job
-of	p4/14-1	ef	of
 isa	p4/14-1	(I 	(1 
-guil	p4/14-1	 «	 
 fs	p4/14-1	fo	so
 tis	p4/14-1	“Tis	'Tis
+head	p4/14-1	Chap.14. An Exposition upon the Book of JOn.
+	
 modal	p4/14-1	I mas	I was
 tis	p4/14-1	say’tis	say ’tis
 job	p4/14-1	Tob	Job
@@ -828,38 +828,21 @@ accent	p4/14-1	tó	to
 accent	p4/14-1	daïes	daies
 split	p4/14-1	world ly	worldly
 job	p4/14-1	Tob	Job
-isa	p4/14-1	1Cor.	1 Cor.
-accent	p4/14-1	threȩfold	threefold
-accent	p4/14-1	cànnot	cannot
-guil	p4/14-1	 «	 
-guil	p4/14-1	»	 
-jf	p4/14-1	facob	Jacob
 accent	p4/14-1	aré	are
-accent	p4/14-1	dutiés	duties
 accent	p4/14-1	thãt	that
 accent	p4/14-1	consciencé	conscience
-accent	p4/14-1	hõt	hot
-accent	p4/14-1	thùs	thus
 accent	p4/14-1	à	a
 accent	p4/14-1	hè	he
 accent	p4/14-1	whãt	what
-accent	p4/14-1	à	a
-accent	p4/14-1	mâde	made
-accent	p4/14-1	Pharãoh	Pharaoh
 accent	p4/14-1	àll	all
 tis	p4/14-1	Tis	'Tis
 job	p4/14-1	Iob	Job
 accent	p4/14-1	wé	we
 job	p4/14-1	fob	Job
-accent	p4/14-1	shãdow	shadow
-fh	p4/14-1	fh	sh
-of	p4/14-1	ot	of
 accent	p4/14-1	samę	same
 tis	p4/14-1	Tis	'Tis
-accent	p4/14-1	Sô	So
 accent	p4/14-1	hé	he
 accent	p4/14-1	néw	new
-accent	p4/14-1	continuancé	continuance
 tis	p4/14-1	that’tis	that ’tis
 junk	p4/14-13	Iiii 2	
 junk	p4/14-13	Mmmm	
@@ -870,6 +853,7 @@ sig	p4/14-13	KKKK 3
 sig	p4/14-13	LI11 2	
 pbjoin	p4/14-13	art of the last day,⏎⏎	t
 catch	p4/14-13	the [pb] the	the
+job	p4/14-13	fob	Job
 job	p4/14-13	Tob	Job
 fs	p4/14-13	fo	so
 job	p4/14-13	Tob	Job
@@ -887,6 +871,7 @@ te	p4/14-13	Te 	Ye
 accent	p4/14-13	à	a
 split	p4/14-13	out ward	outward
 tis	p4/14-13	' 	’
+head	p4/14-13	An Exposition upon the Bookof JeR. Vers. 13. 	
 saith	p4/14-13	, faith 	, saith 
 accent	p4/14-13	oũt	out
 job	p4/14-13	Tob	Job
@@ -970,12 +955,12 @@ pbjoin	p4/14-3	ot be broughe out of⏎⏎	a
 sig	p4/14-3	Dddd	
 pbjoin	p4/14-3	of the Mettal is the⏎⏎	d
 sig	p4/14-3	Dddd 2	
-mw	p4/14-3	n'ho	who
 pronI	p4/14-3	Iflee	I flee
 pronI	p4/14-3	Iam	I am
 wh	p4/14-3	I'ho	Who
 job	p4/14-3	Tob	Job
 tis	p4/14-3	"Tis	'Tis
+head	p4/14-3	An Exposition upon the Book of Jon. Vers.4. 	
 way	p4/14-3	the may	the way
 tis	p4/14-3	“Tis	'Tis
 tis	p4/14-3	Tis	'Tis
@@ -992,6 +977,8 @@ accent	p4/14-3	à	a
 modal	p4/14-3	I mill	I will
 fs	p4/14-3	osten	often
 pronI	p4/14-3	Isee	I see
+head	p4/14-3	An Exposition upon the Book of JoB. Vers.5.
+	
 junk	p4/14-5	Ffff3	
 pua	p4/14-5	;	q;
 sig	p4/14-5	FffS	
@@ -1017,6 +1004,11 @@ modal	p4/14-5	I mill	I will
 fh	p4/14-5	fh	sh
 accent	p4/14-5	thẽ	the
 accent	p4/14-5	à	a
+head	p4/14-5	An Exposition upon the Book of Jon.
+
+Vers.5. 	
+head	p4/14-5	Chap.14. An Exposition upon the Bookof JOR.
+	
 pronI	p4/14-5	Ianswer	I answer
 accent	p4/14-5	à	a
 accent	p4/14-5	hõw	how
@@ -1033,11 +1025,15 @@ accent	p4/14-5	arẽ	are
 job	p4/14-5	fob	Job
 tis	p4/14-5	"Tis	'Tis
 tis	p4/14-5	Tis	'Tis
+head	p4/14-5	Chap.14. Aa Exposition upon the Book of JeR.
+	
 job	p4/14-5	Tob	Job
 accent	p4/14-5	tõ	to
 job	p4/14-5	fob	Job
 job	p4/14-5	tob	Job
 tis	p4/14-5	still’tis	still ’tis
+head	p4/14-5	Chap.14. An Exposition upon the Bockof Jon.
+	
 sig	p4/14-7	H h'hh	
 pbjoin	p4/14-7	makes them dim, then⏎⏎	u
 sig	p4/14-7	Hhhrh 3	
@@ -1086,6 +1082,8 @@ accent	p6/18-1	makę	make
 job	p6/18-1	tob	Job
 job	p6/18-1	fob	Job
 mw	p6/18-1	for me are	for we are
+head	p6/18-1	Chap. 18. An Exposition upon the Book of JOE.
+	
 job	p6/18-1	fob	Job
 job	p6/18-1	fob	Job
 te	p6/18-1	Tou 	You 
@@ -1676,6 +1674,7 @@ isa	p6/19-26	(I 	(1
 pronI	p6/19-26	Iam	I am
 fin	p6/19-26	finnes	sinnes
 way	p6/19-26	the may	the way
+head	p6/19-26	An Exposition upon the Booke of IOB. Vers. 26. 	
 modal	p6/19-26	which mas	which was
 th	p6/19-26	rhen	when
 mw	p6/19-26	his onne	his owne
@@ -1733,6 +1732,7 @@ modal	p6/19-26	I hill	I will
 te	p6/19-26	Tea	Yea
 isa	p6/19-26	1Cor.	1 Cor.
 jf	p6/19-26	facob	Jacob
+head	p6/19-26	Chap.19. An Exposition upon the Book of Job. Vers.27. 	
 job	p6/19-26	Jub	Job
 job	p6/19-26	Tob	Job
 split	p6/19-26	Aristot le	Aristotle
@@ -1858,6 +1858,7 @@ split	p6/19-4	T he	The
 modal	p6/19-4	ye hill	ye will
 guil	p6/19-4	 «	 
 jf	p6/19-4	fewes	Jewes
+head	p6/19-4	Chap. 19. An Exposition upon the Book of JOB. Vers5. 	
 split	p6/19-4	present ly	presently
 of	p6/19-4	ef	of
 th	p6/19-4	ibe	the
@@ -1902,6 +1903,7 @@ job	p6/19-7	fob	Job
 job	p6/19-7	fob	Job
 pronI	p6/19-7	Ihave	I have
 th	p6/19-7	rhen	when
+head	p6/19-7	An Exposition upon the Book o JOB. Vers, 	
 job	p6/19-7	fob	Job
 modal	p6/19-7	I mill	I will
 tis	p6/19-7	“Tis	 'Tis
@@ -2080,6 +2082,7 @@ pronI	p6/20-18	Irejoyced	I rejoyced
 fin	p6/20-18	finne	sinne
 split	p6/20-18	con dition	condition
 mw	p6/20-18	Disciples mas	Disciples was
+accent	p6/20-18	à	a
 split	p6/20-18	violent ly	violently
 split	p6/20-18	bet ween	between
 pua	p6/20-20		q;
