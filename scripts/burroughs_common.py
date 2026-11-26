@@ -168,14 +168,17 @@ def load(slug):
     keys = italic_inverts()
     if keys:
         md = '\n'.join(invert_italic(ln) if any(k in ln for k in keys) else ln for ln in md.split('\n'))
-    md = RE_ORDINAL.sub(r'\1,\2 *\3*', md)
+    md = RE_ORDINAL.sub(lambda m: f'{m.group(1)}{m.group(2)},{m.group(3)} *{m.group(4).rstrip()}*{m.group(5)}{m.group(6)}', md)
     return dropcaps(md)
 
 
-# 段首「First, 〔旁注〕 论点」原书序数词正体、论点斜体，录入本有几处反标成序数词斜体、论点正体
-# （2026-11-26 看图：p.396 First/Secondly、p.67 Secondly、p.11 Fourthly、p.209 Sixtly）：整段只有这一句、句内无斜体时翻正
-RE_ORDINAL = re.compile(r'^\*(First|Secondly|Thirdly|Fourthly|Fifthly|Fiftly|Sixtly|Sixthly|Seventhly|Lastly),\*'
-                        r'( <span class="jb-margin"[^>]*>[^<]*</span>) ([A-Z][^*\n]*)$', re.M)
+# 段首「First, 〔旁注〕 论点」原书引语（序数词、Further、Again、That…）正体、论点斜体，录入本有几十处反标成引语斜体、论点正体
+# （2026-11-26 看图：p.396 First/Secondly、p.67 Secondly、p.11 Fourthly、p.209 Sixtly、p.407 Again observe、p.410 Further）：
+# 段首（或 jb-quote 块首）只有「*一两个词,*」、其后整段一句无斜体时翻正
+RE_ORDINAL = re.compile(r'^((?:<p class="jb-quote"[^>]*>)?(?:<span class="jb-pb"[^>]*></span>)?(?:<span class="jb-margin"[^>]*>[^<]*</span> ?)?)'
+                        r'\*((?:But |Againe? |And )?[A-Za-z][a-z]+(?: (?:observe|further))?),\*'
+                        r'((?: ?<span class="jb-margin"[^>]*>[^<]*</span>)?) ([A-Z](?:[^*\n<]|<span class="jb-(?:mark|pb)"[^>]*>[^<]*</span>)*?)'
+                        r'((?: ?<span class="jb-(?:mark|pb|margin)"[^>]*>[^<]*</span>)*)( ?(?:</p>)?)$', re.M)
 
 
 def italic_inverts():

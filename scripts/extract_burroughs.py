@@ -164,11 +164,16 @@ def prep(root):
     parent = {c: p for p in root.iter() for c in p}
     for p in list(root.iter(TEI + 'p')):
         kids = list(p)
-        if not kids or tt.tag(kids[-1]) != 'q' or (kids[-1].tail or '').strip() or len(list(kids[-1])):
+        if not kids or tt.tag(kids[-1]) != 'q' or (kids[-1].tail or '').strip() \
+                or any(tt.tag(x) not in ('note', 'hi') for x in kids[-1]):
             continue
         q = kids[-1]
         before = (kids[-2].tail if len(kids) > 1 else p.text) or ''
-        if not re.search(r'[.;:?!)]\s*$', before) or len(q.text or '') > 160:
+        qtext = ''.join(t for x in [q] for t in [q.text or ''] + [(y.tail or '') for y in q])
+        # 前文以句末标点收尾，或以引出论点的 That / this / thus 收尾（p.404「the Note is this, That ⟨论点⟩」）
+        # 或以「Note (is) likewise,」「observe,」这类引语加逗号收尾（p.408「Thence this Note likewise, ⟨论点⟩」）
+        if not (re.search(r'(?:[.;:?!)]|\b(?:That|that|this|thus))\s*$', before)
+                or re.search(r'\b(?:Note|note|Notes|observe|Observe|observed)\b[^.;:]{0,25},\s*$', before)) or len(qtext) > 200:
             continue
         p.remove(q)
         q.tail = '\n'
