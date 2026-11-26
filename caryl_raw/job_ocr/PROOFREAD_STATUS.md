@@ -22,6 +22,7 @@
 | 12 | 2026-11-26 | 第 4 部 14:1–2（印本 pp. 544–561） | Packer 纸本 | 18 | 约 270（落表约 160 条；正文约 226） | ≈ 14.9（正文 12.6） | 0 |
 | 13 | 2026-11-26 | 第 6 部 20:15–17（印本 pp. 510–524） | Packer 纸本 | 15 | 约 180（落表 111 条；正文约 130） | ≈ 11.8（正文 8.7） | 0 |
 | 14 | 2026-11-26 | 第 4 部 14:18–22（印本 pp. 650–671） | Packer 纸本 | 22 | 约 150（落表 120 条；正文约 120） | ≈ 6.8（正文 5.5） | 0 |
+| 15 | 2026-11-26 | 第 9 部 30:4–7（印本 pp. 42–63） | Packer 纸本 | 22 | 约 190（落表 160 条；正文约 165） | ≈ 8.6（正文 7.5） | 0 |
 
 ## 第 1 轮发现的错误类别与全书清理
 
@@ -373,3 +374,25 @@ p.205 下半页是下一段 12:7 的开头，同一张图一并核了（落表 8
 
 撤回／不改：本段影像里 `wean the stones`（小标题）、`Propheet`、`Athiest`、`he wasketh`、`because that with waxeth`（=which）原书如此，照录；`Asick`、`betterto` 原书连排照录。
 另记：重跑第 8 部（p82）切段层与 TCP 抽取（extract_caryl.py）时，现行脚本的输出与已提交版本有零星出入（经文框界、virum que→virumque），与本轮无关，未夹带。
+
+## 第 15 轮发现的问题与全书处理（第 9 部 30:4–7，22 页）
+
+本段错处约 190（落表 160 条）：正文约 165（每页约 7.5），旁注 11 条（希伯来／拉丁／希腊旁注几乎条条读坏，整条照影像重录）。
+本段斜体引文多（经文、Broughton 译文、小标题），斜体段里的形近字仍是大头（me→we、ue→we、R'ho→Who、witb→with）。
+
+文字类（`caryl_ocr_sweep.py` 新规则）：
+
+| 类别 | 本段 | 全书命中 |
+|---|---|---|
+| 斜体 w 读成 m：that／and／when／which… me have／shall／should／may → we（「let me」「towards me」不在前词表里，不碰） | 2 | 约 60 |
+| 斜体 h 读成 b：witb／hatb／Tbou → with／hath／Thou | 3 | 约 17 |
+| 斜体 W 读成 R'：R'ho／R'herefore／R'hatsoever → Who／Wherefore…（去掉后是本书常见词才改） | 1 | 8 |
+| Aud → And | 1 | 13 |
+| hill I → will I；Thou halt → Thou shalt | 2 | 6 |
+| Ibe：情态词后 → I be，句首 → The | 1 | 4 |
+| malloms／mallons → mallows | 6 | 6（本段全部） |
+| the sth verse → 5th；asthe → as the；Terusalem；(fer. → (Jer. | 各 1 | 共约 10 |
+
+结构类：引文被页内劈段（p.62「&c.— ⏎ should have fed them」，劈段处还丢了 I）、段首经文框首行 R'ho 读坏，逐条改。
+
+不改：ofits（p.813 影像证实原书连排，第 3 轮已定照录）；Scriprure、Rabshaketh、reretirement、Monchury、Propheet 原书如此，照录。

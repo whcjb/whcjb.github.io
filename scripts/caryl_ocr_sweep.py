@@ -30,6 +30,8 @@
   ——第 10 轮（第 4 部 12:5–6）补：序数词 IIth/Sth/2oth→11th/5th/20th、经卷章号 S→5、代词后 hall→shall、介词后 tle→the、uhen→when、the seet→feet、旁注 mibi→mihi
   ——第 14 轮（第 4 部 14:18–22）补：ve→we、M'h/NV/IV→Wh/W、fignif→signif、zoth→20th、out ward→outward、Obierve→Observe、
           物主词后 orn/oun→own、(l conceive→(I、, be shall→, he shall、Tte→The、thoy→they/thy（按后接词）、Ay soul/brethren→My
+  ——第 15 轮（第 9 部 30:4–7）补：malloms→mallows、witb/hatb/Tbou、R'h→Wh、Aud→And、hill I→will I、Thou halt→shalt、Ibe→I be/The、
+          the sth verse→5th、asthe→as the、Terusalem、(fer.→(Jer.、that/and me shall→we
   head    漏进正文的页眉（「Chap. 31. An Exposition upon the Booke of JOB. Vers. 7.」）删掉
 """
 import argparse
@@ -252,6 +254,25 @@ def rules():
               lambda m: 'they '))
     R.append(('th', re.compile(r'\bthoy (?=(?:own|owne|servants?|Sheild|Shield|soul|soule|God|word|people|name|hand|heart|house|son|sonne|wayes)\b)'),
               lambda m: 'thy '))
+    # —— 第 15 轮（第 9 部 30:4–7 实读 22 页）
+    R.append(('mw', re.compile(r'\bmallo[mn]s\b'), lambda m: 'mallows'))
+    R.append(('th', re.compile(r'\bwitb\b'), lambda m: 'with'))
+    R.append(('th', re.compile(r'\bhatb\b'), lambda m: 'hath'))
+    R.append(('th', re.compile(r'\bTbou\b'), lambda m: 'Thou'))
+    R.append(('wh', re.compile(r"\bR['’]h([a-z]+)\b"),
+              lambda m: 'Wh' + m.group(1) if UNI.get('wh' + m.group(1), 0) >= 3 else m.group(0)))   # R'ho／R'herefore → Who／Wherefore
+    R.append(('of', re.compile(r'\bAud\b'), lambda m: 'And'))
+    R.append(('modal', re.compile(r'\bhill I\b'), lambda m: 'will I'))
+    R.append(('fs', re.compile(r'\bThou halt\b'), lambda m: 'Thou shalt'))
+    R.append(('pronI', re.compile(r'\b(shall|will|lest|may|should|would|must|can) Ibe\b'), lambda m: m.group(1) + ' I be'))
+    R.append(('th', re.compile(r'(?<=[.;:] )Ibe\b'), lambda m: 'The'))
+    R.append(('num', re.compile(r'\bthe sth (?=verse|way|Vers)'), lambda m: 'the 5th '))
+    R.append(('split', re.compile(r'\basthe\b'), lambda m: 'as the'))
+    R.append(('jf', re.compile(r'\bTerusalem\b'), lambda m: 'Jerusalem'))
+    R.append(('isa', re.compile(r'\((\s?)fer\.'), lambda m: '(' + m.group(1) + 'Jer.'))
+    # 斜体 w 读成 m：that me should、and me shall → we（「let me」「towards me」等真 me 不在前词表里）
+    R.append(('mw', re.compile(r'\b(that|and|when|then|though|if|as|which|so|more|yea|where|unlesse|till|untill|what|whom|while|because) me (?=(?:have|shall|should|may|must|are|were|might)\b)'),
+              lambda m: m.group(1) + ' we '))
     # 漏进正文的页眉
     R.append(('head', re.compile(r'\bCha[pn][.,-]?\s?\d{1,2}\.?\s+An Ex\w*\s+u\w*\s+\w+\s+Boo?[sk]\w*\s+\S{1,3}\s?\S{0,3}\s+V\w{2,5}[.,]?\s?\d{0,2}\.?'),
               lambda m: ''))
