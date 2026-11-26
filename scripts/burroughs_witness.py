@@ -676,6 +676,79 @@ def sheets(gids, name, per=16):
         print(f'定位不上 {len(lost)}：{lost[:30]}', file=sys.stderr)
 
 
+# ── 旁注判读图：旁注不在正文流里，用它所对正文位置（mleft/mright）定位到行，裁该行上下两侧页边 ──
+def note_loc(s, wcache):
+    ps = dict(s, left=s.get('mleft') or [], right=s.get('mright') or [], stream='main')
+    return locate_site(ps, wcache)
+
+
+def mtodo(vol, n):
+    """旁注里尚未判读、也没记过「裁片外」的组，按 (叶, 行位) 聚成格。"""
+    sites = json.loads((RAW / 'gap_sites.json').read_text(encoding='utf-8'))
+    done = {int(r[0]) for r in bc._tsv('gap_review.tsv')} | {int(r[0]) for r in bc._tsv('gap_approved.tsv')}
+    f = RAW / 'witness_seen.tsv'
+    seen = {int(ln.split('\t')[0]) for ln in f.read_text(encoding='utf-8').splitlines() if ln[:1].isdigit()} if f.exists() else set()
+    out = [s['gid'] for s in sites if s['vol'] == vol and s['stream'] == 'note' and s['gid'] not in done | seen]
+    print(','.join(map(str, out[:n])))
+
+
+def msheets(gids, name, per=10):
+    """一格 = 同叶同处（行位差 < 6 行）的一组旁注缺字；格内是该行上下各 7 行的左右两条页边并排。"""
+    from PIL import Image, ImageDraw
+    sites = {x['gid']: x for x in json.loads((RAW / 'gap_sites.json').read_text(encoding='utf-8'))}
+    wcache, cells, lost = {}, [], []
+    for g in gids:
+        loc = note_loc(sites[g], wcache)
+        if not loc:
+            lost.append(g)
+            continue
+        wid, leaf, (x0, y0, x1, y1), how = loc
+        cy, lh = (y0 + y1) / 2, max(1, y1 - y0)
+        for c in cells:
+            if c['wid'] == wid and c['leaf'] == leaf and abs(c['cy'] - cy) < 6 * lh:
+                c['g'].append(g)
+                break
+        else:
+            cells.append(dict(wid=wid, leaf=leaf, cy=cy, lh=lh, how=how, g=[g]))
+    out_dir = WIT / 'sheets'
+    out_dir.mkdir(exist_ok=True)
+    TW, TH = 980, 560
+    lines = []
+    for k in range(0, len(cells), per):
+        chunk = cells[k:k + per]
+        rows = (len(chunk) + 1) // 2
+        sheet = Image.new('RGB', (TW * 2, (TH + 34) * rows), 'white')
+        dr = ImageDraw.Draw(sheet)
+        for n, c in enumerate(chunk):
+            im = Image.open(leaf_img(c['wid'], c['leaf']))
+            W, H = im.size
+            sc = W / wcache[c['wid']][c['leaf']]['w']
+            cy, lh = c['cy'] * sc, max(40, c['lh'] * sc)
+            top, bot = int(cy - lh * 7), int(cy + lh * 7)
+            mw = int(W * 0.30)
+            left, right = im.crop((0, top, mw, bot)), im.crop((W - mw, top, W, bot))
+            strip = Image.new('RGB', (mw * 2 + 8, bot - top), 'black')
+            strip.paste(left, (0, 0)); strip.paste(right, (mw + 8, 0))
+            strip = strip.resize((TW, TH))
+            col, row = n % 2, n // 2
+            sheet.paste(strip, (col * TW, row * (TH + 34) + 34))
+            labs = []
+            for g in c['g']:
+                s = sites[g]
+                t = (' '.join(s['left'][-2:]) + ' <' + s['tcp'] + '> ' + ' '.join(s['right'][:2]))
+                t = t.replace('•', '#').replace('〈◊〉', '[W]').replace('〈…〉', '[SPAN]').replace('〈Greek〉', '[GK]')
+                labs.append(f'{g}: ' + t.encode('ascii', 'replace').decode())
+                lines.append(f'{g}\t{c["wid"]}\tn{c["leaf"]}\t{c["how"]}\t{s["tcp"]}\t')
+            dr.rectangle((col * TW, row * (TH + 34), (col + 1) * TW - 1, row * (TH + 34) + 33), fill=(255, 240, 200))
+            dr.text((col * TW + 4, row * (TH + 34) + 2), '  |  '.join(labs)[:170], fill='black')
+            dr.text((col * TW + 4, row * (TH + 34) + 17), '  |  '.join(labs)[170:340], fill='black')
+        f = out_dir / f'{name}_{k // per:02d}.jpg'
+        sheet.save(f, quality=82)
+        print(f, file=sys.stderr)
+    (out_dir / f'{name}.txt').write_text('\n'.join(lines) + '\n', encoding='utf-8')
+    print(f'{len(gids)} 组 → {len(cells)} 格；定位不上 {len(lost)}：{lost[:20]}', file=sys.stderr)
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument('cmd')
@@ -690,6 +763,16 @@ def main():
         put(a.gids)
     elif a.cmd == 'land':
         land(a.apply)
+    elif a.cmd == 'mtodo':
+        mtodo(int(a.name), a.per)
+    elif a.cmd == 'msheets':
+        g = gidrange(a.gids)
+        sites = {x['gid']: x for x in json.loads((RAW / 'gap_sites.json').read_text(encoding='utf-8'))}
+        wc = {}
+        need = {(l[0], l[1]) for l in (note_loc(sites[x], wc) for x in g) if l}
+        for w, l in sorted(need):
+            leaf_img(w, l)
+        msheets(g, a.name, a.per)
     elif a.cmd == 'sheets':
         prefetch(gidrange(a.gids))
         sheets(gidrange(a.gids), a.name, a.per)
