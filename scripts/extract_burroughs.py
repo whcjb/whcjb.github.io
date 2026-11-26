@@ -132,6 +132,17 @@ def prep(root):
             lab.tag = TEI + 'note'
             lab.attrib.clear()
             lab.set('place', 'mark')
+    # 页边只印一个序号（2、3…）的，录入本记作空 <milestone type="tcpmilestone" n="2"/>，原先整类丢掉；
+    # 段内的照页边纲目标记排（2026-11-26 抽 7:9、5:15 看图：p.678「2. 3 4」、p.522「2」）。块级的（章节间）不动。
+    inline = {c for p in root.iter() if tt.tag(p) in ('p', 'item', 'q', 'l', 'hi') for c in p}
+    for ms in root.iter(TEI + 'milestone'):
+        if ms.get('type') == 'tcpmilestone' and ms in inline:
+            unit = ms.get('unit', 'unspecified')
+            txt = ((unit + ' ') if unit != 'unspecified' else '') + (ms.get('n') or '')
+            ms.tag = TEI + 'note'
+            ms.attrib.clear()
+            ms.set('place', 'mark')
+            ms.text = txt.strip()
     for el in root.iter():                          # 原书字面星号不当斜体
         for a in ('text', 'tail'):
             v = getattr(el, a)
@@ -255,6 +266,7 @@ def words(paras):
         v = p[-1]
         if isinstance(v, list):
             v = ' '.join(x if isinstance(x, str) else '' for x in v)
+        v = re.sub(r'<span class="jb-mark">[0-9]+</span>', ' ', v)        # 页边纯序号不计词（2026-11-26 补出后不改动分页）
         n += len(re.sub(r'<[^>]+>|\n\{: [^}]*\}', ' ', v).split())       # 标题版式行不计词
     return n
 
