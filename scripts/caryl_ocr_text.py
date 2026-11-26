@@ -220,6 +220,10 @@ class Builder:
                  f'<span class="{P}-pb" data-leaf="{int(lf)}"></span>'
             pending_pb.append(pb)
             x1 = pg['x1']
+            if self.part in COLS_NUMBERED:
+                pg = dict(pg, body=[dict(b) for b in pg['body']], margin=list(pg['margin']))
+                fold_fullwidth(pg)
+                fix_gutter(pg)
             notes = group_margin(pg['margin'])
             for b in pg['body']:
                 t = b['t'].strip()
@@ -425,14 +429,65 @@ def strip_bleed(t, x_first, x_this, hy=False):
 
 def group_margin(ms):
     """同侧、上下相距不到 1.6 行高的旁注行并成一条（旁注是窄栏，一条注占好几行）；行末断词号拼合。"""
+    # 两侧分开并：对开本一叶左右都有旁注，按高度混排后左右行交错，只看「上一行」同侧就一条也并不上
+    # （第 16 轮，p82 叶 206：一条拉丁旁注碎成 40 多条，p82 全部旁注 810 条里 466 条不到 18 字）
     out = []
-    for m in sorted(ms, key=lambda m: m['y']):
-        if out and out[-1][2] == m['side'] and m['y'] - out[-1][3] < 110:
-            out[-1][1] = join_lines([out[-1][1], m['t']])
-            out[-1][3] = m['y']
+    for side in sorted({m['side'] for m in ms}):
+        cur = None
+        for m in sorted((m for m in ms if m['side'] == side), key=lambda m: m['y']):
+            if cur and m['y'] - cur[3] < 110:
+                cur[1] = join_lines([cur[1], m['t']])
+                cur[3] = m['y']
+            else:
+                cur = [m['y'], m['t'], side, m['y']]
+                out.append(cur)
+    return [(y, t) for y, t, _, _ in sorted(out, key=lambda g: g[0])]
+
+
+RE_GUTTER80 = re.compile(r'^\W{0,3}[1l]?\s*(?:[8S][o0c]|1?80)\s*[l1]?\s*[!\]]?\s*')
+
+
+def fix_gutter(pg):
+    """对开本两栏中缝印行号（10、20…80）。页底「80」被切进旁注，右栏末行与它同高时整行跟着进了旁注
+    （「(8o l bread at the Table…」「180l (Eccl. 7. 12.) Wisdom is a defence…」）。页底这类旁注：
+    只有行号的删掉；后面带正文的剥掉行号，作右栏末行接回正文。胶片水印「UMI」也在这里删。"""
+    body = pg['body']
+    if not body:
+        return
+    maxy = max(b['y'] for b in body)
+    mid = (pg['x0'] + pg['x1']) / 2
+    keep = []
+    for m in pg['margin']:
+        if m['t'].strip() in ('UMI', 'UMi', 'Mi'):     # 胶片上的 UMI 水印
+            continue
+        g = RE_GUTTER80.match(m['t'])
+        if g and m['y'] >= maxy - 120:
+            rest = m['t'][g.end():].strip()
+            if len(re.findall(r'[A-Za-z]{2,}', rest)) >= 3:
+                body.append(dict(y=m['y'], x=int(mid) + 40, end=int(pg['x1']), t=rest, lx0=mid, lx1=pg['x1'],
+                                 indent=False, short=False))
+            elif re.search(r'[A-Za-z]{3,}', rest):
+                keep.append(dict(m, t=rest))
+            continue
+        keep.append(m)
+    pg['margin'] = keep
+
+
+def fold_fullwidth(pg):
+    """对开本章首通栏印的整章经文：每行右半被版心右界切进右旁注。正文行在这一高度上只有一行（没有第二栏的行）、
+    右旁注同高起头的，接回正文行尾。章题行「CHAP. XXVIII.」不接（切段靠它单独成行；同行的「Vers. 1, 2, …」留作旁注）。"""
+    body = pg['body']
+    mid = (pg['x0'] + pg['x1']) / 2
+    top2 = min((b['y'] for b in body if b['x'] > mid), default=10 ** 9)   # 第二栏起头高度：通栏只在它上面
+    keep = []
+    for m in pg['margin']:
+        row = [b for b in body if abs(b['y'] - m['y']) <= 25]
+        if m['side'] == 'R' and m['y'] < top2 - 60 and len(row) == 1 and row[0]['x'] < mid and len(m['t']) >= 8 \
+                and not RE_CHAPLINE.match(row[0]['t'].strip()):
+            row[0]['t'] = row[0]['t'].rstrip() + ' ' + m['t'].strip()
         else:
-            out.append([m['y'], m['t'], m['side'], m['y']])
-    return [(y, t) for y, t, _, _ in out]
+            keep.append(m)
+    pg['margin'] = keep
 
 
 def roman(r):

@@ -64,6 +64,23 @@ def accent_fix(m):
     return base
 
 
+FS_STOP = {'fuit', 'fon', 'fons', 'setf', 'fouls', 'ifa'}   # 拉丁 fuit（是）；黑体 fon 多是 for（「weep fon your」）；setf 是 self；
+                                                          # fouls 也作 fowls（「the fouls of the air」）；Ifa 是 If a
+
+
+def fs_fix(m):
+    w = m.group(0)
+    if len(w) < 3 or UNI.get(w.lower(), 0) or w.lower() in FS_STOP:
+        return w
+    lw = w.lower()
+    idx = [i for i, c in enumerate(lw) if c == 'f']
+    cands = [lw[:i] + 's' + lw[i + 1:] for i in idx] + [lw.replace('f', 's')]
+    best = max(cands, key=lambda c: UNI.get(c, 0))
+    if UNI.get(best, 0) < 30:
+        return w
+    return ''.join(b.upper() if a.isupper() else b for a, b in zip(w, best))
+
+
 def rules():
     R = []
     # job
@@ -273,6 +290,16 @@ def rules():
     # 斜体 w 读成 m：that me should、and me shall → we（「let me」「towards me」等真 me 不在前词表里）
     R.append(('mw', re.compile(r'\b(that|and|when|then|though|if|as|which|so|more|yea|where|unlesse|till|untill|what|whom|while|because) me (?=(?:have|shall|should|may|must|are|were|might)\b)'),
               lambda m: m.group(1) + ' we '))
+    # —— 第 16 轮（第 8 部对开本 28:1–11 实读 14 叶 28 栏）
+    # 正体长 s 读成 f、两层都没判的非词：faw／fecond／fuffice／insluence／allufions → saw／second…（本书 0 次、改后 ≥ 30 次才改）
+    R.append(('fs', re.compile(r'\b[A-Za-z]*f[A-Za-z]*\b'), fs_fix))
+    # 斜体 is 读成带附加符号的单个 u：There ù a vein、the eye ũ so → is（前后都须是英文词，希腊文里的 τù 不碰）
+    R.append(('uis', re.compile(r'(?:(?<=[A-Za-z] )|(?<=[A-Za-z], ))(?:ù|ũ|ù|ũ)(?= [A-Za-z])'), lambda m: 'is'))
+    # 对开本黑体小标题：and 读成 ano／anu／ann，The 读成 Ebe，eye 读成 epe（「ab ano & resto」拉丁不碰）
+    R.append(('bl', re.compile(r'(?<![Aa]b )(?<=[A-Za-z,;:] )(?:ano|anu|ann)(?= (?!same\b)[a-z&])'), lambda m: 'and'))
+    R.append(('bl', re.compile(r'\b(?:Anu|Ano)(?= [a-z])'), lambda m: 'And'))
+    R.append(('bl', re.compile(r'\bEbe\b'), lambda m: 'The'))
+    R.append(('bl', re.compile(r'(?<![\w\u00c0-\u024f\u0300-\u036f])epe\b'), lambda m: 'eye'))
     # 漏进正文的页眉
     R.append(('head', re.compile(r'\bCha[pn][.,-]?\s?\d{1,2}\.?\s+An Ex\w*\s+u\w*\s+\w+\s+Boo?[sk]\w*\s+\S{1,3}\s?\S{0,3}\s+V\w{2,5}[.,]?\s?\d{0,2}\.?'),
               lambda m: ''))

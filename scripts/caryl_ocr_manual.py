@@ -40,11 +40,15 @@ def plain_map(md):
 def apply_one(md, old, new):
     """→ (新 md, 状态)。状态：ok / done / missing / multi / blocked"""
     if new == '@正文':                          # 切栏失败、被划进旁注的正文行末词：拆掉旁注标签放回正文（第 12 轮，p4 印本 p.550）
+        pre = ''
+        if '⟦' in old:                          # 「that which ⟦is」：旁注文字太短、段内不唯一时，⟦ 前写紧挨着的正文作定位（第 16 轮，p82「is」）
+            pre, old = old.split('⟦', 1)
         tag = f'<span class="cy-margin">{old}</span>'
-        n = md.count(tag)
-        if n == 1:
-            return md.replace(tag, old), 'ok'
-        return md, ('multi' if n > 1 else 'done' if old in plain_map(md)[0] else 'missing')
+        hits = [m.start() for m in re.finditer(re.escape(tag), md)
+                if not pre or RE_TAG.sub('', md[max(0, m.start() - 400):m.start()]).rstrip().endswith(pre.rstrip())]
+        if len(hits) == 1:
+            return md[:hits[0]] + old + md[hits[0] + len(tag):], 'ok'
+        return md, ('multi' if len(hits) > 1 else 'done' if (pre + old) in plain_map(md)[0] or old in plain_map(md)[0] else 'missing')
     pt, idx = plain_map(md)
     n = pt.count(old)
     if new and new in pt and (n == 0 or old in new):
