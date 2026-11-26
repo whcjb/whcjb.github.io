@@ -300,6 +300,13 @@ def rules():
     R.append(('bl', re.compile(r'\b(?:Anu|Ano)(?= [a-z])'), lambda m: 'And'))
     R.append(('bl', re.compile(r'\bEbe\b'), lambda m: 'The'))
     R.append(('bl', re.compile(r'(?<![\w\u00c0-\u024f\u0300-\u036f])epe\b'), lambda m: 'eye'))
+    # —— 第 17 轮（第 9 部 31:34 实读 16 页）
+    R.append(('pronI', re.compile(r'\bIf eare\b'), lambda m: 'I feare'))
+    R.append(('jf', re.compile(r'\b[Tf](udah|ordan|ohn|oseph|acob|onathan|osh[bu]a|ewes|ews)\b'), lambda m: 'J' + m.group(1).replace('shb', 'sh')))
+    R.append(('mw', re.compile(r'\b(I|he|she|they|we|ye|you|Pilate|David|Job) (?:sam|san)\b'), lambda m: m.group(1) + ' saw'))
+    R.append(('of', re.compile(r'(?:(?<=[,;] )|(?<=nothing ))lut\b'), lambda m: 'but'))
+    R.append(('of', re.compile(r'\bagairst\b'), lambda m: 'against'))
+    R.append(('hy', re.compile(r'(?<=[a-z])¬(?=[.;:?!])'), lambda m: ''))   # 行中句末的断词号：him¬. → him.
     # 漏进正文的页眉
     R.append(('head', re.compile(r'\bCha[pn][.,-]?\s?\d{1,2}\.?\s+An Ex\w*\s+u\w*\s+\w+\s+Boo?[sk]\w*\s+\S{1,3}\s?\S{0,3}\s+V\w{2,5}[.,]?\s?\d{0,2}\.?'),
               lambda m: ''))
@@ -475,6 +482,8 @@ def fix_pagebreaks(md, log, where):
 def is_junk(t):
     """整段乱码（书末花饰、横线、页底签名单成一段）：一个真词也没有，且同一字符连写 5 个以上、像书帖签名、
     大写占七成以上（≥ 5 个字母）、或字母数字混杂而没有小写词。「Ohierve」「Ianswer」「vocamus」这类真内容挡在外面。"""
+    if re.fullmatch(r'[A-Z][a-z]{1,7}\s+[A-Za-z]?\d{3,6}', t):
+        return True                          # 页底提示词＋书帖签名读成一段：「Wec 22242」「Verse S8882」（第 17 轮）
     ws = re.findall(r'[A-Za-z]+', t)
     if any(len(w) >= 3 and UNI.get(w.lower(), 0) for w in ws):
         return False
