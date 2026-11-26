@@ -159,6 +159,21 @@ def prep(root):
             ms.attrib.clear()
             ms.set('place', 'mark')
             ms.text = txt.strip()
+    # 段尾的 <q>（前面是句末标点、后面段落结束）原书是居中的逐句小标题，录入本录进了上一段：
+    # 挪出来与其他段外 <q> 一样排 jb-quote（2026-11-26 抽 11:2 看图 p.37「But they knew not that I healed them.」）
+    parent = {c: p for p in root.iter() for c in p}
+    for p in list(root.iter(TEI + 'p')):
+        kids = list(p)
+        if not kids or tt.tag(kids[-1]) != 'q' or (kids[-1].tail or '').strip() or len(list(kids[-1])):
+            continue
+        q = kids[-1]
+        before = (kids[-2].tail if len(kids) > 1 else p.text) or ''
+        if not re.search(r'[.;:?!)]\s*$', before) or len(q.text or '') > 160:
+            continue
+        p.remove(q)
+        q.tail = '\n'
+        gp = parent[p]
+        gp.insert(list(gp).index(p) + 1, q)
     for el in root.iter():                          # 原书字面星号不当斜体
         for a in ('text', 'tail'):
             v = getattr(el, a)
