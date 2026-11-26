@@ -11,19 +11,23 @@ next_url: "/burroughs/hosea/vol2-to-the-reader/"
 next_label: "Vol. II · To the Reader"
 ---
 
-<span class="jb-pb" data-facs="1"></span>AN EXPOSITION WITH Practical Observations CONTINUED Upon the Fourth, Fifth, Sixth, and Seventh Chapters of the PROPHESY OF HOSEA. Being first delivered in several LECTURES *at Michaels* Cornhil *London.* By *Jeremiah Burroughs.* Being the Fifth BOOK, published by
-
-<p class="jb-item" markdown="1">*Thomas Goodwyn,*</p>
-
-<p class="jb-item" markdown="1">*William Greenhil,*</p>
-
-<p class="jb-item" markdown="1">*Sydrach Simson*</p>
-
-<p class="jb-item" markdown="1">*William Bridge,*</p>
-
-<p class="jb-item" markdown="1">*John Yates,*</p>
-
-<p class="jb-item" markdown="1">*William Adderly.*</p>
-
-*LONDON,* Printed for *Peter Cole,* at the sign of the Printing-Press in Cornhil, near the Royal Exchange, 1650.
-
+<span class="jb-pb" data-facs="1"></span>
+<div class="jb-tp">
+<div class="jb-tp-l s3 ls">AN</div>
+<div class="jb-tp-l s0">EXPOSITION</div>
+<div class="jb-tp-l s4 ls">WITH</div>
+<div class="jb-tp-l s1">Practical Observations</div>
+<div class="jb-tp-l s4 ls">CONTINUED</div>
+<div class="jb-tp-l s3">Upon the Fourth, Fifth, Sixth, and<br>Seventh Chapters of the <span class="ls">PROPHESY</span></div>
+<div class="jb-tp-l s4 ls">OF</div>
+<div class="jb-tp-l s00">HOSEA.</div>
+<div class="jb-tp-l s3">Being first delivered in several<br><span class="ls">LECTURES</span> <i>at Michaels</i> Cornhil <i>London.</i></div>
+<hr class="jb-tp-rule">
+<div class="jb-tp-l s2">By <i>Jeremiah Burroughs.</i></div>
+<hr class="jb-tp-rule">
+<div class="jb-tp-l s3">Being the Fifth <span class="ls">BOOK</span>, published by</div>
+<div class="jb-tp-pub"><div class="a"><i>Thomas Goodwyn,</i><br><i>William Greenhil,</i><br><i>Sydrach Simson</i></div><div class="b"><i>William Bridge,</i><br><i>John Yates,</i><br><i>William Adderly.</i></div></div>
+<hr class="jb-tp-rule">
+<div class="jb-tp-l s3 it ls">LONDON,</div>
+<div class="jb-tp-l s4">Printed for <i>Peter Cole,</i> at the sign of the Printing-Press<br>in Cornhil, near the Royal Exchange, 1650.</div>
+</div>
