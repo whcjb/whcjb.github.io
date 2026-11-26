@@ -25,6 +25,8 @@
   ——第 5 轮（第 6 部 21:27–29）补：wh（W'hat/u'hat/n'hen→What/when）、jf（femes/facob/ferusalem→Jewes/Jacob/Jerusalem）、
           sob→Job、句中 Te→Ye、(Job. N.N)→(Joh. N.N)（按 KJV 引文比对）
   ——第 6 轮（第 4 部 11:15–16）补：Tou→You、Tea→Yea、句首 l→I、Ged/Gcd→God、osten→often、chap. I0.→10.、旁注插在词中（MARGIN_SPLIT）（整段乱码：书末花饰、横线、单成一段的签名）、段首「- 」「+ 」噪点（会被排成列表）
+  ——第 9 轮（第 9 部 30:16–17）补：accent（英文词里的组合附加符 thé/oùr/quiçkly）、pua（私用区 U+E8BF → q;）、小写 tob→Job、
+          himfelf(e)→himself(e)、and’tis→and ’tis、Ay/Afy bones→My、主语后 nas→was、tabe→take、空旁注
   head    漏进正文的页眉（「Chap. 31. An Exposition upon the Booke of JOB. Vers. 7.」）删掉
 """
 import argparse
@@ -32,6 +34,7 @@ import collections
 import difflib
 import re
 import sys
+import unicodedata
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
@@ -44,6 +47,16 @@ UNI = C.UNI
 SUFFIX = {'ly', 'lesse', 'nesse', 'ward', 'wards', 'ing', 'ed', 'ment', 'ness', 'ful', 'full', 'ous'}
 NAMES = r'(?:Job|David|God|Christ|Moses|Paul|Peter|Solomon|Isaiah|Jeremiah|Elihu|Eliphaz|Bildad|Zophar|the Lord|the Prophet|the Apostle|he|she|they|hee)'
 DETS = r'(?:the|a|good|his|my|their|our|your|her|its|narrow|right|wrong|same|thy|thine|mine|old|new|plaine|straight|evill|crooked)'
+
+
+def accent_fix(m):
+    w = m.group(0)
+    base = ''.join(c for c in unicodedata.normalize('NFD', w) if not unicodedata.combining(c))
+    if base == w or UNI.get(unicodedata.normalize('NFC', w).lower(), 0) or UNI.get(base.lower(), 0) < 50:
+        return w
+    if len(base) == 1 and base.lower() not in ('a', 'i', 'o'):
+        return w
+    return base
 
 
 def rules():
@@ -174,6 +187,16 @@ def rules():
     # —— 第 8 轮（第 4 部 13:26–28 实读 20 页）：段首花体／大写 T 后多出空格「T hat」「T hou」「T he」；unde standing
     R.append(('split', re.compile(r'\bT (hat|hou|he|his|hus|here|hey|hen|ho)\b'), lambda m: 'T' + m.group(1)))
     R.append(('split', re.compile(r'\bunde standing\b'), lambda m: 'understanding'))
+    # —— 第 9 轮（第 9 部 30:16–17 实读 19 页）
+    # 英文词里冒出的附加符（thé、à、oùr、wherés、quiçkly、Slèepe——kraken 把墨点读成组合附加符）：去掉符号后是本书常见词、
+    # 带符号的拼法本书没有，才去；拉丁文旁注本来就不进这里
+    R.append(('accent', re.compile(r'\b[A-Za-z]*(?:[A-Za-z][̀-ͯ]+|[àáâäèéêëìíîïòóôöùúûüçÀÁÈÉÒÓÙÚ])[A-Za-z̀-ͯ]*'), accent_fix))
+    R.append(('job', re.compile(r'(?<![\w-])tob([\'’]s)?\b'), lambda m: 'Job' + (m.group(1) or '')))
+    R.append(('fs', re.compile(r'\b(him|her|it|them|our|your|my|thy|one)f(elfe|elves|elf)\b'), lambda m: m.group(1) + 's' + m.group(2)))
+    R.append(('tis', re.compile(r'\b([a-z]+)([’\'])(tis)\b'), lambda m: f'{m.group(1)} {m.group(2)}{m.group(3)}'))   # and’tis → and ’tis
+    R.append(('mw', re.compile(r'\bA(?:y|fy) (?=(?:bones|breath|soule|heart|dayes|God|flesh|eyes|life|spirit|sinews|feet|hands|wayes|sonne|son)\b)'), lambda m: 'My '))
+    R.append(('mw', re.compile(r'\b(I|he|she|it|soule|which|that|who|there|this|what) nas\b'), lambda m: m.group(1) + ' was'))
+    R.append(('tabe', re.compile(r'\btabe\b'), lambda m: 'take'))
     # 漏进正文的页眉
     R.append(('head', re.compile(r'\bCha[pn][.,-]?\s?\d{1,2}\.?\s+An Ex\w*\s+u\w*\s+\w+\s+Boo?[sk]\w*\s+\S{1,3}\s?\S{0,3}\s+V\w{2,5}[.,]?\s?\d{0,2}\.?'),
               lambda m: ''))
@@ -372,6 +395,16 @@ def drop_junk(md, log, where):
 def sweep_md(md, log, where):
     """只改标签之间的纯文本片段（不跨标签），旁注 span 整个跳过。"""
     md = drop_junk(md, log, where)
+    # 第 9 轮：kraken 把拉丁文缩写「q;」（-que）读成私用区字符 U+E8BF（「Animam\ue8bf;」「cujus\ue8bf rets」）；旁注里居多，旁注也改
+    def pua(m):
+        log.append(('pua', where, m.group(0), 'q;'))
+        return 'q;'
+    md = re.sub('\ue8bf;?', pua, md)
+    # \u4eba\u5de5\u8868\u628a\u6574\u6761\u4e71\u7801\u65c1\u6ce8\u6539\u7a7a\u540e\u7559\u4e0b\u7684\u7a7a\u65c1\u6ce8
+    def empty_margin(m):
+        log.append(('junk', where, '[\u7a7a\u65c1\u6ce8]', ''))
+        return ''
+    md = re.sub(r'<span class="cy-margin">\s*</span> ?', empty_margin, md)
     # 看图确认、旁注插在一个正文词中间（「ret [旁注] neweth」）：并成一词、旁注挪到词后
     for w0, a, b, whole in MARGIN_SPLIT:
         if w0 == where:
