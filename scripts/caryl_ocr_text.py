@@ -26,6 +26,7 @@
 import argparse
 import collections
 import json
+import difflib
 import re
 import sys
 from pathlib import Path
@@ -66,6 +67,14 @@ def overlap(line, vocab):
     if not w:
         return 0.0
     return sum(1 for x in w if x in vocab) / len(w)
+
+
+def fuzzy_overlap(line, vocab):
+    w = toks(line)
+    if not w:
+        return 0.0
+    vl = list(vocab)
+    return sum(1 for x in w if x in vocab or difflib.get_close_matches(x, vl, 1, 0.7)) / len(w)
 
 
 def verse_nums(s):
@@ -314,6 +323,13 @@ class Builder:
                     # 讲解首段也缩进，但起头是段首花体大写（「N the former…」「OB proceeds…」），小写条件挡得住
                     #   另：不缩进的行（新一节）重合 ≥ 0.4 即收——讲解首段一律缩进（花体字母），轮不到这条（「May shin is blache…」0.44）
                     ov = overlap(plain, epi_vocab)
+                    # 第 13 轮：出处行后第一行斜体读得太烂（「He hath smallomed domne riches. andhe spall vouit」0.38、
+                    # 「He heth destroyed me on euery si det」0.29），整框经文漏进讲解。第一行改用形近匹配（difflib ≥ 0.7）算重合，≥ 0.6 即收；
+                    # 讲解首段（「–He similitude betweene…」0.17、「93 still continues his complaint…」0.33）进不来
+                    if len(epi_lines) == 1 and not b['indent'] and fuzzy_overlap(plain, epi_vocab) >= 0.6:
+                        epi_lines.append(t)
+                        prev = b
+                        continue
                     if not b['indent']:
                         cont = cont or ov >= 0.4
                     elif not re.search(r'[.:;?!]\W*$', re.sub(r'<[^>]+>', '', epi_lines[-1]).strip()):

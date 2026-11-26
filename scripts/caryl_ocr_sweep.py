@@ -209,7 +209,13 @@ def rules():
     R.append(('fs', re.compile(r'\b(I|you|he|we|they|ye|Ye|thou|it|she|You|We|He|They|Thou|It) hall\b'), lambda m: m.group(1) + ' shall'))
     R.append(('th', re.compile(r'\b(to|in|of|as|by|at|on|for|from|with|and|is|was|that|upon|into|unto|all) tle\b'), lambda m: m.group(1) + ' the'))
     R.append(('wh', re.compile(r'\buhen\b'), lambda m: 'when'))
-    R.append(('split', re.compile(r'\b([Ww])i ll\b'), lambda m: m.group(1) + 'ill'))   # 两截都在词表里（wi、ll），拆词规则不合
+    R.append(('split', re.compile(r'\b([Ww])i ll\b'), lambda m: m.group(1) + 'ill'))
+    # —— 第 13 轮（第 6 部 20:15–17 实读 15 页）：句点、经文出处右括号后缺空格（「the sword.It is」「(Exod. 12.40.)It came」）
+    R.append(('space', re.compile(r'\b([a-z]{2,})\.(?=(?:And|But|He|The|It|For|As|What|This|Then|If|In|We|They|So|Now|Thus|There|God|I)\b)'),
+              lambda m: m.group(1) + '. '))
+    R.append(('space', re.compile(r'(\b(?:Isa|Psal|Job|Gen|Exod|Rom|Cor|Heb|Prov|Jer|Mich|Eph|Lam|Ezek|Pet|Mat|Matth|Luk|Deut|Sam|Acts|Hos)\.\s?\d+\.\s?\d+[.,]?\s?\))(?=[A-Za-z])'),
+              lambda m: m.group(1) + ' '))
+    R.append(('mw', re.compile(r'\b(the|into the) mood\b'), lambda m: m.group(1) + ' wood'))   # 两截都在词表里（wi、ll），拆词规则不合
     R.append(('fs', re.compile(r'\b(the|his|their|my|our|your) seet\b'), lambda m: m.group(1) + ' feet'))
     # —— 第 11 轮（第 6 部 21:4–6 实读 20 页）
     R.append(('wh', re.compile(r"\bm'h(at|y)\b"), lambda m: 'wh' + m.group(1)))          # 斜体 W 读成 m'（n' 已有规则）
@@ -311,6 +317,8 @@ MARGIN_BODY = [
     ('p6/21-27', 'if', 'all', 'that'),               # p.795 影像
     ('p6/21-27', 'Benefactors,', 'or', 'Gratious'),  # p.795 影像              # p.785 影像
     ('p4/12-5', 'is', 'al', 'temptation', 'a'),     # p.193 影像
+    ('p6/20-15', 'as', 'it', 'was,'),
+    ('p6/20-15', 'man;', 'ef', 'He', ''),           # p.521 影像：小标题行末 of 被划进旁注（标题在人工表补），旁注删                # p.514 影像
     ('p6/21-4', 'more.', 'ye', '', ''),               # p.644 影像：行首 ye 被划进旁注（已在人工表补回正文），旁注删
     ('p4/12-5', 'wi', 'll', 'not'),                  # p.191 影像（will 的后半截划进旁注，拆词规则再并回）
 ]
