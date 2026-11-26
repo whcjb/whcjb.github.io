@@ -97,6 +97,8 @@ def latin_note(t):
     return sum(1 for w in ws if re.search(LATIN_END, w)) * 3 >= len(ws) * 2
 
 
+# 纲目标签（Obs. 2、Use.、Expos. 1. …）斜体底子页上也排正体，不翻
+RE_LABEL = re.compile(r'^(?:\d+\.?\s*)?(?:Obs|Obser|Observ|Use|Us|Uses|Expos|Exp|Quest|Qu|Answ|Ans|Reas|Object|Obj|Applic|Applicat|Doct|Doctr|Motive|Motives|Means|Note|Simile|simile|Caution|Signes?|Reason)\.?,?\s*\d*\.?\s*$')
 LATIN_MARK = set('et est non quod qui quae quam sed cum nec neque vel enim sunt esse sic sicut ut ad nisi hoc id ab ex pro '
                  'per ejus eius sua suam eum eos quia atque quasi tamen ergo autem etiam inquit'.split())
 LATIN_END = r'(us|um|am|is|ae|orum|arum|ibus|ur|unt|ent|it|at|em|ere|ari|iri|tio|tas)$'
@@ -109,11 +111,25 @@ class GR(tt.R):
         if c.get('place') == 'mark':                 # 页边纲目标记（Note 1 / Obs. / Use …）
             t = tt.norm(self, self.inline(c))
             return f'<span class="{self.P}-mark">{t}</span>' if t else ''
-        if latin_note(self.inline(c)):
+        plain = tt.norm(self, self.inline(c))
+        lat = latin_note(self.inline(c))
+        if lat or (self.italic_base() and not RE_LABEL.match(re.sub(r'<[^>]+>|\*|[▪•]', '', plain))):
             # 拉丁文旁注原书底子是斜体，录入本只给正体部分（英文连接词、出处人名）标 <hi>，整条正斜互换
             # （2026-11-26 抽 10:12 对杜克藏本影像核实：Hierom 注、Arias Mont. 注、Paratus sum 注、Ipsa gratiarum actio 注）
-            return f'<span class="{self.P}-margin" markdown="1">{tt.norm(self, chr(1) + self.inline(c, True) + chr(2))}</span>'
+            t = tt.norm(self, chr(1) + self.inline(c, True) + chr(2))
+            if not lat:                              # 斜体底子页：条首序号「2.」原书正体
+                t = re.sub(r'^\*(\d+\.?) ', r'\1 *', t)
+            return f'<span class="{self.P}-margin" markdown="1">{t}</span>'
         return super().note(c)
+
+    def italic_base(self):
+        """这一页的英文旁注原书是不是斜体底子（录入本照例只给正体部分标 <hi>，须整条正斜互换）。
+        第 3 卷 pp. 1–441 是（逐叶测倾斜 + 看图核 p.68/110/114/203/204/271/420/430/431）；p.442 起回到正体底子
+        （第 1 轮实读 442–487），其中 p.467 那条长注例外仍是斜体。第 2、4 卷看图都是正体底子。"""
+        if getattr(self, 'tcp', None) != 'A30574' or not self.pages:
+            return False
+        n = self.pages[-1][0]
+        return n.isdigit() and (int(n) <= 441 or n == '467')
 
     def gap(self, e):
         if e.get('reason') == 'illegible' and (e.get('extent') or '') == '1 chunk':
@@ -392,6 +408,7 @@ def main():
         prep(root)
         text = root.find(f'.//{TEI}text')
         r = GR(P, str(year))
+        r.tcp = tcp
         for div in text.find(TEI + 'front'):
             if tt.tag(div) != 'div' or div.get('type') in FRONT_SKIP:
                 continue
