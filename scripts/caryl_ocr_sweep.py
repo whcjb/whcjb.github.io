@@ -27,6 +27,7 @@
   ——第 6 轮（第 4 部 11:15–16）补：Tou→You、Tea→Yea、句首 l→I、Ged/Gcd→God、osten→often、chap. I0.→10.、旁注插在词中（MARGIN_SPLIT）（整段乱码：书末花饰、横线、单成一段的签名）、段首「- 」「+ 」噪点（会被排成列表）
   ——第 9 轮（第 9 部 30:16–17）补：accent（英文词里的组合附加符 thé/oùr/quiçkly）、pua（私用区 U+E8BF → q;）、小写 tob→Job、
           himfelf(e)→himself(e)、and’tis→and ’tis、Ay/Afy bones→My、主语后 nas→was、tabe→take、空旁注
+  ——第 10 轮（第 4 部 12:5–6）补：序数词 IIth/Sth/2oth→11th/5th/20th、经卷章号 S→5、代词后 hall→shall、介词后 tle→the、uhen→when、the seet→feet、旁注 mibi→mihi
   head    漏进正文的页眉（「Chap. 31. An Exposition upon the Booke of JOB. Vers. 7.」）删掉
 """
 import argparse
@@ -197,6 +198,19 @@ def rules():
     R.append(('mw', re.compile(r'\bA(?:y|fy) (?=(?:bones|breath|soule|heart|dayes|God|flesh|eyes|life|spirit|sinews|feet|hands|wayes|sonne|son)\b)'), lambda m: 'My '))
     R.append(('mw', re.compile(r'\b(I|he|she|it|soule|which|that|who|there|this|what) nas\b'), lambda m: m.group(1) + ' was'))
     R.append(('tabe', re.compile(r'\btabe\b'), lambda m: 'take'))
+    # —— 第 10 轮（第 4 部 12:5–6 实读 20 页）
+    # 序数词里的数字读成字母：IIth→11th、Sth→5th、2oth→20th、I2th→12th（I→1、S→5、o→0，只在「数字串＋th」形状里换）
+    R.append(('num', re.compile(r'\b([0-9IS][0-9IoSl]?)(th)\b'),
+              lambda m: (m.group(1).translate(str.maketrans('ISol', '1501')) + m.group(2))
+              if re.search(r'[0-9]', m.group(1)) or m.group(1) in ('S', 'II', 'IS', 'SI') else m.group(0)))
+    # 经卷引用章号 5 读成 S：(Joh. S. 35.)、(2 Cor. S. 14.)
+    R.append(('num', re.compile(r'(?<=[(\s])((?:Joh|Psal|Isa|Chap|chap|Gen|Exod|Deut|Matth|Rom|Prov|Jer|Ezek|Hos|ver|vers|Rev|Revel|Luk|Mark|Acts?|Heb|Cor|Job)\.\s?)S(\.\s?\d)'),
+              lambda m: m.group(1) + '5' + m.group(2)))
+    R.append(('fs', re.compile(r'\b(I|you|he|we|they|ye|Ye|thou|it|she|You|We|He|They|Thou|It) hall\b'), lambda m: m.group(1) + ' shall'))
+    R.append(('th', re.compile(r'\b(to|in|of|as|by|at|on|for|from|with|and|is|was|that|upon|into|unto|all) tle\b'), lambda m: m.group(1) + ' the'))
+    R.append(('wh', re.compile(r'\buhen\b'), lambda m: 'when'))
+    R.append(('split', re.compile(r'\b([Ww])i ll\b'), lambda m: m.group(1) + 'ill'))   # 两截都在词表里（wi、ll），拆词规则不合
+    R.append(('fs', re.compile(r'\b(the|his|their|my|our|your) seet\b'), lambda m: m.group(1) + ' feet'))
     # 漏进正文的页眉
     R.append(('head', re.compile(r'\bCha[pn][.,-]?\s?\d{1,2}\.?\s+An Ex\w*\s+u\w*\s+\w+\s+Boo?[sk]\w*\s+\S{1,3}\s?\S{0,3}\s+V\w{2,5}[.,]?\s?\d{0,2}\.?'),
               lambda m: ''))
@@ -286,6 +300,8 @@ MARGIN_BODY = [
     ('p6/21-27', 'draw', 'it', 'out.'),              # p.787 影像
     ('p6/21-27', 'if', 'all', 'that'),               # p.795 影像
     ('p6/21-27', 'Benefactors,', 'or', 'Gratious'),  # p.795 影像              # p.785 影像
+    ('p4/12-5', 'is', 'al', 'temptation', 'a'),     # p.193 影像
+    ('p4/12-5', 'wi', 'll', 'not'),                  # p.191 影像（will 的后半截划进旁注，拆词规则再并回）
 ]
 
 
@@ -400,6 +416,11 @@ def sweep_md(md, log, where):
         log.append(('pua', where, m.group(0), 'q;'))
         return 'q;'
     md = re.sub('\ue8bf;?', pua, md)
+    # 第 10 轮：旁注拉丁文 mibi → mihi（h 读成 b；清理规则不进旁注，在这里全文改）
+    def mihi(m):
+        log.append(('latin', where, 'mibi', 'mihi'))
+        return 'mihi'
+    md = re.sub(r'\bmibi\b', mihi, md)
     # \u4eba\u5de5\u8868\u628a\u6574\u6761\u4e71\u7801\u65c1\u6ce8\u6539\u7a7a\u540e\u7559\u4e0b\u7684\u7a7a\u65c1\u6ce8
     def empty_margin(m):
         log.append(('junk', where, '[\u7a7a\u65c1\u6ce8]', ''))
@@ -414,12 +435,13 @@ def sweep_md(md, log, where):
                 log.append(('mword', where, f'{a} [..] {b}', whole))
                 md = rx.sub(lambda m: f'{whole} {m.group(1)}', md, 1)
     # 看图确认、被划进旁注的正文小词（人工表跨不了标签，在这里放回）：(段, 前词, 旁注词, 后词)
-    for w0, a, w, b in MARGIN_BODY:
+    for w0, a, w, b, *fix in MARGIN_BODY:     # 可带第 5 列：放回正文时改成的词（旁注栏把「a」连同括号读成「al」）
         if w0 == where:
             rx = re.compile(rf'(\b{re.escape(a)}) <span class="cy-margin">{re.escape(w)}</span> ({re.escape(b)})')
+            w2 = fix[0] if fix else w
             if rx.search(md):
-                log.append(('mword', where, f'{a} [{w}] {b}', f'{a} {w} {b}'))
-                md = rx.sub(lambda m: f'{m.group(1)} {w} {m.group(2)}', md, 1)
+                log.append(('mword', where, f'{a} [{w}] {b}', f'{a} {w2} {b}'))
+                md = rx.sub(lambda m: f'{m.group(1)} {w2} {m.group(2)}', md, 1)
     # 页顶漏进正文的页眉残片：页码锚点后「Vers. / verss.」紧跟一个只有数字的旁注（页眉节号被划进旁注）、
     # 或「An 〔页码〕 Exposition upon the Book of」（真正的逐节小标题节号都在行内，不受影响）
     def unhead(m):
