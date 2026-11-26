@@ -12,7 +12,7 @@ next_label: "Vol. III · To the Reader"
 ---
 
 <span class="jb-pb" data-facs="1"></span>
-<div class="jb-tp">
+<div class="jb-tp fr3">
 <div class="jb-tp-l s3 ls">AN</div>
 <div class="jb-tp-l s0 ls">EXPOSITION</div>
 <div class="jb-tp-l s4 ls">WITH</div>

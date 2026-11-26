@@ -211,6 +211,13 @@ layout: default
 .burroughs-wrap .jb-tp .it { font-style: italic; }
 .burroughs-wrap .jb-tp .ls { letter-spacing: .22em; }
 .burroughs-wrap .jb-tp sup { font-size: .45em; vertical-align: .95em; }
+/* 第 2–4 卷扉页：原书花饰框（从杜克藏本同版影像裁出，img/burroughs/tpN-frame.jpg，border-image 只取四边） */
+.burroughs-wrap .jb-tp.fr2, .burroughs-wrap .jb-tp.fr3, .burroughs-wrap .jb-tp.fr4 {
+  outline: none; border: 22px solid transparent; padding: 20px 22px 16px; }
+.burroughs-wrap .jb-tp.fr2 { border-image: url("{{ site.baseurl }}/img/burroughs/tp2-frame.jpg") 34 round; }
+.burroughs-wrap .jb-tp.fr3 { border-image: url("{{ site.baseurl }}/img/burroughs/tp3-frame.jpg") 34 round; }
+.burroughs-wrap .jb-tp.fr4 { border-image: url("{{ site.baseurl }}/img/burroughs/tp4-frame.jpg") 24 32 30 32 round; }
+@media (max-width: 600px) { .burroughs-wrap .jb-tp.fr2, .burroughs-wrap .jb-tp.fr3, .burroughs-wrap .jb-tp.fr4 { border-width: 14px; padding: 14px 8px 12px; } }
 /* 扉页出版人两栏，中间一对大括号（三人 } { 三人） */
 .burroughs-wrap .jb-tp-pub { display: flex; justify-content: center; font-size: 14px; line-height: 1.35; margin: 4px 0 6px; text-align: left; }
 .burroughs-wrap .jb-tp-pub .a { padding-right: 10px; border-right: 1.5px solid #2a2a2a; border-radius: 0 10px 10px 0; text-align: right; }
