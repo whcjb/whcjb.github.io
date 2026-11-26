@@ -105,8 +105,8 @@ def apply(md, groups_gid, dec, sites):
         trail = re.search(r'\**$', s).group(0)
         inner = v
         if kind == 'c' and inner:
-            m = re.match(r'^(⁀?)(.*?)([.,;:!?)]*)$', inner)   # 连写号留在方括号外，落字时才认得出
-            inner = f'{m.group(1)}{CONJ_L}{m.group(2)}{CONJ_R}{m.group(3)}'
+            m = re.match(r'^(⁀?)(.*?)([.,;:!?)]*)(⁀?)$', inner)   # 连写号留在方括号外，落字时才认得出
+            inner = f'{m.group(1)}{CONJ_L}{m.group(2)}{CONJ_R}{m.group(3)}{m.group(4)}'
         mid = s[len(lead):len(s) - len(trail)] if trail else s[len(lead):]
         if '*' in mid:
             sw, vw = s.split(' '), inner.split(' ')
