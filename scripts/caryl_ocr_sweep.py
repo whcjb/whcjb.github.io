@@ -328,6 +328,14 @@ def rules():
     R.append(('fs', re.compile(r'\b(he|God|all|hath|hast|have|not|company|nothing|and) lest (?=(?:him|them|us|me)\b(?! (?:should|be|bring|judge|mar)\b))'),
               lambda m: m.group(1) + ' left '))
     R.append(('mw', re.compile(r'\blest me (?=(?:bring|judge|mar|should|be|fall)\b)'), lambda m: 'lest we '))
+    # —— 第 21 轮（第 6 部 21:11–13 实读 17 页）
+    R.append(('th', re.compile(r"\bT['’]h(ey|ese|at|e|ere|em|en|is|ose)\b"), lambda m: 'Th' + m.group(1)))   # 撇号噪点插进 Th（p82「T'hah」是 That hath，不碰）
+    R.append(('mw', re.compile(r'\bmomen\b(?! (?:any|grass)\b)'), lambda m: 'women'))   # 「momen any」＝momentany、「the momen grass」＝mown，不碰
+    R.append(('ll', re.compile(r'(?<=\w)!!'), lambda m: 'll'))                          # natura!!／special!!／a!! → naturall／speciall／all
+    R.append(('split', re.compile(r'\binus\b'), lambda m: 'in us'))
+    R.append(('mw', re.compile(r'\bhour (?=(?:hand|hands|selves|heart|hearts)\b)'), lambda m: 'your '))   # 斜体 y 读成 h
+    R.append(('th', re.compile(r'\b(he|I|it|God|she|they|we|ye|you) bad (?=(?:not|been|said|done)\b)'), lambda m: m.group(1) + ' had '))   # 「so bad not to have」不碰
+    R.append(('th', re.compile(r'\bIe (?=(?:is|hath|was|notes|renders|breaks|hurrieth)\b)'), lambda m: 'It '))   # Ie are／walk／shall see 多是 We，不立规则
     # 漏进正文的页眉
     R.append(('head', re.compile(r'\bCha[pn][.,-]?\s?\d{1,2}\.?\s+An Ex\w*\s+u\w*\s+\w+\s+Boo?[sk]\w*\s+\S{1,3}\s?\S{0,3}\s+V\w{2,5}[.,]?\s?\d{0,2}\.?'),
               lambda m: ''))
@@ -671,7 +679,13 @@ def main():
     log, outs = [], {}
     for p in PARTS:
         for f in sorted((BASE / p / 'fixed').glob('*.md')):
-            outs[f] = sweep_md(f.read_text(encoding='utf-8'), log, f'{p}/{f.stem}')
+            md = f.read_text(encoding='utf-8')
+            for _ in range(5):               # 迭代到不动点：一条规则的结果会露出另一条的匹配（签名「A a a a 2」、we mill），第 21 轮整链重跑查出单遍留 7 处
+                n = len(log)
+                md = sweep_md(md, log, f'{p}/{f.stem}')
+                if len(log) == n:
+                    break
+            outs[f] = md
     c = collections.Counter(x[0] for x in log)
     print('全书同类清理：' + '，'.join(f'{k} {v}' for k, v in c.most_common()), file=sys.stderr)
     for k in c:

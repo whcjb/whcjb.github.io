@@ -28,6 +28,7 @@
 | 18 | 2026-11-26 | 第 6 部 19:13–14（印本 pp. 232–253） | Packer 纸本 | 22 | 约 125（落表 106 条；正文约 115） | ≈ 5.7（正文 5.2） | 0 |
 | 19 | 2026-11-26 | 第 4 部 12:17–18（印本 pp. 265–284） | Packer 纸本 | 20 | 约 230（落表 239 条；正文约 200） | ≈ 11.5（正文 10） | 0 |
 | 20 | 2026-11-26 | 第 6 部 18:17–21（印本 pp. 114–136） | Packer 纸本 | 23 | 约 190（落表 169 条；正文约 160） | ≈ 8.3（正文 7） | 0 |
+| 21 | 2026-11-26 | 第 6 部 21:11–13（印本 pp. 664–680） | Packer 纸本 | 17 | 约 150（落表 124 条；正文约 125） | ≈ 8.8（正文 7.4） | 0 |
 
 ## 第 1 轮发现的错误类别与全书清理
 
@@ -503,4 +504,30 @@ p8 重跑产生的改动全部撤回。随后改从上线的四部（p4/p6/p82/p
 | spall → shall；bnom → know | 2 | 少量（多在存疑标记里，改了推定字） |
 
 原书照录：Hester、Geneallogies、unappliable、Pharoab、contentfully、consanguitie、resurrction、the Isles shall be astonished（本段斜体经文照印本）。
+
+## 第 21 轮发现的问题与全书处理（第 6 部 21:11–13，17 页）
+
+本段错处约 150（落表 124 条，其中 10 条是把 OCR 给成正确拼法的原书误植改回）：正文每页约 7.4，旁注 13 条（希伯来／拉丁）照影像整条重录。
+行末 is 被切进旁注 3 处（p.675 两处、p.678），用 `@正文` 放回；页底签名「RIrr2」、跨页小标题并段，逐条改。
+p.680 下半页属 21-14 段，同一张图读过，6 处一并落表（段首经文框 There forè／me desire、wve desire na the trn ledge）。
+
+文字类（`caryl_ocr_sweep.py` 新规则）：
+
+| 类别 | 本段 | 全书命中 |
+|---|---|---|
+| 撇号噪点插进 Th：T'hey／T’hat／T’he → They／That／The（p82「T'hah」不碰） | 2 | 8 |
+| momen → women（斜体 w 读成 m；「momen any」＝momentany、「the momen grass」不碰） | 1 | 9 |
+| 词尾 !! → ll（natura!!／special!!／a!!） | 1 | 3 |
+| inus → in us | 1 | 6 |
+| hour hand(s)／selves → your（斜体 y 读成 h） | 1 | 3 |
+| 代词后 bad not／been → had（「so bad not to have」不碰） | 1 | 4 |
+| Ie is／hath／notes… → It（Ie are／walk／shall see 多是 We，不立规则） | 1 | 约 16 |
+
+工具修正：
+- 清理脚本一遍到不了不动点：整链重跑后再试跑，仍有签名「A a a a 2」、we mill 等 7 处要第二遍才清。改为每段迭代到不动点（至多 5 遍）。
+- 人工表两对跨页断词条目（p4 12-5 mo-/narchy、p9 30-16 afflicti-/on）次序不稳：先补前半时纯文本里整词已经拼成，被判「已落盘」跳过，
+  接着删后半，新链上会出「spiritual momust」「afflictior」。上线版是旧链产物所以没坏；两对都改成先删后半、再补前半，p9 那处顺带补回 affliction 后的空格。
+
+原书误植照录（本段）：attecedent、exponnd、unlawfnll、conntenance、counteuance、houle、rhis、coporally、rlations、spendiug、heen；
+he had is family、troublons、Ezek. 39 38（实为 36:38）照印本；thns（And thus Job）、soand（vhead 的 sound）两处 OCR 已给正确拼法，未改回。
 
