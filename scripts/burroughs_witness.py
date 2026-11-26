@@ -512,6 +512,9 @@ def locate_site(s, wcache):
         elif len(rh) == 1:
             pts, how = [where[rh[0][0]]], '右锚'
         else:
+            est = estimate(s, lv, leaf)
+            if est:
+                return (wid,) + est
             continue
         li = pts[0][0]
         same = [p for p in pts if p[0] == li]
@@ -526,6 +529,43 @@ def locate_site(s, wcache):
             cx = bx[0][2] + 120                                   # 左锚尾往右一点；跨行时缺字在下一行行首，裁高度已含
         return wid, li, (cx - 1, y0, cx + 1, y1), how
     return None
+
+
+_TP = None
+
+
+def estimate(s, lv, leaf):
+    """估位：缺字在录入本本页的词序比例 → 证人本叶正文行的同一比例处。返回 (leaf, bbox, '估位')。"""
+    global _TP
+    if _TP is None:
+        _TP = tcp_pages()
+    page = next((w for po, lab, w in _TP[s['vol']] if po == s['po']), None)
+    if not page or s.get('stream') == 'note':
+        return None
+    keys = [key(w) for w in page]
+    L = [key(w) for w in s['left'][-3:]]
+    idx = None
+    for i in range(len(keys) - len(L) + 1):
+        if keys[i:i + len(L)] == L:
+            idx = i + len(L)
+            break
+    if idx is None:
+        return None
+    frac = idx / max(1, len(keys))
+    words = lv[leaf]['words']
+    lines = collections.OrderedDict()
+    for t, ln, c in words:
+        lines.setdefault(ln, []).append(c)
+    rows = sorted(((sum(c[1] + c[3] for c in cs) / 2 / len(cs), cs) for cs in lines.values() if len(cs) >= 4),
+                  key=lambda x: x[0])
+    if len(rows) < 8:
+        return None
+    k = min(len(rows) - 1, int(frac * len(rows)))
+    y = rows[k][0]
+    xs = [c[0] for _, cs in rows for c in cs] + [c[2] for _, cs in rows for c in cs]
+    x0, x1 = min(xs), max(xs)
+    lh = sum(c[1] - c[3] for c in rows[k][1]) / len(rows[k][1])
+    return leaf, ((x0 + x1) / 2 - 1, y - lh / 2, (x0 + x1) / 2 + 1, y + lh / 2), '估位'
 
 
 _PL = None
@@ -595,6 +635,8 @@ def sheets(gids, name, per=16):
             continue
         items.append((g, s, loc))
     CW, CH = 980, 200
+    if items and all(x[2][3] == '估位' for x in items):        # 估位批：整行宽、九行高，不压扁
+        CH = 470
     SRC_W = 1400                                                   # 原图上裁 1400 宽（约正文一行半）再缩到 980
     lines = []
     for k in range(0, len(items), per):
@@ -608,8 +650,11 @@ def sheets(gids, name, per=16):
             sc = im.size[0] / wcache[wid][leaf]['w']
             cx, cy = (x0 + x1) / 2 * sc, (y0 + y1) / 2 * sc
             lh = max(60, (y1 - y0) * sc)
-            hw = SRC_W * sc * wcache[wid][leaf]['w'] / im.size[0] / 2 if False else SRC_W / 2
+            hw = SRC_W / 2
             box = (int(cx - hw), int(cy - lh * 1.9), int(cx + hw), int(cy + lh * 1.9))
+            if how == '估位':                                       # 估位不准：整行宽、上下各四行半
+                hw = min(im.size[0] / 2, 1000 * sc)
+                box = (int(cx - hw), int(cy - lh * 4.5), int(cx + hw), int(cy + lh * 4.5))
             crop = im.crop(box).resize((CW, CH))
             c, r = n % cols, n // cols
             sheet.paste(crop, (c * CW, r * (CH + 24) + 24))
