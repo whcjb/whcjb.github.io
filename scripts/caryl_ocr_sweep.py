@@ -211,6 +211,11 @@ def rules():
     R.append(('wh', re.compile(r'\buhen\b'), lambda m: 'when'))
     R.append(('split', re.compile(r'\b([Ww])i ll\b'), lambda m: m.group(1) + 'ill'))   # 两截都在词表里（wi、ll），拆词规则不合
     R.append(('fs', re.compile(r'\b(the|his|their|my|our|your) seet\b'), lambda m: m.group(1) + ' feet'))
+    # —— 第 11 轮（第 6 部 21:4–6 实读 20 页）
+    R.append(('wh', re.compile(r"\bm'h(at|y)\b"), lambda m: 'wh' + m.group(1)))          # 斜体 W 读成 m'（n' 已有规则）
+    R.append(('tis', re.compile(r"(?<=[a-z]\.)(?='Tis\b)"), lambda m: ' '))             # 句点后缺空格：turns.'Tis
+    R.append(('fs', re.compile(r'\bfles\b'), lambda m: 'flesh'))
+    R.append(('mw', re.compile(r'\b(for|why|For|Why) me (are|doe|have|shall)\b'), lambda m: f'{m.group(1)} we {m.group(2)}'))   # 斜体 w 读成 m：for me have → for we have
     # 漏进正文的页眉
     R.append(('head', re.compile(r'\bCha[pn][.,-]?\s?\d{1,2}\.?\s+An Ex\w*\s+u\w*\s+\w+\s+Boo?[sk]\w*\s+\S{1,3}\s?\S{0,3}\s+V\w{2,5}[.,]?\s?\d{0,2}\.?'),
               lambda m: ''))
@@ -301,6 +306,7 @@ MARGIN_BODY = [
     ('p6/21-27', 'if', 'all', 'that'),               # p.795 影像
     ('p6/21-27', 'Benefactors,', 'or', 'Gratious'),  # p.795 影像              # p.785 影像
     ('p4/12-5', 'is', 'al', 'temptation', 'a'),     # p.193 影像
+    ('p6/21-4', 'more.', 'ye', '', ''),               # p.644 影像：行首 ye 被划进旁注（已在人工表补回正文），旁注删
     ('p4/12-5', 'wi', 'll', 'not'),                  # p.191 影像（will 的后半截划进旁注，拆词规则再并回）
 ]
 
@@ -415,15 +421,15 @@ def sweep_md(md, log, where):
     def pua(m):
         log.append(('pua', where, m.group(0), 'q;'))
         return 'q;'
-    md = re.sub('\ue8bf;?', pua, md)
+    md = re.sub('(?<=[A-Za-z])\ue8bf;?', pua, md)   # 第 11 轮：只在词尾（-que）改；正文里单独一个的是别的字读坏（p6 21-4「no \ue8bf as?」= Gods）
     # 第 10 轮：旁注拉丁文 mibi → mihi（h 读成 b；清理规则不进旁注，在这里全文改）
     def mihi(m):
         log.append(('latin', where, 'mibi', 'mihi'))
         return 'mihi'
     md = re.sub(r'\bmibi\b', mihi, md)
-    # \u4eba\u5de5\u8868\u628a\u6574\u6761\u4e71\u7801\u65c1\u6ce8\u6539\u7a7a\u540e\u7559\u4e0b\u7684\u7a7a\u65c1\u6ce8
+    # 人工表把整条乱码旁注改空后留下的空旁注
     def empty_margin(m):
-        log.append(('junk', where, '[\u7a7a\u65c1\u6ce8]', ''))
+        log.append(('junk', where, '[空旁注]', ''))
         return ''
     md = re.sub(r'<span class="cy-margin">\s*</span> ?', empty_margin, md)
     # 看图确认、旁注插在一个正文词中间（「ret [旁注] neweth」）：并成一词、旁注挪到词后
@@ -437,11 +443,11 @@ def sweep_md(md, log, where):
     # 看图确认、被划进旁注的正文小词（人工表跨不了标签，在这里放回）：(段, 前词, 旁注词, 后词)
     for w0, a, w, b, *fix in MARGIN_BODY:     # 可带第 5 列：放回正文时改成的词（旁注栏把「a」连同括号读成「al」）
         if w0 == where:
-            rx = re.compile(rf'(\b{re.escape(a)}) <span class="cy-margin">{re.escape(w)}</span> ({re.escape(b)})')
+            rx = re.compile(rf'(\b{re.escape(a)}) <span class="cy-margin">{re.escape(w)}</span> ?({re.escape(b)})')
             w2 = fix[0] if fix else w
             if rx.search(md):
                 log.append(('mword', where, f'{a} [{w}] {b}', f'{a} {w2} {b}'))
-                md = rx.sub(lambda m: f'{m.group(1)} {w2} {m.group(2)}', md, 1)
+                md = rx.sub(lambda m: (f'{m.group(1)} {w2} {m.group(2)}' if w2 else f'{m.group(1)} {m.group(2)}').rstrip(' ') + (' ' if m.group(2) else ''), md, 1)
     # 页顶漏进正文的页眉残片：页码锚点后「Vers. / verss.」紧跟一个只有数字的旁注（页眉节号被划进旁注）、
     # 或「An 〔页码〕 Exposition upon the Book of」（真正的逐节小标题节号都在行内，不受影响）
     def unhead(m):
@@ -459,6 +465,11 @@ def sweep_md(md, log, where):
         if new == md:
             break
         md = new
+    # 第 11 轮（排在剔书帖签名之后：签名常夹在接字和页码锚点之间）：页末接字没剔掉，与下页首词重复（「complaining. Having <pb>Having given」）；接字前若被劈了段，一并并回
+    def dupcw(m):
+        log.append(('catch', where, m.group(2) + ' [pb] ' + m.group(2), m.group(2)))
+        return (' ' if m.group(1) else '') + m.group(3)
+    md = re.sub(r'(\n\n)?\b([A-Za-z]{2,}) (<span class="cy-pb"[^>]*></span>)(?=\2\b)', dupcw, md)
     def jhn(m):
         r = job_or_john(m)
         if r:

@@ -40,6 +40,10 @@ TCP 编目把第 12 部年份记作 1653，扉页印的是 1666，以扉页为�
 | 9 | 30–31 | 已上线（OCR） |
 
 TCP 未录，1676–77 对开合订本也不在 TCP；AGES、Logos 等均无录入本（2026-11-24 查过，只有 1836 年节本与现代节本）。
+2026-11-26 再查：TCP 全目录（TCP.csv）里卡里尔名下《约伯记讲解》只有上表 8 个编号，4、6、8、9 部无任何版本（含再版、对开本）；
+Monergism 2025 年起出现代整理本（calibre 制 PDF/ePub），只出到第 1–3 卷（1–10 章，TCP 已有的部分）；Dust and Ashes／RHB 12 卷本是影印；
+Digital Puritan、IA、Regent College（Packer 藏本）、Google Books 都是扫描件；Digital Puritan 评论区有人（2020-10，James Dina）自称私下录了 1–20 章「现代字体」本、
+未公开，另一人（2025-06）现代化到第 8 章。结论：缺的 4 部没有可用的人工录入本。
 处理链与各步实测都写在脚本文首，次序：
 
 1. `caryl_ocr.py`：取图（curl，系统 Python 的 SSL 连 IA 会卡死）→ 背景展平 → kraken + CATMuS-Print Large。
