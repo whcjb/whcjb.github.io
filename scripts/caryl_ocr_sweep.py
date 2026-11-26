@@ -87,7 +87,8 @@ def rules():
     R.append(('job', re.compile(r'\b(?:Tob|fob|Fob|Sob|sob|Jub|Iob|Jeb|Ieb|lob|Iub)([\'’]?s?)\b'), lambda m: 'Job' + m.group(1)))   # sob：第 5 轮
     R.append(('job', re.compile(r'(?<!\ba )(?<!\bthe )(?<!\bhis )\bjob(\'?s?)\b'), lambda m: 'Job' + m.group(1)))
     # way
-    R.append(('way', re.compile(rf'(?<!nay to )(?<!yea to )\b({DETS}) (?:may|nay|var|mav)\b(?! be\b)'), lambda m: m.group(1) + ' way'))   # 「yea to their yea, and nay to their nay」不碰
+    R.append(('way', re.compile(rf'(?<!nay to )(?<!yea to )\b({DETS}) (?:may|nay|var|mav)\b(?! be\b)(?<!same may)(?<!same mav)'), lambda m: m.group(1) + ' way'))
+    # 「the same may we to Bildad」：same＋may＋人称代词是情态动词，第 20 轮 p.114 影像（改成 way 是误伤）   # 「yea to their yea, and nay to their nay」不碰
     R.append(('way', re.compile(r'\b(out of (?:the|that|his|their|my) )(?:may|nay|man|var)\b'), lambda m: m.group(1) + 'way'))
     # modal
     R.append(('modal', re.compile(r'\b(I|we|wee|he|hee|they|ye|yee|you|thou|she|it|who|which) (mill|mil|mould|mas|vas|vere|mere)\b'),
@@ -319,6 +320,14 @@ def rules():
     R.append(('kr', re.compile(r'(?<![-\w])Rings\b'), lambda m: 'Kings'))     # 本书大写 Rings 全是 Kings（K 读成 R；1 Rings 17、the Rings gate）
     R.append(('mw', re.compile(r'(?<!prudent )(?<!\bin )\bvise\b(?! ?tatione)'), lambda m: 'wise'))   # 「a prudent vise」（wife）、拉丁 vise tatione 不碰
     R.append(('th', re.compile(r'\bsucb\b'), lambda m: 'such'))
+    # —— 第 20 轮（第 6 部 18:17–21 实读 23 页）
+    R.append(('th', re.compile(r'\bbave\b'), lambda m: 'have'))       # 斜体 h 读成 b（第 1 层没碰：语料里有 1 次 bave）
+    R.append(('fs', re.compile(r'\bspall\b'), lambda m: 'shall'))
+    R.append(('mw', re.compile(r'\bbnom\b'), lambda m: 'know'))
+    # left 的 f 读成长 s：he／God／all／hath／not … lest him／them／us → left（连词 lest 前面不会是这些词）
+    R.append(('fs', re.compile(r'\b(he|God|all|hath|hast|have|not|company|nothing|and) lest (?=(?:him|them|us|me)\b(?! (?:should|be|bring|judge|mar)\b))'),
+              lambda m: m.group(1) + ' left '))
+    R.append(('mw', re.compile(r'\blest me (?=(?:bring|judge|mar|should|be|fall)\b)'), lambda m: 'lest we '))
     # 漏进正文的页眉
     R.append(('head', re.compile(r'\bCha[pn][.,-]?\s?\d{1,2}\.?\s+An Ex\w*\s+u\w*\s+\w+\s+Boo?[sk]\w*\s+\S{1,3}\s?\S{0,3}\s+V\w{2,5}[.,]?\s?\d{0,2}\.?'),
               lambda m: ''))

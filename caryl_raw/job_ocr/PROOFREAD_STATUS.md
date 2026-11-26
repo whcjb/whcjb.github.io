@@ -27,6 +27,7 @@
 | 17 | 2026-11-26 | 第 9 部 31:34（印本 pp. 710–725） | Packer 纸本 | 16 | 约 140（落表 114 条；正文约 120） | ≈ 8.8（正文 7.5） | 0 |
 | 18 | 2026-11-26 | 第 6 部 19:13–14（印本 pp. 232–253） | Packer 纸本 | 22 | 约 125（落表 106 条；正文约 115） | ≈ 5.7（正文 5.2） | 0 |
 | 19 | 2026-11-26 | 第 4 部 12:17–18（印本 pp. 265–284） | Packer 纸本 | 20 | 约 230（落表 239 条；正文约 200） | ≈ 11.5（正文 10） | 0 |
+| 20 | 2026-11-26 | 第 6 部 18:17–21（印本 pp. 114–136） | Packer 纸本 | 23 | 约 190（落表 169 条；正文约 160） | ≈ 8.3（正文 7） | 0 |
 
 ## 第 1 轮发现的错误类别与全书清理
 
@@ -484,4 +485,22 @@ p8 重跑产生的改动全部撤回。随后改从上线的四部（p4/p6/p82/p
 
 不改：whichis／mhichis 等连写约 27 处，与 ofit 同一处理（部分原书连排），只按影像逐条改。
 原书照录：Jer.19.11（实为 Isa.19，原书误注）、thatGod、fouls of the Heaven、Generalissimo、Rehoboham。
+
+## 第 20 轮发现的问题与全书处理（第 6 部 18:17–21，23 页）
+
+本段错处约 190（落表 169 条）：正文每页约 7，旁注 22 条（希伯来／拉丁）照影像整条重录。
+页首续行 4th) 读成 1)、跨页段落劈开，逐条改。
+
+撤回（误伤）：`way` 规则把「the same may we to Bildad」（p.114，情态动词 may）改成了 way。规则加了排除：same 之后的 may／mav 不改。全书 2 处恢复。
+
+文字类（`caryl_ocr_sweep.py` 新规则）：
+
+| 类别 | 本段 | 全书命中 |
+|---|---|---|
+| bave → have（斜体 h 读成 b；语料里有一次 bave，第 1 层没碰） | 1 | 25 |
+| left 读成 lest：he／God／all／hath／not／nothing … lest him／them／us → left | 0 | 10 |
+| lest me bring／judge／mar → lest we | 0 | 3 |
+| spall → shall；bnom → know | 2 | 少量（多在存疑标记里，改了推定字） |
+
+原书照录：Hester、Geneallogies、unappliable、Pharoab、contentfully、consanguitie、resurrction、the Isles shall be astonished（本段斜体经文照印本）。
 
