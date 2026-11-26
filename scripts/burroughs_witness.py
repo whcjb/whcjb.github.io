@@ -440,6 +440,7 @@ def put(path):
                 raise ValueError(f'{g}: 原串 {t!r} 有 {len(toks)} 处缺，给了 {len(parts)} 段')
             it = iter(parts)
             v = TOKRE.sub(lambda m: next(it), t)
+            v = re.sub(r'(?<=\S)⁀ (?=\S)|(?<=\S) ⁀(?=\S)', '', v)   # 段间连写号（e⁀|xt）当场并词，落字时只认首尾的 ⁀
             for tok, part in zip(toks, parts):
                 if tok.startswith('•') and len(part) != len(tok) and not note.startswith('字数'):
                     raise ValueError(f'{g}: {tok} 缺 {len(tok)} 字，给了 {part!r}')
