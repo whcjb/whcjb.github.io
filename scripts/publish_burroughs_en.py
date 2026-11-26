@@ -9,6 +9,7 @@
 巴罗夫讲到 13:11 为止，书首页第 14 章标灰。
 """
 import argparse
+import collections
 import json
 import sys
 from pathlib import Path
@@ -40,8 +41,19 @@ class Book(tcp_publish.Book):
         return pages
 
 
+def counts():
+    """各类判读条数（首页说明照此生成，表改首页跟着变）。"""
+    rv = tc._tsv('gap_review.tsv')
+    ap = tc._tsv('gap_approved.tsv')
+    k = collections.Counter(r[2] for r in rv if len(r) > 2 and r[1] not in ('?', ''))
+    a = collections.Counter(r[2] for r in ap if len(r) > 2)
+    return dict(ocr=k['证人OCR'], img=k['看图'], ed1=a['初版同处'] + a['初版影像'],
+                q=sum(1 for r in rv if r[1] == '?'))
+
+
 def about_en(f):
-    vols = '; '.join(f'Vol. {i} (ch. {c[0]}–{c[-1]}, {y}): {t}' for i, (t, y, c) in enumerate(VOLS, 1))
+    c = counts()
+    vols = '; '.join(f'Vol. {i} (ch. {ch[0]}–{ch[-1]}, {y}): {t}' for i, (t, y, ch) in enumerate(VOLS, 1))
     return [
         '<p><b>About this text.</b> Burroughs preached through Hosea in weekly lectures at St Michael’s, Cornhill, London, '
         'from 1642 until his death in November 1646. The lectures were published in four volumes: chapters 1–3 in his '
@@ -56,11 +68,21 @@ def about_en(f):
         'Marginal notes are printed as footnotes. The tables of contents, indexes and booksellers’ advertisements are not '
         'included.</p>',
         f'<p><b>Illegible places.</b> The transcription is incomplete at {f["n"]} places: letters or words the keyers could not '
-        'read from the film images, and the Greek and Hebrew, which they did not transcribe. None of these has yet been '
-        'checked against the page images; they are shown <span class="jb-gap">in red</span>.</p>']
+        'read from the film images, and the Greek and Hebrew, which they did not transcribe. They are being filled from '
+        'scans of actual copies on the Internet Archive (Duke University Library, and for chapters 8–10 also the West '
+        'Virginia Wesleyan copy): '
+        f'{c["ocr"]} places where the OCR of a copy of the <i>same edition</i> reads, at the same place, a word that agrees '
+        'letter for letter with what the keyers did transcribe (checked against the page images by sample); '
+        f'{c["img"]} places read directly from the page images of the same edition. These are printed as plain text. '
+        'For chapters 1–3 no scan of the 1652 edition is available; '
+        f'{c["ed1"]} places are supplied from the first edition (1643) at the same place and shown in '
+        '<span class="jb-conj">[brackets]</span>. '
+        f'{c["q"]} places are damaged in the scanned copy as well and remain open; the rest have not yet been checked '
+        'and are shown <span class="jb-gap">in red</span>.</p>']
 
 
 def about_zh(f):
+    c = counts()
     return [
         '<p class="jb-note-zh"><b>文本说明。</b>巴罗夫自 1642 年起在伦敦康希尔圣米迦勒堂（St Michael’s, Cornhill）的周间讲座上'
         '逐节讲解何西阿书，直到 1646 年 11 月去世。讲稿分四卷出版：第 1–3 章生前即出（此处用 1652 年合订本），'
@@ -70,8 +92,12 @@ def about_zh(f):
         '保留原书拼写与斜体，长 ſ 作 s；印本页码保留为页内锚点，各卷页码自 1 起。'
         '第 1–3 章一讲一页，标出每讲所讲的经节（常从上一讲讲到的那节中间接着讲，故节段前后相叠）；'
         '第 4–13 章照原书分段，每页一段经文。页边旁注排成页底脚注。各卷目录、索引与书商广告未收。</p>',
-        f'<p class="jb-note-zh">录入本不完整之处共 {f["n"]} 处，包括录入者读不出的字母和词，以及没有录入的希腊文、希伯来文；'
-        '这些都还没有对照原书影像补出，正文中<span class="jb-gap">标红</span>留在明面。</p>']
+        f'<p class="jb-note-zh">录入本不完整之处共 {f["n"]} 处，包括录入者读不出的字母和词，以及没有录入的希腊文、希伯来文。'
+        '正逐处对照 Internet Archive 上的原书实物扫描补出（杜克大学藏本；第 8–10 章另有西弗吉尼亚卫斯理学院藏本）：'
+        f'同版扫描的 OCR 在同一处读出、且与录入本已录字母逐字相合的 {c["ocr"]} 处（抽样对图核过）；'
+        f'直接看同版影像读出的 {c["img"]} 处。这两类直接补成正文，不加标记。'
+        f'第 1–3 章找不到 1652 年版的扫描，{c["ed1"]} 处据 1643 年初版同处补出，正文以<span class="jb-conj">[方括号]</span>另色标出。'
+        f'扫描本同处也残缺、读不出的 {c["q"]} 处列在文末；其余尚未核对，正文中<span class="jb-gap">标红</span>留在明面。</p>']
 
 
 BOOK = Book(
@@ -81,7 +107,10 @@ BOOK = Book(
     front=_meta('front'), back=_meta('back'), back_label='Appended Matter',
     all_chapters=list(range(1, 15)),
     about_en=about_en, about_zh=about_zh,
-    witness_zh='原版影像',
+    witness_zh='原书扫描影像',
+    conj_note_col=4,
+    conj_intro_zh='以下各处在 1652 年录入本中读不出，1652 年版又无扫描可查，据 1643 年初版同处补出。初版与 1652「新校」再版不是同一版，'
+                  '补出的字只证明初版此处如此。',
     margin_footnotes=True)
 
 

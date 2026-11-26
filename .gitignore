@@ -144,3 +144,5 @@ bridges_raw/psalm119/work/
 # 卡里尔约伯记缺部页图（可由 scripts/caryl_ocr.py fetch 重建）
 caryl_raw/job_ocr/*/img/
 caryl_raw/job_ocr/*/alto/
+# 巴罗夫何西阿书：IA 证人 djvu.xml、页码表、页图（可由 scripts/burroughs_witness.py fetch 重建）
+burroughs_raw/hosea/witness/
