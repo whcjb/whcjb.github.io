@@ -31,6 +31,7 @@
 | 21 | 2026-11-26 | 第 6 部 21:11–13（印本 pp. 664–680） | Packer 纸本 | 17 | 约 150（落表 124 条；正文约 125） | ≈ 8.8（正文 7.4） | 0 |
 | 22 | 2026-11-26 | 第 4 部 14:3–4（印本 pp. 562–578） | Packer 纸本 | 17 | 约 150（落表 128 条；正文约 130） | ≈ 8.8（正文 7.6） | 0 |
 | 23 | 2026-11-27 | 第 9 部 30:15（印本 pp. 133–151） | Packer 纸本 | 19 | 约 175（落表 148 条；正文约 150） | ≈ 9.2（正文 7.9） | 0 |
+| 24 | 2026-11-27 | 第 6 部 20:20–23（印本 pp. 541–563） | Packer 纸本 | 23 | 约 230（落表 177 条；正文约 185） | ≈ 10（正文 8） | 0 |
 
 ## 第 1 轮发现的错误类别与全书清理
 
@@ -591,4 +592,31 @@ possibilitie、worthlesnesse），按位置对上就被「改正」成 immortali
 
 原书误植照录（本段）：dee（God dee set）、rected（证人层给成了 erected）、be be（shall be be as the morning）。
 本段几处 of it 印本字距看得出分开（p.140、144、149、151），只在本段按影像改；全书 ofit 仍照第 3 轮的判断不动。
+
+## 第 24 轮发现的问题与全书处理（第 6 部 20:20–23，23 页）
+
+本段错处约 230（落表 177 条）：正文每页约 8，旁注 25 条（拉丁／希伯来／希腊）照影像重录，本段旁注几乎条条读坏。
+其余成片的：长 s 与 f 混读（sulnesse、surther、lest＝left）、斜体 w 读成 m／n（mrath、mealthy、n'hen）、页底书帖签名漏进正文（Aaaa、Bbbb2、Cccc）、
+p.549 两行次序错乱（「his Secondly, Others expound … family.」）、p.550 旁注首行漏、旁注里的 a 落进正文。
+
+结构类（`caryl_ocr_sweep.py` 的页缝处理）：
+
+| 类别 | 全书 |
+|---|---|
+| 页序数字紧贴存疑标记（`<span class="cy-ocr">Hhhh</span>2`），签名剥离认不出 → 先补空格 | 6（Hhhh 2、XXXX 2、Cecc 2、qqq 2、CCCCc 2） |
+| 签名＋接字被拼进末行行中（「are Thus A a a a a justly punished」）→ 人工表 1 条（p6 21-19） | 1 |
+
+文字类（新规则）：
+
+| 类别 | 本段 | 全书命中 |
+|---|---|---|
+| be／is／nothing／meat／are lest → left（「say nothing lest they」是连词，不碰；22 处逐条看过） | 7 | 20 |
+| surther → further | — | 8 |
+| sully → fully（「To sully the spoyling」另看，不碰） | — | 5 |
+| shal!／til! → shall／till | 1 | 3 |
+| Nhen／n'hen → When／when；hom farre／great → how | 3 | 3 |
+| (Ia. → (Isa.；satis fled → satisfied；days so all be → shall be | 3 | 4 |
+
+原书误植照录（本段）：canuot、Nothiug、hononred、participiation、amay、spitits、diffeeence、mnst、drunkenenesse、sinfnlly；
+原书拼法 sorow、claping、conveniant 照录。
 

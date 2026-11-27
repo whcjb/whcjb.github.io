@@ -357,6 +357,18 @@ def rules():
     R.append(('ll', re.compile(r'\b(what|whom)! (?=(?:have|shall|will|am|doe|did|know)\b)'), lambda m: m.group(1) + ' I '))   # what! have → what I have
     R.append(('mw', re.compile(r'(?:(?<=\boppressor )|(?<=\bcord ))mas\b'), lambda m: 'was'))
     R.append(('mw', re.compile(r'\bany mas\b(?= in\b)'), lambda m: 'any man'))
+    # —— 第 24 轮（第 6 部 20:20–23 实读 23 页）
+    R.append(('fs', re.compile(r'\bsurther\b'), lambda m: 'further'))                               # f 读成 s
+    R.append(('fs', re.compile(r'(?<![Tt]o )\bsully\b'), lambda m: 'fully'))                          # 「To sully the spoyling」另看
+    R.append(('fs', re.compile(r'\b(be|is|nothing|meat|thing|are) lest\b(?! (?:they|he|we|ye|you|I|it|she|thou)\b)'),
+              lambda m: m.group(1) + ' left'))                                                          # 「say nothing lest they should」是连词，不碰
+    R.append(('isa', re.compile(r'\(\s?Ia\.(?=\s?\d)'), lambda m: '(Isa.'))
+    R.append(('split', re.compile(r'\bsatis fled\b'), lambda m: 'satisfied'))
+    R.append(('ll', re.compile(r'\b(shal|til|wil|stil)!(?= )'), lambda m: m.group(1) + 'l'))
+    R.append(('mw', re.compile(r"\bn'hen\b"), lambda m: 'when'))
+    R.append(('mw', re.compile(r'\bNhen\b'), lambda m: 'When'))
+    R.append(('mw', re.compile(r'\bhom (?=(?:farre|great|much|many)\b)'), lambda m: 'how '))
+    R.append(('fs', re.compile(r'\bdays so all be\b'), lambda m: 'days shall be'))
     # 漏进正文的页眉
     R.append(('head', re.compile(r'\bCha[pn][.,-]?\s?\d{1,2}\.?\s+An Ex\w*\s+u\w*\s+\w+\s+Boo?[sk]\w*\s+\S{1,3}\s?\S{0,3}\s+V\w{2,5}[.,]?\s?\d{0,2}\.?'),
               lambda m: ''))
@@ -491,6 +503,7 @@ def fix_pagebreaks(md, log, where):
             out.append(seg + m.group(0))
             last = m.end()
             continue
+        body = re.sub(r'(<span class="cy-ocr"[^>]*>[A-Za-z]{2,5}</span>)([2-9])$', r'\1 \2', body)   # 「Hhhh</span>2」：页序数字紧贴存疑标记（第 24 轮，p4 14-7）
         glued = False
         # 末尾往回剥最多 4 个短 token（纯字母／数字，或 cy-ocr 包着的），找像签名的最短后缀
         toks, cut, bb = [], [], body
