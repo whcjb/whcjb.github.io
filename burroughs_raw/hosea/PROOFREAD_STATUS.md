@@ -15,6 +15,7 @@
 | 8 | 2026-11-27 | 第 2 卷 6:7–8（及 6:9 首） | pp. 622–629 | 8 | 1（标点 1）＋两类整类 | ≈ 0.13 |
 | 9 | 2026-11-27 | 第 3 卷 9:10（及 9:11 首） | pp. 211–220 | 10 | 6（词 1、标点 1、缺字 3、旁注正斜 1）＋两类整类 | ≈ 0.6 |
 | 10 | 2026-11-27 | 第 4 卷 12:5（及 12:6 首） | pp. 270–274、285–289（原书页码跳 275–284） | 10 | 2（词 2）＋上标一类 | ≈ 0.2 |
+| 11 | 2026-11-27 | 第 4 卷 12:8 | pp. 324–334（p.329 印作 229） | 11 | 16（词 12、旁注 2、小标题 2）＋三类整类 | ≈ 1.5 |
 
 ## 第 1 轮（10:12）
 
@@ -170,3 +171,22 @@ p.217 旁注「Perit judicium, & quum res transit in affectum.」原书正体，
 
 查过不改：p.273 旁注条末页边序号「1」并进上一条旁注（录入本如此，与第 2 轮页边序号同例）；p.285 旁注「[* Alwaies …]」原书带星号与方括号对应正文 Lord*，录入本未录，不补；
 St Paul 原书 Sᵗ 上标，录入本作 St，不改。
+
+## 第 11 轮（12:8）
+
+11 页各整页读一次（账本里都没看过）。这一段录入质量明显差于前几轮所抽，错处集中在词句。
+
+逐条（tcp_fixes）：circumvenced→circumvented、Ward→Word、Labhor→I abhor、conceipred→conceipted、a men→a man、beforting→besotting、
+guiliness→guiltiness、borther→brother、knowledge→knowledg（原书拼法）、wholeworks 类无；旁注 in meis factus→factis、「*A true* Convert」→「A true *Convert*」（录入本正斜反标）；
+p.330 段尾「In all my labors.」前文以逗号收尾、原书单独一行斜体，单条拆出（tcp_fixes 支持字面 `\n`）。
+
+整类：
+1. **长 s 误录作 f**（tcp_fixes 39＋6 条）：p.326 finful、p.329 feest、p.331 fin 看图都是 ſ。录入者把 ſ 认作 f，造出 finful/finners/fuch/felves/confider/Himfelf/prefently 这类非词，
+   或 fins/fame/forest/fouls 这类恰好是别的词。全书扫描：首字母或词中一个 f 换成 s 后是本书常用词（≥ 8 次）、原词罕见（≤ 3 次）的，逐个看上下文，
+   确是 ſ 的才改（fame 只改 the fame liberty/wonderfull 两处，拉丁 mori fame 不动；fouls of the heaven 是 fowls 不动；a third loft、flew in his face、fee、feat 不动）。
+   全书共 45 处，除看图的 3 处外未逐条看图。
+2. **段尾经文小标题并进上段**（`extract_burroughs.prep` 段尾 `<q>` 规则）：前文句末标点落在 `<hi>` 里、`<hi>` 后只有空白时（p.325「*they much glory in what they have got.* ⟨I am become rich…⟩」）规则漏判。
+   改为取 `<q>` 前最后一个 `<hi>` 的文字判断。全书再拆 20 处（p.329「He said he was rich…」、p.330「—In all my labors…」看图证实）。
+3. **拉丁旁注虚词表**（`LATIN_MARK`）：补 ac/mihi/tibi/sibi/ipse/simul 等，p.328「Populus me sibilat, at mihi plaudo…」原书斜体被漏；全书 4 条翻正，均成句拉丁。
+
+查过不改：Prophte（原书误植）、Sentences(… them.) 原书括号不配；页码 329 原书印作 229。

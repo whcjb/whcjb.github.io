@@ -129,7 +129,8 @@ NAME_STOP = set('Pareus Hierom Seventy Pagnin Tremel Vatab Mont Arias Calvin Sep
 # 纲目标签（Obs. 2、Use.、Expos. 1. …）与只有一个人名的旁注（Jareb.、Hierom.——p.392/393 看图）斜体底子页上也排正体，不翻
 RE_LABEL = re.compile(r'^[A-Z][a-zſ]+\.?$|^(?:\d+\.?\s*)?(?:Obs|Obser|Observ|Use|Us|Uses|Expos|Exp|Quest|Qu|Answ|Ans|Reas|Object|Obj|Applic|Applicat|Doct|Doctr|Motive|Motives|Means|Note|Simile|simile|Caution|Signes?|Reason)\.?,?\s*\d*\.?\s*$')
 LATIN_MARK = set('et est non quod qui quae quam sed cum nec neque vel enim sunt esse sic sicut ut ad nisi hoc id ab ex pro '
-                 'per ejus eius sua suam eum eos quia atque quasi tamen ergo autem etiam inquit ibi tunc nunc ubi unde inde ita'.split())
+                 'per ejus eius sua suam eum eos quia atque quasi tamen ergo autem etiam inquit ibi tunc nunc ubi unde inde ita '
+                 'ac mihi tibi sibi ipse ipsa ipsum nobis vobis ego nos vos simul quoque'.split())
 LATIN_END = r'(us|um|am|is|ae|orum|arum|ibus|ur|unt|ent|it|at|em|ere|ari|iri|tio|tas)$'
 
 
@@ -209,6 +210,12 @@ def prep(root):
             continue
         q = kids[-1]
         before = (kids[-2].tail if len(kids) > 1 else p.text) or ''
+        if not before.strip() and len(kids) > 1:     # 前文句末标点在 <hi> 里（*they much glory in what they have got.* ⟨q⟩，p.325）
+            k = len(kids) - 2
+            while k >= 0 and tt.tag(kids[k]) == 'note' and not (kids[k].tail or '').strip():
+                k -= 1
+            if k >= 0 and tt.tag(kids[k]) == 'hi':
+                before = ''.join(kids[k].itertext()) + (kids[k].tail or '')
         qtext = ''.join(t for x in [q] for t in [q.text or ''] + [(y.tail or '') for y in q])
         # 前文以句末标点收尾，或以引出论点的 That / this / thus 收尾（p.404「the Note is this, That ⟨论点⟩」）
         # 或以「Note (is) likewise,」「observe,」这类引语加逗号收尾（p.408「Thence this Note likewise, ⟨论点⟩」）

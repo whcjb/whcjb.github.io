@@ -142,7 +142,7 @@ def apply(md, groups_gid, dec, sites):
 def tcp_fixes():
     """tcp_fixes.tsv：TCP 录入错误（非缺字），对照 原版影像确认后的改正；原串须在全书唯一。"""
     f = RAW / 'tcp_fixes.tsv'
-    return [tuple(ln.split('\t')[:2]) for ln in f.read_text(encoding='utf-8').splitlines()
+    return [tuple(x.replace('\\n', '\n') for x in ln.split('\t')[:2]) for ln in f.read_text(encoding='utf-8').splitlines()
             if ln and not ln.startswith('#')] if f.exists() else []
 
 
