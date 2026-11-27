@@ -173,6 +173,12 @@ class GR(tt.R):
 
 
 def prep(root):
+    # 上标缩写（wᶜʰ、wᵗʰ、2ˡʸ）：录入本 <hi rend="sup">，原先当斜体出；改成记号，load 时转 <sup>（2026-11-27 抽 12:5 看 p.272）
+    for h in root.iter(TEI + 'hi'):
+        if h.get('rend') == 'sup' and not len(h):
+            h.tag = TEI + 'seg'
+            h.attrib.clear()
+            h.text = '⁽' + (h.text or '') + '⁾'
     for g in root.iter(TEI + 'g'):
         if g.get('ref') == 'char:V':                 # Ʋ：原书 U/V 同形的大写 V 字模。后接元音读 V（Vatablus、Vulg.），后接辅音读 U（Unto、Upon）
             tail = (g.tail or '').replace('ſ', 's')

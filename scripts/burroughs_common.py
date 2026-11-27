@@ -169,6 +169,7 @@ def load(slug):
     if keys:
         md = '\n'.join(invert_italic(ln) if any(k in ln for k in keys) else ln for ln in md.split('\n'))
     md = RE_ORDINAL.sub(lambda m: f'{m.group(1)}{m.group(2)},{m.group(3)} *{m.group(4).rstrip()}*{m.group(5)}{m.group(6)}', md)
+    md = re.sub(r'⁽([^⁽⁾]*)⁾', r'<sup>\1</sup>', md)
     return dropcaps(md)
 
 
