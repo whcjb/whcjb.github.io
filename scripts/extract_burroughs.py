@@ -113,6 +113,14 @@ def short_latin(t, base, lex):
     return any(w in LATIN_MARK for w in ws) or any(re.search(LATIN_END, w) for w in ws if len(w) >= 3)
 
 
+LABEL_WORDS = r'(?:Obs|Obser|Observ|Use|Uses|Expos|Exp|Quest|Answ|Reas|Object|Applic|Doct|Note|Caution|Reason|Motive|Means)'
+
+
+# 原书个别拉丁旁注排正体（排字不一），规则判不出，逐条看图列在这里：
+# p.217（第 3 卷）Perit judicium — 2026-11-27 抽 9:10 看图，同页其余拉丁旁注斜体
+LATIN_ROMAN = ('Perit judicium',)
+
+
 NAME_STOP = set('Pareus Hierom Seventy Pagnin Tremel Vatab Mont Arias Calvin Septuag Buxtorf Lexic Chald Vulg Cyril '
                 'Livelius Expos Obser Observ Answ Vers Hiphil Niphal Kal Piel Heb Greek Hebrew '
                 'Vatablus Tremel Tremelius Vulgat Vulgata Beza Theophylact Junius Piscator Drusius Mercerus Polanus Rivetus Lyra notis loc'.split())
@@ -134,12 +142,17 @@ class GR(tt.R):
             return f'<span class="{self.P}-mark">{t}</span>' if t else ''
         plain = tt.norm(self, self.inline(c))
         lat = latin_note(self.inline(c))
+        if any(plain.startswith(k) for k in LATIN_ROMAN):
+            return super().note(c)
         if lat or (self.italic_base() and not RE_LABEL.match(re.sub(r'<[^>]+>|\*|[▪•]', '', plain))):
             # 拉丁文旁注原书底子是斜体，录入本只给正体部分（英文连接词、出处人名）标 <hi>，整条正斜互换
             # （2026-11-26 抽 10:12 对杜克藏本影像核实：Hierom 注、Arias Mont. 注、Paratus sum 注、Ipsa gratiarum actio 注）
             t = tt.norm(self, chr(1) + self.inline(c, True) + chr(2))
             if not lat:                              # 斜体底子页：条首序号「2.」原书正体
                 t = re.sub(r'^\*(\d+\.?) ', r'\1 *', t)
+                # 条首纲目标签（Expos. 4 prefer'd.、Use for England.）原书正体、余字斜体（2026-11-27 抽 9:10 看 p.218）
+                if t.count('*') == 2 and t.startswith('*') and t.rstrip().endswith('*'):   # 录入本整条无 <hi>
+                    t = re.sub(r'^\*(' + LABEL_WORDS + r')\.?,?( \d+\.?)? (?=\S)', lambda m: m.group(0)[1:].rstrip() + ' *', t)
             return f'<span class="{self.P}-margin" markdown="1">{t}</span>'
         return super().note(c)
 

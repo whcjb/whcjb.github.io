@@ -74021,7 +74021,7 @@
 "gid": 2230,
 "slug": "9-5",
 "stream": "note",
-"tcp": "[You]▪*",
+"tcp": "*[You]▪*",
 "left": [
 "Expos."
 ],
@@ -76256,7 +76256,7 @@
 "gid": 2292,
 "slug": "9-11",
 "stream": "note",
-"tcp": "•o",
+"tcp": "*•o",
 "left": [
 "Applic."
 ],
@@ -77301,7 +77301,7 @@
 "gid": 2321,
 "slug": "9-16",
 "stream": "note",
-"tcp": "〈Greek〉*",
+"tcp": "*〈Greek〉*",
 "left": [
 "Expos."
 ],
@@ -80456,7 +80456,7 @@
 "gid": 2406,
 "slug": "10-9",
 "stream": "note",
-"tcp": "〈Greek〉*",
+"tcp": "*〈Greek〉*",
 "left": [
 "Expos.",
 "3."
@@ -80905,7 +80905,7 @@
 "gid": 2418,
 "slug": "10-11",
 "stream": "note",
-"tcp": "〈Greek〉.*",
+"tcp": "*〈Greek〉.*",
 "left": [
 "Expos.",
 "1."

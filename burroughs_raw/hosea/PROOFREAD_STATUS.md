@@ -13,6 +13,7 @@
 | 6 | 2026-11-26 | 第 3 卷 10:6（及 10:7 首） | pp. 392–402 | 11 | 2（标点 1、斜体边界 1）＋四类整类 | ≈ 0.2 |
 | 7 | 2026-11-26 | 第 2 卷 5:6（及 5:7 首） | pp. 404–417 | 14 | 2（希伯来旁注 2）＋两类整类 | ≈ 0.15 |
 | 8 | 2026-11-27 | 第 2 卷 6:7–8（及 6:9 首） | pp. 622–629 | 8 | 1（标点 1）＋两类整类 | ≈ 0.13 |
+| 9 | 2026-11-27 | 第 3 卷 9:10（及 9:11 首） | pp. 211–220 | 10 | 6（词 1、标点 1、缺字 3、旁注正斜 1）＋两类整类 | ≈ 0.6 |
 
 ## 第 1 轮（10:12）
 
@@ -139,3 +140,20 @@ au、commeth our、Isa. 29.16 原书误植照录。
 3. 顺带改正上一轮补字笔误：535 Mendatcs → Mendaces（录入本 Mendat•s 的 t 是误录，整组照初版）。
 
 查过不改：monnt Sinai、Paeadise、geference 录入本已正，不动；tinuerunt、corruted、Devil is is、thns 原书如此照录（thns 录入本已正）。
+
+## 第 9 轮（9:10）
+
+抽段时先查账本，整段一叶都没看过的才抽（上一轮 6:7 有 4 叶补字时看过页边，又整页读了一遍，不再这样）。10 页各整页读一次。
+
+逐条：p.216「and Apostate that leaves」→「an Apostate」；p.218「Moab; and」→「Moab, and」（tcp_fixes）；
+缺字 p.215 nec、ill，p.217「Perit judicium, & quum…」的 &（gap_review，看图）；
+p.217 旁注「Perit judicium, & quum res transit in affectum.」原书正体，同页其余拉丁旁注都斜体，排字不一，规则判不出，列入 `extract_burroughs.LATIN_ROMAN` 单条保持正体。
+
+整类：
+1. **段首斜体时花饰首字没认**（`burroughs_common.RE_DROP_IT`）：段落以经文引语起头、录入本整段首词连同首字标斜体（`*AS for* Ephraim.]`、`*THey make the King glad.]`），
+   旧规则要求行首就是大写字母，前面有 `*` 就漏了。花饰首字本身正体，提到 `*` 前。全书 19 处（p.220 看图：A 花饰、S for 斜体）。
+2. **斜体底子页条首纲目标签**（`extract_burroughs.GR.note`）：第 3 卷 pp. 1–441 英文旁注斜体底子，录入本整条无 `<hi>` 的整条翻成斜体，
+   但条首「Expos. 4」「Use」「Caution」「Applic.」原书正体（p.218「Expos. 4 *prefer'd.*」看图）。只动录入本整条无 `<hi>` 的，标签移出斜体，全书 12 条。
+   录入本有 `<hi>` 的（Answ, 1. *of others*、Obs. 1. *Of Persons*）标法各异，不动。
+
+查过不改：小标题「They went to BAAL-PEOR」原书 Baal-Peor 小型大写，录入本全大写，站上照显；Chap. 7. 12 首字母原书切边（缺字照留）。

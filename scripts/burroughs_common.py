@@ -205,7 +205,12 @@ RE_DROP = re.compile(r'^ ?((?:<span class="jb-pb"[^>]*></span>|<span class="jb-m
 # 原书无 W 铅字，花饰首字 W 是一整块 VV，整块放大（VVEE、VVhat），不拆成 V + V
 
 
+RE_DROP_IT = re.compile(RE_DROP.pattern.replace(')*)(VV', ')*)\\*(VV', 1), re.M)
+
 def dropcaps(md):
     """原书花饰首字：录入本没标 decorInit 的，照排印惯例「首字放大、次字大写」认（WEe、THe）。
     只认正文段首（不在标题、分条、经文框里）。"""
-    return RE_DROP.sub(lambda m: f'{m.group(1)}<span class="jb-dropcap">{m.group(2)}</span>', md)
+    md = RE_DROP.sub(lambda m: f'{m.group(1)}<span class="jb-dropcap">{m.group(2)}</span>', md)
+    # 段首是斜体（经文引语起头：*AS for* Ephraim.]、*THey make the King glad.]）：花饰首字本身正体，提到 * 前
+    # （2026-11-27 抽 9:10 看 p.220，原书 A 花饰首字、S for 斜体）
+    return RE_DROP_IT.sub(lambda m: f'{m.group(1)}<span class="jb-dropcap">{m.group(2)}</span>*', md)
