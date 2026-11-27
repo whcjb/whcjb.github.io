@@ -30,6 +30,7 @@
 | 20 | 2026-11-26 | 第 6 部 18:17–21（印本 pp. 114–136） | Packer 纸本 | 23 | 约 190（落表 169 条；正文约 160） | ≈ 8.3（正文 7） | 0 |
 | 21 | 2026-11-26 | 第 6 部 21:11–13（印本 pp. 664–680） | Packer 纸本 | 17 | 约 150（落表 124 条；正文约 125） | ≈ 8.8（正文 7.4） | 0 |
 | 22 | 2026-11-26 | 第 4 部 14:3–4（印本 pp. 562–578） | Packer 纸本 | 17 | 约 150（落表 128 条；正文约 130） | ≈ 8.8（正文 7.6） | 0 |
+| 23 | 2026-11-27 | 第 9 部 30:15（印本 pp. 133–151） | Packer 纸本 | 19 | 约 175（落表 148 条；正文约 150） | ≈ 9.2（正文 7.9） | 0 |
 
 ## 第 1 轮发现的错误类别与全书清理
 
@@ -558,4 +559,36 @@ p.575 页底三行拉丁脚注续接旁注，「Clarum sa-」一截被切进旁�
 | Pob → Job | 1 | 3 |
 
 原书误植照录（本段）：apon、afer、conscienee、spinging、uuclean、impossile；另 wbrds、poisnous、canno、mor、brethen、therereby、ourparents 本来就照印本，未动。
+
+## 第 23 轮发现的问题与全书处理（第 9 部 30:15，19 页）
+
+本段错处约 175（落表 148 条）：正文每页约 7.9，旁注 8 条（希伯来／拉丁）照影像重录。
+新毛病是**证人层把印本拼法改成现代拼法**：第 9 部的对照本是现代拼法的版次，底本词只要是词表外的当时拼法（immortalitie、mortalitie、
+possibilitie、worthlesnesse），按位置对上就被「改正」成 immortality／worthlessness；底本有 OCR 错时（flacke、Aimselfe、jatherlesse），
+改出来的也是现代词尾（flock、Himself、fatherless）。p.143 一页就有 6 处 -itie → -ity。
+
+结构类（`caryl_ocr_witness.py`）：
+
+| 处理 | 全书 |
+|---|---|
+| 底本只是对照词的当时拼法（-ie／-ies／-nesse／-lesse 词尾，y／i 互换）→ 判 archaic，不改、不标存疑 | 65（p9 55、p6 9、p82 1） |
+| 底本有错、按对照词改时，保留底本的当时词尾：-ie、-nesse、-lesse，以及词尾 e（对照词加 e 在 TCP 卡里尔语料里 ≥ 5 次才加：flocke、foole、looke、himselfe） | 约 115（p9 108、p6／p82／p4 各几处） |
+
+判当时拼法时只做 y→i 折叠，不折叠双字母（试过折叠，把 loke 当成 looke 的变体放过了，第一次整链重跑时被人工表失配查出来）。
+证人层改动后人工表 8 条原串失配（上游改出的词尾变了：Knowledg→Knowledge、usury→usurie、near→neare…），已按新的上游文字改原串。
+
+文字类（`caryl_ocr_sweep.py` 新规则）：
+
+| 类别 | 本段 | 全书命中 |
+|---|---|---|
+| me／he are → we are（「reproached me are」「to me are」不碰；11 处逐条看过） | 1 | 11 |
+| should／must／shall… me not ＋ 动词 → we not；think me can、the less me go | 2 | 5 |
+| Ie are／walk／may／can／shall see → We（「Ie shall goe ill」是 It，不碰） | 1 | 6 |
+| Ther ＋ 小写词 → They；Ther's → There's | 2 | 6 |
+| 词中 ! 是 l（Second!y、swa!low、especia!ly、most high!y）；what! have → what I have；which!sin → which sin | 2 | 14 |
+| oppressor／cord mas → was；any mas in → any man in | 1 | 4 |
+| Ris the → 'Tis the | — | 1 |
+
+原书误植照录（本段）：dee（God dee set）、rected（证人层给成了 erected）、be be（shall be be as the morning）。
+本段几处 of it 印本字距看得出分开（p.140、144、149、151），只在本段按影像改；全书 ofit 仍照第 3 轮的判断不动。
 

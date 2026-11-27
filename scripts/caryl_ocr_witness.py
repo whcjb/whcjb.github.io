@@ -134,6 +134,30 @@ def tokens_of(md):
     return out
 
 
+SUF = (('nesse', 'ness'), ('lesse', 'less'), ('ies', 'ys'), ('ie', 'y'))
+
+
+def oldsuf(t, u):
+    """对照本是现代拼法的版次（第 9 部尤甚）：底本词尾是当时拼法（-ie／-nesse／-lesse）而对照词是现代词尾时，
+    改正结果保留底本词尾（jatherlesse→fatherlesse，不是 fatherless）。→ 换好词尾的 u；词尾不对应时原样返回。"""
+    for old, new in SUF:
+        if t.lower().endswith(old) and u.lower().endswith(new) and not u.lower().endswith(old):
+            return u[:-len(new)] + old
+    # 词尾 e：底本 flacke／Aimselfe，对照词 flock／Himself → flocke／Himselfe（加 e 的词在 TCP 卡里尔语料里 ≥ 5 次才算当时拼法）
+    if len(t) > 3 and t[-1].lower() == 'e' and u[-1:].lower() != 'e' and t[-2].lower() == u[-1:].lower() and \
+            fx.freq((u + 'e').lower()) >= 5:
+        return u + 'e'
+    return u
+
+
+def archaic(t, u):
+    """t 只是 u 的当时拼法（immortalitie／immortality、meanesse／meanness、drynesse／driness）→ True，不改。
+    第 23 轮 p9 印本 p.143 一页 6 处 -itie 被改成 -ity。"""
+    v = oldsuf(t, u)
+    f = lambda x: x.lower().replace('y', 'i')   # noqa: E731  （不折叠双字母：loke≠looke）
+    return v != u and f(v) == f(t)
+
+
 def judge(md, W, log, slug):
     toks = tokens_of(md)
     seq = [norm(t[2]) for t in toks]
@@ -197,6 +221,8 @@ def judge(md, W, log, slug):
                     kind, new = 'agree-fix', c
                 else:
                     kind, new = 'agree', None
+            elif c and archaic(t, c):
+                kind, new = 'archaic', None
             elif c and (norm(c) == wn or (len(t) > 3 and edit(norm(c), wn) <= 1 and edit(t, c) <= 2)):
                 kind, new = 'confirm', c          # 对照本自己也有错（foolish↔soolith），差一个字母仍算印证
             elif len(norm(t)) == len(wn) + 1 and norm(t).endswith(wn) and t[0] in 'IAa' and fx.freq(t[1:].lower()) >= 20:
@@ -206,7 +232,10 @@ def judge(md, W, log, slug):
             else:
                 u = unfold(wn)
                 lim = 3 if len(t) >= 8 else 2
-                if u and len(u) >= 3 and len(t) - len(u) <= 1 and len(u) - len(t) <= 2 and edit(t, u) <= lim:
+                if u and archaic(t, u):
+                    kind, new = 'archaic', None         # 当时拼法，不改，也不标存疑
+                elif u and len(u) >= 3 and len(t) - len(u) <= 1 and len(u) - len(t) <= 2 and edit(t, u) <= lim:
+                    u = oldsuf(t, u)
                     kind, new = 'witness', (u.capitalize() if t[0].isupper() else u)
                 elif u:
                     kind, new = 'conflict', None

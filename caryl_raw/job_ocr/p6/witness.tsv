@@ -583,7 +583,7 @@
 18-11	noalign	Juagemems		tudgements
 18-11	witness	daths	deaths	deaths
 18-11	witness	wth	with	with
-18-11	witness	qualitie	quality	quality
+18-11	archaic	qualitie		quality
 18-11	agree-fix	finners	sinners	sinners
 18-11	agree	Polycarpus		polycarpus
 18-11	noalign	Marcien		marcin
@@ -1374,7 +1374,7 @@
 18-17	confirm	mith	with	with
 18-17	confirm	mereie	mercie	mercie
 18-17	witness	buomledge	knowledge	knowledge
-18-17	witness	gnowledge	knowledg	knowledg
+18-17	witness	gnowledge	knowledge	knowledg
 18-17	confirm	knouledge	knowledge	knowledge
 18-17	confirm	hnowledge	knowledge	knowledge
 18-17	agree-fix	sinsull	sinfull	sinsull
@@ -2563,7 +2563,7 @@
 19-10	agree	Alpes		alpes
 19-10	noalign	Hanniball		hannibal
 19-10	agree	Armie		armie
-19-10	witness	Armie	Army	army
+19-10	archaic	Armie		army
 19-10	noalign	Agyet		
 19-10	confirm	mrath	wrath	wrath
 19-10	noalign	gyptians		zgyptians
@@ -2576,7 +2576,7 @@
 19-10	solo	delence	defence	
 19-10	witness	Losds	Lords	lords
 19-10	agree	Armie		armie
-19-10	witness	Armie	Army	army
+19-10	archaic	Armie		army
 19-10	witness	amoums	amounts	amounts
 19-10	noalign	toa		
 19-10	agree-fix	ufually	usually	usually
@@ -2599,7 +2599,7 @@
 19-10	confirm	hattel	battel	battel
 19-10	agree-fix	foone	soone	soone
 19-10	confirm	faitb	faith	saith
-19-10	witness	Armie	Army	army
+19-10	archaic	Armie		army
 19-10	witness	fob	job	job
 19-10	agree-fix	selse	selfe	selse
 19-10	split	fromme	from me	srom
@@ -2625,7 +2625,7 @@
 19-13	confirm	nniversality	universality	universality
 19-13	agree-fix	fuch	such	such
 19-13	noalign	intirenesse		
-19-13	witness	familiaritie	familiarity	samiliarity
+19-13	archaic	familiaritie		samiliarity
 19-13	agree-fix	fuch	such	such
 19-13	witness	stb	sob	sob
 19-13	agree-fix	Verf	Vers	vers
@@ -2698,7 +2698,7 @@
 19-13	confirm	mho	who	who
 19-13	confirm	knem	knew	knew
 19-13	confirm	knomue	knowne	knowne
-19-13	witness	formalitie	formality	sormality
+19-13	archaic	formalitie		sormality
 19-13	confirm	seebe	seeke	seeke
 19-13	confirm	mayes	wayes	wayes
 19-13	confirm	knouing	knowing	knowing
@@ -2859,7 +2859,7 @@
 19-13	confirm	Mho	Who	who
 19-13	confirm	dtgree	degree	degree
 19-13	agree	uncertaintie		uncertaintie
-19-13	witness	uncertaintie	uncertainty	uncertainty
+19-13	archaic	uncertaintie		uncertainty
 19-13	noalign	ancertaintie		
 19-13	confirm	knoming	knowing	knowing
 19-13	conflict	leffe		j
@@ -6949,7 +6949,7 @@
 20-10	confirm	thetɇ	there	these
 20-10	confirm	xords	words	words
 20-10	noalign	masted		
-20-10	witness	Prodigalitie	Prodigality	prodigality
+20-10	archaic	Prodigalitie		prodigality
 20-10	noalign	uesteth		
 20-10	witness	apainst	against	against
 20-10	conflict	strug		strugled
@@ -12213,7 +12213,7 @@
 21-30	agree	contentiousnes		contentiousnes
 21-30	noalign	bying		bujing
 21-30	noalign	usarie		
-21-30	witness	usurie	usury	usury
+21-30	archaic	usurie		usury
 21-30	conflict	negotiations		nego
 21-30	noalign	gyptian		
 21-30	noalign	worshiped		

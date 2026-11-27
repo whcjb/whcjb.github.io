@@ -343,6 +343,20 @@ def rules():
     R.append(('mw', re.compile(r'(?<=[A-Za-z] )vas(?= [a-z])'), lambda m: 'was'))            # 前词是英文词（Latin「Αguονε vas in conspectu」前面是希腊字母，不碰）
     R.append(('fs', re.compile(r'\bflest\b'), lambda m: 'flesh'))
     R.append(('job', re.compile(r'\bPob\b'), lambda m: 'Job'))
+    # —— 第 23 轮（第 9 部 30:15 实读 19 页）
+    R.append(('mw', re.compile(r'(?<!reproached )(?<!\bto )\b(?:me|he) are\b'), lambda m: 'we are'))     # 「The stronger me are」「that he are appointed」；「reproached me are」「to me are estranged」不碰（全书 11 处看过）
+    R.append(('mw', re.compile(r'\b(should|must|shall|can|may|will|did|would) me not\b(?= [a-z])'), lambda m: m.group(1) + ' we not'))   # shall me not receive
+    R.append(('mw', re.compile(r'\bthink me can\b'), lambda m: 'think we can'))
+    R.append(('mw', re.compile(r'\bthe less me go\b'), lambda m: 'the less we go'))
+    R.append(('th', re.compile(r'\bIe (?=(?:are|walk|may|can|shall see)\b)'), lambda m: 'We '))      # 「Ie shall goe ill with him」是 It，不碰
+    R.append(('th', re.compile(r'\bTher(?= [a-z])'), lambda m: 'They'))                                 # Ther have／cut／who／confesse／would
+    R.append(('th', re.compile(r'\bTher(?=[’\']s\b)'), lambda m: 'There'))
+    R.append(('tis', re.compile(r'\bRis (?=the\b)'), lambda m: "'Tis "))
+    R.append(('ll', re.compile(r'(?<=[a-z])(?<!multiply)(?<!himse)(?<!\bwhich)!(?=[a-z])'), lambda m: 'l'))         # 词中 ! 是 l：Second!y、swa!low、especia!ly
+    R.append(('ll', re.compile(r'\bwhich!(?=sin\b)'), lambda m: 'which '))
+    R.append(('ll', re.compile(r'\b(what|whom)! (?=(?:have|shall|will|am|doe|did|know)\b)'), lambda m: m.group(1) + ' I '))   # what! have → what I have
+    R.append(('mw', re.compile(r'(?:(?<=\boppressor )|(?<=\bcord ))mas\b'), lambda m: 'was'))
+    R.append(('mw', re.compile(r'\bany mas\b(?= in\b)'), lambda m: 'any man'))
     # 漏进正文的页眉
     R.append(('head', re.compile(r'\bCha[pn][.,-]?\s?\d{1,2}\.?\s+An Ex\w*\s+u\w*\s+\w+\s+Boo?[sk]\w*\s+\S{1,3}\s?\S{0,3}\s+V\w{2,5}[.,]?\s?\d{0,2}\.?'),
               lambda m: ''))
