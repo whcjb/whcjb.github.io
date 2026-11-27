@@ -1,4 +1,4 @@
-# 证人	叶	印本页	读法（full=整页，crop=裁片）	日期	结论（已落 tcp_fixes / gap_review；再用到这叶时照此，不再看图）
+# 证人	叶	印本页	读法（full=整页，crop=裁片；crop 只算看过所记的组，抽章实读这叶仍要整页读）	日期	结论（已落 tcp_fixes / gap_review；再用到这叶时照此，不再看图）
 expositionofprop03burr	433	442	full	2026-11-26	第1轮 10:12；Prophe to meddle→Prophet to meddle；旁注 The Exposition of Hierom…→正斜颠倒（英文正体、拉丁斜体）
 expositionofprop03burr	434	443	full	2026-11-26	第1轮 10:12；Righteousness of Jesu Christ, we preach→Jesus；Righteousness of God making→Gods making（s 残损但可见）
 expositionofprop03burr	435	444	full	2026-11-26	第1轮 10:12；Gold upon them; this is→them, this（标点，影像作逗号）
@@ -128,3 +128,261 @@ expositionofprop02burr	341	414	full	2026-11-26	第7轮 5:6；无错（页边 2�
 expositionofprop02burr	342	415	full	2026-11-26	第7轮 5:6；无错
 expositionofprop02burr	343	416	full	2026-11-26	第7轮 5:6；无错
 expositionofprop02burr	344	417	full	2026-11-26	第7轮 5:6 末 + 5:7 首；页边希伯来 בגדו（gid1780 已落）
+expositionofprop01burr	9	2	crop	2026-11-27	希伯来／希腊旁注补字（只核外文字组，正文未通读）；组 3,4；结论已落 gap_review/gap_approved
+expositionofprop01burr	14	5	crop	2026-11-27	希伯来／希腊旁注补字（只核外文字组，正文未通读）；组 14；结论已落 gap_review/gap_approved
+expositionofprop01burr	15	6	crop	2026-11-27	希伯来／希腊旁注补字（只核外文字组，正文未通读）；组 18；结论已落 gap_review/gap_approved
+expositionofprop01burr	16	7	crop	2026-11-27	希伯来／希腊旁注补字（只核外文字组，正文未通读）；组 21；结论已落 gap_review/gap_approved
+expositionofprop01burr	17		crop	2026-11-27	希伯来／希腊旁注补字（只核外文字组，正文未通读）；组 22；结论已落 gap_review/gap_approved
+expositionofprop01burr	28	16	crop	2026-11-27	希伯来／希腊旁注补字（只核外文字组，正文未通读）；组 26；结论已落 gap_review/gap_approved
+expositionofprop01burr	35	21	crop	2026-11-27	希伯来／希腊旁注补字（只核外文字组，正文未通读）；组 35,36；结论已落 gap_review/gap_approved
+expositionofprop01burr	38	23	crop	2026-11-27	希伯来／希腊旁注补字（只核外文字组，正文未通读）；组 38；结论已落 gap_review/gap_approved
+expositionofprop01burr	48		crop	2026-11-27	希伯来／希腊旁注补字（只核外文字组，正文未通读）；组 49,50；结论已落 gap_review/gap_approved
+expositionofprop01burr	55	36	crop	2026-11-27	希伯来／希腊旁注补字（只核外文字组，正文未通读）；组 56；结论已落 gap_review/gap_approved
+expositionofprop01burr	64	42	crop	2026-11-27	希伯来／希腊旁注补字（只核外文字组，正文未通读）；组 69,70；结论已落 gap_review/gap_approved
+expositionofprop01burr	88	59	crop	2026-11-27	希伯来／希腊旁注补字（只核外文字组，正文未通读）；组 75；结论已落 gap_review/gap_approved
+expositionofprop01burr	93		crop	2026-11-27	希伯来／希腊旁注补字（只核外文字组，正文未通读）；组 83,85；结论已落 gap_review/gap_approved
+expositionofprop01burr	94	63	crop	2026-11-27	希伯来／希腊旁注补字（只核外文字组，正文未通读）；组 87；结论已落 gap_review/gap_approved
+expositionofprop01burr	130	87	crop	2026-11-27	希伯来／希腊旁注补字（只核外文字组，正文未通读）；组 109；结论已落 gap_review/gap_approved
+expositionofprop01burr	133		crop	2026-11-27	希伯来／希腊旁注补字（只核外文字组，正文未通读）；组 114；结论已落 gap_review/gap_approved
+expositionofprop01burr	140	95	crop	2026-11-27	希伯来／希腊旁注补字（只核外文字组，正文未通读）；组 122；结论已落 gap_review/gap_approved
+expositionofprop01burr	148	101	crop	2026-11-27	希伯来／希腊旁注补字（只核外文字组，正文未通读）；组 146；结论已落 gap_review/gap_approved
+expositionofprop01burr	150	102	crop	2026-11-27	希伯来／希腊旁注补字（只核外文字组，正文未通读）；组 148,149；结论已落 gap_review/gap_approved
+expositionofprop01burr	165		crop	2026-11-27	希伯来／希腊旁注补字（只核外文字组，正文未通读）；组 172；结论已落 gap_review/gap_approved
+expositionofprop01burr	169		crop	2026-11-27	希伯来／希腊旁注补字（只核外文字组，正文未通读）；组 175；结论已落 gap_review/gap_approved
+expositionofprop01burr	176		crop	2026-11-27	希伯来／希腊旁注补字（只核外文字组，正文未通读）；组 186；结论已落 gap_review/gap_approved
+expositionofprop01burr	177	121	crop	2026-11-27	希伯来／希腊旁注补字（只核外文字组，正文未通读）；组 189；结论已落 gap_review/gap_approved
+expositionofprop01burr	204	141	crop	2026-11-27	希伯来／希腊旁注补字（只核外文字组，正文未通读）；组 232；结论已落 gap_review/gap_approved
+expositionofprop01burr	210	147	crop	2026-11-27	希伯来／希腊旁注补字（只核外文字组，正文未通读）；组 259；结论已落 gap_review/gap_approved
+expositionofprop01burr	223	157	crop	2026-11-27	希伯来／希腊旁注补字（只核外文字组，正文未通读）；组 286；结论已落 gap_review/gap_approved
+expositionofprop01burr	229	161	crop	2026-11-27	希伯来／希腊旁注补字（只核外文字组，正文未通读）；组 297；结论已落 gap_review/gap_approved
+expositionofprop01burr	237		crop	2026-11-27	希伯来／希腊旁注补字（只核外文字组，正文未通读）；组 309；结论已落 gap_review/gap_approved
+expositionofprop01burr	238	167	crop	2026-11-27	希伯来／希腊旁注补字（只核外文字组，正文未通读）；组 310；结论已落 gap_review/gap_approved
+expositionofprop01burr	266	187	crop	2026-11-27	希伯来／希腊旁注补字（只核外文字组，正文未通读）；组 334；结论已落 gap_review/gap_approved
+expositionofprop01burr	269	189	crop	2026-11-27	希伯来／希腊旁注补字（只核外文字组，正文未通读）；组 340；结论已落 gap_review/gap_approved
+expositionofprop01burr	298	210	crop	2026-11-27	希伯来／希腊旁注补字（只核外文字组，正文未通读）；组 362；结论已落 gap_review/gap_approved
+expositionofprop01burr	302		crop	2026-11-27	希伯来／希腊旁注补字（只核外文字组，正文未通读）；组 376；结论已落 gap_review/gap_approved
+expositionofprop01burr	309	218	crop	2026-11-27	希伯来／希腊旁注补字（只核外文字组，正文未通读）；组 395；结论已落 gap_review/gap_approved
+expositionofprop01burr	316	223	crop	2026-11-27	希伯来／希腊旁注补字（只核外文字组，正文未通读）；组 405；结论已落 gap_review/gap_approved
+expositionofprop01burr	319	225	crop	2026-11-27	希伯来／希腊旁注补字（只核外文字组，正文未通读）；组 413；结论已落 gap_review/gap_approved
+expositionofprop01burr	327	231	crop	2026-11-27	希伯来／希腊旁注补字（只核外文字组，正文未通读）；组 426,428；结论已落 gap_review/gap_approved
+expositionofprop01burr	328		crop	2026-11-27	希伯来／希腊旁注补字（只核外文字组，正文未通读）；组 429,431；结论已落 gap_review/gap_approved
+expositionofprop01burr	363	257	crop	2026-11-27	希伯来／希腊旁注补字（只核外文字组，正文未通读）；组 474；结论已落 gap_review/gap_approved
+expositionofprop01burr	364		crop	2026-11-27	希伯来／希腊旁注补字（只核外文字组，正文未通读）；组 476,478；结论已落 gap_review/gap_approved
+expositionofprop01burr	375	266	crop	2026-11-27	希伯来／希腊旁注补字（只核外文字组，正文未通读）；组 494；结论已落 gap_review/gap_approved
+expositionofprop01burr	378	268	crop	2026-11-27	希伯来／希腊旁注补字（只核外文字组，正文未通读）；组 497；结论已落 gap_review/gap_approved
+expositionofprop01burr	382	272	crop	2026-11-27	希伯来／希腊旁注补字（只核外文字组，正文未通读）；定位找注时看页边；结论已落 gap_review/gap_approved
+expositionofprop01burr	383	273	crop	2026-11-27	希伯来／希腊旁注补字（只核外文字组，正文未通读）；组 510,512；结论已落 gap_review/gap_approved
+expositionofprop01burr	384	275	crop	2026-11-27	希伯来／希腊旁注补字（只核外文字组，正文未通读）；组 514,516,517；结论已落 gap_review/gap_approved
+expositionofprop01burr	391	280	crop	2026-11-27	希伯来／希腊旁注补字（只核外文字组，正文未通读）；组 525；结论已落 gap_review/gap_approved
+expositionofprop01burr	392	281	crop	2026-11-27	希伯来／希腊旁注补字（只核外文字组，正文未通读）；定位找注时看页边；结论已落 gap_review/gap_approved
+expositionofprop01burr	393		crop	2026-11-27	希伯来／希腊旁注补字（只核外文字组，正文未通读）；组 529；结论已落 gap_review/gap_approved
+expositionofprop01burr	394	282	crop	2026-11-27	希伯来／希腊旁注补字（只核外文字组，正文未通读）；组 531；结论已落 gap_review/gap_approved
+expositionofprop01burr	399	286	crop	2026-11-27	希伯来／希腊旁注补字（只核外文字组，正文未通读）；组 533；结论已落 gap_review/gap_approved
+expositionofprop01burr	401	288	crop	2026-11-27	希伯来／希腊旁注补字（只核外文字组，正文未通读）；组 535；结论已落 gap_review/gap_approved
+expositionofprop01burr	415		crop	2026-11-27	希伯来／希腊旁注补字（只核外文字组，正文未通读）；组 550；结论已落 gap_review/gap_approved
+expositionofprop01burr	417	299	crop	2026-11-27	希伯来／希腊旁注补字（只核外文字组，正文未通读）；组 551；结论已落 gap_review/gap_approved
+expositionofprop01burr	422	303	crop	2026-11-27	希伯来／希腊旁注补字（只核外文字组，正文未通读）；组 559；结论已落 gap_review/gap_approved
+expositionofprop01burr	455	327	crop	2026-11-27	希伯来／希腊旁注补字（只核外文字组，正文未通读）；组 600；结论已落 gap_review/gap_approved
+expositionofprop01burr	462		crop	2026-11-27	希伯来／希腊旁注补字（只核外文字组，正文未通读）；组 606；结论已落 gap_review/gap_approved
+expositionofprop01burr	467	335	crop	2026-11-27	希伯来／希腊旁注补字（只核外文字组，正文未通读）；组 609,610；结论已落 gap_review/gap_approved
+expositionofprop01burr	468	336	crop	2026-11-27	希伯来／希腊旁注补字（只核外文字组，正文未通读）；组 611,615；结论已落 gap_review/gap_approved
+expositionofprop01burr	477		crop	2026-11-27	希伯来／希腊旁注补字（只核外文字组，正文未通读）；组 626,630；结论已落 gap_review/gap_approved
+expositionofprop01burr	480	345	crop	2026-11-27	希伯来／希腊旁注补字（只核外文字组，正文未通读）；组 633；结论已落 gap_review/gap_approved
+expositionofprop01burr	481		crop	2026-11-27	希伯来／希腊旁注补字（只核外文字组，正文未通读）；定位找注时看页边；结论已落 gap_review/gap_approved
+expositionofprop01burr	482	346	crop	2026-11-27	希伯来／希腊旁注补字（只核外文字组，正文未通读）；组 634；结论已落 gap_review/gap_approved
+expositionofprop01burr	484		crop	2026-11-27	希伯来／希腊旁注补字（只核外文字组，正文未通读）；组 637；结论已落 gap_review/gap_approved
+expositionofprop01burr	485	348	crop	2026-11-27	希伯来／希腊旁注补字（只核外文字组，正文未通读）；组 638；结论已落 gap_review/gap_approved
+expositionofprop01burr	487	350	crop	2026-11-27	希伯来／希腊旁注补字（只核外文字组，正文未通读）；组 641；结论已落 gap_review/gap_approved
+expositionofprop01burr	491	353	crop	2026-11-27	希伯来／希腊旁注补字（只核外文字组，正文未通读）；组 643；结论已落 gap_review/gap_approved
+expositionofprop01burr	497	357	crop	2026-11-27	希伯来／希腊旁注补字（只核外文字组，正文未通读）；组 647；结论已落 gap_review/gap_approved
+expositionofprop01burr	502	361	crop	2026-11-27	希伯来／希腊旁注补字（只核外文字组，正文未通读）；组 656；结论已落 gap_review/gap_approved
+expositionofprop01burr	503		crop	2026-11-27	希伯来／希腊旁注补字（只核外文字组，正文未通读）；组 659；结论已落 gap_review/gap_approved
+expositionofprop01burr	517		crop	2026-11-27	希伯来／希腊旁注补字（只核外文字组，正文未通读）；组 677；结论已落 gap_review/gap_approved
+expositionofprop01burr	518	372	crop	2026-11-27	希伯来／希腊旁注补字（只核外文字组，正文未通读）；组 679,684；结论已落 gap_review/gap_approved
+expositionofprop01burr	519	373	crop	2026-11-27	希伯来／希腊旁注补字（只核外文字组，正文未通读）；组 690；结论已落 gap_review/gap_approved
+expositionofprop01burr	610	442	crop	2026-11-27	希伯来／希腊旁注补字（只核外文字组，正文未通读）；组 753；结论已落 gap_review/gap_approved
+expositionofprop01burr	628		crop	2026-11-27	希伯来／希腊旁注补字（只核外文字组，正文未通读）；组 769；结论已落 gap_review/gap_approved
+expositionofprop01burr	630	457	crop	2026-11-27	希伯来／希腊旁注补字（只核外文字组，正文未通读）；组 775；结论已落 gap_review/gap_approved
+expositionofprop01burr	634	460	crop	2026-11-27	希伯来／希腊旁注补字（只核外文字组，正文未通读）；组 778,779,780；结论已落 gap_review/gap_approved
+expositionofprop01burr	637	462	crop	2026-11-27	希伯来／希腊旁注补字（只核外文字组，正文未通读）；组 782,783；结论已落 gap_review/gap_approved
+expositionofprop01burr	639		crop	2026-11-27	希伯来／希腊旁注补字（只核外文字组，正文未通读）；组 784,785；结论已落 gap_review/gap_approved
+expositionofprop01burr	640	474	crop	2026-11-27	希伯来／希腊旁注补字（只核外文字组，正文未通读）；定位找注时看页边；结论已落 gap_review/gap_approved
+expositionofprop01burr	647	479	crop	2026-11-27	希伯来／希腊旁注补字（只核外文字组，正文未通读）；组 793；结论已落 gap_review/gap_approved
+expositionofprop01burr	654	484	crop	2026-11-27	希伯来／希腊旁注补字（只核外文字组，正文未通读）；组 796；结论已落 gap_review/gap_approved
+expositionofprop01burr	663	491	crop	2026-11-27	希伯来／希腊旁注补字（只核外文字组，正文未通读）；组 804；结论已落 gap_review/gap_approved
+expositionofprop01burr	665	492	crop	2026-11-27	希伯来／希腊旁注补字（只核外文字组，正文未通读）；组 805；结论已落 gap_review/gap_approved
+expositionofprop01burr	672		crop	2026-11-27	希伯来／希腊旁注补字（只核外文字组，正文未通读）；组 808；结论已落 gap_review/gap_approved
+expositionofprop01burr	673	498	crop	2026-11-27	希伯来／希腊旁注补字（只核外文字组，正文未通读）；组 810；结论已落 gap_review/gap_approved
+expositionofprop01burr	681		crop	2026-11-27	希伯来／希腊旁注补字（只核外文字组，正文未通读）；组 819,820；结论已落 gap_review/gap_approved
+expositionofprop01burr	682	504	crop	2026-11-27	希伯来／希腊旁注补字（只核外文字组，正文未通读）；组 823；结论已落 gap_review/gap_approved
+expositionofprop01burr	685		crop	2026-11-27	希伯来／希腊旁注补字（只核外文字组，正文未通读）；组 825,826；结论已落 gap_review/gap_approved
+expositionofprop01burr	687	508	crop	2026-11-27	希伯来／希腊旁注补字（只核外文字组，正文未通读）；组 829；结论已落 gap_review/gap_approved
+expositionofprop01burr	700	517	crop	2026-11-27	希伯来／希腊旁注补字（只核外文字组，正文未通读）；组 860,862,863,864,865,867,869,871；结论已落 gap_review/gap_approved
+expositionofprop01burr	703		crop	2026-11-27	希伯来／希腊旁注补字（只核外文字组，正文未通读）；定位找注时看页边；结论已落 gap_review/gap_approved
+expositionofprop01burr	704		crop	2026-11-27	希伯来／希腊旁注补字（只核外文字组，正文未通读）；定位找注时看页边；结论已落 gap_review/gap_approved
+expositionofprop01burr	706		crop	2026-11-27	希伯来／希腊旁注补字（只核外文字组，正文未通读）；定位找注时看页边；结论已落 gap_review/gap_approved
+expositionofprop01burr	707		crop	2026-11-27	希伯来／希腊旁注补字（只核外文字组，正文未通读）；定位找注时看页边；结论已落 gap_review/gap_approved
+expositionofprop01burr	708		crop	2026-11-27	希伯来／希腊旁注补字（只核外文字组，正文未通读）；定位找注时看页边；结论已落 gap_review/gap_approved
+expositionofprop01burr	713		crop	2026-11-27	希伯来／希腊旁注补字（只核外文字组，正文未通读）；定位找注时看页边；结论已落 gap_review/gap_approved
+expositionofprop01burr	738		crop	2026-11-27	希伯来／希腊旁注补字（只核外文字组，正文未通读）；组 905；结论已落 gap_review/gap_approved
+expositionofprop02burr	30	3	crop	2026-11-27	希伯来／希腊旁注补字（只核外文字组，正文未通读）；组 933,934,935；结论已落 gap_review/gap_approved
+expositionofprop02burr	60	33	crop	2026-11-27	希伯来／希腊旁注补字（只核外文字组，正文未通读）；组 983；结论已落 gap_review/gap_approved
+expositionofprop02burr	67	40	crop	2026-11-27	希伯来／希腊旁注补字（只核外文字组，正文未通读）；组 1007；结论已落 gap_review/gap_approved
+expositionofprop02burr	68	41	crop	2026-11-27	希伯来／希腊旁注补字（只核外文字组，正文未通读）；组 1013；结论已落 gap_review/gap_approved
+expositionofprop02burr	71	44	crop	2026-11-27	希伯来／希腊旁注补字（只核外文字组，正文未通读）；组 1040；结论已落 gap_review/gap_approved
+expositionofprop02burr	92	64	crop	2026-11-27	希伯来／希腊旁注补字（只核外文字组，正文未通读）；组 1128；结论已落 gap_review/gap_approved
+expositionofprop02burr	93	65	crop	2026-11-27	希伯来／希腊旁注补字（只核外文字组，正文未通读）；组 1132；结论已落 gap_review/gap_approved
+expositionofprop02burr	104	76	crop	2026-11-27	希伯来／希腊旁注补字（只核外文字组，正文未通读）；组 1183；结论已落 gap_review/gap_approved
+expositionofprop02burr	108	80	crop	2026-11-27	希伯来／希腊旁注补字（只核外文字组，正文未通读）；组 1199；结论已落 gap_review/gap_approved
+expositionofprop02burr	111	83	crop	2026-11-27	希伯来／希腊旁注补字（只核外文字组，正文未通读）；组 1202；结论已落 gap_review/gap_approved
+expositionofprop02burr	112	84	crop	2026-11-27	希伯来／希腊旁注补字（只核外文字组，正文未通读）；定位找注时看页边；结论已落 gap_review/gap_approved
+expositionofprop02burr	113	85	crop	2026-11-27	希伯来／希腊旁注补字（只核外文字组，正文未通读）；组 1206；结论已落 gap_review/gap_approved
+expositionofprop02burr	116	88	crop	2026-11-27	希伯来／希腊旁注补字（只核外文字组，正文未通读）；组 1208；结论已落 gap_review/gap_approved
+expositionofprop02burr	119	91	crop	2026-11-27	希伯来／希腊旁注补字（只核外文字组，正文未通读）；组 1210；结论已落 gap_review/gap_approved
+expositionofprop02burr	122	94	crop	2026-11-27	希伯来／希腊旁注补字（只核外文字组，正文未通读）；组 1214,1215；结论已落 gap_review/gap_approved
+expositionofprop02burr	123	95	crop	2026-11-27	希伯来／希腊旁注补字（只核外文字组，正文未通读）；组 1218；结论已落 gap_review/gap_approved
+expositionofprop02burr	129	101	crop	2026-11-27	希伯来／希腊旁注补字（只核外文字组，正文未通读）；组 1223；结论已落 gap_review/gap_approved
+expositionofprop02burr	130	102	crop	2026-11-27	希伯来／希腊旁注补字（只核外文字组，正文未通读）；组 1224；结论已落 gap_review/gap_approved
+expositionofprop02burr	136	108	crop	2026-11-27	希伯来／希腊旁注补字（只核外文字组，正文未通读）；组 1226,1227；结论已落 gap_review/gap_approved
+expositionofprop02burr	147	119	crop	2026-11-27	希伯来／希腊旁注补字（只核外文字组，正文未通读）；组 1244,1245；结论已落 gap_review/gap_approved
+expositionofprop02burr	152	124	crop	2026-11-27	希伯来／希腊旁注补字（只核外文字组，正文未通读）；组 1258,1260；结论已落 gap_review/gap_approved
+expositionofprop02burr	155	127	crop	2026-11-27	希伯来／希腊旁注补字（只核外文字组，正文未通读）；组 1269；结论已落 gap_review/gap_approved
+expositionofprop02burr	161	133	crop	2026-11-27	希伯来／希腊旁注补字（只核外文字组，正文未通读）；组 1272；结论已落 gap_review/gap_approved
+expositionofprop02burr	189	159	crop	2026-11-27	希伯来／希腊旁注补字（只核外文字组，正文未通读）；定位找注时看页边；结论已落 gap_review/gap_approved
+expositionofprop02burr	190	160	crop	2026-11-27	希伯来／希腊旁注补字（只核外文字组，正文未通读）；组 1318,1320；结论已落 gap_review/gap_approved
+expositionofprop02burr	191	161	crop	2026-11-27	希伯来／希腊旁注补字（只核外文字组，正文未通读）；定位找注时看页边；结论已落 gap_review/gap_approved
+expositionofprop02burr	192	162	crop	2026-11-27	希伯来／希腊旁注补字（只核外文字组，正文未通读）；定位找注时看页边；结论已落 gap_review/gap_approved
+expositionofprop02burr	196	166	crop	2026-11-27	希伯来／希腊旁注补字（只核外文字组，正文未通读）；组 1332,1333；结论已落 gap_review/gap_approved
+expositionofprop02burr	198	168	crop	2026-11-27	希伯来／希腊旁注补字（只核外文字组，正文未通读）；组 1335；结论已落 gap_review/gap_approved
+expositionofprop02burr	212	182	crop	2026-11-27	希伯来／希腊旁注补字（只核外文字组，正文未通读）；组 1359,1360；结论已落 gap_review/gap_approved
+expositionofprop02burr	219	189	crop	2026-11-27	希伯来／希腊旁注补字（只核外文字组，正文未通读）；组 1383,1384；结论已落 gap_review/gap_approved
+expositionofprop02burr	228	198	crop	2026-11-27	希伯来／希腊旁注补字（只核外文字组，正文未通读）；组 1394；结论已落 gap_review/gap_approved
+expositionofprop02burr	244	214	crop	2026-11-27	希伯来／希腊旁注补字（只核外文字组，正文未通读）；组 1417；结论已落 gap_review/gap_approved
+expositionofprop02burr	246	216	crop	2026-11-27	希伯来／希腊旁注补字（只核外文字组，正文未通读）；组 1421；结论已落 gap_review/gap_approved
+expositionofprop02burr	248	218	crop	2026-11-27	希伯来／希腊旁注补字（只核外文字组，正文未通读）；组 1425；结论已落 gap_review/gap_approved
+expositionofprop02burr	250	220	crop	2026-11-27	希伯来／希腊旁注补字（只核外文字组，正文未通读）；组 1435；结论已落 gap_review/gap_approved
+expositionofprop02burr	281	251	crop	2026-11-27	希伯来／希腊旁注补字（只核外文字组，正文未通读）；组 1474；结论已落 gap_review/gap_approved
+expositionofprop02burr	287	257	crop	2026-11-27	希伯来／希腊旁注补字（只核外文字组，正文未通读）；组 1521；结论已落 gap_review/gap_approved
+expositionofprop02burr	288	258	crop	2026-11-27	希伯来／希腊旁注补字（只核外文字组，正文未通读）；组 1522；结论已落 gap_review/gap_approved
+expositionofprop02burr	303	273	crop	2026-11-27	（同叶已有整页实读记录）希伯来／希腊旁注补字（只核外文字组，正文未通读）；组 1671；结论已落 gap_review/gap_approved
+expositionofprop02burr	314	284	crop	2026-11-27	希伯来／希腊旁注补字（只核外文字组，正文未通读）；组 1751；结论已落 gap_review/gap_approved
+expositionofprop02burr	318	288	crop	2026-11-27	希伯来／希腊旁注补字（只核外文字组，正文未通读）；组 1756；结论已落 gap_review/gap_approved
+expositionofprop02burr	320	290	crop	2026-11-27	希伯来／希腊旁注补字（只核外文字组，正文未通读）；组 1759；结论已落 gap_review/gap_approved
+expositionofprop02burr	325	295	crop	2026-11-27	希伯来／希腊旁注补字（只核外文字组，正文未通读）；组 1773；结论已落 gap_review/gap_approved
+expositionofprop02burr	360	330	crop	2026-11-27	希伯来／希腊旁注补字（只核外文字组，正文未通读）；组 1792；结论已落 gap_review/gap_approved
+expositionofprop02burr	363	333	crop	2026-11-27	希伯来／希腊旁注补字（只核外文字组，正文未通读）；组 1793,1794；结论已落 gap_review/gap_approved
+expositionofprop02burr	364	334	crop	2026-11-27	希伯来／希腊旁注补字（只核外文字组，正文未通读）；组 1795；结论已落 gap_review/gap_approved
+expositionofprop02burr	375	345	crop	2026-11-27	希伯来／希腊旁注补字（只核外文字组，正文未通读）；组 1800；结论已落 gap_review/gap_approved
+expositionofprop02burr	387	357	crop	2026-11-27	希伯来／希腊旁注补字（只核外文字组，正文未通读）；组 1811；结论已落 gap_review/gap_approved
+expositionofprop02burr	389	359	crop	2026-11-27	希伯来／希腊旁注补字（只核外文字组，正文未通读）；组 1813,1814；结论已落 gap_review/gap_approved
+expositionofprop02burr	390	360	crop	2026-11-27	希伯来／希腊旁注补字（只核外文字组，正文未通读）；组 1817,1818；结论已落 gap_review/gap_approved
+expositionofprop02burr	392	362	crop	2026-11-27	希伯来／希腊旁注补字（只核外文字组，正文未通读）；组 1820,1821；结论已落 gap_review/gap_approved
+expositionofprop02burr	403	373	crop	2026-11-27	希伯来／希腊旁注补字（只核外文字组，正文未通读）；组 1826,1828；结论已落 gap_review/gap_approved
+expositionofprop02burr	414		crop	2026-11-27	希伯来／希腊旁注补字（只核外文字组，正文未通读）；定位找注时看页边；结论已落 gap_review/gap_approved
+expositionofprop02burr	415	381	crop	2026-11-27	希伯来／希腊旁注补字（只核外文字组，正文未通读）；组 1879,1880；结论已落 gap_review/gap_approved
+expositionofprop02burr	423	389	crop	2026-11-27	希伯来／希腊旁注补字（只核外文字组，正文未通读）；组 1885；结论已落 gap_review/gap_approved
+expositionofprop02burr	425	391	crop	2026-11-27	希伯来／希腊旁注补字（只核外文字组，正文未通读）；组 1889,1890；结论已落 gap_review/gap_approved
+expositionofprop02burr	434	400	crop	2026-11-27	希伯来／希腊旁注补字（只核外文字组，正文未通读）；组 1895；结论已落 gap_review/gap_approved
+expositionofprop02burr	465	421	crop	2026-11-27	希伯来／希腊旁注补字（只核外文字组，正文未通读）；组 1926,1927；结论已落 gap_review/gap_approved
+expositionofprop02burr	474	430	crop	2026-11-27	希伯来／希腊旁注补字（只核外文字组，正文未通读）；组 1934；结论已落 gap_review/gap_approved
+expositionofprop02burr	486	442	crop	2026-11-27	希伯来／希腊旁注补字（只核外文字组，正文未通读）；定位找注时看页边；结论已落 gap_review/gap_approved
+expositionofprop02burr	487	443	crop	2026-11-27	希伯来／希腊旁注补字（只核外文字组，正文未通读）；组 1967；结论已落 gap_review/gap_approved
+expositionofprop02burr	491	447	crop	2026-11-27	希伯来／希腊旁注补字（只核外文字组，正文未通读）；组 1972；结论已落 gap_review/gap_approved
+expositionofprop02burr	495	451	crop	2026-11-27	希伯来／希腊旁注补字（只核外文字组，正文未通读）；组 1975；结论已落 gap_review/gap_approved
+expositionofprop02burr	506	462	crop	2026-11-27	希伯来／希腊旁注补字（只核外文字组，正文未通读）；组 1979,1980,1981；结论已落 gap_review/gap_approved
+expositionofprop02burr	507	463	crop	2026-11-27	希伯来／希腊旁注补字（只核外文字组，正文未通读）；组 1983；结论已落 gap_review/gap_approved
+expositionofprop02burr	523	479	crop	2026-11-27	希伯来／希腊旁注补字（只核外文字组，正文未通读）；组 1994；结论已落 gap_review/gap_approved
+expositionofprop02burr	534	490	crop	2026-11-27	希伯来／希腊旁注补字（只核外文字组，正文未通读）；组 2001,2003；结论已落 gap_review/gap_approved
+expositionofprop02burr	552	508	crop	2026-11-27	希伯来／希腊旁注补字（只核外文字组，正文未通读）；组 2015；结论已落 gap_review/gap_approved
+expositionofprop02burr	557	513	crop	2026-11-27	希伯来／希腊旁注补字（只核外文字组，正文未通读）；组 2017,2019；结论已落 gap_review/gap_approved
+expositionofprop02burr	558	514	crop	2026-11-27	希伯来／希腊旁注补字（只核外文字组，正文未通读）；组 2020,2021,2022；结论已落 gap_review/gap_approved
+expositionofprop02burr	559	515	crop	2026-11-27	希伯来／希腊旁注补字（只核外文字组，正文未通读）；组 2023；结论已落 gap_review/gap_approved
+expositionofprop02burr	562	518	crop	2026-11-27	希伯来／希腊旁注补字（只核外文字组，正文未通读）；组 2024,2025,2026；结论已落 gap_review/gap_approved
+expositionofprop02burr	567	521	crop	2026-11-27	希伯来／希腊旁注补字（只核外文字组，正文未通读）；组 2028,2029,2030；结论已落 gap_review/gap_approved
+expositionofprop02burr	568	522	crop	2026-11-27	希伯来／希腊旁注补字（只核外文字组，正文未通读）；组 2032,2033；结论已落 gap_review/gap_approved
+expositionofprop02burr	572	526	crop	2026-11-27	希伯来／希腊旁注补字（只核外文字组，正文未通读）；组 2035；结论已落 gap_review/gap_approved
+expositionofprop02burr	581	533	crop	2026-11-27	希伯来／希腊旁注补字（只核外文字组，正文未通读）；组 2038；结论已落 gap_review/gap_approved
+expositionofprop02burr	583	535	crop	2026-11-27	希伯来／希腊旁注补字（只核外文字组，正文未通读）；组 2040；结论已落 gap_review/gap_approved
+expositionofprop02burr	594	546	crop	2026-11-27	希伯来／希腊旁注补字（只核外文字组，正文未通读）；定位找注时看页边；结论已落 gap_review/gap_approved
+expositionofprop02burr	595	547	crop	2026-11-27	希伯来／希腊旁注补字（只核外文字组，正文未通读）；组 2060；结论已落 gap_review/gap_approved
+expositionofprop02burr	599	551	crop	2026-11-27	希伯来／希腊旁注补字（只核外文字组，正文未通读）；组 2061,2062；结论已落 gap_review/gap_approved
+expositionofprop02burr	600	552	crop	2026-11-27	希伯来／希腊旁注补字（只核外文字组，正文未通读）；组 2063,2064,2065,2066；结论已落 gap_review/gap_approved
+expositionofprop02burr	607	559	crop	2026-11-27	希伯来／希腊旁注补字（只核外文字组，正文未通读）；组 2071；结论已落 gap_review/gap_approved
+expositionofprop02burr	610	562	crop	2026-11-27	希伯来／希腊旁注补字（只核外文字组，正文未通读）；组 2072；结论已落 gap_review/gap_approved
+expositionofprop02burr	623	575	crop	2026-11-27	希伯来／希腊旁注补字（只核外文字组，正文未通读）；组 2078；结论已落 gap_review/gap_approved
+expositionofprop02burr	624	576	crop	2026-11-27	希伯来／希腊旁注补字（只核外文字组，正文未通读）；组 2079；结论已落 gap_review/gap_approved
+expositionofprop02burr	626	578	crop	2026-11-27	希伯来／希腊旁注补字（只核外文字组，正文未通读）；组 2081,2083；结论已落 gap_review/gap_approved
+expositionofprop02burr	629	581	crop	2026-11-27	希伯来／希腊旁注补字（只核外文字组，正文未通读）；组 2084；结论已落 gap_review/gap_approved
+expositionofprop02burr	633	585	crop	2026-11-27	希伯来／希腊旁注补字（只核外文字组，正文未通读）；组 2090；结论已落 gap_review/gap_approved
+expositionofprop03burr	44	11	crop	2026-11-27	（同叶已有整页实读记录）希伯来／希腊旁注补字（只核外文字组，正文未通读）；组 2096；结论已落 gap_review/gap_approved
+expositionofprop03burr	60	27	crop	2026-11-27	希伯来／希腊旁注补字（只核外文字组，正文未通读）；组 2107；结论已落 gap_review/gap_approved
+expositionofprop03burr	101	68	crop	2026-11-27	希伯来／希腊旁注补字（只核外文字组，正文未通读）；组 2143；结论已落 gap_review/gap_approved
+expositionofprop03burr	114	81	crop	2026-11-27	希伯来／希腊旁注补字（只核外文字组，正文未通读）；组 2150；结论已落 gap_review/gap_approved
+expositionofprop03burr	128	95	crop	2026-11-27	希伯来／希腊旁注补字（只核外文字组，正文未通读）；组 2169,2171；结论已落 gap_review/gap_approved
+expositionofprop03burr	129	96	crop	2026-11-27	希伯来／希腊旁注补字（只核外文字组，正文未通读）；定位找注时看页边；结论已落 gap_review/gap_approved
+expositionofprop03burr	133	100	crop	2026-11-27	希伯来／希腊旁注补字（只核外文字组，正文未通读）；定位找注时看页边；结论已落 gap_review/gap_approved
+expositionofprop03burr	201	168	crop	2026-11-27	希伯来／希腊旁注补字（只核外文字组，正文未通读）；组 2213；结论已落 gap_review/gap_approved
+expositionofprop03burr	204	171	crop	2026-11-27	希伯来／希腊旁注补字（只核外文字组，正文未通读）；组 2218；结论已落 gap_review/gap_approved
+expositionofprop03burr	207	174	crop	2026-11-27	希伯来／希腊旁注补字（只核外文字组，正文未通读）；组 2223,2224；结论已落 gap_review/gap_approved
+expositionofprop03burr	217	184	crop	2026-11-27	希伯来／希腊旁注补字（只核外文字组，正文未通读）；组 2242；结论已落 gap_review/gap_approved
+expositionofprop03burr	218	185	crop	2026-11-27	希伯来／希腊旁注补字（只核外文字组，正文未通读）；组 2243；结论已落 gap_review/gap_approved
+expositionofprop03burr	254	221	crop	2026-11-27	希伯来／希腊旁注补字（只核外文字组，正文未通读）；组 2275；结论已落 gap_review/gap_approved
+expositionofprop03burr	266	233	crop	2026-11-27	希伯来／希腊旁注补字（只核外文字组，正文未通读）；组 2293；结论已落 gap_review/gap_approved
+expositionofprop03burr	267	236	crop	2026-11-27	希伯来／希腊旁注补字（只核外文字组，正文未通读）；组 2295；结论已落 gap_review/gap_approved
+expositionofprop03burr	286	255	crop	2026-11-27	希伯来／希腊旁注补字（只核外文字组，正文未通读）；组 2308；结论已落 gap_review/gap_approved
+expositionofprop03burr	287	256	crop	2026-11-27	希伯来／希腊旁注补字（只核外文字组，正文未通读）；组 2309；结论已落 gap_review/gap_approved
+expositionofprop03burr	299	268	crop	2026-11-27	希伯来／希腊旁注补字（只核外文字组，正文未通读）；组 2321；结论已落 gap_review/gap_approved
+expositionofprop03burr	308	277	crop	2026-11-27	希伯来／希腊旁注补字（只核外文字组，正文未通读）；组 2330；结论已落 gap_review/gap_approved
+expositionofprop03burr	313	282	crop	2026-11-27	希伯来／希腊旁注补字（只核外文字组，正文未通读）；组 2338；结论已落 gap_review/gap_approved
+expositionofprop03burr	314	283	crop	2026-11-27	希伯来／希腊旁注补字（只核外文字组，正文未通读）；组 2339；结论已落 gap_review/gap_approved
+expositionofprop03burr	316	285	crop	2026-11-27	希伯来／希腊旁注补字（只核外文字组，正文未通读）；组 2341；结论已落 gap_review/gap_approved
+expositionofprop03burr	318	287	crop	2026-11-27	希伯来／希腊旁注补字（只核外文字组，正文未通读）；组 2342；结论已落 gap_review/gap_approved
+expositionofprop03burr	327	296	crop	2026-11-27	希伯来／希腊旁注补字（只核外文字组，正文未通读）；组 2351；结论已落 gap_review/gap_approved
+expositionofprop03burr	331	300	crop	2026-11-27	希伯来／希腊旁注补字（只核外文字组，正文未通读）；组 2354；结论已落 gap_review/gap_approved
+expositionofprop03burr	335	304	crop	2026-11-27	希伯来／希腊旁注补字（只核外文字组，正文未通读）；组 2358；结论已落 gap_review/gap_approved
+expositionofprop03burr	355	324	crop	2026-11-27	希伯来／希腊旁注补字（只核外文字组，正文未通读）；组 2364；结论已落 gap_review/gap_approved
+expositionofprop03burr	371	340	crop	2026-11-27	希伯来／希腊旁注补字（只核外文字组，正文未通读）；组 2368；结论已落 gap_review/gap_approved
+expositionofprop03burr	379	348	crop	2026-11-27	希伯来／希腊旁注补字（只核外文字组，正文未通读）；组 2371；结论已落 gap_review/gap_approved
+expositionofprop03burr	394	363	crop	2026-11-27	希伯来／希腊旁注补字（只核外文字组，正文未通读）；组 2378；结论已落 gap_review/gap_approved
+expositionofprop03burr	397	366	crop	2026-11-27	希伯来／希腊旁注补字（只核外文字组，正文未通读）；组 2382；结论已落 gap_review/gap_approved
+expositionofprop03burr	408	377	crop	2026-11-27	希伯来／希腊旁注补字（只核外文字组，正文未通读）；组 2385；结论已落 gap_review/gap_approved
+expositionofprop03burr	415	384	crop	2026-11-27	希伯来／希腊旁注补字（只核外文字组，正文未通读）；组 2386；结论已落 gap_review/gap_approved
+expositionofprop03burr	417	386	crop	2026-11-27	希伯来／希腊旁注补字（只核外文字组，正文未通读）；组 2389；结论已落 gap_review/gap_approved
+expositionofprop03burr	419	388	crop	2026-11-27	希伯来／希腊旁注补字（只核外文字组，正文未通读）；组 2390,2391,2392,2393,2394,2395,2396,2399,2402,2404；结论已落 gap_review/gap_approved
+expositionofprop03burr	420	389	crop	2026-11-27	希伯来／希腊旁注补字（只核外文字组，正文未通读）；组 2406；结论已落 gap_review/gap_approved
+expositionofprop03burr	424	393	crop	2026-11-27	希伯来／希腊旁注补字（只核外文字组，正文未通读）；组 2409；结论已落 gap_review/gap_approved
+expositionofprop03burr	426	395	crop	2026-11-27	希伯来／希腊旁注补字（只核外文字组，正文未通读）；组 2412；结论已落 gap_review/gap_approved
+expositionofprop03burr	428	397	crop	2026-11-27	希伯来／希腊旁注补字（只核外文字组，正文未通读）；组 2416；结论已落 gap_review/gap_approved
+expositionofprop03burr	431	400	crop	2026-11-27	希伯来／希腊旁注补字（只核外文字组，正文未通读）；组 2418；结论已落 gap_review/gap_approved
+expositionofprop03burr	444	413	crop	2026-11-27	（同叶已有整页实读记录）希伯来／希腊旁注补字（只核外文字组，正文未通读）；组 2423；结论已落 gap_review/gap_approved
+expositionofprop03burr	468	437	crop	2026-11-27	（同叶已有整页实读记录）希伯来／希腊旁注补字（只核外文字组，正文未通读）；组 2452；结论已落 gap_review/gap_approved
+expositionofprop03burr	471	440	crop	2026-11-27	希伯来／希腊旁注补字（只核外文字组，正文未通读）；组 2456；结论已落 gap_review/gap_approved
+expositionofprop03burr	484	453	crop	2026-11-27	希伯来／希腊旁注补字（只核外文字组，正文未通读）；组 2467；结论已落 gap_review/gap_approved
+expositionofprop03burr	486	455	crop	2026-11-27	希伯来／希腊旁注补字（只核外文字组，正文未通读）；组 2470；结论已落 gap_review/gap_approved
+expositionofprop03burr	487	456	crop	2026-11-27	希伯来／希腊旁注补字（只核外文字组，正文未通读）；组 2473；结论已落 gap_review/gap_approved
+expositionofprop03burr	488	457	crop	2026-11-27	希伯来／希腊旁注补字（只核外文字组，正文未通读）；组 2474；结论已落 gap_review/gap_approved
+expositionofprop03burr	490	459	crop	2026-11-27	希伯来／希腊旁注补字（只核外文字组，正文未通读）；组 2480；结论已落 gap_review/gap_approved
+expositionofprop03burr	492	461	crop	2026-11-27	希伯来／希腊旁注补字（只核外文字组，正文未通读）；组 2485；结论已落 gap_review/gap_approved
+expositionofprop04burr	82	51	crop	2026-11-27	希伯来／希腊旁注补字（只核外文字组，正文未通读）；组 2532；结论已落 gap_review/gap_approved
+expositionofprop04burr	89	58	crop	2026-11-27	希伯来／希腊旁注补字（只核外文字组，正文未通读）；组 2538；结论已落 gap_review/gap_approved
+expositionofprop04burr	120	89	crop	2026-11-27	希伯来／希腊旁注补字（只核外文字组，正文未通读）；组 2559；结论已落 gap_review/gap_approved
+expositionofprop04burr	128	97	crop	2026-11-27	希伯来／希腊旁注补字（只核外文字组，正文未通读）；组 2564；结论已落 gap_review/gap_approved
+expositionofprop04burr	133	102	crop	2026-11-27	希伯来／希腊旁注补字（只核外文字组，正文未通读）；组 2566,2567；结论已落 gap_review/gap_approved
+expositionofprop04burr	151	120	crop	2026-11-27	希伯来／希腊旁注补字（只核外文字组，正文未通读）；组 2589；结论已落 gap_review/gap_approved
+expositionofprop04burr	166	135	crop	2026-11-27	希伯来／希腊旁注补字（只核外文字组，正文未通读）；组 2596,2597；结论已落 gap_review/gap_approved
+expositionofprop04burr	167	136	crop	2026-11-27	希伯来／希腊旁注补字（只核外文字组，正文未通读）；组 2598；结论已落 gap_review/gap_approved
+expositionofprop04burr	193	168	crop	2026-11-27	希伯来／希腊旁注补字（只核外文字组，正文未通读）；组 2608；结论已落 gap_review/gap_approved
+expositionofprop04burr	196	171	crop	2026-11-27	希伯来／希腊旁注补字（只核外文字组，正文未通读）；组 2609；结论已落 gap_review/gap_approved
+expositionofprop04burr	210	185	crop	2026-11-27	希伯来／希腊旁注补字（只核外文字组，正文未通读）；组 2619,2620；结论已落 gap_review/gap_approved
+expositionofprop04burr	226	201	crop	2026-11-27	希伯来／希腊旁注补字（只核外文字组，正文未通读）；组 2660,2661,2662；结论已落 gap_review/gap_approved
+expositionofprop04burr	282	261	crop	2026-11-27	（同叶已有整页实读记录）希伯来／希腊旁注补字（只核外文字组，正文未通读）；定位找注时看页边；结论已落 gap_review/gap_approved
+expositionofprop04burr	283	262	crop	2026-11-27	希伯来／希腊旁注补字（只核外文字组，正文未通读）；组 2727；结论已落 gap_review/gap_approved
+expositionofprop04burr	362	341	crop	2026-11-27	希伯来／希腊旁注补字（只核外文字组，正文未通读）；组 2754；结论已落 gap_review/gap_approved
+expositionofprop04burr	423	402	crop	2026-11-27	希伯来／希腊旁注补字（只核外文字组，正文未通读）；组 2809；结论已落 gap_review/gap_approved
+expositionofprop04burr	453	432	crop	2026-11-27	希伯来／希腊旁注补字（只核外文字组，正文未通读）；组 2820；结论已落 gap_review/gap_approved
+expositionofprop04burr	455	434	crop	2026-11-27	希伯来／希腊旁注补字（只核外文字组，正文未通读）；组 2822,2823；结论已落 gap_review/gap_approved
+expositionofprop04burr	475	454	crop	2026-11-27	希伯来／希腊旁注补字（只核外文字组，正文未通读）；组 2845,2846,2847,2848,2849；结论已落 gap_review/gap_approved
+expositionofprop04burr	518	497	crop	2026-11-27	希伯来／希腊旁注补字（只核外文字组，正文未通读）；定位找注时看页边；结论已落 gap_review/gap_approved
+expositionofprop04burr	519	498	crop	2026-11-27	希伯来／希腊旁注补字（只核外文字组，正文未通读）；组 2862；结论已落 gap_review/gap_approved
+expositionwithpr00jere	265	234	crop	2026-11-27	希伯来／希腊旁注补字（只核外文字组，正文未通读）；定位找注时看页边；结论已落 gap_review/gap_approved
+expositionwithpr00jere	266	235	crop	2026-11-27	希伯来／希腊旁注补字（只核外文字组，正文未通读）；定位找注时看页边；结论已落 gap_review/gap_approved
