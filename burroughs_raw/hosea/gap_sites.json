@@ -739,7 +739,7 @@
 "gid": 18,
 "slug": "1-1",
 "stream": "note",
-"tcp": "〈Greek〉",
+"tcp": "*〈Greek〉",
 "left": [],
 "right": [
 "Puteus."
@@ -2137,7 +2137,7 @@
 "gid": 56,
 "slug": "1-2",
 "stream": "note",
-"tcp": "〈Greek〉",
+"tcp": "*〈Greek〉",
 "left": [],
 "right": [
 "Quiescere",
@@ -2592,7 +2592,7 @@
 "gid": 69,
 "slug": "1-6",
 "stream": "note",
-"tcp": "〈Greek〉",
+"tcp": "*〈Greek〉",
 "left": [],
 "right": [
 "Oblitus",
@@ -2631,7 +2631,7 @@
 "gid": 70,
 "slug": "1-6",
 "stream": "note",
-"tcp": "〈Greek〉 Ab••ulit. 〈Greek〉.",
+"tcp": "〈Greek〉 Ab••ulit. 〈Greek〉.*",
 "left": [
 "〈Greek〉",
 "Oblitus",
@@ -14926,7 +14926,7 @@
 "gid": 426,
 "slug": "2-6",
 "stream": "note",
-"tcp": "〈Greek〉",
+"tcp": "*〈Greek〉",
 "left": [],
 "right": [
 "Vadam.",
@@ -15003,7 +15003,7 @@
 "gid": 428,
 "slug": "2-6",
 "stream": "note",
-"tcp": "〈Greek〉",
+"tcp": "〈Greek〉*",
 "left": [
 "〈Greek〉",
 "Vadam.",
@@ -19384,7 +19384,7 @@
 "gid": 550,
 "slug": "2-11-2",
 "stream": "note",
-"tcp": "〈Greek〉",
+"tcp": "*〈Greek〉",
 "left": [],
 "right": [
 "Iovialiter",
@@ -60250,7 +60250,7 @@
 "gid": 1818,
 "slug": "5-10",
 "stream": "note",
-"tcp": "〈Greek〉",
+"tcp": "〈Greek〉*",
 "left": [
 "Crimea",
 "cōcussionis."
@@ -65174,7 +65174,7 @@
 "gid": 1967,
 "slug": "6-3",
 "stream": "note",
-"tcp": "〈Greek〉",
+"tcp": "*〈Greek〉",
 "left": [],
 "right": [
 "Incumbamus",
@@ -67106,7 +67106,7 @@
 "gid": 2025,
 "slug": "6-7",
 "stream": "note",
-"tcp": "〈Greek〉",
+"tcp": "*〈Greek〉",
 "left": [],
 "right": [
 "Vanitas."
@@ -67358,7 +67358,7 @@
 "gid": 2032,
 "slug": "6-9",
 "stream": "note",
-"tcp": "〈Greek〉",
+"tcp": "*〈Greek〉",
 "left": [],
 "right": [
 "Nunquid",
@@ -67400,7 +67400,7 @@
 "gid": 2033,
 "slug": "6-9",
 "stream": "note",
-"tcp": "〈Greek〉",
+"tcp": "*〈Greek〉*",
 "left": [
 "〈Greek〉",
 "Nunquid",
@@ -80972,7 +80972,7 @@
 "gid": 2420,
 "slug": "10-12",
 "stream": "note",
-"tcp": "〈Greek〉",
+"tcp": "*〈Greek〉",
 "left": [],
 "right": [
 "ad",
@@ -82834,7 +82834,7 @@
 "gid": 2470,
 "slug": "10-14",
 "stream": "note",
-"tcp": "〈Greek〉",
+"tcp": "*〈Greek〉",
 "left": [],
 "right": [
 "Foveâ",
@@ -86100,7 +86100,7 @@
 "gid": 2561,
 "slug": "11-4",
 "stream": "note",
-"tcp": "〈Greek〉.",
+"tcp": "*〈Greek〉.",
 "left": [],
 "right": [
 "Erupisset.",
@@ -87799,7 +87799,7 @@
 "gid": 2607,
 "slug": "11-8",
 "stream": "note",
-"tcp": "〈Greek〉 〈◊〉",
+"tcp": "*〈Greek〉 〈◊〉",
 "left": [],
 "right": [
 "Consolat",
@@ -87837,7 +87837,7 @@
 "gid": 2608,
 "slug": "11-8",
 "stream": "note",
-"tcp": "〈Greek〉",
+"tcp": "〈Greek〉*",
 "left": [
 "〈Greek〉",
 "〈◊〉",
@@ -90652,7 +90652,7 @@
 "gid": 2693,
 "slug": "12-2",
 "stream": "note",
-"tcp": "〈Greek〉",
+"tcp": "*〈Greek〉*",
 "left": [],
 "right": [
 "á",
@@ -90694,7 +90694,7 @@
 "gid": 2694,
 "slug": "12-2",
 "stream": "note",
-"tcp": "〈Greek〉",
+"tcp": "*〈Greek〉",
 "left": [
 "〈Greek〉",
 "á"
@@ -90737,7 +90737,7 @@
 "gid": 2695,
 "slug": "12-2",
 "stream": "note",
-"tcp": "〈Greek〉",
+"tcp": "〈Greek〉*",
 "left": [
 "〈Greek〉",
 "á",
@@ -90780,7 +90780,7 @@
 "gid": 2696,
 "slug": "12-2",
 "stream": "note",
-"tcp": "〈Greek〉",
+"tcp": "*〈Greek〉",
 "left": [
 "〈Greek〉",
 "á",
@@ -93172,7 +93172,7 @@
 "gid": 2767,
 "slug": "12-13",
 "stream": "note",
-"tcp": "〈Greek〉",
+"tcp": "*〈Greek〉*",
 "left": [],
 "right": [
 "in",
@@ -93375,7 +93375,7 @@
 "gid": 2773,
 "slug": "12-13",
 "stream": "note",
-"tcp": "T••msire",
+"tcp": "*T••msire",
 "left": [],
 "right": [
 "fecit",
@@ -93411,7 +93411,7 @@
 "gid": 2774,
 "slug": "12-13",
 "stream": "note",
-"tcp": "〈Greek〉",
+"tcp": "〈Greek〉*",
 "left": [
 "T••msire",
 "fecit"

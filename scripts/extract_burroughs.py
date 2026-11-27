@@ -89,7 +89,7 @@ def latin_note(t):
     ws = re.findall(r"(?<![A-Za-z•])[a-z]{3,}(?![A-Za-z•])", base)               # 带缺字记号的残词不算
     lex = en_lexicon()
     if not (len(ws) >= 2 and sum(1 for w in ws if w in lex) * 3 < len(ws)):
-        return False
+        return short_latin(t, base, lex)
     # 还要有拉丁的正面证据：虚词，或多数词带拉丁词尾（挡住 Fair Skins foul Souls oftimes 这类生僻英文）
     toks = re.findall(r"(?<![A-Za-z•])[A-Za-z]+(?![A-Za-z•])", base)
     if any(w.lower() in LATIN_MARK for w in toks):
@@ -97,10 +97,31 @@ def latin_note(t):
     return sum(1 for w in ws if re.search(LATIN_END, w)) * 3 >= len(ws) * 2
 
 
+def short_latin(t, base, lex):
+    """短拉丁释义：旁注里有希伯来／希腊字（录入本记缺），余下只有一两个拉丁词（און Vanitas.、
+    Psa. 14.5, ibi tinuerunt; i. e. tunc、ad os misericordiae）。原书这些拉丁词斜体，录入本没标，
+    上面「至少两个小写词」的判据漏掉（2026-11-27 抽 6:7 看 p.623、p.627）。
+    出处缩写（四字母以内带点：Calv. Hier. Isa.）与人名、纲目标签不算词；余词英文常用词不到一半，且有拉丁虚词或词尾。"""
+    if 'non-Latin' not in t and '〈Greek〉' not in t and 'foreign' not in t:
+        return False
+    toks = [m.group(1) for m in re.finditer(r"(?<![A-Za-z•])([A-Za-z]{2,})(?![A-Za-z•])(\.?)", base)
+            if not (m.group(2) and len(m.group(1)) <= 4)]
+    toks = [w for w in toks if w not in NAME_STOP]
+    ws = [w.lower() for w in toks if len(w) >= 3] + [w.lower() for w in toks if w.lower() in ('ad', 'os', 'in', 'ut', 'ab', 'ex')]
+    if not ws or sum(1 for w in ws if w in lex) * 2 >= len(ws):
+        return False
+    return any(w in LATIN_MARK for w in ws) or any(re.search(LATIN_END, w) for w in ws if len(w) >= 3)
+
+
+NAME_STOP = set('Pareus Hierom Seventy Pagnin Tremel Vatab Mont Arias Calvin Septuag Buxtorf Lexic Chald Vulg Cyril '
+                'Livelius Expos Obser Observ Answ Vers Hiphil Niphal Kal Piel Heb Greek Hebrew '
+                'Vatablus Tremel Tremelius Vulgat Vulgata Beza Theophylact Junius Piscator Drusius Mercerus Polanus Rivetus Lyra notis loc'.split())
+
+
 # 纲目标签（Obs. 2、Use.、Expos. 1. …）与只有一个人名的旁注（Jareb.、Hierom.——p.392/393 看图）斜体底子页上也排正体，不翻
 RE_LABEL = re.compile(r'^[A-Z][a-zſ]+\.?$|^(?:\d+\.?\s*)?(?:Obs|Obser|Observ|Use|Us|Uses|Expos|Exp|Quest|Qu|Answ|Ans|Reas|Object|Obj|Applic|Applicat|Doct|Doctr|Motive|Motives|Means|Note|Simile|simile|Caution|Signes?|Reason)\.?,?\s*\d*\.?\s*$')
 LATIN_MARK = set('et est non quod qui quae quam sed cum nec neque vel enim sunt esse sic sicut ut ad nisi hoc id ab ex pro '
-                 'per ejus eius sua suam eum eos quia atque quasi tamen ergo autem etiam inquit'.split())
+                 'per ejus eius sua suam eum eos quia atque quasi tamen ergo autem etiam inquit ibi tunc nunc ubi unde inde ita'.split())
 LATIN_END = r'(us|um|am|is|ae|orum|arum|ibus|ur|unt|ent|it|at|em|ere|ari|iri|tio|tas)$'
 
 

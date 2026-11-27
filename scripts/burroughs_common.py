@@ -201,7 +201,8 @@ def invert_italic(line):
     return re.sub('\x01(\\d+)\x01', lambda m: held[int(m.group(1))], t)
 
 
-RE_DROP = re.compile(r'^ ?((?:<span class="jb-pb"[^>]*></span>|<span class="jb-margin"[^>]*>[^<]*(?:<span[^>]*>[^<]*</span>[^<]*)*</span> ?)*)([A-Z])(?=[A-Z][a-zſ]|[A-Z]+ [a-zſ]|[A-Z]+ [A-Z][a-zſ])', re.M)   # WEe / THe；首词全大写（IN these、THE word、GOD hath、WHAT King——原书首字放大、余字小型大写；JESUS CHRIST 这类连串全大写不认）
+RE_DROP = re.compile(r'^ ?((?:<span class="jb-pb"[^>]*></span>|<span class="jb-margin"[^>]*>[^<]*(?:<span[^>]*>[^<]*</span>[^<]*)*</span> ?)*)(VV(?=[A-Zſa-z])|[A-Z](?=[A-Z][a-zſ]|[A-Z]+ [a-zſ]|[A-Z]+ [A-Z][a-zſ]))', re.M)   # WEe / THe；首词全大写（IN these、THE word、GOD hath、WHAT King——原书首字放大、余字小型大写；JESUS CHRIST 这类连串全大写不认）；
+# 原书无 W 铅字，花饰首字 W 是一整块 VV，整块放大（VVEE、VVhat），不拆成 V + V
 
 
 def dropcaps(md):
