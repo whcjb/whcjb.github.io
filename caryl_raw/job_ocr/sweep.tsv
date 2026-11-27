@@ -1374,6 +1374,7 @@ fh	p6/18-17	fh	sh
 fh	p6/18-17	fh	sh
 fh	p6/18-17	fh	sh
 accent	p6/18-17	péople	people
+head	p6/18-17	Vers 	Vers. 
 shall	p6/18-17	sual	shall
 isa	p6/18-17	(Per	(Jer
 god	p6/18-17	Ged	God
@@ -1490,6 +1491,7 @@ fin	p6/19-1	fin	sin
 fin	p6/19-1	fins	sins
 fs	p6/19-1	osten	often
 accent	p6/19-1	timès	times
+fs	p6/19-1	too ost	too oft
 fh	p6/19-1	fh	sh
 wh	p6/19-1	I'hid	I hid
 tis	p6/19-1	“Tis	'Tis
@@ -1562,6 +1564,7 @@ pronI	p6/19-10	Iam	I am
 accent	p6/19-10	oçcasion	occasion
 accent	p6/19-10	Job́	Job
 accent	p6/19-10	thẽ	the
+mw	p6/19-10	mrath	wrath 
 job	p6/19-10	Iob	Job
 tis	p6/19-10	Tis	'Tis
 tis	p6/19-10	Tis	'Tis
@@ -2107,8 +2110,10 @@ tis	p6/19-29	so’tis	so ’tis
 fin	p6/19-29	fin	sin
 th	p6/19-29	ihe	the
 job	p6/19-29	Tob	Job
+mw	p6/19-29	mrath	wrath 
 pronI	p6/19-29	Iam	I am
 pronI	p6/19-29	Iam	I am
+mw	p6/19-29	mrath	wrath 
 uis	p6/19-29	ù	is
 job	p6/19-29	Tob	Job
 accent	p6/19-29	makę	make
@@ -2222,6 +2227,7 @@ job	p6/19-7	job's	Job's
 tis	p6/19-7	“Tis	'Tis
 tis	p6/19-7	“Tis	'Tis
 god	p6/19-7	Ged	God
+head	p6/19-7	Vers 	Vers. 
 job	p6/19-7	Tob	Job
 jf	p6/19-7	fosephs	Josephs
 tis	p6/19-7	Tis	'Tis
@@ -2749,21 +2755,21 @@ accent	p6/21-14	çan	can
 mw	p6/21-14	that ve have	that we have
 mw	p6/21-14	that me 	that we 
 split	p6/21-14	out ward	outward
-pua	p6/21-16	;	q;
 sig	p6/21-16	XXXX	
 pbjoin	p6/21-16	 of good men too, it⏎⏎	i
 sig	p6/21-16	XXXX 2	
 pbjoin	p6/21-16	d have their portion⏎⏎	p
 catch	p6/21-16	portion [pb] portion	portion
+mw	p6/21-16	Hom ost	How oft
+mw	p6/21-16	michedl	wicked
+mw	p6/21-16	stubble before the mind	stubble before the wind
 mw	p6/21-16	that ve pray	that we pray
 mw	p6/21-16	that ve pray	that we pray
 fs	p6/21-16	affigned	assigned
 split	p6/21-16	wick ed	wicked
 split	p6/21-16	Broug hton	Broughton
 job	p6/21-16	fobs	Jobs
-job	p6/21-16	fob	Job
 saith	p6/21-16	(faith 	(saith 
-accent	p6/21-16	truę	true
 isa	p6/21-16	I/a.	Isa.
 pronI	p6/21-16	I'have	I have
 pronI	p6/21-16	I'have	I have
@@ -2777,15 +2783,13 @@ pronI	p6/21-16	Iam	I am
 job	p6/21-16	Tob	Job
 jf	p6/21-16	facob	Jacob
 te	p6/21-16	Te 	Ye 
+mw	p6/21-16	Hom oft	How oft
 split	p6/21-16	present ly	presently
 job	p6/21-16	tob	Job
 job	p6/21-16	job	Job
 job	p6/21-16	Tob's	Job's
 mw	p6/21-16	that me 	that we 
 saith	p6/21-16	( faith 	( saith 
-accent	p6/21-16	thûs	thus
-tis	p6/21-16	"Tis	 'Tis
-job	p6/21-16	tob	Job
 isa	p6/21-16	(I 	(1 
 accent	p6/21-16	considerãtion	consideration
 split	p6/21-16	thresh ed	threshed
@@ -2819,6 +2823,7 @@ wh	p6/21-19	W'hat	what
 th	p6/21-19	rhen	when
 job	p6/21-19	tob	Job
 space	p6/21-19	all.	all. 
+mw	p6/21-19	hom ost	how oft
 god	p6/21-19	Ged	God
 modal	p6/21-19	mould	would
 te	p6/21-19	Te 	Ye 
@@ -3668,6 +3673,7 @@ uis	p82/28-12	ù	is
 job	p82/28-12	job	Job
 job	p82/28-12	tob	Job
 pronI	p82/28-12	Iam	I am
+head	p82/28-12	Vers 	Vers. 
 th	p82/28-12	ibe	the
 accent	p82/28-12	à	a
 bl	p82/28-12	Ebe	The
@@ -4880,6 +4886,7 @@ split	p9/30-13	delight full	delightfull
 job	p9/30-13	sob	Job
 tis	p9/30-13	so’tis	so ’tis
 guil	p9/30-13	» 	 
+mw	p9/30-13	mountaines before the mind	mountaines before the wind
 job	p9/30-13	Tob	Job
 job	p9/30-13	sob	Job
 tis	p9/30-13	but’tis	but ’tis
@@ -5032,6 +5039,7 @@ mw	p9/30-2	age mas	age was
 saith	p9/30-2	( faith 	( saith 
 of	p9/30-2	ef	of
 tis	p9/30-2	saith’tis	saith ’tis
+head	p9/30-2	Vers 	Vers. 
 split	p9/30-2	out ward	outward
 fs	p9/30-2	osten	often
 accent	p9/30-2	thȩy	they
@@ -5073,6 +5081,7 @@ tis	p9/30-21	Tis	'Tis
 tis	p9/30-21		 
 fs	p9/30-21	surther	further
 job	p9/30-21	sob	Job
+mw	p9/30-21	mee before the mind	mee before the wind
 pronI	p9/30-21	I'am	I am
 job	p9/30-21	sob	Job
 job	p9/30-21	Tob	Job
@@ -5718,6 +5727,7 @@ fs	p9/31-22	fo	so
 mw	p9/31-22	Doe ve provoke	Doe we provoke
 mw	p9/31-22	as ve are	as we are
 isa	p9/31-22	(fer.	(Jer.
+mw	p9/31-22	mrath	wrath 
 job	p9/31-22	sob	Job
 job	p9/31-22	job	Job
 job	p9/31-22	job	Job

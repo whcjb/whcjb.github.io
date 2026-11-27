@@ -369,6 +369,14 @@ def rules():
     R.append(('mw', re.compile(r'\bNhen\b'), lambda m: 'When'))
     R.append(('mw', re.compile(r'\bhom (?=(?:farre|great|much|many)\b)'), lambda m: 'how '))
     R.append(('fs', re.compile(r'\bdays so all be\b'), lambda m: 'days shall be'))
+    # —— 第 25 轮（第 6 部 21:16–18 实读 19 叶）
+    R.append(('mw', re.compile(r'\b([Hh])om (?:ost|oft|est)\b'), lambda m: m.group(1) + 'ow oft'))      # 斜体 w 读成 m、f 读成长 s
+    R.append(('fs', re.compile(r'\b(how|too|very) ost\b'), lambda m: m.group(1) + ' oft'))
+    R.append(('mw', re.compile(r'\bmrath(?=(?:of|be|bringeth)\b)'), lambda m: 'wrath '))
+    R.append(('mw', re.compile(r'\bmrath\b'), lambda m: 'wrath'))
+    R.append(('mw', re.compile(r'\bmichedl\b'), lambda m: 'wicked'))
+    R.append(('mw', re.compile(r'\b(stubble|mountaines|mee) before the mind\b'), lambda m: m.group(1) + ' before the wind'))
+    R.append(('head', re.compile(r'(?<![\w.])Vers (?=\d{1,2}\. [A-Z])'), lambda m: 'Vers. '))             # 节首小标题 Vers 漏点
     # 漏进正文的页眉
     R.append(('head', re.compile(r'\bCha[pn][.,-]?\s?\d{1,2}\.?\s+An Ex\w*\s+u\w*\s+\w+\s+Boo?[sk]\w*\s+\S{1,3}\s?\S{0,3}\s+V\w{2,5}[.,]?\s?\d{0,2}\.?'),
               lambda m: ''))

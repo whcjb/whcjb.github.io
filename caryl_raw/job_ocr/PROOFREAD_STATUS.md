@@ -32,6 +32,7 @@
 | 22 | 2026-11-26 | 第 4 部 14:3–4（印本 pp. 562–578） | Packer 纸本 | 17 | 约 150（落表 128 条；正文约 130） | ≈ 8.8（正文 7.6） | 0 |
 | 23 | 2026-11-27 | 第 9 部 30:15（印本 pp. 133–151） | Packer 纸本 | 19 | 约 175（落表 148 条；正文约 150） | ≈ 9.2（正文 7.9） | 0 |
 | 24 | 2026-11-27 | 第 6 部 20:20–23（印本 pp. 541–563） | Packer 纸本 | 23 | 约 230（落表 177 条；正文约 185） | ≈ 10（正文 8） | 0 |
+| 25 | 2026-11-27 | 第 6 部 21:16–18（印本 pp. 704–713、716–724） | Packer 纸本 | 19 | 约 165（落表 136 条；正文约 155） | ≈ 8.7（正文 8.2） | 0 |
 
 ## 第 1 轮发现的错误类别与全书清理
 
@@ -619,4 +620,25 @@ p.549 两行次序错乱（「his Secondly, Others expound … family.」）、p
 
 原书误植照录（本段）：canuot、Nothiug、hononred、participiation、amay、spitits、diffeeence、mnst、drunkenenesse、sinfnlly；
 原书拼法 sorow、claping、conveniant 照录。
+
+## 第 25 轮发现的问题与全书处理（第 6 部 21:16–18，19 叶）
+
+本段错处约 165（落表 136 条）：正文每页约 8.2，旁注 7 条照影像重录。
+
+**页码错位（切段层 `caryl_ocr_text.py`）**：叶 717–722 的页码读坏（708 读成「708」，709 读成「702」，710 没读出，711 读成「71」…），
+逐页定页码的插补把叶 717–719 判成无号（成品里只有叶锚、没有页码），叶 720–722 又错成 713–715，与真页 711–713 差 2。
+看图定：叶 717–722 = pp. 708–713，叶 723 = p. 716；p.713 页底接字 Most、p.716 以「every one hath his lot」起，中间 pp. 714–715 扫描件缺，
+补 `PAGE_SET`／`PAGE_GAP`（第 6 部），页上插「此页扫描件缺」说明。全书其余无页码叶锚 17 个，都是卷首献辞、序言等本不编页的叶。
+
+文字类（新规则）：
+
+| 类别 | 本段 | 全书命中 |
+|---|---|---|
+| Hom ost／Hom oft／hom est → How oft；how／too ost → oft | 8 | 4 |
+| mrath(of／be／bringeth) → wrath (of…)；michedl → wicked | 2 | 5 |
+| stubble／mountaines／mee before the mind → wind | 2 | 3 |
+| 节首小标题 Vers N. 漏点 → Vers. N. | 2 | 4 |
+| 「a Winde of Hype.bole」→ kinde of Hyperbole（p6 19-1，人工表） | — | 1 |
+
+原书误植照录（本段）：nse、assirmes、al、distibute、eligantly、aud（两处）、notwithstandiug、bnt、wnide、becanse。
 
