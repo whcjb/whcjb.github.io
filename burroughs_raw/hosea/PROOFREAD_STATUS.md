@@ -177,7 +177,7 @@ St Paul 原书 Sᵗ 上标，录入本作 St，不改。
 11 页各整页读一次（账本里都没看过）。这一段录入质量明显差于前几轮所抽，错处集中在词句。
 
 逐条（tcp_fixes）：circumvenced→circumvented、Ward→Word、Labhor→I abhor、conceipred→conceipted、a men→a man、beforting→besotting、
-guiliness→guiltiness、borther→brother、knowledge→knowledg（原书拼法）、wholeworks 类无；旁注 in meis factus→factis、「*A true* Convert」→「A true *Convert*」（录入本正斜反标）；
+guiliness→guiltiness、borther→brother、knowledge→knowledg（原书拼法）；旁注 in meis factus→factis、「*A true* Convert」→「A true *Convert*」（录入本正斜反标）；
 p.330 段尾「In all my labors.」前文以逗号收尾、原书单独一行斜体，单条拆出（tcp_fixes 支持字面 `\n`）。
 
 整类：
